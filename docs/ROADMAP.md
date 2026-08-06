@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 MLX validation v2 protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E2 MLX validation v2 protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -129,10 +129,11 @@ protocol and a new untouched target bank that is neither P2 nor C1.
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-Status in the v2 public-freeze commit: the v1 engineering validation stopped at
-a preserved technical MLX export failure; the v2 engineering protocol is
-frozen and validation is pending. Before that commit is public, v2 remains
-`freeze_pending`. No E2 scientific model forward or result is authorized.
+Status: Stage-A v2 engineering validation is complete with
+`status: validation_failed` and `scientific_result: false`. The v2 protocol and technical surface were frozen
+at public commit `dc84ac19e06ef7a0fd7dcd77fdce4b484b192e57`. MLX is not
+qualified for the pinned E2 scientific cell. No E2 scientific-grid forward was
+run or authorized.
 
 Version 1 was frozen by public commit
 `88685bd01ab115df323e9a324d49a659c66163c7`. Its Transformers/MPS phase
@@ -144,57 +145,52 @@ RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the
 
 The failure preceded parity comparison, the speed decision, and every
 scientific endpoint. No v1 receipt was produced, and no scientific outcome was
-inspected.
+inspected. Its [failure record](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json)
+remains available.
 
-- make `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2` effective only
-  when the next public commit freezes the bilingual protocol and v2 technical
-  surface; until then its status is `freeze_pending` / `validation_pending`;
-- write any completed v2 receipt only to
-  `validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`, without creating or
-  backfilling a v1 receipt;
-- change only the MLX-to-NumPy export bridge: cast MLX BF16 arrays to
-  `mx.float32` immediately before NumPy export while retaining native-BF16 model
-  execution;
-- keep the model artifact and revision, artifact inventory, prompts, layers,
-  parity and speed thresholds, intervention-vector construction and bytes,
-  warm-up and measurement counts, timing boundary, process order, and
-  scientific boundaries unchanged from v1;
-- after the v2 public freeze, rerun the same process-isolated
-  Transformers/MPS-to-MLX parity and local-speed validation for the base
-  `mlx-community/Llama-3.2-3B-bf16` artifact at revision
-  `60a99aaf43164077157d64bf909b7b61143c6a6d`;
-- use native BF16, `add_special_tokens: false`, `resid_post` at `last_nonpad`,
-  and layers 5 and 11, derived from fixed relative depths 0.2 and 0.4 over the
-  expected 28 decoder layers;
-- require every frozen numerical parity, zero-vector, intervention-fidelity,
-  token-ID, argmax, and speed check to pass before MLX is selected for the
-  prospective E2 cell;
-- keep Stage A inputs to fixed engineering probes outside the E1 endpoint/grid
-  and every target/source-wrapper bank; three probes use public E1-panel glyphs
-  for surface coverage but are not scientific outcome inputs; do not read,
-  hash, tokenize, forward, or analyze P2 or C1;
-- only after a passing, immutable Stage-A receipt, publicly freeze the E2
-  tokenizer audit, run configs, analysis, and manifest before any scientific
-  outcome is inspected;
-- retain all 50 original E1 emoji as the primary literal set and prespecify the
-  five-family slots 03--09 as a fixed 35-glyph token-structural sensitivity;
-- reuse only the same 24 already explored prestage targets and the same 16
-  source wrappers; do not describe them as confirmatory;
-- report the later E2 grid, if run, as a bounded transport observation. Model,
-  tokenizer, vocabulary, architecture, and dtype all change together, so the
-  comparison cannot isolate scale or establish a scale effect.
+V2 changed the specified backend numerical semantics only at the MLX-to-NumPy
+export bridge: native BF16 arrays were cast to `mx.float32` immediately before
+NumPy export while model execution remained BF16. This allowed both isolated
+worker phases to complete, with return code 0 and no simultaneous model
+residency. Pinned model metadata and the complete nine-file artifact manifest
+matched across backends.
 
-The fixed engineering gate is in the [E2 Stage-A MLX validation
-protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md). Until that gate passes and a
-separate scientific freeze is public, E2 is neither a cross-model replication
-nor evidence for a model-general emoji effect, and it does not satisfy Phase I
-paper gate 5.
+- Overall parity passed 33 / 60 checks. Token IDs and within-backend determinism
+  passed 10 / 10, and exact zero-hook behavior passed 10 / 10.
+- Baseline checks passed 6 / 10 and changed-output checks passed 7 / 10.
+- All ten activation-delta subcomparisons passed, with NRMSE
+  0.014057–0.018356, cosine 0.999832–0.999901, and RMS ratio
+  0.999625–1.000526. The composite delta family nevertheless passed 0 / 10
+  because the corresponding logit deltas failed clearly: NRMSE
+  0.580523–1.402939 and cosine -0.097707–0.816940.
+- Intervention fidelity passed 0 / 10. Activation NRMSE was approximately
+  0.0302–0.0341 against the frozen 0.01 threshold, while cosine was about
+  0.9994 and RMS ratio remained about 1 for both backends.
+- The machine-local speed gate failed. Aggregate median latency was
+  132.127833 ms for Transformers/MPS and 230.138000 ms for MLX. MLX used
+  1.741782892 times the latency; the recorded speedup was `0.574124367x`.
+- The run did not access study target banks or confirmatory or causal outcomes.
+  It produced no scientific E2 grid, emoji-family, semantic, causal,
+  cross-model, or model-scale result.
+
+The complete outcome is in the [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md),
+the fixed engineering gate is in the [protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md),
+and the machine-readable record is the [v2 receipt](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json).
+This negative engineering qualification is not a scientific negative result
+and does not satisfy Phase I paper gate 5.
+
+Two paths remain, with the research owner's decision pending: create a separate
+Transformers/MPS scientific freeze, or create a new MLX v3 diagnostic and
+optimization freeze and requalify that route before accessing scientific
+outcomes. Neither path is recommended here. The v2 thresholds will not be
+relaxed or retuned after the result.
 
 Exit condition: one atomic, no-overwrite receipt binds the pinned model and
 configuration identities to complete backend parity and a machine-local MLX
 aggregate median latency no greater than 95% of Transformers/MPS. This exit
-condition remains unmet. Satisfying it would qualify the engineering route
-only; it would not complete E2 or a paper gate.
+condition remains unmet. V2 produced the required recorded failure evidence,
+not a qualified MLX route. Even a later passing engineering receipt would not
+by itself complete E2 or a paper gate.
 
 ### Milestone 3 — Targeted causal localization
 

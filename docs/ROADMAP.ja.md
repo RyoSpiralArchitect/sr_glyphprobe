@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 MLX validation v2プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E2 MLX validation v2プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -68,10 +68,11 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-V2公開freeze commitでの状態: V1のengineering validationは、記録を保存した
-MLX exportの技術的失敗で停止した。V2のengineering protocolは凍結済みで、
-validationは未実行である。Commit公開前は`freeze_pending`とする。E2の科学的
-model forwardも結果も認めない。
+状態: Stage A v2の技術検証は完了し、`status: validation_failed`、
+`scientific_result: false`となった。
+V2プロトコルと技術面は、公開commit
+`dc84ac19e06ef7a0fd7dcd77fdce4b484b192e57`で凍結した。固定したE2科学セルには
+MLXを採用しない。E2科学gridのforwardは、実行も許可もしていない。
 
 V1は、公開commit `88685bd01ab115df323e9a324d49a659c66163c7`で凍結した。
 Transformers/MPS phaseは完了したが、MLX phaseは最初のbaseline exportで次の
@@ -83,49 +84,46 @@ RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the
 
 この技術的失敗は、parity比較、speed判定、科学的endpointのいずれよりも前に
 発生した。V1ではreceiptを生成せず、科学的outcomeも確認していない。
+[失敗記録](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json)は
+そのまま残す。
 
-- `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2`が有効になるのは、
-  次の公開commitが英日protocolとv2の技術面を凍結した時点とする。それまでは
-  `freeze_pending` / `validation_pending`である。
-- 完了したv2 receiptは
-  `validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`だけへ書き出す。V1の
-  receiptを新規作成したり、後から補ったりしない。
-- MLXからNumPyへのexport bridgeだけを変更する。MLXのBF16 arrayをNumPyへ
-  exportする直前に`mx.float32`へcastし、model実行はnative BF16のまま維持する。
-- Model artifactとrevision、artifact inventory、prompt、layer、parity・speed閾値、
-  intervention vectorの構築方法とbyte列、warm-up・計測回数、timing境界、process順、
-  科学的な境界はv1から変更しない。
-- V2の公開freeze後、base modelである`mlx-community/Llama-3.2-3B-bf16`のrevision
-  `60a99aaf43164077157d64bf909b7b61143c6a6d`について、同じprocess-isolatedな
-  Transformers/MPS-to-MLX parityとlocal speedのvalidationを再実行する。
-- Native BF16、`add_special_tokens: false`、`last_nonpad`の`resid_post`、
-  layer 5・11を用いる。Layerは、期待されるdecoder 28層に対して、固定した相対
-  depth 0.2・0.4から導出する。
-- MLXを今後のE2 cellへ選択する前に、固定済みのnumerical parity、zero-vector、
-  intervention fidelity、token ID、argmax、speedの全checkへ合格することを求める。
-- Stage Aのinputは、E1 endpoint/gridとすべてのtarget/source-wrapper bankの外に
-  置いた固定engineering probeに限る。Surface coverageのため、そのうち3件では
-  公開済みE1 panelのglyphを使うが、科学的outcome inputには用いない。P2とC1は、
-  読み込み、hash、tokenize、forward、解析のいずれも行わない。
-- ImmutableなStage-A receiptが合格した場合に限り、科学的outcomeを見る前に、
-  E2のtokenizer audit、run config、解析、manifestを公開freezeする。
-- E1の元の50絵文字すべてをprimary literal setとして保ち、5 familyのslot
-  03--09を、固定した35 glyphのtoken-structural sensitivityとして事前指定する。
-- すでに探索に使った同じ24件のprestage targetと、同じ16件のsource wrapper
-  だけを再利用する。Confirmatoryとは表現しない。
-- その後E2 gridを実行しても、範囲を限定したtransport observationとして報告
-  する。Model、tokenizer、vocabulary、architecture、dtypeがすべて同時に変わる
-  ため、model scaleの効果だけを識別できず、scale effectを確立できない。
+V2で指定したバックエンドの数値挙動に影響する変更は、MLX-to-NumPy export bridge
+だけである。Native BF16 arrayをNumPyへ渡す直前に`mx.float32`へcastし、model
+実行はBF16のまま保った。これにより、隔離した2つのworker phaseはどちらもreturn
+code 0で完了した。両モデルを同時にメモリへ常駐させていない。固定したmodel metadataと
+全9 fileのartifact manifestはbackend間で一致した。
 
-固定するengineering gateは、[E2 Stage-A MLX validationプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)
-に記載する。このgateへの合格と別の科学的freezeの公開が完了するまで、E2は
-cross-model replicationでもmodel-generalな絵文字効果の証拠でもなく、Phase I
-論文gate 5も満たさない。
+- Parity全体は60件中33件が合格した。Token IDとbackend内の決定性は10 / 10、
+  厳密なzero-hookは10 / 10が合格した。
+- Baselineは6 / 10、介入後outputは7 / 10が合格した。
+- Activation差分だけなら10件すべてが合格した。NRMSEは0.014057–0.018356、
+  cosineは0.999832–0.999901、RMS ratioは0.999625–1.000526である。しかし、
+  対応するlogit差分が明確に不合格だったため、複合差分は0 / 10となった。
+  Logit差分のNRMSEは0.580523–1.402939、cosineは-0.097707–0.816940だった。
+- 介入忠実度は0 / 10だった。Activation NRMSEは、固定した閾値0.01に対して
+  約0.0302–0.0341だった。両backendともcosineは約0.9994、RMS ratioは約1である。
+- マシンローカルな速度gateも不合格だった。Aggregate median latencyは、
+  Transformers/MPSが132.127833 ms、MLXが230.138000 msである。MLXは
+  1.741782892倍の時間を要し、記録したspeedupは`0.574124367x`だった。
+- 研究用target bank、確認用outcome、因果outcomeにはアクセスしていない。
+  E2科学grid、絵文字family、意味、因果、modelをまたぐ再現、model scaleの結果は
+  得ていない。
+
+全結果は [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)、固定した
+engineering gateは [プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)、機械可読の
+記録は [v2レシート](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) に示す。
+この技術経路の不適格判定は、科学的な負の結果ではなく、Phase I論文gate 5も満たさない。
+
+次の経路は2つある。Transformers/MPS専用の科学プロトコルを別に凍結するか、MLX v3の
+診断・最適化プロトコルを新しく凍結し、科学的outcomeを見る前に再検証するかである。
+選択は研究責任者の判断待ちで、本書ではどちらも推奨しない。結果を見た後でv2の閾値を
+緩めたり調整したりもしない。
 
 終了条件: 固定model/configuration identityを、完全なbackend parityおよび
 Transformers/MPSの95%以下となるmachine-localなMLX aggregate median latencyへ
-結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。達成しても
-認定されるのはengineering routeだけであり、E2や論文gateは完了しない。
+結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。V2が
+残したのは、要件を満たさないことを示すfailure evidenceであり、MLX経路の適格性ではない。
+将来engineering receiptが合格しても、それだけではE2も論文gateも完了しない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

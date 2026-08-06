@@ -1,6 +1,6 @@
 # Backend capability boundary
 
-[Japanese / 日本語](BACKENDS.ja.md)
+[Japanese / 日本語](BACKENDS.ja.md) · [E2 Stage-A result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
 
 The CLI is shared, but backend names do not imply that two runtimes expose the
 same numerical object. Read `capabilities.json`, `receipt.json`, and the backend
@@ -58,6 +58,34 @@ This receipt does not validate other models, revisions, dtypes, sites, hardware,
 prompt distributions, or quantized cells. `model_receipt` records MLX/MLX-LM
 versions, resolved device/dtype, block path, quantization metadata, model locator,
 and a path-independent file manifest for the resolved model artifact.
+
+#### Failed Llama 3.2 3B BF16 Stage-A cell
+
+The Llama 3.2 3B v1 engineering attempt stopped at the first MLX BF16-to-NumPy
+baseline export. V2 retained native-BF16 model execution but cast MLX BF16
+arrays to `mx.float32` immediately before NumPy export. That narrow bridge fix
+allowed the isolated Transformers/MPS and MLX phases to complete, but the
+receipt records `status: validation_failed` and `scientific_result: false`.
+
+The pinned v2 cell passed 33 / 60 parity checks. Tokenization/determinism and
+exact zero-hook behavior each passed 10 / 10, while composite deltas and
+intervention fidelity each passed 0 / 10. Aggregate median latency was
+132.127833 ms for Transformers/MPS and 230.138000 ms for MLX, so the
+machine-local speed gate also failed. This receipt does not authorize activation
+intervention for the Llama cell. Forward-logit and hidden-state capture remain
+inspectable under the general boundary above, but capture is not a substitute
+for a passing intervention receipt.
+
+Receipts are also source-tree-hash bound. An older receipt remains historical
+evidence for the exact implementation it records; after backend source changes,
+it cannot authorize activation patching in the current source tree unless every
+required identity and gate matches again. Do not reinterpret the preserved v1
+failure record or the failed v2 receipt as current authorization.
+
+See the [complete v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md),
+[frozen protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md),
+[v1 failure record](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json),
+and [v2 receipt](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json).
 
 ### Deterministic mock (`mock`)
 

@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [E2 Stage-A result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -84,6 +84,37 @@ third tokens dominating a small, uneven family-specific remainder. The
 [complete E1 result](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) reports all matrices,
 intervals, and negative cells without p-values or a confirmatory label.
 
+## A larger model did not pass the engineering gate
+
+E2 asked whether the same MLX route could be qualified for a pinned Llama 3.2
+3B BF16 cell before any new scientific result was viewed. Its first frozen
+attempt stopped at an MLX BF16-to-NumPy export error. That failure remains part
+of the record. V2 added the narrow bridge needed to cast BF16 arrays to FP32 at
+the point of NumPy export while keeping model execution in native BF16. This
+time, both backend phases completed.
+
+Completion was not qualification. The v2 receipt records
+`status: validation_failed` and `scientific_result: false`: 33 of 60 parity checks passed. Tokenization,
+within-backend determinism, and exact zero-hook behavior passed. Every
+activation-delta subcomparison also passed. But the corresponding logit deltas
+failed by a wide margin, the combined delta family passed 0/10, and the frozen
+intervention-fidelity check passed 0/10. Its activation NRMSE was about
+0.0302–0.0341 against a threshold of 0.01, even though cosine stayed near
+0.9994 and the RMS ratio stayed near 1.
+
+MLX was also slower in this recorded cell. Aggregate median latency was
+132.127833 ms for Transformers/MPS and 230.138000 ms for MLX, or a recorded
+`0.574124367x` speedup. The speed gate failed. This number belongs to the
+specific machine, run order, software, model, and timing boundary; it is not a
+general verdict on MLX.
+
+The useful result is the gate itself working as intended. It rejected an
+engineering route before the study target banks or scientific outcomes were
+opened. No Llama emoji-family grid was run, so this is neither a negative emoji
+result nor cross-model replication. The [complete E2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
+keeps the activation match, logit mismatch, speed failure, and scientific
+boundary together.
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
@@ -97,6 +128,11 @@ tokenizer-independent, layer-specific, or robust random-control effect.
 ## What comes next
 
 Operational Milestone 2 is complete. Layer 2 can now enter the design of a new frozen targeted causal protocol using untouched C1; layer 4 remains unresolved and is not a candidate. This permits protocol design, not a causal claim. E1 does not select or modify that candidate: any focused hypothesis derived from E1 would need its own public protocol and a new untouched target bank that is neither P2 nor C1.
+
+E2 now has a separate engineering choice. We can freeze a Transformers/MPS-only
+scientific route, or first freeze a new MLX v3 diagnostic and optimization plan
+and requalify it before opening scientific outcomes. Neither path has been
+selected, and the failed v2 thresholds will not be tuned after the fact.
 
 C1 stays closed until the candidate, intervention site and operation, endpoint, controls, and multiplicity family are fixed in a sealed patch–ablate–restore protocol. Independent backend and model or tokenizer replication also remain open. Final-paper confirmatory wording and any replication used to support it must prospectively bind scientific roles to frozen inputs and account for data-dependent prototype resampling.
 

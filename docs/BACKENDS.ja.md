@@ -1,6 +1,6 @@
 # バックエンドの能力境界
 
-[English](BACKENDS.md)
+[English](BACKENDS.md) · [E2 Stage A 結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)
 
 CLI は共通だが、バックエンド名が同じ数値対象を扱うことを保証するわけではない。
 実行結果を比較する前に、`capabilities.json`、`receipt.json`、および以下の各セクションを
@@ -52,6 +52,32 @@ activation patch は無効になるか拒否される。
 この receipt は、他のモデル、revision、dtype、site、hardware、prompt 分布、量子化セルを検証しない。
 `model_receipt` には MLX/MLX-LM のバージョン、解決済み device/dtype、block path、量子化情報、
 model locator、および解決したモデル・アーティファクトの path 非依存な file manifest を記録する。
+
+#### Llama 3.2 3B BF16 Stage Aの不適格cell
+
+Llama 3.2 3Bのv1技術検証は、MLX BF16 arrayをNumPyへ渡す最初のbaseline exportで
+停止した。V2ではmodel実行をnative BF16のまま保ち、NumPy exportの直前だけMLX
+BF16 arrayを`mx.float32`へcastした。この限定的なbridge修正により、隔離した
+Transformers/MPSとMLXのphaseは最後まで実行できた。しかし、レシートの判定は
+`status: validation_failed`、`scientific_result: false`である。
+
+固定したv2 cellでは、parity検査60件中33件が合格した。Tokenization・決定性と
+厳密なzero-hookは、それぞれ10 / 10が合格した。一方、複合差分と介入忠実度は、
+どちらも0 / 10だった。Aggregate median latencyは、Transformers/MPSが
+132.127833 ms、MLXが230.138000 msで、マシンローカルな速度gateも不合格だった。
+このレシートは、Llama cellのactivation介入を許可しない。Forward logitと
+hidden-state captureは上記の一般境界の下で調査できるが、captureは介入用の合格
+レシートを代替しない。
+
+レシートはsource-tree hashにも拘束される。古いレシートは、そこに記録した実装の
+歴史的証拠として残る。一方、backend sourceを変更した後は、必要なidentityとgateが
+再びすべて一致しない限り、現行source treeでactivation patchを許可できない。
+保存済みのv1失敗記録や、不合格のv2レシートを現在の許可へ読み替えてはならない。
+
+詳細は [v2の全結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)、
+[凍結済みプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)、
+[v1失敗記録](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json)、
+[v2レシート](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) を参照する。
 
 ### 決定論的 mock (`mock`)
 

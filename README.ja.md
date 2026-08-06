@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [E2 Stage A 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -87,6 +87,33 @@ E1が使ったのは、すでに探索済みのprestage target 24件だけであ
 [E1 evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md)
 を参照してほしい。
 
+### E2 Stage A 技術検証の結果
+
+固定したLlama 3.2 3B BF16の技術検証は、最後まで実行したうえで
+`status: validation_failed`、`scientific_result: false`となった。Parity検査の
+合格数は33 / 60である。
+Tokenizationとbackend内の決定性は10 / 10、厳密なzero-hookは10 / 10が合格した。
+一方、baselineは6 / 10、介入後outputは7 / 10、複合的な介入差分は0 / 10、
+介入忠実度は0 / 10だった。Activation差分だけを見れば10件すべてが閾値内だったが、
+対応するlogit差分が凍結済み閾値を満たさず、複合差分gateは全件不合格となった。
+
+マシンローカルな速度gateも不合格だった。Aggregate median latencyは、
+Transformers/MPSが132.127833 ms、MLXが230.138000 msである。MLXは
+1.741782892倍の時間を要し、レシートに記録したspeedupは`0.574124367x`だった。
+V2で指定したバックエンドの数値挙動に影響する変更、すなわちNumPy export直前の
+BF16-to-FP32 castによって検証自体は完走したが、このcellへのMLX採用条件は
+満たさなかった。
+
+これは技術経路の不適格判定に限られる。研究用target bank、確認用outcome、因果outcome
+にはアクセスせず、E2科学gridも実行していない。絵文字family、意味、因果、modelを
+またぐ再現の結果ではなく、論文gateも閉じない。V1のexport失敗記録はそのまま残す。
+詳細は [E2の全結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)、
+[凍結済みプロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)、
+[機械可読レシート](validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) にまとめた。
+次にTransformers/MPS専用の科学プロトコルを凍結するか、MLX v3の診断・最適化
+プロトコルを新たに凍結するかは、研究責任者の判断待ちである。結果を見た後でv2の
+閾値を調整しない。
+
 ## インストール
 
 Python 3.11 以降を使います。
@@ -159,6 +186,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
 - [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md)
 - [E1 探索プロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
+- [E2 Stage A 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
+- [E2 Stage A プロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md)
 - [再現性ガイド](docs/REPRODUCIBILITY.ja.md) / [English](docs/REPRODUCIBILITY.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
@@ -168,7 +197,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage Aは、技術経路の不適格判定として完了しました。科学gridは実行しておらず、独立backendまたはmodelでの再現gateを満たしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
 
 ## ライセンスと引用
 

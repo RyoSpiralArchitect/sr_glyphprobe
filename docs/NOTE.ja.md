@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [E2 Stage A 結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -89,6 +89,33 @@ comparatorにならず、random controlを上回らないcellも30件中10件あ
 読むのが妥当だ。[E1の全結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)には、
 行列、区間、非正cellを省かず掲載している。p値や確認的statusは付けていない。
 
+## より大きなモデルは、技術ゲートを通過しなかった
+
+E2では、新しい科学的な結果を見る前に、固定したLlama 3.2 3B BF16 cellへ同じ
+MLX経路を採用できるか検証した。最初に凍結した試行は、MLXのBF16 arrayをNumPyへ
+渡す箇所でerrorとなり、停止した。この失敗記録は残している。V2では、NumPy export
+の時点だけBF16 arrayをFP32へcastするbridgeを追加し、model実行はnative BF16の
+まま保った。今度は、2つのbackend phaseを最後まで実行できた。
+
+ただし、完走は適格性を意味しない。V2レシートの判定は
+`status: validation_failed`、`scientific_result: false`で、parity検査60件中
+33件が合格した。Tokenization、
+backend内の決定性、厳密なzero-hookは合格した。Activation差分も10件すべてが
+閾値内だった。一方、対応するlogit差分は大きく外れ、複合差分は0 / 10、固定した
+介入忠実度も0 / 10だった。介入忠実度のactivation NRMSEは、閾値0.01に対して
+約0.0302〜0.0341である。Cosineは約0.9994、RMS ratioは約1だった。
+
+この記録では、MLXは速度でも遅かった。Aggregate median latencyは、
+Transformers/MPSが132.127833 ms、MLXが230.138000 msで、記録上のspeedupは
+`0.574124367x`である。速度gateは不合格となった。この値は、特定のマシン、
+実行順、software、model、計測境界に依存する。MLX全般の評価ではない。
+
+重要なのは、gateが意図どおりに働いたことである。研究用target bankや科学的outcomeを
+開く前に、不適格な技術経路を止めた。Llamaで絵文字familyのgridは実行していない。
+したがって、絵文字についての負の結果でも、modelをまたぐ再現でもない。
+[E2の全結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)には、activationの一致、
+logitの不一致、速度gateの失敗、科学的な主張境界をまとめている。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -102,6 +129,11 @@ E1もこの境界を変えず、意味、tokenizer非依存性、layer固有性�
 ## 次は、因果プロトコルを凍結する
 
 運用上のMilestone 2は完了した。Layer 2は、未使用のC1を使う、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。E1はこの候補を選び直す根拠にはしない。E1から仮説を絞るなら、P2でもC1でもない新しい未使用target bankと、別の公開プロトコルが必要になる。
+
+E2には、これとは別の技術判断が残った。Transformers/MPS専用の科学プロトコルを
+凍結するか、MLX v3の診断・最適化計画を新しく凍結し、科学的outcomeを開く前に
+再検証するかである。どちらを採るかは未決定で、失敗したv2の閾値を事後的に
+調整することもしない。
 
 候補、介入部位と操作、endpoint、対照、多重性familyを、sealed patch–ablate–restoreプロトコルに固定するまで、C1は開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 
