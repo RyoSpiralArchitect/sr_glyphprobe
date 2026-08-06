@@ -18,6 +18,11 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   every target-bootstrap replicate.
 - `milestone2/analyses/diagnostics/` contains the suffix-matched and
   prefix-homogeneous paired comparisons and same-seed dimension folds.
+- `emoji_family_exploratory_v1/` contains the E1 tokenizer preflight, complete
+  descriptive analysis, and 15 compact files for each of five family runs.
+- `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json` binds all 82 E1 payload members by
+  SHA-256 and inventories the omitted raw ledgers and arrays. With this root
+  manifest, the public E1 artifact contains 83 files.
 
 The legacy v1 bundle omits one 77,327,172-byte condition ledger and three NPZ arrays, as recorded in `MANIFEST.json`. Separately, `MILESTONE2_MANIFEST.json` records 58 omitted large local files across 14 runs, including condition ledgers and model-dependent NPZ arrays, plus two 20,000-replicate bootstrap tables. Their hashes bind the audited local artifacts but cannot reconstruct them. Reproduce the applicable run or analysis to recover the complete data.
 
@@ -64,3 +69,44 @@ candidate and a mixed Milestone 2 control result. They do not establish glyph
 semantics, a mechanism, a circuit, a causal path, or a tokenization-free effect.
 Operational Milestone 2 is complete, and layer 2 is eligible for targeted
 causal-protocol design using untouched C1; layer 4 remains unresolved.
+
+## E1 exploratory reading
+
+The [complete E1 result](../docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) reports a
+token-isomorphic five-family side experiment frozen at commit
+`0cd4e11610e42253ead9ce9aff9f0b02474a0558`. The complete mean transfer matrix
+was broadly positive at both layers, while the family-equal within-family excess
+was small: 0.014752595564 at layer 2, with a 95% descriptive interval of
+[0.002875238085, 0.027439243404], and 0.014887989201 at layer 4, with
+[0.003407563347, 0.019684351979]. Every family-specific interval included zero
+at both layers. The prespecified layer-4 negative comparator was not negative.
+
+Random-control comparison was heterogeneous. Ten of 30 family × layer × seed
+cells were non-positive: all five families at layer 2 seed 307 and all five at
+layer 4 seed 101. This does not support robust superiority over random controls.
+The bounded interpretation is exploratory matched-slot recurrence under a fixed
+middle-token family substitution, with shared-token transfer dominating the
+small family-specific excess.
+
+The bundle validator passes with 82/82 public payload members and five verified role
+bindings. It found no hash mismatch or local absolute path and validated the
+manifest declaration that P2 and C1 were outside the fixed E1 input surface;
+this is not an independent proof of process history. The bundle contains
+1,237,638 payload bytes, including 39 JSONL files with 1,635 compact rows. With
+the root manifest it contains 83 files and 1,303,644 bytes. The manifest SHA-256
+is `c22989ebc9ccaaf5f4652624d61ea11e2a9df4f2148a7886daf50c2fc3e4f53f`. It inventories
+20 omitted raw files totaling 74,618,134 bytes, including all 8,880 intervention
+rows, by hash, row count, and array shape as applicable. Those omissions cannot
+be reconstructed from hashes.
+
+The evidence is organized as follows:
+
+- [root manifest](EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json);
+- [tokenizer-only preflight](emoji_family_exploratory_v1/preflight/tokenization_audit_v1.json);
+- [analysis report and machine-readable outputs](emoji_family_exploratory_v1/analysis/report.md);
+- [five compact run directories](emoji_family_exploratory_v1/runs/).
+
+E1 computes no p-values or confirmatory status. It does not establish emoji
+semantics, tokenizer independence, layer specificity, a mechanism, a causal
+path, or cross-model regularity. It does not update Milestone 2, unseal C1, or
+satisfy a Phase I paper gate.

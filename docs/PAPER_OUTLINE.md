@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -38,6 +38,24 @@ Both 14,208-row diagnostic runs completed with zero errors, zero-hook activation
 
 At 96 dimensions, 20/36 suffix cells and 25/36 prefix cells were positive. These are post-hoc descriptive diagnostics, not inference or equivalence analyses. The lower-dimensional values are same-seed algebraic folds, not independent reruns or seed sensitivity.
 
+## Current E1 exploratory side result
+
+E1 held the first and third GPT-2 tokens fixed across five ten-glyph families
+and varied only the family-middle token. The equal-family global specificity was
+0.014752595564 at layer 2 (95% descriptive interval
+[0.002875238085, 0.027439243404]) and 0.014887989201 at layer 4
+([0.003407563347, 0.019684351979]). All five family-specific intervals included
+zero at each layer. The full transfer matrix was broadly positive—0.395455 to
+0.484915 at layer 2 and 0.602564 to 0.681909 at layer 4—while 10/30
+family × layer × seed cells did not exceed random controls.
+
+The planned negative comparator at layer 4 was not negative. The bounded
+interpretation is therefore shared-token matched-slot recurrence with a small
+family-specific excess, not semantic family structure, tokenizer independence,
+layer specificity, robust random-control superiority, or causality. E1 reused
+24 exploratory prestage targets, did not touch P2 or C1, does not update the
+Milestone 2 result, and does not satisfy a paper gate.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -46,8 +64,11 @@ At 96 dimensions, 20/36 suffix cells and 25/36 prefix cells were positive. These
 4. Which observed effects survive the prespecified token-count and prefix-panel matched controls?
 5. Can a prespecified component or path intervention selectively remove and restore the candidate effect?
 6. Which results replicate across execution backends, tokenizers, or model families?
+7. In a token-isomorphic exploratory panel, how much matched-slot recurrence transfers across middle-token families, and how large is the residual within-family excess?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. Questions 5–6 remain required before the paper freezes a stronger claim.
+Question 7 is answered only descriptively by E1 and is not promoted to a
+confirmatory or causal research question.
 
 ## Planned paper structure
 
@@ -113,6 +134,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - fixed-prototype v1 bootstrap versus the post-hoc rebuilt-prototype sensitivity;
 - completed suffix and prefix-homogeneous diagnostics, reported as post-hoc
   descriptive comparisons rather than inference or equivalence tests.
+- E1 as a clearly separated exploratory side analysis: complete five-family
+  transfer matrices, small global excess, family intervals crossing zero,
+  heterogeneous random controls, and a failed layer-4 negative comparator;
+- do not use E1 to select the causal layer or strengthen the Milestone 2 status.
 
 ### 6. Targeted causal experiments
 
@@ -139,6 +164,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - compressed CountSketch fingerprints versus full-vocabulary interpretation;
 - exploratory selection, cluster count, and statistical power;
 - absent SAE, iso-KL, or generation evidence where still missing.
+- E1 family identity is exactly confounded with the middle GPT-2 token, while
+  the first and third tokens are shared; its transfer pattern cannot establish
+  a semantic or tokenizer-independent family representation.
 
 ### 9. Reproducibility statement
 
@@ -155,6 +183,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 4. Cross-seed reproducibility with target-cluster uncertainty.
 5. Dose and sign-flip diagnostics.
 6. Token-count/prefix-panel control results, fixed- versus rebuilt-prototype uncertainty, and any later causal intervention.
+7. E1 source-family × prototype-family transfer matrices at layers 2 and 4,
+   labeled exploratory and separated from the confirmatory claim family.
 
 ## Planned main tables
 
@@ -174,6 +204,7 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The effect is uniform across cells | not supported | no repair required; report heterogeneity |
 | Layer 2 exceeds the prespecified token-count and prefix-panel matched controls | supported by frozen v1 in both source-wrapper arms; post-hoc dependence sensitivity is directionally consistent | prospectively resolve role binding and prototype-resampling dependence before final confirmatory wording |
 | Layer 4 exceeds those controls | not supported; unresolved in both arms | retain as a main mixed/negative result |
+| Token-isomorphic E1 families show matched-slot transfer | supported descriptively in one pinned cell; global excess is small, all family intervals include zero, and random-control cells are heterogeneous | retain as an exploratory side result; require a new frozen protocol and untouched bank for any focused confirmation |
 | The effect is independent of tokenization | not supported | token-identity matching is impossible for a distinct GPT-2 byte input; make only the bounded matched-panel claim |
 | A particular component or path causes the effect | not tested | targeted patch/ablate/restore experiment |
 | The directions encode human-readable glyph meaning | not tested and not implied | would require an independently justified semantic assay |
@@ -190,6 +221,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - The paper will report effect sizes and uncertainty, not only p-values.
 - The `1/1001` exploratory permutation floor will not be presented as a multiplicity-corrected global result.
 - Negative and non-positive cells will remain visible.
+- E1 intervals remain descriptive; no p-value, multiplicity decision,
+  confirmatory status, or layer-comparison inference will be retrofitted.
 
 ## Remaining paper gates
 
@@ -216,6 +249,8 @@ The preprint package should contain or point to:
 - resolved inputs and configs;
 - complete raw intervention ledger and required arrays;
 - compact public summaries and omission manifest;
+- the E1 tokenizer preflight, complete descriptive analysis, five compact run
+  bundles, and root hash manifest;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;
 - English manuscript, supplementary material, and Japanese public summary.

@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -68,6 +68,27 @@ v1 analyzerは、凍結済みターゲット、モデルセル、条件grid、ta
 
 CountSketchの96、48、32、24次元で、standard-minus-suffix raw separationの中央値は、`+0.002624`、`+0.009473`、`+0.004026`、`+0.009700`。Standard-minus-prefixは、`+0.022096`、`+0.023254`、`+0.011040`、`+0.025387`だった。96次元で正だったのは、suffixが20 / 36セル、prefixが25 / 36セルである。これは事後的・記述的な診断であり、推論や同等性の検定ではない。低次元値は同じseedによる代数的な畳み込みで、独立した再実行でもseed感度でもない。
 
+## Familyを差し替えると、共有部分が見えてきた
+
+探索side trackのE1では、問いをさらに狭くした。10 glyphからなる5つの
+familyを選び、対応するslotではGPT-2の第1・第3 tokenを共通にして、中間token
+だけをfamilyごとに変えた。Token構造を強く統制できる一方、family identityと
+中間tokenは切り分けられない。5本のMLX runより先に設計を凍結し、すでに
+探索で使った24 targetだけを再利用した。P2とC1には触れていない。
+
+Source familyとprototype familyを組み合わせた行列は、全体に正だった。
+25 cellの平均値はlayer 2で`0.395455`〜`0.484915`、layer 4で
+`0.602564`〜`0.681909`である。ところが、family内で上乗せされたglobalな
+超過量はlayer 2で`0.014752595564`、layer 4で`0.014887989201`にとどまった。
+Family別の記述区間はすべて0をまたいだ。Layer 4は想定したnegative
+comparatorにならず、random controlを上回らないcellも30件中10件あった。
+
+この結果から「GPT-2が5種類の意味上の絵文字familyを見つけた」とは言えない。
+むしろ、matched-slot反復の多くは中間tokenを替えてもfamily間を移り、意図的に
+共有した第1・第3 tokenが、小さく不均一なfamily固有成分より強く効いていると
+読むのが妥当だ。[E1の全結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)には、
+行列、区間、非正cellを省かず掲載している。p値や確認的statusは付けていない。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -75,10 +96,12 @@ CountSketchの96、48、32、24次元で、standard-minus-suffix raw separation�
 ただし、トークン化から独立したglyph効果とは呼べない。GPT-2に茶色い丸の概念があるとも、特定のattention headやMLPがglyph featureを担うとも、人が読める意味を方向が運んでいるとも、別モデルへ一般化するとも言えない。独立ソース条件は同じターゲットを使っており、独立モデルや独立ターゲットでの再現ではない。完了した二次診断は、2つのトークン構造問題を記述的に絞り込むが、同等性を示さず、主張からトークン化を取り除くものでもない。
 
 `causal_claim_authorized`は、いまも`false`である。C1因果ホールドアウトは、モデル入力にも結果解析にも使っていない。
+E1もこの境界を変えず、意味、tokenizer非依存性、layer固有性、random controlに
+対する頑健性を確立しない。
 
 ## 次は、因果プロトコルを凍結する
 
-運用上のMilestone 2は完了した。Layer 2は、未使用のC1を使う、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。
+運用上のMilestone 2は完了した。Layer 2は、未使用のC1を使う、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。E1はこの候補を選び直す根拠にはしない。E1から仮説を絞るなら、P2でもC1でもない新しい未使用target bankと、別の公開プロトコルが必要になる。
 
 候補、介入部位と操作、endpoint、対照、多重性familyを、sealed patch–ablate–restoreプロトコルに固定するまで、C1は開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 

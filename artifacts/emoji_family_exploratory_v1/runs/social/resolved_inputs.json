@@ -1,0 +1,168 @@
+{
+  "panel": [
+    {
+      "factors": {
+        "codepoint": "U+1F911",
+        "family": "social",
+        "matched_slot": "slot_00"
+      },
+      "glyph": "🤑",
+      "id": "social_slot_00",
+      "labels": [
+        "money_mouth_face"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F912",
+        "family": "social",
+        "matched_slot": "slot_01"
+      },
+      "glyph": "🤒",
+      "id": "social_slot_01",
+      "labels": [
+        "face_with_thermometer"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F913",
+        "family": "social",
+        "matched_slot": "slot_02"
+      },
+      "glyph": "🤓",
+      "id": "social_slot_02",
+      "labels": [
+        "nerd_face"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F914",
+        "family": "social",
+        "matched_slot": "slot_03"
+      },
+      "glyph": "🤔",
+      "id": "social_slot_03",
+      "labels": [
+        "thinking_face"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F915",
+        "family": "social",
+        "matched_slot": "slot_04"
+      },
+      "glyph": "🤕",
+      "id": "social_slot_04",
+      "labels": [
+        "face_with_head_bandage"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F916",
+        "family": "social",
+        "matched_slot": "slot_05"
+      },
+      "glyph": "🤖",
+      "id": "social_slot_05",
+      "labels": [
+        "robot_face"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F917",
+        "family": "social",
+        "matched_slot": "slot_06"
+      },
+      "glyph": "🤗",
+      "id": "social_slot_06",
+      "labels": [
+        "hugging_face"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F918",
+        "family": "social",
+        "matched_slot": "slot_07"
+      },
+      "glyph": "🤘",
+      "id": "social_slot_07",
+      "labels": [
+        "sign_of_the_horns"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F919",
+        "family": "social",
+        "matched_slot": "slot_08"
+      },
+      "glyph": "🤙",
+      "id": "social_slot_08",
+      "labels": [
+        "call_me_hand"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F91A",
+        "family": "social",
+        "matched_slot": "slot_09"
+      },
+      "glyph": "🤚",
+      "id": "social_slot_09",
+      "labels": [
+        "raised_back_of_hand"
+      ]
+    }
+  ],
+  "target_ids": [
+    "cont_01",
+    "cont_02",
+    "cont_03",
+    "cont_04",
+    "fact_01",
+    "fact_02",
+    "fact_03",
+    "fact_04",
+    "reason_01",
+    "reason_02",
+    "reason_03",
+    "reason_04",
+    "proc_01",
+    "proc_02",
+    "proc_03",
+    "proc_04",
+    "class_01",
+    "class_02",
+    "class_03",
+    "class_04",
+    "plan_01",
+    "plan_02",
+    "plan_03",
+    "plan_04"
+  ],
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w02_bracket_continue",
+    "w03_pipe_next",
+    "w04_token_state",
+    "w05_begin_end",
+    "w06_binary_result",
+    "w07_symbol_following",
+    "w08_pair_q",
+    "w09_input_response",
+    "w10_sequence_continuation",
+    "w11_field_anchor",
+    "w12_list_next",
+    "w13_left_right",
+    "w14_codepoint_text",
+    "w15_observation_inference",
+    "w16_slot_completion"
+  ]
+}

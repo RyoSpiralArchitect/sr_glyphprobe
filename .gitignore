@@ -211,6 +211,9 @@ tempCodeRunnerFile.py
 
 # GlyphProbe local experiment outputs
 runs/
+# The compact, checksum-bound E1 evidence bundle is intentionally versioned.
+!artifacts/emoji_family_exploratory_v1/runs/
+!artifacts/emoji_family_exploratory_v1/runs/**
 experiments/
 configs/experiments/
 .DS_Store

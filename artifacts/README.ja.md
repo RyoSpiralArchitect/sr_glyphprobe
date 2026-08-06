@@ -11,6 +11,8 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `MILESTONE2_MANIFEST.json`：Milestone 2軽量バンドルを結び付け、完了した診断と省略したraw fileを記録するmanifest
 - `milestone2/analyses/posthoc_dependence/p2/`と`milestone2/analyses/posthoc_dependence/independent_source/`：target bootstrapの各replicateでleave-one-target-group-out prototypeを作り直す、独立した事後解析
 - `milestone2/analyses/diagnostics/`：末尾token一致と接頭構造均一化のpaired comparison、および同一seedによる次元fold
+- `emoji_family_exploratory_v1/`：E1のtokenizer preflight、全記述解析、5 family runごとの軽量file 15件
+- `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json`：E1の公開payload 82件をSHA-256で結び付け、省略したraw ledgerとarrayを記録するroot manifest
 
 従来のv1 bundleでは、77,327,172 byteの条件ledger 1件とNPZ配列3件を省略しており、`MANIFEST.json`に記録している。これとは別に、`MILESTONE2_MANIFEST.json`は、14 runにわたる大容量ローカルfile 58件の省略を記録する。内訳には条件ledgerとmodel依存NPZのほか、20,000 replicateのbootstrap table 2件が含まれる。Hashは監査対象だったローカルartifactを結び付けるが、欠けたデータを復元することはできない。完全なデータが必要な場合は、該当runまたは解析を再現する。
 
@@ -27,3 +29,43 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 実行時の来歴として、matched-null Aの最初のforeground processは、マシン負荷が極端に高い最中、ledger 798行で外部から中断された。Sealを保ったresumeによって、重複・欠損・error・非ゼロのzero-hook RMSなしで14,208行の正確なgridを完了した。この事象は、モデルに関する証拠でも、一般化できる速度の主張でもない。P2、独立ソース、診断runは通常どおり完了した。C1は未使用のままである。
 
 ここにあるのは、再現可能な因果検証前のactivation screening候補と、レイヤーごとに分かれたMilestone 2対照結果である。Glyphの意味、機構、回路、因果経路、トークン化から独立した効果を確立する証拠ではない。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う対象限定型の因果プロトコルを設計できる。Layer 4は未解決のままである。
+
+## E1探索の読み方
+
+[E1の全結果](../docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)は、commit
+`0cd4e11610e42253ead9ce9aff9f0b02474a0558`で凍結した、トークン同型な
+5 familyの探索実験である。平均transfer行列は両layerで広く正だった。一方、
+family等重みのwithin-family超過量は小さく、layer 2で0.014752595564
+（95%記述区間[0.002875238085, 0.027439243404]）、layer 4で
+0.014887989201（[0.003407563347, 0.019684351979]）だった。Family別区間は、
+両layerの全familyで0を含んだ。事前指定したlayer 4のnegative comparatorも
+negativeにはならなかった。
+
+Random controlとの比較は不均一だった。Family × layer × seedの30 cell中
+10 cellが非正で、layer 2のseed 307とlayer 4のseed 101では、それぞれ
+5 familyすべてが該当した。したがって、random controlに対する頑健な優位性は
+主張しない。ここで許される解釈は、固定した中間token置換下での探索的な
+matched-slot反復と、共有tokenによるtransferが小さなfamily固有超過より
+支配的だという範囲に限られる。
+
+Bundle validatorはpassした。Root manifestとは別に公開payload 82件と5つの
+role bindingを検証し、hash mismatchとlocal absolute pathはいずれも0だった。
+P2/C1 contentが固定済みE1 input surfaceの外にあるというmanifest上の
+宣言も検査したが、過去のprocess履歴を独立に完全証明するものではない。
+Payloadは1,237,638 byteで、
+JSONL 39件・1,635行を含む。Root manifestを含めると83 file、1,303,644 byteで、
+manifestのSHA-256は
+`c22989ebc9ccaaf5f4652624d61ea11e2a9df4f2148a7886daf50c2fc3e4f53f`である。
+省略したraw fileは20件、計74,618,134 byteで、全8,880 intervention rowを含めて
+hash、行数、array shapeを対象に応じて記録した。Hashだけでは省略dataを復元できない。
+
+公開エビデンスは次に分かれている。
+
+- [root manifest](EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json)
+- [tokenizer-only preflight](emoji_family_exploratory_v1/preflight/tokenization_audit_v1.json)
+- [解析reportと機械可読出力](emoji_family_exploratory_v1/analysis/report.md)
+- [5つの軽量run directory](emoji_family_exploratory_v1/runs/)
+
+E1ではp値も確認的statusも算出していない。絵文字の意味、tokenizer非依存性、
+layer固有性、mechanism、因果path、model間の規則性を確立せず、Milestone 2の
+判定を更新せず、C1も開かず、Phase I論文gateも満たさない。

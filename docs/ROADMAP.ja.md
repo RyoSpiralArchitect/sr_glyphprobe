@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -45,19 +45,26 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 
 ### 探索side track E1 — トークン同型な絵文字familyのスクリーニング
 
-状態: 科学的な設計は指定済み。実行条件の凍結とE1のmodel runは未実施であり、E1のactivation結果はまだ確認も主張もしていない。
+状態: 範囲を限定した記述的探索として完了。公開commit
+`0cd4e11610e42253ead9ce9aff9f0b02474a0558`で実行条件を凍結した後、
+5本のMLX runを実施した。
 
 - 10 code pointからなる5 blockを固定する。`sky`（`U+1F311`–`U+1F31A`）、`food`（`U+1F351`–`U+1F35A`）、`animals`（`U+1F411`–`U+1F41A`）、`transport`（`U+1F691`–`U+1F69A`）、`social`（`U+1F911`–`U+1F91A`）である。
 - 各glyphを固定GPT-2で3 tokenとし、family間では第1 tokenと対応slotの第3 tokenを一致させ、第2 tokenだけをfamilyごとに変える。
 - 既存`prestage_targets`の先頭24件と16件のsource wrapperだけを再利用する。P2とC1は、読み込み、tokenize、score、選択のいずれにも使わない。
 - Run familyは、固定GPT-2、MLX FP32、`resid_post`のlayer 2・4、strength 0.05、seed 101 / 211 / 307、各layerのrandom direction 2本に限定する。Zero-hook checkは有効、neutral-direction armとsign-flip armは無効とする。
-- Layer 2をprimary exploratory row、layer 4を事前指定したsecondary negative comparatorとする。
+- Layer 2をprimary exploratory rowとした。事前指定したlayer 4のnegative comparatorは、結果としてnegativeにならなかった。
 - ReplicateごとにLOTO prototypeを作り直し、\(M_{f\leftarrow g}\)行列全体、within-row超過量\(R_f\)、family等重みの\(R_{\mathrm{global}}\)を報告する。Primary descriptive aggregateはtarget等重みの平均とし、データ依存prototypeは、target groupで層化した20,000回のbootstrap内でも毎回再構築する。
-- 凍結後は全familyを公開し、null、負、不均一、失敗、中断のcellも残す。P値、多重性判定、status labelは付けない。
+- 5本のrunは全8,880介入行を完走した。Errorは0件で、zero-hookのactivation/logit RMSは正確に0だった。
+- Family等重みのglobal超過量は、layer 2で0.014752595564、95%記述区間[0.002875238085, 0.027439243404]、layer 4で0.014887989201、[0.003407563347, 0.019684351979]だった。
+- Family別区間は、両layerの5 familyすべてで0を含んだ。
+- 平均transfer行列は広く正だった。25 cellの範囲はlayer 2で0.395455〜0.484915、layer 4で0.602564〜0.681909だった。
+- Family × layer × seedの30 cell中10 cellはrandom controlを上回らなかった。Layer 2のseed 307とlayer 4のseed 101で、それぞれ5 familyすべてが該当した。
+- 凍結後は全familyを公開し、null、負、不均一なcellも残す。P値、多重性判定、確認的status labelは付けない。
 
-[E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)では、問い、input、endpoint、停止規則、主張境界を定める。E1で記述できるのは、統制した中間token置換の下でのmatched-slot反復までである。意味上のfamily効果、tokenization非依存の性質、因果mechanism、modelをまたぐ規則性は主張しない。Milestone 2の判定を更新せず、C1を開かず、Milestone 3の介入も選ばず、Phase I論文gateも満たさない。
+[E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)では、問い、input、endpoint、停止規則、主張境界を定め、[E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)では全結果を公開した。広く正のtransfer行列と小さなfamily固有超過は、共有tokenによるtransferが残差的なwithin-family信号より支配的であることを示唆する。E1で記述できるのは、統制した中間token置換の下でのmatched-slot反復までである。意味上のfamily効果、tokenization非依存の性質、layer固有の効果、random controlに対する頑健な優位性、因果mechanism、modelをまたぐ規則性は主張しない。Milestone 2の判定を更新せず、C1を開かず、Milestone 3の介入も選ばず、Phase I論文gateも満たさない。
 
-終了条件: 英日プロトコルを実行inputとreceiptへ結び付けた公開commitを作り、凍結済みgridの全結果と記述解析を公開する。E1から新しい仮説を立てる場合は、P2でもC1でもない未使用target bankを用意し、新しい確認プロトコルを先に公開する。
+終了条件: 達成。公開bundleは、tokenizer-only preflight、全記述解析、5つの軽量run directory、root manifestを結び付けている。E1から新しい仮説を立てる場合は、P2でもC1でもない未使用target bankを用意し、新しい確認プロトコルを先に公開する。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

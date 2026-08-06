@@ -1,0 +1,168 @@
+{
+  "panel": [
+    {
+      "factors": {
+        "codepoint": "U+1F311",
+        "family": "sky",
+        "matched_slot": "slot_00"
+      },
+      "glyph": "🌑",
+      "id": "sky_slot_00",
+      "labels": [
+        "new_moon"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F312",
+        "family": "sky",
+        "matched_slot": "slot_01"
+      },
+      "glyph": "🌒",
+      "id": "sky_slot_01",
+      "labels": [
+        "waxing_crescent"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F313",
+        "family": "sky",
+        "matched_slot": "slot_02"
+      },
+      "glyph": "🌓",
+      "id": "sky_slot_02",
+      "labels": [
+        "first_quarter"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F314",
+        "family": "sky",
+        "matched_slot": "slot_03"
+      },
+      "glyph": "🌔",
+      "id": "sky_slot_03",
+      "labels": [
+        "waxing_gibbous"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F315",
+        "family": "sky",
+        "matched_slot": "slot_04"
+      },
+      "glyph": "🌕",
+      "id": "sky_slot_04",
+      "labels": [
+        "full_moon"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F316",
+        "family": "sky",
+        "matched_slot": "slot_05"
+      },
+      "glyph": "🌖",
+      "id": "sky_slot_05",
+      "labels": [
+        "waning_gibbous"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F317",
+        "family": "sky",
+        "matched_slot": "slot_06"
+      },
+      "glyph": "🌗",
+      "id": "sky_slot_06",
+      "labels": [
+        "last_quarter"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F318",
+        "family": "sky",
+        "matched_slot": "slot_07"
+      },
+      "glyph": "🌘",
+      "id": "sky_slot_07",
+      "labels": [
+        "waning_crescent"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F319",
+        "family": "sky",
+        "matched_slot": "slot_08"
+      },
+      "glyph": "🌙",
+      "id": "sky_slot_08",
+      "labels": [
+        "crescent_moon"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F31A",
+        "family": "sky",
+        "matched_slot": "slot_09"
+      },
+      "glyph": "🌚",
+      "id": "sky_slot_09",
+      "labels": [
+        "new_moon_face"
+      ]
+    }
+  ],
+  "target_ids": [
+    "cont_01",
+    "cont_02",
+    "cont_03",
+    "cont_04",
+    "fact_01",
+    "fact_02",
+    "fact_03",
+    "fact_04",
+    "reason_01",
+    "reason_02",
+    "reason_03",
+    "reason_04",
+    "proc_01",
+    "proc_02",
+    "proc_03",
+    "proc_04",
+    "class_01",
+    "class_02",
+    "class_03",
+    "class_04",
+    "plan_01",
+    "plan_02",
+    "plan_03",
+    "plan_04"
+  ],
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w02_bracket_continue",
+    "w03_pipe_next",
+    "w04_token_state",
+    "w05_begin_end",
+    "w06_binary_result",
+    "w07_symbol_following",
+    "w08_pair_q",
+    "w09_input_response",
+    "w10_sequence_continuation",
+    "w11_field_anchor",
+    "w12_list_next",
+    "w13_left_right",
+    "w14_codepoint_text",
+    "w15_observation_inference",
+    "w16_slot_completion"
+  ]
+}

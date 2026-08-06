@@ -17,7 +17,10 @@
 - 収録/省略 file の hash、POSIX/Windows 絶対 path の公開防止、copy 前の run/audit/parity 相互照合を備えた、fail-closed な compact public-bundle builder を追加。
 - artifact audit が失敗した場合、status/decision と一貫して `scientific_result: false` になるよう修正。
 - 標準 MLX 行列を検証: 14,208 record、0 error、11/11 readiness、別立の 15/15 artifact audit と明示的 caveat。
-- test suite を 76 passing tests に拡張。
+- 10 emoji × 5 familyからなるトークン同型E1 panel、tokenizer-only preflight、roleを固定した5つのMLX config、bootstrap内でLOTO prototypeを作り直す依存対応の記述analyzerを追加。
+- E1の5 runを完了。全8,880介入行、error 0、zero-hookのactivation/logit RMS 0を確認した。結果は、広いfamily間transfer、小さなfamily固有超過、random controlとの不均一な比較を示した。p値、確認的status、意味、layer固有性、tokenizer非依存性、因果性は主張しない。
+- Fail-closedなE1公開bundle builderと独立validatorを追加。検証済みmanifestは公開payload 82件を結び付け、省略したraw file 20件を記録し、local absolute pathを拒否する。P2/C1 contentを使っていないことも記録する。
+- Milestone 2、E1 preflight、解析、公開、検証に関するtestを拡充。Revisionごとに変わるtest数は固定値として文書へ埋め込まない。
 - 公開ドキュメントの英日ペア管理と、再現可能で反証可能な英語論文を Phase I の目標とする方針を導入。
 
 ## 0.1.0

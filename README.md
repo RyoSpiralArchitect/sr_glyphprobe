@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -30,6 +30,8 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Milestone 2, primary-source layer 4 | -0.0329465, 95% CI [-0.0761085, 0.0110094] | Holm-adjusted p = 0.999500; unresolved under frozen v1 |
 | Milestone 2, independent-source layer 2 | +0.187507, 95% CI [0.125489, 0.247659] | Holm-adjusted p = 0.00393996; robust to the prespecified matched controls under frozen v1 |
 | Milestone 2, independent-source layer 4 | -0.086379, 95% CI [-0.159246, -0.016917] | Holm-adjusted p = 0.999430; unresolved under frozen v1 |
+| E1 global specificity, layer 2 | 0.014752595564, 95% descriptive interval [0.002875238085, 0.027439243404] | exploratory; all five family-specific intervals included zero |
+| E1 global specificity, layer 4 | 0.014887989201, 95% descriptive interval [0.003407563347, 0.019684351979] | intended negative comparator was not negative; all five family-specific intervals included zero |
 
 The baseline fingerprint rows are descriptive outputs of one pinned model cell;
 the Milestone 2 rows are frozen-v1 target-cluster results with the qualifications
@@ -76,6 +78,29 @@ See [Milestone 2 results](docs/MILESTONE2_RESULTS.md) for the exact results,
 analysis limitations, sensitivity intervals, and evidence links. The result is
 pre-causal and does not establish semantics, mechanism, a circuit, or a
 tokenization-free glyph effect.
+
+### E1 exploratory status
+
+The frozen token-isomorphic emoji-family screen is complete across five ten-glyph
+families. Its full matched-slot transfer matrix was broadly positive at both
+layers: the 25 family-pair means ranged from 0.395455 to 0.484915 at layer 2 and
+from 0.602564 to 0.681909 at layer 4. The much smaller global within-family
+excess was 0.014752595564 at layer 2 and 0.014887989201 at layer 4. Every one of
+the ten family-specific descriptive intervals included zero.
+
+This pattern suggests that transfer tied to the deliberately shared first and
+third GPT-2 tokens dominates the small family-specific excess. It does not
+support a semantic-family, tokenizer-independent, layer-specific, or causal
+claim. Random-control comparison was also heterogeneous: 10/30 prespecified
+family × layer × seed cells were non-positive, comprising all five families at
+layer 2 seed 307 and all five at layer 4 seed 101. All 8,880 intervention rows
+completed with zero errors and exact zero-hook activation/logit RMS of 0.
+
+E1 used the already explored 24-target prestage bank. It did not open P2 or C1,
+does not change the Milestone 2 classification, and does not satisfy a Phase I
+paper gate. See the [E1 results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md),
+[frozen protocol](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md), and
+[public evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md).
 
 ## Install
 
@@ -216,6 +241,9 @@ Project-authored public documentation is maintained in English and Japanese:
 | Current results | [RESULTS_V1.md](docs/RESULTS_V1.md) | [RESULTS_V1.ja.md](docs/RESULTS_V1.ja.md) |
 | Milestone 2 results | [MILESTONE2_RESULTS.md](docs/MILESTONE2_RESULTS.md) | [MILESTONE2_RESULTS.ja.md](docs/MILESTONE2_RESULTS.ja.md) |
 | Milestone 2 protocol | [MILESTONE2_PROTOCOL.md](docs/MILESTONE2_PROTOCOL.md) | [MILESTONE2_PROTOCOL.ja.md](docs/MILESTONE2_PROTOCOL.ja.md) |
+| E1 exploratory results | [EMOJI_FAMILY_EXPLORATORY_RESULTS.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) | [EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) |
+| E1 exploratory protocol | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) |
+| Reproducibility guide | [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) | [REPRODUCIBILITY.ja.md](docs/REPRODUCIBILITY.ja.md) |
 | Research roadmap | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.ja.md](docs/ROADMAP.ja.md) |
 | Phase I paper plan | [PAPER_OUTLINE.md](docs/PAPER_OUTLINE.md) | [PAPER_OUTLINE.ja.md](docs/PAPER_OUTLINE.ja.md) |
 | Public research note | [NOTE.md](docs/NOTE.md) | [NOTE.ja.md](docs/NOTE.ja.md) |
@@ -224,7 +252,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -60,6 +60,30 @@ The two secondary token-structure diagnostics also completed. Each covered 14,20
 
 At CountSketch dimensions 96, 48, 32, and 24, the median standard-minus-suffix raw separation was `+0.002624`, `+0.009473`, `+0.004026`, and `+0.009700`. The corresponding standard-minus-prefix values were `+0.022096`, `+0.023254`, `+0.011040`, and `+0.025387`. At 96 dimensions, 20/36 suffix cells and 25/36 prefix cells were positive. These are post-hoc descriptive diagnostics, not inferential or equivalence tests. The lower-dimensional results are same-seed algebraic folds, not independent reruns or seed sensitivity.
 
+## A controlled family substitution exposed shared transfer
+
+The E1 side track asked a different, narrower question. Five ten-emoji blocks
+were selected so that every matched slot has the same first and third GPT-2
+tokens; only the family-middle token changes. That makes the token structure
+unusually controlled, but it also makes family identity inseparable from the
+middle token. E1 was frozen before five MLX runs and reused only the 24 already
+explored prestage targets. P2 and C1 stayed untouched.
+
+The complete source-family × prototype-family matrices were broadly positive.
+Their 25 mean cells ranged from `0.395455` to `0.484915` at layer 2 and from
+`0.602564` to `0.681909` at layer 4. Yet the equal-family within-family excess
+was only `0.014752595564` at layer 2 and `0.014887989201` at layer 4. Every
+family-specific descriptive interval crossed zero. The layer-4 negative
+comparator was not negative, and 10/30 family × layer × seed cells failed to
+exceed random controls.
+
+The most useful reading is not that GPT-2 discovered five semantic emoji
+families. It is that much of the matched-slot recurrence transfers across the
+middle-token substitution, consistent with the deliberately shared first and
+third tokens dominating a small, uneven family-specific remainder. The
+[complete E1 result](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) reports all matrices,
+intervals, and negative cells without p-values or a confirmatory label.
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
@@ -67,10 +91,12 @@ We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retaine
 We cannot call this a tokenization-free glyph effect. We cannot say that GPT-2 has a brown-circle concept, that a particular attention head or MLP implements a glyph feature, that the direction carries human-readable meaning, or that the result generalizes to another model. The independent-source arm reuses the same targets and is not independent model or target replication. The completed secondary diagnostics narrow two token-structure questions descriptively; they do not establish equivalence or remove tokenization from the claim.
 
 The summary boundary remains machine-readable: `causal_claim_authorized` is `false`. The C1 causal holdout has not been passed to a model or outcome analysis.
+E1 does not change either statement and does not establish a semantic,
+tokenizer-independent, layer-specific, or robust random-control effect.
 
 ## What comes next
 
-Operational Milestone 2 is complete. Layer 2 can now enter the design of a new frozen targeted causal protocol using untouched C1; layer 4 remains unresolved and is not a candidate. This permits protocol design, not a causal claim.
+Operational Milestone 2 is complete. Layer 2 can now enter the design of a new frozen targeted causal protocol using untouched C1; layer 4 remains unresolved and is not a candidate. This permits protocol design, not a causal claim. E1 does not select or modify that candidate: any focused hypothesis derived from E1 would need its own public protocol and a new untouched target bank that is neither P2 nor C1.
 
 C1 stays closed until the candidate, intervention site and operation, endpoint, controls, and multiplicity family are fixed in a sealed patch–ablate–restore protocol. Independent backend and model or tokenizer replication also remain open. Final-paper confirmatory wording and any replication used to support it must prospectively bind scientific roles to frozen inputs and account for data-dependent prototype resampling.
 

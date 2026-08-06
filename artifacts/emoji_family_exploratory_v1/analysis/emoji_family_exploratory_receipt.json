@@ -1,0 +1,1032 @@
+{
+  "analysis_id": "glyphprobe-e1-token-isomorphic-emoji-families-v1",
+  "analysis_implementation": {
+    "path": "scripts/analyze_emoji_family_exploratory_v1.py",
+    "sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4"
+  },
+  "bootstrap": {
+    "direction_seeds_nested_within_target": true,
+    "interval": "95_percentile_2.5_97.5",
+    "joint_across_all_families_layers_endpoints_and_pairs": true,
+    "loto_prototypes_rebuilt_inside_each_replicate": true,
+    "replicate_aggregate": "equal-target arithmetic mean",
+    "replicates": 20000,
+    "sampling_unit": "target_prompt_cluster",
+    "seed": 20260808,
+    "stratification": "four targets sampled with replacement in each of six groups"
+  },
+  "claim_boundary": "Exploratory matched-slot fingerprint recurrence under a fixed middle-token family substitution in one pinned GPT-2 MLX FP32 intervention cell; no semantic, tokenizer-independent, causal, cross-model, backend-replication, or paper-gate claim is authorized.",
+  "descriptive_control_boundary": {
+    "endpoint_decisions_computed": false,
+    "label_permutations_run": 0,
+    "p_values_computed_by_analyzer": false,
+    "random_and_zero_hook_controls_are_endpoint_observations": false,
+    "random_control_cells_reported": 30,
+    "selection_performed": false
+  },
+  "endpoint_definitions": {
+    "equal_family_global_specificity_R_global": "equal-family mean of family-specific target R, then target mean",
+    "family_specificity_R": "within-family target M minus the median target M over the four other prototype families",
+    "ordered_cross_family_same_slot_transfer_M_offdiag": "seed-averaged ordered off-diagonal matched-slot transfer M",
+    "primary_cell_aggregate": "equal-target arithmetic mean",
+    "target_medians": "secondary_description_only",
+    "within_family_slot_separation_M_diag": "seed-averaged diagonal matched-slot cosine minus mean mismatched-slot cosine"
+  },
+  "fixed_cell": {
+    "backend": "mlx",
+    "direction_seeds": [
+      101,
+      211,
+      307
+    ],
+    "dtype": "float32",
+    "fingerprint_dim": 96,
+    "fingerprint_seed": 8675309,
+    "layers": [
+      2,
+      4
+    ],
+    "model": "openai-community/gpt2",
+    "primary_layer": 2,
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "secondary_negative_comparator_layer": 4,
+    "site": "resid_post",
+    "strength": 0.05
+  },
+  "hashed_outputs_excluding_self": [
+    {
+      "filename": "family_target_scores.jsonl",
+      "row_count": 240,
+      "sha256": "8e178248d6133ccefe4421abf4738d83ae24a3383d36f01a6f3cb3070e07b12b"
+    },
+    {
+      "filename": "transfer_target_scores.jsonl",
+      "row_count": 960,
+      "sha256": "dc2260da76eb00134aace810873632cec96ef4af8bc20c57c783c347aa571495"
+    },
+    {
+      "filename": "family_cell_summary.jsonl",
+      "row_count": 10,
+      "sha256": "c201193061975a894b39fed0d6abe48de206ce998c9b0e97c124202b3b2797d7"
+    },
+    {
+      "filename": "transfer_cell_summary.jsonl",
+      "row_count": 40,
+      "sha256": "c7311130dbdddc75085b6af74e71823f87c3fd907963e508c64041b4fb294607"
+    },
+    {
+      "filename": "report.md",
+      "sha256": "50124b5caa72f079fa508a0f73c8509c81b0e9b99c61e528a456402ccd0c7cb5"
+    }
+  ],
+  "input_runs": [
+    {
+      "fingerprint_summary_sha256": "3f67912e9860c42a13c44d704164b4da748b293c6b1eb6d7afe0c8b77ee2f603",
+      "fixed_config_file": "configs/e1_sky_moon_mlx.yaml",
+      "fixed_config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+      "fixed_panel_file": "data/emoji_panels/e1_sky_moon.yaml",
+      "fixed_panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "interventions_sha256": "77748a7585fd671c15f474adff97773b301b364ee7be6740a1d55d2fee54770c",
+      "positive_emoji_row_count": 1440,
+      "resolved_config_sha256": "5ca76d4e8f9abd01f632b11bd0e32d1161d01f06aafcad42bf3b704c2c6f839a",
+      "resolved_inputs_sha256": "11453fe2511956445f9123c83775b814a0e9d2fb6387526faffd36735c93671d",
+      "role": "sky",
+      "run_label": "e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1",
+      "run_receipt_sha256": "1e40048164c49e4f53d1021656550682198de8390f6d4c0200526adfba97ffb7",
+      "summary_sha256": "0d707ff9bee5e33568d9182be3ab704bebbc0b49e0a7afaefc7486778984dc37",
+      "zero_hook_max_activation_delta_rms": 0.0,
+      "zero_hook_max_logit_delta_rms": 0.0
+    },
+    {
+      "fingerprint_summary_sha256": "0926147a6db6c8ec1ac1c6178cc8b1ccf2c75eb64b30639baff29bd22d3bd96a",
+      "fixed_config_file": "configs/e1_food_mlx.yaml",
+      "fixed_config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+      "fixed_panel_file": "data/emoji_panels/e1_food.yaml",
+      "fixed_panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "interventions_sha256": "b30681db2743530326f5d362f1420741ad1bb9c636025b3e47877c48e90a2dcd",
+      "positive_emoji_row_count": 1440,
+      "resolved_config_sha256": "befb18b96256ef90d5c2c8c74fcf3a31b58585ca22336fb33c9d3bdb56b60fef",
+      "resolved_inputs_sha256": "e02a2e20fac6a323f93dc46ed42c599ae4bf0ee39d2459f9d04d6c189a763be4",
+      "role": "food",
+      "run_label": "e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540",
+      "run_receipt_sha256": "e196aee3945be278f3484dfb38ab4d8f998b88fa0892329907012cf890c6d18f",
+      "summary_sha256": "17cc9dcfa8ed5a4e1475cccb7c8d83aafc6fc2525f72dcd51502ea50e8006f7d",
+      "zero_hook_max_activation_delta_rms": 0.0,
+      "zero_hook_max_logit_delta_rms": 0.0
+    },
+    {
+      "fingerprint_summary_sha256": "281867db574d6048450c035746d6c40979500eb815420b1bf81e7799627d71f0",
+      "fixed_config_file": "configs/e1_animals_mlx.yaml",
+      "fixed_config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+      "fixed_panel_file": "data/emoji_panels/e1_animals.yaml",
+      "fixed_panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "interventions_sha256": "dfcb7a3100076874f5538a3227a5f0ced15136a38891e103beb28cc074597064",
+      "positive_emoji_row_count": 1440,
+      "resolved_config_sha256": "694b47d324b610e4880ff3696134ca6bf1f27bdb5146f26ce6ed5f77f10e1c36",
+      "resolved_inputs_sha256": "e7fdd94ce856b765ecb0978c81199456d3ae046471dff9174bf685158f635021",
+      "role": "animals",
+      "run_label": "e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1",
+      "run_receipt_sha256": "0a803f2e1b49e853182dc5a2c23f98cbd60d16f6ca58998e85d7c209833f34f5",
+      "summary_sha256": "b3ab351fd31e63d740586385e0c9bfb2b9fdbe73d943919e6f8dda06226c5f49",
+      "zero_hook_max_activation_delta_rms": 0.0,
+      "zero_hook_max_logit_delta_rms": 0.0
+    },
+    {
+      "fingerprint_summary_sha256": "a36a94800f5b25f931e1b9b4f93ec68fb944d8060c706461aaae3b2d6022a04d",
+      "fixed_config_file": "configs/e1_transport_mlx.yaml",
+      "fixed_config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+      "fixed_panel_file": "data/emoji_panels/e1_transport.yaml",
+      "fixed_panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "interventions_sha256": "d3c9aea93b9eed38e24159a05c7616f3c3093ca5a02bb0b059ee762b611e7340",
+      "positive_emoji_row_count": 1440,
+      "resolved_config_sha256": "83f2fedd6703a4ad81750d065361593743396315f4f4bf21e2e5fe4fbe308de2",
+      "resolved_inputs_sha256": "eccb32fb4441beeb6e68fcec350a9a6defd75fb3b79c988948afcf481595735e",
+      "role": "transport",
+      "run_label": "e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d",
+      "run_receipt_sha256": "8ead4aa7f3ff0657581357aebd4399a5773b3cdb9b723ca6e5b16fa5669d7140",
+      "summary_sha256": "cf4fb64260531e4c417de9d7ee3ac3f86c5b844b09a1bfb1dd923da44b3c9b26",
+      "zero_hook_max_activation_delta_rms": 0.0,
+      "zero_hook_max_logit_delta_rms": 0.0
+    },
+    {
+      "fingerprint_summary_sha256": "afca8c13aa69c8f24793d1e335c79e93bb7eb894574c9d9c3659d7f018f0004f",
+      "fixed_config_file": "configs/e1_social_mlx.yaml",
+      "fixed_config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+      "fixed_panel_file": "data/emoji_panels/e1_social.yaml",
+      "fixed_panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "interventions_sha256": "e17368a22b7d97960665d0878aa0a6d885ffa3f8f93be2cea632b3548823f990",
+      "positive_emoji_row_count": 1440,
+      "resolved_config_sha256": "0986bde5fd152fecc21dc799f51b7858460d7171bc01dcd73e51902d57cc97de",
+      "resolved_inputs_sha256": "9eafc62e5c2c8708643e9fd0d48e8210b2064b205c89aff6ccfbf14194966a4c",
+      "role": "social",
+      "run_label": "e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5",
+      "run_receipt_sha256": "3d144ca93c5450734e16bd8552527c16609888becfaa9e23389fb8f41e698ab5",
+      "summary_sha256": "9cbe4028d6d0efed37512257cbc1b72e76f63618e9617903769107a856b0ba4c",
+      "zero_hook_max_activation_delta_rms": 0.0,
+      "zero_hook_max_logit_delta_rms": 0.0
+    }
+  ],
+  "manifest_binding": {
+    "path": "data/manifests/emoji_family_exploratory_v1.json",
+    "sha256": "9fb96d5808dc298cbd47ca3586e0f00f793ce23e6627ef7705016f02e1c1d583"
+  },
+  "output_inventory": [
+    "family_target_scores.jsonl",
+    "transfer_target_scores.jsonl",
+    "family_cell_summary.jsonl",
+    "transfer_cell_summary.jsonl",
+    "emoji_family_exploratory_receipt.json",
+    "report.md"
+  ],
+  "results_by_layer": [
+    {
+      "equal_family_global_specificity_R_global": {
+        "target_mean": 0.014752595563580046,
+        "target_mean_ci95": {
+          "high": 0.027439243403595655,
+          "low": 0.002875238085274479
+        },
+        "target_median_secondary": 0.010534155554185697
+      },
+      "family_specificity_R": [
+        {
+          "family": "sky",
+          "target_mean": 0.008588119975005321,
+          "target_mean_ci95": {
+            "high": 0.038752971526034435,
+            "low": -0.014893152698814294
+          },
+          "target_median_secondary": 0.01409325195976957
+        },
+        {
+          "family": "food",
+          "target_mean": 0.02374869452880311,
+          "target_mean_ci95": {
+            "high": 0.05244718436325283,
+            "low": -0.01459654853467455
+          },
+          "target_median_secondary": 0.022764545933151692
+        },
+        {
+          "family": "animals",
+          "target_mean": -0.01118202109286494,
+          "target_mean_ci95": {
+            "high": 0.052737240635117394,
+            "low": -0.04218413829061567
+          },
+          "target_median_secondary": 0.012075082924712197
+        },
+        {
+          "family": "transport",
+          "target_mean": 0.06493385425433865,
+          "target_mean_ci95": {
+            "high": 0.08657242446451217,
+            "low": -0.01774718948694493
+          },
+          "target_median_secondary": 0.09983963096609591
+        },
+        {
+          "family": "social",
+          "target_mean": -0.0123256698473819,
+          "target_mean_ci95": {
+            "high": 0.028138886629828882,
+            "low": -0.0324222575968618
+          },
+          "target_median_secondary": -0.005394724787165961
+        }
+      ],
+      "full_M_matrix": {
+        "cells": [
+          {
+            "diagonal": true,
+            "prototype_family": "sky",
+            "source_family": "sky",
+            "target_mean": 0.4760257902351155,
+            "target_mean_ci95": {
+              "high": 0.5803398644778516,
+              "low": 0.3625218913780645
+            },
+            "target_median_secondary": 0.6193886857654141
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "sky",
+            "target_mean": 0.48491541345962846,
+            "target_mean_ci95": {
+              "high": 0.5931785631546392,
+              "low": 0.35877049036994363
+            },
+            "target_median_secondary": 0.6275779625326094
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "sky",
+            "target_mean": 0.45046768374599133,
+            "target_mean_ci95": {
+              "high": 0.5658417774066246,
+              "low": 0.34228532364798864
+            },
+            "target_median_secondary": 0.5464632051056796
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "sky",
+            "target_mean": 0.4841033735068934,
+            "target_mean_ci95": {
+              "high": 0.5773547900151684,
+              "low": 0.34308812854346427
+            },
+            "target_median_secondary": 0.6192951224745462
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "sky",
+            "target_mean": 0.4581443524186412,
+            "target_mean_ci95": {
+              "high": 0.5739962820102206,
+              "low": 0.3457429039444362
+            },
+            "target_median_secondary": 0.5573984162684288
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "food",
+            "target_mean": 0.46888277383919474,
+            "target_mean_ci95": {
+              "high": 0.5825305926202672,
+              "low": 0.35443516262104674
+            },
+            "target_median_secondary": 0.621522300991141
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "food",
+            "source_family": "food",
+            "target_mean": 0.4826842391379926,
+            "target_mean_ci95": {
+              "high": 0.6046122246449082,
+              "low": 0.34691037767804056
+            },
+            "target_median_secondary": 0.6367725525862973
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "food",
+            "target_mean": 0.4414289362769966,
+            "target_mean_ci95": {
+              "high": 0.5688287933713474,
+              "low": 0.3268733753235458
+            },
+            "target_median_secondary": 0.542153876260463
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "food",
+            "target_mean": 0.4706586723118475,
+            "target_mean_ci95": {
+              "high": 0.5694801048162809,
+              "low": 0.32684076190654543
+            },
+            "target_median_secondary": 0.5979450616134674
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "food",
+            "target_mean": 0.4488805047587181,
+            "target_mean_ci95": {
+              "high": 0.5751090622617839,
+              "low": 0.33266090396020787
+            },
+            "target_median_secondary": 0.5659117816272053
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "animals",
+            "target_mean": 0.430329391989607,
+            "target_mean_ci95": {
+              "high": 0.5410716820620173,
+              "low": 0.3268605729798907
+            },
+            "target_median_secondary": 0.5709651380520749
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "animals",
+            "target_mean": 0.4438155394002253,
+            "target_mean_ci95": {
+              "high": 0.558829447794303,
+              "low": 0.32060999421200614
+            },
+            "target_median_secondary": 0.5801492210180663
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "animals",
+            "source_family": "animals",
+            "target_mean": 0.42683179071717275,
+            "target_mean_ci95": {
+              "high": 0.5489526307679763,
+              "low": 0.31370691973025217
+            },
+            "target_median_secondary": 0.5720905452087863
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "animals",
+            "target_mean": 0.43426346287611944,
+            "target_mean_ci95": {
+              "high": 0.5321462566224457,
+              "low": 0.30323735774268035
+            },
+            "target_median_secondary": 0.5323897333204124
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "animals",
+            "target_mean": 0.4223650318304228,
+            "target_mean_ci95": {
+              "high": 0.5440048510213099,
+              "low": 0.318075317458426
+            },
+            "target_median_secondary": 0.547661126110975
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "transport",
+            "target_mean": 0.43101958615100094,
+            "target_mean_ci95": {
+              "high": 0.5404860249876742,
+              "low": 0.3179556077523188
+            },
+            "target_median_secondary": 0.5334957527750639
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "transport",
+            "target_mean": 0.43491980430175287,
+            "target_mean_ci95": {
+              "high": 0.5454578899191831,
+              "low": 0.3089550428558195
+            },
+            "target_median_secondary": 0.5538739560577521
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "transport",
+            "target_mean": 0.3954554961131622,
+            "target_mean_ci95": {
+              "high": 0.5167769608051236,
+              "low": 0.2942700867896267
+            },
+            "target_median_secondary": 0.4690438270800831
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "transport",
+            "source_family": "transport",
+            "target_mean": 0.47873646510495355,
+            "target_mean_ci95": {
+              "high": 0.58860901468985,
+              "low": 0.318884150091937
+            },
+            "target_median_secondary": 0.5776216119879936
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "transport",
+            "target_mean": 0.40560530952552926,
+            "target_mean_ci95": {
+              "high": 0.5256249621970565,
+              "low": 0.29798112083120193
+            },
+            "target_median_secondary": 0.4811455424917229
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "social",
+            "target_mean": 0.4425531483249092,
+            "target_mean_ci95": {
+              "high": 0.5561032756191087,
+              "low": 0.33260131850599556
+            },
+            "target_median_secondary": 0.5973400859090534
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "social",
+            "target_mean": 0.453079809045345,
+            "target_mean_ci95": {
+              "high": 0.5694208785495578,
+              "low": 0.32746019086814643
+            },
+            "target_median_secondary": 0.6140469372264622
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "social",
+            "target_mean": 0.4319971144176861,
+            "target_mean_ci95": {
+              "high": 0.5497738775438135,
+              "low": 0.32268978889829836
+            },
+            "target_median_secondary": 0.5795188171656076
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "social",
+            "target_mean": 0.4527165121787791,
+            "target_mean_ci95": {
+              "high": 0.5533726384680062,
+              "low": 0.31156901799057624
+            },
+            "target_median_secondary": 0.597938622901955
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "social",
+            "source_family": "social",
+            "target_mean": 0.4351888545563196,
+            "target_mean_ci95": {
+              "high": 0.5555238049668246,
+              "low": 0.32643072187072397
+            },
+            "target_median_secondary": 0.5679069097518226
+          }
+        ],
+        "column_role": "prototype_family",
+        "family_order": [
+          "sky",
+          "food",
+          "animals",
+          "transport",
+          "social"
+        ],
+        "row_role": "source_family_fingerprints"
+      },
+      "layer": 2,
+      "layer_role": "primary_exploratory"
+    },
+    {
+      "equal_family_global_specificity_R_global": {
+        "target_mean": 0.014887989201344922,
+        "target_mean_ci95": {
+          "high": 0.01968435197932875,
+          "low": 0.0034075633469810517
+        },
+        "target_median_secondary": 0.01528433677575523
+      },
+      "family_specificity_R": [
+        {
+          "family": "sky",
+          "target_mean": 0.029824742224831956,
+          "target_mean_ci95": {
+            "high": 0.04780698592875781,
+            "low": -0.018878836026682517
+          },
+          "target_median_secondary": 0.058611498953120816
+        },
+        {
+          "family": "food",
+          "target_mean": 0.02315858923529228,
+          "target_mean_ci95": {
+            "high": 0.04392950817617445,
+            "low": -0.007450607139041366
+          },
+          "target_median_secondary": 0.03805420503551771
+        },
+        {
+          "family": "animals",
+          "target_mean": 0.009492309810173774,
+          "target_mean_ci95": {
+            "high": 0.03913776554032369,
+            "low": -0.017225813275495758
+          },
+          "target_median_secondary": 0.022713362378719737
+        },
+        {
+          "family": "transport",
+          "target_mean": 0.03478720868903721,
+          "target_mean_ci95": {
+            "high": 0.059454087320260605,
+            "low": -0.017567207849645855
+          },
+          "target_median_secondary": 0.05450058753192749
+        },
+        {
+          "family": "social",
+          "target_mean": -0.022822903952610607,
+          "target_mean_ci95": {
+            "high": 0.003102843898201886,
+            "low": -0.04327286640229305
+          },
+          "target_median_secondary": -0.03184343047246749
+        }
+      ],
+      "full_M_matrix": {
+        "cells": [
+          {
+            "diagonal": true,
+            "prototype_family": "sky",
+            "source_family": "sky",
+            "target_mean": 0.6590626618184284,
+            "target_mean_ci95": {
+              "high": 0.7361216976993121,
+              "low": 0.5309769195220351
+            },
+            "target_median_secondary": 0.7574736048220654
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "sky",
+            "target_mean": 0.6403987073432599,
+            "target_mean_ci95": {
+              "high": 0.7337002951956034,
+              "low": 0.5099171893016725
+            },
+            "target_median_secondary": 0.7256586798109761
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "sky",
+            "target_mean": 0.6422120673140435,
+            "target_mean_ci95": {
+              "high": 0.7256291326418234,
+              "low": 0.5314273073875326
+            },
+            "target_median_secondary": 0.7341982667813676
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "sky",
+            "target_mean": 0.6375734667038216,
+            "target_mean_ci95": {
+              "high": 0.7283343819938082,
+              "low": 0.506335321702485
+            },
+            "target_median_secondary": 0.6928635184166174
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "sky",
+            "target_mean": 0.613301259227609,
+            "target_mean_ci95": {
+              "high": 0.7160537826414101,
+              "low": 0.48049195293869335
+            },
+            "target_median_secondary": 0.6970066933533603
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "food",
+            "target_mean": 0.6595628078236241,
+            "target_mean_ci95": {
+              "high": 0.7451171323774147,
+              "low": 0.5244869275527237
+            },
+            "target_median_secondary": 0.7454714043933527
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "food",
+            "source_family": "food",
+            "target_mean": 0.6691873431110752,
+            "target_mean_ci95": {
+              "high": 0.772592929319208,
+              "low": 0.5177608507527087
+            },
+            "target_median_secondary": 0.7796233711928842
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "food",
+            "target_mean": 0.65000434278276,
+            "target_mean_ci95": {
+              "high": 0.7474171441921704,
+              "low": 0.5279026932740817
+            },
+            "target_median_secondary": 0.7296992880717772
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "food",
+            "target_mean": 0.6695744977174712,
+            "target_mean_ci95": {
+              "high": 0.7676649098368277,
+              "low": 0.5156354246003672
+            },
+            "target_median_secondary": 0.7662385604113442
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "food",
+            "target_mean": 0.6356694704617499,
+            "target_mean_ci95": {
+              "high": 0.7475730646162859,
+              "low": 0.490180501700325
+            },
+            "target_median_secondary": 0.6978981097803336
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "animals",
+            "target_mean": 0.6463140454173515,
+            "target_mean_ci95": {
+              "high": 0.7277826953726194,
+              "low": 0.516030862651353
+            },
+            "target_median_secondary": 0.7025748873303921
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "animals",
+            "target_mean": 0.6326492756225569,
+            "target_mean_ci95": {
+              "high": 0.7346583128460349,
+              "low": 0.49334113371488963
+            },
+            "target_median_secondary": 0.7204029625780937
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "animals",
+            "source_family": "animals",
+            "target_mean": 0.6334036769730251,
+            "target_mean_ci95": {
+              "high": 0.7244519860481331,
+              "low": 0.5175981393853879
+            },
+            "target_median_secondary": 0.6961546674508605
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "animals",
+            "target_mean": 0.6333885970488465,
+            "target_mean_ci95": {
+              "high": 0.7333094635927783,
+              "low": 0.4886696106739695
+            },
+            "target_median_secondary": 0.7317569902499794
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "animals",
+            "target_mean": 0.6064336878634592,
+            "target_mean_ci95": {
+              "high": 0.7154022878973779,
+              "low": 0.4707262581381339
+            },
+            "target_median_secondary": 0.6739664505523875
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "transport",
+            "target_mean": 0.6550109916006105,
+            "target_mean_ci95": {
+              "high": 0.7371721597427476,
+              "low": 0.5322314400669589
+            },
+            "target_median_secondary": 0.7141373308668686
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "transport",
+            "target_mean": 0.6687927053525519,
+            "target_mean_ci95": {
+              "high": 0.769277805532105,
+              "low": 0.523922291001946
+            },
+            "target_median_secondary": 0.7500320647125447
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "transport",
+            "target_mean": 0.6485370117941944,
+            "target_mean_ci95": {
+              "high": 0.7450233075745142,
+              "low": 0.5313852700532288
+            },
+            "target_median_secondary": 0.7248668124464445
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "transport",
+            "source_family": "transport",
+            "target_mean": 0.6819090389733945,
+            "target_mean_ci95": {
+              "high": 0.7814733232875513,
+              "low": 0.5279754269387159
+            },
+            "target_median_secondary": 0.7840501989588899
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "social",
+            "source_family": "transport",
+            "target_mean": 0.6340205685354193,
+            "target_mean_ci95": {
+              "high": 0.7435765474275424,
+              "low": 0.4979675188843523
+            },
+            "target_median_secondary": 0.726443024402831
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "sky",
+            "source_family": "social",
+            "target_mean": 0.6318553846747826,
+            "target_mean_ci95": {
+              "high": 0.7117617757825097,
+              "low": 0.5088102939916307
+            },
+            "target_median_secondary": 0.7014195117117461
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "food",
+            "source_family": "social",
+            "target_mean": 0.6299095588237221,
+            "target_mean_ci95": {
+              "high": 0.7277851765726585,
+              "low": 0.4965272203446707
+            },
+            "target_median_secondary": 0.7599886077820404
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "animals",
+            "source_family": "social",
+            "target_mean": 0.6197356551955843,
+            "target_mean_ci95": {
+              "high": 0.7084699929233809,
+              "low": 0.5096641207729771
+            },
+            "target_median_secondary": 0.6947842279084355
+          },
+          {
+            "diagonal": false,
+            "prototype_family": "transport",
+            "source_family": "social",
+            "target_mean": 0.6290832852564364,
+            "target_mean_ci95": {
+              "high": 0.722616246618833,
+              "low": 0.49283395073766245
+            },
+            "target_median_secondary": 0.7380804141579653
+          },
+          {
+            "diagonal": true,
+            "prototype_family": "social",
+            "source_family": "social",
+            "target_mean": 0.602563562914686,
+            "target_mean_ci95": {
+              "high": 0.7067332600390315,
+              "low": 0.4739224885264145
+            },
+            "target_median_secondary": 0.6842526106110138
+          }
+        ],
+        "column_role": "prototype_family",
+        "family_order": [
+          "sky",
+          "food",
+          "animals",
+          "transport",
+          "social"
+        ],
+        "row_role": "source_family_fingerprints"
+      },
+      "layer": 4,
+      "layer_role": "prespecified_secondary_negative_comparator"
+    }
+  ],
+  "row_completeness": {
+    "all_families_observed_intervention_rows": 8880,
+    "all_families_observed_positive_rms_emoji_rows": 7200,
+    "all_families_observed_random_rows": 1440,
+    "all_families_observed_zero_hook_rows": 240,
+    "exact_unique_key_grids_verified": true,
+    "per_family_expected_intervention_rows": 1776,
+    "per_family_expected_positive_rms_emoji_rows": 1440,
+    "per_family_expected_random_rows": 288,
+    "per_family_expected_zero_hook_rows": 48,
+    "published_row_counts": {
+      "family_cell_summary.jsonl": 10,
+      "family_target_scores.jsonl": 240,
+      "transfer_cell_summary.jsonl": 40,
+      "transfer_target_scores.jsonl": 960
+    }
+  },
+  "schema_version": 1,
+  "target_sampling": {
+    "bank_role": "reused_exploratory_prestage_targets",
+    "group_order": [
+      "continuation",
+      "factual",
+      "reasoning",
+      "procedural",
+      "classification",
+      "planning"
+    ],
+    "ordered_target_groups": [
+      "continuation",
+      "continuation",
+      "continuation",
+      "continuation",
+      "factual",
+      "factual",
+      "factual",
+      "factual",
+      "reasoning",
+      "reasoning",
+      "reasoning",
+      "reasoning",
+      "procedural",
+      "procedural",
+      "procedural",
+      "procedural",
+      "classification",
+      "classification",
+      "classification",
+      "classification",
+      "planning",
+      "planning",
+      "planning",
+      "planning"
+    ],
+    "ordered_target_ids": [
+      "cont_01",
+      "cont_02",
+      "cont_03",
+      "cont_04",
+      "fact_01",
+      "fact_02",
+      "fact_03",
+      "fact_04",
+      "reason_01",
+      "reason_02",
+      "reason_03",
+      "reason_04",
+      "proc_01",
+      "proc_02",
+      "proc_03",
+      "proc_04",
+      "class_01",
+      "class_02",
+      "class_03",
+      "class_04",
+      "plan_01",
+      "plan_02",
+      "plan_03",
+      "plan_04"
+    ],
+    "selected_first_rows": 24,
+    "targets_per_group": 4
+  },
+  "zero_hook_integrity_by_family_and_layer": [
+    {
+      "family": "sky",
+      "layer": 2,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "sky",
+      "layer": 4,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "food",
+      "layer": 2,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "food",
+      "layer": 4,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "animals",
+      "layer": 2,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "animals",
+      "layer": 4,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "transport",
+      "layer": 2,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "transport",
+      "layer": 4,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "social",
+      "layer": 2,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    },
+    {
+      "family": "social",
+      "layer": 4,
+      "max_activation_delta_rms": 0.0,
+      "max_logit_delta_rms": 0.0,
+      "row_count": 24
+    }
+  ]
+}

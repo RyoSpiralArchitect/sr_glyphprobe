@@ -1,0 +1,1849 @@
+{
+  "absolute_path_scrub": {
+    "files_scanned": 82,
+    "match_count": 0,
+    "policy": "fail closed on user-home or drive-qualified filesystem paths; evidence bytes are otherwise unchanged",
+    "transformed_file_count": 0
+  },
+  "analysis": {
+    "descriptive_random_control_summary": {
+      "comparison": "less_than_or_equal_to_zero",
+      "endpoint_observations": false,
+      "fraction_nonpositive": 0.3333333333333333,
+      "metric": "emoji_advantage_over_random",
+      "nonpositive_cell_count": 10,
+      "reported_cell_count": 30,
+      "use": "descriptive_integrity_screen_only"
+    },
+    "expected_jsonl_rows": {
+      "family_cell_summary.jsonl": 10,
+      "family_target_scores.jsonl": 240,
+      "transfer_cell_summary.jsonl": 40,
+      "transfer_target_scores.jsonl": 960
+    },
+    "file_count": 6,
+    "files": [
+      {
+        "bytes": 132637,
+        "format": "jsonl",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/family_target_scores.jsonl",
+        "row_count": 240,
+        "sha256": "8e178248d6133ccefe4421abf4738d83ae24a3383d36f01a6f3cb3070e07b12b"
+      },
+      {
+        "bytes": 490511,
+        "format": "jsonl",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/transfer_target_scores.jsonl",
+        "row_count": 960,
+        "sha256": "dc2260da76eb00134aace810873632cec96ef4af8bc20c57c783c347aa571495"
+      },
+      {
+        "bytes": 40513,
+        "format": "jsonl",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/family_cell_summary.jsonl",
+        "row_count": 10,
+        "sha256": "c201193061975a894b39fed0d6abe48de206ce998c9b0e97c124202b3b2797d7"
+      },
+      {
+        "bytes": 31913,
+        "format": "jsonl",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/transfer_cell_summary.jsonl",
+        "row_count": 40,
+        "sha256": "c7311130dbdddc75085b6af74e71823f87c3fd907963e508c64041b4fb294607"
+      },
+      {
+        "bytes": 35953,
+        "format": "json",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/emoji_family_exploratory_receipt.json",
+        "row_count": null,
+        "sha256": "a2357d27432f7e4dd2a6fd4ca663d6afd737f6c8e298b80d03dadc0f2a3f2847"
+      },
+      {
+        "bytes": 5655,
+        "format": "markdown",
+        "path": "artifacts/emoji_family_exploratory_v1/analysis/report.md",
+        "row_count": null,
+        "sha256": "50124b5caa72f079fa508a0f73c8509c81b0e9b99c61e528a456402ccd0c7cb5"
+      }
+    ],
+    "implementation_path": "scripts/analyze_emoji_family_exploratory_v1.py",
+    "implementation_sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4",
+    "independent_outcome_review": {
+      "byte_identical_file_count": 6,
+      "same_input_reanalysis_byte_identical": true,
+      "status": "pass"
+    },
+    "output_sha256": {
+      "emoji_family_exploratory_receipt.json": "a2357d27432f7e4dd2a6fd4ca663d6afd737f6c8e298b80d03dadc0f2a3f2847",
+      "family_cell_summary.jsonl": "c201193061975a894b39fed0d6abe48de206ce998c9b0e97c124202b3b2797d7",
+      "family_target_scores.jsonl": "8e178248d6133ccefe4421abf4738d83ae24a3383d36f01a6f3cb3070e07b12b",
+      "report.md": "50124b5caa72f079fa508a0f73c8509c81b0e9b99c61e528a456402ccd0c7cb5",
+      "transfer_cell_summary.jsonl": "c7311130dbdddc75085b6af74e71823f87c3fd907963e508c64041b4fb294607",
+      "transfer_target_scores.jsonl": "dc2260da76eb00134aace810873632cec96ef4af8bc20c57c783c347aa571495"
+    },
+    "public_directory": "artifacts/emoji_family_exploratory_v1/analysis",
+    "source_run_path": "runs/e1-token-isomorphic-emoji-family-analysis-v1"
+  },
+  "bundle_id": "emoji_family_exploratory_v1_public_evidence",
+  "claim_boundary": "Exploratory matched-slot fingerprint recurrence under a fixed middle-token family substitution in one pinned GPT-2 MLX FP32 intervention cell; no semantic, tokenizer-independent, causal, cross-model, backend-replication, or paper-gate claim is authorized.",
+  "excluded_content_access": {
+    "content_hashed": false,
+    "content_opened_or_read": false,
+    "content_tokenized": false,
+    "model_forward_count": 0,
+    "paths": [
+      "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    ],
+    "verification_scope": "declaration only; excluded bank files are outside the fixed E1 build input surface"
+  },
+  "freeze": {
+    "claim_boundary": "Tokenizer-only structural qualification for an exploratory matched-slot screen. Family identity is perfectly confounded with the family-middle GPT-2 token. No semantic, tokenizer-independent, confirmatory, mechanistic, causal, cross-model, or paper-gate claim is authorized.",
+    "e1_model_forward_executed_after_freeze": true,
+    "manifest_path": "data/manifests/emoji_family_exploratory_v1.json",
+    "manifest_sha256": "9fb96d5808dc298cbd47ca3586e0f00f793ce23e6627ef7705016f02e1c1d583",
+    "prepared_before_e1_model_forward": true,
+    "public_freeze_commit": "0cd4e11610e42253ead9ce9aff9f0b02474a0558"
+  },
+  "inventory": {
+    "analysis_file_count": 6,
+    "omitted_intervention_jsonl_rows": 8880,
+    "omitted_raw_file_count": 20,
+    "omitted_raw_total_bytes": 74618134,
+    "per_role_included_file_count": 15,
+    "public_file_count_including_root_manifest": 83,
+    "public_jsonl_file_count": 39,
+    "public_jsonl_row_count": 1635,
+    "public_member_file_count": 82,
+    "public_member_scope": "payload files under artifacts/emoji_family_exploratory_v1; the root manifest is excluded from member byte totals",
+    "public_member_total_bytes": 1237638,
+    "role_count": 5
+  },
+  "preflight": {
+    "bytes": 43367,
+    "format": "json",
+    "path": "artifacts/emoji_family_exploratory_v1/preflight/tokenization_audit_v1.json",
+    "row_count": null,
+    "sha256": "28cd1cd2487d1e11978308bcd77b64a90b2f2d5cfe08103361bbd7dbbcd3418d"
+  },
+  "runs": [
+    {
+      "included_file_count": 15,
+      "included_files": [
+        {
+          "bytes": 1894,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/capabilities.json",
+          "row_count": null,
+          "sha256": "0f470a7f1519a4b17bc8488c1ec6f524f7984239c04eecc87edbe227c09e2c77"
+        },
+        {
+          "bytes": 1014,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/cross_seed_fingerprint_summary.jsonl",
+          "row_count": 2,
+          "sha256": "5582e37b5b794e40b06c7411f017402013f277a30023e48425f42fd069e841af"
+        },
+        {
+          "bytes": 508,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/direction_replicates.json",
+          "row_count": null,
+          "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+        },
+        {
+          "bytes": 6898,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/fingerprint_summary.jsonl",
+          "row_count": 6,
+          "sha256": "3f67912e9860c42a13c44d704164b4da748b293c6b1eb6d7afe0c8b77ee2f603"
+        },
+        {
+          "bytes": 569,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/plan.json",
+          "row_count": null,
+          "sha256": "4e5ee5692d43a3283553fe7f49dcdf48eacb4a0c5e6665dd422ca317526a1e3c"
+        },
+        {
+          "bytes": 10994,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/receipt.json",
+          "row_count": null,
+          "sha256": "1e40048164c49e4f53d1021656550682198de8390f6d4c0200526adfba97ffb7"
+        },
+        {
+          "bytes": 4831,
+          "format": "markdown",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/report.md",
+          "row_count": null,
+          "sha256": "b551f01b3a184b2c726202cc18c734b5c29f20ab180a18bd26bebfa134634a2d"
+        },
+        {
+          "bytes": 2211,
+          "format": "yaml",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/resolved_config.yaml",
+          "row_count": null,
+          "sha256": "5ca76d4e8f9abd01f632b11bd0e32d1161d01f06aafcad42bf3b704c2c6f839a"
+        },
+        {
+          "bytes": 3152,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/resolved_inputs.json",
+          "row_count": null,
+          "sha256": "11453fe2511956445f9123c83775b814a0e9d2fb6387526faffd36735c93671d"
+        },
+        {
+          "bytes": 6782,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/scalar_balance_summary.jsonl",
+          "row_count": 12,
+          "sha256": "e96bb9b2a406b67f93f812190a2a5796c7cc3545690cc4c2467ac98519c8117c"
+        },
+        {
+          "bytes": 4858,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/source_item_metrics.jsonl",
+          "row_count": 20,
+          "sha256": "7ec954fd6d88a71e2d4ad523f68ce204944af83c239cca66d10a0ea518833d7e"
+        },
+        {
+          "bytes": 4348,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/source_layer_metrics.jsonl",
+          "row_count": 2,
+          "sha256": "7edebdad17886721ce702b3d1a22cededb7db34c73804b17fcb2ab8789df13d2"
+        },
+        {
+          "bytes": 3729,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/summary.json",
+          "row_count": null,
+          "sha256": "0d707ff9bee5e33568d9182be3ab704bebbc0b49e0a7afaefc7486778984dc37"
+        },
+        {
+          "bytes": 4728,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/target_baselines.jsonl",
+          "row_count": 24,
+          "sha256": "74aa276cbc4c8256e36d8410488a453148c51687135c5b4cdb2b50b44b51cbc0"
+        },
+        {
+          "bytes": 34909,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/sky/tokenization.jsonl",
+          "row_count": 11,
+          "sha256": "b703c81c9102199e57f8ce1c3d9e4f6767db93f9d78bd93935958efc3375c8d5"
+        }
+      ],
+      "intervention_row_count": 1776,
+      "omitted_raw_file_count": 4,
+      "omitted_raw_files": [
+        {
+          "bytes": 9568504,
+          "format": "jsonl",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 1776,
+          "row_count_basis": "nonblank JSONL records",
+          "sha256": "77748a7585fd671c15f474adff97773b301b364ee7be6740a1d55d2fee54770c",
+          "source_path": "runs/e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1/interventions.jsonl"
+        },
+        {
+          "array_count": 2,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 36864,
+              "name": "activations",
+              "shape": [
+                24,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 147456
+            },
+            {
+              "dtype": "float32",
+              "elements": 1206168,
+              "name": "logits",
+              "shape": [
+                24,
+                50257
+              ],
+              "uncompressed_bytes": 4824672
+            }
+          ],
+          "bytes": 3984508,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 24,
+          "row_count_basis": "target prompt records shared by activations and logits",
+          "sha256": "b60089c807ad265cd2334aa09ff5a779ebed654c1e6f7616358cd061927c5a76",
+          "source_path": "runs/e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1/target_baselines.npz",
+          "stored_vector_row_count": 72
+        },
+        {
+          "array_count": 3,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 245760,
+              "name": "emoji",
+              "shape": [
+                10,
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 983040
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 24576,
+              "name": "neutral",
+              "shape": [
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 98304
+            }
+          ],
+          "bytes": 1005017,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 176,
+          "row_count_basis": "source forwards: emoji conditions times wrappers plus neutral wrappers",
+          "sha256": "397d1f8f8ac19d5b58d27b2624ec29d9c20709b53ab597edf5dbf78d98e470e0",
+          "source_path": "runs/e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1/source_activations.npz",
+          "stored_vector_row_count": 352
+        },
+        {
+          "array_count": 10,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_101",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_211",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_307",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            }
+          ],
+          "bytes": 362250,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 66,
+          "row_count_basis": "intervention direction vectors across seeds, conditions, and layers",
+          "sha256": "c4b27af69508f0d509861cf8a5301834f6b376f43346099995ef47f4469cf6f5",
+          "source_path": "runs/e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1/directions.npz",
+          "stored_vector_row_count": 126
+        }
+      ],
+      "planned_forward_calls": 1976,
+      "public_directory": "artifacts/emoji_family_exploratory_v1/runs/sky",
+      "role": "sky",
+      "role_binding": {
+        "config_path": "configs/e1_sky_moon_mlx.yaml",
+        "config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+        "panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+        "panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+        "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+        "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "role": "sky",
+        "source_path": "data/wrappers/source_wrappers.jsonl",
+        "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "target_path": "data/targets/prestage_targets.jsonl",
+        "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "run_name": "e1-sky-token-isomorphic-exploratory-mlx",
+      "source_run_path": "runs/e1-sky-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--39a274120fa8e6a1"
+    },
+    {
+      "included_file_count": 15,
+      "included_files": [
+        {
+          "bytes": 1893,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/capabilities.json",
+          "row_count": null,
+          "sha256": "2ebd93f46878b969268cc2f8d3ee8d7c075d5763d429830e07e6165200145234"
+        },
+        {
+          "bytes": 1014,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/cross_seed_fingerprint_summary.jsonl",
+          "row_count": 2,
+          "sha256": "b79618ccf972568ad9930fd2b20624aef182c3118de884e54b30adec24a6b418"
+        },
+        {
+          "bytes": 508,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/direction_replicates.json",
+          "row_count": null,
+          "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+        },
+        {
+          "bytes": 6904,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/fingerprint_summary.jsonl",
+          "row_count": 6,
+          "sha256": "0926147a6db6c8ec1ac1c6178cc8b1ccf2c75eb64b30639baff29bd22d3bd96a"
+        },
+        {
+          "bytes": 569,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/plan.json",
+          "row_count": null,
+          "sha256": "4e5ee5692d43a3283553fe7f49dcdf48eacb4a0c5e6665dd422ca317526a1e3c"
+        },
+        {
+          "bytes": 10981,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/receipt.json",
+          "row_count": null,
+          "sha256": "e196aee3945be278f3484dfb38ab4d8f998b88fa0892329907012cf890c6d18f"
+        },
+        {
+          "bytes": 4832,
+          "format": "markdown",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/report.md",
+          "row_count": null,
+          "sha256": "631dd4ad469759ddbf793727da2849abdaa2ce9803ddcbcd9ad0613021093574"
+        },
+        {
+          "bytes": 2208,
+          "format": "yaml",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/resolved_config.yaml",
+          "row_count": null,
+          "sha256": "befb18b96256ef90d5c2c8c74fcf3a31b58585ca22336fb33c9d3bdb56b60fef"
+        },
+        {
+          "bytes": 3138,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/resolved_inputs.json",
+          "row_count": null,
+          "sha256": "e02a2e20fac6a323f93dc46ed42c599ae4bf0ee39d2459f9d04d6c189a763be4"
+        },
+        {
+          "bytes": 6781,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/scalar_balance_summary.jsonl",
+          "row_count": 12,
+          "sha256": "75be99e6f6735c95bc3a93ee1481946b4d7f4bb7ea12d5686cfa878d1ec449e9"
+        },
+        {
+          "bytes": 4882,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/source_item_metrics.jsonl",
+          "row_count": 20,
+          "sha256": "4c4d44f64625b66da2fb8ec02de4a44014fbec1ecd640bdc6d4f3c4fffa32d3c"
+        },
+        {
+          "bytes": 4268,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/source_layer_metrics.jsonl",
+          "row_count": 2,
+          "sha256": "23f4379d755d453413f0c12f161375fed0c2f566ef7ba8ce7d8647d4b87799bf"
+        },
+        {
+          "bytes": 3731,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/summary.json",
+          "row_count": null,
+          "sha256": "17cc9dcfa8ed5a4e1475cccb7c8d83aafc6fc2525f72dcd51502ea50e8006f7d"
+        },
+        {
+          "bytes": 4730,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/target_baselines.jsonl",
+          "row_count": 24,
+          "sha256": "04ba50d9d4555587e02ddb192c4180ddd77b2d926b17214a2caae16e98261123"
+        },
+        {
+          "bytes": 34813,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/food/tokenization.jsonl",
+          "row_count": 11,
+          "sha256": "ac7c2a6ed5f07631e126facfb88a839bc1a9500a464aeb871acbbffb613ec80d"
+        }
+      ],
+      "intervention_row_count": 1776,
+      "omitted_raw_file_count": 4,
+      "omitted_raw_files": [
+        {
+          "bytes": 9567336,
+          "format": "jsonl",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 1776,
+          "row_count_basis": "nonblank JSONL records",
+          "sha256": "b30681db2743530326f5d362f1420741ad1bb9c636025b3e47877c48e90a2dcd",
+          "source_path": "runs/e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540/interventions.jsonl"
+        },
+        {
+          "array_count": 2,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 36864,
+              "name": "activations",
+              "shape": [
+                24,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 147456
+            },
+            {
+              "dtype": "float32",
+              "elements": 1206168,
+              "name": "logits",
+              "shape": [
+                24,
+                50257
+              ],
+              "uncompressed_bytes": 4824672
+            }
+          ],
+          "bytes": 3984508,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 24,
+          "row_count_basis": "target prompt records shared by activations and logits",
+          "sha256": "b60089c807ad265cd2334aa09ff5a779ebed654c1e6f7616358cd061927c5a76",
+          "source_path": "runs/e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540/target_baselines.npz",
+          "stored_vector_row_count": 72
+        },
+        {
+          "array_count": 3,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 245760,
+              "name": "emoji",
+              "shape": [
+                10,
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 983040
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 24576,
+              "name": "neutral",
+              "shape": [
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 98304
+            }
+          ],
+          "bytes": 1005199,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 176,
+          "row_count_basis": "source forwards: emoji conditions times wrappers plus neutral wrappers",
+          "sha256": "277891d563b2c13daf3ad1f99a3331634f1f09458a012fc697148463eb2e092a",
+          "source_path": "runs/e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540/source_activations.npz",
+          "stored_vector_row_count": 352
+        },
+        {
+          "array_count": 10,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_101",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_211",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_307",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            }
+          ],
+          "bytes": 362312,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 66,
+          "row_count_basis": "intervention direction vectors across seeds, conditions, and layers",
+          "sha256": "ab9b0b59638a4ae47feb158d776bf460e3ba8f9c5e6d3f68cd5a59577d1ecee2",
+          "source_path": "runs/e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540/directions.npz",
+          "stored_vector_row_count": 126
+        }
+      ],
+      "planned_forward_calls": 1976,
+      "public_directory": "artifacts/emoji_family_exploratory_v1/runs/food",
+      "role": "food",
+      "role_binding": {
+        "config_path": "configs/e1_food_mlx.yaml",
+        "config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+        "panel_path": "data/emoji_panels/e1_food.yaml",
+        "panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+        "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+        "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "role": "food",
+        "source_path": "data/wrappers/source_wrappers.jsonl",
+        "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "target_path": "data/targets/prestage_targets.jsonl",
+        "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "run_name": "e1-food-token-isomorphic-exploratory-mlx",
+      "source_run_path": "runs/e1-food-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--ec228b7a9eb2d540"
+    },
+    {
+      "included_file_count": 15,
+      "included_files": [
+        {
+          "bytes": 1893,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/capabilities.json",
+          "row_count": null,
+          "sha256": "d6dd99a8c57bc7f96c99ef2d8baec51355ae94aa2398f2198762ceda8ef60154"
+        },
+        {
+          "bytes": 1015,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/cross_seed_fingerprint_summary.jsonl",
+          "row_count": 2,
+          "sha256": "026095f42d64d9347c2112fa7e7680469bd7dd16e5ab399ecf08b59cc5ec94ba"
+        },
+        {
+          "bytes": 508,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/direction_replicates.json",
+          "row_count": null,
+          "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+        },
+        {
+          "bytes": 6905,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/fingerprint_summary.jsonl",
+          "row_count": 6,
+          "sha256": "281867db574d6048450c035746d6c40979500eb815420b1bf81e7799627d71f0"
+        },
+        {
+          "bytes": 569,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/plan.json",
+          "row_count": null,
+          "sha256": "4e5ee5692d43a3283553fe7f49dcdf48eacb4a0c5e6665dd422ca317526a1e3c"
+        },
+        {
+          "bytes": 10993,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/receipt.json",
+          "row_count": null,
+          "sha256": "0a803f2e1b49e853182dc5a2c23f98cbd60d16f6ca58998e85d7c209833f34f5"
+        },
+        {
+          "bytes": 4836,
+          "format": "markdown",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/report.md",
+          "row_count": null,
+          "sha256": "07955dc2098789eba199190a8d62e65ec429bd19778f473f4d76f218cc6f23d9"
+        },
+        {
+          "bytes": 2214,
+          "format": "yaml",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/resolved_config.yaml",
+          "row_count": null,
+          "sha256": "694b47d324b610e4880ff3696134ca6bf1f27bdb5146f26ce6ed5f77f10e1c36"
+        },
+        {
+          "bytes": 3168,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/resolved_inputs.json",
+          "row_count": null,
+          "sha256": "e7fdd94ce856b765ecb0978c81199456d3ae046471dff9174bf685158f635021"
+        },
+        {
+          "bytes": 6780,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/scalar_balance_summary.jsonl",
+          "row_count": 12,
+          "sha256": "7c1c09d7ae5d6f79356ddedc23a508d9ad73a3c406ff0f04eeaf1cf12f8cf7e4"
+        },
+        {
+          "bytes": 4944,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/source_item_metrics.jsonl",
+          "row_count": 20,
+          "sha256": "f381a2405d9dc3c808c108400ae1aa07358b513a72a3699c632508a508fd5af4"
+        },
+        {
+          "bytes": 4272,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/source_layer_metrics.jsonl",
+          "row_count": 2,
+          "sha256": "7f30fb82332e52bd8e4372a6add0402679ed438242ec38e61f877560de510f2b"
+        },
+        {
+          "bytes": 3731,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/summary.json",
+          "row_count": null,
+          "sha256": "b3ab351fd31e63d740586385e0c9bfb2b9fdbe73d943919e6f8dda06226c5f49"
+        },
+        {
+          "bytes": 4729,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/target_baselines.jsonl",
+          "row_count": 24,
+          "sha256": "7d41d029f327aab1319e9755497901634bb8c6939289a1d0f76b4466f6ff094c"
+        },
+        {
+          "bytes": 34834,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/animals/tokenization.jsonl",
+          "row_count": 11,
+          "sha256": "2b3a0a5b6fafd88e3e7fba19ce69d8e9cf64a522bdfd7c09900b7c15dbb3ba7b"
+        }
+      ],
+      "intervention_row_count": 1776,
+      "omitted_raw_file_count": 4,
+      "omitted_raw_files": [
+        {
+          "bytes": 9573524,
+          "format": "jsonl",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 1776,
+          "row_count_basis": "nonblank JSONL records",
+          "sha256": "dfcb7a3100076874f5538a3227a5f0ced15136a38891e103beb28cc074597064",
+          "source_path": "runs/e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1/interventions.jsonl"
+        },
+        {
+          "array_count": 2,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 36864,
+              "name": "activations",
+              "shape": [
+                24,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 147456
+            },
+            {
+              "dtype": "float32",
+              "elements": 1206168,
+              "name": "logits",
+              "shape": [
+                24,
+                50257
+              ],
+              "uncompressed_bytes": 4824672
+            }
+          ],
+          "bytes": 3984508,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 24,
+          "row_count_basis": "target prompt records shared by activations and logits",
+          "sha256": "b60089c807ad265cd2334aa09ff5a779ebed654c1e6f7616358cd061927c5a76",
+          "source_path": "runs/e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1/target_baselines.npz",
+          "stored_vector_row_count": 72
+        },
+        {
+          "array_count": 3,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 245760,
+              "name": "emoji",
+              "shape": [
+                10,
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 983040
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 24576,
+              "name": "neutral",
+              "shape": [
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 98304
+            }
+          ],
+          "bytes": 1005108,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 176,
+          "row_count_basis": "source forwards: emoji conditions times wrappers plus neutral wrappers",
+          "sha256": "c7ffce0f602a3895f42a979f787c68139262777ed05a667befba24b383ef3be3",
+          "source_path": "runs/e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1/source_activations.npz",
+          "stored_vector_row_count": 352
+        },
+        {
+          "array_count": 10,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_101",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_211",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_307",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            }
+          ],
+          "bytes": 362372,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 66,
+          "row_count_basis": "intervention direction vectors across seeds, conditions, and layers",
+          "sha256": "42270933b3a531739e761593fceb29187e07c9482c204954bb1f1d36667cec34",
+          "source_path": "runs/e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1/directions.npz",
+          "stored_vector_row_count": 126
+        }
+      ],
+      "planned_forward_calls": 1976,
+      "public_directory": "artifacts/emoji_family_exploratory_v1/runs/animals",
+      "role": "animals",
+      "role_binding": {
+        "config_path": "configs/e1_animals_mlx.yaml",
+        "config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+        "panel_path": "data/emoji_panels/e1_animals.yaml",
+        "panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+        "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+        "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "role": "animals",
+        "source_path": "data/wrappers/source_wrappers.jsonl",
+        "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "target_path": "data/targets/prestage_targets.jsonl",
+        "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "run_name": "e1-animals-token-isomorphic-exploratory-mlx",
+      "source_run_path": "runs/e1-animals-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--c1872402b746bcc1"
+    },
+    {
+      "included_file_count": 15,
+      "included_files": [
+        {
+          "bytes": 1893,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/capabilities.json",
+          "row_count": null,
+          "sha256": "d58a0160edcd27b16021bb6f35f861c3450fbee91be3dff89bc064cee405e209"
+        },
+        {
+          "bytes": 1014,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/cross_seed_fingerprint_summary.jsonl",
+          "row_count": 2,
+          "sha256": "048c6e6599bdd05de12bfce15ecbb2c173dd71c3da6a31c8676ca59b84d845f9"
+        },
+        {
+          "bytes": 508,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/direction_replicates.json",
+          "row_count": null,
+          "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+        },
+        {
+          "bytes": 6904,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/fingerprint_summary.jsonl",
+          "row_count": 6,
+          "sha256": "a36a94800f5b25f931e1b9b4f93ec68fb944d8060c706461aaae3b2d6022a04d"
+        },
+        {
+          "bytes": 569,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/plan.json",
+          "row_count": null,
+          "sha256": "4e5ee5692d43a3283553fe7f49dcdf48eacb4a0c5e6665dd422ca317526a1e3c"
+        },
+        {
+          "bytes": 11001,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/receipt.json",
+          "row_count": null,
+          "sha256": "8ead4aa7f3ff0657581357aebd4399a5773b3cdb9b723ca6e5b16fa5669d7140"
+        },
+        {
+          "bytes": 4837,
+          "format": "markdown",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/report.md",
+          "row_count": null,
+          "sha256": "040473f484c5d561967f8462f740eae48e0618a765ac347c3930a489e392b8dc"
+        },
+        {
+          "bytes": 2218,
+          "format": "yaml",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/resolved_config.yaml",
+          "row_count": null,
+          "sha256": "83f2fedd6703a4ad81750d065361593743396315f4f4bf21e2e5fe4fbe308de2"
+        },
+        {
+          "bytes": 3275,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/resolved_inputs.json",
+          "row_count": null,
+          "sha256": "eccb32fb4441beeb6e68fcec350a9a6defd75fb3b79c988948afcf481595735e"
+        },
+        {
+          "bytes": 6773,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/scalar_balance_summary.jsonl",
+          "row_count": 12,
+          "sha256": "745437765cb7e7c737f84cbd32fbd9fbbc64b36c40218e11c28e95e292c8ce22"
+        },
+        {
+          "bytes": 4982,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/source_item_metrics.jsonl",
+          "row_count": 20,
+          "sha256": "4dcbff87974ccbd9e291d60be5bcb0496a450b3577f2bda3ea2ba0161558f055"
+        },
+        {
+          "bytes": 4289,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/source_layer_metrics.jsonl",
+          "row_count": 2,
+          "sha256": "00c9defab880b1636e0f0586ea627a7da46b8d0a4603b0559b9e7335ad5c22f9"
+        },
+        {
+          "bytes": 3731,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/summary.json",
+          "row_count": null,
+          "sha256": "cf4fb64260531e4c417de9d7ee3ac3f86c5b844b09a1bfb1dd923da44b3c9b26"
+        },
+        {
+          "bytes": 4730,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/target_baselines.jsonl",
+          "row_count": 24,
+          "sha256": "dbcba89bc1381f4b2213381dc6d535a15ec3e772341b03305c0f57a1541cae3d"
+        },
+        {
+          "bytes": 34941,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/transport/tokenization.jsonl",
+          "row_count": 11,
+          "sha256": "e1e773a9545cbe3232070bb0edcc6d029dbf4c5b4e9db15ca5f030cf6a0c18b0"
+        }
+      ],
+      "intervention_row_count": 1776,
+      "omitted_raw_file_count": 4,
+      "omitted_raw_files": [
+        {
+          "bytes": 9576092,
+          "format": "jsonl",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 1776,
+          "row_count_basis": "nonblank JSONL records",
+          "sha256": "d3c9aea93b9eed38e24159a05c7616f3c3093ca5a02bb0b059ee762b611e7340",
+          "source_path": "runs/e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d/interventions.jsonl"
+        },
+        {
+          "array_count": 2,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 36864,
+              "name": "activations",
+              "shape": [
+                24,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 147456
+            },
+            {
+              "dtype": "float32",
+              "elements": 1206168,
+              "name": "logits",
+              "shape": [
+                24,
+                50257
+              ],
+              "uncompressed_bytes": 4824672
+            }
+          ],
+          "bytes": 3984508,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 24,
+          "row_count_basis": "target prompt records shared by activations and logits",
+          "sha256": "b60089c807ad265cd2334aa09ff5a779ebed654c1e6f7616358cd061927c5a76",
+          "source_path": "runs/e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d/target_baselines.npz",
+          "stored_vector_row_count": 72
+        },
+        {
+          "array_count": 3,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 245760,
+              "name": "emoji",
+              "shape": [
+                10,
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 983040
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 24576,
+              "name": "neutral",
+              "shape": [
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 98304
+            }
+          ],
+          "bytes": 1005074,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 176,
+          "row_count_basis": "source forwards: emoji conditions times wrappers plus neutral wrappers",
+          "sha256": "1c1c8d94b26532ab59dd4749167cc10f4c160a97bbb67c96d48b8a79819f3e23",
+          "source_path": "runs/e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d/source_activations.npz",
+          "stored_vector_row_count": 352
+        },
+        {
+          "array_count": 10,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_101",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_211",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_307",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            }
+          ],
+          "bytes": 362233,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 66,
+          "row_count_basis": "intervention direction vectors across seeds, conditions, and layers",
+          "sha256": "ba42f42c788e50732b33943a8706245ba5c0601d5f4ba2717e4b215932e74089",
+          "source_path": "runs/e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d/directions.npz",
+          "stored_vector_row_count": 126
+        }
+      ],
+      "planned_forward_calls": 1976,
+      "public_directory": "artifacts/emoji_family_exploratory_v1/runs/transport",
+      "role": "transport",
+      "role_binding": {
+        "config_path": "configs/e1_transport_mlx.yaml",
+        "config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+        "panel_path": "data/emoji_panels/e1_transport.yaml",
+        "panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+        "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+        "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "role": "transport",
+        "source_path": "data/wrappers/source_wrappers.jsonl",
+        "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "target_path": "data/targets/prestage_targets.jsonl",
+        "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "run_name": "e1-transport-token-isomorphic-exploratory-mlx",
+      "source_run_path": "runs/e1-transport-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--afdbe7e855f85a8d"
+    },
+    {
+      "included_file_count": 15,
+      "included_files": [
+        {
+          "bytes": 1893,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/capabilities.json",
+          "row_count": null,
+          "sha256": "9675650bdd5a81987f93d391802f44f226a8ed8964ddbf3a89097327a53b3110"
+        },
+        {
+          "bytes": 1014,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/cross_seed_fingerprint_summary.jsonl",
+          "row_count": 2,
+          "sha256": "db086288a68af8c04004158e61b20dba42397fc76b6511193bfbe8633df2d973"
+        },
+        {
+          "bytes": 508,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/direction_replicates.json",
+          "row_count": null,
+          "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+        },
+        {
+          "bytes": 6904,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/fingerprint_summary.jsonl",
+          "row_count": 6,
+          "sha256": "afca8c13aa69c8f24793d1e335c79e93bb7eb894574c9d9c3659d7f018f0004f"
+        },
+        {
+          "bytes": 569,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/plan.json",
+          "row_count": null,
+          "sha256": "4e5ee5692d43a3283553fe7f49dcdf48eacb4a0c5e6665dd422ca317526a1e3c"
+        },
+        {
+          "bytes": 10989,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/receipt.json",
+          "row_count": null,
+          "sha256": "3d144ca93c5450734e16bd8552527c16609888becfaa9e23389fb8f41e698ab5"
+        },
+        {
+          "bytes": 4834,
+          "format": "markdown",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/report.md",
+          "row_count": null,
+          "sha256": "3805e8c80b7f99238e579b37b207c87834acf736015c5900bd458a4786ff0f71"
+        },
+        {
+          "bytes": 2212,
+          "format": "yaml",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/resolved_config.yaml",
+          "row_count": null,
+          "sha256": "0986bde5fd152fecc21dc799f51b7858460d7171bc01dcd73e51902d57cc97de"
+        },
+        {
+          "bytes": 3237,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/resolved_inputs.json",
+          "row_count": null,
+          "sha256": "9eafc62e5c2c8708643e9fd0d48e8210b2064b205c89aff6ccfbf14194966a4c"
+        },
+        {
+          "bytes": 6777,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/scalar_balance_summary.jsonl",
+          "row_count": 12,
+          "sha256": "a5c8ffc1824c80e40d2f350447030b503a145faf5ba975a62a3070955645e302"
+        },
+        {
+          "bytes": 4923,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/source_item_metrics.jsonl",
+          "row_count": 20,
+          "sha256": "60345f8bdeae20913fa865650581c63fa293b4913b5e713948aa92f1121502c0"
+        },
+        {
+          "bytes": 4306,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/source_layer_metrics.jsonl",
+          "row_count": 2,
+          "sha256": "1ec7cefb8d505abce66c1650e07c85abde11ad73fc356501fb095db81ec55866"
+        },
+        {
+          "bytes": 3731,
+          "format": "json",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/summary.json",
+          "row_count": null,
+          "sha256": "9cbe4028d6d0efed37512257cbc1b72e76f63618e9617903769107a856b0ba4c"
+        },
+        {
+          "bytes": 4726,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/target_baselines.jsonl",
+          "row_count": 24,
+          "sha256": "5e5892a746ae1eaba3755aba0ed8d093572c8b0c9eed08767099e8cbd60b79d0"
+        },
+        {
+          "bytes": 34733,
+          "format": "jsonl",
+          "path": "artifacts/emoji_family_exploratory_v1/runs/social/tokenization.jsonl",
+          "row_count": 11,
+          "sha256": "147e5e13773f68b4c21a5b56ae48e32f018494e523ce86af95b39b67f1e9a38b"
+        }
+      ],
+      "intervention_row_count": 1776,
+      "omitted_raw_file_count": 4,
+      "omitted_raw_files": [
+        {
+          "bytes": 9573209,
+          "format": "jsonl",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 1776,
+          "row_count_basis": "nonblank JSONL records",
+          "sha256": "e17368a22b7d97960665d0878aa0a6d885ffa3f8f93be2cea632b3548823f990",
+          "source_path": "runs/e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5/interventions.jsonl"
+        },
+        {
+          "array_count": 2,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 36864,
+              "name": "activations",
+              "shape": [
+                24,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 147456
+            },
+            {
+              "dtype": "float32",
+              "elements": 1206168,
+              "name": "logits",
+              "shape": [
+                24,
+                50257
+              ],
+              "uncompressed_bytes": 4824672
+            }
+          ],
+          "bytes": 3984508,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 24,
+          "row_count_basis": "target prompt records shared by activations and logits",
+          "sha256": "b60089c807ad265cd2334aa09ff5a779ebed654c1e6f7616358cd061927c5a76",
+          "source_path": "runs/e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5/target_baselines.npz",
+          "stored_vector_row_count": 72
+        },
+        {
+          "array_count": 3,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 245760,
+              "name": "emoji",
+              "shape": [
+                10,
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 983040
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 24576,
+              "name": "neutral",
+              "shape": [
+                16,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 98304
+            }
+          ],
+          "bytes": 1005133,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 176,
+          "row_count_basis": "source forwards: emoji conditions times wrappers plus neutral wrappers",
+          "sha256": "1075f8e7c7160646f1eeeb28919153e25a4def6a60054983b23cb57f03e6a300",
+          "source_path": "runs/e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5/source_activations.npz",
+          "stored_vector_row_count": 352
+        },
+        {
+          "array_count": 10,
+          "arrays": [
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "directions_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_101",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_211",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "float32",
+              "elements": 1536,
+              "name": "generic_seed_307",
+              "shape": [
+                2,
+                768
+              ],
+              "uncompressed_bytes": 6144
+            },
+            {
+              "dtype": "int64",
+              "elements": 2,
+              "name": "layers",
+              "shape": [
+                2
+              ],
+              "uncompressed_bytes": 16
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_101",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_211",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            },
+            {
+              "dtype": "float32",
+              "elements": 15360,
+              "name": "panel_means_seed_307",
+              "shape": [
+                10,
+                2,
+                768
+              ],
+              "uncompressed_bytes": 61440
+            }
+          ],
+          "bytes": 362231,
+          "format": "npz",
+          "omitted_reason": "large_raw_replay_payload",
+          "public_copy_path": null,
+          "row_count": 66,
+          "row_count_basis": "intervention direction vectors across seeds, conditions, and layers",
+          "sha256": "e4a260ad89e230b8b455e535b89b21765e6aa7975cd0e2949a5fb18d6cfdb4ac",
+          "source_path": "runs/e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5/directions.npz",
+          "stored_vector_row_count": 126
+        }
+      ],
+      "planned_forward_calls": 1976,
+      "public_directory": "artifacts/emoji_family_exploratory_v1/runs/social",
+      "role": "social",
+      "role_binding": {
+        "config_path": "configs/e1_social_mlx.yaml",
+        "config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+        "panel_path": "data/emoji_panels/e1_social.yaml",
+        "panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+        "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+        "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "role": "social",
+        "source_path": "data/wrappers/source_wrappers.jsonl",
+        "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "target_path": "data/targets/prestage_targets.jsonl",
+        "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "run_name": "e1-social-token-isomorphic-exploratory-mlx",
+      "source_run_path": "runs/e1-social-token-isomorphic-exploratory-mlx--mlx--openai-community-gpt2--1a535759124aaaf5"
+    }
+  ],
+  "schema_version": 1,
+  "status": "complete_validated_public_evidence",
+  "tooling": {
+    "builder_path": "scripts/build_emoji_family_exploratory_v1_bundle.py",
+    "builder_sha256": "94e3e35debfc10db0423866f5beaa647544d88f05b957a8f4c5fb8ce60c15773",
+    "validator_path": "scripts/validate_emoji_family_exploratory_v1_bundle.py",
+    "validator_sha256": "541b13742a9809bf50f78ee80a8f1878287acebbb82b2447ddb9d89d321f06d5"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "backend": "mlx",
+  "capabilities": {
+    "activation_cache": true,
+    "activation_patch": true,
+    "attention_weights": false,
+    "canonical_hooks": false,
+    "deterministic_forward": true,
+    "forward_logits": true,
+    "generate": false,
+    "hidden_states": true,
+    "logprobs": false,
+    "sae_analysis": false,
+    "server_metrics": false,
+    "tokenize": true
+  },
+  "metadata": {
+    "block_path": "model.h",
+    "d_model": 768,
+    "loader_metadata": {
+      "load_latency_ms": 4557.735791999221,
+      "local_files_only_requested": true,
+      "mlx_lm_version": "0.31.2",
+      "mlx_version": "0.31.1",
+      "model_type": "gpt2",
+      "quantization": null
+    },
+    "num_layers": 12,
+    "parity_validation": {
+      "implementation_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d",
+      "model_identity_sha256": "b41e06b3ca7fce8e79ed12a5275a3c5b0b774856d8e00bb3b7d6a1ce74e67cf6",
+      "receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "receipt_status": "validated_mlx_selected",
+      "validated": true,
+      "validated_intervention_layers": [
+        2,
+        4,
+        7,
+        9
+      ],
+      "validated_prompt_token_counts": [
+        3,
+        10,
+        9,
+        22
+      ],
+      "validated_site": "resid_post"
+    },
+    "supported_sites": [
+      "resid_post"
+    ]
+  },
+  "model": "openai-community/gpt2",
+  "notes": {
+    "concurrency": "Selected decoder blocks are temporarily proxied; one backend instance must not execute concurrent forward calls.",
+    "hook_semantics": "resid_post is the edited decoder-block output. Other sites are rejected until model-family parity receipts exist.",
+    "validation_scope": "Activation patching is advertised only after a pinned same-model receipt passes tokenizer, activation, logit, zero-hook, intervention, and speed gates."
+  }
+}

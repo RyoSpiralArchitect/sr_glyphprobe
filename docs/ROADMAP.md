@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -78,9 +78,8 @@ frozen inputs and account for data-dependent prototype resampling.
 
 ### Exploratory side track E1 — Token-isomorphic emoji-family screen
 
-Status: the scientific design is specified; the executable freeze and all E1
-model runs remain pending. No E1 activation outcome has been inspected or
-claimed.
+Status: complete as a bounded descriptive exploration. The public freeze at
+commit `0cd4e11610e42253ead9ce9aff9f0b02474a0558` preceded all five MLX runs.
 
 - freeze five ten-code-point blocks: `sky` (`U+1F311`–`U+1F31A`), `food`
   (`U+1F351`–`U+1F35A`), `animals` (`U+1F411`–`U+1F41A`), `transport`
@@ -93,27 +92,40 @@ claimed.
 - hold the run family to pinned GPT-2, MLX FP32, `resid_post` layers 2 and 4,
   strength 0.05, seeds 101/211/307, two random directions per layer, and an
   enabled zero-hook check, with neutral-direction and sign-flip arms disabled;
-- make layer 2 the primary exploratory row and layer 4 the prespecified
-  secondary negative comparator;
+- layer 2 remained the primary exploratory row; the prespecified layer-4
+  negative comparator was not negative;
 - report the complete replicate-wise LOTO \(M_{f\leftarrow g}\) matrix, the
   within-row excess \(R_f\), and family-equal \(R_{\mathrm{global}}\), with
   data-dependent prototypes rebuilt inside 20,000 stratified target-bootstrap
   replicates and equal-target means as the primary descriptive aggregates;
-- publish every family and every null, negative, heterogeneous, failed, or
-  interrupted cell after freeze, without p-values, multiplicity decisions, or
-  status labels.
+- all five runs completed, producing 8,880 intervention rows with zero errors
+  and exact zero-hook activation/logit RMS of 0;
+- the equal-family global excess was 0.014752595564 at layer 2, with a 95%
+  descriptive interval of [0.002875238085, 0.027439243404], and 0.014887989201
+  at layer 4, with [0.003407563347, 0.019684351979];
+- all five family-specific intervals included zero at each layer;
+- the complete mean transfer matrix was broadly positive: its 25 cells ranged
+  from 0.395455 to 0.484915 at layer 2 and from 0.602564 to 0.681909 at layer 4;
+- 10/30 family × layer × seed cells did not exceed their random controls: all
+  five families at layer 2 seed 307 and all five at layer 4 seed 101;
+- publish every family and every null, negative, and heterogeneous cell without
+  p-values, multiplicity decisions, or confirmatory status labels.
 
 The [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) fixes the
-question, inputs, endpoints, stopping rule, and claim boundary. E1 can describe
-matched-slot recurrence under a controlled middle-token substitution, but not a
-semantic family effect, tokenization-independent property, causal mechanism, or
+question, inputs, endpoints, stopping rule, and claim boundary; the
+[E1 results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) publish the complete outcome.
+The broadly positive transfer matrix and small family-specific excess suggest
+that shared-token transfer dominates the residual within-family signal. E1 can
+describe matched-slot recurrence under a controlled middle-token substitution,
+but not a semantic family effect, tokenization-independent property,
+layer-specific effect, robust random-control superiority, causal mechanism, or
 cross-model regularity. It does not update Milestone 2, unseal C1, choose the
 Milestone 3 intervention, or satisfy a Phase I paper gate.
 
-Exit condition: a public commit binds the protocol pair to executable inputs and
-receipts, and the complete frozen grid plus descriptive analysis is published.
-Any hypothesis prompted by E1 requires a new public confirmatory protocol and a
-new untouched target bank that is neither P2 nor C1.
+Exit condition: met. The public bundle links the tokenizer-only preflight,
+complete descriptive analysis, five compact run directories, and a root
+manifest. Any hypothesis prompted by E1 requires a new public confirmatory
+protocol and a new untouched target bank that is neither P2 nor C1.
 
 ### Milestone 3 — Targeted causal localization
 

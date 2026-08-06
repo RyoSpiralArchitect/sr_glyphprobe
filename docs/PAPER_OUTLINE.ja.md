@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -40,6 +40,25 @@
 
 96次元で正だったのは、suffixが20 / 36セル、prefixが25 / 36セルである。これは事後的・記述的な診断であり、推論や同等性の解析ではない。低次元値は同じseedによる代数的な畳み込みで、独立した再実行でもseed感度でもない。
 
+## 現在のE1探索side result
+
+E1では、10 glyphからなる5 familyについて、第1・第3 GPT-2 tokenをfamily間で
+固定し、中間tokenだけを置換した。Family等重みのglobal specificityは、
+layer 2で0.014752595564（95%記述区間
+[0.002875238085, 0.027439243404]）、layer 4で0.014887989201
+（[0.003407563347, 0.019684351979]）だった。Family別区間は、両layerの
+5 familyすべてで0を含んだ。Transfer行列は広く正で、layer 2では
+0.395455〜0.484915、layer 4では0.602564〜0.681909だったが、
+family × layer × seedの30 cell中10 cellはrandom controlを上回らなかった。
+
+事前指定したlayer 4のnegative comparatorはnegativeにならなかった。
+したがって、許される解釈は、固定した中間token置換下で共有tokenに結び付く
+matched-slot反復が見られ、family固有の上乗せは小さかった、という範囲に
+限られる。意味上のfamily構造、tokenizer非依存性、layer固有性、random
+controlに対する頑健な優位性、因果性は主張しない。E1は探索済みtarget
+24件を再利用し、P2とC1を使っていない。Milestone 2の判定も論文gateも
+更新しない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -47,8 +66,12 @@
 3. **RQ3 — 対照との差:** その再現性は、同じノルムのランダム方向、一般絵文字方向、ラベル置換より高いか。
 4. **RQ4 — 条件依存性:** 効果はレイヤー、強度、ソース方向、ターゲット群、指定済みのトークン数・接頭構造matched controlsでどう変わるか。
 5. **RQ5 — 因果性:** 候補コンポーネントのアブレーションと復元で、指紋を選択的に消し、戻せるか。
+6. **RQ6 — 独立再現:** どの結果が、実行backend、tokenizer、model familyをまたいで再現するか。
+7. **RQ7 — 共有token間のtransfer:** トークン同型な探索panelで、matched-slot反復は中間token familyをまたいでどの程度移り、family内の残差的な上乗せはどの程度か。
 
-Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。RQ5が未成立なら、論文の射程はRQ1〜RQ4に限定する。
+Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。RQ5・RQ6が
+未成立なら、論文の中心命題はRQ1〜RQ4に限定する。RQ7に対するE1の答えは
+探索的・記述的なside resultとして扱い、確認命題や因果命題へ格上げしない。
 
 ## 予定する貢献
 
@@ -98,6 +121,7 @@ Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る�
 - ランダム方向、ゼロ、一般絵文字、符号反転、用量、ラベル置換
 - 確認段階のトークン数・パネル接頭構造matched controls。Iso-KLは未実施
 - 凍結済み主要評価量、target-cluster再標本化、Holm補正、prototype依存感度
+- E1のtoken-isomorphic panel、全family-pair transfer、replicate内でのLOTO prototype再構築。確認仮説familyとは分離する
 
 ### 5. Backend Validation
 
@@ -121,12 +145,16 @@ Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る�
 6. 用量反応と符号反転
 7. トークン数・接頭構造matched controlsと感度分析
 8. 因果実験を行った場合は、アブレーションと復元
+9. E1の全family-pair transfer行列、family固有の小さな超過、全family区間、random-controlの不均一性、成立しなかったlayer 4 negative comparator
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
 Milestone 2では、探索96次元のpaired median difference `+0.047427`を記述値として示し、48 / 32 / 24次元の`+0.040200 / +0.028907 / +0.048591`は同一seedの代数的foldであってseed感度ではないと明記する。「何%を説明したか」は報告しない。
 
 確認表には、layer 2の頑健判定とlayer 4の未解決判定を、主要ソースと独立ソースの両方について並べる。V1のCLI順序によるrole bindingと別監査、固定prototype bootstrapと事後prototype再構築感度を分けて示す。Panel Cの`🟥`、完了した末尾token診断と接頭構造均一化診断も、事後的・記述的な境界とともに省略せず示す。
+
+E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果候補を
+強める根拠には使わない。
 
 ### 7. Discussion
 
@@ -135,6 +163,7 @@ Milestone 2では、探索96次元のpaired median difference `+0.047427`を記�
 - トークン化、プロンプト分布、モデル固有性の可能性
 - 因果実験の成否に応じた解釈
 - グリフを使った制御パネルの利点と限界
+- E1で見えた広いfamily間transferと小さなfamily固有超過を、共有token構造で説明できる範囲
 
 ### 8. Limitations
 
@@ -144,6 +173,7 @@ Milestone 2では、探索96次元のpaired median difference `+0.047427`を記�
 - ターゲットが設計された24件で、自然分布の無作為標本ではないこと
 - 中立グリフとのトークン長差
 - Milestone 2のmatched panelはtoken identityではなく、token countとパネル単位のprefix構造を揃えた対照であること
+- E1ではfamily identityと中間GPT-2 tokenが完全に交絡し、第1・第3 tokenを共有しているため、意味上またはtokenizer非依存のfamily表現を同定できないこと
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
 - 置換p値の有限下限と多重性
@@ -156,6 +186,7 @@ Milestone 2では、探索96次元のpaired median difference `+0.047427`を記�
 - バックエンドパリティレシート
 - 標準実験レシートとアーティファクト整合性監査
 - 公開集約データとハッシュ付きマニフェスト
+- E1のtokenizer preflight、全記述解析、5つの軽量run bundle、root manifest
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -170,6 +201,7 @@ Milestone 2では、探索96次元のpaired median difference `+0.047427`を記�
 7. **Table 1:** 固定設定とバックエンドパリティ
 8. **Table 2:** 主要評価量、区間、正・非正セル
 9. **Table 3:** 追試モデルと成立・不成立範囲
+10. **Figure / Supplement:** E1のlayer別5 × 5 transfer行列。確認結果とは明確に分ける
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -182,6 +214,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - pre-causal activation screening
 - condition-dependent / heterogeneous effect
 - robust to the prespecified token-count and token-prefix matched controls at layer 2 under frozen v1
+- exploratory matched-slot recurrence under a fixed middle-token family substitution
 
 ### 追加の証拠なしには使用しない
 
@@ -190,6 +223,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - circuit for color or shape
 - causal path
 - universal or model-independent effect
+- semantic emoji family, tokenizer-independent E1 effect, layer-specific E1 effect
 
 ## 残る論文ゲート
 
@@ -201,6 +235,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - 論文の表と図をversion管理したscriptから生成する。
 - 先入観のない再現性・主張境界レビューを行う。
 - 英語原稿と日本語公開概要の命題を一致させる。
+- E1の記述区間にp値、確認status、layer比較の推論を後付けしない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

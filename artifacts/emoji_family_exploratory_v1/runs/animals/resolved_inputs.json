@@ -1,0 +1,168 @@
+{
+  "panel": [
+    {
+      "factors": {
+        "codepoint": "U+1F411",
+        "family": "animals",
+        "matched_slot": "slot_00"
+      },
+      "glyph": "🐑",
+      "id": "animals_slot_00",
+      "labels": [
+        "sheep"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F412",
+        "family": "animals",
+        "matched_slot": "slot_01"
+      },
+      "glyph": "🐒",
+      "id": "animals_slot_01",
+      "labels": [
+        "monkey"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F413",
+        "family": "animals",
+        "matched_slot": "slot_02"
+      },
+      "glyph": "🐓",
+      "id": "animals_slot_02",
+      "labels": [
+        "rooster"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F414",
+        "family": "animals",
+        "matched_slot": "slot_03"
+      },
+      "glyph": "🐔",
+      "id": "animals_slot_03",
+      "labels": [
+        "chicken"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F415",
+        "family": "animals",
+        "matched_slot": "slot_04"
+      },
+      "glyph": "🐕",
+      "id": "animals_slot_04",
+      "labels": [
+        "dog"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F416",
+        "family": "animals",
+        "matched_slot": "slot_05"
+      },
+      "glyph": "🐖",
+      "id": "animals_slot_05",
+      "labels": [
+        "pig"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F417",
+        "family": "animals",
+        "matched_slot": "slot_06"
+      },
+      "glyph": "🐗",
+      "id": "animals_slot_06",
+      "labels": [
+        "boar"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F418",
+        "family": "animals",
+        "matched_slot": "slot_07"
+      },
+      "glyph": "🐘",
+      "id": "animals_slot_07",
+      "labels": [
+        "elephant"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F419",
+        "family": "animals",
+        "matched_slot": "slot_08"
+      },
+      "glyph": "🐙",
+      "id": "animals_slot_08",
+      "labels": [
+        "octopus"
+      ]
+    },
+    {
+      "factors": {
+        "codepoint": "U+1F41A",
+        "family": "animals",
+        "matched_slot": "slot_09"
+      },
+      "glyph": "🐚",
+      "id": "animals_slot_09",
+      "labels": [
+        "spiral_shell"
+      ]
+    }
+  ],
+  "target_ids": [
+    "cont_01",
+    "cont_02",
+    "cont_03",
+    "cont_04",
+    "fact_01",
+    "fact_02",
+    "fact_03",
+    "fact_04",
+    "reason_01",
+    "reason_02",
+    "reason_03",
+    "reason_04",
+    "proc_01",
+    "proc_02",
+    "proc_03",
+    "proc_04",
+    "class_01",
+    "class_02",
+    "class_03",
+    "class_04",
+    "plan_01",
+    "plan_02",
+    "plan_03",
+    "plan_04"
+  ],
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w02_bracket_continue",
+    "w03_pipe_next",
+    "w04_token_state",
+    "w05_begin_end",
+    "w06_binary_result",
+    "w07_symbol_following",
+    "w08_pair_q",
+    "w09_input_response",
+    "w10_sequence_continuation",
+    "w11_field_anchor",
+    "w12_list_next",
+    "w13_left_right",
+    "w14_codepoint_text",
+    "w15_observation_inference",
+    "w16_slot_completion"
+  ]
+}

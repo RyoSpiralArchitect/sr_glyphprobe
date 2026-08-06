@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -58,6 +58,34 @@ MLX は、同じモデル名だから採用したわけではありません。�
 実行時の来歴として、matched-null Aの最初のprocessは、マシン負荷が極端に高い最中、798行で外部から中断された。Sealを保ったresumeによって、重複・欠損・error・非ゼロのzero-hook RMSなしで14,208行の正確なgridを完了した。この事象は、モデルに関する証拠でも、一般化できる速度の主張でもない。
 
 正確な結果、解析上の留保、感度区間、エビデンスへのリンクは [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) にまとめた。この結果は前因果段階にあり、意味、機構、回路、因果経路、トークン化から独立したglyph効果を確立しない。
+
+### E1探索の現在地
+
+トークン同型な5つの絵文字familyを調べるE1は完了した。Family pair 25組の
+平均transfer値は広く正で、layer 2では0.395455〜0.484915、layer 4では
+0.602564〜0.681909だった。一方、family内で上乗せされたglobalな超過量は
+小さかった。
+
+| 指標 | Layer 2（primary exploratory） | Layer 4（事前指定したnegative comparator） |
+|---|---:|---:|
+| Family等重みのglobal specificity | 0.014752595564、95%記述区間[0.002875238085, 0.027439243404] | 0.014887989201、[0.003407563347, 0.019684351979] |
+| 0を含むfamily別区間 | 5 / 5 | 5 / 5 |
+| 平均transfer値25件の範囲 | 0.395455〜0.484915 | 0.602564〜0.681909 |
+
+この結果は、意図的に共通化したGPT-2の第1・第3 tokenによるtransferが
+支配的で、family固有の上乗せは小さいことを示唆する。意味上のfamily、
+tokenizer非依存性、layer固有性、因果性の証拠ではない。Random controlとの
+比較も不均一で、family × layer × seedの30 cell中10 cellが非正だった。
+内訳はlayer 2のseed 307で5 familyすべて、layer 4のseed 101で5 family
+すべてである。全8,880介入行はerror 0で完了し、zero-hookの
+activation/logit RMSは正確に0だった。
+
+E1が使ったのは、すでに探索済みのprestage target 24件だけである。P2とC1は
+使っておらず、Milestone 2の判定もPhase Iの論文gateも更新しない。全結果は
+[E1探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)、設計は
+[凍結済みプロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)、公開物は
+[E1 evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md)
+を参照してほしい。
 
 ## インストール
 
@@ -129,6 +157,9 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [v1 実験結果](docs/RESULTS_V1.ja.md) / [English](docs/RESULTS_V1.md)
 - [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) / [English](docs/MILESTONE2_RESULTS.md)
 - [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
+- [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md)
+- [E1 探索プロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
+- [再現性ガイド](docs/REPRODUCIBILITY.ja.md) / [English](docs/REPRODUCIBILITY.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
 - [公開研究ノート](docs/NOTE.ja.md) / [English](docs/NOTE.md)
@@ -137,7 +168,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
 
 ## ライセンスと引用
 

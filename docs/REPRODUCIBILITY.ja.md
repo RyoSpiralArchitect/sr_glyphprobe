@@ -2,8 +2,9 @@
 
 [English](REPRODUCIBILITY.md)
 
-このガイドは、公開した MLX validation と標準的な事前因果行列を再現するためのものである。
-異なる hardware で wall-clock time が同じになることは保証しない。
+このガイドでは、公開したMLX validation、標準的な事前因果行列、E1探索
+side trackの再現手順を示す。異なるhardwareでwall-clock timeが同じになる
+ことは保証しない。
 
 ## 1. 環境を準備する
 
@@ -19,8 +20,9 @@ python -m pytest
 
 このガイドのコマンドは、すべて repository checkout の root で実行する。
 
-公開版の test suite は 76 テストである。MLX の研究経路には、これに加えて以下の live モデル/
-バックエンド検証が必要である。決定論的な adapter test で代替しない。
+Test数はrevisionの更新に伴って変わる。検証したrevisionで、収集数と合格数を
+記録すること。MLXの研究経路には、これに加えて以下のlive model/backend
+検証が必要であり、決定論的なadapter testでは代替できない。
 
 ## 2. 固定した model revision を準備する
 
@@ -106,6 +108,61 @@ python scripts/build_public_artifact_bundle.py \
 builder は、local な POSIX/Windows 絶対 path または `file://` URI を含む text artifact の公開を拒否する。コンパクトな summary をコピーし、
 収録 file と省略した大容量 ledger/array の hash を含む manifest を生成する。省略対象の hash は local file の存在を結び付けるが、
 そのデータを復元可能にするわけではない。論文水準の公開では、完全な sealed run を別途 archive する。
+
+## 8. E1探索side trackを再現・検証する
+
+はじめにtokenizer-only preflightを再実行し、凍結済みreceiptと照合する。
+
+```bash
+python scripts/audit_e1_token_isomorphic_panels.py \
+  --output /tmp/e1-tokenization-audit.candidate.json
+```
+
+固定したGPT-2 snapshotを用意したうえで、5つのconfigを実行する。必要に応じて
+各runの前に`glyphprobe inspect`と`glyphprobe plan --load-model`も行う。
+
+```bash
+glyphprobe run -c configs/e1_sky_moon_mlx.yaml
+glyphprobe run -c configs/e1_food_mlx.yaml
+glyphprobe run -c configs/e1_animals_mlx.yaml
+glyphprobe run -c configs/e1_transport_mlx.yaml
+glyphprobe run -c configs/e1_social_mlx.yaml
+```
+
+Analyzerは、各runの科学的roleを、想定するconfig、panel、source、target、hashへ
+直接結び付ける。5つの完了済みsealed run directoryを渡し、まだ存在しない
+output directoryへ書き出す。
+
+```bash
+python scripts/analyze_emoji_family_exploratory_v1.py \
+  --sky-run path/to/sky-run \
+  --food-run path/to/food-run \
+  --animals-run path/to/animals-run \
+  --transport-run path/to/transport-run \
+  --social-run path/to/social-run \
+  --output-dir path/to/new-analysis-directory
+```
+
+最後に、凍結済みのlocal runと解析から軽量bundleを作り、別validatorで検査する。
+
+```bash
+python scripts/build_emoji_family_exploratory_v1_bundle.py
+python scripts/validate_emoji_family_exploratory_v1_bundle.py
+```
+
+Root manifestとは別に、公開payloadは82件である。内訳はtokenizer preflight
+1件、解析出力6件、5 run × 15件の軽量fileである。Validatorは、解析gridの
+240 / 960 / 10 / 40行、role binding、local absolute pathがないこと、
+P2/C1非アクセスの宣言を検査する。Hashで固定した公開receiptと
+summaryにはerror 0とexact zero hookが記録されているが、validator自身が
+この2 fieldを独立に再計算するわけではない。軽量run directoryには、raw
+intervention ledgerとmodel依存arrayを収録しない。省略fileはhashで記録するが、
+hashだけでは解析を再生成できない。完全なsealed local runを保存またはarchiveする。
+
+E1の区間は記述値である。再現しても、p値、確認的status、意味の証拠、
+tokenizer非依存の効果、因果結果へ変わるわけではない。
+[凍結済みプロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)と
+[E1探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)も参照してほしい。
 
 ## マシン固有の量
 

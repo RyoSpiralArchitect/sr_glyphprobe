@@ -2,8 +2,9 @@
 
 [Japanese / 日本語](REPRODUCIBILITY.ja.md)
 
-This guide reproduces the released MLX validation and standard pre-causal matrix.
-It does not promise identical wall-clock timing on different hardware.
+This guide reproduces the released MLX validation, standard pre-causal matrix,
+and E1 exploratory side track. It does not promise identical wall-clock timing
+on different hardware.
 
 ## 1. Prepare the environment
 
@@ -19,7 +20,8 @@ python -m pytest
 
 Run every command in this guide from the repository checkout root.
 
-The release test suite contains 76 tests. The MLX scientific path additionally
+The test count changes as the release grows. Record the collected and passing
+count from the exact revision you test. The MLX scientific path additionally
 requires the live model/backend validation below; deterministic adapter tests do
 not replace it.
 
@@ -123,6 +125,66 @@ path or `file://` URI, copies the compact summaries, and emits a manifest with h
 files and omitted large ledgers/arrays. Omission hashes attest local files but do
 not make them reconstructable; archive the full sealed run separately for a
 paper-grade release.
+
+## 8. Reproduce and validate the E1 exploratory side track
+
+First rerun the tokenizer-only preflight and compare its deterministic receipt
+with the frozen one:
+
+```bash
+python scripts/audit_e1_token_isomorphic_panels.py \
+  --output /tmp/e1-tokenization-audit.candidate.json
+```
+
+After making the pinned GPT-2 snapshot available, inspect, plan, and run each of
+the five frozen configurations:
+
+```bash
+glyphprobe run -c configs/e1_sky_moon_mlx.yaml
+glyphprobe run -c configs/e1_food_mlx.yaml
+glyphprobe run -c configs/e1_animals_mlx.yaml
+glyphprobe run -c configs/e1_transport_mlx.yaml
+glyphprobe run -c configs/e1_social_mlx.yaml
+```
+
+The analyzer binds every scientific role to its expected config, panel, source,
+target file, and hashes. Use five complete sealed run directories and a new,
+absent output directory:
+
+```bash
+python scripts/analyze_emoji_family_exploratory_v1.py \
+  --sky-run path/to/sky-run \
+  --food-run path/to/food-run \
+  --animals-run path/to/animals-run \
+  --transport-run path/to/transport-run \
+  --social-run path/to/social-run \
+  --output-dir path/to/new-analysis-directory
+```
+
+Build and independently validate the compact public bundle from the exact
+frozen local runs and analysis:
+
+```bash
+python scripts/build_emoji_family_exploratory_v1_bundle.py
+python scripts/validate_emoji_family_exploratory_v1_bundle.py
+```
+
+Separate from its root manifest, the published payload contains 82 hash-bound
+members: the tokenizer preflight, six analysis outputs, and 15 compact files for
+each of five runs.
+The validator checks the 240/960/10/40 analysis row grids, role bindings,
+absence of local absolute paths, and the declared non-access to P2 and C1. The
+hash-bound published receipts and summaries record zero errors and exact
+zero-hook behavior; those two fields are not independently recomputed by this
+validator. The compact run directories deliberately omit the raw intervention
+ledgers and model-dependent arrays. Their hashes document the omission, but the
+compact bundle alone cannot regenerate the analysis; keep or archive the
+complete sealed local runs.
+
+E1 intervals are descriptive. Reproduction does not turn them into p-values,
+confirmatory statuses, semantic evidence, tokenizer-independent effects, or a
+causal result. See the [frozen protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
+and [complete result](EMOJI_FAMILY_EXPLORATORY_RESULTS.md).
 
 ## Machine-specific quantities
 

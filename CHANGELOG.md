@@ -33,7 +33,19 @@
   their status and decision.
 - Validated the standard MLX matrix with 14,208 records, zero errors, 11/11
   readiness, and a separate 15/15 artifact audit with explicit caveats.
-- Expanded the suite to 76 passing tests.
+- Added frozen token-isomorphic E1 panels for five ten-emoji families, a
+  tokenizer-only preflight, five role-bound MLX configs, and a dependence-aware
+  descriptive analyzer that rebuilds LOTO prototypes inside each bootstrap.
+- Completed all five E1 runs: 8,880 intervention rows, zero errors, and exact
+  zero-hook activation/logit RMS of 0. The result showed broadly positive
+  cross-family transfer, small family-specific excess, and heterogeneous random
+  controls; it carries no p-value, confirmatory status, semantic, layer-specific,
+  tokenizer-independent, or causal claim.
+- Added a fail-closed E1 public-bundle builder and independent validator. The
+  validated manifest binds 82 public payload members, inventories 20 omitted raw files,
+  rejects local absolute paths, and records that P2 and C1 content was not used.
+- Expanded the test suite for Milestone 2, E1 preflight, analysis, publication,
+  and validation without hard-coding a revision-dependent test count.
 - Established paired English/Japanese public documentation and the Phase I goal
   of a reproducible, falsifiable English-language paper.
 

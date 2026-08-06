@@ -1,0 +1,23 @@
+{
+  "backend": "mlx",
+  "claim_boundary": "pre-causal-activation-screen",
+  "emoji_count": 10,
+  "emoji_intervention_calls": 1440,
+  "estimated_forward_calls": 1976,
+  "generic_emoji_control_calls": 0,
+  "iso_kl_calibration_calls_upper_bound": 0,
+  "iso_kl_evaluation_calls": 0,
+  "mode": "internal",
+  "model": "openai-community/gpt2",
+  "random_control_calls": 288,
+  "resolved_layers": [
+    2,
+    4
+  ],
+  "seed_count": 3,
+  "source_forward_calls": 176,
+  "target_baseline_calls": 24,
+  "target_count": 24,
+  "wrapper_count": 16,
+  "zero_hook_control_calls": 48
+}
