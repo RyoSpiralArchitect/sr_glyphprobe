@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "control_suite_id": "glyphprobe-m2-tokenization-controls-v1",
+  "selection_boundary": {
+    "allowed_inputs": [
+      "Unicode scalar identity, UTF-8 bytes, category, and assigned name",
+      "token IDs from the pinned GPT-2 tokenizer",
+      "token counts and glyph-token positions in the 16 frozen source wrappers"
+    ],
+    "forbidden_inputs": [
+      "model activations",
+      "model logits or generations",
+      "fingerprints or downstream endpoints",
+      "confirmatory target outcomes"
+    ]
+  },
+  "tokenizer": {
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "tokenizer_class": "GPT2TokenizerFast",
+    "vocab_size": 50257,
+    "add_special_tokens": false,
+    "local_files_only": true,
+    "assets_sha256": {
+      "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783",
+      "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    }
+  },
+  "reference_panel": {
+    "id": "colored_shapes_v1",
+    "path": "data/emoji_panels/colored_shapes.yaml",
+    "sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+    "expected_size": 10,
+    "expected_prefix_histogram": {
+      "8582,253": 9,
+      "8582,242": 1
+    }
+  },
+  "wrappers": {
+    "path": "data/wrappers/source_wrappers.jsonl",
+    "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+    "expected_count": 16,
+    "require_equal_full_token_count": true,
+    "require_equal_glyph_token_positions": true,
+    "require_equal_outside_span_token_ids": true
+  },
+  "execution_config_constraints": {
+    "source_wrappers_path": "data/wrappers/source_wrappers.jsonl",
+    "targets_path": "data/targets/prestage_targets.jsonl",
+    "neutral_control_id": "m2_neutral_dominant_prefix",
+    "run_name_required_substring": "exploratory"
+  },
+  "scalar_constraints": {
+    "require_single_unicode_scalar": true,
+    "require_assigned_unicode_name": true,
+    "required_utf8_byte_length": 4,
+    "required_raw_token_count": 3,
+    "forbidden_codepoints": [
+      "U+200D",
+      "U+FE0E",
+      "U+FE0F"
+    ]
+  },
+  "neutral_controls": [
+    {
+      "id": "m2_neutral_dominant_prefix",
+      "glyph": "🟰",
+      "expected_raw_token_ids": [8582, 253, 108],
+      "reference_prefix": [8582, 253]
+    },
+    {
+      "id": "m2_neutral_outlier_prefix",
+      "glyph": "🔖",
+      "expected_raw_token_ids": [8582, 242, 244],
+      "reference_prefix": [8582, 242]
+    }
+  ],
+  "matched_null_inventory": {
+    "assigned_single_scalar_count_for_prefix_8582_253": 39,
+    "reference_glyph_count_excluded": 9,
+    "neutral_glyph_count_excluded": 1,
+    "non_colored_geometric_candidate_count": 26,
+    "conservative_semantic_near_controls": [
+      {
+        "glyph": "🟥",
+        "codepoint": "U+1F7E5",
+        "unicode_name": "LARGE RED SQUARE",
+        "panel_id": "m2_null_prefix_9x253_1x242_c"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": "m2_null_prefix_9x253_1x242_a",
+      "role": "matched_null",
+      "path": "data/emoji_panels/m2_matched_null_a.yaml",
+      "sha256": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+      "config_path": "configs/m2_matched_null_a_mlx.yaml",
+      "config_sha256": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884",
+      "expected_size": 10,
+      "expected_prefix_histogram": {
+        "8582,253": 9,
+        "8582,242": 1
+      }
+    },
+    {
+      "id": "m2_null_prefix_9x253_1x242_b",
+      "role": "matched_null",
+      "path": "data/emoji_panels/m2_matched_null_b.yaml",
+      "sha256": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+      "config_path": "configs/m2_matched_null_b_mlx.yaml",
+      "config_sha256": "21d9df0933d8daf3a4da8c1d237ef63e208d8d9979df571a47f44da9301dc3bd",
+      "expected_size": 10,
+      "expected_prefix_histogram": {
+        "8582,253": 9,
+        "8582,242": 1
+      }
+    },
+    {
+      "id": "m2_null_prefix_9x253_1x242_c",
+      "role": "matched_null",
+      "path": "data/emoji_panels/m2_matched_null_c.yaml",
+      "sha256": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+      "config_path": "configs/m2_matched_null_c_mlx.yaml",
+      "config_sha256": "6ca0c5c2726210b945e1bc5793c027c94f9cf3754dd0aae008f0878bf1eef934",
+      "expected_size": 10,
+      "expected_prefix_histogram": {
+        "8582,253": 9,
+        "8582,242": 1
+      }
+    },
+    {
+      "id": "m2_suffix_matched_middle_236",
+      "role": "suffix_matched_middle_shift",
+      "path": "data/emoji_panels/m2_suffix_matched_middle_shift.yaml",
+      "sha256": "8d31fcd54e62bbe046fb9b6acbc864c62a4a40a514abb5d34d6ff05e76f9ca6e",
+      "config_path": "configs/m2_suffix_matched_middle_shift_mlx.yaml",
+      "config_sha256": "1e8261d61cd00345de1d2cee9e0ee03bfe26f9225aa536777fc1e35d247a9e30",
+      "expected_size": 10,
+      "expected_middle_token_id": 236,
+      "require_reference_first_and_suffix_token_match": true
+    },
+    {
+      "id": "m2_colored_shapes_prefix_10x253",
+      "role": "prefix_homogeneous_colored_shapes",
+      "path": "data/emoji_panels/m2_prefix_homogeneous_colored_shapes.yaml",
+      "sha256": "7318ee10c36f18b7ca4910d2b08ae28b5fce36a6f32e27cf7ec9b8a7c388c54b",
+      "config_path": "configs/m2_prefix_homogeneous_colored_shapes_mlx.yaml",
+      "config_sha256": "dca8513adbcca334def98dc651cb96ff7147d3b4f6c476382110c804062eece0",
+      "expected_size": 10,
+      "expected_prefix_histogram": {
+        "8582,253": 10
+      },
+      "expected_factor_levels": {
+        "color": ["brown", "green", "orange", "purple", "yellow"],
+        "shape": ["circle", "square"]
+      }
+    }
+  ],
+  "matched_null_cross_panel_overlap": {
+    "maximum_pairwise_glyph_overlap": 0,
+    "expected_overlaps": []
+  }
+}

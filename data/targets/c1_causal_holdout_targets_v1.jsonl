@@ -1,0 +1,48 @@
+{"id":"c1_cont_01","group":"continuation","prompt":"Complete with one natural continuation:\nThe train reached the small station just as"}
+{"id":"c1_cont_02","group":"continuation","prompt":"Complete with one natural continuation:\nOn the first morning of the workshop, the participants"}
+{"id":"c1_cont_03","group":"continuation","prompt":"Complete with one natural continuation:\nA folded map slipped from the notebook and"}
+{"id":"c1_cont_04","group":"continuation","prompt":"Complete with one natural continuation:\nOnce the clouds cleared, the survey crew"}
+{"id":"c1_cont_05","group":"continuation","prompt":"Complete with one natural continuation:\nThe mechanic tightened the final bolt before"}
+{"id":"c1_cont_06","group":"continuation","prompt":"Complete with one natural continuation:\nIn the quiet reading room, the clock"}
+{"id":"c1_cont_07","group":"continuation","prompt":"Complete with one natural continuation:\nAfter the seedlings were watered, the trays"}
+{"id":"c1_cont_08","group":"continuation","prompt":"Complete with one natural continuation:\nNear the end of the hike, the group discovered"}
+{"id":"c1_fact_01","group":"factual","prompt":"Answer in one concise sentence:\nWhy do stars appear to twinkle when viewed from Earth?"}
+{"id":"c1_fact_02","group":"factual","prompt":"Answer in one concise sentence:\nHow does a refrigerator move heat out of its interior?"}
+{"id":"c1_fact_03","group":"factual","prompt":"Answer in one concise sentence:\nWhat is the main function of red blood cells?"}
+{"id":"c1_fact_04","group":"factual","prompt":"Answer in one concise sentence:\nWhy does soap help remove grease with water?"}
+{"id":"c1_fact_05","group":"factual","prompt":"Answer in one concise sentence:\nWhat role does the Domain Name System serve on the internet?"}
+{"id":"c1_fact_06","group":"factual","prompt":"Answer in one concise sentence:\nWhy can a magnet attract an iron object?"}
+{"id":"c1_fact_07","group":"factual","prompt":"Answer in one concise sentence:\nHow do sedimentary rocks commonly form?"}
+{"id":"c1_fact_08","group":"factual","prompt":"Answer in one concise sentence:\nWhat is the purpose of randomized assignment in an experiment?"}
+{"id":"c1_reason_01","group":"reasoning","prompt":"Choose the conclusion that follows and explain briefly:\nEvery labeled sample in this study is stored cold. This sample is labeled."}
+{"id":"c1_reason_02","group":"reasoning","prompt":"Solve briefly:\nA cyclist covers 45 kilometers in 3 hours. What is the average speed?"}
+{"id":"c1_reason_03","group":"reasoning","prompt":"State what follows logically:\nIf the door is locked, its handle will not turn. The handle turned."}
+{"id":"c1_reason_04","group":"reasoning","prompt":"Compare the two quantities briefly:\n35 percent of 200 and seven tenths of 90."}
+{"id":"c1_reason_05","group":"reasoning","prompt":"Give the next number and the rule briefly:\n2, 6, 10, 14, ..."}
+{"id":"c1_reason_06","group":"reasoning","prompt":"Choose the conclusion that follows and explain briefly:\nEvery hexagon is a polygon. This figure is a hexagon."}
+{"id":"c1_reason_07","group":"reasoning","prompt":"Solve briefly:\nFour identical batteries cost 6 dollars. What do 10 batteries cost at the same unit price?"}
+{"id":"c1_reason_08","group":"reasoning","prompt":"State the ordering implied by the facts:\nDana arrives before Eli, and Eli arrives before Farah."}
+{"id":"c1_proc_01","group":"procedural","prompt":"Give three compact steps for checking a digital clock against a reliable time reference."}
+{"id":"c1_proc_02","group":"procedural","prompt":"Give three compact steps for backing up a folder and verifying that one file can be restored."}
+{"id":"c1_proc_03","group":"procedural","prompt":"Give three compact steps for washing fresh produce before serving it."}
+{"id":"c1_proc_04","group":"procedural","prompt":"Give three compact steps for setting up a controlled comparison of seed germination."}
+{"id":"c1_proc_05","group":"procedural","prompt":"Give three compact steps for renaming a file collection with a reversible mapping."}
+{"id":"c1_proc_06","group":"procedural","prompt":"Give three compact steps for testing the output of a small solar panel."}
+{"id":"c1_proc_07","group":"procedural","prompt":"Give three compact steps for installing a software update with rollback preparation."}
+{"id":"c1_proc_08","group":"procedural","prompt":"Give three compact steps for brewing one cup of loose-leaf tea."}
+{"id":"c1_class_01","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA ceramic mug."}
+{"id":"c1_class_02","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA neighborhood association."}
+{"id":"c1_class_03","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA geometric angle."}
+{"id":"c1_class_04","group":"classification","prompt":"Classify as reversible or irreversible, then give one reason:\nOpening and closing a reusable zipper."}
+{"id":"c1_class_05","group":"classification","prompt":"Classify as reversible or irreversible, then give one reason:\nBurning a sheet of paper."}
+{"id":"c1_class_06","group":"classification","prompt":"Classify as observation or inference, then give one reason:\nThe thermometer display reads 21 degrees Celsius."}
+{"id":"c1_class_07","group":"classification","prompt":"Classify as observation or inference, then give one reason:\nThe window is fogged, so the indoor air must be humid."}
+{"id":"c1_class_08","group":"classification","prompt":"Classify as finite or infinite, then give one reason:\nThe set of months in a calendar year."}
+{"id":"c1_plan_01","group":"planning","prompt":"Propose a minimal one-day plan for labeling 240 plant photographs."}
+{"id":"c1_plan_02","group":"planning","prompt":"Propose a minimal experiment to compare two keyboard layouts fairly."}
+{"id":"c1_plan_03","group":"planning","prompt":"Propose a minimal checklist for relocating a small database to a test server."}
+{"id":"c1_plan_04","group":"planning","prompt":"Propose a minimal four-week plan for learning descriptive statistics."}
+{"id":"c1_plan_05","group":"planning","prompt":"Propose a minimal schedule for maintaining 12 shared bicycles."}
+{"id":"c1_plan_06","group":"planning","prompt":"Propose a minimal sampling plan for measuring library use over one week."}
+{"id":"c1_plan_07","group":"planning","prompt":"Propose a minimal plan for running a one-day community swap table."}
+{"id":"c1_plan_08","group":"planning","prompt":"Propose a minimal workflow for converting paper recipe cards into a searchable archive."}

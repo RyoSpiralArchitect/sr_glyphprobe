@@ -1,6 +1,6 @@
-# GlyphProbe v1
+# GlyphProbe
 
-[English](README.md)
+[English](README.md) · [実験結果](docs/RESULTS_V1.ja.md) · [Milestone 2 プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -39,6 +39,14 @@ MLX は、同じモデル名だから採用したわけではありません。�
 ただし、36セルのうち優位量が正だったのは25セルで、11セルは非正でした。集約値が正でも、効果が一様に出たわけではありません。現在の結果は、追試に値する**前因果的な指紋候補**です。絵文字の意味、意味表現、回路、因果経路の証明ではありません。
 
 詳しい結果と留保は [実験結果](docs/RESULTS_V1.ja.md)、次の研究段階は [ロードマップ](docs/ROADMAP.ja.md) を参照してください。
+
+### Milestone 2 の現在地
+
+トークン化を揃えた対照実験は、プロトコルを凍結し、事前検査を待っている段階です。Milestone 2 のモデル出力はまだ確認しておらず、結果も報告していません。一度だけ使うP2確認用バンク（48件）と、将来の因果試験まで残すC1ホールドアウト・バンク（48件）を、それぞれ凍結しました。
+
+主要比較では、色付き図形パネルに対し、GPT-2のトークン数と9対1のトークン接頭構造を揃えた、互いに重複しない10記号のnull対照パネルを3組使います。主要仮説は、strength 0.05におけるlayer 2とlayer 4に固定します。推論の標本単位はターゲットプロンプトのクラスタであり、glyphやdirection seedを独立標本として数えません。
+
+P2バンクを開くのは、プロトコルと、それに結び付いたmanifest、config、解析コード、testが公開凍結コミットに揃い、すべての事前検査を通過した後の一度だけです。C1バンクは、後に定める因果プロトコルまで使いません。endpoint、判定規則、禁止事項は [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) に固定しています。
 
 ## インストール
 
@@ -108,6 +116,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [バックエンド境界](docs/BACKENDS.ja.md) / [English](docs/BACKENDS.md)
 - [指標の定義](docs/METRICS.ja.md) / [English](docs/METRICS.md)
 - [v1 実験結果](docs/RESULTS_V1.ja.md) / [English](docs/RESULTS_V1.md)
+- [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
 - [公開研究ノート](docs/NOTE.ja.md) / [English](docs/NOTE.md)

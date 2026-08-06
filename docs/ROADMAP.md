@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Current results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Current results](RESULTS_V1.md) · [Milestone 2 protocol](MILESTONE2_PROTOCOL.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -24,13 +24,31 @@ Exit condition: an internally consistent pre-causal candidate exists. This miles
 
 ### Milestone 2 — Tokenization and null strengthening
 
-Status: planned.
+Status: protocol frozen; preflight pending. No Milestone 2 model outcomes have
+been inspected or claimed.
 
-- add neutral and non-neutral controls matched for token count and prefix structure;
-- add byte- or token-identity-matched constructions where technically meaningful;
-- expand random null families without selecting them after seeing outcomes;
-- preregister primary layers, strengths, and estimands from the baseline map;
-- freeze a confirmatory target set that was not used for exploratory choices.
+- use the frozen 48-target P2 bank once for confirmation, while preserving the
+  separate 48-target C1 bank for the future final causal test;
+- compare the colored-shape panel with three disjoint ten-symbol null panels
+  matched on the prespecified GPT-2 token count and 9:1 token-prefix structure;
+- keep exact-token identity outside the claim: identical token IDs would decode
+  to the same input bytes, so this is a matched robustness test rather than a
+  tokenization-free glyph test;
+- hold the primary family fixed at layers 2 and 4, strength 0.05, with direction
+  seeds treated as repeated estimates inside each target;
+- estimate the primary effect over 48 target-prompt clusters, using
+  leave-one-group-out prototypes, stratified target-cluster bootstrap intervals,
+  and Holm correction across the two primary layers;
+- keep the existing 24 targets available for implementation checks and
+  diagnostics, without using either holdout bank for debugging or tuning;
+- complete manifest, configuration, analysis-code, and test preflight before the
+  one-shot P2 bank is opened.
+
+The exact question, endpoint, decision rule, stopping rule, and prohibited uses
+are fixed in the [Milestone 2 confirmatory protocol](MILESTONE2_PROTOCOL.md).
+The freeze takes effect in the first public commit containing that protocol and
+its bound manifests, configs, and analysis code. P2 remains unopened until that
+public freeze exists and every preflight check passes.
 
 Exit condition: the confirmatory effect cannot be explained by the currently identified token-length or token-prefix asymmetries alone.
 

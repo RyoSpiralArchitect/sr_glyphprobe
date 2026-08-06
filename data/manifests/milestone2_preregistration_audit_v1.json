@@ -1,0 +1,345 @@
+{
+  "audit_id": "glyphprobe-m2-preregistration-audit-v1",
+  "frozen_file_count": 35,
+  "hash_algorithm": "sha256",
+  "manifest_id": "milestone2_preregistration_v1",
+  "manifest_path": "data/manifests/milestone2_preregistration_v1.json",
+  "manifest_sha256": "2beb2e6547c3ac3022356f6c6345f33e7eebf255a458f7febc51a826d0357bf5",
+  "mlx_validation_receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+  "model_or_tokenizer_loaded": false,
+  "p2_config_count": 8,
+  "p2_configs": [
+    {
+      "arm": "primary",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/colored_shapes.yaml",
+      "path": "configs/m2_p2_primary_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/source_wrappers.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_a",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_a.yaml",
+      "path": "configs/m2_p2_matched_null_a_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/source_wrappers.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_b",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_b.yaml",
+      "path": "configs/m2_p2_matched_null_b_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/source_wrappers.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_c",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_c.yaml",
+      "path": "configs/m2_p2_matched_null_c_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/source_wrappers.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "primary_independent_source",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/colored_shapes.yaml",
+      "path": "configs/m2_p2_primary_independent_source_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_a_independent_source",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_a.yaml",
+      "path": "configs/m2_p2_matched_null_a_independent_source_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_b_independent_source",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_b.yaml",
+      "path": "configs/m2_p2_matched_null_b_independent_source_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "arm": "matched_null_c_independent_source",
+      "layers": [
+        2,
+        4
+      ],
+      "panel": "../data/emoji_panels/m2_matched_null_c.yaml",
+      "path": "configs/m2_p2_matched_null_c_independent_source_mlx.yaml",
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "source": "../data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "strengths": [
+        0.05
+      ],
+      "targets": "../data/targets/p2_confirmatory_targets_v1.jsonl"
+    }
+  ],
+  "protocol_id": "glyphprobe-m2-tokenization-controls-v1",
+  "schema_version": 1,
+  "status": "pass",
+  "verified_files": [
+    {
+      "actual_sha256": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884",
+      "expected_sha256": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884",
+      "path": "configs/m2_matched_null_a_mlx.yaml"
+    },
+    {
+      "actual_sha256": "21d9df0933d8daf3a4da8c1d237ef63e208d8d9979df571a47f44da9301dc3bd",
+      "expected_sha256": "21d9df0933d8daf3a4da8c1d237ef63e208d8d9979df571a47f44da9301dc3bd",
+      "path": "configs/m2_matched_null_b_mlx.yaml"
+    },
+    {
+      "actual_sha256": "6ca0c5c2726210b945e1bc5793c027c94f9cf3754dd0aae008f0878bf1eef934",
+      "expected_sha256": "6ca0c5c2726210b945e1bc5793c027c94f9cf3754dd0aae008f0878bf1eef934",
+      "path": "configs/m2_matched_null_c_mlx.yaml"
+    },
+    {
+      "actual_sha256": "4667c59b2fc61a92c6d6520245b0d837a932443067f8d707063cf2b72b669333",
+      "expected_sha256": "4667c59b2fc61a92c6d6520245b0d837a932443067f8d707063cf2b72b669333",
+      "path": "configs/m2_p2_matched_null_a_independent_source_mlx.yaml"
+    },
+    {
+      "actual_sha256": "f769cd7401d3cca974b60fe2d4b34671a6a7d804ef1f8aca94901937438ea34d",
+      "expected_sha256": "f769cd7401d3cca974b60fe2d4b34671a6a7d804ef1f8aca94901937438ea34d",
+      "path": "configs/m2_p2_matched_null_a_mlx.yaml"
+    },
+    {
+      "actual_sha256": "6cfc75299a87f6028a06e3cc549e51d1f63e3ef1d9b8ab436675fb3e2d74fe08",
+      "expected_sha256": "6cfc75299a87f6028a06e3cc549e51d1f63e3ef1d9b8ab436675fb3e2d74fe08",
+      "path": "configs/m2_p2_matched_null_b_independent_source_mlx.yaml"
+    },
+    {
+      "actual_sha256": "da4c91413b01b36d4568f8ff8a9e5570aa7d9aee15184bb2c7acbfb7b511b4ca",
+      "expected_sha256": "da4c91413b01b36d4568f8ff8a9e5570aa7d9aee15184bb2c7acbfb7b511b4ca",
+      "path": "configs/m2_p2_matched_null_b_mlx.yaml"
+    },
+    {
+      "actual_sha256": "b1cb250694dfd9d9a6ae16e6727feea8c89dc70e5bfd87bc1c1a569ef00826f5",
+      "expected_sha256": "b1cb250694dfd9d9a6ae16e6727feea8c89dc70e5bfd87bc1c1a569ef00826f5",
+      "path": "configs/m2_p2_matched_null_c_independent_source_mlx.yaml"
+    },
+    {
+      "actual_sha256": "bc6f69fdb150d7df59cee4ddc949d0af5e969c3772ec651028ef0f70ddd84430",
+      "expected_sha256": "bc6f69fdb150d7df59cee4ddc949d0af5e969c3772ec651028ef0f70ddd84430",
+      "path": "configs/m2_p2_matched_null_c_mlx.yaml"
+    },
+    {
+      "actual_sha256": "2a82c805af75d88cb042ac643c62294502aa83d7ea629405e6eb61508951d470",
+      "expected_sha256": "2a82c805af75d88cb042ac643c62294502aa83d7ea629405e6eb61508951d470",
+      "path": "configs/m2_p2_primary_independent_source_mlx.yaml"
+    },
+    {
+      "actual_sha256": "500a4d8d7a44bf4f0eae8d2ebce160d08c9b2e9b6578e2f4d73129fa432274a9",
+      "expected_sha256": "500a4d8d7a44bf4f0eae8d2ebce160d08c9b2e9b6578e2f4d73129fa432274a9",
+      "path": "configs/m2_p2_primary_mlx.yaml"
+    },
+    {
+      "actual_sha256": "dca8513adbcca334def98dc651cb96ff7147d3b4f6c476382110c804062eece0",
+      "expected_sha256": "dca8513adbcca334def98dc651cb96ff7147d3b4f6c476382110c804062eece0",
+      "path": "configs/m2_prefix_homogeneous_colored_shapes_mlx.yaml"
+    },
+    {
+      "actual_sha256": "1e8261d61cd00345de1d2cee9e0ee03bfe26f9225aa536777fc1e35d247a9e30",
+      "expected_sha256": "1e8261d61cd00345de1d2cee9e0ee03bfe26f9225aa536777fc1e35d247a9e30",
+      "path": "configs/m2_suffix_matched_middle_shift_mlx.yaml"
+    },
+    {
+      "actual_sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+      "expected_sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+      "path": "data/emoji_panels/colored_shapes.yaml"
+    },
+    {
+      "actual_sha256": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+      "expected_sha256": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+      "path": "data/emoji_panels/m2_matched_null_a.yaml"
+    },
+    {
+      "actual_sha256": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+      "expected_sha256": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+      "path": "data/emoji_panels/m2_matched_null_b.yaml"
+    },
+    {
+      "actual_sha256": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+      "expected_sha256": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+      "path": "data/emoji_panels/m2_matched_null_c.yaml"
+    },
+    {
+      "actual_sha256": "7318ee10c36f18b7ca4910d2b08ae28b5fce36a6f32e27cf7ec9b8a7c388c54b",
+      "expected_sha256": "7318ee10c36f18b7ca4910d2b08ae28b5fce36a6f32e27cf7ec9b8a7c388c54b",
+      "path": "data/emoji_panels/m2_prefix_homogeneous_colored_shapes.yaml"
+    },
+    {
+      "actual_sha256": "8d31fcd54e62bbe046fb9b6acbc864c62a4a40a514abb5d34d6ff05e76f9ca6e",
+      "expected_sha256": "8d31fcd54e62bbe046fb9b6acbc864c62a4a40a514abb5d34d6ff05e76f9ca6e",
+      "path": "data/emoji_panels/m2_suffix_matched_middle_shift.yaml"
+    },
+    {
+      "actual_sha256": "ffa3889a98bcff62d01d620b3fa18bb6a2e4e624d49d623ab7175117553450c0",
+      "expected_sha256": "ffa3889a98bcff62d01d620b3fa18bb6a2e4e624d49d623ab7175117553450c0",
+      "path": "data/manifests/milestone2_frozen_banks_v1.json"
+    },
+    {
+      "actual_sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "expected_sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    },
+    {
+      "actual_sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "expected_sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl"
+    },
+    {
+      "actual_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "expected_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "path": "data/targets/prestage_targets.jsonl"
+    },
+    {
+      "actual_sha256": "e7cb6e358a96cc6d178c634be29221074cee3e6e43f7a5758ca328853c2e84a4",
+      "expected_sha256": "e7cb6e358a96cc6d178c634be29221074cee3e6e43f7a5758ca328853c2e84a4",
+      "path": "data/tokenization_controls/audit_receipt_v1.json"
+    },
+    {
+      "actual_sha256": "29ff22ad1e98c30ce848122c6d37b8feaff22814181150191238ca85ba24ac12",
+      "expected_sha256": "29ff22ad1e98c30ce848122c6d37b8feaff22814181150191238ca85ba24ac12",
+      "path": "data/tokenization_controls/manifest.json"
+    },
+    {
+      "actual_sha256": "08cf58c9dd85f3310e78cb34a213416d76b3d7c8df970e1f5e96d15457b71d15",
+      "expected_sha256": "08cf58c9dd85f3310e78cb34a213416d76b3d7c8df970e1f5e96d15457b71d15",
+      "path": "data/tokenization_controls/manifest.sha256"
+    },
+    {
+      "actual_sha256": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+      "expected_sha256": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+      "path": "data/wrappers/milestone2_independent_source_wrappers_v1.jsonl"
+    },
+    {
+      "actual_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "expected_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "path": "data/wrappers/source_wrappers.jsonl"
+    },
+    {
+      "actual_sha256": "5b20cef8dd9a20d870b95607a2534cd1e02dd9e9e2382aa912e0236e07d7b3a7",
+      "expected_sha256": "5b20cef8dd9a20d870b95607a2534cd1e02dd9e9e2382aa912e0236e07d7b3a7",
+      "path": "docs/MILESTONE2_PROTOCOL.ja.md"
+    },
+    {
+      "actual_sha256": "7387659c2a49f7d354d1b6d0ccfe718a953719e64113bdad2c1930ddac2058d3",
+      "expected_sha256": "7387659c2a49f7d354d1b6d0ccfe718a953719e64113bdad2c1930ddac2058d3",
+      "path": "docs/MILESTONE2_PROTOCOL.md"
+    },
+    {
+      "actual_sha256": "362a4181a418515fc19e724df1790e59d3067b78eb2d699a6c3c09c4a69ce696",
+      "expected_sha256": "362a4181a418515fc19e724df1790e59d3067b78eb2d699a6c3c09c4a69ce696",
+      "path": "scripts/analyze_countsketch_sensitivity.py"
+    },
+    {
+      "actual_sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86",
+      "expected_sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86",
+      "path": "scripts/analyze_m2_confirmatory.py"
+    },
+    {
+      "actual_sha256": "f0f4923c04a706377faeea505bef6f48270d3cd64923b1fab3403106aac9422d",
+      "expected_sha256": "f0f4923c04a706377faeea505bef6f48270d3cd64923b1fab3403106aac9422d",
+      "path": "scripts/audit_m2_preregistration.py"
+    },
+    {
+      "actual_sha256": "074e9e2b795396a3089128f5f0933d82d1a1dca99156a37d3da1d681046ad484",
+      "expected_sha256": "074e9e2b795396a3089128f5f0933d82d1a1dca99156a37d3da1d681046ad484",
+      "path": "scripts/audit_m2_tokenization_controls.py"
+    },
+    {
+      "actual_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "expected_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "path": "validation/mlx_gpt2_parity/receipt.json"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+items:
+  - id: suffix_middle_brown_circle
+    glyph: "🎤"
+    factors: {reference_id: brown_circle, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_brown_square
+    glyph: "🎫"
+    factors: {reference_id: brown_square, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_orange_circle
+    glyph: "🎠"
+    factors: {reference_id: orange_circle, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_orange_square
+    glyph: "🎧"
+    factors: {reference_id: orange_square, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_green_circle
+    glyph: "🎢"
+    factors: {reference_id: green_circle, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_green_square
+    glyph: "🎩"
+    factors: {reference_id: green_square, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_blue_circle
+    glyph: "🎵"
+    factors: {reference_id: blue_circle, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_blue_square
+    glyph: "🎦"
+    factors: {reference_id: blue_square, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_purple_circle
+    glyph: "🎣"
+    factors: {reference_id: purple_circle, diagnostic_axis: middle_token}
+    labels: []
+  - id: suffix_middle_purple_square
+    glyph: "🎪"
+    factors: {reference_id: purple_square, diagnostic_axis: middle_token}
+    labels: []

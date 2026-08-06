@@ -1,0 +1,16 @@
+{"id":"m2w01_cue_completion","template":"Cue={emoji}\nCompletion:"}
+{"id":"m2w02_context_reply","template":"Context\n<{emoji}>\nReply:"}
+{"id":"m2w03_prompt_write","template":"Prompt symbol / {emoji} /\nWrite:"}
+{"id":"m2w04_arrow_continue","template":"A -> {emoji} -> B\nContinue:"}
+{"id":"m2w05_reference_return","template":"Reference [{emoji}]\nReturn:"}
+{"id":"m2w06_middle_last","template":"First: alpha\nMiddle: {emoji}\nLast:"}
+{"id":"m2w07_signal_completion","template":"Signal\n({emoji})\nCompletion:"}
+{"id":"m2w08_given_answer","template":"Given-symbol={emoji}\nAnswer:"}
+{"id":"m2w09_key_value","template":"Key: {emoji}\nValue:"}
+{"id":"m2w10_before_after","template":"Before\n-- {emoji} --\nAfter:"}
+{"id":"m2w11_context_finish","template":"Context: left / {emoji} / right\nFinish:"}
+{"id":"m2w12_indicator_statement","template":"Indicator={emoji}\nStatement:"}
+{"id":"m2w13_record_content","template":"Record\nsymbol={emoji}\ncontent="}
+{"id":"m2w14_a_b","template":"A:{emoji}\nB:"}
+{"id":"m2w15_header_body","template":"Header [{emoji}]\nBody:"}
+{"id":"m2w16_premise_consequence","template":"Premise\n{emoji}\nConsequence:"}

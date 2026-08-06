@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "manifest_id": "milestone2_frozen_banks_v1",
+  "milestone": "M2_tokenization_matched_controls",
+  "freeze": {
+    "status": "frozen_before_experimental_evaluation",
+    "date": "2026-08-06",
+    "hash_algorithm": "sha256",
+    "revision_policy": "Do not overwrite a frozen v1 file. Any content change requires a new versioned filename and a new manifest."
+  },
+  "experimental_model_output_use": {
+    "used_for_authoring_or_selection": false,
+    "statement": "No GlyphProbe model inference, activation, logit, generated-text, metric, run-summary, or tokenizer-outcome data were used to author, select, filter, rank, or revise these records."
+  },
+  "authoring_and_selection_rule": {
+    "method": "Text-only manual authoring followed by deterministic structural validation.",
+    "compatibility_reference": "The existing prestage target groups and record schemas were consulted only for group coverage, schema compatibility, and exact-duplicate exclusion. Existing source wrapper templates were consulted only for exact-template exclusion.",
+    "target_constraints": [
+      "Use exactly six prespecified primary groups: continuation, factual, reasoning, procedural, classification, and planning.",
+      "Include exactly eight distinct English prompts per group in each bank.",
+      "Give each prompt one compact, self-contained task with no glyph or emoji condition.",
+      "Use bank-specific IDs and exclude exact prompt duplicates within a bank, between the two frozen banks, and against the prestage target file.",
+      "Do not inspect tokenizer results or experimental model outputs while constructing or validating the banks."
+    ],
+    "source_wrapper_constraints": [
+      "Include exactly 16 distinct templates with exactly one literal {emoji} placeholder each.",
+      "Use m2w01 through m2w16 ID prefixes in file order.",
+      "Exclude exact template duplicates within the new bank and against the existing source wrapper file.",
+      "Do not inspect tokenizer results or experimental model outputs while constructing or validating the wrapper bank."
+    ]
+  },
+  "banks": [
+    {
+      "id": "p2_confirmatory_targets_v1",
+      "kind": "target_bank",
+      "purpose": "One-shot confirmation of the prespecified tokenization-matched fingerprint endpoint and candidate gate after all matching and analysis rules are frozen.",
+      "prohibited_use": "Do not use this bank to develop matched controls, tune thresholds, debug an adapter, or explore causal intervention sites.",
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "record_count": 48,
+      "id_prefix": "p2_",
+      "group_counts": {
+        "continuation": 8,
+        "factual": 8,
+        "reasoning": 8,
+        "procedural": 8,
+        "classification": 8,
+        "planning": 8
+      }
+    },
+    {
+      "id": "c1_causal_holdout_targets_v1",
+      "kind": "target_bank",
+      "purpose": "Final held-out confirmation of a causal intervention selected without access to outcomes from this bank.",
+      "prohibited_use": "Do not use this bank for matched-control design, threshold tuning, candidate-layer selection, strength selection, intervention-site selection, or implementation debugging.",
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl",
+      "sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "record_count": 48,
+      "id_prefix": "c1_",
+      "group_counts": {
+        "continuation": 8,
+        "factual": 8,
+        "reasoning": 8,
+        "procedural": 8,
+        "classification": 8,
+        "planning": 8
+      }
+    },
+    {
+      "id": "milestone2_independent_source_wrappers_v1",
+      "kind": "source_wrapper_bank",
+      "purpose": "Independent source contexts for Milestone 2 direction estimation, separate from the exploratory source wrappers.",
+      "prohibited_use": "Do not alter or filter these wrappers after inspecting tokenizer or experimental outcomes; create a new version instead.",
+      "path": "data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "sha256": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+      "record_count": 16,
+      "id_range": [
+        "m2w01",
+        "m2w16"
+      ]
+    }
+  ],
+  "exclusion_references": [
+    {
+      "path": "data/targets/prestage_targets.jsonl",
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "comparison": "exact_prompt",
+      "overlap_count": 0
+    },
+    {
+      "path": "data/wrappers/source_wrappers.jsonl",
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "comparison": "exact_template",
+      "overlap_count": 0
+    }
+  ],
+  "structural_validation": {
+    "json_parse": "pass",
+    "required_keys_and_string_types": "pass",
+    "unique_ids_within_each_file": "pass",
+    "unique_prompts_across_p2_c1_and_prestage": "pass",
+    "balanced_target_groups": "pass",
+    "unique_wrapper_templates_across_new_and_existing_banks": "pass",
+    "exactly_one_emoji_placeholder_per_new_wrapper": "pass",
+    "model_inference_run": false,
+    "tokenizer_run": false
+  }
+}

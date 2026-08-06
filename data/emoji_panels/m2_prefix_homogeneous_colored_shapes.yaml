@@ -1,0 +1,41 @@
+items:
+  - id: brown_circle
+    glyph: "🟤"
+    factors: {color: brown, shape: circle}
+    labels: [brown, circle]
+  - id: brown_square
+    glyph: "🟫"
+    factors: {color: brown, shape: square}
+    labels: [brown, square]
+  - id: orange_circle
+    glyph: "🟠"
+    factors: {color: orange, shape: circle}
+    labels: [orange, circle]
+  - id: orange_square
+    glyph: "🟧"
+    factors: {color: orange, shape: square}
+    labels: [orange, square]
+  - id: green_circle
+    glyph: "🟢"
+    factors: {color: green, shape: circle}
+    labels: [green, circle]
+  - id: green_square
+    glyph: "🟩"
+    factors: {color: green, shape: square}
+    labels: [green, square]
+  - id: yellow_circle
+    glyph: "🟡"
+    factors: {color: yellow, shape: circle}
+    labels: [yellow, circle]
+  - id: yellow_square
+    glyph: "🟨"
+    factors: {color: yellow, shape: square}
+    labels: [yellow, square]
+  - id: purple_circle
+    glyph: "🟣"
+    factors: {color: purple, shape: circle}
+    labels: [purple, circle]
+  - id: purple_square
+    glyph: "🟪"
+    factors: {color: purple, shape: square}
+    labels: [purple, square]

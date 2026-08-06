@@ -53,3 +53,27 @@ unexecuted controls explicitly.
 Phase I の到達点は、再現可能で反証可能な英語論文である。論文で報告する実験セルは、
 設定、ソース、依存関係とランタイム、モデル・アーティファクト、検証 receipt に結び付ける。
 負の結果と未実施の対照実験も明記する。
+
+## Frozen holdouts / 凍結ホールドアウト
+
+Treat `data/targets/p2_confirmatory_targets_v1.jsonl` as a one-shot Milestone 2
+confirmatory bank. Do not use it for implementation debugging, control design,
+threshold tuning, layer or strength selection, or intervention-site exploration.
+It may be opened only by the exact frozen P2 configs after the public protocol
+freeze and all preflight checks pass.
+
+`data/targets/c1_causal_holdout_targets_v1.jsonl` is stricter: do not pass it to
+any model, tokenizer-driven selection process, or outcome analysis until a new
+C1 causal protocol has frozen the intervention, endpoint, controls, and
+multiplicity family. Structural hash/schema checks that do not inspect model
+outcomes are allowed. Never overwrite either v1 bank.
+
+`data/targets/p2_confirmatory_targets_v1.jsonl` は、Milestone 2 で一度だけ使う
+確認用bankとして扱う。実装debug、対照設計、閾値調整、layer・strength選択、
+介入点探索には使わない。公開プロトコルの凍結後、すべての事前検査を通過した
+場合に限り、凍結済みP2 configから開くことができる。
+
+`data/targets/c1_causal_holdout_targets_v1.jsonl` にはさらに厳しい制約を置く。
+介入、endpoint、対照、多重性familyを新しいC1因果プロトコルで凍結するまで、
+モデル入力、tokenizerを用いた選別、結果解析に使わない。モデル結果を見ない
+構造・hash・schema検査だけは許可する。どちらのv1 bankも上書きしない。

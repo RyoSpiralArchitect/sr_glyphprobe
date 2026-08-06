@@ -1,0 +1,1366 @@
+{
+  "claim_boundary": "Tokenizer-only construction audit; no model activation, logit, generation, fingerprint, causal, or semantic result is established.",
+  "conservative_semantic_near_controls": [
+    {
+      "codepoint": "U+1F7E5",
+      "glyph": "🟥",
+      "panel_id": "m2_null_prefix_9x253_1x242_c",
+      "unicode_name": "LARGE RED SQUARE"
+    }
+  ],
+  "control_suite_id": "glyphprobe-m2-tokenization-controls-v1",
+  "counts": {
+    "matched_null_panel_count": 3,
+    "panel_count": 5,
+    "scalar_entries_verified": 62,
+    "wrapper_profile_comparisons": 992
+  },
+  "manifest_sha256": "29ff22ad1e98c30ce848122c6d37b8feaff22814181150191238ca85ba24ac12",
+  "matched_null_disjoint": true,
+  "neutral_controls": [
+    {
+      "codepoint": "U+1F7F0",
+      "glyph": "🟰",
+      "id": "m2_neutral_dominant_prefix",
+      "raw_token_ids": [
+        8582,
+        253,
+        108
+      ],
+      "unicode_category": "So",
+      "unicode_name": "HEAVY EQUALS SIGN",
+      "utf8_hex": "f09f9fb0"
+    },
+    {
+      "codepoint": "U+1F516",
+      "glyph": "🔖",
+      "id": "m2_neutral_outlier_prefix",
+      "raw_token_ids": [
+        8582,
+        242,
+        244
+      ],
+      "unicode_category": "So",
+      "unicode_name": "BOOKMARK",
+      "utf8_hex": "f09f9496"
+    }
+  ],
+  "panels": [
+    {
+      "id": "m2_null_prefix_9x253_1x242_a",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F7C0",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟀",
+          "id": "null_a_u1f7c0",
+          "raw_token_ids": [
+            8582,
+            253,
+            222
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LIGHT THREE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f80"
+        },
+        {
+          "codepoint": "U+1F7C3",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟃",
+          "id": "null_a_u1f7c3",
+          "raw_token_ids": [
+            8582,
+            253,
+            225
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM THREE POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f83"
+        },
+        {
+          "codepoint": "U+1F7C6",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟆",
+          "id": "null_a_u1f7c6",
+          "raw_token_ids": [
+            8582,
+            253,
+            228
+          ],
+          "unicode_category": "So",
+          "unicode_name": "FOUR POINTED BLACK STAR",
+          "utf8_hex": "f09f9f86"
+        },
+        {
+          "codepoint": "U+1F7C9",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟉",
+          "id": "null_a_u1f7c9",
+          "raw_token_ids": [
+            8582,
+            253,
+            231
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LIGHT FIVE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f89"
+        },
+        {
+          "codepoint": "U+1F7CC",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟌",
+          "id": "null_a_u1f7cc",
+          "raw_token_ids": [
+            8582,
+            253,
+            234
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY SIX POINTED BLACK STAR",
+          "utf8_hex": "f09f9f8c"
+        },
+        {
+          "codepoint": "U+1F7CF",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟏",
+          "id": "null_a_u1f7cf",
+          "raw_token_ids": [
+            8582,
+            253,
+            237
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY EIGHT POINTED BLACK STAR",
+          "utf8_hex": "f09f9f8f"
+        },
+        {
+          "codepoint": "U+1F7D2",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟒",
+          "id": "null_a_u1f7d2",
+          "raw_token_ids": [
+            8582,
+            253,
+            240
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LIGHT TWELVE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f92"
+        },
+        {
+          "codepoint": "U+1F7D5",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟕",
+          "id": "null_a_u1f7d5",
+          "raw_token_ids": [
+            8582,
+            253,
+            243
+          ],
+          "unicode_category": "So",
+          "unicode_name": "CIRCLED TRIANGLE",
+          "utf8_hex": "f09f9f95"
+        },
+        {
+          "codepoint": "U+1F7D8",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟘",
+          "id": "null_a_u1f7d8",
+          "raw_token_ids": [
+            8582,
+            253,
+            246
+          ],
+          "unicode_category": "So",
+          "unicode_name": "NEGATIVE CIRCLED SQUARE",
+          "utf8_hex": "f09f9f98"
+        },
+        {
+          "codepoint": "U+1F500",
+          "factors": {
+            "control_family": "m2_null_a",
+            "prefix_stratum": "p8582_242"
+          },
+          "glyph": "🔀",
+          "id": "null_a_u1f500",
+          "raw_token_ids": [
+            8582,
+            242,
+            222
+          ],
+          "unicode_category": "So",
+          "unicode_name": "TWISTED RIGHTWARDS ARROWS",
+          "utf8_hex": "f09f9480"
+        }
+      ],
+      "prefix_histogram": {
+        "8582,242": 1,
+        "8582,253": 9
+      },
+      "role": "matched_null",
+      "wrappers_verified_per_item": 16
+    },
+    {
+      "id": "m2_null_prefix_9x253_1x242_b",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F7C1",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟁",
+          "id": "null_b_u1f7c1",
+          "raw_token_ids": [
+            8582,
+            253,
+            223
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM THREE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f81"
+        },
+        {
+          "codepoint": "U+1F7C4",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟄",
+          "id": "null_b_u1f7c4",
+          "raw_token_ids": [
+            8582,
+            253,
+            226
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LIGHT FOUR POINTED BLACK STAR",
+          "utf8_hex": "f09f9f84"
+        },
+        {
+          "codepoint": "U+1F7C7",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟇",
+          "id": "null_b_u1f7c7",
+          "raw_token_ids": [
+            8582,
+            253,
+            229
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM FOUR POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f87"
+        },
+        {
+          "codepoint": "U+1F7CA",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟊",
+          "id": "null_b_u1f7ca",
+          "raw_token_ids": [
+            8582,
+            253,
+            232
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY FIVE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f8a"
+        },
+        {
+          "codepoint": "U+1F7CD",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟍",
+          "id": "null_b_u1f7cd",
+          "raw_token_ids": [
+            8582,
+            253,
+            235
+          ],
+          "unicode_category": "So",
+          "unicode_name": "SIX POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f8d"
+        },
+        {
+          "codepoint": "U+1F7D0",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟐",
+          "id": "null_b_u1f7d0",
+          "raw_token_ids": [
+            8582,
+            253,
+            238
+          ],
+          "unicode_category": "So",
+          "unicode_name": "VERY HEAVY EIGHT POINTED BLACK STAR",
+          "utf8_hex": "f09f9f90"
+        },
+        {
+          "codepoint": "U+1F7D3",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟓",
+          "id": "null_b_u1f7d3",
+          "raw_token_ids": [
+            8582,
+            253,
+            241
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY TWELVE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f93"
+        },
+        {
+          "codepoint": "U+1F7D6",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟖",
+          "id": "null_b_u1f7d6",
+          "raw_token_ids": [
+            8582,
+            253,
+            244
+          ],
+          "unicode_category": "So",
+          "unicode_name": "NEGATIVE CIRCLED TRIANGLE",
+          "utf8_hex": "f09f9f96"
+        },
+        {
+          "codepoint": "U+1F7D9",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟙",
+          "id": "null_b_u1f7d9",
+          "raw_token_ids": [
+            8582,
+            253,
+            247
+          ],
+          "unicode_category": "So",
+          "unicode_name": "NINE POINTED WHITE STAR",
+          "utf8_hex": "f09f9f99"
+        },
+        {
+          "codepoint": "U+1F50B",
+          "factors": {
+            "control_family": "m2_null_b",
+            "prefix_stratum": "p8582_242"
+          },
+          "glyph": "🔋",
+          "id": "null_b_u1f50b",
+          "raw_token_ids": [
+            8582,
+            242,
+            233
+          ],
+          "unicode_category": "So",
+          "unicode_name": "BATTERY",
+          "utf8_hex": "f09f948b"
+        }
+      ],
+      "prefix_histogram": {
+        "8582,242": 1,
+        "8582,253": 9
+      },
+      "role": "matched_null",
+      "wrappers_verified_per_item": 16
+    },
+    {
+      "id": "m2_null_prefix_9x253_1x242_c",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F7C2",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟂",
+          "id": "null_c_u1f7c2",
+          "raw_token_ids": [
+            8582,
+            253,
+            224
+          ],
+          "unicode_category": "So",
+          "unicode_name": "THREE POINTED BLACK STAR",
+          "utf8_hex": "f09f9f82"
+        },
+        {
+          "codepoint": "U+1F7C5",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟅",
+          "id": "null_c_u1f7c5",
+          "raw_token_ids": [
+            8582,
+            253,
+            227
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM FOUR POINTED BLACK STAR",
+          "utf8_hex": "f09f9f85"
+        },
+        {
+          "codepoint": "U+1F7C8",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟈",
+          "id": "null_c_u1f7c8",
+          "raw_token_ids": [
+            8582,
+            253,
+            230
+          ],
+          "unicode_category": "So",
+          "unicode_name": "REVERSE LIGHT FOUR POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f88"
+        },
+        {
+          "codepoint": "U+1F7CB",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟋",
+          "id": "null_c_u1f7cb",
+          "raw_token_ids": [
+            8582,
+            253,
+            233
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM SIX POINTED BLACK STAR",
+          "utf8_hex": "f09f9f8b"
+        },
+        {
+          "codepoint": "U+1F7CE",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟎",
+          "id": "null_c_u1f7ce",
+          "raw_token_ids": [
+            8582,
+            253,
+            236
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MEDIUM EIGHT POINTED BLACK STAR",
+          "utf8_hex": "f09f9f8e"
+        },
+        {
+          "codepoint": "U+1F7D1",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟑",
+          "id": "null_c_u1f7d1",
+          "raw_token_ids": [
+            8582,
+            253,
+            239
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY EIGHT POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f91"
+        },
+        {
+          "codepoint": "U+1F7D4",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟔",
+          "id": "null_c_u1f7d4",
+          "raw_token_ids": [
+            8582,
+            253,
+            242
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEAVY TWELVE POINTED PINWHEEL STAR",
+          "utf8_hex": "f09f9f94"
+        },
+        {
+          "codepoint": "U+1F7D7",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟗",
+          "id": "null_c_u1f7d7",
+          "raw_token_ids": [
+            8582,
+            253,
+            245
+          ],
+          "unicode_category": "So",
+          "unicode_name": "CIRCLED SQUARE",
+          "utf8_hex": "f09f9f97"
+        },
+        {
+          "codepoint": "U+1F7E5",
+          "factors": {
+            "control_family": "m2_null_c",
+            "control_subrole": "conservative_semantic_near_control",
+            "prefix_stratum": "p8582_253"
+          },
+          "glyph": "🟥",
+          "id": "null_c_u1f7e5",
+          "raw_token_ids": [
+            8582,
+            253,
+            98
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE RED SQUARE",
+          "utf8_hex": "f09f9fa5"
+        },
+        {
+          "codepoint": "U+1F52C",
+          "factors": {
+            "control_family": "m2_null_c",
+            "prefix_stratum": "p8582_242"
+          },
+          "glyph": "🔬",
+          "id": "null_c_u1f52c",
+          "raw_token_ids": [
+            8582,
+            242,
+            105
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MICROSCOPE",
+          "utf8_hex": "f09f94ac"
+        }
+      ],
+      "prefix_histogram": {
+        "8582,242": 1,
+        "8582,253": 9
+      },
+      "role": "matched_null",
+      "wrappers_verified_per_item": 16
+    },
+    {
+      "id": "m2_suffix_matched_middle_236",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F3A4",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "brown_circle"
+          },
+          "glyph": "🎤",
+          "id": "suffix_middle_brown_circle",
+          "raw_token_ids": [
+            8582,
+            236,
+            97
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MICROPHONE",
+          "utf8_hex": "f09f8ea4"
+        },
+        {
+          "codepoint": "U+1F3AB",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "brown_square"
+          },
+          "glyph": "🎫",
+          "id": "suffix_middle_brown_square",
+          "raw_token_ids": [
+            8582,
+            236,
+            104
+          ],
+          "unicode_category": "So",
+          "unicode_name": "TICKET",
+          "utf8_hex": "f09f8eab"
+        },
+        {
+          "codepoint": "U+1F3A0",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "orange_circle"
+          },
+          "glyph": "🎠",
+          "id": "suffix_middle_orange_circle",
+          "raw_token_ids": [
+            8582,
+            236,
+            254
+          ],
+          "unicode_category": "So",
+          "unicode_name": "CAROUSEL HORSE",
+          "utf8_hex": "f09f8ea0"
+        },
+        {
+          "codepoint": "U+1F3A7",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "orange_square"
+          },
+          "glyph": "🎧",
+          "id": "suffix_middle_orange_square",
+          "raw_token_ids": [
+            8582,
+            236,
+            100
+          ],
+          "unicode_category": "So",
+          "unicode_name": "HEADPHONE",
+          "utf8_hex": "f09f8ea7"
+        },
+        {
+          "codepoint": "U+1F3A2",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "green_circle"
+          },
+          "glyph": "🎢",
+          "id": "suffix_middle_green_circle",
+          "raw_token_ids": [
+            8582,
+            236,
+            95
+          ],
+          "unicode_category": "So",
+          "unicode_name": "ROLLER COASTER",
+          "utf8_hex": "f09f8ea2"
+        },
+        {
+          "codepoint": "U+1F3A9",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "green_square"
+          },
+          "glyph": "🎩",
+          "id": "suffix_middle_green_square",
+          "raw_token_ids": [
+            8582,
+            236,
+            102
+          ],
+          "unicode_category": "So",
+          "unicode_name": "TOP HAT",
+          "utf8_hex": "f09f8ea9"
+        },
+        {
+          "codepoint": "U+1F3B5",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "blue_circle"
+          },
+          "glyph": "🎵",
+          "id": "suffix_middle_blue_circle",
+          "raw_token_ids": [
+            8582,
+            236,
+            113
+          ],
+          "unicode_category": "So",
+          "unicode_name": "MUSICAL NOTE",
+          "utf8_hex": "f09f8eb5"
+        },
+        {
+          "codepoint": "U+1F3A6",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "blue_square"
+          },
+          "glyph": "🎦",
+          "id": "suffix_middle_blue_square",
+          "raw_token_ids": [
+            8582,
+            236,
+            99
+          ],
+          "unicode_category": "So",
+          "unicode_name": "CINEMA",
+          "utf8_hex": "f09f8ea6"
+        },
+        {
+          "codepoint": "U+1F3A3",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "purple_circle"
+          },
+          "glyph": "🎣",
+          "id": "suffix_middle_purple_circle",
+          "raw_token_ids": [
+            8582,
+            236,
+            96
+          ],
+          "unicode_category": "So",
+          "unicode_name": "FISHING POLE AND FISH",
+          "utf8_hex": "f09f8ea3"
+        },
+        {
+          "codepoint": "U+1F3AA",
+          "factors": {
+            "diagnostic_axis": "middle_token",
+            "reference_id": "purple_square"
+          },
+          "glyph": "🎪",
+          "id": "suffix_middle_purple_square",
+          "raw_token_ids": [
+            8582,
+            236,
+            103
+          ],
+          "unicode_category": "So",
+          "unicode_name": "CIRCUS TENT",
+          "utf8_hex": "f09f8eaa"
+        }
+      ],
+      "prefix_histogram": {
+        "8582,236": 10
+      },
+      "role": "suffix_matched_middle_shift",
+      "wrappers_verified_per_item": 16
+    },
+    {
+      "id": "m2_colored_shapes_prefix_10x253",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F7E4",
+          "factors": {
+            "color": "brown",
+            "shape": "circle"
+          },
+          "glyph": "🟤",
+          "id": "brown_circle",
+          "raw_token_ids": [
+            8582,
+            253,
+            97
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE BROWN CIRCLE",
+          "utf8_hex": "f09f9fa4"
+        },
+        {
+          "codepoint": "U+1F7EB",
+          "factors": {
+            "color": "brown",
+            "shape": "square"
+          },
+          "glyph": "🟫",
+          "id": "brown_square",
+          "raw_token_ids": [
+            8582,
+            253,
+            104
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE BROWN SQUARE",
+          "utf8_hex": "f09f9fab"
+        },
+        {
+          "codepoint": "U+1F7E0",
+          "factors": {
+            "color": "orange",
+            "shape": "circle"
+          },
+          "glyph": "🟠",
+          "id": "orange_circle",
+          "raw_token_ids": [
+            8582,
+            253,
+            254
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE ORANGE CIRCLE",
+          "utf8_hex": "f09f9fa0"
+        },
+        {
+          "codepoint": "U+1F7E7",
+          "factors": {
+            "color": "orange",
+            "shape": "square"
+          },
+          "glyph": "🟧",
+          "id": "orange_square",
+          "raw_token_ids": [
+            8582,
+            253,
+            100
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE ORANGE SQUARE",
+          "utf8_hex": "f09f9fa7"
+        },
+        {
+          "codepoint": "U+1F7E2",
+          "factors": {
+            "color": "green",
+            "shape": "circle"
+          },
+          "glyph": "🟢",
+          "id": "green_circle",
+          "raw_token_ids": [
+            8582,
+            253,
+            95
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE GREEN CIRCLE",
+          "utf8_hex": "f09f9fa2"
+        },
+        {
+          "codepoint": "U+1F7E9",
+          "factors": {
+            "color": "green",
+            "shape": "square"
+          },
+          "glyph": "🟩",
+          "id": "green_square",
+          "raw_token_ids": [
+            8582,
+            253,
+            102
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE GREEN SQUARE",
+          "utf8_hex": "f09f9fa9"
+        },
+        {
+          "codepoint": "U+1F7E1",
+          "factors": {
+            "color": "yellow",
+            "shape": "circle"
+          },
+          "glyph": "🟡",
+          "id": "yellow_circle",
+          "raw_token_ids": [
+            8582,
+            253,
+            94
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE YELLOW CIRCLE",
+          "utf8_hex": "f09f9fa1"
+        },
+        {
+          "codepoint": "U+1F7E8",
+          "factors": {
+            "color": "yellow",
+            "shape": "square"
+          },
+          "glyph": "🟨",
+          "id": "yellow_square",
+          "raw_token_ids": [
+            8582,
+            253,
+            101
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE YELLOW SQUARE",
+          "utf8_hex": "f09f9fa8"
+        },
+        {
+          "codepoint": "U+1F7E3",
+          "factors": {
+            "color": "purple",
+            "shape": "circle"
+          },
+          "glyph": "🟣",
+          "id": "purple_circle",
+          "raw_token_ids": [
+            8582,
+            253,
+            96
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE PURPLE CIRCLE",
+          "utf8_hex": "f09f9fa3"
+        },
+        {
+          "codepoint": "U+1F7EA",
+          "factors": {
+            "color": "purple",
+            "shape": "square"
+          },
+          "glyph": "🟪",
+          "id": "purple_square",
+          "raw_token_ids": [
+            8582,
+            253,
+            103
+          ],
+          "unicode_category": "So",
+          "unicode_name": "LARGE PURPLE SQUARE",
+          "utf8_hex": "f09f9faa"
+        }
+      ],
+      "prefix_histogram": {
+        "8582,253": 10
+      },
+      "role": "prefix_homogeneous_colored_shapes",
+      "wrappers_verified_per_item": 16
+    }
+  ],
+  "reference_items": [
+    {
+      "codepoint": "U+1F7E4",
+      "factors": {
+        "color": "brown",
+        "shape": "circle"
+      },
+      "glyph": "🟤",
+      "id": "brown_circle",
+      "raw_token_ids": [
+        8582,
+        253,
+        97
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE BROWN CIRCLE",
+      "utf8_hex": "f09f9fa4"
+    },
+    {
+      "codepoint": "U+1F7EB",
+      "factors": {
+        "color": "brown",
+        "shape": "square"
+      },
+      "glyph": "🟫",
+      "id": "brown_square",
+      "raw_token_ids": [
+        8582,
+        253,
+        104
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE BROWN SQUARE",
+      "utf8_hex": "f09f9fab"
+    },
+    {
+      "codepoint": "U+1F7E0",
+      "factors": {
+        "color": "orange",
+        "shape": "circle"
+      },
+      "glyph": "🟠",
+      "id": "orange_circle",
+      "raw_token_ids": [
+        8582,
+        253,
+        254
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE ORANGE CIRCLE",
+      "utf8_hex": "f09f9fa0"
+    },
+    {
+      "codepoint": "U+1F7E7",
+      "factors": {
+        "color": "orange",
+        "shape": "square"
+      },
+      "glyph": "🟧",
+      "id": "orange_square",
+      "raw_token_ids": [
+        8582,
+        253,
+        100
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE ORANGE SQUARE",
+      "utf8_hex": "f09f9fa7"
+    },
+    {
+      "codepoint": "U+1F7E2",
+      "factors": {
+        "color": "green",
+        "shape": "circle"
+      },
+      "glyph": "🟢",
+      "id": "green_circle",
+      "raw_token_ids": [
+        8582,
+        253,
+        95
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE GREEN CIRCLE",
+      "utf8_hex": "f09f9fa2"
+    },
+    {
+      "codepoint": "U+1F7E9",
+      "factors": {
+        "color": "green",
+        "shape": "square"
+      },
+      "glyph": "🟩",
+      "id": "green_square",
+      "raw_token_ids": [
+        8582,
+        253,
+        102
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE GREEN SQUARE",
+      "utf8_hex": "f09f9fa9"
+    },
+    {
+      "codepoint": "U+1F535",
+      "factors": {
+        "color": "blue",
+        "shape": "circle"
+      },
+      "glyph": "🔵",
+      "id": "blue_circle",
+      "raw_token_ids": [
+        8582,
+        242,
+        113
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE BLUE CIRCLE",
+      "utf8_hex": "f09f94b5"
+    },
+    {
+      "codepoint": "U+1F7E6",
+      "factors": {
+        "color": "blue",
+        "shape": "square"
+      },
+      "glyph": "🟦",
+      "id": "blue_square",
+      "raw_token_ids": [
+        8582,
+        253,
+        99
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE BLUE SQUARE",
+      "utf8_hex": "f09f9fa6"
+    },
+    {
+      "codepoint": "U+1F7E3",
+      "factors": {
+        "color": "purple",
+        "shape": "circle"
+      },
+      "glyph": "🟣",
+      "id": "purple_circle",
+      "raw_token_ids": [
+        8582,
+        253,
+        96
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE PURPLE CIRCLE",
+      "utf8_hex": "f09f9fa3"
+    },
+    {
+      "codepoint": "U+1F7EA",
+      "factors": {
+        "color": "purple",
+        "shape": "square"
+      },
+      "glyph": "🟪",
+      "id": "purple_square",
+      "raw_token_ids": [
+        8582,
+        253,
+        103
+      ],
+      "unicode_category": "So",
+      "unicode_name": "LARGE PURPLE SQUARE",
+      "utf8_hex": "f09f9faa"
+    }
+  ],
+  "reference_prefix_profiles": {
+    "8582,242": {
+      "glyph_token_positions_by_wrapper": {
+        "w01_mark_anchor": [
+          2,
+          3,
+          4
+        ],
+        "w02_bracket_continue": [
+          1,
+          2,
+          3
+        ],
+        "w03_pipe_next": [
+          2,
+          3,
+          4
+        ],
+        "w04_token_state": [
+          2,
+          3,
+          4
+        ],
+        "w05_begin_end": [
+          2,
+          3,
+          4
+        ],
+        "w06_binary_result": [
+          1,
+          2,
+          3
+        ],
+        "w07_symbol_following": [
+          3,
+          4,
+          5
+        ],
+        "w08_pair_q": [
+          2,
+          3,
+          4
+        ],
+        "w09_input_response": [
+          2,
+          3,
+          4
+        ],
+        "w10_sequence_continuation": [
+          4,
+          5,
+          6
+        ],
+        "w11_field_anchor": [
+          4,
+          5,
+          6
+        ],
+        "w12_list_next": [
+          3,
+          4,
+          5
+        ],
+        "w13_left_right": [
+          1,
+          2,
+          3
+        ],
+        "w14_codepoint_text": [
+          4,
+          5,
+          6
+        ],
+        "w15_observation_inference": [
+          2,
+          3,
+          4
+        ],
+        "w16_slot_completion": [
+          3,
+          4,
+          5
+        ]
+      },
+      "reference_item_id": "blue_circle",
+      "token_count_by_wrapper": {
+        "w01_mark_anchor": 10,
+        "w02_bracket_continue": 8,
+        "w03_pipe_next": 10,
+        "w04_token_state": 8,
+        "w05_begin_end": 10,
+        "w06_binary_result": 8,
+        "w07_symbol_following": 10,
+        "w08_pair_q": 8,
+        "w09_input_response": 9,
+        "w10_sequence_continuation": 12,
+        "w11_field_anchor": 11,
+        "w12_list_next": 8,
+        "w13_left_right": 8,
+        "w14_codepoint_text": 10,
+        "w15_observation_inference": 9,
+        "w16_slot_completion": 10
+      }
+    },
+    "8582,253": {
+      "glyph_token_positions_by_wrapper": {
+        "w01_mark_anchor": [
+          2,
+          3,
+          4
+        ],
+        "w02_bracket_continue": [
+          1,
+          2,
+          3
+        ],
+        "w03_pipe_next": [
+          2,
+          3,
+          4
+        ],
+        "w04_token_state": [
+          2,
+          3,
+          4
+        ],
+        "w05_begin_end": [
+          2,
+          3,
+          4
+        ],
+        "w06_binary_result": [
+          1,
+          2,
+          3
+        ],
+        "w07_symbol_following": [
+          3,
+          4,
+          5
+        ],
+        "w08_pair_q": [
+          2,
+          3,
+          4
+        ],
+        "w09_input_response": [
+          2,
+          3,
+          4
+        ],
+        "w10_sequence_continuation": [
+          4,
+          5,
+          6
+        ],
+        "w11_field_anchor": [
+          4,
+          5,
+          6
+        ],
+        "w12_list_next": [
+          3,
+          4,
+          5
+        ],
+        "w13_left_right": [
+          1,
+          2,
+          3
+        ],
+        "w14_codepoint_text": [
+          4,
+          5,
+          6
+        ],
+        "w15_observation_inference": [
+          2,
+          3,
+          4
+        ],
+        "w16_slot_completion": [
+          3,
+          4,
+          5
+        ]
+      },
+      "reference_item_id": "brown_circle",
+      "token_count_by_wrapper": {
+        "w01_mark_anchor": 10,
+        "w02_bracket_continue": 8,
+        "w03_pipe_next": 10,
+        "w04_token_state": 8,
+        "w05_begin_end": 10,
+        "w06_binary_result": 8,
+        "w07_symbol_following": 10,
+        "w08_pair_q": 8,
+        "w09_input_response": 9,
+        "w10_sequence_continuation": 12,
+        "w11_field_anchor": 11,
+        "w12_list_next": 8,
+        "w13_left_right": 8,
+        "w14_codepoint_text": 10,
+        "w15_observation_inference": 9,
+        "w16_slot_completion": 10
+      }
+    }
+  },
+  "status": "pass",
+  "tokenizer": {
+    "class": "GPT2TokenizerFast",
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "verified_asset_count": 4,
+    "vocab_size": 50257
+  },
+  "wrapper_count": 16,
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w02_bracket_continue",
+    "w03_pipe_next",
+    "w04_token_state",
+    "w05_begin_end",
+    "w06_binary_result",
+    "w07_symbol_following",
+    "w08_pair_q",
+    "w09_input_response",
+    "w10_sequence_continuation",
+    "w11_field_anchor",
+    "w12_list_next",
+    "w13_left_right",
+    "w14_codepoint_text",
+    "w15_observation_inference",
+    "w16_slot_completion"
+  ]
+}

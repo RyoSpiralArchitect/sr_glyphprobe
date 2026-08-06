@@ -1,0 +1,48 @@
+{"id":"p2_cont_01","group":"continuation","prompt":"Complete with one natural continuation:\nThe museum opened a new gallery, and the first visitors"}
+{"id":"p2_cont_02","group":"continuation","prompt":"Complete with one natural continuation:\nAs the storm moved offshore, the fishing boats"}
+{"id":"p2_cont_03","group":"continuation","prompt":"Complete with one natural continuation:\nThe librarian found the misplaced volume behind"}
+{"id":"p2_cont_04","group":"continuation","prompt":"Complete with one natural continuation:\nDuring the rehearsal, the conductor asked the brass section to"}
+{"id":"p2_cont_05","group":"continuation","prompt":"Complete with one natural continuation:\nA narrow footbridge crossed the stream and led toward"}
+{"id":"p2_cont_06","group":"continuation","prompt":"Complete with one natural continuation:\nWhen the software update finished, the device"}
+{"id":"p2_cont_07","group":"continuation","prompt":"Complete with one natural continuation:\nThe baker removed the loaves from the oven before"}
+{"id":"p2_cont_08","group":"continuation","prompt":"Complete with one natural continuation:\nBy noon, the volunteers had sorted most of"}
+{"id":"p2_fact_01","group":"factual","prompt":"Answer in one concise sentence:\nWhat causes the phases of the Moon?"}
+{"id":"p2_fact_02","group":"factual","prompt":"Answer in one concise sentence:\nWhy does dew form on grass overnight?"}
+{"id":"p2_fact_03","group":"factual","prompt":"Answer in one concise sentence:\nWhat is the purpose of a circuit breaker?"}
+{"id":"p2_fact_04","group":"factual","prompt":"Answer in one concise sentence:\nHow do bees contribute to plant reproduction?"}
+{"id":"p2_fact_05","group":"factual","prompt":"Answer in one concise sentence:\nWhy are coastal climates often milder than inland climates?"}
+{"id":"p2_fact_06","group":"factual","prompt":"Answer in one concise sentence:\nWhat makes a rainbow visible?"}
+{"id":"p2_fact_07","group":"factual","prompt":"Answer in one concise sentence:\nWhat is a database index used for?"}
+{"id":"p2_fact_08","group":"factual","prompt":"Answer in one concise sentence:\nWhy does dissolved salt lower the freezing point of water?"}
+{"id":"p2_reason_01","group":"reasoning","prompt":"Choose the conclusion that follows and explain briefly:\nEvery cedar in this grove is evergreen. This tree is a cedar in the grove."}
+{"id":"p2_reason_02","group":"reasoning","prompt":"Solve briefly:\nA reservoir releases 180 liters evenly over 6 hours. What is the average rate?"}
+{"id":"p2_reason_03","group":"reasoning","prompt":"State what follows logically:\nIf the alarm is armed, its indicator is lit. The indicator is not lit."}
+{"id":"p2_reason_04","group":"reasoning","prompt":"Compare the two quantities briefly:\nFive eighths of 96 and 70 percent of 80."}
+{"id":"p2_reason_05","group":"reasoning","prompt":"Give the next number and the rule briefly:\n4, 7, 10, 13, ..."}
+{"id":"p2_reason_06","group":"reasoning","prompt":"Choose the conclusion that follows and explain briefly:\nNo ceramic object in the set is flexible. This band is flexible."}
+{"id":"p2_reason_07","group":"reasoning","prompt":"Solve briefly:\nA recipe uses 3 cups of flour for 2 loaves. How many cups are needed for 5 loaves at the same ratio?"}
+{"id":"p2_reason_08","group":"reasoning","prompt":"State the ordering implied by the facts:\nTask A finishes before Task B, and Task B finishes before Task C."}
+{"id":"p2_proc_01","group":"procedural","prompt":"Give three compact steps for checking a kitchen scale with known weights."}
+{"id":"p2_proc_02","group":"procedural","prompt":"Give three compact steps for verifying a downloaded archive against a published checksum."}
+{"id":"p2_proc_03","group":"procedural","prompt":"Give three compact steps for repotting a small houseplant."}
+{"id":"p2_proc_04","group":"procedural","prompt":"Give three compact steps for testing a household flashlight after replacing its batteries."}
+{"id":"p2_proc_05","group":"procedural","prompt":"Give three compact steps for organizing a small archive of research notes."}
+{"id":"p2_proc_06","group":"procedural","prompt":"Give three compact steps for cleaning a reusable water bottle."}
+{"id":"p2_proc_07","group":"procedural","prompt":"Give three compact steps for comparing two internet connections under the same conditions."}
+{"id":"p2_proc_08","group":"procedural","prompt":"Give three compact steps for preparing a serving of overnight oats."}
+{"id":"p2_class_01","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA wooden stool."}
+{"id":"p2_class_02","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA friendship between two neighbors."}
+{"id":"p2_class_03","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA prime number."}
+{"id":"p2_class_04","group":"classification","prompt":"Classify as reversible or irreversible, then give one reason:\nStretching an elastic band within its working limit."}
+{"id":"p2_class_05","group":"classification","prompt":"Classify as reversible or irreversible, then give one reason:\nToasting a slice of bread."}
+{"id":"p2_class_06","group":"classification","prompt":"Classify as observation or inference, then give one reason:\nThe pressure gauge displays 40 kPa."}
+{"id":"p2_class_07","group":"classification","prompt":"Classify as observation or inference, then give one reason:\nThe lawn is wet, so the sprinkler must have run."}
+{"id":"p2_class_08","group":"classification","prompt":"Classify as finite or infinite, then give one reason:\nThe set of named weekdays."}
+{"id":"p2_plan_01","group":"planning","prompt":"Propose a minimal one-day plan for cataloging 150 unlabeled audio clips."}
+{"id":"p2_plan_02","group":"planning","prompt":"Propose a minimal experiment to compare two study methods fairly."}
+{"id":"p2_plan_03","group":"planning","prompt":"Propose a minimal checklist for moving a static blog to a new host."}
+{"id":"p2_plan_04","group":"planning","prompt":"Propose a minimal three-week plan for learning basic probability."}
+{"id":"p2_plan_05","group":"planning","prompt":"Propose a minimal one-day plan for inventorying 300 shared tools."}
+{"id":"p2_plan_06","group":"planning","prompt":"Propose a minimal pilot plan for testing a short questionnaire."}
+{"id":"p2_plan_07","group":"planning","prompt":"Propose a minimal workflow for digitizing one year of paper receipts."}
+{"id":"p2_plan_08","group":"planning","prompt":"Propose a minimal plan for preparing a 30-minute classroom science demonstration."}

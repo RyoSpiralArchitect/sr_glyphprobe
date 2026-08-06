@@ -1,0 +1,41 @@
+items:
+  - id: null_c_u1f7c2
+    glyph: "🟂"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7c5
+    glyph: "🟅"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7c8
+    glyph: "🟈"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7cb
+    glyph: "🟋"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7ce
+    glyph: "🟎"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7d1
+    glyph: "🟑"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7d4
+    glyph: "🟔"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7d7
+    glyph: "🟗"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253}
+    labels: []
+  - id: null_c_u1f7e5
+    glyph: "🟥"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_253, control_subrole: conservative_semantic_near_control}
+    labels: []
+  - id: null_c_u1f52c
+    glyph: "🔬"
+    factors: {control_family: m2_null_c, prefix_stratum: p8582_242}
+    labels: []

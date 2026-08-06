@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Results](docs/RESULTS_V1.md) · [Milestone 2 protocol](docs/MILESTONE2_PROTOCOL.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -30,6 +30,23 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 These numbers are descriptive outputs of one pinned model cell. The [parity receipt](validation/mlx_gpt2_parity/receipt.json) is explicitly marked as an engineering validation rather than a scientific result. The [standard-run audit](validation/run_audits/colored-shapes-v1-standard-mlx--c493ae1e18743922.json) passed 15/15 integrity checks with caveats. The run authorizes targeted follow-up design only; `causal_claim_authorized` remains `false`. See [Results v1](docs/RESULTS_V1.md) for the complete qualification and negative cells.
 
 Latency is machine-, load-, and software-dependent. Treat the receipt as the measurement, not 1.63× as a universal MLX claim.
+
+### Milestone 2 status
+
+The tokenization-matched control protocol is frozen and preflight is pending;
+no Milestone 2 model outcome is reported yet. A one-shot 48-target P2
+confirmatory bank and a separate 48-target C1 causal holdout bank are frozen.
+The primary comparison uses three disjoint ten-symbol null panels matched to the
+colored-shape panel on GPT-2 token count and its 9:1 token-prefix structure.
+Layers 2 and 4 at strength 0.05 are the fixed primary family, and inference is
+performed over target-prompt clusters rather than treating glyphs or direction
+seeds as independent observations.
+
+The P2 bank remains unopened until the protocol and its bound manifests,
+configs, analysis code, and tests are present in the public freeze commit and
+all preflight checks pass. The C1 bank is reserved for a later causal protocol.
+See the [Milestone 2 confirmatory protocol](docs/MILESTONE2_PROTOCOL.md) for the
+endpoint, decision rule, and prohibited uses.
 
 ## Install
 
@@ -168,6 +185,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Backend boundaries | [BACKENDS.md](docs/BACKENDS.md) | [BACKENDS.ja.md](docs/BACKENDS.ja.md) |
 | Metrics | [METRICS.md](docs/METRICS.md) | [METRICS.ja.md](docs/METRICS.ja.md) |
 | Current results | [RESULTS_V1.md](docs/RESULTS_V1.md) | [RESULTS_V1.ja.md](docs/RESULTS_V1.ja.md) |
+| Milestone 2 protocol | [MILESTONE2_PROTOCOL.md](docs/MILESTONE2_PROTOCOL.md) | [MILESTONE2_PROTOCOL.ja.md](docs/MILESTONE2_PROTOCOL.ja.md) |
 | Research roadmap | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.ja.md](docs/ROADMAP.ja.md) |
 | Phase I paper plan | [PAPER_OUTLINE.md](docs/PAPER_OUTLINE.md) | [PAPER_OUTLINE.ja.md](docs/PAPER_OUTLINE.ja.md) |
 | Public research note | [NOTE.md](docs/NOTE.md) | [NOTE.ja.md](docs/NOTE.ja.md) |
