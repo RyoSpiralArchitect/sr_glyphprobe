@@ -26,7 +26,12 @@ from glyphprobe.records import Intervention
 
 MODEL_ID = "mlx-community/Llama-3.2-3B-bf16"
 MODEL_REVISION = "60a99aaf43164077157d64bf909b7b61143c6a6d"
-PROTOCOL_ID = "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1"
+PROTOCOL_ID = "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2"
+VALIDATOR_VERSION = 2
+SUPERSEDES_PROTOCOL_ID = (
+    "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1"
+)
+TECHNICAL_CHANGE = "MLX BF16 arrays cast to mx.float32 before NumPy export"
 DTYPE = "bfloat16"
 SITE = "resid_post"
 LAYERS = (5, 11)
@@ -42,7 +47,9 @@ EXPECTED_ARTIFACT_MANIFEST_SHA256 = (
 RELATIVE_INTERVENTION_RMS = 0.05
 WARMUPS = 2
 REPEATS = 10
-DEFAULT_OUTPUT = Path("validation/mlx_llama32_3b_bf16_parity/receipt.json")
+DEFAULT_OUTPUT = Path(
+    "validation/mlx_llama32_3b_bf16_parity_v2/receipt.json"
+)
 CLAIM_BOUNDARY = (
     "pinned-llama32-3b-bf16-resid-post-backend-parity-and-speed-only"
 )
@@ -85,6 +92,9 @@ THRESHOLDS: dict[str, Any] = {
 
 VALIDATION_CONFIG: dict[str, Any] = {
     "protocol_id": PROTOCOL_ID,
+    "validator_version": VALIDATOR_VERSION,
+    "supersedes_protocol_id": SUPERSEDES_PROTOCOL_ID,
+    "technical_change": TECHNICAL_CHANGE,
     "model": MODEL_ID,
     "revision": MODEL_REVISION,
     "dtype": DTYPE,
@@ -1081,6 +1091,9 @@ def _assemble_receipt(
     return {
         "schema_version": 3,
         "protocol_id": PROTOCOL_ID,
+        "validator_version": VALIDATOR_VERSION,
+        "supersedes_protocol_id": SUPERSEDES_PROTOCOL_ID,
+        "technical_change": TECHNICAL_CHANGE,
         "status": status,
         "claim_boundary": CLAIM_BOUNDARY,
         "scientific_result": False,

@@ -3,9 +3,11 @@ from __future__ import annotations
 from types import SimpleNamespace
 
 import numpy as np
+import pytest
 import torch
 
 from glyphprobe.backends.lens import TransformerLensBackend
+from glyphprobe.backends.mlx_backend import MLXBackend
 from glyphprobe.backends.transformers_backend import TransformersBackend
 from glyphprobe.config import BackendConfig
 from glyphprobe.records import Intervention
@@ -171,3 +173,47 @@ def test_raw_transformers_resid_post_hook_changes_logits() -> None:
     assert set(changed.activations) == {0, 1}
     assert not np.allclose(baseline.activations[0], changed.activations[0])
     assert not np.allclose(baseline.logits, changed.logits)
+
+
+def test_mlx_numpy_bridge_casts_before_numpy_conversion() -> None:
+    float32_sentinel = object()
+
+    class RejectDirectNumpyConversion:
+        def __init__(self) -> None:
+            self.requested_dtype = None
+
+        def astype(self, dtype):
+            self.requested_dtype = dtype
+            return np.array([-1.5, 0.0, 2.25], dtype=np.float32)
+
+        def __array__(self, dtype=None, copy=None):
+            del dtype, copy
+            raise RuntimeError("the source array must be cast before NumPy conversion")
+
+    source = RejectDirectNumpyConversion()
+    backend = MLXBackend(
+        BackendConfig(kind="mlx", model="fake", device="cpu", dtype="bfloat16")
+    )
+    backend.mx = SimpleNamespace(float32=float32_sentinel, eval=lambda *values: None)
+
+    converted = backend._to_numpy_float32(source)
+
+    assert source.requested_dtype is float32_sentinel
+    assert converted.dtype == np.float32
+    np.testing.assert_array_equal(converted, [-1.5, 0.0, 2.25])
+
+
+def test_mlx_numpy_bridge_handles_real_bfloat16_and_float32() -> None:
+    mx = pytest.importorskip("mlx.core")
+    backend = MLXBackend(
+        BackendConfig(kind="mlx", model="fake", device="cpu", dtype="bfloat16")
+    )
+    backend.mx = mx
+
+    expected = np.array([-1.5, 0.0, 2.25], dtype=np.float32)
+    for source_dtype in (mx.bfloat16, mx.float32):
+        source = mx.array(expected, dtype=source_dtype)
+        converted = backend._to_numpy_float32(source)
+
+        assert converted.dtype == np.float32
+        np.testing.assert_array_equal(converted, expected)

@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 MLX validationプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 MLX validation v2プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -68,13 +68,36 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-公開freeze commitでの状態: engineering protocol frozen / validation pending。
-Commit公開前の実効statusは`freeze_pending`のままとする。どちらの状態でも、E2の
-科学的model forwardも結果も認めない。
+V2公開freeze commitでの状態: V1のengineering validationは、記録を保存した
+MLX exportの技術的失敗で停止した。V2のengineering protocolは凍結済みで、
+validationは未実行である。Commit公開前は`freeze_pending`とする。E2の科学的
+model forwardも結果も認めない。
 
-- まず、base modelである`mlx-community/Llama-3.2-3B-bf16`のrevision
-  `60a99aaf43164077157d64bf909b7b61143c6a6d`について、process-isolatedな
-  Transformers/MPS-to-MLX parityとlocal speedのvalidationを凍結し、実行する。
+V1は、公開commit `88685bd01ab115df323e9a324d49a659c66163c7`で凍結した。
+Transformers/MPS phaseは完了したが、MLX phaseは最初のbaseline exportで次の
+errorを出して停止した。
+
+```text
+RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the dtype B item size 1.
+```
+
+この技術的失敗は、parity比較、speed判定、科学的endpointのいずれよりも前に
+発生した。V1ではreceiptを生成せず、科学的outcomeも確認していない。
+
+- `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2`が有効になるのは、
+  次の公開commitが英日protocolとv2の技術面を凍結した時点とする。それまでは
+  `freeze_pending` / `validation_pending`である。
+- 完了したv2 receiptは
+  `validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`だけへ書き出す。V1の
+  receiptを新規作成したり、後から補ったりしない。
+- MLXからNumPyへのexport bridgeだけを変更する。MLXのBF16 arrayをNumPyへ
+  exportする直前に`mx.float32`へcastし、model実行はnative BF16のまま維持する。
+- Model artifactとrevision、artifact inventory、prompt、layer、parity・speed閾値、
+  intervention vectorの構築方法とbyte列、warm-up・計測回数、timing境界、process順、
+  科学的な境界はv1から変更しない。
+- V2の公開freeze後、base modelである`mlx-community/Llama-3.2-3B-bf16`のrevision
+  `60a99aaf43164077157d64bf909b7b61143c6a6d`について、同じprocess-isolatedな
+  Transformers/MPS-to-MLX parityとlocal speedのvalidationを再実行する。
 - Native BF16、`add_special_tokens: false`、`last_nonpad`の`resid_post`、
   layer 5・11を用いる。Layerは、期待されるdecoder 28層に対して、固定した相対
   depth 0.2・0.4から導出する。
@@ -101,8 +124,8 @@ cross-model replicationでもmodel-generalな絵文字効果の証拠でもな�
 
 終了条件: 固定model/configuration identityを、完全なbackend parityおよび
 Transformers/MPSの95%以下となるmachine-localなMLX aggregate median latencyへ
-結び付けたatomic・no-overwrite receiptを1件作る。この終了条件が認定するのは
-engineering routeだけであり、E2や論文gateは完了しない。
+結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。達成しても
+認定されるのはengineering routeだけであり、E2や論文gateは完了しない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

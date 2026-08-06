@@ -190,7 +190,16 @@ def test_frozen_model_architecture_prompts_and_thresholds() -> None:
     assert VALIDATOR.DTYPE == "bfloat16"
     assert (
         VALIDATOR.PROTOCOL_ID
+        == "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2"
+    )
+    assert VALIDATOR.VALIDATOR_VERSION == 2
+    assert (
+        VALIDATOR.SUPERSEDES_PROTOCOL_ID
         == "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1"
+    )
+    assert (
+        VALIDATOR.TECHNICAL_CHANGE
+        == "MLX BF16 arrays cast to mx.float32 before NumPy export"
     )
     assert VALIDATOR.LAYERS == (5, 11)
     assert VALIDATOR.ADD_SPECIAL_TOKENS is False
@@ -240,7 +249,31 @@ def test_frozen_model_architecture_prompts_and_thresholds() -> None:
     vector = VALIDATOR._intervention_vector(0.123)
     assert VALIDATOR._rms(vector) == pytest.approx(0.123, rel=2e-7)
     assert VALIDATOR.VALIDATION_CONFIG["protocol_id"] == VALIDATOR.PROTOCOL_ID
+    assert VALIDATOR.VALIDATION_CONFIG["validator_version"] == 2
+    assert (
+        VALIDATOR.VALIDATION_CONFIG["supersedes_protocol_id"]
+        == VALIDATOR.SUPERSEDES_PROTOCOL_ID
+    )
+    assert (
+        VALIDATOR.VALIDATION_CONFIG["technical_change"]
+        == VALIDATOR.TECHNICAL_CHANGE
+    )
     assert len(VALIDATOR.VALIDATION_CONFIG_SHA256) == 64
+
+
+def test_v2_protocol_and_default_output_are_distinct_from_frozen_v1() -> None:
+    v1_protocol_id = "glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1"
+    v1_output = Path("validation/mlx_llama32_3b_bf16_parity/receipt.json")
+    v1_validation_config_sha256 = (
+        "425d3fa53576fd5e8000efdbcd77ca27122e1c797590590c756d42e8f3f0155c"
+    )
+
+    assert VALIDATOR.PROTOCOL_ID != v1_protocol_id
+    assert VALIDATOR.DEFAULT_OUTPUT == Path(
+        "validation/mlx_llama32_3b_bf16_parity_v2/receipt.json"
+    )
+    assert VALIDATOR.DEFAULT_OUTPUT != v1_output
+    assert VALIDATOR.VALIDATION_CONFIG_SHA256 != v1_validation_config_sha256
 
 
 def test_fake_subprocess_command_is_offline_and_pinned(
@@ -312,6 +345,9 @@ def test_run_is_strictly_sequential_and_receipt_schema_is_backend_compatible(
     assert calls == ["transformers_mps", "mlx_gpu"]
     assert receipt["schema_version"] == 3
     assert receipt["protocol_id"] == VALIDATOR.PROTOCOL_ID
+    assert receipt["validator_version"] == 2
+    assert receipt["supersedes_protocol_id"] == VALIDATOR.SUPERSEDES_PROTOCOL_ID
+    assert receipt["technical_change"] == VALIDATOR.TECHNICAL_CHANGE
     assert receipt["status"] == "validated_mlx_selected"
     assert receipt["claim_boundary"] == VALIDATOR.CLAIM_BOUNDARY
     assert receipt["scientific_result"] is False

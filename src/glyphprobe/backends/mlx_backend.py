@@ -142,6 +142,13 @@ class MLXBackend(Backend):
             raise IndexError(f"Position {idx} outside sequence length {length}")
         return idx
 
+    def _to_numpy_float32(self, value: Any) -> np.ndarray:
+        """Materialize an MLX array through an on-device float32 cast."""
+
+        float32_value = value.astype(self.mx.float32)
+        self.mx.eval(float32_value)
+        return np.array(float32_value, dtype=np.float32, copy=True)
+
     def _resolve_local_model(self) -> str:
         model = self.config.model
         if Path(model).exists():
@@ -547,9 +554,9 @@ class MLXBackend(Backend):
             self.mx.eval(logits_all, *captured_lazy.values())
         latency_ms = (time.perf_counter() - started) * 1000.0
 
-        logits = np.array(logits_all[0, -1, :], dtype=np.float32, copy=True)
+        logits = self._to_numpy_float32(logits_all[0, -1, :])
         captured = {
-            layer: np.array(value, dtype=np.float32, copy=True)
+            layer: self._to_numpy_float32(value)
             for layer, value in captured_lazy.items()
             if layer in capture_layers
         }

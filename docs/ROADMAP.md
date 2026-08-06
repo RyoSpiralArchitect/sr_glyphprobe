@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 MLX validation protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 MLX validation v2 protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -129,14 +129,39 @@ protocol and a new untouched target bank that is neither P2 nor C1.
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-Status in the public freeze commit: engineering protocol frozen; validation
-pending. Before that commit is public, the effective status remains
-`freeze_pending`. No E2 scientific model forward or result is authorized at
-either status.
+Status in the v2 public-freeze commit: the v1 engineering validation stopped at
+a preserved technical MLX export failure; the v2 engineering protocol is
+frozen and validation is pending. Before that commit is public, v2 remains
+`freeze_pending`. No E2 scientific model forward or result is authorized.
 
-- first freeze and run a process-isolated Transformers/MPS-to-MLX parity and
-  local-speed validation for the base `mlx-community/Llama-3.2-3B-bf16`
-  artifact at revision
+Version 1 was frozen by public commit
+`88685bd01ab115df323e9a324d49a659c66163c7`. Its Transformers/MPS phase
+completed. The MLX phase then failed on the first baseline export with:
+
+```text
+RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the dtype B item size 1.
+```
+
+The failure preceded parity comparison, the speed decision, and every
+scientific endpoint. No v1 receipt was produced, and no scientific outcome was
+inspected.
+
+- make `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2` effective only
+  when the next public commit freezes the bilingual protocol and v2 technical
+  surface; until then its status is `freeze_pending` / `validation_pending`;
+- write any completed v2 receipt only to
+  `validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`, without creating or
+  backfilling a v1 receipt;
+- change only the MLX-to-NumPy export bridge: cast MLX BF16 arrays to
+  `mx.float32` immediately before NumPy export while retaining native-BF16 model
+  execution;
+- keep the model artifact and revision, artifact inventory, prompts, layers,
+  parity and speed thresholds, intervention-vector construction and bytes,
+  warm-up and measurement counts, timing boundary, process order, and
+  scientific boundaries unchanged from v1;
+- after the v2 public freeze, rerun the same process-isolated
+  Transformers/MPS-to-MLX parity and local-speed validation for the base
+  `mlx-community/Llama-3.2-3B-bf16` artifact at revision
   `60a99aaf43164077157d64bf909b7b61143c6a6d`;
 - use native BF16, `add_special_tokens: false`, `resid_post` at `last_nonpad`,
   and layers 5 and 11, derived from fixed relative depths 0.2 and 0.4 over the
@@ -168,8 +193,8 @@ paper gate 5.
 Exit condition: one atomic, no-overwrite receipt binds the pinned model and
 configuration identities to complete backend parity and a machine-local MLX
 aggregate median latency no greater than 95% of Transformers/MPS. This exit
-condition qualifies the engineering route only; it does not complete E2 or a
-paper gate.
+condition remains unmet. Satisfying it would qualify the engineering route
+only; it would not complete E2 or a paper gate.
 
 ### Milestone 3 — Targeted causal localization
 

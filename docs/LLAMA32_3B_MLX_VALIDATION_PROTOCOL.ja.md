@@ -1,8 +1,8 @@
-# E2 Stage-Aプロトコル: Llama 3.2 3B MLX engineering validation
+# E2 Stage-A v2プロトコル: Llama 3.2 3B MLX engineering validation
 
 [English](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [研究ロードマップ](ROADMAP.ja.md) · [E1探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)
 
-プロトコルID: `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1`
+プロトコルID: `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2`
 
 ## 状態と目的
 
@@ -10,9 +10,9 @@
 `frozen_by_public_commit_containing_this_protocol`。Execution status:
 `validation_pending`。Stage: engineering validation。
 
-このfrozen statusが有効になるのは、このprotocolと実行可能なvalidatorを含むcommitが
-公開された時点である。公開前の実効statusは`freeze_pending`であり、validation
-forwardは認めない。
+このfrozen statusが有効になるのは、公開commitがこの英日文書とv2の実装・検証
+codeを結び付けた時点である。公開前の実効statusは`freeze_pending`であり、v2の
+validation forwardは認めない。
 
 このプロトコルは、E2のcross-model transport side trackに先立ち、backend
 parityとマシン内速度のgateを固定する。対象は、1つの固定済みLlama 3.2
@@ -20,11 +20,41 @@ parityとマシン内速度のgateを固定する。対象は、1つの固定済
 Transformers/MPSに十分近い出力が得られ、かつ検証機でforward latencyの集約中央
 値が少なくとも5%短いか、というengineering上の問いだけである。
 
-英日文書、validatorとそのtest、固定した検証inputと閾値、実装identityを1つの
-公開commitで結び付けるまで、このプロトコルに基づくvalidation forwardは認め
-ない。合格receiptによって選択できるのは、固定済みE2 cellに対するMLXだけで
-ある。これは科学的結果でも、cross-model replicationでも、絵文字表現に関する
-証拠でもない。
+英日文書、validatorとそのtest、固定した検証inputと閾値、実装identityを次の
+公開commitで結び付けるまで、v2のvalidation forwardは認めない。合格receiptで
+選択できるのは、固定済みE2 cellに対するMLXだけである。これは科学的結果でも、
+cross-model replicationでも、絵文字表現に関する証拠でもない。
+
+## V1の試行記録とv2で変更する一点
+
+V1は、公開commit `88685bd01ab115df323e9a324d49a659c66163c7`で
+凍結した。その後にengineering validationを試行し、Transformers/MPS phaseは
+完了したが、MLX phaseは最初のbaseline exportで停止した。正確なerrorは次の
+とおりである。
+
+```text
+RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the dtype B item size 1.
+```
+
+この技術的失敗は、parity比較、speed判定、科学的endpointのいずれよりも前に
+発生した。V1ではreceiptを生成せず、E2用backendも選択せず、科学的outcomeも
+確認していない。したがって、正負どちらのmodel結果にも当たらない。
+
+この試行の機械可読な記録は
+[`attempt_01_failure.json`](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json)
+に保存する。
+
+V2で変更するengineering処理は1点だけである。MLXのBF16 arrayを、NumPyへ
+exportする直前に`mx.float32`へcastする。Model実行はnative BF16のまま維持する。
+固定model artifactとrevision、artifact inventory、prompt、layer、閾値、
+intervention vectorの構築方法とbyte列、warm-up・計測回数、timing境界、process順、
+receipt rule、科学的な境界はv1から変更しない。V1のfreezeと失敗した試行は公開履歴
+として残し、v2で上書きも再解釈もしない。
+
+この修正により、hash対象である`src/glyphprobe` treeは変わる。そのため、過去の
+MLX parity receiptは現在のcheckoutを認定しない。GPT-2とE1の既存証拠は、元の
+implementation commitへ結び付けた履歴として維持し、書き換えない。現在のsourceで
+新しくrunする場合は、versionを分けた新しいreceiptを必要とする。
 
 ## 固定する候補cell
 
@@ -129,15 +159,17 @@ vector RMS、width、dtype、各prompt-layer caseのcontent hashを記録する�
    payloadを書き出した後、終了する。
 2. Reference processが終了してmodel stateを解放した後、MLX processが同じ固定
    artifactとrevisionを読み込む。同じinvariantを検証し、同一promptとserialize済み
-   float32 vectorをreplayする。注入前にexact hashを確認し、出力とtiming sampleを
-   別のstaging payloadへ書き出した後、終了する。
+   float32 vectorをreplayする。注入前にexact hashを確認し、報告対象のBF16 arrayを
+   NumPyへexportする直前に`mx.float32`へcastする。出力とtiming sampleを別の
+   staging payloadへ書き出した後、終了する。
 3. 比較stepは、modelを読み込まずに両staging identityを検証し、固定済みparity
    gateとspeed gateを評価する。
 
 各prompt-layer-backend cellでは、記録しないwarm-up forwardを2回行った後、10回
 を計測する。5 promptと2 layerなので、各backendから100 sampleを得る。Forward
 timingには、tokenization、capture/intervention、device evaluation、報告対象array
-のNumPyへの転送を含める。Model load latencyは別に記録し、speed gateには含めない。
+のNumPyへの転送を含める。V2のexport castも、この変更しないtiming境界の内側で
+行う。Model load latencyは別に記録し、speed gateには含めない。
 
 このscheduleは意図的に逐次かつnon-interleavedとし、24 GiBのメモリを備えた
 machineで約6.4 GBのweight setを2つ同時に保持しなくてよいようにする。Timing比較は
@@ -173,8 +205,8 @@ cross-backend deltaにおける`MLX RMS / Transformers RMS`を表す。次のche
 
 Baselineとchanged logitsはvocabulary全体で比較する。Validation出力を1つでも確認
 した後は、閾値を緩めたり、promptやlayerを除いたりしてはならない。Code defectを
-修正する場合も、versionを更新したvalidatorと新たに凍結したreceipt destinationを
-用い、失敗receiptは見える状態に残す。
+修正する場合も、versionを更新したprotocolと新たに凍結したreceipt destinationを
+用いる。既存のfailure evidenceは残し、v1でreceiptが生成されなかったことも明記する。
 
 ## 固定するspeed gate
 
@@ -189,14 +221,16 @@ m_M \le 0.95m_T.
 Cell別・aggregate別のmedian、mean、minimum、95 percentile latencyに加えて、
 sample数とmodel load timeを公開する。このgateの合格が意味するのは、固定した
 local E2 cellにMLXを選ぶことだけである。不合格でもparity自体は無効にならないが、
-予定する科学的gridについて、v1のMLX engineering qualificationを主張することは
+予定する科学的gridについて、v2のMLX engineering qualificationを主張することは
 認めない。
 
 ## Receipt、identity、no-overwrite rule
 
 最終receipt pathは
-`validation/mlx_llama32_3b_bf16_parity/receipt.json`とする。公開前に、receiptは
-少なくとも次を結び付ける。
+`validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`とする。V1のpathとは
+分離する。V1ではreceiptが生成されなかったため、v2からv1 destinationへreceiptを
+新規作成したり、後から補ったりしてはならない。公開前に、receiptは少なくとも次を
+結び付ける。
 
 - protocol IDと固定validation configuration identity
 - 正確なmodel名とrevision、固定済み9-file・6,434,705,789-byteのartifact inventory

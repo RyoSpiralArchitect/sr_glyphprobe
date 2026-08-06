@@ -1,8 +1,8 @@
-# E2 Stage-A protocol: Llama 3.2 3B MLX engineering validation
+# E2 Stage-A v2 protocol: Llama 3.2 3B MLX engineering validation
 
 [日本語](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [Research roadmap](ROADMAP.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
 
-Protocol ID: `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v1`
+Protocol ID: `glyphprobe-e2-llama32-3b-mlx-engineering-validation-v2`
 
 ## Status and purpose
 
@@ -10,22 +10,54 @@ Protocol status after publication:
 `frozen_by_public_commit_containing_this_protocol`. Execution status:
 `validation_pending`. Stage: engineering validation.
 
-The frozen status becomes effective only when the public commit containing this
-protocol and its executable validator is available. Before that publication,
-the effective status is `freeze_pending`, and no validation forward is
-authorized.
+That frozen status becomes effective only when the public commit binds this
+English/Japanese pair to the v2 implementation and validation surface. Before
+publication, the effective status is `freeze_pending`, and no v2 validation
+forward is authorized.
 
-This protocol freezes the backend-parity and machine-local speed gate for a
+This protocol will freeze the backend-parity and machine-local speed gate for a
 prospective E2 cross-model transport side track. It asks only whether one exact
 Llama 3.2 3B BF16 artifact can run the required `resid_post` intervention cell
 through MLX with acceptably close outputs to Transformers/MPS and at least 5%
 lower aggregate median forward latency on the validation machine.
 
-No validation forward is authorized by this protocol until one public commit
-binds this English/Japanese pair to the validator, its tests, the fixed
-validation inputs and thresholds, and the implementation identity. A passing
-receipt may select MLX for the pinned E2 cell only. It is not a scientific
-result, a cross-model replication, or evidence about emoji representations.
+No validation forward is authorized by v2 until that public commit binds this
+English/Japanese pair to the validator, its tests, the fixed validation inputs
+and thresholds, and the implementation identity. A passing receipt may select
+MLX for the pinned E2 cell only. It is not a scientific result, a cross-model
+replication, or evidence about emoji representations.
+
+## Preserved v1 attempt and the sole v2 change
+
+Version 1 was frozen by public commit
+`88685bd01ab115df323e9a324d49a659c66163c7`. Its engineering validation was
+attempted after that freeze. The Transformers/MPS phase completed, but the MLX
+phase stopped on its first baseline export, with the exact error:
+
+```text
+RuntimeError: Item size 2 for PEP 3118 buffer format string B does not match the dtype B item size 1.
+```
+
+The failure occurred before any parity comparison, speed decision, or
+scientific endpoint. Version 1 produced no receipt, selected no backend for E2,
+and inspected no scientific outcome. This is a technical compatibility failure,
+not a negative or positive model result.
+
+The machine-readable record of that attempt is
+[`attempt_01_failure.json`](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json).
+
+Version 2 changes one engineering operation only: immediately before NumPy
+export, MLX BF16 arrays are cast to `mx.float32`. Model execution remains native
+BF16. The pinned model artifact and revision, artifact inventory, prompts,
+layers, thresholds, intervention-vector construction and bytes, warm-up and
+measurement counts, timing boundary, process order, receipt rules, and
+scientific boundary are unchanged from v1. The v1 freeze and failed attempt
+remain part of the public record; v2 neither overwrites nor reinterprets them.
+
+Because the fix changes the hashed `src/glyphprobe` tree, older MLX parity
+receipts do not qualify the current checkout. Historical GPT-2 and E1 evidence
+remains bound to its original implementation commit and is not rewritten;
+future runs on the current source require a newly versioned receipt.
 
 ## Pinned candidate cell
 
@@ -134,7 +166,8 @@ fixed order:
 2. after the reference process has exited and released its model state, an MLX
    process loads the same pinned artifact and revision, verifies the same
    invariants, replays the exact prompts and serialized float32 vectors,
-   verifies their exact hashes before injection, records its outputs and timing
+   verifies their exact hashes before injection, casts each BF16 report array to
+   `mx.float32` immediately before NumPy export, records its outputs and timing
    samples, writes a second staged payload, and exits;
 3. a comparison step verifies both staged identities and evaluates the fixed
    parity and speed gates without loading either model.
@@ -143,8 +176,8 @@ Each prompt-layer-backend cell receives two unrecorded warm-up forwards followed
 by ten measured forwards. With five prompts and two layers, each backend
 contributes 100 measured samples. The forward timing includes tokenization,
 capture/intervention, device evaluation, and transfer of the reported arrays to
-NumPy. Model-load latency is recorded separately and is not part of the speed
-gate.
+NumPy. The v2 export cast remains inside this unchanged timing boundary.
+Model-load latency is recorded separately and is not part of the speed gate.
 
 This schedule is deliberately sequential and non-interleaved so that a 24 GiB
 machine need not hold two approximately 6.4 GB weight sets simultaneously. Its
@@ -182,8 +215,8 @@ failed parity case.
 Baseline and changed logits are compared over the complete vocabulary. No
 threshold may be loosened, and no prompt or layer may be removed, after any
 validation output is inspected. A code defect may be corrected only with a
-versioned validator and a newly frozen receipt destination; the failed receipt
-remains visible.
+versioned protocol and a newly frozen receipt destination. Existing failure
+evidence remains visible, including the explicit absence of a v1 receipt.
 
 ## Fixed speed gate
 
@@ -199,13 +232,15 @@ Cell-level and aggregate median, mean, minimum, and 95th-percentile latency are
 published, along with the sample counts and model-load times. Passing this gate
 means only that MLX is selected for the pinned local E2 cell. Failing it does
 not invalidate parity; it means the planned scientific grid is not authorized
-to claim this MLX engineering qualification under v1.
+to claim this MLX engineering qualification under v2.
 
 ## Receipt, identity, and no-overwrite rule
 
 The final receipt path is
-`validation/mlx_llama32_3b_bf16_parity/receipt.json`. Before publication, the
-receipt must bind at least:
+`validation/mlx_llama32_3b_bf16_parity_v2/receipt.json`. This destination is
+separate from the v1 path. Because v1 produced no receipt, v2 must not create or
+backfill one at the v1 destination. Before publication, the receipt must bind at
+least:
 
 - the protocol ID and frozen validation configuration identity;
 - the exact model name and revision; the frozen 9-file, 6,434,705,789-byte
