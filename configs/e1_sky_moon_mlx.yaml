@@ -1,0 +1,67 @@
+schema_version: 1
+mode: internal
+backend:
+  kind: mlx
+  model: openai-community/gpt2
+  revision: 607a30d783dfa663caf39e06633721c8d4cfcd7e
+  device: gpu
+  dtype: float32
+  local_files_only: true
+  add_special_tokens: false
+  trust_remote_code: false
+  validation_receipt: ../validation/mlx_gpt2_parity/receipt.json
+  validation_receipt_sha256: 98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679
+run:
+  name: e1-sky-token-isomorphic-exploratory-mlx
+  output_root: ../runs
+  seeds: [101, 211, 307]
+  resume: true
+  fail_fast: true
+  replicate_mode: wrapper_subsample
+  wrapper_subsample_fraction: 0.75
+panel:
+  file: ../data/emoji_panels/e1_sky_moon.yaml
+  neutral_glyph: "🟰"
+  centroid_mode: panel
+source:
+  wrappers_file: ../data/wrappers/source_wrappers.jsonl
+  max_wrappers: 16
+  anchor_position: last_nonpad
+targets:
+  cases_file: ../data/targets/prestage_targets.jsonl
+  max_cases: 24
+  calibration_cases: 6
+capture:
+  site: resid_post
+  layers: [2, 4]
+  position: last_nonpad
+  return_attentions: false
+intervention:
+  mode: activation_add
+  normalization: rms
+  strengths: [0.05]
+  position: last_nonpad
+  clip: {mode: global_rms, max_ratio: 0.25}
+  iso_kl: {enabled: false}
+controls:
+  random_directions_per_layer: 2
+  zero_direction: true
+  sign_flip: false
+  sign_flip_strengths: []
+  label_shuffle_permutations: 0
+  include_neutral_direction: false
+metrics:
+  top_k: 50
+  fingerprint_dim: 96
+  fingerprint_seed: 8675309
+  split_half_repeats: 200
+  rbo_p: 0.90
+  save_top_logit_deltas: 32
+  save_fingerprints: true
+  epsilon: 1.0e-12
+sae:
+  enabled: false
+surface:
+  emoji_template: "{emoji}\n{prompt}"
+  neutral_template: "{prompt}"
+  system_prompt: null

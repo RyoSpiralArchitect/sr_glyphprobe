@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "manifest_id": "emoji_family_exploratory_v1",
+  "protocol_id": "glyphprobe-e1-token-isomorphic-emoji-families-v1",
+  "experiment_role": "bounded_exploratory_screen",
+  "freeze": {
+    "status": "frozen_by_public_commit_containing_this_manifest",
+    "hash_algorithm": "sha256",
+    "prepared_before_e1_model_forward": true,
+    "prepared_before_e1_outcome_inspection": true,
+    "revision_policy": "Do not overwrite frozen v1 inputs after the public freeze. Any content change requires a new versioned manifest and filenames."
+  },
+  "claim_boundary": "Tokenizer-only structural qualification for an exploratory matched-slot screen. Family identity is perfectly confounded with the family-middle GPT-2 token. No semantic, tokenizer-independent, confirmatory, mechanistic, causal, cross-model, or paper-gate claim is authorized.",
+  "protocol_documents": [
+    {
+      "language": "en",
+      "path": "docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md",
+      "sha256": "e1b42e46038e154e292ae7689ca28fb4d84ca178de2e2af473960c304d5bc0da"
+    },
+    {
+      "language": "ja",
+      "path": "docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md",
+      "sha256": "3be313f482e43c309b53c06572f4e35c35d69b40d01ecd06e356efdf57fc5320"
+    }
+  ],
+  "tokenizer": {
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "tokenizer_class": "GPT2TokenizerFast",
+    "vocab_size": 50257,
+    "local_files_only": true,
+    "add_special_tokens": false,
+    "assets_sha256": {
+      "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+      "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+      "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+      "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+    }
+  },
+  "token_isomorphism": {
+    "panel_count": 5,
+    "conditions_per_panel": 10,
+    "required_unicode_scalar_count": 1,
+    "required_utf8_byte_length": 4,
+    "required_raw_token_count": 3,
+    "shared_first_token_id": 8582,
+    "shared_slot_suffix_token_ids": [239, 240, 241, 242, 243, 244, 245, 246, 247, 248],
+    "matched_slot_rule": "For slot j, every family has exact raw tokens [8582, family_middle_token_id, shared_slot_suffix_token_ids[j]].",
+    "cross_panel_maximum_glyph_overlap": 0
+  },
+  "shared_inputs": {
+    "source": {
+      "role": "exploratory_source_wrappers",
+      "path": "data/wrappers/source_wrappers.jsonl",
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "file_record_count": 16,
+      "selected_record_count": 16,
+      "ordered_ids": [
+        "w01_mark_anchor",
+        "w02_bracket_continue",
+        "w03_pipe_next",
+        "w04_token_state",
+        "w05_begin_end",
+        "w06_binary_result",
+        "w07_symbol_following",
+        "w08_pair_q",
+        "w09_input_response",
+        "w10_sequence_continuation",
+        "w11_field_anchor",
+        "w12_list_next",
+        "w13_left_right",
+        "w14_codepoint_text",
+        "w15_observation_inference",
+        "w16_slot_completion"
+      ]
+    },
+    "target": {
+      "role": "reused_exploratory_targets",
+      "path": "data/targets/prestage_targets.jsonl",
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "file_record_count": 32,
+      "selected_record_count": 24,
+      "ordered_selected_ids": [
+        "cont_01",
+        "cont_02",
+        "cont_03",
+        "cont_04",
+        "fact_01",
+        "fact_02",
+        "fact_03",
+        "fact_04",
+        "reason_01",
+        "reason_02",
+        "reason_03",
+        "reason_04",
+        "proc_01",
+        "proc_02",
+        "proc_03",
+        "proc_04",
+        "class_01",
+        "class_02",
+        "class_03",
+        "class_04",
+        "plan_01",
+        "plan_02",
+        "plan_03",
+        "plan_04"
+      ],
+      "ordered_selected_groups": [
+        "continuation",
+        "continuation",
+        "continuation",
+        "continuation",
+        "factual",
+        "factual",
+        "factual",
+        "factual",
+        "reasoning",
+        "reasoning",
+        "reasoning",
+        "reasoning",
+        "procedural",
+        "procedural",
+        "procedural",
+        "procedural",
+        "classification",
+        "classification",
+        "classification",
+        "classification",
+        "planning",
+        "planning",
+        "planning",
+        "planning"
+      ]
+    },
+    "parity": {
+      "role": "mlx_transformers_backend_qualification",
+      "path": "validation/mlx_gpt2_parity/receipt.json",
+      "sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "required_status": "validated_mlx_selected",
+      "required_site": "resid_post",
+      "required_intervention_layers": [2, 4]
+    }
+  },
+  "panels": [
+    {
+      "role": "sky",
+      "id": "e1_sky_moon",
+      "factor_family": "sky",
+      "path": "data/emoji_panels/e1_sky_moon.yaml",
+      "sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "config_path": "configs/e1_sky_moon_mlx.yaml",
+      "config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+      "run_name": "e1-sky-token-isomorphic-exploratory-mlx",
+      "codepoint_start": "U+1F311",
+      "codepoint_end": "U+1F31A",
+      "family_middle_token_id": 234
+    },
+    {
+      "role": "food",
+      "id": "e1_food",
+      "factor_family": "food",
+      "path": "data/emoji_panels/e1_food.yaml",
+      "sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "config_path": "configs/e1_food_mlx.yaml",
+      "config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+      "run_name": "e1-food-token-isomorphic-exploratory-mlx",
+      "codepoint_start": "U+1F351",
+      "codepoint_end": "U+1F35A",
+      "family_middle_token_id": 235
+    },
+    {
+      "role": "animals",
+      "id": "e1_animals",
+      "factor_family": "animals",
+      "path": "data/emoji_panels/e1_animals.yaml",
+      "sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "config_path": "configs/e1_animals_mlx.yaml",
+      "config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+      "run_name": "e1-animals-token-isomorphic-exploratory-mlx",
+      "codepoint_start": "U+1F411",
+      "codepoint_end": "U+1F41A",
+      "family_middle_token_id": 238
+    },
+    {
+      "role": "transport",
+      "id": "e1_transport",
+      "factor_family": "transport",
+      "path": "data/emoji_panels/e1_transport.yaml",
+      "sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "config_path": "configs/e1_transport_mlx.yaml",
+      "config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+      "run_name": "e1-transport-token-isomorphic-exploratory-mlx",
+      "codepoint_start": "U+1F691",
+      "codepoint_end": "U+1F69A",
+      "family_middle_token_id": 248
+    },
+    {
+      "role": "social",
+      "id": "e1_social",
+      "factor_family": "social",
+      "path": "data/emoji_panels/e1_social.yaml",
+      "sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "config_path": "configs/e1_social_mlx.yaml",
+      "config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+      "run_name": "e1-social-token-isomorphic-exploratory-mlx",
+      "codepoint_start": "U+1F911",
+      "codepoint_end": "U+1F91A",
+      "family_middle_token_id": 97
+    }
+  ],
+  "role_bindings": [
+    {
+      "role": "sky",
+      "panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+      "panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "config_path": "configs/e1_sky_moon_mlx.yaml",
+      "config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    },
+    {
+      "role": "food",
+      "panel_path": "data/emoji_panels/e1_food.yaml",
+      "panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "config_path": "configs/e1_food_mlx.yaml",
+      "config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    },
+    {
+      "role": "animals",
+      "panel_path": "data/emoji_panels/e1_animals.yaml",
+      "panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "config_path": "configs/e1_animals_mlx.yaml",
+      "config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    },
+    {
+      "role": "transport",
+      "panel_path": "data/emoji_panels/e1_transport.yaml",
+      "panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "config_path": "configs/e1_transport_mlx.yaml",
+      "config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    },
+    {
+      "role": "social",
+      "panel_path": "data/emoji_panels/e1_social.yaml",
+      "panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "config_path": "configs/e1_social_mlx.yaml",
+      "config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    }
+  ],
+  "fixed_execution_cell": {
+    "mode": "internal",
+    "backend": {
+      "kind": "mlx",
+      "model": "openai-community/gpt2",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "device": "gpu",
+      "dtype": "float32",
+      "local_files_only": true,
+      "add_special_tokens": false,
+      "trust_remote_code": false
+    },
+    "run": {
+      "seeds": [101, 211, 307],
+      "resume": true,
+      "fail_fast": true,
+      "replicate_mode": "wrapper_subsample",
+      "wrapper_subsample_fraction": 0.75
+    },
+    "panel": {
+      "neutral_glyph": "🟰",
+      "centroid_mode": "panel"
+    },
+    "source": {
+      "max_wrappers": 16,
+      "anchor_position": "last_nonpad"
+    },
+    "targets": {
+      "max_cases": 24,
+      "calibration_cases": 6
+    },
+    "capture": {
+      "site": "resid_post",
+      "layers": [2, 4],
+      "position": "last_nonpad",
+      "return_attentions": false
+    },
+    "intervention": {
+      "mode": "activation_add",
+      "normalization": "rms",
+      "strengths": [0.05],
+      "position": "last_nonpad",
+      "clip": {
+        "mode": "global_rms",
+        "max_ratio": 0.25
+      },
+      "iso_kl_enabled": false
+    },
+    "controls": {
+      "random_directions_per_layer": 2,
+      "zero_direction": true,
+      "sign_flip": false,
+      "sign_flip_strengths": [],
+      "label_shuffle_permutations": 0,
+      "include_neutral_direction": false
+    },
+    "metrics": {
+      "top_k": 50,
+      "fingerprint_dim": 96,
+      "fingerprint_seed": 8675309,
+      "split_half_repeats": 200,
+      "rbo_p": 0.9,
+      "save_top_logit_deltas": 32,
+      "save_fingerprints": true,
+      "epsilon": 1e-12
+    },
+    "sae_enabled": false,
+    "surface": {
+      "emoji_template": "{emoji}\n{prompt}",
+      "neutral_template": "{prompt}",
+      "system_prompt": null
+    },
+    "fixed_family_layer_strength_seed_cell_count": 30,
+    "expected_forward_calls_per_family": {
+      "source": 176,
+      "target_baseline": 24,
+      "emoji_intervention": 1440,
+      "random_control": 288,
+      "generic_emoji_control": 0,
+      "zero_hook_control": 48,
+      "total": 1976,
+      "intervention_rows": 1776
+    },
+    "expected_forward_calls_all_families": 9880,
+    "expected_intervention_rows_all_families": 8880
+  },
+  "fixed_analysis": {
+    "analysis_id": "glyphprobe-e1-token-isomorphic-emoji-families-v1",
+    "script_path": "scripts/analyze_emoji_family_exploratory_v1.py",
+    "script_sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4",
+    "primary_layer": 2,
+    "secondary_layer": 4,
+    "secondary_layer_role": "prespecified_negative_comparator",
+    "endpoints": {
+      "M": {
+        "within_family_id": "within_family_slot_separation_M_diag",
+        "ordered_cross_family_id": "ordered_cross_family_same_slot_transfer_M_offdiag",
+        "target_value": "seed-averaged matched-slot cosine minus the mean cosine to the nine mismatched slots",
+        "cell_estimand": "arithmetic mean across the 24 selected target prompts; target median is secondary description only"
+      },
+      "R": {
+        "id": "family_specificity_R",
+        "target_value": "M[f<-f,t] minus median over M[f<-g,t] for the four g != f prototype families",
+        "cell_estimand": "arithmetic mean across the 24 selected target prompts"
+      },
+      "R_global": {
+        "id": "equal_family_global_specificity_R_global",
+        "cell_estimand": "equal-weight arithmetic mean of the five family-specific R means"
+      }
+    },
+    "mean_estimand": "Every M and R family/pair cell uses the arithmetic mean across the 24 fixed targets; R_global is the equal-weight arithmetic mean of the five family R means. Target medians are secondary descriptions only.",
+    "output_filenames": [
+      "family_target_scores.jsonl",
+      "transfer_target_scores.jsonl",
+      "family_cell_summary.jsonl",
+      "transfer_cell_summary.jsonl",
+      "emoji_family_exploratory_receipt.json",
+      "report.md"
+    ],
+    "expected_output_rows": {
+      "family_target_scores.jsonl": 240,
+      "transfer_target_scores.jsonl": 960,
+      "family_cell_summary.jsonl": 10,
+      "transfer_cell_summary.jsonl": 40
+    },
+    "output_unique_keys": {
+      "family_target_scores.jsonl": ["family", "layer", "target_id"],
+      "transfer_target_scores.jsonl": ["source_family", "prototype_family", "layer", "target_id"],
+      "family_cell_summary.jsonl": ["family", "layer"],
+      "transfer_cell_summary.jsonl": ["source_family", "prototype_family", "layer"]
+    },
+    "cli_role_arguments": {
+      "--sky-run": "sky",
+      "--food-run": "food",
+      "--animals-run": "animals",
+      "--transport-run": "transport",
+      "--social-run": "social",
+      "--output-dir": "output_directory"
+    },
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260808,
+    "sampling_unit": "target_prompt_cluster",
+    "stratification": "four selected targets sampled with replacement inside each of six fixed groups",
+    "paired_resampling": true,
+    "rebuild_loto_prototypes_inside_each_replicate": true,
+    "direction_seeds_nested_within_target": true,
+    "p_values": false,
+    "multiplicity_decisions": false
+  },
+  "excluded_banks": [
+    {
+      "role": "p2_one_shot_confirmatory_bank_not_used_by_e1",
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "historical_status": "opened_once_only_by_the_frozen_m2_protocol",
+      "e1_tokenizer_access_count_declared": 0,
+      "e1_model_forward_count_declared": 0
+    },
+    {
+      "role": "c1_causal_holdout_sealed_and_not_used_by_e1",
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl",
+      "sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "historical_status": "sealed_untouched",
+      "e1_tokenizer_access_count_declared": 0,
+      "e1_model_forward_count_declared": 0
+    }
+  ]
+}

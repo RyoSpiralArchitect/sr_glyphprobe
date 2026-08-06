@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -75,6 +75,45 @@ The frozen question and decision rule are in the [Milestone 2 protocol](MILESTON
 Exit condition: operational execution is complete. Final-paper confirmatory
 wording and any supporting replication must prospectively bind run roles to
 frozen inputs and account for data-dependent prototype resampling.
+
+### Exploratory side track E1 — Token-isomorphic emoji-family screen
+
+Status: the scientific design is specified; the executable freeze and all E1
+model runs remain pending. No E1 activation outcome has been inspected or
+claimed.
+
+- freeze five ten-code-point blocks: `sky` (`U+1F311`–`U+1F31A`), `food`
+  (`U+1F351`–`U+1F35A`), `animals` (`U+1F411`–`U+1F41A`), `transport`
+  (`U+1F691`–`U+1F69A`), and `social` (`U+1F911`–`U+1F91A`);
+- require every glyph to have three pinned GPT-2 tokens, with token 1 and the
+  matched-slot token 3 identical across families and only token 2 changing by
+  family;
+- reuse only the existing first 24 prestage targets and the 16 source wrappers;
+  do not read, tokenize, score, or select with P2 or C1;
+- hold the run family to pinned GPT-2, MLX FP32, `resid_post` layers 2 and 4,
+  strength 0.05, seeds 101/211/307, two random directions per layer, and an
+  enabled zero-hook check, with neutral-direction and sign-flip arms disabled;
+- make layer 2 the primary exploratory row and layer 4 the prespecified
+  secondary negative comparator;
+- report the complete replicate-wise LOTO \(M_{f\leftarrow g}\) matrix, the
+  within-row excess \(R_f\), and family-equal \(R_{\mathrm{global}}\), with
+  data-dependent prototypes rebuilt inside 20,000 stratified target-bootstrap
+  replicates and equal-target means as the primary descriptive aggregates;
+- publish every family and every null, negative, heterogeneous, failed, or
+  interrupted cell after freeze, without p-values, multiplicity decisions, or
+  status labels.
+
+The [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) fixes the
+question, inputs, endpoints, stopping rule, and claim boundary. E1 can describe
+matched-slot recurrence under a controlled middle-token substitution, but not a
+semantic family effect, tokenization-independent property, causal mechanism, or
+cross-model regularity. It does not update Milestone 2, unseal C1, choose the
+Milestone 3 intervention, or satisfy a Phase I paper gate.
+
+Exit condition: a public commit binds the protocol pair to executable inputs and
+receipts, and the complete frozen grid plus descriptive analysis is published.
+Any hypothesis prompted by E1 requires a new public confirmatory protocol and a
+new untouched target bank that is neither P2 nor C1.
 
 ### Milestone 3 — Targeted causal localization
 
@@ -163,4 +202,7 @@ manuscript.
 
 ## Beyond Phase I
 
-Possible Phase II directions include broader symbol families, multimodal tokenizers, learned feature-basis analysis, intervention-orbit studies, and comparisons across training checkpoints. They remain outside the current commitment until the Phase I paper is complete.
+Possible Phase II directions include expansion beyond E1's five frozen emoji
+blocks, multimodal tokenizers, learned feature-basis analysis,
+intervention-orbit studies, and comparisons across training checkpoints. They
+remain outside the current commitment until the Phase I paper is complete.

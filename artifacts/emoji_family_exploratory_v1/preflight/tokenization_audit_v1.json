@@ -1,0 +1,1522 @@
+{
+  "analysis_binding": {
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20260808,
+    "cli_role_arguments": {
+      "--animals-run": "animals",
+      "--food-run": "food",
+      "--output-dir": "output_directory",
+      "--sky-run": "sky",
+      "--social-run": "social",
+      "--transport-run": "transport"
+    },
+    "design": {
+      "direction_seeds_nested_within_target": true,
+      "multiplicity_decisions": false,
+      "p_values": false,
+      "paired_resampling": true,
+      "rebuild_loto_prototypes_inside_each_replicate": true,
+      "sampling_unit": "target_prompt_cluster",
+      "secondary_layer_role": "prespecified_negative_comparator",
+      "stratification": "four selected targets sampled with replacement inside each of six fixed groups"
+    },
+    "endpoint_ids": [
+      "equal_family_global_specificity_R_global",
+      "family_specificity_R",
+      "ordered_cross_family_same_slot_transfer_M_offdiag",
+      "within_family_slot_separation_M_diag"
+    ],
+    "endpoints": {
+      "M": {
+        "cell_estimand": "arithmetic mean across the 24 selected target prompts; target median is secondary description only",
+        "ordered_cross_family_id": "ordered_cross_family_same_slot_transfer_M_offdiag",
+        "target_value": "seed-averaged matched-slot cosine minus the mean cosine to the nine mismatched slots",
+        "within_family_id": "within_family_slot_separation_M_diag"
+      },
+      "R": {
+        "cell_estimand": "arithmetic mean across the 24 selected target prompts",
+        "id": "family_specificity_R",
+        "target_value": "M[f<-f,t] minus median over M[f<-g,t] for the four g != f prototype families"
+      },
+      "R_global": {
+        "cell_estimand": "equal-weight arithmetic mean of the five family-specific R means",
+        "id": "equal_family_global_specificity_R_global"
+      }
+    },
+    "expected_output_rows": {
+      "family_cell_summary.jsonl": 10,
+      "family_target_scores.jsonl": 240,
+      "transfer_cell_summary.jsonl": 40,
+      "transfer_target_scores.jsonl": 960
+    },
+    "mean_estimand": "Every M and R family/pair cell uses the arithmetic mean across the 24 fixed targets; R_global is the equal-weight arithmetic mean of the five family R means. Target medians are secondary descriptions only.",
+    "output_filenames": [
+      "family_target_scores.jsonl",
+      "transfer_target_scores.jsonl",
+      "family_cell_summary.jsonl",
+      "transfer_cell_summary.jsonl",
+      "emoji_family_exploratory_receipt.json",
+      "report.md"
+    ],
+    "output_unique_keys": {
+      "family_cell_summary.jsonl": [
+        "family",
+        "layer"
+      ],
+      "family_target_scores.jsonl": [
+        "family",
+        "layer",
+        "target_id"
+      ],
+      "transfer_cell_summary.jsonl": [
+        "source_family",
+        "prototype_family",
+        "layer"
+      ],
+      "transfer_target_scores.jsonl": [
+        "source_family",
+        "prototype_family",
+        "layer",
+        "target_id"
+      ]
+    },
+    "primary_layer": 2,
+    "script_path": "scripts/analyze_emoji_family_exploratory_v1.py",
+    "script_sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4",
+    "secondary_layer": 4,
+    "secondary_layer_role": "prespecified_negative_comparator"
+  },
+  "audit_id": "emoji_family_exploratory_v1_tokenization_preflight",
+  "audit_implementation": {
+    "path": "scripts/audit_e1_token_isomorphic_panels.py",
+    "sha256": "3506c0ac301697478a87400b3c3eb7bdb2e22c7fbb901fc66ec186316f895753"
+  },
+  "audit_scope": "tokenizer-only structural, input-binding, config-binding, and excluded-bank declaration preflight",
+  "authorization": {
+    "c1_model_forward_authorized": false,
+    "causal_claim_authorized": false,
+    "confirmatory_claim_authorized": false,
+    "e1_model_forward_authorized_now": false,
+    "e1_model_forward_conditionally_authorized_after_public_freeze": true,
+    "p2_model_forward_authorized": false
+  },
+  "claim_boundary": "Tokenizer-only structural qualification for an exploratory matched-slot screen. Family identity is perfectly confounded with the family-middle GPT-2 token. No semantic, tokenizer-independent, confirmatory, mechanistic, causal, cross-model, or paper-gate claim is authorized.",
+  "configs": [
+    {
+      "config_path": "configs/e1_sky_moon_mlx.yaml",
+      "config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+      "forbidden_holdout_path_used": false,
+      "plan": {
+        "emoji_intervention": 1440,
+        "generic_emoji_control": 0,
+        "intervention_rows": 1776,
+        "random_control": 288,
+        "source": 176,
+        "target_baseline": 24,
+        "total": 1976,
+        "zero_hook_control": 48
+      },
+      "resolved_panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+      "resolved_parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "resolved_source_path": "data/wrappers/source_wrappers.jsonl",
+      "resolved_target_path": "data/targets/prestage_targets.jsonl",
+      "role": "sky",
+      "run_name": "e1-sky-token-isomorphic-exploratory-mlx"
+    },
+    {
+      "config_path": "configs/e1_food_mlx.yaml",
+      "config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+      "forbidden_holdout_path_used": false,
+      "plan": {
+        "emoji_intervention": 1440,
+        "generic_emoji_control": 0,
+        "intervention_rows": 1776,
+        "random_control": 288,
+        "source": 176,
+        "target_baseline": 24,
+        "total": 1976,
+        "zero_hook_control": 48
+      },
+      "resolved_panel_path": "data/emoji_panels/e1_food.yaml",
+      "resolved_parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "resolved_source_path": "data/wrappers/source_wrappers.jsonl",
+      "resolved_target_path": "data/targets/prestage_targets.jsonl",
+      "role": "food",
+      "run_name": "e1-food-token-isomorphic-exploratory-mlx"
+    },
+    {
+      "config_path": "configs/e1_animals_mlx.yaml",
+      "config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+      "forbidden_holdout_path_used": false,
+      "plan": {
+        "emoji_intervention": 1440,
+        "generic_emoji_control": 0,
+        "intervention_rows": 1776,
+        "random_control": 288,
+        "source": 176,
+        "target_baseline": 24,
+        "total": 1976,
+        "zero_hook_control": 48
+      },
+      "resolved_panel_path": "data/emoji_panels/e1_animals.yaml",
+      "resolved_parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "resolved_source_path": "data/wrappers/source_wrappers.jsonl",
+      "resolved_target_path": "data/targets/prestage_targets.jsonl",
+      "role": "animals",
+      "run_name": "e1-animals-token-isomorphic-exploratory-mlx"
+    },
+    {
+      "config_path": "configs/e1_transport_mlx.yaml",
+      "config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+      "forbidden_holdout_path_used": false,
+      "plan": {
+        "emoji_intervention": 1440,
+        "generic_emoji_control": 0,
+        "intervention_rows": 1776,
+        "random_control": 288,
+        "source": 176,
+        "target_baseline": 24,
+        "total": 1976,
+        "zero_hook_control": 48
+      },
+      "resolved_panel_path": "data/emoji_panels/e1_transport.yaml",
+      "resolved_parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "resolved_source_path": "data/wrappers/source_wrappers.jsonl",
+      "resolved_target_path": "data/targets/prestage_targets.jsonl",
+      "role": "transport",
+      "run_name": "e1-transport-token-isomorphic-exploratory-mlx"
+    },
+    {
+      "config_path": "configs/e1_social_mlx.yaml",
+      "config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+      "forbidden_holdout_path_used": false,
+      "plan": {
+        "emoji_intervention": 1440,
+        "generic_emoji_control": 0,
+        "intervention_rows": 1776,
+        "random_control": 288,
+        "source": 176,
+        "target_baseline": 24,
+        "total": 1976,
+        "zero_hook_control": 48
+      },
+      "resolved_panel_path": "data/emoji_panels/e1_social.yaml",
+      "resolved_parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "resolved_source_path": "data/wrappers/source_wrappers.jsonl",
+      "resolved_target_path": "data/targets/prestage_targets.jsonl",
+      "role": "social",
+      "run_name": "e1-social-token-isomorphic-exploratory-mlx"
+    }
+  ],
+  "counts": {
+    "fixed_family_layer_strength_seed_cells": 30,
+    "items_per_panel": 10,
+    "panel_count": 5,
+    "planned_forward_calls": 9880,
+    "planned_intervention_rows": 8880,
+    "scalar_entries_verified": 50,
+    "wrapper_count": 16,
+    "wrapper_profiles_verified": 800
+  },
+  "excluded_banks": [
+    {
+      "e1_model_forward_count_declared": 0,
+      "e1_tokenizer_access_count_declared": 0,
+      "historical_status": "opened_once_only_by_the_frozen_m2_protocol",
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "role": "p2_one_shot_confirmatory_bank_not_used_by_e1",
+      "sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "verification_scope": "manifest path and known frozen SHA declaration only; the excluded file was not opened, read, re-hashed, tokenized, or sent to a model"
+    },
+    {
+      "e1_model_forward_count_declared": 0,
+      "e1_tokenizer_access_count_declared": 0,
+      "historical_status": "sealed_untouched",
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl",
+      "role": "c1_causal_holdout_sealed_and_not_used_by_e1",
+      "sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "verification_scope": "manifest path and known frozen SHA declaration only; the excluded file was not opened, read, re-hashed, tokenized, or sent to a model"
+    }
+  ],
+  "freeze_status": "frozen_by_public_commit_containing_this_manifest",
+  "language_model_loaded": false,
+  "manifest_path": "data/manifests/emoji_family_exploratory_v1.json",
+  "manifest_sha256": "9fb96d5808dc298cbd47ca3586e0f00f793ce23e6627ef7705016f02e1c1d583",
+  "model_forward_executed": false,
+  "outcome_data_inspected": false,
+  "panels": [
+    {
+      "codepoint_range": [
+        "U+1F311",
+        "U+1F31A"
+      ],
+      "family_middle_token_id": 234,
+      "id": "e1_sky_moon",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F311",
+          "decoded_round_trip": true,
+          "glyph": "🌑",
+          "id": "sky_slot_00",
+          "raw_token_ids": [
+            8582,
+            234,
+            239
+          ],
+          "slot": "slot_00",
+          "unicode_category": "So",
+          "unicode_name": "NEW MOON SYMBOL",
+          "utf8_hex": "f09f8c91"
+        },
+        {
+          "codepoint": "U+1F312",
+          "decoded_round_trip": true,
+          "glyph": "🌒",
+          "id": "sky_slot_01",
+          "raw_token_ids": [
+            8582,
+            234,
+            240
+          ],
+          "slot": "slot_01",
+          "unicode_category": "So",
+          "unicode_name": "WAXING CRESCENT MOON SYMBOL",
+          "utf8_hex": "f09f8c92"
+        },
+        {
+          "codepoint": "U+1F313",
+          "decoded_round_trip": true,
+          "glyph": "🌓",
+          "id": "sky_slot_02",
+          "raw_token_ids": [
+            8582,
+            234,
+            241
+          ],
+          "slot": "slot_02",
+          "unicode_category": "So",
+          "unicode_name": "FIRST QUARTER MOON SYMBOL",
+          "utf8_hex": "f09f8c93"
+        },
+        {
+          "codepoint": "U+1F314",
+          "decoded_round_trip": true,
+          "glyph": "🌔",
+          "id": "sky_slot_03",
+          "raw_token_ids": [
+            8582,
+            234,
+            242
+          ],
+          "slot": "slot_03",
+          "unicode_category": "So",
+          "unicode_name": "WAXING GIBBOUS MOON SYMBOL",
+          "utf8_hex": "f09f8c94"
+        },
+        {
+          "codepoint": "U+1F315",
+          "decoded_round_trip": true,
+          "glyph": "🌕",
+          "id": "sky_slot_04",
+          "raw_token_ids": [
+            8582,
+            234,
+            243
+          ],
+          "slot": "slot_04",
+          "unicode_category": "So",
+          "unicode_name": "FULL MOON SYMBOL",
+          "utf8_hex": "f09f8c95"
+        },
+        {
+          "codepoint": "U+1F316",
+          "decoded_round_trip": true,
+          "glyph": "🌖",
+          "id": "sky_slot_05",
+          "raw_token_ids": [
+            8582,
+            234,
+            244
+          ],
+          "slot": "slot_05",
+          "unicode_category": "So",
+          "unicode_name": "WANING GIBBOUS MOON SYMBOL",
+          "utf8_hex": "f09f8c96"
+        },
+        {
+          "codepoint": "U+1F317",
+          "decoded_round_trip": true,
+          "glyph": "🌗",
+          "id": "sky_slot_06",
+          "raw_token_ids": [
+            8582,
+            234,
+            245
+          ],
+          "slot": "slot_06",
+          "unicode_category": "So",
+          "unicode_name": "LAST QUARTER MOON SYMBOL",
+          "utf8_hex": "f09f8c97"
+        },
+        {
+          "codepoint": "U+1F318",
+          "decoded_round_trip": true,
+          "glyph": "🌘",
+          "id": "sky_slot_07",
+          "raw_token_ids": [
+            8582,
+            234,
+            246
+          ],
+          "slot": "slot_07",
+          "unicode_category": "So",
+          "unicode_name": "WANING CRESCENT MOON SYMBOL",
+          "utf8_hex": "f09f8c98"
+        },
+        {
+          "codepoint": "U+1F319",
+          "decoded_round_trip": true,
+          "glyph": "🌙",
+          "id": "sky_slot_08",
+          "raw_token_ids": [
+            8582,
+            234,
+            247
+          ],
+          "slot": "slot_08",
+          "unicode_category": "So",
+          "unicode_name": "CRESCENT MOON",
+          "utf8_hex": "f09f8c99"
+        },
+        {
+          "codepoint": "U+1F31A",
+          "decoded_round_trip": true,
+          "glyph": "🌚",
+          "id": "sky_slot_09",
+          "raw_token_ids": [
+            8582,
+            234,
+            248
+          ],
+          "slot": "slot_09",
+          "unicode_category": "So",
+          "unicode_name": "NEW MOON WITH FACE",
+          "utf8_hex": "f09f8c9a"
+        }
+      ],
+      "panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+      "panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "role": "sky"
+    },
+    {
+      "codepoint_range": [
+        "U+1F351",
+        "U+1F35A"
+      ],
+      "family_middle_token_id": 235,
+      "id": "e1_food",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F351",
+          "decoded_round_trip": true,
+          "glyph": "🍑",
+          "id": "food_slot_00",
+          "raw_token_ids": [
+            8582,
+            235,
+            239
+          ],
+          "slot": "slot_00",
+          "unicode_category": "So",
+          "unicode_name": "PEACH",
+          "utf8_hex": "f09f8d91"
+        },
+        {
+          "codepoint": "U+1F352",
+          "decoded_round_trip": true,
+          "glyph": "🍒",
+          "id": "food_slot_01",
+          "raw_token_ids": [
+            8582,
+            235,
+            240
+          ],
+          "slot": "slot_01",
+          "unicode_category": "So",
+          "unicode_name": "CHERRIES",
+          "utf8_hex": "f09f8d92"
+        },
+        {
+          "codepoint": "U+1F353",
+          "decoded_round_trip": true,
+          "glyph": "🍓",
+          "id": "food_slot_02",
+          "raw_token_ids": [
+            8582,
+            235,
+            241
+          ],
+          "slot": "slot_02",
+          "unicode_category": "So",
+          "unicode_name": "STRAWBERRY",
+          "utf8_hex": "f09f8d93"
+        },
+        {
+          "codepoint": "U+1F354",
+          "decoded_round_trip": true,
+          "glyph": "🍔",
+          "id": "food_slot_03",
+          "raw_token_ids": [
+            8582,
+            235,
+            242
+          ],
+          "slot": "slot_03",
+          "unicode_category": "So",
+          "unicode_name": "HAMBURGER",
+          "utf8_hex": "f09f8d94"
+        },
+        {
+          "codepoint": "U+1F355",
+          "decoded_round_trip": true,
+          "glyph": "🍕",
+          "id": "food_slot_04",
+          "raw_token_ids": [
+            8582,
+            235,
+            243
+          ],
+          "slot": "slot_04",
+          "unicode_category": "So",
+          "unicode_name": "SLICE OF PIZZA",
+          "utf8_hex": "f09f8d95"
+        },
+        {
+          "codepoint": "U+1F356",
+          "decoded_round_trip": true,
+          "glyph": "🍖",
+          "id": "food_slot_05",
+          "raw_token_ids": [
+            8582,
+            235,
+            244
+          ],
+          "slot": "slot_05",
+          "unicode_category": "So",
+          "unicode_name": "MEAT ON BONE",
+          "utf8_hex": "f09f8d96"
+        },
+        {
+          "codepoint": "U+1F357",
+          "decoded_round_trip": true,
+          "glyph": "🍗",
+          "id": "food_slot_06",
+          "raw_token_ids": [
+            8582,
+            235,
+            245
+          ],
+          "slot": "slot_06",
+          "unicode_category": "So",
+          "unicode_name": "POULTRY LEG",
+          "utf8_hex": "f09f8d97"
+        },
+        {
+          "codepoint": "U+1F358",
+          "decoded_round_trip": true,
+          "glyph": "🍘",
+          "id": "food_slot_07",
+          "raw_token_ids": [
+            8582,
+            235,
+            246
+          ],
+          "slot": "slot_07",
+          "unicode_category": "So",
+          "unicode_name": "RICE CRACKER",
+          "utf8_hex": "f09f8d98"
+        },
+        {
+          "codepoint": "U+1F359",
+          "decoded_round_trip": true,
+          "glyph": "🍙",
+          "id": "food_slot_08",
+          "raw_token_ids": [
+            8582,
+            235,
+            247
+          ],
+          "slot": "slot_08",
+          "unicode_category": "So",
+          "unicode_name": "RICE BALL",
+          "utf8_hex": "f09f8d99"
+        },
+        {
+          "codepoint": "U+1F35A",
+          "decoded_round_trip": true,
+          "glyph": "🍚",
+          "id": "food_slot_09",
+          "raw_token_ids": [
+            8582,
+            235,
+            248
+          ],
+          "slot": "slot_09",
+          "unicode_category": "So",
+          "unicode_name": "COOKED RICE",
+          "utf8_hex": "f09f8d9a"
+        }
+      ],
+      "panel_path": "data/emoji_panels/e1_food.yaml",
+      "panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "role": "food"
+    },
+    {
+      "codepoint_range": [
+        "U+1F411",
+        "U+1F41A"
+      ],
+      "family_middle_token_id": 238,
+      "id": "e1_animals",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F411",
+          "decoded_round_trip": true,
+          "glyph": "🐑",
+          "id": "animals_slot_00",
+          "raw_token_ids": [
+            8582,
+            238,
+            239
+          ],
+          "slot": "slot_00",
+          "unicode_category": "So",
+          "unicode_name": "SHEEP",
+          "utf8_hex": "f09f9091"
+        },
+        {
+          "codepoint": "U+1F412",
+          "decoded_round_trip": true,
+          "glyph": "🐒",
+          "id": "animals_slot_01",
+          "raw_token_ids": [
+            8582,
+            238,
+            240
+          ],
+          "slot": "slot_01",
+          "unicode_category": "So",
+          "unicode_name": "MONKEY",
+          "utf8_hex": "f09f9092"
+        },
+        {
+          "codepoint": "U+1F413",
+          "decoded_round_trip": true,
+          "glyph": "🐓",
+          "id": "animals_slot_02",
+          "raw_token_ids": [
+            8582,
+            238,
+            241
+          ],
+          "slot": "slot_02",
+          "unicode_category": "So",
+          "unicode_name": "ROOSTER",
+          "utf8_hex": "f09f9093"
+        },
+        {
+          "codepoint": "U+1F414",
+          "decoded_round_trip": true,
+          "glyph": "🐔",
+          "id": "animals_slot_03",
+          "raw_token_ids": [
+            8582,
+            238,
+            242
+          ],
+          "slot": "slot_03",
+          "unicode_category": "So",
+          "unicode_name": "CHICKEN",
+          "utf8_hex": "f09f9094"
+        },
+        {
+          "codepoint": "U+1F415",
+          "decoded_round_trip": true,
+          "glyph": "🐕",
+          "id": "animals_slot_04",
+          "raw_token_ids": [
+            8582,
+            238,
+            243
+          ],
+          "slot": "slot_04",
+          "unicode_category": "So",
+          "unicode_name": "DOG",
+          "utf8_hex": "f09f9095"
+        },
+        {
+          "codepoint": "U+1F416",
+          "decoded_round_trip": true,
+          "glyph": "🐖",
+          "id": "animals_slot_05",
+          "raw_token_ids": [
+            8582,
+            238,
+            244
+          ],
+          "slot": "slot_05",
+          "unicode_category": "So",
+          "unicode_name": "PIG",
+          "utf8_hex": "f09f9096"
+        },
+        {
+          "codepoint": "U+1F417",
+          "decoded_round_trip": true,
+          "glyph": "🐗",
+          "id": "animals_slot_06",
+          "raw_token_ids": [
+            8582,
+            238,
+            245
+          ],
+          "slot": "slot_06",
+          "unicode_category": "So",
+          "unicode_name": "BOAR",
+          "utf8_hex": "f09f9097"
+        },
+        {
+          "codepoint": "U+1F418",
+          "decoded_round_trip": true,
+          "glyph": "🐘",
+          "id": "animals_slot_07",
+          "raw_token_ids": [
+            8582,
+            238,
+            246
+          ],
+          "slot": "slot_07",
+          "unicode_category": "So",
+          "unicode_name": "ELEPHANT",
+          "utf8_hex": "f09f9098"
+        },
+        {
+          "codepoint": "U+1F419",
+          "decoded_round_trip": true,
+          "glyph": "🐙",
+          "id": "animals_slot_08",
+          "raw_token_ids": [
+            8582,
+            238,
+            247
+          ],
+          "slot": "slot_08",
+          "unicode_category": "So",
+          "unicode_name": "OCTOPUS",
+          "utf8_hex": "f09f9099"
+        },
+        {
+          "codepoint": "U+1F41A",
+          "decoded_round_trip": true,
+          "glyph": "🐚",
+          "id": "animals_slot_09",
+          "raw_token_ids": [
+            8582,
+            238,
+            248
+          ],
+          "slot": "slot_09",
+          "unicode_category": "So",
+          "unicode_name": "SPIRAL SHELL",
+          "utf8_hex": "f09f909a"
+        }
+      ],
+      "panel_path": "data/emoji_panels/e1_animals.yaml",
+      "panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "role": "animals"
+    },
+    {
+      "codepoint_range": [
+        "U+1F691",
+        "U+1F69A"
+      ],
+      "family_middle_token_id": 248,
+      "id": "e1_transport",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F691",
+          "decoded_round_trip": true,
+          "glyph": "🚑",
+          "id": "transport_slot_00",
+          "raw_token_ids": [
+            8582,
+            248,
+            239
+          ],
+          "slot": "slot_00",
+          "unicode_category": "So",
+          "unicode_name": "AMBULANCE",
+          "utf8_hex": "f09f9a91"
+        },
+        {
+          "codepoint": "U+1F692",
+          "decoded_round_trip": true,
+          "glyph": "🚒",
+          "id": "transport_slot_01",
+          "raw_token_ids": [
+            8582,
+            248,
+            240
+          ],
+          "slot": "slot_01",
+          "unicode_category": "So",
+          "unicode_name": "FIRE ENGINE",
+          "utf8_hex": "f09f9a92"
+        },
+        {
+          "codepoint": "U+1F693",
+          "decoded_round_trip": true,
+          "glyph": "🚓",
+          "id": "transport_slot_02",
+          "raw_token_ids": [
+            8582,
+            248,
+            241
+          ],
+          "slot": "slot_02",
+          "unicode_category": "So",
+          "unicode_name": "POLICE CAR",
+          "utf8_hex": "f09f9a93"
+        },
+        {
+          "codepoint": "U+1F694",
+          "decoded_round_trip": true,
+          "glyph": "🚔",
+          "id": "transport_slot_03",
+          "raw_token_ids": [
+            8582,
+            248,
+            242
+          ],
+          "slot": "slot_03",
+          "unicode_category": "So",
+          "unicode_name": "ONCOMING POLICE CAR",
+          "utf8_hex": "f09f9a94"
+        },
+        {
+          "codepoint": "U+1F695",
+          "decoded_round_trip": true,
+          "glyph": "🚕",
+          "id": "transport_slot_04",
+          "raw_token_ids": [
+            8582,
+            248,
+            243
+          ],
+          "slot": "slot_04",
+          "unicode_category": "So",
+          "unicode_name": "TAXI",
+          "utf8_hex": "f09f9a95"
+        },
+        {
+          "codepoint": "U+1F696",
+          "decoded_round_trip": true,
+          "glyph": "🚖",
+          "id": "transport_slot_05",
+          "raw_token_ids": [
+            8582,
+            248,
+            244
+          ],
+          "slot": "slot_05",
+          "unicode_category": "So",
+          "unicode_name": "ONCOMING TAXI",
+          "utf8_hex": "f09f9a96"
+        },
+        {
+          "codepoint": "U+1F697",
+          "decoded_round_trip": true,
+          "glyph": "🚗",
+          "id": "transport_slot_06",
+          "raw_token_ids": [
+            8582,
+            248,
+            245
+          ],
+          "slot": "slot_06",
+          "unicode_category": "So",
+          "unicode_name": "AUTOMOBILE",
+          "utf8_hex": "f09f9a97"
+        },
+        {
+          "codepoint": "U+1F698",
+          "decoded_round_trip": true,
+          "glyph": "🚘",
+          "id": "transport_slot_07",
+          "raw_token_ids": [
+            8582,
+            248,
+            246
+          ],
+          "slot": "slot_07",
+          "unicode_category": "So",
+          "unicode_name": "ONCOMING AUTOMOBILE",
+          "utf8_hex": "f09f9a98"
+        },
+        {
+          "codepoint": "U+1F699",
+          "decoded_round_trip": true,
+          "glyph": "🚙",
+          "id": "transport_slot_08",
+          "raw_token_ids": [
+            8582,
+            248,
+            247
+          ],
+          "slot": "slot_08",
+          "unicode_category": "So",
+          "unicode_name": "RECREATIONAL VEHICLE",
+          "utf8_hex": "f09f9a99"
+        },
+        {
+          "codepoint": "U+1F69A",
+          "decoded_round_trip": true,
+          "glyph": "🚚",
+          "id": "transport_slot_09",
+          "raw_token_ids": [
+            8582,
+            248,
+            248
+          ],
+          "slot": "slot_09",
+          "unicode_category": "So",
+          "unicode_name": "DELIVERY TRUCK",
+          "utf8_hex": "f09f9a9a"
+        }
+      ],
+      "panel_path": "data/emoji_panels/e1_transport.yaml",
+      "panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "role": "transport"
+    },
+    {
+      "codepoint_range": [
+        "U+1F911",
+        "U+1F91A"
+      ],
+      "family_middle_token_id": 97,
+      "id": "e1_social",
+      "item_count": 10,
+      "items": [
+        {
+          "codepoint": "U+1F911",
+          "decoded_round_trip": true,
+          "glyph": "🤑",
+          "id": "social_slot_00",
+          "raw_token_ids": [
+            8582,
+            97,
+            239
+          ],
+          "slot": "slot_00",
+          "unicode_category": "So",
+          "unicode_name": "MONEY-MOUTH FACE",
+          "utf8_hex": "f09fa491"
+        },
+        {
+          "codepoint": "U+1F912",
+          "decoded_round_trip": true,
+          "glyph": "🤒",
+          "id": "social_slot_01",
+          "raw_token_ids": [
+            8582,
+            97,
+            240
+          ],
+          "slot": "slot_01",
+          "unicode_category": "So",
+          "unicode_name": "FACE WITH THERMOMETER",
+          "utf8_hex": "f09fa492"
+        },
+        {
+          "codepoint": "U+1F913",
+          "decoded_round_trip": true,
+          "glyph": "🤓",
+          "id": "social_slot_02",
+          "raw_token_ids": [
+            8582,
+            97,
+            241
+          ],
+          "slot": "slot_02",
+          "unicode_category": "So",
+          "unicode_name": "NERD FACE",
+          "utf8_hex": "f09fa493"
+        },
+        {
+          "codepoint": "U+1F914",
+          "decoded_round_trip": true,
+          "glyph": "🤔",
+          "id": "social_slot_03",
+          "raw_token_ids": [
+            8582,
+            97,
+            242
+          ],
+          "slot": "slot_03",
+          "unicode_category": "So",
+          "unicode_name": "THINKING FACE",
+          "utf8_hex": "f09fa494"
+        },
+        {
+          "codepoint": "U+1F915",
+          "decoded_round_trip": true,
+          "glyph": "🤕",
+          "id": "social_slot_04",
+          "raw_token_ids": [
+            8582,
+            97,
+            243
+          ],
+          "slot": "slot_04",
+          "unicode_category": "So",
+          "unicode_name": "FACE WITH HEAD-BANDAGE",
+          "utf8_hex": "f09fa495"
+        },
+        {
+          "codepoint": "U+1F916",
+          "decoded_round_trip": true,
+          "glyph": "🤖",
+          "id": "social_slot_05",
+          "raw_token_ids": [
+            8582,
+            97,
+            244
+          ],
+          "slot": "slot_05",
+          "unicode_category": "So",
+          "unicode_name": "ROBOT FACE",
+          "utf8_hex": "f09fa496"
+        },
+        {
+          "codepoint": "U+1F917",
+          "decoded_round_trip": true,
+          "glyph": "🤗",
+          "id": "social_slot_06",
+          "raw_token_ids": [
+            8582,
+            97,
+            245
+          ],
+          "slot": "slot_06",
+          "unicode_category": "So",
+          "unicode_name": "HUGGING FACE",
+          "utf8_hex": "f09fa497"
+        },
+        {
+          "codepoint": "U+1F918",
+          "decoded_round_trip": true,
+          "glyph": "🤘",
+          "id": "social_slot_07",
+          "raw_token_ids": [
+            8582,
+            97,
+            246
+          ],
+          "slot": "slot_07",
+          "unicode_category": "So",
+          "unicode_name": "SIGN OF THE HORNS",
+          "utf8_hex": "f09fa498"
+        },
+        {
+          "codepoint": "U+1F919",
+          "decoded_round_trip": true,
+          "glyph": "🤙",
+          "id": "social_slot_08",
+          "raw_token_ids": [
+            8582,
+            97,
+            247
+          ],
+          "slot": "slot_08",
+          "unicode_category": "So",
+          "unicode_name": "CALL ME HAND",
+          "utf8_hex": "f09fa499"
+        },
+        {
+          "codepoint": "U+1F91A",
+          "decoded_round_trip": true,
+          "glyph": "🤚",
+          "id": "social_slot_09",
+          "raw_token_ids": [
+            8582,
+            97,
+            248
+          ],
+          "slot": "slot_09",
+          "unicode_category": "So",
+          "unicode_name": "RAISED BACK OF HAND",
+          "utf8_hex": "f09fa49a"
+        }
+      ],
+      "panel_path": "data/emoji_panels/e1_social.yaml",
+      "panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "role": "social"
+    }
+  ],
+  "protocol_documents": [
+    {
+      "language": "en",
+      "path": "docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md",
+      "sha256": "e1b42e46038e154e292ae7689ca28fb4d84ca178de2e2af473960c304d5bc0da"
+    },
+    {
+      "language": "ja",
+      "path": "docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md",
+      "sha256": "3be313f482e43c309b53c06572f4e35c35d69b40d01ecd06e356efdf57fc5320"
+    }
+  ],
+  "protocol_id": "glyphprobe-e1-token-isomorphic-emoji-families-v1",
+  "role_bindings": [
+    {
+      "config_path": "configs/e1_sky_moon_mlx.yaml",
+      "config_sha256": "b2bfe45d102d4a2d6231a27aadc70bbdddbb7aa6f7e460d6189c91e029071dde",
+      "panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+      "panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "role": "sky",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "config_path": "configs/e1_food_mlx.yaml",
+      "config_sha256": "83c6da6f64342f5fb7594f4a4e040c93d0f1007cedd33c139165f91663f31c5e",
+      "panel_path": "data/emoji_panels/e1_food.yaml",
+      "panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "role": "food",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "config_path": "configs/e1_animals_mlx.yaml",
+      "config_sha256": "7bbbc5e111a553a96af247b54ac8aab39c5a82d90de93c49d2fa3e90c9999665",
+      "panel_path": "data/emoji_panels/e1_animals.yaml",
+      "panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "role": "animals",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "config_path": "configs/e1_transport_mlx.yaml",
+      "config_sha256": "5b279cd1f8351dcb14d9a8f78eecf9c69d5ed9fd0961cf82bc6e2e9f550f04c8",
+      "panel_path": "data/emoji_panels/e1_transport.yaml",
+      "panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "role": "transport",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "config_path": "configs/e1_social_mlx.yaml",
+      "config_sha256": "5559856737531767b4e25c322320712ee0a34b329414d4fefe2b9573aa17203c",
+      "panel_path": "data/emoji_panels/e1_social.yaml",
+      "panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+      "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "role": "social",
+      "source_path": "data/wrappers/source_wrappers.jsonl",
+      "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+      "target_path": "data/targets/prestage_targets.jsonl",
+      "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    }
+  ],
+  "schema_version": 1,
+  "shared_inputs": {
+    "parity_layers_cover_fixed_cell": true,
+    "parity_path": "validation/mlx_gpt2_parity/receipt.json",
+    "parity_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+    "source_path": "data/wrappers/source_wrappers.jsonl",
+    "source_record_count": 16,
+    "source_sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+    "target_file_record_count": 32,
+    "target_path": "data/targets/prestage_targets.jsonl",
+    "target_selected_record_count": 24,
+    "target_sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+  },
+  "status": "pass",
+  "token_isomorphism": {
+    "cross_panel_glyph_overlap_count": 0,
+    "family_middle_token_ids": {
+      "animals": 238,
+      "food": 235,
+      "sky": 234,
+      "social": 97,
+      "transport": 248
+    },
+    "raw_first_and_third_identity": true,
+    "shared_first_token_id": 8582,
+    "shared_slot_suffix_token_ids": [
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248
+    ],
+    "wrapper_profile_isomorphic": true
+  },
+  "tokenizer": {
+    "class": "GPT2TokenizerFast",
+    "model_id": "openai-community/gpt2",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "verified_asset_count": 4,
+    "vocab_size": 50257
+  },
+  "wrappers": [
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        9704,
+        25,
+        198,
+        2025,
+        354,
+        273,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w01_mark_anchor",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        1,
+        2,
+        3
+      ],
+      "outside_span_token_ids": [
+        58,
+        60,
+        198,
+        29453,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w02_bracket_continue",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        87,
+        930,
+        930,
+        331,
+        198,
+        10019,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w03_pipe_next",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        30642,
+        25,
+        198,
+        9012,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w04_token_state",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        44140,
+        198,
+        198,
+        12915,
+        198,
+        26410,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w05_begin_end",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        1,
+        2,
+        3
+      ],
+      "outside_span_token_ids": [
+        15,
+        352,
+        198,
+        23004,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w06_binary_result",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        3,
+        4,
+        5
+      ],
+      "outside_span_token_ids": [
+        13940,
+        23650,
+        27,
+        29,
+        198,
+        14291,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w07_symbol_following",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        47,
+        25,
+        198,
+        48,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w08_pair_q",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        20560,
+        7,
+        8,
+        198,
+        31077,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 9,
+      "wrapper_id": "w09_input_response",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        4,
+        5,
+        6
+      ],
+      "outside_span_token_ids": [
+        44015,
+        594,
+        25,
+        257,
+        275,
+        198,
+        17875,
+        2288,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 12,
+      "wrapper_id": "w10_sequence_continuation",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        4,
+        5,
+        6
+      ],
+      "outside_span_token_ids": [
+        15878,
+        198,
+        8367,
+        28,
+        198,
+        3702,
+        273,
+        28
+      ],
+      "profiles_verified": 50,
+      "token_count": 11,
+      "wrapper_id": "w11_field_anchor",
+      "wrapper_span_first_token_id": 8582
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        3,
+        4,
+        5
+      ],
+      "outside_span_token_ids": [
+        7449,
+        198,
+        12,
+        198,
+        12
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w12_list_next",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        1,
+        2,
+        3
+      ],
+      "outside_span_token_ids": [
+        18819,
+        6498,
+        198,
+        23656,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 8,
+      "wrapper_id": "w13_left_right",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        4,
+        5,
+        6
+      ],
+      "outside_span_token_ids": [
+        43806,
+        538,
+        1563,
+        25,
+        198,
+        8206,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w14_codepoint_text",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        2,
+        3,
+        4
+      ],
+      "outside_span_token_ids": [
+        31310,
+        13208,
+        198,
+        818,
+        4288,
+        25
+      ],
+      "profiles_verified": 50,
+      "token_count": 9,
+      "wrapper_id": "w15_observation_inference",
+      "wrapper_span_first_token_id": 12520
+    },
+    {
+      "glyph_span_token_count": 3,
+      "glyph_token_positions": [
+        3,
+        4,
+        5
+      ],
+      "outside_span_token_ids": [
+        38963,
+        317,
+        28,
+        26,
+        32026,
+        347,
+        28
+      ],
+      "profiles_verified": 50,
+      "token_count": 10,
+      "wrapper_id": "w16_slot_completion",
+      "wrapper_span_first_token_id": 8582
+    }
+  ]
+}
