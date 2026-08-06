@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E2 MLX validation v2プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -68,11 +68,10 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-状態: Stage A v2の技術検証は完了し、`status: validation_failed`、
-`scientific_result: false`となった。
-V2プロトコルと技術面は、公開commit
-`dc84ac19e06ef7a0fd7dcd77fdce4b484b192e57`で凍結した。固定したE2科学セルには
-MLXを採用しない。E2科学gridのforwardは、実行も許可もしていない。
+状態: Stage A v2の技術検証と、それに続くStage A3のruntime dtype screenは完了した。
+V2は引き続き`status: validation_failed`、`scientific_result: false`であり、
+Stage A3でもeligible candidateは選ばれなかった。固定したE2科学セルにはMLXを
+採用しない。E2科学gridのforwardは、実行も許可もしていない。
 
 V1は、公開commit `88685bd01ab115df323e9a324d49a659c66163c7`で凍結した。
 Transformers/MPS phaseは完了したが、MLX phaseは最初のbaseline exportで次の
@@ -114,15 +113,25 @@ engineering gateは [プロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)�
 記録は [v2レシート](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) に示す。
 この技術経路の不適格判定は、科学的な負の結果ではなく、Phase I論文gate 5も満たさない。
 
-次の経路は2つある。Transformers/MPS専用の科学プロトコルを別に凍結するか、MLX v3の
-診断・最適化プロトコルを新しく凍結し、科学的outcomeを見る前に再検証するかである。
-選択は研究責任者の判断待ちで、本書ではどちらも推奨しない。結果を見た後でv2の閾値を
-緩めたり調整したりもしない。
+Stage A3では、同じBF16-weight artifactに対して、2つのruntime compute candidateを
+公開凍結した。FP16とFP32はどちらも、identity、token・決定性、厳密なzero vector、
+backend内の介入忠実度に合格した。一方、マシンローカルな速度gateには不合格だった。
+MLX/MPSはFP16で1.956666698、FP32で0.986249198。凍結済み規則は0.95以下を求めていた。
+したがって、決定論的な選定結果は`null` / `no_go_no_eligible_numeric_candidate`である。
+Stage A3はbackend間のfull parity familyを実行していないため、FP32の忠実度が高くても、
+FP32経路を適格とは扱わない。詳細は [Stage A3結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)、
+[凍結済みプロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md)、
+[レシート](../validation/mlx_llama32_3b_numeric_screen_v1/receipt.json) に記録した。
+
+次の経路は2つある。Transformers/MPS専用の科学プロトコルを別に凍結するか、新しい
+公開プロトコルの下で将来のMLX engineering計画を別に設計するかである。選択は研究責任者の
+判断待ちで、本書ではどちらも選ばない。結果を見た後でv2やStage A3の閾値を緩めたり、
+調整したりもしない。
 
 終了条件: 固定model/configuration identityを、完全なbackend parityおよび
 Transformers/MPSの95%以下となるmachine-localなMLX aggregate median latencyへ
-結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。V2が
-残したのは、要件を満たさないことを示すfailure evidenceであり、MLX経路の適格性ではない。
+結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。
+V2とStage A3が残したのは、要件を満たさないことを示すfailure evidenceであり、MLX経路の適格性ではない。
 将来engineering receiptが合格しても、それだけではE2も論文gateも完了しない。
 
 ### Milestone 3 — 対象を絞った因果局在化

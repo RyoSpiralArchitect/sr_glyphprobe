@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [E2 Stage A 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -14,7 +14,7 @@ GlyphProbe は、絵文字やグリフから作った活性化方向が、言語
 
 ## 現在地
 
-2026年8月6日時点で、次の実験セルを検証しています。
+2026年8月7日時点で、次の実験セルを検証しています。
 
 - モデル: `openai-community/gpt2`
 - リビジョン: `607a30d783dfa663caf39e06633721c8d4cfcd7e`
@@ -87,9 +87,9 @@ E1が使ったのは、すでに探索済みのprestage target 24件だけであ
 [E1 evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md)
 を参照してほしい。
 
-### E2 Stage A 技術検証の結果
+### E2 技術検証の結果
 
-固定したLlama 3.2 3B BF16の技術検証は、最後まで実行したうえで
+固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
 `status: validation_failed`、`scientific_result: false`となった。Parity検査の
 合格数は33 / 60である。
 Tokenizationとbackend内の決定性は10 / 10、厳密なzero-hookは10 / 10が合格した。
@@ -110,9 +110,25 @@ BF16-to-FP32 castによって検証自体は完走したが、このcellへのML
 詳細は [E2の全結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)、
 [凍結済みプロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)、
 [機械可読レシート](validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) にまとめた。
-次にTransformers/MPS専用の科学プロトコルを凍結するか、MLX v3の診断・最適化
-プロトコルを新たに凍結するかは、研究責任者の判断待ちである。結果を見た後でv2の
-閾値を調整しない。
+続くStage A3では、同じBF16-weight artifactを使い、runtime compute dtypeだけを
+FP16とFP32に分けて検査した。両candidateとも、artifact・parameter identity、
+prompt・token identity、決定性、v2から変えていないzero-vector閾値、backend別の
+介入忠実度には合格した。不合格だったのは、マシンローカルな速度要件だけである。
+FP16のaggregate medianはTransformers/MPSが165.0765625 ms、MLXが322.9998125 ms。
+FP32は465.013771 msと458.619459 msだった。FP32のMLXは約1.375%短かったが、
+要件の5%には届かなかった。決定論的な判定は
+`selection.selected_runtime_dtype: null`、
+`selection.decision: no_go_no_eligible_numeric_candidate`である。
+
+Stage A3ではbackend間のfull parityを実行していない。したがって、backend内の
+fidelityが高いFP32もqualifiedとは表現できない。Formal v3 validatorとMLX科学gridは、
+実行も許可もしていない。V2の不合格判定も変わらない。詳細は
+[Stage A3結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)、
+[凍結済み数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md)、
+[atomic receipt](validation/mlx_llama32_3b_numeric_screen_v1/receipt.json)にまとめた。
+次は、Transformers/MPS専用の科学経路を別に凍結するか、新しい公開プロトコルの下で
+将来のMLX engineering計画を設計するかを研究責任者が判断する。V2とStage A3の
+閾値は、結果を見た後で緩和しない。
 
 ## インストール
 
@@ -186,8 +202,10 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
 - [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md)
 - [E1 探索プロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
-- [E2 Stage A 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
-- [E2 Stage A プロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md)
+- [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
+- [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
+- [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
+- [E2 Stage A v2 プロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md)
 - [再現性ガイド](docs/REPRODUCIBILITY.ja.md) / [English](docs/REPRODUCIBILITY.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
@@ -197,7 +215,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage Aは、技術経路の不適格判定として完了しました。科学gridは実行しておらず、独立backendまたはmodelでの再現gateを満たしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、いずれも技術経路の不適格判定として完了しました。Stage A3ではruntime dtypeを選定せず、どちらの段階でも科学gridを実行していません。独立backendまたはmodelでの再現gateも満たしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
 
 ## ライセンスと引用
 

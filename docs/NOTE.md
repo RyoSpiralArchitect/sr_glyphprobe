@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [E2 Stage-A result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -115,6 +115,16 @@ result nor cross-model replication. The [complete E2 result](LLAMA32_3B_MLX_VALI
 keeps the activation match, logit mismatch, speed failure, and scientific
 boundary together.
 
+A separately frozen Stage-A3 screen then asked whether changing only runtime
+compute dtype could produce an eligible route over the same BF16-weight
+artifact. FP16 and FP32 both passed identity, determinism, zero-vector, and
+within-backend fidelity checks. Speed remained the stopping point. FP16 took
+1.9567 times the Transformers/MPS latency on MLX. FP32 was about 1.4% faster,
+but the rule required at least 5%. No candidate was selected. Stage A3 did not
+run the full cross-backend parity families, so it did not qualify FP32 or
+authorize the 50-emoji science grid. The [Stage-A3 result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
+keeps this engineering no-go separate from any claim about Llama or emoji.
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
@@ -130,9 +140,9 @@ tokenizer-independent, layer-specific, or robust random-control effect.
 Operational Milestone 2 is complete. Layer 2 can now enter the design of a new frozen targeted causal protocol using untouched C1; layer 4 remains unresolved and is not a candidate. This permits protocol design, not a causal claim. E1 does not select or modify that candidate: any focused hypothesis derived from E1 would need its own public protocol and a new untouched target bank that is neither P2 nor C1.
 
 E2 now has a separate engineering choice. We can freeze a Transformers/MPS-only
-scientific route, or first freeze a new MLX v3 diagnostic and optimization plan
-and requalify it before opening scientific outcomes. Neither path has been
-selected, and the failed v2 thresholds will not be tuned after the fact.
+scientific route, or design a distinct future MLX engineering program under a
+new public protocol. Neither path has been selected, and the failed v2 and
+Stage-A3 thresholds will not be tuned after the fact.
 
 C1 stays closed until the candidate, intervention site and operation, endpoint, controls, and multiplicity family are fixed in a sealed patch–ablate–restore protocol. Independent backend and model or tokenizer replication also remain open. Final-paper confirmatory wording and any replication used to support it must prospectively bind scientific roles to frozen inputs and account for data-dependent prototype resampling.
 

@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [E2 Stage-A result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -34,6 +34,9 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | E1 global specificity, layer 4 | 0.014887989201, 95% descriptive interval [0.003407563347, 0.019684351979] | intended negative comparator was not negative; all five family-specific intervals included zero |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
+| E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
+| E2 Stage-A3 FP16 median latency | 165.0765625 ms → 322.9998125 ms | MLX/MPS fraction 1.956666698; all 10 MLX cell medians were slower |
+| E2 Stage-A3 FP32 median latency | 465.013771 ms → 458.619459 ms | MLX/MPS fraction 0.986249198; approximately 1.375% lower, short of the required 5%; 4/10 MLX cell medians were slower |
 
 The baseline fingerprint rows are descriptive outputs of one pinned model cell;
 the Milestone 2 rows are frozen-v1 target-cluster results with the qualifications
@@ -104,9 +107,9 @@ paper gate. See the [E1 results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md),
 [frozen protocol](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md), and
 [public evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md).
 
-### E2 Stage-A engineering result
+### E2 engineering results
 
-The frozen Llama 3.2 3B BF16 engineering validation completed with
+The frozen Llama 3.2 3B BF16 Stage-A v2 engineering validation completed with
 `status: validation_failed` and `scientific_result: false`. It passed 33/60 parity checks: tokenization and
 within-backend determinism passed 10/10, exact zero-hook behavior passed 10/10,
 baseline checks passed 6/10, changed-output checks passed 7/10, composite-delta
@@ -127,9 +130,27 @@ semantic, causal, or cross-model result, and closes no paper gate. The v1 export
 failure remains preserved. See the [complete E2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md),
 [frozen protocol](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md), and
 [machine-readable receipt](validation/mlx_llama32_3b_bf16_parity_v2/receipt.json).
-The next choice—pending the research owner's decision—is either a separate
-Transformers/MPS scientific freeze or a new MLX v3 diagnostic and optimization
-freeze. The v2 thresholds will not be tuned after the result.
+Stage A3 then screened the same pinned BF16-weight artifact with separate FP16
+and FP32 runtime-compute candidates. Both candidates passed exact artifact and
+parameter identity, prompt/token identity, determinism, the unchanged
+zero-vector threshold, and backend-specific fidelity. Both failed only the
+frozen machine-local speed requirement. FP16 recorded 165.0765625 ms for
+Transformers/MPS and 322.9998125 ms for MLX; FP32 recorded 465.013771 ms and
+458.619459 ms. The latter is approximately a 1.375% reduction, not the required
+5%. The deterministic result was therefore
+`selection.selected_runtime_dtype: null` and
+`selection.decision: no_go_no_eligible_numeric_candidate`.
+
+Stage A3 did not run full cross-backend parity, so FP32 is not qualified despite
+its strong within-backend fidelity. No formal v3 validator or MLX science grid
+was run or authorized, and the v2 failure remains unchanged. See the
+[Stage-A3 result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md),
+[frozen numeric-screen protocol](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md), and
+[atomic receipt](validation/mlx_llama32_3b_numeric_screen_v1/receipt.json).
+The next choice is either a separate Transformers/MPS scientific freeze or a
+distinct future MLX engineering redesign under a new public protocol. It
+requires the research owner's decision; neither v2 nor Stage-A3 thresholds will
+be relaxed after the result.
 
 ## Install
 
@@ -272,8 +293,10 @@ Project-authored public documentation is maintained in English and Japanese:
 | Milestone 2 protocol | [MILESTONE2_PROTOCOL.md](docs/MILESTONE2_PROTOCOL.md) | [MILESTONE2_PROTOCOL.ja.md](docs/MILESTONE2_PROTOCOL.ja.md) |
 | E1 exploratory results | [EMOJI_FAMILY_EXPLORATORY_RESULTS.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) | [EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) |
 | E1 exploratory protocol | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) |
-| E2 Stage-A results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
-| E2 Stage-A protocol | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) |
+| E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
+| E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
+| E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
+| E2 Stage-A v2 protocol | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) |
 | Reproducibility guide | [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) | [REPRODUCIBILITY.ja.md](docs/REPRODUCIBILITY.ja.md) |
 | Research roadmap | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.ja.md](docs/ROADMAP.ja.md) |
 | Phase I paper plan | [PAPER_OUTLINE.md](docs/PAPER_OUTLINE.md) | [PAPER_OUTLINE.ja.md](docs/PAPER_OUTLINE.ja.md) |
@@ -283,7 +306,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. E2 Stage A is a completed negative engineering qualification; it did not run the scientific grid and does not satisfy the independent-backend-or-model replication gate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. E2 Stage A v2 and Stage A3 are completed negative engineering qualifications. Stage A3 selected no runtime dtype, and neither stage ran the scientific grid or satisfied the independent-backend-or-model replication gate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

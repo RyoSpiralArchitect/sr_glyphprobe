@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [E2 Stage A 結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -116,6 +116,16 @@ Transformers/MPSが132.127833 ms、MLXが230.138000 msで、記録上のspeedup�
 [E2の全結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)には、activationの一致、
 logitの不一致、速度gateの失敗、科学的な主張境界をまとめている。
 
+続いて、runtime compute dtypeだけを変えれば、同じBF16-weight artifactから適格な
+経路を作れるかをStage A3で調べた。これも実行前に条件を凍結した。FP16とFP32は、
+identity、決定性、zero vector、backend内の介入忠実度に合格した。止まったのは
+速度である。FP16のMLXは、Transformers/MPSの1.9567倍の時間を要した。FP32のMLXは
+約1.4%速かったものの、規則が求めた5%以上の短縮には届かなかった。候補は選ばれて
+いない。また、Stage A3ではbackend間のfull parity familyを実行していないため、
+FP32の適格性も、50絵文字の科学gridも許可しない。
+[Stage A3の全結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)では、この技術上の
+no-goを、Llamaや絵文字に関する主張と明確に分けている。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -131,9 +141,9 @@ E1もこの境界を変えず、意味、tokenizer非依存性、layer固有性�
 運用上のMilestone 2は完了した。Layer 2は、未使用のC1を使う、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。E1はこの候補を選び直す根拠にはしない。E1から仮説を絞るなら、P2でもC1でもない新しい未使用target bankと、別の公開プロトコルが必要になる。
 
 E2には、これとは別の技術判断が残った。Transformers/MPS専用の科学プロトコルを
-凍結するか、MLX v3の診断・最適化計画を新しく凍結し、科学的outcomeを開く前に
-再検証するかである。どちらを採るかは未決定で、失敗したv2の閾値を事後的に
-調整することもしない。
+凍結するか、新しい公開プロトコルの下で将来のMLX engineering計画を別に設計するかで
+ある。どちらを採るかは未決定で、失敗したv2とStage A3の閾値を事後的に調整することも
+しない。
 
 候補、介入部位と操作、endpoint、対照、多重性familyを、sealed patch–ablate–restoreプロトコルに固定するまで、C1は開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 

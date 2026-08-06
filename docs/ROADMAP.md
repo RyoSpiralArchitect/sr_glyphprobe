@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E2 MLX validation v2 protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -129,9 +129,9 @@ protocol and a new untouched target bank that is neither P2 nor C1.
 
 ### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
 
-Status: Stage-A v2 engineering validation is complete with
-`status: validation_failed` and `scientific_result: false`. The v2 protocol and technical surface were frozen
-at public commit `dc84ac19e06ef7a0fd7dcd77fdce4b484b192e57`. MLX is not
+Status: Stage-A v2 engineering validation and the subsequent Stage-A3
+runtime-dtype screen are complete. V2 remains `status: validation_failed` and
+`scientific_result: false`; Stage A3 selected no eligible candidate. MLX is not
 qualified for the pinned E2 scientific cell. No E2 scientific-grid forward was
 run or authorized.
 
@@ -179,18 +179,28 @@ and the machine-readable record is the [v2 receipt](../validation/mlx_llama32_3b
 This negative engineering qualification is not a scientific negative result
 and does not satisfy Phase I paper gate 5.
 
+Stage A3 publicly froze two runtime-compute candidates over the same BF16-weight
+artifact. FP16 and FP32 both passed identity, token/determinism, exact zero-vector,
+and within-backend fidelity gates. Both failed the machine-local speed gate:
+MLX/MPS was 1.956666698 for FP16 and 0.986249198 for FP32, while the frozen rule
+required no more than 0.95. The deterministic selection was therefore `null` /
+`no_go_no_eligible_numeric_candidate`. Stage A3 did not run the full
+cross-backend parity families, so its strong FP32 fidelity is not a qualified
+FP32 route. See the [Stage-A3 result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md),
+[frozen protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md), and
+[receipt](../validation/mlx_llama32_3b_numeric_screen_v1/receipt.json).
+
 Two paths remain, with the research owner's decision pending: create a separate
-Transformers/MPS scientific freeze, or create a new MLX v3 diagnostic and
-optimization freeze and requalify that route before accessing scientific
-outcomes. Neither path is recommended here. The v2 thresholds will not be
-relaxed or retuned after the result.
+Transformers/MPS scientific freeze, or design a distinct future MLX engineering
+program under a new public protocol. Neither path is selected here. The v2 and
+Stage-A3 thresholds will not be relaxed or retuned after the results.
 
 Exit condition: one atomic, no-overwrite receipt binds the pinned model and
 configuration identities to complete backend parity and a machine-local MLX
 aggregate median latency no greater than 95% of Transformers/MPS. This exit
-condition remains unmet. V2 produced the required recorded failure evidence,
-not a qualified MLX route. Even a later passing engineering receipt would not
-by itself complete E2 or a paper gate.
+condition remains unmet. V2 and Stage A3 produced the required recorded failure
+evidence, not a qualified MLX route. Even a later passing engineering receipt
+would not by itself complete E2 or a paper gate.
 
 ### Milestone 3 — Targeted causal localization
 

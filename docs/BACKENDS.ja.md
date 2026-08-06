@@ -1,6 +1,6 @@
 # バックエンドの能力境界
 
-[English](BACKENDS.md) · [E2 Stage A 結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)
+[English](BACKENDS.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)
 
 CLI は共通だが、バックエンド名が同じ数値対象を扱うことを保証するわけではない。
 実行結果を比較する前に、`capabilities.json`、`receipt.json`、および以下の各セクションを
@@ -53,7 +53,7 @@ activation patch は無効になるか拒否される。
 `model_receipt` には MLX/MLX-LM のバージョン、解決済み device/dtype、block path、量子化情報、
 model locator、および解決したモデル・アーティファクトの path 非依存な file manifest を記録する。
 
-#### Llama 3.2 3B BF16 Stage Aの不適格cell
+#### Llama 3.2 3B Stage Aの不適格cell
 
 Llama 3.2 3Bのv1技術検証は、MLX BF16 arrayをNumPyへ渡す最初のbaseline exportで
 停止した。V2ではmodel実行をnative BF16のまま保ち、NumPy exportの直前だけMLX
@@ -69,6 +69,14 @@ Transformers/MPSとMLXのphaseは最後まで実行できた。しかし、レ�
 hidden-state captureは上記の一般境界の下で調査できるが、captureは介入用の合格
 レシートを代替しない。
 
+その後のStage A3では、同じ固定済みBF16-weight artifactに対し、FP16とFP32のruntime
+computeを技術screenにかけた。両candidateはidentity、token・決定性、厳密なzero vector、
+backend内の介入忠実度に合格した。しかし、指定済みのマシンローカルな速度gateには
+どちらも不合格だった。MLX/MPSはFP16で1.956666698、FP32で0.986249198。合格条件は
+0.95以下である。したがって、eligible runtime dtypeは選ばれなかった。Stage A3は
+backend間のfull parity familyを実行しておらず、どちらのcandidateにもactivation介入や
+科学gridを許可しない。
+
 レシートはsource-tree hashにも拘束される。古いレシートは、そこに記録した実装の
 歴史的証拠として残る。一方、backend sourceを変更した後は、必要なidentityとgateが
 再びすべて一致しない限り、現行source treeでactivation patchを許可できない。
@@ -77,7 +85,9 @@ hidden-state captureは上記の一般境界の下で調査できるが、captur
 詳細は [v2の全結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md)、
 [凍結済みプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)、
 [v1失敗記録](../validation/mlx_llama32_3b_bf16_parity/attempt_01_failure.json)、
-[v2レシート](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json) を参照する。
+[v2レシート](../validation/mlx_llama32_3b_bf16_parity_v2/receipt.json)、
+[Stage A3結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)、
+[Stage A3レシート](../validation/mlx_llama32_3b_numeric_screen_v1/receipt.json) を参照する。
 
 ### 決定論的 mock (`mock`)
 
