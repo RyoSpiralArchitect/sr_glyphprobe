@@ -1,0 +1,16 @@
+{"id":"w01_mark_anchor","template":"Mark: {emoji}\nAnchor:"}
+{"id":"w02_bracket_continue","template":"[{emoji}]\nContinue:"}
+{"id":"w03_pipe_next","template":"x | {emoji} | y\nNext:"}
+{"id":"w04_token_state","template":"Token: {emoji}\nState:"}
+{"id":"w05_begin_end","template":"Begin\n{emoji}\nEnd\nOutput:"}
+{"id":"w06_binary_result","template":"0 {emoji} 1\nResult:"}
+{"id":"w07_symbol_following","template":"Symbol<{emoji}>\nFollowing:"}
+{"id":"w08_pair_q","template":"P:{emoji}\nQ:"}
+{"id":"w09_input_response","template":"Input({emoji})\nResponse:"}
+{"id":"w10_sequence_continuation","template":"Sequence: a {emoji} b\nContinuation:"}
+{"id":"w11_field_anchor","template":"Field\nvalue={emoji}\nanchor="}
+{"id":"w12_list_next","template":"Item\n- {emoji}\n-"}
+{"id":"w13_left_right","template":"Left {emoji} Right\nCenter:"}
+{"id":"w14_codepoint_text","template":"Codepoint: {emoji}\nText:"}
+{"id":"w15_observation_inference","template":"Observation {emoji}\nInference:"}
+{"id":"w16_slot_completion","template":"Slot A={emoji}; Slot B="}

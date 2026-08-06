@@ -209,6 +209,12 @@ tempCodeRunnerFile.py
 # PyPI configuration file
 .pypirc
 
+# GlyphProbe local experiment outputs
+runs/
+experiments/
+configs/experiments/
+.DS_Store
+
 # Marimo
 marimo/_static/
 marimo/_lsp/

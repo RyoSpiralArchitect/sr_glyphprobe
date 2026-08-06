@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use GlyphProbe, cite the repository and the exact sealed run receipt."
+title: "GlyphProbe: Pre-causal emoji and glyph activation cartography"
+version: 0.1.0
+authors:
+  - family-names: "SpiralArchitect"
+    given-names: "Ryō"
+license: Apache-2.0
+type: software
+repository-code: "https://github.com/RyoSpiralArchitect/sr_glyphprobe"

@@ -1,0 +1,19 @@
+base_config: v1_standard.yaml
+cells:
+  - name: lens-gpt2
+    backend: lens
+    model: openai-community/gpt2
+    device: cpu
+    dtype: float32
+  - name: raw-transformers-gpt2
+    backend: transformers
+    model: openai-community/gpt2
+    device: cpu
+    dtype: float32
+  - name: ollama-surface
+    backend: ollama
+    model: qwen3:4b
+    base_url: http://127.0.0.1:11434/v1
+    set:
+      - mode=surface
+      - targets.max_cases=8

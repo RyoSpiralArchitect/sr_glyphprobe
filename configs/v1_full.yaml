@@ -1,0 +1,82 @@
+schema_version: 1
+mode: internal
+backend:
+  kind: lens
+  model: openai-community/gpt2
+  revision: main
+  device: auto
+  dtype: float32
+  add_special_tokens: true
+  generation:
+    max_new_tokens: 48
+    temperature: 0.7
+    top_p: 0.95
+    logprobs: true
+    top_logprobs: 20
+run:
+  name: colored-shapes-v1-full
+  output_root: ../runs
+  seeds: [101, 211, 307, 401, 503]
+  deterministic_torch: false
+  resume: true
+  fail_fast: true
+  replicate_mode: wrapper_subsample
+  wrapper_subsample_fraction: 0.75
+panel:
+  file: ../data/emoji_panels/colored_shapes.yaml
+  neutral_glyph: "·"
+  centroid_mode: panel
+source:
+  wrappers_file: ../data/wrappers/source_wrappers.jsonl
+  max_wrappers: 16
+  anchor_position: last_nonpad
+targets:
+  cases_file: ../data/targets/prestage_targets.jsonl
+  max_cases: 32
+  calibration_cases: 8
+  generation_cases: 8
+capture:
+  site: resid_post
+  layers: [0.15, 0.30, 0.45, 0.60, 0.75, 0.90]
+  position: last_nonpad
+  return_attentions: false
+intervention:
+  mode: activation_add
+  normalization: rms
+  strengths: [0.025, 0.05, 0.10]
+  position: last_nonpad
+  clip:
+    mode: global_rms
+    max_ratio: 0.25
+  iso_kl:
+    enabled: true
+    target_kl: 0.03
+    tolerance: 0.004
+    min_strength: 0.001
+    max_strength: 0.35
+    bisection_steps: 7
+    per_seed: false
+controls:
+  random_directions_per_layer: 2
+  zero_direction: true
+  sign_flip: true
+  sign_flip_strengths: [0.05]
+  label_shuffle_permutations: 1000
+  include_neutral_direction: true
+metrics:
+  top_k: 50
+  fingerprint_dim: 96
+  fingerprint_seed: 8675309
+  split_half_repeats: 200
+  rbo_p: 0.90
+  save_top_logit_deltas: 32
+  save_fingerprints: true
+sae:
+  enabled: false
+  release: null
+  sae_ids: {}
+  device: auto
+  top_k_features: 32
+surface:
+  emoji_template: "{emoji}\n{prompt}"
+  neutral_template: "{prompt}"

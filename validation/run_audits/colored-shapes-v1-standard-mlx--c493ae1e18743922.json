@@ -1,0 +1,366 @@
+{
+  "as_of": "2026-08-06T09:20:44.464812+00:00",
+  "causal_claim_authorized": false,
+  "caveats": [
+    "This is a pre-causal map; it does not identify glyph meaning, a circuit, or a causal path.",
+    "The full pipeline was run only on MLX. Torch/MPS parity is adapter-level across fixed prompts, layers, and vectors, not a duplicate 14,208-record run.",
+    "Primary glyph token counts are balanced, but token identities are not: blue_circle has a different middle token prefix, and the neutral glyph is one token versus three for primaries.",
+    "Permutation p-values are screening flags at a finite 1/1001 floor and are not multiplicity-corrected global significance tests.",
+    "Fingerprint advantage is heterogeneous at cell level (including non-positive cells); use the median and cross-seed aggregate rather than cherry-picking the maximum row.",
+    "Seeds are repeated direction estimates, not independent observational units; target prompts are the principal sampling clusters.",
+    "Iso-KL, SAE, generation, resid_pre, attn_out, mlp_out, and path-level causal tests were not run."
+  ],
+  "checks": [
+    {
+      "id": "receipt_complete",
+      "pass": true
+    },
+    {
+      "id": "errors_absent",
+      "pass": true
+    },
+    {
+      "id": "input_hashes_match",
+      "pass": true,
+      "value": {
+        "input_00:v1_mlx_standard.yaml": "65fad6cb8b3195f800ecc4a34a04aed1a84c9721ac7273082821dc9d07b445be",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      }
+    },
+    {
+      "id": "implementation_hash_matches",
+      "pass": true,
+      "value": {
+        "package_version": "0.1.0",
+        "source_file_count": 32,
+        "source_tree_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d"
+      }
+    },
+    {
+      "id": "intervention_count_matches_plan",
+      "pass": true,
+      "value": {
+        "actual": 14208,
+        "expected": 14208
+      }
+    },
+    {
+      "id": "condition_counts_match_plan",
+      "pass": true,
+      "value": {
+        "actual": {
+          "emoji": 11520,
+          "generic_emoji": 864,
+          "random": 1728,
+          "zero": 96
+        },
+        "expected": {
+          "emoji": 11520,
+          "generic_emoji": 864,
+          "random": 1728,
+          "zero": 96
+        }
+      }
+    },
+    {
+      "id": "task_ids_unique",
+      "pass": true,
+      "value": {
+        "rows": 14208,
+        "unique": 14208
+      }
+    },
+    {
+      "id": "task_ids_recompute",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "id": "required_fields_complete",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "id": "core_metrics_finite",
+      "pass": true,
+      "value": 0
+    },
+    {
+      "id": "targets_unique_and_complete",
+      "pass": true,
+      "value": {
+        "rows": 24,
+        "unique_ids": 24,
+        "unique_prompt_hashes": 24
+      }
+    },
+    {
+      "id": "primary_token_count_balance",
+      "pass": true,
+      "value": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "id": "wrapper_token_count_balance",
+      "pass": true,
+      "value": []
+    },
+    {
+      "id": "headline_metrics_recompute",
+      "pass": true,
+      "value": {
+        "discrepancies": {},
+        "recomputed": {
+          "cross_seed_fingerprint_advantage": 0.9308144243617886,
+          "emoji_fingerprint_advantage": 0.6075275459781928,
+          "intervention_record_count": 14208,
+          "median_direction_replicate_alignment": 0.970527167689162,
+          "median_emoji_kl_dose_monotonicity": 1.0,
+          "median_emoji_label_permutation_p": 0.000999000999000999,
+          "median_emoji_perturbation_ratio_max_abs_error": 1.3877787807814457e-17,
+          "median_sign_antisymmetry": 0.9997067961488515,
+          "random_control_count": 1728,
+          "zero_hook_control_count": 96,
+          "zero_hook_max_activation_delta_rms": 0.0,
+          "zero_hook_max_logit_delta_rms": 0.0
+        }
+      }
+    },
+    {
+      "id": "readiness_consistent",
+      "pass": true,
+      "value": {
+        "causal_claim_authorized": false,
+        "checks": [
+          {
+            "criterion": "All primary glyphs have the same raw token count.",
+            "id": "tokenization_control",
+            "pass": true,
+            "value": [
+              3
+            ]
+          },
+          {
+            "criterion": "Each sealed source wrapper has the same total token count across primary glyphs.",
+            "id": "wrapper_tokenization_control",
+            "pass": true,
+            "value": []
+          },
+          {
+            "criterion": "Median source-direction replicate alignment >= 0.50.",
+            "id": "source_direction_stability",
+            "pass": true,
+            "value": 0.970527167689162
+          },
+          {
+            "criterion": "At least 16 target prompt records are present.",
+            "id": "target_case_count",
+            "pass": true,
+            "value": 24
+          },
+          {
+            "criterion": "At least one random-direction control record is present.",
+            "id": "random_direction_control",
+            "pass": true,
+            "value": 1728
+          },
+          {
+            "criterion": "An explicit zero-vector hook changes neither the patched activation nor logits beyond 1e-6 RMS.",
+            "id": "zero_hook_noop",
+            "pass": true,
+            "value": {
+              "count": 96,
+              "max_activation_delta_rms": 0.0,
+              "max_logit_delta_rms": 0.0
+            }
+          },
+          {
+            "criterion": "At least three positive strengths for dose-response inspection.",
+            "id": "strength_dose_grid",
+            "pass": true,
+            "value": 3
+          },
+          {
+            "criterion": "Median maximum achieved-RMS-ratio error <= 1e-5.",
+            "id": "scalar_strength_match",
+            "pass": true,
+            "value": 1.3877787807814457e-17
+          },
+          {
+            "criterion": "Same-emoji held-out fingerprint similarity exceeds cross-emoji/random controls.",
+            "id": "fingerprint_reproducibility",
+            "pass": true,
+            "value": 0.6075275459781928
+          },
+          {
+            "criterion": "Median within-target label-shuffle screening p-value <= 0.05; this is a screening flag, not a multiplicity-corrected global test.",
+            "id": "label_identity_permutation",
+            "pass": true,
+            "value": 0.000999000999000999
+          },
+          {
+            "criterion": "Same-glyph cross-seed fingerprint separation exceeds the random-direction null.",
+            "id": "cross_seed_output_stability",
+            "pass": true,
+            "value": 0.9308144243617886
+          }
+        ],
+        "passed": 11,
+        "stage": "pre-causal-readiness-only",
+        "total": 11,
+        "warning": "Passing these gates supports escalation to targeted patching and path-level tests; it does not establish a semantic or mechanistic causal interpretation."
+      }
+    }
+  ],
+  "decision": "Artifact is internally consistent and suitable for designing a targeted causal follow-up, with the stated caveats.",
+  "fingerprint_profile": {
+    "advantage": {
+      "by_layer": {
+        "2": {
+          "count": 9,
+          "max_advantage": 1.0106076657513348,
+          "median_advantage": 0.8679945642640585,
+          "min_advantage": -0.8470854770670075
+        },
+        "4": {
+          "count": 9,
+          "max_advantage": 2.502303594416311,
+          "median_advantage": 0.6139168791926831,
+          "min_advantage": -1.218837355336576
+        },
+        "7": {
+          "count": 9,
+          "max_advantage": 1.0146569086639121,
+          "median_advantage": 0.3648982297497534,
+          "min_advantage": -0.6242642312758515
+        },
+        "9": {
+          "count": 9,
+          "max_advantage": 0.8185696226654267,
+          "median_advantage": 0.42010782148292014,
+          "min_advantage": -1.0631877510992989
+        }
+      },
+      "by_seed": {
+        "101": {
+          "count": 12,
+          "median_advantage": 0.4433436360607576,
+          "positive_count": 9
+        },
+        "211": {
+          "count": 12,
+          "median_advantage": 0.5813822775467961,
+          "positive_count": 7
+        },
+        "307": {
+          "count": 12,
+          "median_advantage": 0.6658644762335197,
+          "positive_count": 9
+        }
+      },
+      "by_strength": {
+        "0.025": {
+          "count": 12,
+          "median_advantage": 0.5338588317011488,
+          "positive_count": 8
+        },
+        "0.05": {
+          "count": 12,
+          "median_advantage": 0.6863095049437629,
+          "positive_count": 8
+        },
+        "0.1": {
+          "count": 12,
+          "median_advantage": 0.3950024564839827,
+          "positive_count": 9
+        }
+      },
+      "max": 2.502303594416311,
+      "median": 0.6075275459781928,
+      "median_without_three_iqr_extremes": 0.6075275459781928,
+      "min": -1.218837355336576,
+      "positive_count": 25,
+      "positive_rate": 0.6944444444444444
+    },
+    "permutation_screen": {
+      "at_minimum_count": 36,
+      "median_p": 0.000999000999000999,
+      "minimum_p": 0.000999000999000999,
+      "note": "Screening p-values are not multiplicity-corrected global significance tests."
+    },
+    "random_separation": {
+      "interpretation": "Random-control separation is heterogeneous across cells. The predefined three-IQR diagnostic does not itself license removing any cell.",
+      "median": 0.4390016369500159,
+      "q1": 0.052241989870670025,
+      "q3": 1.6336582382460954,
+      "three_iqr_bounds": [
+        -4.692006755255606,
+        6.377906983372371
+      ],
+      "three_iqr_extremes": []
+    },
+    "row_count": 36
+  },
+  "intended_use": "pre-causal activation screening only",
+  "passed": 15,
+  "recomputed_headlines": {
+    "cross_seed_fingerprint_advantage": 0.9308144243617886,
+    "emoji_fingerprint_advantage": 0.6075275459781928,
+    "intervention_record_count": 14208,
+    "median_direction_replicate_alignment": 0.970527167689162,
+    "median_emoji_kl_dose_monotonicity": 1.0,
+    "median_emoji_label_permutation_p": 0.000999000999000999,
+    "median_emoji_perturbation_ratio_max_abs_error": 1.3877787807814457e-17,
+    "median_sign_antisymmetry": 0.9997067961488515,
+    "random_control_count": 1728,
+    "zero_hook_control_count": 96,
+    "zero_hook_max_activation_delta_rms": 0.0,
+    "zero_hook_max_logit_delta_rms": 0.0
+  },
+  "run_dir": "colored-shapes-v1-standard-mlx--mlx--openai-community-gpt2--c493ae1e18743922",
+  "run_id": "colored-shapes-v1-standard-mlx--mlx--openai-community-gpt2--c493ae1e18743922",
+  "runtime_seconds": 254.633341,
+  "schema_version": 1,
+  "scientific_result": true,
+  "status": "ready_with_caveats",
+  "target_group_counts": {
+    "classification": 4,
+    "continuation": 4,
+    "factual": 4,
+    "planning": 4,
+    "procedural": 4,
+    "reasoning": 4
+  },
+  "tokenization_profile": {
+    "blue_circle_prefix_differs": true,
+    "distinct_primary_token_sequences": 10,
+    "neutral_token_count": 1,
+    "primary_count": 10,
+    "primary_token_counts": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  "total": 15
+}

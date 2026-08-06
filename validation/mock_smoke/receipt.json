@@ -1,0 +1,141 @@
+{
+  "backend": {
+    "add_special_tokens": true,
+    "api_key_env": null,
+    "base_url": null,
+    "device": "cpu",
+    "dtype": "float32",
+    "generation": {
+      "do_sample": null,
+      "logprobs": true,
+      "max_new_tokens": 8,
+      "temperature": 0.0,
+      "top_k": null,
+      "top_logprobs": 20,
+      "top_p": 1.0
+    },
+    "kind": "mock",
+    "local_files_only": false,
+    "model": "glyphprobe/mock-64d",
+    "model_kwargs": {},
+    "revision": null,
+    "trust_remote_code": false,
+    "validation_receipt": null,
+    "validation_receipt_sha256": null
+  },
+  "capabilities": {
+    "backend": "mock",
+    "capabilities": {
+      "activation_cache": true,
+      "activation_patch": true,
+      "attention_weights": false,
+      "canonical_hooks": false,
+      "deterministic_forward": true,
+      "forward_logits": true,
+      "generate": true,
+      "hidden_states": true,
+      "logprobs": false,
+      "sae_analysis": false,
+      "server_metrics": false,
+      "tokenize": true
+    },
+    "metadata": {
+      "d_model": 64,
+      "num_layers": 8
+    },
+    "model": "glyphprobe/mock-64d",
+    "notes": {
+      "scientific_status": "CI-only synthetic backend; never use as evidence."
+    }
+  },
+  "claim_boundary": "pre-causal-activation-screen",
+  "config_path": "v1_smoke.yaml",
+  "environment": {
+    "cuda_visible_devices": null,
+    "machine": "arm64",
+    "packages": {
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.4.4",
+      "openai": "2.45.0",
+      "pydantic": "2.12.5",
+      "sae-lens": null,
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformer-lens": null,
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "python": "3.13.13 (v3.13.13:01104ce1beb, Apr  7 2026, 14:43:30) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  },
+  "finished_at": "2026-08-06T09:21:32.978611+00:00",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d"
+  },
+  "input_hashes": {
+    "input_00:v1_smoke.yaml": "3c85d1019e6f9c074c84e43d8ef407f33cce3b996382d88db05b45f2b41fcf08",
+    "input_01:colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+    "input_02:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+    "input_03:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+  },
+  "mode": "internal",
+  "model_identity": {
+    "payload": {
+      "backend": "mock",
+      "d_model": 64,
+      "d_vocab": 512,
+      "device": "cpu",
+      "dtype": "float32",
+      "model": "glyphprobe/mock-64d",
+      "num_layers": 8,
+      "revision": null,
+      "scientific_status": "CI-only synthetic backend"
+    },
+    "sha256": "e0d2ecd6c76bfdfbe37f2d1a6c2f8683070463b0109a1c55f4e326039fc26593"
+  },
+  "model_receipt": {
+    "backend": "mock",
+    "d_model": 64,
+    "d_vocab": 512,
+    "device": "cpu",
+    "dtype": "float32",
+    "model": "glyphprobe/mock-64d",
+    "num_layers": 8,
+    "revision": null,
+    "scientific_status": "CI-only synthetic backend"
+  },
+  "plan": {
+    "backend": "mock",
+    "claim_boundary": "pre-causal-activation-screen",
+    "emoji_count": 10,
+    "emoji_intervention_calls": 1080,
+    "estimated_forward_calls": 1386,
+    "generic_emoji_control_calls": 72,
+    "iso_kl_calibration_calls_upper_bound": 0,
+    "iso_kl_evaluation_calls": 0,
+    "mode": "internal",
+    "model": "glyphprobe/mock-64d",
+    "random_control_calls": 144,
+    "resolved_layers": [
+      2,
+      4,
+      5
+    ],
+    "seed_count": 2,
+    "source_forward_calls": 66,
+    "target_baseline_calls": 6,
+    "target_count": 6,
+    "wrapper_count": 6,
+    "zero_hook_control_calls": 18
+  },
+  "run_id": "glyphprobe-v1-smoke--mock--glyphprobe-mock-64d--19a5d40d5d537277",
+  "run_seal": "19a5d40d5d537277",
+  "schema_version": 1,
+  "started_at": "2026-08-06T09:21:28.042796+00:00",
+  "status": "complete",
+  "summary_path": "summary.json"
+}

@@ -1,0 +1,105 @@
+{
+  "bundle": "glyphprobe-v1-standard-mlx-public-compact",
+  "causal_claim_authorized": false,
+  "claim_boundary": "pre-causal-activation-screen",
+  "included_files": {
+    "mlx_gpt2_parity/receipt.json": {
+      "bytes": 179401,
+      "sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    },
+    "v1_standard_mlx/audit.json": {
+      "bytes": 11721,
+      "sha256": "903e7c1d78669e7004c53c62a19e539e67012b7b2d5b93252d0c300c1bdbd54e"
+    },
+    "v1_standard_mlx/capabilities.json": {
+      "bytes": 1894,
+      "sha256": "0d5ee6abe56f95e4a894fc1ba3d5bc9b9cef858b7afb23828cedf4342eb0b67b"
+    },
+    "v1_standard_mlx/cross_seed_fingerprint_summary.jsonl": {
+      "bytes": 6079,
+      "sha256": "6a7f1bc47eeef51ae9b9ee41d6be3eedb9ce8dcfefc72b423570b78ccf0d8a1f"
+    },
+    "v1_standard_mlx/direction_replicates.json": {
+      "bytes": 508,
+      "sha256": "4cd3e70b8218de6c04677ebad23c3ee20ea6d3f8816242bcc1e4d753df403c5d"
+    },
+    "v1_standard_mlx/dose_response_summary.jsonl": {
+      "bytes": 14677,
+      "sha256": "50fc0b182b3dc8a595bedb18c2f4ee5679830466ecbb8ca86b26bd5a5f1641ad"
+    },
+    "v1_standard_mlx/fingerprint_summary.jsonl": {
+      "bytes": 96359,
+      "sha256": "ae6df12d9da853956da1259a5941b7d54d847ba24ff70addf7074fa68afda0d9"
+    },
+    "v1_standard_mlx/plan.json": {
+      "bytes": 588,
+      "sha256": "f92d8398320600d8ffec8ca34ad58d5ddf944ff4b3ebd816c4dc69f3f28f70aa"
+    },
+    "v1_standard_mlx/receipt.json": {
+      "bytes": 11010,
+      "sha256": "e38f9f5029f800a397d07ca930291b5ea96f18d991949bc3a897e2c97ad54739"
+    },
+    "v1_standard_mlx/report.md": {
+      "bytes": 5580,
+      "sha256": "0bf83192c2d960b33787fa33c27ee39aacbb42af768fc132fe3ebbbf74887f5f"
+    },
+    "v1_standard_mlx/resolved_config.yaml": {
+      "bytes": 2247,
+      "sha256": "fddd3ddf2168cdd251a935e65409ec798ed1afb5f010d8aea2fcc46803c5d877"
+    },
+    "v1_standard_mlx/resolved_inputs.json": {
+      "bytes": 2882,
+      "sha256": "41c1920500ca97fdb00b43fd25591677ace06af8d52b0535291fccf1211e4e85"
+    },
+    "v1_standard_mlx/scalar_balance_summary.jsonl": {
+      "bytes": 61254,
+      "sha256": "8a3bb4034d22294b0994f52e80336dcf372c32623050fbc51079959b1b29b041"
+    },
+    "v1_standard_mlx/sign_flip_summary.jsonl": {
+      "bytes": 3764,
+      "sha256": "f4f1284973306611302c0e8ff3ef3ba1525b31235300f3fcca9cd51f74c3817b"
+    },
+    "v1_standard_mlx/source_item_metrics.jsonl": {
+      "bytes": 9775,
+      "sha256": "193e0ec9d82f87e493ad12aea6bc05ba41edb1baeee37a8717805153db11a6b7"
+    },
+    "v1_standard_mlx/source_layer_metrics.jsonl": {
+      "bytes": 14932,
+      "sha256": "72f39fe4aa14cfc1cd6e1bbcbef40ceff5a63021b67d2da6fbb03f926d8ca48b"
+    },
+    "v1_standard_mlx/summary.json": {
+      "bytes": 3790,
+      "sha256": "97d08590ffa1bfc0d1b53d78bf314199e8b1457d17668a105afed156934b86bd"
+    },
+    "v1_standard_mlx/target_baselines.jsonl": {
+      "bytes": 4711,
+      "sha256": "cd98ea69db65027ca152ff941ab32d2a1a140cf2bd05f53b9b3ae9ef90af0e46"
+    },
+    "v1_standard_mlx/tokenization.jsonl": {
+      "bytes": 34215,
+      "sha256": "33d7b29d1148e7c947faf6ab7d401b88ac08e89a52fe4411880483642e28ede4"
+    }
+  },
+  "omission_reason": "The condition ledger and numeric NPZ arrays are excluded from Git because of size. Their hashes attest the audited local artifacts but cannot reconstruct them.",
+  "omitted_large_local_files": {
+    "directions.npz": {
+      "bytes": 723925,
+      "sha256": "ca68561f0f4c992577277edbc5fe4a75ebe142eb823baf2cf4cd1ce1ece44a36"
+    },
+    "interventions.jsonl": {
+      "bytes": 77327172,
+      "sha256": "901d5576b8e86fb412f0ae962f6ef81997ebc3ff14105ae23211f9cf83ca82b6"
+    },
+    "source_activations.npz": {
+      "bytes": 2013636,
+      "sha256": "68bc8fcb56d9b4a47da0c98b4e448e54f64e9ca6599f30ff723281f59273a373"
+    },
+    "target_baselines.npz": {
+      "bytes": 4122305,
+      "sha256": "f4885066c312bf617fa6fb465c671a330578b89d2b3503ffa984ecee01a1e3f7"
+    }
+  },
+  "run_seal": "c493ae1e18743922",
+  "schema_version": 1,
+  "source_run_id": "colored-shapes-v1-standard-mlx--mlx--openai-community-gpt2--c493ae1e18743922"
+}

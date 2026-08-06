@@ -1,0 +1,64 @@
+schema_version: 1
+mode: internal
+backend:
+  kind: mock
+  model: glyphprobe/mock-64d
+  device: cpu
+  dtype: float32
+  generation:
+    max_new_tokens: 8
+    temperature: 0.0
+run:
+  name: glyphprobe-v1-smoke
+  output_root: ../runs
+  seeds: [101, 211]
+  deterministic_torch: true
+  resume: true
+  fail_fast: true
+  replicate_mode: wrapper_subsample
+  wrapper_subsample_fraction: 0.75
+panel:
+  file: ../data/emoji_panels/colored_shapes.yaml
+  neutral_glyph: "·"
+  centroid_mode: panel
+source:
+  wrappers_file: ../data/wrappers/source_wrappers.jsonl
+  max_wrappers: 6
+  anchor_position: last_nonpad
+targets:
+  cases_file: ../data/targets/prestage_targets.jsonl
+  max_cases: 6
+  calibration_cases: 3
+capture:
+  site: resid_post
+  layers: [0.25, 0.50, 0.75]
+  position: last_nonpad
+intervention:
+  mode: activation_add
+  normalization: rms
+  strengths: [0.03, 0.08]
+  position: last_nonpad
+  clip:
+    mode: global_rms
+    max_ratio: 0.20
+  iso_kl:
+    enabled: false
+controls:
+  random_directions_per_layer: 2
+  zero_direction: true
+  sign_flip: true
+  sign_flip_strengths: [0.03]
+  label_shuffle_permutations: 100
+  include_neutral_direction: true
+metrics:
+  top_k: 20
+  fingerprint_dim: 48
+  fingerprint_seed: 8675309
+  split_half_repeats: 50
+  rbo_p: 0.90
+  save_top_logit_deltas: 8
+sae:
+  enabled: false
+surface:
+  emoji_template: "{emoji}\n{prompt}"
+  neutral_template: "{prompt}"

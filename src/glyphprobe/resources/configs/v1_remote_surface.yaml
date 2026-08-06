@@ -1,0 +1,45 @@
+schema_version: 1
+mode: surface
+backend:
+  kind: ollama
+  model: qwen3:4b
+  base_url: http://127.0.0.1:11434/v1
+  generation:
+    max_new_tokens: 64
+    temperature: 0.7
+    top_p: 0.95
+    logprobs: true
+    top_logprobs: 20
+run:
+  name: colored-shapes-v1-surface
+  output_root: ../runs
+  seeds: [101, 211, 307, 401, 503]
+  resume: true
+  fail_fast: false
+  max_errors: 20
+panel:
+  file: ../data/emoji_panels/colored_shapes.yaml
+  neutral_glyph: "·"
+source:
+  wrappers_file: ../data/wrappers/source_wrappers.jsonl
+  max_wrappers: 4
+targets:
+  cases_file: ../data/targets/prestage_targets.jsonl
+  max_cases: 16
+  generation_cases: 16
+capture:
+  site: resid_post
+  layers: [0.25, 0.50, 0.75]
+intervention:
+  strengths: [0.025, 0.05, 0.10]
+controls:
+  random_directions_per_layer: 0
+metrics:
+  top_k: 20
+sae:
+  enabled: false
+surface:
+  emoji_template: "{emoji}\n\n{prompt}"
+  neutral_template: "{prompt}"
+  system_prompt: "Answer the user request directly. Do not discuss the marker unless it is relevant."
+  enabled_logprobs: true

@@ -1,0 +1,24 @@
+{
+  "backend": "mock",
+  "claim_boundary": "pre-causal-activation-screen",
+  "emoji_count": 10,
+  "emoji_intervention_calls": 1080,
+  "estimated_forward_calls": 1386,
+  "generic_emoji_control_calls": 72,
+  "iso_kl_calibration_calls_upper_bound": 0,
+  "iso_kl_evaluation_calls": 0,
+  "mode": "internal",
+  "model": "glyphprobe/mock-64d",
+  "random_control_calls": 144,
+  "resolved_layers": [
+    2,
+    4,
+    5
+  ],
+  "seed_count": 2,
+  "source_forward_calls": 66,
+  "target_baseline_calls": 6,
+  "target_count": 6,
+  "wrapper_count": 6,
+  "zero_hook_control_calls": 18
+}

@@ -1,0 +1,22 @@
+base_config: v1_standard.yaml
+cells:
+  - name: lens-resid-pre
+    backend: lens
+    model: openai-community/gpt2
+    set:
+      - capture.site=resid_pre
+  - name: lens-attn-out
+    backend: lens
+    model: openai-community/gpt2
+    set:
+      - capture.site=attn_out
+  - name: lens-mlp-out
+    backend: lens
+    model: openai-community/gpt2
+    set:
+      - capture.site=mlp_out
+  - name: lens-resid-post
+    backend: lens
+    model: openai-community/gpt2
+    set:
+      - capture.site=resid_post

@@ -1,0 +1,32 @@
+{"id":"cont_01","group":"continuation","prompt":"Complete with one natural continuation:\nThe committee reviewed the evidence and"}
+{"id":"cont_02","group":"continuation","prompt":"Complete with one natural continuation:\nAt the edge of the garden, a small path"}
+{"id":"cont_03","group":"continuation","prompt":"Complete with one natural continuation:\nThe instrument recorded a sudden change in"}
+{"id":"cont_04","group":"continuation","prompt":"Complete with one natural continuation:\nAfter comparing both proposals, the team"}
+{"id":"fact_01","group":"factual","prompt":"Answer in one concise sentence:\nWhy do leaves change color in autumn?"}
+{"id":"fact_02","group":"factual","prompt":"Answer in one concise sentence:\nWhat causes ocean tides?"}
+{"id":"fact_03","group":"factual","prompt":"Answer in one concise sentence:\nWhy does metal expand when heated?"}
+{"id":"fact_04","group":"factual","prompt":"Answer in one concise sentence:\nWhat is the function of a checksum?"}
+{"id":"reason_01","group":"reasoning","prompt":"Choose the more plausible conclusion and explain briefly:\nAll sealed boxes are dry. This box is sealed."}
+{"id":"reason_02","group":"reasoning","prompt":"Solve briefly:\nA train travels 120 km in 2 hours. What is its average speed?"}
+{"id":"reason_03","group":"reasoning","prompt":"State the missing implication:\nIf the sensor is disconnected, no signal arrives. A signal arrived."}
+{"id":"reason_04","group":"reasoning","prompt":"Compare the two quantities briefly:\nThree quarters of 80 and two thirds of 90."}
+{"id":"proc_01","group":"procedural","prompt":"Give three compact steps for safely backing up a small project directory."}
+{"id":"proc_02","group":"procedural","prompt":"Give three compact steps for testing whether a thermometer is consistent."}
+{"id":"proc_03","group":"procedural","prompt":"Give three compact steps for preparing a simple lentil soup."}
+{"id":"proc_04","group":"procedural","prompt":"Give three compact steps for reviewing a pull request."}
+{"id":"class_01","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA promise."}
+{"id":"class_02","group":"classification","prompt":"Classify as physical, social, or abstract, then give one reason:\nA river delta."}
+{"id":"class_03","group":"classification","prompt":"Classify as reversible or irreversible, then give one reason:\nMelting an ice cube in a closed cup."}
+{"id":"class_04","group":"classification","prompt":"Classify as observation or inference, then give one reason:\nThe pavement is wet, so it probably rained."}
+{"id":"plan_01","group":"planning","prompt":"Propose a minimal one-day plan for organizing 200 unlabeled image files."}
+{"id":"plan_02","group":"planning","prompt":"Propose a minimal experiment to compare two text classifiers fairly."}
+{"id":"plan_03","group":"planning","prompt":"Propose a minimal checklist for moving a local service to a new machine."}
+{"id":"plan_04","group":"planning","prompt":"Propose a minimal study plan for learning basic linear algebra over four weeks."}
+{"id":"style_01","group":"style","prompt":"Rewrite neutrally and precisely:\nThis gadget is absolutely incredible and changes everything."}
+{"id":"style_02","group":"style","prompt":"Rewrite warmly but without exaggeration:\nYour request has been received and will be processed."}
+{"id":"style_03","group":"style","prompt":"Rewrite as a compact technical note:\nThe program got slower after we added more logging."}
+{"id":"style_04","group":"style","prompt":"Rewrite as a plain-language explanation:\nThe estimate has high variance because the sample is small."}
+{"id":"abstract_01","group":"abstract","prompt":"In two sentences, distinguish a boundary from a threshold."}
+{"id":"abstract_02","group":"abstract","prompt":"In two sentences, distinguish repetition from recurrence."}
+{"id":"abstract_03","group":"abstract","prompt":"In two sentences, distinguish evidence from interpretation."}
+{"id":"abstract_04","group":"abstract","prompt":"In two sentences, distinguish representation from mechanism."}

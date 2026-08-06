@@ -1,0 +1,25 @@
+{
+  "backend": "mock",
+  "capabilities": {
+    "activation_cache": true,
+    "activation_patch": true,
+    "attention_weights": false,
+    "canonical_hooks": false,
+    "deterministic_forward": true,
+    "forward_logits": true,
+    "generate": true,
+    "hidden_states": true,
+    "logprobs": false,
+    "sae_analysis": false,
+    "server_metrics": false,
+    "tokenize": true
+  },
+  "metadata": {
+    "d_model": 64,
+    "num_layers": 8
+  },
+  "model": "glyphprobe/mock-64d",
+  "notes": {
+    "scientific_status": "CI-only synthetic backend; never use as evidence."
+  }
+}
