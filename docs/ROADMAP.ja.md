@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 MLX validationプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -65,6 +65,44 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 [E1 探索プロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)では、問い、input、endpoint、停止規則、主張境界を定め、[E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)では全結果を公開した。広く正のtransfer行列と小さなfamily固有超過は、共有tokenによるtransferが残差的なwithin-family信号より支配的であることを示唆する。E1で記述できるのは、統制した中間token置換の下でのmatched-slot反復までである。意味上のfamily効果、tokenization非依存の性質、layer固有の効果、random controlに対する頑健な優位性、因果mechanism、modelをまたぐ規則性は主張しない。Milestone 2の判定を更新せず、C1を開かず、Milestone 3の介入も選ばず、Phase I論文gateも満たさない。
 
 終了条件: 達成。公開bundleは、tokenizer-only preflight、全記述解析、5つの軽量run directory、root manifestを結び付けている。E1から新しい仮説を立てる場合は、P2でもC1でもない未使用target bankを用意し、新しい確認プロトコルを先に公開する。
+
+### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
+
+公開freeze commitでの状態: engineering protocol frozen / validation pending。
+Commit公開前の実効statusは`freeze_pending`のままとする。どちらの状態でも、E2の
+科学的model forwardも結果も認めない。
+
+- まず、base modelである`mlx-community/Llama-3.2-3B-bf16`のrevision
+  `60a99aaf43164077157d64bf909b7b61143c6a6d`について、process-isolatedな
+  Transformers/MPS-to-MLX parityとlocal speedのvalidationを凍結し、実行する。
+- Native BF16、`add_special_tokens: false`、`last_nonpad`の`resid_post`、
+  layer 5・11を用いる。Layerは、期待されるdecoder 28層に対して、固定した相対
+  depth 0.2・0.4から導出する。
+- MLXを今後のE2 cellへ選択する前に、固定済みのnumerical parity、zero-vector、
+  intervention fidelity、token ID、argmax、speedの全checkへ合格することを求める。
+- Stage Aのinputは、E1 endpoint/gridとすべてのtarget/source-wrapper bankの外に
+  置いた固定engineering probeに限る。Surface coverageのため、そのうち3件では
+  公開済みE1 panelのglyphを使うが、科学的outcome inputには用いない。P2とC1は、
+  読み込み、hash、tokenize、forward、解析のいずれも行わない。
+- ImmutableなStage-A receiptが合格した場合に限り、科学的outcomeを見る前に、
+  E2のtokenizer audit、run config、解析、manifestを公開freezeする。
+- E1の元の50絵文字すべてをprimary literal setとして保ち、5 familyのslot
+  03--09を、固定した35 glyphのtoken-structural sensitivityとして事前指定する。
+- すでに探索に使った同じ24件のprestage targetと、同じ16件のsource wrapper
+  だけを再利用する。Confirmatoryとは表現しない。
+- その後E2 gridを実行しても、範囲を限定したtransport observationとして報告
+  する。Model、tokenizer、vocabulary、architecture、dtypeがすべて同時に変わる
+  ため、model scaleの効果だけを識別できず、scale effectを確立できない。
+
+固定するengineering gateは、[E2 Stage-A MLX validationプロトコル](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md)
+に記載する。このgateへの合格と別の科学的freezeの公開が完了するまで、E2は
+cross-model replicationでもmodel-generalな絵文字効果の証拠でもなく、Phase I
+論文gate 5も満たさない。
+
+終了条件: 固定model/configuration identityを、完全なbackend parityおよび
+Transformers/MPSの95%以下となるmachine-localなMLX aggregate median latencyへ
+結び付けたatomic・no-overwrite receiptを1件作る。この終了条件が認定するのは
+engineering routeだけであり、E2や論文gateは完了しない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

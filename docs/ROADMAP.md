@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 MLX validation protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [E1 exploratory protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -126,6 +126,50 @@ Exit condition: met. The public bundle links the tokenizer-only preflight,
 complete descriptive analysis, five compact run directories, and a root
 manifest. Any hypothesis prompted by E1 requires a new public confirmatory
 protocol and a new untouched target bank that is neither P2 nor C1.
+
+### Engineering side track E2 — Llama 3.2 3B MLX cross-model transport
+
+Status in the public freeze commit: engineering protocol frozen; validation
+pending. Before that commit is public, the effective status remains
+`freeze_pending`. No E2 scientific model forward or result is authorized at
+either status.
+
+- first freeze and run a process-isolated Transformers/MPS-to-MLX parity and
+  local-speed validation for the base `mlx-community/Llama-3.2-3B-bf16`
+  artifact at revision
+  `60a99aaf43164077157d64bf909b7b61143c6a6d`;
+- use native BF16, `add_special_tokens: false`, `resid_post` at `last_nonpad`,
+  and layers 5 and 11, derived from fixed relative depths 0.2 and 0.4 over the
+  expected 28 decoder layers;
+- require every frozen numerical parity, zero-vector, intervention-fidelity,
+  token-ID, argmax, and speed check to pass before MLX is selected for the
+  prospective E2 cell;
+- keep Stage A inputs to fixed engineering probes outside the E1 endpoint/grid
+  and every target/source-wrapper bank; three probes use public E1-panel glyphs
+  for surface coverage but are not scientific outcome inputs; do not read,
+  hash, tokenize, forward, or analyze P2 or C1;
+- only after a passing, immutable Stage-A receipt, publicly freeze the E2
+  tokenizer audit, run configs, analysis, and manifest before any scientific
+  outcome is inspected;
+- retain all 50 original E1 emoji as the primary literal set and prespecify the
+  five-family slots 03--09 as a fixed 35-glyph token-structural sensitivity;
+- reuse only the same 24 already explored prestage targets and the same 16
+  source wrappers; do not describe them as confirmatory;
+- report the later E2 grid, if run, as a bounded transport observation. Model,
+  tokenizer, vocabulary, architecture, and dtype all change together, so the
+  comparison cannot isolate scale or establish a scale effect.
+
+The fixed engineering gate is in the [E2 Stage-A MLX validation
+protocol](LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md). Until that gate passes and a
+separate scientific freeze is public, E2 is neither a cross-model replication
+nor evidence for a model-general emoji effect, and it does not satisfy Phase I
+paper gate 5.
+
+Exit condition: one atomic, no-overwrite receipt binds the pinned model and
+configuration identities to complete backend parity and a machine-local MLX
+aggregate median latency no greater than 95% of Transformers/MPS. This exit
+condition qualifies the engineering route only; it does not complete E2 or a
+paper gate.
 
 ### Milestone 3 — Targeted causal localization
 
