@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [実験結果](docs/RESULTS_V1.ja.md) · [Milestone 2 プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -42,11 +42,22 @@ MLX は、同じモデル名だから採用したわけではありません。�
 
 ### Milestone 2 の現在地
 
-トークン化を揃えた対照実験は、プロトコルを凍結し、事前検査を待っている段階です。Milestone 2 のモデル出力はまだ確認しておらず、結果も報告していません。一度だけ使うP2確認用バンク（48件）と、将来の因果試験まで残すC1ホールドアウト・バンク（48件）を、それぞれ凍結しました。
+事前検査を通過した後、凍結済み48件のP2バンクを一度だけ開いた。v1の結果は、レイヤーによって分かれている。
 
-主要比較では、色付き図形パネルに対し、GPT-2のトークン数と9対1のトークン接頭構造を揃えた、互いに重複しない10記号のnull対照パネルを3組使います。主要仮説は、strength 0.05におけるlayer 2とlayer 4に固定します。推論の標本単位はターゲットプロンプトのクラスタであり、glyphやdirection seedを独立標本として数えません。
+| ソースラッパー | レイヤー | 調整済み効果 | 95% CI | Holm補正済みp値 | v1判定 |
+|---|---:|---:|:---:|---:|---|
+| 主要ソース | 2 | +0.208363 | [0.137463, 0.276893] | 0.00143999 | 指定済みmatched controlsに対して頑健 |
+| 主要ソース | 4 | -0.0329465 | [-0.0761085, 0.0110094] | 0.999500 | 未解決 |
+| 独立ソース | 2 | +0.187507 | [0.125489, 0.247659] | 0.00393996 | 指定済みmatched controlsに対して頑健 |
+| 独立ソース | 4 | -0.086379 | [-0.159246, -0.016917] | 0.999430 | 未解決 |
 
-P2バンクを開くのは、プロトコルと、それに結び付いたmanifest、config、解析コード、testが公開凍結コミットに揃い、すべての事前検査を通過した後の一度だけです。C1バンクは、後に定める因果プロトコルまで使いません。endpoint、判定規則、禁止事項は [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) に固定しています。
+3つの対照パネルで揃えたのは、3トークンという長さと、パネル単位の9対1の接頭構造である。token IDそのものは同じではない。Panel Cには、事前申告した意味的に近い対照`🟥`を1個含む。独立ソース条件は同じP2ターゲットを再利用しており、独立ターゲットや別モデルでの再現ではない。
+
+別に行ったinput-binding auditは合格した。一方、target bootstrapの各replicateでleave-one-group-out prototypeを作り直す事後感度分析では、区間が広がった。この事後解析は、凍結済みv1判定を上書きしない。その後、2つの二次診断はいずれも14,208行のgridを完走し、errorは0件、zero-hook RMSは0、readinessは11 / 11だった。Random-adjustedのheadline優位量は、末尾token一致で+0.751225、接頭構造均一化で+0.601038である。これはpaired診断で使うraw separation scoreとは別の評価量である。96次元における記述的なstandard-minus-diagnostic中央値は、末尾token一致が+0.002624（36セル中20セルが正）、接頭構造均一化が+0.022096（36セル中25セルが正）だった。これらの事後診断は、推論や同等性の検定ではない。C1因果ホールドアウトは未使用のままである。
+
+実行時の来歴として、matched-null Aの最初のprocessは、マシン負荷が極端に高い最中、798行で外部から中断された。Sealを保ったresumeによって、重複・欠損・error・非ゼロのzero-hook RMSなしで14,208行の正確なgridを完了した。この事象は、モデルに関する証拠でも、一般化できる速度の主張でもない。
+
+正確な結果、解析上の留保、感度区間、エビデンスへのリンクは [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) にまとめた。この結果は前因果段階にあり、意味、機構、回路、因果経路、トークン化から独立したglyph効果を確立しない。
 
 ## インストール
 
@@ -116,6 +127,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [バックエンド境界](docs/BACKENDS.ja.md) / [English](docs/BACKENDS.md)
 - [指標の定義](docs/METRICS.ja.md) / [English](docs/METRICS.md)
 - [v1 実験結果](docs/RESULTS_V1.ja.md) / [English](docs/RESULTS_V1.md)
+- [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) / [English](docs/MILESTONE2_RESULTS.md)
 - [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
@@ -125,7 +137,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。現在のスクリーニング結果をそのまま論文の結論にはせず、トークン化をそろえた対照、独立ターゲットでの確認、クラスタ構造を反映した推論、因果介入を順に積み上げます。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
 
 ## ライセンスと引用
 

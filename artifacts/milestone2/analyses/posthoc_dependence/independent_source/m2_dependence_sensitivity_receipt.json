@@ -1,0 +1,256 @@
+{
+  "analysis": "stratified target bootstrap with replicate-wise refitting of all leave-one-target-group-out condition prototypes",
+  "analysis_id": "glyphprobe-m2-posthoc-dependence-sensitivity-v1",
+  "inference_boundary": {
+    "confirmatory_status_computed": false,
+    "interpretation": "post-hoc dependence sensitivity conditional on the fixed panels, fixed seeds, fixed group labels, and empirical P2 target bank",
+    "multiplicity_adjustment_computed": false,
+    "p_values_computed": false,
+    "practical_equivalence_status_computed": false
+  },
+  "inputs": [
+    {
+      "condition_ids": [
+        "blue_circle",
+        "blue_square",
+        "brown_circle",
+        "brown_square",
+        "green_circle",
+        "green_square",
+        "orange_circle",
+        "orange_square",
+        "purple_circle",
+        "purple_square"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "56e535819b3a63cc173df1a4b7442fc5c2e7a8c24cf699153d1e55cd17f96361",
+      "panel_role": "primary_colored_shapes",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "b0453d7725e319ca3f78d6c66350db854619a910adcccabcdf1f8d83f9991838",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "58cec5b5f957bc1c9fa45a84b6c5ca561aa893e76dcb53d9d984f87f8462c737",
+      "run_label": "m2-p2-primary-colored-shapes-independent-source-mlx--mlx--openai-community-gpt2--f4d15948bb33bcd4",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "ee7a73b37fc29fd5b131bbfde6820e4766440c04b334f47b4796d8da4542d9b0",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_a_u1f500",
+        "null_a_u1f7c0",
+        "null_a_u1f7c3",
+        "null_a_u1f7c6",
+        "null_a_u1f7c9",
+        "null_a_u1f7cc",
+        "null_a_u1f7cf",
+        "null_a_u1f7d2",
+        "null_a_u1f7d5",
+        "null_a_u1f7d8"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "8a7d6f4d94035be5e4b2da4c2339c6b2c006f3f623cc2cd0d8fa1ebebef1088c",
+      "panel_role": "matched_null_a",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "38fa29079b9802b2a45cef095dfae937ffddf4d941e7179f801ce97b10271b57",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "d12d17529f099732957e19d41bfb89e31685a4ed30d9444bb8a9501314cc1d66",
+      "run_label": "m2-p2-matched-null-a-independent-source-mlx--mlx--openai-community-gpt2--3399aab5e0115243",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "6c7aa59e9a060df7615cddda68261c1cf9dd1df1ea8ca5747ac0e1160496d205",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_b_u1f50b",
+        "null_b_u1f7c1",
+        "null_b_u1f7c4",
+        "null_b_u1f7c7",
+        "null_b_u1f7ca",
+        "null_b_u1f7cd",
+        "null_b_u1f7d0",
+        "null_b_u1f7d3",
+        "null_b_u1f7d6",
+        "null_b_u1f7d9"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "c1f82f4e4186e62b7caaa521ead87e4a1ab59dd4ef6ecd15cff5cbcbc2505ab6",
+      "panel_role": "matched_null_b",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "9d0308103edf7de6a822fdce1b457abe2dfd4a5f110a918d27f2e0bff878accd",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "41289b09a1021565b38a087a8c9447e89f142ece0a4f29f754ef78c2ab131010",
+      "run_label": "m2-p2-matched-null-b-independent-source-mlx--mlx--openai-community-gpt2--23db0b861df96b5e",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "874594af91451b7c35267cfbf403be0562d356389fb03b068b3d96b0f633ef54",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_c_u1f52c",
+        "null_c_u1f7c2",
+        "null_c_u1f7c5",
+        "null_c_u1f7c8",
+        "null_c_u1f7cb",
+        "null_c_u1f7ce",
+        "null_c_u1f7d1",
+        "null_c_u1f7d4",
+        "null_c_u1f7d7",
+        "null_c_u1f7e5"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "19a2fd9341a067215e281c4eff9a243e4ec0cee3dd7464051703112a6c75a9dc",
+      "panel_role": "matched_null_c",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "7315fd07e494c6a80dc9e66b0bdfa45a61ba6bde48ce3b0aec0305cbdeaa863f",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "513971fc104e6139ab7f337a0608dd219dc52360ec64597dedbe7406f8b0f296",
+      "run_label": "m2-p2-matched-null-c-independent-source-mlx--mlx--openai-community-gpt2--dccae08cea5de146",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "f9359215cd4450283aaffec7ccef72d9d7581cfdb9aec3157562367ef1c6251b",
+      "run_receipt_status": "complete"
+    }
+  ],
+  "limitations": [
+    "The method was specified after P2 outcomes were available.",
+    "The target bank is treated as the empirical resampling population.",
+    "Panel-selection and direction-seed-selection uncertainty are not estimated.",
+    "Percentile sensitivity intervals do not supply a confirmatory decision rule.",
+    "The analysis does not establish semantics, mechanism, or causality."
+  ],
+  "outputs": {
+    "bootstrap_layer_means": {
+      "file": "m2_dependence_sensitivity_bootstrap.jsonl",
+      "row_count": 20000,
+      "sha256": "4a5d557bda61ee08ee306bdb143043491fcbaa973985ae5de000b617fc7b7cab"
+    },
+    "report": {
+      "file": "m2_dependence_sensitivity_report.md",
+      "sha256": "8e01998d368a979a623feaba8ca4aedfcdeeaa16e8719156e3268f4c6d76b89c"
+    }
+  },
+  "overwrites_frozen_v1_status": false,
+  "parameters": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260806,
+    "chunk_size_computational_only": 128,
+    "direction_seeds": [
+      101,
+      211,
+      307
+    ],
+    "fingerprint_dim": 96,
+    "layers": [
+      2,
+      4
+    ],
+    "strength": 0.05
+  },
+  "post_hoc": true,
+  "protocol_conformant": false,
+  "resampling_method": {
+    "draws_per_stratum": [
+      8,
+      8,
+      8,
+      8,
+      8,
+      8
+    ],
+    "interval": "2.5th and 97.5th percentiles of rebuilt-prototype replicates",
+    "joint_target_multiplicities_across_panels_layers_and_seeds": true,
+    "layer_statistic": "multiplicity-weighted mean of primary-minus-null-median target effects",
+    "null_aggregation": "targetwise median of matched-null panels A/B/C",
+    "observation_unit": "target",
+    "prototype_rebuilt_inside_each_replicate": true,
+    "prototype_training_set": "resampled targets from all five groups other than the evaluated target's complete held-out group",
+    "seed_aggregation": "arithmetic mean within target after prototype refit",
+    "seed_choice_preregistered_for_this_method": false,
+    "seed_reused_from_frozen_v1_for_paired_method_comparison": true,
+    "strata": [
+      "continuation",
+      "factual",
+      "reasoning",
+      "procedural",
+      "classification",
+      "planning"
+    ],
+    "with_replacement": true
+  },
+  "results": [
+    {
+      "bootstrap_distribution_descriptives": {
+        "maximum": 0.37931475481055027,
+        "mean": 0.18847578915194108,
+        "minimum": 0.01596250276602998,
+        "standard_deviation_ddof1": 0.04251874786870237
+      },
+      "confirmatory_status_assigned": false,
+      "dependence_aware_percentile_interval_95": {
+        "high": 0.2713218881892265,
+        "low": 0.10421010904114894,
+        "replicates": 20000,
+        "seed": 20260806
+      },
+      "fixed_prototype_comparison_interval_95": {
+        "high": 0.24765946050723542,
+        "low": 0.1254891742077538,
+        "same_resample_weights": true
+      },
+      "layer": 2,
+      "point_mean_adjusted_effect": 0.18750669377391474
+    },
+    {
+      "bootstrap_distribution_descriptives": {
+        "maximum": 0.12479755524129037,
+        "mean": -0.08757503697156874,
+        "minimum": -0.29254132459542687,
+        "standard_deviation_ddof1": 0.04919657449582471
+      },
+      "confirmatory_status_assigned": false,
+      "dependence_aware_percentile_interval_95": {
+        "high": 0.00764787980830255,
+        "low": -0.18508355906486268,
+        "replicates": 20000,
+        "seed": 20260806
+      },
+      "fixed_prototype_comparison_interval_95": {
+        "high": -0.016917019138212933,
+        "low": -0.15924636296641068,
+        "same_resample_weights": true
+      },
+      "layer": 4,
+      "point_mean_adjusted_effect": -0.08637902620859146
+    }
+  ],
+  "schema_version": 1,
+  "validation": {
+    "analyzer_file": "analyze_m2_dependence_sensitivity_v1.py",
+    "analyzer_sha256": "3714b25f7cc74b03613371a29d38306002a038aa9735abf5b0113570f5eabc03",
+    "c1_holdout_accessed": false,
+    "frozen_v1_analyzer_dependency_file": "analyze_m2_confirmatory.py",
+    "frozen_v1_analyzer_dependency_sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86",
+    "model_forward_passes": 0,
+    "numpy_version": "2.4.4",
+    "orjson_version": "3.11.9",
+    "python_version": "3.13.13",
+    "stored_fingerprints_sufficient_for_exact_refit": true,
+    "strict_frozen_p2_evidence_validation": true,
+    "tensor_point_estimate_matches_fixed_v1_endpoint_atol": 2e-12
+  }
+}

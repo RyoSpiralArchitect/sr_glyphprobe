@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "manifest_id": "milestone2_preregistration_v1",
+  "protocol_id": "glyphprobe-m2-tokenization-controls-v1",
+  "hash_algorithm": "sha256",
+  "freeze": {
+    "date": "2026-08-06",
+    "state": "outcome_blind_before_milestone2_model_forward",
+    "event": "The first public Git commit containing this manifest and every listed file is the protocol freeze event.",
+    "revision_policy": "Do not overwrite protocol v1 or its frozen inputs. Any scientific change requires a new protocol ID and versioned files."
+  },
+  "experimental_state": {
+    "milestone2_model_forward_run": false,
+    "p2_confirmatory_bank_opened": false,
+    "c1_causal_holdout_bank_opened": false,
+    "tokenizer_only_control_audit_run": true
+  },
+  "primary_analysis": {
+    "layers": [2, 4],
+    "strength": 0.05,
+    "direction_seeds": [101, 211, 307],
+    "fingerprint_dim": 96,
+    "fingerprint_seed": 8675309,
+    "delta": 0.06,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260806,
+    "sign_flip_draws": 100000,
+    "sign_flip_seed": 20260807,
+    "familywise_alpha": 0.05,
+    "multiplicity": "Holm across layers 2 and 4",
+    "effective_observation_unit": "target cluster"
+  },
+  "declared_constraint": {
+    "semantic_near_control": "🟥",
+    "reason": "Only 26 assigned non-colored dominant-prefix scalars remain after reference and neutral exclusions; 27 disjoint dominant-prefix slots are required.",
+    "selection_inputs": "Unicode metadata and pinned tokenizer/wrapper structure only; no activation, logit, generation, fingerprint, or confirmatory outcome."
+  },
+  "frozen_file_count": 35,
+  "files": [
+    {
+      "path": "docs/MILESTONE2_PROTOCOL.md",
+      "sha256": "7387659c2a49f7d354d1b6d0ccfe718a953719e64113bdad2c1930ddac2058d3"
+    },
+    {
+      "path": "docs/MILESTONE2_PROTOCOL.ja.md",
+      "sha256": "5b20cef8dd9a20d870b95607a2534cd1e02dd9e9e2382aa912e0236e07d7b3a7"
+    },
+    {
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+    },
+    {
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl",
+      "sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986"
+    },
+    {
+      "path": "data/wrappers/milestone2_independent_source_wrappers_v1.jsonl",
+      "sha256": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338"
+    },
+    {
+      "path": "data/manifests/milestone2_frozen_banks_v1.json",
+      "sha256": "ffa3889a98bcff62d01d620b3fa18bb6a2e4e624d49d623ab7175117553450c0"
+    },
+    {
+      "path": "data/tokenization_controls/manifest.json",
+      "sha256": "29ff22ad1e98c30ce848122c6d37b8feaff22814181150191238ca85ba24ac12"
+    },
+    {
+      "path": "data/tokenization_controls/manifest.sha256",
+      "sha256": "08cf58c9dd85f3310e78cb34a213416d76b3d7c8df970e1f5e96d15457b71d15"
+    },
+    {
+      "path": "data/tokenization_controls/audit_receipt_v1.json",
+      "sha256": "e7cb6e358a96cc6d178c634be29221074cee3e6e43f7a5758ca328853c2e84a4"
+    },
+    {
+      "path": "data/targets/prestage_targets.jsonl",
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "path": "data/wrappers/source_wrappers.jsonl",
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    {
+      "path": "data/emoji_panels/colored_shapes.yaml",
+      "sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97"
+    },
+    {
+      "path": "data/emoji_panels/m2_matched_null_a.yaml",
+      "sha256": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422"
+    },
+    {
+      "path": "data/emoji_panels/m2_matched_null_b.yaml",
+      "sha256": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef"
+    },
+    {
+      "path": "data/emoji_panels/m2_matched_null_c.yaml",
+      "sha256": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4"
+    },
+    {
+      "path": "data/emoji_panels/m2_suffix_matched_middle_shift.yaml",
+      "sha256": "8d31fcd54e62bbe046fb9b6acbc864c62a4a40a514abb5d34d6ff05e76f9ca6e"
+    },
+    {
+      "path": "data/emoji_panels/m2_prefix_homogeneous_colored_shapes.yaml",
+      "sha256": "7318ee10c36f18b7ca4910d2b08ae28b5fce36a6f32e27cf7ec9b8a7c388c54b"
+    },
+    {
+      "path": "configs/m2_matched_null_a_mlx.yaml",
+      "sha256": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884"
+    },
+    {
+      "path": "configs/m2_matched_null_b_mlx.yaml",
+      "sha256": "21d9df0933d8daf3a4da8c1d237ef63e208d8d9979df571a47f44da9301dc3bd"
+    },
+    {
+      "path": "configs/m2_matched_null_c_mlx.yaml",
+      "sha256": "6ca0c5c2726210b945e1bc5793c027c94f9cf3754dd0aae008f0878bf1eef934"
+    },
+    {
+      "path": "configs/m2_suffix_matched_middle_shift_mlx.yaml",
+      "sha256": "1e8261d61cd00345de1d2cee9e0ee03bfe26f9225aa536777fc1e35d247a9e30"
+    },
+    {
+      "path": "configs/m2_prefix_homogeneous_colored_shapes_mlx.yaml",
+      "sha256": "dca8513adbcca334def98dc651cb96ff7147d3b4f6c476382110c804062eece0"
+    },
+    {
+      "path": "configs/m2_p2_primary_mlx.yaml",
+      "sha256": "500a4d8d7a44bf4f0eae8d2ebce160d08c9b2e9b6578e2f4d73129fa432274a9"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_a_mlx.yaml",
+      "sha256": "f769cd7401d3cca974b60fe2d4b34671a6a7d804ef1f8aca94901937438ea34d"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_b_mlx.yaml",
+      "sha256": "da4c91413b01b36d4568f8ff8a9e5570aa7d9aee15184bb2c7acbfb7b511b4ca"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_c_mlx.yaml",
+      "sha256": "bc6f69fdb150d7df59cee4ddc949d0af5e969c3772ec651028ef0f70ddd84430"
+    },
+    {
+      "path": "configs/m2_p2_primary_independent_source_mlx.yaml",
+      "sha256": "2a82c805af75d88cb042ac643c62294502aa83d7ea629405e6eb61508951d470"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_a_independent_source_mlx.yaml",
+      "sha256": "4667c59b2fc61a92c6d6520245b0d837a932443067f8d707063cf2b72b669333"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_b_independent_source_mlx.yaml",
+      "sha256": "6cfc75299a87f6028a06e3cc549e51d1f63e3ef1d9b8ab436675fb3e2d74fe08"
+    },
+    {
+      "path": "configs/m2_p2_matched_null_c_independent_source_mlx.yaml",
+      "sha256": "b1cb250694dfd9d9a6ae16e6727feea8c89dc70e5bfd87bc1c1a569ef00826f5"
+    },
+    {
+      "path": "scripts/analyze_m2_confirmatory.py",
+      "sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86"
+    },
+    {
+      "path": "scripts/analyze_countsketch_sensitivity.py",
+      "sha256": "362a4181a418515fc19e724df1790e59d3067b78eb2d699a6c3c09c4a69ce696"
+    },
+    {
+      "path": "scripts/audit_m2_tokenization_controls.py",
+      "sha256": "074e9e2b795396a3089128f5f0933d82d1a1dca99156a37d3da1d681046ad484"
+    },
+    {
+      "path": "scripts/audit_m2_preregistration.py",
+      "sha256": "f0f4923c04a706377faeea505bef6f48270d3cd64923b1fab3403106aac9422d"
+    },
+    {
+      "path": "validation/mlx_gpt2_parity/receipt.json",
+      "sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+    }
+  ]
+}

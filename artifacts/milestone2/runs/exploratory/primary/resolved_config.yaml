@@ -1,0 +1,109 @@
+schema_version: 1
+mode: internal
+backend:
+  kind: mlx
+  model: openai-community/gpt2
+  revision: 607a30d783dfa663caf39e06633721c8d4cfcd7e
+  device: gpu
+  dtype: float32
+  base_url: null
+  api_key_env: null
+  trust_remote_code: false
+  local_files_only: true
+  add_special_tokens: true
+  model_kwargs: {}
+  validation_receipt: ../validation/mlx_gpt2_parity/receipt.json
+  validation_receipt_sha256: 98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679
+  generation:
+    max_new_tokens: 48
+    temperature: 0.0
+    top_p: 1.0
+    top_k: null
+    do_sample: null
+    logprobs: true
+    top_logprobs: 20
+run:
+  name: colored-shapes-v1-standard-mlx
+  output_root: ../runs
+  seeds:
+  - 101
+  - 211
+  - 307
+  deterministic_torch: false
+  resume: true
+  fail_fast: true
+  max_errors: 10
+  replicate_mode: wrapper_subsample
+  wrapper_subsample_fraction: 0.75
+panel:
+  file: ../data/emoji_panels/colored_shapes.yaml
+  items: []
+  neutral_glyph: ·
+  centroid_mode: panel
+source:
+  wrappers_file: ../data/wrappers/source_wrappers.jsonl
+  max_wrappers: 16
+  anchor_position: last_nonpad
+targets:
+  cases_file: ../data/targets/prestage_targets.jsonl
+  max_cases: 24
+  calibration_cases: 6
+  generation_cases: 8
+capture:
+  site: resid_post
+  layers:
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  position: last_nonpad
+  return_attentions: false
+intervention:
+  mode: activation_add
+  normalization: rms
+  strengths:
+  - 0.025
+  - 0.05
+  - 0.1
+  position: last_nonpad
+  clip:
+    mode: global_rms
+    max_ratio: 0.25
+  iso_kl:
+    enabled: false
+    target_kl: 0.03
+    tolerance: 0.004
+    min_strength: 0.001
+    max_strength: 0.35
+    bisection_steps: 7
+    per_seed: false
+controls:
+  random_directions_per_layer: 2
+  zero_direction: true
+  sign_flip: true
+  sign_flip_strengths:
+  - 0.05
+  label_shuffle_permutations: 1000
+  include_neutral_direction: true
+metrics:
+  top_k: 50
+  fingerprint_dim: 96
+  fingerprint_seed: 8675309
+  split_half_repeats: 200
+  rbo_p: 0.9
+  save_top_logit_deltas: 32
+  save_fingerprints: true
+  epsilon: 1.0e-12
+sae:
+  enabled: false
+  release: null
+  sae_ids: {}
+  device: auto
+  top_k_features: 32
+surface:
+  emoji_template: '{emoji}
+
+    {prompt}'
+  neutral_template: '{prompt}'
+  system_prompt: null
+  enabled_logprobs: true

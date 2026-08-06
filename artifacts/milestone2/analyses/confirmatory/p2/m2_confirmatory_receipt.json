@@ -1,0 +1,290 @@
+{
+  "analysis": "leave-one-target-group-out matched-panel confirmatory analysis",
+  "analysis_id": "glyphprobe-m2-tokenization-controls-v1",
+  "claim_boundaries": [
+    "Robustness is conditional on the prespecified token-count and token-prefix controls; it is not a tokenization-free glyph effect.",
+    "Practical equivalence does not prove that tokenization caused the exploratory result.",
+    "Unresolved is not evidence of absence.",
+    "This pre-causal endpoint does not establish semantics, mechanism, or causality."
+  ],
+  "claim_stage": "milestone-2-confirmatory-tokenization-control",
+  "endpoint": {
+    "adjusted_target_effect": "primary score minus median of null panels a, b, and c",
+    "condition_prototypes": "leave one complete target group out",
+    "estimand": "mean adjusted target effect across frozen P2 targets",
+    "seed_aggregation": "arithmetic mean within target before panel adjustment",
+    "target_score": "mean same-condition cosine minus mean cross-condition cosine"
+  },
+  "independence_boundary": {
+    "bootstrap_or_sign_flip_replicates_counted_as_observations": false,
+    "conditions_counted_as_independent_observations": false,
+    "direction_seed_replicates_per_target": 3,
+    "direction_seeds_averaged_within_target": true,
+    "direction_seeds_counted_as_independent_observations": false,
+    "effective_n_per_layer": 48,
+    "effective_observation_unit": "target cluster",
+    "matched_null_panels_counted_as_independent_observations": false
+  },
+  "inputs": [
+    {
+      "condition_ids": [
+        "blue_circle",
+        "blue_square",
+        "brown_circle",
+        "brown_square",
+        "green_circle",
+        "green_square",
+        "orange_circle",
+        "orange_square",
+        "purple_circle",
+        "purple_square"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "a331800295f1a9a8ca03f5b857d88f5e5be5f4bc73ef8ed8834fdc867b52a371",
+      "panel_role": "primary_colored_shapes",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "f514cfffb2b73d1447ca890be1b043ec886f85cd9158155c0c56cbd381f46303",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "3b8a103ce192baffc888238c62ffc0ff34a04572aa783cbe79ede9b680ac2318",
+      "run_label": "m2-p2-primary-colored-shapes-mlx--mlx--openai-community-gpt2--db21c21c4395d944",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "c9caa07ca90a9683950bb2c64372324a71b8bae977ecf527ec51553190844d74",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_a_u1f500",
+        "null_a_u1f7c0",
+        "null_a_u1f7c3",
+        "null_a_u1f7c6",
+        "null_a_u1f7c9",
+        "null_a_u1f7cc",
+        "null_a_u1f7cf",
+        "null_a_u1f7d2",
+        "null_a_u1f7d5",
+        "null_a_u1f7d8"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "d89750921c2c20fa02924e6d205d93c6a6c6a42d82558103b6a43a4026de0658",
+      "panel_role": "matched_null_a",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "98108dcea51737c58549f50fe44754acec2ecc35cb0477cf1773b0e3558c2b69",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "fe5b80907f61bb90a75b8eaed09a71cd29f83fe92ee20ae3d91b4e71d152caf5",
+      "run_label": "m2-p2-matched-null-a-mlx--mlx--openai-community-gpt2--8866fe45b7b42bc9",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "8274766dd6ed8c7f56e17865a9d9e058c99ce73877b97268ce95cf6b430603bf",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_b_u1f50b",
+        "null_b_u1f7c1",
+        "null_b_u1f7c4",
+        "null_b_u1f7c7",
+        "null_b_u1f7ca",
+        "null_b_u1f7cd",
+        "null_b_u1f7d0",
+        "null_b_u1f7d3",
+        "null_b_u1f7d6",
+        "null_b_u1f7d9"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "31751cacf0216f73e6ab77f1c3bdc5195ff2a622849ad22a4406bde1ee8cde6d",
+      "panel_role": "matched_null_b",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "51bb1d28ccccca3a7147ac9a59b23e8e8d6f797e7cf0a2aa95fecb42ec9df819",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "51e89f33d3ce3ae8b5bcc3aebe514e9fc656e8ac50f19963d9e688bb1a715b84",
+      "run_label": "m2-p2-matched-null-b-mlx--mlx--openai-community-gpt2--5c055161e431b596",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "9fa1a1d7a8a452ad8f4c64a1d6562ef7944607ec79dc0a1f2b237eb7a9b085a1",
+      "run_receipt_status": "complete"
+    },
+    {
+      "condition_ids": [
+        "null_c_u1f52c",
+        "null_c_u1f7c2",
+        "null_c_u1f7c5",
+        "null_c_u1f7c8",
+        "null_c_u1f7cb",
+        "null_c_u1f7ce",
+        "null_c_u1f7d1",
+        "null_c_u1f7d4",
+        "null_c_u1f7d7",
+        "null_c_u1f7e5"
+      ],
+      "eligible_positive_rms_emoji_row_count": 2880,
+      "frozen_p2_target_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "interventions_file": "interventions.jsonl",
+      "interventions_sha256": "f4d97cfe87e6ddb0b194aa5dd4a95a5590748fc29111aa74c48f5d7d2465db31",
+      "panel_role": "matched_null_c",
+      "pinned_parity_receipt_sha256_verified": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "resolved_config_file": "resolved_config.yaml",
+      "resolved_config_sha256": "0d495fd75f26b8524426ce203c2d01457ca6d4ce86e830c196cdf1b37a5d6ba7",
+      "resolved_input_target_count": 48,
+      "resolved_inputs_file": "resolved_inputs.json",
+      "resolved_inputs_sha256": "be77056b9e80445ec32827e7c39f14497c6a89f60903bb34f2a62f011df536c2",
+      "run_label": "m2-p2-matched-null-c-mlx--mlx--openai-community-gpt2--586cbc8576607dea",
+      "run_receipt_file": "receipt.json",
+      "run_receipt_sha256": "8095bce184a48e7c92f56d54ec32847c2dfec5b38438f1b27b76f9bde0f0e28d",
+      "run_receipt_status": "complete"
+    }
+  ],
+  "multiplicity": {
+    "alpha": 0.05,
+    "family_layers": [
+      2,
+      4
+    ],
+    "method": "Holm family-wise correction"
+  },
+  "outputs": {
+    "report": {
+      "file": "m2_confirmatory_report.md",
+      "sha256": "aa5dc3a2082ab47d228b6f4b5a2dd857654b8bc7c55a4d0368be5e3dabc4f3fb"
+    },
+    "target_effects": {
+      "file": "m2_target_effects.jsonl",
+      "row_count": 96,
+      "sha256": "0879a504b5b922a7682107f65f19872bcd4f0469f5606b9a7410ccea352e5320"
+    }
+  },
+  "parameters": {
+    "alpha": 0.05,
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260806,
+    "delta": 0.06,
+    "direction_seeds": [
+      101,
+      211,
+      307
+    ],
+    "fingerprint_dim": 96,
+    "fingerprint_seed": 8675309,
+    "layers": [
+      2,
+      4
+    ],
+    "sign_flip_draws": 100000,
+    "sign_flip_seed": 20260807,
+    "strength": 0.05
+  },
+  "primary_results": [
+    {
+      "bootstrap_ci_95": {
+        "high": 0.276893374151773,
+        "low": 0.1374633328157898,
+        "method": "percentile stratified target-cluster bootstrap",
+        "replicates": 20000,
+        "resampling": "8 targets with replacement inside each of 6 fixed groups",
+        "seed": 20260806
+      },
+      "descriptive": {
+        "nonpositive_adjusted_target_count": 13,
+        "positive_adjusted_target_count": 35,
+        "primary_midrank_percentile_within_three_null_panel_means": 1.0
+      },
+      "holm_adjusted_one_sided_p": 0.0014399856001439985,
+      "layer": 2,
+      "mean_adjusted_target_effect": 0.20836302325833586,
+      "mean_matched_null_median_score": 0.39341311384940925,
+      "mean_primary_score": 0.601776137107745,
+      "median_adjusted_target_effect": 0.2577365580641406,
+      "sign_flip": {
+        "contrast": "D[t] - delta",
+        "draws": 100000,
+        "exceedance_count": 71,
+        "observed_centered_mean": 0.14836302325833586,
+        "plus_one_correction": true,
+        "raw_one_sided_p": 0.0007199928000719992,
+        "seed": 20260807
+      },
+      "status": "robust to the prespecified matched controls",
+      "strength": 0.05,
+      "target_observation_count": 48
+    },
+    {
+      "bootstrap_ci_95": {
+        "high": 0.011009370118962395,
+        "low": -0.076108482066231,
+        "method": "percentile stratified target-cluster bootstrap",
+        "replicates": 20000,
+        "resampling": "8 targets with replacement inside each of 6 fixed groups",
+        "seed": 20260806
+      },
+      "descriptive": {
+        "nonpositive_adjusted_target_count": 30,
+        "positive_adjusted_target_count": 18,
+        "primary_midrank_percentile_within_three_null_panel_means": 0.3333333333333333
+      },
+      "holm_adjusted_one_sided_p": 0.99950000499995,
+      "layer": 4,
+      "mean_adjusted_target_effect": -0.0329465327733583,
+      "mean_matched_null_median_score": 0.57388407845372,
+      "mean_primary_score": 0.5409375456803617,
+      "median_adjusted_target_effect": -0.05289377104094557,
+      "sign_flip": {
+        "contrast": "D[t] - delta",
+        "draws": 100000,
+        "exceedance_count": 99950,
+        "observed_centered_mean": -0.09294653277335829,
+        "plus_one_correction": true,
+        "raw_one_sided_p": 0.99950000499995,
+        "seed": 20260807
+      },
+      "status": "unresolved",
+      "strength": 0.05,
+      "target_observation_count": 48
+    }
+  ],
+  "protocol_conformant": true,
+  "protocol_id": "glyphprobe-m2-tokenization-controls-v1",
+  "schema_version": 1,
+  "status_definitions": {
+    "practically equivalent to the matched-null ensemble": "the full 95% bootstrap interval lies inside [-delta, delta]",
+    "robust to the prespecified matched controls": "95% bootstrap lower bound exceeds delta and the one-sided Holm-adjusted sign-flip p-value is below alpha",
+    "unresolved": "neither prespecified rule is satisfied"
+  },
+  "validation": {
+    "all_resolved_input_target_ids_match_ledger": true,
+    "all_run_input_hashes_bind_frozen_target_and_parity_receipt": true,
+    "all_run_receipts_complete": true,
+    "analysis_config_sha256": "6f9aaa01a412972222526e5073bff81d49c9e713fa5a9a41047885c96eaee2ec",
+    "backend": "mlx",
+    "conditions_per_panel": 10,
+    "cross_panel_analysis_config_match": true,
+    "cross_panel_cell_grid_match": true,
+    "cross_panel_target_grid_match": true,
+    "dtype": "float32",
+    "frozen_p2_target_file_sha256_verified": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+    "frozen_p2_target_sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+    "intervention_site": "resid_post",
+    "ledger_target_ids_and_groups_match_frozen_bank": true,
+    "model": "openai-community/gpt2",
+    "pinned_parity_receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "strict_protocol_parameters_enforced": true,
+    "target_groups": [
+      "continuation",
+      "factual",
+      "reasoning",
+      "procedural",
+      "classification",
+      "planning"
+    ],
+    "targets_per_group": 8
+  }
+}

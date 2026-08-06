@@ -1,0 +1,162 @@
+{
+  "panel": [
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟀",
+      "id": "null_a_u1f7c0",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟃",
+      "id": "null_a_u1f7c3",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟆",
+      "id": "null_a_u1f7c6",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟉",
+      "id": "null_a_u1f7c9",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟌",
+      "id": "null_a_u1f7cc",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟏",
+      "id": "null_a_u1f7cf",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟒",
+      "id": "null_a_u1f7d2",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟕",
+      "id": "null_a_u1f7d5",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟘",
+      "id": "null_a_u1f7d8",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_242"
+      },
+      "glyph": "🔀",
+      "id": "null_a_u1f500",
+      "labels": []
+    }
+  ],
+  "target_ids": [
+    "p2_cont_01",
+    "p2_cont_02",
+    "p2_cont_03",
+    "p2_cont_04",
+    "p2_cont_05",
+    "p2_cont_06",
+    "p2_cont_07",
+    "p2_cont_08",
+    "p2_fact_01",
+    "p2_fact_02",
+    "p2_fact_03",
+    "p2_fact_04",
+    "p2_fact_05",
+    "p2_fact_06",
+    "p2_fact_07",
+    "p2_fact_08",
+    "p2_reason_01",
+    "p2_reason_02",
+    "p2_reason_03",
+    "p2_reason_04",
+    "p2_reason_05",
+    "p2_reason_06",
+    "p2_reason_07",
+    "p2_reason_08",
+    "p2_proc_01",
+    "p2_proc_02",
+    "p2_proc_03",
+    "p2_proc_04",
+    "p2_proc_05",
+    "p2_proc_06",
+    "p2_proc_07",
+    "p2_proc_08",
+    "p2_class_01",
+    "p2_class_02",
+    "p2_class_03",
+    "p2_class_04",
+    "p2_class_05",
+    "p2_class_06",
+    "p2_class_07",
+    "p2_class_08",
+    "p2_plan_01",
+    "p2_plan_02",
+    "p2_plan_03",
+    "p2_plan_04",
+    "p2_plan_05",
+    "p2_plan_06",
+    "p2_plan_07",
+    "p2_plan_08"
+  ],
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w02_bracket_continue",
+    "w03_pipe_next",
+    "w04_token_state",
+    "w05_begin_end",
+    "w06_binary_result",
+    "w07_symbol_following",
+    "w08_pair_q",
+    "w09_input_response",
+    "w10_sequence_continuation",
+    "w11_field_anchor",
+    "w12_list_next",
+    "w13_left_right",
+    "w14_codepoint_text",
+    "w15_observation_inference",
+    "w16_slot_completion"
+  ]
+}

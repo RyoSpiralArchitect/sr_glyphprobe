@@ -1,0 +1,162 @@
+{
+  "panel": [
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟀",
+      "id": "null_a_u1f7c0",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟃",
+      "id": "null_a_u1f7c3",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟆",
+      "id": "null_a_u1f7c6",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟉",
+      "id": "null_a_u1f7c9",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟌",
+      "id": "null_a_u1f7cc",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟏",
+      "id": "null_a_u1f7cf",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟒",
+      "id": "null_a_u1f7d2",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟕",
+      "id": "null_a_u1f7d5",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_253"
+      },
+      "glyph": "🟘",
+      "id": "null_a_u1f7d8",
+      "labels": []
+    },
+    {
+      "factors": {
+        "control_family": "m2_null_a",
+        "prefix_stratum": "p8582_242"
+      },
+      "glyph": "🔀",
+      "id": "null_a_u1f500",
+      "labels": []
+    }
+  ],
+  "target_ids": [
+    "p2_cont_01",
+    "p2_cont_02",
+    "p2_cont_03",
+    "p2_cont_04",
+    "p2_cont_05",
+    "p2_cont_06",
+    "p2_cont_07",
+    "p2_cont_08",
+    "p2_fact_01",
+    "p2_fact_02",
+    "p2_fact_03",
+    "p2_fact_04",
+    "p2_fact_05",
+    "p2_fact_06",
+    "p2_fact_07",
+    "p2_fact_08",
+    "p2_reason_01",
+    "p2_reason_02",
+    "p2_reason_03",
+    "p2_reason_04",
+    "p2_reason_05",
+    "p2_reason_06",
+    "p2_reason_07",
+    "p2_reason_08",
+    "p2_proc_01",
+    "p2_proc_02",
+    "p2_proc_03",
+    "p2_proc_04",
+    "p2_proc_05",
+    "p2_proc_06",
+    "p2_proc_07",
+    "p2_proc_08",
+    "p2_class_01",
+    "p2_class_02",
+    "p2_class_03",
+    "p2_class_04",
+    "p2_class_05",
+    "p2_class_06",
+    "p2_class_07",
+    "p2_class_08",
+    "p2_plan_01",
+    "p2_plan_02",
+    "p2_plan_03",
+    "p2_plan_04",
+    "p2_plan_05",
+    "p2_plan_06",
+    "p2_plan_07",
+    "p2_plan_08"
+  ],
+  "wrapper_ids": [
+    "m2w01_cue_completion",
+    "m2w02_context_reply",
+    "m2w03_prompt_write",
+    "m2w04_arrow_continue",
+    "m2w05_reference_return",
+    "m2w06_middle_last",
+    "m2w07_signal_completion",
+    "m2w08_given_answer",
+    "m2w09_key_value",
+    "m2w10_before_after",
+    "m2w11_context_finish",
+    "m2w12_indicator_statement",
+    "m2w13_record_content",
+    "m2w14_a_b",
+    "m2w15_header_body",
+    "m2w16_premise_consequence"
+  ]
+}

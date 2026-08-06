@@ -1,0 +1,322 @@
+{
+  "backend": {
+    "add_special_tokens": true,
+    "api_key_env": null,
+    "base_url": null,
+    "device": "gpu",
+    "dtype": "float32",
+    "generation": {
+      "do_sample": null,
+      "logprobs": true,
+      "max_new_tokens": 48,
+      "temperature": 0.0,
+      "top_k": null,
+      "top_logprobs": 20,
+      "top_p": 1.0
+    },
+    "kind": "mlx",
+    "local_files_only": true,
+    "model": "openai-community/gpt2",
+    "model_kwargs": {},
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "trust_remote_code": false,
+    "validation_receipt": "../validation/mlx_gpt2_parity/receipt.json",
+    "validation_receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679"
+  },
+  "capabilities": {
+    "backend": "mlx",
+    "capabilities": {
+      "activation_cache": true,
+      "activation_patch": true,
+      "attention_weights": false,
+      "canonical_hooks": false,
+      "deterministic_forward": true,
+      "forward_logits": true,
+      "generate": false,
+      "hidden_states": true,
+      "logprobs": false,
+      "sae_analysis": false,
+      "server_metrics": false,
+      "tokenize": true
+    },
+    "metadata": {
+      "block_path": "model.h",
+      "d_model": 768,
+      "loader_metadata": {
+        "load_latency_ms": 6316.294458000016,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "gpt2",
+        "quantization": null
+      },
+      "num_layers": 12,
+      "parity_validation": {
+        "implementation_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d",
+        "model_identity_sha256": "b41e06b3ca7fce8e79ed12a5275a3c5b0b774856d8e00bb3b7d6a1ce74e67cf6",
+        "receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "receipt_status": "validated_mlx_selected",
+        "validated": true,
+        "validated_intervention_layers": [
+          2,
+          4,
+          7,
+          9
+        ],
+        "validated_prompt_token_counts": [
+          3,
+          10,
+          9,
+          22
+        ],
+        "validated_site": "resid_post"
+      },
+      "supported_sites": [
+        "resid_post"
+      ]
+    },
+    "model": "openai-community/gpt2",
+    "notes": {
+      "concurrency": "Selected decoder blocks are temporarily proxied; one backend instance must not execute concurrent forward calls.",
+      "hook_semantics": "resid_post is the edited decoder-block output. Other sites are rejected until model-family parity receipts exist.",
+      "validation_scope": "Activation patching is advertised only after a pinned same-model receipt passes tokenizer, activation, logit, zero-hook, intervention, and speed gates."
+    }
+  },
+  "claim_boundary": "pre-causal-activation-screen",
+  "config_path": "m2_matched_null_a_mlx.yaml",
+  "environment": {
+    "cuda_visible_devices": null,
+    "machine": "arm64",
+    "packages": {
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.4.4",
+      "openai": "2.45.0",
+      "pydantic": "2.12.5",
+      "sae-lens": null,
+      "scipy": "1.17.1",
+      "torch": "2.11.0",
+      "transformer-lens": null,
+      "transformers": "4.57.6"
+    },
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "processor": "arm",
+    "python": "3.13.13 (v3.13.13:01104ce1beb, Apr  7 2026, 14:43:30) [Clang 16.0.0 (clang-1600.0.26.6)]"
+  },
+  "finished_at": "2026-08-06T13:00:05.040604+00:00",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d"
+  },
+  "input_hashes": {
+    "input_00:m2_matched_null_a_mlx.yaml": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884",
+    "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+    "input_02:m2_matched_null_a.yaml": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+    "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+    "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+  },
+  "mode": "internal",
+  "model_identity": {
+    "payload": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.h",
+      "commit_hash": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "d_model": 768,
+      "device": "gpu",
+      "dtype": "float32",
+      "loader_metadata": {
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "gpt2",
+        "quantization": null
+      },
+      "model": "openai-community/gpt2",
+      "model_artifact": {
+        "file_count": 7,
+        "files": {
+          "config.json": {
+            "bytes": 665,
+            "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+          },
+          "generation_config.json": {
+            "bytes": 124,
+            "sha256": "ed0b32ac72c0f5f44a719abb2d7786ea5146c871f83717b7f2018065954de02b"
+          },
+          "merges.txt": {
+            "bytes": 456318,
+            "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+          },
+          "model.safetensors": {
+            "bytes": 548105171,
+            "sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+          },
+          "tokenizer.json": {
+            "bytes": 1355256,
+            "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+          },
+          "tokenizer_config.json": {
+            "bytes": 26,
+            "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+          },
+          "vocab.json": {
+            "bytes": 1042301,
+            "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+          }
+        },
+        "manifest_sha256": "90265451371a973b9e890f08e56100447117fe838d1b037f0ba8d0c3f48c017b",
+        "total_bytes": 550959861
+      },
+      "model_class": "Model",
+      "model_locator": "hf://openai-community/gpt2@607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "num_layers": 12,
+      "parameter_count": 124439808,
+      "parity_validation": {
+        "implementation_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d",
+        "model_identity_sha256": "b41e06b3ca7fce8e79ed12a5275a3c5b0b774856d8e00bb3b7d6a1ce74e67cf6",
+        "receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "receipt_status": "validated_mlx_selected",
+        "validated": true,
+        "validated_intervention_layers": [
+          2,
+          4,
+          7,
+          9
+        ],
+        "validated_prompt_token_counts": [
+          3,
+          10,
+          9,
+          22
+        ],
+        "validated_site": "resid_post"
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.float32",
+      "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GPT2TokenizerFast"
+    },
+    "sha256": "518207a255353951731580ef7ddd7f0e0b3ffedec04b31b08c84a53c29d098ac"
+  },
+  "model_receipt": {
+    "backend": "mlx",
+    "backend_class": "MLXBackend",
+    "block_path": "model.h",
+    "commit_hash": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "d_model": 768,
+    "device": "gpu",
+    "dtype": "float32",
+    "loader_metadata": {
+      "load_latency_ms": 6316.294458000016,
+      "local_files_only_requested": true,
+      "mlx_lm_version": "0.31.2",
+      "mlx_version": "0.31.1",
+      "model_type": "gpt2",
+      "quantization": null
+    },
+    "model": "openai-community/gpt2",
+    "model_artifact": {
+      "file_count": 7,
+      "files": {
+        "config.json": {
+          "bytes": 665,
+          "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+        },
+        "generation_config.json": {
+          "bytes": 124,
+          "sha256": "ed0b32ac72c0f5f44a719abb2d7786ea5146c871f83717b7f2018065954de02b"
+        },
+        "merges.txt": {
+          "bytes": 456318,
+          "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+        },
+        "model.safetensors": {
+          "bytes": 548105171,
+          "sha256": "248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707"
+        },
+        "tokenizer.json": {
+          "bytes": 1355256,
+          "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+        },
+        "tokenizer_config.json": {
+          "bytes": 26,
+          "sha256": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f"
+        },
+        "vocab.json": {
+          "bytes": 1042301,
+          "sha256": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+        }
+      },
+      "manifest_sha256": "90265451371a973b9e890f08e56100447117fe838d1b037f0ba8d0c3f48c017b",
+      "total_bytes": 550959861
+    },
+    "model_class": "Model",
+    "model_locator": "hf://openai-community/gpt2@607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "num_layers": 12,
+    "parameter_count": 124439808,
+    "parity_validation": {
+      "implementation_sha256": "798b81559b0f2392248dd43d28d97e02039a49aa8459ba33c62dd7962c65e96d",
+      "model_identity_sha256": "b41e06b3ca7fce8e79ed12a5275a3c5b0b774856d8e00bb3b7d6a1ce74e67cf6",
+      "receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+      "receipt_status": "validated_mlx_selected",
+      "validated": true,
+      "validated_intervention_layers": [
+        2,
+        4,
+        7,
+        9
+      ],
+      "validated_prompt_token_counts": [
+        3,
+        10,
+        9,
+        22
+      ],
+      "validated_site": "resid_post"
+    },
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.float32",
+    "revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+    "supported_sites": [
+      "resid_post"
+    ],
+    "tokenizer_class": "GPT2TokenizerFast"
+  },
+  "plan": {
+    "backend": "mlx",
+    "claim_boundary": "pre-causal-activation-screen",
+    "emoji_count": 10,
+    "emoji_intervention_calls": 11520,
+    "estimated_forward_calls": 14408,
+    "generic_emoji_control_calls": 864,
+    "iso_kl_calibration_calls_upper_bound": 0,
+    "iso_kl_evaluation_calls": 0,
+    "mode": "internal",
+    "model": "openai-community/gpt2",
+    "random_control_calls": 1728,
+    "resolved_layers": [
+      2,
+      4,
+      7,
+      9
+    ],
+    "seed_count": 3,
+    "source_forward_calls": 176,
+    "target_baseline_calls": 24,
+    "target_count": 24,
+    "wrapper_count": 16,
+    "zero_hook_control_calls": 96
+  },
+  "run_id": "m2-matched-null-a-exploratory-mlx--mlx--openai-community-gpt2--ec59c9819425696a",
+  "run_seal": "ec59c9819425696a",
+  "schema_version": 1,
+  "started_at": "2026-08-06T12:52:43.869378+00:00",
+  "status": "complete",
+  "summary_path": "summary.json"
+}

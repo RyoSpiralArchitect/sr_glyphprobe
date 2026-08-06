@@ -1,0 +1,231 @@
+{
+  "audit_id": "glyphprobe-m2-public-bundle-input-binding-v1",
+  "checks": {
+    "config_role_mapping": true,
+    "exact_input_hashes": true,
+    "exact_input_key_set": true,
+    "exact_input_paths": true,
+    "panel_role_mapping": true,
+    "source_family_mapping": true,
+    "target_bank_mapping": true
+  },
+  "parity_receipt_sha256": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+  "preregistration_audit_sha256": "015df5ad0d8bbeb6c01505e53a09833241079957d871420fc5cf42ff02683f48",
+  "preregistration_manifest_sha256": "2beb2e6547c3ac3022356f6c6345f33e7eebf255a458f7febc51a826d0357bf5",
+  "protocol_id": "glyphprobe-m2-tokenization-controls-v1",
+  "run_count": 14,
+  "runs": [
+    {
+      "authority": "milestone2_preregistration_v1",
+      "config_path": "configs/m2_prefix_homogeneous_colored_shapes_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "diagnostic",
+      "input_hashes": {
+        "input_00:m2_prefix_homogeneous_colored_shapes_mlx.yaml": "dca8513adbcca334def98dc651cb96ff7147d3b4f6c476382110c804062eece0",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_prefix_homogeneous_colored_shapes.yaml": "7318ee10c36f18b7ca4910d2b08ae28b5fce36a6f32e27cf7ec9b8a7c388c54b",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "prefix_homogeneous_colored_shapes",
+      "run_id": "m2-prefix-homogeneous-colored-shapes-exploratory-mlx--mlx--openai-community-gpt2--7fdfb6b7f642986e"
+    },
+    {
+      "authority": "milestone2_preregistration_v1",
+      "config_path": "configs/m2_suffix_matched_middle_shift_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "diagnostic",
+      "input_hashes": {
+        "input_00:m2_suffix_matched_middle_shift_mlx.yaml": "1e8261d61cd00345de1d2cee9e0ee03bfe26f9225aa536777fc1e35d247a9e30",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_suffix_matched_middle_shift.yaml": "8d31fcd54e62bbe046fb9b6acbc864c62a4a40a514abb5d34d6ff05e76f9ca6e",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "suffix_matched_middle_shift",
+      "run_id": "m2-suffix-matched-middle-shift-exploratory-mlx--mlx--openai-community-gpt2--d84ac7bfd36d18b4"
+    },
+    {
+      "authority": "milestone2_preregistration_v1",
+      "config_path": "configs/m2_matched_null_a_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "exploratory",
+      "input_hashes": {
+        "input_00:m2_matched_null_a_mlx.yaml": "e2e9bb8f7b5218ee3efe7bac90ca2d7e4effa08cc970a7ed75f65e6da8b5c884",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_a.yaml": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "matched_null_a",
+      "run_id": "m2-matched-null-a-exploratory-mlx--mlx--openai-community-gpt2--ec59c9819425696a"
+    },
+    {
+      "authority": "milestone2_preregistration_v1",
+      "config_path": "configs/m2_matched_null_b_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "exploratory",
+      "input_hashes": {
+        "input_00:m2_matched_null_b_mlx.yaml": "21d9df0933d8daf3a4da8c1d237ef63e208d8d9979df571a47f44da9301dc3bd",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_b.yaml": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "matched_null_b",
+      "run_id": "m2-matched-null-b-exploratory-mlx--mlx--openai-community-gpt2--367e0af26c88d1fc"
+    },
+    {
+      "authority": "milestone2_preregistration_v1",
+      "config_path": "configs/m2_matched_null_c_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "exploratory",
+      "input_hashes": {
+        "input_00:m2_matched_null_c_mlx.yaml": "6ca0c5c2726210b945e1bc5793c027c94f9cf3754dd0aae008f0878bf1eef934",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_c.yaml": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "matched_null_c",
+      "run_id": "m2-matched-null-c-exploratory-mlx--mlx--openai-community-gpt2--78505d4abbaea3bb"
+    },
+    {
+      "authority": "legacy published exploratory config plus preregistration-frozen inputs",
+      "config_path": "configs/v1_mlx_standard.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "exploratory",
+      "input_hashes": {
+        "input_00:v1_mlx_standard.yaml": "65fad6cb8b3195f800ecc4a34a04aed1a84c9721ac7273082821dc9d07b445be",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+      },
+      "role": "primary",
+      "run_id": "colored-shapes-v1-standard-mlx--mlx--openai-community-gpt2--c493ae1e18743922"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_a_independent_source_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "independent_source",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_a_independent_source_mlx.yaml": "4667c59b2fc61a92c6d6520245b0d837a932443067f8d707063cf2b72b669333",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_a.yaml": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+        "input_03:milestone2_independent_source_wrappers_v1.jsonl": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_a",
+      "run_id": "m2-p2-matched-null-a-independent-source-mlx--mlx--openai-community-gpt2--3399aab5e0115243"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_b_independent_source_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "independent_source",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_b_independent_source_mlx.yaml": "6cfc75299a87f6028a06e3cc549e51d1f63e3ef1d9b8ab436675fb3e2d74fe08",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_b.yaml": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+        "input_03:milestone2_independent_source_wrappers_v1.jsonl": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_b",
+      "run_id": "m2-p2-matched-null-b-independent-source-mlx--mlx--openai-community-gpt2--23db0b861df96b5e"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_c_independent_source_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "independent_source",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_c_independent_source_mlx.yaml": "b1cb250694dfd9d9a6ae16e6727feea8c89dc70e5bfd87bc1c1a569ef00826f5",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_c.yaml": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+        "input_03:milestone2_independent_source_wrappers_v1.jsonl": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_c",
+      "run_id": "m2-p2-matched-null-c-independent-source-mlx--mlx--openai-community-gpt2--dccae08cea5de146"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_primary_independent_source_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "independent_source",
+      "input_hashes": {
+        "input_00:m2_p2_primary_independent_source_mlx.yaml": "2a82c805af75d88cb042ac643c62294502aa83d7ea629405e6eb61508951d470",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+        "input_03:milestone2_independent_source_wrappers_v1.jsonl": "f8574c034847ab52e274003ad21a6d090db61f5de99d294fdfc583d4c20aa338",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "primary",
+      "run_id": "m2-p2-primary-colored-shapes-independent-source-mlx--mlx--openai-community-gpt2--f4d15948bb33bcd4"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_a_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "p2",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_a_mlx.yaml": "f769cd7401d3cca974b60fe2d4b34671a6a7d804ef1f8aca94901937438ea34d",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_a.yaml": "067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_a",
+      "run_id": "m2-p2-matched-null-a-mlx--mlx--openai-community-gpt2--8866fe45b7b42bc9"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_b_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "p2",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_b_mlx.yaml": "da4c91413b01b36d4568f8ff8a9e5570aa7d9aee15184bb2c7acbfb7b511b4ca",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_b.yaml": "f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_b",
+      "run_id": "m2-p2-matched-null-b-mlx--mlx--openai-community-gpt2--5c055161e431b596"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_matched_null_c_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "p2",
+      "input_hashes": {
+        "input_00:m2_p2_matched_null_c_mlx.yaml": "bc6f69fdb150d7df59cee4ddc949d0af5e969c3772ec651028ef0f70ddd84430",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:m2_matched_null_c.yaml": "78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "matched_null_c",
+      "run_id": "m2-p2-matched-null-c-mlx--mlx--openai-community-gpt2--586cbc8576607dea"
+    },
+    {
+      "authority": "milestone2_preregistration_audit_v1",
+      "config_path": "configs/m2_p2_primary_mlx.yaml",
+      "exact_input_00_through_04_match": true,
+      "family": "p2",
+      "input_hashes": {
+        "input_00:m2_p2_primary_mlx.yaml": "500a4d8d7a44bf4f0eae8d2ebce160d08c9b2e9b6578e2f4d73129fa432274a9",
+        "input_01:receipt.json": "98c3873a1ec6166aeae0fbb5d9abcd587eb1b3996726912ab963ff35ee497679",
+        "input_02:colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+        "input_03:source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee",
+        "input_04:p2_confirmatory_targets_v1.jsonl": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324"
+      },
+      "role": "primary",
+      "run_id": "m2-p2-primary-colored-shapes-mlx--mlx--openai-community-gpt2--db21c21c4395d944"
+    }
+  ],
+  "schema_version": 1,
+  "status": "pass"
+}

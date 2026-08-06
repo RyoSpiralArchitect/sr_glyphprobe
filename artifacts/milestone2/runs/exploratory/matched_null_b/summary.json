@@ -1,0 +1,125 @@
+{
+  "causal_claim_authorized": false,
+  "cross_seed_fingerprint_advantage": 1.0150145128674621,
+  "emoji_count": 10,
+  "emoji_fingerprint_advantage": 0.5755266011452095,
+  "error_count": 0,
+  "glyph_token_counts": [
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3
+  ],
+  "intervention_record_count": 14208,
+  "iso_kl_enabled": false,
+  "median_direction_replicate_alignment": 0.9743262313288797,
+  "median_emoji_kl_dose_monotonicity": 1.0,
+  "median_emoji_label_permutation_p": 0.000999000999000999,
+  "median_emoji_perturbation_ratio_max_abs_error": 1.3877787807814457e-17,
+  "median_sign_antisymmetry": 0.9997460071653741,
+  "random_control_count": 1728,
+  "readiness": {
+    "causal_claim_authorized": false,
+    "checks": [
+      {
+        "criterion": "All primary glyphs have the same raw token count.",
+        "id": "tokenization_control",
+        "pass": true,
+        "value": [
+          3
+        ]
+      },
+      {
+        "criterion": "Each sealed source wrapper has the same total token count across primary glyphs.",
+        "id": "wrapper_tokenization_control",
+        "pass": true,
+        "value": []
+      },
+      {
+        "criterion": "Median source-direction replicate alignment >= 0.50.",
+        "id": "source_direction_stability",
+        "pass": true,
+        "value": 0.9743262313288797
+      },
+      {
+        "criterion": "At least 16 target prompt records are present.",
+        "id": "target_case_count",
+        "pass": true,
+        "value": 24
+      },
+      {
+        "criterion": "At least one random-direction control record is present.",
+        "id": "random_direction_control",
+        "pass": true,
+        "value": 1728
+      },
+      {
+        "criterion": "An explicit zero-vector hook changes neither the patched activation nor logits beyond 1e-6 RMS.",
+        "id": "zero_hook_noop",
+        "pass": true,
+        "value": {
+          "count": 96,
+          "max_activation_delta_rms": 0.0,
+          "max_logit_delta_rms": 0.0
+        }
+      },
+      {
+        "criterion": "At least three positive strengths for dose-response inspection.",
+        "id": "strength_dose_grid",
+        "pass": true,
+        "value": 3
+      },
+      {
+        "criterion": "Median maximum achieved-RMS-ratio error <= 1e-5.",
+        "id": "scalar_strength_match",
+        "pass": true,
+        "value": 1.3877787807814457e-17
+      },
+      {
+        "criterion": "Same-emoji held-out fingerprint similarity exceeds cross-emoji/random controls.",
+        "id": "fingerprint_reproducibility",
+        "pass": true,
+        "value": 0.5755266011452095
+      },
+      {
+        "criterion": "Median within-target label-shuffle screening p-value <= 0.05; this is a screening flag, not a multiplicity-corrected global test.",
+        "id": "label_identity_permutation",
+        "pass": true,
+        "value": 0.000999000999000999
+      },
+      {
+        "criterion": "Same-glyph cross-seed fingerprint separation exceeds the random-direction null.",
+        "id": "cross_seed_output_stability",
+        "pass": true,
+        "value": 1.0150145128674621
+      }
+    ],
+    "passed": 11,
+    "stage": "pre-causal-readiness-only",
+    "total": 11,
+    "warning": "Passing these gates supports escalation to targeted patching and path-level tests; it does not establish a semantic or mechanistic causal interpretation."
+  },
+  "resolved_layers": [
+    2,
+    4,
+    7,
+    9
+  ],
+  "sae_enabled": false,
+  "seed_count": 3,
+  "stage": "pre-causal-activation-screen",
+  "strength_count": 3,
+  "target_case_count": 24,
+  "wrapper_count": 16,
+  "wrapper_token_count_mismatch_count": 0,
+  "wrapper_token_count_mismatch_ids": [],
+  "zero_hook_control_count": 96,
+  "zero_hook_max_activation_delta_rms": 0.0,
+  "zero_hook_max_logit_delta_rms": 0.0
+}

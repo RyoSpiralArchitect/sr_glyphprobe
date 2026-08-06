@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Results](docs/RESULTS_V1.md) · [Milestone 2 protocol](docs/MILESTONE2_PROTOCOL.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -26,27 +26,56 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Readiness gates | 11/11 | pre-causal readiness only |
 | Median held-out fingerprint advantage | 0.608 | 25/36 layer–seed–strength cells were positive; 11/36 were not |
 | Median cross-seed fingerprint advantage | 0.931 | seeds are repeated direction estimates, not independent observations |
+| Milestone 2, primary-source layer 2 | +0.208363, 95% CI [0.137463, 0.276893] | Holm-adjusted p = 0.00143999; robust to the prespecified matched controls under frozen v1 |
+| Milestone 2, primary-source layer 4 | -0.0329465, 95% CI [-0.0761085, 0.0110094] | Holm-adjusted p = 0.999500; unresolved under frozen v1 |
+| Milestone 2, independent-source layer 2 | +0.187507, 95% CI [0.125489, 0.247659] | Holm-adjusted p = 0.00393996; robust to the prespecified matched controls under frozen v1 |
+| Milestone 2, independent-source layer 4 | -0.086379, 95% CI [-0.159246, -0.016917] | Holm-adjusted p = 0.999430; unresolved under frozen v1 |
 
-These numbers are descriptive outputs of one pinned model cell. The [parity receipt](validation/mlx_gpt2_parity/receipt.json) is explicitly marked as an engineering validation rather than a scientific result. The [standard-run audit](validation/run_audits/colored-shapes-v1-standard-mlx--c493ae1e18743922.json) passed 15/15 integrity checks with caveats. The run authorizes targeted follow-up design only; `causal_claim_authorized` remains `false`. See [Results v1](docs/RESULTS_V1.md) for the complete qualification and negative cells.
+The baseline fingerprint rows are descriptive outputs of one pinned model cell;
+the Milestone 2 rows are frozen-v1 target-cluster results with the qualifications
+summarized below. The [parity receipt](validation/mlx_gpt2_parity/receipt.json)
+is explicitly marked as an engineering validation rather than a scientific
+result. The [standard-run audit](validation/run_audits/colored-shapes-v1-standard-mlx--c493ae1e18743922.json)
+passed 15/15 integrity checks with caveats. `causal_claim_authorized` remains
+`false`. See [Results v1](docs/RESULTS_V1.md) for the baseline qualification and
+negative cells.
 
 Latency is machine-, load-, and software-dependent. Treat the receipt as the measurement, not 1.63× as a universal MLX claim.
 
 ### Milestone 2 status
 
-The tokenization-matched control protocol is frozen and preflight is pending;
-no Milestone 2 model outcome is reported yet. A one-shot 48-target P2
-confirmatory bank and a separate 48-target C1 causal holdout bank are frozen.
-The primary comparison uses three disjoint ten-symbol null panels matched to the
-colored-shape panel on GPT-2 token count and its 9:1 token-prefix structure.
-Layers 2 and 4 at strength 0.05 are the fixed primary family, and inference is
-performed over target-prompt clusters rather than treating glyphs or direction
-seeds as independent observations.
+Milestone 2 preflight passed and the frozen 48-target P2 bank was opened once.
+The frozen v1 result is mixed: layer 2 exceeded the three prespecified
+token-count and prefix-panel controls in the primary-source arm (+0.208363,
+95% CI [0.137463, 0.276893], Holm p = 0.00143999) and in the independent-source
+arm (+0.187507, [0.125489, 0.247659], Holm p = 0.00393996). Layer 4 was
+unresolved in both arms (-0.0329465 and -0.086379, respectively).
 
-The P2 bank remains unopened until the protocol and its bound manifests,
-configs, analysis code, and tests are present in the public freeze commit and
-all preflight checks pass. The C1 bank is reserved for a later causal protocol.
-See the [Milestone 2 confirmatory protocol](docs/MILESTONE2_PROTOCOL.md) for the
-endpoint, decision rule, and prohibited uses.
+These controls match the three-token count and panel-level 9:1 prefix structure,
+not token identity. Panel C contains one declared semantic-near control, `🟥`.
+The source-robustness arm reuses the same P2 targets and is not an independent
+target or model replication. A separate input-binding audit passed, while a
+post-hoc sensitivity analysis showed that rebuilding leave-one-group-out
+prototypes inside each target-bootstrap replicate widens the intervals. It does
+not overwrite the frozen v1 statuses. Both secondary diagnostics then completed
+their 14,208-row grids with zero errors, zero-hook activation/logit RMS of 0, and readiness 11/11.
+Their random-adjusted headline advantages were +0.751225 (suffix-matched) and
++0.601038 (prefix-homogeneous). These are not the raw separation scores used in
+the paired diagnostic comparison. At 96 dimensions, the descriptive
+standard-minus-diagnostic median was +0.002624 for suffix matching (20/36 cells
+positive) and +0.022096 for prefix homogenization (25/36 positive). These
+post-hoc diagnostics are not inferential or equivalence tests, and C1 remains
+untouched.
+
+For runtime provenance, the first matched-null A process was externally
+interrupted after 798 rows under severe machine load. A sealed resume completed
+the exact 14,208-row grid without duplicates, missing rows, or errors, with
+zero-hook activation/logit RMS still at 0. The event is not model evidence or a general speed claim.
+
+See [Milestone 2 results](docs/MILESTONE2_RESULTS.md) for the exact results,
+analysis limitations, sensitivity intervals, and evidence links. The result is
+pre-causal and does not establish semantics, mechanism, a circuit, or a
+tokenization-free glyph effect.
 
 ## Install
 
@@ -185,6 +214,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Backend boundaries | [BACKENDS.md](docs/BACKENDS.md) | [BACKENDS.ja.md](docs/BACKENDS.ja.md) |
 | Metrics | [METRICS.md](docs/METRICS.md) | [METRICS.ja.md](docs/METRICS.ja.md) |
 | Current results | [RESULTS_V1.md](docs/RESULTS_V1.md) | [RESULTS_V1.ja.md](docs/RESULTS_V1.ja.md) |
+| Milestone 2 results | [MILESTONE2_RESULTS.md](docs/MILESTONE2_RESULTS.md) | [MILESTONE2_RESULTS.ja.md](docs/MILESTONE2_RESULTS.ja.md) |
 | Milestone 2 protocol | [MILESTONE2_PROTOCOL.md](docs/MILESTONE2_PROTOCOL.md) | [MILESTONE2_PROTOCOL.ja.md](docs/MILESTONE2_PROTOCOL.ja.md) |
 | Research roadmap | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.ja.md](docs/ROADMAP.ja.md) |
 | Phase I paper plan | [PAPER_OUTLINE.md](docs/PAPER_OUTLINE.md) | [PAPER_OUTLINE.ja.md](docs/PAPER_OUTLINE.ja.md) |
@@ -194,7 +224,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. The present standard run is a baseline result, not the endpoint. The [roadmap](docs/ROADMAP.md) requires targeted causal tests, confirmatory statistics at the target-prompt cluster level, stronger tokenization controls, and replication before the paper's claims can be frozen.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

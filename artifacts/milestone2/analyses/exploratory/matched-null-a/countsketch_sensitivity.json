@@ -1,0 +1,42 @@
+{
+  "algebraic_guarantee": "For a same-seed divisor dimension, folding bucket b into b % target_dim and renormalizing equals direct CountSketch of the unavailable raw logit delta, up to stored fingerprint floating-point rounding.",
+  "analysis": "same-seed-divisor-countsketch-fold",
+  "claim_stage": "post-hoc-countsketch-sensitivity",
+  "input": {
+    "eligible_row_count": 11232,
+    "rows_file": "interventions.jsonl",
+    "rows_sha256": "e3048678f9aa83319f5e1c77fb885eb47e70836ff1cf29d59478a1e0db4ea72a",
+    "run_label": "m2-matched-null-a-exploratory-mlx--mlx--openai-community-gpt2--ec59c9819425696a"
+  },
+  "label_permutations": 0,
+  "outputs": [
+    {
+      "cell_count": 36,
+      "summary_file": "fingerprint_summary.folded-48.jsonl",
+      "summary_sha256": "45f8f3b6a3928314d177e40811e680e7ac1f002c48f2a98fbd92092d3f9f1b9f",
+      "target_dim": 48
+    },
+    {
+      "cell_count": 36,
+      "summary_file": "fingerprint_summary.folded-32.jsonl",
+      "summary_sha256": "3cb462530ede9d7d6626d1948dc6fb42925624ac3de00560808ee1d1e4b472db",
+      "target_dim": 32
+    },
+    {
+      "cell_count": 36,
+      "summary_file": "fingerprint_summary.folded-24.jsonl",
+      "summary_sha256": "42aef678ec2f028e2ffa3b1cfd3437a755a60f12595b27f003e79759bd61043a",
+      "target_dim": 24
+    }
+  ],
+  "schema_version": 1,
+  "source_dim": 96,
+  "source_seed": 8675309,
+  "split_half_repeats": 0,
+  "summary_scope": "Fingerprint split-half separation and random-direction advantage only; factor decompositions and other run summaries are not regenerated.",
+  "target_seed": 8675309,
+  "unsupported_without_raw_logits": [
+    "new CountSketch seeds",
+    "non-divisor dimensions"
+  ]
+}
