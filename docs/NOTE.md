@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -151,10 +151,13 @@ hypothesis derived from E1 also needs its own public protocol and new untouched
 target bank.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
-route. Its literal 50-emoji arm and independently centered 35-emoji
-token-structural sensitivity arm are fixed before outcome access in the
-[E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md). This does not
-turn the MLX no-go into a pass, and the failed v2 and Stage-A3 thresholds remain
+route. V1 failed its tokenizer preflight before model-weight loading or any
+forward because the audit conflated raw and contextual wrapper tokenization; it
+has no scientific outcome. The literal 50-emoji arm and independently centered
+35-emoji token-structural sensitivity arm are now rebound before outcome access
+in the corrected [v2 MPS transport
+protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md). This does not turn the MLX
+no-go into a pass, and the failed MLX v2 and Stage-A3 thresholds remain
 unchanged.
 
 A future versioned causal bank stays closed until the candidate, intervention

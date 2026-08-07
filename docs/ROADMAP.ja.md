@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -133,7 +133,7 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 
 ### 科学side track E2b — Llama 3.2 3B MPS絵文字transport
 
-状態: manifest commitが公開されるまでは`freeze_pending`とする。そのcommitでstatic designを固定した後も、model forwardを伴わないpreflight receiptだけを変更した子commitとして公開するまでは`preflight_pending`であり、実行しない。科学的outcomeはまだ存在しない。
+状態: v1はmodel forward 0回のtokenizer preflight failureで廃止した。V2はmanifest commitが公開されるまでは`freeze_pending`とする。そのcommitで修正済みstatic designを固定した後も、model forwardを伴わないv2 preflight receiptだけを変更した子commitとして公開するまでは`preflight_pending`であり、実行しない。科学的outcomeはまだ存在しない。
 
 - 固定した`mlx-community/Llama-3.2-3B-bf16` artifactを、raw Transformers、MPS、FP32 runtime parameterで使う。
 - 10絵文字の5 family panelを`full50` primary armとし、`slot_03`〜`slot_09`の7絵文字panelを5本別々にcenteringする`core35` token-structure感度armとする。
@@ -141,7 +141,7 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 - Layer 5と11、strength 0.05、seed 101 / 211 / 307、random control 2本、厳密なzero-hook検査、target groupで層化した20,000回bootstrapを固定する。
 - `full50`のlayer 5におけるfamily等重み`R_global`を唯一のprimary rowとする。両側95% percentile bootstrap区間の下端が0より大きいときだけ`transport_criterion_met`とする。その他のrowはsecondaryで、primary判定を救済しない。
 
-完全な設計と主張境界は[E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md)に示す。Primary rowが正でも、探索済みtargetを再利用したMPS上の限定transport観測である。意味、tokenizer非依存性、因果、独立targetでの確認、model scaleへの一般化は確立しない。
+完全な設計と主張境界は[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)に示す。Primary rowが正でも、探索済みtargetを再利用したMPS上の限定transport観測である。意味、tokenizer非依存性、因果、独立targetでの確認、model scaleへの一般化は確立しない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

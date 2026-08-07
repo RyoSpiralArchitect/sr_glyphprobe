@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v1",
+  "status": "preflight_failed_no_model_forward",
+  "recording_method": "operator-authored post-failure record from the exact terminal error plus a separately run tokenizer-only diagnostic; not a generated success receipt",
+  "recorded_at_utc": "2026-08-07T03:21:19Z",
+  "freeze_commit": "a6803c7b673404b2bae4200cebe802b79cbc5782",
+  "freeze_manifest_path": "data/manifests/llama32_3b_mps_emoji_transport_v1.json",
+  "freeze_manifest_sha256": "810e4a1f01749893ab13baa9ae6048d7d3f62e756a1a656c7bc0b3d923e08a53",
+  "audit_script_path": "scripts/audit_llama32_3b_mps_emoji_transport_v1.py",
+  "audit_script_sha256": "c39165d1712e4226e4b31c29865321cd4cc4d9161b21c9f47772f3004d19ab69",
+  "command_environment": {
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "model_weights_loaded": false,
+    "model_forward_count": 0
+  },
+  "failure": {
+    "error_type": "AuditError",
+    "message": "Emoji token offset crosses wrapper text for w01_mark_anchor/sky_slot_00",
+    "canonical_success_receipt_written": false,
+    "run_namespace_created": false,
+    "launcher_started": false
+  },
+  "trigger_profile": {
+    "wrapper_id": "w01_mark_anchor",
+    "item_id": "sky_slot_00",
+    "raw_token_ids": [9468, 234, 239],
+    "contextual_token_ids": [11410, 234, 239],
+    "emoji_character_interval": [6, 7],
+    "contextual_token_offsets": [[5, 7], [6, 7], [6, 7]],
+    "cause": "The first contextual token jointly covers the immediately preceding space and the first emoji byte-token component. The frozen v1 audit incorrectly required every overlapping token offset and contextual token ID to equal the raw-glyph profile."
+  },
+  "tokenizer_only_diagnostic": {
+    "full50_wrapper_profiles_checked": 800,
+    "core35_wrapper_profiles_checked": 560,
+    "wrappers_with_preceding_space_merge": 9,
+    "wrappers_with_raw_first_token": 7,
+    "core35_profiles_with_left_context_overlap": 315,
+    "all_core35_contextual_spans_have_three_tokens": true,
+    "all_core35_contextual_patterns_match_wrapper_first_family_middle_and_slot_suffix": true,
+    "all_core35_positions_and_counts_are_constant_within_wrapper": true,
+    "all_full50_outside_token_sequences_are_constant_within_wrapper": true,
+    "contextual_first_token_ids": [9468, 11410],
+    "scientific_outcomes_accessed": false
+  },
+  "disposition": {
+    "v1_execution_authorized": false,
+    "v1_status": "retired_after_preflight_failure_before_execution",
+    "repair_in_place_authorized": false,
+    "next_step": "Create a separately versioned v2 freeze and destination whose tokenizer audit distinguishes raw-glyph tokenization from exact contextual wrapper tokenization."
+  }
+}

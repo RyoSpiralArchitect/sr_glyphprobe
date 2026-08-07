@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -205,10 +205,11 @@ would not by itself complete E2 or a paper gate.
 
 ### Scientific side track E2b — Llama 3.2 3B MPS emoji transport
 
-Status: `freeze_pending` until the manifest commit is public. That commit
-establishes the static design; execution then remains `preflight_pending` until
-the zero-model-forward receipt is published as the only change in a descendant
-commit. No scientific outcome exists yet.
+Status: v1 failed tokenizer preflight with zero model forwards and is retired.
+V2 is `freeze_pending` until its manifest commit is public. That commit
+establishes the corrected static design; execution then remains
+`preflight_pending` until the zero-model-forward v2 receipt is published as the
+only change in a descendant commit. No scientific outcome exists yet.
 
 - use the pinned `mlx-community/Llama-3.2-3B-bf16` artifact through raw
   Transformers on MPS with FP32 runtime parameters;
@@ -225,7 +226,7 @@ commit. No scientific outcome exists yet.
   rescue that decision.
 
 The complete design and claim boundary are in the
-[E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md). Even a
+[E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md). Even a
 positive primary row would support only a bounded, reused-target MPS transport
 observation. It would not establish semantics, tokenizer independence,
 causality, independent-target confirmation, or model-scale generality.

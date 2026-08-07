@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -126,8 +126,7 @@ fidelityが高いFP32もqualifiedとは表現できない。Formal v3 validator�
 [Stage A3結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)、
 [凍結済み数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md)、
 [atomic receipt](validation/mlx_llama32_3b_numeric_screen_v1/receipt.json)にまとめた。
-研究責任者は、Transformers/MPS専用の科学経路を別に選択した。50絵文字のprimary armと、独立にcenteringする35絵文字のtoken-structure感度armは、
-[E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md)に固定する。これはMLXのno-goを読み替えるものではなく、v2とStage A3の閾値も緩和しない。
+研究責任者は、Transformers/MPS専用の科学経路を別に選択した。V1のstatic freezeは、raw tokenizationとwrapper内のcontextual tokenizationをauditが混同したため、model weightの読み込みもforwardも行う前にpreflightで停止した。V1は[科学的outcomeなしで廃止](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md)している。同じ50絵文字primary armと、独立にcenteringする35絵文字token-structure感度armを、修正済みの別versionである[v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へ改めて固定する。MLXのno-goを読み替えず、どちらのMLX閾値も緩和しない。
 
 ## インストール
 
@@ -205,7 +204,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
 - [E2 Stage A v2 プロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md)
-- [E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) / [English](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md)
+- [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) / [English](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md)
+- [E2 MPS transport v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) / [English](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md)
 - [holdout状態](docs/HOLDOUT_STATUS.ja.md) / [English](docs/HOLDOUT_STATUS.md)
 - [再現性ガイド](docs/REPRODUCIBILITY.ja.md) / [English](docs/REPRODUCIBILITY.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
@@ -216,7 +216,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。別versionのTransformers/MPS transport studyは、static manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結します。MLX経路の結果は書き換えず、まだ科学的結果も生んでいません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

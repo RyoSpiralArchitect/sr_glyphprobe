@@ -23,6 +23,12 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
 - `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json` binds all 82 E1 payload members by
   SHA-256 and inventories the omitted raw ledgers and arrays. With this root
   manifest, the public E1 artifact contains 83 files.
+- `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
+  evidence root. At static freeze it contains only its bilingual orientation;
+  no analysis tree means no valid scientific result has been published.
+- `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`
+  records the retired v1 tokenizer-preflight failure. It occurred before model
+  weight loading or any model forward and is not scientific outcome evidence.
 
 The legacy v1 bundle omits one 77,327,172-byte condition ledger and three NPZ arrays, as recorded in `MANIFEST.json`. Separately, `MILESTONE2_MANIFEST.json` records 58 omitted large local files across 14 runs, including condition ledgers and model-dependent NPZ arrays, plus two 20,000-replicate bootstrap tables. Their hashes bind the audited local artifacts but cannot reconstruct them. Reproduce the applicable run or analysis to recover the complete data.
 
