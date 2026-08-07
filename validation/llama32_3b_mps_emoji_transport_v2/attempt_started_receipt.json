@@ -1,0 +1,54 @@
+{
+  "config_order": [
+    "configs/e2_llama32_3b_mps_full50_sky_v2.yaml",
+    "configs/e2_llama32_3b_mps_full50_food_v2.yaml",
+    "configs/e2_llama32_3b_mps_full50_animals_v2.yaml",
+    "configs/e2_llama32_3b_mps_full50_transport_v2.yaml",
+    "configs/e2_llama32_3b_mps_full50_social_v2.yaml",
+    "configs/e2_llama32_3b_mps_core35_sky_v2.yaml",
+    "configs/e2_llama32_3b_mps_core35_food_v2.yaml",
+    "configs/e2_llama32_3b_mps_core35_animals_v2.yaml",
+    "configs/e2_llama32_3b_mps_core35_transport_v2.yaml",
+    "configs/e2_llama32_3b_mps_core35_social_v2.yaml"
+  ],
+  "git_freeze": {
+    "audited_commit": "a4a1c4ebfc8ead11df9076a80d0f33b8ecac0b1e",
+    "branch": "main",
+    "execution_commit": "78502b68bbac47e94f8ce136ff26db01ac06286e",
+    "origin_main_commit": "78502b68bbac47e94f8ce136ff26db01ac06286e"
+  },
+  "initial_namespace_check": {
+    "existing_run_destination_count": 0,
+    "launcher_log_namespace_preexisting": false,
+    "resume_allowed": false,
+    "run_name_count": 10
+  },
+  "launcher_log_namespace": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs",
+  "manifest": {
+    "path": "data/manifests/llama32_3b_mps_emoji_transport_v2.json",
+    "sha256": "018f658a3fe0b810d6512a248f3628c1bec1a238171189eb84029bbc84113b46"
+  },
+  "model_process_count_at_publication": 0,
+  "preflight": {
+    "path": "artifacts/llama32_3b_mps_emoji_transport_v2/preflight/tokenization_audit_v2.json",
+    "sha256": "22851fef18d06b740aa88117a0b801d780d063da990c039e691ef266863f2a80"
+  },
+  "protocol_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v2",
+  "resume_policy": "forbidden_in_v2_new_versioned_freeze_required",
+  "run_names": [
+    "e2-llama32-3b-mps-full50-sky-transport-v2",
+    "e2-llama32-3b-mps-full50-food-transport-v2",
+    "e2-llama32-3b-mps-full50-animals-transport-v2",
+    "e2-llama32-3b-mps-full50-transport-transport-v2",
+    "e2-llama32-3b-mps-full50-social-transport-v2",
+    "e2-llama32-3b-mps-core35-sky-transport-v2",
+    "e2-llama32-3b-mps-core35-food-transport-v2",
+    "e2-llama32-3b-mps-core35-animals-transport-v2",
+    "e2-llama32-3b-mps-core35-transport-transport-v2",
+    "e2-llama32-3b-mps-core35-social-transport-v2"
+  ],
+  "schema_version": 1,
+  "scientific_outcomes_inspected_by_launcher": false,
+  "started_at": "2026-08-07T03:44:14.522472+00:00",
+  "status": "attempt_started_no_process_launched"
+}

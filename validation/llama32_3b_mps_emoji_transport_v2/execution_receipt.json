@@ -1,0 +1,132 @@
+{
+  "analysis_authorized": true,
+  "attempt_started_receipt": {
+    "path": "validation/llama32_3b_mps_emoji_transport_v2/attempt_started_receipt.json",
+    "sha256": "cf89f191a45b4499654ee8fec2e85e7035689df259919378bc399e14ce78534a"
+  },
+  "audited_commit": "a4a1c4ebfc8ead11df9076a80d0f33b8ecac0b1e",
+  "branch": "main",
+  "completed_process_count": 10,
+  "expected_process_count": 10,
+  "failed_execution_receipt_written": false,
+  "finished_at": "2026-08-07T05:35:42.792468+00:00",
+  "freeze_commit": "78502b68bbac47e94f8ce136ff26db01ac06286e",
+  "initial_namespace_check": {
+    "existing_run_destination_count": 0,
+    "launcher_log_namespace_preexisting": false,
+    "resume_allowed": false,
+    "run_name_count": 10
+  },
+  "preflight_path": "artifacts/llama32_3b_mps_emoji_transport_v2/preflight/tokenization_audit_v2.json",
+  "preflight_sha256": "22851fef18d06b740aa88117a0b801d780d063da990c039e691ef266863f2a80",
+  "process_isolation": "strictly_sequential_independent_python_processes",
+  "processes": [
+    {
+      "config": "configs/e2_llama32_3b_mps_full50_sky_v2.yaml",
+      "config_sha256": "c48b407bafe980a5ca113a77ee5d15febfeb590437ee283f5a913fcee1469ee9",
+      "finished_at": "2026-08-07T03:55:44.241972+00:00",
+      "index": 0,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/00-e2_llama32_3b_mps_full50_sky_v2.log",
+      "log_sha256": "ff0dd9333c74c0dbb4e6197aa9f04370cac92337613917438d17ed567ccbea5a",
+      "return_code": 0,
+      "started_at": "2026-08-07T03:44:14.524669+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_full50_food_v2.yaml",
+      "config_sha256": "e8610ba8e9e951c986cf7661901095d5d30dbe7115b87a9907280eee6684f36d",
+      "finished_at": "2026-08-07T04:06:48.555470+00:00",
+      "index": 1,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/01-e2_llama32_3b_mps_full50_food_v2.log",
+      "log_sha256": "411f9c775eb0435be24ee5c53787ea0cc47b8da9d02ad5781b5c3e3ef93e43f1",
+      "return_code": 0,
+      "started_at": "2026-08-07T03:55:44.245360+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_full50_animals_v2.yaml",
+      "config_sha256": "6bcca6590f8ef044028d060c9607c944702927b505faa70822d165f94a8c572b",
+      "finished_at": "2026-08-07T04:17:58.618654+00:00",
+      "index": 2,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/02-e2_llama32_3b_mps_full50_animals_v2.log",
+      "log_sha256": "b4dac7f163b79065907c694b5f9d7f21a0b48c3c3a308f018c18c561aef9558c",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:06:48.558002+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_full50_transport_v2.yaml",
+      "config_sha256": "93835dfa3b97fce829e240d4334f727a933f1b8ee979f749155f6547ce2aaf47",
+      "finished_at": "2026-08-07T04:29:16.545494+00:00",
+      "index": 3,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/03-e2_llama32_3b_mps_full50_transport_v2.log",
+      "log_sha256": "d8ae891d68a0f8efb86781b830431523a5fa4767438705669f7ce81433490c69",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:17:58.621825+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_full50_social_v2.yaml",
+      "config_sha256": "c81f3d3695c3c5c6468e38b685986cf674e375ab1c2d105e1e6a2db3233ab9f3",
+      "finished_at": "2026-08-07T04:41:05.128395+00:00",
+      "index": 4,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/04-e2_llama32_3b_mps_full50_social_v2.log",
+      "log_sha256": "fe2f0508ad1a9b1cead8672f500534a8ef6eb53a4a2bd8698dd1140bf8630d7e",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:29:16.548316+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_core35_sky_v2.yaml",
+      "config_sha256": "adf9047a4785f5b5c4d76b4cc1d5b44b6bc99d74d4b14be7980d79d2c364e1bc",
+      "finished_at": "2026-08-07T04:50:09.018621+00:00",
+      "index": 5,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/05-e2_llama32_3b_mps_core35_sky_v2.log",
+      "log_sha256": "edd45261e37c9266dc3c57468a9e72f07162e84024d62bbd2d8aeea6dc341d42",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:41:05.134252+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_core35_food_v2.yaml",
+      "config_sha256": "400fe8e86d62f85c6aeb6ff32013b5a67dbfa6d46274c9188fc4ae65044192a7",
+      "finished_at": "2026-08-07T04:59:12.769883+00:00",
+      "index": 6,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/06-e2_llama32_3b_mps_core35_food_v2.log",
+      "log_sha256": "f09b9fa403a2789eae5fda914c0aadb5c23c261f5782d0385cf11d5c46f72fe6",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:50:09.022598+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_core35_animals_v2.yaml",
+      "config_sha256": "479d43f58fdaa4039136b57f75434db55e21842a3cdd8f36eca76a5cb020980f",
+      "finished_at": "2026-08-07T05:08:10.515777+00:00",
+      "index": 7,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/07-e2_llama32_3b_mps_core35_animals_v2.log",
+      "log_sha256": "7bd1eb5795bae45da4fc4a25c74c404393b19095c26643bfe4658d67011d3d84",
+      "return_code": 0,
+      "started_at": "2026-08-07T04:59:12.774728+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_core35_transport_v2.yaml",
+      "config_sha256": "ba7cc2510bac72c14fae236f93eb3b2268a5b17f73900a7a2ad7f668082f602c",
+      "finished_at": "2026-08-07T05:17:09.990776+00:00",
+      "index": 8,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/08-e2_llama32_3b_mps_core35_transport_v2.log",
+      "log_sha256": "c9ca2a8f7b8ed86cde651162f7671c473669a2f7c117d62f966eee64db371949",
+      "return_code": 0,
+      "started_at": "2026-08-07T05:08:10.518899+00:00"
+    },
+    {
+      "config": "configs/e2_llama32_3b_mps_core35_social_v2.yaml",
+      "config_sha256": "f35b33f770ae17498cef269a8289988ff151b4e8f1f68110ce5367d9914d758d",
+      "finished_at": "2026-08-07T05:35:42.785229+00:00",
+      "index": 9,
+      "log_path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/09-e2_llama32_3b_mps_core35_social_v2.log",
+      "log_sha256": "217577e86b2d320cfb9742ffe1edfa7703ec5208afcd7c296d3af9a860ce7925",
+      "return_code": 0,
+      "started_at": "2026-08-07T05:17:09.993098+00:00"
+    }
+  ],
+  "protocol_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v2",
+  "resume_policy": "forbidden_in_v2_new_versioned_freeze_required",
+  "schema_version": 1,
+  "scientific_outcomes_inspected_by_launcher": false,
+  "simultaneous_full_model_residency": false,
+  "started_at": "2026-08-07T03:44:14.522472+00:00",
+  "status": "execution_complete_analysis_not_run"
+}
