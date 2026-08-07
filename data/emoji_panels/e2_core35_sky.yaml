@@ -1,0 +1,29 @@
+items:
+  - id: sky_slot_03
+    glyph: "🌔"
+    factors: {family: sky, matched_slot: slot_03, codepoint: U+1F314}
+    labels: [waxing_gibbous]
+  - id: sky_slot_04
+    glyph: "🌕"
+    factors: {family: sky, matched_slot: slot_04, codepoint: U+1F315}
+    labels: [full_moon]
+  - id: sky_slot_05
+    glyph: "🌖"
+    factors: {family: sky, matched_slot: slot_05, codepoint: U+1F316}
+    labels: [waning_gibbous]
+  - id: sky_slot_06
+    glyph: "🌗"
+    factors: {family: sky, matched_slot: slot_06, codepoint: U+1F317}
+    labels: [last_quarter]
+  - id: sky_slot_07
+    glyph: "🌘"
+    factors: {family: sky, matched_slot: slot_07, codepoint: U+1F318}
+    labels: [waning_crescent]
+  - id: sky_slot_08
+    glyph: "🌙"
+    factors: {family: sky, matched_slot: slot_08, codepoint: U+1F319}
+    labels: [crescent_moon]
+  - id: sky_slot_09
+    glyph: "🌚"
+    factors: {family: sky, matched_slot: slot_09, codepoint: U+1F31A}
+    labels: [new_moon_face]

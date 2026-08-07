@@ -62,13 +62,15 @@ externally interrupted after 798 ledger rows during severe machine load. A
 sealed resume completed the exact 14,208-row grid without duplicates, missing
 rows, or errors, with zero-hook activation/logit RMS at 0. This event is not model evidence or a
 universal speed claim. P2, independent-source, and diagnostic runs completed
-normally. C1 remains untouched.
+normally. Milestone 2 did not use C1 v1, but the bank is now retired after the
+separately documented research-context exposure.
 
 These artifacts support a reproducible pre-causal activation-screening
 candidate and a mixed Milestone 2 control result. They do not establish glyph
 semantics, a mechanism, a circuit, a causal path, or a tokenization-free effect.
 Operational Milestone 2 is complete, and layer 2 is eligible for targeted
-causal-protocol design using untouched C1; layer 4 remains unresolved.
+causal-protocol design with a future new versioned bank; layer 4 remains
+unresolved. See [Holdout status](../docs/HOLDOUT_STATUS.md).
 
 ## E1 exploratory reading
 

@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -53,7 +53,7 @@ MLX は、同じモデル名だから採用したわけではありません。�
 
 3つの対照パネルで揃えたのは、3トークンという長さと、パネル単位の9対1の接頭構造である。token IDそのものは同じではない。Panel Cには、事前申告した意味的に近い対照`🟥`を1個含む。独立ソース条件は同じP2ターゲットを再利用しており、独立ターゲットや別モデルでの再現ではない。
 
-別に行ったinput-binding auditは合格した。一方、target bootstrapの各replicateでleave-one-group-out prototypeを作り直す事後感度分析では、区間が広がった。この事後解析は、凍結済みv1判定を上書きしない。その後、2つの二次診断はいずれも14,208行のgridを完走し、errorは0件、zero-hook RMSは0、readinessは11 / 11だった。Random-adjustedのheadline優位量は、末尾token一致で+0.751225、接頭構造均一化で+0.601038である。これはpaired診断で使うraw separation scoreとは別の評価量である。96次元における記述的なstandard-minus-diagnostic中央値は、末尾token一致が+0.002624（36セル中20セルが正）、接頭構造均一化が+0.022096（36セル中25セルが正）だった。これらの事後診断は、推論や同等性の検定ではない。C1因果ホールドアウトは未使用のままである。
+別に行ったinput-binding auditは合格した。一方、target bootstrapの各replicateでleave-one-group-out prototypeを作り直す事後感度分析では、区間が広がった。この事後解析は、凍結済みv1判定を上書きしない。その後、2つの二次診断はいずれも14,208行のgridを完走し、errorは0件、zero-hook RMSは0、readinessは11 / 11だった。Random-adjustedのheadline優位量は、末尾token一致で+0.751225、接頭構造均一化で+0.601038である。これはpaired診断で使うraw separation scoreとは別の評価量である。96次元における記述的なstandard-minus-diagnostic中央値は、末尾token一致が+0.002624（36セル中20セルが正）、接頭構造均一化が+0.022096（36セル中25セルが正）だった。これらの事後診断は、推論や同等性の検定ではない。C1 v1はこれらの実験には使わなかったが、別に記録した研究文脈への露出により、現在は廃止している。詳細は[holdout状態](docs/HOLDOUT_STATUS.ja.md)に示す。
 
 実行時の来歴として、matched-null Aの最初のprocessは、マシン負荷が極端に高い最中、798行で外部から中断された。Sealを保ったresumeによって、重複・欠損・error・非ゼロのzero-hook RMSなしで14,208行の正確なgridを完了した。この事象は、モデルに関する証拠でも、一般化できる速度の主張でもない。
 
@@ -126,9 +126,8 @@ fidelityが高いFP32もqualifiedとは表現できない。Formal v3 validator�
 [Stage A3結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)、
 [凍結済み数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md)、
 [atomic receipt](validation/mlx_llama32_3b_numeric_screen_v1/receipt.json)にまとめた。
-次は、Transformers/MPS専用の科学経路を別に凍結するか、新しい公開プロトコルの下で
-将来のMLX engineering計画を設計するかを研究責任者が判断する。V2とStage A3の
-閾値は、結果を見た後で緩和しない。
+研究責任者は、Transformers/MPS専用の科学経路を別に選択した。50絵文字のprimary armと、独立にcenteringする35絵文字のtoken-structure感度armは、
+[E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md)に固定する。これはMLXのno-goを読み替えるものではなく、v2とStage A3の閾値も緩和しない。
 
 ## インストール
 
@@ -206,6 +205,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
 - [E2 Stage A v2 プロトコル](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md)
+- [E2 MPS transportプロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) / [English](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md)
+- [holdout状態](docs/HOLDOUT_STATUS.ja.md) / [English](docs/HOLDOUT_STATUS.md)
 - [再現性ガイド](docs/REPRODUCIBILITY.ja.md) / [English](docs/REPRODUCIBILITY.md)
 - [研究ロードマップ](docs/ROADMAP.ja.md) / [English](docs/ROADMAP.md)
 - [英語論文の構成案](docs/PAPER_OUTLINE.ja.md) / [English](docs/PAPER_OUTLINE.md)
@@ -215,7 +216,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、未使用のC1を使う新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、いずれも技術経路の不適格判定として完了しました。Stage A3ではruntime dtypeを選定せず、どちらの段階でも科学gridを実行していません。独立backendまたはmodelでの再現gateも満たしません。C1を開く前に、候補、介入、endpoint、対照、多重性familyを凍結します。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文ゲートとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。別versionのTransformers/MPS transport studyは、static manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結します。MLX経路の結果は書き換えず、まだ科学的結果も生んでいません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

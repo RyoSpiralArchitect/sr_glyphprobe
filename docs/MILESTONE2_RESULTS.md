@@ -89,13 +89,22 @@ At 96 dimensions, 20 of 36 standard-minus-suffix cells and 25 of 36 standard-min
 
 One runtime irregularity is retained for provenance. The first foreground matched-null A process was externally interrupted after 798 ledger rows during severe machine load; median latency was about 309 ms, compared with a 10.73 ms baseline. A sealed resume completed the exact 14,208-row grid with no duplicate or missing rows, zero errors, and zero-hook activation/logit RMS of 0; later median latency returned to about 12.43 ms. This is operational provenance, not model evidence or a universal speed claim. P2, independent-source, and diagnostic runs completed normally.
 
-The C1 causal holdout remains untouched. It was not passed to a model or used in outcome analysis.
+Milestone 2 did not pass C1 v1 to a model or use it in outcome analysis. The
+bank is now retired after a separately recorded research-context exposure; see
+[Holdout status](HOLDOUT_STATUS.md). It must not be described or reused as an
+untouched bank.
 
 ## Claim boundary and next decision
 
 Milestone 2 supports a narrow statement: in this pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 exceeded the three prespecified token-count and prefix-panel controls under both source-wrapper banks according to the frozen v1 rule; layer 4 did not. The result does not establish glyph semantics, a mechanism, a circuit, a causal path, a tokenization-free effect, or generalization beyond this cell.
 
-Operational Milestone 2 is complete. Layer 2 is now eligible for the design of a new frozen targeted causal protocol using the untouched C1 bank; layer 4 remains unresolved and is not a candidate. Before C1 is opened, the candidate, intervention site and operation, endpoint, controls, and multiplicity family must all be frozen. This eligibility authorizes protocol design, not a causal claim.
+Operational Milestone 2 is complete. Layer 2 is now eligible for the design of
+a new frozen targeted causal protocol; layer 4 remains unresolved and is not a
+candidate. C1 v1 cannot serve that experiment. A new versioned bank must be
+prepared outside the exposed research context and kept untouched until the
+candidate, intervention site and operation, endpoint, controls, and
+multiplicity family are frozen publicly. This eligibility authorizes protocol
+design, not a causal claim.
 
 Phase I still ends with an English paper and a Japanese public summary. The paper must report the mixed layer result, both v1 and post-hoc uncertainty boundaries, the completed descriptive diagnostics, and the remaining causal and replication gates. Its final confirmatory wording, and any replication used to support that wording, must prospectively address analyzer role binding and prototype-resampling dependence.
 

@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -146,7 +146,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - patch, ablate, and restore candidate paths;
 - selectivity and null predictions;
 - held-out confirmation;
-- keep C1 untouched until the complete causal protocol and multiplicity family are public and frozen;
+- retire C1 v1 and prepare a new versioned causal bank outside the exposed
+  research context; keep the replacement untouched until the complete causal
+  protocol and multiplicity family are public and frozen;
 - explicit update of `causal_claim_authorized` based on results.
 
 ### 7. Replication
@@ -167,6 +169,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - E1 family identity is exactly confounded with the middle GPT-2 token, while
   the first and third tokens are shared; its transfer pattern cannot establish
   a semantic or tokenizer-independent family representation.
+- one complete C1 v1 record was exposed in a research-agent context without
+  experimental use; the bank is retired, and future causal work requires a new
+  versioned bank.
 
 ### 9. Reproducibility statement
 
@@ -226,11 +231,12 @@ The parity receipt is an engineering result and must not be counted as an indepe
 
 ## Remaining paper gates
 
-- freeze a targeted layer-2 causal protocol before opening untouched C1; no
-  additional confirmatory bank is required merely to begin protocol design;
+- prepare a new versioned causal bank outside the C1 v1 exposure context, then
+  freeze the complete targeted layer-2 causal protocol before opening it; no
+  additional bank is required merely to begin protocol design;
 - address v1 role binding and prototype-resampling dependence prospectively in
   final-paper confirmatory wording and supporting replication;
-- complete at least one prespecified targeted causal experiment, positive or negative, without opening C1 early;
+- complete at least one prespecified targeted causal experiment, positive or negative, without opening the replacement bank early;
 - complete an independent backend implementation check and at least one model or tokenizer replication appropriate to the final claim;
 - archive the complete raw evidence and checksum it;
 - generate paper tables and figures from versioned scripts;

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "incident_id": "glyphprobe-holdout-exposure-2026-08-07-repository-search-v1",
+  "recorded_at_utc": "2026-08-07T01:52:54Z",
+  "status": "recorded_and_contained",
+  "cause": "A read-only repository-wide text search failed to exclude data/targets and displayed one complete record from each protected v1 bank in a research-agent context.",
+  "exposure": [
+    {
+      "bank_role": "p2_historical_confirmatory_bank",
+      "path": "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "file_sha256": "9913f1c33d611b86ff9f5518fe8203319967187e060b3e6a222ce4e3cf27b324",
+      "record_id": "p2_plan_01",
+      "complete_record_displayed": true,
+      "prompt_text_republished": false,
+      "disposition": "P2 was already historically opened by its frozen Milestone 2 protocol. Preserve this additional access record; do not reuse P2 as an untouched bank."
+    },
+    {
+      "bank_role": "c1_causal_holdout_v1",
+      "path": "data/targets/c1_causal_holdout_targets_v1.jsonl",
+      "file_sha256": "8d63cbcd2dd1aa9fb9a40f0217bbcbadde4309c39582fc06fcae0d5892011986",
+      "record_id": "c1_reason_04",
+      "complete_record_displayed": true,
+      "prompt_text_republished": false,
+      "disposition": "Retire the complete C1 v1 bank from future confirmatory or causal use and prepare a new versioned bank outside the exposed research context."
+    }
+  ],
+  "experimental_use": {
+    "model_forward_count": 0,
+    "tokenizer_access_count": 0,
+    "outcome_analysis_count": 0,
+    "panel_or_endpoint_selection_use": false
+  },
+  "containment": {
+    "responsible_agent_stopped": true,
+    "subsequent_searches_exclude_protected_target_files": true,
+    "prompt_text_omitted_from_public_incident_record": true,
+    "c1_v1_future_scientific_use_authorized": false
+  },
+  "current_mps_transport_impact": "none: the planned Llama 3.2 3B MPS transport study is bound only to the first 24 records of data/targets/prestage_targets.jsonl and does not use P2 or C1"
+}

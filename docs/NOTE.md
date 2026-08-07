@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -67,7 +67,7 @@ were selected so that every matched slot has the same first and third GPT-2
 tokens; only the family-middle token changes. That makes the token structure
 unusually controlled, but it also makes family identity inseparable from the
 middle token. E1 was frozen before five MLX runs and reused only the 24 already
-explored prestage targets. P2 and C1 stayed untouched.
+explored prestage targets. E1 read neither P2 nor C1.
 
 The complete source-family × prototype-family matrices were broadly positive.
 Their 25 mean cells ranged from `0.395455` to `0.484915` at layer 2 and from
@@ -131,19 +131,37 @@ We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retaine
 
 We cannot call this a tokenization-free glyph effect. We cannot say that GPT-2 has a brown-circle concept, that a particular attention head or MLP implements a glyph feature, that the direction carries human-readable meaning, or that the result generalizes to another model. The independent-source arm reuses the same targets and is not independent model or target replication. The completed secondary diagnostics narrow two token-structure questions descriptively; they do not establish equivalence or remove tokenization from the claim.
 
-The summary boundary remains machine-readable: `causal_claim_authorized` is `false`. The C1 causal holdout has not been passed to a model or outcome analysis.
+The summary boundary remains machine-readable: `causal_claim_authorized` is
+`false`. C1 v1 was not passed through an experimental model, tokenizer, or
+outcome analysis, but one record was displayed in a research-agent context by
+an over-broad read-only search. The complete bank is therefore retired; see
+[Holdout status](HOLDOUT_STATUS.md).
 E1 does not change either statement and does not establish a semantic,
 tokenizer-independent, layer-specific, or robust random-control effect.
 
 ## What comes next
 
-Operational Milestone 2 is complete. Layer 2 can now enter the design of a new frozen targeted causal protocol using untouched C1; layer 4 remains unresolved and is not a candidate. This permits protocol design, not a causal claim. E1 does not select or modify that candidate: any focused hypothesis derived from E1 would need its own public protocol and a new untouched target bank that is neither P2 nor C1.
+Operational Milestone 2 is complete. Layer 2 can now enter the design of a new
+frozen targeted causal protocol; layer 4 remains unresolved and is not a
+candidate. This permits protocol design, not a causal claim. Retired C1 v1
+cannot serve that experiment. A new versioned causal bank must be prepared
+outside the exposed research context and remain untouched through the public
+freeze. E1 does not select or modify the layer candidate: any focused
+hypothesis derived from E1 also needs its own public protocol and new untouched
+target bank.
 
-E2 now has a separate engineering choice. We can freeze a Transformers/MPS-only
-scientific route, or design a distinct future MLX engineering program under a
-new public protocol. Neither path has been selected, and the failed v2 and
-Stage-A3 thresholds will not be tuned after the fact.
+For E2, the research owner selected a separate Transformers/MPS-only scientific
+route. Its literal 50-emoji arm and independently centered 35-emoji
+token-structural sensitivity arm are fixed before outcome access in the
+[E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md). This does not
+turn the MLX no-go into a pass, and the failed v2 and Stage-A3 thresholds remain
+unchanged.
 
-C1 stays closed until the candidate, intervention site and operation, endpoint, controls, and multiplicity family are fixed in a sealed patch–ablate–restore protocol. Independent backend and model or tokenizer replication also remain open. Final-paper confirmatory wording and any replication used to support it must prospectively bind scientific roles to frozen inputs and account for data-dependent prototype resampling.
+A future versioned causal bank stays closed until the candidate, intervention
+site and operation, endpoint, controls, and multiplicity family are fixed in a
+sealed patch–ablate–restore protocol. Independent backend and model or tokenizer
+replication also remain open. Final-paper confirmatory wording and any
+replication used to support it must prospectively bind scientific roles to
+frozen inputs and account for data-dependent prototype resampling.
 
 Phase I still ends with an English paper, whether the final pattern is positive, mixed, or negative. That paper must show layer 2 and layer 4 together, distinguish frozen-v1 inference from post-hoc sensitivity, report the completed diagnostics with their descriptive boundary, and connect every statement to a sealed artifact. The first map has become sharper. It has also become harder to overread, which is exactly what the controls were for.

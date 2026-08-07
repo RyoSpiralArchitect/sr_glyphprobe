@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -28,7 +28,8 @@ Status: operationally complete; mixed layer-specific result; final-paper
 inferential qualification remains open.
 
 - the frozen 48-target P2 bank was opened once after public freeze and passing
-  preflight; the separate 48-target C1 causal holdout remains untouched;
+  preflight; C1 v1 was not used in Milestone 2, but is now retired after the
+  separately documented research-context exposure;
 - the colored-shape panel was compared with three disjoint ten-symbol null
   panels matched on the prespecified GPT-2 token count and 9:1 panel-prefix
   structure;
@@ -190,10 +191,10 @@ FP32 route. See the [Stage-A3 result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md),
 [frozen protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md), and
 [receipt](../validation/mlx_llama32_3b_numeric_screen_v1/receipt.json).
 
-Two paths remain, with the research owner's decision pending: create a separate
-Transformers/MPS scientific freeze, or design a distinct future MLX engineering
-program under a new public protocol. Neither path is selected here. The v2 and
-Stage-A3 thresholds will not be relaxed or retuned after the results.
+The research owner selected a separate Transformers/MPS scientific freeze. It
+does not qualify MLX, revise either no-go, or relax the v2 or Stage-A3
+thresholds. A distinct future MLX redesign would still require its own public
+engineering protocol.
 
 Exit condition: one atomic, no-overwrite receipt binds the pinned model and
 configuration identities to complete backend parity and a machine-local MLX
@@ -201,6 +202,33 @@ aggregate median latency no greater than 95% of Transformers/MPS. This exit
 condition remains unmet. V2 and Stage A3 produced the required recorded failure
 evidence, not a qualified MLX route. Even a later passing engineering receipt
 would not by itself complete E2 or a paper gate.
+
+### Scientific side track E2b — Llama 3.2 3B MPS emoji transport
+
+Status: `freeze_pending` until the manifest commit is public. That commit
+establishes the static design; execution then remains `preflight_pending` until
+the zero-model-forward receipt is published as the only change in a descendant
+commit. No scientific outcome exists yet.
+
+- use the pinned `mlx-community/Llama-3.2-3B-bf16` artifact through raw
+  Transformers on MPS with FP32 runtime parameters;
+- run five separately centered and executed ten-emoji family panels as the literal `full50` primary
+  arm and five independently centered seven-emoji panels (`slot_03`–`slot_09`)
+  as the non-rescuing `core35` token-structural sensitivity arm;
+- reuse only the 24 already explored prestage targets and 16 source wrappers;
+  do not read, tokenize, score, or select with P2 or retired C1 v1;
+- bind layers 5 and 11, strength 0.05, seeds 101/211/307, two random controls,
+  exact zero-hook checks, and a 20,000-replicate target-stratified bootstrap;
+- make `full50`, layer 5, equal-family `R_global` the sole primary row. Its
+  status is `transport_criterion_met` only if the two-sided 95% percentile-bootstrap lower
+  endpoint is greater than zero; every other row is secondary and cannot
+  rescue that decision.
+
+The complete design and claim boundary are in the
+[E2 MPS transport protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md). Even a
+positive primary row would support only a bounded, reused-target MPS transport
+observation. It would not establish semantics, tokenizer independence,
+causality, independent-target confirmation, or model-scale generality.
 
 ### Milestone 3 — Targeted causal localization
 
@@ -214,8 +242,9 @@ confirmatory bank is not a prerequisite to designing this protocol.
 - use ablation, restoration, and projection-removal interventions;
 - include negative controls that should leave the candidate fingerprint unchanged;
 - require held-out selective effects rather than a single large drift.
-- keep C1 sealed until the intervention, endpoint, controls, candidate layer,
-  and multiplicity family are frozen in a new public causal protocol.
+- C1 v1 is retired. Prepare a new versioned causal bank outside the exposed
+  research context, and keep it untouched until the intervention, endpoint,
+  controls, candidate layer, and multiplicity family are frozen publicly.
 
 Exit condition: a prespecified intervention selectively changes the candidate effect and survives matched controls. Until then, `causal_claim_authorized` remains false.
 
@@ -268,7 +297,7 @@ Exit condition: every paper claim points to a sealed artifact, every important c
 The manuscript does not advance from draft to preprint until all of the following are true:
 
 1. The exact primary hypothesis and claim boundary are frozen.
-2. A confirmatory target set remains untouched by exploratory selection.
+2. A new versioned confirmatory target set remains untouched by exploratory selection.
 3. Tokenization-matched controls are complete.
 4. At least one targeted causal experiment is complete, whether positive or negative.
 5. At least one independent backend or model replication is complete.

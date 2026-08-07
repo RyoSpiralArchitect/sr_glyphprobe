@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -74,7 +74,7 @@ CountSketchの96、48、32、24次元で、standard-minus-suffix raw separation�
 familyを選び、対応するslotではGPT-2の第1・第3 tokenを共通にして、中間token
 だけをfamilyごとに変えた。Token構造を強く統制できる一方、family identityと
 中間tokenは切り分けられない。5本のMLX runより先に設計を凍結し、すでに
-探索で使った24 targetだけを再利用した。P2とC1には触れていない。
+探索で使った24 targetだけを再利用した。E1はP2とC1のどちらも読み込んでいない。
 
 Source familyとprototype familyを組み合わせた行列は、全体に正だった。
 25 cellの平均値はlayer 2で`0.395455`〜`0.484915`、layer 4で
@@ -132,20 +132,17 @@ no-goを、Llamaや絵文字に関する主張と明確に分けている。
 
 ただし、トークン化から独立したglyph効果とは呼べない。GPT-2に茶色い丸の概念があるとも、特定のattention headやMLPがglyph featureを担うとも、人が読める意味を方向が運んでいるとも、別モデルへ一般化するとも言えない。独立ソース条件は同じターゲットを使っており、独立モデルや独立ターゲットでの再現ではない。完了した二次診断は、2つのトークン構造問題を記述的に絞り込むが、同等性を示さず、主張からトークン化を取り除くものでもない。
 
-`causal_claim_authorized`は、いまも`false`である。C1因果ホールドアウトは、モデル入力にも結果解析にも使っていない。
+`causal_claim_authorized`は、いまも`false`である。C1 v1は実験model、tokenizer、outcome解析には使っていない。ただし、read-only検索の範囲が広すぎたため、1レコードが研究agentの文脈へ表示された。そのためbank全体を廃止した。詳細は[holdout状態](HOLDOUT_STATUS.ja.md)に示す。
 E1もこの境界を変えず、意味、tokenizer非依存性、layer固有性、random controlに
 対する頑健性を確立しない。
 
 ## 次は、因果プロトコルを凍結する
 
-運用上のMilestone 2は完了した。Layer 2は、未使用のC1を使う、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。E1はこの候補を選び直す根拠にはしない。E1から仮説を絞るなら、P2でもC1でもない新しい未使用target bankと、別の公開プロトコルが必要になる。
+運用上のMilestone 2は完了した。Layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。廃止済みC1 v1はこの実験に使えない。露出した研究文脈の外で新しいversionの因果bankを用意し、公開freezeまで未使用に保つ必要がある。E1はこのlayer候補を選び直す根拠にはしない。E1から仮説を絞る場合も、別の公開プロトコルと新しい未使用target bankが必要になる。
 
-E2には、これとは別の技術判断が残った。Transformers/MPS専用の科学プロトコルを
-凍結するか、新しい公開プロトコルの下で将来のMLX engineering計画を別に設計するかで
-ある。どちらを採るかは未決定で、失敗したv2とStage A3の閾値を事後的に調整することも
-しない。
+E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。元の50絵文字armと、別々にcenteringする35絵文字のtoken-structure感度armを、outcomeを見る前に[E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md)へ固定する。これはMLXのno-goをpassに変えず、v2とStage A3の閾値も変更しない。
 
-候補、介入部位と操作、endpoint、対照、多重性familyを、sealed patch–ablate–restoreプロトコルに固定するまで、C1は開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
+将来の新しいversionの因果bankは、候補、介入部位と操作、endpoint、対照、多重性familyをsealed patch–ablate–restoreプロトコルに固定するまで開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 
 Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断を記述的な境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
 

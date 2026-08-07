@@ -94,6 +94,56 @@ class TransformersBackend(Backend):
             major = 4
         return "dtype" if major >= 5 else "torch_dtype"
 
+    @staticmethod
+    def _parameter_dtype_counts(model: Any) -> tuple[dict[str, int], dict[str, int]]:
+        tensor_counts: dict[str, int] = {}
+        element_counts: dict[str, int] = {}
+        for parameter in model.parameters():
+            dtype_name = str(parameter.dtype)
+            tensor_counts[dtype_name] = tensor_counts.get(dtype_name, 0) + 1
+            element_counts[dtype_name] = element_counts.get(dtype_name, 0) + int(
+                parameter.numel()
+            )
+        return dict(sorted(tensor_counts.items())), dict(sorted(element_counts.items()))
+
+    @classmethod
+    def _validate_explicit_parameter_dtype(
+        cls,
+        model: Any,
+        *,
+        requested_dtype: str,
+        resolved_dtype: Any | None,
+    ) -> None:
+        """Fail before first forward when an explicit dtype was not realized."""
+        if requested_dtype == "auto":
+            return
+        if resolved_dtype is None:
+            raise BackendLoadError(
+                "Explicit parameter dtype check could not resolve the requested dtype: "
+                f"requested_dtype={requested_dtype!r}"
+            )
+
+        expected = str(resolved_dtype)
+        tensor_counts, element_counts = cls._parameter_dtype_counts(model)
+        unexpected_tensor_counts = {
+            name: count for name, count in tensor_counts.items() if name != expected
+        }
+        if not unexpected_tensor_counts:
+            return
+        unexpected_element_counts = {
+            name: count for name, count in element_counts.items() if name != expected
+        }
+        raise BackendLoadError(
+            "Explicit parameter dtype check failed before first forward: "
+            f"requested_dtype={requested_dtype!r}, resolved_dtype={expected!r}, "
+            f"parameter_tensor_dtype_counts={tensor_counts!r}, "
+            f"parameter_element_dtype_counts={element_counts!r}, "
+            "unexpected_parameter_tensor_count="
+            f"{sum(unexpected_tensor_counts.values())}, "
+            "unexpected_parameter_element_count="
+            f"{sum(unexpected_element_counts.values())}"
+        )
+
     def load(self) -> None:
         try:
             import torch
@@ -129,6 +179,11 @@ class TransformersBackend(Backend):
         self.model = AutoModelForCausalLM.from_pretrained(self.config.model, **model_kwargs)
         if "device_map" not in model_kwargs:
             self.model.to(self.device)
+        self._validate_explicit_parameter_dtype(
+            self.model,
+            requested_dtype=self.config.dtype,
+            resolved_dtype=dtype,
+        )
         self.model.eval()
 
         artifact_root: Any = None
@@ -495,6 +550,13 @@ class TransformersBackend(Backend):
     def model_receipt(self) -> dict[str, Any]:
         receipt = super().model_receipt()
         cfg = self.model.config if self.model is not None else None
+        parameter_tensor_dtype_counts: dict[str, int] = {}
+        parameter_element_dtype_counts: dict[str, int] = {}
+        if self.model is not None:
+            (
+                parameter_tensor_dtype_counts,
+                parameter_element_dtype_counts,
+            ) = self._parameter_dtype_counts(self.model)
         receipt.update(
             {
                 "backend_class": type(self).__name__,
@@ -508,6 +570,8 @@ class TransformersBackend(Backend):
                     if self.model is not None
                     else None
                 ),
+                "parameter_tensor_dtype_counts": parameter_tensor_dtype_counts,
+                "parameter_element_dtype_counts": parameter_element_dtype_counts,
                 "commit_hash": getattr(cfg, "_commit_hash", None) if cfg is not None else None,
                 "model_locator": self.model_locator,
                 "model_artifact": self.model_artifact,

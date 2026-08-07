@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -174,6 +174,7 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - 中立グリフとのトークン長差
 - Milestone 2のmatched panelはtoken identityではなく、token countとパネル単位のprefix構造を揃えた対照であること
 - E1ではfamily identityと中間GPT-2 tokenが完全に交絡し、第1・第3 tokenを共有しているため、意味上またはtokenizer非依存のfamily表現を同定できないこと
+- C1 v1の完全な1レコードが、実験に使われないまま研究agentの文脈へ露出したこと。Bankは廃止済みで、将来の因果実験には新しいversionのbankが必要であること
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
 - 置換p値の有限下限と多重性
@@ -227,9 +228,9 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 
 ## 残る論文ゲート
 
-- 未使用のC1を開く前に、layer 2を対象とする因果プロトコルを凍結する。プロトコル設計の着手だけを目的とした追加確認bankは求めない。
+- C1 v1の露出文脈の外で新しいversionの因果bankを用意し、それを開く前にlayer 2を対象とする完全な因果プロトコルを凍結する。プロトコル設計の着手だけを目的とした追加bankは求めない。
 - 論文での最終的な確認表現と、それを支える再現実験では、v1のrole bindingとprototype再標本化依存に事前に対処する。
-- 正負を問わず、事前指定した因果実験を少なくとも1件完了する。C1を早く開かない。
+- 正負を問わず、事前指定した因果実験を少なくとも1件完了する。新しいbankを早く開かない。
 - 独立backendの実装確認と、最終主張に見合う別modelまたはtokenizerでの再現を完了する。
 - 完全なraw evidenceをarchiveし、checksumを付ける。
 - 論文の表と図をversion管理したscriptから生成する。
@@ -241,7 +242,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 
 ## 執筆開始前のチェック
 
-- C1を開く前に、layer 2の候補、介入、endpoint、対照、多重性familyを因果プロトコルへ凍結したか
+- 新しいversionのbankを開く前に、layer 2の候補、介入、endpoint、対照、多重性familyを因果プロトコルへ凍結したか
 - 主要評価量と多重性管理を事前固定したか
 - 実行したトークン数・接頭構造matched controlsと、事後的・記述的な二次診断を正確に区別したか
 - 正・非正・失敗セルをすべて表に入れたか

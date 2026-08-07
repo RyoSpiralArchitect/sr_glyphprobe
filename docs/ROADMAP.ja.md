@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -26,7 +26,7 @@ Phase Iを通して、リポジトリで作成する公開文書は英語版と�
 
 状態: 運用上は完了。結果はレイヤーごとに分かれ、論文での最終的な推論上の位置づけは未確定。
 
-- 公開凍結と事前検査の合格後、48件のP2バンクを一度だけ開いた。別に凍結した48件のC1因果ホールドアウトは未使用のまま残した。
+- 公開凍結と事前検査の合格後、48件のP2バンクを一度だけ開いた。C1 v1はMilestone 2では使わなかったが、別に記録した研究文脈への露出により、現在は廃止済みである。
 - 色付き図形パネルを、指定済みのGPT-2トークン数と、パネル単位の9対1の接頭構造を揃えた、互いに重ならない10記号のnull対照パネル3組と比較した。
 - token IDを完全に一致させる対照は主張の範囲外とする。同じtoken ID列は同じ入力byte列へ復号されるため、ここで行うのはトークン化の影響を除去したglyph試験ではなく、指定済み対照に対する頑健性試験である。
 - 主要仮説はlayer 2とlayer 4、strength 0.05に固定し、direction seedは各target内で平均した。
@@ -123,16 +123,25 @@ FP32経路を適格とは扱わない。詳細は [Stage A3結果](LLAMA32_3B_ML
 [凍結済みプロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md)、
 [レシート](../validation/mlx_llama32_3b_numeric_screen_v1/receipt.json) に記録した。
 
-次の経路は2つある。Transformers/MPS専用の科学プロトコルを別に凍結するか、新しい
-公開プロトコルの下で将来のMLX engineering計画を別に設計するかである。選択は研究責任者の
-判断待ちで、本書ではどちらも選ばない。結果を見た後でv2やStage A3の閾値を緩めたり、
-調整したりもしない。
+研究責任者は、Transformers/MPS専用の科学経路を別に選択した。これはMLXを適格にせず、2つのno-goを書き換えず、v2とStage A3の閾値も緩和しない。将来MLXを再設計する場合は、別の公開engineeringプロトコルが必要である。
 
 終了条件: 固定model/configuration identityを、完全なbackend parityおよび
 Transformers/MPSの95%以下となるmachine-localなMLX aggregate median latencyへ
 結び付けたatomic・no-overwrite receiptを1件作る。現時点では未達である。
 V2とStage A3が残したのは、要件を満たさないことを示すfailure evidenceであり、MLX経路の適格性ではない。
 将来engineering receiptが合格しても、それだけではE2も論文gateも完了しない。
+
+### 科学side track E2b — Llama 3.2 3B MPS絵文字transport
+
+状態: manifest commitが公開されるまでは`freeze_pending`とする。そのcommitでstatic designを固定した後も、model forwardを伴わないpreflight receiptだけを変更した子commitとして公開するまでは`preflight_pending`であり、実行しない。科学的outcomeはまだ存在しない。
+
+- 固定した`mlx-community/Llama-3.2-3B-bf16` artifactを、raw Transformers、MPS、FP32 runtime parameterで使う。
+- 10絵文字の5 family panelを`full50` primary armとし、`slot_03`〜`slot_09`の7絵文字panelを5本別々にcenteringする`core35` token-structure感度armとする。
+- すでに探索したprestage target 24件とsource wrapper 16件だけを再利用する。P2と廃止済みC1 v1は、read、tokenize、score、selectのいずれにも使わない。
+- Layer 5と11、strength 0.05、seed 101 / 211 / 307、random control 2本、厳密なzero-hook検査、target groupで層化した20,000回bootstrapを固定する。
+- `full50`のlayer 5におけるfamily等重み`R_global`を唯一のprimary rowとする。両側95% percentile bootstrap区間の下端が0より大きいときだけ`transport_criterion_met`とする。その他のrowはsecondaryで、primary判定を救済しない。
+
+完全な設計と主張境界は[E2 MPS transportプロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md)に示す。Primary rowが正でも、探索済みtargetを再利用したMPS上の限定transport観測である。意味、tokenizer非依存性、因果、独立targetでの確認、model scaleへの一般化は確立しない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -143,7 +152,7 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 - ablation、restoration、projection-removal介入を用いる。
 - 候補fingerprintを変えないはずのnegative controlを含める。
 - 一度の大きなdriftではなく、holdout上での選択的効果を要求する。
-- 介入、endpoint、対照、候補layer、多重性familyを新しい公開因果プロトコルに凍結するまで、C1は開かない。
+- C1 v1は廃止済みである。露出した研究文脈の外で新しいversionの因果bankを作り、介入、endpoint、対照、候補layer、多重性familyを公開凍結するまで未使用に保つ。
 
 終了条件: 事前指定した介入が候補効果を選択的に変え、matched controlsを通過すること。それまでは`causal_claim_authorized`を`false`のまま保つ。
 
@@ -193,7 +202,7 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 次の条件をすべて満たすまで、論文をdraftからpreprintへ進めません。
 
 1. primary hypothesisと主張境界を正確に凍結する。
-2. 確認用target setを探索的な選択に触れさせない。
+2. 新しいversionの確認用target setを探索的な選択に触れさせない。
 3. トークン化を揃えた対照実験を完了する。
 4. 正負を問わず、対象を絞った因果実験を少なくとも1件完了する。
 5. 独立したbackendまたはmodelでの再現を少なくとも1件完了する。

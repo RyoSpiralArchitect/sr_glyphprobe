@@ -1,0 +1,29 @@
+items:
+  - id: animals_slot_03
+    glyph: "🐔"
+    factors: {family: animals, matched_slot: slot_03, codepoint: U+1F414}
+    labels: [chicken]
+  - id: animals_slot_04
+    glyph: "🐕"
+    factors: {family: animals, matched_slot: slot_04, codepoint: U+1F415}
+    labels: [dog]
+  - id: animals_slot_05
+    glyph: "🐖"
+    factors: {family: animals, matched_slot: slot_05, codepoint: U+1F416}
+    labels: [pig]
+  - id: animals_slot_06
+    glyph: "🐗"
+    factors: {family: animals, matched_slot: slot_06, codepoint: U+1F417}
+    labels: [boar]
+  - id: animals_slot_07
+    glyph: "🐘"
+    factors: {family: animals, matched_slot: slot_07, codepoint: U+1F418}
+    labels: [elephant]
+  - id: animals_slot_08
+    glyph: "🐙"
+    factors: {family: animals, matched_slot: slot_08, codepoint: U+1F419}
+    labels: [octopus]
+  - id: animals_slot_09
+    glyph: "🐚"
+    factors: {family: animals, matched_slot: slot_09, codepoint: U+1F41A}
+    labels: [spiral_shell]

@@ -1,0 +1,572 @@
+{
+  "analysis": {
+    "analysis_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v1",
+    "bootstrap": {
+      "group_stratified": true,
+      "joint_across_arms_layers_endpoints_and_pairs": true,
+      "rebuild_loto_prototypes_inside_each_replicate": true,
+      "replicates": 20000,
+      "sampling_unit": "target_prompt_cluster",
+      "seed": 20260808
+    },
+    "e1_math_dependency": {
+      "path": "scripts/analyze_emoji_family_exploratory_v1.py",
+      "sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4"
+    },
+    "expected_intervention_rows": 15600,
+    "expected_output_rows": {
+      "family_cell_summary.jsonl": 20,
+      "panel_target_scores.jsonl": 480,
+      "transfer_cell_summary.jsonl": 80,
+      "transfer_target_scores.jsonl": 1920
+    },
+    "expected_total_forward_calls": 17360,
+    "output_filenames": [
+      "panel_target_scores.jsonl",
+      "transfer_target_scores.jsonl",
+      "family_cell_summary.jsonl",
+      "transfer_cell_summary.jsonl",
+      "llama32_3b_mps_emoji_transport_receipt.json",
+      "report.md"
+    ],
+    "output_unique_keys": {
+      "family_cell_summary.jsonl": [
+        "panel_arm",
+        "family",
+        "layer"
+      ],
+      "panel_target_scores.jsonl": [
+        "panel_arm",
+        "family",
+        "layer",
+        "target_id"
+      ],
+      "transfer_cell_summary.jsonl": [
+        "panel_arm",
+        "source_family",
+        "prototype_family",
+        "layer"
+      ],
+      "transfer_target_scores.jsonl": [
+        "panel_arm",
+        "source_family",
+        "prototype_family",
+        "layer",
+        "target_id"
+      ]
+    },
+    "primary_criterion": {
+      "endpoint_id": "equal_family_global_specificity_R_global",
+      "id": "H_E2_1_full50_layer5_R_global_positive",
+      "layer": 5,
+      "panel_arm": "full50",
+      "rule": "ci95_lower_gt_zero"
+    },
+    "script_path": "scripts/analyze_llama32_3b_mps_emoji_transport_v1.py",
+    "script_sha256": "c6ea226da99f974298859b63fa34f2769548f452ee79fb5d63755d99eb510b90"
+  },
+  "architecture": {
+    "config_class": "LlamaConfig",
+    "hidden_size": 3072,
+    "num_hidden_layers": 28,
+    "vocab_size": 128256
+  },
+  "arms": {
+    "core35": {
+      "animals": {
+        "config_path": "configs/e2_llama32_3b_mps_core35_animals_v1.yaml",
+        "config_sha256": "f75468139267c298d96260e917e99a76921e76b808aae7200c81ca5286ea9104",
+        "panel_path": "data/emoji_panels/e2_core35_animals.yaml",
+        "panel_sha256": "9d3f2fb5bccc5baffc0608ce5198b5f2cfffd6fb44c823ef32a6e6d72f410d42",
+        "role": "animals",
+        "run_name": "e2-llama32-3b-mps-core35-animals-transport-v1"
+      },
+      "centering": "independent_panel_centroid",
+      "conditions_per_family": 7,
+      "food": {
+        "config_path": "configs/e2_llama32_3b_mps_core35_food_v1.yaml",
+        "config_sha256": "5f00cae9d2e0cee25892a9cf4214b7576234df7c5042bb2d1de5a81e12353775",
+        "panel_path": "data/emoji_panels/e2_core35_food.yaml",
+        "panel_sha256": "1ef31f7cb863e65746522a9e5f0456eb79eac5205ad8b0748d7a18117a38ad1e",
+        "role": "food",
+        "run_name": "e2-llama32-3b-mps-core35-food-transport-v1"
+      },
+      "matched_slots": [
+        "slot_03",
+        "slot_04",
+        "slot_05",
+        "slot_06",
+        "slot_07",
+        "slot_08",
+        "slot_09"
+      ],
+      "sky": {
+        "config_path": "configs/e2_llama32_3b_mps_core35_sky_v1.yaml",
+        "config_sha256": "da683b7584d3e6c222c1467ac779f2a8af45a0c3504ba907814ec342deccc17a",
+        "panel_path": "data/emoji_panels/e2_core35_sky.yaml",
+        "panel_sha256": "ab1f085a31bdbb809423a5dee5b6bdc996638555ee274535ac1b4f922482926c",
+        "role": "sky",
+        "run_name": "e2-llama32-3b-mps-core35-sky-transport-v1"
+      },
+      "social": {
+        "config_path": "configs/e2_llama32_3b_mps_core35_social_v1.yaml",
+        "config_sha256": "ac5c5129d9c10cd713ce50e20281ebeb0595e5802c82afb12b1aa3c92bd6e8a4",
+        "panel_path": "data/emoji_panels/e2_core35_social.yaml",
+        "panel_sha256": "db4a5fdfdc75af562a34cced0109a8d6c7f143b7e74508d9b67a86c30c18f328",
+        "role": "social",
+        "run_name": "e2-llama32-3b-mps-core35-social-transport-v1"
+      },
+      "transport": {
+        "config_path": "configs/e2_llama32_3b_mps_core35_transport_v1.yaml",
+        "config_sha256": "e1132f0f7e2addf82db2ba1159dee93471cde55397e27ec5bdce67a0abd229e1",
+        "panel_path": "data/emoji_panels/e2_core35_transport.yaml",
+        "panel_sha256": "aa83f211378c649bc3239598e0ab991bc2f82eb8e8b129a03e3a5adeaa71d0cb",
+        "role": "transport",
+        "run_name": "e2-llama32-3b-mps-core35-transport-transport-v1"
+      }
+    },
+    "full50": {
+      "animals": {
+        "config_path": "configs/e2_llama32_3b_mps_full50_animals_v1.yaml",
+        "config_sha256": "e43d978bedda954cd3ec99f3b1fd06302f9a790874b39589dd4b6a57bd2cf68b",
+        "panel_path": "data/emoji_panels/e1_animals.yaml",
+        "panel_sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+        "role": "animals",
+        "run_name": "e2-llama32-3b-mps-full50-animals-transport-v1"
+      },
+      "centering": "independent_panel_centroid",
+      "conditions_per_family": 10,
+      "food": {
+        "config_path": "configs/e2_llama32_3b_mps_full50_food_v1.yaml",
+        "config_sha256": "6dc65e94d0ce9d2a7efff662f1217a4f29ede24919f0396f4480324274130a21",
+        "panel_path": "data/emoji_panels/e1_food.yaml",
+        "panel_sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+        "role": "food",
+        "run_name": "e2-llama32-3b-mps-full50-food-transport-v1"
+      },
+      "matched_slots": [
+        "slot_00",
+        "slot_01",
+        "slot_02",
+        "slot_03",
+        "slot_04",
+        "slot_05",
+        "slot_06",
+        "slot_07",
+        "slot_08",
+        "slot_09"
+      ],
+      "sky": {
+        "config_path": "configs/e2_llama32_3b_mps_full50_sky_v1.yaml",
+        "config_sha256": "09574f012bc485b16a1496168aaff08c38891cf7c02fbd1e77913a92ea687dad",
+        "panel_path": "data/emoji_panels/e1_sky_moon.yaml",
+        "panel_sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+        "role": "sky",
+        "run_name": "e2-llama32-3b-mps-full50-sky-transport-v1"
+      },
+      "social": {
+        "config_path": "configs/e2_llama32_3b_mps_full50_social_v1.yaml",
+        "config_sha256": "9cd759cafc9592c58b2efdcd772b9fadb37a44ea4a078467c2968cb7d8351244",
+        "panel_path": "data/emoji_panels/e1_social.yaml",
+        "panel_sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+        "role": "social",
+        "run_name": "e2-llama32-3b-mps-full50-social-transport-v1"
+      },
+      "transport": {
+        "config_path": "configs/e2_llama32_3b_mps_full50_transport_v1.yaml",
+        "config_sha256": "5ed5351ab040fcffe3981200392aa3777caca6058f41985ff7a0b27a1c2b51c9",
+        "panel_path": "data/emoji_panels/e1_transport.yaml",
+        "panel_sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+        "role": "transport",
+        "run_name": "e2-llama32-3b-mps-full50-transport-transport-v1"
+      }
+    }
+  },
+  "environment": {
+    "glyphprobe_version": "0.1.0",
+    "machine": "arm64",
+    "numpy_version": "2.4.4",
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "python_version": "3.13.13",
+    "torch_mps_available": true,
+    "torch_mps_built": true,
+    "torch_version": "2.11.0",
+    "transformers_version": "4.57.6"
+  },
+  "files": [
+    {
+      "path": "artifacts/llama32_3b_mps_emoji_transport_v1/README.ja.md",
+      "sha256": "9560da5660bd21bbc5bddb012bc9493d8cbc9b54d51ded3ea0d8ec1044d27bef"
+    },
+    {
+      "path": "artifacts/llama32_3b_mps_emoji_transport_v1/README.md",
+      "sha256": "795bc9e9ea442b91e950577c36962f7d856a918bd016b65844c02c41024ad8df"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_core35_animals_v1.yaml",
+      "sha256": "f75468139267c298d96260e917e99a76921e76b808aae7200c81ca5286ea9104"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_core35_food_v1.yaml",
+      "sha256": "5f00cae9d2e0cee25892a9cf4214b7576234df7c5042bb2d1de5a81e12353775"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_core35_sky_v1.yaml",
+      "sha256": "da683b7584d3e6c222c1467ac779f2a8af45a0c3504ba907814ec342deccc17a"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_core35_social_v1.yaml",
+      "sha256": "ac5c5129d9c10cd713ce50e20281ebeb0595e5802c82afb12b1aa3c92bd6e8a4"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_core35_transport_v1.yaml",
+      "sha256": "e1132f0f7e2addf82db2ba1159dee93471cde55397e27ec5bdce67a0abd229e1"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_full50_animals_v1.yaml",
+      "sha256": "e43d978bedda954cd3ec99f3b1fd06302f9a790874b39589dd4b6a57bd2cf68b"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_full50_food_v1.yaml",
+      "sha256": "6dc65e94d0ce9d2a7efff662f1217a4f29ede24919f0396f4480324274130a21"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_full50_sky_v1.yaml",
+      "sha256": "09574f012bc485b16a1496168aaff08c38891cf7c02fbd1e77913a92ea687dad"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_full50_social_v1.yaml",
+      "sha256": "9cd759cafc9592c58b2efdcd772b9fadb37a44ea4a078467c2968cb7d8351244"
+    },
+    {
+      "path": "configs/e2_llama32_3b_mps_full50_transport_v1.yaml",
+      "sha256": "5ed5351ab040fcffe3981200392aa3777caca6058f41985ff7a0b27a1c2b51c9"
+    },
+    {
+      "path": "data/emoji_panels/e1_animals.yaml",
+      "sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5"
+    },
+    {
+      "path": "data/emoji_panels/e1_food.yaml",
+      "sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3"
+    },
+    {
+      "path": "data/emoji_panels/e1_sky_moon.yaml",
+      "sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1"
+    },
+    {
+      "path": "data/emoji_panels/e1_social.yaml",
+      "sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6"
+    },
+    {
+      "path": "data/emoji_panels/e1_transport.yaml",
+      "sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f"
+    },
+    {
+      "path": "data/emoji_panels/e2_core35_animals.yaml",
+      "sha256": "9d3f2fb5bccc5baffc0608ce5198b5f2cfffd6fb44c823ef32a6e6d72f410d42"
+    },
+    {
+      "path": "data/emoji_panels/e2_core35_food.yaml",
+      "sha256": "1ef31f7cb863e65746522a9e5f0456eb79eac5205ad8b0748d7a18117a38ad1e"
+    },
+    {
+      "path": "data/emoji_panels/e2_core35_sky.yaml",
+      "sha256": "ab1f085a31bdbb809423a5dee5b6bdc996638555ee274535ac1b4f922482926c"
+    },
+    {
+      "path": "data/emoji_panels/e2_core35_social.yaml",
+      "sha256": "db4a5fdfdc75af562a34cced0109a8d6c7f143b7e74508d9b67a86c30c18f328"
+    },
+    {
+      "path": "data/emoji_panels/e2_core35_transport.yaml",
+      "sha256": "aa83f211378c649bc3239598e0ab991bc2f82eb8e8b129a03e3a5adeaa71d0cb"
+    },
+    {
+      "path": "data/targets/prestage_targets.jsonl",
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    {
+      "path": "data/wrappers/source_wrappers.jsonl",
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    {
+      "path": "docs/HOLDOUT_STATUS.ja.md",
+      "sha256": "68a67169cb0d1e64b416208a3acccf98934b872998ffd2bd7d252cb319c9f163"
+    },
+    {
+      "path": "docs/HOLDOUT_STATUS.md",
+      "sha256": "13368888e0a60b6729180c93c5a112fffed766d13f33e53292375608149e68c1"
+    },
+    {
+      "path": "docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md",
+      "sha256": "95d50f7a432df79fb1d72635b44609bb775cfa3fff31d6616ebf92aa87abc26b"
+    },
+    {
+      "path": "docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md",
+      "sha256": "9437465cfb63696822e0298f7b951403f3c3cce23802c7910974307a7b9b2831"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "e1a203c941c97e2130df9803f56823af78be09d70d168a375f33db5f2445b602"
+    },
+    {
+      "path": "scripts/analyze_emoji_family_exploratory_v1.py",
+      "sha256": "0f40dde0880bf8aaffa0224d0d0363a9127b00f99f8b99fe35395762c9d4bef4"
+    },
+    {
+      "path": "scripts/analyze_llama32_3b_mps_emoji_transport_v1.py",
+      "sha256": "c6ea226da99f974298859b63fa34f2769548f452ee79fb5d63755d99eb510b90"
+    },
+    {
+      "path": "scripts/audit_llama32_3b_mps_emoji_transport_v1.py",
+      "sha256": "c39165d1712e4226e4b31c29865321cd4cc4d9161b21c9f47772f3004d19ab69"
+    },
+    {
+      "path": "scripts/build_llama32_3b_mps_emoji_transport_v1_bundle.py",
+      "sha256": "cdc14c8573269a88024afa94182ca3b4a64da4abbe10eee5a1270a903f5d972c"
+    },
+    {
+      "path": "scripts/run_llama32_3b_mps_emoji_transport_v1.py",
+      "sha256": "ef5ac29c5e91454f6a0bc0d16cf26fbeb6e120305b0bdc6ce504dc41aa33619b"
+    },
+    {
+      "path": "scripts/validate_llama32_3b_mps_emoji_transport_v1_bundle.py",
+      "sha256": "5c0842f9a7907a6da5462796250e35101249798b20dc5909cd3b1eb859346324"
+    },
+    {
+      "path": "src/glyphprobe/backends/transformers_backend.py",
+      "sha256": "80feffe347daa1ca068c3cf87c6fbc6c5a93b376be16a3db44bd7581c0389ca2"
+    },
+    {
+      "path": "tests/test_analyze_llama32_3b_mps_emoji_transport_v1.py",
+      "sha256": "7f80dd03d5a19a60950768a67f407b241a16dbd878a78e11ac0f6c8c17fbf3ab"
+    },
+    {
+      "path": "tests/test_llama32_3b_mps_emoji_transport_v1.py",
+      "sha256": "83680d58f77eb9f3019108a96cc5a3312f4bad5884368e3ae1f91899f1721bf3"
+    },
+    {
+      "path": "tests/test_llama32_3b_mps_emoji_transport_v1_bundle.py",
+      "sha256": "27c10914618f7d266c065dffe0ed082ee342e9f7a8f0d8a316d3caf8e4d33934"
+    },
+    {
+      "path": "tests/test_transformers_explicit_dtype_guard.py",
+      "sha256": "a0ee012c8267332d286892071d5819057e05316748ca3f5aae32017dcf87337c"
+    },
+    {
+      "path": "validation/holdout_exposure_incidents/2026-08-07-repository-search.json",
+      "sha256": "1279bc7657c33a95d639ff48c9af8e61837a714479109b8147394e5b379e38be"
+    }
+  ],
+  "fixed_cell": {
+    "backend": {
+      "add_special_tokens": false,
+      "device": "mps",
+      "dtype": "float32",
+      "kind": "transformers",
+      "local_files_only": true,
+      "model": "mlx-community/Llama-3.2-3B-bf16",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "trust_remote_code": false
+    },
+    "capture": {
+      "layers": [
+        5,
+        11
+      ],
+      "position": "last_nonpad",
+      "return_attentions": false,
+      "site": "resid_post"
+    },
+    "controls": {
+      "include_neutral_direction": false,
+      "label_shuffle_permutations": 0,
+      "random_directions_per_layer": 2,
+      "sign_flip": false,
+      "sign_flip_strengths": [],
+      "zero_direction": true
+    },
+    "environment": {
+      "cuda_visible_devices": null,
+      "machine": "arm64",
+      "packages": {
+        "glyphprobe": "0.1.0",
+        "mlx": "0.31.1",
+        "mlx-lm": "0.31.2",
+        "numpy": "2.4.4",
+        "openai": "2.45.0",
+        "pydantic": "2.12.5",
+        "sae-lens": null,
+        "scipy": "1.17.1",
+        "torch": "2.11.0",
+        "transformer-lens": null,
+        "transformers": "4.57.6"
+      },
+      "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+      "processor": "arm",
+      "python": "3.13.13 (v3.13.13:01104ce1beb, Apr  7 2026, 14:43:30) [Clang 16.0.0 (clang-1600.0.26.6)]"
+    },
+    "intervention": {
+      "clip": {
+        "max_ratio": 0.25,
+        "mode": "global_rms"
+      },
+      "iso_kl_enabled": false,
+      "mode": "activation_add",
+      "normalization": "rms",
+      "position": "last_nonpad",
+      "strengths": [
+        0.05
+      ]
+    },
+    "layers": [
+      5,
+      11
+    ],
+    "metrics": {
+      "epsilon": 1e-12,
+      "fingerprint_dim": 96,
+      "fingerprint_seed": 8675309,
+      "rbo_p": 0.9,
+      "save_fingerprints": true,
+      "save_top_logit_deltas": 32,
+      "split_half_repeats": 200,
+      "top_k": 50
+    },
+    "mode": "internal",
+    "panel": {
+      "centroid_mode": "panel",
+      "neutral_glyph": "🟰"
+    },
+    "run": {
+      "fail_fast": true,
+      "replicate_mode": "wrapper_subsample",
+      "resume": false,
+      "seeds": [
+        101,
+        211,
+        307
+      ],
+      "wrapper_subsample_fraction": 0.75
+    },
+    "run_implementation_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa",
+    "sae_enabled": false,
+    "source": {
+      "anchor_position": "last_nonpad",
+      "max_wrappers": 16
+    },
+    "surface": {
+      "emoji_template": "{emoji}\n{prompt}",
+      "neutral_template": "{prompt}",
+      "system_prompt": null
+    },
+    "targets": {
+      "calibration_cases": 6,
+      "max_cases": 24
+    }
+  },
+  "manifest_id": "llama32_3b_mps_emoji_transport_v1",
+  "model_artifact": {
+    "file_count": 9,
+    "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+    "model": "mlx-community/Llama-3.2-3B-bf16",
+    "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+    "total_bytes": 6434705789
+  },
+  "protocol_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v1",
+  "schema_version": 1,
+  "shared_inputs": {
+    "model_artifact": {
+      "file_count": 9,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "model": "mlx-community/Llama-3.2-3B-bf16",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "total_bytes": 6434705789
+    },
+    "source": {
+      "ordered_ids": [
+        "w01_mark_anchor",
+        "w02_bracket_continue",
+        "w03_pipe_next",
+        "w04_token_state",
+        "w05_begin_end",
+        "w06_binary_result",
+        "w07_symbol_following",
+        "w08_pair_q",
+        "w09_input_response",
+        "w10_sequence_continuation",
+        "w11_field_anchor",
+        "w12_list_next",
+        "w13_left_right",
+        "w14_codepoint_text",
+        "w15_observation_inference",
+        "w16_slot_completion"
+      ],
+      "path": "data/wrappers/source_wrappers.jsonl",
+      "selected_record_count": 16,
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    "target": {
+      "file_record_count": 32,
+      "ordered_selected_groups": [
+        "continuation",
+        "continuation",
+        "continuation",
+        "continuation",
+        "factual",
+        "factual",
+        "factual",
+        "factual",
+        "reasoning",
+        "reasoning",
+        "reasoning",
+        "reasoning",
+        "procedural",
+        "procedural",
+        "procedural",
+        "procedural",
+        "classification",
+        "classification",
+        "classification",
+        "classification",
+        "planning",
+        "planning",
+        "planning",
+        "planning"
+      ],
+      "ordered_selected_ids": [
+        "cont_01",
+        "cont_02",
+        "cont_03",
+        "cont_04",
+        "fact_01",
+        "fact_02",
+        "fact_03",
+        "fact_04",
+        "reason_01",
+        "reason_02",
+        "reason_03",
+        "reason_04",
+        "proc_01",
+        "proc_02",
+        "proc_03",
+        "proc_04",
+        "class_01",
+        "class_02",
+        "class_03",
+        "class_04",
+        "plan_01",
+        "plan_02",
+        "plan_03",
+        "plan_04"
+      ],
+      "path": "data/targets/prestage_targets.jsonl",
+      "selected_record_count": 24,
+      "selected_slice_sha256": "26d42a9be61d9b6a28acf18f18b9b1d771f0f4531b3a576112ba0f6add76713b",
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    }
+  },
+  "status_after_publication": "static_frozen_preflight_pending",
+  "status_before_publication": "freeze_pending"
+}

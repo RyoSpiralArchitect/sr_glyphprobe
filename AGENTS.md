@@ -56,24 +56,33 @@ Phase I の到達点は、再現可能で反証可能な英語論文である。
 
 ## Frozen holdouts / 凍結ホールドアウト
 
-Treat `data/targets/p2_confirmatory_targets_v1.jsonl` as a one-shot Milestone 2
-confirmatory bank. Do not use it for implementation debugging, control design,
-threshold tuning, layer or strength selection, or intervention-site exploration.
-It may be opened only by the exact frozen P2 configs after the public protocol
-freeze and all preflight checks pass.
+`data/targets/p2_confirmatory_targets_v1.jsonl` was the one-shot confirmatory bank
+used by Milestone 2. That one-shot use is complete. Preserve it as historical
+evidence; do not reopen or reuse it for implementation debugging, control
+design, threshold tuning, layer or strength selection, intervention-site
+exploration, confirmation, or causality. Only content-blind file existence,
+size, and hash checks are allowed.
 
-`data/targets/c1_causal_holdout_targets_v1.jsonl` is stricter: do not pass it to
-any model, tokenizer-driven selection process, or outcome analysis until a new
-C1 causal protocol has frozen the intervention, endpoint, controls, and
-multiplicity family. Structural hash/schema checks that do not inspect model
-outcomes are allowed. Never overwrite either v1 bank.
+`data/targets/c1_causal_holdout_targets_v1.jsonl` is retired from future
+confirmatory or causal use. On 2026-08-07, one complete C1 record was exposed to
+a research-agent context by an over-broad repository search. No experimental
+model forward, tokenizer pass, or outcome analysis used it, but the bank can no
+longer be described as fully untouched. Preserve the file as historical
+evidence; do not read, sample, tokenize, model-forward, or analyze it. Only
+content-blind file existence, size, and hash checks are allowed. A future C1
+experiment requires a new versioned bank prepared outside the exposed research
+context. Never overwrite either v1 bank.
 
-`data/targets/p2_confirmatory_targets_v1.jsonl` は、Milestone 2 で一度だけ使う
-確認用bankとして扱う。実装debug、対照設計、閾値調整、layer・strength選択、
-介入点探索には使わない。公開プロトコルの凍結後、すべての事前検査を通過した
-場合に限り、凍結済みP2 configから開くことができる。
+`data/targets/p2_confirmatory_targets_v1.jsonl` は、Milestone 2で使用済みの
+一度限りの確認用bankである。その使用は完了した。歴史的証拠として保存し、
+実装debug、対照設計、閾値調整、layer・strength選択、介入点探索、確認、
+因果実験のいずれにも再度開いたり再利用したりしない。内容を見ないfile存在、
+size、hash検査だけを許可する。
 
-`data/targets/c1_causal_holdout_targets_v1.jsonl` にはさらに厳しい制約を置く。
-介入、endpoint、対照、多重性familyを新しいC1因果プロトコルで凍結するまで、
-モデル入力、tokenizerを用いた選別、結果解析に使わない。モデル結果を見ない
-構造・hash・schema検査だけは許可する。どちらのv1 bankも上書きしない。
+`data/targets/c1_causal_holdout_targets_v1.jsonl` は、今後の確認・因果実験には
+使用しない。2026-08-07、リポジトリ検索の範囲が広すぎたため、C1の完全な1レコードが
+研究agentの文脈へ表示された。実験modelのforward、tokenizer処理、outcome解析には
+使っていないが、このbankを完全な未露出とは呼べない。Fileは歴史的証拠として保存し、
+読み込み、sampling、tokenize、model forward、解析を禁止する。内容を見ないfile存在、
+size、hash検査だけを許可する。将来のC1実験では、露出した研究文脈の外で新しいversionの
+bankを作る。どちらのv1 bankも上書きしない。

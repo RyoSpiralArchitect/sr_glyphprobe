@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [E2 MPS transport protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -71,8 +71,9 @@ Their random-adjusted headline advantages were +0.751225 (suffix-matched) and
 the paired diagnostic comparison. At 96 dimensions, the descriptive
 standard-minus-diagnostic median was +0.002624 for suffix matching (20/36 cells
 positive) and +0.022096 for prefix homogenization (25/36 positive). These
-post-hoc diagnostics are not inferential or equivalence tests, and C1 remains
-untouched.
+post-hoc diagnostics are not inferential or equivalence tests. C1 v1 was not
+used by those experiments, but it is now retired after the separately recorded
+research-context exposure described in [Holdout status](docs/HOLDOUT_STATUS.md).
 
 For runtime provenance, the first matched-null A process was externally
 interrupted after 798 rows under severe machine load. A sealed resume completed
@@ -147,10 +148,12 @@ was run or authorized, and the v2 failure remains unchanged. See the
 [Stage-A3 result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md),
 [frozen numeric-screen protocol](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md), and
 [atomic receipt](validation/mlx_llama32_3b_numeric_screen_v1/receipt.json).
-The next choice is either a separate Transformers/MPS scientific freeze or a
-distinct future MLX engineering redesign under a new public protocol. It
-requires the research owner's decision; neither v2 nor Stage-A3 thresholds will
-be relaxed after the result.
+The research owner selected a separate Transformers/MPS scientific route. Its
+50-emoji primary arm and independently centered 35-emoji token-structural
+sensitivity arm are fixed in the
+[E2 MPS transport protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md). This is
+a new MPS-only study, not a reinterpretation of the MLX no-go; neither v2 nor
+Stage-A3 thresholds are relaxed.
 
 ## Install
 
@@ -297,6 +300,8 @@ Project-authored public documentation is maintained in English and Japanese:
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
 | E2 Stage-A v2 protocol | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.md) | [LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_PROTOCOL.ja.md) |
+| E2 MPS transport protocol | [LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.md) | [LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1.ja.md) |
+| Holdout status | [HOLDOUT_STATUS.md](docs/HOLDOUT_STATUS.md) | [HOLDOUT_STATUS.ja.md](docs/HOLDOUT_STATUS.ja.md) |
 | Reproducibility guide | [REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md) | [REPRODUCIBILITY.ja.md](docs/REPRODUCIBILITY.ja.md) |
 | Research roadmap | [ROADMAP.md](docs/ROADMAP.md) | [ROADMAP.ja.md](docs/ROADMAP.ja.md) |
 | Phase I paper plan | [PAPER_OUTLINE.md](docs/PAPER_OUTLINE.md) | [PAPER_OUTLINE.ja.md](docs/PAPER_OUTLINE.ja.md) |
@@ -306,7 +311,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol using untouched C1, while layer 4 remains unresolved and is not a candidate. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. E2 Stage A v2 and Stage A3 are completed negative engineering qualifications. Stage A3 selected no runtime dtype, and neither stage ran the scientific grid or satisfied the independent-backend-or-model replication gate. The candidate, intervention, endpoint, controls, and multiplicity family must be frozen before C1 is opened. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. The separately versioned Transformers/MPS transport study uses a static manifest commit followed by a receipt-only preflight commit; it does not revise those MLX outcomes and has not yet produced a scientific result. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 
