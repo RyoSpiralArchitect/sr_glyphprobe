@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "correction_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v2-analysis-correction-v1",
+  "base_protocol_id": "glyphprobe-e2-llama32-3b-mps-emoji-transport-v2",
+  "status": "frozen_before_endpoint_computation",
+  "scope": {
+    "correction_type": "post_execution_presentation_layer_admission_fix",
+    "completion_parser_contract": "rich_width80_exact_marker_plus_two_path_lines_v1",
+    "scientific_cell_changed": false,
+    "endpoint_math_changed": false,
+    "bootstrap_changed": false,
+    "row_contract_changed": false,
+    "run_artifacts_changed": false,
+    "source_logs_changed": false,
+    "execution_reused": true,
+    "post_execution_correction": true,
+    "human_result_values_observed_before_freeze": false,
+    "software_loaded_and_validated_run_arrays_before_block": true,
+    "endpoint_or_bootstrap_computed_before_freeze": false,
+    "analysis_output_published_before_freeze": false
+  },
+  "upstream": {
+    "v2_manifest": {
+      "path": "data/manifests/llama32_3b_mps_emoji_transport_v2.json",
+      "sha256": "018f658a3fe0b810d6512a248f3628c1bec1a238171189eb84029bbc84113b46"
+    },
+    "v2_tokenizer_preflight": {
+      "path": "artifacts/llama32_3b_mps_emoji_transport_v2/preflight/tokenization_audit_v2.json",
+      "sha256": "22851fef18d06b740aa88117a0b801d780d063da990c039e691ef266863f2a80"
+    },
+    "v2_attempt_receipt": {
+      "path": "validation/llama32_3b_mps_emoji_transport_v2/attempt_started_receipt.json",
+      "sha256": "cf89f191a45b4499654ee8fec2e85e7035689df259919378bc399e14ce78534a"
+    },
+    "v2_execution_receipt": {
+      "path": "validation/llama32_3b_mps_emoji_transport_v2/execution_receipt.json",
+      "sha256": "0bafb88c1487d6ec6c67dcf49a3a6134a09c117904a25c1853e79c6d3b9b273d"
+    },
+    "v2_analyzer": {
+      "path": "scripts/analyze_llama32_3b_mps_emoji_transport_v2.py",
+      "sha256": "1b9502771c4be7073c78b4eb16097db5f1c648724e5d8af9f076293227b44f56"
+    },
+    "v2_builder": {
+      "path": "scripts/build_llama32_3b_mps_emoji_transport_v2_bundle.py",
+      "sha256": "c9074fa540e232cd595dd4a6ad4fa272c1580324d47b352481e3142453bf83a0"
+    },
+    "v2_validator": {
+      "path": "scripts/validate_llama32_3b_mps_emoji_transport_v2_bundle.py",
+      "sha256": "b6e2948ca0cd0b445df182e5fdf64bd441df4953dc9399eeeb9c573cd659c127"
+    }
+  },
+  "correction_files": {
+    "helper": {
+      "path": "scripts/llama32_3b_mps_emoji_transport_v2_analysis_correction_v1.py",
+      "sha256": "4cf3d5d78ba32120df93c1ba0a0f66c985016c84e5b71c9c1df81148590d22ca"
+    },
+    "analyzer_adapter": {
+      "path": "scripts/analyze_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1.py",
+      "sha256": "15e78383dbc287428aebc85442acf1b9124bc3c9774f62dbf2546f42fe4a971b"
+    },
+    "audit": {
+      "path": "scripts/audit_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1.py",
+      "sha256": "77a500eba4e081941545b7649191a74332c208ff15709acb24caac917b97d9b4"
+    },
+    "bundle_builder": {
+      "path": "scripts/build_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1_bundle.py",
+      "sha256": "3ba701f648c396562f626bb1e74bee35ee0b06c0fec4503d991dea0a6b6ba013"
+    },
+    "bundle_validator": {
+      "path": "scripts/validate_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1_bundle.py",
+      "sha256": "df0e4f4e297470a48d4965117e207fd3d469dd4a28fd6ecda34dd26bc0bec5a1"
+    },
+    "analyzer_tests": {
+      "path": "tests/test_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1.py",
+      "sha256": "1bf0308eca9aeeef1fc3912b4c9763c71b74298511b064232c8373b7604f90f7"
+    },
+    "bundle_tests": {
+      "path": "tests/test_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1_bundle.py",
+      "sha256": "2a4b3c9b26f4c3db0a22bdc1b302584336f100f7825283548673c9749a2d4ede"
+    },
+    "protocol_en": {
+      "path": "docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2_ANALYSIS_CORRECTION_V1.md",
+      "sha256": "ac1219eb87d4a79e1711ce4faffe98c78123c715426a079943a3e59c0a39a58b"
+    },
+    "protocol_ja": {
+      "path": "docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2_ANALYSIS_CORRECTION_V1.ja.md",
+      "sha256": "d3ce4dc2e5020894c0f503bb2ba8433db23b526b08f3e40eb8e5004ee4e4ab50"
+    }
+  },
+  "launcher_logs": [
+    {
+      "index": 0,
+      "panel_arm": "full50",
+      "role": "sky",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/00-e2_llama32_3b_mps_full50_sky_v2.log",
+      "sha256": "ff0dd9333c74c0dbb4e6197aa9f04370cac92337613917438d17ed567ccbea5a",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-full50-sky-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--6e3e6256cf2d25e2",
+      "expected_run_id": "e2-llama32-3b-mps-full50-sky-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--6e3e6256cf2d25e2",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 1,
+      "panel_arm": "full50",
+      "role": "food",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/01-e2_llama32_3b_mps_full50_food_v2.log",
+      "sha256": "411f9c775eb0435be24ee5c53787ea0cc47b8da9d02ad5781b5c3e3ef93e43f1",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-full50-food-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--228179b8a0a43f1c",
+      "expected_run_id": "e2-llama32-3b-mps-full50-food-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--228179b8a0a43f1c",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 2,
+      "panel_arm": "full50",
+      "role": "animals",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/02-e2_llama32_3b_mps_full50_animals_v2.log",
+      "sha256": "b4dac7f163b79065907c694b5f9d7f21a0b48c3c3a308f018c18c561aef9558c",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-full50-animals-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--10689f2d28f3b017",
+      "expected_run_id": "e2-llama32-3b-mps-full50-animals-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--10689f2d28f3b017",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 3,
+      "panel_arm": "full50",
+      "role": "transport",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/03-e2_llama32_3b_mps_full50_transport_v2.log",
+      "sha256": "d8ae891d68a0f8efb86781b830431523a5fa4767438705669f7ce81433490c69",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-full50-transport-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--32d1721f2f4244a2",
+      "expected_run_id": "e2-llama32-3b-mps-full50-transport-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--32d1721f2f4244a2",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 4,
+      "panel_arm": "full50",
+      "role": "social",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/04-e2_llama32_3b_mps_full50_social_v2.log",
+      "sha256": "fe2f0508ad1a9b1cead8672f500534a8ef6eb53a4a2bd8698dd1140bf8630d7e",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-full50-social-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--f33bad235876ff2b",
+      "expected_run_id": "e2-llama32-3b-mps-full50-social-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--f33bad235876ff2b",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 5,
+      "panel_arm": "core35",
+      "role": "sky",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/05-e2_llama32_3b_mps_core35_sky_v2.log",
+      "sha256": "edd45261e37c9266dc3c57468a9e72f07162e84024d62bbd2d8aeea6dc341d42",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-core35-sky-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--8de811fc7bc1a0f0",
+      "expected_run_id": "e2-llama32-3b-mps-core35-sky-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--8de811fc7bc1a0f0",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 6,
+      "panel_arm": "core35",
+      "role": "food",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/06-e2_llama32_3b_mps_core35_food_v2.log",
+      "sha256": "f09b9fa403a2789eae5fda914c0aadb5c23c261f5782d0385cf11d5c46f72fe6",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-core35-food-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--a06331d02f17fb04",
+      "expected_run_id": "e2-llama32-3b-mps-core35-food-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--a06331d02f17fb04",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 7,
+      "panel_arm": "core35",
+      "role": "animals",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/07-e2_llama32_3b_mps_core35_animals_v2.log",
+      "sha256": "7bd1eb5795bae45da4fc4a25c74c404393b19095c26643bfe4658d67011d3d84",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-core35-animals-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--63242afac263eb67",
+      "expected_run_id": "e2-llama32-3b-mps-core35-animals-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--63242afac263eb67",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 8,
+      "panel_arm": "core35",
+      "role": "transport",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/08-e2_llama32_3b_mps_core35_transport_v2.log",
+      "sha256": "c9ca2a8f7b8ed86cde651162f7671c473669a2f7c117d62f966eee64db371949",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-core35-transport-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--2cf328ea1e9893ff",
+      "expected_run_id": "e2-llama32-3b-mps-core35-transport-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--2cf328ea1e9893ff",
+      "wrap_width": 80,
+      "segment_count": 2
+    },
+    {
+      "index": 9,
+      "panel_arm": "core35",
+      "role": "social",
+      "path": "runs/.e2-llama32-3b-mps-transport-v2-launcher-logs/09-e2_llama32_3b_mps_core35_social_v2.log",
+      "sha256": "217577e86b2d320cfb9742ffe1edfa7703ec5208afcd7c296d3af9a860ce7925",
+      "expected_run_relative_path": "runs/e2-llama32-3b-mps-core35-social-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--79f2673fe7cceed9",
+      "expected_run_id": "e2-llama32-3b-mps-core35-social-transport-v2--transformers--mlx-community-Llama-3.2-3B-bf16--79f2673fe7cceed9",
+      "wrap_width": 80,
+      "segment_count": 2
+    }
+  ],
+  "publication": {
+    "correction_preflight_path": "validation/llama32_3b_mps_emoji_transport_v2/analysis_correction_v1_preflight.json",
+    "analysis_output_dir": "runs/e2-llama32-3b-mps-emoji-transport-analysis-v2-correction-v1",
+    "analysis_output_receipt_filename": "llama32_3b_mps_emoji_transport_v2_receipt.json",
+    "bundle_root": "artifacts/llama32_3b_mps_emoji_transport_v2",
+    "root_manifest": "artifacts/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2_MANIFEST.json",
+    "active_correction_validator": "scripts/validate_llama32_3b_mps_emoji_transport_v2_analysis_correction_v1_bundle.py",
+    "analysis_output_must_be_absent_at_preflight": true
+  }
+}
