@@ -1,0 +1,118 @@
+{
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d",
+  "backend": "transformers/mps/fp32",
+  "target": "The capital of France is",
+  "capture_layers": [
+    2,
+    4,
+    5,
+    8,
+    11,
+    16,
+    24
+  ],
+  "arms": [
+    {
+      "glyph": "🚀",
+      "family": "transport",
+      "layers": {
+        "2": {
+          "cos": 0.8713,
+          "rel_delta": 0.4966
+        },
+        "4": {
+          "cos": 0.9014,
+          "rel_delta": 0.4348
+        },
+        "5": {
+          "cos": 0.8968,
+          "rel_delta": 0.4624
+        },
+        "8": {
+          "cos": 0.8971,
+          "rel_delta": 0.4643
+        },
+        "11": {
+          "cos": 0.9287,
+          "rel_delta": 0.3865
+        },
+        "16": {
+          "cos": 0.9702,
+          "rel_delta": 0.2456
+        },
+        "24": {
+          "cos": 0.9753,
+          "rel_delta": 0.2226
+        }
+      }
+    },
+    {
+      "glyph": "🍎",
+      "family": "food",
+      "layers": {
+        "2": {
+          "cos": 0.8726,
+          "rel_delta": 0.4929
+        },
+        "4": {
+          "cos": 0.9091,
+          "rel_delta": 0.4194
+        },
+        "5": {
+          "cos": 0.9077,
+          "rel_delta": 0.439
+        },
+        "8": {
+          "cos": 0.9111,
+          "rel_delta": 0.4305
+        },
+        "11": {
+          "cos": 0.9317,
+          "rel_delta": 0.3712
+        },
+        "16": {
+          "cos": 0.9577,
+          "rel_delta": 0.2938
+        },
+        "24": {
+          "cos": 0.9534,
+          "rel_delta": 0.3091
+        }
+      }
+    },
+    {
+      "glyph": "🐶",
+      "family": "animal",
+      "layers": {
+        "2": {
+          "cos": 0.8734,
+          "rel_delta": 0.4914
+        },
+        "4": {
+          "cos": 0.909,
+          "rel_delta": 0.4199
+        },
+        "5": {
+          "cos": 0.9063,
+          "rel_delta": 0.44
+        },
+        "8": {
+          "cos": 0.9052,
+          "rel_delta": 0.4467
+        },
+        "11": {
+          "cos": 0.9312,
+          "rel_delta": 0.3741
+        },
+        "16": {
+          "cos": 0.9717,
+          "rel_delta": 0.239
+        },
+        "24": {
+          "cos": 0.9792,
+          "rel_delta": 0.2028
+        }
+      }
+    }
+  ]
+}
