@@ -86,7 +86,6 @@
   .bandmeta { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
   .advlabel { font-size: 11.5px; font-weight: 640; font-variant-numeric: tabular-nums; }
   .rowhit { fill: transparent; cursor: default; }
-  .rowhit:hover + .rowmark .connector,
   g.row.active .connector { stroke-width: 3; }
   g.row.active .band-hl { opacity: 1; }
 
@@ -170,6 +169,7 @@ const DATA = [
  {layer:11,strength:0.1,seed:307,emoji:0.9251,emoji_lo:0.885,emoji_hi:0.9512,random:0.569,random_lo:0.4673,random_hi:0.5941,advantage:0.3561},
 ];
 
+const PERM_P = 0.004975124378109453;  // within-target label-permutation p; identical (1/201) across all cells
 const NS = "http://www.w3.org/2000/svg";
 const el = (n, a={}) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
 const median = xs => { const s=[...xs].sort((a,b)=>a-b), m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; };
@@ -207,7 +207,7 @@ function showTip(d, evt){
     `<div class="r"><span>emoji</span><span>${d.emoji.toFixed(3)} <span style="color:var(--muted)">[${d.emoji_lo.toFixed(2)}–${d.emoji_hi.toFixed(2)}]</span></span></div>`+
     `<div class="r"><span>random control</span><span>${d.random.toFixed(3)} <span style="color:var(--muted)">[${d.random_lo.toFixed(2)}–${d.random_hi.toFixed(2)}]</span></span></div>`+
     `<div class="r"><span>advantage</span><span class="${d.advantage>=0?'pos':'neg'}">${fmt(d.advantage)}</span></div>`+
-    `<div class="r"><span>label-perm p</span><span>0.005</span></div>`;
+    `<div class="r"><span>label-perm p</span><span>${PERM_P.toFixed(3)}</span></div>`;
   tip.style.opacity = 1;
   moveTip(evt);
 }
@@ -256,7 +256,7 @@ for (const L of layers) {
     g.appendChild(el("circle", {cx:xpos(d.emoji), cy:cy, r:6.5, style:"fill:var(--surface)"}));
     g.appendChild(el("circle", {cx:xpos(d.emoji), cy:cy, r:5, style:"fill:var(--emoji)"}));
     // advantage label
-    const al = el("text", {class:"advlabel", x:W-M.r+12, y:cy+4, style: d.advantage>=0 ? "fill:var(--pos)" : "fill:var(--neg)"});
+    const al = el("text", {class:"advlabel", x:W-8, y:cy+4, "text-anchor":"end", style: d.advantage>=0 ? "fill:var(--pos)" : "fill:var(--neg)"});
     al.textContent = (d.advantage>=0?"▶ ":"◀ ")+fmt(d.advantage);
     g.appendChild(al);
     // hit rect

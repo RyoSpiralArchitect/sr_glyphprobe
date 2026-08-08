@@ -87,7 +87,9 @@ def main() -> int:
         summary["arms"].append({"glyph": glyph, "family": fam, "layers": per})
         print("-" * 76)
 
-    out = os.path.join(os.path.dirname(__file__), "capture_bf16_summary.json")
+    out_dir = os.path.join(os.path.dirname(__file__), "..", "results")
+    os.makedirs(out_dir, exist_ok=True)
+    out = os.path.join(out_dir, "capture_bf16_summary.json")
     json.dump(summary, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     print("summary written:", out)
     print("=" * 76)

@@ -58,6 +58,11 @@ Emoji vs random-direction fingerprint **separation** (higher = more separable):
 | **11** | 0.929 | 0.619 | **+0.32** |
 | 5 | 0.654 | 0.790 | **−0.17** |
 
+*Advantage is the median of the per-cell `emoji − random` differences — not the
+difference of the two median columns. Because the random control varies strongly
+by seed, the two are not equal (e.g. layer 5: median advantage −0.17, whereas
+0.654 − 0.790 = −0.14).*
+
 So the emoji-conditioned direction is more separable than a matched random
 direction **at layer 11, but not at layer 5**, where the (seed-noisy) random
 control usually wins. The `fingerprint_reproducibility` gate passes only
@@ -69,7 +74,9 @@ layer 11.
 `chart/fp_chart.html` is a self-contained (CSP-safe) dumbbell chart of all 18
 cells (layer × strength × seed), emoji ● vs random-control ○, grouped by layer,
 with 95% split-half CIs, hover tooltips, a data table, and light/dark themes.
-Its data is `chart/fp_chart_data.json` (derived from `results/fingerprint_summary.jsonl`).
+The page embeds its 18-cell data **inline** (CSP-safe, no fetch);
+`chart/fp_chart_data.json` is the same data as a standalone copy — edit both
+together. Both derive from `results/fingerprint_summary.jsonl`.
 
 ## Environment & provenance
 

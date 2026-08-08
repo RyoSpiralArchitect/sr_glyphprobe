@@ -54,6 +54,10 @@ wrapper/panel データの性質で、knob では直せない）。
 | **11** | 0.929 | 0.619 | **+0.32** |
 | 5 | 0.654 | 0.790 | **−0.17** |
 
+*advantage は各セルの `emoji − random` の中央値であり、2つの中央値列の差ではない。
+random 対照は seed で大きくばらつくため両者は一致しない（例：層5 は中央値
+advantage −0.17 だが 0.654 − 0.790 = −0.14）。*
+
 つまり、絵文字条件付き方向は**層11 では**一致 RMS のランダム方向より分離が良いが、
 **層5 では**そうでなく、（seed でばらつく）ランダム対照がしばしば勝つ。
 `fingerprint_reproducibility` gate は全セル中央値の advantage +0.0075 で**かろうじて**
@@ -63,8 +67,10 @@ PASS し、その寄与はほぼ完全に層11 由来。
 
 `chart/fp_chart.html` は 18 セル（層 × 強度 × seed）を並べた自己完結（CSP 安全）の
 ダンベル図。emoji ● vs random 対照 ○ を層でグループ化し、95% split-half CI・hover
-ツールチップ・データテーブル・light/dark テーマ付き。データは
-`chart/fp_chart_data.json`（`results/fingerprint_summary.jsonl` 由来）。
+ツールチップ・データテーブル・light/dark テーマ付き。ページは 18 セルのデータを
+**インライン埋め込み**（CSP 安全・fetch なし）。`chart/fp_chart_data.json` は同じ
+データの独立コピー（両方を一緒に編集すること）。いずれも
+`results/fingerprint_summary.jsonl` 由来。
 
 ## 環境と provenance
 
