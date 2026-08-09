@@ -316,6 +316,42 @@ demonstration that n≈6 statistics are unstable here — which applies to the m
 rule too, pre-registered or not. What is solid is that the joiner cannot explain
 the compound's weakness, and the direction/efficacy independence (26 cases).
 
+## Chasing the one reversed family — and not finding a rule
+
+The composition report left one family running backwards (🍕⬛ 4.94 vs ⬛🍕 4.00,
+order effect **−0.94**). Two runs check whether there is anything to explain, and
+whether it generalises. Full numbers in
+[`results/order_report.md`](results/order_report.md).
+
+Method note: re-seeding the null would not have tested this. The injection KL is
+deterministic and the null is a denominator **shared by both orders**, so
+re-seeding rescales an order effect without moving its sign. The two places real
+sampling variability enters are varied instead — the extraction wrappers and the
+injection targets — giving 2 × 2 = four independent estimates of each pair.
+
+| panel | prediction stated first | outcome |
+|---|---|---|
+| does 🍕⬛'s sign survive? | it will **not** be stable | **prediction wrong.** 🍕⬛ is 0/4 positive across all four conditions and 🍔⬛ agrees (0/4). 🚗⬛ and 🍕⬜ flip |
+| is "food + black square" a type? | if it is, the three new foods go negative and the two non-food controls do not | **no type.** The foods disagree with each other (🍣⬛ 4/4, 🍜⬛ 3/4, 🍺⬛ 1/4) and the non-food controls are *both* sign-stable (🐶⬛ 4/4, 🌈⬛ 4/4) — at least as consistent as the foods |
+
+So an individual pair can carry a reproducible order preference, but it follows
+**neither the component gap, nor semantic category, nor even other members of its
+own category** — and non-food pairs are just as capable of being stable. Whatever
+🍕⬛ and 🍔⬛ have, food does not predict it. No general rule survives, and the
+magnitude is not stable either — 🍕⬛ ranges −1.09 to −0.03 across conditions;
+only the sign is preserved.
+
+**Correction.** The first version of this section said the controls "flip at 3/4
+— indistinguishable from the foods". That came from a runner that re-decided
+which component counted as *strong* inside the condition loop, so the cells where
+⬛ outranked its partner were measured in a mirrored frame. Under one fixed
+convention both controls are sign-stable. The conclusion is unchanged; the reason
+is different.
+
+Worth stating plainly: "stable across four conditions" is a weak bar. With a
+genuinely 50/50 sign one pair in eight looks stable by chance, and nine pairs
+were tested here.
+
 ## What this is NOT
 
 - **Not** the sealed v2 experiment, and not a reproduction of it.
