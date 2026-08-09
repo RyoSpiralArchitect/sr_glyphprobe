@@ -275,6 +275,47 @@ Two other things it settles: it is **not** "emotions are flat" (😢 4.22 and
 😭 4.19 peak mid-network while 🥺 2.71 and 🤔 2.76 do not — a 1.6× spread inside
 one family), and it is **not** token count (Spearman = −0.02).
 
+## Composition: what happens when two glyphs are stuck together
+
+Chasing the why-flat puzzle (🐈 3.96 and 🐱 3.95 engage the middle of the network,
+the ZWJ compound 🐈‍⬛ 3.09 does not) across three more runs, one of them
+**pre-registered**. Full numbers in
+[`results/composition_report.md`](results/composition_report.md), pre-registration
+in [`PREREGISTRATION_mean_rule.md`](PREREGISTRATION_mean_rule.md).
+
+🐈‍⬛ tokenises exactly as 🐈's tokens + ZWJ + ⬛'s tokens, so the joiner can be
+removed and the order reversed independently.
+
+| | verdict |
+|---|---|
+| **the ZWJ joiner** | **not what costs the compound its efficacy.** Removing it leaves 🐈⬛ at 3.31, nowhere near 🐈's 3.96. It is not *nothing* though — it moves the value by 0.006–0.215, and the "👩‍💻 3.39 vs 👩💻 3.39" equality is a 2-dp artefact (3.3933 vs 3.3870) |
+| **"the last component wins"** | **no.** Order shifts the value (🐈⬛ 3.31 → ⬛🐈 3.61), but **neither its size nor its sign is consistent**: ending on the stronger part scores higher in 6/7 families of one set and only 2/6 of the next — 8/13 pooled, against 6.5 expected by chance |
+| **order effect ∝ component gap** | **no such relationship.** Spearman **+0.04** on 7 families, **−0.94** on 6 more, same protocol. A statistic that flips sign between samples is noise |
+| **what sets the composite** | **the mean of its components** — `composite ≈ 0.70 × mean + 1.16`, and 🐈‍⬛ is weak simply because 🐈 (3.96) and ⬛ (3.00) average to 3.48 |
+| **direction vs efficacy** | **independent.** Across 26 cases, reversing a pair moves the cosine by ≤ **0.09** while moving the efficacy by up to **0.94** |
+
+**The mean rule was found post-hoc**, after the order hypothesis failed — so it
+was written down with its six predictions and a two-part decision rule, committed
+before the test script existed (the runner aborts if its predictions disagree
+with the committed file), and then tested on six families that did not shape it:
+
+| criterion | required | observed | |
+|---|---|---|---|
+| Spearman(predicted, observed) | ≥ 0.70 | **+0.886** | PASS |
+| mean absolute error | ≤ 0.72 | **0.308** | PASS |
+
+All 11 solo components reproduced their earlier values. Note the resolution: the
+prior values are stored to 2 dp, so a successful reproduction is bounded below
+0.005 **by construction** — this detects drift larger than that, and is not a
+4-dp agreement.
+
+**Read the negative results as the more reliable ones.** The order effect flips
+both its correlation with the component gap (+0.04 → −0.94) and its own sign
+(6/7 → 2/6) between two samples of the same protocol. That is a direct
+demonstration that n≈6 statistics are unstable here — which applies to the mean
+rule too, pre-registered or not. What is solid is that the joiner cannot explain
+the compound's weakness, and the direction/efficacy independence (26 cases).
+
 ## What this is NOT
 
 - **Not** the sealed v2 experiment, and not a reproduction of it.
@@ -337,12 +378,17 @@ scripts/   sweep_emoji_intervention.py          — the 50-glyph sweep
            make_chart.py, make_deep_chart.py    — self-contained CSP-safe charts
            why_flat.py                          — why-flat follow-up (19 glyphs)
            analyze_whyflat.py                   — corrected continuous analysis
+           cat_chase.py, cat_chase2.py          — composition: ZWJ vs order
+           mean_rule_test.py                    — PRE-REGISTERED confirmatory test
+           gen_composition_report.py            — results/composition_report.md
 chart/     sweep_chart.html, sweep_chart_data.json, deep_chart.html, whyflat_chart.html
-results/   report.md, deep_report.md, whyflat_report.md   — full tables
+results/   report.md, deep_report.md, whyflat_report.md,
+           composition_report.md                — full tables
            sweep_v1_*.jsonl/.json               — 50-glyph sweep records
            deep_v1_phase{1,2,3,4}.jsonl         — deep-run records
            deep_v1_specificity_matrix.json, deep_v1_analysis.json
-           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json, _dirs.npz
+           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json
+           catchase_v{1,2}_*.json(l), meanrule_v1_*.json(l)
            *_meta.json
 
 Console logs (`*_console.log`, `analysis_*.log`) are produced by every run but are

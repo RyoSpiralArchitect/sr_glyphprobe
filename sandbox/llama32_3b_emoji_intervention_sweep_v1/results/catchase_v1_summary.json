@@ -1,0 +1,528 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "panel": [
+    {
+      "id": "cat",
+      "glyph": "🐈",
+      "set": "cat",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 3.9611825334033206,
+      "last": 2.6540043847658015,
+      "peak": 15,
+      "token_ids": [
+        9468,
+        238,
+        230
+      ]
+    },
+    {
+      "id": "black_sq",
+      "glyph": "⬛",
+      "set": "cat",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 3.002989942905477,
+      "last": 6.431846474253834,
+      "peak": 27,
+      "token_ids": [
+        158,
+        105,
+        249
+      ]
+    },
+    {
+      "id": "cat_ZWJ_sq",
+      "glyph": "🐈‍⬛",
+      "set": "cat",
+      "join": "zwj",
+      "parts": [
+        "cat",
+        "black_sq"
+      ],
+      "n_tokens": 7,
+      "mid": 3.090329705536087,
+      "last": 3.821982429580345,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        238,
+        230,
+        102470,
+        158,
+        105,
+        249
+      ]
+    },
+    {
+      "id": "cat_sq",
+      "glyph": "🐈⬛",
+      "set": "cat",
+      "join": "concat",
+      "parts": [
+        "cat",
+        "black_sq"
+      ],
+      "n_tokens": 6,
+      "mid": 3.3052612481527874,
+      "last": 4.900124798658203,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        238,
+        230,
+        158,
+        105,
+        249
+      ]
+    },
+    {
+      "id": "sq_cat",
+      "glyph": "⬛🐈",
+      "set": "cat",
+      "join": "concat",
+      "parts": [
+        "black_sq",
+        "cat"
+      ],
+      "n_tokens": 6,
+      "mid": 3.614991107284368,
+      "last": 4.252256718660569,
+      "peak": 27,
+      "token_ids": [
+        158,
+        105,
+        249,
+        9468,
+        238,
+        230
+      ]
+    },
+    {
+      "id": "sq_ZWJ_cat",
+      "glyph": "⬛‍🐈",
+      "set": "cat",
+      "join": "zwj",
+      "parts": [
+        "black_sq",
+        "cat"
+      ],
+      "n_tokens": 7,
+      "mid": 3.5160236794754467,
+      "last": 3.2681360065114133,
+      "peak": 14,
+      "token_ids": [
+        158,
+        105,
+        249,
+        102470,
+        9468,
+        238,
+        230
+      ]
+    },
+    {
+      "id": "person",
+      "glyph": "🧑",
+      "set": "astro",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 2.8598879392884595,
+      "last": 2.9942235031590356,
+      "peak": 25,
+      "token_ids": [
+        9468,
+        100,
+        239
+      ]
+    },
+    {
+      "id": "rocket",
+      "glyph": "🚀",
+      "set": "astro",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 2.7301912816360385,
+      "last": 3.7791335851276497,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        248,
+        222
+      ]
+    },
+    {
+      "id": "per_ZWJ_roc",
+      "glyph": "🧑‍🚀",
+      "set": "astro",
+      "join": "zwj",
+      "parts": [
+        "person",
+        "rocket"
+      ],
+      "n_tokens": 7,
+      "mid": 2.976200298087217,
+      "last": 3.2731252683636547,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        100,
+        239,
+        102470,
+        9468,
+        248,
+        222
+      ]
+    },
+    {
+      "id": "per_roc",
+      "glyph": "🧑🚀",
+      "set": "astro",
+      "join": "concat",
+      "parts": [
+        "person",
+        "rocket"
+      ],
+      "n_tokens": 6,
+      "mid": 2.8749195728506103,
+      "last": 3.7879503656347366,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        100,
+        239,
+        9468,
+        248,
+        222
+      ]
+    },
+    {
+      "id": "roc_per",
+      "glyph": "🚀🧑",
+      "set": "astro",
+      "join": "concat",
+      "parts": [
+        "rocket",
+        "person"
+      ],
+      "n_tokens": 6,
+      "mid": 2.878014717888192,
+      "last": 4.788687857402137,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        248,
+        222,
+        9468,
+        100,
+        239
+      ]
+    },
+    {
+      "id": "woman",
+      "glyph": "👩",
+      "set": "tech",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 4.278974500091789,
+      "last": 4.935881030461171,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        239,
+        102
+      ]
+    },
+    {
+      "id": "laptop",
+      "glyph": "💻",
+      "set": "tech",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 2,
+      "mid": 3.1588259740775886,
+      "last": 3.1460116140460737,
+      "peak": 14,
+      "token_ids": [
+        93273,
+        119
+      ]
+    },
+    {
+      "id": "wom_ZWJ_lap",
+      "glyph": "👩‍💻",
+      "set": "tech",
+      "join": "zwj",
+      "parts": [
+        "woman",
+        "laptop"
+      ],
+      "n_tokens": 6,
+      "mid": 3.3932804185606567,
+      "last": 4.29725382880838,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        239,
+        102,
+        102470,
+        93273,
+        119
+      ]
+    },
+    {
+      "id": "wom_lap",
+      "glyph": "👩💻",
+      "set": "tech",
+      "join": "concat",
+      "parts": [
+        "woman",
+        "laptop"
+      ],
+      "n_tokens": 5,
+      "mid": 3.386968321251055,
+      "last": 5.411075868074078,
+      "peak": 27,
+      "token_ids": [
+        9468,
+        239,
+        102,
+        93273,
+        119
+      ]
+    },
+    {
+      "id": "pizza",
+      "glyph": "🍕",
+      "set": "anchor",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 5.317431981028592,
+      "last": 1.7406770977632593,
+      "peak": 15,
+      "token_ids": [
+        9468,
+        235,
+        243
+      ]
+    },
+    {
+      "id": "car",
+      "glyph": "🚗",
+      "set": "anchor",
+      "join": "-",
+      "parts": [],
+      "n_tokens": 3,
+      "mid": 5.657188823538752,
+      "last": 1.3197525051246257,
+      "peak": 14,
+      "token_ids": [
+        9468,
+        248,
+        245
+      ]
+    }
+  ],
+  "targets": {
+    "paris": "The capital of France is",
+    "planet": "The largest planet in our solar system is",
+    "thinking": "I am thinking about"
+  },
+  "wrappers": [
+    "Today I saw a",
+    "My favorite thing is",
+    "Here we have",
+    "This reminds me of"
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "num_layers": 28,
+  "deep_layer": 16,
+  "verdicts": [
+    {
+      "set": "cat",
+      "id": "cat_ZWJ_sq",
+      "join": "zwj",
+      "parts": [
+        "cat",
+        "black_sq"
+      ],
+      "mid": 3.090329705536087,
+      "last_part": "black_sq",
+      "nearest_solo": "black_sq"
+    },
+    {
+      "set": "cat",
+      "id": "cat_sq",
+      "join": "concat",
+      "parts": [
+        "cat",
+        "black_sq"
+      ],
+      "mid": 3.3052612481527874,
+      "last_part": "black_sq",
+      "nearest_solo": "black_sq"
+    },
+    {
+      "set": "cat",
+      "id": "sq_cat",
+      "join": "concat",
+      "parts": [
+        "black_sq",
+        "cat"
+      ],
+      "mid": 3.614991107284368,
+      "last_part": "cat",
+      "nearest_solo": "cat"
+    },
+    {
+      "set": "cat",
+      "id": "sq_ZWJ_cat",
+      "join": "zwj",
+      "parts": [
+        "black_sq",
+        "cat"
+      ],
+      "mid": 3.5160236794754467,
+      "last_part": "cat",
+      "nearest_solo": "cat"
+    },
+    {
+      "set": "astro",
+      "id": "per_ZWJ_roc",
+      "join": "zwj",
+      "parts": [
+        "person",
+        "rocket"
+      ],
+      "mid": 2.976200298087217,
+      "last_part": "rocket",
+      "nearest_solo": "person"
+    },
+    {
+      "set": "astro",
+      "id": "per_roc",
+      "join": "concat",
+      "parts": [
+        "person",
+        "rocket"
+      ],
+      "mid": 2.8749195728506103,
+      "last_part": "rocket",
+      "nearest_solo": "person"
+    },
+    {
+      "set": "astro",
+      "id": "roc_per",
+      "join": "concat",
+      "parts": [
+        "rocket",
+        "person"
+      ],
+      "mid": 2.878014717888192,
+      "last_part": "person",
+      "nearest_solo": "person"
+    },
+    {
+      "set": "tech",
+      "id": "wom_ZWJ_lap",
+      "join": "zwj",
+      "parts": [
+        "woman",
+        "laptop"
+      ],
+      "mid": 3.3932804185606567,
+      "last_part": "laptop",
+      "nearest_solo": "laptop"
+    },
+    {
+      "set": "tech",
+      "id": "wom_lap",
+      "join": "concat",
+      "parts": [
+        "woman",
+        "laptop"
+      ],
+      "mid": 3.386968321251055,
+      "last_part": "laptop",
+      "nearest_solo": "laptop"
+    }
+  ],
+  "n_nearest_last": 7,
+  "n_composites": 9,
+  "direction_cosines": [
+    {
+      "id": "cat_ZWJ_sq",
+      "cos_first": 0.9442059127258707,
+      "cos_last": 0.8426724086363008,
+      "first": "cat",
+      "last": "black_sq"
+    },
+    {
+      "id": "cat_sq",
+      "cos_first": 0.9440598406648285,
+      "cos_last": 0.8412745400707494,
+      "first": "cat",
+      "last": "black_sq"
+    },
+    {
+      "id": "sq_cat",
+      "cos_first": 0.7973758586101675,
+      "cos_last": 0.9485457531063558,
+      "first": "black_sq",
+      "last": "cat"
+    },
+    {
+      "id": "sq_ZWJ_cat",
+      "cos_first": 0.7930219883070453,
+      "cos_last": 0.9439687652788801,
+      "first": "black_sq",
+      "last": "cat"
+    },
+    {
+      "id": "per_ZWJ_roc",
+      "cos_first": 0.9482132363536769,
+      "cos_last": 0.9452452748777488,
+      "first": "person",
+      "last": "rocket"
+    },
+    {
+      "id": "per_roc",
+      "cos_first": 0.9491049585454533,
+      "cos_last": 0.9522623659348777,
+      "first": "person",
+      "last": "rocket"
+    },
+    {
+      "id": "roc_per",
+      "cos_first": 0.9689373166218535,
+      "cos_last": 0.9197949325663535,
+      "first": "rocket",
+      "last": "person"
+    },
+    {
+      "id": "wom_ZWJ_lap",
+      "cos_first": 0.8126399173741684,
+      "cos_last": 0.9238344932435031,
+      "first": "woman",
+      "last": "laptop"
+    },
+    {
+      "id": "wom_lap",
+      "cos_first": 0.8672012097205373,
+      "cos_last": 0.8994841651424174,
+      "first": "woman",
+      "last": "laptop"
+    }
+  ],
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}
