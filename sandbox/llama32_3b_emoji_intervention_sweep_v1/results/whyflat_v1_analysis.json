@@ -1,0 +1,353 @@
+{
+  "ranked": [
+    {
+      "id": "pleading",
+      "glyph": "🥺",
+      "grp": "F0",
+      "sem": "emotion",
+      "pair": "cry",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 2.708663518179584,
+      "last": 3.90437981863676,
+      "peak_layer": 27,
+      "p_concept": 0.08004243405239582
+    },
+    {
+      "id": "sailboat",
+      "glyph": "⛵",
+      "grp": "E2",
+      "sem": "vehicle",
+      "pair": "boat",
+      "utf8_lead": "e2",
+      "n_tokens": 3,
+      "mid": 2.7530427466592884,
+      "last": 5.380948073828642,
+      "peak_layer": 27,
+      "p_concept": 0.11084591488950309
+    },
+    {
+      "id": "thinking",
+      "glyph": "🤔",
+      "grp": "F0",
+      "sem": "emotion",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 2.763484703578376,
+      "last": 4.935448771736042,
+      "peak_layer": 27,
+      "p_concept": 0.059751475080343876
+    },
+    {
+      "id": "coffee",
+      "glyph": "☕",
+      "grp": "E2",
+      "sem": "food",
+      "pair": "drink",
+      "utf8_lead": "e2",
+      "n_tokens": 2,
+      "mid": 2.874551488040399,
+      "last": 2.4033971323641126,
+      "peak_layer": 16,
+      "p_concept": 0.31889886755714597
+    },
+    {
+      "id": "red_sq",
+      "glyph": "🟥",
+      "grp": "F0",
+      "sem": "abstract",
+      "pair": "square",
+      "utf8_lead": "f0",
+      "n_tokens": 2,
+      "mid": 2.9604711231524856,
+      "last": 3.6752682302326183,
+      "peak_layer": 27,
+      "p_concept": 0.5170461516890191
+    },
+    {
+      "id": "anchor",
+      "glyph": "⚓",
+      "grp": "E2",
+      "sem": "object",
+      "pair": "-",
+      "utf8_lead": "e2",
+      "n_tokens": 3,
+      "mid": 2.98553522047481,
+      "last": 4.139060898743105,
+      "peak_layer": 27,
+      "p_concept": 0.06078722961530569
+    },
+    {
+      "id": "black_sq",
+      "glyph": "⬛",
+      "grp": "E2",
+      "sem": "abstract",
+      "pair": "square",
+      "utf8_lead": "e2",
+      "n_tokens": 3,
+      "mid": 3.002989942905477,
+      "last": 6.431846474253834,
+      "peak_layer": 27,
+      "p_concept": 0.10565844518950013
+    },
+    {
+      "id": "airplane",
+      "glyph": "✈️",
+      "grp": "E2",
+      "sem": "vehicle",
+      "pair": "air",
+      "utf8_lead": "e2",
+      "n_tokens": 3,
+      "mid": 3.0520240176397153,
+      "last": 3.1414217217175184,
+      "peak_layer": 27,
+      "p_concept": 0.3143724165855816
+    },
+    {
+      "id": "black_cat",
+      "glyph": "🐈‍⬛",
+      "grp": "ZWJ",
+      "sem": "animal",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 7,
+      "mid": 3.090329705536087,
+      "last": 3.821982429580345,
+      "peak_layer": 27,
+      "p_concept": 0.24198754304697034
+    },
+    {
+      "id": "helicopter",
+      "glyph": "🚁",
+      "grp": "F0",
+      "sem": "vehicle",
+      "pair": "air",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 3.5546850953632734,
+      "last": 2.4396769669699867,
+      "peak_layer": 14,
+      "p_concept": 0.28513884200790063
+    },
+    {
+      "id": "dog",
+      "glyph": "🐶",
+      "grp": "F0",
+      "sem": "animal",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 3.707403984158457,
+      "last": 1.5094494257064097,
+      "peak_layer": 14,
+      "p_concept": 0.43123502963384835
+    },
+    {
+      "id": "ship",
+      "glyph": "🚢",
+      "grp": "F0",
+      "sem": "vehicle",
+      "pair": "boat",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 3.7213979180800574,
+      "last": 4.026263993416079,
+      "peak_layer": 27,
+      "p_concept": 0.199157295505337
+    },
+    {
+      "id": "cat_face",
+      "glyph": "🐱",
+      "grp": "F0",
+      "sem": "animal",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 3.9547984411566706,
+      "last": 1.6359319829306875,
+      "peak_layer": 14,
+      "p_concept": 0.3530699891453994
+    },
+    {
+      "id": "cat_plain",
+      "glyph": "🐈",
+      "grp": "F0",
+      "sem": "animal",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 3.9611825334033206,
+      "last": 2.6540043847658015,
+      "peak_layer": 15,
+      "p_concept": 0.24444208139189838
+    },
+    {
+      "id": "sob",
+      "glyph": "😭",
+      "grp": "F0",
+      "sem": "emotion",
+      "pair": "cry",
+      "utf8_lead": "f0",
+      "n_tokens": 2,
+      "mid": 4.189126502407852,
+      "last": 1.6539835132242082,
+      "peak_layer": 17,
+      "p_concept": 0.09382357963695141
+    },
+    {
+      "id": "crying",
+      "glyph": "😢",
+      "grp": "F0",
+      "sem": "emotion",
+      "pair": "cry",
+      "utf8_lead": "f0",
+      "n_tokens": 2,
+      "mid": 4.22113003549832,
+      "last": 1.6792929705479904,
+      "peak_layer": 19,
+      "p_concept": 0.1526364473785551
+    },
+    {
+      "id": "tea",
+      "glyph": "🍵",
+      "grp": "F0",
+      "sem": "food",
+      "pair": "drink",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 4.5862693812928415,
+      "last": 1.3502094932818667,
+      "peak_layer": 15,
+      "p_concept": 0.1170677568799457
+    },
+    {
+      "id": "pizza",
+      "glyph": "🍕",
+      "grp": "F0",
+      "sem": "food",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 5.317431981028592,
+      "last": 1.7406770977632593,
+      "peak_layer": 15,
+      "p_concept": 0.3172042051034135
+    },
+    {
+      "id": "car",
+      "glyph": "🚗",
+      "grp": "F0",
+      "sem": "vehicle",
+      "pair": "-",
+      "utf8_lead": "f0",
+      "n_tokens": 3,
+      "mid": 5.657188823538752,
+      "last": 1.3197525051246257,
+      "peak_layer": 14,
+      "p_concept": 0.49592639563479324
+    }
+  ],
+  "split": {
+    "gap": 0.7311625997357503,
+    "low": [
+      "pleading",
+      "sailboat",
+      "thinking",
+      "coffee",
+      "red_sq",
+      "anchor",
+      "black_sq",
+      "airplane",
+      "black_cat",
+      "helicopter",
+      "dog",
+      "ship",
+      "cat_face",
+      "cat_plain",
+      "sob",
+      "crying",
+      "tea"
+    ],
+    "high": [
+      "pizza",
+      "car"
+    ]
+  },
+  "spearman_e2_mid": -0.5019011475427825,
+  "spearman_pconcept_mid": 0.3368421052631579,
+  "spearman_ntokens_mid": -0.017099639201419235,
+  "pair_ratios_median": 1.2582187923711186,
+  "h2_zwj": [
+    {
+      "layer": 0,
+      "cos_cat_plain": 0.9998605103993603,
+      "cos_black_sq": 0.9996886711359372,
+      "cos_cat_face": 0.999862627190924,
+      "closer": "cat"
+    },
+    {
+      "layer": 2,
+      "cos_cat_plain": 0.9854777225450476,
+      "cos_black_sq": 0.9717010186338935,
+      "cos_cat_face": 0.9815137033436014,
+      "closer": "cat"
+    },
+    {
+      "layer": 5,
+      "cos_cat_plain": 0.9726634773475957,
+      "cos_black_sq": 0.9149407462609424,
+      "cos_cat_face": 0.9579734243666548,
+      "closer": "cat"
+    },
+    {
+      "layer": 8,
+      "cos_cat_plain": 0.956429201464544,
+      "cos_black_sq": 0.8797232441731339,
+      "cos_cat_face": 0.939463059667605,
+      "closer": "cat"
+    },
+    {
+      "layer": 11,
+      "cos_cat_plain": 0.9541693327359851,
+      "cos_black_sq": 0.8715035597801628,
+      "cos_cat_face": 0.9322577100919219,
+      "closer": "cat"
+    },
+    {
+      "layer": 14,
+      "cos_cat_plain": 0.9485743152601898,
+      "cos_black_sq": 0.8516653388638452,
+      "cos_cat_face": 0.9246881467793271,
+      "closer": "cat"
+    },
+    {
+      "layer": 16,
+      "cos_cat_plain": 0.9442059127258707,
+      "cos_black_sq": 0.8426724086363008,
+      "cos_cat_face": 0.9143305294154056,
+      "closer": "cat"
+    },
+    {
+      "layer": 20,
+      "cos_cat_plain": 0.9468835421141856,
+      "cos_black_sq": 0.8065723675200734,
+      "cos_cat_face": 0.8850192567454798,
+      "closer": "cat"
+    },
+    {
+      "layer": 24,
+      "cos_cat_plain": 0.9471169114112372,
+      "cos_black_sq": 0.7955040863010217,
+      "cos_cat_face": 0.8776654452170991,
+      "closer": "cat"
+    },
+    {
+      "layer": 27,
+      "cos_cat_plain": 0.941505691589428,
+      "cos_black_sq": 0.7646488162615321,
+      "cos_cat_face": 0.8814098844279394,
+      "closer": "cat"
+    }
+  ]
+}

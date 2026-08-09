@@ -1,0 +1,73 @@
+# Exploratory emoji panel for the out-of-contract per-glyph intervention sweep.
+#
+# NOT a frozen panel. NOT a holdout bank. Assembled purely from public,
+# already-explored glyph space for sandbox exploration.
+#
+# Two strata:
+#   matched — every glyph costs exactly 4 prefix tokens in the wrapper
+#             "<glyph>\n<target>", so a within-stratum ranking is NOT
+#             explained by token count (the confound that HOLDs elsewhere).
+#   ladder  — deliberately spans 2..16 prefix tokens to MEASURE how much
+#             token count alone drives intervention magnitude.
+#
+# n_prefix_tokens below is the surveyed value; the runner recomputes it and
+# fails loudly on any mismatch rather than trusting this file.
+
+matched:
+  - {id: dog,          glyph: "🐶",  family: animal,    n_prefix_tokens: 4}
+  - {id: cat,          glyph: "🐱",  family: animal,    n_prefix_tokens: 4}
+  - {id: fox,          glyph: "🦊",  family: animal,    n_prefix_tokens: 4}
+  - {id: bear,         glyph: "🐻",  family: animal,    n_prefix_tokens: 4}
+  - {id: lion,         glyph: "🦁",  family: animal,    n_prefix_tokens: 4}
+  - {id: turtle,       glyph: "🐢",  family: animal,    n_prefix_tokens: 4}
+  - {id: butterfly,    glyph: "🦋",  family: animal,    n_prefix_tokens: 4}
+
+  - {id: apple,        glyph: "🍎",  family: food,      n_prefix_tokens: 4}
+  - {id: pizza,        glyph: "🍕",  family: food,      n_prefix_tokens: 4}
+  - {id: burger,       glyph: "🍔",  family: food,      n_prefix_tokens: 4}
+  - {id: sushi,        glyph: "🍣",  family: food,      n_prefix_tokens: 4}
+  - {id: ramen,        glyph: "🍜",  family: food,      n_prefix_tokens: 4}
+  - {id: beer,         glyph: "🍺",  family: food,      n_prefix_tokens: 4}
+  - {id: avocado,      glyph: "🥑",  family: food,      n_prefix_tokens: 4}
+
+  - {id: moon,         glyph: "🌙",  family: nature,    n_prefix_tokens: 4}
+  - {id: rainbow,      glyph: "🌈",  family: nature,    n_prefix_tokens: 4}
+  - {id: fire,         glyph: "🔥",  family: nature,    n_prefix_tokens: 4}
+  - {id: blossom,      glyph: "🌸",  family: nature,    n_prefix_tokens: 4}
+  - {id: wave,         glyph: "🌊",  family: nature,    n_prefix_tokens: 4}
+  - {id: earth,        glyph: "🌍",  family: nature,    n_prefix_tokens: 4}
+  - {id: lightning,    glyph: "⚡",  family: nature,    n_prefix_tokens: 4}
+
+  - {id: rocket,       glyph: "🚀",  family: transport, n_prefix_tokens: 4}
+  - {id: car,          glyph: "🚗",  family: transport, n_prefix_tokens: 4}
+  - {id: locomotive,   glyph: "🚂",  family: transport, n_prefix_tokens: 4}
+  - {id: helicopter,   glyph: "🚁",  family: transport, n_prefix_tokens: 4}
+  - {id: sailboat,     glyph: "⛵",  family: transport, n_prefix_tokens: 4}
+  - {id: bicycle,      glyph: "🚲",  family: transport, n_prefix_tokens: 4}
+  - {id: ufo,          glyph: "🛸",  family: transport, n_prefix_tokens: 4}
+
+  - {id: red_circle,   glyph: "🔴",  family: symbol,    n_prefix_tokens: 4}
+  - {id: green_circle, glyph: "🟢",  family: symbol,    n_prefix_tokens: 4}
+  - {id: blue_circle,  glyph: "🔵",  family: symbol,    n_prefix_tokens: 4}
+  - {id: black_square, glyph: "⬛",  family: symbol,    n_prefix_tokens: 4}
+  - {id: white_square, glyph: "⬜",  family: symbol,    n_prefix_tokens: 4}
+  - {id: recycle,      glyph: "♻️",  family: symbol,    n_prefix_tokens: 4}
+  - {id: ok_button,    glyph: "🆗",  family: symbol,    n_prefix_tokens: 4}
+
+  - {id: thinking,     glyph: "🤔",  family: face,      n_prefix_tokens: 4}
+  - {id: pleading,     glyph: "🥺",  family: face,      n_prefix_tokens: 4}
+  - {id: mindblown,    glyph: "🤯",  family: face,      n_prefix_tokens: 4}
+
+ladder:
+  - {id: star_outline, glyph: "★",           family: textsym,   n_prefix_tokens: 2}
+  - {id: arrow_right,  glyph: "→",           family: textsym,   n_prefix_tokens: 2}
+  - {id: grinning,     glyph: "😀",          family: face,      n_prefix_tokens: 3}
+  - {id: coffee,       glyph: "☕",          family: food,      n_prefix_tokens: 3}
+  - {id: warning,      glyph: "⚠️",          family: symbol,    n_prefix_tokens: 5}
+  - {id: keycap_one,   glyph: "1️⃣",         family: keycap,    n_prefix_tokens: 6}
+  - {id: flag_jp,      glyph: "🇯🇵",          family: flag,      n_prefix_tokens: 7}
+  - {id: woman_tech,   glyph: "👩‍💻",         family: zwj,       n_prefix_tokens: 7}
+  - {id: black_cat,    glyph: "🐈‍⬛",         family: zwj,       n_prefix_tokens: 8}
+  - {id: astronaut,    glyph: "🧑‍🚀",         family: zwj,       n_prefix_tokens: 8}
+  - {id: flag_rainbow, glyph: "🏳️‍🌈",        family: zwj,       n_prefix_tokens: 9}
+  - {id: family_four,  glyph: "👨‍👩‍👧‍👦",       family: zwj,       n_prefix_tokens: 16}

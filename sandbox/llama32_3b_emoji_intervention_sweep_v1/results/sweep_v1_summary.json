@@ -1,0 +1,180 @@
+{
+  "n_glyphs": 50,
+  "n_matched": 38,
+  "n_ladder": 12,
+  "primary_alpha": 0.5,
+  "layers": [
+    5,
+    11,
+    16
+  ],
+  "zero_hook_exact_noop": true,
+  "dose_monotonic_fraction": 1.0,
+  "spearman_tokens_vs_prompt_kl_all": 0.06334405166013038,
+  "spearman_tokens_vs_ratio_all": -0.07776956949771069,
+  "spearman_promptkl_vs_ratio_matched": 0.5498413393150235,
+  "prompt_kl_matched": {
+    "min": 0.1502598196807866,
+    "median": 0.38618982591792983,
+    "max": 0.5860643943444079
+  },
+  "ratio_to_null_by_layer": {
+    "5": {
+      "matched_median": 2.220554962681107,
+      "matched_frac_above_null_median": 1.0,
+      "consistency_median": 0.1613052388858751,
+      "glyphs_clean_all_targets": 0,
+      "cells_zero_exceedance": 0,
+      "n_cells": 150,
+      "cells_zero_exceedance_per_target": {
+        "paris": 0,
+        "planet": 0,
+        "openended": 0
+      }
+    },
+    "11": {
+      "matched_median": 1.8158087413180761,
+      "matched_frac_above_null_median": 1.0,
+      "consistency_median": 0.23327391360622762,
+      "glyphs_clean_all_targets": 0,
+      "cells_zero_exceedance": 50,
+      "n_cells": 150,
+      "cells_zero_exceedance_per_target": {
+        "paris": 0,
+        "planet": 0,
+        "openended": 50
+      }
+    },
+    "16": {
+      "matched_median": 3.75798467219486,
+      "matched_frac_above_null_median": 1.0,
+      "consistency_median": 0.27760009412715114,
+      "glyphs_clean_all_targets": 0,
+      "cells_zero_exceedance": 77,
+      "n_cells": 150,
+      "cells_zero_exceedance_per_target": {
+        "paris": 0,
+        "planet": 27,
+        "openended": 50
+      }
+    }
+  },
+  "family_medians_matched": {
+    "animal": {
+      "n": 7,
+      "prompt_kl_median": 0.45145890541658257,
+      "ratio_median": 3.631277532156011
+    },
+    "face": {
+      "n": 3,
+      "prompt_kl_median": 0.2775911838120354,
+      "ratio_median": 2.932505126803941
+    },
+    "food": {
+      "n": 7,
+      "prompt_kl_median": 0.46691598212871555,
+      "ratio_median": 5.188476247407574
+    },
+    "nature": {
+      "n": 7,
+      "prompt_kl_median": 0.38614812014535604,
+      "ratio_median": 4.22616994894803
+    },
+    "symbol": {
+      "n": 7,
+      "prompt_kl_median": 0.29933181071691467,
+      "ratio_median": 3.7628919460207015
+    },
+    "transport": {
+      "n": 7,
+      "prompt_kl_median": 0.3346153492925778,
+      "ratio_median": 3.5368971180294912
+    }
+  },
+  "ladder_token_ladder": [
+    {
+      "glyph": "★",
+      "id": "star_outline",
+      "tokens": 2,
+      "prompt_kl": 0.28272631919120667,
+      "best_ratio": 4.28296247402184
+    },
+    {
+      "glyph": "→",
+      "id": "arrow_right",
+      "tokens": 2,
+      "prompt_kl": 0.14853796968327954,
+      "best_ratio": 3.1713102914441897
+    },
+    {
+      "glyph": "😀",
+      "id": "grinning",
+      "tokens": 3,
+      "prompt_kl": 0.37267674541534224,
+      "best_ratio": 3.3673251332113536
+    },
+    {
+      "glyph": "☕",
+      "id": "coffee",
+      "tokens": 3,
+      "prompt_kl": 0.3078357214335786,
+      "best_ratio": 3.190924879285801
+    },
+    {
+      "glyph": "⚠️",
+      "id": "warning",
+      "tokens": 5,
+      "prompt_kl": 0.23171278072991883,
+      "best_ratio": 3.3707611461639773
+    },
+    {
+      "glyph": "1️⃣",
+      "id": "keycap_one",
+      "tokens": 6,
+      "prompt_kl": 0.16751030764812708,
+      "best_ratio": 3.37960641721347
+    },
+    {
+      "glyph": "🇯🇵",
+      "id": "flag_jp",
+      "tokens": 7,
+      "prompt_kl": 0.4131654214568958,
+      "best_ratio": 3.9781054497812676
+    },
+    {
+      "glyph": "👩‍💻",
+      "id": "woman_tech",
+      "tokens": 7,
+      "prompt_kl": 0.37335909654553107,
+      "best_ratio": 3.4337114153708597
+    },
+    {
+      "glyph": "🐈‍⬛",
+      "id": "black_cat",
+      "tokens": 8,
+      "prompt_kl": 0.38561065833086267,
+      "best_ratio": 2.9241604827159406
+    },
+    {
+      "glyph": "🧑‍🚀",
+      "id": "astronaut",
+      "tokens": 8,
+      "prompt_kl": 0.3101695896332187,
+      "best_ratio": 2.9512204922200382
+    },
+    {
+      "glyph": "🏳️‍🌈",
+      "id": "flag_rainbow",
+      "tokens": 9,
+      "prompt_kl": 0.446916687094969,
+      "best_ratio": 3.4721336365032087
+    },
+    {
+      "glyph": "👨‍👩‍👧‍👦",
+      "id": "family_four",
+      "tokens": 16,
+      "prompt_kl": 0.3531941577831916,
+      "best_ratio": 3.9804280614079395
+    }
+  ]
+}
