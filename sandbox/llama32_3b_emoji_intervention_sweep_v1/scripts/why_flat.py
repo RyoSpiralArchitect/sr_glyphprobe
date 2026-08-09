@@ -46,6 +46,9 @@ from pathlib import Path
 
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from nullcache import NullCache  # noqa: E402
+
 from glyphprobe.analysis.metrics import distribution_metrics
 from glyphprobe.backends.registry import create_backend
 from glyphprobe.config import BackendConfig
@@ -262,22 +265,37 @@ def main() -> int:
             tb[n] = {"logits": r.logits,
                      "act": {L: np.asarray(r.activations[L], np.float64) for L in layers}}
 
-        print("building per-layer nulls ...")
+        nc = NullCache(out, model_path=os.environ["SNAP"], alpha=A,
+                       n=args.nulls, seed_formula="800000+100*L+s",
+                       stack=NullCache.stack_fingerprint(cfg),
+                       metric_kwargs=MK,
+                       extra={"layers": layers, "runner": "shared_v1"})
+        print(f"building per-layer nulls ({len(layers)*len(TARGETS)} cells; "
+              f"cache {nc.key}) ...", flush=True)
         null = {}
-        for L in layers:
+        for _i, L in enumerate(layers, 1):
             for n in TARGETS:
-                trms = rms(tb[n]["act"][L]); vals = []
-                for s in range(args.nulls):
-                    rng = np.random.default_rng(800_000 + 100 * L + s)
-                    d = rng.standard_normal(be.model_dim)
-                    v = d / rms(d) * A * trms
-                    r = fwd(TARGETS[n], [L],
-                            Intervention(layer=L, vector=v.astype(np.float32),
-                                         site="resid_post", position="last_nonpad",
-                                         label="null"))
-                    vals.append(distribution_metrics(tb[n]["logits"], r.logits,
-                                                     **MK)["kl_base_to_intervened"])
-                null[(L, n)] = np.array(vals)
+                trms = rms(tb[n]["act"][L])
+        
+                def _build(L=L, n=n, trms=trms):
+                    vals = []
+                    for k in range(args.nulls):
+                        rng = np.random.default_rng(800_000 + 100 * L + k)
+                        d = rng.standard_normal(be.model_dim)
+                        v = d / rms(d) * A * trms
+                        r = fwd(TARGETS[n], [L],
+                                Intervention(layer=L, vector=v.astype(np.float32),
+                                             site="resid_post",
+                                             position="last_nonpad", label="null"))
+                        vals.append(distribution_metrics(tb[n]["logits"], r.logits,
+                                                         **MK)["kl_base_to_intervened"])
+                    return vals
+        
+                null[(L, n)] = np.array(nc.get_or_build(
+                    layer=L, target_name=n, target_prompt=TARGETS[n], build=_build))
+            print(f"  nulls: layer {L} done ({_i}/{len(layers)})", flush=True)
+            nc.save()
+        nc.save()
 
         rows2, dirs = [], {}
         print(f"\n{'g':<4} {'id':<11} {'cls':<4} {'peak':>5} {'peakR':>6} {'midR':>6} "

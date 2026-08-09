@@ -225,3 +225,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Derived null-direction cache. Keyed to an unpinned library stack, so it must
+# not travel between machines; regenerate it locally instead.
+sandbox/**/results/_nullcache/

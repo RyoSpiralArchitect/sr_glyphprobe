@@ -53,6 +53,9 @@ from pathlib import Path
 
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from nullcache import NullCache  # noqa: E402
+
 from glyphprobe.analysis.metrics import distribution_metrics
 from glyphprobe.backends.registry import create_backend
 from glyphprobe.config import BackendConfig
@@ -205,29 +208,43 @@ def main() -> int:
             tb[(ts, n)] = {"logits": r.logits,
                            "act": {L: np.asarray(r.activations[L], np.float64)
                                    for L in LAYERS}}
-    print(f"building nulls ({args.nulls} per layer x target, "
-          f"{len(LAYERS)*sum(len(t) for t in TARGET_SETS.values())} cells) ...")
+    nc = NullCache(out, model_path=os.environ["SNAP"], alpha=A, n=args.nulls,
+                   seed_formula="800000+100*L+s+7919*crc32(targetset/target)%1000",
+                   stack=NullCache.stack_fingerprint(cfg),
+                   metric_kwargs=MK,
+                   extra={"layers": LAYERS, "runner": "order_stability_v2"})
+    _cells = len(LAYERS) * sum(len(t) for t in TARGET_SETS.values())
+    print(f"building nulls ({args.nulls} per layer x target, {_cells} cells; "
+          f"cache {nc.key}) ...", flush=True)
     for ts, tgts in TARGET_SETS.items():
         for n, p in tgts.items():
             for L in LAYERS:
                 trms = rms(tb[(ts, n)]["act"][L])
-                vals = []
-                for s in range(args.nulls):
-                    # include the target so the two target sets do not share draws;
-                    # the 2x2 design is only "independent" if they differ. crc32,
-                    # not hash(): str hashing is salted per process, which would
-                    # make the null irreproducible across runs.
-                    rng = np.random.default_rng(
-                        800_000 + 100 * L + s
-                        + 7919 * (zlib.crc32(f"{ts}/{n}".encode()) % 1000))
-                    d = rng.standard_normal(be.model_dim)
-                    v = d / rms(d) * A * trms
-                    r = fwd(p, [L], Intervention(layer=L, vector=v.astype(np.float32),
-                                                 site="resid_post",
-                                                 position="last_nonpad", label="null"))
-                    vals.append(distribution_metrics(tb[(ts, n)]["logits"], r.logits,
-                                                    **MK)["kl_base_to_intervened"])
-                null[(ts, n, L)] = float(np.median(vals))
+    
+                def _build(L=L, ts=ts, n=n, p=p, trms=trms):
+                    vals = []
+                    for k in range(args.nulls):
+                        rng = np.random.default_rng(
+                            800_000 + 100 * L + k
+                            + 7919 * (zlib.crc32(f"{ts}/{n}".encode()) % 1000))
+                        d = rng.standard_normal(be.model_dim)
+                        v = d / rms(d) * A * trms
+                        r = fwd(p, [L], Intervention(layer=L,
+                                                     vector=v.astype(np.float32),
+                                                     site="resid_post",
+                                                     position="last_nonpad",
+                                                     label="null"))
+                        vals.append(distribution_metrics(tb[(ts, n)]["logits"],
+                                                         r.logits,
+                                                         **MK)["kl_base_to_intervened"])
+                    return vals
+    
+                null[(ts, n, L)] = float(np.median(nc.get_or_build(
+                    layer=L, target_name=f"{ts}/{n}", target_prompt=p,
+                    build=_build)))
+            print(f"  nulls: {ts}/{n} done", flush=True)
+            nc.save()
+    nc.save()
 
     # ---- mid ratio per (glyph, wrapper set, target set) --------------------
     mid, rows = {}, []
