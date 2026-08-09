@@ -135,7 +135,8 @@ def softmax(x):
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--phases", type=int, nargs="+", default=[1, 2, 3])
+    ap.add_argument("--phases", type=int, nargs="+", default=[1, 2],
+                    choices=[1, 2], help="1 = concept probe, 2 = layer profile")
     ap.add_argument("--alpha", type=float, default=0.5)
     ap.add_argument("--nulls", type=int, default=24)
     ap.add_argument("--out", default=str(ROOT / "results"))
@@ -174,6 +175,15 @@ def main() -> int:
             "wrappers": WRAPPERS, "alpha": A, "nulls": args.nulls,
             "num_layers": NL, "backend": "transformers/mps/fp32",
             "model_path": os.environ["SNAP"], "phases_run": []}
+    # a single-phase rerun must not erase the record of the other phases
+    _meta_path = out / f"{args.tag}_meta.json"
+    if _meta_path.exists():
+        try:
+            _prev = json.loads(_meta_path.read_text(encoding="utf-8"))
+            meta["phases_run"] = [p for p in _prev.get("phases_run", [])
+                                  if p.get("phase") not in args.phases]
+        except Exception:
+            pass
     t_all = time.time()
 
     # ================================================== PHASE 1 — does it know?
@@ -183,6 +193,7 @@ def main() -> int:
         print("PHASE 1 — H3: does the model have a concept for this glyph?")
         print("=" * 104)
         rows1 = []
+        retokenised = False
         print(f"{'g':<4} {'id':<11} {'cls':<4} {'ntok':>4} {'P(concept)':>11} {'rank':>6}  "
               f"greedy continuation of \"The emoji <g> is a picture of a\"")
         for it in PANEL:
@@ -202,10 +213,16 @@ def main() -> int:
                 probs.append(best_p); ranks.append(best_r)
             # greedy continuation for legibility
             prompt = NAME_PROMPTS[0].format(g=g)
+            # decode-then-re-encode would let BPE re-merge the boundary, so the
+            # string would not be the model's actual greedy path. Extend the token
+            # sequence itself and only decode at the end.
+            base_ids = list(be.tokenize(prompt).token_ids)
             cont_ids: list[int] = []
             for _ in range(8):
-                so_far = prompt + (be.tokenizer.decode(cont_ids) if cont_ids else "")
+                so_far = be.tokenizer.decode(base_ids + cont_ids)
                 nxt = int(np.argmax(fwd(so_far, []).logits))
+                if be.tokenize(so_far).token_ids != base_ids + cont_ids:
+                    retokenised = True
                 cont_ids.append(nxt)
             cont = be.tokenizer.decode(cont_ids)
             rows1.append({"phase": 1, **{k: it[k] for k in
@@ -217,6 +234,9 @@ def main() -> int:
                           "greedy_continuation": cont})
             print(f"{g:<4} {it['id']:<11} {it['grp']:<4} {it['n_tokens']:>4} "
                   f"{np.mean(probs):11.4f} {min(ranks):>6}  {cont!r}")
+        if retokenised:
+            print("NOTE: at least one greedy step round-tripped to a different token "
+                  "sequence; treat those continuations as indicative only.")
         (out / f"{args.tag}_phase1.jsonl").write_text(
             "\n".join(json.dumps(r, ensure_ascii=False) for r in rows1) + "\n", encoding="utf-8")
         meta["phases_run"].append({"phase": 1, "rows": len(rows1),
@@ -294,7 +314,8 @@ def main() -> int:
                               "direction_rms": drms, "ratio_mean": mr,
                               "kl_per_target": dict(zip(TARGETS, map(float, kls))),
                               "exceedance_per_target": dict(zip(TARGETS, exs))})
-            mid = max(prof[10:20]); last = prof[-1]; pk = int(np.argmax(prof))
+            mid_slice = prof[10:20] or prof            # small models have no L10-19
+            mid = max(mid_slice); last = prof[-1]; pk = int(np.argmax(prof))
             shape = "MID-PEAK" if mid > last else "last-peak"
             spark = "".join("▁▂▃▄▅▆▇█"[min(7, int(p / max(max(prof), 1e-9) * 7.99))] for p in prof)
             print(f"{it['glyph']:<4} {it['id']:<11} {it['grp']:<4} L{pk:<4} {max(prof):6.2f} "
@@ -302,9 +323,9 @@ def main() -> int:
 
         (out / f"{args.tag}_phase2.jsonl").write_text(
             "\n".join(json.dumps(r, ensure_ascii=False) for r in rows2) + "\n", encoding="utf-8")
-        np.savez_compressed(out / f"{args.tag}_dirs.npz",
-                            **{f"{k}_L{L}": v[L].astype(np.float32)
-                               for k, v in dirs.items() for L in (5, 11, 14, 16, 20, NL - 1)})
+        # direction vectors are not persisted: nothing downstream reads them, the
+        # H2 cosines below are saved in *_hypotheses.json, and the README states
+        # that raw arrays are not stored.
 
         # ---- H1 pair verdicts ----
         prof_by = {}
@@ -343,7 +364,9 @@ def main() -> int:
         if all(k in dirs for k in ("black_cat", "cat_plain", "black_sq", "cat_face")):
             print(f"{'layer':>5} {'cos(bcat,cat)':>14} {'cos(bcat,blacksq)':>18} "
                   f"{'cos(bcat,catface)':>18}  closer to")
-            for L in [0, 2, 5, 8, 11, 14, 16, 20, 24, NL - 1]:
+            probe_layers = sorted({L for L in (0, 2, 5, 8, 11, 14, 16, 20, 24, NL - 1)
+                                   if 0 <= L < NL})
+            for L in probe_layers:
                 c1 = cosv(dirs["black_cat"][L], dirs["cat_plain"][L])
                 c2 = cosv(dirs["black_cat"][L], dirs["black_sq"][L])
                 c3 = cosv(dirs["black_cat"][L], dirs["cat_face"][L])
@@ -361,6 +384,7 @@ def main() -> int:
             json.dumps(meta, ensure_ascii=False, indent=2, default=str), encoding="utf-8")
         print(f"\nphase 2 done in {time.time()-t0:.0f}s")
 
+    meta["phases_run"].sort(key=lambda p: p["phase"])
     meta["total_elapsed_s"] = round(time.time() - t_all, 1)
     (out / f"{args.tag}_meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2, default=str), encoding="utf-8")

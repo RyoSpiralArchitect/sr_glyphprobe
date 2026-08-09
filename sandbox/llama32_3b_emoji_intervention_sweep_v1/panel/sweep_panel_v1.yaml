@@ -10,8 +10,11 @@
 #   ladder  — deliberately spans 2..16 prefix tokens to MEASURE how much
 #             token count alone drives intervention magnitude.
 #
-# n_prefix_tokens below is the surveyed value; the runner recomputes it and
-# fails loudly on any mismatch rather than trusting this file.
+# n_prefix_tokens below is the surveyed value. The runner recomputes it for
+# EVERY extraction wrapper and aborts with exit code 2 (writing no records)
+# if any wrapper disagrees with this file or with the other wrappers, so a
+# tokenizer change can never leave the 'matched' stratum silently unmatched.
+# Pass --allow-token-mismatch to keep such a run and treat it as unmatched.
 
 matched:
   - {id: dog,          glyph: "🐶",  family: animal,    n_prefix_tokens: 4}

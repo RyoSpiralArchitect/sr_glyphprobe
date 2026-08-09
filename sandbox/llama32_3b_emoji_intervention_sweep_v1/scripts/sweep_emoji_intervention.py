@@ -127,7 +127,13 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None, help="first N glyphs (smoke)")
     ap.add_argument("--out", default=str(ROOT / "results"))
     ap.add_argument("--tag", default="sweep_v1")
+    ap.add_argument("--allow-token-mismatch", action="store_true",
+                    help="continue instead of failing when a panel token count is wrong")
     args = ap.parse_args()
+
+    if args.primary_alpha not in args.alphas:
+        ap.error(f"--primary-alpha {args.primary_alpha} is not in --alphas {args.alphas}; "
+                 "the null is only built for the swept alphas")
 
     panel = yaml.safe_load((ROOT / "panel" / "sweep_panel_v1.yaml").read_text(encoding="utf-8"))
     glyphs = ([dict(r, stratum="matched") for r in panel["matched"]]
@@ -250,11 +256,12 @@ def main() -> int:
         # --- extraction over wrappers (also gives the prompt-level effect) ---
         deltas = {L: [] for L in args.layers}
         prompt_kls, prompt_rel = [], {L: [] for L in args.layers}
-        n_prefix = None
+        per_wrapper_prefix = []
         for w in EXTRACT_WRAPPERS:
             r = fwd(f"{g}\n{w}", args.layers)
             npx = len(r.token_ids) - wrap_ntok[w]
-            n_prefix = npx if n_prefix is None else n_prefix
+            per_wrapper_prefix.append(npx)
+            n_prefix = npx
             pd = distribution_metrics(wrap_base[w]["logits"], r.logits, **METRIC_KW)
             prompt_kls.append(pd["kl_base_to_intervened"])
             for L in args.layers:
@@ -262,8 +269,11 @@ def main() -> int:
                 deltas[L].append(d)
                 prompt_rel[L].append(float(np.linalg.norm(d)
                                            / (np.linalg.norm(wrap_base[w]["act"][L]) + 1e-12)))
-        if n_prefix != item["n_prefix_tokens"]:
-            mismatches.append((item["id"], item["n_prefix_tokens"], n_prefix))
+        # the matched stratum's whole guarantee rests on this, so check every
+        # wrapper: a glyph whose prefix merges differently after one wrapper is a
+        # mismatch even if it is right for the others
+        if len(set(per_wrapper_prefix)) != 1 or n_prefix != item["n_prefix_tokens"]:
+            mismatches.append((item["id"], item["n_prefix_tokens"], per_wrapper_prefix))
         prompt_kl = float(np.mean(prompt_kls))
 
         show, ratio_by_layer = [], []
@@ -334,6 +344,9 @@ def main() -> int:
                         "latency_ms": r.latency_ms})
 
                 dose_by_target.append(all(x < y for x, y in zip(per_alpha, per_alpha[1:])))
+                rows[-1]["dose_kl_by_alpha"] = dict(zip(map(str, args.alphas),
+                                                        map(float, per_alpha)))
+                rows[-1]["dose_monotonic"] = bool(dose_by_target[-1])
 
             mean_primary = float(np.mean(kl_primary))
             null_med = float(np.median([np.median(null[(L, n, pa)]) for n in tnames]))
@@ -351,6 +364,13 @@ def main() -> int:
     dt = time.time() - t0
     print("-" * 104)
     print("panel token counts: " + ("ALL MATCH" if not mismatches else f"MISMATCH {mismatches}"))
+    if mismatches and not args.allow_token_mismatch:
+        print("\nABORT: the matched stratum is no longer token-length matched, so the "
+              "central claim of this sweep would be false. Records were NOT written.\n"
+              "Fix panel/sweep_panel_v1.yaml (or pass --allow-token-mismatch to keep "
+              "the run and treat the stratum as unmatched).", file=sys.stderr)
+        backend.close()
+        return 2
 
     out_dir = Path(args.out)
     out_dir.mkdir(parents=True, exist_ok=True)

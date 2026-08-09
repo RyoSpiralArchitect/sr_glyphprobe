@@ -79,7 +79,6 @@ def main() -> int:
 
     def ticks(a, b, n=5):
         step = (b - a) / n
-        mag = 10 ** (len(f"{step:.0e}".split("e")[1]) and 0)
         return [a + step * i for i in range(n + 1)]
 
     marks = []
@@ -127,11 +126,15 @@ def main() -> int:
             f'class="band"/>'
             f'<line x1="{px2(3.2):.1f}" y1="{py2(med):.1f}" x2="{px2(4.8):.1f}" '
             f'y2="{py2(med):.1f}" class="bandmed"/>')
-    lmarks = "".join(
-        f'<g class="pt"><title>{esc(d["g"] + " " + d["id"] + f" — {d['tok']} tokens, prompt KL {d['x']:.4f}")}</title>'
-        f'<circle cx="{px2(d["tok"]):.1f}" cy="{py2(d["x"]):.1f}" r="13" class="halo"/>'
-        f'<text x="{px2(d["tok"]):.1f}" y="{py2(d["x"]):.1f}" class="glyph">{esc(d["g"])}</text></g>'
-        for d in lad)
+    def _ladder_mark(d):
+        title = "{} {} — {} tokens, prompt KL {:.4f}".format(
+            d["g"], d["id"], d["tok"], d["x"])
+        return (f'<g class="pt"><title>{esc(title)}</title>'
+                f'<circle cx="{px2(d["tok"]):.1f}" cy="{py2(d["x"]):.1f}" r="13" class="halo"/>'
+                f'<text x="{px2(d["tok"]):.1f}" y="{py2(d["x"]):.1f}" class="glyph">'
+                f'{esc(d["g"])}</text></g>')
+
+    lmarks = "".join(_ladder_mark(d) for d in lad)
     lgrid = "".join(
         f'<line x1="{px2(t):.1f}" y1="{mt2}" x2="{px2(t):.1f}" y2="{H2-mb2}" class="grid"/>'
         f'<text x="{px2(t):.1f}" y="{H2-mb2+18}" class="axis mid">{t}</text>'
@@ -143,6 +146,13 @@ def main() -> int:
 
     rho_tok = summ["spearman_tokens_vs_prompt_kl_all"]
     rho_pair = summ["spearman_promptkl_vs_ratio_matched"]
+
+    # every target's clear-count is looked up; none is asserted as a literal, so a
+    # rerun that changes one cannot leave a stale zero next to a computed sibling
+    _clear = summ["ratio_to_null_by_layer"][L]["cells_zero_exceedance_per_target"]
+    clear_open = _clear.get("openended", 0)
+    clear_planet = _clear.get("planet", 0)
+    clear_paris = _clear.get("paris", 0)
 
     rows = "".join(
         f"<tr><td>{esc(g['glyph'])}</td><td>{esc(g['id'])}</td><td>{esc(g['family'])}</td>"
@@ -261,11 +271,12 @@ def main() -> int:
   <b>{rho_pair:+.2f}</b>.</p>
 
   <p class="notes"><b>The vertical axis is a ratio to the null <i>median</i>, and the
-  null is right-skewed.</b> The assumption-free check is how many of the
-  {meta['random_controls']} random draws reached a glyph's KL: at layer {L} that is
-  0 for every glyph on the open-ended target, {summ['ratio_to_null_by_layer'][L]['cells_zero_exceedance_per_target'].get('planet', 0)}/{summ['n_glyphs']}
-  on <code>planet</code>, and <b>0/{summ['n_glyphs']}</b> on <code>paris</code> —
-  <b>no glyph clears the null on all three targets at any layer</b>. Read the vertical
+  null is right-skewed.</b> The assumption-free check counts the glyphs that clear the
+  null <i>outright</i> — not one of the {meta['random_controls']} matched random
+  directions reached their KL. At layer {L} that is {clear_open}/{summ['n_glyphs']} on
+  the open-ended target, {clear_planet}/{summ['n_glyphs']} on <code>planet</code> and
+  {clear_paris}/{summ['n_glyphs']} on <code>paris</code> — and
+  <b>no glyph clears it on all three targets at any layer</b>. Read the vertical
   ordering as relative, not as {len(pts)} individually significant results. The
   horizontal axis does not use the null at all and is unaffected.</p>
 

@@ -39,7 +39,7 @@
 - **抽出ラッパー**（4件）: `Today I saw a` · `My favorite thing is` · `Here we have` · `This reminds me of`
 - **注入ターゲット**（3件、ラッパーと素）: `The capital of France is`（top-1 ` Paris`）· `The largest planet in our solar system is`（` Jupiter`）· `I am thinking about`（` the`）
 - **層** `[5, 11, 16]` · **強度** `alpha ∈ {0.1, 0.5, 1.0}`（主軸 `0.5`）· （層×ターゲット×強度）ごとに**ランダム方向対照 24 本**
-- **パネル**: 50 グリフを2階層に — `matched`（38グリフ、**全て正確に4プレフィックストークン**）と `ladder`（12グリフ、**2〜16**トークンにまたがる）
+- **パネル**: 50 グリフを2階層に — `matched`（38グリフ、**全て正確に4プレフィックストークン**。実行時に*全ての*抽出ラッパーに対して再計算し、不一致があれば記録を書かずに中断する）と `ladder`（12グリフ、**2〜16**トークンにまたがる）
 - 2,157 レコード、M4 上で 359 秒（MPS / FP32）
 
 すべての指標はプロジェクト自身の `glyphprobe.analysis.metrics`

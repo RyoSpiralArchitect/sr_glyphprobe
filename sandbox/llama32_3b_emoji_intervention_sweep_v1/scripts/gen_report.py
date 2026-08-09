@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
-"""Render results/report.md from the sweep records. Numbers are read from the
-data, never transcribed by hand."""
+"""Render results/report.md from the sweep records.
+
+All tables are computed from the records. A few sentences of surrounding prose
+name specific targets/layers as literals; re-read them if you rerun with a
+different panel, alpha or null size."""
 import json
 from pathlib import Path
 
@@ -89,7 +92,10 @@ for lay in meta["layers"]:
     w(f"| {lay} | {s['matched_median']:.2f} | {s['consistency_median']:.3f} | "
       f"{s['cells_zero_exceedance']}/{s['n_cells']} | "
       f"**{s['glyphs_clean_all_targets']}/{summ['n_glyphs']}** | {per} |")
-w("\n**No glyph clears the null on all three targets at any layer.** The magnitude-controlled "
+_any_clean = any(summ["ratio_to_null_by_layer"][str(lay)]["glyphs_clean_all_targets"]
+                 for lay in meta["layers"])
+w("\n**" + ("No glyph clears" if not _any_clean else "Some glyphs clear")
+  + " the null on all three targets at any layer.** The magnitude-controlled "
   "effect is clean only on the open-ended target at layers 11 and 16 (where the null is "
   "tightest), partly on `planet` at layer 16, and never on `paris`. Section B's ranking is "
   "therefore a *relative* ordering, carried mostly by the open-ended target — not a set of "
@@ -115,4 +121,5 @@ w("The random-direction null is a **size** control, not a semantic control. "
   "No causal or semantic claim is authorized by this screen.")
 
 (res / "report.md").write_text("\n".join(out) + "\n", encoding="utf-8")
-print(f"wrote {res / 'report.md'} ({len('\n'.join(out)):,} chars)")
+_text = "\n".join(out)
+print(f"wrote {res / 'report.md'} ({len(_text):,} chars)")

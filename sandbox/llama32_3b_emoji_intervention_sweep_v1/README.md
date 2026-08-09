@@ -40,7 +40,7 @@ score       KL(baseline ‖ intervened) over the next-token distribution
 - **Extraction wrappers** (4): `Today I saw a` · `My favorite thing is` · `Here we have` · `This reminds me of`
 - **Injection targets** (3, disjoint from the wrappers): `The capital of France is` (top-1 ` Paris`) · `The largest planet in our solar system is` (` Jupiter`) · `I am thinking about` (` the`)
 - **Layers** `[5, 11, 16]` · **strengths** `alpha ∈ {0.1, 0.5, 1.0}` (primary `0.5`) · **24 random-direction controls** per (layer, target, alpha)
-- **Panel**: 50 glyphs in two strata — `matched` (38 glyphs, **every one costing exactly 4 prefix tokens**) and `ladder` (12 glyphs spanning **2…16** prefix tokens)
+- **Panel**: 50 glyphs in two strata — `matched` (38 glyphs, **every one costing exactly 4 prefix tokens**, recomputed against *every* extraction wrapper at run time; the runner aborts rather than emit an unmatched stratum) and `ladder` (12 glyphs spanning **2…16** prefix tokens)
 - 2,157 records, 359 s on an M4 (MPS / FP32)
 
 All metrics come from the project's own `glyphprobe.analysis.metrics`
@@ -350,5 +350,5 @@ covered by the repo-wide `*.log` gitignore rule, so they are not committed. Reru
 the commands above to regenerate them.
 ```
 
-Raw activation arrays are not stored — the records keep the derived metrics only.
+Raw activation arrays are not stored — the records keep the derived metrics only, verified by the fact that no committed file holds a per-layer vector.
 Regenerate everything with the commands above.

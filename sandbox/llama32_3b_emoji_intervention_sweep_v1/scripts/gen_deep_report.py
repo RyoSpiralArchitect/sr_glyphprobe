@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """Render results/deep_report.md from the deep-diagnostic outputs.
-Every number is read from the data; none is transcribed by hand."""
+
+All tables are computed from the records. The surrounding prose quotes a few
+numbers as literals (they are the ones the narrative is about); if you rerun
+with a different panel, alpha or null size, re-read the prose as well as the
+tables."""
 from __future__ import annotations
 
 import json
@@ -87,7 +91,12 @@ w(f"\nstrong group ratio median **{np.median([g['ratio_median'] for g in strong]
   "ratio, not from whether a cell is significant.\n")
 
 ids = [g["id"] for g in an["phase1"]["glyphs"] if g["id"] in sweep]
-old = [sweep[i]["by_layer"]["16"]["ratio_to_null_mean"] for i in ids]
+_sl = str(L0) if str(L0) in next(iter(sweep.values()))["by_layer"] else None
+if _sl is None:
+    raise SystemExit(f"deep layer L{L0} is absent from the sweep summary "
+                     f"({sorted(next(iter(sweep.values()))['by_layer'])}); "
+                     "cannot compute the replication correlation")
+old = [sweep[i]["by_layer"][_sl]["ratio_to_null_mean"] for i in ids]
 new = [next(g["ratio_median"] for g in an["phase1"]["glyphs"] if g["id"] == i) for i in ids]
 w(f"**Replication.** sweep_v1 (3 targets, 24 nulls) vs this run (12 targets, {nn} nulls), "
   f"same 13 glyphs at L{L0}: Spearman = **{sp(old, new):+.3f}**. The ordering holds; "
@@ -136,10 +145,31 @@ w(f"At **L0 every glyph sits at ratio 0.05**, i.e. a real emoji direction is ~20
 w("## Phase 3 — specificity and sign flip\n")
 w("Probe words were written by hand per glyph, **not** harvested from the model's own "
   "top-boosted lists, so the diagonal is not selected-on.\n")
-w(f"- own probe group largest (instance level): **{spec['self_wins_instance_level']}/{spec['n']}**")
+_pid = {k: set(v) for k, v in spec["probe_ids"].items()}
+_keys = list(spec["matrix"])
+_shared = {(a, b): sorted(_pid[a] & _pid[b])
+           for i, a in enumerate(_keys) for b in _keys[i + 1:] if _pid[a] & _pid[b]}
+_naive = _excl = 0
+for _k0 in _keys:
+    _v = spec["matrix"][_k0]
+    _off = {k: x for k, x in _v.items() if k != _k0}
+    if _v[_k0] >= max(_off.values()):
+        _naive += 1
+    _ok = {k: x for k, x in _off.items() if not (_pid[k] & _pid[_k0])}
+    if not _ok or _v[_k0] >= max(_ok.values()):
+        _excl += 1
+w(f"- own probe group largest (instance level): **{_naive}/{spec['n']}**")
 w(f"- own *category block* largest: **{spec['own_block_wins']}/{spec['n']}**")
 w(f"- sign-flip antisymmetry `cos(probe_delta(+d), -probe_delta(-d))`: "
   f"median {spec['antisymmetry_median']:+.3f}, min {spec['antisymmetry_min']:+.3f}\n")
+if _shared:
+    w("\n**Probe-group overlap.** Truncating each probe word to its first token makes "
+      "some hand-written groups share ids — "
+      + "; ".join(f"`{a}`/`{b}` share {len(v)} of {len(_pid[a])}" for (a, b), v in _shared.items())
+      + " (black cats are cats, so this is semantically right but makes an "
+      "instance-level diagonal ambiguous). Excluding every competitor column that "
+      f"shares a token with the row leaves the count **unchanged at {_excl}/{spec['n']}**, "
+      "so the conclusion does not depend on the overlap.\n")
 w("| injected | food | animal | vehicle | other | own block | margin over best other |")
 w("|---|---|---|---|---|---|---|")
 gmap = {g["id"]: g["glyph"] for g in an["phase1"]["glyphs"]}

@@ -54,7 +54,7 @@ for gid, p in prof.items():
     rec.append({"id": gid, "glyph": info[gid]["glyph"], "grp": info[gid]["grp"],
                 "sem": info[gid]["sem"], "pair": info[gid]["pair"],
                 "utf8_lead": info[gid]["utf8_lead"], "n_tokens": info[gid]["n_tokens"],
-                "mid": float(max(seq[10:20])), "last": float(seq[-1]),
+                "mid": float(max(seq[10:20] or seq)), "last": float(seq[-1]),
                 "peak_layer": int(np.argmax(seq)),
                 "p_concept": know[gid]["p_concept_mean"]})
 rec.sort(key=lambda r: r["mid"])

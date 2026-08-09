@@ -183,6 +183,15 @@ def main() -> int:
             "nulls_phase1": args.nulls_phase1, "nulls_phase2": args.nulls_phase2,
             "backend": "transformers/mps/fp32", "model_path": os.environ["SNAP"],
             "num_layers": NL, "phases_run": []}
+    # a single-phase rerun must not erase the record of the other phases
+    _meta_path = out / f"{args.tag}_meta.json"
+    if _meta_path.exists():
+        try:
+            _prev = json.loads(_meta_path.read_text(encoding="utf-8"))
+            meta["phases_run"] = [p for p in _prev.get("phases_run", [])
+                                  if p.get("phase") not in args.phases]
+        except Exception:
+            pass
     t_all = time.time()
 
     # ---------------------------------------------------------------- helpers
@@ -429,12 +438,23 @@ def main() -> int:
               f"(rows = injected glyph)")
         hdr = " ".join(f"{k[:6]:>7}" for k in keys)
         print(f"{'inject':<14} {hdr}   diag  best-off  margin")
+        # first-token truncation can make two hand-written groups share ids
+        # (black_cat and cat are both cats), which would make an instance-level
+        # diagonal meaningless. Report the overlaps and exclude those competitors.
+        pid = {k: set(v) for k, v in probe_ids.items()}
+        shared = {(a, b): sorted(pid[a] & pid[b])
+                  for i, a in enumerate(keys) for b in keys[i + 1:] if pid[a] & pid[b]}
+        if shared:
+            print("probe groups sharing token ids (excluded as competitors):")
+            for (a, b), ids in shared.items():
+                print(f"  {a} <-> {b}: {len(ids)} of {len(pid[a])}")
         diag_wins = 0
         for item in FOCUS:
             k0 = item["id"]
             vals = matrix[k0]
-            off = {k: v for k, v in vals.items() if k != k0}
-            # black_cat and cat deliberately share probe words; don't count that pair
+            off = {k: v for k, v in vals.items() if k != k0 and not (pid[k] & pid[k0])}
+            if not off:
+                continue
             bo = max(off.items(), key=lambda kv: kv[1])
             win = vals[k0] >= bo[1]
             diag_wins += win
@@ -488,6 +508,7 @@ def main() -> int:
             json.dumps({"matrix": matrix, "probe_words": probe_words,
                         "probe_ids": probe_ids, "layer": L, "alpha": A,
                         "self_wins_instance_level": int(diag_wins), "n": len(FOCUS),
+                        "probe_group_overlaps": {f"{a}|{b}": v for (a, b), v in shared.items()},
                         "blocks": BLOCKS, "block_view": blk_rows,
                         "own_block_wins": int(blk_wins),
                         "antisymmetry_median": float(np.median(anti)),
@@ -570,6 +591,7 @@ def main() -> int:
                                    "elapsed_s": round(time.time() - t0, 1)})
         print(f"\nphase 4 done in {time.time()-t0:.0f}s -> {args.tag}_phase4.jsonl")
 
+    meta["phases_run"].sort(key=lambda p: p["phase"])
     meta["total_elapsed_s"] = round(time.time() - t_all, 1)
     (out / f"{args.tag}_meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2, default=str), encoding="utf-8")

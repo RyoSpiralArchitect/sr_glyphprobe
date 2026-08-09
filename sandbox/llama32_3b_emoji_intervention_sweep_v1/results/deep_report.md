@@ -93,6 +93,9 @@ Probe words were written by hand per glyph, **not** harvested from the model's o
 - own *category block* largest: **10/13**
 - sign-flip antisymmetry `cos(probe_delta(+d), -probe_delta(-d))`: median +0.633, min -0.362
 
+
+**Probe-group overlap.** Truncating each probe word to its first token makes some hand-written groups share ids — `cat`/`black_cat` share 3 of 6; `black_square`/`black_cat` share 1 of 6 (black cats are cats, so this is semantically right but makes an instance-level diagonal ambiguous). Excluding every competitor column that shares a token with the row leaves the count **unchanged at 4/13**, so the conclusion does not depend on the overlap.
+
 | injected | food | animal | vehicle | other | own block | margin over best other |
 |---|---|---|---|---|---|---|
 | 🍺 `beer` | +1.66 | +0.49 | +0.09 | -0.14 | `food` | +1.18 ✅ |

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Render results/whyflat_report.md. Every number is read from the data."""
+"""Render results/whyflat_report.md.
+
+All tables are computed from the records; the prose quotes a handful of them as
+literals. Re-read the prose too if you rerun with a different panel."""
 from __future__ import annotations
 
 import json
@@ -106,6 +109,10 @@ w(f"\nThree of four pairs put the 4-byte member higher (median {np.median(qs):.2
   f"Spearman(is 3-byte, mid ratio) = **{an['spearman_e2_mid']:+.3f}**, and "
   f"Spearman(token count, mid ratio) = {an['spearman_ntokens_mid']:+.3f}, so this is not "
   "token count in disguise.\n")
+_bp = pairs.get("boat", [])
+_be = next((m for m in _bp if m["grp"] == "E2"), None)
+_bf = next((m for m in _bp if m["grp"] == "F0"), None)
+boat_ratio = (_bf["mid"] / _be["mid"]) if (_be and _bf) else float("nan")
 e2_all = [r for r in rec if r["grp"] == "E2"]
 w(f"All {len(e2_all)} 3-byte glyphs (⛵ ☕ ⚓ ⬛ ✈️) land in the bottom half; none reaches "
   "the top. But three 4-byte glyphs (🥺 🤔 🟥) are just as low, so being 3-byte looks "
@@ -113,7 +120,7 @@ w(f"All {len(e2_all)} 3-byte glyphs (⛵ ☕ ⚓ ⬛ ✈️) land in the bottom 
 w("The most likely reading is that byte class is a *proxy*: the U+26xx/U+2Bxx blocks are "
   "full of abstract symbols, and abstractness is doing part of the work. The pairs argue "
   "against that being the whole story — ⛵ and 🚢 are both concrete boats and still differ "
-  f"{qs[0] if qs else 0:.2f}x — but four loose near-synonyms is thin evidence. Treat H1 as "
+  f"{boat_ratio:.2f}x — but four loose near-synonyms is thin evidence. Treat H1 as "
   "suggestive.\n")
 
 # ------------------------------------------------------------------ H2
