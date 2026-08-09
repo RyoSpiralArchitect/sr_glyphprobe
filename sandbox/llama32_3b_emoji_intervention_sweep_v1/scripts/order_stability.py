@@ -212,7 +212,7 @@ def main() -> int:
                    seed_formula="800000+100*L+s+7919*crc32(targetset/target)%1000",
                    stack=NullCache.stack_fingerprint(cfg),
                    metric_kwargs=MK,
-                   extra={"layers": LAYERS, "runner": "order_stability_v2"})
+                   extra={"runner": "order_stability_v2"})
     _cells = len(LAYERS) * sum(len(t) for t in TARGET_SETS.values())
     print(f"building nulls ({args.nulls} per layer x target, {_cells} cells; "
           f"cache {nc.key}) ...", flush=True)

@@ -269,7 +269,7 @@ def main() -> int:
                        n=args.nulls, seed_formula="800000+100*L+s",
                        stack=NullCache.stack_fingerprint(cfg),
                        metric_kwargs=MK,
-                       extra={"layers": layers, "runner": "shared_v1"})
+                       extra={"runner": "shared_v1"})
         print(f"building per-layer nulls ({len(layers)*len(TARGETS)} cells; "
               f"cache {nc.key}) ...", flush=True)
         null = {}

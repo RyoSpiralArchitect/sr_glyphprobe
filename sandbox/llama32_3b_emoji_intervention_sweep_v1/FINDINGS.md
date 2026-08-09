@@ -11,7 +11,7 @@ so no receipt here is comparable to a canonical run.
 [日本語版](FINDINGS.ja.md) · [README](README.md) · reports:
 [sweep](results/report.md) · [deep](results/deep_report.md) ·
 [why-flat](results/whyflat_report.md) · [composition](results/composition_report.md) ·
-[order](results/order_report.md)
+[order](results/order_report.md) · [n=30](results/meanrule30_report.md)
 
 ---
 
@@ -131,6 +131,32 @@ construction*). This also answers the puzzle that started the chase: **🐈‍�
 weak because 🐈 (3.96) and ⬛ (3.00) average to 3.48** — not the joiner, not the
 order.
 
+**Re-tested at n = 30** on 30 pairs drawn by a seeded sampler from the
+repository's own `e2_core35` panels — a pool I did not choose, every glyph
+exactly 4 prefix tokens — with the coefficients still frozen
+([report](results/meanrule30_report.md),
+[pre-registration](PREREGISTRATION_mean_rule_n30.md)):
+
+| | n = 6 | n = 30 |
+|---|---|---|
+| Spearman | +0.886 | **+0.784** (PASS) |
+| MAE | 0.308 | 0.409 (PASS) |
+| bootstrap 95 % CI | not supportable | **[+0.550, +0.907]** |
+| permutation p | — | **0.0001** |
+
+The interval is the quantity §5.1 said n ≈ 6 could not produce. It excludes zero
+comfortably — **the ordering is real** — but its lower bound sits *below* the
+0.70 pass threshold, and refitting gives `0.62 × mean + 1.86` against the frozen
+`0.70 / 1.16`, with the rule under-predicting on **26 of 30** pairs. **Quote it as an ordering,
+not as a predictor of magnitude.**
+
+And read "SUPPORTED" narrowly: `pred` is a strictly increasing affine map of
+`mean`, so `Spearman(pred, obs)` is *identical* for any positive slope and any
+intercept (verified: 0.70/1.16, 1.0/0.0 and 0.31/99.0 all give +0.784205). That
+leg tests **"the mean of the component scores ranks the composites"**, not the
+fitted rule. Only the MAE leg touches the coefficients — and it is the leg that
+degrades out of sample.
+
 ### 2.5 Injected directions boost recognisable tokens
 
 Qualitative, and the most immediately legible result. Injecting a glyph's
@@ -172,9 +198,18 @@ review, four by my own follow-up measurements.
 | "the layer profile splits the panel with no exceptions" | property of a 13-glyph panel with no intermediate cases; across 19 glyphs the mid ratio is a **continuum** (2.71 → 5.66, largest gap 0.73) |
 | "the direction follows the last component" | an artefact of comparing cos-to-*first* against cos-to-*last*: those labels swap with the order, so the column flipped when the geometry did not |
 | "the order effect scales with the component gap" | read off **two** families; Spearman **+0.04** at n = 7, **−0.94** at n = 6 |
-| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance |
+| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **Superseded at n = 30 — see below** |
 | "joined and bare score the same (3.39 vs 3.39)" | a 2-dp display artefact; the values are 3.3933 and 3.3870 |
 | "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** |
+
+**One retraction was itself too agnostic.** At n = 30 the order effect is not
+absent — it runs the *opposite* way to the original claim: **8/30 pairs positive**
+where chance is 15 (binomial two-sided **p = 0.016**), median **−0.32**. Ending on
+the *stronger* component scores **lower**. The 6/7 claim deserved retraction and
+the 8/13 pooled reading was the right call on the evidence then; with five times
+the units the effect reappears with the sign flipped. This is a new
+single-sample finding at exactly the evidential level the 6/7 claim once had, and
+it needs its own replication before it is more than that.
 
 A confound found late and disclosed rather than buried: **UTF-8 byte class**
 correlates with the prompt-level ranking (Spearman **−0.55**, and **−0.48**
@@ -239,7 +274,10 @@ These cost the most and generalise furthest.
    protocol read +0.04 and −0.94 on two samples. Any rank correlation over
    fewer than ~10 units in this setting should be treated as a hypothesis
    generator only — including the mean rule that *passed* its pre-registered
-   test.
+   test. **Confirmed constructively at n = 30**: the *ordering* claim survives
+   with a bootstrap CI of [+0.55, +0.91], and the order effect — which read 6/7 then
+   2/6 — resolves to 8/30 with the sign reversed. Small samples here did not
+   merely add noise; they got the direction wrong.
 2. **A clean binary split is usually a panel property.** "No exceptions" held
    over 13 glyphs and dissolved at 19. Before claiming a dichotomy, add the
    cases that would sit between the groups.
@@ -284,8 +322,9 @@ These cost the most and generalise furthest.
 
 - **Independent replication**: a second model, and panels chosen by someone
   other than the analyst.
-- **More units per statistic**: the results that failed here failed at n ≈ 6–7.
-  Composition families are cheap; 30+ would make a rank correlation meaningful.
+- ~~**More units per statistic**~~ — done: 30 pairs, see
+  [`results/meanrule30_report.md`](results/meanrule30_report.md). Next: the
+  calibration failure (slope 0.70 → 0.62 refit) needs its own study.
 - **Token-position resolution**: extract the direction at each token position of
   a compound rather than only at the wrapper's `last_nonpad`, to locate where
   composition costs efficacy.
