@@ -1,0 +1,188 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "stated_prediction": "the order-effect sign will NOT be stable across conditions",
+  "pairs": [
+    [
+      "pizsq",
+      "pizza",
+      "black_sq"
+    ],
+    [
+      "bursq",
+      "burger",
+      "black_sq"
+    ],
+    [
+      "carsq",
+      "car",
+      "black_sq"
+    ],
+    [
+      "pizwht",
+      "pizza",
+      "white_sq"
+    ]
+  ],
+  "wrapper_sets": {
+    "A": [
+      "Today I saw a",
+      "My favorite thing is",
+      "Here we have",
+      "This reminds me of"
+    ],
+    "B": [
+      "Look at this",
+      "I just found a",
+      "There was a",
+      "Everyone loves a"
+    ]
+  },
+  "target_sets": {
+    "A": {
+      "paris": "The capital of France is",
+      "planet": "The largest planet in our solar system is",
+      "thinking": "I am thinking about"
+    },
+    "B": {
+      "summer": "The best thing about summer is",
+      "tell": "Let me tell you about",
+      "gold": "The chemical symbol for gold is"
+    }
+  },
+  "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "mid": {
+    "pizza|WA|TA": 5.317431981028592,
+    "pizza|WA|TB": 6.755273459684996,
+    "pizza|WB|TA": 4.5404544603829535,
+    "pizza|WB|TB": 6.167724108909154,
+    "burger|WA|TA": 4.700164441013903,
+    "burger|WA|TB": 5.911445556820205,
+    "burger|WB|TA": 4.067050896142874,
+    "burger|WB|TB": 6.279617810160279,
+    "car|WA|TA": 5.657188823538752,
+    "car|WA|TB": 4.864260285040764,
+    "car|WB|TA": 5.508788243916988,
+    "car|WB|TB": 5.012138211648414,
+    "black_sq|WA|TA": 3.002989942905477,
+    "black_sq|WA|TB": 3.431209985995226,
+    "black_sq|WB|TA": 3.910823262616539,
+    "black_sq|WB|TB": 2.5392053192661987,
+    "white_sq|WA|TA": 4.179943326341358,
+    "white_sq|WA|TB": 3.5987190858732636,
+    "white_sq|WB|TA": 3.253723155014974,
+    "white_sq|WB|TB": 2.8873869615267194,
+    "pizsq__pizza_black_sq|WA|TA": 4.94151905367333,
+    "pizsq__pizza_black_sq|WA|TB": 7.017979334157407,
+    "pizsq__pizza_black_sq|WB|TA": 4.252416659482248,
+    "pizsq__pizza_black_sq|WB|TB": 6.113098215668496,
+    "pizsq__black_sq_pizza|WA|TA": 3.9991163534195486,
+    "pizsq__black_sq_pizza|WA|TB": 5.923032418332255,
+    "pizsq__black_sq_pizza|WB|TA": 3.5511698668943676,
+    "pizsq__black_sq_pizza|WB|TB": 6.078569739488586,
+    "bursq__burger_black_sq|WA|TA": 4.55891563084871,
+    "bursq__burger_black_sq|WA|TB": 6.163458057283203,
+    "bursq__burger_black_sq|WB|TA": 4.090725888696729,
+    "bursq__burger_black_sq|WB|TB": 6.210822191065461,
+    "bursq__black_sq_burger|WA|TA": 4.206888163707943,
+    "bursq__black_sq_burger|WA|TB": 6.052225879106484,
+    "bursq__black_sq_burger|WB|TA": 3.8945353087607106,
+    "bursq__black_sq_burger|WB|TB": 5.86087101810579,
+    "carsq__car_black_sq|WA|TA": 4.916905110585495,
+    "carsq__car_black_sq|WA|TB": 4.0813025193935255,
+    "carsq__car_black_sq|WB|TA": 5.232833809433104,
+    "carsq__car_black_sq|WB|TB": 4.567915863337425,
+    "carsq__black_sq_car|WA|TA": 4.900979221489036,
+    "carsq__black_sq_car|WA|TB": 4.592198129448467,
+    "carsq__black_sq_car|WB|TA": 5.877682504064613,
+    "carsq__black_sq_car|WB|TB": 4.6012154080233385,
+    "pizwht__pizza_white_sq|WA|TA": 3.830244853385338,
+    "pizwht__pizza_white_sq|WA|TB": 6.448928050965033,
+    "pizwht__pizza_white_sq|WB|TA": 3.6869169031229085,
+    "pizwht__pizza_white_sq|WB|TB": 5.256327356413918,
+    "pizwht__white_sq_pizza|WA|TA": 3.4819078532036354,
+    "pizwht__white_sq_pizza|WA|TB": 6.001386466466099,
+    "pizwht__white_sq_pizza|WB|TA": 3.1717581576195144,
+    "pizwht__white_sq_pizza|WB|TB": 5.715574522200071
+  },
+  "order_effect_table": [
+    {
+      "pair": "pizsq",
+      "A": "pizza",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": -0.9424027002537816,
+        "WA/TB": -1.094946915825152,
+        "WB/TA": -0.70124679258788,
+        "WB/TB": -0.034528476179910506
+      },
+      "n_positive": 0,
+      "n_conditions": 4,
+      "sign_stable": true,
+      "range": 1.0604184396452414
+    },
+    {
+      "pair": "bursq",
+      "A": "burger",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": -0.3520274671407666,
+        "WA/TB": -0.11123217817671982,
+        "WB/TA": -0.19619057993601796,
+        "WB/TB": -0.3499511729596705
+      },
+      "n_positive": 0,
+      "n_conditions": 4,
+      "sign_stable": true,
+      "range": 0.24079528896404678
+    },
+    {
+      "pair": "carsq",
+      "A": "car",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": -0.015925889096458867,
+        "WA/TB": 0.5108956100549413,
+        "WB/TA": 0.6448486946315093,
+        "WB/TB": 0.03329954468591367
+      },
+      "n_positive": 3,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 0.6607745837279682
+    },
+    {
+      "pair": "pizwht",
+      "A": "pizza",
+      "B": "white_sq",
+      "order_effects": {
+        "WA/TA": -0.34833700018170255,
+        "WA/TB": -0.4475415844989339,
+        "WB/TA": -0.5151587455033941,
+        "WB/TB": 0.4592471657861532
+      },
+      "n_positive": 1,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 0.9744059112895473
+    }
+  ],
+  "n_sign_stable": 2,
+  "n_pairs": 4,
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}
