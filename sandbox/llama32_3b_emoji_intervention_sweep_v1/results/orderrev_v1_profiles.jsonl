@@ -1,0 +1,65 @@
+{"id": "animals_animals_slot_05+social_social_slot_04", "glyph": "🐖🤕", "parts": ["animals_animals_slot_05", "social_social_slot_04"], "mid": 3.4304704146123797}
+{"id": "social_social_slot_04+animals_animals_slot_05", "glyph": "🤕🐖", "parts": ["social_social_slot_04", "animals_animals_slot_05"], "mid": 3.5345761454532627}
+{"id": "food_food_slot_05+transport_transport_slot_03", "glyph": "🍖🚔", "parts": ["food_food_slot_05", "transport_transport_slot_03"], "mid": 4.7650272124155855}
+{"id": "transport_transport_slot_03+food_food_slot_05", "glyph": "🚔🍖", "parts": ["transport_transport_slot_03", "food_food_slot_05"], "mid": 4.1438561920872035}
+{"id": "food_food_slot_06+social_social_slot_08", "glyph": "🍗🤙", "parts": ["food_food_slot_06", "social_social_slot_08"], "mid": 5.069893640867344}
+{"id": "social_social_slot_08+food_food_slot_06", "glyph": "🤙🍗", "parts": ["social_social_slot_08", "food_food_slot_06"], "mid": 4.327826983284457}
+{"id": "transport_transport_slot_03+transport_transport_slot_04", "glyph": "🚔🚕", "parts": ["transport_transport_slot_03", "transport_transport_slot_04"], "mid": 5.613456570781228}
+{"id": "transport_transport_slot_04+transport_transport_slot_03", "glyph": "🚕🚔", "parts": ["transport_transport_slot_04", "transport_transport_slot_03"], "mid": 6.200357914112222}
+{"id": "food_food_slot_04+sky_sky_slot_07", "glyph": "🍕🌘", "parts": ["food_food_slot_04", "sky_sky_slot_07"], "mid": 4.899409768797017}
+{"id": "sky_sky_slot_07+food_food_slot_04", "glyph": "🌘🍕", "parts": ["sky_sky_slot_07", "food_food_slot_04"], "mid": 4.409962542236612}
+{"id": "food_food_slot_06+sky_sky_slot_06", "glyph": "🍗🌗", "parts": ["food_food_slot_06", "sky_sky_slot_06"], "mid": 5.270727039308897}
+{"id": "sky_sky_slot_06+food_food_slot_06", "glyph": "🌗🍗", "parts": ["sky_sky_slot_06", "food_food_slot_06"], "mid": 4.464969433683326}
+{"id": "animals_animals_slot_06+sky_sky_slot_09", "glyph": "🐗🌚", "parts": ["animals_animals_slot_06", "sky_sky_slot_09"], "mid": 3.8786328529783063}
+{"id": "sky_sky_slot_09+animals_animals_slot_06", "glyph": "🌚🐗", "parts": ["sky_sky_slot_09", "animals_animals_slot_06"], "mid": 3.6626746794401854}
+{"id": "sky_sky_slot_07+social_social_slot_05", "glyph": "🌘🤖", "parts": ["sky_sky_slot_07", "social_social_slot_05"], "mid": 3.064757911908171}
+{"id": "social_social_slot_05+sky_sky_slot_07", "glyph": "🤖🌘", "parts": ["social_social_slot_05", "sky_sky_slot_07"], "mid": 2.949318414694433}
+{"id": "animals_animals_slot_05+animals_animals_slot_09", "glyph": "🐖🐚", "parts": ["animals_animals_slot_05", "animals_animals_slot_09"], "mid": 3.8330397349444643}
+{"id": "animals_animals_slot_09+animals_animals_slot_05", "glyph": "🐚🐖", "parts": ["animals_animals_slot_09", "animals_animals_slot_05"], "mid": 3.765071731581859}
+{"id": "sky_sky_slot_06+transport_transport_slot_06", "glyph": "🌗🚗", "parts": ["sky_sky_slot_06", "transport_transport_slot_06"], "mid": 4.917734624654577}
+{"id": "transport_transport_slot_06+sky_sky_slot_06", "glyph": "🚗🌗", "parts": ["transport_transport_slot_06", "sky_sky_slot_06"], "mid": 5.6687985602502735}
+{"id": "food_food_slot_03+food_food_slot_05", "glyph": "🍔🍖", "parts": ["food_food_slot_03", "food_food_slot_05"], "mid": 4.673620521220591}
+{"id": "food_food_slot_05+food_food_slot_03", "glyph": "🍖🍔", "parts": ["food_food_slot_05", "food_food_slot_03"], "mid": 4.7213543872910515}
+{"id": "social_social_slot_09+transport_transport_slot_09", "glyph": "🤚🚚", "parts": ["social_social_slot_09", "transport_transport_slot_09"], "mid": 3.527079913247286}
+{"id": "transport_transport_slot_09+social_social_slot_09", "glyph": "🚚🤚", "parts": ["transport_transport_slot_09", "social_social_slot_09"], "mid": 3.642636866175048}
+{"id": "transport_transport_slot_04+transport_transport_slot_08", "glyph": "🚕🚙", "parts": ["transport_transport_slot_04", "transport_transport_slot_08"], "mid": 6.100111498361162}
+{"id": "transport_transport_slot_08+transport_transport_slot_04", "glyph": "🚙🚕", "parts": ["transport_transport_slot_08", "transport_transport_slot_04"], "mid": 5.0353234678857275}
+{"id": "animals_animals_slot_03+social_social_slot_09", "glyph": "🐔🤚", "parts": ["animals_animals_slot_03", "social_social_slot_09"], "mid": 3.5974276826516003}
+{"id": "social_social_slot_09+animals_animals_slot_03", "glyph": "🤚🐔", "parts": ["social_social_slot_09", "animals_animals_slot_03"], "mid": 3.362027460399998}
+{"id": "animals_animals_slot_04+transport_transport_slot_07", "glyph": "🐕🚘", "parts": ["animals_animals_slot_04", "transport_transport_slot_07"], "mid": 4.617726505508357}
+{"id": "transport_transport_slot_07+animals_animals_slot_04", "glyph": "🚘🐕", "parts": ["transport_transport_slot_07", "animals_animals_slot_04"], "mid": 5.797955667159067}
+{"id": "animals_animals_slot_06+transport_transport_slot_07", "glyph": "🐗🚘", "parts": ["animals_animals_slot_06", "transport_transport_slot_07"], "mid": 4.656662288163223}
+{"id": "transport_transport_slot_07+animals_animals_slot_06", "glyph": "🚘🐗", "parts": ["transport_transport_slot_07", "animals_animals_slot_06"], "mid": 5.5680284696201765}
+{"id": "animals_animals_slot_09+social_social_slot_04", "glyph": "🐚🤕", "parts": ["animals_animals_slot_09", "social_social_slot_04"], "mid": 3.6945373222835087}
+{"id": "social_social_slot_04+animals_animals_slot_09", "glyph": "🤕🐚", "parts": ["social_social_slot_04", "animals_animals_slot_09"], "mid": 3.5014479837253774}
+{"id": "food_food_slot_03+sky_sky_slot_08", "glyph": "🍔🌙", "parts": ["food_food_slot_03", "sky_sky_slot_08"], "mid": 4.578505643933712}
+{"id": "sky_sky_slot_08+food_food_slot_03", "glyph": "🌙🍔", "parts": ["sky_sky_slot_08", "food_food_slot_03"], "mid": 3.988113254527864}
+{"id": "sky_sky_slot_04+social_social_slot_05", "glyph": "🌕🤖", "parts": ["sky_sky_slot_04", "social_social_slot_05"], "mid": 3.172240135077356}
+{"id": "social_social_slot_05+sky_sky_slot_04", "glyph": "🤖🌕", "parts": ["social_social_slot_05", "sky_sky_slot_04"], "mid": 2.957853389431232}
+{"id": "sky_sky_slot_08+social_social_slot_06", "glyph": "🌙🤗", "parts": ["sky_sky_slot_08", "social_social_slot_06"], "mid": 4.183263488305648}
+{"id": "social_social_slot_06+sky_sky_slot_08", "glyph": "🤗🌙", "parts": ["social_social_slot_06", "sky_sky_slot_08"], "mid": 3.860896350992261}
+{"id": "sky_sky_slot_04+transport_transport_slot_08", "glyph": "🌕🚙", "parts": ["sky_sky_slot_04", "transport_transport_slot_08"], "mid": 5.166143330440524}
+{"id": "transport_transport_slot_08+sky_sky_slot_04", "glyph": "🚙🌕", "parts": ["transport_transport_slot_08", "sky_sky_slot_04"], "mid": 4.3482133281676045}
+{"id": "food_food_slot_07+social_social_slot_03", "glyph": "🍘🤔", "parts": ["food_food_slot_07", "social_social_slot_03"], "mid": 4.474513474662073}
+{"id": "social_social_slot_03+food_food_slot_07", "glyph": "🤔🍘", "parts": ["social_social_slot_03", "food_food_slot_07"], "mid": 3.548866143744103}
+{"id": "animals_animals_slot_04+social_social_slot_03", "glyph": "🐕🤔", "parts": ["animals_animals_slot_04", "social_social_slot_03"], "mid": 3.3390514997510103}
+{"id": "social_social_slot_03+animals_animals_slot_04", "glyph": "🤔🐕", "parts": ["social_social_slot_03", "animals_animals_slot_04"], "mid": 3.807309501044422}
+{"id": "food_food_slot_04+social_social_slot_08", "glyph": "🍕🤙", "parts": ["food_food_slot_04", "social_social_slot_08"], "mid": 5.216795179019043}
+{"id": "social_social_slot_08+food_food_slot_04", "glyph": "🤙🍕", "parts": ["social_social_slot_08", "food_food_slot_04"], "mid": 4.239107276031577}
+{"id": "food_food_slot_07+social_social_slot_07", "glyph": "🍘🤘", "parts": ["food_food_slot_07", "social_social_slot_07"], "mid": 4.79452671812927}
+{"id": "social_social_slot_07+food_food_slot_07", "glyph": "🤘🍘", "parts": ["social_social_slot_07", "food_food_slot_07"], "mid": 3.9830729469976673}
+{"id": "animals_animals_slot_08+social_social_slot_07", "glyph": "🐙🤘", "parts": ["animals_animals_slot_08", "social_social_slot_07"], "mid": 4.214680388253676}
+{"id": "social_social_slot_07+animals_animals_slot_08", "glyph": "🤘🐙", "parts": ["social_social_slot_07", "animals_animals_slot_08"], "mid": 3.9286947300568493}
+{"id": "food_food_slot_09+sky_sky_slot_09", "glyph": "🍚🌚", "parts": ["food_food_slot_09", "sky_sky_slot_09"], "mid": 4.376909931135045}
+{"id": "sky_sky_slot_09+food_food_slot_09", "glyph": "🌚🍚", "parts": ["sky_sky_slot_09", "food_food_slot_09"], "mid": 4.565740755744906}
+{"id": "animals_animals_slot_07+transport_transport_slot_05", "glyph": "🐘🚖", "parts": ["animals_animals_slot_07", "transport_transport_slot_05"], "mid": 4.0045811486069605}
+{"id": "transport_transport_slot_05+animals_animals_slot_07", "glyph": "🚖🐘", "parts": ["transport_transport_slot_05", "animals_animals_slot_07"], "mid": 4.067662285203311}
+{"id": "sky_sky_slot_05+transport_transport_slot_06", "glyph": "🌖🚗", "parts": ["sky_sky_slot_05", "transport_transport_slot_06"], "mid": 4.520656989245208}
+{"id": "transport_transport_slot_06+sky_sky_slot_05", "glyph": "🚗🌖", "parts": ["transport_transport_slot_06", "sky_sky_slot_05"], "mid": 5.739249429917035}
+{"id": "food_food_slot_09+transport_transport_slot_09", "glyph": "🍚🚚", "parts": ["food_food_slot_09", "transport_transport_slot_09"], "mid": 4.653624647433073}
+{"id": "transport_transport_slot_09+food_food_slot_09", "glyph": "🚚🍚", "parts": ["transport_transport_slot_09", "food_food_slot_09"], "mid": 4.556731805905617}
+{"id": "CHECK::animals_1", "glyph": "🐔", "parts": [], "mid": 3.6061601261887373}
+{"id": "CHECK::food_4", "glyph": "🍗", "parts": [], "mid": 5.531410706807972}
+{"id": "CHECK::sky_2", "glyph": "🌕", "parts": [], "mid": 3.8401004497070432}
+{"id": "CHECK::social_6", "glyph": "🤙", "parts": [], "mid": 2.8690349228588254}
+{"id": "CHECK::transport_3", "glyph": "🚖", "parts": [], "mid": 3.3492390740812943}

@@ -1,0 +1,470 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "preregistration": "PREREGISTRATION_order_reversal.md",
+  "pair_seed": 20260810,
+  "n_pairs": 30,
+  "overlap_with_prior": 0,
+  "decision_rule": {
+    "max_positive": 15,
+    "alpha": 0.05
+  },
+  "pairs": [
+    {
+      "A": "animals_animals_slot_05",
+      "B": "social_social_slot_04",
+      "glyphs": "🐖🤕",
+      "strong": "animals_animals_slot_05",
+      "weak": "social_social_slot_04",
+      "component_mean": 3.463669167666112,
+      "observed": 3.4825232800328214,
+      "order_effect": 0.10410573084088304,
+      "err_frozen": -0.10204513733345699,
+      "err_refit": -0.5249516039201678
+    },
+    {
+      "A": "food_food_slot_05",
+      "B": "transport_transport_slot_03",
+      "glyphs": "🍖🚔",
+      "strong": "transport_transport_slot_03",
+      "weak": "food_food_slot_05",
+      "component_mean": 4.928058865217166,
+      "observed": 4.454441702251394,
+      "order_effect": 0.621171020328382,
+      "err_frozen": -0.15519950340062216,
+      "err_refit": -0.46095479418324903
+    },
+    {
+      "A": "food_food_slot_06",
+      "B": "social_social_slot_08",
+      "glyphs": "🍗🤙",
+      "strong": "food_food_slot_06",
+      "weak": "social_social_slot_08",
+      "component_mean": 4.200222814833399,
+      "observed": 4.698860312075901,
+      "order_effect": -0.7420666575828863,
+      "err_frozen": 0.598704341692522,
+      "err_refit": 0.23472216687919367
+    },
+    {
+      "A": "transport_transport_slot_03",
+      "B": "transport_transport_slot_04",
+      "glyphs": "🚔🚕",
+      "strong": "transport_transport_slot_04",
+      "weak": "transport_transport_slot_03",
+      "component_mean": 5.325417807620452,
+      "observed": 5.906907242446724,
+      "order_effect": -0.586901343330994,
+      "err_frozen": 1.0191147771124083,
+      "err_refit": 0.7451482017220439
+    },
+    {
+      "A": "food_food_slot_04",
+      "B": "sky_sky_slot_07",
+      "glyphs": "🍕🌘",
+      "strong": "food_food_slot_04",
+      "weak": "sky_sky_slot_07",
+      "component_mean": 4.522664909898993,
+      "observed": 4.654686155516814,
+      "order_effect": -0.4894472265604044,
+      "err_frozen": 0.3288207185875196,
+      "err_refit": -0.009366088620561541
+    },
+    {
+      "A": "food_food_slot_06",
+      "B": "sky_sky_slot_06",
+      "glyphs": "🍗🌗",
+      "strong": "food_food_slot_06",
+      "weak": "sky_sky_slot_06",
+      "component_mean": 4.4894800574577305,
+      "observed": 4.867848236496112,
+      "order_effect": -0.8057576056255717,
+      "err_frozen": 0.5652121962757013,
+      "err_refit": 0.22437060087231941
+    },
+    {
+      "A": "animals_animals_slot_06",
+      "B": "sky_sky_slot_09",
+      "glyphs": "🐗🌚",
+      "strong": "sky_sky_slot_09",
+      "weak": "animals_animals_slot_06",
+      "component_mean": 3.3347734996292138,
+      "observed": 3.7706537662092456,
+      "order_effect": 0.21595817353812086,
+      "err_frozen": 0.27631231646879595,
+      "err_refit": -0.1569058035608668
+    },
+    {
+      "A": "sky_sky_slot_07",
+      "B": "social_social_slot_05",
+      "glyphs": "🌘🤖",
+      "strong": "sky_sky_slot_07",
+      "weak": "social_social_slot_05",
+      "component_mean": 3.294536015754451,
+      "observed": 3.007038163301302,
+      "order_effect": -0.11543949721373803,
+      "err_frozen": -0.45913704772681374,
+      "err_refit": -0.8955741664664574
+    },
+    {
+      "A": "animals_animals_slot_05",
+      "B": "animals_animals_slot_09",
+      "glyphs": "🐖🐚",
+      "strong": "animals_animals_slot_05",
+      "weak": "animals_animals_slot_09",
+      "component_mean": 3.3060836159457905,
+      "observed": 3.7990557332631614,
+      "order_effect": -0.06796800336260533,
+      "err_frozen": 0.3247972021011085,
+      "err_refit": -0.11071610862322867
+    },
+    {
+      "A": "sky_sky_slot_06",
+      "B": "transport_transport_slot_06",
+      "glyphs": "🌗🚗",
+      "strong": "transport_transport_slot_06",
+      "weak": "sky_sky_slot_06",
+      "component_mean": 4.5523691158231205,
+      "observed": 5.293266592452426,
+      "order_effect": -0.7510639355956963,
+      "err_frozen": 0.9466082113762413,
+      "err_refit": 0.6107977406420906
+    },
+    {
+      "A": "food_food_slot_03",
+      "B": "food_food_slot_05",
+      "glyphs": "🍔🍖",
+      "strong": "food_food_slot_03",
+      "weak": "food_food_slot_05",
+      "component_mean": 4.6445253330372465,
+      "observed": 4.697487454255821,
+      "order_effect": 0.047733866070460707,
+      "err_frozen": 0.2863197211297486,
+      "err_refit": -0.04211825222727139
+    },
+    {
+      "A": "social_social_slot_09",
+      "B": "transport_transport_slot_09",
+      "glyphs": "🤚🚚",
+      "strong": "transport_transport_slot_09",
+      "weak": "social_social_slot_09",
+      "component_mean": 3.4401333397697904,
+      "observed": 3.584858389711167,
+      "order_effect": -0.11555695292776225,
+      "err_frozen": 0.01676505187231392,
+      "err_refit": -0.408024280946103
+    },
+    {
+      "A": "transport_transport_slot_04",
+      "B": "transport_transport_slot_08",
+      "glyphs": "🚕🚙",
+      "strong": "transport_transport_slot_04",
+      "weak": "transport_transport_slot_08",
+      "component_mean": 4.730869306479646,
+      "observed": 5.567717483123445,
+      "order_effect": -1.0647880304754347,
+      "err_frozen": 1.0961089685876928,
+      "err_refit": 0.7745785131060643
+    },
+    {
+      "A": "animals_animals_slot_03",
+      "B": "social_social_slot_09",
+      "glyphs": "🐔🤚",
+      "strong": "animals_animals_slot_03",
+      "weak": "social_social_slot_09",
+      "component_mean": 3.16332834278907,
+      "observed": 3.479727571525799,
+      "order_effect": -0.2354002222516023,
+      "err_frozen": 0.10539773157345023,
+      "err_refit": -0.3415360010034241
+    },
+    {
+      "A": "animals_animals_slot_04",
+      "B": "transport_transport_slot_07",
+      "glyphs": "🐕🚘",
+      "strong": "transport_transport_slot_07",
+      "weak": "animals_animals_slot_04",
+      "component_mean": 5.527345272432122,
+      "observed": 5.207841086333712,
+      "order_effect": -1.1802291616507095,
+      "err_frozen": 0.17869939563122728,
+      "err_refit": -0.07911298257420363
+    },
+    {
+      "A": "animals_animals_slot_06",
+      "B": "transport_transport_slot_07",
+      "glyphs": "🐗🚘",
+      "strong": "transport_transport_slot_07",
+      "weak": "animals_animals_slot_06",
+      "component_mean": 4.957131512304492,
+      "observed": 5.1123453788917,
+      "order_effect": -0.9113661814569536,
+      "err_frozen": 0.4823533202785555,
+      "err_refit": 0.1789238412629146
+    },
+    {
+      "A": "animals_animals_slot_09",
+      "B": "social_social_slot_04",
+      "glyphs": "🐚🤕",
+      "strong": "social_social_slot_04",
+      "weak": "animals_animals_slot_09",
+      "component_mean": 3.243599289581419,
+      "observed": 3.597992653004443,
+      "order_effect": 0.19308933855813137,
+      "err_frozen": 0.16747315029745025,
+      "err_refit": -0.273038906536037
+    },
+    {
+      "A": "food_food_slot_03",
+      "B": "sky_sky_slot_08",
+      "glyphs": "🍔🌙",
+      "strong": "food_food_slot_03",
+      "weak": "sky_sky_slot_08",
+      "component_mean": 4.262418341861243,
+      "observed": 4.283309449230789,
+      "order_effect": -0.5903923894058485,
+      "err_frozen": 0.13961660992791902,
+      "err_refit": -0.21938992272318192
+    },
+    {
+      "A": "sky_sky_slot_04",
+      "B": "social_social_slot_05",
+      "glyphs": "🌕🤖",
+      "strong": "sky_sky_slot_04",
+      "weak": "social_social_slot_05",
+      "component_mean": 3.350637321223275,
+      "observed": 3.065046762254294,
+      "order_effect": -0.2143867456461237,
+      "err_frozen": -0.4403993626019984,
+      "err_refit": -0.8723483769041369
+    },
+    {
+      "A": "sky_sky_slot_08",
+      "B": "social_social_slot_06",
+      "glyphs": "🌙🤗",
+      "strong": "sky_sky_slot_08",
+      "weak": "social_social_slot_06",
+      "component_mean": 3.507543340863765,
+      "observed": 4.022079919648954,
+      "order_effect": -0.32236713731338673,
+      "err_frozen": 0.4067995810443188,
+      "err_refit": -0.012596951686580482
+    },
+    {
+      "A": "sky_sky_slot_04",
+      "B": "transport_transport_slot_08",
+      "glyphs": "🌕🚙",
+      "strong": "transport_transport_slot_08",
+      "weak": "sky_sky_slot_04",
+      "component_mean": 3.9591174763995873,
+      "observed": 4.757178329304065,
+      "order_effect": 0.8179300022729192,
+      "err_frozen": 0.8257960958243533,
+      "err_refit": 0.4425254939363201
+    },
+    {
+      "A": "food_food_slot_07",
+      "B": "social_social_slot_03",
+      "glyphs": "🍘🤔",
+      "strong": "food_food_slot_07",
+      "weak": "social_social_slot_03",
+      "component_mean": 3.7509413240834353,
+      "observed": 4.011689809203088,
+      "order_effect": -0.92564733091797,
+      "err_frozen": 0.22603088234468327,
+      "err_refit": -0.17389381172864216
+    },
+    {
+      "A": "animals_animals_slot_04",
+      "B": "social_social_slot_03",
+      "glyphs": "🐕🤔",
+      "strong": "animals_animals_slot_04",
+      "weak": "social_social_slot_03",
+      "component_mean": 3.5580127150591565,
+      "observed": 3.573180500397716,
+      "order_effect": 0.46825800129341166,
+      "err_frozen": -0.07742840014369357,
+      "err_refit": -0.4927873829389613
+    },
+    {
+      "A": "food_food_slot_04",
+      "B": "social_social_slot_08",
+      "glyphs": "🍕🤙",
+      "strong": "food_food_slot_04",
+      "weak": "social_social_slot_08",
+      "component_mean": 4.093233451943709,
+      "observed": 4.72795122752531,
+      "order_effect": -0.9776879029874666,
+      "err_frozen": 0.7026878111647141,
+      "err_refit": 0.33014648732021
+    },
+    {
+      "A": "food_food_slot_07",
+      "B": "social_social_slot_07",
+      "glyphs": "🍘🤘",
+      "strong": "food_food_slot_07",
+      "weak": "social_social_slot_07",
+      "component_mean": 3.9090277433867135,
+      "observed": 4.3887998325634685,
+      "order_effect": -0.8114537711316028,
+      "err_frozen": 0.4924804121927693,
+      "err_refit": 0.10520263166370558
+    },
+    {
+      "A": "animals_animals_slot_08",
+      "B": "social_social_slot_07",
+      "glyphs": "🐙🤘",
+      "strong": "animals_animals_slot_08",
+      "weak": "social_social_slot_07",
+      "component_mean": 3.485343071184559,
+      "observed": 4.071687559155262,
+      "order_effect": -0.28598565819682653,
+      "err_frozen": 0.47194740932607093,
+      "err_refit": 0.05077485502083601
+    },
+    {
+      "A": "food_food_slot_09",
+      "B": "sky_sky_slot_09",
+      "glyphs": "🍚🌚",
+      "strong": "food_food_slot_09",
+      "weak": "sky_sky_slot_09",
+      "component_mean": 4.3338783373803516,
+      "observed": 4.471325343439975,
+      "order_effect": 0.18883082460986067,
+      "err_frozen": 0.2776105072737298,
+      "err_refit": -0.07567922573584251
+    },
+    {
+      "A": "animals_animals_slot_07",
+      "B": "transport_transport_slot_05",
+      "glyphs": "🐘🚖",
+      "strong": "animals_animals_slot_07",
+      "weak": "transport_transport_slot_05",
+      "component_mean": 3.5332973498379405,
+      "observed": 4.036121716905136,
+      "order_effect": 0.06308113659635062,
+      "err_frozen": 0.4028135720185775,
+      "err_refit": -0.014522639994387632
+    },
+    {
+      "A": "sky_sky_slot_05",
+      "B": "transport_transport_slot_06",
+      "glyphs": "🌖🚗",
+      "strong": "transport_transport_slot_06",
+      "weak": "sky_sky_slot_05",
+      "component_mean": 4.8545768176964135,
+      "observed": 5.129953209581122,
+      "order_effect": -1.2185924406718271,
+      "err_frozen": 0.5717494371936329,
+      "err_refit": 0.26011558260934553
+    },
+    {
+      "A": "food_food_slot_09",
+      "B": "transport_transport_slot_09",
+      "glyphs": "🍚🚚",
+      "strong": "food_food_slot_09",
+      "weak": "transport_transport_slot_09",
+      "component_mean": 4.685046500968566,
+      "observed": 4.605178226669345,
+      "order_effect": -0.09689284152745614,
+      "err_frozen": 0.16564567599134872,
+      "err_refit": -0.15955060393116582
+    }
+  ],
+  "order_effect_positive": 9,
+  "order_effect_median": -0.2606929402242144,
+  "binomial_p": 0.04277394525706768,
+  "verdict": "REPLICATED",
+  "prior": {
+    "positive": 8,
+    "n": 30,
+    "median": -0.32413927518357677
+  },
+  "pooled": {
+    "positive": 17,
+    "n": 60,
+    "binomial_p": 0.0010657657791434353
+  },
+  "frame_check": {
+    "tolerance": 0.01,
+    "max_abs_drift": 0.0,
+    "drift": {
+      "animals_1": 0.0,
+      "food_4": 0.0,
+      "sky_2": 0.0,
+      "social_6": 0.0,
+      "transport_3": 0.0
+    },
+    "resolved": {
+      "animals_1": "animals_animals_slot_03",
+      "food_4": "food_food_slot_06",
+      "sky_2": "sky_sky_slot_04",
+      "social_6": "social_social_slot_08",
+      "transport_3": "transport_transport_slot_05"
+    }
+  },
+  "secondary_mae": {
+    "frozen": 0.41033581828311466,
+    "refit": 0.3093458006446505,
+    "frozen_coeffs": [
+      0.7,
+      1.16
+    ],
+    "refit_coeffs": [
+      0.62,
+      1.86
+    ]
+  },
+  "alpha": 0.5,
+  "nulls": 24,
+  "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "null_cache": {
+    "key": "a12570351695d453",
+    "path": "/Users/ryospiralarchitect/SpiralReality/sr_glyphprobe/sandbox/llama32_3b_emoji_intervention_sweep_v1/results/_nullcache/a12570351695d453.json",
+    "hits": 30,
+    "misses": 0,
+    "forwards_skipped": 720,
+    "identity": {
+      "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "alpha": 0.5,
+      "n": 24,
+      "seed_formula": "800000+100*L+s",
+      "site": "resid_post",
+      "position": "last_nonpad",
+      "metric": "kl_base_to_intervened",
+      "normalisation": "rms_matched_to_alpha_times_target_rms",
+      "metric_kwargs": {
+        "eps": 1e-12,
+        "fingerprint_dim": 96,
+        "fingerprint_seed": 1234,
+        "rbo_p": 0.9,
+        "save_top_deltas": 5,
+        "top_k": 10
+      },
+      "stack": {
+        "add_special_tokens": "False",
+        "device": "mps",
+        "dtype": "float32",
+        "kind": "transformers",
+        "numpy": "2.2.3",
+        "torch": "2.12.1",
+        "transformers": "5.13.0"
+      },
+      "runner": "shared_v1"
+    }
+  },
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}

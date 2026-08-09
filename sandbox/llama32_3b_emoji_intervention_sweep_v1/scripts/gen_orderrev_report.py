@@ -3,9 +3,16 @@
 from __future__ import annotations
 
 import json
+from math import comb
 from pathlib import Path
 
 import numpy as np
+
+
+def binom(k, n, p=0.5):
+    pk = comb(n, k) * p**k * (1 - p)**(n - k)
+    return float(sum(comb(n, i) * p**i * (1 - p)**(n - i) for i in range(n + 1)
+                     if comb(n, i) * p**i * (1 - p)**(n - i) <= pk * (1 + 1e-12)))
 
 ROOT = Path(__file__).resolve().parent.parent
 res = ROOT / "results"
@@ -89,6 +96,20 @@ if verdict == "REPLICATED":
       "to *two samples on one protocol* — which is what the pre-registration said it "
       "could and could not buy. It is still one model, one site, one position, one "
       "strength, one author's sampler.\n")
+    # how many pairs would have to flip sign to overturn the verdict?
+    flips = next((d for d in range(1, n - k + 1)
+                  if not (k + d < s["decision_rule"]["max_positive"]
+                          and binom(k + d, n) < s["decision_rule"]["alpha"])), None)
+    if flips is not None:
+        w(f"> **How close this was.** {flips} pair"
+          f"{' ' if flips == 1 else 's '}flipping sign would have overturned it: "
+          f"{k + flips}/{n} gives p = {binom(k + flips, n):.4f}, above the "
+          f"{s['decision_rule']['alpha']} threshold. The pre-registered rule is met and "
+          "the verdict stands as written — but a result this close to its own boundary "
+          "should be quoted with the margin attached, not as a clean pass. The pooled "
+          f"count ({pool['positive']}/{pool['n']}, p = {pool['binomial_p']:.4f}) is the "
+          "sturdier number, and it was pre-registered as a description rather than as "
+          "the test.\n")
 elif verdict == "SAME DIRECTION, NOT SIGNIFICANT":
     w("The direction survives but the significance does not. Read this as **weak support, "
       f"not replication**: {k}/{n} leans the same way as {prior['positive']}/{prior['n']} "

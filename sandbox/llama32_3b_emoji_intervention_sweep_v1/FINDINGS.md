@@ -1,4 +1,4 @@
-# Per-glyph emoji intervention in Llama-3.2-3B: what survived twelve runs
+# Per-glyph emoji intervention in Llama-3.2-3B: what survived thirteen runs
 
 **Status: out of contract.** Exploratory sandbox work on the real bf16 weights.
 Not the sealed v2 experiment; it touches nothing in `artifacts/`, `validation/`,
@@ -11,7 +11,8 @@ so no receipt here is comparable to a canonical run.
 [日本語版](FINDINGS.ja.md) · [README](README.md) · reports:
 [sweep](results/report.md) · [deep](results/deep_report.md) ·
 [why-flat](results/whyflat_report.md) · [composition](results/composition_report.md) ·
-[order](results/order_report.md) · [n=30](results/meanrule30_report.md)
+[order](results/order_report.md) · [n=30](results/meanrule30_report.md) ·
+[order-replication](results/orderrev_report.md)
 
 ---
 
@@ -157,6 +158,21 @@ leg tests **"the mean of the component scores ranks the composites"**, not the
 fitted rule. Only the MAE leg touches the coefficients — and it is the leg that
 degrades out of sample.
 
+**The refit does generalise.** On 30 further pairs, disjoint from the ones it was
+fitted on ([report](results/orderrev_report.md)), the refit beats the frozen rule
+on exactly the leg that was failing:
+
+| rule | fitted on | MAE on fresh pairs |
+|---|---|---|
+| frozen `0.70 × mean + 1.16` | the 7 catchase families | 0.410 |
+| refit `0.62 × mean + 1.86` | the meanrule30 pairs | **0.309** |
+
+So the calibration drift was signal, not sample noise: the frozen coefficients
+were fitted on 7 hand-picked families and are genuinely mis-set for this pool.
+This was pre-registered as a comparison only, and it does not license quoting
+`0.62 / 1.86` as *the* rule — it was fitted on one sample and tested on one
+more, which is where `0.70 / 1.16` already stood when it started failing.
+
 ### 2.5 Injected directions boost recognisable tokens
 
 Qualitative, and the most immediately legible result. Injecting a glyph's
@@ -187,10 +203,42 @@ shows a direction is structured, not that the structure is meaning.
 
 ---
 
+### 2.6 The order effect runs against the stronger component (replicated)
+
+The one claim in this directory that has been measured four times, and the only
+one where a **pre-registered replication reversed a retraction**:
+
+| sample | n | positive | median | reading |
+|---|---|---|---|---|
+| catchase v2 | 7 | 6/7 | — | ends on stronger scores **higher** — retracted, §3 |
+| meanrule v1 | 6 | 2/6 | — | the reverse |
+| meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower**, p = 0.016 |
+| **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED**, p = 0.043 |
+| pooled | 60 | 17/60 | — | p = 0.0011 |
+
+`order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
+across all four samples. The replication used 30 pairs drawn by a fresh seed with
+**zero overlap** with the earlier 30, and its decision rule was fixed in
+[`PREREGISTRATION_order_reversal.md`](PREREGISTRATION_order_reversal.md) before
+the script existed.
+
+**Quote it with its margin.** At n = 30 the confirmatory result clears its own
+threshold by one pair: 10/30 would have given p = 0.099 and failed. The pooled
+17/60 (p = 0.0011) is the sturdier number and points the same way. What is
+established is the **direction**, on two disjoint samples under one protocol —
+not an effect size, and not anything about why.
+
+The honest shape of this claim's history is that the first reading was wrong in
+sign, the retraction that killed it was right to kill it, and the direction that
+survived is the *opposite* of the one originally announced. §3's entry stays
+exactly as written; nothing here rehabilitates 6/7.
+
 ## 3. What did not survive
 
 Seven claims were stated and then retracted. Three were caught by adversarial
-review, four by my own follow-up measurements.
+review, four by my own follow-up measurements. One of them — the order
+effect — later came back with the **opposite** sign and survived a
+pre-registered replication (§2.6); the original claim stays retracted.
 
 | claim | how it died |
 |---|---|
@@ -198,7 +246,7 @@ review, four by my own follow-up measurements.
 | "the layer profile splits the panel with no exceptions" | property of a 13-glyph panel with no intermediate cases; across 19 glyphs the mid ratio is a **continuum** (2.71 → 5.66, largest gap 0.73) |
 | "the direction follows the last component" | an artefact of comparing cos-to-*first* against cos-to-*last*: those labels swap with the order, so the column flipped when the geometry did not |
 | "the order effect scales with the component gap" | read off **two** families; Spearman **+0.04** at n = 7, **−0.94** at n = 6 |
-| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **Superseded at n = 30 — see below** |
+| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **The sign it claimed is now refuted twice over: the opposite direction replicated at n = 30 + 30 (§2.6).** |
 | "joined and bare score the same (3.39 vs 3.39)" | a 2-dp display artefact; the values are 3.3933 and 3.3870 |
 | "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** |
 
@@ -276,7 +324,8 @@ These cost the most and generalise furthest.
    generator only — including the mean rule that *passed* its pre-registered
    test. **Confirmed constructively at n = 30**: the *ordering* claim survives
    with a bootstrap CI of [+0.55, +0.91], and the order effect — which read 6/7 then
-   2/6 — resolves to 8/30 with the sign reversed. Small samples here did not
+   2/6 — resolves to 8/30 with the sign reversed, and **that reversal then
+   replicated at 9/30 on disjoint pairs** (§2.6). Small samples here did not
    merely add noise; they got the direction wrong.
 2. **A clean binary split is usually a panel property.** "No exceptions" held
    over 13 glyphs and dissolved at 19. Before claiming a dichotomy, add the
@@ -297,6 +346,14 @@ These cost the most and generalise furthest.
    enters as a denominator both orders share, so re-seeding rescales an order
    effect without moving its sign. Vary what actually carries sampling
    variability: the direction estimate and the readout.
+7. **Pre-register identifiers you have actually read, not ones you remember.**
+   The order-reversal pre-registration named its five frame-check components
+   `animals_1`, `food_4`, … — none of which exist; the real ids are
+   `animals_animals_slot_03` and so on. It was caught only because the run
+   crashed. A pre-registration is a machine-checkable object or it is
+   decoration: the fix was to make the runner parse those names out of the
+   committed file and abort on disagreement, which is what the numeric
+   constants already did and the identifiers did not.
 
 ---
 
@@ -323,8 +380,19 @@ These cost the most and generalise furthest.
 - **Independent replication**: a second model, and panels chosen by someone
   other than the analyst.
 - ~~**More units per statistic**~~ — done: 30 pairs, see
-  [`results/meanrule30_report.md`](results/meanrule30_report.md). Next: the
-  calibration failure (slope 0.70 → 0.62 refit) needs its own study.
+  [`results/meanrule30_report.md`](results/meanrule30_report.md).
+- ~~**Replicate the 8/30 order-effect reversal**~~ — done, and it held: 9/30 on
+  disjoint pairs, pooled 17/60 (p = 0.0011), see
+  [`results/orderrev_report.md`](results/orderrev_report.md). It cleared its
+  threshold by a single pair, so the next useful move is **more units again**
+  (n ≈ 100) to get an interval on the effect rather than a sign test — and then
+  a mechanism, since nothing here says *why* ending on the weaker component
+  scores higher.
+- **The calibration, properly**: the refit `0.62 / 1.86` beat the frozen
+  `0.70 / 1.16` out of sample (MAE 0.309 vs 0.410), which means the drift was
+  signal. But `0.62 / 1.86` has now had exactly one confirmatory sample — the
+  position `0.70 / 1.16` was in before it started failing. Fit on one pool,
+  test on a **different pool**, before quoting any coefficients.
 - **Token-position resolution**: extract the direction at each token position of
   a compound rather than only at the wrapper's `last_nonpad`, to locate where
   composition costs efficacy.
