@@ -54,6 +54,8 @@ ROOT = Path(__file__).resolve().parent.parent
 REPO = ROOT.parent.parent
 PREREG = ROOT / "PREREGISTRATION_order_reversal.md"
 PRIOR = ROOT / "results" / "meanrule30_v1_summary.json"
+PRIOR_PROFILES = ROOT / "results" / "meanrule30_v1_profiles.jsonl"
+PREFIX_TOKENS = 4
 
 PAIR_SEED, N_PAIRS, MAX_REUSE = 20260810, 30, 2
 FROZEN = (0.70, 1.16)
@@ -209,6 +211,12 @@ def main() -> int:
         return 2
 
     seen = {frozenset((p["A"], p["B"])) for p in prior["pairs"]}
+    # Rebuild the same set from the prior *profiles* file -- a different artefact --
+    # so a malformed or empty exclusion cannot pass unnoticed. Without this the
+    # "overlap == 0" check below is circular: sample_pairs already skips `seen`.
+    seen_alt = {frozenset(json.loads(ln)["parts"])
+                for ln in PRIOR_PROFILES.read_text(encoding="utf-8").splitlines()
+                if ln.strip() and json.loads(ln).get("parts")}
     ids = [c["id"] for c in comps]
     by_id = {c["id"]: c for c in comps}
     pairs = sample_pairs(ids, seen)
@@ -217,6 +225,10 @@ def main() -> int:
               file=sys.stderr)
         return 2
     overlap = sum(1 for i, j in pairs if frozenset((ids[i], ids[j])) in seen)
+    # what the exclusion actually bought: draws it rejected that would otherwise
+    # have repeated a measured pair. Zero here would mean it did nothing.
+    rejected = sum(1 for i, j in sample_pairs(ids, set())
+                   if frozenset((ids[i], ids[j])) in seen)
     print("=" * 100)
     print("REPLICATION — does the order-effect reversal hold on fresh pairs?")
     print("=" * 100)
@@ -226,8 +238,25 @@ def main() -> int:
     print(f"{len(pairs)} new pairs from random.Random({PAIR_SEED}); "
           f"overlap with the prior sample: {overlap} (must be 0)")
     print("all pre-registered constants verified against the committed file\n")
+    print(f"exclusion set: {len(seen)} pairs from the prior summary, {len(seen_alt)} "
+          f"independently rebuilt from the prior profiles; it rejected {rejected} "
+          f"draw(s) that would otherwise have repeated a measured pair")
     if overlap:
         print("ABORT: pairs overlap the prior sample", file=sys.stderr)
+        return 2
+    if seen != seen_alt:
+        print(f"ABORT: the two independent reconstructions of the prior pair set "
+              f"disagree ({len(seen ^ seen_alt)} differing)", file=sys.stderr)
+        return 2
+    if len(seen) != prior["n_pairs"]:
+        print(f"ABORT: exclusion set holds {len(seen)} pairs, prior run reports "
+              f"{prior['n_pairs']}", file=sys.stderr)
+        return 2
+    stray = {c for pr in seen for c in pr} - set(ids)
+    if stray:
+        print(f"ABORT: exclusion set names components absent from the pool "
+              f"({sorted(stray)[:4]}) -- the exclusion would be a silent no-op",
+              file=sys.stderr)
         return 2
 
     cfg = BackendConfig(kind="transformers", model=os.environ["SNAP"], revision=None,
@@ -251,14 +280,21 @@ def main() -> int:
         return 2
 
     tokmap = {c["id"]: [int(t) for t in be.tokenize(c["glyph"]).token_ids] for c in comps}
+    wl = {w: len(be.tokenize(w).token_ids) for w in WRAPPERS}
+    n_pref = {c["id"]: {w: len(be.tokenize(f"{c['glyph']}\n{w}").token_ids) - wl[w]
+                        for w in WRAPPERS} for c in comps}
+    bad_tok = [c["id"] for c in comps
+               if set(n_pref[c["id"]].values()) != {PREFIX_TOKENS}]
     bad_cat = [it["id"] for it in panel if it["parts"]
                and tokmap[it["parts"][0]] + tokmap[it["parts"][1]]
                != [int(t) for t in be.tokenize(it["glyph"]).token_ids]]
-    if bad_cat:
-        print(f"ABORT: non-decomposing concatenations: {bad_cat}", file=sys.stderr)
+    if bad_tok or bad_cat:
+        print(f"ABORT: token check failed. not-{PREFIX_TOKENS}-tokens={bad_tok} "
+              f"non-decomposing={bad_cat}", file=sys.stderr)
         be.close()
         return 2
-    print(f"all {len(pairs)*2} concatenations decompose")
+    print(f"all {len(comps)} components are exactly {PREFIX_TOKENS} prefix tokens on "
+          f"every wrapper; all {len(pairs)*2} concatenations decompose")
 
     def fwd(p, ls, iv=None):
         return be.forward(p, capture_layers=ls, site="resid_post",
@@ -329,7 +365,7 @@ def main() -> int:
             prof.append(float(np.mean(ratios)))
         mid[it["id"]] = float(max(prof))
         rows.append({"id": it["id"], "glyph": it["glyph"], "parts": it["parts"],
-                     "mid": mid[it["id"]]})
+                     "mid": mid[it["id"]], "profile": prof, "layers": LAYERS})
         if idx % 10 == 0 or idx == len(panel):
             print(f"  {idx}/{len(panel)}", flush=True)
 

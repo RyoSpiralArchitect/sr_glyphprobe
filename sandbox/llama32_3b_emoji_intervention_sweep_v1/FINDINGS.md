@@ -214,7 +214,7 @@ one where a **pre-registered replication reversed a retraction**:
 | meanrule v1 | 6 | 2/6 | — | the reverse |
 | meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower**, p = 0.016 |
 | **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED**, p = 0.043 |
-| pooled | 60 | 17/60 | — | p = 0.0011 |
+| pooled | 60 | 17/60 | — | p = 0.0011 — **inflated, see below** |
 
 `order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
 across all four samples. The replication used 30 pairs drawn by a fresh seed with
@@ -223,10 +223,28 @@ across all four samples. The replication used 30 pairs drawn by a fresh seed wit
 the script existed.
 
 **Quote it with its margin.** At n = 30 the confirmatory result clears its own
-threshold by one pair: 10/30 would have given p = 0.099 and failed. The pooled
-17/60 (p = 0.0011) is the sturdier number and points the same way. What is
-established is the **direction**, on two disjoint samples under one protocol —
-not an effect size, and not anything about why.
+threshold by one pair: 10/30 would have given p = 0.099 and failed.
+
+**And do not quote the pooled p-value.** Adversarial review objected that pooling
+treats 60 pairs as 60 independent trials when every one of the 35 components sits
+in more than one pair (up to 4), both samples come from one pool, and strong/weak
+in both is assigned from a single measurement of `solo_mid`. The pairs are
+disjoint; the units are not independent. Two sensitivity analyses
+([`scripts/pooled_independence.py`](scripts/pooled_independence.py)):
+
+| analysis | positive fraction | on the direction |
+|---|---|---|
+| maximal **component-disjoint** subsets (median n = 15, 2000 draws) | median **0.267**, 90 % [0.188, 0.400] | only **0.25 %** of subsets go the other way |
+| **component-level bootstrap** (20 000 resamples) | **0.284**, 95 % CI [0.077, 0.543] | P(fraction ≥ 0.5) = **0.054** |
+
+**The direction survives clustering; the p-value does not.** In subsets where
+every pair is a genuinely independent unit the positive fraction never approaches
+a majority — but those subsets hold ~15 pairs, so the median sign test reads
+p = 0.119 and the bootstrap interval touches 0.5. Quote the pooled result as
+**17/60 with this caveat**, not as p = 0.0011.
+
+What is established is the **direction**, on two pairs-disjoint samples under one
+protocol — not an effect size, and not anything about why.
 
 The honest shape of this claim's history is that the first reading was wrong in
 sign, the retraction that killed it was right to kill it, and the direction that
@@ -255,9 +273,11 @@ absent — it runs the *opposite* way to the original claim: **8/30 pairs positi
 where chance is 15 (binomial two-sided **p = 0.016**), median **−0.32**. Ending on
 the *stronger* component scores **lower**. The 6/7 claim deserved retraction and
 the 8/13 pooled reading was the right call on the evidence then; with five times
-the units the effect reappears with the sign flipped. This is a new
-single-sample finding at exactly the evidential level the 6/7 claim once had, and
-it needs its own replication before it is more than that.
+the units the effect reappears with the sign flipped. It was a new
+single-sample finding at exactly the evidential level the 6/7 claim once had, so
+it was replicated before anything was built on it — **9/30 on 30 disjoint pairs,
+p = 0.043, pooled 17/60 at p = 0.0011** (§2.6). The reversal is what stands; the
+6/7 claim stays retracted.
 
 A confound found late and disclosed rather than buried: **UTF-8 byte class**
 correlates with the prompt-level ranking (Spearman **−0.55**, and **−0.48**
@@ -393,6 +413,16 @@ These cost the most and generalise furthest.
   signal. But `0.62 / 1.86` has now had exactly one confirmatory sample — the
   position `0.70 / 1.16` was in before it started failing. Fit on one pool,
   test on a **different pool**, before quoting any coefficients.
+- **The component gap, pre-registered this time**: on the replication sample
+  Spearman(|component gap|, order effect) = **−0.66**. §3 retracted exactly this
+  claim because it read +0.04 at n = 7 and −0.94 at n = 6. One more post-hoc
+  sample is not evidence — it is the third reading of a statistic that has
+  already produced every answer. Fix a threshold in advance and draw pairs *for
+  this question* before it is allowed to count.
+- **Pooling needs a design that earns it**: the reuse cap of 2 puts every
+  component into multiple pairs, so a pooled binomial overstates its own
+  precision. Either draw component-disjoint pairs (costing units) or report a
+  clustered interval as the headline rather than as a caveat.
 - **Token-position resolution**: extract the direction at each token position of
   a compound rather than only at the wrapper's `last_nonpad`, to locate where
   composition costs efficacy.

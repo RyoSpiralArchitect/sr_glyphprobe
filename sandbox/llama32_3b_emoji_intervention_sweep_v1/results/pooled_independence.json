@@ -1,0 +1,30 @@
+{
+  "pooled": {
+    "positive": 17,
+    "n": 60,
+    "binomial_p": 0.0010657657791434353
+  },
+  "n_components": 35,
+  "components_in_multiple_pairs": 35,
+  "disjoint_subsets": {
+    "n_draws": 2000,
+    "seed": 20260811,
+    "size_median": 15,
+    "positive_fraction_median": 0.26666666666666666,
+    "positive_fraction_q05": 0.1875,
+    "positive_fraction_q95": 0.4,
+    "sign_test_p_median": 0.11846923828125,
+    "frac_subsets_p_lt_05": 0.211,
+    "frac_subsets_majority_positive": 0.0025
+  },
+  "component_bootstrap": {
+    "n_resamples": 20000,
+    "seed": 20260811,
+    "mean": 0.28384737303672414,
+    "ci95": [
+      0.07692307692307693,
+      0.5428571428571428
+    ],
+    "p_ge_half": 0.0539
+  }
+}

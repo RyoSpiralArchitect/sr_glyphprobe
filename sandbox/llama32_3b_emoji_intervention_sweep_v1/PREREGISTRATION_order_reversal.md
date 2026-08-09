@@ -133,3 +133,56 @@ verdict. The pairs, the seed, the exclusion set, the decision rule, the
 tolerance and the secondary comparison are all unchanged, and the recorded
 values in the table above are read from the *prior* run, not from anything
 measured here.
+
+## Amendment 2 — corrections raised by adversarial review (2026-08-09)
+
+Filed after the primary result was known. **Neither item touches the design, the
+decision rule, or any reported number**; both are defects in this file's own
+prose, and they are corrected here rather than by editing the text above.
+
+**(a) The traceback cited in Amendment 1 is not in the repository.** Amendment 1
+rests its "decided on zero data" claim on `results/orderrev_v1_console.log`, but
+`.gitignore` excludes `*.log`, so no reviewer can open it. The relevant lines are
+therefore quoted in full here:
+
+```
+device=mps num_layers=28
+Traceback (most recent call last):
+  File ".../scripts/order_reversal.py", line 373, in <module>
+    sys.exit(main())
+  File ".../scripts/order_reversal.py", line 206, in main
+    panel += [{"id": f"CHECK::{cid}", "glyph": by_id[cid]["glyph"], "parts": []}
+                                               ~~~~~^^^^^
+KeyError: 'animals_1'
+```
+
+`device=mps num_layers=28` is printed immediately after the weights load and
+immediately before panel assembly. Everything that measures anything — the
+concatenation check, the wrapper and target forward passes, the null build, the
+per-glyph loop — comes after the failing line, and `orderrev_v1_summary.json` did
+not exist. The claim stands; it is now checkable.
+
+**(b) The retraction count above is wrong.** The "Primary hypothesis" section
+says "Eight claims have already been retracted in this directory; a ninth is not
+a problem." [FINDINGS §3](FINDINGS.md) lists **seven**, so a further retraction
+would have been the eighth. The error is in this file only — no script, report or
+verdict reads that number, and the report generator counts the rows in FINDINGS
+rather than trusting a written ordinal.
+
+**(c) What review changed in the runner, after the result was known.** Three
+guards were strengthened and the run repeated; the numbers were unchanged, which
+is stated in the report as a determinism check rather than as a new result.
+
+- The overlap check was **circular** — `sample_pairs` already skips everything in
+  the exclusion set, so `overlap == 0` was true by construction and would have
+  stayed true had the exclusion silently become a no-op. The set is now rebuilt
+  independently from the prior *profiles* file, cross-checked against the
+  summary, required to match the prior run's pair count, required to name only
+  components that exist in the pool, and the run now reports how many draws the
+  exclusion actually rejected (1).
+- The **4-prefix-token invariant** carried by the previous runner had been
+  dropped. It is restored: all 35 components must cost exactly 4 prefix tokens on
+  every wrapper or the run aborts.
+- The profiles file recorded only `mid`, losing the per-layer vector the prior
+  run stored, so no reader could re-derive a score or reanalyse under a different
+  layer aggregation. It now records `profile` and `layers`.
