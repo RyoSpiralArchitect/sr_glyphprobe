@@ -237,13 +237,18 @@ def main() -> int:
     be.load()
     print(f"device={getattr(be,'device',None)} num_layers={be.num_layers}")
 
-    panel = [{"id": f"{by_id[ids[i]]['id']}+{by_id[ids[j]]['id']}",
+    panel = [{"id": f"{ids[x]}+{ids[y]}",
               "glyph": by_id[ids[x]]["glyph"] + by_id[ids[y]]["glyph"],
               "parts": [ids[x], ids[y]]}
              for i, j in pairs for x, y in ((i, j), (j, i))]
-    panel = [{"id": f"{p['parts'][0]}+{p['parts'][1]}", **p} for p in panel]
     panel += [{"id": f"CHECK::{short}", "glyph": by_id[real]["glyph"], "parts": []}
               for short, real in frame.items()]
+
+    if len({it["id"] for it in panel}) != len(panel):
+        print("ABORT: duplicate panel ids -- both orders would collapse onto one key",
+              file=sys.stderr)
+        be.close()
+        return 2
 
     tokmap = {c["id"]: [int(t) for t in be.tokenize(c["glyph"]).token_ids] for c in comps}
     bad_cat = [it["id"] for it in panel if it["parts"]
