@@ -34,8 +34,8 @@ w("Chases the puzzle left by [the why-flat follow-up](whyflat_report.md): 🐈 (
 w("## Summary\n")
 w("| question | answer | confidence |")
 w("|---|---|---|")
-w("| is the ZWJ joiner the cause? | **no** — at fixed order, joined and bare "
-  "concatenations score the same | solid, 3 families |")
+w("| is the ZWJ joiner the cause? | **no** — removing it does not restore the strong "
+  "component's value | solid, 3 families |")
 w("| does the composite follow its LAST component? | **no** — order shifts the value "
   "but does not set it | solid |")
 w("| does the order effect scale with the component gap? | **no relationship exists** "
@@ -57,9 +57,13 @@ for cid, join, order in (("cat", "-", "🐈 alone"), ("cat_ZWJ_sq", "zwj", "🐈
                          ("sq_ZWJ_cat", "zwj", "⬛ then 🐈"),
                          ("black_sq", "-", "⬛ alone")):
     w(f"| {m1[cid]['glyph']} `{cid}` | {join} | {order} | **{m1[cid]['mid']:.2f}** |")
-w("\nAt a fixed order the joiner is worth 0.09-0.22, and in the tech family it is worth "
-  "**exactly zero** (👩‍💻 3.39 vs 👩💻 3.39). Removing it does not bring 🐈⬛ back to 🐈's "
-  "3.96. **H-ZWJ refuted.**\n")
+w("\nAt a fixed order the joiner moves the value by **0.006 to 0.215** — the same "
+  "magnitude as order effects this report treats as signal, so it is not nothing. The "
+  "apparent \"exactly equal\" in the tech family (3.39 vs 3.39) is a 2-dp display "
+  "artefact; the values are 3.3933 and 3.3870. What the data supports is narrower and "
+  "still decisive for the question asked: removing the joiner leaves 🐈⬛ at 3.31, "
+  "nowhere near 🐈's 3.96, so **the joiner cannot be what costs the compound its "
+  "efficacy**.\n")
 
 # ---------------------------------------------------------------- order
 w("## 2 — order shifts the value, but no rule predicts by how much\n")
@@ -70,9 +74,15 @@ for f in v2["family_table"]:
     w(f"| {f['family']} | {f['strong']} {f['mid_strong']:.2f} | "
       f"{f['weak']} {f['mid_weak']:.2f} | {f['gap']:.2f} | {f['ends_weak']:.2f} | "
       f"{f['ends_strong']:.2f} | **{f['order_effect']:+.2f}** |")
-w(f"\nEnding on the stronger component scores higher in "
-  f"**{v2['n_families_ending_strong_higher']}/{len(v2['family_table'])}** families, so "
-  "the *sign* is fairly consistent. The *size* is not predicted by anything tried:\n")
+_a = [f["order_effect"] for f in v2["family_table"]]
+_b = [f["order_effect"] for f in mr["families"]]
+_pa, _pb = sum(x > 0 for x in _a), sum(x > 0 for x in _b)
+w(f"\nEnding on the stronger component scores higher in **{_pa}/{len(_a)}** of these "
+  f"families — but in only **{_pb}/{len(_b)}** of the six later ones, measured on the "
+  f"same protocol with the same sign convention. Pooled that is "
+  f"**{_pa+_pb}/{len(_a)+len(_b)} against {(len(_a)+len(_b))/2:.1f} expected by "
+  "chance**. *Neither the size nor the sign of the order effect is consistent across "
+  "samples.* Both are reported here as negative results:\n")
 w(f"- Spearman(gap, order effect) on these 7 families = **"
   f"{v2['spearman_gap_vs_order_effect']:+.3f}**")
 gaps = [abs(mr["solo_prior"][f["A"]] - mr["solo_prior"][f["B"]]) for f in mr["families"]]
@@ -105,6 +115,10 @@ w("> This is the second time the same mistake was caught here. The 'order effect
   "right.\n")
 
 # ---------------------------------------------------------------- mean rule
+w(f"For completeness, the run built to test \"follows the last component\" reported "
+  f"**{v1['n_nearest_last']}/{v1['n_composites']}** composites landing nearest their last "
+  "part — the observation that suggested H-LAST. Section 3 explains that pattern without "
+  "needing it.\n")
 w("## 3 — the composite tracks the MEAN of its components (pre-registered)\n")
 w("Re-analysing the 7 families for what *did* predict the composite gave "
   "`composite = 0.70 × mean(components) + 1.16` (Spearman +0.821, leave-one-out "
@@ -120,14 +134,17 @@ for f in mr["families"]:
       f"**{f['predicted']:.2f}** | {f['observed']:.2f} | {f['error']:+.2f} |")
 w(f"\n| criterion | required | observed | |")
 w("|---|---|---|---|")
+_ok_rho = mr["spearman_pred_obs"] >= mr["decision_rule"]["min_spearman"]
+_ok_mae = mr["mae"] <= mr["decision_rule"]["max_mae"]
 w(f"| Spearman(predicted, observed) | ≥ {mr['decision_rule']['min_spearman']} | "
-  f"**{mr['spearman_pred_obs']:+.3f}** | PASS |")
+  f"**{mr['spearman_pred_obs']:+.3f}** | {'PASS' if _ok_rho else 'FAIL'} |")
 w(f"| mean absolute error | ≤ {mr['decision_rule']['max_mae']} | "
-  f"**{mr['mae']:.3f}** | PASS |")
+  f"**{mr['mae']:.3f}** | {'PASS' if _ok_mae else 'FAIL'} |")
 w(f"\n**Pre-registered verdict: {mr['verdict']}.**\n")
 w(f"Frame check: all {len(mr['solo_prior'])} solo components reproduced their earlier "
-  f"values to within {max(abs(v) for v in mr['solo_drift'].values()):.4f}, so the "
-  "predictions and the observations live in the same measurement frame.\n")
+  "values. Note the resolution — the prior values are stored to 2 dp, so any successful "
+  "reproduction is bounded below 0.005 **by construction**. This check detects drift "
+  "*larger* than that; it is not a 4-dp agreement.\n")
 w("This also answers the original puzzle. 🐈‍⬛ is weak because 🐈 (3.96) and ⬛ (3.00) "
   "average to 3.48 and the rule compresses toward the middle — not because of the "
   "joiner, and not because ⬛ comes last.\n")

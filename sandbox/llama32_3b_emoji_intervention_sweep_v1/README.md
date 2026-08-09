@@ -288,8 +288,8 @@ removed and the order reversed independently.
 
 | | verdict |
 |---|---|
-| **the ZWJ joiner** | **not the cause.** At fixed order, joined and bare score the same — 👩‍💻 3.39 vs 👩💻 **3.39** exactly; 🐈⬛ 3.31 without the joiner still nowhere near 🐈's 3.96 |
-| **"the last component wins"** | **no.** Order shifts the value (🐈⬛ 3.31 → ⬛🐈 3.61) and its *sign* is consistent (6/7 favour ending on the stronger part), but nothing predicts its size |
+| **the ZWJ joiner** | **not what costs the compound its efficacy.** Removing it leaves 🐈⬛ at 3.31, nowhere near 🐈's 3.96. It is not *nothing* though — it moves the value by 0.006–0.215, and the "👩‍💻 3.39 vs 👩💻 3.39" equality is a 2-dp artefact (3.3933 vs 3.3870) |
+| **"the last component wins"** | **no.** Order shifts the value (🐈⬛ 3.31 → ⬛🐈 3.61), but **neither its size nor its sign is consistent**: ending on the stronger part scores higher in 6/7 families of one set and only 2/6 of the next — 8/13 pooled, against 6.5 expected by chance |
 | **order effect ∝ component gap** | **no such relationship.** Spearman **+0.04** on 7 families, **−0.94** on 6 more, same protocol. A statistic that flips sign between samples is noise |
 | **what sets the composite** | **the mean of its components** — `composite ≈ 0.70 × mean + 1.16`, and 🐈‍⬛ is weak simply because 🐈 (3.96) and ⬛ (3.00) average to 3.48 |
 | **direction vs efficacy** | **independent.** Across 26 cases, reversing a pair moves the cosine by ≤ **0.09** while moving the efficacy by up to **0.94** |
@@ -304,14 +304,17 @@ with the committed file), and then tested on six families that did not shape it:
 | Spearman(predicted, observed) | ≥ 0.70 | **+0.886** | PASS |
 | mean absolute error | ≤ 0.72 | **0.308** | PASS |
 
-All 11 solo components reproduced their earlier values to within **0.005**, so
-predictions and observations share one measurement frame.
+All 11 solo components reproduced their earlier values. Note the resolution: the
+prior values are stored to 2 dp, so a successful reproduction is bounded below
+0.005 **by construction** — this detects drift larger than that, and is not a
+4-dp agreement.
 
-**Read the negative result as the more reliable one.** The order-effect
-correlation flipping from +0.04 to −0.94 across two samples of the same protocol
-is a direct demonstration that n≈6 Spearman is unstable here — which applies to
-the mean rule too, pre-registered or not. What is solid is the ZWJ refutation
-(3 families) and the direction/efficacy independence (26 cases).
+**Read the negative results as the more reliable ones.** The order effect flips
+both its correlation with the component gap (+0.04 → −0.94) and its own sign
+(6/7 → 2/6) between two samples of the same protocol. That is a direct
+demonstration that n≈6 statistics are unstable here — which applies to the mean
+rule too, pre-registered or not. What is solid is that the joiner cannot explain
+the compound's weakness, and the direction/efficacy independence (26 cases).
 
 ## What this is NOT
 

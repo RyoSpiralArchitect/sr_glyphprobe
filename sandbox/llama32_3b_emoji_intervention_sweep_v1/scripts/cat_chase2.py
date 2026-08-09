@@ -4,9 +4,11 @@ with it?
 
 cat_chase.py established two things and broke one of its own metrics.
 
-  established  the ZWJ joiner is not the cause: at a fixed order, joined and
-               bare concatenations score the same (👩‍💻 3.39 vs 👩💻 3.39,
-               🐈‍⬛ 3.09 vs 🐈⬛ 3.31, ⬛‍🐈 3.52 vs ⬛🐈 3.61)
+  established  the ZWJ joiner is not what costs the compound its efficacy:
+               removing it leaves 🐈⬛ at 3.31, nowhere near 🐈's 3.96. (The
+               joiner is not *nothing* — it moves the value by 0.006 to 0.215,
+               the same size as effects treated as signal elsewhere — it just
+               cannot explain the gap this run is chasing.)
   established  ORDER moves the efficacy when the two components differ
                (🐈⬛ 3.31 -> ⬛🐈 3.61) and not when they are alike
                (🧑🚀 2.87 -> 🚀🧑 2.88)
@@ -43,9 +45,7 @@ import argparse
 import json
 import os
 import sys
-import time
 import warnings
-from itertools import combinations
 from pathlib import Path
 
 import numpy as np
@@ -276,9 +276,13 @@ def main() -> int:
     print(f"{'family':<8} {'component':<10} {'cos in A-then-B':>16} "
           f"{'cos in B-then-A':>16} {'shift':>8}   (efficacy shift {'':>0})")
     geo = []
+    _eff_by_family = {f["family"]: f["order_effect"] for f in fam_rows}
     for fam, a, b in FAMILIES:
         ab, ba = f"{fam}__{a}_{b}", f"{fam}__{b}_{a}"
-        eff = mid[ba] - mid[ab]
+        # use the SAME convention as family_table (ends_strong - ends_weak); the
+        # declaration-order difference mid[ba]-mid[ab] flips sign whenever the
+        # second-declared component is the stronger one
+        eff = _eff_by_family[fam]
         for comp in (a, b):
             c_ab = cosv(dirs[ab][L16], dirs[comp][L16])
             c_ba = cosv(dirs[ba][L16], dirs[comp][L16])

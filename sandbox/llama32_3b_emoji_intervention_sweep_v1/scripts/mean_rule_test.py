@@ -122,10 +122,29 @@ def main() -> int:
             for f, a, b in FAMILIES}
     text = PREREG.read_text(encoding="utf-8")
     mismatch = []
+    # the pre-registered values are written to 2 dp, so allow a hair over half a
+    # unit in the last place; 0.005 exactly is a knife edge that some families
+    # land on (dogtea's 4.065 vs the printed 4.07 differs by 0.005 - 1e-16)
+    TOL = 0.0051
     for f, _, _ in FAMILIES:
         m = re.search(rf"\|\s*{f}\s*\|.*?\|\s*\*\*([0-9.]+)\*\*\s*\|", text)
-        if not m or abs(float(m.group(1)) - pred[f]) > 0.005:
+        if not m or abs(float(m.group(1)) - pred[f]) > TOL:
             mismatch.append((f, pred[f], m.group(1) if m else "absent"))
+    # the thresholds decide the outcome, so they must be pinned to the committed
+    # file as tightly as the predictions are — otherwise the half of the
+    # pre-registration that matters could be loosened after seeing the result
+    for label, value, pattern in (
+            ("MIN_SPEARMAN", MIN_SPEARMAN, r"Spearman\(pred, obs\)\s*>=\s*([0-9.]+)"),
+            ("MAX_MAE", MAX_MAE, r"mean\(\|obs - pred\|\)\s*<=\s*([0-9.]+)")):
+        m = re.search(pattern, text)
+        if not m or abs(float(m.group(1)) - value) > 1e-9:
+            mismatch.append((label, value, m.group(1) if m else "absent"))
+    for label, value, pattern in (
+            ("SLOPE", SLOPE, r"composite_mid_mean\s*=\s*([0-9.]+)\s*\*"),
+            ("INTERCEPT", INTERCEPT, r"mean\(component_mid\)\s*\+\s*([0-9.]+)")):
+        m = re.search(pattern, text)
+        if not m or abs(float(m.group(1)) - value) > 1e-9:
+            mismatch.append((label, value, m.group(1) if m else "absent"))
     if mismatch:
         print("ABORT: this script's predictions do not match the committed "
               "pre-registration, so the test would not be confirmatory:",
@@ -139,8 +158,7 @@ def main() -> int:
     print(f"rule: composite = {SLOPE} * mean(components) + {INTERCEPT}  "
           f"(residual sd {RESID_SD})")
     print(f"pass requires Spearman >= {MIN_SPEARMAN} AND MAE <= {MAX_MAE}")
-    print(f"all {len(FAMILIES)} predictions verified against the committed "
-          "pre-registration\n")
+    print(f"all {len(FAMILIES)} predictions, both thresholds and both rule\n    coefficients verified against the committed pre-registration\n")
 
     cfg = BackendConfig(kind="transformers", model=os.environ["SNAP"], revision=None,
                         device="mps", dtype="float32", local_files_only=True,
@@ -292,8 +310,10 @@ def main() -> int:
     print(f"secondary: Spearman(component gap, order effect) = "
           f"{spearman([abs(PRIOR_SOLO[a]-PRIOR_SOLO[b]) for _, a, b in FAMILIES], oeffs):+.3f}")
 
-    (out / f"{args.tag}_profiles.jsonl").write_text(
+    prof_path = out / f"{args.tag}_profiles.jsonl"
+    prof_path.write_text(
         "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n", encoding="utf-8")
+    print(f"\nwrote {prof_path} ({len(rows)} rows)")
     (out / f"{args.tag}_summary.json").write_text(json.dumps({
         "claim_stage": "pre-causal-activation-screen",
         "causal_claim_authorized": False, "out_of_contract": True,

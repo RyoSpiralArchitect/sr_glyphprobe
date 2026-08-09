@@ -6,7 +6,7 @@ Chases the puzzle left by [the why-flat follow-up](whyflat_report.md): 🐈 (3.9
 
 | question | answer | confidence |
 |---|---|---|
-| is the ZWJ joiner the cause? | **no** — at fixed order, joined and bare concatenations score the same | solid, 3 families |
+| is the ZWJ joiner the cause? | **no** — removing it does not restore the strong component's value | solid, 3 families |
 | does the composite follow its LAST component? | **no** — order shifts the value but does not set it | solid |
 | does the order effect scale with the component gap? | **no relationship exists** — Spearman +0.04 on one set, **−0.94** on another | solid (as a negative) |
 | what sets the composite? | **the mean of the two components** | pre-registered test passed, n = 6 |
@@ -25,7 +25,7 @@ Chases the puzzle left by [the why-flat follow-up](whyflat_report.md): 🐈 (3.9
 | ⬛‍🐈 `sq_ZWJ_cat` | zwj | ⬛ then 🐈 | **3.52** |
 | ⬛ `black_sq` | - | ⬛ alone | **3.00** |
 
-At a fixed order the joiner is worth 0.09-0.22, and in the tech family it is worth **exactly zero** (👩‍💻 3.39 vs 👩💻 3.39). Removing it does not bring 🐈⬛ back to 🐈's 3.96. **H-ZWJ refuted.**
+At a fixed order the joiner moves the value by **0.006 to 0.215** — the same magnitude as order effects this report treats as signal, so it is not nothing. The apparent "exactly equal" in the tech family (3.39 vs 3.39) is a 2-dp display artefact; the values are 3.3933 and 3.3870. What the data supports is narrower and still decisive for the question asked: removing the joiner leaves 🐈⬛ at 3.31, nowhere near 🐈's 3.96, so **the joiner cannot be what costs the compound its efficacy**.
 
 ## 2 — order shifts the value, but no rule predicts by how much
 
@@ -41,7 +41,7 @@ Seven families, both orders, bare concatenation, ordered by component gap:
 | pizsq | pizza 5.32 | black_sq 3.00 | 2.31 | 4.94 | 4.00 | **-0.94** |
 | carlap | car 5.66 | laptop 3.16 | 2.50 | 4.16 | 4.36 | **+0.20** |
 
-Ending on the stronger component scores higher in **6/7** families, so the *sign* is fairly consistent. The *size* is not predicted by anything tried:
+Ending on the stronger component scores higher in **6/7** of these families — but in only **2/6** of the six later ones, measured on the same protocol with the same sign convention. Pooled that is **8/13 against 6.5 expected by chance**. *Neither the size nor the sign of the order effect is consistent across samples.* Both are reported here as negative results:
 
 - Spearman(gap, order effect) on these 7 families = **+0.036**
 - the same statistic on the 6 *later* families = **-0.943**
@@ -49,6 +49,8 @@ Ending on the stronger component scores higher in **6/7** families, so the *sign
 **The sign of that correlation flips between two sets measured on the identical protocol.** A quantity that reads +0.04 on one sample and −0.94 on another is not a relationship; it is small-sample noise. This is recorded as a negative result — and as a warning about every other n≈6 Spearman in this directory, including the one below that passed.
 
 > This is the second time the same mistake was caught here. The 'order effect grows with the gap' idea was originally read off **two** families (+0.30 and +0.01), stated, and then dissolved at n=7. The flip to −0.94 at n=6 confirms the retraction was right.
+
+For completeness, the run built to test "follows the last component" reported **7/9** composites landing nearest their last part — the observation that suggested H-LAST. Section 3 explains that pattern without needing it.
 
 ## 3 — the composite tracks the MEAN of its components (pre-registered)
 
@@ -70,7 +72,7 @@ Re-analysing the 7 families for what *did* predict the composite gave `composite
 
 **Pre-registered verdict: SUPPORTED.**
 
-Frame check: all 11 solo components reproduced their earlier values to within 0.0047, so the predictions and the observations live in the same measurement frame.
+Frame check: all 11 solo components reproduced their earlier values. Note the resolution — the prior values are stored to 2 dp, so any successful reproduction is bounded below 0.005 **by construction**. This check detects drift *larger* than that; it is not a 4-dp agreement.
 
 This also answers the original puzzle. 🐈‍⬛ is weak because 🐈 (3.96) and ⬛ (3.00) average to 3.48 and the rule compresses toward the middle — not because of the joiner, and not because ⬛ comes last.
 

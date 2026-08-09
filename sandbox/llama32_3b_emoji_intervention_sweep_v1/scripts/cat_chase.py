@@ -38,7 +38,6 @@ import argparse
 import json
 import os
 import sys
-import time
 import warnings
 from itertools import combinations
 from pathlib import Path
@@ -242,9 +241,7 @@ def main() -> int:
     print("H-ZWJ (the joiner costs it) vs H-LAST (the last component dominates)")
     print("=" * 104)
     verdicts = []
-    for setname, first, second in (("cat", "cat", "black_sq"),
-                                   ("astro", "person", "rocket"),
-                                   ("tech", "woman", "laptop")):
+    for setname in ("cat", "astro", "tech"):
         fam = [it for it in PANEL if it["set"] == setname]
         solo = {it["id"]: it["mid"] for it in fam if not it["parts"]}
         print(f"\n[{setname}]  solo: " + "  ".join(f"{k} {v:.2f}" for k, v in solo.items()))
@@ -284,8 +281,7 @@ def main() -> int:
     (out / f"{args.tag}_summary.json").write_text(json.dumps({
         "claim_stage": "pre-causal-activation-screen",
         "causal_claim_authorized": False, "out_of_contract": True,
-        "panel": [{k: v for k, v in it.items() if k != "token_ids"} |
-                  {"token_ids": it["token_ids"]} for it in PANEL],
+        "panel": PANEL,
         "targets": TARGETS, "wrappers": WRAPPERS, "alpha": A, "nulls": args.nulls,
         "num_layers": NL, "deep_layer": L16,
         "verdicts": verdicts, "n_nearest_last": int(n_last), "n_composites": len(verdicts),
