@@ -1,0 +1,116 @@
+{
+  "h1_pairs": [
+    {
+      "pair": "boat",
+      "e2": "sailboat",
+      "f0": "ship",
+      "e2_shape": "LAST",
+      "f0_shape": "LAST",
+      "e2_mid": 2.7530427466592884,
+      "f0_mid": 3.7213979180800574,
+      "supports_h1": false
+    },
+    {
+      "pair": "drink",
+      "e2": "coffee",
+      "f0": "tea",
+      "e2_shape": "MID",
+      "f0_shape": "MID",
+      "e2_mid": 2.874551488040399,
+      "f0_mid": 4.5862693812928415,
+      "supports_h1": false
+    },
+    {
+      "pair": "square",
+      "e2": "black_sq",
+      "f0": "red_sq",
+      "e2_shape": "LAST",
+      "f0_shape": "LAST",
+      "e2_mid": 3.002989942905477,
+      "f0_mid": 2.9604711231524856,
+      "supports_h1": false
+    },
+    {
+      "pair": "air",
+      "e2": "airplane",
+      "f0": "helicopter",
+      "e2_shape": "LAST",
+      "f0_shape": "MID",
+      "e2_mid": 3.0520240176397153,
+      "f0_mid": 3.5546850953632734,
+      "supports_h1": true
+    }
+  ],
+  "h2_zwj": [
+    {
+      "layer": 0,
+      "cos_cat_plain": 0.9998605103993603,
+      "cos_black_sq": 0.9996886711359372,
+      "cos_cat_face": 0.999862627190924,
+      "closer": "cat"
+    },
+    {
+      "layer": 2,
+      "cos_cat_plain": 0.9854777225450476,
+      "cos_black_sq": 0.9717010186338935,
+      "cos_cat_face": 0.9815137033436014,
+      "closer": "cat"
+    },
+    {
+      "layer": 5,
+      "cos_cat_plain": 0.9726634773475957,
+      "cos_black_sq": 0.9149407462609424,
+      "cos_cat_face": 0.9579734243666548,
+      "closer": "cat"
+    },
+    {
+      "layer": 8,
+      "cos_cat_plain": 0.956429201464544,
+      "cos_black_sq": 0.8797232441731339,
+      "cos_cat_face": 0.939463059667605,
+      "closer": "cat"
+    },
+    {
+      "layer": 11,
+      "cos_cat_plain": 0.9541693327359851,
+      "cos_black_sq": 0.8715035597801628,
+      "cos_cat_face": 0.9322577100919219,
+      "closer": "cat"
+    },
+    {
+      "layer": 14,
+      "cos_cat_plain": 0.9485743152601898,
+      "cos_black_sq": 0.8516653388638452,
+      "cos_cat_face": 0.9246881467793271,
+      "closer": "cat"
+    },
+    {
+      "layer": 16,
+      "cos_cat_plain": 0.9442059127258707,
+      "cos_black_sq": 0.8426724086363008,
+      "cos_cat_face": 0.9143305294154056,
+      "closer": "cat"
+    },
+    {
+      "layer": 20,
+      "cos_cat_plain": 0.9468835421141856,
+      "cos_black_sq": 0.8065723675200734,
+      "cos_cat_face": 0.8850192567454798,
+      "closer": "cat"
+    },
+    {
+      "layer": 24,
+      "cos_cat_plain": 0.9471169114112372,
+      "cos_black_sq": 0.7955040863010217,
+      "cos_cat_face": 0.8776654452170991,
+      "closer": "cat"
+    },
+    {
+      "layer": 27,
+      "cos_cat_plain": 0.941505691589428,
+      "cos_black_sq": 0.7646488162615321,
+      "cos_cat_face": 0.8814098844279394,
+      "closer": "cat"
+    }
+  ]
+}

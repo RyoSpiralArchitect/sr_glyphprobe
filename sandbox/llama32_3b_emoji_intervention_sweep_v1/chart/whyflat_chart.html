@@ -1,0 +1,160 @@
+<title>Llama-3.2-3B · why are some glyphs flat?</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:#f7f8fa; --card:#fff; --ink:#16181d; --mid:#5b6270; --faint:#9aa1ad;
+    --line:#e3e6ec; --grid:#eef0f4; --accent:#2563eb; --warn:#b45309;
+    --shadow:0 1px 3px rgba(16,20,30,.07),0 8px 24px rgba(16,20,30,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page:#0c0e12; --card:#14171d; --ink:#e9ecf1; --mid:#9aa2b1; --faint:#6b7484;
+      --line:#242932; --grid:#1c2029; --accent:#60a5fa; --warn:#fbbf24;
+      --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page:#0c0e12; --card:#14171d; --ink:#e9ecf1; --mid:#9aa2b1; --faint:#6b7484;
+    --line:#242932; --grid:#1c2029; --accent:#60a5fa; --warn:#fbbf24;
+    --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35);
+  }
+  body { margin:0; padding:34px 22px 60px; background:var(--page); color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; }
+  .kicker { font-size:12px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin-bottom:10px; }
+  h1 { font-size:27px; line-height:1.24; margin:0 0 12px; letter-spacing:-.018em; }
+  h2 { font-size:17px; margin:30px 0 6px; }
+  .lede, .notes { color:var(--mid); max-width:76ch; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:14px 12px 6px; margin:14px 0 22px; box-shadow:var(--shadow); overflow-x:auto; }
+  .cap { color:var(--mid); font-size:13px; padding:4px 8px 12px; }
+  svg { display:block; max-width:100%; height:auto; }
+  .grid { stroke:var(--grid); stroke-width:1; }
+  .stem { stroke-width:2; opacity:.5; }
+  .pair { fill:none; stroke:var(--faint); stroke-width:1.2; stroke-dasharray:3 3; opacity:.75; }
+  .curve { fill:none; stroke-width:2.2; }
+  .curvelab { font-size:11px; font-weight:600; }
+  .axis { fill:var(--faint); font-size:11px; }
+  .lab { fill:var(--mid); font-size:12px; font-weight:600; }
+  .rl { fill:var(--mid); font-size:11.5px; }
+  .gl { font-size:16px; }
+  .val { fill:var(--ink); font-size:11px; font-variant-numeric:tabular-nums; }
+  .mid { text-anchor:middle; } .end { text-anchor:end; }
+  .row:hover .stem { opacity:1; stroke-width:3.5; }
+  .warnbox { border:1px solid var(--warn); border-radius:10px; padding:10px 13px;
+    color:var(--mid); font-size:13px; margin:18px 0; }
+  b { color:var(--ink); }
+  .key { font-size:12.5px; color:var(--mid); padding:0 8px 10px; }
+  .sw { display:inline-block; width:10px; height:10px; border-radius:2px;
+    margin:0 5px 0 14px; vertical-align:baseline; }
+</style>
+<div class="wrap">
+  <div class="kicker">GlyphProbe · pre-causal screen · out-of-contract · follow-up</div>
+  <h1>Why are ⬛ 🥺 ⛵ 🐈‍⬛ flat through the middle of the network?</h1>
+  <p class="lede">Three hypotheses, all falsifiable. Two are refuted outright, one
+  survives only partly — and the run overturns the earlier claim that the panel splits
+  cleanly in two.</p>
+
+  <div class="warnbox"><b>Out of contract.</b> Exploratory sandbox run on the real bf16
+  weights. Not the sealed v2 experiment, no causal or semantic claim
+  (<code>pre-causal-activation-screen</code>). No holdout bank.</div>
+
+  <h2>1 · A continuum, not a split</h2>
+  <p class="notes">Absolute mid-network ratio (max over L10-19) — how hard a glyph's
+  direction pushes where the model still has computation left to do. Dashed arcs join the
+  <b>near-synonym pairs that differ only in UTF-8 byte class</b>. Spearman(is 3-byte,
+  mid ratio) = <b>-0.50</b>.</p>
+  <div class="card">
+    <div class="key"><span class="sw" style="background:#b45309"></span>3-byte (U+26xx/2Bxx)
+      <span class="sw" style="background:#2563eb"></span>4-byte (emoji planes)
+      <span class="sw" style="background:#059669"></span>ZWJ compound</div>
+    <svg viewBox="0 0 900 470" role="img" aria-label="mid-network ratio per glyph">
+      <line x1="168.1" y1="26" x2="168.1" y2="418" class="grid"/><text x="168.1" y="436" class="axis mid">2.5</text><line x1="258.6" y1="26" x2="258.6" y2="418" class="grid"/><text x="258.6" y="436" class="axis mid">3.0</text><line x1="349.0" y1="26" x2="349.0" y2="418" class="grid"/><text x="349.0" y="436" class="axis mid">3.5</text><line x1="439.5" y1="26" x2="439.5" y2="418" class="grid"/><text x="439.5" y="436" class="axis mid">4.0</text><line x1="529.9" y1="26" x2="529.9" y2="418" class="grid"/><text x="529.9" y="436" class="axis mid">4.5</text><line x1="620.4" y1="26" x2="620.4" y2="418" class="grid"/><text x="620.4" y="436" class="axis mid">5.0</text><line x1="710.9" y1="26" x2="710.9" y2="418" class="grid"/><text x="710.9" y="436" class="axis mid">5.5</text><g class="row"><title>🥺 pleading (F0, emotion)
+mid-network ratio 2.71   final layer 3.90
+peak layer L27   P(concept) 0.080
+names it:  person with their hands on their face,</title><line x1="150.0" y1="36.3" x2="205.8" y2="36.3" class="stem" style="stroke:#2563eb"/><circle cx="205.8" cy="36.3" r="5.5" style="fill:#2563eb"/><text x="116" y="41.3" class="gl">🥺</text><text x="98" y="40.3" class="rl end">pleading</text><text x="216.8" y="40.3" class="val">2.71</text></g><g class="row"><title>⛵ sailboat (E2, vehicle)
+mid-network ratio 2.75   final layer 5.38
+peak layer L27   P(concept) 0.111
+names it:  ship. It can be used to represent</title><line x1="150.0" y1="56.9" x2="213.9" y2="56.9" class="stem" style="stroke:#b45309"/><circle cx="213.9" cy="56.9" r="5.5" style="fill:#b45309"/><text x="116" y="61.9" class="gl">⛵</text><text x="98" y="60.9" class="rl end">sailboat</text><text x="224.9" y="60.9" class="val">2.75</text></g><g class="row"><title>🤔 thinking (F0, emotion)
+mid-network ratio 2.76   final layer 4.94
+peak layer L27   P(concept) 0.060
+names it:  person with a confused face. It is</title><line x1="150.0" y1="77.6" x2="215.8" y2="77.6" class="stem" style="stroke:#2563eb"/><circle cx="215.8" cy="77.6" r="5.5" style="fill:#2563eb"/><text x="116" y="82.6" class="gl">🤔</text><text x="98" y="81.6" class="rl end">thinking</text><text x="226.8" y="81.6" class="val">2.76</text></g><g class="row"><title>☕ coffee (E2, food)
+mid-network ratio 2.87   final layer 2.40
+peak layer L16   P(concept) 0.319
+names it:  coffee cup. It is used to represent</title><line x1="150.0" y1="98.2" x2="235.9" y2="98.2" class="stem" style="stroke:#b45309"/><circle cx="235.9" cy="98.2" r="5.5" style="fill:#b45309"/><text x="116" y="103.2" class="gl">☕</text><text x="98" y="102.2" class="rl end">coffee</text><text x="246.9" y="102.2" class="val">2.87</text></g><g class="row"><title>🟥 red_sq (F0, abstract)
+mid-network ratio 2.96   final layer 3.68
+peak layer L27   P(concept) 0.517
+names it:  red traffic light. It is also known</title><line x1="150.0" y1="118.8" x2="251.4" y2="118.8" class="stem" style="stroke:#2563eb"/><circle cx="251.4" cy="118.8" r="5.5" style="fill:#2563eb"/><text x="116" y="123.8" class="gl">🟥</text><text x="98" y="122.8" class="rl end">red_sq</text><text x="262.4" y="122.8" class="val">2.96</text></g><g class="row"><title>⚓ anchor (E2, object)
+mid-network ratio 2.99   final layer 4.14
+peak layer L27   P(concept) 0.061
+names it:  sailor’s anchor. It is used to</title><line x1="150.0" y1="139.5" x2="255.9" y2="139.5" class="stem" style="stroke:#b45309"/><circle cx="255.9" cy="139.5" r="5.5" style="fill:#b45309"/><text x="116" y="144.5" class="gl">⚓</text><text x="98" y="143.5" class="rl end">anchor</text><text x="266.9" y="143.5" class="val">2.99</text></g><g class="row"><title>⬛ black_sq (E2, abstract)
+mid-network ratio 3.00   final layer 6.43
+peak layer L27   P(concept) 0.106
+names it:  black square with a white border. It</title><line x1="150.0" y1="160.1" x2="259.1" y2="160.1" class="stem" style="stroke:#b45309"/><circle cx="259.1" cy="160.1" r="5.5" style="fill:#b45309"/><text x="116" y="165.1" class="gl">⬛</text><text x="98" y="164.1" class="rl end">black_sq</text><text x="270.1" y="164.1" class="val">3.00</text></g><g class="row"><title>✈️ airplane (E2, vehicle)
+mid-network ratio 3.05   final layer 3.14
+peak layer L27   P(concept) 0.314
+names it:  plane. It is used to represent a</title><line x1="150.0" y1="180.7" x2="268.0" y2="180.7" class="stem" style="stroke:#b45309"/><circle cx="268.0" cy="180.7" r="5.5" style="fill:#b45309"/><text x="116" y="185.7" class="gl">✈️</text><text x="98" y="184.7" class="rl end">airplane</text><text x="279.0" y="184.7" class="val">3.05</text></g><g class="row"><title>🐈‍⬛ black_cat (ZWJ, animal)
+mid-network ratio 3.09   final layer 3.82
+peak layer L27   P(concept) 0.242
+names it:  black cat with a white face and a</title><line x1="150.0" y1="201.4" x2="274.9" y2="201.4" class="stem" style="stroke:#059669"/><circle cx="274.9" cy="201.4" r="5.5" style="fill:#059669"/><text x="116" y="206.4" class="gl">🐈‍⬛</text><text x="98" y="205.4" class="rl end">black_cat</text><text x="285.9" y="205.4" class="val">3.09</text></g><g class="row"><title>🚁 helicopter (F0, vehicle)
+mid-network ratio 3.55   final layer 2.44
+peak layer L14   P(concept) 0.285
+names it:  helicopter. It can be used to represent</title><line x1="150.0" y1="222.0" x2="358.9" y2="222.0" class="stem" style="stroke:#2563eb"/><circle cx="358.9" cy="222.0" r="5.5" style="fill:#2563eb"/><text x="116" y="227.0" class="gl">🚁</text><text x="98" y="226.0" class="rl end">helicopter</text><text x="369.9" y="226.0" class="val">3.55</text></g><g class="row"><title>🐶 dog (F0, animal)
+mid-network ratio 3.71   final layer 1.51
+peak layer L14   P(concept) 0.431
+names it:  dog, which shows a happy face.</title><line x1="150.0" y1="242.6" x2="386.5" y2="242.6" class="stem" style="stroke:#2563eb"/><circle cx="386.5" cy="242.6" r="5.5" style="fill:#2563eb"/><text x="116" y="247.6" class="gl">🐶</text><text x="98" y="246.6" class="rl end">dog</text><text x="397.5" y="246.6" class="val">3.71</text></g><g class="row"><title>🚢 ship (F0, vehicle)
+mid-network ratio 3.72   final layer 4.03
+peak layer L27   P(concept) 0.199
+names it:  ship. It is also known as the</title><line x1="150.0" y1="263.3" x2="389.1" y2="263.3" class="stem" style="stroke:#2563eb"/><circle cx="389.1" cy="263.3" r="5.5" style="fill:#2563eb"/><text x="116" y="268.3" class="gl">🚢</text><text x="98" y="267.3" class="rl end">ship</text><text x="400.1" y="267.3" class="val">3.72</text></g><g class="row"><title>🐱 cat_face (F0, animal)
+mid-network ratio 3.95   final layer 1.64
+peak layer L14   P(concept) 0.353
+names it:  cat, which looks like a small domestic</title><line x1="150.0" y1="283.9" x2="431.3" y2="283.9" class="stem" style="stroke:#2563eb"/><circle cx="431.3" cy="283.9" r="5.5" style="fill:#2563eb"/><text x="116" y="288.9" class="gl">🐱</text><text x="98" y="287.9" class="rl end">cat_face</text><text x="442.3" y="287.9" class="val">3.95</text></g><g class="row"><title>🐈 cat_plain (F0, animal)
+mid-network ratio 3.96   final layer 2.65
+peak layer L15   P(concept) 0.244
+names it:  cat, which looks like a black and</title><line x1="150.0" y1="304.5" x2="432.5" y2="304.5" class="stem" style="stroke:#2563eb"/><circle cx="432.5" cy="304.5" r="5.5" style="fill:#2563eb"/><text x="116" y="309.5" class="gl">🐈</text><text x="98" y="308.5" class="rl end">cat_plain</text><text x="443.5" y="308.5" class="val">3.96</text></g><g class="row"><title>😭 sob (F0, emotion)
+mid-network ratio 4.19   final layer 1.65
+peak layer L17   P(concept) 0.094
+names it:  weeping face. It is used to</title><line x1="150.0" y1="325.2" x2="473.7" y2="325.2" class="stem" style="stroke:#2563eb"/><circle cx="473.7" cy="325.2" r="5.5" style="fill:#2563eb"/><text x="116" y="330.2" class="gl">😭</text><text x="98" y="329.2" class="rl end">sob</text><text x="484.7" y="329.2" class="val">4.19</text></g><g class="row"><title>😢 crying (F0, emotion)
+mid-network ratio 4.22   final layer 1.68
+peak layer L19   P(concept) 0.153
+names it:  weeping face. It is used to</title><line x1="150.0" y1="345.8" x2="479.5" y2="345.8" class="stem" style="stroke:#2563eb"/><circle cx="479.5" cy="345.8" r="5.5" style="fill:#2563eb"/><text x="116" y="350.8" class="gl">😢</text><text x="98" y="349.8" class="rl end">crying</text><text x="490.5" y="349.8" class="val">4.22</text></g><g class="row"><title>🍵 tea (F0, food)
+mid-network ratio 4.59   final layer 1.35
+peak layer L15   P(concept) 0.117
+names it:  cup of coffee with cream and sugar.</title><line x1="150.0" y1="366.4" x2="545.5" y2="366.4" class="stem" style="stroke:#2563eb"/><circle cx="545.5" cy="366.4" r="5.5" style="fill:#2563eb"/><text x="116" y="371.4" class="gl">🍵</text><text x="98" y="370.4" class="rl end">tea</text><text x="556.5" y="370.4" class="val">4.59</text></g><g class="row"><title>🍕 pizza (F0, food)
+mid-network ratio 5.32   final layer 1.74
+peak layer L15   P(concept) 0.317
+names it:  pizza, which is a flat round bread</title><line x1="150.0" y1="387.1" x2="677.8" y2="387.1" class="stem" style="stroke:#2563eb"/><circle cx="677.8" cy="387.1" r="5.5" style="fill:#2563eb"/><text x="116" y="392.1" class="gl">🍕</text><text x="98" y="391.1" class="rl end">pizza</text><text x="688.8" y="391.1" class="val">5.32</text></g><g class="row"><title>🚗 car (F0, vehicle)
+mid-network ratio 5.66   final layer 1.32
+peak layer L14   P(concept) 0.496
+names it:  car, which shows the direction of travel</title><line x1="150.0" y1="407.7" x2="739.3" y2="407.7" class="stem" style="stroke:#2563eb"/><circle cx="739.3" cy="407.7" r="5.5" style="fill:#2563eb"/><text x="116" y="412.7" class="gl">🚗</text><text x="98" y="411.7" class="rl end">car</text><text x="750.3" y="411.7" class="val">5.66</text></g><path d="M213.9,56.9 C435.1,56.9 435.1,263.3 389.1,263.3" class="pair"><title>boat: ⛵ 2.75 vs 🚢 3.72 (1.35x)</title></path><path d="M235.9,98.2 C591.5,98.2 591.5,366.4 545.5,366.4" class="pair"><title>drink: ☕ 2.87 vs 🍵 4.59 (1.60x)</title></path><path d="M259.1,160.1 C305.1,160.1 305.1,118.8 251.4,118.8" class="pair"><title>square: ⬛ 3.00 vs 🟥 2.96 (0.99x)</title></path><path d="M268.0,180.7 C404.9,180.7 404.9,222.0 358.9,222.0" class="pair"><title>air: ✈️ 3.05 vs 🚁 3.55 (1.16x)</title></path>
+      <text x="460" y="462" class="lab mid">mid-network ratio (max over L10-19)</text>
+    </svg>
+    <div class="cap">Range 2.71 → 5.66; the largest gap anywhere in the sorted list is
+      only <b>0.73</b>. The deep run's "no exceptions" two-way split was a
+      property of a 13-glyph panel with no intermediate cases.</div>
+  </div>
+
+  <h2>2 · The cat paradox</h2>
+  <p class="notes">🐈‍⬛ tokenises as 🐈's tokens + ZWJ + ⬛'s tokens. Its direction stays on
+  the <b>cat</b> side at every depth — and the margin widens with depth — yet its
+  mid-network efficacy lands exactly on <b>⬛</b>. Direction similarity and causal efficacy
+  come apart.</p>
+  <div class="card">
+    <svg viewBox="0 0 900 300" role="img" aria-label="black cat direction cosines by layer">
+      <line x1="58" y1="254.0" x2="690" y2="254.0" class="grid"/><text x="50" y="258.0" class="axis end">0.7</text><line x1="58" y1="181.5" x2="690" y2="181.5" class="grid"/><text x="50" y="185.5" class="axis end">0.8</text><line x1="58" y1="109.0" x2="690" y2="109.0" class="grid"/><text x="50" y="113.0" class="axis end">0.9</text><line x1="58" y1="36.5" x2="690" y2="36.5" class="grid"/><text x="50" y="40.5" class="axis end">1.0</text><text x="58" y="272" class="axis mid">0</text><text x="152" y="272" class="axis mid">4</text><text x="245" y="272" class="axis mid">8</text><text x="339" y="272" class="axis mid">12</text><text x="433" y="272" class="axis mid">16</text><text x="526" y="272" class="axis mid">20</text><text x="620" y="272" class="axis mid">24</text><polyline points="58.0,36.6 104.8,47.0 175.0,56.3 245.3,68.1 315.5,69.7 385.7,73.8 432.5,77.0 526.1,75.0 619.8,74.8 690.0,78.9" class="curve" style="stroke:#059669"/><line x1="72" y1="238" x2="92" y2="238" class="curve" style="stroke:#059669"/><text x="98" y="242" class="curvelab" style="fill:#059669">cos(🐈‍⬛, 🐈) &rarr; 0.94 at L27</text><polyline points="58.0,36.6 104.8,49.9 175.0,67.0 245.3,80.4 315.5,85.6 385.7,91.1 432.5,98.6 526.1,119.9 619.8,125.2 690.0,122.5" class="curve" style="stroke:#2563eb"/><line x1="72" y1="223" x2="92" y2="223" class="curve" style="stroke:#2563eb"/><text x="98" y="227" class="curvelab" style="fill:#2563eb">cos(🐈‍⬛, 🐱) &rarr; 0.88 at L27</text><polyline points="58.0,36.7 104.8,57.0 175.0,98.2 245.3,123.7 315.5,129.7 385.7,144.0 432.5,150.6 526.1,176.7 619.8,184.8 690.0,207.1" class="curve" style="stroke:#b45309"/><line x1="72" y1="208" x2="92" y2="208" class="curve" style="stroke:#b45309"/><text x="98" y="212" class="curvelab" style="fill:#b45309">cos(🐈‍⬛, ⬛) &rarr; 0.76 at L27</text><g><title>🐈 mid-network ratio 3.96</title><rect x="698" y="112" width="44" height="118" rx="3" style="fill:#059669"/><text x="720" y="106" class="val mid">3.96</text><text x="720" y="246" class="gl mid">🐈</text></g><g><title>🐱 mid-network ratio 3.95</title><rect x="746" y="112" width="44" height="118" rx="3" style="fill:#059669"/><text x="768" y="106" class="val mid">3.95</text><text x="768" y="246" class="gl mid">🐱</text></g><g><title>🐈‍⬛ mid-network ratio 3.09</title><rect x="794" y="138" width="44" height="92" rx="3" style="fill:#7c3aed"/><text x="816" y="132" class="val mid">3.09</text><text x="816" y="246" class="gl mid">🐈‍⬛</text></g><g><title>⬛ mid-network ratio 3.00</title><rect x="842" y="141" width="44" height="89" rx="3" style="fill:#b45309"/><text x="864" y="135" class="val mid">3.00</text><text x="864" y="246" class="gl mid">⬛</text></g><text x="794" y="30" class="lab mid">mid-network ratio</text>
+      <text x="374" y="294" class="lab mid">layer (resid_post)</text>
+      <text x="13" y="150" class="lab mid" transform="rotate(-90 13 150)">cosine</text>
+    </svg>
+    <div class="cap">Left: cosine of 🐈‍⬛'s direction to each part, per layer. Right: the
+      mid-network ratio each glyph actually achieves.</div>
+  </div>
+
+  <p class="notes"><b>What this does not show.</b> A pre-causal activation screen. Four
+  near-synonym pairs is thin evidence and the synonyms are loose (⛵ sailboat vs 🚢
+  passenger ship, ☕ coffee vs 🍵 tea, ✈️ aeroplane vs 🚁 helicopter); training-set frequency
+  is uncontrolled and remains a live alternative explanation. The random-direction null is
+  a size control, not a semantic control.</p>
+</div>

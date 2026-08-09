@@ -1,0 +1,321 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "panel": [
+    {
+      "id": "sailboat",
+      "glyph": "⛵",
+      "pair": "boat",
+      "grp": "E2",
+      "sem": "vehicle",
+      "utf8_lead": "e2",
+      "utf8_len": 3,
+      "token_ids": [
+        158,
+        249,
+        113
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "ship",
+      "glyph": "🚢",
+      "pair": "boat",
+      "grp": "F0",
+      "sem": "vehicle",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        248,
+        95
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "coffee",
+      "glyph": "☕",
+      "pair": "drink",
+      "grp": "E2",
+      "sem": "food",
+      "utf8_lead": "e2",
+      "utf8_len": 3,
+      "token_ids": [
+        18107,
+        243
+      ],
+      "n_tokens": 2
+    },
+    {
+      "id": "tea",
+      "glyph": "🍵",
+      "pair": "drink",
+      "grp": "F0",
+      "sem": "food",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        235,
+        113
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "black_sq",
+      "glyph": "⬛",
+      "pair": "square",
+      "grp": "E2",
+      "sem": "abstract",
+      "utf8_lead": "e2",
+      "utf8_len": 3,
+      "token_ids": [
+        158,
+        105,
+        249
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "red_sq",
+      "glyph": "🟥",
+      "pair": "square",
+      "grp": "F0",
+      "sem": "abstract",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        22914
+      ],
+      "n_tokens": 2
+    },
+    {
+      "id": "airplane",
+      "glyph": "✈️",
+      "pair": "air",
+      "grp": "E2",
+      "sem": "vehicle",
+      "utf8_lead": "e2",
+      "utf8_len": 6,
+      "token_ids": [
+        38798,
+        230,
+        31643
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "helicopter",
+      "glyph": "🚁",
+      "pair": "air",
+      "grp": "F0",
+      "sem": "vehicle",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        248,
+        223
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "anchor",
+      "glyph": "⚓",
+      "pair": "-",
+      "grp": "E2",
+      "sem": "object",
+      "utf8_lead": "e2",
+      "utf8_len": 3,
+      "token_ids": [
+        158,
+        248,
+        241
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "black_cat",
+      "glyph": "🐈‍⬛",
+      "pair": "-",
+      "grp": "ZWJ",
+      "sem": "animal",
+      "utf8_lead": "f0",
+      "utf8_len": 10,
+      "token_ids": [
+        9468,
+        238,
+        230,
+        102470,
+        158,
+        105,
+        249
+      ],
+      "n_tokens": 7
+    },
+    {
+      "id": "cat_plain",
+      "glyph": "🐈",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "animal",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        238,
+        230
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "cat_face",
+      "glyph": "🐱",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "animal",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        238,
+        109
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "pleading",
+      "glyph": "🥺",
+      "pair": "cry",
+      "grp": "F0",
+      "sem": "emotion",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        98,
+        118
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "crying",
+      "glyph": "😢",
+      "pair": "cry",
+      "grp": "F0",
+      "sem": "emotion",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        76460,
+        95
+      ],
+      "n_tokens": 2
+    },
+    {
+      "id": "sob",
+      "glyph": "😭",
+      "pair": "cry",
+      "grp": "F0",
+      "sem": "emotion",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        76460,
+        255
+      ],
+      "n_tokens": 2
+    },
+    {
+      "id": "thinking",
+      "glyph": "🤔",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "emotion",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        97,
+        242
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "pizza",
+      "glyph": "🍕",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "food",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        235,
+        243
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "car",
+      "glyph": "🚗",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "vehicle",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 3
+    },
+    {
+      "id": "dog",
+      "glyph": "🐶",
+      "pair": "-",
+      "grp": "F0",
+      "sem": "animal",
+      "utf8_lead": "f0",
+      "utf8_len": 4,
+      "token_ids": [
+        9468,
+        238,
+        114
+      ],
+      "n_tokens": 3
+    }
+  ],
+  "targets": {
+    "paris": "The capital of France is",
+    "planet": "The largest planet in our solar system is",
+    "thinking": "I am thinking about"
+  },
+  "wrappers": [
+    "Today I saw a",
+    "My favorite thing is",
+    "Here we have",
+    "This reminds me of"
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "num_layers": 28,
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d",
+  "phases_run": [
+    {
+      "phase": 1,
+      "rows": 19,
+      "elapsed_s": 61.2
+    },
+    {
+      "phase": 2,
+      "rows": 532,
+      "elapsed_s": 625.6
+    }
+  ],
+  "total_elapsed_s": 61.2
+}

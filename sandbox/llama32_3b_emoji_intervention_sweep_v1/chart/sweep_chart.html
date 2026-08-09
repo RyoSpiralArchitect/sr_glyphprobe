@@ -1,0 +1,281 @@
+<title>Llama-3.2-3B · which emoji intervenes most?</title>
+<style>
+  :root {
+    color-scheme: light;
+    --page:#f7f8fa; --card:#ffffff; --ink:#16181d; --mid:#5b6270; --faint:#9aa1ad;
+    --line:#e3e6ec; --grid:#eef0f4; --halo:#f0f2f6; --accent:#2563eb; --warn:#b45309;
+    --band:#dbeafe; --shadow:0 1px 3px rgba(16,20,30,.07),0 8px 24px rgba(16,20,30,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --page:#0c0e12; --card:#14171d; --ink:#e9ecf1; --mid:#9aa2b1; --faint:#6b7484;
+      --line:#242932; --grid:#1c2029; --halo:#1b1f27; --accent:#60a5fa; --warn:#fbbf24;
+      --band:#1e3a5f; --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page:#0c0e12; --card:#14171d; --ink:#e9ecf1; --mid:#9aa2b1; --faint:#6b7484;
+    --line:#242932; --grid:#1c2029; --halo:#1b1f27; --accent:#60a5fa; --warn:#fbbf24;
+    --band:#1e3a5f; --shadow:0 1px 3px rgba(0,0,0,.5),0 8px 24px rgba(0,0,0,.35);
+  }
+  body { margin:0; padding:34px 22px 60px; background:var(--page); color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif; }
+  .wrap { max-width:960px; margin:0 auto; }
+  .kicker { font-size:12px; letter-spacing:.11em; text-transform:uppercase;
+    color:var(--accent); font-weight:700; margin-bottom:10px; }
+  h1 { font-size:27px; line-height:1.24; margin:0 0 12px; letter-spacing:-.018em; }
+  .lede { color:var(--mid); max-width:74ch; margin:0 0 8px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:16px 14px 8px; margin:22px 0; box-shadow:var(--shadow); overflow-x:auto; }
+  .cap { color:var(--mid); font-size:13px; padding:2px 8px 12px; }
+  svg { display:block; max-width:100%; height:auto; }
+  .grid { stroke:var(--grid); stroke-width:1; }
+  .parity { stroke:var(--warn); stroke-width:1.5; stroke-dasharray:5 4; }
+  .parity-lab { fill:var(--warn); font-size:11px; font-weight:600; }
+  .axis { fill:var(--faint); font-size:11px; }
+  .lab { fill:var(--mid); font-size:12px; font-weight:600; }
+  .mid { text-anchor:middle; } .end { text-anchor:end; }
+  .halo { fill:var(--halo); stroke:var(--line); stroke-width:1; }
+  .pt:hover .halo { stroke:var(--accent); stroke-width:2; }
+  .glyph { font-size:17px; text-anchor:middle; dominant-baseline:central; }
+  .band { fill:var(--band); opacity:.5; }
+  .bandmed { stroke:var(--accent); stroke-width:1.5; }
+  table { border-collapse:collapse; width:100%; font-size:12.5px; }
+  th,td { text-align:left; padding:5px 8px; border-bottom:1px solid var(--line);
+    white-space:nowrap; }
+  th { color:var(--mid); font-weight:600; position:sticky; top:0; background:var(--card); }
+  td.n { text-align:right; font-variant-numeric:tabular-nums; }
+  details { margin-top:4px; } summary { cursor:pointer; color:var(--accent);
+    font-size:13px; font-weight:600; padding:6px 2px; }
+  .notes { color:var(--mid); font-size:13.5px; max-width:78ch; }
+  .notes b { color:var(--ink); }
+  .warnbox { border:1px solid var(--warn); border-radius:10px; padding:10px 13px;
+    color:var(--mid); font-size:13px; margin:18px 0; }
+</style>
+<div class="wrap">
+  <div class="kicker">GlyphProbe · pre-causal screen · out-of-contract</div>
+  <h1>Which emoji actually pushes Llama-3.2-3B the hardest?</h1>
+  <p class="lede">Each glyph measured on its own. <b>Horizontal</b>: how much simply
+  prepending it shifts the next-token distribution. <b>Vertical</b>: how hard its
+  residual-stream direction pushes when re-injected at a <i>matched</i> strength
+  (&alpha;&nbsp;=&nbsp;0.5 of the target activation RMS), as a ratio to the
+  <i>median</i> of 24 random directions of exactly the same
+  size. Above the dashed line beats that median — see the caveat below for what
+  that does and does not license.</p>
+
+  <div class="warnbox"><b>Out of contract.</b> Exploratory sandbox run on the real
+  bf16 weights. Not the sealed v2 experiment, no causal or semantic claim
+  (<code>pre-causal-activation-screen</code>). Tokenization is controlled only inside
+  the matched stratum shown here.</div>
+
+  <div class="card">
+    <svg viewBox="0 0 900 470" role="img"
+         aria-label="prompt-level effect versus magnitude-controlled push, token-matched emoji">
+      <line x1="62.0" y1="20" x2="62.0" y2="424" class="grid"/><text x="62.0" y="442" class="axis mid">0.12</text><line x1="224.8" y1="20" x2="224.8" y2="424" class="grid"/><text x="224.8" y="442" class="axis mid">0.22</text><line x1="387.6" y1="20" x2="387.6" y2="424" class="grid"/><text x="387.6" y="442" class="axis mid">0.32</text><line x1="550.4" y1="20" x2="550.4" y2="424" class="grid"/><text x="550.4" y="442" class="axis mid">0.42</text><line x1="713.2" y1="20" x2="713.2" y2="424" class="grid"/><text x="713.2" y="442" class="axis mid">0.52</text><line x1="876.0" y1="20" x2="876.0" y2="424" class="grid"/><text x="876.0" y="442" class="axis mid">0.62</text><line x1="62" y1="424.0" x2="876" y2="424.0" class="grid"/><text x="53" y="428.0" class="axis end">0.5</text><line x1="62" y1="343.2" x2="876" y2="343.2" class="grid"/><text x="53" y="347.2" class="axis end">1.7</text><line x1="62" y1="262.4" x2="876" y2="262.4" class="grid"/><text x="53" y="266.4" class="axis end">2.8</text><line x1="62" y1="181.6" x2="876" y2="181.6" class="grid"/><text x="53" y="185.6" class="axis end">3.9</text><line x1="62" y1="100.8" x2="876" y2="100.8" class="grid"/><text x="53" y="104.8" class="axis end">5.1</text><line x1="62" y1="20.0" x2="876" y2="20.0" class="grid"/><text x="53" y="24.0" class="axis end">6.2</text>
+      <line x1="62" y1="390.3" x2="876" y2="390.3" class="parity"/><text x="870" y="383.3" class="parity-lab end">random-direction parity (ratio = 1)</text>
+      <text x="450" y="462" class="lab mid">prompt-level effect — KL(no emoji &rarr; emoji), mean of 4 wrappers</text>
+      <text x="14" y="235" class="lab mid" transform="rotate(-90 14 235)">matched-strength push &divide; random-direction null MEDIAN (L16)</text>
+      <g class="pt"><title>🐶 dog (animal, 4 tok)
+prompt KL 0.5861
+ratio to null 3.52  z +7.8
+direction consistency 0.293
+boosts: ' Animals' ' Animal' ' dogs'</title><circle cx="819.9" cy="211.5" r="13" class="halo"/><text x="819.9" y="211.5" class="glyph">🐶</text></g><g class="pt"><title>🐱 cat (animal, 4 tok)
+prompt KL 0.5470
+ratio to null 3.63  z +8.2
+direction consistency 0.297
+boosts: ' Animals' ' Animal' ' dogs'</title><circle cx="757.0" cy="203.5" r="13" class="halo"/><text x="757.0" y="203.5" class="glyph">🐱</text></g><g class="pt"><title>🍕 pizza (food, 4 tok)
+prompt KL 0.4997
+ratio to null 5.67  z +16.2
+direction consistency 0.335
+boosts: ' yummy' ' delicious' ' pizza'</title><circle cx="680.8" cy="58.8" r="13" class="halo"/><text x="680.8" y="58.8" class="glyph">🍕</text></g><g class="pt"><title>🍔 burger (food, 4 tok)
+prompt KL 0.4871
+ratio to null 5.19  z +13.3
+direction consistency 0.324
+boosts: ' steak' ' pizza' ' sandwiches'</title><circle cx="660.6" cy="92.9" r="13" class="halo"/><text x="660.6" y="92.9" class="glyph">🍔</text></g><g class="pt"><title>🍜 ramen (food, 4 tok)
+prompt KL 0.4771
+ratio to null 4.85  z +12.1
+direction consistency 0.321
+boosts: ' steak' ' pizza' ' sandwiches'</title><circle cx="644.3" cy="116.9" r="13" class="halo"/><text x="644.3" y="116.9" class="glyph">🍜</text></g><g class="pt"><title>🚗 car (transport, 4 tok)
+prompt KL 0.4684
+ratio to null 4.89  z +11.7
+direction consistency 0.305
+boosts: ' Automobile' ' Vehicles' ' cars'</title><circle cx="630.4" cy="114.4" r="13" class="halo"/><text x="630.4" y="114.4" class="glyph">🚗</text></g><g class="pt"><title>🍣 sushi (food, 4 tok)
+prompt KL 0.4669
+ratio to null 5.63  z +14.3
+direction consistency 0.327
+boosts: ' steak' ' seafood' ' Steak'</title><circle cx="628.0" cy="61.7" r="13" class="halo"/><text x="628.0" y="61.7" class="glyph">🍣</text></g><g class="pt"><title>🍺 beer (food, 4 tok)
+prompt KL 0.4604
+ratio to null 5.74  z +14.2
+direction consistency 0.271
+boosts: ' steak' ' FOOD' ' Steak'</title><circle cx="617.6" cy="53.7" r="13" class="halo"/><text x="617.6" y="53.7" class="glyph">🍺</text></g><g class="pt"><title>🐢 turtle (animal, 4 tok)
+prompt KL 0.4573
+ratio to null 3.36  z +6.6
+direction consistency 0.253
+boosts: ' Animals' ' Animal' ' animals'</title><circle cx="612.5" cy="222.7" r="13" class="halo"/><text x="612.5" y="222.7" class="glyph">🐢</text></g><g class="pt"><title>🌈 rainbow (nature, 4 tok)
+prompt KL 0.4532
+ratio to null 4.54  z +10.0
+direction consistency 0.277
+boosts: ' Magical' ' COLOR' ' Cute'</title><circle cx="606.0" cy="138.8" r="13" class="halo"/><text x="606.0" y="138.8" class="glyph">🌈</text></g><g class="pt"><title>🦁 lion (animal, 4 tok)
+prompt KL 0.4515
+ratio to null 3.38  z +5.9
+direction consistency 0.229
+boosts: ' �' ' Animals' '�'</title><circle cx="603.1" cy="221.6" r="13" class="halo"/><text x="603.1" y="221.6" class="glyph">🦁</text></g><g class="pt"><title>🐻 bear (animal, 4 tok)
+prompt KL 0.4451
+ratio to null 3.77  z +7.8
+direction consistency 0.278
+boosts: ' Animals' ' Animal' ' animals'</title><circle cx="592.9" cy="193.4" r="13" class="halo"/><text x="592.9" y="193.4" class="glyph">🐻</text></g><g class="pt"><title>🚂 locomotive (transport, 4 tok)
+prompt KL 0.4305
+ratio to null 3.75  z +7.0
+direction consistency 0.225
+boosts: ' �' ' �' '�'</title><circle cx="569.3" cy="195.3" r="13" class="halo"/><text x="569.3" y="195.3" class="glyph">🚂</text></g><g class="pt"><title>🦊 fox (animal, 4 tok)
+prompt KL 0.4303
+ratio to null 3.96  z +7.3
+direction consistency 0.283
+boosts: ' �' ' �' ' �'</title><circle cx="569.0" cy="180.3" r="13" class="halo"/><text x="569.0" y="180.3" class="glyph">🦊</text></g><g class="pt"><title>🌸 blossom (nature, 4 tok)
+prompt KL 0.4212
+ratio to null 4.40  z +9.9
+direction consistency 0.267
+boosts: ' Magical' ' Gorgeous' ' ❤'</title><circle cx="554.5" cy="149.0" r="13" class="halo"/><text x="554.5" y="149.0" class="glyph">🌸</text></g><g class="pt"><title>🦋 butterfly (animal, 4 tok)
+prompt KL 0.4209
+ratio to null 4.19  z +8.5
+direction consistency 0.277
+boosts: ' ❤' ' �' ' �'</title><circle cx="553.9" cy="163.6" r="13" class="halo"/><text x="553.9" y="163.6" class="glyph">🦋</text></g><g class="pt"><title>🚲 bicycle (transport, 4 tok)
+prompt KL 0.4133
+ratio to null 2.93  z +5.2
+direction consistency 0.282
+boosts: ' �' ' Vehicles' ' �'</title><circle cx="541.7" cy="253.6" r="13" class="halo"/><text x="541.7" y="253.6" class="glyph">🚲</text></g><g class="pt"><title>🍎 apple (food, 4 tok)
+prompt KL 0.4078
+ratio to null 4.53  z +9.8
+direction consistency 0.260
+boosts: ' FOOD' ' Cute' ' ❤'</title><circle cx="532.8" cy="139.8" r="13" class="halo"/><text x="532.8" y="139.8" class="glyph">🍎</text></g><g class="pt"><title>🌊 wave (nature, 4 tok)
+prompt KL 0.3862
+ratio to null 3.56  z +6.5
+direction consistency 0.243
+boosts: ' �' '️' '�'</title><circle cx="498.1" cy="208.8" r="13" class="halo"/><text x="498.1" y="208.8" class="glyph">🌊</text></g><g class="pt"><title>🌙 moon (nature, 4 tok)
+prompt KL 0.3861
+ratio to null 4.23  z +8.9
+direction consistency 0.242
+boosts: ' candle' ' Magical' ' Lights'</title><circle cx="498.0" cy="161.3" r="13" class="halo"/><text x="498.0" y="161.3" class="glyph">🌙</text></g><g class="pt"><title>🔵 blue_circle (symbol, 4 tok)
+prompt KL 0.3831
+ratio to null 3.75  z +6.4
+direction consistency 0.249
+boosts: ' �' ' �' '�'</title><circle cx="493.0" cy="194.9" r="13" class="halo"/><text x="493.0" y="194.9" class="glyph">🔵</text></g><g class="pt"><title>♻️ recycle (symbol, 4 tok)
+prompt KL 0.3627
+ratio to null 3.89  z +7.2
+direction consistency 0.264
+boosts: ' �' ' �' ' �'</title><circle cx="460.2" cy="185.4" r="13" class="halo"/><text x="460.2" y="185.4" class="glyph">♻️</text></g><g class="pt"><title>🔥 fire (nature, 4 tok)
+prompt KL 0.3540
+ratio to null 3.34  z +6.1
+direction consistency 0.310
+boosts: ' �' ' Delicious' '�'</title><circle cx="446.2" cy="224.4" r="13" class="halo"/><text x="446.2" y="224.4" class="glyph">🔥</text></g><g class="pt"><title>🌍 earth (nature, 4 tok)
+prompt KL 0.3534
+ratio to null 5.10  z +12.4
+direction consistency 0.206
+boosts: ' LOC' ' Muse' ' Few'</title><circle cx="445.2" cy="99.3" r="13" class="halo"/><text x="445.2" y="99.3" class="glyph">🌍</text></g><g class="pt"><title>🥑 avocado (food, 4 tok)
+prompt KL 0.3492
+ratio to null 4.29  z +9.7
+direction consistency 0.295
+boosts: ' Delicious' ' pizza' ' yummy'</title><circle cx="438.5" cy="156.4" r="13" class="halo"/><text x="438.5" y="156.4" class="glyph">🥑</text></g><g class="pt"><title>🚁 helicopter (transport, 4 tok)
+prompt KL 0.3346
+ratio to null 3.59  z +6.7
+direction consistency 0.251
+boosts: ' Vehicles' ' �' ' LOC'</title><circle cx="415.0" cy="206.6" r="13" class="halo"/><text x="415.0" y="206.6" class="glyph">🚁</text></g><g class="pt"><title>🤯 mindblown (face, 4 tok)
+prompt KL 0.3301
+ratio to null 3.59  z +5.9
+direction consistency 0.316
+boosts: ' �' ' �' ' �'</title><circle cx="407.8" cy="206.4" r="13" class="halo"/><text x="407.8" y="206.4" class="glyph">🤯</text></g><g class="pt"><title>🔴 red_circle (symbol, 4 tok)
+prompt KL 0.3089
+ratio to null 3.85  z +6.9
+direction consistency 0.218
+boosts: ' pakistan' ' �' ' �'</title><circle cx="373.5" cy="188.2" r="13" class="halo"/><text x="373.5" y="188.2" class="glyph">🔴</text></g><g class="pt"><title>🚀 rocket (transport, 4 tok)
+prompt KL 0.3083
+ratio to null 2.94  z +5.3
+direction consistency 0.295
+boosts: ' �' ' �' ' �'</title><circle cx="372.7" cy="252.7" r="13" class="halo"/><text x="372.7" y="252.7" class="glyph">🚀</text></g><g class="pt"><title>🛸 ufo (transport, 4 tok)
+prompt KL 0.3077
+ratio to null 3.54  z +6.3
+direction consistency 0.279
+boosts: ' �' ' Cute' ' �'</title><circle cx="371.6" cy="210.2" r="13" class="halo"/><text x="371.6" y="210.2" class="glyph">🛸</text></g><g class="pt"><title>🟢 green_circle (symbol, 4 tok)
+prompt KL 0.2993
+ratio to null 3.79  z +6.6
+direction consistency 0.279
+boosts: '�' '�' ' �'</title><circle cx="358.2" cy="192.4" r="13" class="halo"/><text x="358.2" y="192.4" class="glyph">🟢</text></g><g class="pt"><title>⚡ lightning (nature, 4 tok)
+prompt KL 0.2834
+ratio to null 3.30  z +5.0
+direction consistency 0.238
+boosts: ' �' ' �' ' �'</title><circle cx="332.5" cy="227.4" r="13" class="halo"/><text x="332.5" y="227.4" class="glyph">⚡</text></g><g class="pt"><title>🥺 pleading (face, 4 tok)
+prompt KL 0.2776
+ratio to null 2.56  z +4.2
+direction consistency 0.305
+boosts: ' india' ' indian' ' pakistan'</title><circle cx="323.2" cy="279.7" r="13" class="halo"/><text x="323.2" y="279.7" class="glyph">🥺</text></g><g class="pt"><title>🤔 thinking (face, 4 tok)
+prompt KL 0.2755
+ratio to null 2.93  z +4.4
+direction consistency 0.289
+boosts: ' �' ' �' ' �'</title><circle cx="319.9" cy="253.1" r="13" class="halo"/><text x="319.9" y="253.1" class="glyph">🤔</text></g><g class="pt"><title>🆗 ok_button (symbol, 4 tok)
+prompt KL 0.2596
+ratio to null 3.51  z +5.9
+direction consistency 0.232
+boosts: ' pakistan' ' Few' ' india'</title><circle cx="294.1" cy="211.9" r="13" class="halo"/><text x="294.1" y="211.9" class="glyph">🆗</text></g><g class="pt"><title>⬜ white_square (symbol, 4 tok)
+prompt KL 0.2565
+ratio to null 3.76  z +7.5
+direction consistency 0.339
+boosts: ' geometry' ' �' ' Geometry'</title><circle cx="289.2" cy="194.2" r="13" class="halo"/><text x="289.2" y="194.2" class="glyph">⬜</text></g><g class="pt"><title>⛵ sailboat (transport, 4 tok)
+prompt KL 0.1871
+ratio to null 3.01  z +4.6
+direction consistency 0.209
+boosts: ' �' ' �' ' �'</title><circle cx="177.4" cy="247.5" r="13" class="halo"/><text x="177.4" y="247.5" class="glyph">⛵</text></g><g class="pt"><title>⬛ black_square (symbol, 4 tok)
+prompt KL 0.1503
+ratio to null 3.28  z +5.1
+direction consistency 0.244
+boosts: ' �' ' �' '�'</title><circle cx="118.1" cy="228.6" r="13" class="halo"/><text x="118.1" y="228.6" class="glyph">⬛</text></g>
+    </svg>
+    <div class="cap">38 glyphs, every one costing exactly 4 prefix tokens —
+      so nothing in this ordering is a token-count artefact. Hover for detail.</div>
+  </div>
+
+  <div class="card">
+    <svg viewBox="0 0 900 250" role="img" aria-label="prompt-level effect versus prefix token count">
+      <line x1="103.7" y1="18" x2="103.7" y2="204" class="grid"/><text x="103.7" y="222" class="axis mid">2</text><line x1="155.9" y1="18" x2="155.9" y2="204" class="grid"/><text x="155.9" y="222" class="axis mid">3</text><line x1="208.1" y1="18" x2="208.1" y2="204" class="grid"/><text x="208.1" y="222" class="axis mid">4</text><line x1="260.3" y1="18" x2="260.3" y2="204" class="grid"/><text x="260.3" y="222" class="axis mid">5</text><line x1="312.5" y1="18" x2="312.5" y2="204" class="grid"/><text x="312.5" y="222" class="axis mid">6</text><line x1="364.6" y1="18" x2="364.6" y2="204" class="grid"/><text x="364.6" y="222" class="axis mid">7</text><line x1="416.8" y1="18" x2="416.8" y2="204" class="grid"/><text x="416.8" y="222" class="axis mid">8</text><line x1="469.0" y1="18" x2="469.0" y2="204" class="grid"/><text x="469.0" y="222" class="axis mid">9</text><line x1="834.3" y1="18" x2="834.3" y2="204" class="grid"/><text x="834.3" y="222" class="axis mid">16</text><line x1="62" y1="204.0" x2="876" y2="204.0" class="grid"/><text x="53" y="208.0" class="axis end">0.0</text><line x1="62" y1="157.5" x2="876" y2="157.5" class="grid"/><text x="53" y="161.5" class="axis end">0.1</text><line x1="62" y1="111.0" x2="876" y2="111.0" class="grid"/><text x="53" y="115.0" class="axis end">0.3</text><line x1="62" y1="64.5" x2="876" y2="64.5" class="grid"/><text x="53" y="68.5" class="axis end">0.4</text><line x1="62" y1="18.0" x2="876" y2="18.0" class="grid"/><text x="53" y="22.0" class="axis end">0.5</text>
+      <rect x="166.4" y="-13.8" width="83.5" height="161.9" class="band"/><line x1="166.4" y1="60.5" x2="249.8" y2="60.5" class="bandmed"/>
+      <text x="450" y="242" class="lab mid">prefix tokens the glyph costs</text>
+      <text x="14" y="125" class="lab mid" transform="rotate(-90 14 125)">prompt-level KL</text>
+      <g class="pt"><title>★ star_outline — 2 tokens, prompt KL 0.2827</title><circle cx="103.7" cy="98.9" r="13" class="halo"/><text x="103.7" y="98.9" class="glyph">★</text></g><g class="pt"><title>→ arrow_right — 2 tokens, prompt KL 0.1485</title><circle cx="103.7" cy="148.8" r="13" class="halo"/><text x="103.7" y="148.8" class="glyph">→</text></g><g class="pt"><title>😀 grinning — 3 tokens, prompt KL 0.3727</title><circle cx="155.9" cy="65.5" r="13" class="halo"/><text x="155.9" y="65.5" class="glyph">😀</text></g><g class="pt"><title>☕ coffee — 3 tokens, prompt KL 0.3078</title><circle cx="155.9" cy="89.6" r="13" class="halo"/><text x="155.9" y="89.6" class="glyph">☕</text></g><g class="pt"><title>⚠️ warning — 5 tokens, prompt KL 0.2317</title><circle cx="260.3" cy="117.9" r="13" class="halo"/><text x="260.3" y="117.9" class="glyph">⚠️</text></g><g class="pt"><title>1️⃣ keycap_one — 6 tokens, prompt KL 0.1675</title><circle cx="312.5" cy="141.8" r="13" class="halo"/><text x="312.5" y="141.8" class="glyph">1️⃣</text></g><g class="pt"><title>🇯🇵 flag_jp — 7 tokens, prompt KL 0.4132</title><circle cx="364.6" cy="50.5" r="13" class="halo"/><text x="364.6" y="50.5" class="glyph">🇯🇵</text></g><g class="pt"><title>👩‍💻 woman_tech — 7 tokens, prompt KL 0.3734</title><circle cx="364.6" cy="65.3" r="13" class="halo"/><text x="364.6" y="65.3" class="glyph">👩‍💻</text></g><g class="pt"><title>🐈‍⬛ black_cat — 8 tokens, prompt KL 0.3856</title><circle cx="416.8" cy="60.7" r="13" class="halo"/><text x="416.8" y="60.7" class="glyph">🐈‍⬛</text></g><g class="pt"><title>🧑‍🚀 astronaut — 8 tokens, prompt KL 0.3102</title><circle cx="416.8" cy="88.7" r="13" class="halo"/><text x="416.8" y="88.7" class="glyph">🧑‍🚀</text></g><g class="pt"><title>🏳️‍🌈 flag_rainbow — 9 tokens, prompt KL 0.4469</title><circle cx="469.0" cy="37.9" r="13" class="halo"/><text x="469.0" y="37.9" class="glyph">🏳️‍🌈</text></g><g class="pt"><title>👨‍👩‍👧‍👦 family_four — 16 tokens, prompt KL 0.3532</title><circle cx="834.3" cy="72.8" r="13" class="halo"/><text x="834.3" y="72.8" class="glyph">👨‍👩‍👧‍👦</text></g>
+    </svg>
+    <div class="cap">The token ladder. Shaded band = full range of the 4-token matched
+      stratum above (line = its median). Spearman(token count, prompt KL) over all
+      50 glyphs = <b>+0.06</b>.</div>
+  </div>
+
+  <p class="notes"><b>How to read it.</b> The two axes are different questions.
+  Horizontal is the everyday one — put this emoji in front of a sentence and the
+  model's next-token distribution moves this much. Vertical strips out size: every
+  glyph's direction is renormalised to the same RMS before injection, so height
+  means "this direction is <i>special</i>", not "this direction is <i>big</i>".
+  Spearman between the two axes inside the matched stratum is
+  <b>+0.55</b>.</p>
+
+  <p class="notes"><b>The vertical axis is a ratio to the null <i>median</i>, and the
+  null is right-skewed.</b> The assumption-free check counts the glyphs that clear the
+  null <i>outright</i> — not one of the 24 matched random
+  directions reached their KL. At layer 16 that is 50/50 on
+  the open-ended target, 27/50 on <code>planet</code> and
+  0/50 on <code>paris</code> — and
+  <b>no glyph clears it on all three targets at any layer</b>. Read the vertical
+  ordering as relative, not as 38 individually significant results. The
+  horizontal axis does not use the null at all and is unaffected.</p>
+
+  <p class="notes"><b>What it does not show.</b> A pre-causal activation screen only.
+  It does not establish emoji meaning, semantic families, tokenizer independence, or
+  any mechanism. The random-direction null is a size control, not a semantic control:
+  beating it means the direction is structured, not that the structure is "meaning".</p>
+
+  <details>
+    <summary>Full data table (50 glyphs)</summary>
+    <table><thead><tr><th>glyph</th><th>id</th><th>family</th><th>tok</th>
+      <th>prompt KL</th><th>ratio L16</th><th>z</th><th>consistency</th>
+      <th>top boosted tokens</th></tr></thead>
+      <tbody><tr><td>🐶</td><td>dog</td><td>animal</td><td class=n>4</td><td class=n>0.5861</td><td class=n>3.52</td><td class=n>+7.8</td><td class=n>0.293</td><td>' Animals' ' Animal' ' dogs'</td></tr><tr><td>🐱</td><td>cat</td><td>animal</td><td class=n>4</td><td class=n>0.5470</td><td class=n>3.63</td><td class=n>+8.2</td><td class=n>0.297</td><td>' Animals' ' Animal' ' dogs'</td></tr><tr><td>🍕</td><td>pizza</td><td>food</td><td class=n>4</td><td class=n>0.4997</td><td class=n>5.67</td><td class=n>+16.2</td><td class=n>0.335</td><td>' yummy' ' delicious' ' pizza'</td></tr><tr><td>🍔</td><td>burger</td><td>food</td><td class=n>4</td><td class=n>0.4871</td><td class=n>5.19</td><td class=n>+13.3</td><td class=n>0.324</td><td>' steak' ' pizza' ' sandwiches'</td></tr><tr><td>🍜</td><td>ramen</td><td>food</td><td class=n>4</td><td class=n>0.4771</td><td class=n>4.85</td><td class=n>+12.1</td><td class=n>0.321</td><td>' steak' ' pizza' ' sandwiches'</td></tr><tr><td>🚗</td><td>car</td><td>transport</td><td class=n>4</td><td class=n>0.4684</td><td class=n>4.89</td><td class=n>+11.7</td><td class=n>0.305</td><td>' Automobile' ' Vehicles' ' cars'</td></tr><tr><td>🍣</td><td>sushi</td><td>food</td><td class=n>4</td><td class=n>0.4669</td><td class=n>5.63</td><td class=n>+14.3</td><td class=n>0.327</td><td>' steak' ' seafood' ' Steak'</td></tr><tr><td>🍺</td><td>beer</td><td>food</td><td class=n>4</td><td class=n>0.4604</td><td class=n>5.74</td><td class=n>+14.2</td><td class=n>0.271</td><td>' steak' ' FOOD' ' Steak'</td></tr><tr><td>🐢</td><td>turtle</td><td>animal</td><td class=n>4</td><td class=n>0.4573</td><td class=n>3.36</td><td class=n>+6.6</td><td class=n>0.253</td><td>' Animals' ' Animal' ' animals'</td></tr><tr><td>🌈</td><td>rainbow</td><td>nature</td><td class=n>4</td><td class=n>0.4532</td><td class=n>4.54</td><td class=n>+10.0</td><td class=n>0.277</td><td>' Magical' ' COLOR' ' Cute'</td></tr><tr><td>🦁</td><td>lion</td><td>animal</td><td class=n>4</td><td class=n>0.4515</td><td class=n>3.38</td><td class=n>+5.9</td><td class=n>0.229</td><td>' �' ' Animals' '�'</td></tr><tr><td>🏳️‍🌈</td><td>flag_rainbow</td><td>zwj</td><td class=n>9</td><td class=n>0.4469</td><td class=n>3.47</td><td class=n>+7.3</td><td class=n>0.290</td><td>' Diversity' ' diversity' ' Minority'</td></tr><tr><td>🐻</td><td>bear</td><td>animal</td><td class=n>4</td><td class=n>0.4451</td><td class=n>3.77</td><td class=n>+7.8</td><td class=n>0.278</td><td>' Animals' ' Animal' ' animals'</td></tr><tr><td>🚂</td><td>locomotive</td><td>transport</td><td class=n>4</td><td class=n>0.4305</td><td class=n>3.75</td><td class=n>+7.0</td><td class=n>0.225</td><td>' �' ' �' '�'</td></tr><tr><td>🦊</td><td>fox</td><td>animal</td><td class=n>4</td><td class=n>0.4303</td><td class=n>3.96</td><td class=n>+7.3</td><td class=n>0.283</td><td>' �' ' �' ' �'</td></tr><tr><td>🌸</td><td>blossom</td><td>nature</td><td class=n>4</td><td class=n>0.4212</td><td class=n>4.40</td><td class=n>+9.9</td><td class=n>0.267</td><td>' Magical' ' Gorgeous' ' ❤'</td></tr><tr><td>🦋</td><td>butterfly</td><td>animal</td><td class=n>4</td><td class=n>0.4209</td><td class=n>4.19</td><td class=n>+8.5</td><td class=n>0.277</td><td>' ❤' ' �' ' �'</td></tr><tr><td>🚲</td><td>bicycle</td><td>transport</td><td class=n>4</td><td class=n>0.4133</td><td class=n>2.93</td><td class=n>+5.2</td><td class=n>0.282</td><td>' �' ' Vehicles' ' �'</td></tr><tr><td>🇯🇵</td><td>flag_jp</td><td>flag</td><td class=n>7</td><td class=n>0.4132</td><td class=n>3.98</td><td class=n>+8.4</td><td class=n>0.308</td><td>' japan' ' Japan' ' Japanese'</td></tr><tr><td>🍎</td><td>apple</td><td>food</td><td class=n>4</td><td class=n>0.4078</td><td class=n>4.53</td><td class=n>+9.8</td><td class=n>0.260</td><td>' FOOD' ' Cute' ' ❤'</td></tr><tr><td>🌊</td><td>wave</td><td>nature</td><td class=n>4</td><td class=n>0.3862</td><td class=n>3.56</td><td class=n>+6.5</td><td class=n>0.243</td><td>' �' '️' '�'</td></tr><tr><td>🌙</td><td>moon</td><td>nature</td><td class=n>4</td><td class=n>0.3861</td><td class=n>4.23</td><td class=n>+8.9</td><td class=n>0.242</td><td>' candle' ' Magical' ' Lights'</td></tr><tr><td>🐈‍⬛</td><td>black_cat</td><td>zwj</td><td class=n>8</td><td class=n>0.3856</td><td class=n>2.92</td><td class=n>+4.9</td><td class=n>0.299</td><td>' �' ' �' ' Animals'</td></tr><tr><td>🔵</td><td>blue_circle</td><td>symbol</td><td class=n>4</td><td class=n>0.3831</td><td class=n>3.75</td><td class=n>+6.4</td><td class=n>0.249</td><td>' �' ' �' '�'</td></tr><tr><td>👩‍💻</td><td>woman_tech</td><td>zwj</td><td class=n>7</td><td class=n>0.3734</td><td class=n>3.42</td><td class=n>+8.0</td><td class=n>0.316</td><td>' Software' ' Programming' ' �'</td></tr><tr><td>😀</td><td>grinning</td><td>face</td><td class=n>3</td><td class=n>0.3727</td><td class=n>3.37</td><td class=n>+6.6</td><td class=n>0.267</td><td>' pakistan' ' indian' ' Cute'</td></tr><tr><td>♻️</td><td>recycle</td><td>symbol</td><td class=n>4</td><td class=n>0.3627</td><td class=n>3.89</td><td class=n>+7.2</td><td class=n>0.264</td><td>' �' ' �' ' �'</td></tr><tr><td>🔥</td><td>fire</td><td>nature</td><td class=n>4</td><td class=n>0.3540</td><td class=n>3.34</td><td class=n>+6.1</td><td class=n>0.310</td><td>' �' ' Delicious' '�'</td></tr><tr><td>🌍</td><td>earth</td><td>nature</td><td class=n>4</td><td class=n>0.3534</td><td class=n>5.10</td><td class=n>+12.4</td><td class=n>0.206</td><td>' LOC' ' Muse' ' Few'</td></tr><tr><td>👨‍👩‍👧‍👦</td><td>family_four</td><td>zwj</td><td class=n>16</td><td class=n>0.3532</td><td class=n>3.98</td><td class=n>+9.5</td><td class=n>0.321</td><td>' Family' ' Kids' ' kids'</td></tr><tr><td>🥑</td><td>avocado</td><td>food</td><td class=n>4</td><td class=n>0.3492</td><td class=n>4.29</td><td class=n>+9.7</td><td class=n>0.295</td><td>' Delicious' ' pizza' ' yummy'</td></tr><tr><td>🚁</td><td>helicopter</td><td>transport</td><td class=n>4</td><td class=n>0.3346</td><td class=n>3.59</td><td class=n>+6.7</td><td class=n>0.251</td><td>' Vehicles' ' �' ' LOC'</td></tr><tr><td>🤯</td><td>mindblown</td><td>face</td><td class=n>4</td><td class=n>0.3301</td><td class=n>3.59</td><td class=n>+5.9</td><td class=n>0.316</td><td>' �' ' �' ' �'</td></tr><tr><td>🧑‍🚀</td><td>astronaut</td><td>zwj</td><td class=n>8</td><td class=n>0.3102</td><td class=n>2.83</td><td class=n>+4.9</td><td class=n>0.323</td><td>' �' ' �' ' �'</td></tr><tr><td>🔴</td><td>red_circle</td><td>symbol</td><td class=n>4</td><td class=n>0.3089</td><td class=n>3.85</td><td class=n>+6.9</td><td class=n>0.218</td><td>' pakistan' ' �' ' �'</td></tr><tr><td>🚀</td><td>rocket</td><td>transport</td><td class=n>4</td><td class=n>0.3083</td><td class=n>2.94</td><td class=n>+5.3</td><td class=n>0.295</td><td>' �' ' �' ' �'</td></tr><tr><td>☕</td><td>coffee</td><td>food</td><td class=n>3</td><td class=n>0.3078</td><td class=n>3.19</td><td class=n>+5.4</td><td class=n>0.225</td><td>' Cute' ' �' ' ❤'</td></tr><tr><td>🛸</td><td>ufo</td><td>transport</td><td class=n>4</td><td class=n>0.3077</td><td class=n>3.54</td><td class=n>+6.3</td><td class=n>0.279</td><td>' �' ' Cute' ' �'</td></tr><tr><td>🟢</td><td>green_circle</td><td>symbol</td><td class=n>4</td><td class=n>0.2993</td><td class=n>3.79</td><td class=n>+6.6</td><td class=n>0.279</td><td>'�' '�' ' �'</td></tr><tr><td>⚡</td><td>lightning</td><td>nature</td><td class=n>4</td><td class=n>0.2834</td><td class=n>3.30</td><td class=n>+5.0</td><td class=n>0.238</td><td>' �' ' �' ' �'</td></tr><tr><td>★</td><td>star_outline</td><td>textsym</td><td class=n>2</td><td class=n>0.2827</td><td class=n>4.28</td><td class=n>+8.6</td><td class=n>0.223</td><td>' japan' ' Japanese' ' japanese'</td></tr><tr><td>🥺</td><td>pleading</td><td>face</td><td class=n>4</td><td class=n>0.2776</td><td class=n>2.56</td><td class=n>+4.2</td><td class=n>0.305</td><td>' india' ' indian' ' pakistan'</td></tr><tr><td>🤔</td><td>thinking</td><td>face</td><td class=n>4</td><td class=n>0.2755</td><td class=n>2.93</td><td class=n>+4.4</td><td class=n>0.289</td><td>' �' ' �' ' �'</td></tr><tr><td>🆗</td><td>ok_button</td><td>symbol</td><td class=n>4</td><td class=n>0.2596</td><td class=n>3.51</td><td class=n>+5.9</td><td class=n>0.232</td><td>' pakistan' ' Few' ' india'</td></tr><tr><td>⬜</td><td>white_square</td><td>symbol</td><td class=n>4</td><td class=n>0.2565</td><td class=n>3.76</td><td class=n>+7.5</td><td class=n>0.339</td><td>' geometry' ' �' ' Geometry'</td></tr><tr><td>⚠️</td><td>warning</td><td>symbol</td><td class=n>5</td><td class=n>0.2317</td><td class=n>3.37</td><td class=n>+5.0</td><td class=n>0.230</td><td>' �' ' �' '�'</td></tr><tr><td>⛵</td><td>sailboat</td><td>transport</td><td class=n>4</td><td class=n>0.1871</td><td class=n>3.01</td><td class=n>+4.6</td><td class=n>0.209</td><td>' �' ' �' ' �'</td></tr><tr><td>1️⃣</td><td>keycap_one</td><td>keycap</td><td class=n>6</td><td class=n>0.1675</td><td class=n>3.38</td><td class=n>+5.6</td><td class=n>0.278</td><td>' �' ' �' ' �'</td></tr><tr><td>⬛</td><td>black_square</td><td>symbol</td><td class=n>4</td><td class=n>0.1503</td><td class=n>3.28</td><td class=n>+5.1</td><td class=n>0.244</td><td>' �' ' �' '�'</td></tr><tr><td>→</td><td>arrow_right</td><td>textsym</td><td class=n>2</td><td class=n>0.1485</td><td class=n>3.17</td><td class=n>+5.4</td><td class=n>0.118</td><td>' wikipedia' ' list' ' List'</td></tr></tbody></table>
+  </details>
+</div>
