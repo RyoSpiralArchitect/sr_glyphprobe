@@ -92,3 +92,44 @@ set. A replication here raises the claim from "one sample" to "two samples on on
 protocol", which is still a long way from a property of language models. No
 causal or semantic claim is authorised either way
 (`pre-causal-activation-screen`, `causal_claim_authorized: false`).
+
+## Amendment 1 — the frame-check identifiers were written wrong (2026-08-09)
+
+**Filed before any measurement existed, and committed before the rerun.**
+
+The section above names the five frame-check components as `animals_1`,
+`food_4`, `sky_2`, `social_6`, `transport_3`. **No component has those
+identifiers.** The pool's real ids are `animals_animals_slot_03`,
+`food_food_slot_06`, and so on — I wrote the shorthand from memory instead of
+reading the panel files, and the first run died on `KeyError: 'animals_1'`
+while assembling the panel.
+
+**Nothing had been measured when it died.** The traceback in
+`results/orderrev_v1_console.log` lands immediately after `device=mps
+num_layers=28` — before the concatenation check, before the first forward pass,
+and before any file was written. `orderrev_v1_summary.json` did not exist. So
+this amendment is decided on zero data, which is the only condition under which
+amending a pre-registration is honest.
+
+**Resolution, mechanical and stated in full:** `<family>_<k>` denotes the k-th
+component of that family, 1-indexed, in the sorted order the loader already
+uses. Every family holds exactly 7 glyphs at contiguous slots 03-09, so the map
+is total and has no free choices:
+
+| as written | resolves to | recorded `mid` |
+|---|---|---|
+| `animals_1` | `animals_animals_slot_03` | 3.6062 |
+| `food_4` | `food_food_slot_06` | 5.5314 |
+| `sky_2` | `sky_sky_slot_04` | 3.8401 |
+| `social_6` | `social_social_slot_08` | 2.8690 |
+| `transport_3` | `transport_transport_slot_05` | 3.3492 |
+
+The runner now parses these five names out of *this file* and aborts if its own
+list disagrees, so the shorthand can no longer drift from what is registered.
+
+**What this does not touch.** The frame check is a sanity check on reused solo
+values, not a hypothesis test: it can only abort the run, never change a
+verdict. The pairs, the seed, the exclusion set, the decision rule, the
+tolerance and the secondary comparison are all unchanged, and the recorded
+values in the table above are read from the *prior* run, not from anything
+measured here.
