@@ -233,3 +233,74 @@ design effect under both residual conventions. Clustered p spans **0.011 to
 0.063**, against a naive 0.0011 — inflated 10-60x, straddling 0.05, not
 annihilated. The clustering objection was right; both of this file's attempts to
 quantify it were wrong, in opposite directions.
+
+## Amendment 4 — the pre-registered test was mis-specified (2026-08-09)
+
+A third adversarial review found that Amendment 3's correction was itself wrong,
+and that the underlying objection reaches further than any earlier amendment
+admitted: **it invalidates the primary test registered in this file.**
+
+### What the decision rule got wrong
+
+The rule above fixes a binomial test on 30 pairs. A binomial test assumes
+independent trials. These pairs are **dyads** over a 35-component pool: components
+recur across pairs, and two pairs sharing a component covary (pooled ICC +0.306,
+P(same sign | share a component) 0.718 against 0.574 for disjoint pairs). The
+design never had the independence the test assumes.
+
+Under the dyadic-robust variance (Aronow-Samii-Assenova) with a null-imposed
+residual — the only candidate that holds its nominal size in simulation, where
+the mean-centred alternative rejects ~10 % at a nominal 5 % under an *independent*
+null:
+
+| sample | count | registered test | dyadic-robust p |
+|---|---|---|---|
+| **primary, this file's test** | 9/30 | 0.0428 (PASS) | **0.070** |
+| prior (meanrule30) | 8/30 | 0.0161 | 0.066 |
+| pooled | 17/60 | 0.0011 | 0.063 |
+
+**No sample in the series clears 0.05 under the appropriate test. All three point
+the same way.**
+
+### What happens to the verdict
+
+**REPLICATED stands as pre-registered.** The rule was fixed before the data
+existed, it was applied as written, and it was met. Substituting a different test
+after seeing the result is the same act whether it rescues a finding or kills one,
+and a pre-registration that may be overridden whenever its author later prefers a
+different analysis is not a pre-registration. The verdict is what the registered
+rule returned.
+
+**And the registered rule was the wrong rule.** Both sentences are true and
+neither cancels the other. Pre-registration protects against choosing a test to
+fit a result; it does not make a mis-specified test correct. Everything downstream
+should quote **`9/30, dyadic-robust p = 0.07`** — a direction reproduced on three
+samples, short of conventional significance — not `p = 0.043`.
+
+The claim that survives is weaker and better specified than the one this file set
+out to test: *ending on the stronger component scores lower, consistently in sign
+across three samples of 30, 30 and 60 pairs, with no single sample reaching
+conventional significance once component clustering is handled.*
+
+### Two failed corrections, on the record
+
+Amendments 2 and 3 both tried to quantify this objection and both got it wrong,
+in opposite directions:
+
+- **Amendment 2** answered with `P(bootstrap fraction >= 0.5) = 0.054` read as
+  "just above 0.05", concluding the evidence did not survive. Its weighting was
+  `cnt[A]*cnt[B]` where the comment claimed an indicator — a real defect — but its
+  number was close to right.
+- **Amendment 3** retracted that with a bad argument: it called a statistic whose
+  null median is ~0.5 "not a p-value", which is precisely what a valid one-sided
+  p-value looks like. It then substituted a **range**, `p ~ 0.011-0.063`, across
+  three estimators of which two are mis-specified — a Rao-Scott multiplier of
+  `m-1` (valid when an observation sits in one cluster; a dyad sits in two, and
+  the correct mean number of other dyads sharing a vertex is 5.20, not 2.43), and
+  the invalid mean-centred dyadic variance. The `0.01` endpoint came entirely from
+  the broken multiplier.
+
+The pattern is worth naming, because it cost three passes: each correction was
+made in the direction of whichever criticism arrived last, without simulating the
+estimator being installed. `scripts/pooled_independence.py --simulate` now does
+that, and it is the reason this amendment states one number instead of a range.

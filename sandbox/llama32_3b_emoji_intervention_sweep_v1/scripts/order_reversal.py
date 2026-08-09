@@ -110,6 +110,10 @@ def sample_pairs(ids, exclude, stats=None):
         if frozenset((ids[i], ids[j])) in exclude:
             if stats is not None:
                 stats["fired"] = stats.get("fired", 0) + 1
+                # ...but a candidate the reuse cap would also have dropped was
+                # never going to be sampled. Only the others are repeats avoided.
+                if used.get(i, 0) < MAX_REUSE and used.get(j, 0) < MAX_REUSE:
+                    stats["avoided"] = stats.get("avoided", 0) + 1
             continue
         if used.get(i, 0) >= MAX_REUSE or used.get(j, 0) >= MAX_REUSE:
             continue
@@ -239,6 +243,7 @@ def main() -> int:
     #   changed -- pairs in the final sample that differ from the unconstrained draw
     unconstrained = sample_pairs(ids, set())
     fired = excl_stats.get("fired", 0)
+    avoided = excl_stats.get("avoided", 0)
     changed = len(set(map(frozenset, ((ids[i], ids[j]) for i, j in pairs)))
                   - set(map(frozenset, ((ids[i], ids[j]) for i, j in unconstrained))))
     print("=" * 100)
@@ -251,10 +256,12 @@ def main() -> int:
           f"overlap with the prior sample: {overlap} (must be 0)")
     print("all pre-registered constants verified against the committed file\n")
     print(f"exclusion set: {len(seen)} pairs from the prior summary, {len(seen_alt)} "
-          f"independently rebuilt from the prior profiles; the exclusion branch fired "
-          f"{fired} time(s) and changed {changed} of the {len(pairs)} final pairs")
-    if not fired:
-        print("ABORT: the exclusion never fired -- it is a no-op on this input",
+          f"independently rebuilt from the prior profiles; the branch fired {fired} "
+          f"time(s), of which {avoided} were repeats genuinely avoided (the rest were "
+          f"candidates the reuse cap would have dropped anyway); {changed} of the "
+          f"{len(pairs)} final pairs differ from the unconstrained draw")
+    if not changed:
+        print("ABORT: the exclusion changed nothing -- it is a no-op on this input",
               file=sys.stderr)
         return 2
     if overlap:
@@ -447,7 +454,8 @@ def main() -> int:
         "causal_claim_authorized": False, "out_of_contract": True,
         "preregistration": "PREREGISTRATION_order_reversal.md",
         "pair_seed": PAIR_SEED, "n_pairs": n, "overlap_with_prior": overlap,
-        "exclusion": {"n_prior_pairs": len(seen), "fired": fired, "changed": changed},
+        "exclusion": {"n_prior_pairs": len(seen), "fired": fired,
+                      "repeats_avoided": avoided, "changed": changed},
         "decision_rule": {"max_positive": MAX_POSITIVE, "alpha": ALPHA_LEVEL},
         "pairs": table, "order_effect_positive": k, "order_effect_median": med,
         "binomial_p": p_bin, "verdict": verdict,

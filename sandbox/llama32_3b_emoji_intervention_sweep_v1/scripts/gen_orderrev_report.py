@@ -109,8 +109,11 @@ w(f"| meanrule30 | {prior['n']} | {prior['positive']}/{prior['n']} | "
 w(f"| **this run** | **{n}** | **{k}/{n}** | **{s['order_effect_median']:+.2f}** | "
   f"**{verdict}** |")
 w(f"| pooled | {pool['n']} | {pool['positive']}/{pool['n']} | — | "
-  f"binomial p = {pool['binomial_p']:.6f} — **but see the clustering section: this "
-  "p-value assumes an independence the design does not have** |\n")
+  f"binomial p = {pool['binomial_p']:.6f} |\n")
+w("> Every p-value in that table is a naive binomial and **every one of them is "
+  "overstated** — pairs are dyads over a shared component pool, not independent trials. "
+  "See the clustering section for the corrected figures; the direction survives, the "
+  "significance does not.\n")
 
 if verdict == "REPLICATED":
     w("The reversal holds on pairs that were never measured before. Two "
@@ -130,8 +133,10 @@ if verdict == "REPLICATED":
           "the verdict stands as written — but a result this close to its own boundary "
           "should be quoted with the margin attached, not as a clean pass. The pooled "
           f"count ({pool['positive']}/{pool['n']}) points the same way and rests on more "
-          "units, but its nominal p-value is **not** the sturdier number either — see "
-          "the clustering section below.\n")
+          "units, but its nominal p-value is **not** the sturdier number either. Both "
+          "figures assume pairs are independent; they are dyads over a shared component "
+          "pool, and the section on clustering below shows what happens to this p-value "
+          "under the appropriate test.\n")
 elif verdict == "SAME DIRECTION, NOT SIGNIFICANT":
     w("The direction survives but the significance does not. Read this as **weak support, "
       f"not replication**: {k}/{n} leans the same way as {prior['positive']}/{prior['n']} "
@@ -185,64 +190,65 @@ w(f"Errors run {min(errs):+.2f} to {max(errs):+.2f}, median **{np.median(errs):+
 
 ind = res / "pooled_independence.json"
 if ind.exists():
-    q = json.loads(ind.read_text(encoding="utf-8"))
-    est = {r["estimator"]: r for r in q["estimators"]}
-    lo, hi = q["clustered_p_range"]
-    sub = q["subsets"]
-    w("## The pooled p-value is inflated — by 10-60x, not to nothing\n")
-    w("Adversarial review objected that pooling treats 60 pairs as 60 independent "
-      f"Bernoulli trials when all {q['n_components']} components sit in several pairs "
-      f"(up to {q['max_pairs_per_component']}), both samples draw from one pool, and "
-      "strong/weak in both is assigned from a single measurement of `solo_mid`. The "
-      "pairs are disjoint; the **units are not**. The objection is right, and the data "
-      f"show it plainly: P(same sign | two pairs share a component) = "
-      f"**{q['p_same_sign_sharing']:.3f}** against **{q['p_same_sign_disjoint']:.3f}** "
-      f"for component-disjoint pairs, ICC = **{q['icc']:+.3f}**.\n")
-    w("These pairs are **dyads** over components, so the textbook correction is a "
-      "dyadic-robust variance (Aronow-Samii-Assenova): two pairs covary iff they share "
-      "a component. Reported beside a Rao-Scott design effect and the naive binomial, "
-      "under both residual conventions "
-      "([`scripts/pooled_independence.py`](../scripts/pooled_independence.py)):\n")
-    w("| estimator | SE | design effect | two-sided p |")
-    w("|---|---|---|---|")
-    for key in ("naive binomial, null-imposed", "Rao-Scott design effect",
-                "dyadic-robust (ASA), e = y - ybar", "dyadic-robust (ASA), e = y - 0.5"):
-        r = est[key]
-        w(f"| {key} | {r['se']:.4f} | {r['deff']:.2f} | **{r['p']:.4f}** |")
-    w(f"\n**The clustered corrections span p = {lo:.3f} to {hi:.3f}** — straddling 0.05, "
-      f"and inflating the naive {q['pooled']['binomial_p']:.4f} by roughly "
-      f"{lo / q['pooled']['binomial_p']:.0f}-{hi / q['pooled']['binomial_p']:.0f}x. The "
-      "two dyadic figures differ only in whether the residual is centred on the sample "
-      "mean or on the null; both are defensible and they disagree about 0.05, so both "
-      "are shown. Picking one after seeing them would be the error this directory keeps "
-      "retracting.\n")
-    w(f"> **How to quote it.** `{q['pooled']['positive']}/{q['pooled']['n']}, clustered "
-      f"p ≈ {lo:.2f}-{hi:.2f}`. Not `p = {q['pooled']['binomial_p']:.4f}`, which assumes "
-      "independence the design does not have. The direction is well supported; the "
-      "*precision* was overstated by more than an order of magnitude.\n")
-    w("**A correction to this section's own first version.** It originally led with a "
-      "bootstrap statistic `P(fraction ≥ 0.5) = 0.054` and read it as \"just above 0.05, "
-      "so the p-value does not survive\". That was wrong twice. The statistic is **not a "
-      "p-value**: simulated under an independent null it has median "
-      f"{q.get('v1_calibration', {}).get('median', 0.51):.2f} and never fell below "
-      f"~{q.get('v1_calibration', {}).get('min', 0.06):.2f} in "
-      f"{q.get('v1_calibration', {}).get('n_sims', 200)} draws, so 0.054 sat *below its "
-      "entire null distribution* — strong evidence misread as weak. And its weights "
-      "were `cnt[A] * cnt[B]` where the comment claimed an indicator, inflating the "
-      "variance past any standard estimator. `--calibrate` reproduces the "
-      "demonstration. The first version over-corrected an over-claim; this one reports "
-      "the span of standard estimators instead.\n")
-    w("**And the component-disjoint subset analysis is withdrawn.** It compared maximal "
-      "component-disjoint subsets against nothing. Against the control it needed — "
-      f"unconstrained subsets of the same size (n = {sub['size']}) — the two are "
-      f"identical: median positive fraction "
-      f"{sub['disjoint']['median_fraction']:.3f} vs "
-      f"{sub['unconstrained']['median_fraction']:.3f}, median sign-test p "
-      f"{sub['disjoint']['median_sign_p']:.4f} vs "
-      f"{sub['unconstrained']['median_sign_p']:.4f}. Those numbers came from discarding "
-      "45 of 60 observations, not from removing dependence. The analysis said nothing "
-      "about clustering and is reported only so the earlier claim that it did is "
-      "retracted on the record.\n")
+    q = json.loads(ind.read_text(encoding="utf-8"))["samples"]
+    pri, pri_prior, poo = (q["primary (this run)"], q["prior (meanrule30)"], q["pooled"])
+    w("## The clustering correction reaches the pre-registered test itself\n")
+    w("Adversarial review objected that pooling treats pairs as independent Bernoulli "
+      "trials when components recur across them. Three review passes later the objection "
+      "has grown teeth: it applies not only to the pooled count but to **every sign test "
+      "in this series, including the pre-registered primary one**.\n")
+    w("Each pair is a **dyad** over two components. Two pairs sharing a component covary "
+      f"— in the pooled sample P(same sign | share a component) = "
+      f"**{poo['p_same_sign_sharing']:.3f}** against "
+      f"**{poo['p_same_sign_disjoint']:.3f}** for component-disjoint pairs, ICC "
+      f"**{poo['icc']:+.3f}**. The estimator for a mean of dyadic observations is the "
+      "dyadic-robust variance (Aronow-Samii-Assenova), with the residual **null-imposed** "
+      "(`e = y − 0.5`), which `--simulate` shows is the only candidate holding its "
+      "nominal size:\n")
+    w("| sample | count | naive binomial | design effect | dyadic-robust `p` (z) | (t) |")
+    w("|---|---|---|---|---|---|")
+    for lbl, r in (("**primary — the pre-registered test**", pri),
+                   ("prior (meanrule30)", pri_prior), ("pooled", poo)):
+        w(f"| {lbl} | {r['k']}/{r['n']} | {r['naive_binomial_p']:.4f} | "
+          f"{r['design_effect']:.2f} | **{r['dyadic_p_z']:.4f}** | "
+          f"{r['dyadic_p_t']:.4f} |")
+    w("\n**No sample in this series clears 0.05 under the appropriate test, and all "
+      "three point the same way.** The direction is consistent and reproducible; the "
+      "*significance* was an artefact of treating dyads as independent.\n")
+    w("> **What this does and does not do to the verdict.** The decision rule was fixed "
+      "in advance and it specified a binomial test. That test was met, so **the "
+      "pre-registered verdict REPLICATED stands as written** — swapping in a different "
+      "test after seeing the result would be the same act whether it rescues a finding "
+      "or kills one, and this directory does not get to do it in the convenient "
+      "direction only. What must be said alongside it is that **the pre-registered test "
+      "was the wrong test**: it assumed an independence the design never had. The "
+      f"defensible reading is `{pri['k']}/{pri['n']}, dyadic-robust p = "
+      f"{pri['dyadic_p_z']:.3f}` — the same direction as two other samples, short of "
+      "conventional significance. Pre-registration protects against choosing a test to "
+      "fit a result; it does not make a mis-specified test correct.\n")
+    w("**This section has now been wrong twice, in opposite directions.** Both are on "
+      "the record rather than quietly replaced:\n")
+    w("- **v1** led with a bootstrap statistic `P(fraction ≥ 0.5) = 0.054` and concluded "
+      "the pooled p-value \"does not survive\". Its weights were `cnt[A] * cnt[B]` where "
+      "the comment claimed an indicator — a real defect. But its *number* was close to "
+      "right, and it was retracted with a bad argument: v2 said a statistic with median "
+      "≈ 0.5 under the null \"is not a p-value\", when a valid one-sided p-value has "
+      "exactly that. `--forensics` re-judges it against the clustered null it should "
+      "have been compared with.")
+    w("- **v2** answered with a range, `p ≈ 0.011–0.063`. Two of its three estimators "
+      "are mis-specified: the Rao-Scott multiplier used `m̄ − 1`, valid when an "
+      "observation sits in one cluster, whereas a dyad sits in two (the correct mean "
+      f"number of other dyads sharing a vertex is **{poo['mean_other_dyads_sharing']:.2f}**, "
+      "not 2.43); and the mean-centred dyadic row rejects **~10 %** of the time at a "
+      "nominal 5 % *under an independent null*. Presenting a range was not "
+      "even-handedness — it averaged one valid estimator with two broken ones, and the "
+      "`0.01` endpoint came entirely from the broken multiplier.")
+    w("- The **component-disjoint subset analysis** stays withdrawn, but v2's stated "
+      "reason was also wrong. It claimed the analysis was identical to a size-matched "
+      "unconstrained control; two of its three rows are pinned by the marginal count and "
+      "*cannot* differ, while the third — the one carrying the original claim — differed "
+      "by ~18×. The analysis was invalid because a median of correlated within-dataset "
+      "p-values is not a p-value, not because it detected nothing.\n")
 
 gap = [abs(solo[t["A"]] - solo[t["B"]]) for t in pairs]
 oe_ = [t["order_effect"] for t in pairs]
@@ -259,7 +265,7 @@ w("This is **not** a revival of that claim. It is one more sample of a quantity 
   "with a threshold and test it on pairs drawn for that question.\n")
 
 w("## What adversarial review changed\n")
-exc = s.get("exclusion", {})
+exc = s["exclusion"]     # KeyError beats a silently-defaulted audit number
 w("Two review passes. Neither moved a measured value; between them they changed what "
   "several numbers were allowed to claim, and caught one analysis that was wrong in "
   "each direction in turn.\n")
@@ -269,10 +275,10 @@ w("- The **overlap check was circular**: `sample_pairs` already skips the exclus
   "had silently become a no-op. The prior pair set is now rebuilt independently from the "
   "prior *profiles* file, cross-checked against the summary, required to match the prior "
   "pair count and to name only components that exist"
-  + (f"; the exclusion branch is instrumented directly and fired **{exc['fired']}** "
-     f"time(s), changing **{exc['changed']}** of the {n} final pairs."
-     if exc else ".")
-  + "")
+  + f"; the branch is instrumented directly and fired **{exc['fired']}** time(s), of "
+    f"which **{exc['repeats_avoided']}** were repeats genuinely avoided — the rest were "
+    f"candidates the reuse cap would have dropped anyway — changing "
+    f"**{exc['changed']}** of the {n} final pairs.")
 w("- The **4-prefix-token invariant** carried by the previous runner had been dropped and "
   "is restored: every component, every wrapper, or the run aborts.")
 w("- The **profiles file had lost its per-layer vector**, so no reader could re-derive a "

@@ -9,6 +9,7 @@
   "exclusion": {
     "n_prior_pairs": 30,
     "fired": 5,
+    "repeats_avoided": 1,
     "changed": 2
   },
   "decision_rule": {

@@ -214,7 +214,7 @@ one where a **pre-registered replication reversed a retraction**:
 | meanrule v1 | 6 | 2/6 | — | the reverse |
 | meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower**, p = 0.016 |
 | **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED**, p = 0.043 |
-| pooled | 60 | 17/60 | — | naive p = 0.0011 is **wrong**; clustered p ≈ 0.01-0.06, see below |
+| pooled | 60 | 17/60 | — | naive p = 0.0011 is **wrong**; dyadic-robust p = 0.063, see below |
 
 `order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
 across all four samples. The replication used 30 pairs drawn by a fresh seed with
@@ -225,41 +225,40 @@ the script existed.
 **Quote it with its margin.** At n = 30 the confirmatory result clears its own
 threshold by one pair: 10/30 would have given p = 0.099 and failed.
 
-**And the pooled p-value is inflated by 10-60×.** Adversarial review objected
-that pooling treats 60 pairs as 60 independent trials when every one of the 35
-components sits in several pairs (up to 4), both samples come from one pool, and
-strong/weak in both is assigned from a single measurement of `solo_mid`. The
-pairs are disjoint; the units are not. The data agree: P(same sign | two pairs
-share a component) = **0.718** against **0.574** for component-disjoint pairs,
-ICC = **+0.306**.
+**And the clustering correction reaches this test too.** Adversarial review
+objected that a pooled sign test treats pairs as independent Bernoulli trials
+when components recur across them. Three passes later the objection applies to
+**every sign test here, the pre-registered one included**. Each pair is a **dyad**
+over two components; two pairs sharing one covary — pooled, P(same sign | share a
+component) = **0.718** against **0.574** for disjoint pairs, ICC **+0.306**. The
+estimator is the dyadic-robust variance (Aronow–Samii–Assenova) with the residual
+null-imposed, the only candidate that holds its nominal size in simulation
+([`scripts/pooled_independence.py`](scripts/pooled_independence.py) `--simulate`):
 
-These pairs are **dyads** over components, so the textbook correction is a
-dyadic-robust variance (Aronow–Samii–Assenova)
-([`scripts/pooled_independence.py`](scripts/pooled_independence.py)):
+| sample | count | naive binomial | design effect | dyadic-robust p |
+|---|---|---|---|---|
+| **primary — the pre-registered test** | 9/30 | 0.0428 | 1.47 | **0.070** |
+| prior (meanrule30) | 8/30 | 0.0161 | 1.93 | **0.066** |
+| pooled | 17/60 | 0.0011 | 3.27 | **0.063** |
 
-| estimator | SE | design effect | two-sided p |
-|---|---|---|---|
-| naive binomial | 0.0645 | 1.00 | 0.0008 |
-| Rao–Scott design effect | 0.0852 | 1.74 | **0.0110** |
-| dyadic-robust, `e = y − ȳ` | 0.0933 | 2.57 | **0.0203** |
-| dyadic-robust, `e = y − 0.5` | 0.1167 | 3.27 | **0.0633** |
+**No sample clears 0.05 under the appropriate test, and all three point the same
+way.** The pre-registered verdict stands as written — a test may not be swapped
+after seeing the result, in either direction — but **the pre-registered test was
+the wrong test**. Read the result as `9/30, dyadic-robust p = 0.07`: a direction
+reproduced across three samples, short of conventional significance.
 
-**Quote it as `17/60, clustered p ≈ 0.01–0.06`** — straddling 0.05. The two
-dyadic figures differ only in where the residual is centred; both are defensible
-and they disagree about 0.05, so both are shown rather than one chosen after the
-fact. The direction is well supported; the *precision* was overstated by more
-than an order of magnitude.
-
-> **This paragraph's own first version was also wrong**, in the opposite
-> direction. It led with a bootstrap statistic `P(fraction ≥ 0.5) = 0.054`, read
-> it as "just above 0.05", and concluded "the p-value does not survive". That
-> statistic is not a p-value: under an independent null it has median 0.51 and
-> never fell below ~0.06 in 200 draws, so 0.054 sat *below its entire null
-> distribution*. A companion analysis over component-disjoint subsets is
-> withdrawn outright — against size-matched unconstrained subsets it is identical
-> (median fraction 0.267 either way, median sign-test p 0.1185 either way), so it
-> measured the cost of discarding 45 of 60 observations, not the cost of
-> dependence. **Over-correcting an over-claim is not caution.**
+> **This paragraph has been wrong twice, in opposite directions.** v1 answered the
+> objection with a bootstrap statistic of my own construction, read `0.054` as
+> "just above 0.05", and concluded the evidence did not survive. v2 retracted that
+> using a bad argument — it called a statistic with null median ≈ 0.5 "not a
+> p-value", which is exactly what a valid one-sided p-value looks like — and
+> replaced it with a **range**, `p ≈ 0.011–0.063`, spanning three estimators. Two
+> were mis-specified: a Rao–Scott multiplier of `m̄ − 1` assumes an observation
+> sits in one cluster when a dyad sits in two (the right figure is **5.20**, not
+> 2.43), and the mean-centred dyadic variance rejects **~10 %** at a nominal 5 %
+> *under an independent null*. The `0.01` endpoint came entirely from the broken
+> multiplier. Averaging a valid estimator with two broken ones is not
+> even-handedness.
 
 What is established is the **direction**, on two pairs-disjoint samples under one
 protocol — not an effect size, and not anything about why.
@@ -294,7 +293,7 @@ the 8/13 pooled reading was the right call on the evidence then; with five times
 the units the effect reappears with the sign flipped. It was a new
 single-sample finding at exactly the evidential level the 6/7 claim once had, so
 it was replicated before anything was built on it — **9/30 on 30 disjoint pairs,
-p = 0.043, pooled 17/60 (clustered p ≈ 0.01-0.06)** (§2.6). The reversal is what stands; the
+dyadic-robust p = 0.070; pooled 17/60 at p = 0.063** (§2.6). The direction is what stands; the
 6/7 claim stays retracted.
 
 A confound found late and disclosed rather than buried: **UTF-8 byte class**
@@ -399,11 +398,15 @@ These cost the most and generalise furthest.
    evidence did not survive. That statistic is not a p-value: under an
    independent null it has median 0.51 and never fell below ~0.06 in 200 draws,
    so `0.054` sat *below its entire null distribution*. The correct answer — a
-   dyadic-robust variance, since the pairs are dyads over components — is
-   p ≈ 0.01–0.06: inflated 10–60×, not annihilated. The retreat felt rigorous
-   and was just a second error pointing the other way. Reach for the estimator
-   the data structure already has a name for, and simulate any statistic you
-   build yourself under a null you understand before it reaches a conclusion.
+   dyadic-robust variance with a null-imposed residual, since the pairs are
+   dyads over components — is p = 0.063, and it applies to the **pre-registered
+   test** too (0.070). Then I corrected *that* wrongly as well, twice: once by
+   retracting a roughly-right number with a bad argument, once by averaging one
+   valid estimator with two mis-specified ones and reporting the range. Three
+   passes, each correcting in the direction of whichever criticism arrived last,
+   none of them simulating the estimator being installed. **Reach for the
+   estimator the data structure already has a name for, and simulate any test you
+   adopt under a null you understand before it reaches a conclusion.**
 
 ---
 
@@ -432,7 +435,8 @@ These cost the most and generalise furthest.
 - ~~**More units per statistic**~~ — done: 30 pairs, see
   [`results/meanrule30_report.md`](results/meanrule30_report.md).
 - ~~**Replicate the 8/30 order-effect reversal**~~ — done, and it held: 9/30 on
-  disjoint pairs, pooled 17/60 (clustered p ≈ 0.01-0.06), see
+  disjoint pairs, pooled 17/60 — though under the appropriate dyadic-robust
+  test no sample reaches 0.05 (§2.6), see
   [`results/orderrev_report.md`](results/orderrev_report.md). It cleared its
   threshold by a single pair, so the next useful move is **more units again**
   (n ≈ 100) to get an interval on the effect rather than a sign test — and then
@@ -450,8 +454,8 @@ These cost the most and generalise furthest.
   already produced every answer. Fix a threshold in advance and draw pairs *for
   this question* before it is allowed to count.
 - **Pooling needs a design that earns it**: every component sits in several
-  pairs (ICC +0.31), so the pooled binomial overstates its precision by a design
-  effect of 1.7–3.3. Either draw component-disjoint pairs — costing units, since
+  pairs (ICC +0.31), so every binomial here overstates its precision by a design
+  effect of 1.5–3.3. Either draw component-disjoint pairs — costing units, since
   35 components cap a disjoint sample at 17 pairs — or report the dyadic-robust
   figure as the headline rather than as a caveat.
 - **Token-position resolution**: extract the direction at each token position of
