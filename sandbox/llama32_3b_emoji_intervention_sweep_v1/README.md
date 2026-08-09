@@ -1,5 +1,7 @@
 # Llama-3.2-3B — per-glyph emoji intervention sweep (v1)
 
+**→ [FINDINGS.md](FINDINGS.md) — the synthesis across all twelve runs: what survived, what was retracted, and the methodological lessons.**
+
 [日本語](README.ja.md) · [Scientific contract](../../docs/SCIENTIFIC_CONTRACT.md) · [Sealed v2 protocol](../../docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [Sibling OOC screen](../llama32_3b_bf16_ooc_screen_v1/README.md)
 
 > ## ⚠️ OUT OF CONTRACT — this is NOT the sealed v2 experiment

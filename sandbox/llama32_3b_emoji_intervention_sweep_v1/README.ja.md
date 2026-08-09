@@ -1,5 +1,7 @@
 # Llama-3.2-3B — 絵文字ごとの介入量スイープ (v1)
 
+**→ [FINDINGS.ja.md](FINDINGS.ja.md) — 全12ランの統合: 生き残ったもの、撤回したもの、方法論上の教訓。**
+
 [English](README.md) · [科学契約](../../docs/SCIENTIFIC_CONTRACT.ja.md) · [封印済み v2 プロトコル](../../docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [姉妹の契約外スクリーン](../llama32_3b_bf16_ooc_screen_v1/README.ja.md)
 
 > ## ⚠️ 契約外 — これは封印済み v2 実験ではない
