@@ -1,0 +1,221 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "stated_prediction": "the order-effect sign will NOT be stable across conditions",
+  "panel": "foodtype",
+  "pairs": [
+    [
+      "sussq",
+      "sushi",
+      "black_sq"
+    ],
+    [
+      "ramsq",
+      "ramen",
+      "black_sq"
+    ],
+    [
+      "beesq",
+      "beer",
+      "black_sq"
+    ],
+    [
+      "dogsq",
+      "dog",
+      "black_sq"
+    ],
+    [
+      "rainsq",
+      "rainbow",
+      "black_sq"
+    ]
+  ],
+  "wrapper_sets": {
+    "A": [
+      "Today I saw a",
+      "My favorite thing is",
+      "Here we have",
+      "This reminds me of"
+    ],
+    "B": [
+      "Look at this",
+      "I just found a",
+      "There was a",
+      "Everyone loves a"
+    ]
+  },
+  "target_sets": {
+    "A": {
+      "paris": "The capital of France is",
+      "planet": "The largest planet in our solar system is",
+      "thinking": "I am thinking about"
+    },
+    "B": {
+      "summer": "The best thing about summer is",
+      "tell": "Let me tell you about",
+      "gold": "The chemical symbol for gold is"
+    }
+  },
+  "layers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "mid": {
+    "sushi|WA|TA": 5.198185403162562,
+    "sushi|WA|TB": 6.436928690045143,
+    "sushi|WB|TA": 4.091102682530896,
+    "sushi|WB|TB": 5.122991081002968,
+    "ramen|WA|TA": 4.401429558489009,
+    "ramen|WA|TB": 5.743756563049824,
+    "ramen|WB|TA": 3.5592934335625466,
+    "ramen|WB|TB": 5.188462939451888,
+    "beer|WA|TA": 5.157210424058381,
+    "beer|WA|TB": 5.572242363127482,
+    "beer|WB|TA": 4.774706693029763,
+    "beer|WB|TB": 6.499088313180216,
+    "dog|WA|TA": 3.707403984158457,
+    "dog|WA|TB": 5.058753599675284,
+    "dog|WB|TA": 3.5625465238499117,
+    "dog|WB|TB": 4.017058783685173,
+    "rainbow|WA|TA": 4.185286925447978,
+    "rainbow|WA|TB": 5.775357772311344,
+    "rainbow|WB|TA": 3.535873348602474,
+    "rainbow|WB|TB": 5.704800540129838,
+    "black_sq|WA|TA": 3.002989942905477,
+    "black_sq|WA|TB": 3.431209985995226,
+    "black_sq|WB|TA": 3.910823262616539,
+    "black_sq|WB|TB": 2.5392053192661987,
+    "sussq__sushi_black_sq|WA|TA": 4.404054003867425,
+    "sussq__sushi_black_sq|WA|TB": 6.193590798913571,
+    "sussq__sushi_black_sq|WB|TA": 4.164304877895151,
+    "sussq__sushi_black_sq|WB|TB": 5.2247860568254225,
+    "sussq__black_sq_sushi|WA|TA": 5.104607212019974,
+    "sussq__black_sq_sushi|WA|TB": 7.469794217487639,
+    "sussq__black_sq_sushi|WB|TA": 4.3254851622071016,
+    "sussq__black_sq_sushi|WB|TB": 6.245418058099275,
+    "ramsq__ramen_black_sq|WA|TA": 4.103148972529386,
+    "ramsq__ramen_black_sq|WA|TB": 5.731497965648473,
+    "ramsq__ramen_black_sq|WB|TA": 3.9409035999241446,
+    "ramsq__ramen_black_sq|WB|TB": 5.448456895926452,
+    "ramsq__black_sq_ramen|WA|TA": 4.57951661438241,
+    "ramsq__black_sq_ramen|WA|TB": 5.770371207973004,
+    "ramsq__black_sq_ramen|WB|TA": 4.278531376064253,
+    "ramsq__black_sq_ramen|WB|TB": 5.337990989533253,
+    "beesq__beer_black_sq|WA|TA": 4.5480395262938265,
+    "beesq__beer_black_sq|WA|TB": 5.403231464543133,
+    "beesq__beer_black_sq|WB|TA": 4.376354533531439,
+    "beesq__beer_black_sq|WB|TB": 6.708408070662652,
+    "beesq__black_sq_beer|WA|TA": 4.562537553705941,
+    "beesq__black_sq_beer|WA|TB": 4.946273927178409,
+    "beesq__black_sq_beer|WB|TA": 4.087584032421601,
+    "beesq__black_sq_beer|WB|TB": 6.033874952870458,
+    "dogsq__dog_black_sq|WA|TA": 3.192980384602713,
+    "dogsq__dog_black_sq|WA|TB": 4.957443957144431,
+    "dogsq__dog_black_sq|WB|TA": 3.239835020552887,
+    "dogsq__dog_black_sq|WB|TB": 3.632933917174274,
+    "dogsq__black_sq_dog|WA|TA": 3.3599317800140303,
+    "dogsq__black_sq_dog|WA|TB": 5.388793187169266,
+    "dogsq__black_sq_dog|WB|TA": 3.325116292831693,
+    "dogsq__black_sq_dog|WB|TB": 4.707521303316104,
+    "rainsq__rainbow_black_sq|WA|TA": 3.2693918434073956,
+    "rainsq__rainbow_black_sq|WA|TB": 5.236144018799242,
+    "rainsq__rainbow_black_sq|WB|TA": 3.1746497258458484,
+    "rainsq__rainbow_black_sq|WB|TB": 4.252300989446398,
+    "rainsq__black_sq_rainbow|WA|TA": 3.3435733876138367,
+    "rainsq__black_sq_rainbow|WA|TB": 5.614859609607666,
+    "rainsq__black_sq_rainbow|WB|TA": 3.303678723182497,
+    "rainsq__black_sq_rainbow|WB|TB": 5.38068011091737
+  },
+  "order_effect_table": [
+    {
+      "pair": "sussq",
+      "A": "sushi",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": 0.7005532081525487,
+        "WA/TB": 1.2762034185740676,
+        "WB/TA": 0.16118028431195075,
+        "WB/TB": 1.0206320012738521
+      },
+      "n_positive": 4,
+      "n_conditions": 4,
+      "sign_stable": true,
+      "range": 1.1150231342621169
+    },
+    {
+      "pair": "ramsq",
+      "A": "ramen",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": 0.4763676418530238,
+        "WA/TB": 0.03887324232453082,
+        "WB/TA": -0.3376277761401081,
+        "WB/TB": -0.1104659063931992
+      },
+      "n_positive": 2,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 0.8139954179931319
+    },
+    {
+      "pair": "beesq",
+      "A": "beer",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": 0.014498027412114922,
+        "WA/TB": -0.45695753736472344,
+        "WB/TA": -0.2887705011098376,
+        "WB/TB": -0.674533117792194
+      },
+      "n_positive": 1,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 0.689031145204309
+    },
+    {
+      "pair": "dogsq",
+      "A": "dog",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": 0.1669513954113171,
+        "WA/TB": 0.4313492300248347,
+        "WB/TA": -0.08528127227880589,
+        "WB/TB": 1.0745873861418298
+      },
+      "n_positive": 3,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 1.1598686584206357
+    },
+    {
+      "pair": "rainsq",
+      "A": "rainbow",
+      "B": "black_sq",
+      "order_effects": {
+        "WA/TA": 0.07418154420644107,
+        "WA/TB": 0.3787155908084241,
+        "WB/TA": -0.12902899733664874,
+        "WB/TB": 1.1283791214709726
+      },
+      "n_positive": 3,
+      "n_conditions": 4,
+      "sign_stable": false,
+      "range": 1.2574081188076214
+    }
+  ],
+  "n_sign_stable": 1,
+  "n_pairs": 5,
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}

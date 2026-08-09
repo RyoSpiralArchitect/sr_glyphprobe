@@ -265,10 +265,11 @@ def main() -> int:
     n_stable = sum(t["sign_stable"] for t in table)
     print(f"\npairs whose order-effect sign is stable across all "
           f"{len(conds)} conditions: **{n_stable}/{len(table)}**")
-    piz = next(t for t in table if t["pair"] == "pizsq")
-    print(f"the original anomaly (pizsq): {piz['n_positive']}/{piz['n_conditions']} "
-          f"positive, spread {piz['range']:.2f} "
-          f"-> {'sign holds' if piz['sign_stable'] else 'SIGN DOES NOT HOLD'}")
+    piz = next((t for t in table if t["pair"] == "pizsq"), None)
+    if piz is not None:
+        print(f"the original anomaly (pizsq): {piz['n_positive']}/{piz['n_conditions']} "
+              f"positive, spread {piz['range']:.2f} "
+              f"-> {'sign holds' if piz['sign_stable'] else 'SIGN DOES NOT HOLD'}")
     print(f"\nPREDICTION WAS: the sign will NOT be stable.  "
           f"OUTCOME: {'prediction wrong, signs are stable' if n_stable == len(table) else 'prediction held for at least one pair'}")
 
