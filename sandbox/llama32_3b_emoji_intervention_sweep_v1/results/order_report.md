@@ -33,20 +33,24 @@ Sign stable across all four conditions: **2/4**.
 | pair | strong | weak | WA/TA | WA/TB | WB/TA | WB/TB | positive | sign |
 |---|---|---|---|---|---|---|---|---|
 | 🍣⬛ `sussq` | sushi | black_sq | +0.70 | +1.28 | +0.16 | +1.02 | 4/4 | **STABLE** |
-| 🍜⬛ `ramsq` | ramen | black_sq | +0.48 | +0.04 | -0.34 | -0.11 | 2/4 | flips |
+| 🍜⬛ `ramsq` | ramen | black_sq ⚠ | +0.48 | +0.04 | +0.34 | -0.11 | 3/4 | flips |
 | 🍺⬛ `beesq` | beer | black_sq | +0.01 | -0.46 | -0.29 | -0.67 | 1/4 | flips |
-| 🐶⬛ `dogsq` | dog | black_sq | +0.17 | +0.43 | -0.09 | +1.07 | 3/4 | flips |
-| 🌈⬛ `rainsq` | rainbow | black_sq | +0.07 | +0.38 | -0.13 | +1.13 | 3/4 | flips |
+| 🐶⬛ `dogsq` | dog | black_sq ⚠ | +0.17 | +0.43 | +0.09 | +1.07 | 4/4 | **STABLE** |
+| 🌈⬛ `rainsq` | rainbow | black_sq ⚠ | +0.07 | +0.38 | +0.13 | +1.13 | 4/4 | **STABLE** |
 
-Sign stable across all four conditions: **1/5**.
+⚠ = the two components swap rank in `ramsq` (WB/TA), `dogsq` (WB/TA), `rainsq` (WB/TA). A positive order effect always means *ends on the component that is stronger in the first condition*; the runner originally re-decided this per condition, which mirrored those cells. Everything here uses the fixed convention.
+
+Sign stable across all four conditions: **3/5**.
 
 ## What the two panels say together
 
-**Panel 1 refuted my prediction.** 🍕⬛ holds its negative sign in all four conditions (0/4 positive) and 🍔⬛ agrees (0/4). Two of the four pairs are stable, so the anomaly is not simply one draw from a noisy quantity — there is something there.
+**Panel 1 refuted my prediction.** 🍕⬛ holds its sign in all four conditions (0/4 positive) and 🍔⬛ agrees (0/4). 2 of 4 pairs are sign-stable, so the anomaly is not one draw from a noisy quantity — there is something there.
 
-**Panel 2 refuted the type.** 🍣⬛ is stable in the *opposite* direction (4/4 positive), and the other two foods flip (ramsq 2/4, beesq 1/4). The non-food controls flip too, at 3/4 each — indistinguishable from the foods. So the negative sign belongs to **🍕 and 🍔 specifically**, not to food.
+**Panel 2 refuted the type.** The three foods do not agree with each other: `sussq` 4/4, `ramsq` 3/4, `beesq` 1/4. And the two non-food controls are `dogsq` 4/4, `rainsq` 4/4 — both sign-stable, i.e. the controls behave at least as consistently as the foods do. Whatever 🍕⬛ and 🍔⬛ have, **food does not predict it**.
 
-Put together: individual glyph pairs can carry a reproducible order preference, but it does not follow the component gap, it does not follow semantic category, and it is not shared even within one category. **No general rule survives.** The magnitude is not stable either — 🍕⬛ ranges -1.09 to -0.03 across the four conditions (spread 1.06); only the sign is preserved.
+Put together: an individual pair can carry a reproducible order preference, but it follows neither the component gap, nor semantic category, nor other members of its own category — and non-food pairs are just as capable of being stable. **No general rule survives.** The magnitude is not stable either — 🍕⬛ ranges -1.09 to -0.03 (spread 1.06); only the sign is preserved.
+
+> **Correction.** The first version of this report said the non-food controls "flip at 3/4 — indistinguishable from the foods". That came from a runner that re-decided which component was *strong* inside the condition loop; ⬛ outranks its partner in `WB/TA` but not elsewhere, so those cells were measured in a mirrored frame. Under one fixed convention the controls are sign-stable, not flipping. The conclusion that food is not the type is unchanged — the reason is different.
 
 ## Scale caveat
 

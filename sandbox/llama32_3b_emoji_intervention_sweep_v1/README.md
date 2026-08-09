@@ -332,13 +332,21 @@ injection targets — giving 2 × 2 = four independent estimates of each pair.
 | panel | prediction stated first | outcome |
 |---|---|---|
 | does 🍕⬛'s sign survive? | it will **not** be stable | **prediction wrong.** 🍕⬛ is 0/4 positive across all four conditions and 🍔⬛ agrees (0/4). 🚗⬛ and 🍕⬜ flip |
-| is "food + black square" a type? | if it is, the three new foods go negative and the two non-food controls do not | **no type.** 🍣⬛ is stable in the *opposite* direction (4/4 positive); 🍜⬛ 2/4 and 🍺⬛ 1/4 flip; the non-food controls 🐶⬛ and 🌈⬛ flip at 3/4 — indistinguishable from the foods |
+| is "food + black square" a type? | if it is, the three new foods go negative and the two non-food controls do not | **no type.** The foods disagree with each other (🍣⬛ 4/4, 🍜⬛ 3/4, 🍺⬛ 1/4) and the non-food controls are *both* sign-stable (🐶⬛ 4/4, 🌈⬛ 4/4) — at least as consistent as the foods |
 
 So an individual pair can carry a reproducible order preference, but it follows
 **neither the component gap, nor semantic category, nor even other members of its
-own category**. The negative sign belongs to 🍕 and 🍔 specifically. No general
-rule survives, and the magnitude is not stable either — 🍕⬛ ranges −1.09 to
-−0.03 across conditions; only the sign is preserved.
+own category** — and non-food pairs are just as capable of being stable. Whatever
+🍕⬛ and 🍔⬛ have, food does not predict it. No general rule survives, and the
+magnitude is not stable either — 🍕⬛ ranges −1.09 to −0.03 across conditions;
+only the sign is preserved.
+
+**Correction.** The first version of this section said the controls "flip at 3/4
+— indistinguishable from the foods". That came from a runner that re-decided
+which component counted as *strong* inside the condition loop, so the cells where
+⬛ outranked its partner were measured in a mirrored frame. Under one fixed
+convention both controls are sign-stable. The conclusion is unchanged; the reason
+is different.
 
 Worth stating plainly: "stable across four conditions" is a weak bar. With a
 genuinely 50/50 sign one pair in eight looks stable by chance, and nine pairs

@@ -12,12 +12,54 @@ ROOT = Path(__file__).resolve().parent.parent
 res = ROOT / "results"
 an = json.loads((res / "orderstab_v1_summary.json").read_text(encoding="utf-8"))
 ft = json.loads((res / "foodtype_v1_summary.json").read_text(encoding="utf-8"))
+
+
+def recompute(data):
+    """Order effects under ONE fixed convention per pair.
+
+    Both summaries were produced by a runner that re-decided strong/weak inside
+    the condition loop. black_sq outranks its partner in some conditions and not
+    others, so those cells were measured in a mirrored frame. Everything below is
+    recomputed as mid[strong-last] - mid[strong-first] with `strong` fixed from
+    the first condition, and `rank_flips` records where the runner would have
+    mirrored it.
+    """
+    mid = data["mid"]
+    cs = list(data["order_effect_table"][0]["order_effects"])
+    out = []
+    for t in data["order_effect_table"]:
+        a, b = t["A"], t["B"]
+        ref = cs[0]
+        strong, weak = ((a, b) if mid[f"{a}|{ref.replace('/', '|')}"]
+                        >= mid[f"{b}|{ref.replace('/', '|')}"] else (b, a))
+        eff = {}
+        flips = []
+        for c in cs:
+            k = c.replace("/", "|")
+            eff[c] = (mid[f"{t['pair']}__{weak}_{strong}|{k}"]
+                      - mid[f"{t['pair']}__{strong}_{weak}|{k}"])
+            if (mid[f"{a}|{k}"] >= mid[f"{b}|{k}"]) != (strong == a):
+                flips.append(c)
+        npos = sum(v > 0 for v in eff.values())
+        out.append({**t, "strong": strong, "weak": weak, "order_effects": eff,
+                    "n_positive": npos, "n_conditions": len(cs),
+                    "sign_stable": npos in (0, len(cs)),
+                    "range": max(eff.values()) - min(eff.values()),
+                    "rank_flips": flips})
+    return out, cs
+
+
+an["order_effect_table"], conds_an = recompute(an)
+ft["order_effect_table"], conds_ft = recompute(ft)
+assert conds_an == conds_ft, (conds_an, conds_ft)
+for d in (an, ft):
+    d["n_sign_stable"] = sum(t["sign_stable"] for t in d["order_effect_table"])
 GL = {"pizza": "🍕", "burger": "🍔", "car": "🚗", "black_sq": "⬛", "white_sq": "⬜",
       "sushi": "🍣", "ramen": "🍜", "beer": "🍺", "dog": "🐶", "rainbow": "🌈"}
 
 o = []
 w = o.append
-conds = list(an["order_effect_table"][0]["order_effects"])
+conds = conds_an
 
 w("# Chasing the one reversed family — and not finding a rule (out of contract)\n")
 w("[The composition report](composition_report.md) left one family running the wrong "
@@ -55,10 +97,18 @@ for tag, data, title, pred in (
     for t in data["order_effect_table"]:
         effs = " | ".join(f"{t['order_effects'][c]:+.2f}" for c in conds)
         a_g, b_g = GL.get(t["A"], t["A"]), GL.get(t["B"], t["B"])
-        strong = t["A"] if t["order_effects"] else t["A"]
-        w(f"| {a_g}{b_g} `{t['pair']}` | {t['A']} | {t['B']} | {effs} | "
+        note = (" ⚠" if t["rank_flips"] else "")
+        w(f"| {a_g}{b_g} `{t['pair']}` | {t['strong']} | {t['weak']}{note} | {effs} | "
           f"{t['n_positive']}/{t['n_conditions']} | "
           f"{'**STABLE**' if t['sign_stable'] else 'flips'} |")
+    fl = [t for t in data["order_effect_table"] if t["rank_flips"]]
+    if fl:
+        w("\n⚠ = the two components swap rank in " +
+          ", ".join(f"`{t['pair']}` ({', '.join(t['rank_flips'])})" for t in fl) +
+          ". A positive order effect always means *ends on the component that is "
+          "stronger in the first condition*; the runner originally re-decided this "
+          "per condition, which mirrored those cells. Everything here uses the "
+          "fixed convention.")
     w(f"\nSign stable across all four conditions: "
       f"**{data['n_sign_stable']}/{data['n_pairs']}**.\n")
 
@@ -66,22 +116,34 @@ pz = next(t for t in an["order_effect_table"] if t["pair"] == "pizsq")
 bu = next(t for t in an["order_effect_table"] if t["pair"] == "bursq")
 su = next(t for t in ft["order_effect_table"] if t["pair"] == "sussq")
 w("## What the two panels say together\n")
-w(f"**Panel 1 refuted my prediction.** 🍕⬛ holds its negative sign in all four "
-  f"conditions ({pz['n_positive']}/{pz['n_conditions']} positive) and 🍔⬛ agrees "
-  f"({bu['n_positive']}/{bu['n_conditions']}). Two of the four pairs are stable, so the "
-  "anomaly is not simply one draw from a noisy quantity — there is something there.\n")
-w(f"**Panel 2 refuted the type.** 🍣⬛ is stable in the *opposite* direction "
-  f"({su['n_positive']}/{su['n_conditions']} positive), and the other two foods flip "
-  f"({', '.join(t['pair'] + ' ' + str(t['n_positive']) + '/4' for t in ft['order_effect_table'] if t['pair'] in ('ramsq', 'beesq'))}). "
-  "The non-food controls flip too, at 3/4 each — indistinguishable from the foods. So "
-  "the negative sign belongs to **🍕 and 🍔 specifically**, not to food.\n")
-w("Put together: individual glyph pairs can carry a reproducible order preference, but "
-  "it does not follow the component gap, it does not follow semantic category, and it is "
-  "not shared even within one category. **No general rule survives.** The magnitude is "
-  f"not stable either — 🍕⬛ ranges {min(pz['order_effects'].values()):+.2f} to "
-  f"{max(pz['order_effects'].values()):+.2f} across the four conditions "
-  f"(spread {pz['range']:.2f}); only the sign is preserved.\n")
-
+_ftab = {t["pair"]: t for t in ft["order_effect_table"]}
+_foods = [_ftab[k] for k in ("sussq", "ramsq", "beesq")]
+_ctrls = [_ftab[k] for k in ("dogsq", "rainsq")]
+w(f"**Panel 1 refuted my prediction.** 🍕⬛ holds its sign in all four conditions "
+  f"({pz['n_positive']}/{pz['n_conditions']} positive) and 🍔⬛ agrees "
+  f"({bu['n_positive']}/{bu['n_conditions']}). {an['n_sign_stable']} of "
+  f"{an['n_pairs']} pairs are sign-stable, so the anomaly is not one draw from a "
+  "noisy quantity — there is something there.\n")
+w("**Panel 2 refuted the type.** The three foods do not agree with each other: "
+  + ", ".join(f"`{t['pair']}` {t['n_positive']}/{t['n_conditions']}" for t in _foods)
+  + ". And the two non-food controls are "
+  + ", ".join(f"`{t['pair']}` {t['n_positive']}/{t['n_conditions']}" for t in _ctrls)
+  + f" — {'both sign-stable' if all(t['sign_stable'] for t in _ctrls) else 'mixed'}, "
+  "i.e. the controls behave at least as consistently as the foods do. Whatever "
+  "🍕⬛ and 🍔⬛ have, **food does not predict it**.\n")
+w("Put together: an individual pair can carry a reproducible order preference, but it "
+  "follows neither the component gap, nor semantic category, nor other members of its "
+  "own category — and non-food pairs are just as capable of being stable. **No general "
+  "rule survives.** The magnitude is not stable either — 🍕⬛ ranges "
+  f"{min(pz['order_effects'].values()):+.2f} to "
+  f"{max(pz['order_effects'].values()):+.2f} (spread {pz['range']:.2f}); only the sign "
+  "is preserved.\n")
+w("> **Correction.** The first version of this report said the non-food controls "
+  "\"flip at 3/4 — indistinguishable from the foods\". That came from a runner that "
+  "re-decided which component was *strong* inside the condition loop; ⬛ outranks its "
+  "partner in `WB/TA` but not elsewhere, so those cells were measured in a mirrored "
+  "frame. Under one fixed convention the controls are sign-stable, not flipping. The "
+  "conclusion that food is not the type is unchanged — the reason is different.\n")
 w("## Scale caveat\n")
 w("The absolute mid ratios move a lot with the target set — 🍕 reads "
   + " / ".join(f"{an['mid'][k]:.2f}" for k in sorted(an["mid"]) if k.startswith("pizza|"))

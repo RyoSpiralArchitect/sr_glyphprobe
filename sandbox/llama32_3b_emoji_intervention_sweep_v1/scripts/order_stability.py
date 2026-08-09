@@ -48,6 +48,7 @@ import json
 import os
 import sys
 import warnings
+import zlib
 from pathlib import Path
 
 import numpy as np
@@ -86,6 +87,11 @@ PANELS = {
          ("rainsq", "rainbow", "black_sq")], # control: nature, not food
     ),
 }
+PREDICTIONS = {
+    "anomaly": "the order-effect sign will NOT be stable across conditions",
+    "foodtype": ("if 'food + black square' is a type, the three new foods will match "
+                 "🍕⬛/🍔⬛ and the two non-food controls will not"),
+}
 G, PAIRS = PANELS["anomaly"]
 
 WRAPPER_SETS = {
@@ -115,13 +121,25 @@ def main() -> int:
     ap.add_argument("--alpha", type=float, default=0.5)
     ap.add_argument("--nulls", type=int, default=24)
     ap.add_argument("--out", default=str(ROOT / "results"))
-    ap.add_argument("--tag", default="orderstab_v1")
+    ap.add_argument("--tag", default=None,
+                    help="output prefix; defaults to <panel>_v1 so panels cannot "
+                         "overwrite each other")
     ap.add_argument("--panel", choices=sorted(PANELS), default="anomaly")
+    ap.add_argument("--overwrite", action="store_true",
+                    help="allow writing over an existing tag")
     args = ap.parse_args()
+    if args.tag is None:
+        args.tag = {"anomaly": "orderstab_v1"}.get(args.panel, f"{args.panel}_v1")
     global G, PAIRS
     G, PAIRS = PANELS[args.panel]
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    existing = out / f"{args.tag}_summary.json"
+    if existing.exists() and not args.overwrite:
+        print(f"ABORT: {existing.name} already exists; re-running would overwrite a "
+              "recorded result. Pass --overwrite or choose another --tag.",
+              file=sys.stderr)
+        return 2
     A = args.alpha
 
     panel = [{"id": k, "glyph": v, "parts": []} for k, v in G.items()]
@@ -136,7 +154,7 @@ def main() -> int:
     print(f"{len(panel)} glyphs, layers {LAYERS[0]}-{LAYERS[-1]}, "
           f"{len(WRAPPER_SETS)} wrapper sets x {len(TARGET_SETS)} target sets = "
           f"{len(WRAPPER_SETS)*len(TARGET_SETS)} conditions")
-    print("PREDICTION STATED BEFORE THE RUN: the sign will NOT be stable.\n")
+    print(f"PREDICTION STATED BEFORE THE RUN: {PREDICTIONS[args.panel]}\n")
 
     cfg = BackendConfig(kind="transformers", model=os.environ["SNAP"], revision=None,
                         device="mps", dtype="float32", local_files_only=True,
@@ -195,7 +213,13 @@ def main() -> int:
                 trms = rms(tb[(ts, n)]["act"][L])
                 vals = []
                 for s in range(args.nulls):
-                    rng = np.random.default_rng(800_000 + 100 * L + s)
+                    # include the target so the two target sets do not share draws;
+                    # the 2x2 design is only "independent" if they differ. crc32,
+                    # not hash(): str hashing is salted per process, which would
+                    # make the null irreproducible across runs.
+                    rng = np.random.default_rng(
+                        800_000 + 100 * L + s
+                        + 7919 * (zlib.crc32(f"{ts}/{n}".encode()) % 1000))
                     d = rng.standard_normal(be.model_dim)
                     v = d / rms(d) * A * trms
                     r = fwd(p, [L], Intervention(layer=L, vector=v.astype(np.float32),
@@ -246,21 +270,31 @@ def main() -> int:
           " ".join(f"{'W'+ws+'/T'+ts:>9}" for ws, ts in conds) + f" {'signs':>7}")
     table = []
     for name, a, b in PAIRS:
-        effs = []
-        for ws, ts in conds:
-            sa, sb = mid[(a, ws, ts)], mid[(b, ws, ts)]
-            strong, weak = (a, b) if sa >= sb else (b, a)
-            effs.append(mid[(f"{name}__{weak}_{strong}", ws, ts)]
-                        - mid[(f"{name}__{strong}_{weak}", ws, ts)])
+        # Fix strong/weak ONCE, from the reference condition, and keep it for every
+        # condition. Deciding it per condition silently redefines what a positive
+        # order effect means: black_sq outranks its partner in some conditions but
+        # not others, so those cells would be measured in a mirrored frame and the
+        # sign-stability test would compare incomparable numbers.
+        ref = conds[0]
+        strong, weak = ((a, b) if mid[(a, *ref)] >= mid[(b, *ref)] else (b, a))
+        effs = [mid[(f"{name}__{weak}_{strong}", ws, ts)]
+                - mid[(f"{name}__{strong}_{weak}", ws, ts)] for ws, ts in conds]
+        # record where the ranking would have flipped, so a reader can see it
+        rank_flips = [f"W{ws}/T{ts}" for ws, ts in conds
+                      if (mid[(a, ws, ts)] >= mid[(b, ws, ts)]) != (strong == a)]
         npos = sum(e > 0 for e in effs)
         stable = npos in (0, len(effs))
         table.append({"pair": name, "A": a, "B": b,
+                      "strong": strong, "weak": weak,
+                      "strong_fixed_from": f"W{ref[0]}/T{ref[1]}",
+                      "conditions_where_ranking_flips": rank_flips,
                       "order_effects": dict(zip([f"W{w}/T{t}" for w, t in conds], effs)),
                       "n_positive": npos, "n_conditions": len(effs),
                       "sign_stable": bool(stable),
                       "range": float(max(effs) - min(effs))})
-        print(f"{name:<9} {a:<10} {b:<10} " + " ".join(f"{e:+9.2f}" for e in effs) +
-              f" {npos}/{len(effs)}" + ("  STABLE" if stable else "  FLIPS"))
+        print(f"{name:<9} {strong:<10} {weak:<10} " + " ".join(f"{e:+9.2f}" for e in effs) +
+              f" {npos}/{len(effs)}" + ("  STABLE" if stable else "  FLIPS") +
+              (f"  [rank flips in {','.join(rank_flips)}]" if rank_flips else ""))
 
     n_stable = sum(t["sign_stable"] for t in table)
     print(f"\npairs whose order-effect sign is stable across all "
@@ -270,15 +304,16 @@ def main() -> int:
         print(f"the original anomaly (pizsq): {piz['n_positive']}/{piz['n_conditions']} "
               f"positive, spread {piz['range']:.2f} "
               f"-> {'sign holds' if piz['sign_stable'] else 'SIGN DOES NOT HOLD'}")
-    print(f"\nPREDICTION WAS: the sign will NOT be stable.  "
-          f"OUTCOME: {'prediction wrong, signs are stable' if n_stable == len(table) else 'prediction held for at least one pair'}")
+    print(f"\nPREDICTION WAS: {PREDICTIONS[args.panel]}")
+    print(f"OUTCOME: {n_stable}/{len(table)} pairs sign-stable across all "
+          f"{len(conds)} conditions")
 
     (out / f"{args.tag}_profiles.jsonl").write_text(
         "\n".join(json.dumps(r, ensure_ascii=False) for r in rows) + "\n", encoding="utf-8")
     (out / f"{args.tag}_summary.json").write_text(json.dumps({
         "claim_stage": "pre-causal-activation-screen",
         "causal_claim_authorized": False, "out_of_contract": True,
-        "stated_prediction": "the order-effect sign will NOT be stable across conditions",
+        "stated_prediction": PREDICTIONS[args.panel],
         "panel": args.panel, "pairs": PAIRS, "wrapper_sets": WRAPPER_SETS, "target_sets": TARGET_SETS,
         "layers": LAYERS, "alpha": A, "nulls": args.nulls,
         "mid": {f"{k[0]}|W{k[1]}|T{k[2]}": v for k, v in mid.items()},
