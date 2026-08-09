@@ -275,6 +275,44 @@ Two other things it settles: it is **not** "emotions are flat" (😢 4.22 and
 😭 4.19 peak mid-network while 🥺 2.71 and 🤔 2.76 do not — a 1.6× spread inside
 one family), and it is **not** token count (Spearman = −0.02).
 
+## Composition: what happens when two glyphs are stuck together
+
+Chasing the why-flat puzzle (🐈 3.96 and 🐱 3.95 engage the middle of the network,
+the ZWJ compound 🐈‍⬛ 3.09 does not) across three more runs, one of them
+**pre-registered**. Full numbers in
+[`results/composition_report.md`](results/composition_report.md), pre-registration
+in [`PREREGISTRATION_mean_rule.md`](PREREGISTRATION_mean_rule.md).
+
+🐈‍⬛ tokenises exactly as 🐈's tokens + ZWJ + ⬛'s tokens, so the joiner can be
+removed and the order reversed independently.
+
+| | verdict |
+|---|---|
+| **the ZWJ joiner** | **not the cause.** At fixed order, joined and bare score the same — 👩‍💻 3.39 vs 👩💻 **3.39** exactly; 🐈⬛ 3.31 without the joiner still nowhere near 🐈's 3.96 |
+| **"the last component wins"** | **no.** Order shifts the value (🐈⬛ 3.31 → ⬛🐈 3.61) and its *sign* is consistent (6/7 favour ending on the stronger part), but nothing predicts its size |
+| **order effect ∝ component gap** | **no such relationship.** Spearman **+0.04** on 7 families, **−0.94** on 6 more, same protocol. A statistic that flips sign between samples is noise |
+| **what sets the composite** | **the mean of its components** — `composite ≈ 0.70 × mean + 1.16`, and 🐈‍⬛ is weak simply because 🐈 (3.96) and ⬛ (3.00) average to 3.48 |
+| **direction vs efficacy** | **independent.** Across 26 cases, reversing a pair moves the cosine by ≤ **0.09** while moving the efficacy by up to **0.94** |
+
+**The mean rule was found post-hoc**, after the order hypothesis failed — so it
+was written down with its six predictions and a two-part decision rule, committed
+before the test script existed (the runner aborts if its predictions disagree
+with the committed file), and then tested on six families that did not shape it:
+
+| criterion | required | observed | |
+|---|---|---|---|
+| Spearman(predicted, observed) | ≥ 0.70 | **+0.886** | PASS |
+| mean absolute error | ≤ 0.72 | **0.308** | PASS |
+
+All 11 solo components reproduced their earlier values to within **0.005**, so
+predictions and observations share one measurement frame.
+
+**Read the negative result as the more reliable one.** The order-effect
+correlation flipping from +0.04 to −0.94 across two samples of the same protocol
+is a direct demonstration that n≈6 Spearman is unstable here — which applies to
+the mean rule too, pre-registered or not. What is solid is the ZWJ refutation
+(3 families) and the direction/efficacy independence (26 cases).
+
 ## What this is NOT
 
 - **Not** the sealed v2 experiment, and not a reproduction of it.
@@ -337,12 +375,17 @@ scripts/   sweep_emoji_intervention.py          — the 50-glyph sweep
            make_chart.py, make_deep_chart.py    — self-contained CSP-safe charts
            why_flat.py                          — why-flat follow-up (19 glyphs)
            analyze_whyflat.py                   — corrected continuous analysis
+           cat_chase.py, cat_chase2.py          — composition: ZWJ vs order
+           mean_rule_test.py                    — PRE-REGISTERED confirmatory test
+           gen_composition_report.py            — results/composition_report.md
 chart/     sweep_chart.html, sweep_chart_data.json, deep_chart.html, whyflat_chart.html
-results/   report.md, deep_report.md, whyflat_report.md   — full tables
+results/   report.md, deep_report.md, whyflat_report.md,
+           composition_report.md                — full tables
            sweep_v1_*.jsonl/.json               — 50-glyph sweep records
            deep_v1_phase{1,2,3,4}.jsonl         — deep-run records
            deep_v1_specificity_matrix.json, deep_v1_analysis.json
-           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json, _dirs.npz
+           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json
+           catchase_v{1,2}_*.json(l), meanrule_v1_*.json(l)
            *_meta.json
 
 Console logs (`*_console.log`, `analysis_*.log`) are produced by every run but are

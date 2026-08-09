@@ -1,0 +1,707 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "panel": [
+    {
+      "id": "cat",
+      "glyph": "🐈",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        238,
+        230
+      ],
+      "n_tokens": 3,
+      "mid": 3.9611825334033206,
+      "last": 2.6540043847658015,
+      "peak": 15
+    },
+    {
+      "id": "cat_face",
+      "glyph": "🐱",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        238,
+        109
+      ],
+      "n_tokens": 3,
+      "mid": 3.9547984411566706,
+      "last": 1.6359319829306875,
+      "peak": 14
+    },
+    {
+      "id": "black_sq",
+      "glyph": "⬛",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        158,
+        105,
+        249
+      ],
+      "n_tokens": 3,
+      "mid": 3.002989942905477,
+      "last": 6.431846474253834,
+      "peak": 27
+    },
+    {
+      "id": "pizza",
+      "glyph": "🍕",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        235,
+        243
+      ],
+      "n_tokens": 3,
+      "mid": 5.317431981028592,
+      "last": 1.7406770977632593,
+      "peak": 15
+    },
+    {
+      "id": "car",
+      "glyph": "🚗",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 3,
+      "mid": 5.657188823538752,
+      "last": 1.3197525051246257,
+      "peak": 14
+    },
+    {
+      "id": "woman",
+      "glyph": "👩",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        239,
+        102
+      ],
+      "n_tokens": 3,
+      "mid": 4.278974500091789,
+      "last": 4.935881030461171,
+      "peak": 27
+    },
+    {
+      "id": "laptop",
+      "glyph": "💻",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        93273,
+        119
+      ],
+      "n_tokens": 2,
+      "mid": 3.1588259740775886,
+      "last": 3.1460116140460737,
+      "peak": 14
+    },
+    {
+      "id": "person",
+      "glyph": "🧑",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        100,
+        239
+      ],
+      "n_tokens": 3,
+      "mid": 2.8598879392884595,
+      "last": 2.9942235031590356,
+      "peak": 25
+    },
+    {
+      "id": "rocket",
+      "glyph": "🚀",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        248,
+        222
+      ],
+      "n_tokens": 3,
+      "mid": 2.7301912816360385,
+      "last": 3.7791335851276497,
+      "peak": 27
+    },
+    {
+      "id": "twin__cat_cat_face",
+      "glyph": "🐈🐱",
+      "kind": "pair",
+      "family": "twin",
+      "parts": [
+        "cat",
+        "cat_face"
+      ],
+      "token_ids": [
+        9468,
+        238,
+        230,
+        9468,
+        238,
+        109
+      ],
+      "n_tokens": 6,
+      "mid": 4.485419954896412,
+      "last": 2.4765603914771144,
+      "peak": 14
+    },
+    {
+      "id": "twin__cat_face_cat",
+      "glyph": "🐱🐈",
+      "kind": "pair",
+      "family": "twin",
+      "parts": [
+        "cat_face",
+        "cat"
+      ],
+      "token_ids": [
+        9468,
+        238,
+        109,
+        9468,
+        238,
+        230
+      ],
+      "n_tokens": 6,
+      "mid": 4.501061288422342,
+      "last": 1.6412249941756114,
+      "peak": 14
+    },
+    {
+      "id": "astro__person_rocket",
+      "glyph": "🧑🚀",
+      "kind": "pair",
+      "family": "astro",
+      "parts": [
+        "person",
+        "rocket"
+      ],
+      "token_ids": [
+        9468,
+        100,
+        239,
+        9468,
+        248,
+        222
+      ],
+      "n_tokens": 6,
+      "mid": 2.8749195728506103,
+      "last": 3.7879503656347366,
+      "peak": 27
+    },
+    {
+      "id": "astro__rocket_person",
+      "glyph": "🚀🧑",
+      "kind": "pair",
+      "family": "astro",
+      "parts": [
+        "rocket",
+        "person"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        222,
+        9468,
+        100,
+        239
+      ],
+      "n_tokens": 6,
+      "mid": 2.878014717888192,
+      "last": 4.788687857402137,
+      "peak": 27
+    },
+    {
+      "id": "pizcar__pizza_car",
+      "glyph": "🍕🚗",
+      "kind": "pair",
+      "family": "pizcar",
+      "parts": [
+        "pizza",
+        "car"
+      ],
+      "token_ids": [
+        9468,
+        235,
+        243,
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 6,
+      "mid": 4.945300361385572,
+      "last": 1.8365063961376595,
+      "peak": 15
+    },
+    {
+      "id": "pizcar__car_pizza",
+      "glyph": "🚗🍕",
+      "kind": "pair",
+      "family": "pizcar",
+      "parts": [
+        "car",
+        "pizza"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        245,
+        9468,
+        235,
+        243
+      ],
+      "n_tokens": 6,
+      "mid": 4.378830709330233,
+      "last": 1.5165078345026919,
+      "peak": 14
+    },
+    {
+      "id": "catsq__cat_black_sq",
+      "glyph": "🐈⬛",
+      "kind": "pair",
+      "family": "catsq",
+      "parts": [
+        "cat",
+        "black_sq"
+      ],
+      "token_ids": [
+        9468,
+        238,
+        230,
+        158,
+        105,
+        249
+      ],
+      "n_tokens": 6,
+      "mid": 3.3052612481527874,
+      "last": 4.900124798658203,
+      "peak": 27
+    },
+    {
+      "id": "catsq__black_sq_cat",
+      "glyph": "⬛🐈",
+      "kind": "pair",
+      "family": "catsq",
+      "parts": [
+        "black_sq",
+        "cat"
+      ],
+      "token_ids": [
+        158,
+        105,
+        249,
+        9468,
+        238,
+        230
+      ],
+      "n_tokens": 6,
+      "mid": 3.614991107284368,
+      "last": 4.252256718660569,
+      "peak": 27
+    },
+    {
+      "id": "tech__woman_laptop",
+      "glyph": "👩💻",
+      "kind": "pair",
+      "family": "tech",
+      "parts": [
+        "woman",
+        "laptop"
+      ],
+      "token_ids": [
+        9468,
+        239,
+        102,
+        93273,
+        119
+      ],
+      "n_tokens": 5,
+      "mid": 3.386968321251055,
+      "last": 5.411075868074078,
+      "peak": 27
+    },
+    {
+      "id": "tech__laptop_woman",
+      "glyph": "💻👩",
+      "kind": "pair",
+      "family": "tech",
+      "parts": [
+        "laptop",
+        "woman"
+      ],
+      "token_ids": [
+        93273,
+        119,
+        9468,
+        239,
+        102
+      ],
+      "n_tokens": 5,
+      "mid": 3.4928786503774845,
+      "last": 4.3360665666968705,
+      "peak": 27
+    },
+    {
+      "id": "pizsq__pizza_black_sq",
+      "glyph": "🍕⬛",
+      "kind": "pair",
+      "family": "pizsq",
+      "parts": [
+        "pizza",
+        "black_sq"
+      ],
+      "token_ids": [
+        9468,
+        235,
+        243,
+        158,
+        105,
+        249
+      ],
+      "n_tokens": 6,
+      "mid": 4.94151905367333,
+      "last": 2.0302157934728675,
+      "peak": 15
+    },
+    {
+      "id": "pizsq__black_sq_pizza",
+      "glyph": "⬛🍕",
+      "kind": "pair",
+      "family": "pizsq",
+      "parts": [
+        "black_sq",
+        "pizza"
+      ],
+      "token_ids": [
+        158,
+        105,
+        249,
+        9468,
+        235,
+        243
+      ],
+      "n_tokens": 6,
+      "mid": 3.9991163534195486,
+      "last": 2.356411568309186,
+      "peak": 15
+    },
+    {
+      "id": "carlap__car_laptop",
+      "glyph": "🚗💻",
+      "kind": "pair",
+      "family": "carlap",
+      "parts": [
+        "car",
+        "laptop"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        245,
+        93273,
+        119
+      ],
+      "n_tokens": 5,
+      "mid": 4.1624420174688455,
+      "last": 2.360678367355755,
+      "peak": 14
+    },
+    {
+      "id": "carlap__laptop_car",
+      "glyph": "💻🚗",
+      "kind": "pair",
+      "family": "carlap",
+      "parts": [
+        "laptop",
+        "car"
+      ],
+      "token_ids": [
+        93273,
+        119,
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 5,
+      "mid": 4.357667612900946,
+      "last": 1.9167924752884338,
+      "peak": 14
+    }
+  ],
+  "families": [
+    [
+      "twin",
+      "cat",
+      "cat_face"
+    ],
+    [
+      "astro",
+      "person",
+      "rocket"
+    ],
+    [
+      "pizcar",
+      "pizza",
+      "car"
+    ],
+    [
+      "catsq",
+      "cat",
+      "black_sq"
+    ],
+    [
+      "tech",
+      "woman",
+      "laptop"
+    ],
+    [
+      "pizsq",
+      "pizza",
+      "black_sq"
+    ],
+    [
+      "carlap",
+      "car",
+      "laptop"
+    ]
+  ],
+  "targets": {
+    "paris": "The capital of France is",
+    "planet": "The largest planet in our solar system is",
+    "thinking": "I am thinking about"
+  },
+  "wrappers": [
+    "Today I saw a",
+    "My favorite thing is",
+    "Here we have",
+    "This reminds me of"
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "num_layers": 28,
+  "deep_layer": 16,
+  "solo_mid": {
+    "cat": 3.9611825334033206,
+    "cat_face": 3.9547984411566706,
+    "black_sq": 3.002989942905477,
+    "pizza": 5.317431981028592,
+    "car": 5.657188823538752,
+    "woman": 4.278974500091789,
+    "laptop": 3.1588259740775886,
+    "person": 2.8598879392884595,
+    "rocket": 2.7301912816360385
+  },
+  "family_table": [
+    {
+      "family": "twin",
+      "strong": "cat",
+      "weak": "cat_face",
+      "mid_strong": 3.9611825334033206,
+      "mid_weak": 3.9547984411566706,
+      "gap": 0.006384092246650042,
+      "ends_strong": 4.501061288422342,
+      "ends_weak": 4.485419954896412,
+      "order_effect": 0.01564133352593
+    },
+    {
+      "family": "astro",
+      "strong": "person",
+      "weak": "rocket",
+      "mid_strong": 2.8598879392884595,
+      "mid_weak": 2.7301912816360385,
+      "gap": 0.129696657652421,
+      "ends_strong": 2.878014717888192,
+      "ends_weak": 2.8749195728506103,
+      "order_effect": 0.0030951450375815703
+    },
+    {
+      "family": "pizcar",
+      "strong": "car",
+      "weak": "pizza",
+      "mid_strong": 5.657188823538752,
+      "mid_weak": 5.317431981028592,
+      "gap": 0.3397568425101607,
+      "ends_strong": 4.945300361385572,
+      "ends_weak": 4.378830709330233,
+      "order_effect": 0.5664696520553383
+    },
+    {
+      "family": "catsq",
+      "strong": "cat",
+      "weak": "black_sq",
+      "mid_strong": 3.9611825334033206,
+      "mid_weak": 3.002989942905477,
+      "gap": 0.9581925904978434,
+      "ends_strong": 3.614991107284368,
+      "ends_weak": 3.3052612481527874,
+      "order_effect": 0.30972985913158047
+    },
+    {
+      "family": "tech",
+      "strong": "woman",
+      "weak": "laptop",
+      "mid_strong": 4.278974500091789,
+      "mid_weak": 3.1588259740775886,
+      "gap": 1.1201485260142006,
+      "ends_strong": 3.4928786503774845,
+      "ends_weak": 3.386968321251055,
+      "order_effect": 0.10591032912642939
+    },
+    {
+      "family": "pizsq",
+      "strong": "pizza",
+      "weak": "black_sq",
+      "mid_strong": 5.317431981028592,
+      "mid_weak": 3.002989942905477,
+      "gap": 2.3144420381231146,
+      "ends_strong": 3.9991163534195486,
+      "ends_weak": 4.94151905367333,
+      "order_effect": -0.9424027002537816
+    },
+    {
+      "family": "carlap",
+      "strong": "car",
+      "weak": "laptop",
+      "mid_strong": 5.657188823538752,
+      "mid_weak": 3.1588259740775886,
+      "gap": 2.498362849461164,
+      "ends_strong": 4.357667612900946,
+      "ends_weak": 4.1624420174688455,
+      "order_effect": 0.19522559543210072
+    }
+  ],
+  "spearman_gap_vs_order_effect": 0.03571428571428571,
+  "n_families_ending_strong_higher": 6,
+  "fixed_frame_cosines": [
+    {
+      "family": "twin",
+      "component": "cat",
+      "cos_AB": 0.9456394549635734,
+      "cos_BA": 0.9421825729097428,
+      "cos_shift": -0.0034568820538305456,
+      "efficacy_shift": 0.01564133352593
+    },
+    {
+      "family": "twin",
+      "component": "cat_face",
+      "cos_AB": 0.9740471467378822,
+      "cos_BA": 0.9860663028521399,
+      "cos_shift": 0.012019156114257745,
+      "efficacy_shift": 0.01564133352593
+    },
+    {
+      "family": "astro",
+      "component": "person",
+      "cos_AB": 0.9491049585454533,
+      "cos_BA": 0.9197949325663535,
+      "cos_shift": -0.02931002597909982,
+      "efficacy_shift": 0.0030951450375815703
+    },
+    {
+      "family": "astro",
+      "component": "rocket",
+      "cos_AB": 0.9522623659348777,
+      "cos_BA": 0.9689373166218535,
+      "cos_shift": 0.016674950686975776,
+      "efficacy_shift": 0.0030951450375815703
+    },
+    {
+      "family": "pizcar",
+      "component": "pizza",
+      "cos_AB": 0.8672670282908775,
+      "cos_BA": 0.7930741628698454,
+      "cos_shift": -0.0741928654210321,
+      "efficacy_shift": -0.5664696520553383
+    },
+    {
+      "family": "pizcar",
+      "component": "car",
+      "cos_AB": 0.8529280518865939,
+      "cos_BA": 0.9010869451466842,
+      "cos_shift": 0.04815889326009026,
+      "efficacy_shift": -0.5664696520553383
+    },
+    {
+      "family": "catsq",
+      "component": "cat",
+      "cos_AB": 0.9440598406648285,
+      "cos_BA": 0.9485457531063558,
+      "cos_shift": 0.0044859124415272955,
+      "efficacy_shift": 0.30972985913158047
+    },
+    {
+      "family": "catsq",
+      "component": "black_sq",
+      "cos_AB": 0.8412745400707494,
+      "cos_BA": 0.7973758586101675,
+      "cos_shift": -0.043898681460581956,
+      "efficacy_shift": 0.30972985913158047
+    },
+    {
+      "family": "tech",
+      "component": "woman",
+      "cos_AB": 0.8672012097205373,
+      "cos_BA": 0.8997816633044138,
+      "cos_shift": 0.03258045358387651,
+      "efficacy_shift": 0.10591032912642939
+    },
+    {
+      "family": "tech",
+      "component": "laptop",
+      "cos_AB": 0.8994841651424174,
+      "cos_BA": 0.8954066907589968,
+      "cos_shift": -0.004077474383420543,
+      "efficacy_shift": 0.10591032912642939
+    },
+    {
+      "family": "pizsq",
+      "component": "pizza",
+      "cos_AB": 0.9620597133549658,
+      "cos_BA": 0.9080686576407873,
+      "cos_shift": -0.053991055714178504,
+      "efficacy_shift": -0.9424027002537816
+    },
+    {
+      "family": "pizsq",
+      "component": "black_sq",
+      "cos_AB": 0.6528647365165785,
+      "cos_BA": 0.7127415479651455,
+      "cos_shift": 0.05987681144856705,
+      "efficacy_shift": -0.9424027002537816
+    },
+    {
+      "family": "carlap",
+      "component": "car",
+      "cos_AB": 0.9147997398873384,
+      "cos_BA": 0.9176102864593483,
+      "cos_shift": 0.0028105465720098533,
+      "efficacy_shift": 0.19522559543210072
+    },
+    {
+      "family": "carlap",
+      "component": "laptop",
+      "cos_AB": 0.8380479606765664,
+      "cos_BA": 0.8376074701913743,
+      "cos_shift": -0.0004404904851921243,
+      "efficacy_shift": 0.19522559543210072
+    }
+  ],
+  "max_abs_cosine_shift": 0.0741928654210321,
+  "max_abs_efficacy_shift": 0.9424027002537816,
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}

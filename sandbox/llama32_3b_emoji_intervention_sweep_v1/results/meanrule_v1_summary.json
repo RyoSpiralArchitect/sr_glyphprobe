@@ -1,0 +1,517 @@
+{
+  "claim_stage": "pre-causal-activation-screen",
+  "causal_claim_authorized": false,
+  "out_of_contract": true,
+  "preregistration": "PREREGISTRATION_mean_rule.md",
+  "rule": {
+    "slope": 0.7,
+    "intercept": 1.16,
+    "residual_sd": 0.36
+  },
+  "decision_rule": {
+    "min_spearman": 0.7,
+    "max_mae": 0.72
+  },
+  "families": [
+    {
+      "family": "dogtea",
+      "A": "dog",
+      "B": "tea",
+      "component_mean": 4.15,
+      "predicted": 4.065,
+      "observed": 4.218945861112305,
+      "error": 0.15394586111230435,
+      "mid_AB": 3.9806621974052185,
+      "mid_BA": 4.457229524819391,
+      "order_effect": -0.47656732741417285
+    },
+    {
+      "family": "sailthink",
+      "A": "sailboat",
+      "B": "thinking",
+      "component_mean": 2.755,
+      "predicted": 3.0885,
+      "observed": 3.1481604866534907,
+      "error": 0.059660486653490885,
+      "mid_AB": 3.1831476171079314,
+      "mid_BA": 3.11317335619905,
+      "order_effect": 0.06997426090888137
+    },
+    {
+      "family": "cryheli",
+      "A": "crying",
+      "B": "helicopter",
+      "component_mean": 3.885,
+      "predicted": 3.8794999999999993,
+      "observed": 4.5978200840919,
+      "error": 0.7183200840919008,
+      "mid_AB": 4.679485446154737,
+      "mid_BA": 4.516154722029064,
+      "order_effect": -0.1633307241256725
+    },
+    {
+      "family": "shipcof",
+      "A": "ship",
+      "B": "coffee",
+      "component_mean": 3.295,
+      "predicted": 3.4665,
+      "observed": 3.8633860483338376,
+      "error": 0.39688604833383767,
+      "mid_AB": 4.001900244241273,
+      "mid_BA": 3.7248718524264013,
+      "order_effect": -0.27702839181487215
+    },
+    {
+      "family": "teacar",
+      "A": "tea",
+      "B": "car",
+      "component_mean": 5.125,
+      "predicted": 4.7475,
+      "observed": 4.83240741279841,
+      "error": 0.08490741279840996,
+      "mid_AB": 4.543707735924392,
+      "mid_BA": 5.121107089672427,
+      "order_effect": -0.5773993537480351
+    },
+    {
+      "family": "anchorair",
+      "A": "anchor",
+      "B": "airplane",
+      "component_mean": 3.02,
+      "predicted": 3.274,
+      "observed": 2.8419329700405243,
+      "error": -0.43206702995947577,
+      "mid_AB": 3.184945337681396,
+      "mid_BA": 2.498920602399653,
+      "order_effect": 0.6860247352817432
+    }
+  ],
+  "spearman_pred_obs": 0.8857142857142857,
+  "mae": 0.30763115382490325,
+  "verdict": "SUPPORTED",
+  "passed": true,
+  "solo_observed": {
+    "dog": 3.707403984158457,
+    "tea": 4.5862693812928415,
+    "sailboat": 2.7530427466592884,
+    "thinking": 2.763484703578376,
+    "crying": 4.22113003549832,
+    "helicopter": 3.5546850953632734,
+    "ship": 3.7213979180800574,
+    "coffee": 2.874551488040399,
+    "car": 5.657188823538752,
+    "anchor": 2.98553522047481,
+    "airplane": 3.0520240176397153
+  },
+  "solo_prior": {
+    "dog": 3.71,
+    "tea": 4.59,
+    "sailboat": 2.75,
+    "thinking": 2.76,
+    "crying": 4.22,
+    "helicopter": 3.55,
+    "ship": 3.72,
+    "coffee": 2.87,
+    "car": 5.66,
+    "anchor": 2.99,
+    "airplane": 3.05
+  },
+  "solo_drift": {
+    "dog": -0.002596015841542787,
+    "tea": -0.0037306187071584063,
+    "sailboat": 0.0030427466592883867,
+    "thinking": 0.003484703578376269,
+    "crying": 0.0011300354983205807,
+    "helicopter": 0.00468509536327355,
+    "ship": 0.001397918080057181,
+    "coffee": 0.004551488040398954,
+    "car": -0.002811176461247733,
+    "anchor": -0.004464779525190199,
+    "airplane": 0.002024017639715492
+  },
+  "max_abs_cosine_shift": 0.08958247945038889,
+  "panel": [
+    {
+      "id": "dog",
+      "glyph": "🐶",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        238,
+        114
+      ],
+      "n_tokens": 3,
+      "mid": 3.707403984158457
+    },
+    {
+      "id": "tea",
+      "glyph": "🍵",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        235,
+        113
+      ],
+      "n_tokens": 3,
+      "mid": 4.5862693812928415
+    },
+    {
+      "id": "sailboat",
+      "glyph": "⛵",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        158,
+        249,
+        113
+      ],
+      "n_tokens": 3,
+      "mid": 2.7530427466592884
+    },
+    {
+      "id": "thinking",
+      "glyph": "🤔",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        97,
+        242
+      ],
+      "n_tokens": 3,
+      "mid": 2.763484703578376
+    },
+    {
+      "id": "crying",
+      "glyph": "😢",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        76460,
+        95
+      ],
+      "n_tokens": 2,
+      "mid": 4.22113003549832
+    },
+    {
+      "id": "helicopter",
+      "glyph": "🚁",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        248,
+        223
+      ],
+      "n_tokens": 3,
+      "mid": 3.5546850953632734
+    },
+    {
+      "id": "ship",
+      "glyph": "🚢",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        248,
+        95
+      ],
+      "n_tokens": 3,
+      "mid": 3.7213979180800574
+    },
+    {
+      "id": "coffee",
+      "glyph": "☕",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        18107,
+        243
+      ],
+      "n_tokens": 2,
+      "mid": 2.874551488040399
+    },
+    {
+      "id": "car",
+      "glyph": "🚗",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 3,
+      "mid": 5.657188823538752
+    },
+    {
+      "id": "anchor",
+      "glyph": "⚓",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        158,
+        248,
+        241
+      ],
+      "n_tokens": 3,
+      "mid": 2.98553522047481
+    },
+    {
+      "id": "airplane",
+      "glyph": "✈️",
+      "kind": "solo",
+      "parts": [],
+      "token_ids": [
+        38798,
+        230,
+        31643
+      ],
+      "n_tokens": 3,
+      "mid": 3.0520240176397153
+    },
+    {
+      "id": "dogtea__dog_tea",
+      "glyph": "🐶🍵",
+      "kind": "pair",
+      "family": "dogtea",
+      "parts": [
+        "dog",
+        "tea"
+      ],
+      "token_ids": [
+        9468,
+        238,
+        114,
+        9468,
+        235,
+        113
+      ],
+      "n_tokens": 6,
+      "mid": 3.9806621974052185
+    },
+    {
+      "id": "dogtea__tea_dog",
+      "glyph": "🍵🐶",
+      "kind": "pair",
+      "family": "dogtea",
+      "parts": [
+        "tea",
+        "dog"
+      ],
+      "token_ids": [
+        9468,
+        235,
+        113,
+        9468,
+        238,
+        114
+      ],
+      "n_tokens": 6,
+      "mid": 4.457229524819391
+    },
+    {
+      "id": "sailthink__sailboat_thinking",
+      "glyph": "⛵🤔",
+      "kind": "pair",
+      "family": "sailthink",
+      "parts": [
+        "sailboat",
+        "thinking"
+      ],
+      "token_ids": [
+        158,
+        249,
+        113,
+        9468,
+        97,
+        242
+      ],
+      "n_tokens": 6,
+      "mid": 3.1831476171079314
+    },
+    {
+      "id": "sailthink__thinking_sailboat",
+      "glyph": "🤔⛵",
+      "kind": "pair",
+      "family": "sailthink",
+      "parts": [
+        "thinking",
+        "sailboat"
+      ],
+      "token_ids": [
+        9468,
+        97,
+        242,
+        158,
+        249,
+        113
+      ],
+      "n_tokens": 6,
+      "mid": 3.11317335619905
+    },
+    {
+      "id": "cryheli__crying_helicopter",
+      "glyph": "😢🚁",
+      "kind": "pair",
+      "family": "cryheli",
+      "parts": [
+        "crying",
+        "helicopter"
+      ],
+      "token_ids": [
+        76460,
+        95,
+        9468,
+        248,
+        223
+      ],
+      "n_tokens": 5,
+      "mid": 4.679485446154737
+    },
+    {
+      "id": "cryheli__helicopter_crying",
+      "glyph": "🚁😢",
+      "kind": "pair",
+      "family": "cryheli",
+      "parts": [
+        "helicopter",
+        "crying"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        223,
+        76460,
+        95
+      ],
+      "n_tokens": 5,
+      "mid": 4.516154722029064
+    },
+    {
+      "id": "shipcof__ship_coffee",
+      "glyph": "🚢☕",
+      "kind": "pair",
+      "family": "shipcof",
+      "parts": [
+        "ship",
+        "coffee"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        95,
+        18107,
+        243
+      ],
+      "n_tokens": 5,
+      "mid": 4.001900244241273
+    },
+    {
+      "id": "shipcof__coffee_ship",
+      "glyph": "☕🚢",
+      "kind": "pair",
+      "family": "shipcof",
+      "parts": [
+        "coffee",
+        "ship"
+      ],
+      "token_ids": [
+        18107,
+        243,
+        9468,
+        248,
+        95
+      ],
+      "n_tokens": 5,
+      "mid": 3.7248718524264013
+    },
+    {
+      "id": "teacar__tea_car",
+      "glyph": "🍵🚗",
+      "kind": "pair",
+      "family": "teacar",
+      "parts": [
+        "tea",
+        "car"
+      ],
+      "token_ids": [
+        9468,
+        235,
+        113,
+        9468,
+        248,
+        245
+      ],
+      "n_tokens": 6,
+      "mid": 4.543707735924392
+    },
+    {
+      "id": "teacar__car_tea",
+      "glyph": "🚗🍵",
+      "kind": "pair",
+      "family": "teacar",
+      "parts": [
+        "car",
+        "tea"
+      ],
+      "token_ids": [
+        9468,
+        248,
+        245,
+        9468,
+        235,
+        113
+      ],
+      "n_tokens": 6,
+      "mid": 5.121107089672427
+    },
+    {
+      "id": "anchorair__anchor_airplane",
+      "glyph": "⚓✈️",
+      "kind": "pair",
+      "family": "anchorair",
+      "parts": [
+        "anchor",
+        "airplane"
+      ],
+      "token_ids": [
+        158,
+        248,
+        241,
+        38798,
+        230,
+        31643
+      ],
+      "n_tokens": 6,
+      "mid": 3.184945337681396
+    },
+    {
+      "id": "anchorair__airplane_anchor",
+      "glyph": "✈️⚓",
+      "kind": "pair",
+      "family": "anchorair",
+      "parts": [
+        "airplane",
+        "anchor"
+      ],
+      "token_ids": [
+        38798,
+        230,
+        31643,
+        158,
+        248,
+        241
+      ],
+      "n_tokens": 6,
+      "mid": 2.498920602399653
+    }
+  ],
+  "alpha": 0.5,
+  "nulls": 24,
+  "num_layers": 28,
+  "backend": "transformers/mps/fp32",
+  "model_path": "/Users/ryospiralarchitect/.hf_home/hub/models--mlx-community--Llama-3.2-3B-bf16/snapshots/60a99aaf43164077157d64bf909b7b61143c6a6d"
+}

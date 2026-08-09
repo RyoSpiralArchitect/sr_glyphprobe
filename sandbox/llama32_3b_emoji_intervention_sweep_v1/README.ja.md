@@ -264,6 +264,42 @@ ZWJ合成が何を損なっているにせよ、「方向が末尾成分に置�
 🥺 2.71 と 🤔 2.76 は平坦 — 同一ファミリー内で1.6倍の開き）。
 トークン数でも**ない**（Spearman = −0.02）。
 
+## 合成 — 2つのグリフをくっつけると何が起きるか
+
+平坦グリフ追試が残した謎（🐈 3.96・🐱 3.95 は中層に噛むのに、ZWJ合成 🐈‍⬛ 3.09 は噛まない）
+を3ランで追った。うち1つは**事前登録済み**。全数値は
+[`results/composition_report.md`](results/composition_report.md)、事前登録は
+[`PREREGISTRATION_mean_rule.md`](PREREGISTRATION_mean_rule.md)。
+
+🐈‍⬛ は「🐈のトークン + ZWJ + ⬛のトークン」に厳密に分解されるので、
+接合子の除去と順序の反転を独立に操作できる。
+
+| | 判定 |
+|---|---|
+| **ZWJ接合子** | **無罪。** 同順序なら接合の有無で差なし — 👩‍💻 3.39 対 👩💻 **3.39** で完全同値。🐈⬛（接合子なし）も 3.31 で、🐈 の 3.96 には戻らない |
+| **「最後の成分が支配」** | **否。** 順序は値を動かし（🐈⬛ 3.31 → ⬛🐈 3.61）*符号*も一貫する（7家族中6で強い成分を最後に置く方が高い）が、**大きさは何でも予測できない** |
+| **順序効果 ∝ 成分差** | **そんな関係は存在しない。** 7家族で Spearman **+0.04**、別の6家族で **−0.94**。同一プロトコルで符号が反転する統計量はノイズである |
+| **合成値を決めるもの** | **成分の平均。** `合成 ≈ 0.70 × 平均 + 1.16`。🐈‍⬛ が弱いのは単に 🐈(3.96) と ⬛(3.00) の平均が 3.48 だから |
+| **方向 vs 効力** | **独立。** 26ケースで、順序反転による余弦の変化は最大 **0.09**、効力の変化は最大 **0.94** |
+
+**平均則は事後解析で見つけた**（順序仮説が失敗した後）。だから6家族分の予測と
+二部構成の判定基準を書き、**検定スクリプトが存在する前に**コミットし
+（実行時にスクリプトが予測値を照合し、食い違えば中断する）、
+その後で「平均則を形作っていない6家族」で検定した:
+
+| 基準 | 要求 | 観測 | |
+|---|---|---|---|
+| Spearman(予測, 観測) | ≥ 0.70 | **+0.886** | PASS |
+| 平均絶対誤差 | ≤ 0.72 | **0.308** | PASS |
+
+成分11体すべてが過去測定値を誤差 **0.005** 以内で再現したので、
+予測と観測は同一の測定フレームにある。
+
+**より信頼できるのは否定的結果の方である。** 順序効果の相関が同一プロトコルの
+2標本で +0.04 → −0.94 と反転した事実は、ここでの n≈6 の Spearman が不安定である
+ことの直接的な実証であり、それは事前登録を通った平均則にも同じく当てはまる。
+堅いのは ZWJ の棄却（3家族）と方向／効力の独立性（26ケース）である。
+
 ## これは何でないか
 
 - 封印済み v2 実験**ではなく**、その再現でもない。
@@ -325,12 +361,17 @@ scripts/   sweep_emoji_intervention.py          — 50グリフのスイープ�
            make_chart.py, make_deep_chart.py    — 自己完結（CSP安全）チャート
            why_flat.py                          — 平坦グリフ追試（19グリフ）
            analyze_whyflat.py                   — 訂正版の連続量解析
+           cat_chase.py, cat_chase2.py          — 合成: ZWJ か順序か
+           mean_rule_test.py                    — 事前登録済み確証検定
+           gen_composition_report.py            — results/composition_report.md 生成
 chart/     sweep_chart.html, sweep_chart_data.json, deep_chart.html, whyflat_chart.html
-results/   report.md, deep_report.md, whyflat_report.md   — 全数値の表
+results/   report.md, deep_report.md, whyflat_report.md,
+           composition_report.md                — 全数値の表
            sweep_v1_*.jsonl/.json               — 50グリフスイープのレコード
            deep_v1_phase{1,2,3,4}.jsonl         — 深掘りランのレコード
            deep_v1_specificity_matrix.json, deep_v1_analysis.json
-           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json, _dirs.npz
+           whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json
+           catchase_v{1,2}_*.json(l), meanrule_v1_*.json(l)
            *_meta.json
 
 コンソールログ（`*_console.log` / `analysis_*.log`）は各実行で生成されるが、
