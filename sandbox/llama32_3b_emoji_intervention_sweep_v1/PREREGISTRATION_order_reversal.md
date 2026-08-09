@@ -136,14 +136,28 @@ measured here.
 
 ## Amendment 2 — corrections raised by adversarial review (2026-08-09)
 
-Filed after the primary result was known. **Neither item touches the design, the
-decision rule, or any reported number**; both are defects in this file's own
-prose, and they are corrected here rather than by editing the text above.
+Filed after the primary result was known. Items (a) and (b) are defects in this
+file's own prose and change no design element, decision rule or reported number.
+Item (c) is different and is flagged as such: it records changes made to the
+**runner** after the result was known. Those changes strengthened guards without
+altering any measurement — the run was repeated with all of them active and every
+value came back bit-identical — but they are post-hoc changes to the instrument
+and belong on the record as that, not as prose corrections.
 
-**(a) The traceback cited in Amendment 1 is not in the repository.** Amendment 1
-rests its "decided on zero data" claim on `results/orderrev_v1_console.log`, but
-`.gitignore` excludes `*.log`, so no reviewer can open it. The relevant lines are
-therefore quoted in full here:
+**(a) The traceback cited in Amendment 1 cannot be checked against any commit.**
+Amendment 1 rests its "decided on zero data" claim on
+`results/orderrev_v1_console.log`, but `.gitignore` excludes `*.log`, so no
+reviewer can open it — and the file has since been overwritten by the successful
+run, so it no longer exists in any form. Quoting it here is therefore the only
+record, and the quotation carries an important caveat: **its line numbers and
+variable names match no committed revision of the script.** The crash happened in
+a working-tree version that was never committed (the first commit of
+`order_reversal.py`, `8d19d1a`, already contains the Amendment 1 fix), which is
+why it refers to a variable `cid` that appears in no commit. A reviewer cannot
+verify this traceback; they can only note that it is consistent with the
+`KeyError: 'animals_1'` that Amendment 1 describes, and that the commit order
+(pre-registration `d1896cc`, then amendment `b923b3d`, then script `8d19d1a`) is
+independently checkable and does corroborate the sequence.
 
 ```
 device=mps num_layers=28
@@ -169,9 +183,9 @@ would have been the eighth. The error is in this file only — no script, report
 verdict reads that number, and the report generator counts the rows in FINDINGS
 rather than trusting a written ordinal.
 
-**(c) What review changed in the runner, after the result was known.** Three
-guards were strengthened and the run repeated; the numbers were unchanged, which
-is stated in the report as a determinism check rather than as a new result.
+**(c) What review changed in the runner, after the result was known.** Guards
+were strengthened and the run repeated; every value came back bit-identical,
+which is stated in the report as a determinism check rather than as a new result.
 
 - The overlap check was **circular** — `sample_pairs` already skips everything in
   the exclusion set, so `overlap == 0` was true by construction and would have
@@ -183,6 +197,39 @@ is stated in the report as a determinism check rather than as a new result.
 - The **4-prefix-token invariant** carried by the previous runner had been
   dropped. It is restored: all 35 components must cost exactly 4 prefix tokens on
   every wrapper or the run aborts.
+- The exclusion audit was **mislabelled**. It reported "1 draw rejected", which
+  was the count of *unconstrained* draws that happened to land in the exclusion
+  set — not the number of times the exclusion branch fired. `sample_pairs` is now
+  instrumented directly: the branch fires **5** times, and **2** of the 30 final
+  pairs differ from the unconstrained draw. Both numbers are written into the
+  summary so no report has to hardcode them.
 - The profiles file recorded only `mid`, losing the per-layer vector the prior
   run stored, so no reader could re-derive a score or reanalyse under a different
-  layer aggregation. It now records `profile` and `layers`.
+  layer aggregation. It now records `profile` and `layers` (the prior run's file
+  carries `profile` but not `layers`).
+
+## Amendment 3 — the clustering correction was itself wrong (2026-08-09)
+
+A second adversarial review found that Amendment 2's headline caveat over-corrected
+the very error it was fixing, and it is retracted here.
+
+The caveat led with a bootstrap statistic `P(fraction >= 0.5) = 0.054`, read it as
+"just above 0.05", and concluded that the pooled p-value "does not survive"
+clustering. **That statistic is not a p-value.** Simulated under an independent
+null it has median 0.51 and did not fall below ~0.06 in 200 draws, so the observed
+0.054 sat below its entire null distribution — strong evidence read as weak. Its
+weights were also `cnt[A] * cnt[B]` where the code comment claimed an indicator,
+inflating the variance past any standard estimator.
+
+The companion "component-disjoint subsets" analysis is withdrawn outright. Against
+the control it never had — unconstrained subsets of the same size — it is
+identical (median positive fraction 0.267 either way, median sign-test p 0.1185
+either way). It measured the cost of discarding 45 of 60 observations, not the
+cost of dependence.
+
+Corrected: these pairs are dyads over components, so the estimator is a
+dyadic-robust variance (Aronow-Samii-Assenova), reported beside a Rao-Scott
+design effect under both residual conventions. Clustered p spans **0.011 to
+0.063**, against a naive 0.0011 — inflated 10-60x, straddling 0.05, not
+annihilated. The clustering objection was right; both of this file's attempts to
+quantify it were wrong, in opposite directions.

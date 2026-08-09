@@ -2,29 +2,79 @@
   "pooled": {
     "positive": 17,
     "n": 60,
+    "fraction": 0.2833333333333333,
     "binomial_p": 0.0010657657791434353
   },
   "n_components": 35,
-  "components_in_multiple_pairs": 35,
-  "disjoint_subsets": {
-    "n_draws": 2000,
+  "max_pairs_per_component": 4,
+  "mean_pairs_per_component": 3.4285714285714284,
+  "icc": 0.30621994450828155,
+  "p_same_sign_sharing": 0.717948717948718,
+  "p_same_sign_disjoint": 0.5743494423791822,
+  "estimators": [
+    {
+      "estimator": "naive binomial, null-imposed",
+      "se": 0.06454972243679027,
+      "deff": 1.0,
+      "z": -3.356585566713095,
+      "p": 0.0007891129890156303
+    },
+    {
+      "estimator": "naive binomial, plug-in",
+      "se": 0.05817438662555248,
+      "deff": 1.0,
+      "z": -3.7244340548233326,
+      "p": 0.000195753872429039
+    },
+    {
+      "estimator": "Rao-Scott design effect",
+      "se": 0.08523685157869268,
+      "deff": 1.7436770080915407,
+      "z": -2.5419365292561853,
+      "p": 0.011024019030392424
+    },
+    {
+      "estimator": "dyadic-robust (ASA), e = y - ybar",
+      "se": 0.09333829351898949,
+      "deff": 2.574281805745554,
+      "z": -2.321305206020145,
+      "p": 0.020270377466169876
+    },
+    {
+      "estimator": "dyadic-robust (ASA), e = y - 0.5",
+      "se": 0.11666666666666667,
+      "deff": 3.266666666666667,
+      "z": -1.8571428571428572,
+      "p": 0.06329083223334529
+    }
+  ],
+  "clustered_p_range": [
+    0.011024019030392424,
+    0.06329083223334529
+  ],
+  "subsets": {
+    "n_draws": 20000,
     "seed": 20260811,
-    "size_median": 15,
-    "positive_fraction_median": 0.26666666666666666,
-    "positive_fraction_q05": 0.1875,
-    "positive_fraction_q95": 0.4,
-    "sign_test_p_median": 0.11846923828125,
-    "frac_subsets_p_lt_05": 0.211,
-    "frac_subsets_majority_positive": 0.0025
+    "size": 15,
+    "disjoint": {
+      "median_fraction": 0.26666666666666666,
+      "median_sign_p": 0.11846923828125,
+      "frac_majority_positive": 0.001,
+      "mc_se": 0.0002234949663862701
+    },
+    "unconstrained": {
+      "median_fraction": 0.26666666666666666,
+      "median_sign_p": 0.11846923828125,
+      "frac_majority_positive": 0.0182,
+      "mc_se": 0.0009452184932596271
+    }
   },
-  "component_bootstrap": {
-    "n_resamples": 20000,
-    "seed": 20260811,
-    "mean": 0.28384737303672414,
-    "ci95": [
-      0.07692307692307693,
-      0.5428571428571428
-    ],
-    "p_ge_half": 0.0539
+  "v1_calibration": {
+    "n_sims": 200,
+    "median": 0.5073333333333333,
+    "q01": 0.10311333333333333,
+    "min": 0.06066666666666667,
+    "observed_v1": 0.0539,
+    "calibrated_p": 0.0
   }
 }

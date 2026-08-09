@@ -6,6 +6,11 @@
   "pair_seed": 20260810,
   "n_pairs": 30,
   "overlap_with_prior": 0,
+  "exclusion": {
+    "n_prior_pairs": 30,
+    "fired": 5,
+    "changed": 2
+  },
   "decision_rule": {
     "max_positive": 15,
     "alpha": 0.05

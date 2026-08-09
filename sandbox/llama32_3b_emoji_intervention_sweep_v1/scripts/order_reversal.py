@@ -93,8 +93,13 @@ def load_components():
     return comps
 
 
-def sample_pairs(ids, exclude):
-    """Same procedure as before, new seed, and never a pair already measured."""
+def sample_pairs(ids, exclude, stats=None):
+    """Same procedure as before, new seed, and never a pair already measured.
+
+    `stats`, if given, records how many times the exclusion branch actually fired
+    -- counted here rather than reconstructed, because a reconstruction that omits
+    the exclusion walks a different candidate sequence and gives a different answer.
+    """
     rng = random.Random(PAIR_SEED)
     allp = [(i, j) for i in range(len(ids)) for j in range(i + 1, len(ids))]
     rng.shuffle(allp)
@@ -103,6 +108,8 @@ def sample_pairs(ids, exclude):
         if len(chosen) >= N_PAIRS:
             break
         if frozenset((ids[i], ids[j])) in exclude:
+            if stats is not None:
+                stats["fired"] = stats.get("fired", 0) + 1
             continue
         if used.get(i, 0) >= MAX_REUSE or used.get(j, 0) >= MAX_REUSE:
             continue
@@ -219,16 +226,21 @@ def main() -> int:
                 if ln.strip() and json.loads(ln).get("parts")}
     ids = [c["id"] for c in comps]
     by_id = {c["id"]: c for c in comps}
-    pairs = sample_pairs(ids, seen)
+    excl_stats = {}
+    pairs = sample_pairs(ids, seen, excl_stats)
     if len(pairs) != N_PAIRS:
         print(f"ABORT: sampler produced {len(pairs)} pairs, pre-registered {N_PAIRS}",
               file=sys.stderr)
         return 2
     overlap = sum(1 for i, j in pairs if frozenset((ids[i], ids[j])) in seen)
-    # what the exclusion actually bought: draws it rejected that would otherwise
-    # have repeated a measured pair. Zero here would mean it did nothing.
-    rejected = sum(1 for i, j in sample_pairs(ids, set())
-                   if frozenset((ids[i], ids[j])) in seen)
+    # What the exclusion actually bought. Two distinct quantities, both reported
+    # because conflating them is how the first version mislabelled this:
+    #   fired   -- times the exclusion branch rejected a candidate while sampling
+    #   changed -- pairs in the final sample that differ from the unconstrained draw
+    unconstrained = sample_pairs(ids, set())
+    fired = excl_stats.get("fired", 0)
+    changed = len(set(map(frozenset, ((ids[i], ids[j]) for i, j in pairs)))
+                  - set(map(frozenset, ((ids[i], ids[j]) for i, j in unconstrained))))
     print("=" * 100)
     print("REPLICATION — does the order-effect reversal hold on fresh pairs?")
     print("=" * 100)
@@ -239,8 +251,12 @@ def main() -> int:
           f"overlap with the prior sample: {overlap} (must be 0)")
     print("all pre-registered constants verified against the committed file\n")
     print(f"exclusion set: {len(seen)} pairs from the prior summary, {len(seen_alt)} "
-          f"independently rebuilt from the prior profiles; it rejected {rejected} "
-          f"draw(s) that would otherwise have repeated a measured pair")
+          f"independently rebuilt from the prior profiles; the exclusion branch fired "
+          f"{fired} time(s) and changed {changed} of the {len(pairs)} final pairs")
+    if not fired:
+        print("ABORT: the exclusion never fired -- it is a no-op on this input",
+              file=sys.stderr)
+        return 2
     if overlap:
         print("ABORT: pairs overlap the prior sample", file=sys.stderr)
         return 2
@@ -431,6 +447,7 @@ def main() -> int:
         "causal_claim_authorized": False, "out_of_contract": True,
         "preregistration": "PREREGISTRATION_order_reversal.md",
         "pair_seed": PAIR_SEED, "n_pairs": n, "overlap_with_prior": overlap,
+        "exclusion": {"n_prior_pairs": len(seen), "fired": fired, "changed": changed},
         "decision_rule": {"max_positive": MAX_POSITIVE, "alpha": ALPHA_LEVEL},
         "pairs": table, "order_effect_positive": k, "order_effect_median": med,
         "binomial_p": p_bin, "verdict": verdict,

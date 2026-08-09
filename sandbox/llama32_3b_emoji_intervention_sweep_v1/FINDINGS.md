@@ -214,7 +214,7 @@ one where a **pre-registered replication reversed a retraction**:
 | meanrule v1 | 6 | 2/6 | — | the reverse |
 | meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower**, p = 0.016 |
 | **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED**, p = 0.043 |
-| pooled | 60 | 17/60 | — | p = 0.0011 — **inflated, see below** |
+| pooled | 60 | 17/60 | — | naive p = 0.0011 is **wrong**; clustered p ≈ 0.01-0.06, see below |
 
 `order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
 across all four samples. The replication used 30 pairs drawn by a fresh seed with
@@ -225,23 +225,41 @@ the script existed.
 **Quote it with its margin.** At n = 30 the confirmatory result clears its own
 threshold by one pair: 10/30 would have given p = 0.099 and failed.
 
-**And do not quote the pooled p-value.** Adversarial review objected that pooling
-treats 60 pairs as 60 independent trials when every one of the 35 components sits
-in more than one pair (up to 4), both samples come from one pool, and strong/weak
-in both is assigned from a single measurement of `solo_mid`. The pairs are
-disjoint; the units are not independent. Two sensitivity analyses
+**And the pooled p-value is inflated by 10-60×.** Adversarial review objected
+that pooling treats 60 pairs as 60 independent trials when every one of the 35
+components sits in several pairs (up to 4), both samples come from one pool, and
+strong/weak in both is assigned from a single measurement of `solo_mid`. The
+pairs are disjoint; the units are not. The data agree: P(same sign | two pairs
+share a component) = **0.718** against **0.574** for component-disjoint pairs,
+ICC = **+0.306**.
+
+These pairs are **dyads** over components, so the textbook correction is a
+dyadic-robust variance (Aronow–Samii–Assenova)
 ([`scripts/pooled_independence.py`](scripts/pooled_independence.py)):
 
-| analysis | positive fraction | on the direction |
-|---|---|---|
-| maximal **component-disjoint** subsets (median n = 15, 2000 draws) | median **0.267**, 90 % [0.188, 0.400] | only **0.25 %** of subsets go the other way |
-| **component-level bootstrap** (20 000 resamples) | **0.284**, 95 % CI [0.077, 0.543] | P(fraction ≥ 0.5) = **0.054** |
+| estimator | SE | design effect | two-sided p |
+|---|---|---|---|
+| naive binomial | 0.0645 | 1.00 | 0.0008 |
+| Rao–Scott design effect | 0.0852 | 1.74 | **0.0110** |
+| dyadic-robust, `e = y − ȳ` | 0.0933 | 2.57 | **0.0203** |
+| dyadic-robust, `e = y − 0.5` | 0.1167 | 3.27 | **0.0633** |
 
-**The direction survives clustering; the p-value does not.** In subsets where
-every pair is a genuinely independent unit the positive fraction never approaches
-a majority — but those subsets hold ~15 pairs, so the median sign test reads
-p = 0.119 and the bootstrap interval touches 0.5. Quote the pooled result as
-**17/60 with this caveat**, not as p = 0.0011.
+**Quote it as `17/60, clustered p ≈ 0.01–0.06`** — straddling 0.05. The two
+dyadic figures differ only in where the residual is centred; both are defensible
+and they disagree about 0.05, so both are shown rather than one chosen after the
+fact. The direction is well supported; the *precision* was overstated by more
+than an order of magnitude.
+
+> **This paragraph's own first version was also wrong**, in the opposite
+> direction. It led with a bootstrap statistic `P(fraction ≥ 0.5) = 0.054`, read
+> it as "just above 0.05", and concluded "the p-value does not survive". That
+> statistic is not a p-value: under an independent null it has median 0.51 and
+> never fell below ~0.06 in 200 draws, so 0.054 sat *below its entire null
+> distribution*. A companion analysis over component-disjoint subsets is
+> withdrawn outright — against size-matched unconstrained subsets it is identical
+> (median fraction 0.267 either way, median sign-test p 0.1185 either way), so it
+> measured the cost of discarding 45 of 60 observations, not the cost of
+> dependence. **Over-correcting an over-claim is not caution.**
 
 What is established is the **direction**, on two pairs-disjoint samples under one
 protocol — not an effect size, and not anything about why.
@@ -276,7 +294,7 @@ the 8/13 pooled reading was the right call on the evidence then; with five times
 the units the effect reappears with the sign flipped. It was a new
 single-sample finding at exactly the evidential level the 6/7 claim once had, so
 it was replicated before anything was built on it — **9/30 on 30 disjoint pairs,
-p = 0.043, pooled 17/60 at p = 0.0011** (§2.6). The reversal is what stands; the
+p = 0.043, pooled 17/60 (clustered p ≈ 0.01-0.06)** (§2.6). The reversal is what stands; the
 6/7 claim stays retracted.
 
 A confound found late and disclosed rather than buried: **UTF-8 byte class**
@@ -374,6 +392,18 @@ These cost the most and generalise furthest.
    decoration: the fix was to make the runner parse those names out of the
    committed file and abort on disagreement, which is what the numeric
    constants already did and the identifiers did not.
+8. **A statistic you invent needs calibrating before you quote it — and
+   over-correcting an over-claim is not caution.** Told that a pooled p-value
+   assumed independence the design lacked, I answered with a bootstrap statistic
+   of my own construction, read `0.054` as "just above 0.05", and concluded the
+   evidence did not survive. That statistic is not a p-value: under an
+   independent null it has median 0.51 and never fell below ~0.06 in 200 draws,
+   so `0.054` sat *below its entire null distribution*. The correct answer — a
+   dyadic-robust variance, since the pairs are dyads over components — is
+   p ≈ 0.01–0.06: inflated 10–60×, not annihilated. The retreat felt rigorous
+   and was just a second error pointing the other way. Reach for the estimator
+   the data structure already has a name for, and simulate any statistic you
+   build yourself under a null you understand before it reaches a conclusion.
 
 ---
 
@@ -402,7 +432,7 @@ These cost the most and generalise furthest.
 - ~~**More units per statistic**~~ — done: 30 pairs, see
   [`results/meanrule30_report.md`](results/meanrule30_report.md).
 - ~~**Replicate the 8/30 order-effect reversal**~~ — done, and it held: 9/30 on
-  disjoint pairs, pooled 17/60 (p = 0.0011), see
+  disjoint pairs, pooled 17/60 (clustered p ≈ 0.01-0.06), see
   [`results/orderrev_report.md`](results/orderrev_report.md). It cleared its
   threshold by a single pair, so the next useful move is **more units again**
   (n ≈ 100) to get an interval on the effect rather than a sign test — and then
@@ -419,10 +449,11 @@ These cost the most and generalise furthest.
   sample is not evidence — it is the third reading of a statistic that has
   already produced every answer. Fix a threshold in advance and draw pairs *for
   this question* before it is allowed to count.
-- **Pooling needs a design that earns it**: the reuse cap of 2 puts every
-  component into multiple pairs, so a pooled binomial overstates its own
-  precision. Either draw component-disjoint pairs (costing units) or report a
-  clustered interval as the headline rather than as a caveat.
+- **Pooling needs a design that earns it**: every component sits in several
+  pairs (ICC +0.31), so the pooled binomial overstates its precision by a design
+  effect of 1.7–3.3. Either draw component-disjoint pairs — costing units, since
+  35 components cap a disjoint sample at 17 pairs — or report the dyadic-robust
+  figure as the headline rather than as a caveat.
 - **Token-position resolution**: extract the direction at each token position of
   a compound rather than only at the wrapper's `last_nonpad`, to locate where
   composition costs efficacy.

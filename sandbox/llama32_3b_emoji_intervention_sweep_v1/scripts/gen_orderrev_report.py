@@ -186,38 +186,63 @@ w(f"Errors run {min(errs):+.2f} to {max(errs):+.2f}, median **{np.median(errs):+
 ind = res / "pooled_independence.json"
 if ind.exists():
     q = json.loads(ind.read_text(encoding="utf-8"))
-    d, bt = q["disjoint_subsets"], q["component_bootstrap"]
-    w("## The pooled p-value is inflated by shared components\n")
-    w("Adversarial review objected — correctly — that pooling treats 60 pairs as 60 "
-      f"independent Bernoulli trials when all {q['n_components']} components appear in "
-      "more than one pair (up to 4), both samples draw from one 35-glyph pool, and "
+    est = {r["estimator"]: r for r in q["estimators"]}
+    lo, hi = q["clustered_p_range"]
+    sub = q["subsets"]
+    w("## The pooled p-value is inflated — by 10-60x, not to nothing\n")
+    w("Adversarial review objected that pooling treats 60 pairs as 60 independent "
+      f"Bernoulli trials when all {q['n_components']} components sit in several pairs "
+      f"(up to {q['max_pairs_per_component']}), both samples draw from one pool, and "
       "strong/weak in both is assigned from a single measurement of `solo_mid`. The "
-      "pairs are disjoint; the **units are not independent**. Two sensitivity analyses "
+      "pairs are disjoint; the **units are not**. The objection is right, and the data "
+      f"show it plainly: P(same sign | two pairs share a component) = "
+      f"**{q['p_same_sign_sharing']:.3f}** against **{q['p_same_sign_disjoint']:.3f}** "
+      f"for component-disjoint pairs, ICC = **{q['icc']:+.3f}**.\n")
+    w("These pairs are **dyads** over components, so the textbook correction is a "
+      "dyadic-robust variance (Aronow-Samii-Assenova): two pairs covary iff they share "
+      "a component. Reported beside a Rao-Scott design effect and the naive binomial, "
+      "under both residual conventions "
       "([`scripts/pooled_independence.py`](../scripts/pooled_independence.py)):\n")
-    w("| analysis | positive fraction | verdict on the direction |")
-    w("|---|---|---|")
-    w(f"| maximal **component-disjoint** subsets (median n = {d['size_median']}, "
-      f"{d['n_draws']} draws) | median **{d['positive_fraction_median']:.3f}**, 90 % "
-      f"[{d['positive_fraction_q05']:.3f}, {d['positive_fraction_q95']:.3f}] | "
-      f"only **{100 * d['frac_subsets_majority_positive']:.2f} %** of subsets go the "
-      "other way |")
-    w(f"| **component-level bootstrap** ({bt['n_resamples']} resamples) | "
-      f"**{bt['mean']:.3f}**, 95 % CI [{bt['ci95'][0]:.3f}, {bt['ci95'][1]:.3f}] | "
-      f"P(fraction ≥ 0.5) = **{bt['p_ge_half']:.3f}** |")
-    w("\nThe two schemes disagree about strength, and that disagreement is the point. "
-      "Under component-disjoint subsets — where every pair is a genuinely independent "
-      "unit — the direction is robust: the positive fraction never approaches a "
-      f"majority. But those subsets hold only ~{d['size_median']} pairs, so the median "
-      f"sign test reads p = {d['sign_test_p_median']:.3f} and just "
-      f"{100 * d['frac_subsets_p_lt_05']:.0f} % reach p < 0.05. The bootstrap's "
-      "interval touches 0.5 outright.\n")
-    w("> **So: the direction survives clustering; the p-value does not.** "
-      f"Quote the pooled count as {pool['positive']}/{pool['n']} with this caveat "
-      f"attached — **not** as p = {pool['binomial_p']:.4f}, which assumes an "
-      "independence the design does not have. The bootstrap scheme matters too: mine "
-      "requires *both* of a pair's components to be drawn, which is deliberately harsh. "
-      "A gentler scheme gives a tighter interval — reported here in its conservative "
-      "form on purpose.\n")
+    w("| estimator | SE | design effect | two-sided p |")
+    w("|---|---|---|---|")
+    for key in ("naive binomial, null-imposed", "Rao-Scott design effect",
+                "dyadic-robust (ASA), e = y - ybar", "dyadic-robust (ASA), e = y - 0.5"):
+        r = est[key]
+        w(f"| {key} | {r['se']:.4f} | {r['deff']:.2f} | **{r['p']:.4f}** |")
+    w(f"\n**The clustered corrections span p = {lo:.3f} to {hi:.3f}** — straddling 0.05, "
+      f"and inflating the naive {q['pooled']['binomial_p']:.4f} by roughly "
+      f"{lo / q['pooled']['binomial_p']:.0f}-{hi / q['pooled']['binomial_p']:.0f}x. The "
+      "two dyadic figures differ only in whether the residual is centred on the sample "
+      "mean or on the null; both are defensible and they disagree about 0.05, so both "
+      "are shown. Picking one after seeing them would be the error this directory keeps "
+      "retracting.\n")
+    w(f"> **How to quote it.** `{q['pooled']['positive']}/{q['pooled']['n']}, clustered "
+      f"p ≈ {lo:.2f}-{hi:.2f}`. Not `p = {q['pooled']['binomial_p']:.4f}`, which assumes "
+      "independence the design does not have. The direction is well supported; the "
+      "*precision* was overstated by more than an order of magnitude.\n")
+    w("**A correction to this section's own first version.** It originally led with a "
+      "bootstrap statistic `P(fraction ≥ 0.5) = 0.054` and read it as \"just above 0.05, "
+      "so the p-value does not survive\". That was wrong twice. The statistic is **not a "
+      "p-value**: simulated under an independent null it has median "
+      f"{q.get('v1_calibration', {}).get('median', 0.51):.2f} and never fell below "
+      f"~{q.get('v1_calibration', {}).get('min', 0.06):.2f} in "
+      f"{q.get('v1_calibration', {}).get('n_sims', 200)} draws, so 0.054 sat *below its "
+      "entire null distribution* — strong evidence misread as weak. And its weights "
+      "were `cnt[A] * cnt[B]` where the comment claimed an indicator, inflating the "
+      "variance past any standard estimator. `--calibrate` reproduces the "
+      "demonstration. The first version over-corrected an over-claim; this one reports "
+      "the span of standard estimators instead.\n")
+    w("**And the component-disjoint subset analysis is withdrawn.** It compared maximal "
+      "component-disjoint subsets against nothing. Against the control it needed — "
+      f"unconstrained subsets of the same size (n = {sub['size']}) — the two are "
+      f"identical: median positive fraction "
+      f"{sub['disjoint']['median_fraction']:.3f} vs "
+      f"{sub['unconstrained']['median_fraction']:.3f}, median sign-test p "
+      f"{sub['disjoint']['median_sign_p']:.4f} vs "
+      f"{sub['unconstrained']['median_sign_p']:.4f}. Those numbers came from discarding "
+      "45 of 60 observations, not from removing dependence. The analysis said nothing "
+      "about clustering and is reported only so the earlier claim that it did is "
+      "retracted on the record.\n")
 
 gap = [abs(solo[t["A"]] - solo[t["B"]]) for t in pairs]
 oe_ = [t["order_effect"] for t in pairs]
@@ -234,30 +259,40 @@ w("This is **not** a revival of that claim. It is one more sample of a quantity 
   "with a threshold and test it on pairs drawn for that question.\n")
 
 w("## What adversarial review changed\n")
-w("Review found eight defects. None moved a number; the two that mattered most were "
-  "about what the numbers were allowed to claim.\n")
+exc = s.get("exclusion", {})
+w("Two review passes. Neither moved a measured value; between them they changed what "
+  "several numbers were allowed to claim, and caught one analysis that was wrong in "
+  "each direction in turn.\n")
+w("**Pass 1 — eight findings.**\n")
 w("- The **overlap check was circular**: `sample_pairs` already skips the exclusion set, "
   "so `overlap == 0` held by construction and would have kept holding if the exclusion "
   "had silently become a no-op. The prior pair set is now rebuilt independently from the "
   "prior *profiles* file, cross-checked against the summary, required to match the prior "
-  "pair count and to name only components that exist. The run now reports what the "
-  "exclusion bought: **1 draw rejected** that would otherwise have repeated a measured "
-  "pair.")
-w("- The **pooled p-value assumed independence the design does not have** — the section "
-  "above is the result.")
+  "pair count and to name only components that exist"
+  + (f"; the exclusion branch is instrumented directly and fired **{exc['fired']}** "
+     f"time(s), changing **{exc['changed']}** of the {n} final pairs."
+     if exc else ".")
+  + "")
 w("- The **4-prefix-token invariant** carried by the previous runner had been dropped and "
-  "is restored: all 35 components, every wrapper, or the run aborts.")
+  "is restored: every component, every wrapper, or the run aborts.")
 w("- The **profiles file had lost its per-layer vector**, so no reader could re-derive a "
   "score or reanalyse under a different layer band. It now records `profile` and "
-  "`layers`, as the run it is pooled with does.")
-w("- Two stale sentences (FINDINGS §3 still said this result needed a replication; the "
-  "pre-registration miscounted the retractions) and a Japanese README left at twelve "
-  "runs. [Amendment 2](../PREREGISTRATION_order_reversal.md) records the corrections, "
-  "including the traceback that Amendment 1 cited from a gitignored log.\n")
-w("The run was then repeated end to end with the strengthened guards. **Every value is "
-  "bit-identical** — all 30 order effects and all 30 observed scores match to 0.0e+00, "
-  "and no key in the summary differs. Taken with the frame check's 0.0000 drift, the "
-  "measurement is exactly reproducible on this machine.\n")
+  "`layers` (the run it is pooled with carries `profile` but not `layers`).")
+w("- Stale prose: FINDINGS §3 still said this result needed the replication it had just "
+  "received; the pre-registration miscounted the retractions; a Japanese README was left "
+  "a version behind.\n")
+w("**Pass 2 — the clustering correction was itself wrong.** Pass 1 replaced an "
+  "over-claim (`p = 0.0011`) with an over-correction (\"the p-value does not survive\"). "
+  "The section above is the corrected version, and both errors are recorded there rather "
+  "than quietly replaced. Pass 2 also found four surviving approving quotes of "
+  "`p = 0.0011` — two of them introduced by the commit that was supposed to remove them "
+  "— a mislabelled exclusion audit, and a rounding disagreement between the two "
+  "languages.\n")
+w("The run was repeated with every guard active. **Every value is bit-identical** — all "
+  f"{n} order effects and all {n} observed scores match to 0.0e+00, and no summary key "
+  "differs. The null distributions came from the protocol-keyed cache rather than being "
+  "recomputed, so this is a determinism check on the measurement path, not on the whole "
+  "pipeline from scratch.\n")
 
 w("## Limitations\n")
 w("- One model, one site (`resid_post`), one position (`last_nonpad`), one strength "

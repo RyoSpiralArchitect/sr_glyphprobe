@@ -85,18 +85,26 @@ The **refit** rule wins by 0.101. The refit generalises to pairs it was not fitt
 
 Errors run -0.46 to +1.10, median **+0.31**, 25/30 positive — the same under-prediction the n = 30 run reported.
 
-## The pooled p-value is inflated by shared components
+## The pooled p-value is inflated — by 10-60x, not to nothing
 
-Adversarial review objected — correctly — that pooling treats 60 pairs as 60 independent Bernoulli trials when all 35 components appear in more than one pair (up to 4), both samples draw from one 35-glyph pool, and strong/weak in both is assigned from a single measurement of `solo_mid`. The pairs are disjoint; the **units are not independent**. Two sensitivity analyses ([`scripts/pooled_independence.py`](../scripts/pooled_independence.py)):
+Adversarial review objected that pooling treats 60 pairs as 60 independent Bernoulli trials when all 35 components sit in several pairs (up to 4), both samples draw from one pool, and strong/weak in both is assigned from a single measurement of `solo_mid`. The pairs are disjoint; the **units are not**. The objection is right, and the data show it plainly: P(same sign | two pairs share a component) = **0.718** against **0.574** for component-disjoint pairs, ICC = **+0.306**.
 
-| analysis | positive fraction | verdict on the direction |
-|---|---|---|
-| maximal **component-disjoint** subsets (median n = 15, 2000 draws) | median **0.267**, 90 % [0.188, 0.400] | only **0.25 %** of subsets go the other way |
-| **component-level bootstrap** (20000 resamples) | **0.284**, 95 % CI [0.077, 0.543] | P(fraction ≥ 0.5) = **0.054** |
+These pairs are **dyads** over components, so the textbook correction is a dyadic-robust variance (Aronow-Samii-Assenova): two pairs covary iff they share a component. Reported beside a Rao-Scott design effect and the naive binomial, under both residual conventions ([`scripts/pooled_independence.py`](../scripts/pooled_independence.py)):
 
-The two schemes disagree about strength, and that disagreement is the point. Under component-disjoint subsets — where every pair is a genuinely independent unit — the direction is robust: the positive fraction never approaches a majority. But those subsets hold only ~15 pairs, so the median sign test reads p = 0.118 and just 21 % reach p < 0.05. The bootstrap's interval touches 0.5 outright.
+| estimator | SE | design effect | two-sided p |
+|---|---|---|---|
+| naive binomial, null-imposed | 0.0645 | 1.00 | **0.0008** |
+| Rao-Scott design effect | 0.0852 | 1.74 | **0.0110** |
+| dyadic-robust (ASA), e = y - ybar | 0.0933 | 2.57 | **0.0203** |
+| dyadic-robust (ASA), e = y - 0.5 | 0.1167 | 3.27 | **0.0633** |
 
-> **So: the direction survives clustering; the p-value does not.** Quote the pooled count as 17/60 with this caveat attached — **not** as p = 0.0011, which assumes an independence the design does not have. The bootstrap scheme matters too: mine requires *both* of a pair's components to be drawn, which is deliberately harsh. A gentler scheme gives a tighter interval — reported here in its conservative form on purpose.
+**The clustered corrections span p = 0.011 to 0.063** — straddling 0.05, and inflating the naive 0.0011 by roughly 10-59x. The two dyadic figures differ only in whether the residual is centred on the sample mean or on the null; both are defensible and they disagree about 0.05, so both are shown. Picking one after seeing them would be the error this directory keeps retracting.
+
+> **How to quote it.** `17/60, clustered p ≈ 0.01-0.06`. Not `p = 0.0011`, which assumes independence the design does not have. The direction is well supported; the *precision* was overstated by more than an order of magnitude.
+
+**A correction to this section's own first version.** It originally led with a bootstrap statistic `P(fraction ≥ 0.5) = 0.054` and read it as "just above 0.05, so the p-value does not survive". That was wrong twice. The statistic is **not a p-value**: simulated under an independent null it has median 0.51 and never fell below ~0.06 in 200 draws, so 0.054 sat *below its entire null distribution* — strong evidence misread as weak. And its weights were `cnt[A] * cnt[B]` where the comment claimed an indicator, inflating the variance past any standard estimator. `--calibrate` reproduces the demonstration. The first version over-corrected an over-claim; this one reports the span of standard estimators instead.
+
+**And the component-disjoint subset analysis is withdrawn.** It compared maximal component-disjoint subsets against nothing. Against the control it needed — unconstrained subsets of the same size (n = 15) — the two are identical: median positive fraction 0.267 vs 0.267, median sign-test p 0.1185 vs 0.1185. Those numbers came from discarding 45 of 60 observations, not from removing dependence. The analysis said nothing about clustering and is reported only so the earlier claim that it did is retracted on the record.
 
 ## An observation, not a claim: the component gap
 
@@ -106,15 +114,18 @@ This is **not** a revival of that claim. It is one more sample of a quantity tha
 
 ## What adversarial review changed
 
-Review found eight defects. None moved a number; the two that mattered most were about what the numbers were allowed to claim.
+Two review passes. Neither moved a measured value; between them they changed what several numbers were allowed to claim, and caught one analysis that was wrong in each direction in turn.
 
-- The **overlap check was circular**: `sample_pairs` already skips the exclusion set, so `overlap == 0` held by construction and would have kept holding if the exclusion had silently become a no-op. The prior pair set is now rebuilt independently from the prior *profiles* file, cross-checked against the summary, required to match the prior pair count and to name only components that exist. The run now reports what the exclusion bought: **1 draw rejected** that would otherwise have repeated a measured pair.
-- The **pooled p-value assumed independence the design does not have** — the section above is the result.
-- The **4-prefix-token invariant** carried by the previous runner had been dropped and is restored: all 35 components, every wrapper, or the run aborts.
-- The **profiles file had lost its per-layer vector**, so no reader could re-derive a score or reanalyse under a different layer band. It now records `profile` and `layers`, as the run it is pooled with does.
-- Two stale sentences (FINDINGS §3 still said this result needed a replication; the pre-registration miscounted the retractions) and a Japanese README left at twelve runs. [Amendment 2](../PREREGISTRATION_order_reversal.md) records the corrections, including the traceback that Amendment 1 cited from a gitignored log.
+**Pass 1 — eight findings.**
 
-The run was then repeated end to end with the strengthened guards. **Every value is bit-identical** — all 30 order effects and all 30 observed scores match to 0.0e+00, and no key in the summary differs. Taken with the frame check's 0.0000 drift, the measurement is exactly reproducible on this machine.
+- The **overlap check was circular**: `sample_pairs` already skips the exclusion set, so `overlap == 0` held by construction and would have kept holding if the exclusion had silently become a no-op. The prior pair set is now rebuilt independently from the prior *profiles* file, cross-checked against the summary, required to match the prior pair count and to name only components that exist; the exclusion branch is instrumented directly and fired **5** time(s), changing **2** of the 30 final pairs.
+- The **4-prefix-token invariant** carried by the previous runner had been dropped and is restored: every component, every wrapper, or the run aborts.
+- The **profiles file had lost its per-layer vector**, so no reader could re-derive a score or reanalyse under a different layer band. It now records `profile` and `layers` (the run it is pooled with carries `profile` but not `layers`).
+- Stale prose: FINDINGS §3 still said this result needed the replication it had just received; the pre-registration miscounted the retractions; a Japanese README was left a version behind.
+
+**Pass 2 — the clustering correction was itself wrong.** Pass 1 replaced an over-claim (`p = 0.0011`) with an over-correction ("the p-value does not survive"). The section above is the corrected version, and both errors are recorded there rather than quietly replaced. Pass 2 also found four surviving approving quotes of `p = 0.0011` — two of them introduced by the commit that was supposed to remove them — a mislabelled exclusion audit, and a rounding disagreement between the two languages.
+
+The run was repeated with every guard active. **Every value is bit-identical** — all 30 order effects and all 30 observed scores match to 0.0e+00, and no summary key differs. The null distributions came from the protocol-keyed cache rather than being recomputed, so this is a determinism check on the measurement path, not on the whole pipeline from scratch.
 
 ## Limitations
 
