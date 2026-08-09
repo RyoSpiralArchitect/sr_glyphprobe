@@ -61,15 +61,32 @@ warnings.filterwarnings("ignore", message=".*encountered in matmul", category=Ru
 
 ROOT = Path(__file__).resolve().parent.parent
 
-G = {"pizza": "\U0001F355", "burger": "\U0001F354", "car": "\U0001F697",
-     "black_sq": "⬛", "white_sq": "⬜"}
-
-PAIRS = [
-    ("pizsq", "pizza", "black_sq"),      # the anomaly
-    ("bursq", "burger", "black_sq"),     # sibling: another strong food
-    ("carsq", "car", "black_sq"),        # sibling: a strong vehicle
-    ("pizwht", "pizza", "white_sq"),     # sibling: the same food, other square
-]
+# --panel anomaly : the original check on 🍕⬛ and three siblings
+# --panel foodtype: is "food + black square" a TYPE, or just 🍕 and 🍔?
+#   Stated before running the foodtype panel: if it is a type, all three new
+#   foods should come out negative (0/4 or 1/4 positive, matching 🍕⬛ and 🍔⬛)
+#   and the two non-food controls should not. If the foods split, "food + black
+#   square" is a description of two glyphs, not a type.
+PANELS = {
+    "anomaly": (
+        {"pizza": "\U0001F355", "burger": "\U0001F354", "car": "\U0001F697",
+         "black_sq": "⬛", "white_sq": "⬜"},
+        [("pizsq", "pizza", "black_sq"),     # the anomaly
+         ("bursq", "burger", "black_sq"),    # sibling: another strong food
+         ("carsq", "car", "black_sq"),       # sibling: a strong vehicle
+         ("pizwht", "pizza", "white_sq")],   # sibling: same food, other square
+    ),
+    "foodtype": (
+        {"sushi": "\U0001F363", "ramen": "\U0001F35C", "beer": "\U0001F37A",
+         "dog": "\U0001F436", "rainbow": "\U0001F308", "black_sq": "⬛"},
+        [("sussq", "sushi", "black_sq"),     # new food 1
+         ("ramsq", "ramen", "black_sq"),     # new food 2
+         ("beesq", "beer", "black_sq"),      # new food 3
+         ("dogsq", "dog", "black_sq"),       # control: animal, not food
+         ("rainsq", "rainbow", "black_sq")], # control: nature, not food
+    ),
+}
+G, PAIRS = PANELS["anomaly"]
 
 WRAPPER_SETS = {
     "A": ["Today I saw a", "My favorite thing is", "Here we have", "This reminds me of"],
@@ -99,7 +116,10 @@ def main() -> int:
     ap.add_argument("--nulls", type=int, default=24)
     ap.add_argument("--out", default=str(ROOT / "results"))
     ap.add_argument("--tag", default="orderstab_v1")
+    ap.add_argument("--panel", choices=sorted(PANELS), default="anomaly")
     args = ap.parse_args()
+    global G, PAIRS
+    G, PAIRS = PANELS[args.panel]
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     A = args.alpha
@@ -258,7 +278,7 @@ def main() -> int:
         "claim_stage": "pre-causal-activation-screen",
         "causal_claim_authorized": False, "out_of_contract": True,
         "stated_prediction": "the order-effect sign will NOT be stable across conditions",
-        "pairs": PAIRS, "wrapper_sets": WRAPPER_SETS, "target_sets": TARGET_SETS,
+        "panel": args.panel, "pairs": PAIRS, "wrapper_sets": WRAPPER_SETS, "target_sets": TARGET_SETS,
         "layers": LAYERS, "alpha": A, "nulls": args.nulls,
         "mid": {f"{k[0]}|W{k[1]}|T{k[2]}": v for k, v in mid.items()},
         "order_effect_table": table, "n_sign_stable": int(n_stable),
