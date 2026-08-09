@@ -147,8 +147,15 @@ exactly 4 prefix tokens — with the coefficients still frozen
 The interval is the quantity §5.1 said n ≈ 6 could not produce. It excludes zero
 comfortably — **the ordering is real** — but its lower bound sits *below* the
 0.70 pass threshold, and refitting gives `0.62 × mean + 1.86` against the frozen
-`0.70 / 1.16`, with the rule under-predicting on 23 of 30 pairs. **Quote it as an
-ordering, not as a predictor of magnitude.**
+`0.70 / 1.16`, with the rule under-predicting on **26 of 30** pairs. **Quote it as an ordering,
+not as a predictor of magnitude.**
+
+And read "SUPPORTED" narrowly: `pred` is a strictly increasing affine map of
+`mean`, so `Spearman(pred, obs)` is *identical* for any positive slope and any
+intercept (verified: 0.70/1.16, 1.0/0.0 and 0.31/99.0 all give +0.784205). That
+leg tests **"the mean of the component scores ranks the composites"**, not the
+fitted rule. Only the MAE leg touches the coefficients — and it is the leg that
+degrades out of sample.
 
 ### 2.5 Injected directions boost recognisable tokens
 
@@ -267,8 +274,8 @@ These cost the most and generalise furthest.
    protocol read +0.04 and −0.94 on two samples. Any rank correlation over
    fewer than ~10 units in this setting should be treated as a hypothesis
    generator only — including the mean rule that *passed* its pre-registered
-   test. **Confirmed constructively at n = 30**: the mean rule survives with a
-   bootstrap CI of [+0.55, +0.91], and the order effect — which read 6/7 then
+   test. **Confirmed constructively at n = 30**: the *ordering* claim survives
+   with a bootstrap CI of [+0.55, +0.91], and the order effect — which read 6/7 then
    2/6 — resolves to 8/30 with the sign reversed. Small samples here did not
    merely add noise; they got the direction wrong.
 2. **A clean binary split is usually a panel property.** "No exceptions" held

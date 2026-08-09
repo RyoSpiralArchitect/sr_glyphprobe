@@ -60,7 +60,7 @@ w(f"| mean absolute error | ≤ {s['decision_rule']['max_mae']} | **{s['mae']:.3
 w(f"\n**Pre-registered verdict: {s['verdict']}.**\n")
 w("| | n = 6 (earlier) | n = 30 (here) |")
 w("|---|---|---|")
-w(f"| Spearman | +{old['spearman_pred_obs']:.3f} | **+{s['spearman_pred_obs']:.3f}** |")
+w(f"| Spearman | {old['spearman_pred_obs']:+.3f} | **{s['spearman_pred_obs']:+.3f}** |")
 w(f"| MAE | {old['mae']:.3f} | {s['mae']:.3f} |")
 w("| components chosen by | me | the repository |")
 w("| bootstrap CI | not supportable | "
@@ -70,6 +70,13 @@ w("\nThe bootstrap interval is the number FINDINGS §5.1 asked for and n = 6 cou
   f"produce. It excludes zero comfortably, but its lower bound ({lo:+.3f}) sits **below "
   f"the {s['decision_rule']['min_spearman']} pass threshold** — the relationship is "
   "solid, the precision is not.\n")
+w("> **What the Spearman leg can and cannot test.** `pred` is a strictly increasing "
+  "affine map of `mean(component_mid)`, so `Spearman(pred, obs)` is *identical* for any "
+  "positive slope and any intercept — verified: 0.70/1.16, 1.0/0.0 and 0.31/99.0 all "
+  f"give {s['spearman_pred_obs']:+.6f}. That leg therefore tests **\"the mean of the "
+  "component scores ranks the composites\"**, not the fitted rule. Only the MAE leg "
+  "touches the coefficients — and it is the leg that degrades out of sample. Read the "
+  "SUPPORTED verdict as: the ordering claim is confirmed and the calibration is not.\n")
 
 w("## Where the rule is wrong\n")
 w(f"Refitting on this sample gives `{s['refit_slope']:.2f} × mean + "
@@ -117,9 +124,11 @@ w("| pairs | n | median residual |")
 w("|---|---|---|")
 w(f"| same family | {len(same)} | {np.median([t['error'] for t in same]):+.2f} |")
 w(f"| cross family | {len(diff)} | {np.median([t['error'] for t in diff]):+.2f} |")
-w("\nEssentially no difference. The hunch is **not supported** — though 6 vs 24 is an "
-  "unbalanced comparison and the same-family pairs come from only five panels, so this "
-  "is weak evidence against rather than a refutation.\n")
+_fam = sorted({t["A"].split("_")[0] for t in same})
+w(f"\nEssentially no difference. The hunch is **not supported** — though "
+  f"{len(same)} vs {len(diff)} is an unbalanced comparison and the same-family pairs "
+  f"come from only {len(_fam)} of the five panels ({', '.join(_fam)}), so this is weak "
+  "evidence against rather than a refutation.\n")
 
 w("## Limitations\n")
 w("- Still one model, one site (`resid_post`), one position (`last_nonpad`), one "

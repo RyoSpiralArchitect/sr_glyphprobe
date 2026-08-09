@@ -108,8 +108,14 @@ def sample_pairs(n_comp):
     return chosen
 
 
-def check_prereg():
-    """Everything that decides the outcome must match the committed file."""
+def check_prereg(args, n_components: int):
+    """Everything that decides the outcome must match the committed file.
+
+    Not just the rule: alpha and the draw count are CLI-settable, the pool size
+    depends on how many e2_core35 panels exist, and the layer band and reuse cap
+    change which pairs are drawn. A guard that checks only the coefficients
+    would pass a run that differs from the pre-registration in any of those.
+    """
     text = PREREG.read_text(encoding="utf-8")
     checks = [
         ("slope", SLOPE, r"composite_mid_mean\s*=\s*([0-9.]+)\s*\*"),
@@ -118,11 +124,23 @@ def check_prereg():
         ("max_mae", MAX_MAE, r"mean\(\|obs - pred\|\)\s*<=\s*([0-9.]+)"),
         ("pair_seed", PAIR_SEED, r"random\.Random\((\d+)\)"),
         ("n_pairs", N_PAIRS, r"\*\*Pairs:\*\*\s*(\d+)"),
+        ("max_reuse", MAX_REUSE, r"use a component more than (\w+)\b"),
+        ("alpha", args.alpha, r"α\s*=\s*([0-9.]+)"),
+        ("nulls", args.nulls, r"([0-9]+) random directions per \(layer, target\)"),
+        ("n_components", n_components, r"all (\d+) glyphs of"),
+        ("layer_lo", LAYERS[0], r"layers (\d+)-\d+"),
+        ("layer_hi", LAYERS[-1], r"layers \d+-(\d+)"),
     ]
+    words = {"twice": 2, "once": 1, "three": 3}
     bad = []
     for label, value, pat in checks:
         m = re.search(pat, text)
-        if not m or abs(float(m.group(1)) - float(value)) > 1e-9:
+        got = None
+        if m:
+            raw = m.group(1)
+            got = float(words[raw]) if raw in words else (
+                float(raw) if re.fullmatch(r"[0-9.]+", raw) else None)
+        if got is None or abs(got - float(value)) > 1e-9:
             bad.append((label, value, m.group(1) if m else "absent"))
     return bad
 
@@ -142,7 +160,8 @@ def main() -> int:
         return 2
     A = args.alpha
 
-    bad = check_prereg()
+    comps_for_check = load_components()
+    bad = check_prereg(args, len(comps_for_check))
     if bad:
         print("ABORT: this script disagrees with the committed pre-registration, "
               "so the test would not be confirmatory:", file=sys.stderr)
@@ -150,8 +169,12 @@ def main() -> int:
             print(f"  {x[0]}: script {x[1]}, pre-registered {x[2]}", file=sys.stderr)
         return 2
 
-    comps = load_components()
+    comps = comps_for_check
     pairs = sample_pairs(len(comps))
+    if len(pairs) != N_PAIRS:
+        print(f"ABORT: sampler produced {len(pairs)} pairs, pre-registered "
+              f"{N_PAIRS}; the reuse cap exhausted the pool", file=sys.stderr)
+        return 2
     print("=" * 100)
     print("CONFIRMATORY TEST — composition mean rule at n = 30")
     print("=" * 100)

@@ -27,6 +27,8 @@ Applies two of the four next steps from [FINDINGS §7](../FINDINGS.md): more uni
 
 The bootstrap interval is the number FINDINGS §5.1 asked for and n = 6 could not produce. It excludes zero comfortably, but its lower bound (+0.550) sits **below the 0.7 pass threshold** — the relationship is solid, the precision is not.
 
+> **What the Spearman leg can and cannot test.** `pred` is a strictly increasing affine map of `mean(component_mid)`, so `Spearman(pred, obs)` is *identical* for any positive slope and any intercept — verified: 0.70/1.16, 1.0/0.0 and 0.31/99.0 all give +0.784205. That leg therefore tests **"the mean of the component scores ranks the composites"**, not the fitted rule. Only the MAE leg touches the coefficients — and it is the leg that degrades out of sample. Read the SUPPORTED verdict as: the ordering claim is confirmed and the calibration is not.
+
 ## Where the rule is wrong
 
 Refitting on this sample gives `0.62 × mean + 1.86` against the frozen `0.7 / 1.16` — reported for comparison only, never substituted. The ordering transfers; the calibration does not.
@@ -89,7 +91,7 @@ The retraction in [FINDINGS §3](../FINDINGS.md) was right that the 6/7 claim di
 | same family | 6 | +0.44 |
 | cross family | 24 | +0.33 |
 
-Essentially no difference. The hunch is **not supported** — though 6 vs 24 is an unbalanced comparison and the same-family pairs come from only five panels, so this is weak evidence against rather than a refutation.
+Essentially no difference. The hunch is **not supported** — though 6 vs 24 is an unbalanced comparison and the same-family pairs come from only 3 of the five panels (animals, sky, transport), so this is weak evidence against rather than a refutation.
 
 ## Limitations
 
