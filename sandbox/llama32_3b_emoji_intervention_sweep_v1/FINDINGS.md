@@ -1,4 +1,4 @@
-# Per-glyph emoji intervention in Llama-3.2-3B: what survived twelve runs
+# Per-glyph emoji intervention in Llama-3.2-3B: what survived thirteen runs
 
 **Status: out of contract.** Exploratory sandbox work on the real bf16 weights.
 Not the sealed v2 experiment; it touches nothing in `artifacts/`, `validation/`,
@@ -11,7 +11,8 @@ so no receipt here is comparable to a canonical run.
 [日本語版](FINDINGS.ja.md) · [README](README.md) · reports:
 [sweep](results/report.md) · [deep](results/deep_report.md) ·
 [why-flat](results/whyflat_report.md) · [composition](results/composition_report.md) ·
-[order](results/order_report.md) · [n=30](results/meanrule30_report.md)
+[order](results/order_report.md) · [n=30](results/meanrule30_report.md) ·
+[order-replication](results/orderrev_report.md)
 
 ---
 
@@ -157,6 +158,21 @@ leg tests **"the mean of the component scores ranks the composites"**, not the
 fitted rule. Only the MAE leg touches the coefficients — and it is the leg that
 degrades out of sample.
 
+**The refit does generalise.** On 30 further pairs, disjoint from the ones it was
+fitted on ([report](results/orderrev_report.md)), the refit beats the frozen rule
+on exactly the leg that was failing:
+
+| rule | fitted on | MAE on fresh pairs |
+|---|---|---|
+| frozen `0.70 × mean + 1.16` | the 7 catchase families | 0.410 |
+| refit `0.62 × mean + 1.86` | the meanrule30 pairs | **0.309** |
+
+So the calibration drift was signal, not sample noise: the frozen coefficients
+were fitted on 7 hand-picked families and are genuinely mis-set for this pool.
+This was pre-registered as a comparison only, and it does not license quoting
+`0.62 / 1.86` as *the* rule — it was fitted on one sample and tested on one
+more, which is where `0.70 / 1.16` already stood when it started failing.
+
 ### 2.5 Injected directions boost recognisable tokens
 
 Qualitative, and the most immediately legible result. Injecting a glyph's
@@ -187,10 +203,81 @@ shows a direction is structured, not that the structure is meaning.
 
 ---
 
+### 2.6 The order effect runs against the stronger component (replicated)
+
+The one claim in this directory that has been measured four times, and the only
+one where a **pre-registered replication reversed a retraction**:
+
+| sample | n | positive | median | reading | naive p | dyadic-robust p |
+|---|---|---|---|---|---|---|
+| catchase v2 | 7 | 6/7 | — | ends on stronger scores **higher** — retracted, §3 | — | — |
+| meanrule v1 | 6 | 2/6 | — | the reverse | — | — |
+| meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower** | 0.016 | **0.066** |
+| **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED** (pre-registered) | 0.043 | **0.070** |
+| pooled | 60 | 17/60 | — | same direction | 0.0011 | **0.063** |
+
+Every naive figure in that column is **overstated** — pairs are dyads over a
+shared component pool, not independent trials. Quote the dyadic-robust column.
+
+`order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
+across all four samples. The replication used 30 pairs drawn by a fresh seed with
+**zero overlap** with the earlier 30, and its decision rule was fixed in
+[`PREREGISTRATION_order_reversal.md`](PREREGISTRATION_order_reversal.md) before
+the script existed.
+
+**Quote it with its margin.** At n = 30 the confirmatory result clears its own
+threshold by one pair: 10/30 would have given p = 0.099 and failed.
+
+**And the clustering correction reaches this test too.** Adversarial review
+objected that a pooled sign test treats pairs as independent Bernoulli trials
+when components recur across them. Three passes later the objection applies to
+**every sign test here, the pre-registered one included**. Each pair is a **dyad**
+over two components; two pairs sharing one covary — pooled, P(same sign | share a
+component) = **0.718** against **0.574** for disjoint pairs, ICC **+0.306**. The
+estimator is the dyadic-robust variance (Aronow–Samii–Assenova) with the residual
+null-imposed, the only candidate that holds its nominal size under **both** an independent and a clustered null
+([`scripts/pooled_independence.py`](scripts/pooled_independence.py) `--simulate`):
+
+| sample | count | naive binomial | design effect | dyadic-robust p |
+|---|---|---|---|---|
+| **primary — the pre-registered test** | 9/30 | 0.0428 | 1.47 | **0.070** |
+| prior (meanrule30) | 8/30 | 0.0161 | 1.93 | **0.066** |
+| pooled | 17/60 | 0.0011 | 3.27 | **0.063** |
+
+**No sample clears 0.05 under the appropriate test, and all three point the same
+way.** The pre-registered verdict stands as written — a test may not be swapped
+after seeing the result, in either direction — but **the pre-registered test was
+the wrong test**. Read the result as `9/30, dyadic-robust p = 0.07`: a direction
+reproduced across three samples, short of conventional significance.
+
+> **This paragraph has been wrong twice, in opposite directions.** v1 answered the
+> objection with a bootstrap statistic of my own construction and read `0.054` as
+> "just above 0.05". v2 retracted it for the wrong reason — calling a statistic
+> with null median ≈ 0.5 "not a p-value", which is exactly what a valid one-sided
+> p-value looks like — but **v2's conclusion was right**: re-judged against the
+> clustered null it should have faced, v1's statistic reads 0.054 where a
+> calibrated value is **0.013**, understating the evidence about fourfold. v2 then
+> replaced it with a **range**, `p ≈ 0.011–0.063`, spanning three estimators, two
+> mis-specified: a Rao–Scott multiplier of `m̄ − 1` assumes an observation sits in
+> one cluster when a dyad sits in two (the right figure is **5.20**), and the
+> mean-centred dyadic variance rejects **~10 %** at a nominal 5 % *under an
+> independent null*. The `0.01` endpoint came entirely from the broken multiplier.
+> Averaging a valid estimator with two broken ones is not even-handedness.
+
+What is established is the **direction**, on two pairs-disjoint samples under one
+protocol — not an effect size, and not anything about why.
+
+The honest shape of this claim's history is that the first reading was wrong in
+sign, the retraction that killed it was right to kill it, and the direction that
+survived is the *opposite* of the one originally announced. §3's entry stays
+exactly as written; nothing here rehabilitates 6/7.
+
 ## 3. What did not survive
 
 Seven claims were stated and then retracted. Three were caught by adversarial
-review, four by my own follow-up measurements.
+review, four by my own follow-up measurements. One of them — the order
+effect — later came back with the **opposite** sign and survived a
+pre-registered replication (§2.6); the original claim stays retracted.
 
 | claim | how it died |
 |---|---|
@@ -198,18 +285,21 @@ review, four by my own follow-up measurements.
 | "the layer profile splits the panel with no exceptions" | property of a 13-glyph panel with no intermediate cases; across 19 glyphs the mid ratio is a **continuum** (2.71 → 5.66, largest gap 0.73) |
 | "the direction follows the last component" | an artefact of comparing cos-to-*first* against cos-to-*last*: those labels swap with the order, so the column flipped when the geometry did not |
 | "the order effect scales with the component gap" | read off **two** families; Spearman **+0.04** at n = 7, **−0.94** at n = 6 |
-| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **Superseded at n = 30 — see below** |
+| "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **The sign it claimed is now refuted twice over: the opposite direction replicated at n = 30 + 30 (§2.6).** |
 | "joined and bare score the same (3.39 vs 3.39)" | a 2-dp display artefact; the values are 3.3933 and 3.3870 |
-| "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** |
+| "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** (note: `foodtype_v1_summary.json`'s `sign_stable`/`n_sign_stable` fields were written under the retracted convention and were never regenerated — the corrected count is derived in the report, not read from that field) |
 
 **One retraction was itself too agnostic.** At n = 30 the order effect is not
 absent — it runs the *opposite* way to the original claim: **8/30 pairs positive**
-where chance is 15 (binomial two-sided **p = 0.016**), median **−0.32**. Ending on
+where chance is 15 (naive binomial **p = 0.016**, dyadic-robust **0.066** — see
+§2.6), median **−0.32**. Ending on
 the *stronger* component scores **lower**. The 6/7 claim deserved retraction and
 the 8/13 pooled reading was the right call on the evidence then; with five times
-the units the effect reappears with the sign flipped. This is a new
-single-sample finding at exactly the evidential level the 6/7 claim once had, and
-it needs its own replication before it is more than that.
+the units the effect reappears with the sign flipped. It was a new
+single-sample finding at exactly the evidential level the 6/7 claim once had, so
+it was replicated before anything was built on it — **9/30 on 30 disjoint pairs,
+dyadic-robust p = 0.070; pooled 17/60 at p = 0.063** (§2.6). The direction is what stands; the
+6/7 claim stays retracted.
 
 A confound found late and disclosed rather than buried: **UTF-8 byte class**
 correlates with the prompt-level ranking (Spearman **−0.55**, and **−0.48**
@@ -259,9 +349,10 @@ means it engages remaining computation. Notably, the sibling OOC screen found
 causal push — separability and efficacy do not rank layers the same way.
 
 **Composition compresses.** The fitted rule has slope 0.70 < 1, so composites
-are pulled toward the middle. Residuals are suggestive and untested: the twin
-pair 🐈🐱 (two names for one concept) sits **+0.54 above** the line, 🍕🚗 (two
-strong unrelated concepts) **−0.83 below**. "Alike composes additively,
+are pulled toward the middle. A related but distinct quantity is suggestive and
+untested — *composite minus the mean of its components*, which is *not* the
+residual from the fitted line: the twin pair 🐈🐱 (two names for one concept)
+sits **+0.54** on it, 🍕🚗 (two strong unrelated concepts) **−0.83**. "Alike composes additively,
 strong-and-different interferes" is a hypothesis this data *generated*.
 
 ---
@@ -276,7 +367,8 @@ These cost the most and generalise furthest.
    generator only — including the mean rule that *passed* its pre-registered
    test. **Confirmed constructively at n = 30**: the *ordering* claim survives
    with a bootstrap CI of [+0.55, +0.91], and the order effect — which read 6/7 then
-   2/6 — resolves to 8/30 with the sign reversed. Small samples here did not
+   2/6 — resolves to 8/30 with the sign reversed, and **that reversal then
+   replicated at 9/30 on disjoint pairs** (§2.6). Small samples here did not
    merely add noise; they got the direction wrong.
 2. **A clean binary split is usually a panel property.** "No exceptions" held
    over 13 glyphs and dissolved at 19. Before claiming a dichotomy, add the
@@ -297,6 +389,30 @@ These cost the most and generalise furthest.
    enters as a denominator both orders share, so re-seeding rescales an order
    effect without moving its sign. Vary what actually carries sampling
    variability: the direction estimate and the readout.
+7. **Pre-register identifiers you have actually read, not ones you remember.**
+   The order-reversal pre-registration named its five frame-check components
+   `animals_1`, `food_4`, … — none of which exist; the real ids are
+   `animals_animals_slot_03` and so on. It was caught only because the run
+   crashed. A pre-registration is a machine-checkable object or it is
+   decoration: the fix was to make the runner parse those names out of the
+   committed file and abort on disagreement, which is what the numeric
+   constants already did and the identifiers did not.
+8. **A statistic you invent needs calibrating before you quote it — and
+   over-correcting an over-claim is not caution.** Told that a pooled p-value
+   assumed independence the design lacked, I answered with a bootstrap statistic
+   of my own construction, read `0.054` as "just above 0.05", and concluded the
+   evidence did not survive. That statistic is not a p-value: under an
+   clustered null it should have faced it reads 0.054 where a calibrated value is
+   **0.013**, understating the evidence about fourfold. The correct answer — a
+   dyadic-robust variance with a null-imposed residual, since the pairs are
+   dyads over components — is p = 0.063, and it applies to the **pre-registered
+   test** too (0.070). Then I corrected *that* wrongly as well, twice: once by
+   retracting a roughly-right number with a bad argument, once by averaging one
+   valid estimator with two mis-specified ones and reporting the range. Three
+   passes, each correcting in the direction of whichever criticism arrived last,
+   none of them simulating the estimator being installed. **Reach for the
+   estimator the data structure already has a name for, and simulate any test you
+   adopt under a null you understand before it reaches a conclusion.**
 
 ---
 
@@ -323,8 +439,31 @@ These cost the most and generalise furthest.
 - **Independent replication**: a second model, and panels chosen by someone
   other than the analyst.
 - ~~**More units per statistic**~~ — done: 30 pairs, see
-  [`results/meanrule30_report.md`](results/meanrule30_report.md). Next: the
-  calibration failure (slope 0.70 → 0.62 refit) needs its own study.
+  [`results/meanrule30_report.md`](results/meanrule30_report.md).
+- ~~**Replicate the 8/30 order-effect reversal**~~ — done, and it held: 9/30 on
+  disjoint pairs, pooled 17/60 — though under the appropriate dyadic-robust
+  test no sample reaches 0.05 (§2.6), see
+  [`results/orderrev_report.md`](results/orderrev_report.md). It cleared its
+  threshold by a single pair, so the next useful move is **more units again**
+  (n ≈ 100) to get an interval on the effect rather than a sign test — and then
+  a mechanism, since nothing here says *why* ending on the weaker component
+  scores higher.
+- **The calibration, properly**: the refit `0.62 / 1.86` beat the frozen
+  `0.70 / 1.16` out of sample (MAE 0.309 vs 0.410), which means the drift was
+  signal. But `0.62 / 1.86` has now had exactly one confirmatory sample — the
+  position `0.70 / 1.16` was in before it started failing. Fit on one pool,
+  test on a **different pool**, before quoting any coefficients.
+- **The component gap, pre-registered this time**: on the replication sample
+  Spearman(|component gap|, order effect) = **−0.66**. §3 retracted exactly this
+  claim because it read +0.04 at n = 7 and −0.94 at n = 6. One more post-hoc
+  sample is not evidence — it is the third reading of a statistic that has
+  already produced every answer. Fix a threshold in advance and draw pairs *for
+  this question* before it is allowed to count.
+- **Pooling needs a design that earns it**: every component sits in several
+  pairs (ICC +0.31), so every binomial here overstates its precision by a design
+  effect of 1.5–3.3. Either draw component-disjoint pairs — costing units, since
+  35 components cap a disjoint sample at 17 pairs — or report the dyadic-robust
+  figure as the headline rather than as a caveat.
 - **Token-position resolution**: extract the direction at each token position of
   a compound rather than only at the wrapper's `last_nonpad`, to locate where
   composition costs efficacy.
