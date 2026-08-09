@@ -386,7 +386,10 @@ PYTHONNOUSERSITE=1 python3 scripts/make_chart.py
 
 ```
 panel/     sweep_panel_v1.yaml                  — 50グリフ、matched + ladder 階層
-scripts/   sweep_emoji_intervention.py          — 50グリフのスイープ本体
+scripts/   nullcache.py                         — プロトコル鍵のヌルキャッシュ（共有）
+           sweep_emoji_intervention.py          — 50グリフのスイープ本体
+           order_stability.py                   — 順序効果の符号安定性
+           gen_order_report.py                  — results/order_report.md 生成
            analyze_sweep.py                     — ランキング・階層・相関
            deep_diagnose.py                     — 4フェーズ深掘り診断（13グリフ）
            analyze_deep.py                      — 深掘りランの解析
@@ -406,6 +409,7 @@ results/   report.md, deep_report.md, whyflat_report.md,
            whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json
            catchase_v{1,2}_*.json(l), meanrule_v1_*.json(l)
            *_meta.json
+           _nullcache/                          — gitignored: derived, stack-keyed
 
 コンソールログ（`*_console.log` / `analysis_*.log`）は各実行で生成されるが、
 リポジトリ全体の `*.log` gitignore 規則の対象なのでコミットしない。

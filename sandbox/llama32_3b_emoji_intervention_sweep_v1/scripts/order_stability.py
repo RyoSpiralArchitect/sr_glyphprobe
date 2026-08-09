@@ -210,6 +210,8 @@ def main() -> int:
                                    for L in LAYERS}}
     nc = NullCache(out, model_path=os.environ["SNAP"], alpha=A, n=args.nulls,
                    seed_formula="800000+100*L+s+7919*crc32(targetset/target)%1000",
+                   stack=NullCache.stack_fingerprint(cfg),
+                   metric_kwargs=MK,
                    extra={"layers": LAYERS, "runner": "order_stability_v2"})
     _cells = len(LAYERS) * sum(len(t) for t in TARGET_SETS.values())
     print(f"building nulls ({args.nulls} per layer x target, {_cells} cells; "
@@ -241,6 +243,7 @@ def main() -> int:
                     layer=L, target_name=f"{ts}/{n}", target_prompt=p,
                     build=_build)))
             print(f"  nulls: {ts}/{n} done", flush=True)
+            nc.save()
     nc.save()
 
     # ---- mid ratio per (glyph, wrapper set, target set) --------------------

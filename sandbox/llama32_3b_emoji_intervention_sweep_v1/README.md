@@ -408,7 +408,10 @@ PYTHONNOUSERSITE=1 python3 scripts/make_chart.py
 
 ```
 panel/     sweep_panel_v1.yaml                  — 50 glyphs, matched + ladder strata
-scripts/   sweep_emoji_intervention.py          — the 50-glyph sweep
+scripts/   nullcache.py                         — protocol-keyed null cache (shared)
+           sweep_emoji_intervention.py          — the 50-glyph sweep
+           order_stability.py                   — order-effect sign stability
+           gen_order_report.py                  — results/order_report.md
            analyze_sweep.py                     — ranking, strata, correlations
            deep_diagnose.py                     — 4-phase deep diagnostic (13 glyphs)
            analyze_deep.py                      — deep-run analysis
@@ -428,6 +431,7 @@ results/   report.md, deep_report.md, whyflat_report.md,
            whyflat_v1_phase{1,2}.jsonl, _hypotheses.json, _analysis.json
            catchase_v{1,2}_*.json(l), meanrule_v1_*.json(l)
            *_meta.json
+           _nullcache/                          — gitignored: derived, stack-keyed
 
 Console logs (`*_console.log`, `analysis_*.log`) are produced by every run but are
 covered by the repo-wide `*.log` gitignore rule, so they are not committed. Rerun
