@@ -1,6 +1,6 @@
 # Does the order-effect reversal replicate? (out of contract)
 
-The n = 30 run reported **8/30 pairs positive** (chance 15, binomial p = 0.016) — ending on the stronger component scores *lower*. It was the first sample in this series with enough units for the sign to mean anything, and it pointed opposite to an earlier 6/7 claim that has already been retracted. So it was tested on a fresh draw before anything was built on it.
+The n = 30 run reported **8/30 pairs positive** (chance 15, naive binomial p = 0.016 — dyadic-robust 0.066, see below) — ending on the stronger component scores *lower*. It was the first sample in this series with enough units for the sign to mean anything, and it pointed opposite to an earlier 6/7 claim that has already been retracted. So it was tested on a fresh draw before anything was built on it.
 
 Pre-registered in [`PREREGISTRATION_order_reversal.md`](../PREREGISTRATION_order_reversal.md), committed before this run's script existed. Claim stage `pre-causal-activation-screen`, `causal_claim_authorized: false`. No holdout bank.
 
@@ -117,7 +117,7 @@ This is **not** a revival of that claim. It is one more sample of a quantity tha
 
 ## What adversarial review changed
 
-Two review passes. Neither moved a measured value; between them they changed what several numbers were allowed to claim, and caught one analysis that was wrong in each direction in turn.
+Three review passes. None moved a measured value; between them they changed what several numbers were allowed to claim, and caught one analysis that was wrong in each direction in turn.
 
 **Pass 1 — eight findings.**
 

@@ -210,13 +210,20 @@ which is stated in the report as a determinism check rather than as a new result
 
 ## Amendment 3 — the clustering correction was itself wrong (2026-08-09)
 
+> **Superseded by Amendment 4.** Two claims below are wrong and are corrected
+> there: the p-range `0.011-0.063` (two of its three estimators are
+> mis-specified), and the reason given for withdrawing the component-disjoint
+> analysis (it was invalid because a median of correlated within-dataset p-values
+> is not a p-value, not because it was identical to its control). Kept unedited
+> as an append-only record.
+
 A second adversarial review found that Amendment 2's headline caveat over-corrected
 the very error it was fixing, and it is retracted here.
 
 The caveat led with a bootstrap statistic `P(fraction >= 0.5) = 0.054`, read it as
 "just above 0.05", and concluded that the pooled p-value "does not survive"
 clustering. **That statistic is not a p-value.** Simulated under an independent
-null it has median 0.51 and did not fall below ~0.06 in 200 draws, so the observed
+null it has median 0.51 and did not fall below ~0.06 in 150 draws, so the observed
 0.054 sat below its entire null distribution — strong evidence read as weak. Its
 weights were also `cnt[A] * cnt[B]` where the code comment claimed an indicator,
 inflating the variance past any standard estimator.

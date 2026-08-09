@@ -57,7 +57,8 @@ n_retracted = sum(1 for ln in _f3.split("\n")
                   and not set(ln) <= set("| -"))
 
 w("# Does the order-effect reversal replicate? (out of contract)\n")
-w("The n = 30 run reported **8/30 pairs positive** (chance 15, binomial p = 0.016) — "
+w("The n = 30 run reported **8/30 pairs positive** (chance 15, naive binomial "
+  "p = 0.016 — dyadic-robust 0.066, see below) — "
   "ending on the stronger component scores *lower*. It was the first sample in this "
   "series with enough units for the sign to mean anything, and it pointed opposite to "
   "an earlier 6/7 claim that has already been retracted. So it was tested on a fresh "
@@ -266,7 +267,7 @@ w("This is **not** a revival of that claim. It is one more sample of a quantity 
 
 w("## What adversarial review changed\n")
 exc = s["exclusion"]     # KeyError beats a silently-defaulted audit number
-w("Two review passes. Neither moved a measured value; between them they changed what "
+w("Three review passes. None moved a measured value; between them they changed what "
   "several numbers were allowed to claim, and caught one analysis that was wrong in "
   "each direction in turn.\n")
 w("**Pass 1 — eight findings.**\n")

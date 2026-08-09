@@ -208,13 +208,16 @@ shows a direction is structured, not that the structure is meaning.
 The one claim in this directory that has been measured four times, and the only
 one where a **pre-registered replication reversed a retraction**:
 
-| sample | n | positive | median | reading |
-|---|---|---|---|---|
-| catchase v2 | 7 | 6/7 | — | ends on stronger scores **higher** — retracted, §3 |
-| meanrule v1 | 6 | 2/6 | — | the reverse |
-| meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower**, p = 0.016 |
-| **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED**, p = 0.043 |
-| pooled | 60 | 17/60 | — | naive p = 0.0011 is **wrong**; dyadic-robust p = 0.063, see below |
+| sample | n | positive | median | reading | naive p | dyadic-robust p |
+|---|---|---|---|---|---|---|
+| catchase v2 | 7 | 6/7 | — | ends on stronger scores **higher** — retracted, §3 | — | — |
+| meanrule v1 | 6 | 2/6 | — | the reverse | — | — |
+| meanrule30 | 30 | 8/30 | −0.32 | ends on stronger scores **lower** | 0.016 | **0.066** |
+| **orderrev** | **30** | **9/30** | **−0.26** | **REPLICATED** (pre-registered) | 0.043 | **0.070** |
+| pooled | 60 | 17/60 | — | same direction | 0.0011 | **0.063** |
+
+Every naive figure in that column is **overstated** — pairs are dyads over a
+shared component pool, not independent trials. Quote the dyadic-robust column.
 
 `order_effect = mid(weak-then-strong) − mid(strong-then-weak)`, one convention
 across all four samples. The replication used 30 pairs drawn by a fresh seed with
@@ -232,7 +235,7 @@ when components recur across them. Three passes later the objection applies to
 over two components; two pairs sharing one covary — pooled, P(same sign | share a
 component) = **0.718** against **0.574** for disjoint pairs, ICC **+0.306**. The
 estimator is the dyadic-robust variance (Aronow–Samii–Assenova) with the residual
-null-imposed, the only candidate that holds its nominal size in simulation
+null-imposed, the only candidate that holds its nominal size under **both** an independent and a clustered null
 ([`scripts/pooled_independence.py`](scripts/pooled_independence.py) `--simulate`):
 
 | sample | count | naive binomial | design effect | dyadic-robust p |
@@ -248,17 +251,18 @@ the wrong test**. Read the result as `9/30, dyadic-robust p = 0.07`: a direction
 reproduced across three samples, short of conventional significance.
 
 > **This paragraph has been wrong twice, in opposite directions.** v1 answered the
-> objection with a bootstrap statistic of my own construction, read `0.054` as
-> "just above 0.05", and concluded the evidence did not survive. v2 retracted that
-> using a bad argument — it called a statistic with null median ≈ 0.5 "not a
-> p-value", which is exactly what a valid one-sided p-value looks like — and
-> replaced it with a **range**, `p ≈ 0.011–0.063`, spanning three estimators. Two
-> were mis-specified: a Rao–Scott multiplier of `m̄ − 1` assumes an observation
-> sits in one cluster when a dyad sits in two (the right figure is **5.20**, not
-> 2.43), and the mean-centred dyadic variance rejects **~10 %** at a nominal 5 %
-> *under an independent null*. The `0.01` endpoint came entirely from the broken
-> multiplier. Averaging a valid estimator with two broken ones is not
-> even-handedness.
+> objection with a bootstrap statistic of my own construction and read `0.054` as
+> "just above 0.05". v2 retracted it for the wrong reason — calling a statistic
+> with null median ≈ 0.5 "not a p-value", which is exactly what a valid one-sided
+> p-value looks like — but **v2's conclusion was right**: re-judged against the
+> clustered null it should have faced, v1's statistic reads 0.054 where a
+> calibrated value is **0.013**, understating the evidence about fourfold. v2 then
+> replaced it with a **range**, `p ≈ 0.011–0.063`, spanning three estimators, two
+> mis-specified: a Rao–Scott multiplier of `m̄ − 1` assumes an observation sits in
+> one cluster when a dyad sits in two (the right figure is **5.20**), and the
+> mean-centred dyadic variance rejects **~10 %** at a nominal 5 % *under an
+> independent null*. The `0.01` endpoint came entirely from the broken multiplier.
+> Averaging a valid estimator with two broken ones is not even-handedness.
 
 What is established is the **direction**, on two pairs-disjoint samples under one
 protocol — not an effect size, and not anything about why.
@@ -283,11 +287,12 @@ pre-registered replication (§2.6); the original claim stays retracted.
 | "the order effect scales with the component gap" | read off **two** families; Spearman **+0.04** at n = 7, **−0.94** at n = 6 |
 | "the order effect's sign is consistent (6/7)" | the confirmatory set was **2/6** the other way; 8/13 pooled against 6.5 expected by chance. **The sign it claimed is now refuted twice over: the opposite direction replicated at n = 30 + 30 (§2.6).** |
 | "joined and bare score the same (3.39 vs 3.39)" | a 2-dp display artefact; the values are 3.3933 and 3.3870 |
-| "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** |
+| "the non-food controls flip — indistinguishable from the foods" | a per-condition strong/weak convention had mirrored three cells; under a fixed convention **both controls are stable** (note: `foodtype_v1_summary.json`'s `sign_stable`/`n_sign_stable` fields were written under the retracted convention and were never regenerated — the corrected count is derived in the report, not read from that field) |
 
 **One retraction was itself too agnostic.** At n = 30 the order effect is not
 absent — it runs the *opposite* way to the original claim: **8/30 pairs positive**
-where chance is 15 (binomial two-sided **p = 0.016**), median **−0.32**. Ending on
+where chance is 15 (naive binomial **p = 0.016**, dyadic-robust **0.066** — see
+§2.6), median **−0.32**. Ending on
 the *stronger* component scores **lower**. The 6/7 claim deserved retraction and
 the 8/13 pooled reading was the right call on the evidence then; with five times
 the units the effect reappears with the sign flipped. It was a new
@@ -344,9 +349,10 @@ means it engages remaining computation. Notably, the sibling OOC screen found
 causal push — separability and efficacy do not rank layers the same way.
 
 **Composition compresses.** The fitted rule has slope 0.70 < 1, so composites
-are pulled toward the middle. Residuals are suggestive and untested: the twin
-pair 🐈🐱 (two names for one concept) sits **+0.54 above** the line, 🍕🚗 (two
-strong unrelated concepts) **−0.83 below**. "Alike composes additively,
+are pulled toward the middle. A related but distinct quantity is suggestive and
+untested — *composite minus the mean of its components*, which is *not* the
+residual from the fitted line: the twin pair 🐈🐱 (two names for one concept)
+sits **+0.54** on it, 🍕🚗 (two strong unrelated concepts) **−0.83**. "Alike composes additively,
 strong-and-different interferes" is a hypothesis this data *generated*.
 
 ---
@@ -396,8 +402,8 @@ These cost the most and generalise furthest.
    assumed independence the design lacked, I answered with a bootstrap statistic
    of my own construction, read `0.054` as "just above 0.05", and concluded the
    evidence did not survive. That statistic is not a p-value: under an
-   independent null it has median 0.51 and never fell below ~0.06 in 200 draws,
-   so `0.054` sat *below its entire null distribution*. The correct answer — a
+   clustered null it should have faced it reads 0.054 where a calibrated value is
+   **0.013**, understating the evidence about fourfold. The correct answer — a
    dyadic-robust variance with a null-imposed residual, since the pairs are
    dyads over components — is p = 0.063, and it applies to the **pre-registered
    test** too (0.070). Then I corrected *that* wrongly as well, twice: once by
