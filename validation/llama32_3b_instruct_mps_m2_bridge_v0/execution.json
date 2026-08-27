@@ -1,0 +1,73 @@
+{
+  "analysis_authorized": true,
+  "attempt": {
+    "path": "validation/llama32_3b_instruct_mps_m2_bridge_v0/attempt_started.json",
+    "sha256": "7bb907331db6f7ffe53f26e798995467f14bae6d872c82fd5faf99427b831fd4"
+  },
+  "completed_process_count": 4,
+  "expected_process_count": 4,
+  "finished_at": "2026-08-27T17:11:43.333315+00:00",
+  "git_authority": {
+    "audited_commit": "ea78186684ff78570d10d913a9df3475f1fb6dc0",
+    "branch": "main",
+    "execution_commit": "28030dc84cb3cb3707220a0ee75aede5b49e56bd",
+    "origin_main_commit": "28030dc84cb3cb3707220a0ee75aede5b49e56bd"
+  },
+  "model_artifact_manifest_sha256": "c698f962b8587e2c38dcb86e344928aa5db3c7386e160230d493fcaf9166ecf6",
+  "model_path_recorded": false,
+  "process_isolation": "four_strictly_sequential_python_processes",
+  "processes": [
+    {
+      "config": "configs/llama32_3b_instruct_mps_m2_primary_v0.yaml",
+      "config_sha256": "14f856b254628996b42141ea18a22a13a060d68a3023244c0398bf56fbd21c8c",
+      "finished_at": "2026-08-27T16:44:37.171647+00:00",
+      "index": 0,
+      "log_bytes": 4644,
+      "log_path": "runs/.llama32-3b-instruct-mps-m2-bridge-v0-logs/00-llama32_3b_instruct_mps_m2_primary_v0.log",
+      "log_sha256": "0a2788661e3bfcdbc56ccb204fb269b46a6126edf3ddc1609e82f39d878f4d36",
+      "return_code": 0,
+      "started_at": "2026-08-27T16:35:24.081478+00:00"
+    },
+    {
+      "config": "configs/llama32_3b_instruct_mps_m2_null_a_v0.yaml",
+      "config_sha256": "2498f9fb7767bb6e4c4f3a71264c56087ccd1a47c74c504d11945a36043cf09b",
+      "finished_at": "2026-08-27T16:54:24.860561+00:00",
+      "index": 1,
+      "log_bytes": 4642,
+      "log_path": "runs/.llama32-3b-instruct-mps-m2-bridge-v0-logs/01-llama32_3b_instruct_mps_m2_null_a_v0.log",
+      "log_sha256": "580b1a7c8f4911a9d87c334fac19cc74f93ad781075b0f69ee735081a6bd7c15",
+      "return_code": 0,
+      "started_at": "2026-08-27T16:44:37.172839+00:00"
+    },
+    {
+      "config": "configs/llama32_3b_instruct_mps_m2_null_b_v0.yaml",
+      "config_sha256": "885a6da6086a84d4d4809883d99d013ec1039d34e3574c36f455ca4b6c51ce47",
+      "finished_at": "2026-08-27T17:03:04.560577+00:00",
+      "index": 2,
+      "log_bytes": 4639,
+      "log_path": "runs/.llama32-3b-instruct-mps-m2-bridge-v0-logs/02-llama32_3b_instruct_mps_m2_null_b_v0.log",
+      "log_sha256": "f494d1182e3a2e591c3d7ba35ce5830bbf9d7bd77848b1e75511678f1d6c09a0",
+      "return_code": 0,
+      "started_at": "2026-08-27T16:54:24.861096+00:00"
+    },
+    {
+      "config": "configs/llama32_3b_instruct_mps_m2_null_c_v0.yaml",
+      "config_sha256": "8483de142eddfde7b272c2443e6b67c56c6472b2f1b37d7ebf509eb3c53a3354",
+      "finished_at": "2026-08-27T17:11:43.332912+00:00",
+      "index": 3,
+      "log_bytes": 4642,
+      "log_path": "runs/.llama32-3b-instruct-mps-m2-bridge-v0-logs/03-llama32_3b_instruct_mps_m2_null_c_v0.log",
+      "log_sha256": "2abee4a3190c8823aced5e554b570548886b368ac2930f7d306846cad173b38f",
+      "return_code": 0,
+      "started_at": "2026-08-27T17:03:04.561341+00:00"
+    }
+  ],
+  "protocol_id": "glyphprobe-llama32-3b-instruct-mps-m2-bridge-v0",
+  "resume_policy": "forbidden_new_versioned_freeze_required",
+  "schema_version": 1,
+  "scientific_outcomes_inspected_by_launcher": false,
+  "simultaneous_full_model_residency": false,
+  "speed_claim_authorized": false,
+  "started_at": "2026-08-27T16:35:24.080367+00:00",
+  "status": "execution_complete_analysis_not_run"
+}

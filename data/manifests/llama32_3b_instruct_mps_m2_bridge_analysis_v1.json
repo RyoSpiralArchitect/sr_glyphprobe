@@ -1,0 +1,158 @@
+{
+  "analysis_id": "glyphprobe-llama32-3b-instruct-mps-m2-bridge-analysis-v1",
+  "claim_boundary": {
+    "exploratory": true,
+    "independent_confirmation": false,
+    "model_forward_count_at_freeze": 0,
+    "protected_p2_or_c1_accessed": false,
+    "scale_curve": false
+  },
+  "correction": {
+    "only_semantic_change": "validate normalized depth specs [0.2, 0.4] in resolved_config; continue validating resolved layers [5, 11] from run summary",
+    "scientific_outcomes_seen_before_v1_freeze": false,
+    "v0_error": "Frozen config differs for primary:capture.layers",
+    "v0_failure_stage": "first_panel_resolved_config_validation",
+    "v0_status": "failed_closed_before_scientific_outcome_read"
+  },
+  "execution_receipt": {
+    "analysis_authorized": true,
+    "completed_process_count": 4,
+    "path": "validation/llama32_3b_instruct_mps_m2_bridge_v0/execution.json",
+    "sha256": "1d872ae1474422f743f1bf92433fcefb159cc512355a6bc4ddd99f65656638e2"
+  },
+  "forbidden_paths_absent": [
+    "data/targets/c1_causal_holdout_targets_v1.jsonl",
+    "data/targets/c1_confirmatory_targets_v1.jsonl",
+    "data/targets/p2_confirmatory_targets_v1.jsonl"
+  ],
+  "schema_version": 1,
+  "static_file_count": 25,
+  "static_files": {
+    "AGENTS.md": {
+      "bytes": 5512,
+      "sha256": "66359f08995b00e907ebf3613699e604a915107d51ab84b00432dc0558d5b17c"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_a_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "2498f9fb7767bb6e4c4f3a71264c56087ccd1a47c74c504d11945a36043cf09b"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_b_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "885a6da6086a84d4d4809883d99d013ec1039d34e3574c36f455ca4b6c51ce47"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_c_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "8483de142eddfde7b272c2443e6b67c56c6472b2f1b37d7ebf509eb3c53a3354"
+    },
+    "configs/llama32_3b_instruct_mps_m2_primary_v0.yaml": {
+      "bytes": 1594,
+      "sha256": "14f856b254628996b42141ea18a22a13a060d68a3023244c0398bf56fbd21c8c"
+    },
+    "data/emoji_panels/colored_shapes.yaml": {
+      "bytes": 1113,
+      "sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_a_v2.yaml": {
+      "bytes": 2602,
+      "sha256": "2bcafdc1ec855606d84c2f606b66b60bb5ca3c8a8631b9b532b6054b1a4ccc03"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_b_v2.yaml": {
+      "bytes": 2772,
+      "sha256": "5764afad3e07ad2f18c1012ccbe2ff90f7d37c822513793385dc5d579a1b421f"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_c_v2.yaml": {
+      "bytes": 2772,
+      "sha256": "5a771c9fecd8453a125b43e50340a4dc6d0d1814308f6237fbb6a14fa76a8a82"
+    },
+    "data/manifests/llama32_3b_instruct_mps_m2_bridge_v0.json": {
+      "bytes": 14534,
+      "sha256": "3521a2549923d2900c8ab2b7fbcbc797cd6079921d64b9c9f52c1f93c5d89e4f"
+    },
+    "data/targets/prestage_targets.jsonl": {
+      "bytes": 4072,
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    "data/wrappers/source_wrappers.jsonl": {
+      "bytes": 1043,
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    "docs/LLAMA32_3B_INSTRUCT_MPS_M2_BRIDGE_ANALYSIS_CORRECTION_V1.ja.md": {
+      "bytes": 2343,
+      "sha256": "e06db3855db6f706f5d3e4391d188e51c38c83343d244a5a298306f9eca1c7df"
+    },
+    "docs/LLAMA32_3B_INSTRUCT_MPS_M2_BRIDGE_ANALYSIS_CORRECTION_V1.md": {
+      "bytes": 2203,
+      "sha256": "168286d2f44b905d620eee51de2f2eb681c327c0ffbd029c1d79ca1a2177cfcf"
+    },
+    "pyproject.toml": {
+      "bytes": 2026,
+      "sha256": "e1a203c941c97e2130df9803f56823af78be09d70d168a375f33db5f2445b602"
+    },
+    "scripts/analyze_llama32_3b_instruct_mps_m2_bridge_v0.py": {
+      "bytes": 35607,
+      "sha256": "9f20b7daacf7a8dfe68d552f176a6c2a98178e0f51f422176698ec8ccd433341"
+    },
+    "scripts/analyze_llama32_3b_instruct_mps_m2_bridge_v1.py": {
+      "bytes": 39667,
+      "sha256": "cafa42c39a925d9943139730b0d94755738ebcf72cd021e75f5e2756c9b0978b"
+    },
+    "scripts/analyze_m2_confirmatory.py": {
+      "bytes": 52769,
+      "sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86"
+    },
+    "scripts/analyze_m2_dependence_sensitivity_v1.py": {
+      "bytes": 29383,
+      "sha256": "3714b25f7cc74b03613371a29d38306002a038aa9735abf5b0113570f5eabc03"
+    },
+    "scripts/build_llama32_3b_instruct_mps_m2_bridge_analysis_v1_manifest.py": {
+      "bytes": 7155,
+      "sha256": "a6d08f2e7a0ca25196c2b7bdda5e37c79cb476f807ff67379ba99c3ce1d4c286"
+    },
+    "tests/test_llama32_3b_instruct_mps_m2_bridge_analysis_v1.py": {
+      "bytes": 4035,
+      "sha256": "7c00b450d6d38564b0d763ae7a8c92f8a3e6f253fd0f01ee21e68d3231649e0d"
+    },
+    "validation/llama32_3b_instruct_mps_m2_bridge_v0/analysis_v0_failure.json": {
+      "bytes": 1937,
+      "sha256": "19bf48f44f7e79bbf54381fa6cfcaa82541a314d88521e6dedff511be45d473e"
+    },
+    "validation/llama32_3b_instruct_mps_m2_bridge_v0/attempt_started.json": {
+      "bytes": 3266,
+      "sha256": "7bb907331db6f7ffe53f26e798995467f14bae6d872c82fd5faf99427b831fd4"
+    },
+    "validation/llama32_3b_instruct_mps_m2_bridge_v0/execution.json": {
+      "bytes": 3416,
+      "sha256": "1d872ae1474422f743f1bf92433fcefb159cc512355a6bc4ddd99f65656638e2"
+    },
+    "validation/llama32_3b_instruct_mps_m2_bridge_v0/preflight.json": {
+      "bytes": 21961,
+      "sha256": "88329319eed1f68229f773c4ef76cc5ae72c241d9857c8f1c5937ae30fc9ea14"
+    }
+  },
+  "static_files_manifest_sha256": "6e68fd406d0541360e88d45e3bbf4f5e2eb189de86a550a8680f34664c7b6c97",
+  "status": "outcome_blind_analysis_correction_v1_frozen",
+  "unchanged_estimand": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260828,
+    "criterion": "both layer-5 rebuilt-prototype 95% lower bounds strictly exceed delta",
+    "delta": 0.06,
+    "direction_seeds": [
+      101,
+      211,
+      307
+    ],
+    "ensemble_endpoint": "primary minus targetwise median of null A/B/C",
+    "layers": [
+      5,
+      11
+    ],
+    "mandatory_sensitivity": "primary minus fully disjoint null A",
+    "non_rescuing_layer": 11,
+    "normalized_depth_specs": [
+      0.2,
+      0.4
+    ],
+    "primary_layer": 5,
+    "strength": 0.05
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-llama32-3b-instruct-mps-m2-bridge-v0",
+  "status": "failed_closed_before_scientific_outcome_read",
+  "recorded_at": "2026-08-27T17:15:26Z",
+  "attempted_analyzer": {
+    "path": "scripts/analyze_llama32_3b_instruct_mps_m2_bridge_v0.py",
+    "sha256": "9f20b7daacf7a8dfe68d552f176a6c2a98178e0f51f422176698ec8ccd433341"
+  },
+  "error": {
+    "message": "Frozen config differs for primary:capture.layers",
+    "stage": "first_panel_resolved_config_validation",
+    "analysis_output_directory_created": false
+  },
+  "representation_mismatch": {
+    "observed_resolved_config_capture_layers": [0.2, 0.4],
+    "incorrect_v0_validator_expectation": [5, 11],
+    "correct_contract": "resolved_config preserves normalized depth specs; summary.resolved_layers records [5, 11]"
+  },
+  "files_reached_before_failure": {
+    "non_outcome_authority_inputs": [
+      "data/targets/prestage_targets.jsonl",
+      "data/wrappers/source_wrappers.jsonl",
+      "data/emoji_panels/colored_shapes.yaml",
+      "data/emoji_panels/llama32_m2_matched_null_a_v2.yaml",
+      "data/emoji_panels/llama32_m2_matched_null_b_v2.yaml",
+      "data/emoji_panels/llama32_m2_matched_null_c_v2.yaml"
+    ],
+    "run_metadata": ["primary/resolved_config.yaml"],
+    "run_receipt_read": false,
+    "run_summary_read": false,
+    "intervention_ledger_read": false,
+    "scientific_outcome_read": false
+  },
+  "execution": {
+    "receipt_sha256": "1d872ae1474422f743f1bf92433fcefb159cc512355a6bc4ddd99f65656638e2",
+    "status": "execution_complete_analysis_not_run",
+    "completed_process_count": 4,
+    "valid_for_outcome_blind_analysis_correction": true
+  },
+  "claim_boundary": {
+    "model_forward_count_by_failed_analyzer": 0,
+    "protected_p2_or_c1_accessed": false,
+    "scientific_decision_assigned": false,
+    "rerun_of_analysis_v0_authorized": false,
+    "new_versioned_analysis_freeze_required": true
+  }
+}

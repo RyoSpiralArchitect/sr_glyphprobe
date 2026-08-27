@@ -1,0 +1,88 @@
+{
+  "config_order": [
+    "configs/llama32_3b_instruct_mps_m2_primary_v0.yaml",
+    "configs/llama32_3b_instruct_mps_m2_null_a_v0.yaml",
+    "configs/llama32_3b_instruct_mps_m2_null_b_v0.yaml",
+    "configs/llama32_3b_instruct_mps_m2_null_c_v0.yaml"
+  ],
+  "git_authority": {
+    "audited_commit": "ea78186684ff78570d10d913a9df3475f1fb6dc0",
+    "branch": "main",
+    "execution_commit": "28030dc84cb3cb3707220a0ee75aede5b49e56bd",
+    "origin_main_commit": "28030dc84cb3cb3707220a0ee75aede5b49e56bd"
+  },
+  "model": {
+    "alias_created_by_launcher": true,
+    "artifact": {
+      "file_count": 8,
+      "files": {
+        "config.json": {
+          "bytes": 878,
+          "sha256": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a"
+        },
+        "generation.json": {
+          "bytes": 189,
+          "sha256": "88effbb63300dbbc7390143fbbdd9d9fa50587b37e8bfd16c8c90d4970a74a36"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 4965799096,
+          "sha256": "13cbd6d16e927a0c5bad54102514e6e18b4a47b3a6eb911e39d678d328d19f55"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 1459729952,
+          "sha256": "7b770216613ac5c34d7c54bdff1fa616bc4e338a9d0b20af6303e48c295ee23c"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 20919,
+          "sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+        },
+        "special_tokens_map.json": {
+          "bytes": 296,
+          "sha256": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec"
+        },
+        "tokenizer.json": {
+          "bytes": 9085657,
+          "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 54528,
+          "sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+        }
+      },
+      "manifest_sha256": "c698f962b8587e2c38dcb86e344928aa5db3c7386e160230d493fcaf9166ecf6",
+      "total_bytes": 6434691515
+    },
+    "model_path_recorded": false,
+    "runtime_alias": "/private/tmp/glyphprobe-llama32-3b-instruct-v0"
+  },
+  "model_process_count": 0,
+  "operational_context": {
+    "concurrent_chatgpt_gui_allowed": true,
+    "load_average_at_start": [
+      3.55322265625,
+      2.97314453125,
+      2.958984375
+    ],
+    "speed_claim_authorized": false
+  },
+  "preflight": {
+    "path": "validation/llama32_3b_instruct_mps_m2_bridge_v0/preflight.json",
+    "sha256": "88329319eed1f68229f773c4ef76cc5ae72c241d9857c8f1c5937ae30fc9ea14"
+  },
+  "protocol_id": "glyphprobe-llama32-3b-instruct-mps-m2-bridge-v0",
+  "resume_policy": "forbidden_new_versioned_freeze_required",
+  "run_names": [
+    "llama32-3b-instruct-mps-m2-primary-v0",
+    "llama32-3b-instruct-mps-m2-null-a-v0",
+    "llama32-3b-instruct-mps-m2-null-b-v0",
+    "llama32-3b-instruct-mps-m2-null-c-v0"
+  ],
+  "schema_version": 1,
+  "scientific_outcomes_inspected_by_launcher": false,
+  "started_at": "2026-08-27T16:35:24.080367+00:00",
+  "static_manifest": {
+    "path": "data/manifests/llama32_3b_instruct_mps_m2_bridge_v0.json",
+    "sha256": "3521a2549923d2900c8ab2b7fbcbc797cd6079921d64b9c9f52c1f93c5d89e4f"
+  },
+  "status": "attempt_started_no_model_process_launched"
+}
