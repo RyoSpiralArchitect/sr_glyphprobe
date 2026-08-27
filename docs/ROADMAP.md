@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -369,6 +369,36 @@ Exit condition: met. A prospectively frozen carrier-distance decay assay is a
 useful cheap next falsification before intervention, but it must remain a side
 track and cannot replace the tokenization-matched confirmatory controls or
 close a Phase I gate.
+
+### Observational side track T5 — Carrier-distance profile
+
+Status: publicly frozen before scientific model forwards; runs pending.
+
+- keep the complete input and current carrier-token identity fixed while moving
+  the readout to distances 1, 2, 4, and 8 after each glyph;
+- use two exact eight-token carriers, repeated `" a"` and repeated `" |"`, and
+  reject any model cell whose tokenizer does not preserve either repeated-token
+  contract exactly;
+- run five fixed depth fractions in Gemma 2 2B 4-bit, Llama 3.2 3B BF16, and
+  OLMo 3 7B BF16 roles, with 400 forward calls per model and no intervention,
+  generation, or protected-target access;
+- require both a distance-1 recurrence component and a prespecified
+  log2-distance attenuation component through one intersection-union test per
+  model; and
+- use the larger component p-value as the model raw p-value, then Holm-correct
+  across the three model roles with 19,999 synchronized within-family
+  permutations per model.
+
+The design distinguishes recurrence with net attenuation across the fixed
+profile from persistence without the prespecified attenuation contrast. It
+does not establish monotonic decay, disappearance by distance 8, semantic
+content, mechanism, causality, tokenizer independence, or direct cross-model
+magnitude equivalence. Llama's earlier Stage-A parity failure remains in force;
+this MLX cell is an observational within-artifact result only.
+
+Exit condition: publish all three sealed model receipts and the joint outcome
+registry from the [frozen protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md), keeping
+T5 outside the Phase I gate and treating T4 only as a descriptive reference.
 
 ### Milestone 3 — Targeted causal localization
 

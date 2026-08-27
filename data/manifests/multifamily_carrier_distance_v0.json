@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-carrier-distance-v0",
+  "experiment_role": "prospective_exploratory_observational_carrier_distance_attenuation",
+  "freeze": {
+    "status": "frozen_by_first_public_commit_containing_this_manifest",
+    "prepared_before_scientific_model_forward": true,
+    "engineering_capability_and_tokenizer_probes_excluded_from_scientific_observations": true,
+    "revision_policy": "Never overwrite v0 after a scientific run. Any model, artifact, panel, carrier, distance, layer, endpoint, randomization, multiplicity, runtime, analysis, or outcome-registry change requires a new protocol version."
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at distances 1, 2, 4, and 8 inside two exact repeated-token carriers in three predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, direct cross-model magnitude, monotonic-decay, disappearance, or Phase I paper-gate claim is authorized.",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+  },
+  "model_artifacts": {
+    "gemma2_2b_4bit": {
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "file_count": 7,
+      "total_bytes": 1492849725,
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3"
+    },
+    "llama32_3b_bf16": {
+      "canonical_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "file_count": 9,
+      "total_bytes": 6434705789,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4"
+    },
+    "olmo3_7b_bf16": {
+      "canonical_model_id": "local/olmo3-1025-7b",
+      "file_count": 30,
+      "total_bytes": 14605885551,
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba"
+    }
+  },
+  "frozen_assets": {
+    "artifacts/multifamily_common_suffix_carryover_v0/PUBLIC_MANIFEST.json": "75ff440fc8a2b56c3f8d5d4bcc29cabb471953ac1fb376a06745c16efcaef55d",
+    "artifacts/multifamily_common_suffix_carryover_v0/analysis/analysis_receipt.json": "ec925636d384cf65837cc0ba43924e4bcee22ac0820251bd06876e1bc8c8d43d",
+    "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+    "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+    "configs/multifamily_carrier_distance_v0.yaml": "9906b5ba878f4e5039f68c13bfc2cf18ae3f1197a279f0debddedb08a202ff82",
+    "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+    "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+    "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+    "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+    "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+    "docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md": "43dfaa2446a9faff39c2f0f0a38ac4575f432ea00e47361915db09ac18017564",
+    "docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md": "062afef1f0951bd3175290cddd639223fb2d9c3f224092e6870f080d828bdad0",
+    "scripts/multifamily_carrier_distance_v0.py": "cfe40b74885d7f058508c3f7056482b2d63f2fc92ad707f741c53e83614df8d4",
+    "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+    "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+    "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+    "tests/test_multifamily_carrier_distance_v0.py": "f4e9a13e51b2de6653658ed05a71db3b66c7722ea60717f1957355c825464b84",
+    "validation/multifamily_carrier_distance_v0/engineering_preflight.json": "e5732e5ec13f67801566e21be6b58713a57b37eecb8170893f7c0cfda7dbb929"
+  },
+  "frozen_t4_reference": {
+    "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+    "outcome_pattern": "olmo_only_common_suffix_carryover",
+    "analysis_receipt_sha256": "ec925636d384cf65837cc0ba43924e4bcee22ac0820251bd06876e1bc8c8d43d",
+    "public_manifest_sha256": "75ff440fc8a2b56c3f8d5d4bcc29cabb471953ac1fb376a06745c16efcaef55d",
+    "role": "design_motivation_and_descriptive_reference_only",
+    "inferential_pooling": false
+  },
+  "protected_inputs": {
+    "must_not_be_opened": [
+      "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    ]
+  },
+  "static_counts": {
+    "model_cells": 3,
+    "panel_items": 50,
+    "families": 5,
+    "slots": 10,
+    "carriers": 2,
+    "distances": 4,
+    "fixed_layers_per_model": 5,
+    "fixed_carrier_distance_depth_cells_per_model": 40,
+    "model_forward_calls_per_model": 400,
+    "model_forward_calls_total": 1200,
+    "activation_vectors_per_model": 2000,
+    "activation_vectors_total": 6000,
+    "primary_model_level_intersection_union_tests": 3,
+    "primary_component_tests_per_model": 2,
+    "randomization_draws_per_model": 19999,
+    "randomization_denominator": 20000,
+    "intervention_calls": 0,
+    "generation_calls": 0,
+    "furnace_compute_calls": 0
+  }
+}

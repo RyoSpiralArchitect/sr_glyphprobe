@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-carrier-distance-v0",
+  "status": "pass",
+  "role": "pre_outcome_tokenizer_and_engineering_feasibility",
+  "prepared_before_scientific_model_forward": true,
+  "scientific_observation_count": 0,
+  "model_forward_calls": 0,
+  "intervention_calls": 0,
+  "generation_calls": 0,
+  "protected_target_files_opened": 0,
+  "panel": {
+    "source_protocol": "glyphprobe-multifamily-matched-slot-geometry-v0",
+    "family_count": 5,
+    "slots_per_family": 10,
+    "item_count": 50,
+    "panel_changed_from_t4": false
+  },
+  "carrier_selection": {
+    "selected_before_activation_outcomes": true,
+    "candidate_strings_checked": 8,
+    "selected_order": [
+      "article_a",
+      "pipe"
+    ],
+    "selected_units": {
+      "article_a": " a",
+      "pipe": " |"
+    },
+    "repeat_count": 8,
+    "distance_order": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "purpose": "Hold current token identity and full input fixed across distance while guarding against one carrier identity; repeated-token dynamics remain a stated limitation."
+  },
+  "tokenizer_feasibility": {
+    "exact_contract": "raw_glyph_tokens_plus_eight_identical_carrier_tokens",
+    "gemma2_2b_4bit": {
+      "status": "pass",
+      "source_node": "mac2",
+      "raw_token_count_histogram": {
+        "1": 50
+      },
+      "combined_token_count_histogram": {
+        "9": 50
+      },
+      "raw_prefix_preserved": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "exactly_eight_identical_carrier_tokens": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "carrier_token_ids": {
+        "article_a": 476,
+        "pipe": 1420
+      },
+      "unique_combined_sequences": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "roundtrip_exact": {
+        "article_a": 50,
+        "pipe": 50
+      }
+    },
+    "llama32_3b_bf16": {
+      "status": "pass",
+      "source_node": "mac2",
+      "raw_token_count_histogram": {
+        "2": 3,
+        "3": 47
+      },
+      "raw_ordered_sequence_sha256": "5373ea1d1180ffaa8b40139e048e2a1b960952fd945a520eaf0dbb5ffe9efb7b",
+      "combined_token_count_histogram": {
+        "10": 3,
+        "11": 47
+      },
+      "raw_prefix_preserved": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "exactly_eight_identical_carrier_tokens": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "carrier_token_ids": {
+        "article_a": 264,
+        "pipe": 765
+      },
+      "unique_combined_sequences": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "roundtrip_exact": {
+        "article_a": 50,
+        "pipe": 50
+      }
+    },
+    "olmo3_7b_bf16": {
+      "status": "pass",
+      "source_node": "mac1",
+      "raw_token_count_histogram": {
+        "3": 50
+      },
+      "combined_token_count_histogram": {
+        "11": 50
+      },
+      "raw_prefix_preserved": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "exactly_eight_identical_carrier_tokens": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "carrier_token_ids": {
+        "article_a": 264,
+        "pipe": 765
+      },
+      "unique_combined_sequences": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "roundtrip_exact": {
+        "article_a": 50,
+        "pipe": 50
+      }
+    },
+    "verification_scope": "Tokenizer-only design evidence. The frozen runner revalidates every raw and carrier token sequence before the first scientific forward in each model cell."
+  },
+  "execution_preflight": {
+    "model_cells": 3,
+    "full_input_fixed_across_distances": true,
+    "position_rule": "raw_token_count_plus_distance_minus_one",
+    "model_forward_calls_per_model": 400,
+    "model_forward_calls_total": 1200,
+    "fixed_depths_per_model": 5,
+    "furnace_compute_planned": false,
+    "nodes": {
+      "mac2": [
+        "gemma2_2b_4bit",
+        "llama32_3b_bf16"
+      ],
+      "mac1": [
+        "olmo3_7b_bf16"
+      ]
+    }
+  },
+  "analysis_preflight": {
+    "distance1_component_declared": true,
+    "fixed_logdistance_attenuation_contrast_declared": true,
+    "distance_contrast_weights": [
+      0.375,
+      0.125,
+      -0.125,
+      -0.375
+    ],
+    "intersection_union_rule": "maximum of the two one-sided component p-values",
+    "same_randomization_draw_synchronized_across_all_40_cells": true,
+    "three_model_holm_family_declared": true,
+    "t4_reference_descriptive_only": true,
+    "t4_inferential_pooling": false,
+    "carrier_distance_depth_subcell_decisions_disabled": true,
+    "distance8_tail_decision_disabled": true
+  },
+  "known_backend_gate": {
+    "llama_mlx_stage_a_parity_qualified": false,
+    "native_mlx_observation_allowed": true,
+    "backend_equivalence_claim_allowed": false
+  },
+  "claim_boundary": "Engineering and tokenizer feasibility only. This receipt contains zero activation observations and is not a recurrence, attenuation, monotonic-decay, disappearance, semantic, behavioral, causal, confirmatory, tokenizer-equivalence, backend-equivalence, or Phase I paper-gate result."
+}

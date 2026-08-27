@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -249,6 +249,30 @@ Gemmaはnull付近に残った。
 終了条件: 達成した。介入前の安価な次の反証として、事前固定したcarrier-distance decay
 assayが有用である。ただしside trackに留め、tokenization-matched確認controlの代替にも、
 Phase I gateのclosureにも使わない。
+
+### 観測side track T5 — Carrier-distance profile
+
+状態: 科学用model forwardの前に公開凍結済み。Runは未実施である。
+
+- 入力全体と読み出し位置のcarrier token IDを固定したまま、各絵文字から1、2、4、8
+  token後ろへ読み出し位置を動かす。
+- `" a"`と`" |"`をそれぞれ8回繰り返す2種類のcarrierを使い、tokenizerが同一tokenの
+  反復という契約を厳密に満たさないmodel cellは実行しない。
+- Gemma 2 2B 4-bit、Llama 3.2 3B BF16、OLMo 3 7B BF16の固定roleで5つの相対深度を
+  調べる。各modelは400 forwardで、介入、生成、保護targetへのアクセスは行わない。
+- Modelごとに、距離1の再現成分と、事前指定したlog2距離に対する減衰成分の両方を
+  intersection-union testで要求する。
+- 2成分のp値の大きい方をmodelのraw p値とし、modelごとにfamily内で同期した19,999
+  permutationを使ったうえで、3つのmodel role間をHolm補正する。
+
+この設計は、固定profile上で正味の減衰を伴う再現と、指定した減衰contrastを伴わない
+持続を分ける。単調減衰、距離8での消失、意味内容、機構、因果、tokenizer非依存性、
+cross-modelの大きさの同等性は示さない。LlamaのStage A parity failureは有効なままで、
+このMLX cellが認めるのはartifact内の観測結果だけである。
+
+終了条件: [固定protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md)に従い、3 modelのsealed
+receiptとjoint outcome registryをすべて公開する。T5はPhase I gateの外に置き、T4は
+記述参照としてのみ使う。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
