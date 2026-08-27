@@ -1,0 +1,75 @@
+{
+  "analysis_role": "frozen_joint_exploratory_observational_geometry",
+  "claim_boundary": "Frozen observational resid_post geometry for one ten-item colored-shape panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "confirmatory_status": false,
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_colored_shape_geometry_v0.yaml": "68a6e10806f71f9ec5a4a0c8f9c27bb4f22659945cdf8133e2780cf8347e569e",
+      "data/emoji_panels/colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+      "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md": "1b39dd4ff5e3a72aa6b0b1a1409680d4530153f0a66ee0f400fb82c0391f2f29",
+      "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md": "e5fca06a69214dd8891bc3985efaa9802ce9288aa1ff649d720e3584dbbc95cb",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "tests/test_multifamily_colored_shape_geometry_v0.py": "62ddb8fd696bcc77d791556a39b99561f67ac66792f23941adcfbac2e3b38a28",
+      "validation/multifamily_colored_shape_geometry_v0/engineering_preflight.json": "394938310d0dd6ebf2bc2356022f667c70aa3d89357dd4fa5cc193c36bbc3056"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "601c7b9172cf73eaa6a4b5b076d64a70c63da5d1ebe66f1ae0c771d22d71b384"
+  },
+  "generation_calls": 0,
+  "inputs": {
+    "gemma2_2b_4bit": {
+      "run_ledger_sha256": "b756146d954d388a1fb1281ad6cbbbdd5900d1b5f885481a97df97602e6197d0",
+      "run_receipt_sha256": "271b5375528b4cbe812d8ef8437a71f1fd66f2bb5998a0c4bda6fd96ed6bdc1a"
+    },
+    "olmo3_7b_bf16": {
+      "run_ledger_sha256": "9c4d252a1fc71afa13a08aa0b98956426329c400c057509b15e466ace44a7bc4",
+      "run_receipt_sha256": "6e3b117b429379956ac773ff9eaa8b3b520d180fb39a9820907c7f933fc31a1a"
+    }
+  },
+  "intervention_calls": 0,
+  "layer_row_count": 10,
+  "outcome_pattern": "no_dual_model_recurrence",
+  "outcome_pattern_definition": "No stronger predeclared pattern applies; retain the complete negative or mixed result without selecting another layer.",
+  "permutations_per_cell": 120,
+  "phase_i_gate_closed": false,
+  "primary_endpoint": {
+    "decision_scope": "primary_layer_only",
+    "definition": "For each color c, form d_c = resid_post(circle_c) - resid_post(square_c), L2-normalize each d_c, and average the ten off-diagonal pairwise cosines across the five colors.",
+    "familywise_alpha": 0.05,
+    "hypothesis_family": [
+      "gemma2_2b_4bit",
+      "olmo3_7b_bf16"
+    ],
+    "id": "circle_minus_square_shape_axis_parallelism",
+    "multiplicity": "holm",
+    "p_value": "count(T_permuted >= T_observed) / 120",
+    "permutations": 120,
+    "test": "exact_one_sided_square_label_permutation"
+  },
+  "primary_results": {
+    "gemma2_2b_4bit": {
+      "holm_adjusted_p": 0.11666666666666667,
+      "holm_reject": false,
+      "layer": 13,
+      "raw_p": 0.058333333333333334,
+      "statistic": 0.114857968827293
+    },
+    "olmo3_7b_bf16": {
+      "holm_adjusted_p": 0.275,
+      "holm_reject": false,
+      "layer": 16,
+      "raw_p": 0.275,
+      "statistic": 0.024628040026043373
+    }
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "schema_version": 1,
+  "status": "pass"
+}

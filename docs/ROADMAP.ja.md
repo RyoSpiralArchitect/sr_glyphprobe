@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -166,7 +166,8 @@ activationの科学的結果ではない。
 
 ### 観測side track T2 — Multifamily colored-shape geometry
 
-状態: 科学的model forwardより前に固定済み。実行は未完了である。
+状態: 凍結済みの観測的な負・mixed resultとして完了した。事前登録した結果patternは
+`no_dual_model_recurrence`である。
 
 - 変更しない10-item colored-shape panelをGemma 2 2B 4-bitとOLMo 3 7B BF16へ
   結び付け、Llamaのoutcomeからlayerを選ばない。
@@ -178,14 +179,31 @@ activationの科学的結果ではない。
 - 2 model-cell testを一つのHolm familyとして扱い、残る4 layerは符号にかかわらず残す。
 - Intervention、generation、protected-target access、cross-model magnitude比較、
   outcome後のlayer差し替えを行わない。
+- Gemmaのprimary midpoint（`T = 0.114857969`、raw `p = 0.058333333`、
+  Holm `p = 0.116666667`）とOLMoのprimary midpoint（`T = 0.024628040`、
+  raw・Holm `p = 0.275`）を、どちらも棄却なしとして残した。
+- 2本のactivation array、固定深度の全10行、生成元・relayのhash証拠、合格したrun・
+  analysis validatorを公開した。
 
-完全なfreezeは[T2プロトコル](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md)に示す。
-最も強い事前登録patternでも観測的recurrence candidateに留まる。Model family、scale、
-precision/quantization、tokenizer構造、nodeが交絡している。Negative、片側だけ、
-opposite-signの結果も完全な結果として残す。
+[T2結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md)と
+[完全なfreeze](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md)には、Gemmaの
+非primary layerに現れた小さな記述的p値も、格上げせずに残している。Model family、scale、
+precision/quantization、tokenizer構造、nodeは交絡したままで、2つのraw magnitudeを
+scale差やquantization差とは読めない。
 
-終了条件: role-bound run 2本とjoint exact analysisをchecksum付きで公開する。このside
-trackは因果gateも独立backend再現も置き換えない。
+終了条件: 達成した。Role-bound run 2本とjoint exact analysisをchecksum付きで公開した。
+このside trackは、因果gateも独立backend再現も置き換えない。
+
+T2後の分岐案。まだprotocol freezeではない。
+
+- 同じfamilyまたは同じartifactに近いprecision contrastを1本加え、交絡を一軸だけほどく。
+- Animals、food、moon/sky、social、transportの公開済み5 panelへ広げる。ただし、
+  family-level endpointか全深度endpointを先に固定する。
+- Gemmaの記述的なlayer peakをprimaryへ持ち込まず、同じendpointを適格な独立backendか
+  別model cellで再実装する。
+
+次のprotocolでは、このうち一つを選ぶ。Model breadth、emoji breadth、outcome後の
+depth選択を同時に動かすと、次も負だったときに原因を分けられない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -258,7 +276,7 @@ trackは因果gateも独立backend再現も置き換えない。
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使う最初のfreezeだが、run 2本とjoint analysisをsealするまで未完了で、因果gateも閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使う最初の実行済み研究となったが、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。境界を限った負・mixed cross-model evidenceであり、因果gateも独立再現gateも閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

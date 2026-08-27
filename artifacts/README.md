@@ -28,6 +28,10 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   node path-scrubbed receipt and summary copies. Each node has a public
   `SHA256SUMS` and a distinctly named original-source `SOURCE_SHA256SUMS`. The
   raw JSONL tables are omitted but bound by exact hashes and row counts.
+- `multifamily_colored_shape_geometry_v0/` contains both complete compact
+  activation runs, all ten fixed-depth analysis rows, the two-cell exact-test
+  decision, three-point OLMo transfer verification, and a public payload
+  manifest. No raw array from this study is omitted.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -47,6 +51,20 @@ any fixed pairwise context. This is tokenizer-only, post-hoc descriptive
 control-design evidence. It does not update Milestone 2, establish
 tokenizer-independent structure, or close a paper gate. See the [full bounded
 result](../docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md).
+
+## Multifamily colored-shape geometry reading
+
+The frozen Gemma 2 2B 4-bit and OLMo 3 7B BF16 midpoint tests both failed to
+reject after the predeclared two-cell Holm correction. Gemma produced
+`T = 0.114857969`, adjusted `p = 0.116666667`; OLMo produced
+`T = 0.024628040`, adjusted `p = 0.275`. The registered outcome is
+`no_dual_model_recurrence`.
+
+All eight non-primary layer rows remain visible but have no multiplicity
+decision. Model family, scale, precision, tokenizer, and node are confounded,
+so this is bounded negative/mixed observational evidence rather than a scale,
+quantization, model-general, semantic, or causal result. See the [complete T2
+result](../docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md).
 
 ## Milestone 2 reading
 

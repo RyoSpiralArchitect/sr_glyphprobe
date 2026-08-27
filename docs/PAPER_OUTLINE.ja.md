@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -71,6 +71,20 @@ classへまとまった。Blue circleとblue squareのどちらにも、どの�
 扱わない。後続のcross-tokenizer activation結果では、tokenizer output classごとにcontrol
 setを事前に直接結び付ける。
 
+## 現在のmultifamily観測結果
+
+凍結済みT2では、2つのraw-glyph `resid_post` cellについて、midpointの
+circle-minus-square平行性だけをprimaryにした。Gemma 2 2B 4-bitは
+`T = 0.114857969`、raw `p = 0.058333333`、Holm `p = 0.116666667`。
+OLMo 3 7B BF16は`T = 0.024628040`、raw・Holm `p = 0.275`だった。
+どちらも棄却せず、登録済みpatternは`no_dual_model_recurrence`である。
+
+固定深度の全10行を残すが、modelごとの非midpoint 4行には多重性判定の権限がなく、
+primary layerと差し替えられない。論文では、現在のmodel-general shape-axis claimを
+支持しない、範囲を限った負・mixed observational evidenceとして使える。Model family、
+scale、precision、tokenizer、nodeが交絡しているため、cell差の原因は推定しない。
+独立backend再現でもなく、Milestone 2や因果候補も変更しない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -81,8 +95,9 @@ setを事前に直接結び付ける。
 6. **RQ6 — 独立再現:** どの結果が、実行backend、tokenizer、model familyをまたいで再現するか。
 7. **RQ7 — 共有token間のtransfer:** トークン同型な探索panelで、matched-slot反復は中間token familyをまたいでどの程度移り、family内の残差的な上乗せはどの程度か。
 
-Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。RQ5・RQ6が
-未成立なら、論文の中心命題はRQ1〜RQ4に限定する。RQ7に対するE1の答えは
+Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
+負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
+RQ5も残っている。これらが未成立なら、論文の中心命題はRQ1〜RQ4に限定する。RQ7に対するE1の答えは
 探索的・記述的なside resultとして扱い、確認命題や因果命題へ格上げしない。
 
 ## 予定する貢献
@@ -158,6 +173,7 @@ Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る�
 7. トークン数・接頭構造matched controlsと感度分析
 8. 因果実験を行った場合は、アブレーションと復元
 9. E1の全family-pair transfer行列、family固有の小さな超過、全family区間、random-controlの不均一性、成立しなかったlayer 4 negative comparator
+10. T2の2つのprimary midpointと固定深度全10行。非primaryの記述的p値を確認判定と分ける
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
@@ -176,6 +192,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - 因果実験の成否に応じた解釈
 - グリフを使った制御パネルの利点と限界
 - E1で見えた広いfamily間transferと小さなfamily固有超過を、共有token構造で説明できる範囲
+- T2のmodel family、scale、precision、tokenizer、node交絡と、midpoint
+  non-recurrenceから言える範囲
 
 ### 8. Limitations
 
@@ -200,6 +218,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - 標準実験レシートとアーティファクト整合性監査
 - 公開集約データとハッシュ付きマニフェスト
 - E1のtokenizer preflight、全記述解析、5つの軽量run bundle、root manifest
+- T2のGemma・OLMo activation array、observation、receipt、全10行joint analysis、
+  転送検証、public manifest
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -215,6 +235,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 8. **Table 2:** 主要評価量、区間、正・非正セル
 9. **Table 3:** 追試モデルと成立・不成立範囲
 10. **Figure / Supplement:** E1のlayer別5 × 5 transfer行列。確認結果とは明確に分ける
+11. **Figure / Supplement:** T2のGemma・OLMo固定深度shape-axis profile。Midpointだけを
+    primaryとして示し、非primaryの記述的p値を分ける
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -228,6 +250,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - condition-dependent / heterogeneous effect
 - robust to the prespecified token-count and token-prefix matched controls at layer 2 under frozen v1
 - exploratory matched-slot recurrence under a fixed middle-token family substitution
+- no dual-model recurrence for the frozen T2 midpoint shape-axis endpoint
 
 ### 追加の証拠なしには使用しない
 
@@ -237,6 +260,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - causal path
 - universal or model-independent effect
 - semantic emoji family, tokenizer-independent E1 effect, layer-specific E1 effect
+- T2 scale effect, quantization effect, or absence of colored-shape geometry
 
 ## 残る論文ゲート
 
@@ -249,6 +273,8 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - 先入観のない再現性・主張境界レビューを行う。
 - 英語原稿と日本語公開概要の命題を一致させる。
 - E1の記述区間にp値、確認status、layer比較の推論を後付けしない。
+- T2の判定は2つのmidpointとHolm familyに限定し、Gemmaの非primary `1/120`行を
+  発見や新しいprimaryへ格上げしない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

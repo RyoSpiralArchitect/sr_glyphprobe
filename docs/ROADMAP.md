@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -263,7 +263,8 @@ and multiplicity rule.
 
 ### Observational side track T2 — Multifamily colored-shape geometry
 
-Status: frozen before scientific model forwards; execution pending.
+Status: complete as a frozen observational negative/mixed result. The
+predeclared outcome is `no_dual_model_recurrence`.
 
 - bind one unchanged ten-item colored-shape panel to Gemma 2 2B 4-bit and
   OLMo 3 7B BF16, without reusing the Llama outcome to select a layer;
@@ -276,16 +277,34 @@ Status: frozen before scientific model forwards; execution pending.
 - treat the two model-cell tests as one Holm-corrected family and retain all
   four secondary layers regardless of sign; and
 - perform no intervention, generation, protected-target access, cross-model
-  magnitude comparison, or post-outcome layer replacement.
+  magnitude comparison, or post-outcome layer replacement;
+- retain the primary Gemma midpoint result (`T = 0.114857969`, raw
+  `p = 0.058333333`, Holm `p = 0.116666667`) and OLMo midpoint result
+  (`T = 0.024628040`, raw/Holm `p = 0.275`) without rejection; and
+- publish both complete activation arrays, all ten fixed-depth rows, source and
+  relay hash evidence, and passing run and analysis validators.
 
-The complete freeze is the [T2 protocol](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md).
-Even its strongest predeclared pattern is an observational recurrence candidate:
-model family, scale, precision/quantization, tokenizer structure, and node are
-confounded. A negative, one-sided, or opposite-sign result remains complete.
+The [T2 result](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) and [complete
+freeze](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md) preserve the non-primary
+Gemma rows with smaller descriptive p-values without promoting them. Model
+family, scale, precision/quantization, tokenizer structure, and node remain
+confounded, so the two raw magnitudes are not a scale or quantization contrast.
 
-Exit condition: both role-bound run bundles and the joint exact analysis are
-published with checksums. This side track does not replace the causal gate or
-an independent backend replication.
+Exit condition: met. Both role-bound run bundles and the joint exact analysis
+are published with checksums. This side track does not replace the causal gate
+or an independent backend replication.
+
+Decision fork after T2, not yet a protocol freeze:
+
+- deconfound one axis with a same-family or same-artifact precision contrast;
+- broaden to the five public animal, food, moon/sky, social, and transport
+  panels only after a family-level or all-depth endpoint is frozen; or
+- reproduce the exact endpoint in an independently qualified backend or model
+  cell without inheriting a descriptive Gemma layer peak as primary.
+
+The next protocol should choose one route. Combining model breadth, emoji
+breadth, and post-outcome depth selection would make another negative result
+ambiguous.
 
 ### Milestone 3 — Targeted causal localization
 
@@ -369,9 +388,10 @@ These gates do not predetermine a positive paper. A carefully bounded negative o
 Current reading: gates 1–3 have GPT-2-specific operational evidence, but the
 multifamily tokenizer census does not extend gate 3 across tokenizers. Any such
 extension needs separately frozen, tokenizer-specific control panels. T2 is a
-frozen first observational use of two such regimes, but it is not complete
-until both runs and the joint analysis are sealed, and it cannot close the
-causal gate. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
+completed first observational use of two such regimes; neither predeclared
+midpoint cell rejected after Holm correction, so it records bounded negative/
+mixed cross-model evidence and does not close the causal or independent-
+replication gates. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
 analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research

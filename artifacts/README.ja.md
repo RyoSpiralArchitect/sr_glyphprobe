@@ -14,6 +14,7 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `emoji_family_exploratory_v1/`：E1のtokenizer preflight、全記述解析、5 family runごとの軽量file 15件
 - `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json`：E1の公開payload 82件をSHA-256で結び付け、省略したraw ledgerとarrayを記録するroot manifest
 - `multifamily_tokenizer_census_v0/`：検証済みの事後記述aggregate、collection receipt、compact checksum台帳、3 nodeのpath-scrub済みsource receipt・summary複製。各nodeには公開bundle用`SHA256SUMS`と、別名の元source台帳`SOURCE_SHA256SUMS`を置く。Raw JSONL tableは省略するが、正確なhashとrow数で結び付ける。
+- `multifamily_colored_shape_geometry_v0/`：2本の完全なcompact activation run、固定深度の全10解析行、2-cell exact-test判定、OLMoの3地点転送検証、public payload manifest。この研究ではraw arrayを省略しない。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
@@ -27,6 +28,18 @@ pairwise contextにも、全output classでtoken数と先頭1 tokenを同時に�
 固定panel内になかった。これはtokenizer-onlyの事後記述的なcontrol設計証拠である。
 Milestone 2を更新せず、tokenizer非依存の構造を確立せず、論文gateも閉じない。
 [主張境界を含む全結果](../docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)を参照する。
+
+## Multifamily colored-shape geometryの読み方
+
+固定したGemma 2 2B 4-bitとOLMo 3 7B BF16のmidpoint testは、事前指定した2-cell
+Holm補正後にどちらも棄却しなかった。Gemmaは`T = 0.114857969`、調整済み
+`p = 0.116666667`、OLMoは`T = 0.024628040`、調整済み`p = 0.275`である。
+登録済みoutcomeは`no_dual_model_recurrence`となった。
+
+非primary 8行もすべて残すが、多重性に関する判定は付けない。Model family、scale、
+precision、tokenizer、nodeが交絡しているため、scale差、quantization差、model一般性、
+意味、因果の結果とは読まない。境界を限った負・mixed observational evidenceである。
+[T2の全結果](../docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 

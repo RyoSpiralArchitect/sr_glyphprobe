@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -70,6 +70,22 @@ present the census as activation evidence, confirmation, tokenizer-independent
 structure, or completion of a paper gate. Any later cross-tokenizer activation
 result must bind its control set prospectively per tokenizer output class.
 
+## Current multifamily observational result
+
+The frozen T2 study tested one midpoint circle-minus-square parallelism endpoint
+in two predeclared raw-glyph `resid_post` cells. Gemma 2 2B 4-bit produced
+`T = 0.114857969`, raw `p = 0.058333333`, and Holm `p = 0.116666667`. OLMo 3
+7B BF16 produced `T = 0.024628040` and raw/Holm `p = 0.275`. Neither rejected,
+so the registered pattern is `no_dual_model_recurrence`.
+
+All ten fixed-depth rows remain available, but the four non-midpoint rows per
+model have no multiplicity decision and cannot replace the primary layer. The
+paper may use T2 as bounded negative/mixed observational evidence against the
+current model-general shape-axis claim. It must not infer a scale,
+quantization, tokenizer, node, or model-family cause because those factors are
+confounded. T2 is not an independent-backend replication and does not change
+Milestone 2 or the causal candidate.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -80,7 +96,7 @@ result must bind its control set prospectively per tokenizer output class.
 6. Which results replicate across execution backends, tokenizers, or model families?
 7. In a token-isomorphic exploratory panel, how much matched-slot recurrence transfers across middle-token families, and how large is the residual within-family excess?
 
-Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. Questions 5–6 remain required before the paper freezes a stronger claim.
+Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
 confirmatory or causal research question.
 
@@ -167,6 +183,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 
 ### 7. Replication
 
+- report T2 as a frozen two-cell non-recurrence result, with all fixed depths
+  and its family/scale/precision/tokenizer/node confounding visible;
 - duplicate confirmatory matrix in a second internal backend;
 - additional tokenizer or model family;
 - agreement and disagreement table;
@@ -204,6 +222,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 6. Token-count/prefix-panel control results, fixed- versus rebuilt-prototype uncertainty, and any later causal intervention.
 7. E1 source-family × prototype-family transfer matrices at layers 2 and 4,
    labeled exploratory and separated from the confirmatory claim family.
+8. T2 fixed-depth shape-axis profile for Gemma and OLMo, with only the midpoint
+   marked primary and the two Holm decisions shown separately from descriptive
+   layer p-values.
 
 ## Planned main tables
 
@@ -213,6 +234,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 4. Confirmatory effect sizes, intervals, and adjusted p-values.
 5. Negative results, failed gates, and missing measurements.
 6. Cross-backend and cross-model replication.
+7. T2 primary and all fixed-depth observational results, labeled negative/mixed
+   and non-confirmatory.
 
 ## Claim table
 
@@ -227,7 +250,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The effect is independent of tokenization | not supported | token-identity matching is impossible for a distinct GPT-2 byte input; make only the bounded matched-panel claim |
 | A particular component or path causes the effect | not tested | targeted patch/ablate/restore experiment |
 | The directions encode human-readable glyph meaning | not tested and not implied | would require an independently justified semantic assay |
-| The result generalizes across models | not tested | cross-model replication |
+| The exact T2 midpoint shape axis recurs across Gemma and OLMo | not supported; neither cell rejected after Holm correction | retain as bounded negative/mixed observational evidence; do not replace the midpoint or attribute the difference to scale |
+| The GPT-2 fingerprint result generalizes across models | not established by T2, which used a different endpoint and confounded cells | claim-matched cross-model replication |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
 ## Statistical commitments
@@ -242,6 +266,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - Negative and non-positive cells will remain visible.
 - E1 intervals remain descriptive; no p-value, multiplicity decision,
   confirmatory status, or layer-comparison inference will be retrofitted.
+- T2's two midpoint p-values and Holm family remain the only authorized
+  decisions for that protocol. The eight non-primary rows remain descriptive,
+  including Gemma rows at the exhaustive `1/120` floor.
 
 ## Remaining paper gates
 
@@ -271,6 +298,8 @@ The preprint package should contain or point to:
 - compact public summaries and omission manifest;
 - the E1 tokenizer preflight, complete descriptive analysis, five compact run
   bundles, and root hash manifest;
+- the complete T2 Gemma and OLMo activation arrays, observations, receipts,
+  ten-row joint analysis, transfer verification, and public manifest;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;
 - English manuscript, supplementary material, and Japanese public summary.

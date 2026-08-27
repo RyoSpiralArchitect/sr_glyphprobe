@@ -1,0 +1,40 @@
+{
+  "claim_boundary": "Three-point byte-integrity evidence for the compact OLMo run bundle only. This receipt does not establish model behavior, node equivalence, performance, scientific confirmation, or process history beyond the recorded transfer checks.",
+  "files": {
+    "SHA256SUMS": {
+      "all_equal": true,
+      "destination_sha256": "9c4d252a1fc71afa13a08aa0b98956426329c400c057509b15e466ace44a7bc4",
+      "relay_sha256": "9c4d252a1fc71afa13a08aa0b98956426329c400c057509b15e466ace44a7bc4",
+      "source_sha256": "9c4d252a1fc71afa13a08aa0b98956426329c400c057509b15e466ace44a7bc4"
+    },
+    "activations.npz": {
+      "all_equal": true,
+      "destination_sha256": "74432f905c1b7f50e1db74d7fbb58765860bbc610c0a07ef83fd9b73ad79a8ba",
+      "relay_sha256": "74432f905c1b7f50e1db74d7fbb58765860bbc610c0a07ef83fd9b73ad79a8ba",
+      "source_sha256": "74432f905c1b7f50e1db74d7fbb58765860bbc610c0a07ef83fd9b73ad79a8ba"
+    },
+    "observations.jsonl": {
+      "all_equal": true,
+      "destination_sha256": "b0df4823209cd7efade805c825893db2740d653675a09068f2baa10d46da6e3e",
+      "relay_sha256": "b0df4823209cd7efade805c825893db2740d653675a09068f2baa10d46da6e3e",
+      "source_sha256": "b0df4823209cd7efade805c825893db2740d653675a09068f2baa10d46da6e3e"
+    },
+    "run_receipt.json": {
+      "all_equal": true,
+      "destination_sha256": "6e3b117b429379956ac773ff9eaa8b3b520d180fb39a9820907c7f933fc31a1a",
+      "relay_sha256": "6e3b117b429379956ac773ff9eaa8b3b520d180fb39a9820907c7f933fc31a1a",
+      "source_sha256": "6e3b117b429379956ac773ff9eaa8b3b520d180fb39a9820907c7f933fc31a1a"
+    }
+  },
+  "files_checked": 4,
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "route": [
+    "mac1_source",
+    "furnace_relay",
+    "mac2_destination"
+  ],
+  "schema_version": 1,
+  "source_validator": "pass",
+  "destination_validator": "pass",
+  "status": "pass"
+}

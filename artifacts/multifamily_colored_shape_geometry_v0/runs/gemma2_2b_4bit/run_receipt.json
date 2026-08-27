@@ -1,0 +1,264 @@
+{
+  "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      10,
+      5,
+      2304
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "layers": [
+      0,
+      6,
+      13,
+      19,
+      25
+    ],
+    "position": "last_nonpad",
+    "primary_fraction": 0.5,
+    "primary_layer": 13,
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one ten-item colored-shape panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      38.32408401649445,
+      20.730166987050325,
+      19.62949999142438,
+      19.988209009170532,
+      20.27829096186906,
+      19.485583005007356,
+      22.77704101288691,
+      19.763832970056683,
+      19.970583962276578,
+      21.26533299451694
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 3415.1747080031782,
+    "model_forward_calls": 10,
+    "peak_memory_bytes_max": 1475370570,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 3715.773874951992
+  },
+  "experiment_role": "prospective_exploratory_observational_activation_geometry",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_colored_shape_geometry_v0.yaml": "68a6e10806f71f9ec5a4a0c8f9c27bb4f22659945cdf8133e2780cf8347e569e",
+      "data/emoji_panels/colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+      "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md": "1b39dd4ff5e3a72aa6b0b1a1409680d4530153f0a66ee0f400fb82c0391f2f29",
+      "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md": "e5fca06a69214dd8891bc3985efaa9802ce9288aa1ff649d720e3584dbbc95cb",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "tests/test_multifamily_colored_shape_geometry_v0.py": "62ddb8fd696bcc77d791556a39b99561f67ac66792f23941adcfbac2e3b38a28",
+      "validation/multifamily_colored_shape_geometry_v0/engineering_preflight.json": "394938310d0dd6ebf2bc2356022f667c70aa3d89357dd4fa5cc193c36bbc3056"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "601c7b9172cf73eaa6a4b5b076d64a70c63da5d1ebe66f1ae0c771d22d71b384"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 7,
+      "files": {
+        "config.json": {
+          "bytes": 952,
+          "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+        },
+        "model.safetensors": {
+          "bytes": 1470988882,
+          "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 46678,
+          "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+        },
+        "special_tokens_map.json": {
+          "bytes": 555,
+          "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+        },
+        "tokenizer.json": {
+          "bytes": 17525357,
+          "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+        },
+        "tokenizer.model": {
+          "bytes": 4241003,
+          "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+        },
+        "tokenizer_config.json": {
+          "bytes": 46298,
+          "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+        }
+      },
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "total_bytes": 1492849725
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": "2da7060bea6e767e27d7a776f834071ba69bd3ba",
+      "d_model": 2304,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 3414.920291979797,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "gemma2",
+        "quantization": {
+          "bits": 4,
+          "group_size": 64
+        }
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 7,
+        "files": {
+          "config.json": {
+            "bytes": 952,
+            "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+          },
+          "model.safetensors": {
+            "bytes": 1470988882,
+            "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 46678,
+            "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+          },
+          "special_tokens_map.json": {
+            "bytes": 555,
+            "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+          },
+          "tokenizer.json": {
+            "bytes": 17525357,
+            "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+          },
+          "tokenizer.model": {
+            "bytes": 4241003,
+            "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+          },
+          "tokenizer_config.json": {
+            "bytes": 46298,
+            "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+          }
+        },
+        "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+        "total_bytes": 1492849725
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://2da7060bea6e767e27d7a776f834071ba69bd3ba#4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "num_layers": 26,
+      "parameter_count": 2614341888,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.uint32",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GemmaTokenizerFast"
+    },
+    "model_dim": 2304,
+    "model_type": "gemma2",
+    "num_layers": 26,
+    "parameter_count": 2614341888,
+    "quantized": true,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.uint32"
+  },
+  "model_label": "gemma2_2b_4bit",
+  "outputs": {
+    "activations.npz": "cdce512ae571cfcad839b3a8af599de4dc47f7d06a9f0df4076987c66b4e7257",
+    "observations.jsonl": "f94980d9719f014487ec2e1a1abd9dfdb31c577de616b533c839e576e3a1ee5e"
+  },
+  "panel": {
+    "colors": [
+      "brown",
+      "orange",
+      "green",
+      "blue",
+      "purple"
+    ],
+    "item_ids": [
+      "brown_circle",
+      "brown_square",
+      "orange_circle",
+      "orange_square",
+      "green_circle",
+      "green_square",
+      "blue_circle",
+      "blue_square",
+      "purple_circle",
+      "purple_square"
+    ],
+    "shapes": [
+      "circle",
+      "square"
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": true,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.4.4",
+      "orjson": "3.11.9",
+      "pydantic": "2.12.5",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "add_special_tokens": false,
+    "context_id": "raw",
+    "expected_item_token_count": 1,
+    "matching_family": "atomic_token_count_plus_unicode_construction",
+    "minimum_shared_prefix_across_panel": 0,
+    "observed_item_token_counts": [
+      1
+    ]
+  }
+}

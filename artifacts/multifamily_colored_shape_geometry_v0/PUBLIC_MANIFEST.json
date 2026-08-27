@@ -1,0 +1,85 @@
+{
+  "claim_boundary": "Complete compact evidence for one frozen observational two-cell raw-glyph resid_post study. Integrity and replayability do not establish semantics, mechanism, causality, backend parity, quantization equivalence, a scale effect, or scientific confirmation.",
+  "freeze_commit": "dc78756bd8f26ae0060463e459d5deb40c47d750",
+  "outcome_pattern": "no_dual_model_recurrence",
+  "payload": {
+    "file_count": 13,
+    "files": {
+      "OLMO_TRANSFER_RECEIPT.json": {
+        "bytes": 1888,
+        "sha256": "262fa012a23266b9d6880557f57ff32604d90b2746b689d01fe9eb80924eaf67"
+      },
+      "analysis/SHA256SUMS": {
+        "bytes": 253,
+        "sha256": "a157c3499c242a5358da8748dce9446bca73c5feab1dca7294cde75b9511495d"
+      },
+      "analysis/analysis_receipt.json": {
+        "bytes": 3862,
+        "sha256": "44c4dec8c0f249c3bea98b55ba8940f79f2ebe3311e2973abe56f06fb664c0c0"
+      },
+      "analysis/layer_statistics.jsonl": {
+        "bytes": 4818,
+        "sha256": "983efd22dfb60fdfa3e885895ad06356ecc2490f1dc28dc3ef72755ed7c4d841"
+      },
+      "analysis/report.md": {
+        "bytes": 519,
+        "sha256": "4be1aa8010444e6ce6888d6db06a1ffbd669265b429947f36fb4681d303479e4"
+      },
+      "runs/gemma2_2b_4bit/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "b756146d954d388a1fb1281ad6cbbbdd5900d1b5f885481a97df97602e6197d0"
+      },
+      "runs/gemma2_2b_4bit/activations.npz": {
+        "bytes": 277364,
+        "sha256": "cdce512ae571cfcad839b3a8af599de4dc47f7d06a9f0df4076987c66b4e7257"
+      },
+      "runs/gemma2_2b_4bit/observations.jsonl": {
+        "bytes": 4081,
+        "sha256": "f94980d9719f014487ec2e1a1abd9dfdb31c577de616b533c839e576e3a1ee5e"
+      },
+      "runs/gemma2_2b_4bit/run_receipt.json": {
+        "bytes": 9081,
+        "sha256": "271b5375528b4cbe812d8ef8437a71f1fd66f2bb5998a0c4bda6fd96ed6bdc1a"
+      },
+      "runs/olmo3_7b_bf16/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "9c4d252a1fc71afa13a08aa0b98956426329c400c057509b15e466ace44a7bc4"
+      },
+      "runs/olmo3_7b_bf16/activations.npz": {
+        "bytes": 387562,
+        "sha256": "74432f905c1b7f50e1db74d7fbb58765860bbc610c0a07ef83fd9b73ad79a8ba"
+      },
+      "runs/olmo3_7b_bf16/observations.jsonl": {
+        "bytes": 4276,
+        "sha256": "b0df4823209cd7efade805c825893db2740d653675a09068f2baa10d46da6e3e"
+      },
+      "runs/olmo3_7b_bf16/run_receipt.json": {
+        "bytes": 17265,
+        "sha256": "6e3b117b429379956ac773ff9eaa8b3b520d180fb39a9820907c7f933fc31a1a"
+      }
+    },
+    "total_bytes": 711469
+  },
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "source_and_transfer_verification": {
+    "gemma_source_validator": "pass",
+    "joint_analysis_validator": "pass",
+    "olmo_destination_validator": "pass",
+    "olmo_source_validator": "pass",
+    "olmo_transfer": {
+      "files_checked": 4,
+      "receipt": "OLMO_TRANSFER_RECEIPT.json",
+      "receipt_sha256": "262fa012a23266b9d6880557f57ff32604d90b2746b689d01fe9eb80924eaf67",
+      "source_equals_relay": true,
+      "source_equals_destination": true
+    },
+    "published_bundle_validators": {
+      "analysis": "pass",
+      "gemma2_2b_4bit": "pass",
+      "olmo3_7b_bf16": "pass"
+    }
+  },
+  "status": "pass"
+}
