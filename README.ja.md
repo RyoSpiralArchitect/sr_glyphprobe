@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -86,6 +86,26 @@ E1が使ったのは、すでに探索済みのprestage target 24件だけであ
 [凍結済みプロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)、公開物は
 [E1 evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md)
 を参照してほしい。
+
+### Multifamily tokenizer censusの現在地
+
+固定したtokenizer-only censusは、mac1、mac2、furnaceにあった14 roster entryを
+すべて完了した。固定文字列115件、context 4種、tokenization 6,440行、pairwise
+19,665行で、model forwardとprotected target accessはいずれも0だった。14 artifactは
+固定surface上で7つの完全一致output classへまとまり、そのうち5 classはnode間で
+完全に再現した。
+
+7 classすべてでraw token数が同じだった文字列は6件だけだった。最大rangeはfamily
+ZWJ sequenceの13 tokenである。Blue circleとblue squareのどちらにも、raw、先頭space、
+glyph-promptのいずれのcontextにも、全7 classでtoken数と先頭1 tokenを同時に揃える
+単一candidateは固定panel内になかった。既存ASCII controlにも、全class共通の
+equal-count candidateはなかった。
+
+したがって、次のcontrol panelはtokenizerごとに別々にfreezeする必要がある。この結果は
+tokenization交絡を取り除かず、Milestone 2も更新せず、layerも選ばず、tokenizer非依存の
+構造も確立しない。詳細は[記述結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)、
+[固定プロトコル](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md)、
+[検証済みcompact aggregate](artifacts/multifamily_tokenizer_census_v0/aggregate.json)に示す。
 
 ### E2 技術検証の結果
 
@@ -200,6 +220,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Milestone 2 確認実験プロトコル](docs/MILESTONE2_PROTOCOL.ja.md) / [English](docs/MILESTONE2_PROTOCOL.md)
 - [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md)
 - [E1 探索プロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
+- [Multifamily tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md)
+- [Multifamily tokenizer censusプロトコル](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md) / [English](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -216,7 +238,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。Multifamily tokenizer censusは完了済みの記述的設計証拠であり、将来のcross-tokenizer controlをtokenizer output classごとに凍結する必要性を示しましたが、それ自体は論文gateを閉じません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

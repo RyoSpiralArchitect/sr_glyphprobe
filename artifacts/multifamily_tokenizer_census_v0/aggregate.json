@@ -1,0 +1,5451 @@
+{
+  "analysis_id": "glyphprobe-multifamily-tokenizer-census-v0-posthoc-aggregate-v1",
+  "analysis_role": "posthoc_descriptive_tokenizer_structure_aggregation",
+  "census_protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "claim_boundary": "Post hoc descriptive aggregation of the frozen tokenizer-only census. This artifact performs no model forward, activation capture, intervention, behavioral or semantic test, confirmation, causal localization, control freeze, or Phase I gate decision.",
+  "composition_delta_histograms_across_unique_output_classes": {
+    "keycap_sequence": {
+      "base_delta": {
+        "histogram": {
+          "1": 4,
+          "4": 10
+        },
+        "observation_count": 14
+      }
+    },
+    "skin_tone_sequence": {
+      "base_delta": {
+        "histogram": {
+          "0": 1,
+          "1": 21,
+          "3": 18,
+          "4": 2
+        },
+        "observation_count": 42
+      }
+    },
+    "variation_selector_sequence": {
+      "base_delta": {
+        "histogram": {
+          "0": 7,
+          "1": 28
+        },
+        "observation_count": 35
+      }
+    },
+    "zwj_sequence": {
+      "component_sum_gap": {
+        "histogram": {
+          "0": 8,
+          "1": 21,
+          "2": 21,
+          "3": 3,
+          "6": 3
+        },
+        "observation_count": 56
+      }
+    }
+  },
+  "cross_class_raw_item_ranges": [
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "blue_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "blue_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "brown_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "brown_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_black_flag",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_black_large_square",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_boy",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_cat",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_fire",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_girl",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_laptop",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 2,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_man",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_microscope",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_person",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_rainbow",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_red_heart_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 2,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_rocket",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_skull_crossbones_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 2,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_white_flag_text",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_woman",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_angles",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_brackets",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_colons",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_digits",
+      "maximum": 4,
+      "minimum": 1,
+      "range": 3,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 4,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 3
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_hashes",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_lower_alpha",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_periods",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_upper_alpha",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_european_union",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 6,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_japan",
+      "maximum": 9,
+      "minimum": 2,
+      "range": 7,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 9,
+        "tokenization_output_class_04": 6,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_united_nations",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 6,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_united_states",
+      "maximum": 6,
+      "minimum": 1,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 6,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "green_circle",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "green_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "ascii_base",
+      "item_id": "keycap_hash_base",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 1,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "keycap_sequence",
+      "item_id": "keycap_hash_sequence",
+      "maximum": 5,
+      "minimum": 2,
+      "range": 3,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 5,
+        "tokenization_output_class_06": 5,
+        "tokenization_output_class_07": 5
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "ascii_base",
+      "item_id": "keycap_one_base",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "keycap_sequence",
+      "item_id": "keycap_one_sequence",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 5,
+        "tokenization_output_class_06": 5,
+        "tokenization_output_class_07": 5
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "modifier_base",
+      "item_id": "modifier_thumbs_base",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_dark",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_light",
+      "maximum": 6,
+      "minimum": 1,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_medium",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "modifier_base",
+      "item_id": "modifier_wave_base",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_dark",
+      "maximum": 9,
+      "minimum": 2,
+      "range": 7,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 9,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_light",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_medium",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 5,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 6,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "orange_circle",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "orange_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "purple_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "purple_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_03",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_black_heart_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 2,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "text_presentation_base",
+      "item_id": "variation_black_heart_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 2,
+        "tokenization_output_class_04": 1,
+        "tokenization_output_class_05": 1,
+        "tokenization_output_class_06": 1,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_red_heart_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_skull_crossbones_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 3,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_sun_emoji",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 3,
+        "tokenization_output_class_05": 3,
+        "tokenization_output_class_06": 3,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "text_presentation_base",
+      "item_id": "variation_sun_text",
+      "maximum": 4,
+      "minimum": 1,
+      "range": 3,
+      "token_counts": {
+        "tokenization_output_class_01": 1,
+        "tokenization_output_class_02": 1,
+        "tokenization_output_class_03": 4,
+        "tokenization_output_class_04": 2,
+        "tokenization_output_class_05": 2,
+        "tokenization_output_class_06": 2,
+        "tokenization_output_class_07": 1
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_white_flag_emoji",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "tokenization_output_class_01": 2,
+        "tokenization_output_class_02": 2,
+        "tokenization_output_class_03": 6,
+        "tokenization_output_class_04": 4,
+        "tokenization_output_class_05": 4,
+        "tokenization_output_class_06": 4,
+        "tokenization_output_class_07": 2
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_black_cat",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 7,
+        "tokenization_output_class_04": 8,
+        "tokenization_output_class_05": 7,
+        "tokenization_output_class_06": 8,
+        "tokenization_output_class_07": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_family",
+      "maximum": 20,
+      "minimum": 7,
+      "range": 13,
+      "token_counts": {
+        "tokenization_output_class_01": 7,
+        "tokenization_output_class_02": 7,
+        "tokenization_output_class_03": 20,
+        "tokenization_output_class_04": 14,
+        "tokenization_output_class_05": 15,
+        "tokenization_output_class_06": 18,
+        "tokenization_output_class_07": 10
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_heart_on_fire",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 5,
+        "tokenization_output_class_04": 8,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 8,
+        "tokenization_output_class_07": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_man_scientist",
+      "maximum": 10,
+      "minimum": 3,
+      "range": 7,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 10,
+        "tokenization_output_class_04": 7,
+        "tokenization_output_class_05": 7,
+        "tokenization_output_class_06": 8,
+        "tokenization_output_class_07": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_person_astronaut",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 7,
+        "tokenization_output_class_04": 8,
+        "tokenization_output_class_05": 7,
+        "tokenization_output_class_06": 8,
+        "tokenization_output_class_07": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_pirate_flag",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 8,
+        "tokenization_output_class_04": 8,
+        "tokenization_output_class_05": 7,
+        "tokenization_output_class_06": 8,
+        "tokenization_output_class_07": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_rainbow_flag",
+      "maximum": 11,
+      "minimum": 4,
+      "range": 7,
+      "token_counts": {
+        "tokenization_output_class_01": 4,
+        "tokenization_output_class_02": 4,
+        "tokenization_output_class_03": 11,
+        "tokenization_output_class_04": 9,
+        "tokenization_output_class_05": 8,
+        "tokenization_output_class_06": 9,
+        "tokenization_output_class_07": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_woman_technologist",
+      "maximum": 10,
+      "minimum": 3,
+      "range": 7,
+      "token_counts": {
+        "tokenization_output_class_01": 3,
+        "tokenization_output_class_02": 3,
+        "tokenization_output_class_03": 10,
+        "tokenization_output_class_04": 7,
+        "tokenization_output_class_05": 6,
+        "tokenization_output_class_06": 7,
+        "tokenization_output_class_07": 4
+      }
+    }
+  ],
+  "cross_class_raw_range_histogram": {
+    "0": 6,
+    "1": 6,
+    "13": 1,
+    "2": 10,
+    "3": 3,
+    "4": 78,
+    "5": 6,
+    "7": 5
+  },
+  "cross_node_exact_reproduction_groups_on_fixed_panel": [
+    {
+      "class_id": "tokenization_output_class_01",
+      "labels": [
+        "furnace_gemma2_2b_it",
+        "mac2_gemma2_2b_4bit"
+      ],
+      "nodes": [
+        "furnace",
+        "mac2"
+      ]
+    },
+    {
+      "class_id": "tokenization_output_class_02",
+      "labels": [
+        "furnace_gemma3_12b_it",
+        "furnace_gemma3_4b_it",
+        "mac1_gemma4_e4b_it"
+      ],
+      "nodes": [
+        "furnace",
+        "mac1"
+      ]
+    },
+    {
+      "class_id": "tokenization_output_class_03",
+      "labels": [
+        "furnace_mistral7b_instruct_v03",
+        "mac1_mistral7b_instruct_v03",
+        "mac2_mistral7b_instruct_v03_4bit"
+      ],
+      "nodes": [
+        "furnace",
+        "mac1",
+        "mac2"
+      ]
+    },
+    {
+      "class_id": "tokenization_output_class_04",
+      "labels": [
+        "mac1_gpt2",
+        "mac2_gpt2"
+      ],
+      "nodes": [
+        "mac1",
+        "mac2"
+      ]
+    },
+    {
+      "class_id": "tokenization_output_class_05",
+      "labels": [
+        "mac1_llama32_3b",
+        "mac2_llama32_3b_bf16"
+      ],
+      "nodes": [
+        "mac1",
+        "mac2"
+      ]
+    }
+  ],
+  "decision_relevant_descriptive_flags": {
+    "all_roster_entries_succeeded": true,
+    "blue_circle_has_universal_equal_count_prefix_1_candidate_in_all_fixed_contexts": false,
+    "blue_circle_has_universal_equal_count_prefix_1_candidate_in_any_fixed_context": false,
+    "blue_square_has_universal_equal_count_prefix_1_candidate_in_all_fixed_contexts": false,
+    "blue_square_has_universal_equal_count_prefix_1_candidate_in_any_fixed_context": false,
+    "cross_node_exact_reproduction_group_count_on_fixed_panel": 5,
+    "existing_non_glyph_panel_closes_both_focal_prefix_controls_in_all_fixed_contexts": false
+  },
+  "focal_target_control_census": {
+    "blue_circle": {
+      "contexts": {
+        "glyph_prompt": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                243357
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                246404
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 5,
+              "target_span_token_ids": [
+                29473,
+                1011,
+                930,
+                919,
+                952
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                8582,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                145710
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "animals_slot_00",
+                "animals_slot_01",
+                "animals_slot_02",
+                "animals_slot_03",
+                "animals_slot_04",
+                "animals_slot_05",
+                "animals_slot_06",
+                "animals_slot_07",
+                "animals_slot_08",
+                "animals_slot_09",
+                "component_black_flag",
+                "component_cat",
+                "component_microscope",
+                "component_person",
+                "component_rainbow",
+                "component_white_flag_text",
+                "food_slot_00",
+                "food_slot_01",
+                "food_slot_02",
+                "food_slot_03",
+                "food_slot_04",
+                "food_slot_05",
+                "food_slot_06",
+                "food_slot_07",
+                "food_slot_08",
+                "food_slot_09",
+                "sky_slot_00",
+                "sky_slot_03",
+                "sky_slot_04",
+                "sky_slot_07",
+                "sky_slot_08",
+                "sky_slot_09",
+                "social_slot_01",
+                "social_slot_02",
+                "social_slot_04",
+                "social_slot_05",
+                "social_slot_06",
+                "social_slot_07",
+                "social_slot_08",
+                "social_slot_09",
+                "transport_slot_00",
+                "transport_slot_01",
+                "transport_slot_02",
+                "transport_slot_03",
+                "transport_slot_04",
+                "transport_slot_06",
+                "transport_slot_07",
+                "transport_slot_08",
+                "transport_slot_09"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        },
+        "leading_space": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                243357
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                246404
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 4,
+              "target_span_token_ids": [
+                1011,
+                930,
+                919,
+                952
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                12520,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 2,
+              "target_span_token_ids": [
+                96169,
+                113
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 2,
+              "target_span_token_ids": [
+                96169,
+                113
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [],
+              "non_glyph_controls": [],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 2,
+              "target_span_token_ids": [
+                95069,
+                113
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "component_laptop",
+                "component_microscope"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        },
+        "raw": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                243357
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                246404
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 5,
+              "target_span_token_ids": [
+                29473,
+                1011,
+                930,
+                919,
+                952
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                8582,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                242,
+                113
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                145710
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "animals_slot_00",
+                "animals_slot_01",
+                "animals_slot_02",
+                "animals_slot_03",
+                "animals_slot_04",
+                "animals_slot_05",
+                "animals_slot_06",
+                "animals_slot_07",
+                "animals_slot_08",
+                "animals_slot_09",
+                "component_black_flag",
+                "component_cat",
+                "component_microscope",
+                "component_person",
+                "component_rainbow",
+                "component_white_flag_text",
+                "food_slot_00",
+                "food_slot_01",
+                "food_slot_02",
+                "food_slot_03",
+                "food_slot_04",
+                "food_slot_05",
+                "food_slot_06",
+                "food_slot_07",
+                "food_slot_08",
+                "food_slot_09",
+                "sky_slot_00",
+                "sky_slot_03",
+                "sky_slot_04",
+                "sky_slot_07",
+                "sky_slot_08",
+                "sky_slot_09",
+                "social_slot_01",
+                "social_slot_02",
+                "social_slot_04",
+                "social_slot_05",
+                "social_slot_06",
+                "social_slot_07",
+                "social_slot_08",
+                "social_slot_09",
+                "transport_slot_00",
+                "transport_slot_01",
+                "transport_slot_02",
+                "transport_slot_03",
+                "transport_slot_04",
+                "transport_slot_06",
+                "transport_slot_07",
+                "transport_slot_08",
+                "transport_slot_09"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        }
+      }
+    },
+    "blue_square": {
+      "contexts": {
+        "glyph_prompt": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                247528
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                252624
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 5,
+              "target_span_token_ids": [
+                29473,
+                1011,
+                930,
+                930,
+                937
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                8582,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 2,
+              "target_span_token_ids": [
+                128227,
+                99
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "green_square",
+                "orange_square",
+                "purple_circle",
+                "sky_slot_05",
+                "sky_slot_06",
+                "variation_sun_emoji"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        },
+        "leading_space": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                247528
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                252624
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 4
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 4,
+              "target_span_token_ids": [
+                1011,
+                930,
+                930,
+                937
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                12520,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                11410,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                11410,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_digits",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 3
+                }
+              ],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                11162,
+                253,
+                99
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "animals_slot_00",
+                "animals_slot_01",
+                "animals_slot_02",
+                "animals_slot_03",
+                "animals_slot_04",
+                "animals_slot_05",
+                "animals_slot_06",
+                "animals_slot_07",
+                "animals_slot_08",
+                "animals_slot_09",
+                "component_black_flag",
+                "component_cat",
+                "component_person",
+                "component_rainbow",
+                "component_white_flag_text",
+                "food_slot_00",
+                "food_slot_01",
+                "food_slot_02",
+                "food_slot_03",
+                "food_slot_04",
+                "food_slot_05",
+                "food_slot_06",
+                "food_slot_07",
+                "food_slot_08",
+                "food_slot_09",
+                "green_square",
+                "orange_square",
+                "purple_circle",
+                "sky_slot_00",
+                "sky_slot_03",
+                "sky_slot_04",
+                "sky_slot_05",
+                "sky_slot_06",
+                "sky_slot_07",
+                "sky_slot_08",
+                "sky_slot_09",
+                "social_slot_01",
+                "social_slot_02",
+                "social_slot_04",
+                "social_slot_05",
+                "social_slot_06",
+                "social_slot_07",
+                "social_slot_08",
+                "social_slot_09",
+                "transport_slot_00",
+                "transport_slot_01",
+                "transport_slot_02",
+                "transport_slot_03",
+                "transport_slot_04",
+                "transport_slot_06",
+                "transport_slot_07",
+                "transport_slot_08",
+                "transport_slot_09",
+                "variation_sun_emoji"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        },
+        "raw": {
+          "by_output_class": {
+            "tokenization_output_class_01": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma2_2b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                247528
+              ]
+            },
+            "tokenization_output_class_02": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "non_glyph_controls": [
+                {
+                  "item_id": "control_angles",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_brackets",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_colons",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_hashes",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_lower_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_periods",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                },
+                {
+                  "item_id": "control_upper_alpha",
+                  "shared_prefix_length": 0,
+                  "span_token_count": 1
+                }
+              ],
+              "representative_label": "furnace_gemma3_12b_it",
+              "target_span_token_count": 1,
+              "target_span_token_ids": [
+                252624
+              ]
+            },
+            "tokenization_output_class_03": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 3,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 4,
+                  "span_token_count": 5
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "furnace_mistral7b_instruct_v03",
+              "target_span_token_count": 5,
+              "target_span_token_ids": [
+                29473,
+                1011,
+                930,
+                930,
+                937
+              ]
+            },
+            "tokenization_output_class_04": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_gpt2",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                8582,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_05": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_llama32_3b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_06": {
+              "colored_shapes": [
+                {
+                  "item_id": "blue_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 2,
+                  "span_token_count": 3
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac1_olmo3_7b",
+              "target_span_token_count": 3,
+              "target_span_token_ids": [
+                9468,
+                253,
+                99
+              ]
+            },
+            "tokenization_output_class_07": {
+              "colored_shapes": [
+                {
+                  "item_id": "brown_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "brown_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "green_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "orange_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "orange_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "purple_circle",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                },
+                {
+                  "item_id": "purple_square",
+                  "shared_prefix_length": 1,
+                  "span_token_count": 2
+                }
+              ],
+              "non_glyph_controls": [],
+              "representative_label": "mac2_qwen25_3b",
+              "target_span_token_count": 2,
+              "target_span_token_ids": [
+                128227,
+                99
+              ]
+            }
+          },
+          "universal": {
+            "all_fixed_items": {
+              "equal_count": [
+                "green_square",
+                "orange_square",
+                "purple_circle",
+                "sky_slot_05",
+                "sky_slot_06",
+                "variation_sun_emoji"
+              ],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            },
+            "non_glyph_controls": {
+              "equal_count": [],
+              "equal_count_and_prefix_1": [],
+              "equal_count_and_prefix_2": []
+            }
+          }
+        }
+      }
+    }
+  },
+  "integrity": {
+    "contexts": [
+      "raw",
+      "leading_space",
+      "marker_wrapper",
+      "glyph_prompt"
+    ],
+    "frozen_authority_sha256": {
+      "config": "dd35257b12449ee11adad58475d91ba571908c265cbb50aac7715cf91fd71643",
+      "manifest": "060c83e29d3c4d857dbb910001435bb37bcb4419e887f7471d46a7fe5c7bc906",
+      "script": "b553fcd215d648fc6d18524a70f31e69daf8623d3b707842a811c0b828818f72"
+    },
+    "model_forward_calls": 0,
+    "node_count": 3,
+    "nodes": [
+      "mac1",
+      "mac2",
+      "furnace"
+    ],
+    "pairwise_rows": 19665,
+    "panel_items": 115,
+    "protected_target_files_opened": 0,
+    "roster_entries": 14,
+    "successful_roster_entries": 14,
+    "tokenization_rows": 6440
+  },
+  "interpretation_limits": [
+    "The seven output classes are exact equivalence only on the fixed 115 items and four contexts.",
+    "Token IDs are compared only within a tokenizer output class, never across vocabularies.",
+    "Equal token count or prefix structure does not establish semantic equivalence.",
+    "The focal-target summary is post hoc control-design evidence and is not a new frozen control set.",
+    "No activation, behavior, mechanism, causality, or cross-model scientific result follows from this aggregation."
+  ],
+  "items_with_identical_raw_token_count_across_classes": [
+    "control_brackets",
+    "control_colons",
+    "control_hashes",
+    "control_lower_alpha",
+    "control_periods",
+    "keycap_hash_base"
+  ],
+  "pairwise_match_counts_by_output_class": {
+    "glyph_prompt": {
+      "tokenization_output_class_01": {
+        "equal_count_and_prefix_1": 4,
+        "equal_count_and_prefix_2": 0,
+        "equal_token_count": 4541,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma2_2b_it"
+      },
+      "tokenization_output_class_02": {
+        "equal_count_and_prefix_1": 13,
+        "equal_count_and_prefix_2": 6,
+        "equal_token_count": 3949,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma3_12b_it"
+      },
+      "tokenization_output_class_03": {
+        "equal_count_and_prefix_1": 2580,
+        "equal_count_and_prefix_2": 2356,
+        "equal_token_count": 2689,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_mistral7b_instruct_v03"
+      },
+      "tokenization_output_class_04": {
+        "equal_count_and_prefix_1": 2388,
+        "equal_count_and_prefix_2": 307,
+        "equal_token_count": 2769,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_gpt2"
+      },
+      "tokenization_output_class_05": {
+        "equal_count_and_prefix_1": 2551,
+        "equal_count_and_prefix_2": 309,
+        "equal_token_count": 2868,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_llama32_3b"
+      },
+      "tokenization_output_class_06": {
+        "equal_count_and_prefix_1": 2754,
+        "equal_count_and_prefix_2": 331,
+        "equal_token_count": 3124,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_olmo3_7b"
+      },
+      "tokenization_output_class_07": {
+        "equal_count_and_prefix_1": 38,
+        "equal_count_and_prefix_2": 0,
+        "equal_token_count": 3344,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac2_qwen25_3b"
+      }
+    },
+    "leading_space": {
+      "tokenization_output_class_01": {
+        "equal_count_and_prefix_1": 4,
+        "equal_count_and_prefix_2": 0,
+        "equal_token_count": 4541,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma2_2b_it"
+      },
+      "tokenization_output_class_02": {
+        "equal_count_and_prefix_1": 13,
+        "equal_count_and_prefix_2": 6,
+        "equal_token_count": 3876,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma3_12b_it"
+      },
+      "tokenization_output_class_03": {
+        "equal_count_and_prefix_1": 2356,
+        "equal_count_and_prefix_2": 2355,
+        "equal_token_count": 2681,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_mistral7b_instruct_v03"
+      },
+      "tokenization_output_class_04": {
+        "equal_count_and_prefix_1": 2388,
+        "equal_count_and_prefix_2": 307,
+        "equal_token_count": 2836,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_gpt2"
+      },
+      "tokenization_output_class_05": {
+        "equal_count_and_prefix_1": 1944,
+        "equal_count_and_prefix_2": 276,
+        "equal_token_count": 2336,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_llama32_3b"
+      },
+      "tokenization_output_class_06": {
+        "equal_count_and_prefix_1": 2124,
+        "equal_count_and_prefix_2": 304,
+        "equal_token_count": 2477,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_olmo3_7b"
+      },
+      "tokenization_output_class_07": {
+        "equal_count_and_prefix_1": 2128,
+        "equal_count_and_prefix_2": 305,
+        "equal_token_count": 2943,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac2_qwen25_3b"
+      }
+    },
+    "raw": {
+      "tokenization_output_class_01": {
+        "equal_count_and_prefix_1": 4,
+        "equal_count_and_prefix_2": 0,
+        "equal_token_count": 4541,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma2_2b_it"
+      },
+      "tokenization_output_class_02": {
+        "equal_count_and_prefix_1": 13,
+        "equal_count_and_prefix_2": 6,
+        "equal_token_count": 3949,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_gemma3_12b_it"
+      },
+      "tokenization_output_class_03": {
+        "equal_count_and_prefix_1": 2580,
+        "equal_count_and_prefix_2": 2356,
+        "equal_token_count": 2689,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "furnace_mistral7b_instruct_v03"
+      },
+      "tokenization_output_class_04": {
+        "equal_count_and_prefix_1": 2388,
+        "equal_count_and_prefix_2": 307,
+        "equal_token_count": 2769,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_gpt2"
+      },
+      "tokenization_output_class_05": {
+        "equal_count_and_prefix_1": 2551,
+        "equal_count_and_prefix_2": 309,
+        "equal_token_count": 2868,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_llama32_3b"
+      },
+      "tokenization_output_class_06": {
+        "equal_count_and_prefix_1": 2754,
+        "equal_count_and_prefix_2": 331,
+        "equal_token_count": 3124,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac1_olmo3_7b"
+      },
+      "tokenization_output_class_07": {
+        "equal_count_and_prefix_1": 38,
+        "equal_count_and_prefix_2": 0,
+        "equal_token_count": 3344,
+        "exact_span_token_sequence": 0,
+        "pair_count": 6555,
+        "representative_label": "mac2_qwen25_3b"
+      }
+    }
+  },
+  "raw_token_count_by_output_class": {
+    "tokenization_output_class_01": {
+      "count": 115,
+      "histogram": {
+        "1": 95,
+        "2": 11,
+        "3": 7,
+        "4": 1,
+        "7": 1
+      },
+      "maximum": 7,
+      "mean": 1.295652174,
+      "median": 1,
+      "member_labels": [
+        "furnace_gemma2_2b_it",
+        "mac2_gemma2_2b_4bit"
+      ],
+      "minimum": 1,
+      "representative_label": "furnace_gemma2_2b_it"
+    },
+    "tokenization_output_class_02": {
+      "count": 115,
+      "histogram": {
+        "1": 88,
+        "2": 14,
+        "3": 6,
+        "4": 6,
+        "7": 1
+      },
+      "maximum": 7,
+      "mean": 1.434782609,
+      "median": 1,
+      "member_labels": [
+        "furnace_gemma3_12b_it",
+        "furnace_gemma3_4b_it",
+        "mac1_gemma4_e4b_it"
+      ],
+      "minimum": 1,
+      "representative_label": "furnace_gemma3_12b_it"
+    },
+    "tokenization_output_class_03": {
+      "count": 115,
+      "histogram": {
+        "1": 6,
+        "10": 2,
+        "11": 1,
+        "2": 13,
+        "20": 1,
+        "3": 6,
+        "4": 2,
+        "5": 72,
+        "6": 7,
+        "7": 2,
+        "8": 1,
+        "9": 2
+      },
+      "maximum": 20,
+      "mean": 4.791304348,
+      "median": 5,
+      "member_labels": [
+        "furnace_mistral7b_instruct_v03",
+        "mac1_mistral7b_instruct_v03",
+        "mac2_mistral7b_instruct_v03_4bit"
+      ],
+      "minimum": 1,
+      "representative_label": "furnace_mistral7b_instruct_v03"
+    },
+    "tokenization_output_class_04": {
+      "count": 115,
+      "histogram": {
+        "1": 10,
+        "14": 1,
+        "2": 11,
+        "3": 73,
+        "4": 1,
+        "5": 8,
+        "6": 4,
+        "7": 2,
+        "8": 4,
+        "9": 1
+      },
+      "maximum": 14,
+      "mean": 3.373913043,
+      "median": 3,
+      "member_labels": [
+        "mac1_gpt2",
+        "mac2_gpt2"
+      ],
+      "minimum": 1,
+      "representative_label": "mac1_gpt2"
+    },
+    "tokenization_output_class_05": {
+      "count": 115,
+      "histogram": {
+        "1": 12,
+        "15": 1,
+        "2": 8,
+        "3": 74,
+        "4": 1,
+        "5": 2,
+        "6": 12,
+        "7": 4,
+        "8": 1
+      },
+      "maximum": 15,
+      "mean": 3.365217391,
+      "median": 3,
+      "member_labels": [
+        "mac1_llama32_3b",
+        "mac2_llama32_3b_bf16"
+      ],
+      "minimum": 1,
+      "representative_label": "mac1_llama32_3b"
+    },
+    "tokenization_output_class_06": {
+      "count": 115,
+      "histogram": {
+        "1": 11,
+        "18": 1,
+        "2": 5,
+        "3": 78,
+        "4": 1,
+        "5": 2,
+        "6": 10,
+        "7": 1,
+        "8": 5,
+        "9": 1
+      },
+      "maximum": 18,
+      "mean": 3.504347826,
+      "median": 3,
+      "member_labels": [
+        "mac1_olmo3_7b"
+      ],
+      "minimum": 1,
+      "representative_label": "mac1_olmo3_7b"
+    },
+    "tokenization_output_class_07": {
+      "count": 115,
+      "histogram": {
+        "1": 78,
+        "10": 1,
+        "2": 26,
+        "3": 1,
+        "4": 4,
+        "5": 5
+      },
+      "maximum": 10,
+      "mean": 1.6,
+      "median": 1,
+      "member_labels": [
+        "mac2_qwen25_3b"
+      ],
+      "minimum": 1,
+      "representative_label": "mac2_qwen25_3b"
+    }
+  },
+  "roundtrip": {
+    "exact_count": 6095,
+    "failure_by_context": {
+      "leading_space": 345
+    },
+    "failure_by_label": {
+      "furnace_mistral7b_instruct_v03": 115,
+      "mac1_mistral7b_instruct_v03": 115,
+      "mac2_mistral7b_instruct_v03_4bit": 115
+    },
+    "failure_count": 345,
+    "row_count": 6440
+  },
+  "schema_version": 1,
+  "tokenization_output_classes": [
+    {
+      "class_id": "tokenization_output_class_01",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "furnace_gemma2_2b_it",
+        "mac2_gemma2_2b_4bit"
+      ],
+      "member_count": 2,
+      "representative_label": "furnace_gemma2_2b_it",
+      "signature_sha256": "ad2e0f538fa13a07eaaa5611e23cf3b527299ffc58a8dd68935d6da1f97bc9f8"
+    },
+    {
+      "class_id": "tokenization_output_class_02",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "furnace_gemma3_12b_it",
+        "furnace_gemma3_4b_it",
+        "mac1_gemma4_e4b_it"
+      ],
+      "member_count": 3,
+      "representative_label": "furnace_gemma3_12b_it",
+      "signature_sha256": "810089590a20c05da2cd4ac2cbf2d0a73e7b973cf73892cac5bcf679d3bdd1e9"
+    },
+    {
+      "class_id": "tokenization_output_class_03",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "furnace_mistral7b_instruct_v03",
+        "mac1_mistral7b_instruct_v03",
+        "mac2_mistral7b_instruct_v03_4bit"
+      ],
+      "member_count": 3,
+      "representative_label": "furnace_mistral7b_instruct_v03",
+      "signature_sha256": "90527a45d1f480475906adbb25088be2cbfc3aa6f5a885529d2ffaa5aa29a65d"
+    },
+    {
+      "class_id": "tokenization_output_class_04",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "mac1_gpt2",
+        "mac2_gpt2"
+      ],
+      "member_count": 2,
+      "representative_label": "mac1_gpt2",
+      "signature_sha256": "7e98005968e5833e3c7cf0781da7713def19704d4376df14c9a10d89ddba3637"
+    },
+    {
+      "class_id": "tokenization_output_class_05",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "mac1_llama32_3b",
+        "mac2_llama32_3b_bf16"
+      ],
+      "member_count": 2,
+      "representative_label": "mac1_llama32_3b",
+      "signature_sha256": "e14c628379b419ca65c93eb287ffbd1772497ada4a4f3c60019ae81fa6dc28c9"
+    },
+    {
+      "class_id": "tokenization_output_class_06",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "mac1_olmo3_7b"
+      ],
+      "member_count": 1,
+      "representative_label": "mac1_olmo3_7b",
+      "signature_sha256": "6264f7046f56b66325f43de96fbbf2fa54fa7e642e5ee92fe83d55299a04d292"
+    },
+    {
+      "class_id": "tokenization_output_class_07",
+      "exact_item_context_rows": 460,
+      "labels": [
+        "mac2_qwen25_3b"
+      ],
+      "member_count": 1,
+      "representative_label": "mac2_qwen25_3b",
+      "signature_sha256": "6c79d73ed0eca719743eacae161207428aba42586440efceff7b24c8eeadb151"
+    }
+  ],
+  "unique_output_class_count": 7,
+  "wrapper_sensitivity": {
+    "tokenization_output_class_01": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 0
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 26
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 26
+        }
+      },
+      "representative_label": "furnace_gemma2_2b_it"
+    },
+    "tokenization_output_class_02": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 0
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 1,
+          "span_token_ids_changed": 25
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 1,
+          "span_token_ids_changed": 25
+        }
+      },
+      "representative_label": "furnace_gemma3_12b_it"
+    },
+    "tokenization_output_class_03": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 0
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 106,
+          "span_token_ids_changed": 106
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 106,
+          "span_token_ids_changed": 106
+        }
+      },
+      "representative_label": "furnace_mistral7b_instruct_v03"
+    },
+    "tokenization_output_class_04": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 0
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 3,
+          "span_token_ids_changed": 115
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 3,
+          "span_token_ids_changed": 115
+        }
+      },
+      "representative_label": "mac1_gpt2"
+    },
+    "tokenization_output_class_05": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 6
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 18,
+          "span_token_ids_changed": 112
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 18,
+          "span_token_ids_changed": 112
+        }
+      },
+      "representative_label": "mac1_llama32_3b"
+    },
+    "tokenization_output_class_06": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 6
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 21,
+          "span_token_ids_changed": 112
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 21,
+          "span_token_ids_changed": 112
+        }
+      },
+      "representative_label": "mac1_olmo3_7b"
+    },
+    "tokenization_output_class_07": {
+      "contexts": {
+        "glyph_prompt": {
+          "item_count": 115,
+          "span_token_count_changed": 0,
+          "span_token_ids_changed": 6
+        },
+        "leading_space": {
+          "item_count": 115,
+          "span_token_count_changed": 98,
+          "span_token_ids_changed": 112
+        },
+        "marker_wrapper": {
+          "item_count": 115,
+          "span_token_count_changed": 98,
+          "span_token_ids_changed": 112
+        }
+      },
+      "representative_label": "mac2_qwen25_3b"
+    }
+  }
+}

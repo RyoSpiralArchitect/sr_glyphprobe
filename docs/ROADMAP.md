@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -231,6 +231,36 @@ positive primary row would support only a bounded, reused-target MPS transport
 observation. It would not establish semantics, tokenizer independence,
 causality, independent-target confirmation, or model-scale generality.
 
+### Control-design side track T1 — Multifamily tokenizer census
+
+Status: complete as a frozen tokenizer-only census and post-hoc descriptive
+aggregate. It is design evidence, not a scientific activation result.
+
+- complete all 14 locally available tokenizer roster entries across mac1,
+  mac2, and furnace with zero model forwards and zero protected-target access;
+- retain all 115 fixed items, four contexts, 6,440 tokenization rows, and
+  19,665 pairwise rows;
+- treat the seven exact output classes as fixed-surface equivalence only, with
+  five cross-node reproduction groups;
+- record that only six items have invariant raw token count across all seven
+  classes and that the family ZWJ item spans 7–20 raw tokens;
+- record that neither blue circle nor blue square has one fixed-panel candidate
+  matching both token count and a one-token prefix across every output class in
+  any fixed pairwise context; and
+- keep the result post hoc and descriptive: it does not update Milestone 2,
+  select a layer, establish tokenizer-independent structure, or close a paper
+  gate.
+
+The [T1 result](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) and [frozen
+protocol](MULTIFAMILY_TOKENIZER_CENSUS_V0.md) imply that future cross-tokenizer
+activation cells must freeze controls separately per tokenizer output class.
+Atomic-token cases need a declared alternative structural match rather than a
+prefix rule relaxed after outcomes are visible.
+
+Exit condition: met for the census. A later matched-control activation study is
+a new protocol with its own untouched targets, endpoint, hypothesis family,
+and multiplicity rule.
+
 ### Milestone 3 — Targeted causal localization
 
 Status: eligible for protocol design, but no causal protocol has yet been
@@ -310,12 +340,14 @@ The manuscript does not advance from draft to preprint until all of the followin
 
 These gates do not predetermine a positive paper. A carefully bounded negative or mixed result is a valid Phase I outcome if the experiment is identifiable and the artifacts are complete.
 
-Current reading: gates 1–3 have operational evidence, but the final statistical
-qualification for gate 6 remains open because the rebuilt-prototype analysis was
-post-hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be maintained on every
-public documentation change. The English paper remains the Phase I endpoint;
-the current repository is an evidence-bearing research release, not a finished
-manuscript.
+Current reading: gates 1–3 have GPT-2-specific operational evidence, but the
+multifamily tokenizer census does not extend gate 3 across tokenizers. Any such
+extension needs separately frozen, tokenizer-specific control panels. The final
+statistical qualification for gate 6 remains open because the rebuilt-prototype
+analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
+maintained on every public documentation change. The English paper remains the
+Phase I endpoint; the current repository is an evidence-bearing research
+release, not a finished manuscript.
 
 ## Beyond Phase I
 

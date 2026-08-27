@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -55,6 +55,20 @@ family-specific excess, not semantic family structure, tokenizer independence,
 layer specificity, robust random-control superiority, or causality. E1 reused
 24 exploratory prestage targets, did not touch P2 or C1, does not update the
 Milestone 2 result, and does not satisfy a paper gate.
+
+## Current tokenizer-control design evidence
+
+The frozen multifamily census completed 14 tokenizer entries over 115 items and
+four contexts with zero model forwards and zero protected-target access. The
+entries formed seven exact output classes on that fixed surface. Neither blue
+circle nor blue square had one fixed-panel candidate matching both token count
+and a one-token prefix across every class in any fixed pairwise context.
+
+The manuscript may use this as descriptive motivation for tokenizer-specific
+control design and as a limitation on cross-tokenizer transport. It must not
+present the census as activation evidence, confirmation, tokenizer-independent
+structure, or completion of a paper gate. Any later cross-tokenizer activation
+result must bind its control set prospectively per tokenizer output class.
 
 ## Research questions
 

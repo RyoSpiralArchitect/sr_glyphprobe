@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -88,6 +88,30 @@ comparatorにならず、random controlを上回らないcellも30件中10件あ
 共有した第1・第3 tokenが、小さく不均一なfamily固有成分より強く効いていると
 読むのが妥当だ。[E1の全結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)には、
 行列、区間、非正cellを省かず掲載している。p値や確認的statusは付けていない。
+
+## 同じ絵文字でも、tokenizationの問題は同じではない
+
+次のcontrol設計では、activationからいったん完全に離れた。固定censusで、mac1、mac2、
+furnaceにすでにあった14 tokenizer artifactへ、固定文字列115件を4つの正確なtext
+contextで入力した。Model forwardは行わず、target bankも開いていない。
+
+14 artifactは、この有限surface上で7つの完全一致output classへまとまった。すべての
+classでraw token数が同じだった文字列は6件だけである。Family ZWJ sequenceは、
+compactなclassでは7 token、Mistral v0.3では20 tokenだった。先頭spaceの影響も大きく
+異なり、ほぼ数が変わらないtokenizerがある一方、item-span countがMistralでは
+115件中106件、Qwenでは98件変わった。
+
+Blue circleとblue squareが、実務上の限界をはっきり示した。固定panelには、7 class
+すべてでtoken数と先頭tokenを同時に揃える別itemが1件もなかった。Raw textでも、先頭に
+spaceを置いても、固定promptの前でも同じだった。Byteに近い分割をするtokenizerでは
+色・形のmatchが多数ある。一方、一部のGemma shapeは別々のatomic tokenなので、別glyphと
+先頭tokenを共有する条件そのものが成立しない。
+
+Controlが作れない、という結論ではない。Universal panelを単位にするのが不適切だった、
+という結論である。将来のcross-tokenizer実験では、tokenizer構造ごとに実現可能な
+control familyを別々にfreezeし、atomic-tokenの場合にprefix matchingを何へ置き換えるかも
+先に宣言する。[Censusの全結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)は
+記述的な設計証拠であり、新しいactivation結果でも論文gateでもない。
 
 ## より大きなモデルは、技術ゲートを通過しなかった
 

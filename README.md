@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -32,6 +32,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Milestone 2, independent-source layer 4 | -0.086379, 95% CI [-0.159246, -0.016917] | Holm-adjusted p = 0.999430; unresolved under frozen v1 |
 | E1 global specificity, layer 2 | 0.014752595564, 95% descriptive interval [0.002875238085, 0.027439243404] | exploratory; all five family-specific intervals included zero |
 | E1 global specificity, layer 4 | 0.014887989201, 95% descriptive interval [0.003407563347, 0.019684351979] | intended negative comparator was not negative; all five family-specific intervals included zero |
+| Multifamily tokenizer census | 14/14 roster entries; 7 exact output classes | tokenizer-only; no universal equal-count plus first-prefix candidate for blue circle or blue square in the fixed 115-item panel |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -107,6 +108,28 @@ does not change the Milestone 2 classification, and does not satisfy a Phase I
 paper gate. See the [E1 results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md),
 [frozen protocol](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md), and
 [public evidence bundle](artifacts/emoji_family_exploratory_v1/analysis/report.md).
+
+### Multifamily tokenizer census status
+
+The frozen tokenizer-only census completed all 14 locally available roster
+entries across mac1, mac2, and furnace: 115 fixed strings, four contexts, 6,440
+tokenization rows, 19,665 pairwise rows, zero model forwards, and zero protected
+target access. The 14 artifacts formed seven exact output classes on the fixed
+surface; five classes reproduced exactly across nodes.
+
+Only six strings had the same raw token count across all seven classes. The
+largest range was 13 tokens for the family ZWJ sequence. For both blue circle
+and blue square, no single fixed-panel candidate matched both token count and a
+one-token prefix across all seven classes in any of the raw, leading-space, or
+glyph-prompt contexts. Existing ASCII controls did not provide a universal
+equal-count match either.
+
+This result calls for separately frozen, tokenizer-specific control panels; it
+does not remove tokenization as a confound, update Milestone 2, select a layer,
+or establish tokenizer-independent structure. See the [complete descriptive
+result](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md), [frozen
+protocol](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md), and [compact verified
+aggregate](artifacts/multifamily_tokenizer_census_v0/aggregate.json).
 
 ### E2 engineering results
 
@@ -299,6 +322,8 @@ Project-authored public documentation is maintained in English and Japanese:
 | Milestone 2 protocol | [MILESTONE2_PROTOCOL.md](docs/MILESTONE2_PROTOCOL.md) | [MILESTONE2_PROTOCOL.ja.md](docs/MILESTONE2_PROTOCOL.ja.md) |
 | E1 exploratory results | [EMOJI_FAMILY_EXPLORATORY_RESULTS.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) | [EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) |
 | E1 exploratory protocol | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md) | [EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) |
+| Multifamily tokenizer census results | [MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) | [MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) |
+| Multifamily tokenizer census protocol | [MULTIFAMILY_TOKENIZER_CENSUS_V0.md](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md) | [MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -315,7 +340,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. MPS transport v1 failed preflight with zero model forwards and contributes no scientific result. The corrected v2 study again uses a static manifest commit followed by a receipt-only preflight commit and does not revise the MLX outcomes. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census is completed descriptive design evidence: it requires future cross-tokenizer controls to be frozen per tokenizer output class and does not itself close a gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. MPS transport v1 failed preflight with zero model forwards and contributes no scientific result. The corrected v2 study again uses a static manifest commit followed by a receipt-only preflight commit and does not revise the MLX outcomes. Final paper wording and supporting replication must prospectively address analyzer role binding and prototype-resampling dependence. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

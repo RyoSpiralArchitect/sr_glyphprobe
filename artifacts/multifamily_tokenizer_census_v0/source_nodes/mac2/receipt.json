@@ -1,0 +1,150 @@
+{
+  "claim_boundary": "Descriptive tokenizer structure only. The census performs no model forward, activation capture, intervention, behavioral evaluation, semantic test, confirmation, causal localization, or Phase I gate decision.",
+  "completed_at": "2026-08-27T19:27:39.102119Z",
+  "config": {
+    "path": "configs/multifamily_tokenizer_census_v0.yaml",
+    "sha256": "dd35257b12449ee11adad58475d91ba571908c265cbb50aac7715cf91fd71643"
+  },
+  "environment": {
+    "hostname": "RyonoMacBook-Air.local",
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.13",
+    "tokenizers": "0.22.2",
+    "transformers": "4.57.6"
+  },
+  "frozen_roster_labels": [
+    "mac2_llama32_3b_bf16",
+    "mac2_mistral7b_instruct_v03_4bit",
+    "mac2_gemma2_2b_4bit",
+    "mac2_qwen25_3b",
+    "mac2_gpt2"
+  ],
+  "manifest": {
+    "path": "data/manifests/multifamily_tokenizer_census_v0.json",
+    "sha256": "060c83e29d3c4d857dbb910001435bb37bcb4419e887f7471d46a7fe5c7bc906"
+  },
+  "model_forward_calls": 0,
+  "node": "mac2",
+  "output_sha256": {
+    "pairwise_controls.jsonl": "2ec380e5f6ea2dd6702a91bcf3adbf1cb370ac941a40dd5856d8e8ca53c71f30",
+    "summary.json": "c04edc16cb8fa52ca1459e713ff2bee728b769e1cd105df2ff2d7876312d8997",
+    "tokenizations.jsonl": "244a655f7152dbd7c2228e1d0cfc77793bdb30e17ef31561c2aba5c453e63439"
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "role": "tokenizer_only_structural_census",
+  "row_counts": {
+    "pairwise_controls.jsonl": 6555,
+    "tokenizations.jsonl": 2300
+  },
+  "schema_version": 1,
+  "script": {
+    "path": "scripts/audit_multifamily_emoji_tokenizers_v0.py",
+    "sha256": "b553fcd215d648fc6d18524a70f31e69daf8623d3b707842a811c0b828818f72"
+  },
+  "started_at": "2026-08-27T19:27:35.878787Z",
+  "status": "complete",
+  "successful_labels": [
+    "mac2_llama32_3b_bf16",
+    "mac2_mistral7b_instruct_v03_4bit",
+    "mac2_gemma2_2b_4bit",
+    "mac2_qwen25_3b",
+    "mac2_gpt2"
+  ],
+  "tokenizer_results": [
+    {
+      "asset_sha256": {
+        "config.json": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63",
+        "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+      },
+      "canonical_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "is_fast": true,
+      "label": "mac2_llama32_3b_bf16",
+      "local_path": "<local-path-redacted>",
+      "model_type": "llama",
+      "snapshot_revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "status": "success",
+      "tokenizer_class": "PreTrainedTokenizerFast",
+      "tokenizer_length": 128256,
+      "vocab_size": 128000
+    },
+    {
+      "asset_sha256": {
+        "config.json": "efc145d2f53d6d6ef2639be0556b4ecf6faac6cf8a7199ad2b7bb5ebcf443bdd",
+        "special_tokens_map.json": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0",
+        "tokenizer.json": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49",
+        "tokenizer.model": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer_config.json": "e8fbcfef34d855dba2c7f1d91a2c5470cf493d00ecfd06488ce21e45325bc8ae"
+      },
+      "canonical_model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "is_fast": true,
+      "label": "mac2_mistral7b_instruct_v03_4bit",
+      "local_path": "<local-path-redacted>",
+      "model_type": "mistral",
+      "snapshot_revision": "a4b8f870474b0eb527f466a03fbc187830d271f5",
+      "status": "success",
+      "tokenizer_class": "LlamaTokenizerFast",
+      "tokenizer_length": 32768,
+      "vocab_size": 32768
+    },
+    {
+      "asset_sha256": {
+        "config.json": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836",
+        "special_tokens_map.json": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18",
+        "tokenizer.json": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922",
+        "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+        "tokenizer_config.json": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+      },
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "is_fast": true,
+      "label": "mac2_gemma2_2b_4bit",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma2",
+      "snapshot_revision": "2da7060bea6e767e27d7a776f834071ba69bd3ba",
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizerFast",
+      "tokenizer_length": 256000,
+      "vocab_size": 256000
+    },
+    {
+      "asset_sha256": {
+        "config.json": "27467e2fc311a7656c09a43ae9c3d408211e1f212bbddbc93c8596a06423826f",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "canonical_model_id": "Qwen/Qwen2.5-3B",
+      "is_fast": true,
+      "label": "mac2_qwen25_3b",
+      "local_path": "<local-path-redacted>",
+      "model_type": "qwen2",
+      "snapshot_revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "status": "success",
+      "tokenizer_class": "Qwen2TokenizerFast",
+      "tokenizer_length": 151665,
+      "vocab_size": 151643
+    },
+    {
+      "asset_sha256": {
+        "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+        "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+        "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+      },
+      "canonical_model_id": "openai-community/gpt2",
+      "is_fast": true,
+      "label": "mac2_gpt2",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gpt2",
+      "snapshot_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "status": "success",
+      "tokenizer_class": "GPT2TokenizerFast",
+      "tokenizer_length": 50257,
+      "vocab_size": 50257
+    }
+  ]
+}

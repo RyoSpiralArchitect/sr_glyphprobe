@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -58,6 +58,18 @@ matched-slot反復が見られ、family固有の上乗せは小さかった、�
 controlに対する頑健な優位性、因果性は主張しない。E1は探索済みtarget
 24件を再利用し、P2とC1を使っていない。Milestone 2の判定も論文gateも
 更新しない。
+
+## 現在のtokenizer control設計証拠
+
+固定multifamily censusは、14 tokenizer entry、115 item、4 contextを、model forwardと
+protected-target accessを0に保って完了した。Entryは固定surface上で7つの完全一致output
+classへまとまった。Blue circleとblue squareのどちらにも、どの固定pairwise contextにも、
+全classでtoken数と先頭1 tokenを同時に揃える単一fixed-panel candidateはなかった。
+
+論文では、tokenizer別control設計の記述的な動機と、cross-tokenizer transportの限界として
+のみ使える。Activation evidence、確認結果、tokenizer非依存の構造、論文gateの完了として
+扱わない。後続のcross-tokenizer activation結果では、tokenizer output classごとにcontrol
+setを事前に直接結び付ける。
 
 ## 研究質問
 

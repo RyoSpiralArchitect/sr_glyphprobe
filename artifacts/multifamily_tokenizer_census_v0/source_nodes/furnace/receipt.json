@@ -1,0 +1,133 @@
+{
+  "claim_boundary": "Descriptive tokenizer structure only. The census performs no model forward, activation capture, intervention, behavioral evaluation, semantic test, confirmation, causal localization, or Phase I gate decision.",
+  "completed_at": "2026-08-27T19:27:40.062349Z",
+  "config": {
+    "path": "configs/multifamily_tokenizer_census_v0.yaml",
+    "sha256": "dd35257b12449ee11adad58475d91ba571908c265cbb50aac7715cf91fd71643"
+  },
+  "environment": {
+    "hostname": "spiralreality",
+    "platform": "Linux-7.0.0-29-generic-x86_64-with-glibc2.43",
+    "python": "3.14.4",
+    "tokenizers": "0.22.2",
+    "transformers": "5.15.0"
+  },
+  "frozen_roster_labels": [
+    "furnace_gemma2_2b_it",
+    "furnace_gemma3_4b_it",
+    "furnace_gemma3_12b_it",
+    "furnace_mistral7b_instruct_v03"
+  ],
+  "manifest": {
+    "path": "data/manifests/multifamily_tokenizer_census_v0.json",
+    "sha256": "060c83e29d3c4d857dbb910001435bb37bcb4419e887f7471d46a7fe5c7bc906"
+  },
+  "model_forward_calls": 0,
+  "node": "furnace",
+  "output_sha256": {
+    "pairwise_controls.jsonl": "7e965127376c18711431d1ac0030f4906d2f441127e03c55107607dd6b0d9afe",
+    "summary.json": "cc4ddcffc44b8b8c25aae3795d5f373d25868c3c7ea71f27d390b13558437346",
+    "tokenizations.jsonl": "e86e2383b859804ae5da2dc0c1c70b02da4bf7667c11dc863a319b742dbd85c9"
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "role": "tokenizer_only_structural_census",
+  "row_counts": {
+    "pairwise_controls.jsonl": 6555,
+    "tokenizations.jsonl": 1840
+  },
+  "schema_version": 1,
+  "script": {
+    "path": "scripts/audit_multifamily_emoji_tokenizers_v0.py",
+    "sha256": "b553fcd215d648fc6d18524a70f31e69daf8623d3b707842a811c0b828818f72"
+  },
+  "started_at": "2026-08-27T19:27:35.996537Z",
+  "status": "complete",
+  "successful_labels": [
+    "furnace_gemma2_2b_it",
+    "furnace_gemma3_4b_it",
+    "furnace_gemma3_12b_it",
+    "furnace_mistral7b_instruct_v03"
+  ],
+  "tokenizer_results": [
+    {
+      "asset_sha256": {
+        "config.json": "eacec6c5ca317a87ed2c46789d9705b9274db5027e7ba59da739bfae23addb55",
+        "special_tokens_map.json": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351",
+        "tokenizer.json": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922",
+        "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+        "tokenizer_config.json": "cb32b7929c62608d46572e813112b3ad8a841fb98fdd6a4da8559e368a951c89"
+      },
+      "canonical_model_id": "google/gemma-2-2b-it",
+      "is_fast": true,
+      "label": "furnace_gemma2_2b_it",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma2",
+      "snapshot_revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizer",
+      "tokenizer_length": 256000,
+      "vocab_size": 256000
+    },
+    {
+      "asset_sha256": {
+        "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+        "config.json": "9059f680f4dbd1957f35cb44b9fdd6948f4792db7a7a35ee353ea42e68adf7ff",
+        "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+        "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+        "tokenizer.model": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+        "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+      },
+      "canonical_model_id": "google/gemma-3-4b-it",
+      "is_fast": true,
+      "label": "furnace_gemma3_4b_it",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma3",
+      "snapshot_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizer",
+      "tokenizer_length": 262145,
+      "vocab_size": 262144
+    },
+    {
+      "asset_sha256": {
+        "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+        "config.json": "39172c4124d3470341bbbb25f2926fd97edf68f0fe3a9fa4cde6acb9b7ed2cc6",
+        "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+        "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+        "tokenizer.model": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+        "tokenizer_config.json": "bfe25c2735e395407beb78456ea9a6984a1f00d8c16fa04a8b75f2a614cf53e1"
+      },
+      "canonical_model_id": "google/gemma-3-12b-it",
+      "is_fast": true,
+      "label": "furnace_gemma3_12b_it",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma3",
+      "snapshot_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizer",
+      "tokenizer_length": 262145,
+      "vocab_size": 262144
+    },
+    {
+      "asset_sha256": {
+        "config.json": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99",
+        "special_tokens_map.json": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0",
+        "tokenizer.json": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49",
+        "tokenizer.model": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer.model.v3": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer_config.json": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2"
+      },
+      "canonical_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "is_fast": true,
+      "label": "furnace_mistral7b_instruct_v03",
+      "local_path": "<local-path-redacted>",
+      "model_type": "mistral",
+      "snapshot_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "status": "success",
+      "tokenizer_class": "TokenizersBackend",
+      "tokenizer_length": 32768,
+      "vocab_size": 32768
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "aggregate": {
+    "path": "aggregate.json",
+    "sha256": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f"
+  },
+  "analysis_id": "glyphprobe-multifamily-tokenizer-census-v0-posthoc-aggregate-v1",
+  "census_freeze_commit": "e3bea44a145d3c87f41fc5c60f90201b8cea2bdc",
+  "census_protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "claim_boundary": "Post hoc descriptive aggregation of the frozen tokenizer-only census. This artifact performs no model forward, activation capture, intervention, behavioral or semantic test, confirmation, causal localization, control freeze, or Phase I gate decision.",
+  "model_forward_calls": 0,
+  "protected_target_files_opened": 0,
+  "public_source_metadata": {
+    "absolute_path_replacement": "<local-path-redacted>",
+    "original_source_checksum_ledger": "SOURCE_SHA256SUMS",
+    "public_node_checksum_ledger": "SHA256SUMS",
+    "receipt_and_summary_copies": "absolute_paths_redacted",
+    "source_hashes_reference_original_node_outputs": true
+  },
+  "raw_jsonl_publication": {
+    "included_in_git_artifact": false,
+    "reason": "Git retains node receipts, summaries, and exact raw-output hashes; the 38 MiB raw node tables remain separate run artifacts."
+  },
+  "role": "posthoc_descriptive_collection_receipt",
+  "schema_version": 1,
+  "script": {
+    "path": "scripts/collect_multifamily_tokenizer_census_v0.py",
+    "sha256": "602d679a71fba06a3a268ad03772e8e6ed861a6bef3ba4c97c80a2e825ae31c9"
+  },
+  "source_nodes": {
+    "furnace": {
+      "model_forward_calls": 0,
+      "node": "furnace",
+      "pairwise_controls_sha256": "7e965127376c18711431d1ac0030f4906d2f441127e03c55107607dd6b0d9afe",
+      "pairwise_rows": 6555,
+      "protected_target_files_opened": 0,
+      "receipt_sha256": "ae5d0b63455206cf61ab2bd92f787336c37fddb7e423487915085b649c34b170",
+      "source_sha256sums_sha256": "9e431a8e5120998b53839e5f17d51b366ebe784905b6bdf9974f4c91dc378e65",
+      "status": "complete",
+      "successful_labels": [
+        "furnace_gemma2_2b_it",
+        "furnace_gemma3_4b_it",
+        "furnace_gemma3_12b_it",
+        "furnace_mistral7b_instruct_v03"
+      ],
+      "summary_sha256": "cc4ddcffc44b8b8c25aae3795d5f373d25868c3c7ea71f27d390b13558437346",
+      "tokenization_rows": 1840,
+      "tokenizations_sha256": "e86e2383b859804ae5da2dc0c1c70b02da4bf7667c11dc863a319b742dbd85c9"
+    },
+    "mac1": {
+      "model_forward_calls": 0,
+      "node": "mac1",
+      "pairwise_controls_sha256": "b4e9aa6c8b5a7f8a5bd954d48cc7c79d40b6e04702c24de7962c95cfb5237970",
+      "pairwise_rows": 6555,
+      "protected_target_files_opened": 0,
+      "receipt_sha256": "fa5636984ede55ba5a3ef2ff4021a39a3f7229f43a2b957dc6479cb9609aa379",
+      "source_sha256sums_sha256": "ba19f289e0f130439ab688a1f4195a7967946e008fe667accbb7146cbf6f3e97",
+      "status": "complete",
+      "successful_labels": [
+        "mac1_llama32_3b",
+        "mac1_mistral7b_instruct_v03",
+        "mac1_gpt2",
+        "mac1_gemma4_e4b_it",
+        "mac1_olmo3_7b"
+      ],
+      "summary_sha256": "13cd202248f7609e51d6bc0db0586406d38953c6650a886571d810c51c52c1f6",
+      "tokenization_rows": 2300,
+      "tokenizations_sha256": "4cf2b46e71b8b986ef1d33807cc8be67d8c64742c505240af21c0de6afab956d"
+    },
+    "mac2": {
+      "model_forward_calls": 0,
+      "node": "mac2",
+      "pairwise_controls_sha256": "2ec380e5f6ea2dd6702a91bcf3adbf1cb370ac941a40dd5856d8e8ca53c71f30",
+      "pairwise_rows": 6555,
+      "protected_target_files_opened": 0,
+      "receipt_sha256": "37a94632f81ee090148cf36ba06cfb6b91185d356fbf7373fdb8600d43d921cf",
+      "source_sha256sums_sha256": "432dec7ce5fd21cf2dd208c6f022ac8cd2525d669e3ff3a85c7a0a9b500c5d7a",
+      "status": "complete",
+      "successful_labels": [
+        "mac2_llama32_3b_bf16",
+        "mac2_mistral7b_instruct_v03_4bit",
+        "mac2_gemma2_2b_4bit",
+        "mac2_qwen25_3b",
+        "mac2_gpt2"
+      ],
+      "summary_sha256": "c04edc16cb8fa52ca1459e713ff2bee728b769e1cd105df2ff2d7876312d8997",
+      "tokenization_rows": 2300,
+      "tokenizations_sha256": "244a655f7152dbd7c2228e1d0cfc77793bdb30e17ef31561c2aba5c453e63439"
+    }
+  },
+  "status": "pass"
+}

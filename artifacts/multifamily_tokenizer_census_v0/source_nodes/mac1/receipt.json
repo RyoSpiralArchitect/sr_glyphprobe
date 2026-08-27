@@ -1,0 +1,150 @@
+{
+  "claim_boundary": "Descriptive tokenizer structure only. The census performs no model forward, activation capture, intervention, behavioral evaluation, semantic test, confirmation, causal localization, or Phase I gate decision.",
+  "completed_at": "2026-08-27T19:27:42.883897Z",
+  "config": {
+    "path": "configs/multifamily_tokenizer_census_v0.yaml",
+    "sha256": "dd35257b12449ee11adad58475d91ba571908c265cbb50aac7715cf91fd71643"
+  },
+  "environment": {
+    "hostname": "Ryos-MacBook-Pro.local",
+    "platform": "macOS-26.4.1-arm64-arm-64bit",
+    "python": "3.12.6",
+    "tokenizers": "0.22.2",
+    "transformers": "5.13.0"
+  },
+  "frozen_roster_labels": [
+    "mac1_llama32_3b",
+    "mac1_mistral7b_instruct_v03",
+    "mac1_gpt2",
+    "mac1_gemma4_e4b_it",
+    "mac1_olmo3_7b"
+  ],
+  "manifest": {
+    "path": "data/manifests/multifamily_tokenizer_census_v0.json",
+    "sha256": "060c83e29d3c4d857dbb910001435bb37bcb4419e887f7471d46a7fe5c7bc906"
+  },
+  "model_forward_calls": 0,
+  "node": "mac1",
+  "output_sha256": {
+    "pairwise_controls.jsonl": "b4e9aa6c8b5a7f8a5bd954d48cc7c79d40b6e04702c24de7962c95cfb5237970",
+    "summary.json": "13cd202248f7609e51d6bc0db0586406d38953c6650a886571d810c51c52c1f6",
+    "tokenizations.jsonl": "4cf2b46e71b8b986ef1d33807cc8be67d8c64742c505240af21c0de6afab956d"
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "role": "tokenizer_only_structural_census",
+  "row_counts": {
+    "pairwise_controls.jsonl": 6555,
+    "tokenizations.jsonl": 2300
+  },
+  "schema_version": 1,
+  "script": {
+    "path": "scripts/audit_multifamily_emoji_tokenizers_v0.py",
+    "sha256": "b553fcd215d648fc6d18524a70f31e69daf8623d3b707842a811c0b828818f72"
+  },
+  "started_at": "2026-08-27T19:27:35.669417Z",
+  "status": "complete",
+  "successful_labels": [
+    "mac1_llama32_3b",
+    "mac1_mistral7b_instruct_v03",
+    "mac1_gpt2",
+    "mac1_gemma4_e4b_it",
+    "mac1_olmo3_7b"
+  ],
+  "tokenizer_results": [
+    {
+      "asset_sha256": {
+        "config.json": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a",
+        "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "tokenizer_config.json": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+      },
+      "canonical_model_id": "local/llama-3.2-3b",
+      "is_fast": true,
+      "label": "mac1_llama32_3b",
+      "local_path": "<local-path-redacted>",
+      "model_type": "llama",
+      "snapshot_revision": null,
+      "status": "success",
+      "tokenizer_class": "TokenizersBackend",
+      "tokenizer_length": 128256,
+      "vocab_size": 128000
+    },
+    {
+      "asset_sha256": {
+        "config.json": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99",
+        "special_tokens_map.json": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0",
+        "tokenizer.json": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49",
+        "tokenizer.model": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer.model.v3": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer_config.json": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2"
+      },
+      "canonical_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "is_fast": true,
+      "label": "mac1_mistral7b_instruct_v03",
+      "local_path": "<local-path-redacted>",
+      "model_type": "mistral",
+      "snapshot_revision": null,
+      "status": "success",
+      "tokenizer_class": "TokenizersBackend",
+      "tokenizer_length": 32768,
+      "vocab_size": 32768
+    },
+    {
+      "asset_sha256": {
+        "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+        "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+      },
+      "canonical_model_id": "openai-community/gpt2",
+      "is_fast": true,
+      "label": "mac1_gpt2",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gpt2",
+      "snapshot_revision": null,
+      "status": "success",
+      "tokenizer_class": "GPT2Tokenizer",
+      "tokenizer_length": 50257,
+      "vocab_size": 50257
+    },
+    {
+      "asset_sha256": {
+        "chat_template.jinja": "55572b8d3c8342044e25874c73fe5234b661fa0a57a57f6ef75b58e03d7d959a",
+        "config.json": "33b10c02df3c2e8536cf323d29d53262aaa2f4d11dbe19bc729373fbe90295d4",
+        "tokenizer.json": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "tokenizer_config.json": "97af7f9a43d9c26b4ae9558b39c2d6ffed60b9869f2cf2b9a5282b05c6dac67c"
+      },
+      "canonical_model_id": "local/gemma-4-E4B-it",
+      "is_fast": true,
+      "label": "mac1_gemma4_e4b_it",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma4",
+      "snapshot_revision": null,
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizer",
+      "tokenizer_length": 262144,
+      "vocab_size": 262144
+    },
+    {
+      "asset_sha256": {
+        "config.json": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85",
+        "merges.txt": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502",
+        "special_tokens_map.json": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21",
+        "tokenizer.json": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca",
+        "tokenizer_config.json": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6",
+        "vocab.json": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+      },
+      "canonical_model_id": "local/olmo3-1025-7b",
+      "is_fast": true,
+      "label": "mac1_olmo3_7b",
+      "local_path": "<local-path-redacted>",
+      "model_type": "olmo3",
+      "snapshot_revision": null,
+      "status": "success",
+      "tokenizer_class": "TokenizersBackend",
+      "tokenizer_length": 100278,
+      "vocab_size": 100278
+    }
+  ]
+}

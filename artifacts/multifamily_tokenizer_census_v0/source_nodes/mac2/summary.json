@@ -1,0 +1,2414 @@
+{
+  "analysis_role": "descriptive_tokenizer_structure_only",
+  "claim_boundary": "Descriptive tokenizer structure only. The census performs no model forward, activation capture, intervention, behavioral evaluation, semantic test, confirmation, causal localization, or Phase I gate decision.",
+  "context_count": 4,
+  "cross_tokenizer_item_ranges": [
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_sky",
+      "construction": "single_codepoint",
+      "item_id": "sky_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_food",
+      "construction": "single_codepoint",
+      "item_id": "food_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_animals",
+      "construction": "single_codepoint",
+      "item_id": "animals_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_03",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_transport",
+      "construction": "single_codepoint",
+      "item_id": "transport_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_00",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_01",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_02",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_03",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_04",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_05",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_06",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_07",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_08",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "e1_social",
+      "construction": "single_codepoint",
+      "item_id": "social_slot_09",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "brown_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "brown_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "orange_circle",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "orange_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "green_circle",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "green_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "blue_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "blue_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "purple_circle",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "colored_shape",
+      "construction": "single_codepoint",
+      "item_id": "purple_square",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "modifier_base",
+      "item_id": "modifier_wave_base",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_light",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_medium",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_wave_dark",
+      "maximum": 9,
+      "minimum": 2,
+      "range": 7,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 9,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "modifier_base",
+      "item_id": "modifier_thumbs_base",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_light",
+      "maximum": 6,
+      "minimum": 1,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_medium",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "modifier",
+      "construction": "skin_tone_sequence",
+      "item_id": "modifier_thumbs_dark",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_cat",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_black_large_square",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_woman",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_laptop",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_man",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_microscope",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_person",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_rocket",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_red_heart_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_fire",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_white_flag_text",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_rainbow",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_black_flag",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_skull_crossbones_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_girl",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_component",
+      "construction": "component_single",
+      "item_id": "component_boy",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_black_cat",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 8,
+        "mac2_llama32_3b_bf16": 7,
+        "mac2_mistral7b_instruct_v03_4bit": 7,
+        "mac2_qwen25_3b": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_woman_technologist",
+      "maximum": 10,
+      "minimum": 3,
+      "range": 7,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 7,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 10,
+        "mac2_qwen25_3b": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_man_scientist",
+      "maximum": 10,
+      "minimum": 3,
+      "range": 7,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 7,
+        "mac2_llama32_3b_bf16": 7,
+        "mac2_mistral7b_instruct_v03_4bit": 10,
+        "mac2_qwen25_3b": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_person_astronaut",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 8,
+        "mac2_llama32_3b_bf16": 7,
+        "mac2_mistral7b_instruct_v03_4bit": 7,
+        "mac2_qwen25_3b": 4
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_heart_on_fire",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 8,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_rainbow_flag",
+      "maximum": 11,
+      "minimum": 4,
+      "range": 7,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 4,
+        "mac2_gpt2": 9,
+        "mac2_llama32_3b_bf16": 8,
+        "mac2_mistral7b_instruct_v03_4bit": 11,
+        "mac2_qwen25_3b": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_pirate_flag",
+      "maximum": 8,
+      "minimum": 3,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 8,
+        "mac2_llama32_3b_bf16": 7,
+        "mac2_mistral7b_instruct_v03_4bit": 8,
+        "mac2_qwen25_3b": 5
+      }
+    },
+    {
+      "census_family": "zwj_sequence",
+      "construction": "zwj_sequence",
+      "item_id": "zwj_family",
+      "maximum": 20,
+      "minimum": 7,
+      "range": 13,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 7,
+        "mac2_gpt2": 14,
+        "mac2_llama32_3b_bf16": 15,
+        "mac2_mistral7b_instruct_v03_4bit": 20,
+        "mac2_qwen25_3b": 10
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_japan",
+      "maximum": 9,
+      "minimum": 2,
+      "range": 7,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 6,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 9,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_united_states",
+      "maximum": 6,
+      "minimum": 1,
+      "range": 5,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 6,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_united_nations",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 6,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "regional_flag",
+      "construction": "regional_indicator_pair",
+      "item_id": "flag_european_union",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 6,
+        "mac2_llama32_3b_bf16": 6,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "text_presentation_base",
+      "item_id": "variation_black_heart_text",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_black_heart_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_red_heart_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "text_presentation_base",
+      "item_id": "variation_sun_text",
+      "maximum": 4,
+      "minimum": 1,
+      "range": 3,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 2,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_sun_emoji",
+      "maximum": 5,
+      "minimum": 1,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_white_flag_emoji",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 4,
+        "mac2_llama32_3b_bf16": 4,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "variation_selector",
+      "construction": "variation_selector_sequence",
+      "item_id": "variation_skull_crossbones_emoji",
+      "maximum": 3,
+      "minimum": 1,
+      "range": 2,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 3,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "ascii_base",
+      "item_id": "keycap_one_base",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "keycap_sequence",
+      "item_id": "keycap_one_sequence",
+      "maximum": 6,
+      "minimum": 2,
+      "range": 4,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 5,
+        "mac2_mistral7b_instruct_v03_4bit": 6,
+        "mac2_qwen25_3b": 5
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "ascii_base",
+      "item_id": "keycap_hash_base",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "keycap",
+      "construction": "keycap_sequence",
+      "item_id": "keycap_hash_sequence",
+      "maximum": 5,
+      "minimum": 2,
+      "range": 3,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 2,
+        "mac2_gpt2": 5,
+        "mac2_llama32_3b_bf16": 5,
+        "mac2_mistral7b_instruct_v03_4bit": 5,
+        "mac2_qwen25_3b": 5
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_upper_alpha",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_lower_alpha",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_digits",
+      "maximum": 4,
+      "minimum": 1,
+      "range": 3,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 3
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_hashes",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_periods",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_colons",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_brackets",
+      "maximum": 1,
+      "minimum": 1,
+      "range": 0,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "census_family": "non_glyph_control",
+      "construction": "ascii_control",
+      "item_id": "control_angles",
+      "maximum": 2,
+      "minimum": 1,
+      "range": 1,
+      "token_counts": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 2,
+        "mac2_qwen25_3b": 1
+      }
+    }
+  ],
+  "interpretation_limits": [
+    "Token IDs are compared only within a tokenizer, never across vocabularies.",
+    "Equal token counts or shared prefixes do not establish semantic matching.",
+    "Tokenizer structure does not establish activation, behavior, mechanism, or causality."
+  ],
+  "node": "mac2",
+  "pairs_equal_count_in_all_reported_contexts": 1254,
+  "pairwise_row_count": 6555,
+  "panel_item_count": 115,
+  "protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "raw_family_token_count_histograms": {
+    "mac2_gemma2_2b_4bit": {
+      "colored_shape": {
+        "1": 10
+      },
+      "e1_animals": {
+        "1": 10
+      },
+      "e1_food": {
+        "1": 10
+      },
+      "e1_sky": {
+        "1": 10
+      },
+      "e1_social": {
+        "1": 10
+      },
+      "e1_transport": {
+        "1": 10
+      },
+      "keycap": {
+        "1": 2,
+        "2": 2
+      },
+      "modifier": {
+        "1": 3,
+        "2": 5
+      },
+      "non_glyph_control": {
+        "1": 7,
+        "3": 1
+      },
+      "regional_flag": {
+        "1": 1,
+        "2": 3
+      },
+      "variation_selector": {
+        "1": 6,
+        "2": 1
+      },
+      "zwj_component": {
+        "1": 16
+      },
+      "zwj_sequence": {
+        "3": 6,
+        "4": 1,
+        "7": 1
+      }
+    },
+    "mac2_gpt2": {
+      "colored_shape": {
+        "3": 10
+      },
+      "e1_animals": {
+        "3": 10
+      },
+      "e1_food": {
+        "3": 10
+      },
+      "e1_sky": {
+        "3": 10
+      },
+      "e1_social": {
+        "3": 10
+      },
+      "e1_transport": {
+        "3": 10
+      },
+      "keycap": {
+        "1": 2,
+        "5": 2
+      },
+      "modifier": {
+        "2": 2,
+        "5": 6
+      },
+      "non_glyph_control": {
+        "1": 7,
+        "2": 1
+      },
+      "regional_flag": {
+        "6": 4
+      },
+      "variation_selector": {
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 1
+      },
+      "zwj_component": {
+        "2": 6,
+        "3": 10
+      },
+      "zwj_sequence": {
+        "14": 1,
+        "7": 2,
+        "8": 4,
+        "9": 1
+      }
+    },
+    "mac2_llama32_3b_bf16": {
+      "colored_shape": {
+        "3": 10
+      },
+      "e1_animals": {
+        "3": 10
+      },
+      "e1_food": {
+        "3": 10
+      },
+      "e1_sky": {
+        "2": 2,
+        "3": 8
+      },
+      "e1_social": {
+        "2": 1,
+        "3": 9
+      },
+      "e1_transport": {
+        "3": 10
+      },
+      "keycap": {
+        "1": 2,
+        "5": 2
+      },
+      "modifier": {
+        "3": 2,
+        "6": 6
+      },
+      "non_glyph_control": {
+        "1": 8
+      },
+      "regional_flag": {
+        "6": 4
+      },
+      "variation_selector": {
+        "1": 1,
+        "2": 3,
+        "3": 2,
+        "4": 1
+      },
+      "zwj_component": {
+        "1": 1,
+        "2": 2,
+        "3": 13
+      },
+      "zwj_sequence": {
+        "15": 1,
+        "6": 2,
+        "7": 4,
+        "8": 1
+      }
+    },
+    "mac2_mistral7b_instruct_v03_4bit": {
+      "colored_shape": {
+        "2": 2,
+        "5": 8
+      },
+      "e1_animals": {
+        "5": 10
+      },
+      "e1_food": {
+        "5": 10
+      },
+      "e1_sky": {
+        "5": 10
+      },
+      "e1_social": {
+        "2": 1,
+        "5": 9
+      },
+      "e1_transport": {
+        "5": 10
+      },
+      "keycap": {
+        "1": 1,
+        "2": 1,
+        "5": 1,
+        "6": 1
+      },
+      "modifier": {
+        "2": 1,
+        "3": 2,
+        "5": 1,
+        "6": 3,
+        "9": 1
+      },
+      "non_glyph_control": {
+        "1": 5,
+        "2": 2,
+        "4": 1
+      },
+      "regional_flag": {
+        "3": 1,
+        "6": 2,
+        "9": 1
+      },
+      "variation_selector": {
+        "2": 1,
+        "3": 3,
+        "4": 1,
+        "5": 1,
+        "6": 1
+      },
+      "zwj_component": {
+        "2": 5,
+        "5": 11
+      },
+      "zwj_sequence": {
+        "10": 2,
+        "11": 1,
+        "20": 1,
+        "5": 1,
+        "7": 2,
+        "8": 1
+      }
+    },
+    "mac2_qwen25_3b": {
+      "colored_shape": {
+        "1": 2,
+        "2": 8
+      },
+      "e1_animals": {
+        "1": 10
+      },
+      "e1_food": {
+        "1": 10
+      },
+      "e1_sky": {
+        "1": 7,
+        "2": 3
+      },
+      "e1_social": {
+        "1": 10
+      },
+      "e1_transport": {
+        "1": 10
+      },
+      "keycap": {
+        "1": 2,
+        "5": 2
+      },
+      "modifier": {
+        "1": 2,
+        "2": 6
+      },
+      "non_glyph_control": {
+        "1": 7,
+        "3": 1
+      },
+      "regional_flag": {
+        "2": 4
+      },
+      "variation_selector": {
+        "1": 2,
+        "2": 5
+      },
+      "zwj_component": {
+        "1": 16
+      },
+      "zwj_sequence": {
+        "10": 1,
+        "4": 4,
+        "5": 3
+      }
+    }
+  },
+  "relation_token_count_deltas": [
+    {
+      "item_id": "modifier_wave_light",
+      "reference_ids": [
+        "modifier_wave_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "modifier_wave_medium",
+      "reference_ids": [
+        "modifier_wave_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "modifier_wave_dark",
+      "reference_ids": [
+        "modifier_wave_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "modifier_thumbs_light",
+      "reference_ids": [
+        "modifier_thumbs_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 0,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "modifier_thumbs_medium",
+      "reference_ids": [
+        "modifier_thumbs_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "modifier_thumbs_dark",
+      "reference_ids": [
+        "modifier_thumbs_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 3,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "zwj_black_cat",
+      "reference_ids": [
+        "component_cat",
+        "component_black_large_square"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_woman_technologist",
+      "reference_ids": [
+        "component_woman",
+        "component_laptop"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_man_scientist",
+      "reference_ids": [
+        "component_man",
+        "component_microscope"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_person_astronaut",
+      "reference_ids": [
+        "component_person",
+        "component_rocket"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_heart_on_fire",
+      "reference_ids": [
+        "variation_red_heart_emoji",
+        "component_fire"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_rainbow_flag",
+      "reference_ids": [
+        "variation_white_flag_emoji",
+        "component_rainbow"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_pirate_flag",
+      "reference_ids": [
+        "component_black_flag",
+        "variation_skull_crossbones_emoji"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 2,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 2
+      }
+    },
+    {
+      "item_id": "zwj_family",
+      "reference_ids": [
+        "component_man",
+        "component_woman",
+        "component_girl",
+        "component_boy"
+      ],
+      "relation": "component_sum_gap",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 3,
+        "mac2_gpt2": 6,
+        "mac2_llama32_3b_bf16": 3,
+        "mac2_mistral7b_instruct_v03_4bit": 0,
+        "mac2_qwen25_3b": 6
+      }
+    },
+    {
+      "item_id": "variation_black_heart_emoji",
+      "reference_ids": [
+        "variation_black_heart_text"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 0,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "variation_red_heart_emoji",
+      "reference_ids": [
+        "component_red_heart_text"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 0,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "variation_sun_emoji",
+      "reference_ids": [
+        "variation_sun_text"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 0,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "variation_white_flag_emoji",
+      "reference_ids": [
+        "component_white_flag_text"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "variation_skull_crossbones_emoji",
+      "reference_ids": [
+        "component_skull_crossbones_text"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 0,
+        "mac2_gpt2": 1,
+        "mac2_llama32_3b_bf16": 1,
+        "mac2_mistral7b_instruct_v03_4bit": 1,
+        "mac2_qwen25_3b": 1
+      }
+    },
+    {
+      "item_id": "keycap_one_sequence",
+      "reference_ids": [
+        "keycap_one_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 4,
+        "mac2_llama32_3b_bf16": 4,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 4
+      }
+    },
+    {
+      "item_id": "keycap_hash_sequence",
+      "reference_ids": [
+        "keycap_hash_base"
+      ],
+      "relation": "base_delta",
+      "token_count_delta": {
+        "mac2_gemma2_2b_4bit": 1,
+        "mac2_gpt2": 4,
+        "mac2_llama32_3b_bf16": 4,
+        "mac2_mistral7b_instruct_v03_4bit": 4,
+        "mac2_qwen25_3b": 4
+      }
+    }
+  ],
+  "roster_count": 5,
+  "schema_version": 1,
+  "successful_tokenizer_count": 5,
+  "tokenizer_results": [
+    {
+      "asset_sha256": {
+        "config.json": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63",
+        "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+        "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+        "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+      },
+      "canonical_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "is_fast": true,
+      "label": "mac2_llama32_3b_bf16",
+      "local_path": "<local-path-redacted>",
+      "model_type": "llama",
+      "snapshot_revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "status": "success",
+      "tokenizer_class": "PreTrainedTokenizerFast",
+      "tokenizer_length": 128256,
+      "vocab_size": 128000
+    },
+    {
+      "asset_sha256": {
+        "config.json": "efc145d2f53d6d6ef2639be0556b4ecf6faac6cf8a7199ad2b7bb5ebcf443bdd",
+        "special_tokens_map.json": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0",
+        "tokenizer.json": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49",
+        "tokenizer.model": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+        "tokenizer_config.json": "e8fbcfef34d855dba2c7f1d91a2c5470cf493d00ecfd06488ce21e45325bc8ae"
+      },
+      "canonical_model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "is_fast": true,
+      "label": "mac2_mistral7b_instruct_v03_4bit",
+      "local_path": "<local-path-redacted>",
+      "model_type": "mistral",
+      "snapshot_revision": "a4b8f870474b0eb527f466a03fbc187830d271f5",
+      "status": "success",
+      "tokenizer_class": "LlamaTokenizerFast",
+      "tokenizer_length": 32768,
+      "vocab_size": 32768
+    },
+    {
+      "asset_sha256": {
+        "config.json": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836",
+        "special_tokens_map.json": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18",
+        "tokenizer.json": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922",
+        "tokenizer.model": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2",
+        "tokenizer_config.json": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+      },
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "is_fast": true,
+      "label": "mac2_gemma2_2b_4bit",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gemma2",
+      "snapshot_revision": "2da7060bea6e767e27d7a776f834071ba69bd3ba",
+      "status": "success",
+      "tokenizer_class": "GemmaTokenizerFast",
+      "tokenizer_length": 256000,
+      "vocab_size": 256000
+    },
+    {
+      "asset_sha256": {
+        "config.json": "27467e2fc311a7656c09a43ae9c3d408211e1f212bbddbc93c8596a06423826f",
+        "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "tokenizer_config.json": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "canonical_model_id": "Qwen/Qwen2.5-3B",
+      "is_fast": true,
+      "label": "mac2_qwen25_3b",
+      "local_path": "<local-path-redacted>",
+      "model_type": "qwen2",
+      "snapshot_revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "status": "success",
+      "tokenizer_class": "Qwen2TokenizerFast",
+      "tokenizer_length": 151665,
+      "vocab_size": 151643
+    },
+    {
+      "asset_sha256": {
+        "config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+        "tokenizer_config.json": "5e04eb606e3a1583530a42e36c2a6b6615c86f34fe77e44d9ddeb43ff940931f",
+        "vocab.json": "196139668be63f3b5d6574427317ae82f612a97c5d1cdaf36ed2256dbf636783"
+      },
+      "canonical_model_id": "openai-community/gpt2",
+      "is_fast": true,
+      "label": "mac2_gpt2",
+      "local_path": "<local-path-redacted>",
+      "model_type": "gpt2",
+      "snapshot_revision": "607a30d783dfa663caf39e06633721c8d4cfcd7e",
+      "status": "success",
+      "tokenizer_class": "GPT2TokenizerFast",
+      "tokenizer_length": 50257,
+      "vocab_size": 50257
+    }
+  ]
+}

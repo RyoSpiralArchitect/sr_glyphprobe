@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -143,6 +143,27 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 
 完全な設計と主張境界は[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)に示す。Primary rowが正でも、探索済みtargetを再利用したMPS上の限定transport観測である。意味、tokenizer非依存性、因果、独立targetでの確認、model scaleへの一般化は確立しない。
 
+### Control設計side track T1 — Multifamily tokenizer census
+
+状態: 固定tokenizer-only censusと事後記述集計として完了した。設計証拠であり、
+activationの科学的結果ではない。
+
+- mac1、mac2、furnaceで、local利用可能tokenizer 14 entryをすべて完了し、model
+  forwardとprotected-target accessを0に保った。
+- 固定115 item、4 context、tokenization 6,440行、pairwise 19,665行をすべて残した。
+- 7つの完全一致output classは固定surfaceだけの同値classとして扱い、そのうち5 groupが
+  node間で再現した。
+- 7 classすべてでraw token数が不変なのは6 itemだけで、family ZWJ itemはraw
+  7〜20 tokenだった。
+- Blue circleとblue squareのどちらにも、どの固定pairwise contextにも、全output classで
+  token数と先頭1 tokenを同時に揃える単一fixed-panel candidateがないことを記録した。
+- 結果は事後的・記述的に保つ。Milestone 2を更新せず、layerを選ばず、tokenizer非依存の
+  構造を確立せず、論文gateも閉じない。
+
+[T1結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)と[固定プロトコル](MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md)から、将来のcross-tokenizer activation cellでは、tokenizer output classごとにcontrolを別々にfreezeする必要がある。Atomic-tokenの場合は、outcomeを見た後にprefix ruleを緩めず、代替のstructural matchを事前申告する。
+
+終了条件: Censusについては達成した。後続のmatched-control activation studyは、独自の未使用target、endpoint、hypothesis family、多重性ruleを持つ新しいprotocolとする。
+
 ### Milestone 3 — 対象を絞った因果局在化
 
 状態: プロトコル設計へ進める。ただし、因果プロトコルはまだ凍結しておらず、因果主張も認めない。現時点の候補はlayer 2だけで、layer 4は未解決のため候補にしない。別の確認用bankは、このプロトコル設計に着手するための前提条件ではない。
@@ -214,7 +235,7 @@ V2とStage A3が残したのは、要件を満たさないことを示すfailure
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3に実行上の根拠がある。ただし、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

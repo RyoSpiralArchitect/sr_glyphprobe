@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -83,6 +83,33 @@ middle-token substitution, consistent with the deliberately shared first and
 third tokens dominating a small, uneven family-specific remainder. The
 [complete E1 result](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) reports all matrices,
 intervals, and negative cells without p-values or a confirmatory label.
+
+## The same emoji is not the same tokenization problem
+
+The next control-design exercise stepped away from activations entirely. A
+frozen census sent 115 fixed strings through 14 tokenizer artifacts already
+available on mac1, mac2, and furnace, under four exact text contexts. It made no
+model forward and opened no target bank.
+
+The 14 artifacts reduced to seven exact output classes on that finite surface.
+Only six strings kept the same raw token count across every class. The family
+ZWJ sequence ranged from 7 tokens in the most compact classes to 20 in Mistral
+v0.3. A leading space changed almost nothing for some tokenizers and changed
+the item-span count for 106 of 115 Mistral items and 98 of 115 Qwen items.
+
+Blue circle and blue square exposed the practical limit. The fixed panel had no
+single different item that matched both token count and a shared first token
+across all seven classes—not in raw text, after a leading space, or before the
+fixed prompt. Some byte-style tokenizers provide many color-and-shape matches;
+some Gemma shapes are distinct atomic tokens, where a different glyph cannot
+share that first token at all.
+
+The lesson is not that controls are impossible. It is that a universal control
+panel is the wrong unit. A future cross-tokenizer experiment must freeze a
+different feasible control family for each tokenizer structure and say in
+advance what replaces prefix matching for atomic-token cases. The [full census
+result](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) is descriptive design
+evidence, not a new activation result or a paper gate.
 
 ## A larger model did not pass the engineering gate
 

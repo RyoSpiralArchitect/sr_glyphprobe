@@ -23,6 +23,11 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
 - `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json` binds all 82 E1 payload members by
   SHA-256 and inventories the omitted raw ledgers and arrays. With this root
   manifest, the public E1 artifact contains 83 files.
+- `multifamily_tokenizer_census_v0/` contains the verified post-hoc descriptive
+  aggregate, collection receipt, compact checksum ledger, and the three source
+  node path-scrubbed receipt and summary copies. Each node has a public
+  `SHA256SUMS` and a distinctly named original-source `SOURCE_SHA256SUMS`. The
+  raw JSONL tables are omitted but bound by exact hashes and row counts.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -31,6 +36,17 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   weight loading or any model forward and is not scientific outcome evidence.
 
 The legacy v1 bundle omits one 77,327,172-byte condition ledger and three NPZ arrays, as recorded in `MANIFEST.json`. Separately, `MILESTONE2_MANIFEST.json` records 58 omitted large local files across 14 runs, including condition ledgers and model-dependent NPZ arrays, plus two 20,000-replicate bootstrap tables. Their hashes bind the audited local artifacts but cannot reconstruct them. Reproduce the applicable run or analysis to recover the complete data.
+
+## Multifamily tokenizer census reading
+
+The census completed all 14 frozen tokenizer entries and grouped them into
+seven exact output classes on the fixed 115-item, four-context surface. It found
+no single fixed-panel candidate for either blue circle or blue square that
+matched both token count and a one-token prefix across every output class in
+any fixed pairwise context. This is tokenizer-only, post-hoc descriptive
+control-design evidence. It does not update Milestone 2, establish
+tokenizer-independent structure, or close a paper gate. See the [full bounded
+result](../docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md).
 
 ## Milestone 2 reading
 

@@ -13,10 +13,20 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `milestone2/analyses/diagnostics/`：末尾token一致と接頭構造均一化のpaired comparison、および同一seedによる次元fold
 - `emoji_family_exploratory_v1/`：E1のtokenizer preflight、全記述解析、5 family runごとの軽量file 15件
 - `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json`：E1の公開payload 82件をSHA-256で結び付け、省略したraw ledgerとarrayを記録するroot manifest
+- `multifamily_tokenizer_census_v0/`：検証済みの事後記述aggregate、collection receipt、compact checksum台帳、3 nodeのpath-scrub済みsource receipt・summary複製。各nodeには公開bundle用`SHA256SUMS`と、別名の元source台帳`SOURCE_SHA256SUMS`を置く。Raw JSONL tableは省略するが、正確なhashとrow数で結び付ける。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
 従来のv1 bundleでは、77,327,172 byteの条件ledger 1件とNPZ配列3件を省略しており、`MANIFEST.json`に記録している。これとは別に、`MILESTONE2_MANIFEST.json`は、14 runにわたる大容量ローカルfile 58件の省略を記録する。内訳には条件ledgerとmodel依存NPZのほか、20,000 replicateのbootstrap table 2件が含まれる。Hashは監査対象だったローカルartifactを結び付けるが、欠けたデータを復元することはできない。完全なデータが必要な場合は、該当runまたは解析を再現する。
+
+## Multifamily tokenizer censusの読み方
+
+Censusは固定tokenizer entry 14件をすべて完了し、固定115-item・4-context surface上で
+7つの完全一致output classへまとめた。Blue circleとblue squareのどちらにも、どの固定
+pairwise contextにも、全output classでtoken数と先頭1 tokenを同時に揃える単一candidateは
+固定panel内になかった。これはtokenizer-onlyの事後記述的なcontrol設計証拠である。
+Milestone 2を更新せず、tokenizer非依存の構造を確立せず、論文gateも閉じない。
+[主張境界を含む全結果](../docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 
