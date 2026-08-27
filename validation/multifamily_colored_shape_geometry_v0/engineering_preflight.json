@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "receipt_role": "pre_freeze_engineering_capability_only",
+  "scientific_observation": false,
+  "activation_endpoint_computed": false,
+  "speed_claim": false,
+  "intervention_attempted": false,
+  "cells": {
+    "gemma2_2b_4bit": {
+      "status": "pass",
+      "node": "mac2",
+      "model_family": "gemma2",
+      "num_layers": 26,
+      "model_dim": 2304,
+      "parameter_count": 2614341888,
+      "block_path": "model.layers",
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.uint32",
+      "quantized": true,
+      "probe_prompt_token_count": 3,
+      "capture_layer": 13,
+      "activation_shape": [2304],
+      "logits_shape": [256000],
+      "activation_finite": true,
+      "logits_finite": true,
+      "load_elapsed_ms": 3412.056,
+      "forward_latency_ms_initial_compile_included": 60.141,
+      "peak_memory_bytes_backend_counter": 1478410143,
+      "parity_validated": false,
+      "model_artifact": {
+        "file_count": 7,
+        "total_bytes": 1492849725,
+        "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3"
+      },
+      "critical_runtime": {
+        "mlx": "0.31.1",
+        "mlx-lm": "0.31.2",
+        "transformers": "4.57.6"
+      }
+    },
+    "olmo3_7b_bf16": {
+      "status": "pass",
+      "node": "mac1",
+      "model_family": "olmo3",
+      "num_layers": 32,
+      "model_dim": 4096,
+      "parameter_count": 7298011136,
+      "block_path": "model.layers",
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.bfloat16",
+      "quantized": false,
+      "probe_prompt_token_count": 5,
+      "capture_layer": 16,
+      "activation_shape": [4096],
+      "logits_shape": [100278],
+      "activation_finite": true,
+      "logits_finite": true,
+      "load_elapsed_ms": 24162.569,
+      "forward_latency_ms_initial_compile_included": 40358.284,
+      "peak_memory_bytes_backend_counter": 14602186076,
+      "parity_validated": false,
+      "model_artifact": {
+        "file_count": 30,
+        "total_bytes": 14605885551,
+        "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba"
+      },
+      "critical_runtime": {
+        "mlx": "0.31.1",
+        "mlx-lm": "0.31.2",
+        "transformers": "4.57.6"
+      },
+      "runtime_isolation": {
+        "sitecustomize_loaded": false,
+        "user_site_present": false
+      }
+    }
+  },
+  "compatibility_caveat": "mlx-lm 0.31.2 declares transformers>=5.0.0; the preflight-qualified clean runtime uses transformers 4.57.6 and the mismatch is retained rather than hidden.",
+  "claim_boundary": "These probes establish only that each sealed local model can load and return one finite resid_post vector and finite logits without intervention. They do not establish parity, speed superiority, activation geometry, recurrence, semantics, behavior, mechanism, causality, or confirmation."
+}

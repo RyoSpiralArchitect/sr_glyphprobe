@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [固定済みmultifamily geometryプロトコル](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -106,6 +106,22 @@ tokenization交絡を取り除かず、Milestone 2も更新せず、layerも選�
 構造も確立しない。詳細は[記述結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md)、
 [固定プロトコル](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md)、
 [検証済みcompact aggregate](artifacts/multifamily_tokenizer_census_v0/aggregate.json)に示す。
+
+### Multifamily colored-shape geometry v0の現在地
+
+次のactivation cellは、科学的outcomeを見る前に固定した。変更しない10-item
+colored-shape panel、raw glyphの`resid_post`、outcomeに依存しない5つのdepth fraction、
+そして5色にまたがるcircle-minus-square方向の平行性をmidpointで測る唯一のprimary
+statisticを結び付ける。Gemma 2 2B 4-bitはcensusで宣言したatomic 1-token match、
+OLMo 3 7B BF16はequal 3-token spanとshared prefixを使う。2つの5! exact permutation
+testを一つのHolm familyとして扱う。
+
+両方のsealed model artifactは、介入なしの有限値engineering captureを1件ずつ通過したが、
+このprobeは本実験から除外する。公開freeze commitの後にrole-bound runを2本完了するまで、
+科学的run、endpoint、p-value、outcome patternは存在しない。両modelで正でも、model family、
+scale、precision、tokenizer、nodeが交絡するため観測的結果に留まる。詳細は
+[日本語プロトコル](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md)と
+[English](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md)に示す。
 
 ### E2 技術検証の結果
 
@@ -222,6 +238,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [E1 探索プロトコル](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md) / [English](docs/EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
 - [Multifamily tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md)
 - [Multifamily tokenizer censusプロトコル](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md) / [English](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md)
+- [Multifamily colored-shape geometry v0](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md) / [English](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -238,7 +255,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。Multifamily tokenizer censusは完了済みの記述的設計証拠であり、将来のcross-tokenizer controlをtokenizer output classごとに凍結する必要性を示しましたが、それ自体は論文gateを閉じません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。Multifamily tokenizer censusは完了済みの記述的設計証拠であり、将来のcross-tokenizer controlをtokenizer output classごとに凍結する必要性を示しましたが、それ自体は論文gateを閉じません。新しいmultifamily colored-shape geometry v0は固定済み・未実行であり、得られるのは境界を限定した観測的cross-model evidenceで、因果や確認のclosureではありません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

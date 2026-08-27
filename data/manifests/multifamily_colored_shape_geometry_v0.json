@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-colored-shape-geometry-v0",
+  "experiment_role": "prospective_exploratory_observational_activation_geometry",
+  "freeze": {
+    "status": "frozen_by_first_public_commit_containing_this_manifest",
+    "prepared_before_scientific_model_forward": true,
+    "engineering_capability_probes_excluded_from_scientific_observations": true,
+    "revision_policy": "Never overwrite v0 after a scientific run. Any model, artifact, panel, context, layer, endpoint, multiplicity, runtime, or analysis change requires a new protocol version."
+  },
+  "claim_boundary": "Observational resid_post geometry for one fixed ten-item colored-shape panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, parity, node-effect, quantization-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+  },
+  "model_artifacts": {
+    "gemma2_2b_4bit": {
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "file_count": 7,
+      "total_bytes": 1492849725,
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3"
+    },
+    "olmo3_7b_bf16": {
+      "canonical_model_id": "local/olmo3-1025-7b",
+      "file_count": 30,
+      "total_bytes": 14605885551,
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba"
+    }
+  },
+  "frozen_assets": {
+    "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+    "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+    "configs/multifamily_colored_shape_geometry_v0.yaml": "68a6e10806f71f9ec5a4a0c8f9c27bb4f22659945cdf8133e2780cf8347e569e",
+    "data/emoji_panels/colored_shapes.yaml": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97",
+    "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md": "1b39dd4ff5e3a72aa6b0b1a1409680d4530153f0a66ee0f400fb82c0391f2f29",
+    "docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md": "e5fca06a69214dd8891bc3985efaa9802ce9288aa1ff649d720e3584dbbc95cb",
+    "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+    "tests/test_multifamily_colored_shape_geometry_v0.py": "62ddb8fd696bcc77d791556a39b99561f67ac66792f23941adcfbac2e3b38a28",
+    "validation/multifamily_colored_shape_geometry_v0/engineering_preflight.json": "394938310d0dd6ebf2bc2356022f667c70aa3d89357dd4fa5cc193c36bbc3056"
+  },
+  "protected_inputs": {
+    "must_not_be_opened": [
+      "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    ]
+  },
+  "static_counts": {
+    "model_cells": 2,
+    "panel_items": 10,
+    "colors": 5,
+    "shapes": 2,
+    "fixed_layers_per_model": 5,
+    "primary_cells": 2,
+    "square_label_permutations_per_cell": 120,
+    "intervention_calls": 0,
+    "generation_calls": 0
+  }
+}

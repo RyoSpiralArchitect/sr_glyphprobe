@@ -261,6 +261,32 @@ Exit condition: met for the census. A later matched-control activation study is
 a new protocol with its own untouched targets, endpoint, hypothesis family,
 and multiplicity rule.
 
+### Observational side track T2 — Multifamily colored-shape geometry
+
+Status: frozen before scientific model forwards; execution pending.
+
+- bind one unchanged ten-item colored-shape panel to Gemma 2 2B 4-bit and
+  OLMo 3 7B BF16, without reusing the Llama outcome to select a layer;
+- use the Gemma atomic one-token construction match and the OLMo equal-count,
+  shared-prefix construction match as distinct declared control families;
+- capture raw-glyph `resid_post` at five depth fractions selected by formula,
+  with only the midpoint layer primary;
+- test mean circle-minus-square direction parallelism across five colors with
+  all 120 square-label permutations;
+- treat the two model-cell tests as one Holm-corrected family and retain all
+  four secondary layers regardless of sign; and
+- perform no intervention, generation, protected-target access, cross-model
+  magnitude comparison, or post-outcome layer replacement.
+
+The complete freeze is the [T2 protocol](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md).
+Even its strongest predeclared pattern is an observational recurrence candidate:
+model family, scale, precision/quantization, tokenizer structure, and node are
+confounded. A negative, one-sided, or opposite-sign result remains complete.
+
+Exit condition: both role-bound run bundles and the joint exact analysis are
+published with checksums. This side track does not replace the causal gate or
+an independent backend replication.
+
 ### Milestone 3 — Targeted causal localization
 
 Status: eligible for protocol design, but no causal protocol has yet been
@@ -342,8 +368,10 @@ These gates do not predetermine a positive paper. A carefully bounded negative o
 
 Current reading: gates 1–3 have GPT-2-specific operational evidence, but the
 multifamily tokenizer census does not extend gate 3 across tokenizers. Any such
-extension needs separately frozen, tokenizer-specific control panels. The final
-statistical qualification for gate 6 remains open because the rebuilt-prototype
+extension needs separately frozen, tokenizer-specific control panels. T2 is a
+frozen first observational use of two such regimes, but it is not complete
+until both runs and the joint analysis are sealed, and it cannot close the
+causal gate. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
 analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research

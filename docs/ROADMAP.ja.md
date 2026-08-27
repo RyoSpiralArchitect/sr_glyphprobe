@@ -164,6 +164,29 @@ activationの科学的結果ではない。
 
 終了条件: Censusについては達成した。後続のmatched-control activation studyは、独自の未使用target、endpoint、hypothesis family、多重性ruleを持つ新しいprotocolとする。
 
+### 観測side track T2 — Multifamily colored-shape geometry
+
+状態: 科学的model forwardより前に固定済み。実行は未完了である。
+
+- 変更しない10-item colored-shape panelをGemma 2 2B 4-bitとOLMo 3 7B BF16へ
+  結び付け、Llamaのoutcomeからlayerを選ばない。
+- Gemmaのatomic 1-token construction matchと、OLMoのequal-count・shared-prefix
+  construction matchを、別々に申告したcontrol familyとして使う。
+- 式だけで決める5つのdepth fractionにおいてraw-glyph `resid_post`を捕捉し、
+  midpoint layerだけをprimaryにする。
+- 5色のcircle-minus-square方向の平均平行性を、square labelの全120置換で検定する。
+- 2 model-cell testを一つのHolm familyとして扱い、残る4 layerは符号にかかわらず残す。
+- Intervention、generation、protected-target access、cross-model magnitude比較、
+  outcome後のlayer差し替えを行わない。
+
+完全なfreezeは[T2プロトコル](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md)に示す。
+最も強い事前登録patternでも観測的recurrence candidateに留まる。Model family、scale、
+precision/quantization、tokenizer構造、nodeが交絡している。Negative、片側だけ、
+opposite-signの結果も完全な結果として残す。
+
+終了条件: role-bound run 2本とjoint exact analysisをchecksum付きで公開する。このside
+trackは因果gateも独立backend再現も置き換えない。
+
 ### Milestone 3 — 対象を絞った因果局在化
 
 状態: プロトコル設計へ進める。ただし、因果プロトコルはまだ凍結しておらず、因果主張も認めない。現時点の候補はlayer 2だけで、layer 4は未解決のため候補にしない。別の確認用bankは、このプロトコル設計に着手するための前提条件ではない。
@@ -235,7 +258,7 @@ activationの科学的結果ではない。
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使う最初のfreezeだが、run 2本とjoint analysisをsealするまで未完了で、因果gateも閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 
