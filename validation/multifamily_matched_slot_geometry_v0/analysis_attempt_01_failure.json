@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "attempt_id": "glyphprobe-multifamily-matched-slot-geometry-v0-analysis-attempt-01",
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "status": "failed_before_publication",
+  "occurred_at": "2026-08-27T22:11:24Z",
+  "stage": "analysis_receipt_serialization",
+  "error_type": "TypeError",
+  "error_message": "Dict key must be str",
+  "root_cause": "The frozen YAML key named null was parsed as a Python None mapping key. The mathematical analysis completed in process, but JSON serialization of the unmodified primary_endpoint mapping failed before the output directory was published.",
+  "output_directory_published": false,
+  "output_directory_present_after_failure": false,
+  "analysis_values_printed": false,
+  "analysis_values_inspected": false,
+  "scientific_result_available": false,
+  "frozen_choices_changed": false,
+  "bound_inputs": {
+    "gemma2_2b_4bit": {
+      "activations.npz": "966fad8860ca9d1283d68f6e92c2052ee6a1cf75554d226a38a6600ab2022e7f",
+      "observations.jsonl": "d160178ebe35d8d8bba73eb77cdb3c383d1d95b6c6ed75a1f1afbb3ed6558d62",
+      "run_receipt.json": "28f3e99abe192d847cbd864e85cda80c3fd771a915b021158c6195ad8ea9af5b",
+      "SHA256SUMS": "3aa2df4ec79948d1e6c5fe88d8617bcb52afc2f06fc33877576dd93009ce5410"
+    },
+    "olmo3_7b_bf16": {
+      "activations.npz": "72b1be4bcba211e08cd3f7de5e9b6f9ec06df5dfaa774fe90bfa000cbc31aa1b",
+      "observations.jsonl": "b460c134b1b9e12f875eaa41626e54448064a65c8fd1e4c1adfefaf5f8f32a6f",
+      "run_receipt.json": "724be5b65fc38e5868772fd1364c42341859d83acdf3721303ddce1405b5c5da",
+      "SHA256SUMS": "e5a78697a2da51ca3b0dfa88aedf9828dc40d4f5bf4d751ac3f9d375a093b343"
+    }
+  },
+  "repair_boundary": "A separately frozen repair may normalize mapping keys only for JSON receipt serialization. It may not change the activation inputs, panel, depths, statistic, randomization algorithm, randomization draws, seed, p-value, multiplicity rule, outcome registry, or report rows."
+}

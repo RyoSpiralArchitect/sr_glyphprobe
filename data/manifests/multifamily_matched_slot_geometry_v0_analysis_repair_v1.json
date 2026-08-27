@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "repair_id": "glyphprobe-multifamily-matched-slot-geometry-v0-analysis-repair-v1",
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "status": "frozen_by_first_public_commit_containing_this_manifest",
+  "prepared_before_repaired_analysis_execution": true,
+  "original_analysis_values_printed_or_inspected": false,
+  "change_scope": "json_mapping_key_normalization_only",
+  "scientific_choices_changed": false,
+  "frozen_statistics_changed": false,
+  "frozen_protocol_manifest_sha256": "492102592bfbf35a3e64f3c9e88928cbf9a0ad94e6808c7145c0615ca9fab485",
+  "input_runs": {
+    "gemma2_2b_4bit": {
+      "activations.npz": "966fad8860ca9d1283d68f6e92c2052ee6a1cf75554d226a38a6600ab2022e7f",
+      "observations.jsonl": "d160178ebe35d8d8bba73eb77cdb3c383d1d95b6c6ed75a1f1afbb3ed6558d62",
+      "run_receipt.json": "28f3e99abe192d847cbd864e85cda80c3fd771a915b021158c6195ad8ea9af5b",
+      "SHA256SUMS": "3aa2df4ec79948d1e6c5fe88d8617bcb52afc2f06fc33877576dd93009ce5410"
+    },
+    "olmo3_7b_bf16": {
+      "activations.npz": "72b1be4bcba211e08cd3f7de5e9b6f9ec06df5dfaa774fe90bfa000cbc31aa1b",
+      "observations.jsonl": "b460c134b1b9e12f875eaa41626e54448064a65c8fd1e4c1adfefaf5f8f32a6f",
+      "run_receipt.json": "724be5b65fc38e5868772fd1364c42341859d83acdf3721303ddce1405b5c5da",
+      "SHA256SUMS": "e5a78697a2da51ca3b0dfa88aedf9828dc40d4f5bf4d751ac3f9d375a093b343"
+    }
+  },
+  "frozen_assets": {
+    "configs/multifamily_matched_slot_geometry_v0.yaml": "131751c07d10b65a8164de38332811d92d451d7e5a386fb309e15cddc62764d9",
+    "data/manifests/multifamily_matched_slot_geometry_v0.json": "492102592bfbf35a3e64f3c9e88928cbf9a0ad94e6808c7145c0615ca9fab485",
+    "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md": "fdf3bf387a75d58fd0c4bcebfb6a049eb7320010d1fc7dd375a8deb171282d14",
+    "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md": "979ffa53c86b70886aac1dbf0dfdd3f1c9b726b425f543fd37c7f57b44d935af",
+    "scripts/analyze_multifamily_matched_slot_geometry_v0_repair_v1.py": "a258c593324e083d35d0c380a3b1c1f802af230c15ab06e842ea6decb45e5216",
+    "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+    "tests/test_multifamily_matched_slot_geometry_v0_analysis_repair_v1.py": "51a3399030e698c489adad425ae064720f630061214bd1fe6c2cd54c910a19af",
+    "validation/multifamily_matched_slot_geometry_v0/analysis_attempt_01_failure.json": "a90e90624b48d7ee2e8ad8ac0a1e498eb29b38d5eb72b0d53da10a24af9734fa"
+  },
+  "immutable_analysis_choices": {
+    "fixed_depth_fractions": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "primary_endpoint": "all_depth_matched_slot_fraction_after_family_centering",
+    "randomization": "independent_within_family_slot_label_permutation",
+    "randomization_draws": 19999,
+    "rng": "numpy.random.PCG64",
+    "seed": 20260828,
+    "p_value_denominator": 20000,
+    "multiplicity": "holm",
+    "familywise_alpha": 0.05,
+    "model_roles": ["gemma2_2b_4bit", "olmo3_7b_bf16"]
+  }
+}
