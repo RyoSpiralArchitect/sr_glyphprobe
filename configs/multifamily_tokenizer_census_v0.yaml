@@ -1,0 +1,110 @@
+protocol_id: glyphprobe-multifamily-tokenizer-census-v0
+manifest_path: ../data/manifests/multifamily_tokenizer_census_v0.json
+experiment_role: tokenizer_only_structural_census
+claim_boundary: >-
+  Descriptive tokenizer structure only. The census performs no model forward,
+  activation capture, intervention, behavioral evaluation, semantic test,
+  confirmation, causal localization, or Phase I gate decision.
+
+tokenization:
+  local_files_only: true
+  use_fast: true
+  trust_remote_code: false
+  add_special_tokens: false
+  contexts:
+    - id: raw
+      template: "{item}"
+    - id: leading_space
+      template: " {item}"
+    - id: marker_wrapper
+      template: "Marker: {item} ->"
+    - id: glyph_prompt
+      template: |-
+        {item}
+        probe
+
+pairwise_controls:
+  contexts: [raw, leading_space, glyph_prompt]
+  report_all_pairs: true
+  prefix_lengths: [1, 2]
+
+panel_sources:
+  - id: e1_sky_moon
+    path: ../data/emoji_panels/e1_sky_moon.yaml
+    expected_items: 10
+    census_family: e1_sky
+    construction: single_codepoint
+  - id: e1_food
+    path: ../data/emoji_panels/e1_food.yaml
+    expected_items: 10
+    census_family: e1_food
+    construction: single_codepoint
+  - id: e1_animals
+    path: ../data/emoji_panels/e1_animals.yaml
+    expected_items: 10
+    census_family: e1_animals
+    construction: single_codepoint
+  - id: e1_transport
+    path: ../data/emoji_panels/e1_transport.yaml
+    expected_items: 10
+    census_family: e1_transport
+    construction: single_codepoint
+  - id: e1_social
+    path: ../data/emoji_panels/e1_social.yaml
+    expected_items: 10
+    census_family: e1_social
+    construction: single_codepoint
+  - id: colored_shapes
+    path: ../data/emoji_panels/colored_shapes.yaml
+    expected_items: 10
+    census_family: colored_shape
+    construction: single_codepoint
+  - id: multifamily_sequences
+    path: ../data/emoji_panels/multifamily_tokenizer_sequences_v0.yaml
+    expected_items: 55
+    census_family_from_item: true
+    construction_from_item: true
+
+expected_total_items: 115
+
+node_rosters:
+  mac1:
+    - label: mac1_llama32_3b
+      canonical_model_id: local/llama-3.2-3b
+    - label: mac1_mistral7b_instruct_v03
+      canonical_model_id: mistralai/Mistral-7B-Instruct-v0.3
+    - label: mac1_gpt2
+      canonical_model_id: openai-community/gpt2
+    - label: mac1_gemma4_e4b_it
+      canonical_model_id: local/gemma-4-E4B-it
+    - label: mac1_olmo3_7b
+      canonical_model_id: local/olmo3-1025-7b
+  mac2:
+    - label: mac2_llama32_3b_bf16
+      canonical_model_id: mlx-community/Llama-3.2-3B-bf16
+    - label: mac2_mistral7b_instruct_v03_4bit
+      canonical_model_id: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+    - label: mac2_gemma2_2b_4bit
+      canonical_model_id: mlx-community/gemma-2-2b-4bit
+    - label: mac2_qwen25_3b
+      canonical_model_id: Qwen/Qwen2.5-3B
+    - label: mac2_gpt2
+      canonical_model_id: openai-community/gpt2
+  furnace:
+    - label: furnace_gemma2_2b_it
+      canonical_model_id: google/gemma-2-2b-it
+    - label: furnace_gemma3_4b_it
+      canonical_model_id: google/gemma-3-4b-it
+    - label: furnace_gemma3_12b_it
+      canonical_model_id: google/gemma-3-12b-it
+    - label: furnace_mistral7b_instruct_v03
+      canonical_model_id: mistralai/Mistral-7B-Instruct-v0.3
+
+failure_policy:
+  retain_every_roster_entry: true
+  continue_after_tokenizer_load_failure: true
+  prohibit_replacement_after_output_inspection: true
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl

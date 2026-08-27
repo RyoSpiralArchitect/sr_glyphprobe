@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "manifest_id": "multifamily_tokenizer_census_v0",
+  "protocol_id": "glyphprobe-multifamily-tokenizer-census-v0",
+  "experiment_role": "tokenizer_only_structural_census",
+  "freeze": {
+    "status": "frozen_by_first_public_commit_containing_this_manifest",
+    "hash_algorithm": "sha256",
+    "prepared_before_live_v0_census_execution": true,
+    "prepared_before_model_forward": true,
+    "revision_policy": "Do not overwrite v0 after live output. Any panel, roster, context, relation, or analysis change requires a new version."
+  },
+  "claim_boundary": "Descriptive tokenizer structure for 115 fixed strings across a predeclared availability-based roster. No activation, behavior, semantic, mechanistic, causal, confirmatory, cross-model-generalization, or paper-gate claim is authorized.",
+  "static_counts": {
+    "panel_sources": 7,
+    "panel_items": 115,
+    "contexts": 4,
+    "pairwise_contexts": 3,
+    "unordered_item_pairs": 6555,
+    "node_rosters": 3,
+    "roster_entries": 14
+  },
+  "node_rosters": {
+    "mac1": [
+      {"label": "mac1_llama32_3b", "canonical_model_id": "local/llama-3.2-3b"},
+      {"label": "mac1_mistral7b_instruct_v03", "canonical_model_id": "mistralai/Mistral-7B-Instruct-v0.3"},
+      {"label": "mac1_gpt2", "canonical_model_id": "openai-community/gpt2"},
+      {"label": "mac1_gemma4_e4b_it", "canonical_model_id": "local/gemma-4-E4B-it"},
+      {"label": "mac1_olmo3_7b", "canonical_model_id": "local/olmo3-1025-7b"}
+    ],
+    "mac2": [
+      {"label": "mac2_llama32_3b_bf16", "canonical_model_id": "mlx-community/Llama-3.2-3B-bf16"},
+      {"label": "mac2_mistral7b_instruct_v03_4bit", "canonical_model_id": "mlx-community/Mistral-7B-Instruct-v0.3-4bit"},
+      {"label": "mac2_gemma2_2b_4bit", "canonical_model_id": "mlx-community/gemma-2-2b-4bit"},
+      {"label": "mac2_qwen25_3b", "canonical_model_id": "Qwen/Qwen2.5-3B"},
+      {"label": "mac2_gpt2", "canonical_model_id": "openai-community/gpt2"}
+    ],
+    "furnace": [
+      {"label": "furnace_gemma2_2b_it", "canonical_model_id": "google/gemma-2-2b-it"},
+      {"label": "furnace_gemma3_4b_it", "canonical_model_id": "google/gemma-3-4b-it"},
+      {"label": "furnace_gemma3_12b_it", "canonical_model_id": "google/gemma-3-12b-it"},
+      {"label": "furnace_mistral7b_instruct_v03", "canonical_model_id": "mistralai/Mistral-7B-Instruct-v0.3"}
+    ]
+  },
+  "tokenization_contract": {
+    "local_files_only": true,
+    "use_fast": true,
+    "trust_remote_code": false,
+    "add_special_tokens": false,
+    "context_ids": ["raw", "leading_space", "marker_wrapper", "glyph_prompt"],
+    "pairwise_context_ids": ["raw", "leading_space", "glyph_prompt"],
+    "retain_all_pairs": true,
+    "retain_roster_failures": true,
+    "model_forward_calls": 0
+  },
+  "forbidden_research_inputs": [
+    "data/targets/p2_confirmatory_targets_v1.jsonl",
+    "data/targets/c1_causal_holdout_targets_v1.jsonl"
+  ],
+  "expected_outputs": [
+    "tokenizations.jsonl",
+    "pairwise_controls.jsonl",
+    "summary.json",
+    "receipt.json",
+    "SHA256SUMS"
+  ],
+  "frozen_files": [
+    {"path": "pyproject.toml", "sha256": "e1a203c941c97e2130df9803f56823af78be09d70d168a375f33db5f2445b602"},
+    {"path": "configs/multifamily_tokenizer_census_v0.yaml", "sha256": "dd35257b12449ee11adad58475d91ba571908c265cbb50aac7715cf91fd71643"},
+    {"path": "data/emoji_panels/e1_sky_moon.yaml", "sha256": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1"},
+    {"path": "data/emoji_panels/e1_food.yaml", "sha256": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3"},
+    {"path": "data/emoji_panels/e1_animals.yaml", "sha256": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5"},
+    {"path": "data/emoji_panels/e1_transport.yaml", "sha256": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f"},
+    {"path": "data/emoji_panels/e1_social.yaml", "sha256": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6"},
+    {"path": "data/emoji_panels/colored_shapes.yaml", "sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97"},
+    {"path": "data/emoji_panels/multifamily_tokenizer_sequences_v0.yaml", "sha256": "d04edbf7e78195dcf6f17ac2c37929e7dde865c534f359190ec04ebfe296694d"},
+    {"path": "scripts/audit_multifamily_emoji_tokenizers_v0.py", "sha256": "b553fcd215d648fc6d18524a70f31e69daf8623d3b707842a811c0b828818f72"},
+    {"path": "tests/test_multifamily_tokenizer_census_v0.py", "sha256": "9413cf5bfbe24f20647df98b045f5656a6b3555cb303b0031bdbfcac3b16bd18"},
+    {"path": "docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md", "sha256": "76a31bf3bd5e3493f0fd6557ba689d87da359b0baebd00549b30f5b8bbea20b8"},
+    {"path": "docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md", "sha256": "5b18a721d83d88f5d9ab0c69dd7f5f148b00480d34323239c6516bb8026b48a5"}
+  ]
+}
