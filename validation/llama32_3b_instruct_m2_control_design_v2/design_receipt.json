@@ -1,0 +1,988 @@
+{
+  "all_three_generated_panels_match": true,
+  "allocation_contract": {
+    "candidate_order": "ascending_unicode_scalar",
+    "donor_pool": "original_source_panel_only",
+    "expected_maximum_pairwise_overlap": 1,
+    "expected_total_pairwise_overlap": 2,
+    "no_language_model_outcome_inspection": true,
+    "no_manual_candidate_selection": true,
+    "panel_order": [
+      "m2_null_prefix_9x253_1x242_a",
+      "m2_null_prefix_9x253_1x242_b",
+      "m2_null_prefix_9x253_1x242_c"
+    ],
+    "replacements": [
+      {
+        "donor_panel_id": "m2_null_prefix_9x253_1x242_a",
+        "recipient_panel_id": "m2_null_prefix_9x253_1x242_b",
+        "rule": "lowest_unicode_scalar_compatible_dominant_glyph_in_original_donor_not_already_in_original_recipient"
+      },
+      {
+        "donor_panel_id": "m2_null_prefix_9x253_1x242_b",
+        "recipient_panel_id": "m2_null_prefix_9x253_1x242_c",
+        "rule": "lowest_unicode_scalar_compatible_dominant_glyph_in_original_donor_not_already_in_original_recipient"
+      }
+    ]
+  },
+  "analysis_constraints": {
+    "confirmatory_claim_authorized": false,
+    "require_disjoint_panel_a_only_sensitivity": true,
+    "require_overlap_aware_analysis": true,
+    "treat_control_panels_as_independent": false
+  },
+  "claim_boundary": {
+    "experimental_grid_authorized": false,
+    "independent_control_panels_claimed": false,
+    "language_model_loaded": false,
+    "manual_candidate_selection": false,
+    "model_forward_count": 0,
+    "model_selection_authorized": false,
+    "scientific_result": false,
+    "study_target_banks_accessed": false,
+    "tokenizer_only": true
+  },
+  "config": {
+    "path": "configs/llama32_3b_instruct_m2_control_design_v2.yaml",
+    "sha256": "0b9c4ade51700ea51277ddb0d4e9ded2d414f99d4104a0e1902f8e896fce739d"
+  },
+  "decision": "The suite attains the unavoidable two-placement overlap lower bound while matching all tokenizer features in all 16 wrappers. It is exploratory input, not three independent controls; overlap-aware analysis and a disjoint panel-A-only sensitivity are mandatory before interpreting model outcomes.",
+  "design_id": "glyphprobe-llama32-3b-instruct-m2-control-design-v2",
+  "generated_comparisons": {
+    "m2_null_prefix_9x253_1x242_a": {
+      "candidate_panel_id": "llama32_m2_null_minimum_overlap_a_v2",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": true,
+        "item_count_match": true,
+        "raw_feature_histogram_match": true,
+        "raw_prefix_histogram_match": true,
+        "raw_token_count_histogram_match": true
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": true,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_b": {
+      "candidate_panel_id": "llama32_m2_null_minimum_overlap_b_v2",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": true,
+        "item_count_match": true,
+        "raw_feature_histogram_match": true,
+        "raw_prefix_histogram_match": true,
+        "raw_token_count_histogram_match": true
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": true,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_c": {
+      "candidate_panel_id": "llama32_m2_null_minimum_overlap_c_v2",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": true,
+        "item_count_match": true,
+        "raw_feature_histogram_match": true,
+        "raw_prefix_histogram_match": true,
+        "raw_token_count_histogram_match": true
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": true,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        }
+      }
+    }
+  },
+  "implementation": {
+    "path": "scripts/design_llama32_m2_controls_tokenizer_v2.py",
+    "sha256": "ab6c7849afa6ce8a1441dc1a4b685783125bc4a6f2360b25ba32965d4d6db3c4",
+    "v0_helper_path": "scripts/design_llama32_m2_controls_tokenizer_v0.py",
+    "v0_helper_sha256": "48ff6ec36e343cdde39af35c398b8fc5d033e41723ff26f192387dff303a3c46"
+  },
+  "inventory_contract": {
+    "dominant_prefix_token_ids": [
+      9468,
+      253
+    ],
+    "dominant_slots_per_panel": 9,
+    "expected_unique_compatible_dominant_glyphs": 25,
+    "panels": 3,
+    "required_dominant_placements": 27,
+    "required_raw_token_count": 3,
+    "special_prefix_token_ids": [
+      9468,
+      242
+    ],
+    "theoretical_minimum_reused_placements": 2
+  },
+  "inventory_observed": {
+    "compatible_dominant_by_source_panel": {
+      "m2_null_prefix_9x253_1x242_a": 9,
+      "m2_null_prefix_9x253_1x242_b": 8,
+      "m2_null_prefix_9x253_1x242_c": 8
+    },
+    "required_dominant_placements": 27,
+    "theoretical_minimum_reused_placements": 2,
+    "unique_compatible_dominant_glyphs": 25
+  },
+  "outputs": [
+    {
+      "bytes": 2602,
+      "filename": "llama32_m2_matched_null_a_v2.yaml",
+      "panel_id": "llama32_m2_null_minimum_overlap_a_v2",
+      "sha256": "2bcafdc1ec855606d84c2f606b66b60bb5ca3c8a8631b9b532b6054b1a4ccc03"
+    },
+    {
+      "bytes": 2772,
+      "filename": "llama32_m2_matched_null_b_v2.yaml",
+      "panel_id": "llama32_m2_null_minimum_overlap_b_v2",
+      "sha256": "5764afad3e07ad2f18c1012ccbe2ff90f7d37c822513793385dc5d579a1b421f"
+    },
+    {
+      "bytes": 2772,
+      "filename": "llama32_m2_matched_null_c_v2.yaml",
+      "panel_id": "llama32_m2_null_minimum_overlap_c_v2",
+      "sha256": "5a771c9fecd8453a125b43e50340a4dc6d0d1814308f6237fbb6a14fa76a8a82"
+    }
+  ],
+  "overlap": {
+    "attained_reused_placements": 2,
+    "attains_theoretical_minimum": true,
+    "maximum_pairwise_overlap": 1,
+    "pairwise": [
+      {
+        "left_panel_id": "m2_null_prefix_9x253_1x242_a",
+        "overlap_codepoints": [
+          "U+1F7C0"
+        ],
+        "overlap_count": 1,
+        "overlap_glyphs": [
+          "🟀"
+        ],
+        "right_panel_id": "m2_null_prefix_9x253_1x242_b"
+      },
+      {
+        "left_panel_id": "m2_null_prefix_9x253_1x242_a",
+        "overlap_codepoints": [],
+        "overlap_count": 0,
+        "overlap_glyphs": [],
+        "right_panel_id": "m2_null_prefix_9x253_1x242_c"
+      },
+      {
+        "left_panel_id": "m2_null_prefix_9x253_1x242_b",
+        "overlap_codepoints": [
+          "U+1F7C4"
+        ],
+        "overlap_count": 1,
+        "overlap_glyphs": [
+          "🟄"
+        ],
+        "right_panel_id": "m2_null_prefix_9x253_1x242_c"
+      }
+    ],
+    "total_pairwise_overlap": 2
+  },
+  "prior_negative_branches": [
+    {
+      "eligible_candidate_count": 0,
+      "id": "single_scalar_v0",
+      "path": "validation/llama32_3b_instruct_m2_control_design_v0/design_receipt.json",
+      "sha256": "14b7cfa5cdba2314aa4af1942c4fa233f1ae1dcb6e62d9a92aedf8c0a10c580f",
+      "status": "no_eligible_single_scalar_tokenizer_matches"
+    },
+    {
+      "eligible_candidate_count": 0,
+      "id": "tokenizer_grapheme_completion_v1",
+      "path": "validation/llama32_3b_instruct_m2_control_design_v1/design_receipt.json",
+      "sha256": "5222e2b17b81e4f22e3d9feeec23ec9894901a1a873b28e4623be54b8150f1a4",
+      "status": "no_eligible_tokenizer_completion_graphemes"
+    }
+  ],
+  "schema_version": 1,
+  "selected_reuses": [
+    {
+      "candidate_count": 9,
+      "donor_panel_id": "m2_null_prefix_9x253_1x242_a",
+      "recipient_panel_id": "m2_null_prefix_9x253_1x242_b",
+      "replaced_source_item_id": "null_b_u1f7c1",
+      "rule": "lowest_unicode_scalar_compatible_dominant_glyph_in_original_donor_not_already_in_original_recipient",
+      "selected_candidate_ordinal": 1,
+      "selected_codepoint": "U+1F7C0",
+      "selected_glyph": "🟀",
+      "selected_raw_token_ids": [
+        9468,
+        253,
+        222
+      ],
+      "selected_unicode_name": "LIGHT THREE POINTED BLACK STAR"
+    },
+    {
+      "candidate_count": 8,
+      "donor_panel_id": "m2_null_prefix_9x253_1x242_b",
+      "recipient_panel_id": "m2_null_prefix_9x253_1x242_c",
+      "replaced_source_item_id": "null_c_u1f7e5",
+      "rule": "lowest_unicode_scalar_compatible_dominant_glyph_in_original_donor_not_already_in_original_recipient",
+      "selected_candidate_ordinal": 1,
+      "selected_codepoint": "U+1F7C4",
+      "selected_glyph": "🟄",
+      "selected_raw_token_ids": [
+        9468,
+        253,
+        226
+      ],
+      "selected_unicode_name": "LIGHT FOUR POINTED BLACK STAR"
+    }
+  ],
+  "source_audit": {
+    "path": "validation/llama32_3b_instruct_m2_control_transfer_tokenizer_v0/receipt.json",
+    "sha256": "fc6842954974e4fe362e47485e7000bc9af721300e5683a80e14ac4e25e8b3b0",
+    "status": "existing_controls_do_not_transfer"
+  },
+  "source_comparisons": {
+    "m2_null_prefix_9x253_1x242_a": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_a",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": true,
+        "item_count_match": true,
+        "raw_feature_histogram_match": true,
+        "raw_prefix_histogram_match": true,
+        "raw_token_count_histogram_match": true
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": true,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_b": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_b",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": false,
+        "item_count_match": true,
+        "raw_feature_histogram_match": false,
+        "raw_prefix_histogram_match": false,
+        "raw_token_count_histogram_match": false
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": false,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_c": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_c",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": false,
+        "item_count_match": true,
+        "raw_feature_histogram_match": false,
+        "raw_prefix_histogram_match": false,
+        "raw_token_count_histogram_match": false
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": false,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        }
+      }
+    }
+  },
+  "status": "llama32_m2_tokenizer_matched_minimum_overlap_suite_designed",
+  "tokenizer": {
+    "file_manifest_sha256": "4368cf5f0cea8b02cb5b662dabae678663d78f5041a57467b556bf80f2b7f831",
+    "files": [
+      {
+        "bytes": 9085657,
+        "path": "tokenizer.json",
+        "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+      },
+      {
+        "bytes": 54528,
+        "path": "tokenizer_config.json",
+        "sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+      },
+      {
+        "bytes": 296,
+        "path": "special_tokens_map.json",
+        "sha256": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec"
+      }
+    ],
+    "local_path_recorded": false,
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "special_token_ids": {
+      "bos_token_id": 128000,
+      "eos_token_id": 128009,
+      "pad_token_id": null
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "tokenizer_length": 128256,
+    "vocab_size": 128000
+  }
+}

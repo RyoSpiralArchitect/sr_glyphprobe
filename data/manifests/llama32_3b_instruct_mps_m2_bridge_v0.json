@@ -1,0 +1,378 @@
+{
+  "analysis": {
+    "bootstrap_replicates": 20000,
+    "bootstrap_seed": 20260828,
+    "confirmatory_status_authorized": false,
+    "criterion": "both layer-5 rebuilt-prototype 95% lower bounds strictly exceed delta",
+    "delta": 0.06,
+    "ensemble_endpoint": "primary minus targetwise median of null A/B/C",
+    "mandatory_sensitivity": "primary minus fully disjoint null A",
+    "non_rescuing_layer": 11,
+    "primary_layer": 5
+  },
+  "claim_boundary": {
+    "exploratory_bridge": true,
+    "independent_confirmation": false,
+    "model_forward_count_at_manifest_build": 0,
+    "protected_p2_or_c1_accessed": false,
+    "reused_prestage_targets": true,
+    "scale_curve": false
+  },
+  "forbidden_paths_absent": [
+    "data/targets/c1_causal_holdout_targets_v1.jsonl",
+    "data/targets/c1_confirmatory_targets_v1.jsonl",
+    "data/targets/p2_confirmatory_targets_v1.jsonl"
+  ],
+  "grid": {
+    "backend": "transformers/mps",
+    "direction_seeds": [
+      101,
+      211,
+      307
+    ],
+    "normalized_depths": [
+      0.2,
+      0.4
+    ],
+    "random_directions_per_layer": 8,
+    "resolved_layers_for_28_layer_model": [
+      5,
+      11
+    ],
+    "roles": [
+      "primary",
+      "null_a",
+      "null_b",
+      "null_c"
+    ],
+    "runtime_dtype": "bfloat16",
+    "strength": 0.05,
+    "targets": "first 24 reused prestage targets",
+    "wrappers": 16
+  },
+  "model_artifact": {
+    "file_count": 8,
+    "files": {
+      "config.json": {
+        "bytes": 878,
+        "sha256": "39fb36dc5416f445ebc4e71cb71fbcf6727e80a35836d8ba1a1474c318467b7a"
+      },
+      "generation.json": {
+        "bytes": 189,
+        "sha256": "88effbb63300dbbc7390143fbbdd9d9fa50587b37e8bfd16c8c90d4970a74a36"
+      },
+      "model-00001-of-00002.safetensors": {
+        "bytes": 4965799096,
+        "sha256": "13cbd6d16e927a0c5bad54102514e6e18b4a47b3a6eb911e39d678d328d19f55"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 1459729952,
+        "sha256": "7b770216613ac5c34d7c54bdff1fa616bc4e338a9d0b20af6303e48c295ee23c"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 20919,
+        "sha256": "0a57c30afc07c81610ae7fe013bea3b9d50365f9a8145ae98e8714220f3d7c7c"
+      },
+      "special_tokens_map.json": {
+        "bytes": 296,
+        "sha256": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec"
+      },
+      "tokenizer.json": {
+        "bytes": 9085657,
+        "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+      },
+      "tokenizer_config.json": {
+        "bytes": 54528,
+        "sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+      }
+    },
+    "manifest_sha256": "c698f962b8587e2c38dcb86e344928aa5db3c7386e160230d493fcaf9166ecf6",
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "runtime_alias": "/private/tmp/glyphprobe-llama32-3b-instruct-v0",
+    "total_bytes": 6434691515
+  },
+  "protocol_id": "glyphprobe-llama32-3b-instruct-mps-m2-bridge-v0",
+  "schema_version": 1,
+  "static_file_count": 69,
+  "static_files": {
+    "AGENTS.md": {
+      "bytes": 5512,
+      "sha256": "66359f08995b00e907ebf3613699e604a915107d51ab84b00432dc0558d5b17c"
+    },
+    "configs/llama32_3b_instruct_m2_control_design_v0.yaml": {
+      "bytes": 4061,
+      "sha256": "e6f928157a71ab90db643441fb2db9f8b66d0deb46f5b54b15d969651cd919a3"
+    },
+    "configs/llama32_3b_instruct_m2_control_design_v1.yaml": {
+      "bytes": 4629,
+      "sha256": "96114bc9cb33788d9e2167751258ac66b52a1e54e32423cf5cd44e037d87f006"
+    },
+    "configs/llama32_3b_instruct_m2_control_design_v2.yaml": {
+      "bytes": 4884,
+      "sha256": "0b9c4ade51700ea51277ddb0d4e9ded2d414f99d4104a0e1902f8e896fce739d"
+    },
+    "configs/llama32_3b_instruct_m2_control_transfer_tokenizer_v0.yaml": {
+      "bytes": 2275,
+      "sha256": "468dfa8517bea414437ece3300af83ed135abe5f50a22ae98762ae7595556567"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_a_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "2498f9fb7767bb6e4c4f3a71264c56087ccd1a47c74c504d11945a36043cf09b"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_b_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "885a6da6086a84d4d4809883d99d013ec1039d34e3574c36f455ca4b6c51ce47"
+    },
+    "configs/llama32_3b_instruct_mps_m2_null_c_v0.yaml": {
+      "bytes": 1607,
+      "sha256": "8483de142eddfde7b272c2443e6b67c56c6472b2f1b37d7ebf509eb3c53a3354"
+    },
+    "configs/llama32_3b_instruct_mps_m2_primary_v0.yaml": {
+      "bytes": 1594,
+      "sha256": "14f856b254628996b42141ea18a22a13a060d68a3023244c0398bf56fbd21c8c"
+    },
+    "data/emoji_panels/colored_shapes.yaml": {
+      "bytes": 1113,
+      "sha256": "6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_a_v2.yaml": {
+      "bytes": 2602,
+      "sha256": "2bcafdc1ec855606d84c2f606b66b60bb5ca3c8a8631b9b532b6054b1a4ccc03"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_b_v2.yaml": {
+      "bytes": 2772,
+      "sha256": "5764afad3e07ad2f18c1012ccbe2ff90f7d37c822513793385dc5d579a1b421f"
+    },
+    "data/emoji_panels/llama32_m2_matched_null_c_v2.yaml": {
+      "bytes": 2772,
+      "sha256": "5a771c9fecd8453a125b43e50340a4dc6d0d1814308f6237fbb6a14fa76a8a82"
+    },
+    "data/targets/prestage_targets.jsonl": {
+      "bytes": 4072,
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    "data/wrappers/source_wrappers.jsonl": {
+      "bytes": 1043,
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    "docs/LLAMA32_3B_INSTRUCT_MPS_M2_BRIDGE_V0.ja.md": {
+      "bytes": 7774,
+      "sha256": "81218deacc0bad5beb70b81ed67fad55b9aba26d0c00fd998e7a22d42a444ac2"
+    },
+    "docs/LLAMA32_3B_INSTRUCT_MPS_M2_BRIDGE_V0.md": {
+      "bytes": 7135,
+      "sha256": "bf5c6939fa9ad7e4ce7ab275e4d9c6224aea0016230b4c0c4b8fc44506d99a0c"
+    },
+    "pyproject.toml": {
+      "bytes": 2026,
+      "sha256": "e1a203c941c97e2130df9803f56823af78be09d70d168a375f33db5f2445b602"
+    },
+    "scripts/analyze_llama32_3b_instruct_mps_m2_bridge_v0.py": {
+      "bytes": 35607,
+      "sha256": "9f20b7daacf7a8dfe68d552f176a6c2a98178e0f51f422176698ec8ccd433341"
+    },
+    "scripts/analyze_m2_confirmatory.py": {
+      "bytes": 52769,
+      "sha256": "1e35a26f11068725acc0915119421186e182cd8f59b3d4e58339c263c694ac86"
+    },
+    "scripts/analyze_m2_dependence_sensitivity_v1.py": {
+      "bytes": 29383,
+      "sha256": "3714b25f7cc74b03613371a29d38306002a038aa9735abf5b0113570f5eabc03"
+    },
+    "scripts/audit_llama32_m2_control_transfer_tokenizer_v0.py": {
+      "bytes": 20076,
+      "sha256": "250d5d1ac10a993f3ddbb232f51074fe8d5539cb1c2f3c3400074bb2cc8e83bd"
+    },
+    "scripts/build_llama32_3b_instruct_mps_m2_bridge_v0_manifest.py": {
+      "bytes": 8785,
+      "sha256": "e4ff591967d6a3984df7e839bee3eb438e72a157e580941a799cf15b8ef96780"
+    },
+    "scripts/design_llama32_m2_controls_tokenizer_v0.py": {
+      "bytes": 27362,
+      "sha256": "48ff6ec36e343cdde39af35c398b8fc5d033e41723ff26f192387dff303a3c46"
+    },
+    "scripts/design_llama32_m2_controls_tokenizer_v1.py": {
+      "bytes": 24590,
+      "sha256": "273de4bb184b0d9abd1f7a02434d8555fc5460b77a9cd8e461016fe5af0909d2"
+    },
+    "scripts/design_llama32_m2_controls_tokenizer_v2.py": {
+      "bytes": 21891,
+      "sha256": "ab6c7849afa6ce8a1441dc1a4b685783125bc4a6f2360b25ba32965d4d6db3c4"
+    },
+    "scripts/preflight_llama32_3b_instruct_mps_m2_bridge_v0.py": {
+      "bytes": 14644,
+      "sha256": "31dd5d24fbcb8109fc8e21d7c57b52fd01f9a582a3401b38549593622dfdc7d0"
+    },
+    "scripts/run_llama32_3b_instruct_mps_m2_bridge_v0.py": {
+      "bytes": 15612,
+      "sha256": "59a26d90a28071ce654b0735575f5ef58e9719976d3e6a516b4e08ad6251eac3"
+    },
+    "src/glyphprobe/__init__.py": {
+      "bytes": 183,
+      "sha256": "510680921aface6db3275c500d7ebfcc169064d391a2cb419d6bce186721ef28"
+    },
+    "src/glyphprobe/__main__.py": {
+      "bytes": 59,
+      "sha256": "41df9ff33d90dafa6210fdb1e8f045b09ae900258357114a424f36d0c845987a"
+    },
+    "src/glyphprobe/analysis/__init__.py": {
+      "bytes": 258,
+      "sha256": "1411963de57cb54ce1432f3a23c816eee659343fb6681a123a7279ed54b22358"
+    },
+    "src/glyphprobe/analysis/directions.py": {
+      "bytes": 5417,
+      "sha256": "ba26e9acfb9468a30eb616335289c4ca2afbaefb169c6a8953ede430f844fdb2"
+    },
+    "src/glyphprobe/analysis/factors.py": {
+      "bytes": 8066,
+      "sha256": "4dd748d7b10ac18b6c806171e644e3ab259d93e919a460f43334336081f8d1b4"
+    },
+    "src/glyphprobe/analysis/metrics.py": {
+      "bytes": 7553,
+      "sha256": "7f33ace8c6a7a056c49124b9359e0cb2556b78a42e6ca25342bf474a099a9a4d"
+    },
+    "src/glyphprobe/analysis/readiness.py": {
+      "bytes": 6878,
+      "sha256": "fe78becedfad039cb9ca4bc2891f8a5151f4ac1db36e2e021e8e37560e2ab858"
+    },
+    "src/glyphprobe/analysis/sae.py": {
+      "bytes": 2857,
+      "sha256": "0ecd06aa2fbd9632cb6bc53811681a7cb1de0e3f2f2421d9ceaaf30a7df4c158"
+    },
+    "src/glyphprobe/analysis/text.py": {
+      "bytes": 1606,
+      "sha256": "6424cc1ff4fa1117b2c43221f1019c800fc7d7098d661ac590095333b7799d87"
+    },
+    "src/glyphprobe/backends/__init__.py": {
+      "bytes": 142,
+      "sha256": "313f339fe93160d8754e16d9aa6f584510a79a22c09d014d841ad9f73893f057"
+    },
+    "src/glyphprobe/backends/base.py": {
+      "bytes": 2326,
+      "sha256": "05e27b02dabbf7273737de2a7424ae54fe76dbf2b4353dfcad84acba4ebecf9b"
+    },
+    "src/glyphprobe/backends/lens.py": {
+      "bytes": 19116,
+      "sha256": "047cf407660586b498414e7380c251e938eca3ae3c295c7e6e96d302ac3bc7da"
+    },
+    "src/glyphprobe/backends/mlx_backend.py": {
+      "bytes": 24383,
+      "sha256": "8b45faf147fc647121770c05d9675532dcd1ecc3024b9b39d88435ae4bab1964"
+    },
+    "src/glyphprobe/backends/mock.py": {
+      "bytes": 7833,
+      "sha256": "bf7e1a4855c56ee392cb6b6db432d6623e3e8db49640fdbe582f65f5da4e3891"
+    },
+    "src/glyphprobe/backends/openai_compat.py": {
+      "bytes": 9471,
+      "sha256": "cd27eb560a07bc9b14024cf4173308d27fe60240419f52cf92a38bc6d032a499"
+    },
+    "src/glyphprobe/backends/registry.py": {
+      "bytes": 1378,
+      "sha256": "0ce007a9ee8813053fe96f4c85d1607dc6bd7a0f044162e4eef8c373eb64eaeb"
+    },
+    "src/glyphprobe/backends/transformers_backend.py": {
+      "bytes": 23861,
+      "sha256": "80feffe347daa1ca068c3cf87c6fbc6c5a93b376be16a3db44bd7581c0389ca2"
+    },
+    "src/glyphprobe/capabilities.py": {
+      "bytes": 1329,
+      "sha256": "dd19f321bb2571feb40438f503a19b8b7677713005f45e810aa42fc016cbcd20"
+    },
+    "src/glyphprobe/cli.py": {
+      "bytes": 18104,
+      "sha256": "2fe39ba9ed4923ac93fb1891ecd4b357e87f80c1a10e9e761b978be255b59f7e"
+    },
+    "src/glyphprobe/config.py": {
+      "bytes": 18330,
+      "sha256": "3da03bf6b9f5a671e5a9e786e5c04f697f555830d29374031191dd905d291fff"
+    },
+    "src/glyphprobe/errors.py": {
+      "bytes": 442,
+      "sha256": "fc2d7f9342119d80867fac593bd117099da245270eb044cd099da6c1575cceca"
+    },
+    "src/glyphprobe/experiment/__init__.py": {
+      "bytes": 65,
+      "sha256": "aed75f3d386340bbdcfbde353017a6fefe22e19fa25add62feb4901d1b8b43f4"
+    },
+    "src/glyphprobe/experiment/internal.py": {
+      "bytes": 74030,
+      "sha256": "386c22c1efb33486b128286098900afac59b0efb3cbcea6f83a05941ed2095d9"
+    },
+    "src/glyphprobe/experiment/plan.py": {
+      "bytes": 3988,
+      "sha256": "022a9fda4ad46abeed31b2ddfe137b27657681b506a7459a0bdcdc0a5f8be4ef"
+    },
+    "src/glyphprobe/experiment/runner.py": {
+      "bytes": 8982,
+      "sha256": "3b792d159604c69000d83661a741608fcde2a8dd13ee8880528f7f7abaccc096"
+    },
+    "src/glyphprobe/experiment/surface.py": {
+      "bytes": 9243,
+      "sha256": "0394e4e11b9f0c3ebe5eb88e1f4021e71bfd26634cf23c28622eb8d77502669c"
+    },
+    "src/glyphprobe/io.py": {
+      "bytes": 3229,
+      "sha256": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef"
+    },
+    "src/glyphprobe/provenance.py": {
+      "bytes": 2877,
+      "sha256": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c"
+    },
+    "src/glyphprobe/records.py": {
+      "bytes": 1245,
+      "sha256": "e827e3905c96b235230cf0e7e761f3b958354b57b15da905e8020fd2a706e13a"
+    },
+    "src/glyphprobe/reporting/__init__.py": {
+      "bytes": 81,
+      "sha256": "2ed973210ac6c6b8f2f07771650dcd0f6519395549808b457a37129f0ac1a87c"
+    },
+    "src/glyphprobe/reporting/report.py": {
+      "bytes": 7016,
+      "sha256": "0b09837185cfc69a8cf87ed368e1a84cfb92b3a12a6f227b3e23be8de46fa61c"
+    },
+    "src/glyphprobe/seed.py": {
+      "bytes": 718,
+      "sha256": "458bed9440f55c93da06b1c79fa6d0ecea5ffbbc9d2a407af3897eac7cb1e0c4"
+    },
+    "tests/test_audit_llama32_m2_control_transfer_tokenizer_v0.py": {
+      "bytes": 4368,
+      "sha256": "60e5f200a9e4603ac8d125539490cdfe7f39419f41a4cd840fbb7495e589df2e"
+    },
+    "tests/test_design_llama32_m2_controls_tokenizer_v0.py": {
+      "bytes": 4620,
+      "sha256": "c532c2363ba0fbec46c0e9f678a6bc6694bc491e4f4fbc42e6d5a55502ee838f"
+    },
+    "tests/test_design_llama32_m2_controls_tokenizer_v1.py": {
+      "bytes": 3748,
+      "sha256": "caf39f814b7bc43aeb7b1c83a203d26fa81dc2c77edb3d4e3871fbe695537784"
+    },
+    "tests/test_design_llama32_m2_controls_tokenizer_v2.py": {
+      "bytes": 4121,
+      "sha256": "77d855f0ca15c3f25c73b369fcdd65e0a7f6d66390cb071b97efaf8de282878a"
+    },
+    "tests/test_llama32_3b_instruct_mps_m2_bridge_v0.py": {
+      "bytes": 5083,
+      "sha256": "53c447b96537cbde42d4fbd5c224d6c55c682cee53ce4dc90e524bb64882b749"
+    },
+    "validation/llama32_3b_instruct_m2_control_design_v0/design_receipt.json": {
+      "bytes": 20092,
+      "sha256": "14b7cfa5cdba2314aa4af1942c4fa233f1ae1dcb6e62d9a92aedf8c0a10c580f"
+    },
+    "validation/llama32_3b_instruct_m2_control_design_v1/design_receipt.json": {
+      "bytes": 21350,
+      "sha256": "5222e2b17b81e4f22e3d9feeec23ec9894901a1a873b28e4623be54b8150f1a4"
+    },
+    "validation/llama32_3b_instruct_m2_control_design_v2/design_receipt.json": {
+      "bytes": 39758,
+      "sha256": "8a8d1a18312200d7bc75dd5dffc23ad82fadef6f8bdf38eafee6df007933558b"
+    },
+    "validation/llama32_3b_instruct_m2_control_transfer_tokenizer_v0/receipt.json": {
+      "bytes": 743544,
+      "sha256": "fc6842954974e4fe362e47485e7000bc9af721300e5683a80e14ac4e25e8b3b0"
+    }
+  },
+  "static_files_manifest_sha256": "96d5311cb993ad8e3455db9ccb8183e4f2e5503708e15d36a2f49fa745bafe97",
+  "status": "static_freeze_model_forward_not_authorized_until_public_preflight"
+}

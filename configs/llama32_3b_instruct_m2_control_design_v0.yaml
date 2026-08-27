@@ -1,0 +1,118 @@
+schema_version: 1
+design_id: glyphprobe-llama32-3b-instruct-m2-control-design-v0
+status: tokenizer_only_control_design_not_scientific
+
+claim_boundary:
+  scientific_result: false
+  experimental_grid_authorized: false
+  model_selection_authorized: false
+  language_model_loaded: false
+  study_target_banks_accessed: false
+
+tokenizer:
+  model: meta-llama/Llama-3.2-3B-Instruct
+  revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95
+  class: PreTrainedTokenizerFast
+  vocab_size: 128000
+  tokenizer_length: 128256
+  special_token_ids:
+    bos_token_id: 128000
+    eos_token_id: 128009
+    pad_token_id: null
+  required_files:
+    tokenizer.json: 79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4
+    tokenizer_config.json: 9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e
+    special_tokens_map.json: 6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec
+
+source_audit:
+  path: ../validation/llama32_3b_instruct_m2_control_transfer_tokenizer_v0/receipt.json
+  sha256: fc6842954974e4fe362e47485e7000bc9af721300e5683a80e14ac4e25e8b3b0
+  required_status: existing_controls_do_not_transfer
+  required_all_three_transfer_gate_pass: false
+
+reference_panel:
+  id: colored_shapes
+  path: ../data/emoji_panels/colored_shapes.yaml
+  sha256: 6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97
+
+source_panels:
+  - id: m2_null_prefix_9x253_1x242_a
+    output_id: llama32_m2_null_prefix_9x253_1x242_a_v0
+    path: ../data/emoji_panels/m2_matched_null_a.yaml
+    sha256: 067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422
+    required_source_gate_pass: true
+    replacement: null
+  - id: m2_null_prefix_9x253_1x242_b
+    output_id: llama32_m2_null_prefix_9x253_1x242_b_v0
+    path: ../data/emoji_panels/m2_matched_null_b.yaml
+    sha256: f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef
+    required_source_gate_pass: false
+    replacement:
+      source_item_id: null_b_u1f7c1
+      expected_glyph: "🟁"
+      expected_codepoint: U+1F7C1
+      expected_raw_token_ids: [9468, 108244]
+  - id: m2_null_prefix_9x253_1x242_c
+    output_id: llama32_m2_null_prefix_9x253_1x242_c_v0
+    path: ../data/emoji_panels/m2_matched_null_c.yaml
+    sha256: 78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4
+    required_source_gate_pass: false
+    replacement:
+      source_item_id: null_c_u1f7e5
+      expected_glyph: "🟥"
+      expected_codepoint: U+1F7E5
+      expected_raw_token_ids: [9468, 22914]
+
+wrappers:
+  path: ../data/wrappers/source_wrappers.jsonl
+  sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+  expected_count: 16
+
+search_contract:
+  strategy: unicode_scalar_range
+  scalar_ranges:
+    - {start: U+1F000, end_inclusive: U+1FAFF}
+    - {start: U+2600, end_inclusive: U+27BF}
+  order: listed_ranges_then_ascending_unicode_scalar
+  require_single_scalar: true
+  require_assigned_unicode_name: true
+  allowed_unicode_categories: [So]
+  require_exact_raw_decode: true
+  add_special_tokens: false
+  required_raw_token_count: 3
+  required_raw_prefix_token_ids: [9468, 253]
+  excluded_exact_glyphs: ["🟰"]
+  exclude_reference_and_all_source_panel_glyphs: true
+  forbidden_unicode_name_terms:
+    - BLACK
+    - WHITE
+    - RED
+    - ORANGE
+    - YELLOW
+    - GREEN
+    - BLUE
+    - PURPLE
+    - BROWN
+    - GRAY
+    - GREY
+    - CYAN
+    - MAGENTA
+    - COLOR
+    - COLOUR
+    - CIRCLE
+    - SQUARE
+
+selection_contract:
+  replacement_order: [m2_null_prefix_9x253_1x242_b, m2_null_prefix_9x253_1x242_c]
+  rule: first_eligible_scalar_whose_replaced_full_panel_matches_reference_in_all_16_wrappers
+  chosen_replacements_must_be_distinct: true
+  no_language_model_outcome_inspection: true
+  no_manual_candidate_selection: true
+
+output_contract:
+  panel_filenames:
+    llama32_m2_null_prefix_9x253_1x242_a_v0: llama32_m2_matched_null_a_v0.yaml
+    llama32_m2_null_prefix_9x253_1x242_b_v0: llama32_m2_matched_null_b_v0.yaml
+    llama32_m2_null_prefix_9x253_1x242_c_v0: llama32_m2_matched_null_c_v0.yaml
+  receipt_filename: design_receipt.json
+  no_overwrite: true

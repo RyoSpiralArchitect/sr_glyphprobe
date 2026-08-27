@@ -1,0 +1,516 @@
+{
+  "all_three_generated_panels_match": false,
+  "candidate_search_counts": {
+    "eligible": 0,
+    "excluded_exact_glyph": 41,
+    "raw_decode_not_exact": 0,
+    "raw_prefix_mismatch": 1747,
+    "raw_token_count_mismatch": 351,
+    "total_scalars": 3264,
+    "unassigned_unicode_name": 502,
+    "unicode_category_not_allowed": 63,
+    "unicode_name_term_forbidden": 560
+  },
+  "claim_boundary": {
+    "experimental_grid_authorized": false,
+    "language_model_loaded": false,
+    "manual_candidate_selection": false,
+    "model_forward_count": 0,
+    "model_selection_authorized": false,
+    "scientific_result": false,
+    "study_target_banks_accessed": false,
+    "tokenizer_only": true
+  },
+  "config": {
+    "path": "configs/llama32_3b_instruct_m2_control_design_v0.yaml",
+    "sha256": "e6f928157a71ab90db643441fb2db9f8b66d0deb46f5b54b15d969651cd919a3"
+  },
+  "decision": "The fixed single-scalar search universe contains no unused candidate with the required Llama tokenizer structure. Freeze this negative branch; do not run a language-model forward and do not silently broaden the search.",
+  "design_id": "glyphprobe-llama32-3b-instruct-m2-control-design-v0",
+  "eligible_candidate_count": 0,
+  "eligible_candidate_order_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "implementation": {
+    "path": "scripts/design_llama32_m2_controls_tokenizer_v0.py",
+    "sha256": "48ff6ec36e343cdde39af35c398b8fc5d033e41723ff26f192387dff303a3c46"
+  },
+  "outputs": [],
+  "schema_version": 1,
+  "search_contract": {
+    "add_special_tokens": false,
+    "allowed_unicode_categories": [
+      "So"
+    ],
+    "exclude_reference_and_all_source_panel_glyphs": true,
+    "excluded_exact_glyphs": [
+      "🟰"
+    ],
+    "forbidden_unicode_name_terms": [
+      "BLACK",
+      "WHITE",
+      "RED",
+      "ORANGE",
+      "YELLOW",
+      "GREEN",
+      "BLUE",
+      "PURPLE",
+      "BROWN",
+      "GRAY",
+      "GREY",
+      "CYAN",
+      "MAGENTA",
+      "COLOR",
+      "COLOUR",
+      "CIRCLE",
+      "SQUARE"
+    ],
+    "order": "listed_ranges_then_ascending_unicode_scalar",
+    "require_assigned_unicode_name": true,
+    "require_exact_raw_decode": true,
+    "require_single_scalar": true,
+    "required_raw_prefix_token_ids": [
+      9468,
+      253
+    ],
+    "required_raw_token_count": 3,
+    "scalar_ranges": [
+      {
+        "end_inclusive": "U+1FAFF",
+        "start": "U+1F000"
+      },
+      {
+        "end_inclusive": "U+27BF",
+        "start": "U+2600"
+      }
+    ],
+    "strategy": "unicode_scalar_range"
+  },
+  "search_filter_order": [
+    "excluded_exact_glyph",
+    "assigned_unicode_name",
+    "allowed_unicode_category",
+    "forbidden_unicode_name_terms",
+    "exact_raw_decode",
+    "raw_token_count",
+    "raw_prefix_token_ids"
+  ],
+  "selected_replacements": [],
+  "source_audit": {
+    "all_three_transfer_gate_pass": false,
+    "path": "validation/llama32_3b_instruct_m2_control_transfer_tokenizer_v0/receipt.json",
+    "sha256": "fc6842954974e4fe362e47485e7000bc9af721300e5683a80e14ac4e25e8b3b0",
+    "status": "existing_controls_do_not_transfer"
+  },
+  "source_comparisons": {
+    "m2_null_prefix_9x253_1x242_a": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_a",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": true,
+        "item_count_match": true,
+        "raw_feature_histogram_match": true,
+        "raw_prefix_histogram_match": true,
+        "raw_token_count_histogram_match": true
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": true,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": true,
+          "full_token_count_histogram_match": true,
+          "glyph_prefix_histogram_match": true,
+          "glyph_span_count_histogram_match": true,
+          "position_and_outside_histogram_match": true
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_b": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_b",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": false,
+        "item_count_match": true,
+        "raw_feature_histogram_match": false,
+        "raw_prefix_histogram_match": false,
+        "raw_token_count_histogram_match": false
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": false,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        }
+      }
+    },
+    "m2_null_prefix_9x253_1x242_c": {
+      "candidate_panel_id": "m2_null_prefix_9x253_1x242_c",
+      "checks": {
+        "all_wrapper_full_feature_histograms_match": false,
+        "item_count_match": true,
+        "raw_feature_histogram_match": false,
+        "raw_prefix_histogram_match": false,
+        "raw_token_count_histogram_match": false
+      },
+      "reference_panel_id": "colored_shapes",
+      "transfer_gate_pass": false,
+      "wrapper_checks": {
+        "w01_mark_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w02_bracket_continue": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w03_pipe_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w04_token_state": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w05_begin_end": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w06_binary_result": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w07_symbol_following": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w08_pair_q": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w09_input_response": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w10_sequence_continuation": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w11_field_anchor": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w12_list_next": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w13_left_right": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w14_codepoint_text": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w15_observation_inference": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        },
+        "w16_slot_completion": {
+          "full_feature_histogram_match": false,
+          "full_token_count_histogram_match": false,
+          "glyph_prefix_histogram_match": false,
+          "glyph_span_count_histogram_match": false,
+          "position_and_outside_histogram_match": false
+        }
+      }
+    }
+  },
+  "status": "no_eligible_single_scalar_tokenizer_matches",
+  "tokenizer": {
+    "file_manifest_sha256": "4368cf5f0cea8b02cb5b662dabae678663d78f5041a57467b556bf80f2b7f831",
+    "files": [
+      {
+        "bytes": 9085657,
+        "path": "tokenizer.json",
+        "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+      },
+      {
+        "bytes": 54528,
+        "path": "tokenizer_config.json",
+        "sha256": "9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e"
+      },
+      {
+        "bytes": 296,
+        "path": "special_tokens_map.json",
+        "sha256": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec"
+      }
+    ],
+    "local_path_recorded": false,
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "revision": "0cb88a4f764b7a12671c53f0838cd831a0843b95",
+    "special_token_ids": {
+      "bos_token_id": 128000,
+      "eos_token_id": 128009,
+      "pad_token_id": null
+    },
+    "tokenizer_class": "PreTrainedTokenizerFast",
+    "tokenizer_length": 128256,
+    "vocab_size": 128000
+  },
+  "unicode_database_version": "14.0.0"
+}

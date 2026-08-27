@@ -1,0 +1,80 @@
+schema_version: 1
+panel_id: llama32_m2_null_minimum_overlap_a_v2
+status: tokenizer_matched_minimum_overlap_control_input_not_scientific
+construction:
+  design_id: glyphprobe-llama32-3b-instruct-m2-control-design-v2
+  tokenizer_model: meta-llama/Llama-3.2-3B-Instruct
+  tokenizer_revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95
+  independent_control_panel: false
+  requires_overlap_aware_analysis: true
+items:
+- id: llama32_null_a_u1f7c0
+  glyph: 🟀
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7c3
+  glyph: 🟃
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7c6
+  glyph: 🟆
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7c9
+  glyph: 🟉
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7cc
+  glyph: 🟌
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7cf
+  glyph: 🟏
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7d2
+  glyph: 🟒
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7d5
+  glyph: 🟕
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f7d8
+  glyph: 🟘
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_253
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []
+- id: llama32_null_a_u1f500
+  glyph: 🔀
+  factors:
+    control_family: llama32_m2_null_minimum_overlap_a_v2
+    prefix_stratum: p9468_242
+    construction_role: retained_tokenizer_compatible_source_glyph
+  labels: []

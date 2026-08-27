@@ -1,0 +1,59 @@
+schema_version: 1
+audit_id: glyphprobe-llama32-3b-instruct-m2-control-transfer-tokenizer-v0
+status: tokenizer_only_transfer_gate_not_scientific
+
+claim_boundary:
+  scientific_result: false
+  experimental_grid_authorized: false
+  model_selection_authorized: false
+  language_model_loaded: false
+  study_target_banks_accessed: false
+
+tokenizer:
+  model: meta-llama/Llama-3.2-3B-Instruct
+  revision: 0cb88a4f764b7a12671c53f0838cd831a0843b95
+  class: PreTrainedTokenizerFast
+  vocab_size: 128000
+  tokenizer_length: 128256
+  special_token_ids:
+    bos_token_id: 128000
+    eos_token_id: 128009
+    pad_token_id: null
+  required_files:
+    tokenizer.json: 79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4
+    tokenizer_config.json: 9823dcfdc1121869029da45192238e85cf44f0b232a6d9dc20e4fe6f4242a14e
+    special_tokens_map.json: 6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec
+
+reference_panel:
+  id: colored_shapes
+  path: ../data/emoji_panels/colored_shapes.yaml
+  sha256: 6c9138425f1744d700040c0562c8521472d249f39bd97ff6106fa68cd3c19e97
+
+candidate_panels:
+  - id: m2_null_prefix_9x253_1x242_a
+    path: ../data/emoji_panels/m2_matched_null_a.yaml
+    sha256: 067225b379fea7ce227872b0773c82da5988639e5dc4eb538738adbf072ee422
+  - id: m2_null_prefix_9x253_1x242_b
+    path: ../data/emoji_panels/m2_matched_null_b.yaml
+    sha256: f4db53b015d65ca6e41698f91b08958ab1563cab3d3a59518dff54ece191c0ef
+  - id: m2_null_prefix_9x253_1x242_c
+    path: ../data/emoji_panels/m2_matched_null_c.yaml
+    sha256: 78b590ef62b92a7db7addb627ed03a365088712e437cbb1f12da5df816dc0fa4
+
+wrappers:
+  path: ../data/wrappers/source_wrappers.jsonl
+  sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+  expected_count: 16
+
+matching_contract:
+  add_special_tokens: false
+  raw_prefix: all_tokens_except_final_token
+  contextual_prefix: all_glyph_span_tokens_except_final_token
+  require_exact_raw_decode: true
+  require_same_item_count: true
+  require_raw_token_count_histogram: true
+  require_raw_prefix_histogram: true
+  require_each_wrapper_full_token_count_histogram: true
+  require_each_wrapper_glyph_span_count_histogram: true
+  require_each_wrapper_glyph_position_and_outside_token_histogram: true
+  require_each_wrapper_glyph_prefix_histogram: true
