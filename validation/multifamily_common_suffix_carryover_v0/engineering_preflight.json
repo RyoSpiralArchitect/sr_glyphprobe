@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "status": "pass",
+  "role": "pre_outcome_tokenizer_and_engineering_feasibility",
+  "prepared_before_scientific_model_forward": true,
+  "scientific_observation_count": 0,
+  "model_forward_calls": 0,
+  "intervention_calls": 0,
+  "generation_calls": 0,
+  "protected_target_files_opened": 0,
+  "panel": {
+    "source_protocol": "glyphprobe-multifamily-matched-slot-geometry-v0",
+    "family_count": 5,
+    "slots_per_family": 10,
+    "item_count": 50,
+    "panel_changed_from_t3": false
+  },
+  "context_selection": {
+    "selected_before_activation_outcomes": true,
+    "order": [
+      "period",
+      "newline"
+    ],
+    "purpose": "Guard against dependence on one suffix choice; contexts are not independent replications.",
+    "temporary_tokenizer_probe_sha256": "11a47d83bad92523b8c0b2e6c644d4ede78d1a35a36d5f76fa9a83a5afb2fa1a"
+  },
+  "tokenizer_feasibility": {
+    "exact_contract": "raw_glyph_tokens_plus_one_context_specific_common_suffix_token",
+    "gemma2_2b_4bit": {
+      "status": "pass",
+      "source_node": "mac2",
+      "raw_token_count": 1,
+      "combined_token_count": 2,
+      "raw_prefix_preserved": {
+        "period": 50,
+        "newline": 50
+      },
+      "exactly_one_suffix_token_appended": {
+        "period": 50,
+        "newline": 50
+      },
+      "suffix_token_ids": {
+        "period": 235265,
+        "newline": 108
+      },
+      "unique_combined_sequences": {
+        "period": 50,
+        "newline": 50
+      },
+      "roundtrip_exact": {
+        "period": 50,
+        "newline": 50
+      }
+    },
+    "olmo3_7b_bf16": {
+      "status": "pass",
+      "source_node": "mac1",
+      "raw_token_count": 3,
+      "combined_token_count": 4,
+      "raw_prefix_preserved": {
+        "period": 50,
+        "newline": 50
+      },
+      "exactly_one_suffix_token_appended": {
+        "period": 50,
+        "newline": 50
+      },
+      "suffix_token_ids": {
+        "period": 13,
+        "newline": 198
+      },
+      "unique_combined_sequences": {
+        "period": 50,
+        "newline": 50
+      },
+      "roundtrip_exact": {
+        "period": 50,
+        "newline": 50
+      }
+    },
+    "verification_scope": "Tokenizer-only design evidence. The frozen runner revalidates every raw and contextualized token sequence before the first scientific forward."
+  },
+  "analysis_preflight": {
+    "two_context_equal_weight_omnibus_declared": true,
+    "all_five_depths_equal_weight_declared": true,
+    "same_randomization_draw_synchronized_across_all_ten_cells": true,
+    "two_model_holm_family_declared": true,
+    "t3_reference_descriptive_only": true,
+    "t3_inferential_pooling": false,
+    "context_and_depth_subcell_decisions_disabled": true
+  },
+  "claim_boundary": "Engineering and tokenizer feasibility only. This receipt contains zero activation observations and is not a semantic, behavioral, causal, confirmatory, tokenizer-equivalence, carryover, or Phase I paper-gate result."
+}

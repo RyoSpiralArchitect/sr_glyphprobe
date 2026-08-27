@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "experiment_role": "prospective_exploratory_observational_common_suffix_carryover",
+  "freeze": {
+    "status": "frozen_by_first_public_commit_containing_this_manifest",
+    "prepared_before_scientific_model_forward": true,
+    "engineering_capability_and_tokenizer_probes_excluded_from_scientific_observations": true,
+    "revision_policy": "Never overwrite v0 after a scientific run. Any model, artifact, panel, context, suffix, layer, endpoint, randomization, multiplicity, runtime, analysis, or outcome-registry change requires a new protocol version."
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at two exact common one-token suffix positions in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+  },
+  "model_artifacts": {
+    "gemma2_2b_4bit": {
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "file_count": 7,
+      "total_bytes": 1492849725,
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3"
+    },
+    "olmo3_7b_bf16": {
+      "canonical_model_id": "local/olmo3-1025-7b",
+      "file_count": 30,
+      "total_bytes": 14605885551,
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba"
+    }
+  },
+  "frozen_assets": {
+    "artifacts/multifamily_matched_slot_geometry_v0/PUBLIC_MANIFEST.json": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+    "artifacts/multifamily_matched_slot_geometry_v0/analysis/analysis_receipt.json": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+    "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+    "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+    "configs/multifamily_common_suffix_carryover_v0.yaml": "f1e4d889ebbf3c1535837f8be6343bc2e77743964b509685b65aa797274d24e8",
+    "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+    "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+    "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+    "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+    "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+    "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md": "cdd38ffc429d6847eff2294f0212309ae9348e82e3a083ad96f46bd9f4e77d6e",
+    "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md": "997df3fe66193e7e7432d8bbb738eb05795f5e2c5b24c9dda9a12b141b01aed0",
+    "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+    "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+    "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+    "tests/test_multifamily_common_suffix_carryover_v0.py": "98374badc5a7b9218301c4a6eecfa7fd482ac15207fb97d6902d753ec69a3e5d",
+    "validation/multifamily_common_suffix_carryover_v0/engineering_preflight.json": "ad893bc484f09fc390c96be4156025dc007bff9077b097f8802ce813b741c974"
+  },
+  "frozen_t3_reference": {
+    "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+    "outcome_pattern": "olmo_only_token_structured_recurrence",
+    "analysis_receipt_sha256": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+    "public_manifest_sha256": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+    "role": "descriptive_reference_only",
+    "inferential_pooling": false
+  },
+  "protected_inputs": {
+    "must_not_be_opened": [
+      "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    ]
+  },
+  "static_counts": {
+    "model_cells": 2,
+    "panel_items": 50,
+    "families": 5,
+    "slots": 10,
+    "contexts": 2,
+    "fixed_layers_per_model": 5,
+    "fixed_context_depth_cells_per_model": 10,
+    "model_forward_calls_per_model": 100,
+    "model_forward_calls_total": 200,
+    "activation_vectors_per_model": 500,
+    "primary_model_level_tests": 2,
+    "randomization_draws_per_model": 19999,
+    "randomization_denominator": 20000,
+    "intervention_calls": 0,
+    "generation_calls": 0
+  }
+}
