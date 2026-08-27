@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "experiment_role": "prospective_exploratory_observational_activation_geometry",
+  "freeze": {
+    "status": "frozen_by_first_public_commit_containing_this_manifest",
+    "prepared_before_scientific_model_forward": true,
+    "engineering_capability_and_tokenizer_probes_excluded_from_scientific_observations": true,
+    "revision_policy": "Never overwrite v0 after a scientific run. Any model, artifact, panel, context, layer, endpoint, randomization, multiplicity, runtime, or analysis change requires a new protocol version."
+  },
+  "claim_boundary": "Observational resid_post geometry for one fixed five-family by ten-slot emoji panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+  },
+  "model_artifacts": {
+    "gemma2_2b_4bit": {
+      "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+      "file_count": 7,
+      "total_bytes": 1492849725,
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3"
+    },
+    "olmo3_7b_bf16": {
+      "canonical_model_id": "local/olmo3-1025-7b",
+      "file_count": 30,
+      "total_bytes": 14605885551,
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba"
+    }
+  },
+  "frozen_assets": {
+    "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+    "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+    "configs/multifamily_matched_slot_geometry_v0.yaml": "131751c07d10b65a8164de38332811d92d451d7e5a386fb309e15cddc62764d9",
+    "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+    "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+    "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+    "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+    "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+    "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md": "466bad5ec68e4d533c0fe751c72303134b1dab7950258a386faa7f163095e54b",
+    "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md": "6f7486325afbbdf09f966ac8d21e04004177321f870f0b3f27f5cff647406f8f",
+    "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+    "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+    "tests/test_multifamily_matched_slot_geometry_v0.py": "d7c3e472e6b42f3f2bd22ca8a051b34f8d68f034d957cfc794d27b30702c0891",
+    "validation/multifamily_matched_slot_geometry_v0/engineering_preflight.json": "b82ce2d69780bb73b75aea5d55ca055fc382011ce1842522c507eb36d8d331fb"
+  },
+  "protected_inputs": {
+    "must_not_be_opened": [
+      "data/targets/p2_confirmatory_targets_v1.jsonl",
+      "data/targets/c1_causal_holdout_targets_v1.jsonl"
+    ]
+  },
+  "static_counts": {
+    "model_cells": 2,
+    "panel_items": 50,
+    "families": 5,
+    "slots": 10,
+    "fixed_layers_per_model": 5,
+    "primary_model_level_tests": 2,
+    "randomization_draws_per_model": 19999,
+    "randomization_denominator": 20000,
+    "intervention_calls": 0,
+    "generation_calls": 0
+  }
+}

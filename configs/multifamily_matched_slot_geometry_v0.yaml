@@ -1,0 +1,161 @@
+protocol_id: glyphprobe-multifamily-matched-slot-geometry-v0
+manifest_path: ../data/manifests/multifamily_matched_slot_geometry_v0.json
+experiment_role: prospective_exploratory_observational_activation_geometry
+claim_boundary: >-
+  Frozen observational resid_post geometry for one five-family by ten-slot emoji
+  panel in two predeclared MLX model cells. No intervention, behavior, semantic,
+  mechanistic, causal, backend-parity, node-effect, quantization-equivalence,
+  tokenizer-equivalence, confirmatory, or Phase I paper-gate claim is authorized.
+
+panel:
+  family_order: [sky, food, animals, transport, social]
+  slot_order: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  expected_items_per_family: 10
+  expected_total_items: 50
+  construction: single_codepoint_consecutive_unicode_blocks
+  sources:
+    sky: ../data/emoji_panels/e1_sky_moon.yaml
+    food: ../data/emoji_panels/e1_food.yaml
+    animals: ../data/emoji_panels/e1_animals.yaml
+    transport: ../data/emoji_panels/e1_transport.yaml
+    social: ../data/emoji_panels/e1_social.yaml
+
+input:
+  context_id: raw
+  template: "{glyph}"
+  add_special_tokens: false
+  position: last_nonpad
+  site: resid_post
+  return_attentions: false
+
+layers:
+  fractions: [0.0, 0.25, 0.5, 0.75, 1.0]
+  resolution: "min(num_layers - 1, floor(fraction * num_layers))"
+  primary_scope: all_five_fixed_depths_equal_weight
+  selection_uses_activation_outcomes: false
+
+primary_endpoint:
+  id: all_depth_matched_slot_fraction_after_family_centering
+  definition: >-
+    At each fixed depth, arrange resid_post vectors as family by slot. Remove
+    each family's mean, decompose the remaining sum of squares into a shared
+    slot main effect and family-by-slot interaction, and compute
+    SS_slot / (SS_slot + SS_interaction). The model-level statistic is the
+    equal-depth mean over all five frozen depths.
+  null: independent_within_family_slot_label_permutation
+  synchronized_across_depths: true
+  fixed_reference_family: sky
+  randomization_draws: 19999
+  p_value: "(1 + count(T_randomized >= T_observed)) / 20000"
+  rng: numpy.random.PCG64
+  seed: 20260828
+  hypothesis_family: [gemma2_2b_4bit, olmo3_7b_bf16]
+  multiplicity: holm
+  familywise_alpha: 0.05
+  decision_scope: model_level_all_depth_omnibus_only
+
+secondary_endpoints:
+  - complete_fixed_depth_slot_fraction_profile
+  - family_fraction_after_slot_centering
+  - interaction_fraction_of_total_centered_sum_of_squares
+  - per_depth_randomization_p_values_without_decisions
+  - activation_rms
+  - exact_token_sequence_diagnostics
+  - first_forward_latency_and_peak_memory_engineering_only
+
+models:
+  order: [gemma2_2b_4bit, olmo3_7b_bf16]
+  gemma2_2b_4bit:
+    canonical_model_id: mlx-community/gemma-2-2b-4bit
+    tokenizer_output_class: tokenization_output_class_01
+    node: mac2
+    expected_model_type: gemma2
+    expected_num_layers: 26
+    expected_model_dim: 2304
+    expected_parameter_count: 2614341888
+    expected_vocab_size: 256000
+    expected_quantized: true
+    expected_resolved_dtype: mlx.core.uint32
+    tokenization_contract:
+      kind: distinct_atomic_tokens
+      expected_item_token_count: 1
+      expected_unique_sequence_count: 50
+      minimum_shared_prefix_across_panel: 0
+      matching_family: atomic_token_count_plus_single_codepoint_factorial_panel
+  olmo3_7b_bf16:
+    canonical_model_id: local/olmo3-1025-7b
+    tokenizer_output_class: tokenization_output_class_06
+    node: mac1
+    expected_model_type: olmo3
+    expected_num_layers: 32
+    expected_model_dim: 4096
+    expected_parameter_count: 7298011136
+    expected_vocab_size: 100278
+    expected_quantized: false
+    expected_resolved_dtype: mlx.core.bfloat16
+    tokenization_contract:
+      kind: exact_prefix_family_slot_factorization
+      expected_item_token_count: 3
+      expected_unique_sequence_count: 50
+      minimum_shared_prefix_across_panel: 1
+      shared_prefix_token_id: 9468
+      family_token_ids:
+        sky: 234
+        food: 235
+        animals: 238
+        transport: 248
+        social: 97
+      slot_token_ids: [239, 240, 241, 242, 243, 244, 245, 246, 247, 248]
+      matching_family: exact_common_prefix_plus_family_token_plus_shared_slot_token
+
+runtime:
+  backend: mlx
+  device: gpu
+  dtype: auto
+  local_files_only: true
+  trust_remote_code: false
+  critical_versions:
+    mlx: 0.31.1
+    mlx-lm: 0.31.2
+    transformers: 4.57.6
+    numpy: 2.5.2
+  compatibility_caveat: >-
+    mlx-lm 0.31.2 declares transformers>=5.0.0, while the preflight-qualified
+    clean runtime uses transformers 4.57.6. This mismatch must remain visible
+    in every receipt and prevents a backend-qualification claim.
+
+failure_policy:
+  fail_closed_on_asset_hash_mismatch: true
+  fail_closed_on_model_artifact_mismatch: true
+  fail_closed_on_tokenization_contract_mismatch: true
+  fail_closed_on_nonfinite_activation_or_logits: true
+  retain_failed_model_cell: true
+  prohibit_model_replacement_after_outcomes: true
+  prohibit_layer_panel_endpoint_or_seed_reselection_after_outcomes: true
+
+outcome_pattern_registry:
+  dual_model_slot_recurrence_candidate: >-
+    Both model-level all-depth slot-alignment excesses are positive and both
+    Holm-adjusted tests reject.
+  gemma_only_heterogeneity: >-
+    Only the Gemma model-level test rejects; atomic tokenization, quantization,
+    model family, scale, and node remain inseparable explanations.
+  olmo_only_token_structured_recurrence: >-
+    Only the OLMo model-level test rejects; the deliberately shared final slot
+    token is an expected sufficient explanation and no tokenizer-independent
+    recurrence is claimed.
+  opposite_null_centered_direction: >-
+    The two observed-minus-null-mean slot-alignment excesses have opposite signs.
+  no_dual_model_slot_recurrence: >-
+    No stronger predeclared pattern applies; retain the complete negative or
+    mixed result without selecting another layer or family.
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+forbidden_actions:
+  - activation_intervention
+  - behavioral_generation
+  - protected_target_access
+  - post_outcome_layer_family_endpoint_or_seed_selection
+  - direct_cross_model_effect_magnitude_comparison

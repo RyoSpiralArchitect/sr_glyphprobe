@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "status": "pass",
+  "role": "pre_outcome_engineering_and_tokenizer_feasibility",
+  "prepared_before_scientific_model_forward": true,
+  "scientific_observation_count": 0,
+  "model_forward_calls": 0,
+  "intervention_calls": 0,
+  "generation_calls": 0,
+  "protected_target_files_opened": 0,
+  "panel": {
+    "family_count": 5,
+    "slots_per_family": 10,
+    "item_count": 50,
+    "all_single_codepoint": true,
+    "all_family_blocks_consecutive": true,
+    "matched_low_six_codepoint_bits_by_slot": true
+  },
+  "tokenizer_feasibility": {
+    "gemma2_2b_4bit": {
+      "status": "pass",
+      "source_node": "mac2",
+      "source_raw_census_sha256": "244a655f7152dbd7c2228e1d0cfc77793bdb30e17ef31561c2aba5c453e63439",
+      "selected_raw_rows": 50,
+      "token_count_histogram": {
+        "1": 50
+      },
+      "unique_token_sequences": 50,
+      "roundtrip_exact": 50,
+      "contract": "distinct_atomic_tokens"
+    },
+    "olmo3_7b_bf16": {
+      "status": "pass",
+      "source_node": "mac1",
+      "source_raw_census_sha256": "4cf2b46e71b8b986ef1d33807cc8be67d8c64742c505240af21c0de6afab956d",
+      "selected_raw_rows": 50,
+      "token_count_histogram": {
+        "3": 50
+      },
+      "unique_token_sequences": 50,
+      "roundtrip_exact": 50,
+      "shared_prefix_token_id": 9468,
+      "family_token_ids": {
+        "sky": 234,
+        "food": 235,
+        "animals": 238,
+        "transport": 248,
+        "social": 97
+      },
+      "slot_token_ids": [239, 240, 241, 242, 243, 244, 245, 246, 247, 248],
+      "contract": "exact_prefix_family_slot_factorization",
+      "live_tokenizer_only_replay": "pass"
+    },
+    "verification_scope": "Tokenizer-only design evidence. The frozen runner revalidates the complete contract against each pinned model artifact before any scientific forward."
+  },
+  "analysis_preflight": {
+    "targeted_tests_passed": 11,
+    "factor_sum_of_squares_identity_checked": true,
+    "additive_factor_fixture_checked": true,
+    "synchronized_randomization_determinism_checked": true,
+    "all_depth_omnibus_checked": true,
+    "outcome_registry_totality_checked": true,
+    "per_depth_multiplicity_decisions_disabled": true
+  },
+  "claim_boundary": "Engineering and tokenizer feasibility only. This receipt is not an activation, semantic, behavioral, causal, confirmatory, tokenizer-equivalence, or Phase I paper-gate result."
+}
