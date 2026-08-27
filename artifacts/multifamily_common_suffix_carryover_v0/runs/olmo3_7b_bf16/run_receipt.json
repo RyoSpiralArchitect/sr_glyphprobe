@@ -1,0 +1,1482 @@
+{
+  "canonical_model_id": "local/olmo3-1025-7b",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      50,
+      2,
+      5,
+      4096
+    ],
+    "context_order": [
+      "period",
+      "newline"
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "layers": [
+      0,
+      8,
+      16,
+      24,
+      31
+    ],
+    "position": "last_nonpad",
+    "primary_scope": "both_fixed_contexts_by_all_five_fixed_depths_equal_weight",
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at two exact common one-token suffix positions in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      35320.035166994785,
+      1117.978166003013,
+      450.2627910114825,
+      505.9232079947833,
+      485.9497500001453,
+      473.33370900014415,
+      478.36387500865385,
+      483.14445800497197,
+      457.92729199456517,
+      457.5922910007648,
+      446.0643750062445,
+      465.56087498902343,
+      445.9446250111796,
+      443.9320000092266,
+      439.0522080066148,
+      456.83933299733326,
+      444.4485420099227,
+      445.1547499920707,
+      430.6240829901071,
+      422.77249999460764,
+      417.35691600479186,
+      426.8540000048233,
+      426.6950829915004,
+      424.03820900653955,
+      427.44754199520685,
+      428.4426660015015,
+      425.2121659956174,
+      432.04904200683814,
+      414.6607079892419,
+      424.89258300338406,
+      409.7034159931354,
+      415.0847910059383,
+      417.1912500023609,
+      405.3581670013955,
+      414.88091700011864,
+      411.7292080045445,
+      408.3912919886643,
+      415.2163329999894,
+      421.92733300908003,
+      437.5419999996666,
+      426.79641699942295,
+      429.63050000253133,
+      417.35495800094213,
+      407.59474999504164,
+      427.26141700404696,
+      426.38487499789335,
+      435.61866699019447,
+      434.3689160014037,
+      432.67220800044015,
+      435.52275000547525,
+      434.34149998938665,
+      423.9980409911368,
+      419.25275001267437,
+      420.86091700184625,
+      422.4138339923229,
+      422.7588329958962,
+      420.72508300771005,
+      423.9290410041576,
+      413.77108299639076,
+      421.0291670024162,
+      426.26804200699553,
+      418.5387500037905,
+      429.44966700451914,
+      413.6077919974923,
+      428.6505829950329,
+      418.01929200300947,
+      416.69258299225476,
+      410.34062500693835,
+      410.3239999967627,
+      420.2601249999134,
+      412.21987499739043,
+      412.5121249962831,
+      420.59249999874737,
+      411.16737500124145,
+      421.2298750062473,
+      420.86637500324287,
+      427.07354099547956,
+      427.33179200149607,
+      430.25716600823216,
+      427.3936250101542,
+      422.1935000095982,
+      427.6158749999013,
+      414.0551250020508,
+      423.342792011681,
+      417.2757499909494,
+      407.175999993342,
+      420.4122910014121,
+      425.63608300406486,
+      421.10062499705236,
+      416.2904999975581,
+      397.56316599959973,
+      426.8691250035772,
+      427.1960000041872,
+      422.0309580123285,
+      420.43999998713844,
+      412.6420409884304,
+      418.9649579930119,
+      430.1696670008823,
+      419.66483400028665,
+      428.2324169907952
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 15997.020583992708,
+    "model_forward_calls": 100,
+    "peak_memory_bytes_max": 14600908120,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 96000.68066699896
+  },
+  "experiment_role": "prospective_exploratory_observational_common_suffix_carryover",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_matched_slot_geometry_v0/PUBLIC_MANIFEST.json": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+      "artifacts/multifamily_matched_slot_geometry_v0/analysis/analysis_receipt.json": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_common_suffix_carryover_v0.yaml": "f1e4d889ebbf3c1535837f8be6343bc2e77743964b509685b65aa797274d24e8",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md": "cdd38ffc429d6847eff2294f0212309ae9348e82e3a083ad96f46bd9f4e77d6e",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md": "997df3fe66193e7e7432d8bbb738eb05795f5e2c5b24c9dda9a12b141b01aed0",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_common_suffix_carryover_v0.py": "98374badc5a7b9218301c4a6eecfa7fd482ac15207fb97d6902d753ec69a3e5d",
+      "validation/multifamily_common_suffix_carryover_v0/engineering_preflight.json": "ad893bc484f09fc390c96be4156025dc007bff9077b097f8802ce813b741c974"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "785f63a1522c55db6888247b804b8b68e2b7094e0259088373ea66163901e4a1"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 30,
+      "files": {
+        ".cache/huggingface/.gitignore": {
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        ".cache/huggingface/CACHEDIR.TAG": {
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        ".cache/huggingface/download/.gitattributes.metadata": {
+          "bytes": 101,
+          "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+        },
+        ".cache/huggingface/download/README.md.metadata": {
+          "bytes": 101,
+          "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+        },
+        ".cache/huggingface/download/config.json.metadata": {
+          "bytes": 101,
+          "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+        },
+        ".cache/huggingface/download/generation_config.json.metadata": {
+          "bytes": 100,
+          "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+        },
+        ".cache/huggingface/download/merges.txt.metadata": {
+          "bytes": 100,
+          "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+        },
+        ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+          "bytes": 101,
+          "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+        },
+        ".cache/huggingface/download/olmo-base.png.metadata": {
+          "bytes": 124,
+          "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+        },
+        ".cache/huggingface/download/olmo3-logo.metadata": {
+          "bytes": 99,
+          "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+        },
+        ".cache/huggingface/download/special_tokens_map.json.metadata": {
+          "bytes": 101,
+          "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+        },
+        ".cache/huggingface/download/tokenizer.json.metadata": {
+          "bytes": 100,
+          "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+        },
+        ".cache/huggingface/download/tokenizer_config.json.metadata": {
+          "bytes": 101,
+          "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+        },
+        ".cache/huggingface/download/vocab.json.metadata": {
+          "bytes": 100,
+          "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+        },
+        ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+          "bytes": 2427,
+          "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+        },
+        ".gitattributes": {
+          "bytes": 1569,
+          "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+        },
+        "README.md": {
+          "bytes": 12222,
+          "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+        },
+        "config.json": {
+          "bytes": 1620,
+          "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+        },
+        "generation_config.json": {
+          "bytes": 69,
+          "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+        },
+        "merges.txt": {
+          "bytes": 916646,
+          "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 4969984976,
+          "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 4981161496,
+          "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 4644917240,
+          "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 29630,
+          "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+        },
+        "olmo-base.png": {
+          "bytes": 103368,
+          "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+        },
+        "olmo3-logo": {
+          "bytes": 119,
+          "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 207,
+          "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+        },
+        "tokenizer.json": {
+          "bytes": 7137177,
+          "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+        },
+        "tokenizer_config.json": {
+          "bytes": 4308,
+          "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+        },
+        "vocab.json": {
+          "bytes": 1611056,
+          "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+        }
+      },
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "total_bytes": 14605885551
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": null,
+      "d_model": 4096,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 15996.94262498815,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "olmo3",
+        "quantization": null
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 30,
+        "files": {
+          ".cache/huggingface/.gitignore": {
+            "bytes": 1,
+            "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+          },
+          ".cache/huggingface/CACHEDIR.TAG": {
+            "bytes": 191,
+            "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+          },
+          ".cache/huggingface/download/.gitattributes.metadata": {
+            "bytes": 101,
+            "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+          },
+          ".cache/huggingface/download/README.md.metadata": {
+            "bytes": 101,
+            "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+          },
+          ".cache/huggingface/download/config.json.metadata": {
+            "bytes": 101,
+            "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+          },
+          ".cache/huggingface/download/generation_config.json.metadata": {
+            "bytes": 100,
+            "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+          },
+          ".cache/huggingface/download/merges.txt.metadata": {
+            "bytes": 100,
+            "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+          },
+          ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+            "bytes": 101,
+            "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+          },
+          ".cache/huggingface/download/olmo-base.png.metadata": {
+            "bytes": 124,
+            "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+          },
+          ".cache/huggingface/download/olmo3-logo.metadata": {
+            "bytes": 99,
+            "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+          },
+          ".cache/huggingface/download/special_tokens_map.json.metadata": {
+            "bytes": 101,
+            "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+          },
+          ".cache/huggingface/download/tokenizer.json.metadata": {
+            "bytes": 100,
+            "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+          },
+          ".cache/huggingface/download/tokenizer_config.json.metadata": {
+            "bytes": 101,
+            "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+          },
+          ".cache/huggingface/download/vocab.json.metadata": {
+            "bytes": 100,
+            "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+          },
+          ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+            "bytes": 2427,
+            "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+          },
+          ".gitattributes": {
+            "bytes": 1569,
+            "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+          },
+          "README.md": {
+            "bytes": 12222,
+            "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+          },
+          "config.json": {
+            "bytes": 1620,
+            "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+          },
+          "generation_config.json": {
+            "bytes": 69,
+            "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+          },
+          "merges.txt": {
+            "bytes": 916646,
+            "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+          },
+          "model-00001-of-00003.safetensors": {
+            "bytes": 4969984976,
+            "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+          },
+          "model-00002-of-00003.safetensors": {
+            "bytes": 4981161496,
+            "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+          },
+          "model-00003-of-00003.safetensors": {
+            "bytes": 4644917240,
+            "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 29630,
+            "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+          },
+          "olmo-base.png": {
+            "bytes": 103368,
+            "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+          },
+          "olmo3-logo": {
+            "bytes": 119,
+            "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 207,
+            "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+          },
+          "tokenizer.json": {
+            "bytes": 7137177,
+            "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4308,
+            "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+          },
+          "vocab.json": {
+            "bytes": 1611056,
+            "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+          }
+        },
+        "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+        "total_bytes": 14605885551
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://olmo3-1025-7b#ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "num_layers": 32,
+      "parameter_count": 7298011136,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.bfloat16",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GPT2TokenizerFast"
+    },
+    "model_dim": 4096,
+    "model_type": "olmo3",
+    "num_layers": 32,
+    "parameter_count": 7298011136,
+    "quantized": false,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.bfloat16"
+  },
+  "model_label": "olmo3_7b_bf16",
+  "outputs": {
+    "activations.npz": "0d0ce1f54510b33d590f8b5455705d9fe8297e62e48f50eb8bc17c5aec6999a3",
+    "observations.jsonl": "7236c9a7dc0201f14af3102236a0b23b9d795491be576a374715a317293f4349"
+  },
+  "panel": {
+    "family_order": [
+      "sky",
+      "food",
+      "animals",
+      "transport",
+      "social"
+    ],
+    "item_ids": [
+      "sky_slot_00",
+      "sky_slot_01",
+      "sky_slot_02",
+      "sky_slot_03",
+      "sky_slot_04",
+      "sky_slot_05",
+      "sky_slot_06",
+      "sky_slot_07",
+      "sky_slot_08",
+      "sky_slot_09",
+      "food_slot_00",
+      "food_slot_01",
+      "food_slot_02",
+      "food_slot_03",
+      "food_slot_04",
+      "food_slot_05",
+      "food_slot_06",
+      "food_slot_07",
+      "food_slot_08",
+      "food_slot_09",
+      "animals_slot_00",
+      "animals_slot_01",
+      "animals_slot_02",
+      "animals_slot_03",
+      "animals_slot_04",
+      "animals_slot_05",
+      "animals_slot_06",
+      "animals_slot_07",
+      "animals_slot_08",
+      "animals_slot_09",
+      "transport_slot_00",
+      "transport_slot_01",
+      "transport_slot_02",
+      "transport_slot_03",
+      "transport_slot_04",
+      "transport_slot_05",
+      "transport_slot_06",
+      "transport_slot_07",
+      "transport_slot_08",
+      "transport_slot_09",
+      "social_slot_00",
+      "social_slot_01",
+      "social_slot_02",
+      "social_slot_03",
+      "social_slot_04",
+      "social_slot_05",
+      "social_slot_06",
+      "social_slot_07",
+      "social_slot_08",
+      "social_slot_09"
+    ],
+    "slot_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": false,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.5.2",
+      "orjson": "3.12.0",
+      "pydantic": "2.13.4",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "context_order": [
+      "period",
+      "newline"
+    ],
+    "contexts": {
+      "newline": {
+        "combined_token_count": 4,
+        "observed_combined_token_counts": [
+          4
+        ],
+        "raw_prefix_preserved_count": 50,
+        "roundtrip_exact_count": 50,
+        "suffix": "\n",
+        "suffix_token_id": 198,
+        "token_sequences": [
+          [
+            9468,
+            234,
+            239,
+            198
+          ],
+          [
+            9468,
+            234,
+            240,
+            198
+          ],
+          [
+            9468,
+            234,
+            241,
+            198
+          ],
+          [
+            9468,
+            234,
+            242,
+            198
+          ],
+          [
+            9468,
+            234,
+            243,
+            198
+          ],
+          [
+            9468,
+            234,
+            244,
+            198
+          ],
+          [
+            9468,
+            234,
+            245,
+            198
+          ],
+          [
+            9468,
+            234,
+            246,
+            198
+          ],
+          [
+            9468,
+            234,
+            247,
+            198
+          ],
+          [
+            9468,
+            234,
+            248,
+            198
+          ],
+          [
+            9468,
+            235,
+            239,
+            198
+          ],
+          [
+            9468,
+            235,
+            240,
+            198
+          ],
+          [
+            9468,
+            235,
+            241,
+            198
+          ],
+          [
+            9468,
+            235,
+            242,
+            198
+          ],
+          [
+            9468,
+            235,
+            243,
+            198
+          ],
+          [
+            9468,
+            235,
+            244,
+            198
+          ],
+          [
+            9468,
+            235,
+            245,
+            198
+          ],
+          [
+            9468,
+            235,
+            246,
+            198
+          ],
+          [
+            9468,
+            235,
+            247,
+            198
+          ],
+          [
+            9468,
+            235,
+            248,
+            198
+          ],
+          [
+            9468,
+            238,
+            239,
+            198
+          ],
+          [
+            9468,
+            238,
+            240,
+            198
+          ],
+          [
+            9468,
+            238,
+            241,
+            198
+          ],
+          [
+            9468,
+            238,
+            242,
+            198
+          ],
+          [
+            9468,
+            238,
+            243,
+            198
+          ],
+          [
+            9468,
+            238,
+            244,
+            198
+          ],
+          [
+            9468,
+            238,
+            245,
+            198
+          ],
+          [
+            9468,
+            238,
+            246,
+            198
+          ],
+          [
+            9468,
+            238,
+            247,
+            198
+          ],
+          [
+            9468,
+            238,
+            248,
+            198
+          ],
+          [
+            9468,
+            248,
+            239,
+            198
+          ],
+          [
+            9468,
+            248,
+            240,
+            198
+          ],
+          [
+            9468,
+            248,
+            241,
+            198
+          ],
+          [
+            9468,
+            248,
+            242,
+            198
+          ],
+          [
+            9468,
+            248,
+            243,
+            198
+          ],
+          [
+            9468,
+            248,
+            244,
+            198
+          ],
+          [
+            9468,
+            248,
+            245,
+            198
+          ],
+          [
+            9468,
+            248,
+            246,
+            198
+          ],
+          [
+            9468,
+            248,
+            247,
+            198
+          ],
+          [
+            9468,
+            248,
+            248,
+            198
+          ],
+          [
+            9468,
+            97,
+            239,
+            198
+          ],
+          [
+            9468,
+            97,
+            240,
+            198
+          ],
+          [
+            9468,
+            97,
+            241,
+            198
+          ],
+          [
+            9468,
+            97,
+            242,
+            198
+          ],
+          [
+            9468,
+            97,
+            243,
+            198
+          ],
+          [
+            9468,
+            97,
+            244,
+            198
+          ],
+          [
+            9468,
+            97,
+            245,
+            198
+          ],
+          [
+            9468,
+            97,
+            246,
+            198
+          ],
+          [
+            9468,
+            97,
+            247,
+            198
+          ],
+          [
+            9468,
+            97,
+            248,
+            198
+          ]
+        ],
+        "unique_combined_sequence_count": 50
+      },
+      "period": {
+        "combined_token_count": 4,
+        "observed_combined_token_counts": [
+          4
+        ],
+        "raw_prefix_preserved_count": 50,
+        "roundtrip_exact_count": 50,
+        "suffix": ".",
+        "suffix_token_id": 13,
+        "token_sequences": [
+          [
+            9468,
+            234,
+            239,
+            13
+          ],
+          [
+            9468,
+            234,
+            240,
+            13
+          ],
+          [
+            9468,
+            234,
+            241,
+            13
+          ],
+          [
+            9468,
+            234,
+            242,
+            13
+          ],
+          [
+            9468,
+            234,
+            243,
+            13
+          ],
+          [
+            9468,
+            234,
+            244,
+            13
+          ],
+          [
+            9468,
+            234,
+            245,
+            13
+          ],
+          [
+            9468,
+            234,
+            246,
+            13
+          ],
+          [
+            9468,
+            234,
+            247,
+            13
+          ],
+          [
+            9468,
+            234,
+            248,
+            13
+          ],
+          [
+            9468,
+            235,
+            239,
+            13
+          ],
+          [
+            9468,
+            235,
+            240,
+            13
+          ],
+          [
+            9468,
+            235,
+            241,
+            13
+          ],
+          [
+            9468,
+            235,
+            242,
+            13
+          ],
+          [
+            9468,
+            235,
+            243,
+            13
+          ],
+          [
+            9468,
+            235,
+            244,
+            13
+          ],
+          [
+            9468,
+            235,
+            245,
+            13
+          ],
+          [
+            9468,
+            235,
+            246,
+            13
+          ],
+          [
+            9468,
+            235,
+            247,
+            13
+          ],
+          [
+            9468,
+            235,
+            248,
+            13
+          ],
+          [
+            9468,
+            238,
+            239,
+            13
+          ],
+          [
+            9468,
+            238,
+            240,
+            13
+          ],
+          [
+            9468,
+            238,
+            241,
+            13
+          ],
+          [
+            9468,
+            238,
+            242,
+            13
+          ],
+          [
+            9468,
+            238,
+            243,
+            13
+          ],
+          [
+            9468,
+            238,
+            244,
+            13
+          ],
+          [
+            9468,
+            238,
+            245,
+            13
+          ],
+          [
+            9468,
+            238,
+            246,
+            13
+          ],
+          [
+            9468,
+            238,
+            247,
+            13
+          ],
+          [
+            9468,
+            238,
+            248,
+            13
+          ],
+          [
+            9468,
+            248,
+            239,
+            13
+          ],
+          [
+            9468,
+            248,
+            240,
+            13
+          ],
+          [
+            9468,
+            248,
+            241,
+            13
+          ],
+          [
+            9468,
+            248,
+            242,
+            13
+          ],
+          [
+            9468,
+            248,
+            243,
+            13
+          ],
+          [
+            9468,
+            248,
+            244,
+            13
+          ],
+          [
+            9468,
+            248,
+            245,
+            13
+          ],
+          [
+            9468,
+            248,
+            246,
+            13
+          ],
+          [
+            9468,
+            248,
+            247,
+            13
+          ],
+          [
+            9468,
+            248,
+            248,
+            13
+          ],
+          [
+            9468,
+            97,
+            239,
+            13
+          ],
+          [
+            9468,
+            97,
+            240,
+            13
+          ],
+          [
+            9468,
+            97,
+            241,
+            13
+          ],
+          [
+            9468,
+            97,
+            242,
+            13
+          ],
+          [
+            9468,
+            97,
+            243,
+            13
+          ],
+          [
+            9468,
+            97,
+            244,
+            13
+          ],
+          [
+            9468,
+            97,
+            245,
+            13
+          ],
+          [
+            9468,
+            97,
+            246,
+            13
+          ],
+          [
+            9468,
+            97,
+            247,
+            13
+          ],
+          [
+            9468,
+            97,
+            248,
+            13
+          ]
+        ],
+        "unique_combined_sequence_count": 50
+      }
+    },
+    "exact_contract": "raw_glyph_tokens_plus_one_context_specific_common_suffix_token",
+    "raw": {
+      "expected_item_token_count": 3,
+      "kind": "exact_prefix_family_slot_factorization",
+      "matching_family": "exact_common_prefix_plus_family_token_plus_shared_slot_token",
+      "minimum_shared_prefix_across_panel": 1,
+      "observed_item_token_counts": [
+        3
+      ],
+      "token_sequences": [
+        [
+          9468,
+          234,
+          239
+        ],
+        [
+          9468,
+          234,
+          240
+        ],
+        [
+          9468,
+          234,
+          241
+        ],
+        [
+          9468,
+          234,
+          242
+        ],
+        [
+          9468,
+          234,
+          243
+        ],
+        [
+          9468,
+          234,
+          244
+        ],
+        [
+          9468,
+          234,
+          245
+        ],
+        [
+          9468,
+          234,
+          246
+        ],
+        [
+          9468,
+          234,
+          247
+        ],
+        [
+          9468,
+          234,
+          248
+        ],
+        [
+          9468,
+          235,
+          239
+        ],
+        [
+          9468,
+          235,
+          240
+        ],
+        [
+          9468,
+          235,
+          241
+        ],
+        [
+          9468,
+          235,
+          242
+        ],
+        [
+          9468,
+          235,
+          243
+        ],
+        [
+          9468,
+          235,
+          244
+        ],
+        [
+          9468,
+          235,
+          245
+        ],
+        [
+          9468,
+          235,
+          246
+        ],
+        [
+          9468,
+          235,
+          247
+        ],
+        [
+          9468,
+          235,
+          248
+        ],
+        [
+          9468,
+          238,
+          239
+        ],
+        [
+          9468,
+          238,
+          240
+        ],
+        [
+          9468,
+          238,
+          241
+        ],
+        [
+          9468,
+          238,
+          242
+        ],
+        [
+          9468,
+          238,
+          243
+        ],
+        [
+          9468,
+          238,
+          244
+        ],
+        [
+          9468,
+          238,
+          245
+        ],
+        [
+          9468,
+          238,
+          246
+        ],
+        [
+          9468,
+          238,
+          247
+        ],
+        [
+          9468,
+          238,
+          248
+        ],
+        [
+          9468,
+          248,
+          239
+        ],
+        [
+          9468,
+          248,
+          240
+        ],
+        [
+          9468,
+          248,
+          241
+        ],
+        [
+          9468,
+          248,
+          242
+        ],
+        [
+          9468,
+          248,
+          243
+        ],
+        [
+          9468,
+          248,
+          244
+        ],
+        [
+          9468,
+          248,
+          245
+        ],
+        [
+          9468,
+          248,
+          246
+        ],
+        [
+          9468,
+          248,
+          247
+        ],
+        [
+          9468,
+          248,
+          248
+        ],
+        [
+          9468,
+          97,
+          239
+        ],
+        [
+          9468,
+          97,
+          240
+        ],
+        [
+          9468,
+          97,
+          241
+        ],
+        [
+          9468,
+          97,
+          242
+        ],
+        [
+          9468,
+          97,
+          243
+        ],
+        [
+          9468,
+          97,
+          244
+        ],
+        [
+          9468,
+          97,
+          245
+        ],
+        [
+          9468,
+          97,
+          246
+        ],
+        [
+          9468,
+          97,
+          247
+        ],
+        [
+          9468,
+          97,
+          248
+        ]
+      ],
+      "unique_sequence_count": 50
+    }
+  }
+}

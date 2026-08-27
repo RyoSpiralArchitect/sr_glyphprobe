@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "status": "pass",
+  "freeze_commit": "868f3be36e10bc6acd7e44caaf916b4e1ede84b9",
+  "outcome_pattern": "olmo_only_common_suffix_carryover",
+  "scientific_confirmation": false,
+  "claim_boundary": "Complete compact evidence for one frozen observational five-family by ten-slot common-suffix resid_post study. OLMo matched-slot geometry remains observable one common token after the raw glyph in two fixed contexts, while the Gemma omnibus does not reject. Integrity and replayability do not establish semantics, tokenizer causality or independence, mechanism, intervention effects, backend or node equivalence, scale or precision effects, confirmation, or Phase I paper-gate closure.",
+  "frozen_t3_reference": {
+    "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+    "outcome_pattern": "olmo_only_token_structured_recurrence",
+    "analysis_receipt_sha256": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+    "public_manifest_sha256": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+    "inferential_pooling": false
+  },
+  "source_and_transfer_verification": {
+    "gemma_source_validator": "pass",
+    "olmo_source_validator": "pass",
+    "olmo_destination_validator": "pass",
+    "joint_analysis_validator": "pass",
+    "olmo_transfer": {
+      "receipt": "OLMO_TRANSFER_RECEIPT.json",
+      "receipt_sha256": "5856962e48e34dc1e70b7768cdc4f6abee66a34da63390ef647a465e022f7ee9",
+      "archive_sha256": "878a656b2d57ddb1e1fa9f45feb9831f903b5faef80f23f927d4dc607ac9ef81",
+      "files_checked": 4,
+      "source_equals_relay_archive": true,
+      "source_equals_destination": true,
+      "compute_used_on_relay": false
+    },
+    "published_bundle_validators": {
+      "gemma2_2b_4bit": "pass",
+      "olmo3_7b_bf16": "pass",
+      "analysis": "pass"
+    }
+  },
+  "payload": {
+    "file_count": 13,
+    "total_bytes": 6789798,
+    "files": {
+      "OLMO_TRANSFER_RECEIPT.json": {
+        "bytes": 1590,
+        "sha256": "5856962e48e34dc1e70b7768cdc4f6abee66a34da63390ef647a465e022f7ee9"
+      },
+      "analysis/SHA256SUMS": {
+        "bytes": 261,
+        "sha256": "352471db82472c5cace6933a4f2cf69607909dd083a13b5f014beeb1fa37bdc5"
+      },
+      "analysis/analysis_receipt.json": {
+        "bytes": 10110,
+        "sha256": "ec925636d384cf65837cc0ba43924e4bcee22ac0820251bd06876e1bc8c8d43d"
+      },
+      "analysis/context_layer_statistics.jsonl": {
+        "bytes": 14030,
+        "sha256": "cb09dcbd4d458b72d87a1888b39ce7bd5d048384966d539cdd6a8b394e2a010d"
+      },
+      "analysis/report.md": {
+        "bytes": 674,
+        "sha256": "9da0a5c92dfcd65a45489160a655b6ac312a79a447b4ea3cef08cae4b8509afd"
+      },
+      "runs/gemma2_2b_4bit/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "aa7afdc2bbe3f727abbfb56bccbd672afeef0b5da4debd8a7aa1c65cb679143e"
+      },
+      "runs/gemma2_2b_4bit/activations.npz": {
+        "bytes": 2782786,
+        "sha256": "cd58cd9f461b59eb3ff9f8858338fe69871a91c6da76488841e56bff0d9dd108"
+      },
+      "runs/gemma2_2b_4bit/observations.jsonl": {
+        "bytes": 53996,
+        "sha256": "f2501674de5a1f66c9ba492b661a3917b993eab8ba7f97a11a8093fa78e6f546"
+      },
+      "runs/gemma2_2b_4bit/run_receipt.json": {
+        "bytes": 22765,
+        "sha256": "4302b17b49363fa4248c0e5b5b6289862fa4256090d69e801942bfe597f646c1"
+      },
+      "runs/olmo3_7b_bf16/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "1830a5fec119d1152c8ef6220febcf26fecf4de991ea3a7c2f7e05696d51a9e3"
+      },
+      "runs/olmo3_7b_bf16/activations.npz": {
+        "bytes": 3811058,
+        "sha256": "0d0ce1f54510b33d590f8b5455705d9fe8297e62e48f50eb8bc17c5aec6999a3"
+      },
+      "runs/olmo3_7b_bf16/observations.jsonl": {
+        "bytes": 56731,
+        "sha256": "7236c9a7dc0201f14af3102236a0b23b9d795491be576a374715a317293f4349"
+      },
+      "runs/olmo3_7b_bf16/run_receipt.json": {
+        "bytes": 35297,
+        "sha256": "c2239d6aaa3957fa5cd8f417655126f3c87038cbd8d5e071b1abee1748b14ba6"
+      }
+    }
+  }
+}

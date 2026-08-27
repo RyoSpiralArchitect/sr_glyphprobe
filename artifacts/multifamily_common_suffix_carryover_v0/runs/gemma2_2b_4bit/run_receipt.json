@@ -1,0 +1,1001 @@
+{
+  "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      50,
+      2,
+      5,
+      2304
+    ],
+    "context_order": [
+      "period",
+      "newline"
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "layers": [
+      0,
+      6,
+      13,
+      19,
+      25
+    ],
+    "position": "last_nonpad",
+    "primary_scope": "both_fixed_contexts_by_all_five_fixed_depths_equal_weight",
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at two exact common one-token suffix positions in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      48.278417030815035,
+      20.138250023592263,
+      20.724750007502735,
+      21.97125001111999,
+      20.3401250182651,
+      21.048166963737458,
+      21.342166990507394,
+      20.394542021676898,
+      22.93129201279953,
+      20.76158404815942,
+      20.730792020913213,
+      20.7086669979617,
+      21.165583981201053,
+      22.444874979555607,
+      20.766499976161867,
+      23.092209012247622,
+      21.24495798489079,
+      21.453875000588596,
+      21.009082964155823,
+      21.512624982278794,
+      21.228166995570064,
+      21.016458980739117,
+      22.350332990754396,
+      21.20899996953085,
+      23.504584038164467,
+      20.929957972839475,
+      24.243708001449704,
+      21.510332997422665,
+      21.272125013638288,
+      21.328374976292253,
+      23.695999989286065,
+      21.974625007715076,
+      21.332416974473745,
+      21.554958017077297,
+      21.714250033255666,
+      21.573750011157244,
+      21.121458034031093,
+      21.895333018619567,
+      21.570166980382055,
+      21.71108400216326,
+      21.000917011406273,
+      22.08808303112164,
+      21.37183299055323,
+      22.99620897974819,
+      21.037333004642278,
+      21.549500001128763,
+      21.779834001790732,
+      21.30312501685694,
+      21.181999996770173,
+      21.478792012203485,
+      21.8600410153158,
+      21.130583016201854,
+      20.857584022451192,
+      21.350833005271852,
+      23.749042011331767,
+      21.281666005961597,
+      23.78070796839893,
+      21.44204097567126,
+      23.913292039651424,
+      20.99687495501712,
+      21.664374973624945,
+      21.890000032726675,
+      24.200125015340745,
+      21.215541986748576,
+      21.573250007349998,
+      21.450250002089888,
+      21.139250020496547,
+      21.696209034416825,
+      22.127917036414146,
+      21.307999966666102,
+      20.95633401768282,
+      22.02537498669699,
+      21.267416945192963,
+      23.970833979547024,
+      20.91912500327453,
+      20.34404198639095,
+      22.471084026619792,
+      20.020166994072497,
+      20.406875002663583,
+      20.475708006415516,
+      20.248457964044064,
+      22.546374995727092,
+      21.132124995347112,
+      20.547375024762005,
+      22.36349997110665,
+      21.065334032755345,
+      22.885375015903264,
+      20.928666985128075,
+      21.216791006736457,
+      21.588124975096434,
+      21.179416042286903,
+      21.705791004933417,
+      21.106707979924977,
+      22.26791699649766,
+      20.698208012618124,
+      23.244582989718765,
+      21.597334009129554,
+      20.899125025607646,
+      21.123915968928486,
+      21.187583974096924
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 2180.020167026669,
+    "model_forward_calls": 100,
+    "peak_memory_bytes_max": 1476895982,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 5034.891167015303
+  },
+  "experiment_role": "prospective_exploratory_observational_common_suffix_carryover",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_matched_slot_geometry_v0/PUBLIC_MANIFEST.json": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+      "artifacts/multifamily_matched_slot_geometry_v0/analysis/analysis_receipt.json": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_common_suffix_carryover_v0.yaml": "f1e4d889ebbf3c1535837f8be6343bc2e77743964b509685b65aa797274d24e8",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md": "cdd38ffc429d6847eff2294f0212309ae9348e82e3a083ad96f46bd9f4e77d6e",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md": "997df3fe66193e7e7432d8bbb738eb05795f5e2c5b24c9dda9a12b141b01aed0",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_common_suffix_carryover_v0.py": "98374badc5a7b9218301c4a6eecfa7fd482ac15207fb97d6902d753ec69a3e5d",
+      "validation/multifamily_common_suffix_carryover_v0/engineering_preflight.json": "ad893bc484f09fc390c96be4156025dc007bff9077b097f8802ce813b741c974"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "785f63a1522c55db6888247b804b8b68e2b7094e0259088373ea66163901e4a1"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 7,
+      "files": {
+        "config.json": {
+          "bytes": 952,
+          "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+        },
+        "model.safetensors": {
+          "bytes": 1470988882,
+          "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 46678,
+          "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+        },
+        "special_tokens_map.json": {
+          "bytes": 555,
+          "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+        },
+        "tokenizer.json": {
+          "bytes": 17525357,
+          "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+        },
+        "tokenizer.model": {
+          "bytes": 4241003,
+          "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+        },
+        "tokenizer_config.json": {
+          "bytes": 46298,
+          "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+        }
+      },
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "total_bytes": 1492849725
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": "2da7060bea6e767e27d7a776f834071ba69bd3ba",
+      "d_model": 2304,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 2179.778915946372,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "gemma2",
+        "quantization": {
+          "bits": 4,
+          "group_size": 64
+        }
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 7,
+        "files": {
+          "config.json": {
+            "bytes": 952,
+            "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+          },
+          "model.safetensors": {
+            "bytes": 1470988882,
+            "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 46678,
+            "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+          },
+          "special_tokens_map.json": {
+            "bytes": 555,
+            "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+          },
+          "tokenizer.json": {
+            "bytes": 17525357,
+            "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+          },
+          "tokenizer.model": {
+            "bytes": 4241003,
+            "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+          },
+          "tokenizer_config.json": {
+            "bytes": 46298,
+            "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+          }
+        },
+        "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+        "total_bytes": 1492849725
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://2da7060bea6e767e27d7a776f834071ba69bd3ba#4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "num_layers": 26,
+      "parameter_count": 2614341888,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.uint32",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GemmaTokenizerFast"
+    },
+    "model_dim": 2304,
+    "model_type": "gemma2",
+    "num_layers": 26,
+    "parameter_count": 2614341888,
+    "quantized": true,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.uint32"
+  },
+  "model_label": "gemma2_2b_4bit",
+  "outputs": {
+    "activations.npz": "cd58cd9f461b59eb3ff9f8858338fe69871a91c6da76488841e56bff0d9dd108",
+    "observations.jsonl": "f2501674de5a1f66c9ba492b661a3917b993eab8ba7f97a11a8093fa78e6f546"
+  },
+  "panel": {
+    "family_order": [
+      "sky",
+      "food",
+      "animals",
+      "transport",
+      "social"
+    ],
+    "item_ids": [
+      "sky_slot_00",
+      "sky_slot_01",
+      "sky_slot_02",
+      "sky_slot_03",
+      "sky_slot_04",
+      "sky_slot_05",
+      "sky_slot_06",
+      "sky_slot_07",
+      "sky_slot_08",
+      "sky_slot_09",
+      "food_slot_00",
+      "food_slot_01",
+      "food_slot_02",
+      "food_slot_03",
+      "food_slot_04",
+      "food_slot_05",
+      "food_slot_06",
+      "food_slot_07",
+      "food_slot_08",
+      "food_slot_09",
+      "animals_slot_00",
+      "animals_slot_01",
+      "animals_slot_02",
+      "animals_slot_03",
+      "animals_slot_04",
+      "animals_slot_05",
+      "animals_slot_06",
+      "animals_slot_07",
+      "animals_slot_08",
+      "animals_slot_09",
+      "transport_slot_00",
+      "transport_slot_01",
+      "transport_slot_02",
+      "transport_slot_03",
+      "transport_slot_04",
+      "transport_slot_05",
+      "transport_slot_06",
+      "transport_slot_07",
+      "transport_slot_08",
+      "transport_slot_09",
+      "social_slot_00",
+      "social_slot_01",
+      "social_slot_02",
+      "social_slot_03",
+      "social_slot_04",
+      "social_slot_05",
+      "social_slot_06",
+      "social_slot_07",
+      "social_slot_08",
+      "social_slot_09"
+    ],
+    "slot_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": false,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.5.2",
+      "orjson": "3.12.0",
+      "pydantic": "2.13.4",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "context_order": [
+      "period",
+      "newline"
+    ],
+    "contexts": {
+      "newline": {
+        "combined_token_count": 2,
+        "observed_combined_token_counts": [
+          2
+        ],
+        "raw_prefix_preserved_count": 50,
+        "roundtrip_exact_count": 50,
+        "suffix": "\n",
+        "suffix_token_id": 108,
+        "token_sequences": [
+          [
+            244936,
+            108
+          ],
+          [
+            248338,
+            108
+          ],
+          [
+            248675,
+            108
+          ],
+          [
+            249320,
+            108
+          ],
+          [
+            244126,
+            108
+          ],
+          [
+            249351,
+            108
+          ],
+          [
+            248875,
+            108
+          ],
+          [
+            248749,
+            108
+          ],
+          [
+            240830,
+            108
+          ],
+          [
+            243829,
+            108
+          ],
+          [
+            243451,
+            108
+          ],
+          [
+            243400,
+            108
+          ],
+          [
+            242612,
+            108
+          ],
+          [
+            244174,
+            108
+          ],
+          [
+            243014,
+            108
+          ],
+          [
+            247189,
+            108
+          ],
+          [
+            245706,
+            108
+          ],
+          [
+            252521,
+            108
+          ],
+          [
+            246650,
+            108
+          ],
+          [
+            246494,
+            108
+          ],
+          [
+            246062,
+            108
+          ],
+          [
+            246049,
+            108
+          ],
+          [
+            246309,
+            108
+          ],
+          [
+            246008,
+            108
+          ],
+          [
+            244327,
+            108
+          ],
+          [
+            247765,
+            108
+          ],
+          [
+            249870,
+            108
+          ],
+          [
+            246186,
+            108
+          ],
+          [
+            245268,
+            108
+          ],
+          [
+            246651,
+            108
+          ],
+          [
+            249062,
+            108
+          ],
+          [
+            248174,
+            108
+          ],
+          [
+            249355,
+            108
+          ],
+          [
+            250260,
+            108
+          ],
+          [
+            249264,
+            108
+          ],
+          [
+            251175,
+            108
+          ],
+          [
+            243182,
+            108
+          ],
+          [
+            246177,
+            108
+          ],
+          [
+            246180,
+            108
+          ],
+          [
+            245216,
+            108
+          ],
+          [
+            243623,
+            108
+          ],
+          [
+            248213,
+            108
+          ],
+          [
+            241888,
+            108
+          ],
+          [
+            238918,
+            108
+          ],
+          [
+            246231,
+            108
+          ],
+          [
+            243349,
+            108
+          ],
+          [
+            239880,
+            108
+          ],
+          [
+            241372,
+            108
+          ],
+          [
+            242146,
+            108
+          ],
+          [
+            245553,
+            108
+          ]
+        ],
+        "unique_combined_sequence_count": 50
+      },
+      "period": {
+        "combined_token_count": 2,
+        "observed_combined_token_counts": [
+          2
+        ],
+        "raw_prefix_preserved_count": 50,
+        "roundtrip_exact_count": 50,
+        "suffix": ".",
+        "suffix_token_id": 235265,
+        "token_sequences": [
+          [
+            244936,
+            235265
+          ],
+          [
+            248338,
+            235265
+          ],
+          [
+            248675,
+            235265
+          ],
+          [
+            249320,
+            235265
+          ],
+          [
+            244126,
+            235265
+          ],
+          [
+            249351,
+            235265
+          ],
+          [
+            248875,
+            235265
+          ],
+          [
+            248749,
+            235265
+          ],
+          [
+            240830,
+            235265
+          ],
+          [
+            243829,
+            235265
+          ],
+          [
+            243451,
+            235265
+          ],
+          [
+            243400,
+            235265
+          ],
+          [
+            242612,
+            235265
+          ],
+          [
+            244174,
+            235265
+          ],
+          [
+            243014,
+            235265
+          ],
+          [
+            247189,
+            235265
+          ],
+          [
+            245706,
+            235265
+          ],
+          [
+            252521,
+            235265
+          ],
+          [
+            246650,
+            235265
+          ],
+          [
+            246494,
+            235265
+          ],
+          [
+            246062,
+            235265
+          ],
+          [
+            246049,
+            235265
+          ],
+          [
+            246309,
+            235265
+          ],
+          [
+            246008,
+            235265
+          ],
+          [
+            244327,
+            235265
+          ],
+          [
+            247765,
+            235265
+          ],
+          [
+            249870,
+            235265
+          ],
+          [
+            246186,
+            235265
+          ],
+          [
+            245268,
+            235265
+          ],
+          [
+            246651,
+            235265
+          ],
+          [
+            249062,
+            235265
+          ],
+          [
+            248174,
+            235265
+          ],
+          [
+            249355,
+            235265
+          ],
+          [
+            250260,
+            235265
+          ],
+          [
+            249264,
+            235265
+          ],
+          [
+            251175,
+            235265
+          ],
+          [
+            243182,
+            235265
+          ],
+          [
+            246177,
+            235265
+          ],
+          [
+            246180,
+            235265
+          ],
+          [
+            245216,
+            235265
+          ],
+          [
+            243623,
+            235265
+          ],
+          [
+            248213,
+            235265
+          ],
+          [
+            241888,
+            235265
+          ],
+          [
+            238918,
+            235265
+          ],
+          [
+            246231,
+            235265
+          ],
+          [
+            243349,
+            235265
+          ],
+          [
+            239880,
+            235265
+          ],
+          [
+            241372,
+            235265
+          ],
+          [
+            242146,
+            235265
+          ],
+          [
+            245553,
+            235265
+          ]
+        ],
+        "unique_combined_sequence_count": 50
+      }
+    },
+    "exact_contract": "raw_glyph_tokens_plus_one_context_specific_common_suffix_token",
+    "raw": {
+      "expected_item_token_count": 1,
+      "kind": "distinct_atomic_tokens",
+      "matching_family": "atomic_token_count_plus_single_codepoint_factorial_panel",
+      "minimum_shared_prefix_across_panel": 0,
+      "observed_item_token_counts": [
+        1
+      ],
+      "token_sequences": [
+        [
+          244936
+        ],
+        [
+          248338
+        ],
+        [
+          248675
+        ],
+        [
+          249320
+        ],
+        [
+          244126
+        ],
+        [
+          249351
+        ],
+        [
+          248875
+        ],
+        [
+          248749
+        ],
+        [
+          240830
+        ],
+        [
+          243829
+        ],
+        [
+          243451
+        ],
+        [
+          243400
+        ],
+        [
+          242612
+        ],
+        [
+          244174
+        ],
+        [
+          243014
+        ],
+        [
+          247189
+        ],
+        [
+          245706
+        ],
+        [
+          252521
+        ],
+        [
+          246650
+        ],
+        [
+          246494
+        ],
+        [
+          246062
+        ],
+        [
+          246049
+        ],
+        [
+          246309
+        ],
+        [
+          246008
+        ],
+        [
+          244327
+        ],
+        [
+          247765
+        ],
+        [
+          249870
+        ],
+        [
+          246186
+        ],
+        [
+          245268
+        ],
+        [
+          246651
+        ],
+        [
+          249062
+        ],
+        [
+          248174
+        ],
+        [
+          249355
+        ],
+        [
+          250260
+        ],
+        [
+          249264
+        ],
+        [
+          251175
+        ],
+        [
+          243182
+        ],
+        [
+          246177
+        ],
+        [
+          246180
+        ],
+        [
+          245216
+        ],
+        [
+          243623
+        ],
+        [
+          248213
+        ],
+        [
+          241888
+        ],
+        [
+          238918
+        ],
+        [
+          246231
+        ],
+        [
+          243349
+        ],
+        [
+          239880
+        ],
+        [
+          241372
+        ],
+        [
+          242146
+        ],
+        [
+          245553
+        ]
+      ],
+      "unique_sequence_count": 50
+    }
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "analysis_role": "frozen_joint_exploratory_observational_common_suffix_carryover",
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at two exact common one-token suffix positions in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, cross-model magnitude, or Phase I paper-gate claim is authorized.",
+  "confirmatory_status": false,
+  "context_layer_row_count": 20,
+  "context_order": [
+    "period",
+    "newline"
+  ],
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_matched_slot_geometry_v0/PUBLIC_MANIFEST.json": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+      "artifacts/multifamily_matched_slot_geometry_v0/analysis/analysis_receipt.json": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_common_suffix_carryover_v0.yaml": "f1e4d889ebbf3c1535837f8be6343bc2e77743964b509685b65aa797274d24e8",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md": "cdd38ffc429d6847eff2294f0212309ae9348e82e3a083ad96f46bd9f4e77d6e",
+      "docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md": "997df3fe66193e7e7432d8bbb738eb05795f5e2c5b24c9dda9a12b141b01aed0",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_common_suffix_carryover_v0.py": "98374badc5a7b9218301c4a6eecfa7fd482ac15207fb97d6902d753ec69a3e5d",
+      "validation/multifamily_common_suffix_carryover_v0/engineering_preflight.json": "ad893bc484f09fc390c96be4156025dc007bff9077b097f8802ce813b741c974"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "785f63a1522c55db6888247b804b8b68e2b7094e0259088373ea66163901e4a1"
+  },
+  "generation_calls": 0,
+  "inputs": {
+    "gemma2_2b_4bit": {
+      "run_ledger_sha256": "aa7afdc2bbe3f727abbfb56bccbd672afeef0b5da4debd8a7aa1c65cb679143e",
+      "run_receipt_sha256": "4302b17b49363fa4248c0e5b5b6289862fa4256090d69e801942bfe597f646c1"
+    },
+    "olmo3_7b_bf16": {
+      "run_ledger_sha256": "1830a5fec119d1152c8ef6220febcf26fecf4de991ea3a7c2f7e05696d51a9e3",
+      "run_receipt_sha256": "c2239d6aaa3957fa5cd8f417655126f3c87038cbd8d5e071b1abee1748b14ba6"
+    }
+  },
+  "intervention_calls": 0,
+  "outcome_pattern": "olmo_only_common_suffix_carryover",
+  "outcome_pattern_definition": "Only the OLMo common-suffix omnibus rejects; matched-slot structure persists after moving the readout to a common suffix token, without a causal claim.",
+  "phase_i_gate_closed": false,
+  "primary_endpoint": {
+    "decision_scope": "model_level_all_context_all_depth_omnibus_only",
+    "definition": "For each common-suffix context and fixed depth, arrange resid_post vectors as family by slot at the shared suffix-token position. Remove each family mean and compute SS_slot / (SS_slot + SS_interaction). The model-level statistic is the equal-weight mean across both contexts and all five depths.",
+    "familywise_alpha": 0.05,
+    "fixed_reference_family": "sky",
+    "hypothesis_family": [
+      "gemma2_2b_4bit",
+      "olmo3_7b_bf16"
+    ],
+    "id": "all_context_all_depth_common_suffix_slot_fraction_after_family_centering",
+    "multiplicity": "holm",
+    "p_value": "(1 + count(T_randomized >= T_observed)) / 20000",
+    "randomization_draws": 19999,
+    "randomization_null": "independent_within_family_slot_label_permutation",
+    "rng": "numpy.random.PCG64",
+    "seed": 20260829,
+    "synchronized_across_contexts_and_depths": true
+  },
+  "primary_results": {
+    "gemma2_2b_4bit": {
+      "context_depth_profile": [
+        0.1741062372673869,
+        0.2074941693552233,
+        0.2176542682605905,
+        0.20248319980036722,
+        0.19358684150294037,
+        0.18592947164616244,
+        0.20915739693835733,
+        0.22103899800237092,
+        0.2101667696988169,
+        0.21281275632886115
+      ],
+      "context_summaries_secondary": {
+        "newline": {
+          "depth_profile": [
+            0.18592947164616244,
+            0.20915739693835733,
+            0.22103899800237092,
+            0.2101667696988169,
+            0.21281275632886115
+          ],
+          "excess_over_null_mean": 0.00777129312722416,
+          "multiplicity_decision_authorized": false,
+          "null_mean": 0.2000497853956896,
+          "raw_p_secondary": 0.19165,
+          "statistic": 0.20782107852291376
+        },
+        "period": {
+          "depth_profile": [
+            0.1741062372673869,
+            0.2074941693552233,
+            0.2176542682605905,
+            0.20248319980036722,
+            0.19358684150294037
+          ],
+          "excess_over_null_mean": -0.0009746558758853274,
+          "multiplicity_decision_authorized": false,
+          "null_mean": 0.200039599113187,
+          "raw_p_secondary": 0.54225,
+          "statistic": 0.19906494323730167
+        }
+      },
+      "excess_over_null_mean": 0.003398318625669361,
+      "holm_adjusted_p": 0.30295,
+      "holm_reject": false,
+      "null_mean": 0.20004469225443833,
+      "raw_p": 0.30295,
+      "statistic": 0.2034430108801077,
+      "t3_raw_reference_descriptive": {
+        "excess_over_null_mean": 0.004320342165609475,
+        "inferential_pooling": false,
+        "null_mean": 0.19998446280655024,
+        "statistic": 0.20430480497215972,
+        "suffix_minus_raw_statistic": -0.0008617940920520317
+      }
+    },
+    "olmo3_7b_bf16": {
+      "context_depth_profile": [
+        0.9909236118645289,
+        0.6868974107811958,
+        0.44144574210017656,
+        0.29422651650281606,
+        0.2814336280567682,
+        0.9847782846896881,
+        0.6785839886157709,
+        0.4234466401238543,
+        0.3161409921809265,
+        0.2767702172199385
+      ],
+      "context_summaries_secondary": {
+        "newline": {
+          "depth_profile": [
+            0.9847782846896881,
+            0.6785839886157709,
+            0.4234466401238543,
+            0.3161409921809265,
+            0.2767702172199385
+          ],
+          "excess_over_null_mean": 0.33597768099888214,
+          "multiplicity_decision_authorized": false,
+          "null_mean": 0.19996634356715345,
+          "raw_p_secondary": 0.00005,
+          "statistic": 0.5359440245660356
+        },
+        "period": {
+          "depth_profile": [
+            0.9909236118645289,
+            0.6868974107811958,
+            0.44144574210017656,
+            0.29422651650281606,
+            0.2814336280567682
+          ],
+          "excess_over_null_mean": 0.33899599546530024,
+          "multiplicity_decision_authorized": false,
+          "null_mean": 0.19998938639579686,
+          "raw_p_secondary": 0.00005,
+          "statistic": 0.5389853818610971
+        }
+      },
+      "excess_over_null_mean": 0.33748683823209125,
+      "holm_adjusted_p": 0.0001,
+      "holm_reject": true,
+      "null_mean": 0.19997786498147516,
+      "raw_p": 0.00005,
+      "statistic": 0.5374647032135664,
+      "t3_raw_reference_descriptive": {
+        "excess_over_null_mean": 0.30020703371150426,
+        "inferential_pooling": false,
+        "null_mean": 0.20018483520628658,
+        "statistic": 0.5003918689177909,
+        "suffix_minus_raw_statistic": 0.03707283429577557
+      }
+    }
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "randomization_draws_per_model": 19999,
+  "randomization_seed": 20260829,
+  "schema_version": 1,
+  "status": "pass",
+  "t3_raw_reference": {
+    "analysis_receipt_sha256": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951",
+    "inferential_pooling": false,
+    "outcome_pattern": "olmo_only_token_structured_recurrence",
+    "primary_results": {
+      "gemma2_2b_4bit": {
+        "depth_profile": [
+          0.19384167222400528,
+          0.20321173390563463,
+          0.2115572370695346,
+          0.2032932574930808,
+          0.20962012416854325
+        ],
+        "excess_over_null_mean": 0.004320342165609475,
+        "holm_adjusted_p": 0.2085,
+        "holm_reject": false,
+        "null_mean": 0.19998446280655024,
+        "raw_p": 0.2085,
+        "statistic": 0.20430480497215972
+      },
+      "olmo3_7b_bf16": {
+        "depth_profile": [
+          0.9947218881765565,
+          0.4613245544477011,
+          0.4134240981408787,
+          0.33666082351610443,
+          0.2958279803077132
+        ],
+        "excess_over_null_mean": 0.30020703371150426,
+        "holm_adjusted_p": 0.0001,
+        "holm_reject": true,
+        "null_mean": 0.20018483520628658,
+        "raw_p": 0.00005,
+        "statistic": 0.5003918689177909
+      }
+    },
+    "public_manifest_sha256": "389e805c33da16a7fdb713bd266422efe685209262b9a5d832d99a5948e2ae6d",
+    "role": "frozen_descriptive_reference_only"
+  }
+}

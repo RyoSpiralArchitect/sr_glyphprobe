@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -330,9 +330,45 @@ token is a sufficient explanation for its recurrence; model family, scale,
 precision, and node remain confounded, so the result is not a causal tokenizer
 contrast or semantic effect.
 
-Exit condition: met. T3 narrows the next useful options to a same-artifact
-token/precision deconfound or an independent exact implementation. It does not
-close a Phase I gate or select a causal layer.
+Exit condition: met. The one-token common-suffix falsification was selected
+prospectively as T4 and completed below. Same-artifact token/precision
+deconfounding and an independent exact implementation remain future options.
+T3 does not close a Phase I gate or select a causal layer.
+
+### Observational side track T4 — Common-suffix carryover
+
+Status: complete with `olmo_only_common_suffix_carryover`.
+
+- reuse the unchanged T3 panel, two model artifacts, five depth fractions, and
+  model-role binding;
+- append either an exact period or newline token to every glyph, with all 50
+  raw token sequences preserved as exact prefixes plus one common suffix token;
+- read `resid_post` at the suffix rather than the glyph's own final token;
+- use the equal-weight mean over both contexts and all five depths as the sole
+  model-level endpoint;
+- synchronize each of 19,999 within-family slot permutations across all ten
+  context/depth cells and Holm-correct the two model-level tests; and
+- bind the T3 statistics as descriptive references without inferential pooling.
+
+Gemma produced `T = 0.203443011` against null mean `0.200044692` (Holm
+`p = 0.30295`) and did not reject. OLMo produced `T = 0.537464703` against
+`0.199977865` (Holm `p = 0.0001`) and rejected. Its secondary period and newline
+statistics were closely aligned at `0.538985382` and `0.535944025`. OLMo's
+matched-slot geometry is therefore observable one common token later in both
+fixed contexts, while Gemma remains near the null.
+
+The [T4 result](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md), [frozen
+protocol](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md), and [public
+evidence](../artifacts/multifamily_common_suffix_carryover_v0/README.md) retain
+all 20 rows and the full compact arrays. The result rules out a strictly
+current-token-only description of T3 but not short-range propagation from the
+immediately preceding structured token sequence. It is not semantic, causal,
+confirmatory, tokenizer-independent, or a cross-model magnitude contrast.
+
+Exit condition: met. A prospectively frozen carrier-distance decay assay is a
+useful cheap next falsification before intervention, but it must remain a side
+track and cannot replace the tokenization-matched confirmatory controls or
+close a Phase I gate.
 
 ### Milestone 3 — Targeted causal localization
 
@@ -421,9 +457,12 @@ midpoint cell rejected after Holm correction, so it records bounded negative/
 mixed cross-model evidence and does not close the causal or independent-
 replication gates. T3 then used the five-family matched-slot factorial and
 found OLMo-only recurrence under an exact shared final-token construction;
-Gemma's atomic-token omnibus did not reject. This narrows the tokenizer-
-structured alternative but is not a causal tokenizer contrast, independent
-replication, or semantic result. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
+Gemma's atomic-token omnibus did not reject. T4 then moved the readout to a
+common token one position later and again found OLMo-only recurrence in both
+fixed suffix contexts. This rejects a strictly current-token-only description
+but leaves short-range propagation from OLMo's structured prefix sufficient.
+T2–T4 are not causal tokenizer contrasts, independent replications, or semantic
+results and close no paper gate. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
 analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research

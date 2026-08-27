@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -100,6 +100,20 @@ all-depth endpointと差し替えられない。論文では、OLMoの結果に�
 十分な代替説明が残る、tokenizer条件付きの観測evidenceとして扱う。Tokenizerの
 因果性、意味、確認的結論、model scale、precision、backend、nodeの効果は推定しない。
 
+## 現在のcommon-suffix carryover結果
+
+結果を見る前に固定したT4では、読み出しを1 token後ろへ移した。生の絵文字token列を
+厳密に保ったまま、その後ろに共通のperiodまたはnewline tokenを1個だけ加えた。主統計は
+固定2文脈×5深度を等重み平均した。Gemmaは`T = 0.203443011`、null平均
+`0.200044692`、Holm `p = 0.302950`だった。OLMoは`T = 0.537464703`、null平均
+`0.199977865`、Holm `p = 0.000100`だった。
+
+登録済みpatternは`olmo_only_common_suffix_carryover`である。OLMoの副次的なperiodと
+newline統計は`0.538985382`と`0.535944025`だった。論文では、T3のrecurrenceが共有slot
+tokenそのものを読む位置だけに閉じず、固定した両文脈で1つ後ろの共通tokenにも観測
+できると記述できる。同時に、OLMoの構造化prefixからの短距離伝播だけで十分という説明を
+残す。T4は意味、因果、確認、tokenizer非依存性、model-scale contrastを示さない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -110,6 +124,7 @@ all-depth endpointと差し替えられない。論文では、OLMoの結果に�
 6. **RQ6 — 独立再現:** どの結果が、実行backend、tokenizer、model familyをまたいで再現するか。
 7. **RQ7 — 共有token間のtransfer:** トークン同型な探索panelで、matched-slot反復は中間token familyをまたいでどの程度移り、family内の残差的な上乗せはどの程度か。
 8. **RQ8 — Matched-slot geometry:** 固定した5 family格子で、matched-slot activation geometryはatomic-token cellと、厳密に同じ末尾slot tokenを共有するcellの両方に再現するか。
+9. **RQ9 — Common-suffix carryover:** 生の絵文字から厳密に1 token後ろの共通tokenにも、matched-slot geometryは観測できるか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -117,6 +132,8 @@ RQ5も残っている。これらが未成立なら、論文の中心命題はRQ
 探索的・記述的なside resultとして扱い、確認命題や因果命題へ格上げしない。
 T3はRQ8に分岐した答えを与えた。OLMoは棄却し、Gemmaは棄却しなかった。
 ただし、token構造とその他のmodel-cell差が交絡しているため、この問いは観測的なままである。
+T4も固定した2接尾文脈でRQ9に同じ分岐を与えた。現在tokenだけの説明は退くが、短距離の
+prefix伝播は退かない。
 
 ## 予定する貢献
 
@@ -194,6 +211,8 @@ T3はRQ8に分岐した答えを与えた。OLMoは棄却し、Gemmaは棄却し
 10. T2の2つのprimary midpointと固定深度全10行。非primaryの記述的p値を確認判定と分ける
 11. T3の2つのall-depth primaryと固定深度全10行。Gemmaのatomic-token条件と
     OLMoの共有末尾token条件を分け、深度別p値は副次記述とする
+12. T4の2つのall-context/all-depth primary、2つの文脈summary、全20文脈×深度row。
+    1 token後ろへの位置移動と、残るprefix説明を明示する
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
@@ -216,6 +235,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   non-recurrenceから言える範囲
 - T3のOLMo recurrenceが厳密な共有末尾token構成に沿い、深度とともに弱まること。
   2 cellの分岐からtoken因果性やscale、precision、architecture、backend、node効果は同定しない
+- T4では現在tokenを共通接尾へ移してもOLMoだけが再現すること。説明をcontextual
+  carryoverへ狭めるが、そのmechanism、持続距離、意味内容は同定しない
 
 ### 8. Limitations
 
@@ -228,6 +249,7 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - E1ではfamily identityと中間GPT-2 tokenが完全に交絡し、第1・第3 tokenを共有しているため、意味上またはtokenizer非依存のfamily表現を同定できないこと
 - T3ではmodel family、size、precision、tokenizer、nodeが同時に変わり、OLMoの共有
   末尾tokenを原因として同定できないこと
+- T4の2接尾文脈は独立追試ではなく、1 tokenより先のcarryover距離を示さないこと
 - C1 v1の完全な1レコードが、実験に使われないまま研究agentの文脈へ露出したこと。Bankは廃止済みで、将来の因果実験には新しいversionのbankが必要であること
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
@@ -246,6 +268,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   転送検証、public manifest
 - T3のGemma・OLMo activation array、observation、receipt、repair後の全10行
   joint analysis、3地点の転送検証、public manifest、および結果を見る前のrepair chain
+- T4のGemma・OLMo activation array、observation、receipt、全20行joint analysis、
+  3地点の転送検証、public manifest
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -265,6 +289,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
     primaryとして示し、非primaryの記述的p値を分ける
 12. **Figure / Supplement:** T3のall-depth主結果と全深度profile。Gemmaのatomic-token条件と
     OLMoの共有末尾token条件を分けて示す
+13. **Figure / Supplement:** T4のcommon-suffix主結果と2つの文脈×深度profile。現在tokenを
+    共通化した点と、prefix構造が残る点を並べる
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -280,6 +306,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - exploratory matched-slot recurrence under a fixed middle-token family substitution
 - no dual-model recurrence for the frozen T2 midpoint shape-axis endpoint
 - OLMo-only token-structured recurrence for the frozen T3 all-depth endpoint
+- OLMo-only common-suffix carryover for the frozen T4 all-context/all-depth endpoint
 
 ### 追加の証拠なしには使用しない
 
@@ -291,6 +318,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - semantic emoji family, tokenizer-independent E1 effect, layer-specific E1 effect
 - T2 scale effect, quantization effect, or absence of colored-shape geometry
 - T3 tokenizer causality, semantic matched-slot variable, scale effect, precision effect, or node effect
+- T4 semantics, causal mechanism, independent replication, or carryover beyond one token
 
 ## 残る論文ゲート
 
@@ -307,6 +335,10 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
   発見や新しいprimaryへ格上げしない。
 - T3の判定は2つのall-depth p値とHolm familyに限定し、10個の深度別p値を
   確認判定、新しいprimary、またはcellの救済に使わない。
+- T4の判定は2つのall-context/all-depth p値とHolm familyに限定する。文脈別と全20
+  文脈×深度値は副次結果で、T3は推論へ統合しない記述参照とする。
+- T4の2接尾文脈を独立再現として数えず、新しい固定distance assayなしに1 tokenより
+  長いcarryoverを主張しない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

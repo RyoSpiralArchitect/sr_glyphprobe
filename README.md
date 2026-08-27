@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -35,6 +35,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Multifamily tokenizer census | 14/14 roster entries; 7 exact output classes | tokenizer-only; no universal equal-count plus first-prefix candidate for blue circle or blue square in the fixed 115-item panel |
 | Multifamily colored-shape geometry v0 | `no_dual_model_recurrence` | Gemma midpoint T = 0.114858, Holm p = 0.116667; OLMo midpoint T = 0.024628, Holm p = 0.275; both non-rejecting |
 | Multifamily matched-slot geometry v0 | `olmo_only_token_structured_recurrence` | Gemma all-depth T = 0.204305, Holm p = 0.2085; OLMo T = 0.500392, Holm p = 0.0001; shared final slot token remains sufficient |
+| Multifamily common-suffix carryover v0 | `olmo_only_common_suffix_carryover` | Gemma two-context T = 0.203443, Holm p = 0.30295; OLMo T = 0.537465, Holm p = 0.0001; recurrence remains one common token later |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -167,6 +168,23 @@ tokenizer-independent recurrence. The complete result, the failed first
 serialization attempt, and the prospective serialization-only repair are all
 retained in the [result document](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md)
 and [public evidence](artifacts/multifamily_matched_slot_geometry_v0/README.md).
+
+### Multifamily common-suffix carryover v0 status
+
+The prospective follow-up moved the readout one token past each raw glyph to a
+common period or newline token. Gemma's two-context all-depth statistic was
+`0.203443011` against a null mean of `0.200044692` (Holm p = `0.30295`). OLMo's
+was `0.537464703` against `0.199977865` (Holm p = `0.0001`). The predeclared
+pattern is `olmo_only_common_suffix_carryover`.
+
+OLMo was closely matched across the two secondary context summaries (period
+`0.538985382`; newline `0.535944025`). The shared-slot geometry is therefore not
+confined to reading the slot token itself, but remains visible one common token
+later. Short-range propagation from the immediately preceding token structure
+is still a sufficient explanation; this is not semantic, causal, confirmatory,
+or tokenizer-independent evidence. See the [complete result](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md),
+[frozen protocol](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md), and [public
+evidence](artifacts/multifamily_common_suffix_carryover_v0/README.md).
 
 ### E2 engineering results
 
@@ -366,6 +384,8 @@ Project-authored public documentation is maintained in English and Japanese:
 | Multifamily matched-slot geometry v0 results | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) |
 | Multifamily matched-slot geometry v0 | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md) | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md) |
 | Matched-slot analysis repair v1 | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md) | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md) |
+| Multifamily common-suffix carryover v0 results | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) |
+| Multifamily common-suffix carryover v0 | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md) | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -382,7 +402,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`, consistent with OLMo's deliberately shared final slot token and not with a tokenizer-independent claim. Neither observational study closes a causal, confirmatory, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, and tokenizer-structured alternatives. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; and common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`. T4 rules out a strictly current-token-only description of the OLMo T3 result but leaves short-range propagation from its deliberately structured prefix sufficient. None of these observational studies closes a causal, confirmatory, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, and carryover distance. Causal testing, independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

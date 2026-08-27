@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+  "freeze_commit": "868f3be36e10bc6acd7e44caaf916b4e1ede84b9",
+  "status": "pass",
+  "source_node": "mac1",
+  "relay_node": "furnace",
+  "destination_node": "mac2",
+  "transport": "verified_tar_gzip_relay",
+  "archive_sha256": "878a656b2d57ddb1e1fa9f45feb9831f903b5faef80f23f927d4dc607ac9ef81",
+  "compute_used_on_relay": false,
+  "source_validator": "pass",
+  "destination_validator": "pass",
+  "files": {
+    "SHA256SUMS": {
+      "sha256": "1830a5fec119d1152c8ef6220febcf26fecf4de991ea3a7c2f7e05696d51a9e3",
+      "source_match": true,
+      "relay_archive_member_match": true,
+      "destination_match": true
+    },
+    "activations.npz": {
+      "sha256": "0d0ce1f54510b33d590f8b5455705d9fe8297e62e48f50eb8bc17c5aec6999a3",
+      "source_match": true,
+      "relay_archive_member_match": true,
+      "destination_match": true
+    },
+    "observations.jsonl": {
+      "sha256": "7236c9a7dc0201f14af3102236a0b23b9d795491be576a374715a317293f4349",
+      "source_match": true,
+      "relay_archive_member_match": true,
+      "destination_match": true
+    },
+    "run_receipt.json": {
+      "sha256": "c2239d6aaa3957fa5cd8f417655126f3c87038cbd8d5e071b1abee1748b14ba6",
+      "source_match": true,
+      "relay_archive_member_match": true,
+      "destination_match": true
+    }
+  },
+  "claim_boundary": "This receipt proves byte identity across source, relay archive, and destination. It does not establish a scientific effect, method superiority, node equivalence, or compute use on furnace."
+}

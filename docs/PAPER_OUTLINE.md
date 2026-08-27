@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -104,6 +104,23 @@ shared token structure is a sufficient alternative explanation for the OLMo
 result. It must not infer tokenizer causality, semantics, confirmation, or a
 model-scale, precision, backend, or node effect from the two confounded cells.
 
+## Current common-suffix carryover result
+
+The prospectively frozen T4 study moved the readout one token later. Every raw
+glyph sequence was preserved exactly and followed by either one common period
+token or one common newline token. The primary statistic averaged both fixed
+contexts and all five fixed depths. Gemma produced `T = 0.203443011`, null mean
+`0.200044692`, and Holm `p = 0.302950`. OLMo produced `T = 0.537464703`, null
+mean `0.199977865`, and Holm `p = 0.000100`.
+
+The registered pattern is `olmo_only_common_suffix_carryover`. OLMo's
+secondary period and newline statistics were `0.538985382` and `0.535944025`.
+The paper may state that T3 recurrence is not confined to reading the shared
+slot token itself and remains observable one common token later in both fixed
+contexts. It must also state that short-range propagation from OLMo's
+structured prefix remains a sufficient explanation. T4 is not semantic,
+causal, confirmatory, tokenizer-independent, or a model-scale contrast.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -114,6 +131,7 @@ model-scale, precision, backend, or node effect from the two confounded cells.
 6. Which results replicate across execution backends, tokenizers, or model families?
 7. In a token-isomorphic exploratory panel, how much matched-slot recurrence transfers across middle-token families, and how large is the residual within-family excess?
 8. In a frozen five-family grid, does matched-slot activation geometry recur in an atomic-token cell and in a cell with an exact shared final slot token?
+9. Does the matched-slot geometry remain observable at a common token exactly one position after the raw glyph?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -121,6 +139,9 @@ confirmatory or causal research question.
 T3 gives a split answer to question 8: OLMo rejected and Gemma did not. The
 question remains observational because token structure is confounded with the
 other model-cell differences.
+T4 gives the same split answer to question 9 across two fixed suffix contexts.
+It rules out a strictly current-token-only description, not short-range prefix
+propagation.
 
 ## Planned paper structure
 
@@ -210,6 +231,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - report T3 as a separately frozen five-family matched-slot result: Gemma
   non-rejection and OLMo rejection under an exact shared-final-token contract,
   with all fixed depths and the confounded cell differences visible;
+- report T4 as a separately frozen common-suffix carryover result: Gemma
+  non-rejection and OLMo rejection across the fixed period/newline omnibus,
+  with all 20 context-by-depth rows visible;
 - duplicate confirmatory matrix in a second internal backend;
 - additional tokenizer or model family;
 - agreement and disagreement table;
@@ -229,6 +253,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - T3's OLMo recurrence follows an exact shared final-token construction and
   weakens with depth; the cross-cell split cannot identify token causality or a
   scale, precision, architecture, backend, or node effect.
+- T4 moves the current token to a common suffix and still finds OLMo-only
+  recurrence; this narrows the account to contextual carryover but does not
+  identify its mechanism, duration, or semantic content.
 - one complete C1 v1 record was exposed in a research-agent context without
   experimental use; the bank is retired, and future causal work requires a new
   versioned bank.
@@ -241,6 +268,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - exact commands for parity, run, audit, and figure generation.
 - complete T3 arrays, rows, repaired analysis, transfer receipt, and public
   manifest, with the pre-outcome serialization-repair chain retained.
+- complete T4 arrays, all 20 rows, joint analysis, three-point transfer
+  receipt, and public manifest.
 
 ## Planned main figures
 
@@ -257,6 +286,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
    layer p-values.
 9. T3 all-depth matched-slot primary result and full depth profiles, separating
    the Gemma atomic-token and OLMo shared-final-token contracts.
+10. T4 common-suffix primary result and both context-by-depth profiles,
+    emphasizing the one-token position shift and the remaining prefix account.
 
 ## Planned main tables
 
@@ -270,6 +301,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
    and non-confirmatory.
 8. T3 primary model-level statistics and all fixed-depth rows, labeled
    tokenizer-conditioned and observational.
+9. T4 primary model-level statistics, both context summaries, and all 20
+   context-by-depth rows, labeled carryover and observational.
 
 ## Claim table
 
@@ -287,6 +320,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The exact T2 midpoint shape axis recurs across Gemma and OLMo | not supported; neither cell rejected after Holm correction | retain as bounded negative/mixed observational evidence; do not replace the midpoint or attribute the difference to scale |
 | Matched-slot geometry recurs in both T3 tokenizer regimes | not supported; OLMo rejected but Gemma did not | retain the registered `olmo_only_token_structured_recurrence` split and its token-structured alternative explanation |
 | OLMo T3 recurrence proves tokenizer causality or emoji meaning | not supported | require a causally identified near-matched tokenizer or token intervention; do not infer it from the two confounded cells |
+| OLMo T3 recurrence is confined to reading the shared slot token itself | not supported by T4; it persists one common token later in both fixed contexts | report `olmo_only_common_suffix_carryover`; freeze a carrier-distance assay before making any duration claim |
+| T4 common-suffix carryover proves semantics or a causal mechanism | not supported | require identified interventions and near-matched controls; short-range structured-prefix propagation remains sufficient |
 | The GPT-2 fingerprint result generalizes across models | not established by T2, which used a different endpoint and confounded cells | claim-matched cross-model replication |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
@@ -308,6 +343,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - T3's two all-depth p-values and Holm family remain its only authorized
   decisions. All ten per-depth p-values are secondary, with no multiplicity
   decision and no authority to replace the primary endpoint.
+- T4's two all-context, all-depth p-values and Holm family remain its only
+  authorized decisions. Context-specific and all 20 context-by-depth values are
+  secondary, and T3 is a descriptive reference without inferential pooling.
 
 ## Remaining paper gates
 
@@ -324,6 +362,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - keep the English manuscript and Japanese public summary propositionally aligned.
 - preserve the T3 tokenizer-conditioned interpretation; do not relabel its
   secondary depth profile as confirmation or use it to rescue either cell.
+- preserve the T4 carryover boundary; do not treat its two suffix contexts as
+  independent replications or infer carryover beyond one token without a new
+  frozen distance assay.
 
 No full manuscript is claimed at this stage. The English paper remains the Phase I endpoint.
 
@@ -343,6 +384,9 @@ The preprint package should contain or point to:
   ten-row joint analysis, transfer verification, and public manifest;
 - the complete T3 Gemma and OLMo activation arrays, observations, receipts,
   ten-row repaired joint analysis, three-node transfer verification, and public
+  manifest;
+- the complete T4 Gemma and OLMo activation arrays, observations, receipts,
+  20-row joint analysis, three-point transfer verification, and public
   manifest;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;

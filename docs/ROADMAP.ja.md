@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -221,8 +221,34 @@ OLMoのslot比率は固定profile上で`0.994722`から`0.295828`へ下がった
 
 [T3結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md)、[固定protocol](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md)、[analysis repair](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md)では、tokenizer条件に沿う解釈を明示した。OLMoが厳密に共有する末尾tokenだけで再現を説明できる。Model family、scale、precision、nodeは交絡したままであり、tokenizerの因果contrastでも意味効果でもない。
 
-終了条件: 達成した。次に価値がある案は、同じartifactに近いtoken/precision deconfoundか、
-同じendpointの独立実装へ絞られた。T3はPhase I gateを閉じず、因果layerも選ばない。
+終了条件: 達成した。1 token後ろの共通接尾で反証する案をT4として結果を見る前に選び、
+次節のとおり完了した。同じartifactに近いtoken/precision deconfoundと、同じendpointの
+独立実装は今後の候補として残る。T3はPhase I gateを閉じず、因果layerも選ばない。
+
+### 観測side track T4 — 共通接尾tokenへのcarryover
+
+状態: `olmo_only_common_suffix_carryover`として完了した。
+
+- T3のpanel、2つのmodel artifact、5 depth fraction、model roleを変更せず再利用する。
+- 全絵文字へperiodまたはnewlineを加え、生token列全体を厳密なprefixとして保ったまま、
+  1個の共通接尾tokenだけを追加する。
+- 絵文字自身の末尾ではなく、その共通接尾tokenの`resid_post`を読む。
+- 固定2文脈×5深度の等重み平均だけをmodel-level endpointにする。
+- Family内slotの19,999 permutationを10個すべての文脈×深度セルで同期し、2つの
+  model-level testをHolm補正する。
+- T3統計は記述参照として固定し、推論には統合しない。
+
+Gemmaは`T = 0.203443011`、null平均`0.200044692`、Holm `p = 0.30295`で棄却しなかった。
+OLMoは`T = 0.537464703`、null平均`0.199977865`、Holm `p = 0.0001`で棄却した。
+OLMoの副次的なperiodとnewline統計は`0.538985382`と`0.535944025`で近かった。したがって
+OLMoのmatched-slot geometryは、固定した両文脈で1つ後ろの共通tokenにも観測でき、
+Gemmaはnull付近に残った。
+
+[T4結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md)、[固定protocol](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md)、[公開evidence](../artifacts/multifamily_common_suffix_carryover_v0/README.ja.md)には、全20 rowとcompactな全arrayを残す。T3を現在tokenだけで説明する記述は退くが、直前の構造化token列から短距離で伝わるだけという説明は残る。意味、因果、確認、tokenizer非依存性、cross-model magnitude contrastは示さない。
+
+終了条件: 達成した。介入前の安価な次の反証として、事前固定したcarrier-distance decay
+assayが有用である。ただしside trackに留め、tokenization-matched確認controlの代替にも、
+Phase I gateのclosureにも使わない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -295,7 +321,7 @@ OLMoのslot比率は固定profile上で`0.994722`から`0.295828`へ下がった
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。この結果はtokenizer構造による代替説明を絞るが、tokenizerの因果contrast、独立再現、意味効果ではない。T2/T3とも因果gateと独立再現gateを閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

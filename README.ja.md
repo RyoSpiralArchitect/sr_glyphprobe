@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -138,6 +138,20 @@ pは`0.2085`だった。OLMoは`0.500391869`、null平均`0.200184835`、Holm p
 [結果文書](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md)と
 [公開evidence](artifacts/multifamily_matched_slot_geometry_v0/README.ja.md)に残している。
 
+### Multifamily common-suffix carryover v0の現在地
+
+事前に固定したfollow-upでは、生の絵文字から1 token後ろにperiodまたはnewlineを置き、
+その共通tokenで読み出した。Gemmaの2文脈×全深度統計は`0.203443011`、null平均は
+`0.200044692`、Holm pは`0.30295`だった。OLMoは`0.537464703`、null平均
+`0.199977865`、Holm p `0.0001`だった。事前に定めたpatternは
+`olmo_only_common_suffix_carryover`である。
+
+OLMoの副次的な文脈別統計はperiod `0.538985382`、newline `0.535944025`と近かった。
+したがってshared-slot geometryは、slot tokenそのものを読む位置だけに閉じず、1つ後ろの
+共通tokenでも観測できる。ただし、直前のtoken構造が短距離で伝わるだけという説明は
+十分に残る。意味、因果、確認、tokenizer非依存のevidenceではない。詳細は[全結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md)、
+[固定protocol](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md)、[公開evidence](artifacts/multifamily_common_suffix_carryover_v0/README.ja.md)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -258,6 +272,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Multifamily matched-slot geometry v0結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md)
 - [Multifamily matched-slot geometry v0](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md)
 - [Matched-slot analysis repair v1](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md)
+- [Multifamily common-suffix carryover v0結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md)
+- [Multifamily common-suffix carryover v0](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md) / [English](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -274,7 +290,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`で完了しました。後者はOLMoが意図的に共有する末尾slot tokenと整合し、tokenizer非依存の主張ではありません。どちらもmodel一般性、因果、確認のclosureではありません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明を事前に扱います。因果検証、独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`で完了しました。T4によって、OLMoのT3結果を現在tokenだけで説明する記述は退きましたが、構造化された直前prefixからの短距離伝播で十分という説明は残ります。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carryover距離を事前に扱います。因果検証、独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

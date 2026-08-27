@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -168,6 +168,30 @@ Model family、size、precision、nodeも同時に変わる。そのため
 OLMoの観測に対する十分な代替説明として扱う。Tokenizerの因果性や絵文字の
 意味の証明ではない。
 
+## 1つ後ろの共通tokenにも、OLMoの配置は残った
+
+T3には、安価に反証できる点が一つ残っていた。OLMoの結果は、現在位置で共有slot token
+そのものを読んだから見えただけかもしれない。そこでT4では、読み出しを厳密に1 token
+後ろへ移した。全絵文字に同じperiodまたはnewlineを加え、その位置の`resid_post`を
+測った。生の絵文字token列は直前のprefixに残るが、各文脈内の現在tokenは50項目すべてで
+同一になる。
+
+2文脈×5深度のGemma統計は`0.203443011`、null平均`0.200044692`、Holm
+`p = 0.302950`だった。OLMoは`0.537464703`、null平均`0.199977865`、Holm
+`p = 0.000100`だった。登録済みの結果は`olmo_only_common_suffix_carryover`である。
+OLMoの文脈別統計も、period `0.538985382`、newline `0.535944025`とほぼ同じだった。
+
+これで説明は一段狭くなった。T3の配置は、slot tokenそのものを読む瞬間だけに閉じて
+いない。次の共通tokenに対する最初のblock出力ですでに見え、stackを進むにつれて弱く
+なる。ただし、絵文字の意味を見つけたわけではない。Transformerはprefixの情報を現在
+位置へ混ぜる。OLMoの明示的な`[family_token, slot_token]`構造が短距離で伝わるだけで、
+まだ十分に説明できる。
+
+[T4の全結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md)では、2本のarrayと
+全20文脈×深度rowを公開した。次に問うなら意味ラベルではなく距離である。同じcarrier
+tokenを何個はさんだところで配置が消えるのか。ただし新しいprotocolとして固定する必要が
+あり、tokenization-matched確認controlの代わりにはならない。
+
 ## より大きなモデルは、技術ゲートを通過しなかった
 
 E2では、新しい科学的な結果を見る前に、固定したLlama 3.2 3B BF16 cellへ同じ
@@ -221,21 +245,23 @@ T3からは、tokenizer条件に沿う分岐が加わる。厳密に同じ末尾
 共有するOLMo cellは固定omnibus nullを棄却し、Gemmaのatomic-token cellは
 棄却しなかった。ただし、model cell間で複数の条件が同時に変わるため、token構造に
 よる代替説明は支持しても、token identityを原因とは同定できない。
+T4からは、もう一つ境界が加わる。OLMoの分岐は、固定した2文脈で1つ後ろの共通tokenにも
+残った。現在tokenだけの説明は退くが、構造化prefixからの短距離伝播は退かない。
 
 ## 次は、因果プロトコルを凍結する
 
 運用上のMilestone 2は完了した。Layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。廃止済みC1 v1はこの実験に使えない。露出した研究文脈の外で新しいversionの因果bankを用意し、公開freezeまで未使用に保つ必要がある。E1はこのlayer候補を選び直す根拠にはしない。E1から仮説を絞る場合も、別の公開プロトコルと新しい未使用target bankが必要になる。
 
 T2は完了しており、primary layerを動かして救済しない。5 familyへ広げる
-選択肢は、T2の判定に後付けせず、別protocolのT3として固定・完了した。
-残る綺麗な選択肢は、より条件の近いmodel pairでtokenizer差の交絡をほどくか、
-一つの固定endpointを独立に再実装するかである。どちらも新しいprotocolとし、
-GemmaやOLMoのdepth profileを見た後の救済には使わない。
+選択肢は、T2の判定に後付けせず、別protocolのT3として固定・完了した。T4もT3のsubcellを
+救済せず、1 token carryoverを事前に固定して検証した。残る綺麗な選択肢は、carrier距離の
+減衰を固定して測る、より条件の近いmodel pairでtokenizer差の交絡をほどく、または一つの
+固定endpointを独立に再実装することである。いずれも新しいprotocolを要する。
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
 将来の新しいversionの因果bankは、候補、介入部位と操作、endpoint、対照、多重性familyをsealed patch–ablate–restoreプロトコルに固定するまで開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 
-Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断、T2 non-recurrence、T3のtokenizer条件に沿う分岐をそれぞれの主張境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
+Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断、T2 non-recurrence、T3のtokenizer条件に沿う分岐、T4の1 token carryoverを、それぞれの主張境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。
