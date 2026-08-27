@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -294,17 +294,45 @@ Exit condition: met. Both role-bound run bundles and the joint exact analysis
 are published with checksums. This side track does not replace the causal gate
 or an independent backend replication.
 
-Decision fork after T2, not yet a protocol freeze:
+The five-family breadth branch was selected prospectively as T3. The remaining
+same-family precision contrast and independent implementation remain future
+options rather than post-outcome rescue analyses.
 
-- deconfound one axis with a same-family or same-artifact precision contrast;
-- broaden to the five public animal, food, moon/sky, social, and transport
-  panels only after a family-level or all-depth endpoint is frozen; or
-- reproduce the exact endpoint in an independently qualified backend or model
-  cell without inheriting a descriptive Gemma layer peak as primary.
+### Observational side track T3 — Five-family matched-slot geometry
 
-The next protocol should choose one route. Combining model breadth, emoji
-breadth, and post-outcome depth selection would make another negative result
-ambiguous.
+Status: complete with `olmo_only_token_structured_recurrence`.
+
+- bind the unchanged E1 sky, food, animals, transport, and social panels into
+  one 5 × 10 crossed design;
+- require Gemma's 50 distinct atomic tokens and OLMo's exact
+  `[shared_prefix, family_token, slot_token]` factorization before forwarding;
+- capture the same five formula-selected depth fractions in both model roles;
+- remove each family mean and use the shared-slot sum-of-squares fraction as
+  the per-depth statistic;
+- average all five fixed depths as the only model-level primary endpoint;
+- synchronize 19,999 independent within-family slot-label randomizations
+  across depth and Holm-correct the two model-level tests;
+- retain all ten depth rows without granting any one depth a decision; and
+- record the failed first receipt serialization and freeze a key-normalization-
+  only repair before rerunning analysis.
+
+Gemma produced `T = 0.204304805` against null mean `0.199984463` (Holm
+`p = 0.2085`) and did not reject. OLMo produced `T = 0.500391869` against
+`0.200184835` (Holm `p = 0.0001`) and rejected. OLMo's slot fraction fell from
+`0.994722` to `0.295828` across the fixed profile but remained above the null
+at every depth. Those depth rows are secondary.
+
+The [T3 result](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md), [frozen
+protocol](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md), and [analysis
+repair](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md) keep the
+tokenizer-conditioned interpretation explicit. The exact shared OLMo suffix
+token is a sufficient explanation for its recurrence; model family, scale,
+precision, and node remain confounded, so the result is not a causal tokenizer
+contrast or semantic effect.
+
+Exit condition: met. T3 narrows the next useful options to a same-artifact
+token/precision deconfound or an independent exact implementation. It does not
+close a Phase I gate or select a causal layer.
 
 ### Milestone 3 — Targeted causal localization
 
@@ -391,7 +419,11 @@ extension needs separately frozen, tokenizer-specific control panels. T2 is a
 completed first observational use of two such regimes; neither predeclared
 midpoint cell rejected after Holm correction, so it records bounded negative/
 mixed cross-model evidence and does not close the causal or independent-
-replication gates. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
+replication gates. T3 then used the five-family matched-slot factorial and
+found OLMo-only recurrence under an exact shared final-token construction;
+Gemma's atomic-token omnibus did not reject. This narrows the tokenizer-
+structured alternative but is not a causal tokenizer contrast, independent
+replication, or semantic result. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
 analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research

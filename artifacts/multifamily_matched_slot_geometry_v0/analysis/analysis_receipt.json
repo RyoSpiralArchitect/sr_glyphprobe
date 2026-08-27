@@ -1,0 +1,107 @@
+{
+  "analysis_role": "frozen_joint_exploratory_observational_matched_slot_geometry",
+  "analysis_serialization_repair": {
+    "change_scope": "json_mapping_key_normalization_only",
+    "repair_id": "glyphprobe-multifamily-matched-slot-geometry-v0-analysis-repair-v1",
+    "repair_manifest_sha256": "86b22dc57a2b6c70c120d2fbb70214dbcc12c39def3840949334d79852eee0bc",
+    "scientific_choices_changed": false
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one five-family by ten-slot emoji panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "confirmatory_status": false,
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_matched_slot_geometry_v0.yaml": "131751c07d10b65a8164de38332811d92d451d7e5a386fb309e15cddc62764d9",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md": "466bad5ec68e4d533c0fe751c72303134b1dab7950258a386faa7f163095e54b",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md": "6f7486325afbbdf09f966ac8d21e04004177321f870f0b3f27f5cff647406f8f",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_matched_slot_geometry_v0.py": "d7c3e472e6b42f3f2bd22ca8a051b34f8d68f034d957cfc794d27b30702c0891",
+      "validation/multifamily_matched_slot_geometry_v0/engineering_preflight.json": "b82ce2d69780bb73b75aea5d55ca055fc382011ce1842522c507eb36d8d331fb"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "492102592bfbf35a3e64f3c9e88928cbf9a0ad94e6808c7145c0615ca9fab485"
+  },
+  "generation_calls": 0,
+  "inputs": {
+    "gemma2_2b_4bit": {
+      "run_ledger_sha256": "3aa2df4ec79948d1e6c5fe88d8617bcb52afc2f06fc33877576dd93009ce5410",
+      "run_receipt_sha256": "28f3e99abe192d847cbd864e85cda80c3fd771a915b021158c6195ad8ea9af5b"
+    },
+    "olmo3_7b_bf16": {
+      "run_ledger_sha256": "e5a78697a2da51ca3b0dfa88aedf9828dc40d4f5bf4d751ac3f9d375a093b343",
+      "run_receipt_sha256": "724be5b65fc38e5868772fd1364c42341859d83acdf3721303ddce1405b5c5da"
+    }
+  },
+  "intervention_calls": 0,
+  "layer_row_count": 10,
+  "outcome_pattern": "olmo_only_token_structured_recurrence",
+  "outcome_pattern_definition": "Only the OLMo model-level test rejects; the deliberately shared final slot token is an expected sufficient explanation and no tokenizer-independent recurrence is claimed.",
+  "phase_i_gate_closed": false,
+  "primary_endpoint": {
+    "decision_scope": "model_level_all_depth_omnibus_only",
+    "definition": "At each fixed depth, arrange resid_post vectors as family by slot. Remove each family's mean, decompose the remaining sum of squares into a shared slot main effect and family-by-slot interaction, and compute SS_slot / (SS_slot + SS_interaction). The model-level statistic is the equal-depth mean over all five frozen depths.",
+    "familywise_alpha": 0.05,
+    "fixed_reference_family": "sky",
+    "hypothesis_family": [
+      "gemma2_2b_4bit",
+      "olmo3_7b_bf16"
+    ],
+    "id": "all_depth_matched_slot_fraction_after_family_centering",
+    "multiplicity": "holm",
+    "null": "independent_within_family_slot_label_permutation",
+    "p_value": "(1 + count(T_randomized >= T_observed)) / 20000",
+    "randomization_draws": 19999,
+    "rng": "numpy.random.PCG64",
+    "seed": 20260828,
+    "synchronized_across_depths": true
+  },
+  "primary_results": {
+    "gemma2_2b_4bit": {
+      "depth_profile": [
+        0.19384167222400528,
+        0.20321173390563463,
+        0.2115572370695346,
+        0.2032932574930808,
+        0.20962012416854325
+      ],
+      "excess_over_null_mean": 0.004320342165609475,
+      "holm_adjusted_p": 0.2085,
+      "holm_reject": false,
+      "null_mean": 0.19998446280655024,
+      "raw_p": 0.2085,
+      "statistic": 0.20430480497215972
+    },
+    "olmo3_7b_bf16": {
+      "depth_profile": [
+        0.9947218881765565,
+        0.4613245544477011,
+        0.4134240981408787,
+        0.33666082351610443,
+        0.2958279803077132
+      ],
+      "excess_over_null_mean": 0.30020703371150426,
+      "holm_adjusted_p": 0.0001,
+      "holm_reject": true,
+      "null_mean": 0.20018483520628658,
+      "raw_p": 0.00005,
+      "statistic": 0.5003918689177909
+    }
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "randomization_draws_per_model": 19999,
+  "randomization_seed": 20260828,
+  "schema_version": 1,
+  "status": "pass"
+}

@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [固定プロトコル](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -123,6 +123,21 @@ backend parity、quantization、scale、model一般性の主張ではない。�
 [固定プロトコル](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md)、
 [公開エビデンス](artifacts/multifamily_colored_shape_geometry_v0/README.ja.md)に示す。
 
+### Multifamily matched-slot geometry v0の現在地
+
+固定した5 family × 10 slotの観測実験を、同じGemma/OLMo roleで完了した。Gemmaの
+all-depth slot比率は`0.204304805`、randomization null平均は`0.199984463`、Holm
+pは`0.2085`だった。OLMoは`0.500391869`、null平均`0.200184835`、Holm p
+`0.0001`だった。事前に定めたpatternは`olmo_only_token_structured_recurrence`である。
+
+これは設計が区別しようとしたtokenizer条件どおりの分岐である。Gemmaは互いに異なる
+50個のatomic tokenを使い、OLMoは厳密に
+`[shared_prefix, family_token, shared_slot_token]`となる。したがってOLMoの結果には
+共有tokenだけで十分な説明が残り、意味上またはtokenizer非依存の再現は示さない。
+全結果、最初のserialization failure、結果を見る前に固定したserialization-only repairは、
+[結果文書](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md)と
+[公開evidence](artifacts/multifamily_matched_slot_geometry_v0/README.ja.md)に残している。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -240,6 +255,9 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Multifamily tokenizer censusプロトコル](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.ja.md) / [English](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0.md)
 - [Multifamily colored-shape geometry v0結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md)
 - [Multifamily colored-shape geometry v0](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.ja.md) / [English](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0.md)
+- [Multifamily matched-slot geometry v0結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md)
+- [Multifamily matched-slot geometry v0](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md)
+- [Matched-slot analysis repair v1](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -256,7 +274,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、このプロトコルには使えません。将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意し、それまで未使用に保つ必要があります。E1は完了済みの探索side trackであり、この判断も論文gateも変更しません。Multifamily tokenizer censusは完了済みの記述的設計証拠であり、将来のcross-tokenizer controlをtokenizer output classごとに凍結する必要性を示しましたが、それ自体は論文gateを閉じません。Multifamily colored-shape geometry v0も`no_dual_model_recurrence`として完了しました。事前指定したmidpointはどちらもHolm補正後に棄却せず、得られたのは境界を限定した負・mixed observational evidenceです。Model一般性、因果、確認のclosureではありません。E2 Stage A v2とStage A3は、MLX技術経路の不適格判定として完了済みのままです。MPS transport v1はmodel forward 0回のpreflight failureで、科学的結果を生んでいません。修正済みv2もstatic manifest commitとreceiptだけを追加するpreflight commitの2段階で凍結し、MLX経路の結果を書き換えません。最終的な論文表現と、それを支える再現実験では、analyzerのrole bindingとprototype再標本化依存に事前に対処します。因果検証、独立backendまたはmodelでの再現、完全な証拠archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`で完了しました。後者はOLMoが意図的に共有する末尾slot tokenと整合し、tokenizer非依存の主張ではありません。どちらもmodel一般性、因果、確認のclosureではありません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明を事前に扱います。因果検証、独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

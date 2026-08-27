@@ -1,0 +1,93 @@
+{
+  "analysis_repair": {
+    "change_scope": "json_mapping_key_normalization_only",
+    "repair_commit": "7f9184d9adb1bf6487a5e262f2fcdace90f68608",
+    "repair_id": "glyphprobe-multifamily-matched-slot-geometry-v0-analysis-repair-v1",
+    "repair_manifest_sha256": "86b22dc57a2b6c70c120d2fbb70214dbcc12c39def3840949334d79852eee0bc",
+    "scientific_choices_changed": false
+  },
+  "claim_boundary": "Complete compact evidence for one frozen observational five-family by ten-slot raw-glyph resid_post study. The OLMo recurrence follows an exact shared final-token construction, while the Gemma atomic-token omnibus does not reject. Integrity and replayability do not establish semantics, tokenizer causality, mechanism, intervention effects, backend or node equivalence, scale or precision effects, confirmation, or Phase I paper-gate closure.",
+  "freeze_commit": "ae928b840e6164c89e9c4c71d5e41ceb8de3dfaa",
+  "outcome_pattern": "olmo_only_token_structured_recurrence",
+  "payload": {
+    "file_count": 13,
+    "files": {
+      "OLMO_TRANSFER_RECEIPT.json": {
+        "bytes": 1345,
+        "sha256": "2d0ee05be29fa900206a50e577b39318014dca26b36121ef7e76d3598a6d56e9"
+      },
+      "analysis/SHA256SUMS": {
+        "bytes": 253,
+        "sha256": "045a0c0b8500fa447c22c56bc0c00e6aad71ba9dd023c5ed2b7568fb454835fe"
+      },
+      "analysis/analysis_receipt.json": {
+        "bytes": 5711,
+        "sha256": "54e63f54f82e5906d29c89c44c99d1ffdd5687af66697c8e2862894c0c553951"
+      },
+      "analysis/layer_statistics.jsonl": {
+        "bytes": 5693,
+        "sha256": "79712cba31458b3533b6c1ba2edb7e48550967d297a17d3c88796990dd0ee832"
+      },
+      "analysis/report.md": {
+        "bytes": 661,
+        "sha256": "1e2216612d1f0e1ba753eb7ad11e61e096d3a21819f4e4cae3196cbbf00cd0b7"
+      },
+      "runs/gemma2_2b_4bit/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "3aa2df4ec79948d1e6c5fe88d8617bcb52afc2f06fc33877576dd93009ce5410"
+      },
+      "runs/gemma2_2b_4bit/activations.npz": {
+        "bytes": 1382695,
+        "sha256": "966fad8860ca9d1283d68f6e92c2052ee6a1cf75554d226a38a6600ab2022e7f"
+      },
+      "runs/gemma2_2b_4bit/observations.jsonl": {
+        "bytes": 22170,
+        "sha256": "d160178ebe35d8d8bba73eb77cdb3c383d1d95b6c6ed75a1f1afbb3ed6558d62"
+      },
+      "runs/gemma2_2b_4bit/run_receipt.json": {
+        "bytes": 13451,
+        "sha256": "28f3e99abe192d847cbd864e85cda80c3fd771a915b021158c6195ad8ea9af5b"
+      },
+      "runs/olmo3_7b_bf16/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "e5a78697a2da51ca3b0dfa88aedf9828dc40d4f5bf4d751ac3f9d375a093b343"
+      },
+      "runs/olmo3_7b_bf16/activations.npz": {
+        "bytes": 1933141,
+        "sha256": "72b1be4bcba211e08cd3f7de5e9b6f9ec06df5dfaa774fe90bfa000cbc31aa1b"
+      },
+      "runs/olmo3_7b_bf16/observations.jsonl": {
+        "bytes": 23111,
+        "sha256": "b460c134b1b9e12f875eaa41626e54448064a65c8fd1e4c1adfefaf5f8f32a6f"
+      },
+      "runs/olmo3_7b_bf16/run_receipt.json": {
+        "bytes": 22825,
+        "sha256": "724be5b65fc38e5868772fd1364c42341859d83acdf3721303ddce1405b5c5da"
+      }
+    },
+    "total_bytes": 3411556
+  },
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "source_and_transfer_verification": {
+    "gemma_source_validator": "pass",
+    "joint_analysis_validator": "pass",
+    "olmo_destination_validator": "pass",
+    "olmo_source_validator": "pass",
+    "olmo_transfer": {
+      "compute_used_on_relay": false,
+      "files_checked": 4,
+      "receipt": "OLMO_TRANSFER_RECEIPT.json",
+      "receipt_sha256": "2d0ee05be29fa900206a50e577b39318014dca26b36121ef7e76d3598a6d56e9",
+      "source_equals_destination": true,
+      "source_equals_relay": true
+    },
+    "published_bundle_validators": {
+      "analysis": "pass",
+      "gemma2_2b_4bit": "pass",
+      "olmo3_7b_bf16": "pass"
+    }
+  },
+  "status": "pass"
+}

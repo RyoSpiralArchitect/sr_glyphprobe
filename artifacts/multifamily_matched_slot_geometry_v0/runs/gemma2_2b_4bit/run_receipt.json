@@ -1,0 +1,510 @@
+{
+  "canonical_model_id": "mlx-community/gemma-2-2b-4bit",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      50,
+      5,
+      2304
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "layers": [
+      0,
+      6,
+      13,
+      19,
+      25
+    ],
+    "position": "last_nonpad",
+    "primary_scope": "all_five_fixed_depths_equal_weight",
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one five-family by ten-slot emoji panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      41.88958398299292,
+      21.391167014371604,
+      19.68345802742988,
+      19.006667018402368,
+      19.56670801155269,
+      19.977625051978976,
+      19.16170894401148,
+      19.895375007763505,
+      20.58029198087752,
+      19.69179097795859,
+      20.200167025905102,
+      20.124667033087462,
+      20.1572910300456,
+      22.96674996614456,
+      20.389583020005375,
+      20.271707966458052,
+      21.647625020705163,
+      21.228790981695056,
+      22.769082977902144,
+      20.36945801228285,
+      21.254165971186012,
+      21.37491700705141,
+      20.665583957452327,
+      22.399667010176927,
+      21.086666965857148,
+      23.634707962628454,
+      20.14262502780184,
+      20.720166969113052,
+      20.58179199229926,
+      20.526374981272966,
+      23.561334004625678,
+      21.40899997903034,
+      23.651457973755896,
+      20.986749965231866,
+      23.526167031377554,
+      21.081832994241267,
+      20.983375026844442,
+      20.91312501579523,
+      21.388958033639938,
+      21.462833043187857,
+      20.842208003159612,
+      23.2020829571411,
+      19.85504198819399,
+      20.026666985359043,
+      22.205083048902452,
+      20.43458301341161,
+      20.180749997962266,
+      20.19900002051145,
+      20.646374963689595,
+      21.263874950818717
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 4301.78983398946,
+    "model_forward_calls": 50,
+    "peak_memory_bytes_max": 1475370570,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 5720.096667006146
+  },
+  "experiment_role": "prospective_exploratory_observational_activation_geometry",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_matched_slot_geometry_v0.yaml": "131751c07d10b65a8164de38332811d92d451d7e5a386fb309e15cddc62764d9",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md": "466bad5ec68e4d533c0fe751c72303134b1dab7950258a386faa7f163095e54b",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md": "6f7486325afbbdf09f966ac8d21e04004177321f870f0b3f27f5cff647406f8f",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_matched_slot_geometry_v0.py": "d7c3e472e6b42f3f2bd22ca8a051b34f8d68f034d957cfc794d27b30702c0891",
+      "validation/multifamily_matched_slot_geometry_v0/engineering_preflight.json": "b82ce2d69780bb73b75aea5d55ca055fc382011ce1842522c507eb36d8d331fb"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "492102592bfbf35a3e64f3c9e88928cbf9a0ad94e6808c7145c0615ca9fab485"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 7,
+      "files": {
+        "config.json": {
+          "bytes": 952,
+          "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+        },
+        "model.safetensors": {
+          "bytes": 1470988882,
+          "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 46678,
+          "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+        },
+        "special_tokens_map.json": {
+          "bytes": 555,
+          "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+        },
+        "tokenizer.json": {
+          "bytes": 17525357,
+          "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+        },
+        "tokenizer.model": {
+          "bytes": 4241003,
+          "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+        },
+        "tokenizer_config.json": {
+          "bytes": 46298,
+          "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+        }
+      },
+      "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "total_bytes": 1492849725
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": "2da7060bea6e767e27d7a776f834071ba69bd3ba",
+      "d_model": 2304,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 4301.707042031921,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "gemma2",
+        "quantization": {
+          "bits": 4,
+          "group_size": 64
+        }
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 7,
+        "files": {
+          "config.json": {
+            "bytes": 952,
+            "sha256": "8af5a7870fce96cf452998b80ab14284898ce85392141c7ca406055fce18b836"
+          },
+          "model.safetensors": {
+            "bytes": 1470988882,
+            "sha256": "1b963f82f8aa6cc162107d6e568000424dc26b7bc5314790d16191b72fb9f730"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 46678,
+            "sha256": "cb1ab8d56b40451421668d828f8650cbf17c2d901d6f43a16f9a0f3ab49e42c9"
+          },
+          "special_tokens_map.json": {
+            "bytes": 555,
+            "sha256": "db82f8bd9b25d14f9c788e6bde64de84d42f1c2538f1c245ba6cb3e872d14b18"
+          },
+          "tokenizer.json": {
+            "bytes": 17525357,
+            "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+          },
+          "tokenizer.model": {
+            "bytes": 4241003,
+            "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+          },
+          "tokenizer_config.json": {
+            "bytes": 46298,
+            "sha256": "fe5d3fb6a117764c66d7274b15df16660dcfe84795643fdbe512c502ab0cac9a"
+          }
+        },
+        "manifest_sha256": "4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+        "total_bytes": 1492849725
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://2da7060bea6e767e27d7a776f834071ba69bd3ba#4f7e5c5b8feec1c7e8a6e4f7f731ca544ef17efb32857fe376516f130a0081d3",
+      "num_layers": 26,
+      "parameter_count": 2614341888,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.uint32",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GemmaTokenizerFast"
+    },
+    "model_dim": 2304,
+    "model_type": "gemma2",
+    "num_layers": 26,
+    "parameter_count": 2614341888,
+    "quantized": true,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.uint32"
+  },
+  "model_label": "gemma2_2b_4bit",
+  "outputs": {
+    "activations.npz": "966fad8860ca9d1283d68f6e92c2052ee6a1cf75554d226a38a6600ab2022e7f",
+    "observations.jsonl": "d160178ebe35d8d8bba73eb77cdb3c383d1d95b6c6ed75a1f1afbb3ed6558d62"
+  },
+  "panel": {
+    "family_order": [
+      "sky",
+      "food",
+      "animals",
+      "transport",
+      "social"
+    ],
+    "item_ids": [
+      "sky_slot_00",
+      "sky_slot_01",
+      "sky_slot_02",
+      "sky_slot_03",
+      "sky_slot_04",
+      "sky_slot_05",
+      "sky_slot_06",
+      "sky_slot_07",
+      "sky_slot_08",
+      "sky_slot_09",
+      "food_slot_00",
+      "food_slot_01",
+      "food_slot_02",
+      "food_slot_03",
+      "food_slot_04",
+      "food_slot_05",
+      "food_slot_06",
+      "food_slot_07",
+      "food_slot_08",
+      "food_slot_09",
+      "animals_slot_00",
+      "animals_slot_01",
+      "animals_slot_02",
+      "animals_slot_03",
+      "animals_slot_04",
+      "animals_slot_05",
+      "animals_slot_06",
+      "animals_slot_07",
+      "animals_slot_08",
+      "animals_slot_09",
+      "transport_slot_00",
+      "transport_slot_01",
+      "transport_slot_02",
+      "transport_slot_03",
+      "transport_slot_04",
+      "transport_slot_05",
+      "transport_slot_06",
+      "transport_slot_07",
+      "transport_slot_08",
+      "transport_slot_09",
+      "social_slot_00",
+      "social_slot_01",
+      "social_slot_02",
+      "social_slot_03",
+      "social_slot_04",
+      "social_slot_05",
+      "social_slot_06",
+      "social_slot_07",
+      "social_slot_08",
+      "social_slot_09"
+    ],
+    "slot_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": false,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.5.2",
+      "orjson": "3.12.0",
+      "pydantic": "2.13.4",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "add_special_tokens": false,
+    "context_id": "raw",
+    "expected_item_token_count": 1,
+    "kind": "distinct_atomic_tokens",
+    "matching_family": "atomic_token_count_plus_single_codepoint_factorial_panel",
+    "minimum_shared_prefix_across_panel": 0,
+    "observed_item_token_counts": [
+      1
+    ],
+    "token_sequences": [
+      [
+        244936
+      ],
+      [
+        248338
+      ],
+      [
+        248675
+      ],
+      [
+        249320
+      ],
+      [
+        244126
+      ],
+      [
+        249351
+      ],
+      [
+        248875
+      ],
+      [
+        248749
+      ],
+      [
+        240830
+      ],
+      [
+        243829
+      ],
+      [
+        243451
+      ],
+      [
+        243400
+      ],
+      [
+        242612
+      ],
+      [
+        244174
+      ],
+      [
+        243014
+      ],
+      [
+        247189
+      ],
+      [
+        245706
+      ],
+      [
+        252521
+      ],
+      [
+        246650
+      ],
+      [
+        246494
+      ],
+      [
+        246062
+      ],
+      [
+        246049
+      ],
+      [
+        246309
+      ],
+      [
+        246008
+      ],
+      [
+        244327
+      ],
+      [
+        247765
+      ],
+      [
+        249870
+      ],
+      [
+        246186
+      ],
+      [
+        245268
+      ],
+      [
+        246651
+      ],
+      [
+        249062
+      ],
+      [
+        248174
+      ],
+      [
+        249355
+      ],
+      [
+        250260
+      ],
+      [
+        249264
+      ],
+      [
+        251175
+      ],
+      [
+        243182
+      ],
+      [
+        246177
+      ],
+      [
+        246180
+      ],
+      [
+        245216
+      ],
+      [
+        243623
+      ],
+      [
+        248213
+      ],
+      [
+        241888
+      ],
+      [
+        238918
+      ],
+      [
+        246231
+      ],
+      [
+        243349
+      ],
+      [
+        239880
+      ],
+      [
+        241372
+      ],
+      [
+        242146
+      ],
+      [
+        245553
+      ]
+    ],
+    "unique_sequence_count": 50
+  }
+}

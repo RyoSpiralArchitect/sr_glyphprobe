@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -147,6 +147,32 @@ is thus a clean negative/mixed observational result. It does not say that shape
 geometry is absent or that a 7B model removed it. It says that the exact frozen
 midpoint recurrence claim did not clear its two-cell decision rule.
 
+## The five-family grid separated atomic tokens from a shared suffix
+
+T3 used all five public ten-emoji families in an exact 5 × 10 factorial grid.
+The slot labels were matched across families, and raw-glyph `resid_post` was
+captured at five formula-selected depths. The primary statistic was fixed in
+advance: after subtracting each family center, how much of the remaining
+activation variation was explained by the shared slot labels, averaged equally
+over all five depths? A synchronized 19,999-draw null and a two-model Holm
+family supplied the decisions.
+
+The tokenizers created two sharply different cells. Gemma represented all 50
+glyphs as 50 distinct atomic tokens. Its all-depth slot fraction was
+`0.204304805` against a null mean of `0.199984463`, with Holm `p = 0.208500`.
+OLMo represented every glyph as `[shared_prefix, family_token, slot_token]`, so
+the same slot reused the exact final token across all five families. Its slot
+fraction was `0.500391869` against `0.200184835`, with Holm `p = 0.000100`.
+The registered outcome was `olmo_only_token_structured_recurrence`.
+
+The OLMo profile was strongest at the first captured depth and declined from
+`0.994722` to `0.295828` across the stack. That is compatible with a shared
+input-token identity whose geometry is progressively mixed, but it is not a
+mechanistic test of that account. Model family, size, precision, and node also
+changed. The [complete T3 result](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md)
+therefore treats the token structure as a sufficient explanation for the OLMo
+observation, not as proof of tokenizer causality or emoji semantics.
+
 ## A larger model did not pass the engineering gate
 
 E2 asked whether the same MLX route could be qualified for a pinned Llama 3.2
@@ -204,6 +230,10 @@ tokenizer-independent, layer-specific, or robust random-control effect.
 T2 adds a bounded cross-model non-recurrence result: neither prespecified
 midpoint cell rejected after Holm correction. It does not identify the source
 of the heterogeneity or establish that colored-shape geometry is absent.
+T3 adds a tokenizer-conditioned split: the OLMo cell with an exact shared final
+slot token rejected its frozen omnibus null, while the Gemma atomic-token cell
+did not. Because the model cells differ on several axes, this supports a
+token-structured alternative without identifying token identity as the cause.
 
 ## What comes next
 
@@ -216,11 +246,12 @@ freeze. E1 does not select or modify the layer candidate: any focused
 hypothesis derived from E1 also needs its own public protocol and new untouched
 target bank.
 
-T2 is complete and should not be rescued by moving its primary layer. Its clean
-next choices are separate: deconfound one model/precision axis, broaden the five
-public emoji families under a predeclared family or all-depth endpoint, or
-reimplement the exact shape-axis test independently. The next protocol should
-choose one of those questions rather than search all of them at once.
+T2 is complete and should not be rescued by moving its primary layer. Its
+five-family option was selected, frozen, and completed separately as T3 rather
+than retrofitted onto the T2 decision. The clean remaining choices are to
+deconfound the tokenizer contrast in a nearer-matched model pair or to
+reimplement one frozen endpoint independently. Either must be a new protocol,
+not a post-hoc rescue of the Gemma or OLMo depth profiles.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -239,4 +270,4 @@ replication also remain open. Final-paper confirmatory wording and any
 replication used to support it must prospectively bind scientific roles to
 frozen inputs and account for data-dependent prototype resampling.
 
-Phase I still ends with an English paper, whether the final pattern is positive, mixed, or negative. That paper must show layer 2 and layer 4 together, distinguish frozen-v1 inference from post-hoc sensitivity, report the completed diagnostics and T2 non-recurrence with their descriptive boundaries, and connect every statement to a sealed artifact. The first map has become sharper. It has also become harder to overread, which is exactly what the controls were for.
+Phase I still ends with an English paper, whether the final pattern is positive, mixed, or negative. That paper must show layer 2 and layer 4 together, distinguish frozen-v1 inference from post-hoc sensitivity, report the completed diagnostics, T2 non-recurrence, and the T3 tokenizer-conditioned split with their claim boundaries, and connect every statement to a sealed artifact. The first map has become sharper. It has also become harder to overread, which is exactly what the controls were for.

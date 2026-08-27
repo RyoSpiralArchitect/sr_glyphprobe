@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -194,16 +194,35 @@ scale差やquantization差とは読めない。
 終了条件: 達成した。Role-bound run 2本とjoint exact analysisをchecksum付きで公開した。
 このside trackは、因果gateも独立backend再現も置き換えない。
 
-T2後の分岐案。まだprotocol freezeではない。
+この分岐から、5 familyへ広げる案をT3として結果を見る前に選んだ。同じartifactに
+近いprecision contrastと独立実装は、結果を救済する解析ではなく、今後の候補として残す。
 
-- 同じfamilyまたは同じartifactに近いprecision contrastを1本加え、交絡を一軸だけほどく。
-- Animals、food、moon/sky、social、transportの公開済み5 panelへ広げる。ただし、
-  family-level endpointか全深度endpointを先に固定する。
-- Gemmaの記述的なlayer peakをprimaryへ持ち込まず、同じendpointを適格な独立backendか
-  別model cellで再実装する。
+### 観測side track T3 — 5 family matched-slot geometry
 
-次のprotocolでは、このうち一つを選ぶ。Model breadth、emoji breadth、outcome後の
-depth選択を同時に動かすと、次も負だったときに原因を分けられない。
+状態: `olmo_only_token_structured_recurrence`として完了した。
+
+- E1のsky、food、animals、transport、social panelを変更せず、5×10のcrossed designに
+  結び付ける。
+- Forward前に、Gemmaの50個の固有atomic tokenと、OLMoの厳密な
+  `[shared_prefix, family_token, slot_token]`分解を要求する。
+- 両model roleで、式だけから選ぶ同じ5 depth fractionをcaptureする。
+- Family平均を引き、共有slotの平方和比率を深度ごとの統計量にする。
+- 固定5深度の等重み平均だけをmodel-level primary endpointにする。
+- Family内slot labelの独立randomization 19,999回を全深度で同期し、2 model-level testを
+  Holm補正する。
+- 深度別10行をすべて残し、どの深度にも判定権を与えない。
+- 最初のreceipt serialization failureを記録し、key normalizationだけのrepairを結果の
+  再解析前に公開freezeする。
+
+Gemmaは`T = 0.204304805`、null平均`0.199984463`、Holm `p = 0.2085`で棄却しなかった。
+OLMoは`T = 0.500391869`、null平均`0.200184835`、Holm `p = 0.0001`で棄却した。
+OLMoのslot比率は固定profile上で`0.994722`から`0.295828`へ下がったが、全深度でnullを
+上回った。深度別の値は副次記述である。
+
+[T3結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md)、[固定protocol](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md)、[analysis repair](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md)では、tokenizer条件に沿う解釈を明示した。OLMoが厳密に共有する末尾tokenだけで再現を説明できる。Model family、scale、precision、nodeは交絡したままであり、tokenizerの因果contrastでも意味効果でもない。
+
+終了条件: 達成した。次に価値がある案は、同じartifactに近いtoken/precision deconfoundか、
+同じendpointの独立実装へ絞られた。T3はPhase I gateを閉じず、因果layerも選ばない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -276,7 +295,7 @@ depth選択を同時に動かすと、次も負だったときに原因を分け
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使う最初の実行済み研究となったが、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。境界を限った負・mixed cross-model evidenceであり、因果gateも独立再現gateも閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。この結果はtokenizer構造による代替説明を絞るが、tokenizerの因果contrast、独立再現、意味効果ではない。T2/T3とも因果gateと独立再現gateを閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

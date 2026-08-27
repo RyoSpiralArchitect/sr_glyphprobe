@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -86,6 +86,24 @@ quantization, tokenizer, node, or model-family cause because those factors are
 confounded. T2 is not an independent-backend replication and does not change
 Milestone 2 or the causal candidate.
 
+## Current matched-slot observational result
+
+The separately frozen T3 study used the five public ten-emoji families as an
+exact 5 × 10 factorial. After family centering, its primary statistic was the
+equal-depth mean slot sum-of-squares fraction across five fixed depths. Gemma 2
+2B 4-bit, where all 50 glyphs are distinct atomic tokens, produced
+`T = 0.204304805`, null mean `0.199984463`, and Holm `p = 0.208500`. OLMo 3
+7B BF16, where each family reuses the exact final slot token, produced
+`T = 0.500391869`, null mean `0.200184835`, and Holm `p = 0.000100`.
+
+The registered pattern is `olmo_only_token_structured_recurrence`. OLMo's
+fixed-depth slot fraction declined from `0.994722` to `0.295828`; the five
+per-depth p-values are secondary and cannot replace the all-depth endpoint.
+The paper may present this as tokenizer-conditioned observational evidence:
+shared token structure is a sufficient alternative explanation for the OLMo
+result. It must not infer tokenizer causality, semantics, confirmation, or a
+model-scale, precision, backend, or node effect from the two confounded cells.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -95,10 +113,14 @@ Milestone 2 or the causal candidate.
 5. Can a prespecified component or path intervention selectively remove and restore the candidate effect?
 6. Which results replicate across execution backends, tokenizers, or model families?
 7. In a token-isomorphic exploratory panel, how much matched-slot recurrence transfers across middle-token families, and how large is the residual within-family excess?
+8. In a frozen five-family grid, does matched-slot activation geometry recur in an atomic-token cell and in a cell with an exact shared final slot token?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
 confirmatory or causal research question.
+T3 gives a split answer to question 8: OLMo rejected and Gemma did not. The
+question remains observational because token structure is confounded with the
+other model-cell differences.
 
 ## Planned paper structure
 
@@ -185,6 +207,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 
 - report T2 as a frozen two-cell non-recurrence result, with all fixed depths
   and its family/scale/precision/tokenizer/node confounding visible;
+- report T3 as a separately frozen five-family matched-slot result: Gemma
+  non-rejection and OLMo rejection under an exact shared-final-token contract,
+  with all fixed depths and the confounded cell differences visible;
 - duplicate confirmatory matrix in a second internal backend;
 - additional tokenizer or model family;
 - agreement and disagreement table;
@@ -201,6 +226,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - E1 family identity is exactly confounded with the middle GPT-2 token, while
   the first and third tokens are shared; its transfer pattern cannot establish
   a semantic or tokenizer-independent family representation.
+- T3's OLMo recurrence follows an exact shared final-token construction and
+  weakens with depth; the cross-cell split cannot identify token causality or a
+  scale, precision, architecture, backend, or node effect.
 - one complete C1 v1 record was exposed in a research-agent context without
   experimental use; the bank is retired, and future causal work requires a new
   versioned bank.
@@ -211,6 +239,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - raw-ledger archival location;
 - compact public evidence manifest and omitted files;
 - exact commands for parity, run, audit, and figure generation.
+- complete T3 arrays, rows, repaired analysis, transfer receipt, and public
+  manifest, with the pre-outcome serialization-repair chain retained.
 
 ## Planned main figures
 
@@ -225,6 +255,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 8. T2 fixed-depth shape-axis profile for Gemma and OLMo, with only the midpoint
    marked primary and the two Holm decisions shown separately from descriptive
    layer p-values.
+9. T3 all-depth matched-slot primary result and full depth profiles, separating
+   the Gemma atomic-token and OLMo shared-final-token contracts.
 
 ## Planned main tables
 
@@ -236,6 +268,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 6. Cross-backend and cross-model replication.
 7. T2 primary and all fixed-depth observational results, labeled negative/mixed
    and non-confirmatory.
+8. T3 primary model-level statistics and all fixed-depth rows, labeled
+   tokenizer-conditioned and observational.
 
 ## Claim table
 
@@ -251,6 +285,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | A particular component or path causes the effect | not tested | targeted patch/ablate/restore experiment |
 | The directions encode human-readable glyph meaning | not tested and not implied | would require an independently justified semantic assay |
 | The exact T2 midpoint shape axis recurs across Gemma and OLMo | not supported; neither cell rejected after Holm correction | retain as bounded negative/mixed observational evidence; do not replace the midpoint or attribute the difference to scale |
+| Matched-slot geometry recurs in both T3 tokenizer regimes | not supported; OLMo rejected but Gemma did not | retain the registered `olmo_only_token_structured_recurrence` split and its token-structured alternative explanation |
+| OLMo T3 recurrence proves tokenizer causality or emoji meaning | not supported | require a causally identified near-matched tokenizer or token intervention; do not infer it from the two confounded cells |
 | The GPT-2 fingerprint result generalizes across models | not established by T2, which used a different endpoint and confounded cells | claim-matched cross-model replication |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
@@ -269,6 +305,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - T2's two midpoint p-values and Holm family remain the only authorized
   decisions for that protocol. The eight non-primary rows remain descriptive,
   including Gemma rows at the exhaustive `1/120` floor.
+- T3's two all-depth p-values and Holm family remain its only authorized
+  decisions. All ten per-depth p-values are secondary, with no multiplicity
+  decision and no authority to replace the primary endpoint.
 
 ## Remaining paper gates
 
@@ -283,6 +322,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - generate paper tables and figures from versioned scripts;
 - run a fresh-eyes reproducibility and claim-boundary review;
 - keep the English manuscript and Japanese public summary propositionally aligned.
+- preserve the T3 tokenizer-conditioned interpretation; do not relabel its
+  secondary depth profile as confirmation or use it to rescue either cell.
 
 No full manuscript is claimed at this stage. The English paper remains the Phase I endpoint.
 
@@ -300,6 +341,9 @@ The preprint package should contain or point to:
   bundles, and root hash manifest;
 - the complete T2 Gemma and OLMo activation arrays, observations, receipts,
   ten-row joint analysis, transfer verification, and public manifest;
+- the complete T3 Gemma and OLMo activation arrays, observations, receipts,
+  ten-row repaired joint analysis, three-node transfer verification, and public
+  manifest;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;
 - English manuscript, supplementary material, and Japanese public summary.

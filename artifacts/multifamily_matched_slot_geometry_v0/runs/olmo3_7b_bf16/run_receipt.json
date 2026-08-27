@@ -1,0 +1,791 @@
+{
+  "canonical_model_id": "local/olmo3-1025-7b",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      50,
+      5,
+      4096
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "layers": [
+      0,
+      8,
+      16,
+      24,
+      31
+    ],
+    "position": "last_nonpad",
+    "primary_scope": "all_five_fixed_depths_equal_weight",
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one five-family by ten-slot emoji panel in two predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      27608.538375003263,
+      1093.6293749982724,
+      502.2832910035504,
+      549.8282909975387,
+      532.4703340011183,
+      493.04729199502617,
+      499.52074998873286,
+      469.12820800207555,
+      468.9634170063073,
+      457.89375000458676,
+      451.45270800276194,
+      435.65308400138747,
+      422.5531670090277,
+      425.35183299332857,
+      434.1881669970462,
+      427.9792090092087,
+      432.08008400688414,
+      445.0727499934146,
+      438.25766700319946,
+      443.29029200889636,
+      435.9211250121007,
+      452.1375420008553,
+      464.78158299578354,
+      453.79266700183507,
+      451.43137499690056,
+      447.4415000004228,
+      452.629709005123,
+      452.8166670061182,
+      456.4081249991432,
+      434.2372079991037,
+      451.699874989572,
+      441.6021249926416,
+      440.7562910055276,
+      437.83029200858437,
+      445.1111249945825,
+      443.5568750050152,
+      432.3572499997681,
+      443.0874160025269,
+      443.20479201269336,
+      437.94425000669435,
+      437.04470800003037,
+      449.2657499940833,
+      446.05512500857003,
+      446.19408299331553,
+      449.8161249939585,
+      445.7075829996029,
+      434.2815419950057,
+      438.0810830043629,
+      430.80874999577645,
+      428.46920900046825
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 16754.789375001565,
+    "model_forward_calls": 50,
+    "peak_memory_bytes_max": 14600006996,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 67957.41404200089
+  },
+  "experiment_role": "prospective_exploratory_observational_activation_geometry",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_matched_slot_geometry_v0.yaml": "131751c07d10b65a8164de38332811d92d451d7e5a386fb309e15cddc62764d9",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.ja.md": "466bad5ec68e4d533c0fe751c72303134b1dab7950258a386faa7f163095e54b",
+      "docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0.md": "6f7486325afbbdf09f966ac8d21e04004177321f870f0b3f27f5cff647406f8f",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_matched_slot_geometry_v0.py": "d7c3e472e6b42f3f2bd22ca8a051b34f8d68f034d957cfc794d27b30702c0891",
+      "validation/multifamily_matched_slot_geometry_v0/engineering_preflight.json": "b82ce2d69780bb73b75aea5d55ca055fc382011ce1842522c507eb36d8d331fb"
+    },
+    "implementation": {
+      "package_version": null,
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "492102592bfbf35a3e64f3c9e88928cbf9a0ad94e6808c7145c0615ca9fab485"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 30,
+      "files": {
+        ".cache/huggingface/.gitignore": {
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        ".cache/huggingface/CACHEDIR.TAG": {
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        ".cache/huggingface/download/.gitattributes.metadata": {
+          "bytes": 101,
+          "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+        },
+        ".cache/huggingface/download/README.md.metadata": {
+          "bytes": 101,
+          "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+        },
+        ".cache/huggingface/download/config.json.metadata": {
+          "bytes": 101,
+          "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+        },
+        ".cache/huggingface/download/generation_config.json.metadata": {
+          "bytes": 100,
+          "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+        },
+        ".cache/huggingface/download/merges.txt.metadata": {
+          "bytes": 100,
+          "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+        },
+        ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+          "bytes": 101,
+          "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+        },
+        ".cache/huggingface/download/olmo-base.png.metadata": {
+          "bytes": 124,
+          "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+        },
+        ".cache/huggingface/download/olmo3-logo.metadata": {
+          "bytes": 99,
+          "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+        },
+        ".cache/huggingface/download/special_tokens_map.json.metadata": {
+          "bytes": 101,
+          "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+        },
+        ".cache/huggingface/download/tokenizer.json.metadata": {
+          "bytes": 100,
+          "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+        },
+        ".cache/huggingface/download/tokenizer_config.json.metadata": {
+          "bytes": 101,
+          "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+        },
+        ".cache/huggingface/download/vocab.json.metadata": {
+          "bytes": 100,
+          "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+        },
+        ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+          "bytes": 2427,
+          "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+        },
+        ".gitattributes": {
+          "bytes": 1569,
+          "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+        },
+        "README.md": {
+          "bytes": 12222,
+          "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+        },
+        "config.json": {
+          "bytes": 1620,
+          "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+        },
+        "generation_config.json": {
+          "bytes": 69,
+          "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+        },
+        "merges.txt": {
+          "bytes": 916646,
+          "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 4969984976,
+          "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 4981161496,
+          "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 4644917240,
+          "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 29630,
+          "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+        },
+        "olmo-base.png": {
+          "bytes": 103368,
+          "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+        },
+        "olmo3-logo": {
+          "bytes": 119,
+          "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 207,
+          "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+        },
+        "tokenizer.json": {
+          "bytes": 7137177,
+          "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+        },
+        "tokenizer_config.json": {
+          "bytes": 4308,
+          "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+        },
+        "vocab.json": {
+          "bytes": 1611056,
+          "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+        }
+      },
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "total_bytes": 14605885551
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": null,
+      "d_model": 4096,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 16754.724415994133,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "olmo3",
+        "quantization": null
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 30,
+        "files": {
+          ".cache/huggingface/.gitignore": {
+            "bytes": 1,
+            "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+          },
+          ".cache/huggingface/CACHEDIR.TAG": {
+            "bytes": 191,
+            "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+          },
+          ".cache/huggingface/download/.gitattributes.metadata": {
+            "bytes": 101,
+            "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+          },
+          ".cache/huggingface/download/README.md.metadata": {
+            "bytes": 101,
+            "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+          },
+          ".cache/huggingface/download/config.json.metadata": {
+            "bytes": 101,
+            "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+          },
+          ".cache/huggingface/download/generation_config.json.metadata": {
+            "bytes": 100,
+            "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+          },
+          ".cache/huggingface/download/merges.txt.metadata": {
+            "bytes": 100,
+            "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+          },
+          ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+            "bytes": 101,
+            "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+          },
+          ".cache/huggingface/download/olmo-base.png.metadata": {
+            "bytes": 124,
+            "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+          },
+          ".cache/huggingface/download/olmo3-logo.metadata": {
+            "bytes": 99,
+            "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+          },
+          ".cache/huggingface/download/special_tokens_map.json.metadata": {
+            "bytes": 101,
+            "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+          },
+          ".cache/huggingface/download/tokenizer.json.metadata": {
+            "bytes": 100,
+            "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+          },
+          ".cache/huggingface/download/tokenizer_config.json.metadata": {
+            "bytes": 101,
+            "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+          },
+          ".cache/huggingface/download/vocab.json.metadata": {
+            "bytes": 100,
+            "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+          },
+          ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+            "bytes": 2427,
+            "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+          },
+          ".gitattributes": {
+            "bytes": 1569,
+            "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+          },
+          "README.md": {
+            "bytes": 12222,
+            "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+          },
+          "config.json": {
+            "bytes": 1620,
+            "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+          },
+          "generation_config.json": {
+            "bytes": 69,
+            "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+          },
+          "merges.txt": {
+            "bytes": 916646,
+            "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+          },
+          "model-00001-of-00003.safetensors": {
+            "bytes": 4969984976,
+            "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+          },
+          "model-00002-of-00003.safetensors": {
+            "bytes": 4981161496,
+            "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+          },
+          "model-00003-of-00003.safetensors": {
+            "bytes": 4644917240,
+            "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 29630,
+            "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+          },
+          "olmo-base.png": {
+            "bytes": 103368,
+            "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+          },
+          "olmo3-logo": {
+            "bytes": 119,
+            "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 207,
+            "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+          },
+          "tokenizer.json": {
+            "bytes": 7137177,
+            "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4308,
+            "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+          },
+          "vocab.json": {
+            "bytes": 1611056,
+            "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+          }
+        },
+        "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+        "total_bytes": 14605885551
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://olmo3-1025-7b#ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "num_layers": 32,
+      "parameter_count": 7298011136,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.bfloat16",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GPT2TokenizerFast"
+    },
+    "model_dim": 4096,
+    "model_type": "olmo3",
+    "num_layers": 32,
+    "parameter_count": 7298011136,
+    "quantized": false,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.bfloat16"
+  },
+  "model_label": "olmo3_7b_bf16",
+  "outputs": {
+    "activations.npz": "72b1be4bcba211e08cd3f7de5e9b6f9ec06df5dfaa774fe90bfa000cbc31aa1b",
+    "observations.jsonl": "b460c134b1b9e12f875eaa41626e54448064a65c8fd1e4c1adfefaf5f8f32a6f"
+  },
+  "panel": {
+    "family_order": [
+      "sky",
+      "food",
+      "animals",
+      "transport",
+      "social"
+    ],
+    "item_ids": [
+      "sky_slot_00",
+      "sky_slot_01",
+      "sky_slot_02",
+      "sky_slot_03",
+      "sky_slot_04",
+      "sky_slot_05",
+      "sky_slot_06",
+      "sky_slot_07",
+      "sky_slot_08",
+      "sky_slot_09",
+      "food_slot_00",
+      "food_slot_01",
+      "food_slot_02",
+      "food_slot_03",
+      "food_slot_04",
+      "food_slot_05",
+      "food_slot_06",
+      "food_slot_07",
+      "food_slot_08",
+      "food_slot_09",
+      "animals_slot_00",
+      "animals_slot_01",
+      "animals_slot_02",
+      "animals_slot_03",
+      "animals_slot_04",
+      "animals_slot_05",
+      "animals_slot_06",
+      "animals_slot_07",
+      "animals_slot_08",
+      "animals_slot_09",
+      "transport_slot_00",
+      "transport_slot_01",
+      "transport_slot_02",
+      "transport_slot_03",
+      "transport_slot_04",
+      "transport_slot_05",
+      "transport_slot_06",
+      "transport_slot_07",
+      "transport_slot_08",
+      "transport_slot_09",
+      "social_slot_00",
+      "social_slot_01",
+      "social_slot_02",
+      "social_slot_03",
+      "social_slot_04",
+      "social_slot_05",
+      "social_slot_06",
+      "social_slot_07",
+      "social_slot_08",
+      "social_slot_09"
+    ],
+    "slot_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": false,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": null,
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.5.2",
+      "orjson": "3.12.0",
+      "pydantic": "2.13.4",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "add_special_tokens": false,
+    "context_id": "raw",
+    "expected_item_token_count": 3,
+    "kind": "exact_prefix_family_slot_factorization",
+    "matching_family": "exact_common_prefix_plus_family_token_plus_shared_slot_token",
+    "minimum_shared_prefix_across_panel": 1,
+    "observed_item_token_counts": [
+      3
+    ],
+    "token_sequences": [
+      [
+        9468,
+        234,
+        239
+      ],
+      [
+        9468,
+        234,
+        240
+      ],
+      [
+        9468,
+        234,
+        241
+      ],
+      [
+        9468,
+        234,
+        242
+      ],
+      [
+        9468,
+        234,
+        243
+      ],
+      [
+        9468,
+        234,
+        244
+      ],
+      [
+        9468,
+        234,
+        245
+      ],
+      [
+        9468,
+        234,
+        246
+      ],
+      [
+        9468,
+        234,
+        247
+      ],
+      [
+        9468,
+        234,
+        248
+      ],
+      [
+        9468,
+        235,
+        239
+      ],
+      [
+        9468,
+        235,
+        240
+      ],
+      [
+        9468,
+        235,
+        241
+      ],
+      [
+        9468,
+        235,
+        242
+      ],
+      [
+        9468,
+        235,
+        243
+      ],
+      [
+        9468,
+        235,
+        244
+      ],
+      [
+        9468,
+        235,
+        245
+      ],
+      [
+        9468,
+        235,
+        246
+      ],
+      [
+        9468,
+        235,
+        247
+      ],
+      [
+        9468,
+        235,
+        248
+      ],
+      [
+        9468,
+        238,
+        239
+      ],
+      [
+        9468,
+        238,
+        240
+      ],
+      [
+        9468,
+        238,
+        241
+      ],
+      [
+        9468,
+        238,
+        242
+      ],
+      [
+        9468,
+        238,
+        243
+      ],
+      [
+        9468,
+        238,
+        244
+      ],
+      [
+        9468,
+        238,
+        245
+      ],
+      [
+        9468,
+        238,
+        246
+      ],
+      [
+        9468,
+        238,
+        247
+      ],
+      [
+        9468,
+        238,
+        248
+      ],
+      [
+        9468,
+        248,
+        239
+      ],
+      [
+        9468,
+        248,
+        240
+      ],
+      [
+        9468,
+        248,
+        241
+      ],
+      [
+        9468,
+        248,
+        242
+      ],
+      [
+        9468,
+        248,
+        243
+      ],
+      [
+        9468,
+        248,
+        244
+      ],
+      [
+        9468,
+        248,
+        245
+      ],
+      [
+        9468,
+        248,
+        246
+      ],
+      [
+        9468,
+        248,
+        247
+      ],
+      [
+        9468,
+        248,
+        248
+      ],
+      [
+        9468,
+        97,
+        239
+      ],
+      [
+        9468,
+        97,
+        240
+      ],
+      [
+        9468,
+        97,
+        241
+      ],
+      [
+        9468,
+        97,
+        242
+      ],
+      [
+        9468,
+        97,
+        243
+      ],
+      [
+        9468,
+        97,
+        244
+      ],
+      [
+        9468,
+        97,
+        245
+      ],
+      [
+        9468,
+        97,
+        246
+      ],
+      [
+        9468,
+        97,
+        247
+      ],
+      [
+        9468,
+        97,
+        248
+      ]
+    ],
+    "unique_sequence_count": 50
+  }
+}

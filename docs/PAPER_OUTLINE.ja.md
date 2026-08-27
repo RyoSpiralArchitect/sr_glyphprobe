@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -85,6 +85,21 @@ primary layerと差し替えられない。論文では、現在のmodel-general
 scale、precision、tokenizer、nodeが交絡しているため、cell差の原因は推定しない。
 独立backend再現でもなく、Milestone 2や因果候補も変更しない。
 
+## 現在のmatched-slot観測結果
+
+別に凍結したT3では、公開済みの10 emoji × 5 familyを正確な5 × 10格子として
+使った。Family平均を引いた後、slot平方和比率を固定5深度で等重み平均した値を
+主統計量とした。Gemma 2 2B 4-bitでは50 glyphがすべて別々のatomic tokenであり、
+`T = 0.204304805`、null平均`0.199984463`、Holm `p = 0.208500`だった。
+OLMo 3 7B BF16では、5 familyが同じslotで厳密に同じ末尾tokenを使い、
+`T = 0.500391869`、null平均`0.200184835`、Holm `p = 0.000100`だった。
+
+登録済みpatternは`olmo_only_token_structured_recurrence`である。OLMoの固定深度別
+slot比率は`0.994722`から`0.295828`まで下がった。深度別の5つのp値は副次的で、
+all-depth endpointと差し替えられない。論文では、OLMoの結果にはtoken構造だけで
+十分な代替説明が残る、tokenizer条件付きの観測evidenceとして扱う。Tokenizerの
+因果性、意味、確認的結論、model scale、precision、backend、nodeの効果は推定しない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -94,11 +109,14 @@ scale、precision、tokenizer、nodeが交絡しているため、cell差の原�
 5. **RQ5 — 因果性:** 候補コンポーネントのアブレーションと復元で、指紋を選択的に消し、戻せるか。
 6. **RQ6 — 独立再現:** どの結果が、実行backend、tokenizer、model familyをまたいで再現するか。
 7. **RQ7 — 共有token間のtransfer:** トークン同型な探索panelで、matched-slot反復は中間token familyをまたいでどの程度移り、family内の残差的な上乗せはどの程度か。
+8. **RQ8 — Matched-slot geometry:** 固定した5 family格子で、matched-slot activation geometryはatomic-token cellと、厳密に同じ末尾slot tokenを共有するcellの両方に再現するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
 RQ5も残っている。これらが未成立なら、論文の中心命題はRQ1〜RQ4に限定する。RQ7に対するE1の答えは
 探索的・記述的なside resultとして扱い、確認命題や因果命題へ格上げしない。
+T3はRQ8に分岐した答えを与えた。OLMoは棄却し、Gemmaは棄却しなかった。
+ただし、token構造とその他のmodel-cell差が交絡しているため、この問いは観測的なままである。
 
 ## 予定する貢献
 
@@ -174,6 +192,8 @@ RQ5も残っている。これらが未成立なら、論文の中心命題はRQ
 8. 因果実験を行った場合は、アブレーションと復元
 9. E1の全family-pair transfer行列、family固有の小さな超過、全family区間、random-controlの不均一性、成立しなかったlayer 4 negative comparator
 10. T2の2つのprimary midpointと固定深度全10行。非primaryの記述的p値を確認判定と分ける
+11. T3の2つのall-depth primaryと固定深度全10行。Gemmaのatomic-token条件と
+    OLMoの共有末尾token条件を分け、深度別p値は副次記述とする
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
@@ -194,6 +214,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - E1で見えた広いfamily間transferと小さなfamily固有超過を、共有token構造で説明できる範囲
 - T2のmodel family、scale、precision、tokenizer、node交絡と、midpoint
   non-recurrenceから言える範囲
+- T3のOLMo recurrenceが厳密な共有末尾token構成に沿い、深度とともに弱まること。
+  2 cellの分岐からtoken因果性やscale、precision、architecture、backend、node効果は同定しない
 
 ### 8. Limitations
 
@@ -204,6 +226,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - 中立グリフとのトークン長差
 - Milestone 2のmatched panelはtoken identityではなく、token countとパネル単位のprefix構造を揃えた対照であること
 - E1ではfamily identityと中間GPT-2 tokenが完全に交絡し、第1・第3 tokenを共有しているため、意味上またはtokenizer非依存のfamily表現を同定できないこと
+- T3ではmodel family、size、precision、tokenizer、nodeが同時に変わり、OLMoの共有
+  末尾tokenを原因として同定できないこと
 - C1 v1の完全な1レコードが、実験に使われないまま研究agentの文脈へ露出したこと。Bankは廃止済みで、将来の因果実験には新しいversionのbankが必要であること
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
@@ -220,6 +244,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - E1のtokenizer preflight、全記述解析、5つの軽量run bundle、root manifest
 - T2のGemma・OLMo activation array、observation、receipt、全10行joint analysis、
   転送検証、public manifest
+- T3のGemma・OLMo activation array、observation、receipt、repair後の全10行
+  joint analysis、3地点の転送検証、public manifest、および結果を見る前のrepair chain
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -237,6 +263,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 10. **Figure / Supplement:** E1のlayer別5 × 5 transfer行列。確認結果とは明確に分ける
 11. **Figure / Supplement:** T2のGemma・OLMo固定深度shape-axis profile。Midpointだけを
     primaryとして示し、非primaryの記述的p値を分ける
+12. **Figure / Supplement:** T3のall-depth主結果と全深度profile。Gemmaのatomic-token条件と
+    OLMoの共有末尾token条件を分けて示す
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -251,6 +279,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - robust to the prespecified token-count and token-prefix matched controls at layer 2 under frozen v1
 - exploratory matched-slot recurrence under a fixed middle-token family substitution
 - no dual-model recurrence for the frozen T2 midpoint shape-axis endpoint
+- OLMo-only token-structured recurrence for the frozen T3 all-depth endpoint
 
 ### 追加の証拠なしには使用しない
 
@@ -261,6 +290,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - universal or model-independent effect
 - semantic emoji family, tokenizer-independent E1 effect, layer-specific E1 effect
 - T2 scale effect, quantization effect, or absence of colored-shape geometry
+- T3 tokenizer causality, semantic matched-slot variable, scale effect, precision effect, or node effect
 
 ## 残る論文ゲート
 
@@ -275,6 +305,8 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - E1の記述区間にp値、確認status、layer比較の推論を後付けしない。
 - T2の判定は2つのmidpointとHolm familyに限定し、Gemmaの非primary `1/120`行を
   発見や新しいprimaryへ格上げしない。
+- T3の判定は2つのall-depth p値とHolm familyに限定し、10個の深度別p値を
+  確認判定、新しいprimary、またはcellの救済に使わない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

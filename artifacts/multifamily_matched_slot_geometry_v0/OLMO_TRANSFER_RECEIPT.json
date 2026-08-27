@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-matched-slot-geometry-v0",
+  "transfer_id": "olmo3_7b_bf16_mac1_furnace_relay_mac2",
+  "verified_at": "2026-08-27T22:15:41Z",
+  "status": "pass",
+  "source_node": "mac1",
+  "relay_node": "furnace",
+  "destination_node": "mac2",
+  "compute_used_on_relay": false,
+  "files": {
+    "activations.npz": {
+      "sha256": "72b1be4bcba211e08cd3f7de5e9b6f9ec06df5dfaa774fe90bfa000cbc31aa1b",
+      "source_match": true,
+      "relay_match": true,
+      "destination_match": true
+    },
+    "observations.jsonl": {
+      "sha256": "b460c134b1b9e12f875eaa41626e54448064a65c8fd1e4c1adfefaf5f8f32a6f",
+      "source_match": true,
+      "relay_match": true,
+      "destination_match": true
+    },
+    "run_receipt.json": {
+      "sha256": "724be5b65fc38e5868772fd1364c42341859d83acdf3721303ddce1405b5c5da",
+      "source_match": true,
+      "relay_match": true,
+      "destination_match": true
+    },
+    "SHA256SUMS": {
+      "sha256": "e5a78697a2da51ca3b0dfa88aedf9828dc40d4f5bf4d751ac3f9d375a093b343",
+      "source_match": true,
+      "relay_match": true,
+      "destination_match": true
+    }
+  },
+  "claim_boundary": "This receipt proves byte identity at the three checked locations. It does not prove scientific validity, model equivalence, node equivalence, or method superiority."
+}
