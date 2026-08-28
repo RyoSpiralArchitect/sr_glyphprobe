@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-mistral7b-base-depth-distance-v0",
+  "status": "pass",
+  "recorded_at_utc": "2026-08-28T04:43:55Z",
+  "freeze": {
+    "commit": "25de47a5fb4c9eaf7674d5b2fa49f0c2cf84ca8b",
+    "manifest_sha256": "495f323589d150ce3429035cb47694988eb33f7f7b97a7d58526cfc35ed03493",
+    "engineering_preflight_sha256": "508d85f3ee90358811ce20c268d380a7a4f46eae48b858b5dd15ad963bc51936",
+    "source_archive_sha256": "93080d722327e72d390f55c5e0eb3b580501a4fb706834c0a642149077684eb6",
+    "source_archive_sha256_verified_on_furnace": true,
+    "remote_freeze_audit": "pass",
+    "remote_tokenizer_preflight": "pass",
+    "model_forward_calls_before_freeze_commit": 0
+  },
+  "model_download": {
+    "explicitly_authorized_in_current_user_thread": true,
+    "canonical_model_id": "mistralai/Mistral-7B-v0.3",
+    "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+    "public": true,
+    "gated": false,
+    "selected_file_count": 12,
+    "selected_total_bytes": 14499379264,
+    "selected_artifact_manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+    "duplicate_consolidated_weight_downloaded": false
+  },
+  "execution_start_gate": {
+    "furnace_status_rechecked_immediately_before_compute": true,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_memory_used_mib": 10,
+    "gpu_utilization_percent": 0,
+    "competing_compute_process_observed": false,
+    "direct_current_thread_user_authorization": true,
+    "fresh_attention_notification_used_as_execution_authority": false,
+    "notification_content_retrieved_for_t7_start": false,
+    "notification_reply_observed_for_t7_start": false,
+    "notification_commitment_observed_for_t7_start": false,
+    "six_task_local_deliveries_claimed": false
+  },
+  "execution": {
+    "run_validator_on_furnace": "pass",
+    "analysis_validator_on_furnace": "pass",
+    "model_forward_calls": 400,
+    "captured_vectors": 2000,
+    "array_shape": [50, 2, 4, 5, 4096],
+    "intervention_calls": 0,
+    "generation_calls": 0,
+    "protected_target_files_opened": 0,
+    "peak_memory_bytes_max": 14531155456,
+    "timing_claim_authorized": false
+  },
+  "result_return_transfer": {
+    "transport": "spiral_pull_direct_furnace_to_mac2",
+    "run_ledger_sha256_at_source": "ebbf51f8a27efefb688912cc087d80d1f85662018ebdd5f7728da570a7357325",
+    "analysis_ledger_sha256_at_source": "b4046bfc36ed733b3f60d98368b801142d1f074f2b6392d6f0d41f13d546180c",
+    "run_ledger_sha256_at_destination": "ebbf51f8a27efefb688912cc087d80d1f85662018ebdd5f7728da570a7357325",
+    "analysis_ledger_sha256_at_destination": "b4046bfc36ed733b3f60d98368b801142d1f074f2b6392d6f0d41f13d546180c",
+    "ledger_count_checked": 2,
+    "payload_files_checked": 6,
+    "total_returned_files_including_ledgers": 8,
+    "total_returned_bytes": 16132053,
+    "all_source_ledgers_verified_at_destination": true,
+    "run_validator_on_mac2": "pass",
+    "analysis_validator_on_mac2": "pass"
+  },
+  "post_execution_resource_state": {
+    "gpu_memory_used_mib": 10,
+    "gpu_utilization_percent": 0,
+    "compute_processes": 0,
+    "furnace_released": true
+  },
+  "claim_boundary": {
+    "scientific_confirmation": false,
+    "instruction_tuning_effect_authorized": false,
+    "backend_or_node_equivalence_authorized": false,
+    "phase_i_gate_closed": false
+  }
+}

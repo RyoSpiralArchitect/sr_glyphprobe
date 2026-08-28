@@ -1,5 +1,7 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
+[Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
+
 [日本語](NOTE.ja.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
@@ -275,6 +277,41 @@ next step is to freeze a control that breaks shared slot structure on the same
 artifact, or to freeze the distance-by-depth interaction itself. Adding more
 models without resolving that structure would mostly add more confounding.
 
+## The base checkpoint made the depth interaction visible
+
+T7 took the second of those options. After T6, but before any T7 forward, it
+froze one Mistral 7B v0.3 base-model cell and an endpoint that required two
+things at once: recurrence at distance 1, and stronger attenuation at the first
+captured depth than across the four later depths. The same 50 glyphs, two
+carriers, four distances, and five relative depths were retained. No
+intervention or generation was added.
+
+This time the conjunction passed. Distance-1 recurrence was `0.377524026`,
+against a synchronized slot-permutation null mean of `0.199970302`. The fixed
+early-minus-late interaction was `0.149104068`, against a null mean of
+`0.000111606`. Both one-sided p-values reached the `0.00005` floor from 19,999
+draws. The first captured depth had positive attenuation (`+0.114009450`),
+whereas the mean of the four later depths was slightly negative
+(`-0.035094618`). Averaging across all five depths would have hidden the split:
+that older attenuation statistic was `-0.005273805` with `p = 0.87475`.
+
+The shape is strikingly similar to the already known Instruct profile. Across
+the 20 depth-by-distance cells, the descriptive correlation is `0.996785730`
+and the MAE is `0.011953404`. That visual agreement is a clue, not an effect
+estimate. The endpoint and base checkpoint were chosen after seeing T6, and the
+two checkpoints are related. T7 therefore cannot tell us what instruction
+tuning changed, cannot serve as independent confirmation, and cannot convert
+this observational geometry into a semantic or causal claim.
+
+What it does establish within its narrow frozen scope is that the Mistral
+recurrence is not simply flat across depth. It is strongest in an early layer,
+then settles into a persistent later-depth profile. A future clean test can now
+target that interaction directly while breaking the shared slot structure, or
+move to an unrelated checkpoint under a new freeze. The [complete T7
+result](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) retains all 40 profile rows,
+the compact activation array, the transfer receipt, and the negative claim
+boundaries alongside the positive primary outcome.
+
 ## A larger model did not pass the engineering gate
 
 E2 asked whether the same MLX route could be qualified for a pinned Llama 3.2
@@ -348,6 +385,10 @@ T6 repeats that negative conjunction in four selected dense CUDA cells. Mistral
 retains a strong recurrence component without the fixed attenuation component;
 the three Gemma cells do not reject distance 1. This does not establish model
 scale, tokenizer equivalence, backend parity, or confirmation.
+T7 prospectively tests the Mistral depth interaction in one previously unseen
+base checkpoint. Both frozen components reject, but the endpoint and related
+checkpoint were selected after T6. The result is neither an instruction-tuning
+effect nor independent confirmation and closes no Phase I gate.
 
 ## What comes next
 
@@ -366,10 +407,12 @@ than retrofitted onto the T2 decision. T4 then prospectively tested one-token
 carryover rather than rescuing a T3 subcell. T5 then froze and rejected the
 simple model-level carrier-distance attenuation account. T6 then retained the
 same conjunction across four selected dense CUDA cells and again rejected no
-model. Further model breadth is now lower priority. The clean remaining choices
-are a prospectively fixed depth-by-distance interaction replication, a
-same-artifact control that breaks shared slot structure, or an independent
-implementation of one frozen endpoint. Each requires a new protocol.
+model. T7 subsequently froze the depth-by-distance interaction itself and
+rejected its one-model IUT in the unseen Mistral base cell. Further adjacent
+model breadth is now lower priority. The clean remaining choices are a
+same-artifact control that breaks shared slot structure or a genuinely
+independent replication of the frozen interaction. Each requires a new
+protocol.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -394,3 +437,5 @@ profiles belong in that record as well; neither may be replaced by a favorable
 distance, carrier, or depth.
 T6's four non-rejections, Mistral component split, and all 160 profile rows also
 belong in that record without promotion of a tail, depth, or model pair.
+T7's positive depth interaction and all 40 rows belong beside them, with its
+post-T6 model selection and non-confirmatory status stated explicitly.

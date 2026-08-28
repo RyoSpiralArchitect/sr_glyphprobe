@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-mistral7b-base-depth-distance-v0",
+  "status": "pass",
+  "freeze_commit": "25de47a5fb4c9eaf7674d5b2fa49f0c2cf84ca8b",
+  "outcome_pattern": "recurrence_and_early_depth_attenuation_excess",
+  "scientific_confirmation": false,
+  "instruction_tuning_effect_authorized": false,
+  "claim_boundary": "Complete compact evidence for one prospectively frozen observational depth-by-distance IUT in a selected, previously unobserved Mistral 7B v0.3 base-model CUDA/BF16 cell. Both fixed components reached the permutation floor. The endpoint and model were selected after T6, and the related base/instruct pair is descriptive only. No semantic, mechanistic, causal, instruction-tuning, checkpoint-equivalence, tokenizer, backend, node, precision, model-general, independent-confirmation, or Phase I paper-gate claim is authorized.",
+  "primary_result": {
+    "distance1_recurrence_statistic": 0.37752402613924974,
+    "distance1_recurrence_raw_p": 0.00005,
+    "early_minus_late_attenuation_statistic": 0.14910406790191197,
+    "early_minus_late_attenuation_raw_p": 0.00005,
+    "intersection_union_raw_p": 0.00005,
+    "reject_at_alpha_0_05": true
+  },
+  "descriptive_t6_instruct_comparison": {
+    "inferential_pooling": false,
+    "equivalence_decision_authorized": false,
+    "depth_distance_cell_count": 20,
+    "pearson_correlation": 0.9967857296884247,
+    "mean_absolute_difference": 0.01195340385574908,
+    "rmse": 0.015478703323741854,
+    "maximum_absolute_difference": 0.04009724300270523
+  },
+  "source_gate_and_transfer_verification": {
+    "freeze_manifest_sha256": "495f323589d150ce3429035cb47694988eb33f7f7b97a7d58526cfc35ed03493",
+    "model_artifact_manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+    "free_furnace_recheck": "pass",
+    "run_validator_on_furnace": "pass",
+    "analysis_validator_on_furnace": "pass",
+    "run_validator_on_mac2": "pass",
+    "analysis_validator_on_mac2": "pass",
+    "post_execution_furnace_release": "pass",
+    "transfer": {
+      "receipt": "TRANSFER_RECEIPT.json",
+      "receipt_sha256": "9e2d28c1a94026f41d23a1bd9b68b94ae9ea998e61762052e3a9f152524eb50a",
+      "freeze_archive_sha256": "93080d722327e72d390f55c5e0eb3b580501a4fb706834c0a642149077684eb6",
+      "returned_bundle_count": 2,
+      "payload_files_checked": 6,
+      "ledger_count_checked": 2,
+      "all_source_ledgers_verified_at_destination": true
+    }
+  },
+  "payload": {
+    "file_count": 9,
+    "total_bytes": 16135385,
+    "files": {
+      "TRANSFER_RECEIPT.json": {
+        "bytes": 3332,
+        "sha256": "9e2d28c1a94026f41d23a1bd9b68b94ae9ea998e61762052e3a9f152524eb50a"
+      },
+      "analysis/SHA256SUMS": {
+        "bytes": 270,
+        "sha256": "b4046bfc36ed733b3f60d98368b801142d1f074f2b6392d6f0d41f13d546180c"
+      },
+      "analysis/analysis_receipt.json": {
+        "bytes": 10317,
+        "sha256": "1f1f7e51f1c52b44a3869ed97d322e8efb04e4a44e33ead4cf48090445770048"
+      },
+      "analysis/carrier_distance_layer_statistics.jsonl": {
+        "bytes": 22296,
+        "sha256": "10745722e98d15eb1759bdd2f9f095378fd1300fb9291e7b4b2b1281699cb7e0"
+      },
+      "analysis/report.md": {
+        "bytes": 410,
+        "sha256": "6fff2f502d1838e66a3d1374c150be896082192218835f24041d3270cd6e9e7f"
+      },
+      "runs/mistral7b_base_v03/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "ebbf51f8a27efefb688912cc087d80d1f85662018ebdd5f7728da570a7357325"
+      },
+      "runs/mistral7b_base_v03/activations.npz": {
+        "bytes": 15732955,
+        "sha256": "42c7bc4bc2e89fd1cd3e206aae4a758abd84387a5a57773273d15bfc1bdeb3ca"
+      },
+      "runs/mistral7b_base_v03/observations.jsonl": {
+        "bytes": 302226,
+        "sha256": "0c91cf3b97c4efb7a69705843a69656003f1bec2808e1a7ca50d7a42fef8ea11"
+      },
+      "runs/mistral7b_base_v03/run_receipt.json": {
+        "bytes": 63329,
+        "sha256": "8bd522cc59361e16743b0bcfde69ad1510074d6f8012c58a96ec783784026d05"
+      }
+    }
+  }
+}

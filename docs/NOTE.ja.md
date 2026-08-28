@@ -1,5 +1,7 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
+[Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
+
 [English](NOTE.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
@@ -250,6 +252,32 @@ validator、返送ledgerは[T6の全結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTA
 壊すcontrolか、距離×深度interaction自体を事前固定する方が綺麗である。構造をほどかずに
 modelを追加しても、主に交絡を増やすことになる。
 
+## Base checkpointでは、深度interactionが見えた
+
+T7では、その2つ目の選択肢を採った。T6の後、T7 forwardを1回も行う前に、Mistral 7B
+v0.3 baseの1 cellと、2条件を同時に要求するendpointを固定した。条件は、距離1で反復することと、
+最初に捕捉した深度の減衰が後期4深度の平均より強いことである。50 glyph、2 carrier、4 distance、
+5つの相対深度はそのまま保ち、介入や生成は加えていない。
+
+今回はconjunctionが通った。距離1の反復は`0.377524026`で、同期slot permutationのnull平均は
+`0.199970302`だった。固定した初期−後期interactionは`0.149104068`、null平均は
+`0.000111606`である。19,999 drawによる片側p値はいずれも`0.00005`の下限に達した。最初の
+深度では正の減衰（`+0.114009450`）があり、後期4深度の平均はわずかに負
+（`-0.035094618`）だった。5深度を平均するとこの分岐は隠れる。以前の全深度減衰統計は
+`-0.005273805`、`p = 0.87475`だった。
+
+形は、すでに観測済みだったInstruct profileと驚くほど近い。20個の深度×距離cellについて、
+記述的な相関は`0.996785730`、MAEは`0.011953404`である。ただし、この見た目の一致は手がかりで
+あって効果推定ではない。Endpointとbase checkpointはT6を見た後に選び、2 checkpointは関連して
+いる。したがってT7からinstruction tuningが何を変えたかは分からず、独立確認にもならず、この
+観測geometryを意味や因果のclaimへ変えることもできない。
+
+狭い固定scopeの中で分かったのは、Mistralの反復が深度方向に単純な平坦形ではないことである。
+初期layerで最も強く、その後は持続する後期profileへ落ち着く。次の綺麗な実験では、共有slot構造を
+壊しながらこのinteractionを直接狙うか、新しいfreezeの下で無関係なcheckpointへ移れる。
+[T7の全結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)には、40個すべてのprofile row、
+compact activation array、transfer receipt、正の一次結果と同時に負のclaim境界も残した。
+
 ## より大きなモデルは、技術ゲートを通過しなかった
 
 E2では、新しい科学的な結果を見る前に、固定したLlama 3.2 3B BF16 cellへ同じ
@@ -312,6 +340,9 @@ T5からは、持続距離に関する負の結果が加わる。Gemma、Llama�
 T6でも、選択した4つのdense CUDA cellで同じ負のconjunctionが繰り返された。Mistralは強い
 recurrence成分を保ったが、固定した減衰成分を通らず、3つのGemma cellは距離1を棄却しない。
 Model scale、tokenizer同等性、backend parity、確認は示さない。
+T7では、それまで未観測だったMistral base checkpointの深度interactionをprospectiveに検定し、
+固定した両成分を棄却した。ただしendpointと関連checkpointはT6後に選んでいる。Instruction
+tuning効果でも独立確認でもなく、Phase I gateも閉じない。
 
 ## 次は、因果プロトコルを凍結する
 
@@ -321,9 +352,10 @@ T2は完了しており、primary layerを動かして救済しない。5 family
 選択肢は、T2の判定に後付けせず、別protocolのT3として固定・完了した。T4もT3のsubcellを
 救済せず、1 token carryoverを事前に固定して検証した。T5は単純なmodel-level carrier距離
 減衰を固定し、その説明を棄却した。T6も選択した4つのdense CUDA cellで同じconjunctionを
-保ち、やはり通過modelはなかった。追加model幅の優先度は下がった。残る綺麗な選択肢は、
-距離×深度interactionの事前固定追試、同じartifact上で共有slot構造だけを壊すcontrol、または
-一つの固定endpointを独立に再実装することである。いずれも新しいprotocolを要する。
+保ち、やはり通過modelはなかった。続くT7では深度×距離interaction自体を固定し、未観測だった
+Mistral base cellの1 model IUTを棄却した。隣接modelをさらに増やす優先度は下がった。残る
+綺麗な選択肢は、同じartifact上で共有slot構造だけを壊すcontrolか、固定interactionの真に独立した
+追試である。どちらも新しいprotocolを要する。
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
@@ -334,5 +366,7 @@ T5で失敗した減衰endpointと、持続して見える完全な記述profile
 距離、carrier、深度へ差し替えてはならない。
 T6の4つのnon-rejection、Mistralの成分分岐、160 rowすべても記録へ含め、tail、深度、model
 pairを格上げしてはならない。
+T7の正の深度interactionと40 rowすべても、そのT6後のmodel選択と非確認的statusを明記して
+並べる。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。

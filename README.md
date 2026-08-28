@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -38,6 +38,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Multifamily common-suffix carryover v0 | `olmo_only_common_suffix_carryover` | Gemma two-context T = 0.203443, Holm p = 0.30295; OLMo T = 0.537465, Holm p = 0.0001; recurrence remains one common token later |
 | Multifamily carrier-distance v0 | `no_model_distance_attenuation` | Gemma IUT/Holm p = 1.0; Llama = 0.564; OLMo = 1.0; Llama and OLMo recur at distance 1 but do not pass the fixed attenuation component |
 | Multifamily dense CUDA carrier-distance v0 | `no_dense_model_distance_attenuation` | Four-model Holm family: no rejection; Mistral distance-1 raw p = 0.00005 but attenuation p = 0.46975 |
+| Mistral 7B base depth-by-distance v0 | `recurrence_and_early_depth_attenuation_excess` | Fixed recurrence and early-minus-late components both raw p = 0.00005; selected post-T6 base cell, not independent confirmation |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -227,6 +228,23 @@ backend, semantic, causal, or confirmatory claims. See the [complete
 result](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md), [frozen
 protocol](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md), and [public
 evidence](artifacts/multifamily_dense_cuda_carrier_distance_v0/README.md).
+
+### Mistral 7B base depth-by-distance T7 status
+
+The post-T6 endpoint was frozen before the previously unobserved Mistral 7B
+v0.3 base-model run. Distance-1 recurrence was `0.377524026` and the fixed
+early-minus-late attenuation interaction was `0.149104068`; both one-sided raw
+p-values reached the `0.00005` permutation floor, so the single IUT rejected.
+Depth-0 attenuation was `+0.114009450`, while the later-depth mean was
+`-0.035094618`.
+
+The 20 base depth-by-distance cells were descriptively close to the already
+known T6 Instruct profile (`r = 0.996785730`), but the model and endpoint were
+selected after T6 and the checkpoints are related. No equivalence,
+instruction-tuning, independent-confirmation, semantic, causal, or Phase I
+gate claim is made. See the [complete result](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md),
+[frozen protocol](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md), and [public
+evidence](artifacts/mistral7b_base_depth_distance_v0/README.md).
 
 ### E2 engineering results
 
@@ -432,6 +450,8 @@ Project-authored public documentation is maintained in English and Japanese:
 | Multifamily carrier-distance v0 | [MULTIFAMILY_CARRIER_DISTANCE_V0.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) | [MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) |
 | Multifamily dense CUDA carrier-distance v0 results | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) |
 | Multifamily dense CUDA carrier-distance v0 | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md) | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md) |
+| Mistral 7B base depth-by-distance v0 results | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) |
+| Mistral 7B base depth-by-distance v0 | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md) | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -448,7 +468,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; and dense CUDA T6 ended with `no_dense_model_distance_attenuation`. T6 adds four complete selected dense cells but no scale, confirmation, or backend-parity claim. None of these observational studies closes a causal, confirmatory, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, and carrier-distance heterogeneity. Causal testing, claim-matched independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. None of these observational studies closes a causal, confirmatory, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, and carrier-distance heterogeneity. Causal testing, claim-matched independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

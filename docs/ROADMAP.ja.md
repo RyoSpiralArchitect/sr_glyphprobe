@@ -1,5 +1,7 @@
 # GlyphProbe 研究ロードマップ
 
+[Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
+
 [English](ROADMAP.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
@@ -322,6 +324,36 @@ T6単独では因果、確認、tokenizer非依存性、backend parity、model�
 距離×深度interactionへ移る。Phase I本線ではtokenization-matched controlsと未使用の
 confirmatory target setを優先する。
 
+### 観測side track T7 — Mistral base 深度×距離
+
+状態: `recurrence_and_early_depth_attenuation_excess`として完了した。T6でMistral
+Instructのprofileを観測した後、T7 model forwardを1回も行う前にendpointを固定してpushした。
+Prospectiveなのは、それまで未観測だったMistral 7B v0.3 base modelのoutcomeに対してだけである。
+
+- T6の公開50-item panel、2 carrier、距離1・2・4・8、5つの相対深度、family内で同期した
+  slot randomization、400-forwardの観測境界を保つ。
+- 失敗した全深度decay conjunctionの代わりに、距離1の反復と、初期深度の減衰から後期4深度の
+  平均減衰を引いた正のinteractionを同時に要求する1つのIUTを固定する。
+- 距離weight `[0.375, 0.125, -0.125, -0.375]`、19,999 PCG64 draw、seed
+  `2026082801`を使い、1 modelの判定scopeには多重性補正を置かない。
+- 介入、生成、behavior scoring、protected-target accessは0に保つ。
+
+距離1の反復統計は`0.377524026`、固定した初期−後期深度interactionは`0.149104068`で、
+片側raw p値はいずれもpermutation下限`0.00005`に達し、IUTは棄却した。深度0の減衰は
+`+0.114009450`、後期深度の平均は`-0.035094618`だった。元の全深度減衰は負で、棄却
+しなかった（`p = 0.87475`）。
+
+Base modelの20個の深度×距離cellは、既知のT6 Instruct profileと記述的には近かった
+（`r = 0.996785730`、MAE `0.011953404`）。これは同等性検定でもinstruction tuningのcontrast
+でもない。ModelとendpointはT6後に選び、checkpointは関連しており、新しいmodel cellは1つだけ
+だからである。独立確認ではなく、意味、因果、scale、tokenizer非依存性、backend parity、
+Phase I gateのclaimを認めない。
+
+終了条件: 達成した。[全結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)、sealed
+400-forward run、40-row analysis、transfer receipt、public manifestを公開する。将来の
+structure-breaking controlまたは真に独立した追試には新しいprospective freezeが必要である。
+T7は、tokenization-matched controlsと未使用confirmatory setという本線の優先順位を変えない。
+
 ### Milestone 3 — 対象を絞った因果局在化
 
 状態: プロトコル設計へ進める。ただし、因果プロトコルはまだ凍結しておらず、因果主張も認めない。現時点の候補はlayer 2だけで、layer 4は未解決のため候補にしない。別の確認用bankは、このプロトコル設計に着手するための前提条件ではない。
@@ -393,7 +425,7 @@ confirmatory target setを優先する。
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

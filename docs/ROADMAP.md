@@ -1,5 +1,7 @@
 # GlyphProbe research roadmap
 
+[Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
+
 [日本語](ROADMAP.ja.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
@@ -456,6 +458,45 @@ deprioritized in favor of a separately frozen structure-breaking control or
 distance-by-depth interaction, while the main Phase I path retains
 tokenization-matched controls and an untouched confirmatory target set.
 
+### Observational side track T7 — Mistral base depth-by-distance
+
+Status: complete with `recurrence_and_early_depth_attenuation_excess`. The
+endpoint was frozen and pushed before any T7 model forward, after T6 had exposed
+the Mistral Instruct profile. It is prospective only for the previously unseen
+Mistral 7B v0.3 base-model outcomes.
+
+- retain T6's public 50-item panel, two carriers, distances 1/2/4/8, five depth
+  fractions, synchronized within-family slot randomization, and 400-forward
+  observational boundary;
+- replace the failed all-depth decay conjunction with one fixed IUT requiring
+  both distance-1 recurrence and positive early-depth attenuation minus the
+  mean of the four later depths;
+- use fixed distance weights `[0.375, 0.125, -0.125, -0.375]`, 19,999 PCG64
+  draws, seed `2026082801`, and one-model decision scope with no multiplicity
+  adjustment; and
+- retain zero intervention, generation, behavior scoring, and protected-target
+  access.
+
+Distance-1 recurrence was `0.377524026` and the fixed early-minus-late
+interaction was `0.149104068`; both one-sided raw p-values reached the
+`0.00005` permutation floor, so the IUT rejected. Depth-0 attenuation was
+`+0.114009450`, while the later-depth mean was `-0.035094618`. The original
+all-depth attenuation remained negative and non-rejecting (`p = 0.87475`).
+
+The 20 base-model depth-by-distance cells were descriptively close to the known
+T6 Instruct profile (`r = 0.996785730`, MAE `0.011953404`). This is not an
+equivalence test or an instruction-tuning contrast: the model and endpoint were
+selected after T6, the checkpoints are related, and only one new model cell was
+run. It is therefore not independent confirmation and does not authorize
+semantic, causal, scale, tokenizer-independent, backend-parity, or Phase I gate
+claims.
+
+Exit condition: met. The [complete result](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md),
+sealed 400-forward run, 40-row analysis, transfer receipt, and public manifest
+are published. A later structure-breaking control or genuinely independent
+replication requires a new prospective freeze; T7 does not displace the main
+tokenization-matched-control and untouched-confirmatory-set priorities.
+
 ### Milestone 3 — Targeted causal localization
 
 Status: eligible for protocol design, but no causal protocol has yet been
@@ -548,7 +589,13 @@ common token one position later and again found OLMo-only recurrence in both
 fixed suffix contexts. This rejects a strictly current-token-only description
 but leaves short-range propagation from OLMo's structured prefix sufficient.
 T2–T4 are not causal tokenizer contrasts, independent replications, or semantic
-results and close no paper gate. Final statistical qualification for gate 6 remains open because the rebuilt-prototype
+results and close no paper gate. T5 and T6 rejected no registered model-level
+distance-attenuation conjunction. T7 then prospectively rejected the fixed
+distance-1 plus early-minus-late depth IUT in one selected Mistral base cell,
+but its post-T6 endpoint/model selection and related Instruct reference prevent
+independent-confirmation or instruction-tuning claims. T5–T7 therefore sharpen
+the depth-dependent observational account without closing gates 4 or 5. Final
+statistical qualification for gate 6 remains open because the rebuilt-prototype
 analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research

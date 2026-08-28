@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -182,6 +182,20 @@ callは0だった。開始gateは、炉が空いていることの再確認と�
 backend、意味、因果、確認のclaimも認めない。詳細は[全結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md)、
 [固定protocol](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md)、[公開evidence](artifacts/multifamily_dense_cuda_carrier_distance_v0/README.ja.md)に示す。
 
+### Mistral 7B base 深度×距離 T7の現在地
+
+T6後にendpointを固定し、それまで未観測だったMistral 7B v0.3 base modelを実行した。
+距離1の反復統計は`0.377524026`、固定した初期深度−後期深度の減衰interactionは
+`0.149104068`で、片側raw p値はいずれもpermutation下限`0.00005`に達した。
+単一のintersection-union testは棄却した。深度0の減衰は`+0.114009450`、後期4深度の
+平均は`-0.035094618`だった。
+
+Base modelの20個の深度×距離cellは、既知だったT6 Instruct profileと記述的には近かった
+（`r = 0.996785730`）。ただしmodelとendpointはT6を見た後に選んでおり、2 checkpointは
+関連している。同等性、instruction tuningの効果、独立確認、意味、因果、Phase I gateの
+claimは認めない。詳細は[全結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)、
+[固定protocol](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)、[公開evidence](artifacts/mistral7b_base_depth_distance_v0/README.ja.md)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -308,6 +322,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Multifamily carrier-distance v0](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md)
 - [Multifamily dense CUDA carrier-distance v0結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md)
 - [Multifamily dense CUDA carrier-distance v0](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md)
+- [Mistral 7B base 深度×距離 v0結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
+- [Mistral 7B base 深度×距離 v0](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -324,7 +340,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T6は選択した4つのdense cellを追加しましたが、scale、確認、backend parityのclaimは持ちません。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性を事前に扱います。因果検証、claim-matchedな独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T7ではMistral 7B baseの固定した距離1反復と初期−後期深度interactionがともに棄却されたが、T6後に選択した関連checkpointの1 cellであり、独立確認やinstruction tuning効果ではない。T6とT7は、scale、確認、backend parityのclaimを持たない。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性を事前に扱います。因果検証、claim-matchedな独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 
