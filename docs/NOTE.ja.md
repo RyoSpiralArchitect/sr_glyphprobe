@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -192,6 +192,36 @@ OLMoの文脈別統計も、period `0.538985382`、newline `0.535944025`とほ�
 tokenを何個はさんだところで配置が消えるのか。ただし新しいprotocolとして固定する必要が
 あり、tokenization-matched確認controlの代わりにはならない。
 
+## 8個の共通carrier tokenでも、登録した減衰は得られなかった
+
+T5では、その距離の問いを新しいmodel forwardより先に固定した。すべての絵文字の後ろへ、
+同じ`" a"` tokenまたは同じ`" |"` tokenを8個置いた。入力全体は変えず、読み出し位置だけを
+距離1、2、4、8へ動かした。Gemma 2 2B、Llama 3.2 3B、OLMo 3 7Bについて、5つの
+固定深度を測った。
+
+正の判定は意図的に厳しくした。各modelは、距離1のmatched-slot再現と、log距離に対する
+正の固定減衰contrastの両方を示す必要がある。2つのp値の大きい方をmodelのraw p値とし、
+3 modelをまとめてHolm補正した。
+
+通過したmodelはなかった。Gemmaは距離1の再現を示さなかった。LlamaとOLMoはこの成分を
+permutation下限で棄却したが、減衰p値はLlamaが`0.188`、OLMoが`0.9977`だった。
+登録済みoutcomeは`no_model_distance_attenuation`である。
+
+この負の判定は、結果を見た後の正の物語より重要である。Llamaの距離profileは
+`0.379, 0.414, 0.396, 0.369`、OLMoは`0.480, 0.519, 0.513, 0.527`だった。
+どちらも単純なmodel-level減衰曲線には従わず、距離8でも記述的には高い。ただしtailは
+副次値であり、主減衰仮説が失敗したからといって、新しい発見へ差し替えることはできない。
+
+完全なprofileは、次のprotocolに使える手がかりを一つ残した。LlamaとOLMoでは、最初の
+捕捉layerは距離とともに下がる一方、後半の深度は平坦または上昇する。後半blockがslot変数を
+再構成した証明ではない。Interactionは主検定ではなかったからだ。結果を見た後で初期layerだけを
+選ぶと誤解を招くことは分かる。次はinteraction自体を固定するか、同じartifact上で共有slot構造を
+壊す必要がある。
+
+[T5の全結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md)には、3本のarray、120個すべての
+carrier×距離×深度row、失敗した主判定、3 nodeの転送証拠を公開した。これはtokenizer条件付きの
+geometryに関する観測証拠であり、絵文字の意味や因果的memoryではない。
+
 ## より大きなモデルは、技術ゲートを通過しなかった
 
 E2では、新しい科学的な結果を見る前に、固定したLlama 3.2 3B BF16 cellへ同じ
@@ -247,6 +277,10 @@ T3からは、tokenizer条件に沿う分岐が加わる。厳密に同じ末尾
 よる代替説明は支持しても、token identityを原因とは同定できない。
 T4からは、もう一つ境界が加わる。OLMoの分岐は、固定した2文脈で1つ後ろの共通tokenにも
 残った。現在tokenだけの説明は退くが、構造化prefixからの短距離伝播は退かない。
+T5からは、持続距離に関する負の結果が加わる。Gemma、Llama、OLMoのいずれも、距離1の
+再現と正のmodel-level減衰を同時に要求した登録済み検定を通過しなかった。LlamaとOLMoは
+距離8でも記述的には高いが、tailとdepth interactionは副次結果であり、持続、意味、機構の
+主張を認めない。
 
 ## 次は、因果プロトコルを凍結する
 
@@ -254,14 +288,18 @@ T4からは、もう一つ境界が加わる。OLMoの分岐は、固定した2�
 
 T2は完了しており、primary layerを動かして救済しない。5 familyへ広げる
 選択肢は、T2の判定に後付けせず、別protocolのT3として固定・完了した。T4もT3のsubcellを
-救済せず、1 token carryoverを事前に固定して検証した。残る綺麗な選択肢は、carrier距離の
-減衰を固定して測る、より条件の近いmodel pairでtokenizer差の交絡をほどく、または一つの
-固定endpointを独立に再実装することである。いずれも新しいprotocolを要する。
+救済せず、1 token carryoverを事前に固定して検証した。T5は単純なmodel-level carrier距離
+減衰を固定し、その説明を棄却した。残る綺麗な選択肢は、距離×深度interactionの事前固定追試、
+同じartifact上で共有slot構造だけを壊すcontrol、より条件の近いmodel pairでtokenizer差の
+交絡をほどくこと、または一つの固定endpointを独立に再実装することである。いずれも新しい
+protocolを要する。
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
 将来の新しいversionの因果bankは、候補、介入部位と操作、endpoint、対照、多重性familyをsealed patch–ablate–restoreプロトコルに固定するまで開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 
 Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断、T2 non-recurrence、T3のtokenizer条件に沿う分岐、T4の1 token carryoverを、それぞれの主張境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
+T5で失敗した減衰endpointと、持続して見える完全な記述profileも同じ記録へ含める。都合のよい
+距離、carrier、深度へ差し替えてはならない。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。

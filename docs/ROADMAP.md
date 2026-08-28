@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -372,7 +372,7 @@ close a Phase I gate.
 
 ### Observational side track T5 — Carrier-distance profile
 
-Status: publicly frozen before scientific model forwards; runs pending.
+Status: complete with `no_model_distance_attenuation`.
 
 - keep the complete input and current carrier-token identity fixed while moving
   the readout to distances 1, 2, 4, and 8 after each glyph;
@@ -396,9 +396,22 @@ content, mechanism, causality, tokenizer independence, or direct cross-model
 magnitude equivalence. Llama's earlier Stage-A parity failure remains in force;
 this MLX cell is an observational within-artifact result only.
 
-Exit condition: publish all three sealed model receipts and the joint outcome
-registry from the [frozen protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md), keeping
-T5 outside the Phase I gate and treating T4 only as a descriptive reference.
+Gemma did not reject distance-1 recurrence. Llama and OLMo rejected that
+component at raw `p = 0.00005`, but their attenuation components did not reject
+(`p = 0.188` and `0.9977`). Their model IUT/Holm p-values were `0.564` and
+`1.0`; Gemma's was also `1.0`. The fixed outcome is therefore
+`no_model_distance_attenuation`.
+
+Llama and OLMo remain descriptively elevated at distance 8, while their first
+captured layers decline and later fixed depths are flatter or rise. That
+depth-by-distance heterogeneity is secondary and cannot replace the failed
+model-level endpoint. A new interaction replication or a same-artifact control
+that breaks shared slot structure would require a separate prospective freeze.
+
+Exit condition: met. The [complete result](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md),
+three sealed runs, 120-row joint analysis, transfer receipt, and public manifest
+are published. T5 remains outside the Phase I gate and T4 remains a descriptive
+reference only.
 
 ### Milestone 3 — Targeted causal localization
 

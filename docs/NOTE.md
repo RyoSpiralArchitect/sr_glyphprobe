@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -202,6 +202,44 @@ is distance, not a semantic label: after how many matched carrier tokens does
 the layout decay? That question must be frozen separately and cannot replace
 the tokenization-matched confirmatory controls.
 
+## Eight matched carrier tokens did not yield the registered decay
+
+T5 froze that distance question before any new model forward. Every glyph was
+followed by either eight identical `" a"` tokens or eight identical `" |"`
+tokens. The full input stayed unchanged while the readout moved to distances
+1, 2, 4, and 8. Gemma 2 2B, Llama 3.2 3B, and OLMo 3 7B each contributed five
+fixed depths.
+
+The rule deliberately made a positive result difficult. A model had to show
+both matched-slot recurrence at distance 1 and a positive fixed log-distance
+attenuation contrast. The larger of those two p-values became the model's raw
+p-value, and the three models were Holm-corrected together.
+
+No model passed. Gemma did not establish distance-1 recurrence. Llama and OLMo
+did, both at the permutation floor, but Llama's attenuation p-value was `0.188`
+and OLMo's was `0.9977`. The registered outcome is
+`no_model_distance_attenuation`.
+
+The negative decision is more informative than a post-hoc positive story.
+Llama's distance profile was `0.379, 0.414, 0.396, 0.369`; OLMo's was `0.480,
+0.519, 0.513, 0.527`. Both remain descriptively elevated at distance 8 rather
+than following one simple model-level decay curve. Those tail values are
+secondary and do not become new discoveries merely because the primary decay
+hypothesis failed.
+
+The full profile adds a useful clue for a future protocol. In Llama and OLMo,
+the first captured layer declines with distance, while later depths are flatter
+or even rise. That does not prove that later blocks reconstruct a slot variable;
+the interaction was not the primary test. It does show why selecting only an
+early layer after seeing the result would be misleading. The next clean test
+must freeze the interaction itself or break the shared slot structure on the
+same artifact.
+
+The [complete T5 result](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) publishes
+all three arrays, all 120 carrier-by-distance-by-depth rows, the failed primary
+decision, and the three-node transfer evidence. It is observational evidence
+about tokenizer-conditioned geometry, not emoji semantics or causal memory.
+
 ## A larger model did not pass the engineering gate
 
 E2 asked whether the same MLX route could be qualified for a pinned Llama 3.2
@@ -266,6 +304,11 @@ token-structured alternative without identifying token identity as the cause.
 T4 adds one more boundary: the OLMo split persists at a common token one
 position later in both fixed contexts. It rejects a strictly current-token-only
 description, but not short-range propagation from the structured prefix.
+T5 adds a negative duration result: neither Gemma, Llama, nor OLMo passed the
+registered conjunction of distance-1 recurrence and positive model-level
+attenuation. Llama and OLMo remain descriptively elevated at distance 8, but
+the tail and depth interaction are secondary and do not authorize persistence,
+semantic, or mechanistic claims.
 
 ## What comes next
 
@@ -281,10 +324,12 @@ target bank.
 T2 is complete and should not be rescued by moving its primary layer. Its
 five-family option was selected, frozen, and completed separately as T3 rather
 than retrofitted onto the T2 decision. T4 then prospectively tested one-token
-carryover rather than rescuing a T3 subcell. The clean remaining choices are a
-frozen carrier-distance decay assay, a nearer-matched model pair that
-deconfounds tokenizer structure, or an independent implementation of one
-frozen endpoint. Each requires a new protocol.
+carryover rather than rescuing a T3 subcell. T5 then froze and rejected the
+simple model-level carrier-distance attenuation account. The clean remaining
+choices are a prospectively fixed depth-by-distance interaction replication, a
+same-artifact control that breaks shared slot structure, a nearer-matched model
+pair that deconfounds tokenizer structure, or an independent implementation of
+one frozen endpoint. Each requires a new protocol.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -304,3 +349,6 @@ replication used to support it must prospectively bind scientific roles to
 frozen inputs and account for data-dependent prototype resampling.
 
 Phase I still ends with an English paper, whether the final pattern is positive, mixed, or negative. That paper must show layer 2 and layer 4 together, distinguish frozen-v1 inference from post-hoc sensitivity, report the completed diagnostics, T2 non-recurrence, the T3 tokenizer-conditioned split, and T4 one-token carryover with their claim boundaries, and connect every statement to a sealed artifact. The first map has become sharper. It has also become harder to overread, which is exactly what the controls were for.
+T5's failed attenuation endpoint and its complete persistent descriptive
+profiles belong in that record as well; neither may be replaced by a favorable
+distance, carrier, or depth.

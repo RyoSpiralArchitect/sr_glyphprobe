@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -252,7 +252,7 @@ Phase I gateのclosureにも使わない。
 
 ### 観測side track T5 — Carrier-distance profile
 
-状態: 科学用model forwardの前に公開凍結済み。Runは未実施である。
+状態: `no_model_distance_attenuation`として完了した。
 
 - 入力全体と読み出し位置のcarrier token IDを固定したまま、各絵文字から1、2、4、8
   token後ろへ読み出し位置を動かす。
@@ -270,9 +270,19 @@ Phase I gateのclosureにも使わない。
 cross-modelの大きさの同等性は示さない。LlamaのStage A parity failureは有効なままで、
 このMLX cellが認めるのはartifact内の観測結果だけである。
 
-終了条件: [固定protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md)に従い、3 modelのsealed
-receiptとjoint outcome registryをすべて公開する。T5はPhase I gateの外に置き、T4は
-記述参照としてのみ使う。
+Gemmaは距離1の再現を棄却しなかった。LlamaとOLMoはこの成分をraw `p = 0.00005`で
+棄却したが、減衰成分は棄却しなかった（`p = 0.188`と`0.9977`）。Model IUT/Holm p値は
+Llamaが`0.564`、OLMoが`1.0`で、Gemmaも`1.0`だった。固定outcomeは
+`no_model_distance_attenuation`である。
+
+LlamaとOLMoは距離8でも記述的には高い。最初の捕捉layerは距離とともに下がる一方、
+後半の固定深度は平坦または上昇する。この距離×深度の不均一性は副次結果であり、失敗した
+model-level endpointと差し替えられない。Interactionの追試や、共有slot構造だけを壊す
+same-artifact controlには、別の事前凍結が必要になる。
+
+終了条件: 達成した。[全結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md)、3つのsealed
+run、120 rowのjoint analysis、transfer receipt、public manifestを公開する。T5はPhase I
+gateの外に置き、T4は記述参照としてのみ使う。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-carrier-distance-v0",
+  "freeze_commit": "e0043c6af6a397ca229900fa5a0b4aa134d242b8",
+  "status": "pass",
+  "freeze_package_transfer": {
+    "source_node": "mac2",
+    "relay_node": "furnace",
+    "destination_node": "mac1",
+    "transport": "verified_git_archive_tar_gzip_relay",
+    "archive_sha256": "ef2429f124f9a08eedc16ed1fae43a6206947100a4077a2a29b9eec122d1c0a6",
+    "source_archive_match": true,
+    "relay_archive_match": true,
+    "destination_archive_match": true,
+    "destination_frozen_asset_audit": "pass",
+    "destination_frozen_asset_count": 18,
+    "compute_used_on_relay": false
+  },
+  "olmo_run_return_transfer": {
+    "source_node": "mac1",
+    "relay_node": "furnace",
+    "destination_node": "mac2",
+    "transport": "verified_tar_gzip_relay",
+    "archive_sha256": "871afd05f8694775cdbd3b61a839269c6dae1de452312089cde71b88bb4286eb",
+    "source_validator": "pass",
+    "destination_validator": "pass",
+    "compute_used_on_relay": false,
+    "files": {
+      "SHA256SUMS": {
+        "sha256": "3dcf154a6ca533c9e03b8f6a08b79f5d0f8e4ac3fab30accce1c0af816464a7d",
+        "source_match": true,
+        "relay_archive_member_match": true,
+        "destination_match": true
+      },
+      "activations.npz": {
+        "sha256": "679d5d71c7cc4af5331df921626063eab8a6dbd2e2655c35715c7765729b75f4",
+        "source_match": true,
+        "relay_archive_member_match": true,
+        "destination_match": true
+      },
+      "observations.jsonl": {
+        "sha256": "91e36ef9b9f9d0348b590e5c7ce43324acea46d799f90bcffebe8a139d807952",
+        "source_match": true,
+        "relay_archive_member_match": true,
+        "destination_match": true
+      },
+      "run_receipt.json": {
+        "sha256": "64971067dbcad222ff2576d37bb09acbca6d094678ffbeb1849c081d8ddd5915",
+        "source_match": true,
+        "relay_archive_member_match": true,
+        "destination_match": true
+      }
+    }
+  },
+  "claim_boundary": "This receipt proves byte identity for the frozen source package and returned OLMo run across the named source, relay, and destination points. It does not establish a scientific effect, method superiority, node equivalence, notification delivery, or furnace compute use."
+}

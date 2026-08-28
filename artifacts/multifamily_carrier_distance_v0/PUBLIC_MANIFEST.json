@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-carrier-distance-v0",
+  "status": "pass",
+  "freeze_commit": "e0043c6af6a397ca229900fa5a0b4aa134d242b8",
+  "outcome_pattern": "no_model_distance_attenuation",
+  "scientific_confirmation": false,
+  "claim_boundary": "Complete compact evidence for one frozen observational five-family by ten-slot resid_post carrier-distance study. No model passed the preregistered intersection of distance-1 recurrence and positive log-distance attenuation after Holm correction. Llama and OLMo have persistent descriptive profiles, including elevated distance-8 secondary statistics, but these do not establish monotonic persistence, a duration threshold, semantics, tokenizer causality or independence, mechanism, intervention effects, backend or node equivalence, scale or precision effects, confirmation, or Phase I paper-gate closure.",
+  "frozen_t4_reference": {
+    "protocol_id": "glyphprobe-multifamily-common-suffix-carryover-v0",
+    "outcome_pattern": "olmo_only_common_suffix_carryover",
+    "analysis_receipt_sha256": "ec925636d384cf65837cc0ba43924e4bcee22ac0820251bd06876e1bc8c8d43d",
+    "public_manifest_sha256": "75ff440fc8a2b56c3f8d5d4bcc29cabb471953ac1fb376a06745c16efcaef55d",
+    "inferential_pooling": false
+  },
+  "source_and_transfer_verification": {
+    "gemma_source_validator": "pass",
+    "llama_source_validator": "pass",
+    "olmo_source_validator": "pass",
+    "olmo_destination_validator": "pass",
+    "joint_analysis_validator": "pass",
+    "transfer": {
+      "receipt": "TRANSFER_RECEIPT.json",
+      "receipt_sha256": "5fb2bd8b00eff7867bb40e1220cf93f0d06b8774b24836d313a191e3c4b93ff3",
+      "freeze_archive_sha256": "ef2429f124f9a08eedc16ed1fae43a6206947100a4077a2a29b9eec122d1c0a6",
+      "olmo_return_archive_sha256": "871afd05f8694775cdbd3b61a839269c6dae1de452312089cde71b88bb4286eb",
+      "olmo_files_checked": 4,
+      "source_equals_relay_archive": true,
+      "source_equals_destination": true,
+      "compute_used_on_relay": false
+    },
+    "published_bundle_validators": {
+      "gemma2_2b_4bit": "pass",
+      "llama32_3b_bf16": "pass",
+      "olmo3_7b_bf16": "pass",
+      "analysis": "pass"
+    }
+  },
+  "payload": {
+    "file_count": 17,
+    "total_bytes": 39449933,
+    "files": {
+      "TRANSFER_RECEIPT.json": {
+        "bytes": 2267,
+        "sha256": "5fb2bd8b00eff7867bb40e1220cf93f0d06b8774b24836d313a191e3c4b93ff3"
+      },
+      "analysis/SHA256SUMS": {
+        "bytes": 270,
+        "sha256": "03f4d4ee70817bcce89c2153a77c37b8a1f51f9b499d38b8da8fefeecfe0a4f3"
+      },
+      "analysis/analysis_receipt.json": {
+        "bytes": 14719,
+        "sha256": "435dc5bd3187fde9594523e6dcb4bb0919343d409a2f31137f06ca4f2658f948"
+      },
+      "analysis/carrier_distance_layer_statistics.jsonl": {
+        "bytes": 77022,
+        "sha256": "bb39dd10846f371cbea56ac451ae3c8c29ffe0e3fa8390b2e9e3b10354f83a04"
+      },
+      "analysis/report.md": {
+        "bytes": 704,
+        "sha256": "c36ea4fc0d1e04a59f96f4138a3f54a6f63bc0d170503b0e087bfc56d9622610"
+      },
+      "runs/gemma2_2b_4bit/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "5294b1b75f2b2ed981a6e3b0e9c029dd9f0495728ed3e3e644bde4c727987a90"
+      },
+      "runs/gemma2_2b_4bit/activations.npz": {
+        "bytes": 11096085,
+        "sha256": "fc2f0d40f31da21f1f06149d1d58e2e336bc5a3258ac0027acf240e385169cea"
+      },
+      "runs/gemma2_2b_4bit/observations.jsonl": {
+        "bytes": 269724,
+        "sha256": "143848706ebac30e6e372ea309da0068fe422af6861750883036f9b35bcfe6fd"
+      },
+      "runs/gemma2_2b_4bit/run_receipt.json": {
+        "bytes": 51092,
+        "sha256": "535a931d47ac470c029a530e928b2b0f0de10e399e65cbc50850230249fc0ae3"
+      },
+      "runs/llama32_3b_bf16/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "0b7bdad6c4f4b0b3876a0632c42db7d97a725c3b6f1f84347d2150727129f1cd"
+      },
+      "runs/llama32_3b_bf16/activations.npz": {
+        "bytes": 11717511,
+        "sha256": "7897646f1c02c5c9eaaa8f972e016441250512926c20dde261ddd6cf297c30cf"
+      },
+      "runs/llama32_3b_bf16/observations.jsonl": {
+        "bytes": 275853,
+        "sha256": "cff1c90c5c81c6d19bdc715937e4ec5f93d8bf8dd82f5c17d38ecb7da1187d4e"
+      },
+      "runs/llama32_3b_bf16/run_receipt.json": {
+        "bytes": 56383,
+        "sha256": "49d347c505fbf79d7b904e66c02badde56074896cfc195c9dad98f7f3de004a5"
+      },
+      "runs/olmo3_7b_bf16/SHA256SUMS": {
+        "bytes": 250,
+        "sha256": "3dcf154a6ca533c9e03b8f6a08b79f5d0f8e4ac3fab30accce1c0af816464a7d"
+      },
+      "runs/olmo3_7b_bf16/activations.npz": {
+        "bytes": 15547383,
+        "sha256": "679d5d71c7cc4af5331df921626063eab8a6dbd2e2655c35715c7765729b75f4"
+      },
+      "runs/olmo3_7b_bf16/observations.jsonl": {
+        "bytes": 276249,
+        "sha256": "91e36ef9b9f9d0348b590e5c7ce43324acea46d799f90bcffebe8a139d807952"
+      },
+      "runs/olmo3_7b_bf16/run_receipt.json": {
+        "bytes": 63921,
+        "sha256": "64971067dbcad222ff2576d37bb09acbca6d094678ffbeb1849c081d8ddd5915"
+      }
+    }
+  }
+}

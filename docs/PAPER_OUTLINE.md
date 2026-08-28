@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -121,6 +121,27 @@ contexts. It must also state that short-range propagation from OLMo's
 structured prefix remains a sufficient explanation. T4 is not semantic,
 causal, confirmatory, tokenizer-independent, or a model-scale contrast.
 
+## Current carrier-distance result
+
+The prospectively frozen T5 study kept the complete input and current carrier
+token fixed while reading the same geometry at distances 1, 2, 4, and 8 after
+the raw glyph. Its only primary decision was a model-level intersection-union
+test requiring both distance-1 recurrence and a positive fixed log-distance
+attenuation contrast. The three raw IUT p-values were `0.573250` for Gemma,
+`0.188000` for Llama, and `0.997700` for OLMo; their Holm-adjusted values were
+`1.000000`, `0.564000`, and `1.000000`. No model rejected, so the registered
+pattern is `no_model_distance_attenuation`.
+
+Llama and OLMo each had a distance-1 component raw p-value of `0.000050`, but
+neither passed the fixed attenuation component required by the IUT. Their descriptive distance-8 slot fractions
+were `0.369105` and `0.527099`; Gemma's was `0.204289`. These tail values and
+the complete distance-by-depth interaction are secondary and carry no
+multiplicity decision. T5 therefore supports a bounded negative result for the
+simple model-level attenuation hypothesis, not monotonic decay, disappearance,
+duration, persistence, semantics, mechanism, causality, confirmation,
+tokenizer independence, backend parity, or direct cross-model magnitude
+comparison. Llama's MLX Stage-A parity also remains unqualified.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -132,6 +153,7 @@ causal, confirmatory, tokenizer-independent, or a model-scale contrast.
 7. In a token-isomorphic exploratory panel, how much matched-slot recurrence transfers across middle-token families, and how large is the residual within-family excess?
 8. In a frozen five-family grid, does matched-slot activation geometry recur in an atomic-token cell and in a cell with an exact shared final slot token?
 9. Does the matched-slot geometry remain observable at a common token exactly one position after the raw glyph?
+10. Across fixed distances 1, 2, 4, and 8 in repeated common-token carriers, does distance-1 recurrence coexist with a prespecified positive log-distance attenuation contrast?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -142,6 +164,12 @@ other model-cell differences.
 T4 gives the same split answer to question 9 across two fixed suffix contexts.
 It rules out a strictly current-token-only description, not short-range prefix
 propagation.
+T5 gives a negative answer to the fixed model-level conjunction in question 10:
+no model passed both components after Holm correction. Llama and OLMo had
+distance-1 component raw p-values at the permutation floor, but their
+attenuation components did not reject. Distance-8 and
+distance-by-depth patterns remain secondary descriptions rather than rescued
+duration or layer-specific claims.
 
 ## Planned paper structure
 
@@ -234,6 +262,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - report T4 as a separately frozen common-suffix carryover result: Gemma
   non-rejection and OLMo rejection across the fixed period/newline omnibus,
   with all 20 context-by-depth rows visible;
+- report T5 as a separately frozen three-model carrier-distance result: no
+  model passed the recurrence-plus-attenuation IUT, with all 120
+  carrier-by-distance-by-depth rows visible and no subcell promoted;
 - duplicate confirmatory matrix in a second internal backend;
 - additional tokenizer or model family;
 - agreement and disagreement table;
@@ -256,6 +287,13 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - T4 moves the current token to a common suffix and still finds OLMo-only
   recurrence; this narrows the account to contextual carryover but does not
   identify its mechanism, duration, or semantic content.
+- T5 rejects no model under the fixed recurrence-plus-attenuation conjunction.
+  Llama and OLMo remain descriptively elevated at distance 8, while early
+  captured depths decline more than later depths; neither observation has an
+  inferential decision or licenses a duration, monotonicity, persistence, or
+  selected-layer claim.
+- Llama's observational T5 cell does not qualify MLX parity; backend agreement
+  remains an engineering gate rather than an inferred property of the result.
 - one complete C1 v1 record was exposed in a research-agent context without
   experimental use; the bank is retired, and future causal work requires a new
   versioned bank.
@@ -270,6 +308,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
   manifest, with the pre-outcome serialization-repair chain retained.
 - complete T4 arrays, all 20 rows, joint analysis, three-point transfer
   receipt, and public manifest.
+- complete T5 arrays for all three models, all 120
+  carrier-by-distance-by-depth rows, joint analysis, verified transfer receipt,
+  and public manifest.
 
 ## Planned main figures
 
@@ -288,6 +329,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
    the Gemma atomic-token and OLMo shared-final-token contracts.
 10. T4 common-suffix primary result and both context-by-depth profiles,
     emphasizing the one-token position shift and the remaining prefix account.
+11. T5 model-level IUT components and complete distance-by-depth profiles,
+    separating the sole primary decisions from descriptive distance-8 tails and
+    depth interactions.
 
 ## Planned main tables
 
@@ -303,6 +347,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
    tokenizer-conditioned and observational.
 9. T4 primary model-level statistics, both context summaries, and all 20
    context-by-depth rows, labeled carryover and observational.
+10. T5 distance-1, attenuation, IUT, and Holm results for all three models plus
+    all 120 secondary rows, labeled exploratory, observational, and
+    non-confirmatory.
 
 ## Claim table
 
@@ -320,8 +367,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The exact T2 midpoint shape axis recurs across Gemma and OLMo | not supported; neither cell rejected after Holm correction | retain as bounded negative/mixed observational evidence; do not replace the midpoint or attribute the difference to scale |
 | Matched-slot geometry recurs in both T3 tokenizer regimes | not supported; OLMo rejected but Gemma did not | retain the registered `olmo_only_token_structured_recurrence` split and its token-structured alternative explanation |
 | OLMo T3 recurrence proves tokenizer causality or emoji meaning | not supported | require a causally identified near-matched tokenizer or token intervention; do not infer it from the two confounded cells |
-| OLMo T3 recurrence is confined to reading the shared slot token itself | not supported by T4; it persists one common token later in both fixed contexts | report `olmo_only_common_suffix_carryover`; freeze a carrier-distance assay before making any duration claim |
+| OLMo T3 recurrence is confined to reading the shared slot token itself | not supported by T4; it remains observable one common token later in both fixed contexts | report `olmo_only_common_suffix_carryover`; T5 is now complete and does not support the fixed model-level attenuation hypothesis |
 | T4 common-suffix carryover proves semantics or a causal mechanism | not supported | require identified interventions and near-matched controls; short-range structured-prefix propagation remains sufficient |
+| Matched-slot recurrence follows the fixed simple carrier-distance attenuation profile | not supported; no T5 model passed the recurrence-plus-attenuation IUT after Holm correction | retain `no_model_distance_attenuation` as a bounded negative result; do not replace the primary with a distance, carrier, or depth subcell |
+| Llama or OLMo distance-8 values prove persistence, duration, meaning, or mechanism | not supported; tail and depth-interaction values are secondary without multiplicity decisions | require a new prospectively powered duration or mechanism assay and independent backend qualification |
 | The GPT-2 fingerprint result generalizes across models | not established by T2, which used a different endpoint and confounded cells | claim-matched cross-model replication |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
@@ -346,6 +395,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - T4's two all-context, all-depth p-values and Holm family remain its only
   authorized decisions. Context-specific and all 20 context-by-depth values are
   secondary, and T3 is a descriptive reference without inferential pooling.
+- T5's three model-level IUT p-values and their Holm family remain its only
+  authorized decisions. The distance-1 and attenuation component p-values are
+  constituent gates; all carrier-, distance-, depth-, tail-, and T4-comparison
+  values are secondary and cannot replace the conjunction.
 
 ## Remaining paper gates
 
@@ -363,8 +416,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - preserve the T3 tokenizer-conditioned interpretation; do not relabel its
   secondary depth profile as confirmation or use it to rescue either cell.
 - preserve the T4 carryover boundary; do not treat its two suffix contexts as
-  independent replications or infer carryover beyond one token without a new
-  frozen distance assay.
+  independent replications.
+- preserve the completed T5 boundary: do not infer duration, monotonic decay,
+  disappearance, or a selected distance/depth effect from its failed primary
+  attenuation conjunction or its secondary profiles.
 
 No full manuscript is claimed at this stage. The English paper remains the Phase I endpoint.
 
@@ -388,8 +443,15 @@ The preprint package should contain or point to:
 - the complete T4 Gemma and OLMo activation arrays, observations, receipts,
   20-row joint analysis, three-point transfer verification, and public
   manifest;
+- the complete T5 Gemma, Llama, and OLMo activation arrays, observations,
+  receipts, 120-row joint analysis, verified transfer receipt, and public
+  manifest;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;
 - English manuscript, supplementary material, and Japanese public summary.
 
-The current compact repository omits the approximately 74 MiB (77.3 MB) raw intervention ledger and model-dependent NPZ arrays. That is acceptable for code review, but not sufficient as the final archival evidence package.
+The current compact repository omits the approximately 74 MiB (77.3 MB) raw
+baseline intervention ledger and its model-dependent NPZ arrays. The compact
+T5 activation arrays are included in its public evidence bundle. The remaining
+omission is acceptable for code review, but not sufficient as the final
+archival evidence package.

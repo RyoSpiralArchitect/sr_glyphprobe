@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -154,19 +154,19 @@ OLMoの副次的な文脈別統計はperiod `0.538985382`、newline `0.535944025
 
 ### Multifamily carrier-distance v0の現在地
 
-次の観測的な反証実験は、科学用model forwardを一度も実行する前に公開凍結した。
-各入力全体と、読み出し位置にあるcarrier tokenのIDを固定し、同じ絵文字から
-1、2、4、8 token後ろの`resid_post`を読む。Carrierは、`" a"`を8回繰り返した列と、
-`" |"`を8回繰り返した列の2種類である。固定model roleはGemma 2 2B 4-bit、
-Llama 3.2 3B BF16、OLMo 3 7B BF16で、各modelの5つの相対深度を使う。
+事前固定した観測的な反証実験は完了した。入力全体と現在位置のcarrier token IDを固定し、
+`" a"`と`" |"`の反復列の中で、同じ絵文字から1、2、4、8 token後ろの`resid_post`を
+読んだ。唯一の主判定では、model-level intersection-union testごとに、距離1の再現と
+正の固定log距離減衰contrastの両方を要求した。
 
-Model-levelの主検定はintersection-union test 1件だけである。距離1での再現成分と、
-事前指定したlog2距離に対する減衰contrastの両方が棄却された場合に限り、そのmodelを
-棄却とする。Modelのraw p値には2成分の大きい方を使い、3 model間をHolm補正する。
-この検定が捉えられるのは、固定profile上での距離1の再現と正味の減衰である。
-単調減衰、距離8での消失、意味、機構、因果、tokenizer非依存性、cross-modelの
-大きさ比較は示さない。役割、endpoint、permutation、outcome pattern、停止規則は
-[固定protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md)に定めた。科学用runと結果は未実施である。
+Gemmaは距離1の再現を棄却しなかった。LlamaとOLMoはこの成分をpermutation下限
+`0.00005`で棄却したが、減衰p値はそれぞれ`0.188`と`0.9977`だった。Gemma、Llama、
+OLMoのIUT/Holm p値は`1.0`、`0.564`、`1.0`となり、outcomeは
+`no_model_distance_attenuation`である。距離8の記述profileはLlamaで`0.369105`、
+OLMoで`0.527099`と高いが、tail rowには独立した多重性判定がない。単調な持続、
+持続時間の閾値、意味、機構、因果、tokenizer非依存性、cross-modelの大きさ比較は示さない。
+LlamaのStage A parity failureも有効なままである。詳細は[全結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md)、
+[固定protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md)、[公開evidence](artifacts/multifamily_carrier_distance_v0/README.ja.md)に示す。
 
 ### E2 技術検証の結果
 
@@ -290,6 +290,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Matched-slot analysis repair v1](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md) / [English](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md)
 - [Multifamily common-suffix carryover v0結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md)
 - [Multifamily common-suffix carryover v0](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md) / [English](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md)
+- [Multifamily carrier-distance v0結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md)
 - [Multifamily carrier-distance v0](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)

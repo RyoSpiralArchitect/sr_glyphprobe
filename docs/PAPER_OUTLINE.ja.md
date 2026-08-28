@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -114,6 +114,24 @@ tokenそのものを読む位置だけに閉じず、固定した両文脈で1�
 できると記述できる。同時に、OLMoの構造化prefixからの短距離伝播だけで十分という説明を
 残す。T4は意味、因果、確認、tokenizer非依存性、model-scale contrastを示さない。
 
+## 現在のcarrier-distance結果
+
+結果を見る前に固定したT5では、入力全体と現在位置のcarrier tokenを変えず、生の絵文字から
+1、2、4、8 token後ろの同じgeometryを読み出した。唯一の主判定はmodel単位の
+intersection-union testであり、距離1でのrecurrenceと、事前指定した正のlog-distance
+減衰contrastの両方を要求した。Raw IUT p値はGemmaが`0.573250`、Llamaが
+`0.188000`、OLMoが`0.997700`、Holm補正後は順に`1.000000`、`0.564000`、
+`1.000000`だった。棄却したmodelはなく、登録済みpatternは
+`no_model_distance_attenuation`である。
+
+LlamaとOLMoの距離1成分のraw p値はいずれも`0.000050`だったが、IUTが要求する固定した
+減衰成分は通らなかった。副次的な
+距離8のslot比率はLlamaが`0.369105`、OLMoが`0.527099`、Gemmaが`0.204289`
+だった。これらのtail値と完全なdistance × depth interactionには多重性判定の権限がない。
+したがってT5が支持するのは、単純なmodel-level減衰仮説に対する範囲を限った負の結果である。
+単調減衰、消失、持続時間、意味、機構、因果、確認、tokenizer非依存性、backend parity、
+cross-modelの大きさ比較は示さない。LlamaのMLX Stage-A parityも未資格のままである。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -125,6 +143,7 @@ tokenそのものを読む位置だけに閉じず、固定した両文脈で1�
 7. **RQ7 — 共有token間のtransfer:** トークン同型な探索panelで、matched-slot反復は中間token familyをまたいでどの程度移り、family内の残差的な上乗せはどの程度か。
 8. **RQ8 — Matched-slot geometry:** 固定した5 family格子で、matched-slot activation geometryはatomic-token cellと、厳密に同じ末尾slot tokenを共有するcellの両方に再現するか。
 9. **RQ9 — Common-suffix carryover:** 生の絵文字から厳密に1 token後ろの共通tokenにも、matched-slot geometryは観測できるか。
+10. **RQ10 — Carrier-distance attenuation:** 共通tokenを反復する固定carrierの距離1、2、4、8で、距離1のrecurrenceと、事前指定した正のlog-distance減衰contrastは両立するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -134,6 +153,11 @@ T3はRQ8に分岐した答えを与えた。OLMoは棄却し、Gemmaは棄却し
 ただし、token構造とその他のmodel-cell差が交絡しているため、この問いは観測的なままである。
 T4も固定した2接尾文脈でRQ9に同じ分岐を与えた。現在tokenだけの説明は退くが、短距離の
 prefix伝播は退かない。
+T5はRQ10の固定したmodel-level conjunctionに負の答えを与えた。Holm補正後に両成分を
+通過したmodelはない。LlamaとOLMoの距離1成分は置換下限のraw p値だったが、減衰成分は
+棄却しなかった。
+距離8とdistance × depthのpatternは、持続時間や特定layerの救済命題ではなく、副次記述に
+とどめる。
 
 ## 予定する貢献
 
@@ -213,6 +237,8 @@ prefix伝播は退かない。
     OLMoの共有末尾token条件を分け、深度別p値は副次記述とする
 12. T4の2つのall-context/all-depth primary、2つの文脈summary、全20文脈×深度row。
     1 token後ろへの位置移動と、残るprefix説明を明示する
+13. T5の3つのmodel-level IUTと、全120 carrier × distance × depth row。距離1、
+    減衰、IUT、Holmの主判定を、副次的なtail値とdepth interactionから分ける
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
@@ -237,6 +263,9 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   2 cellの分岐からtoken因果性やscale、precision、architecture、backend、node効果は同定しない
 - T4では現在tokenを共通接尾へ移してもOLMoだけが再現すること。説明をcontextual
   carryoverへ狭めるが、そのmechanism、持続距離、意味内容は同定しない
+- T5では固定したrecurrence-plus-attenuation conjunctionを通過したmodelがなかったこと。
+  LlamaとOLMoの距離8は記述的に高く、初期の取得層は後段より強く低下するが、どちらにも
+  推論判定はなく、持続時間、単調性、永続性、選択layerの主張には使わない
 
 ### 8. Limitations
 
@@ -250,6 +279,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - T3ではmodel family、size、precision、tokenizer、nodeが同時に変わり、OLMoの共有
   末尾tokenを原因として同定できないこと
 - T4の2接尾文脈は独立追試ではなく、1 tokenより先のcarryover距離を示さないこと
+- T5の主判定は負であり、距離8のtail値とdistance × depth interactionは多重性判定のない
+  副次結果であること。LlamaのMLX Stage-A parityも未資格であること
 - C1 v1の完全な1レコードが、実験に使われないまま研究agentの文脈へ露出したこと。Bankは廃止済みで、将来の因果実験には新しいversionのbankが必要であること
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
@@ -270,6 +301,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   joint analysis、3地点の転送検証、public manifest、および結果を見る前のrepair chain
 - T4のGemma・OLMo activation array、observation、receipt、全20行joint analysis、
   3地点の転送検証、public manifest
+- T5のGemma・Llama・OLMo activation array、observation、receipt、全120行joint
+  analysis、検証済み転送receipt、public manifest
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -291,6 +324,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
     OLMoの共有末尾token条件を分けて示す
 13. **Figure / Supplement:** T4のcommon-suffix主結果と2つの文脈×深度profile。現在tokenを
     共通化した点と、prefix構造が残る点を並べる
+14. **Figure / Supplement:** T5のmodel-level IUT成分とdistance × depth profile。唯一の
+    主判定と、距離8のtail・depth interactionという副次記述を分ける
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -307,6 +342,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - no dual-model recurrence for the frozen T2 midpoint shape-axis endpoint
 - OLMo-only token-structured recurrence for the frozen T3 all-depth endpoint
 - OLMo-only common-suffix carryover for the frozen T4 all-context/all-depth endpoint
+- no model-level carrier-distance attenuation for the frozen T5 recurrence-plus-attenuation endpoint
 
 ### 追加の証拠なしには使用しない
 
@@ -319,6 +355,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - T2 scale effect, quantization effect, or absence of colored-shape geometry
 - T3 tokenizer causality, semantic matched-slot variable, scale effect, precision effect, or node effect
 - T4 semantics, causal mechanism, independent replication, or carryover beyond one token
+- T5 monotonic decay, disappearance, duration, persistence, selected-layer effect, semantics, or mechanism
 
 ## 残る論文ゲート
 
@@ -337,8 +374,9 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
   確認判定、新しいprimary、またはcellの救済に使わない。
 - T4の判定は2つのall-context/all-depth p値とHolm familyに限定する。文脈別と全20
   文脈×深度値は副次結果で、T3は推論へ統合しない記述参照とする。
-- T4の2接尾文脈を独立再現として数えず、新しい固定distance assayなしに1 tokenより
-  長いcarryoverを主張しない。
+- T4の2接尾文脈を独立再現として数えない。
+- 完了したT5の境界を保ち、失敗した主減衰conjunctionや副次profileから、持続時間、
+  単調減衰、消失、特定distance・depthの効果を推定しない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 
@@ -346,6 +384,8 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 
 - 新しいversionのbankを開く前に、layer 2の候補、介入、endpoint、対照、多重性familyを因果プロトコルへ凍結したか
 - 主要評価量と多重性管理を事前固定したか
+- T5では3つのmodel-level IUTとHolm familyだけを判定として扱い、carrier、distance、
+  depth、tail、T4比較を副次結果のまま保ったか
 - 実行したトークン数・接頭構造matched controlsと、事後的・記述的な二次診断を正確に区別したか
 - 正・非正・失敗セルをすべて表に入れたか
 - 論文中の数値が、公開レシートまたは集約アーティファクトへ一意にたどれるか

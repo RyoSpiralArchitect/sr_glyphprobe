@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -36,7 +36,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Multifamily colored-shape geometry v0 | `no_dual_model_recurrence` | Gemma midpoint T = 0.114858, Holm p = 0.116667; OLMo midpoint T = 0.024628, Holm p = 0.275; both non-rejecting |
 | Multifamily matched-slot geometry v0 | `olmo_only_token_structured_recurrence` | Gemma all-depth T = 0.204305, Holm p = 0.2085; OLMo T = 0.500392, Holm p = 0.0001; shared final slot token remains sufficient |
 | Multifamily common-suffix carryover v0 | `olmo_only_common_suffix_carryover` | Gemma two-context T = 0.203443, Holm p = 0.30295; OLMo T = 0.537465, Holm p = 0.0001; recurrence remains one common token later |
-| Multifamily carrier-distance v0 | publicly frozen; scientific runs pending | Fixed distances 1/2/4/8 in two repeated-token carriers; Gemma, Llama, and OLMo roles; zero interventions and zero protected-target calls |
+| Multifamily carrier-distance v0 | `no_model_distance_attenuation` | Gemma IUT/Holm p = 1.0; Llama = 0.564; OLMo = 1.0; Llama and OLMo recur at distance 1 but do not pass the fixed attenuation component |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -189,23 +189,26 @@ evidence](artifacts/multifamily_common_suffix_carryover_v0/README.md).
 
 ### Multifamily carrier-distance v0 status
 
-The next prospective observational falsification is publicly frozen before any
-scientific model forward. It keeps each full input and the current carrier-token
-identity fixed, then reads `resid_post` at distances 1, 2, 4, and 8 after the
-same glyph inside two exact eight-token carriers: repeated `" a"` and repeated
-`" |"`. The fixed roles are Gemma 2 2B 4-bit, Llama 3.2 3B BF16, and OLMo 3 7B
-BF16, each at five depth fractions.
+The prospective observational falsification is complete. It kept each full
+input and current carrier-token identity fixed while reading `resid_post` at
+distances 1, 2, 4, and 8 inside repeated `" a"` and repeated `" |"` carriers.
+The sole primary decision required both distance-1 recurrence and a positive
+fixed log-distance attenuation contrast in each model-level
+intersection-union test.
 
-The sole primary model-level test is an intersection-union test: both the
-distance-1 recurrence component and a prespecified log2-distance attenuation
-contrast must reject. The model raw p-value is the larger component p-value;
-the three model tests are then Holm-corrected. This can identify recurrence
-with net attenuation across the fixed profile. It cannot establish monotonic
-decay, disappearance by distance 8, semantics, mechanism, causality,
-tokenizer independence, or a direct cross-model magnitude contrast. The
-[frozen protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) defines all roles,
-endpoints, permutations, outcome patterns, and stopping rules. Scientific runs
-and results are still pending.
+Gemma did not reject distance-1 recurrence. Llama and OLMo did reject that
+component at the `0.00005` permutation floor, but their attenuation p-values
+were `0.188` and `0.9977`, respectively. The IUT/Holm p-values were therefore
+`1.0`, `0.564`, and `1.0` for Gemma, Llama, and OLMo, yielding
+`no_model_distance_attenuation`. The descriptive distance-8 profiles remain
+elevated for Llama (`0.369105`) and OLMo (`0.527099`), but tail rows carry no
+separate multiplicity decision. The result does not establish monotonic
+persistence, a duration threshold, semantics, mechanism, causality, tokenizer
+independence, or a direct cross-model magnitude contrast. Llama's earlier
+Stage-A parity failure also remains in force. See the [complete
+result](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md), [frozen
+protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md), and [public
+evidence](artifacts/multifamily_carrier_distance_v0/README.md).
 
 ### E2 engineering results
 
@@ -407,6 +410,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Matched-slot analysis repair v1 | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.md) | [MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_ANALYSIS_REPAIR_V1.ja.md) |
 | Multifamily common-suffix carryover v0 results | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) |
 | Multifamily common-suffix carryover v0 | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md) | [MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md) |
+| Multifamily carrier-distance v0 results | [MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) | [MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) |
 | Multifamily carrier-distance v0 | [MULTIFAMILY_CARRIER_DISTANCE_V0.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) | [MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |

@@ -1,0 +1,3101 @@
+{
+  "canonical_model_id": "local/olmo3-1025-7b",
+  "capture": {
+    "array_dtype": "float32",
+    "array_shape": [
+      50,
+      2,
+      4,
+      5,
+      4096
+    ],
+    "carrier_order": [
+      "article_a",
+      "pipe"
+    ],
+    "distance_order": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "fractions": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "full_input_fixed_across_distances": true,
+    "layers": [
+      0,
+      8,
+      16,
+      24,
+      31
+    ],
+    "position_rule": "raw_token_count_plus_distance_minus_one",
+    "primary_scope": "both_fixed_carriers_by_all_five_fixed_depths_equal_weight",
+    "site": "resid_post"
+  },
+  "claim_boundary": "Frozen observational resid_post geometry for one fixed five-family by ten-slot emoji panel at distances 1, 2, 4, and 8 inside two exact repeated-token carriers in three predeclared MLX model cells. No intervention, behavior, semantic, mechanistic, causal, backend-parity, node-effect, quantization-equivalence, tokenizer-equivalence, confirmatory, direct cross-model magnitude, monotonic-decay, disappearance, or Phase I paper-gate claim is authorized.",
+  "execution": {
+    "forward_latency_ms": [
+      31153.921041986905,
+      923.8078749913257,
+      229.6965830028057,
+      230.47024999686982,
+      229.84308299783152,
+      233.24170800333377,
+      231.305416993564,
+      230.06479200557806,
+      231.63041699444875,
+      230.76320900872815,
+      232.7239159931196,
+      239.34729199390858,
+      237.67674999544397,
+      232.83279199677054,
+      234.42520800745115,
+      232.86899999948218,
+      233.5495000006631,
+      234.88870800065342,
+      240.16845799633302,
+      233.3660830045119,
+      235.98458401102107,
+      231.6923339967616,
+      232.4570839991793,
+      230.87741700874176,
+      232.02949999540579,
+      232.7918750088429,
+      231.32629100291524,
+      230.97833400242962,
+      230.00449998653494,
+      232.96758299693465,
+      232.16050000337418,
+      230.35041699768044,
+      231.1232500069309,
+      229.1611670079874,
+      228.40587499376852,
+      228.53145901171956,
+      227.61204100970645,
+      227.13012500025798,
+      229.4387919973815,
+      228.51616599655244,
+      231.62008299550507,
+      229.72629200376105,
+      231.76112500368617,
+      228.95525000058115,
+      228.68166700936854,
+      227.75670800183434,
+      227.56104200379923,
+      229.36579199449625,
+      227.0518750010524,
+      226.44158299954142,
+      226.27504100091755,
+      230.5893750017276,
+      227.52229099569377,
+      226.65879200212657,
+      229.52125000301749,
+      226.50679199432489,
+      229.48725000605918,
+      227.13800000201445,
+      230.70000000006985,
+      229.56616600276902,
+      228.72562499833293,
+      228.68545800156426,
+      227.8423340030713,
+      227.7879169996595,
+      228.0202500114683,
+      226.6697079903679,
+      228.38600000250153,
+      227.84591700474266,
+      227.33770799823105,
+      227.7013330021873,
+      227.29587499634363,
+      226.7506669886643,
+      226.7164579970995,
+      227.09479100012686,
+      226.3125419995049,
+      227.18670799804386,
+      227.45058398868423,
+      227.09491700516082,
+      227.9007500037551,
+      227.18433300906327,
+      225.72720800235402,
+      227.00804100895766,
+      227.86220800480805,
+      227.00666700256988,
+      229.35904200130608,
+      227.1315839898307,
+      232.03079198719934,
+      227.7310000063153,
+      228.18395899957977,
+      229.0169999905629,
+      226.7492079990916,
+      230.12554198794533,
+      227.96554100932553,
+      227.1604169945931,
+      226.4816660026554,
+      227.86354199342895,
+      227.10795799503103,
+      229.14512499119155,
+      226.7359999968903,
+      226.1911660025362,
+      227.87125001195818,
+      227.32662499765866,
+      226.64570799679495,
+      226.09208300127648,
+      227.5267079967307,
+      227.64658300729934,
+      227.27083299832884,
+      227.78079198906198,
+      228.0989159917226,
+      228.09533300460316,
+      230.70437500427943,
+      230.96274999261368,
+      228.38229199987836,
+      228.09504200995434,
+      226.71895800158381,
+      226.5828329982469,
+      225.74895899742842,
+      227.53012500470504,
+      226.54083398811053,
+      227.10412500600796,
+      227.65537499799393,
+      229.15995899529662,
+      227.36199999053497,
+      228.44112498569302,
+      226.7597919999389,
+      229.49612500087824,
+      226.6772500006482,
+      227.48920798767358,
+      229.25133300304879,
+      227.24654199555516,
+      230.03037500893697,
+      227.48800000408664,
+      229.76224999001715,
+      228.54845800611656,
+      228.11079199891537,
+      227.88929200032726,
+      226.16391599876806,
+      226.6592919913819,
+      226.5116669877898,
+      228.23966598662082,
+      229.835791993537,
+      227.08595800213516,
+      227.34395899169613,
+      227.3758329974953,
+      228.09329199662898,
+      226.27658300916664,
+      229.03962500276975,
+      227.5894589984091,
+      231.42691698740236,
+      230.82504200283438,
+      228.00825000740588,
+      228.11262500181329,
+      228.95979200256988,
+      231.00729200814385,
+      228.57033299806062,
+      231.33341698849108,
+      228.60662499442697,
+      227.7199579984881,
+      229.83683399797883,
+      227.70145800313912,
+      227.91541699552909,
+      227.2216249984922,
+      228.83029200602323,
+      227.69733400491532,
+      227.27895800198894,
+      229.12941699905787,
+      233.626874993206,
+      236.43629100115504,
+      237.84112501016352,
+      228.67450000194367,
+      231.10062499472406,
+      229.19462498975918,
+      229.4764169928385,
+      229.66637500212528,
+      231.660749996081,
+      231.0753750061849,
+      231.59670899622142,
+      231.0176660103025,
+      232.11279200040735,
+      230.9518330002902,
+      232.02266600856092,
+      231.24249999818858,
+      232.27525000402238,
+      231.8943329883041,
+      232.15016699396074,
+      233.7532500096131,
+      233.3581669954583,
+      233.35295800643507,
+      234.16895799164195,
+      233.79349999595433,
+      233.07666600157972,
+      234.9834579945309,
+      234.997999999905,
+      235.28850000002421,
+      235.16012499749195,
+      235.06441699282732,
+      234.54645900346804,
+      237.13924999174196,
+      234.96879100275692,
+      236.14041700784583,
+      234.19033299433067,
+      234.62395899696276,
+      235.52629200275987,
+      234.41274999640882,
+      236.06429100618698,
+      235.67049999837764,
+      237.7308750001248,
+      235.40949999005534,
+      235.1068749994738,
+      236.80704199068714,
+      236.02754199237097,
+      236.2602500070352,
+      237.9745840007672,
+      239.34299999382347,
+      238.22199999995064,
+      236.98670898738783,
+      235.7990409946069,
+      238.84404099953827,
+      238.08849998749793,
+      237.19487499329261,
+      237.22491700027604,
+      236.69641600281466,
+      236.93987498700153,
+      236.87525000423193,
+      236.62266599421855,
+      236.98154200974386,
+      237.4124999914784,
+      238.22404201200698,
+      238.0580830067629,
+      241.55629199231043,
+      238.76325000310317,
+      238.58720800490119,
+      237.36374999862164,
+      238.23620899929665,
+      237.1519169973908,
+      238.1618749932386,
+      240.37683400092646,
+      244.36566699296236,
+      241.42058299912605,
+      240.63208300503902,
+      238.94358398683835,
+      239.02512500353623,
+      238.83950000163168,
+      237.6250420056749,
+      238.18666700390168,
+      237.696040989249,
+      238.51529198873322,
+      238.2391249993816,
+      241.4533749979455,
+      237.2172080067685,
+      239.76570800004993,
+      238.11808299797121,
+      240.05604100238997,
+      238.37129199819174,
+      239.00650000723545,
+      238.96425000566524,
+      239.7143749985844,
+      238.7449999951059,
+      238.78845799481496,
+      237.91391699342057,
+      238.23329199512955,
+      242.0177500025602,
+      239.00491700624116,
+      237.72662499686703,
+      238.03379099990707,
+      237.92500000854488,
+      237.28604200005066,
+      238.62208300852217,
+      238.23233299481217,
+      237.40904199075885,
+      236.91274999873713,
+      238.1226669967873,
+      237.9197920090519,
+      239.05391700100154,
+      238.2720000023255,
+      238.43625000154134,
+      237.5559169886401,
+      239.44404200301506,
+      238.71220801083837,
+      239.32808300014585,
+      240.84983399370685,
+      239.5892909989925,
+      241.04804200760555,
+      239.0535419981461,
+      239.3766669993056,
+      238.36612499144394,
+      237.3464169941144,
+      240.75100000482053,
+      238.38787501154002,
+      238.36466700595338,
+      237.39154200302437,
+      238.38862500269897,
+      238.12420800095424,
+      239.4521250098478,
+      238.26708398701157,
+      238.42895799316466,
+      239.13175000052433,
+      240.39520900987554,
+      238.46537499048281,
+      237.8000000026077,
+      238.91733300115447,
+      238.91220799123403,
+      239.98337499506306,
+      239.93904198869132,
+      238.3364159904886,
+      238.68812499858905,
+      237.9392500006361,
+      239.30412500340026,
+      237.8174159966875,
+      237.7965000050608,
+      237.88358298770618,
+      239.46379200788215,
+      237.6185000030091,
+      237.71549999946728,
+      237.19075000553858,
+      238.42195900215302,
+      237.0118749968242,
+      238.30566699325573,
+      239.32887500268407,
+      237.60879201290663,
+      238.4352920053061,
+      238.66425000596792,
+      242.28787500760518,
+      241.57120799645782,
+      241.35016700893175,
+      240.05020799813792,
+      239.9269579909742,
+      241.70045799110085,
+      241.103041000315,
+      239.92470900702756,
+      241.42904199834447,
+      241.55387499195058,
+      243.60883400368039,
+      242.93949999264441,
+      243.7992080085678,
+      241.62608399637975,
+      240.6752080132719,
+      241.16166699968744,
+      241.9351669959724,
+      241.9827089906903,
+      241.0241670004325,
+      240.30616700474638,
+      241.55495800368953,
+      241.11870799970347,
+      242.10870800015982,
+      242.43475000548642,
+      240.0032919977093,
+      240.82137500226963,
+      241.23174999840558,
+      239.20179199194536,
+      240.97737499687355,
+      241.43545799597632,
+      241.2507499975618,
+      241.3414580078097,
+      241.26787499699276,
+      240.6347910000477,
+      241.65141599951312,
+      241.47779200575314,
+      241.7080419982085,
+      241.2102079979377,
+      241.96729098912328,
+      240.5750409961911,
+      241.82204098906368,
+      241.85062499600463,
+      241.17537499114405,
+      240.4696659941692,
+      243.62287500116508,
+      240.01341599796433,
+      243.3014170092065,
+      244.74883399670944,
+      242.1704580046935,
+      241.17570799717214,
+      241.66570900706574,
+      243.77204199845437,
+      240.75237500073854,
+      241.51704099494964,
+      241.7980419995729,
+      241.5568330034148,
+      240.68745800468605,
+      241.5863329952117,
+      240.20650000602473,
+      242.20537500514183,
+      241.27633299212903,
+      240.59270801080856,
+      241.9177080009831,
+      241.07895800261758,
+      243.09758399613202,
+      241.97095799900126,
+      241.61174999608193,
+      242.3328749864595,
+      241.03954101155978,
+      241.4498750003986,
+      242.88166699989233,
+      242.32300001312979,
+      242.55462500150315,
+      240.6448330002604,
+      241.35066599410493,
+      243.58220800058916,
+      242.16350000642706,
+      242.33212499530055
+    ],
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "load_elapsed_ms": 13550.596457993379,
+    "model_forward_calls": 400,
+    "peak_memory_bytes_max": 14609247604,
+    "protected_target_files_opened": 0,
+    "timing_claim_authorized": false,
+    "total_elapsed_ms_before_close": 143336.99108299334
+  },
+  "experiment_role": "prospective_exploratory_observational_carrier_distance_attenuation",
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_common_suffix_carryover_v0/PUBLIC_MANIFEST.json": "75ff440fc8a2b56c3f8d5d4bcc29cabb471953ac1fb376a06745c16efcaef55d",
+      "artifacts/multifamily_common_suffix_carryover_v0/analysis/analysis_receipt.json": "ec925636d384cf65837cc0ba43924e4bcee22ac0820251bd06876e1bc8c8d43d",
+      "artifacts/multifamily_tokenizer_census_v0/aggregate.json": "53bf6bf603b8b62c157a909c3597bb7d9be316529571d6eb4820fb4063c27e4f",
+      "artifacts/multifamily_tokenizer_census_v0/collection_receipt.json": "4fbbea7f309b4d9553be062723e66278113be360b547f09397867192a5a6b4b0",
+      "configs/multifamily_carrier_distance_v0.yaml": "9906b5ba878f4e5039f68c13bfc2cf18ae3f1197a279f0debddedb08a202ff82",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md": "43dfaa2446a9faff39c2f0f0a38ac4575f432ea00e47361915db09ac18017564",
+      "docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md": "062afef1f0951bd3175290cddd639223fb2d9c3f224092e6870f080d828bdad0",
+      "scripts/multifamily_carrier_distance_v0.py": "cfe40b74885d7f058508c3f7056482b2d63f2fc92ad707f741c53e83614df8d4",
+      "scripts/multifamily_colored_shape_geometry_v0.py": "b95b9754ec4d0fcc9a385ea9f98ca00f5d73a92ebe051b61df140f713806cb7e",
+      "scripts/multifamily_common_suffix_carryover_v0.py": "97124dd9add4c9a819b9041a380aec7a2ca0ea9c3ef49f6456972ab1a4810845",
+      "scripts/multifamily_matched_slot_geometry_v0.py": "4ecfc6bc435cd30151a438912b98dd7162177e163d2826a1f60d9067c57aec8d",
+      "tests/test_multifamily_carrier_distance_v0.py": "f4e9a13e51b2de6653658ed05a71db3b66c7722ea60717f1957355c825464b84",
+      "validation/multifamily_carrier_distance_v0/engineering_preflight.json": "e5732e5ec13f67801566e21be6b58713a57b37eecb8170893f7c0cfda7dbb929"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "bc93b3d0477a4b8ab3c285494dde5c7ae38de3d45f624b711ba65c9e714a5bc2"
+  },
+  "model": {
+    "artifact": {
+      "file_count": 30,
+      "files": {
+        ".cache/huggingface/.gitignore": {
+          "bytes": 1,
+          "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+        },
+        ".cache/huggingface/CACHEDIR.TAG": {
+          "bytes": 191,
+          "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+        },
+        ".cache/huggingface/download/.gitattributes.metadata": {
+          "bytes": 101,
+          "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+        },
+        ".cache/huggingface/download/README.md.metadata": {
+          "bytes": 101,
+          "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+        },
+        ".cache/huggingface/download/config.json.metadata": {
+          "bytes": 101,
+          "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+        },
+        ".cache/huggingface/download/generation_config.json.metadata": {
+          "bytes": 100,
+          "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+        },
+        ".cache/huggingface/download/merges.txt.metadata": {
+          "bytes": 100,
+          "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+        },
+        ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+          "bytes": 101,
+          "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+        },
+        ".cache/huggingface/download/olmo-base.png.metadata": {
+          "bytes": 124,
+          "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+        },
+        ".cache/huggingface/download/olmo3-logo.metadata": {
+          "bytes": 99,
+          "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+        },
+        ".cache/huggingface/download/special_tokens_map.json.metadata": {
+          "bytes": 101,
+          "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+        },
+        ".cache/huggingface/download/tokenizer.json.metadata": {
+          "bytes": 100,
+          "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+        },
+        ".cache/huggingface/download/tokenizer_config.json.metadata": {
+          "bytes": 101,
+          "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+        },
+        ".cache/huggingface/download/vocab.json.metadata": {
+          "bytes": 100,
+          "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+        },
+        ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+          "bytes": 2427,
+          "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+        },
+        ".gitattributes": {
+          "bytes": 1569,
+          "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+        },
+        "README.md": {
+          "bytes": 12222,
+          "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+        },
+        "config.json": {
+          "bytes": 1620,
+          "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+        },
+        "generation_config.json": {
+          "bytes": 69,
+          "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+        },
+        "merges.txt": {
+          "bytes": 916646,
+          "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 4969984976,
+          "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 4981161496,
+          "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 4644917240,
+          "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 29630,
+          "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+        },
+        "olmo-base.png": {
+          "bytes": 103368,
+          "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+        },
+        "olmo3-logo": {
+          "bytes": 119,
+          "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 207,
+          "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+        },
+        "tokenizer.json": {
+          "bytes": 7137177,
+          "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+        },
+        "tokenizer_config.json": {
+          "bytes": 4308,
+          "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+        },
+        "vocab.json": {
+          "bytes": 1611056,
+          "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+        }
+      },
+      "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "total_bytes": 14605885551
+    },
+    "backend_receipt": {
+      "backend": "mlx",
+      "backend_class": "MLXBackend",
+      "block_path": "model.layers",
+      "commit_hash": null,
+      "d_model": 4096,
+      "device": "gpu",
+      "dtype": "auto",
+      "loader_metadata": {
+        "load_latency_ms": 13550.292457992327,
+        "local_files_only_requested": true,
+        "mlx_lm_version": "0.31.2",
+        "mlx_version": "0.31.1",
+        "model_type": "olmo3",
+        "quantization": null
+      },
+      "model": "<LOCAL_MODEL_ARTIFACT>",
+      "model_artifact": {
+        "file_count": 30,
+        "files": {
+          ".cache/huggingface/.gitignore": {
+            "bytes": 1,
+            "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+          },
+          ".cache/huggingface/CACHEDIR.TAG": {
+            "bytes": 191,
+            "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+          },
+          ".cache/huggingface/download/.gitattributes.metadata": {
+            "bytes": 101,
+            "sha256": "d74511770fe20cb93288cae28ef54e50983373f83a0db1f3d9080dfdddd88e01"
+          },
+          ".cache/huggingface/download/README.md.metadata": {
+            "bytes": 101,
+            "sha256": "ca6e8f07d978e88cddd78e548df6dd1a9d46c43680be60e6ba48d87be03a2dcd"
+          },
+          ".cache/huggingface/download/config.json.metadata": {
+            "bytes": 101,
+            "sha256": "4070e82f493ca8cc7de64751e7340b51923959302b6f21d5c14e5d062e9d4a6d"
+          },
+          ".cache/huggingface/download/generation_config.json.metadata": {
+            "bytes": 100,
+            "sha256": "1bb1b5b0abf9e36426c2aaf7078b40395c2fa3bf46431524fa8eb07d775cdd44"
+          },
+          ".cache/huggingface/download/merges.txt.metadata": {
+            "bytes": 100,
+            "sha256": "3a23aa7c84241c9e4461deaeeb0f5dcaa2ee1d278e9c756018037603cf03c503"
+          },
+          ".cache/huggingface/download/model.safetensors.index.json.metadata": {
+            "bytes": 101,
+            "sha256": "6d2cc7038aa3952105288181b385ecaf198c93076d449ab3dfc01c39ff032580"
+          },
+          ".cache/huggingface/download/olmo-base.png.metadata": {
+            "bytes": 124,
+            "sha256": "3c2eca711c26cb784cc4f43699e16d5a0d80c90e71eb928b62ad745a31cd8506"
+          },
+          ".cache/huggingface/download/olmo3-logo.metadata": {
+            "bytes": 99,
+            "sha256": "f5638a56fe1e00a07fa9b94fb14d0d37a139eb66797f8b94ef525fb826cd304f"
+          },
+          ".cache/huggingface/download/special_tokens_map.json.metadata": {
+            "bytes": 101,
+            "sha256": "4d17754582c82bb5949d80223af828f6b67bba94199d8050ed7282bbd5418cb3"
+          },
+          ".cache/huggingface/download/tokenizer.json.metadata": {
+            "bytes": 100,
+            "sha256": "46fa292ee5a2dceb5ec905d1b0fd306837ab421488bcf6a5f4864a48db687035"
+          },
+          ".cache/huggingface/download/tokenizer_config.json.metadata": {
+            "bytes": 101,
+            "sha256": "d9585fe1b20e4729fbe09a4bfe92682de420ffc3ec19ecfc7ce81d238a26269c"
+          },
+          ".cache/huggingface/download/vocab.json.metadata": {
+            "bytes": 100,
+            "sha256": "22c6c84aa11a0caf579de5c04320e2f68b1aeac611b06654757e5f89cc97b223"
+          },
+          ".cache/huggingface/trees/a81bae42db3975be1671e27b9c9a56da1a9f980f.json": {
+            "bytes": 2427,
+            "sha256": "2081c34b3be0245f85b183571cf16f6d76111d557a49ede41b07b4841c35ec18"
+          },
+          ".gitattributes": {
+            "bytes": 1569,
+            "sha256": "ad6d13f6df2bb984308e5b913a776634001c4230c2400c4065f2778c5c96ad5c"
+          },
+          "README.md": {
+            "bytes": 12222,
+            "sha256": "d9f4fad78dd34fac1faee26233a339784b2210fcdd2c22551a43628e5446a952"
+          },
+          "config.json": {
+            "bytes": 1620,
+            "sha256": "277d7ea5c6159d4c2d6986a8a23757d1ef06acaa7abc2c40e0513446f7db0f85"
+          },
+          "generation_config.json": {
+            "bytes": 69,
+            "sha256": "52e8c2bef1d50a9aa99ce1da2a586ec40f524c1eded9c9ece289f3146b909ded"
+          },
+          "merges.txt": {
+            "bytes": 916646,
+            "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+          },
+          "model-00001-of-00003.safetensors": {
+            "bytes": 4969984976,
+            "sha256": "0490d6668e613a29b23367e3a7aa9cc6aced3d162694445bb969ed7622b3c4e2"
+          },
+          "model-00002-of-00003.safetensors": {
+            "bytes": 4981161496,
+            "sha256": "e127ea479fb6e208fe9d48d23b11212b5722f4873f6eef9c009b7a855866c641"
+          },
+          "model-00003-of-00003.safetensors": {
+            "bytes": 4644917240,
+            "sha256": "f3ddff10052ffe5de5c6b4cad45c422c0d898acc6beb21b1b8531244adfb3c70"
+          },
+          "model.safetensors.index.json": {
+            "bytes": 29630,
+            "sha256": "47a8266860f2a5f95c021fb4d7d3a469a95ee8b445742becbb6b19632cfc6e95"
+          },
+          "olmo-base.png": {
+            "bytes": 103368,
+            "sha256": "b055ed6bda17ff57a4889f3f003893cee8c08bdee0dc3c8d4979c8989bb1f84d"
+          },
+          "olmo3-logo": {
+            "bytes": 119,
+            "sha256": "3547a0cb5218aa7af81bbb99d07b577e67745d74bb4fc654fd3fd586afc14b3d"
+          },
+          "special_tokens_map.json": {
+            "bytes": 207,
+            "sha256": "4cb2b52960bababa8ec27153831e405ef7811e3fad1226106e09c28e715cfb21"
+          },
+          "tokenizer.json": {
+            "bytes": 7137177,
+            "sha256": "73fd5254624f39a88e3faac6a8e11300fc3c735ed37880d4f4f08db898eaecca"
+          },
+          "tokenizer_config.json": {
+            "bytes": 4308,
+            "sha256": "ffa5b2cfee6e73d5dc0a7d3b7e02eb6ed60a491dd782f2bd8ad2b4659b2aafc6"
+          },
+          "vocab.json": {
+            "bytes": 1611056,
+            "sha256": "9e14712c91b37c7aab74b1306baa46ac342d620637a4b44523cdc3aec7d24195"
+          }
+        },
+        "manifest_sha256": "ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+        "total_bytes": 14605885551
+      },
+      "model_class": "Model",
+      "model_locator": "local-artifact://olmo3-1025-7b#ed9c0d884596f3342e74d278455a05793d6ea767cee4bc9d4b8cd2bdb2efe3ba",
+      "num_layers": 32,
+      "parameter_count": 7298011136,
+      "parity_validation": {
+        "reason": "no validation receipt was supplied",
+        "validated": false
+      },
+      "resolved_device": "Device(gpu, 0)",
+      "resolved_dtype": "mlx.core.bfloat16",
+      "revision": null,
+      "supported_sites": [
+        "resid_post"
+      ],
+      "tokenizer_class": "GPT2TokenizerFast"
+    },
+    "model_dim": 4096,
+    "model_type": "olmo3",
+    "num_layers": 32,
+    "parameter_count": 7298011136,
+    "quantized": false,
+    "resolved_device": "Device(gpu, 0)",
+    "resolved_dtype": "mlx.core.bfloat16"
+  },
+  "model_label": "olmo3_7b_bf16",
+  "outputs": {
+    "activations.npz": "679d5d71c7cc4af5331df921626063eab8a6dbd2e2655c35715c7765729b75f4",
+    "observations.jsonl": "91e36ef9b9f9d0348b590e5c7ce43324acea46d799f90bcffebe8a139d807952"
+  },
+  "panel": {
+    "family_order": [
+      "sky",
+      "food",
+      "animals",
+      "transport",
+      "social"
+    ],
+    "item_ids": [
+      "sky_slot_00",
+      "sky_slot_01",
+      "sky_slot_02",
+      "sky_slot_03",
+      "sky_slot_04",
+      "sky_slot_05",
+      "sky_slot_06",
+      "sky_slot_07",
+      "sky_slot_08",
+      "sky_slot_09",
+      "food_slot_00",
+      "food_slot_01",
+      "food_slot_02",
+      "food_slot_03",
+      "food_slot_04",
+      "food_slot_05",
+      "food_slot_06",
+      "food_slot_07",
+      "food_slot_08",
+      "food_slot_09",
+      "animals_slot_00",
+      "animals_slot_01",
+      "animals_slot_02",
+      "animals_slot_03",
+      "animals_slot_04",
+      "animals_slot_05",
+      "animals_slot_06",
+      "animals_slot_07",
+      "animals_slot_08",
+      "animals_slot_09",
+      "transport_slot_00",
+      "transport_slot_01",
+      "transport_slot_02",
+      "transport_slot_03",
+      "transport_slot_04",
+      "transport_slot_05",
+      "transport_slot_06",
+      "transport_slot_07",
+      "transport_slot_08",
+      "transport_slot_09",
+      "social_slot_00",
+      "social_slot_01",
+      "social_slot_02",
+      "social_slot_03",
+      "social_slot_04",
+      "social_slot_05",
+      "social_slot_06",
+      "social_slot_07",
+      "social_slot_08",
+      "social_slot_09"
+    ],
+    "slot_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  },
+  "protocol_id": "glyphprobe-multifamily-carrier-distance-v0",
+  "runtime": {
+    "declared_transformers_requirement_conflict": true,
+    "mlx_lm_declared_requirements": [
+      "mlx>=0.30.4; platform_system == \"Darwin\"",
+      "numpy",
+      "transformers>=5.0.0",
+      "sentencepiece",
+      "protobuf",
+      "pyyaml",
+      "jinja2",
+      "datasets; extra == \"test\"",
+      "lm-eval; extra == \"test\"",
+      "datasets; extra == \"train\"",
+      "tqdm; extra == \"train\"",
+      "lm-eval; extra == \"evaluate\"",
+      "tqdm; extra == \"evaluate\"",
+      "mlx[cuda13]>=0.30.4; extra == \"cuda13\"",
+      "mlx[cuda12]>=0.30.4; extra == \"cuda12\"",
+      "mlx[cpu]>=0.30.4; extra == \"cpu\""
+    ],
+    "sitecustomize_loaded": false,
+    "user_site_on_sys_path": false,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "mlx": "0.31.1",
+      "mlx-lm": "0.31.2",
+      "numpy": "2.5.2",
+      "orjson": "3.12.0",
+      "pydantic": "2.13.4",
+      "transformers": "4.57.6"
+    }
+  },
+  "schema_version": 1,
+  "scientific_confirmation": false,
+  "status": "pass",
+  "tokenization": {
+    "carrier_order": [
+      "article_a",
+      "pipe"
+    ],
+    "carriers": {
+      "article_a": {
+        "carrier_token_id": 264,
+        "observed_combined_token_counts": [
+          11
+        ],
+        "raw_prefix_preserved_count": 50,
+        "readout_positions_by_item": [
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ]
+        ],
+        "repeats": 8,
+        "roundtrip_exact_count": 50,
+        "token_sequences": [
+          [
+            9468,
+            234,
+            239,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            240,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            241,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            242,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            243,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            244,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            245,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            246,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            247,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            234,
+            248,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            239,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            240,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            241,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            242,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            243,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            244,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            245,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            246,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            247,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            235,
+            248,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            239,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            240,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            241,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            242,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            243,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            244,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            245,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            246,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            247,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            238,
+            248,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            239,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            240,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            241,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            242,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            243,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            244,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            245,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            246,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            247,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            248,
+            248,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            239,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            240,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            241,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            242,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            243,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            244,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            245,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            246,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            247,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ],
+          [
+            9468,
+            97,
+            248,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ]
+        ],
+        "unique_combined_sequence_count": 50,
+        "unit": " a"
+      },
+      "pipe": {
+        "carrier_token_id": 765,
+        "observed_combined_token_counts": [
+          11
+        ],
+        "raw_prefix_preserved_count": 50,
+        "readout_positions_by_item": [
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            4,
+            6,
+            10
+          ]
+        ],
+        "repeats": 8,
+        "roundtrip_exact_count": 50,
+        "token_sequences": [
+          [
+            9468,
+            234,
+            239,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            240,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            241,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            242,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            243,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            244,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            245,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            246,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            247,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            234,
+            248,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            239,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            240,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            241,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            242,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            243,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            244,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            245,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            246,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            247,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            235,
+            248,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            239,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            240,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            241,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            242,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            243,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            244,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            245,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            246,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            247,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            238,
+            248,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            239,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            240,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            241,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            242,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            243,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            244,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            245,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            246,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            247,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            248,
+            248,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            239,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            240,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            241,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            242,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            243,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            244,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            245,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            246,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            247,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ],
+          [
+            9468,
+            97,
+            248,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765,
+            765
+          ]
+        ],
+        "unique_combined_sequence_count": 50,
+        "unit": " |"
+      }
+    },
+    "distance_order": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "exact_contract": "raw_glyph_tokens_plus_eight_identical_carrier_tokens",
+    "raw": {
+      "expected_item_token_count": 3,
+      "kind": "exact_prefix_family_slot_factorization",
+      "matching_family": "exact_common_prefix_plus_family_token_plus_shared_slot_token",
+      "minimum_shared_prefix_across_panel": 1,
+      "observed_item_token_counts": [
+        3
+      ],
+      "token_sequences": [
+        [
+          9468,
+          234,
+          239
+        ],
+        [
+          9468,
+          234,
+          240
+        ],
+        [
+          9468,
+          234,
+          241
+        ],
+        [
+          9468,
+          234,
+          242
+        ],
+        [
+          9468,
+          234,
+          243
+        ],
+        [
+          9468,
+          234,
+          244
+        ],
+        [
+          9468,
+          234,
+          245
+        ],
+        [
+          9468,
+          234,
+          246
+        ],
+        [
+          9468,
+          234,
+          247
+        ],
+        [
+          9468,
+          234,
+          248
+        ],
+        [
+          9468,
+          235,
+          239
+        ],
+        [
+          9468,
+          235,
+          240
+        ],
+        [
+          9468,
+          235,
+          241
+        ],
+        [
+          9468,
+          235,
+          242
+        ],
+        [
+          9468,
+          235,
+          243
+        ],
+        [
+          9468,
+          235,
+          244
+        ],
+        [
+          9468,
+          235,
+          245
+        ],
+        [
+          9468,
+          235,
+          246
+        ],
+        [
+          9468,
+          235,
+          247
+        ],
+        [
+          9468,
+          235,
+          248
+        ],
+        [
+          9468,
+          238,
+          239
+        ],
+        [
+          9468,
+          238,
+          240
+        ],
+        [
+          9468,
+          238,
+          241
+        ],
+        [
+          9468,
+          238,
+          242
+        ],
+        [
+          9468,
+          238,
+          243
+        ],
+        [
+          9468,
+          238,
+          244
+        ],
+        [
+          9468,
+          238,
+          245
+        ],
+        [
+          9468,
+          238,
+          246
+        ],
+        [
+          9468,
+          238,
+          247
+        ],
+        [
+          9468,
+          238,
+          248
+        ],
+        [
+          9468,
+          248,
+          239
+        ],
+        [
+          9468,
+          248,
+          240
+        ],
+        [
+          9468,
+          248,
+          241
+        ],
+        [
+          9468,
+          248,
+          242
+        ],
+        [
+          9468,
+          248,
+          243
+        ],
+        [
+          9468,
+          248,
+          244
+        ],
+        [
+          9468,
+          248,
+          245
+        ],
+        [
+          9468,
+          248,
+          246
+        ],
+        [
+          9468,
+          248,
+          247
+        ],
+        [
+          9468,
+          248,
+          248
+        ],
+        [
+          9468,
+          97,
+          239
+        ],
+        [
+          9468,
+          97,
+          240
+        ],
+        [
+          9468,
+          97,
+          241
+        ],
+        [
+          9468,
+          97,
+          242
+        ],
+        [
+          9468,
+          97,
+          243
+        ],
+        [
+          9468,
+          97,
+          244
+        ],
+        [
+          9468,
+          97,
+          245
+        ],
+        [
+          9468,
+          97,
+          246
+        ],
+        [
+          9468,
+          97,
+          247
+        ],
+        [
+          9468,
+          97,
+          248
+        ]
+      ],
+      "unique_sequence_count": 50
+    }
+  }
+}
