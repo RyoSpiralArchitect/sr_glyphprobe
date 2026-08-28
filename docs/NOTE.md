@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[日本語](NOTE.ja.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -240,6 +240,41 @@ all three arrays, all 120 carrier-by-distance-by-depth rows, the failed primary
 decision, and the three-node transfer evidence. It is observational evidence
 about tokenizer-conditioned geometry, not emoji semantics or causal memory.
 
+## Four denser CUDA cells repeated the negative conjunction
+
+T6 kept the full T5 endpoint and changed the model roster and execution cell.
+Before any T6 forward, it froze four locally complete BF16
+Transformers/CUDA roles: Gemma 2 2B IT, Gemma 3 4B IT, Mistral 7B Instruct
+v0.3, and Gemma 3 12B IT. The roster was selected after T5, so this is
+prospective only for T6's own unseen outcomes.
+
+Again, no model passed. Gemma 2 2B and both Gemma 3 cells stayed near the
+matched null at distance 1. Mistral was different: its distance-1 statistic was
+`0.3845` against a null mean near `0.2`, at the `0.00005` permutation floor.
+But its attenuation p-value was `0.46975`, so the conjunction still failed.
+All four Holm-adjusted IUT p-values were `1.0`. The registered outcome is
+`no_dense_model_distance_attenuation`.
+
+This split is more useful than a slogan about larger models. Mistral remained
+descriptively high at distance 8 (`0.3930`), while Gemma 3 12B had a nominal
+secondary tail p-value of `0.04045`. Neither tail has a multiplicity-authorized
+decision. Gemma 3 4B and 12B share the observed tokenizer roster, but one
+selected pair does not identify a scale law. The four cells differ in model
+family and tokenizer, and all are instruction-tuned, so T6 is neither an
+independent confirmation nor a backend-parity experiment.
+
+The operational boundary mattered too. Compute started only after the furnace
+was re-observed free and the current `resource:furnace` notice surfaced at a
+natural receiver-owned Codex lifecycle boundary. The notification body was not
+automatically retrieved, and no reply, commitment, or six-session delivery is
+claimed. All 1,600 forwards, four arrays, 160 profile rows, validators, and
+return ledgers are in the [complete T6 result](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md).
+
+The endpoint has now received enough model breadth for this phase. A cleaner
+next step is to freeze a control that breaks shared slot structure on the same
+artifact, or to freeze the distance-by-depth interaction itself. Adding more
+models without resolving that structure would mostly add more confounding.
+
 ## A larger model did not pass the engineering gate
 
 E2 asked whether the same MLX route could be qualified for a pinned Llama 3.2
@@ -309,6 +344,10 @@ registered conjunction of distance-1 recurrence and positive model-level
 attenuation. Llama and OLMo remain descriptively elevated at distance 8, but
 the tail and depth interaction are secondary and do not authorize persistence,
 semantic, or mechanistic claims.
+T6 repeats that negative conjunction in four selected dense CUDA cells. Mistral
+retains a strong recurrence component without the fixed attenuation component;
+the three Gemma cells do not reject distance 1. This does not establish model
+scale, tokenizer equivalence, backend parity, or confirmation.
 
 ## What comes next
 
@@ -325,11 +364,12 @@ T2 is complete and should not be rescued by moving its primary layer. Its
 five-family option was selected, frozen, and completed separately as T3 rather
 than retrofitted onto the T2 decision. T4 then prospectively tested one-token
 carryover rather than rescuing a T3 subcell. T5 then froze and rejected the
-simple model-level carrier-distance attenuation account. The clean remaining
-choices are a prospectively fixed depth-by-distance interaction replication, a
-same-artifact control that breaks shared slot structure, a nearer-matched model
-pair that deconfounds tokenizer structure, or an independent implementation of
-one frozen endpoint. Each requires a new protocol.
+simple model-level carrier-distance attenuation account. T6 then retained the
+same conjunction across four selected dense CUDA cells and again rejected no
+model. Further model breadth is now lower priority. The clean remaining choices
+are a prospectively fixed depth-by-distance interaction replication, a
+same-artifact control that breaks shared slot structure, or an independent
+implementation of one frozen endpoint. Each requires a new protocol.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -352,3 +392,5 @@ Phase I still ends with an English paper, whether the final pattern is positive,
 T5's failed attenuation endpoint and its complete persistent descriptive
 profiles belong in that record as well; neither may be replaced by a favorable
 distance, carrier, or depth.
+T6's four non-rejections, Mistral component split, and all 160 profile rows also
+belong in that record without promotion of a tail, depth, or model pair.

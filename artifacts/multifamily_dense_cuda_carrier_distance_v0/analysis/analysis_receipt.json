@@ -1,0 +1,451 @@
+{
+  "analysis_role": "frozen_post_t5_dense_cuda_carrier_distance_replication",
+  "carrier_distance_layer_row_count": 160,
+  "carrier_order": [
+    "article_a",
+    "pipe"
+  ],
+  "claim_boundary": "Frozen observational resid_post carrier-distance geometry for four dense, instruction-tuned Transformers/CUDA model cells selected from complete local furnace artifacts after T5 was known. Each model receives the same fixed panel, carriers, distances, depths, endpoint, and multiplicity rule, but the study is not an independent confirmation of T5 and does not isolate model scale, family, tokenizer, instruction tuning, backend, node, or precision. No intervention, generation, behavior, semantic, mechanistic, causal, tokenizer-equivalence, backend-parity, direct cross-model magnitude, monotonic-decay, disappearance, duration, persistence, confirmatory, or Phase I paper-gate claim is authorized.",
+  "confirmatory_status": false,
+  "distance_order": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "freeze": {
+    "frozen_assets": {
+      "artifacts/multifamily_carrier_distance_v0/PUBLIC_MANIFEST.json": "6a93c12f30653b48074bd4941ec731f492349cdac8340388f77a3b3ab345f407",
+      "artifacts/multifamily_carrier_distance_v0/analysis/analysis_receipt.json": "435dc5bd3187fde9594523e6dcb4bb0919343d409a2f31137f06ca4f2658f948",
+      "configs/multifamily_dense_cuda_carrier_distance_v0.yaml": "6790d0442a47f801d3958eae77b2059847c70560e81ce68744597fe3bb7f5374",
+      "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+      "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+      "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+      "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+      "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+      "docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md": "3bf3664bef7006316da5e50ce6ea1a1f4ef073f56c25ef9fd596d5da17c8364c",
+      "docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md": "5db9d464277b27c41795018d60ddfa1bfb886a03fab988298f6cbe78ef68cf60",
+      "scripts/multifamily_carrier_distance_v0.py": "cfe40b74885d7f058508c3f7056482b2d63f2fc92ad707f741c53e83614df8d4",
+      "scripts/multifamily_dense_cuda_carrier_distance_v0.py": "cfeb9b1f4a0d3a85544b2b5bd6124290bdd2b60b06b7c430b67928387090a995",
+      "src/glyphprobe/backends/transformers_backend.py": "80feffe347daa1ca068c3cf87c6fbc6c5a93b376be16a3db44bd7581c0389ca2",
+      "tests/test_multifamily_dense_cuda_carrier_distance_v0.py": "f033b5e336840112f492ef0b878510e21d811f9e62619fa86e9ccfc77bfafcdf",
+      "validation/multifamily_dense_cuda_carrier_distance_v0/engineering_preflight.json": "03aebfea51e9e597151b9dd89b5f2d01b6bce7341f6100174ad29ad7c8e5ad2b"
+    },
+    "implementation": {
+      "package_version": "0.1.0",
+      "source_file_count": 32,
+      "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+    },
+    "manifest_sha256": "997389551df07922e8dcacfffa93a97a2ffb97a9da23e2e86fbc64c73a829f06"
+  },
+  "generation_calls": 0,
+  "inputs": {
+    "gemma2_2b_it": {
+      "run_ledger_sha256": "5b9282578281866f9a3646bdd6554a3ef73b49f5354864205404bba5769d8547",
+      "run_receipt_sha256": "3994330655cf79871433fbeff211f9c18d36eca5145e4356a7b8804ce70731a8"
+    },
+    "gemma3_12b_it": {
+      "run_ledger_sha256": "7c0b871c64375783b60485cb4e22e6f04fe4622db425ed6431b68eb9c712d6e2",
+      "run_receipt_sha256": "f3a27264e7716f003274732fce3c6a053c987d751f6fb29921249791c953e770"
+    },
+    "gemma3_4b_it": {
+      "run_ledger_sha256": "f7ce0205682be7c0983db7581bd3aead0031e9cdf07b5a28fe75d6d12429cabd",
+      "run_receipt_sha256": "b294dd8985428116ee7fa0d81fa57fc8b12b1bc7c9d906283901a5d769fa1db2"
+    },
+    "mistral7b_instruct_v03": {
+      "run_ledger_sha256": "ed2892efd15a91b3c414cb4806bd286d7df3dd824dca725458a6656d491f3b89",
+      "run_receipt_sha256": "ac9b6da51a3c96b44660426bc860bf823de108aa205032b2a8a36383d58d4f72"
+    }
+  },
+  "intervention_calls": 0,
+  "outcome_pattern": "no_dense_model_distance_attenuation",
+  "outcome_pattern_definition": "No model-level intersection-union test survives Holm. Retain both primary components and all profiles without promoting a carrier, distance, depth, model pair, or tail subcell.",
+  "phase_i_gate_closed": false,
+  "primary_endpoint": {
+    "decision_scope": "model_level_intersection_union_only",
+    "definition": "For each carrier, distance, and fixed depth, arrange resid_post vectors as family by matched slot, remove each family mean, and compute SS_slot / (SS_slot + SS_interaction). Criterion A is the equal-weight distance-1 mean. Criterion B is the equal-weight log-distance contrast with weights [0.375, 0.125, -0.125, -0.375] at distances [1, 2, 4, 8]. A model-level intersection-union p-value is max(p_A, p_B), requiring both distance-1 recurrence and positive attenuation evidence.",
+    "distance_contrast_weights": [
+      0.375,
+      0.125,
+      -0.125,
+      -0.375
+    ],
+    "familywise_alpha": 0.05,
+    "fixed_reference_family": "sky",
+    "hypothesis_family": [
+      "gemma2_2b_it",
+      "gemma3_4b_it",
+      "mistral7b_instruct_v03",
+      "gemma3_12b_it"
+    ],
+    "id": "distance1_recurrence_intersection_logdistance_attenuation",
+    "intersection_union_p_value": "max_distance1_and_attenuation_component_p_values",
+    "multiplicity": "holm_on_four_model_level_intersection_union_p_values",
+    "p_value": "(1 + count(T_randomized >= T_observed)) / 20000",
+    "randomization_draws": 19999,
+    "randomization_null": "independent_within_family_slot_label_permutation",
+    "rng": "numpy.random.PCG64",
+    "seed": 20260831,
+    "synchronized_across_carriers_distances_and_depths": true
+  },
+  "primary_results": {
+    "gemma2_2b_it": {
+      "attenuation_component": {
+        "excess_over_null_mean": -0.002907004515877963,
+        "greater_equal_count": 15417,
+        "null_mean": -0.000010762913549594684,
+        "null_median": 0.0001312655580700983,
+        "raw_p": 0.7709,
+        "statistic": -0.0029177674294275577
+      },
+      "carrier_distance_profile": [
+        [
+          0.19394223843708477,
+          0.19515361903268139,
+          0.2023038423893925,
+          0.19679521959961419
+        ],
+        [
+          0.1933606408026433,
+          0.1958397206141497,
+          0.20084218976891996,
+          0.20201818842656713
+        ]
+      ],
+      "distance1_component": {
+        "excess_over_null_mean": -0.006375272428160272,
+        "greater_equal_count": 15305,
+        "null_mean": 0.20002671204802436,
+        "null_median": 0.19967055863071997,
+        "raw_p": 0.7653,
+        "statistic": 0.19365143961986409
+      },
+      "distance8_tail_secondary": {
+        "excess_over_null_mean": -0.0006465308795327307,
+        "greater_equal_count": 10146,
+        "null_mean": 0.2000532348926234,
+        "null_median": 0.19960531586291672,
+        "raw_p": 0.50735,
+        "statistic": 0.19940670401309066
+      },
+      "distance_profile": [
+        0.19365143961986403,
+        0.19549666982341554,
+        0.20157301607915623,
+        0.19940670401309066
+      ],
+      "holm_adjusted_p": 1.0,
+      "holm_reject": false,
+      "intersection_union_raw_p": 0.7709
+    },
+    "gemma3_12b_it": {
+      "attenuation_component": {
+        "excess_over_null_mean": -0.021029700188141726,
+        "greater_equal_count": 19514,
+        "null_mean": -0.000052891662836468085,
+        "null_median": 0.0000134976395598764,
+        "raw_p": 0.97575,
+        "statistic": -0.021082591850978195
+      },
+      "carrier_distance_profile": [
+        [
+          0.1890244696666342,
+          0.17870914306236949,
+          0.19929029533480994,
+          0.2604360809823744
+        ],
+        [
+          0.17707745175786224,
+          0.18601609793196044,
+          0.1864417197782001,
+          0.21110407227444566
+        ]
+      ],
+      "distance1_component": {
+        "excess_over_null_mean": -0.01691602062629438,
+        "greater_equal_count": 16515,
+        "null_mean": 0.19996698133854257,
+        "null_median": 0.19910557993623343,
+        "raw_p": 0.8258,
+        "statistic": 0.1830509607122482
+      },
+      "distance8_tail_secondary": {
+        "excess_over_null_mean": 0.03564751981651515,
+        "greater_equal_count": 808,
+        "null_mean": 0.2001225568118949,
+        "null_median": 0.19956160026757122,
+        "raw_p": 0.04045,
+        "statistic": 0.23577007662841004
+      },
+      "distance_profile": [
+        0.18305096071224822,
+        0.18236262049716498,
+        0.19286600755650501,
+        0.23577007662841004
+      ],
+      "holm_adjusted_p": 1.0,
+      "holm_reject": false,
+      "intersection_union_raw_p": 0.97575
+    },
+    "gemma3_4b_it": {
+      "attenuation_component": {
+        "excess_over_null_mean": -0.011782217922649373,
+        "greater_equal_count": 16902,
+        "null_mean": 0.0000546413612496962,
+        "null_median": 0.0004590587912363726,
+        "raw_p": 0.84515,
+        "statistic": -0.011727576561399677
+      },
+      "carrier_distance_profile": [
+        [
+          0.180378195465881,
+          0.21630703388849196,
+          0.15651869857839454,
+          0.18485856207694618
+        ],
+        [
+          0.19643511210359463,
+          0.19453264644833007,
+          0.2641345910881445,
+          0.25123061737675534
+        ]
+      ],
+      "distance1_component": {
+        "excess_over_null_mean": -0.011493395301483578,
+        "greater_equal_count": 15059,
+        "null_mean": 0.1999000490862214,
+        "null_median": 0.19875270262829375,
+        "raw_p": 0.753,
+        "statistic": 0.1884066537847378
+      },
+      "distance8_tail_secondary": {
+        "excess_over_null_mean": 0.018187306374005646,
+        "greater_equal_count": 3759,
+        "null_mean": 0.1998572833528451,
+        "null_median": 0.19860898405332525,
+        "raw_p": 0.188,
+        "statistic": 0.21804458972685076
+      },
+      "distance_profile": [
+        0.1884066537847378,
+        0.205419840168411,
+        0.21032664483326952,
+        0.21804458972685076
+      ],
+      "holm_adjusted_p": 1.0,
+      "holm_reject": false,
+      "intersection_union_raw_p": 0.84515
+    },
+    "mistral7b_instruct_v03": {
+      "attenuation_component": {
+        "excess_over_null_mean": 0.0007156996948038652,
+        "greater_equal_count": 9394,
+        "null_mean": -0.00004357599526952427,
+        "null_median": 0.00030346078338658046,
+        "raw_p": 0.46975,
+        "statistic": 0.000672123699534341
+      },
+      "carrier_distance_profile": [
+        [
+          0.38547045030945826,
+          0.4224915236456187,
+          0.37762520723943493,
+          0.35727367828136913
+        ],
+        [
+          0.38349464646344283,
+          0.4268994750434077,
+          0.4096488138582717,
+          0.4288124179577887
+        ]
+      ],
+      "distance1_component": {
+        "excess_over_null_mean": 0.184562871651686,
+        "greater_equal_count": 0,
+        "null_mean": 0.19991967673476452,
+        "null_median": 0.1994663809304949,
+        "raw_p": 0.00005,
+        "statistic": 0.3844825483864505
+      },
+      "distance8_tail_secondary": {
+        "excess_over_null_mean": 0.19303423798165056,
+        "greater_equal_count": 0,
+        "null_mean": 0.20000881013792834,
+        "null_median": 0.1991200312427161,
+        "raw_p": 0.00005,
+        "statistic": 0.3930430481195789
+      },
+      "distance_profile": [
+        0.3844825483864505,
+        0.4246954993445132,
+        0.3936370105488533,
+        0.3930430481195789
+      ],
+      "holm_adjusted_p": 1.0,
+      "holm_reject": false,
+      "intersection_union_raw_p": 0.46975
+    }
+  },
+  "prior_t5_reference": {
+    "analysis_receipt_sha256": "435dc5bd3187fde9594523e6dcb4bb0919343d409a2f31137f06ca4f2658f948",
+    "inferential_pooling": false,
+    "outcome_pattern": "no_model_distance_attenuation",
+    "primary_results": {
+      "gemma2_2b_4bit": {
+        "attenuation_component": {
+          "excess_over_null_mean": -0.0006120612246885354,
+          "greater_equal_count": 11464,
+          "null_mean": -0.000021797212949999392,
+          "null_median": 0.00010067343699723258,
+          "raw_p": 0.57325,
+          "statistic": -0.0006338584376385347
+        },
+        "carrier_distance_profile": [
+          [
+            0.19931067544969994,
+            0.20791498426928395,
+            0.20014773251119528,
+            0.1985408479815985
+          ],
+          [
+            0.2020029836713045,
+            0.21469015313067344,
+            0.2108051913174367,
+            0.21003746066392
+          ]
+        ],
+        "distance1_component": {
+          "excess_over_null_mean": 0.0006797855533744179,
+          "greater_equal_count": 8861,
+          "null_mean": 0.19997704400712782,
+          "null_median": 0.1997416307821645,
+          "raw_p": 0.4431,
+          "statistic": 0.20065682956050224
+        },
+        "distance8_tail_secondary": {
+          "excess_over_null_mean": 0.004278260776325177,
+          "greater_equal_count": 6566,
+          "null_mean": 0.20001089354643406,
+          "null_median": 0.19964648113889583,
+          "raw_p": 0.32835,
+          "statistic": 0.20428915432275924
+        },
+        "distance_profile": [
+          0.20065682956050224,
+          0.2113025686999787,
+          0.20547646191431598,
+          0.20428915432275926
+        ],
+        "holm_adjusted_p": 1.0,
+        "holm_reject": false,
+        "intersection_union_raw_p": 0.57325
+      },
+      "llama32_3b_bf16": {
+        "attenuation_component": {
+          "excess_over_null_mean": 0.006103604437497203,
+          "greater_equal_count": 3759,
+          "null_mean": 0.0000134371585752961,
+          "null_median": 0.00021498123705163824,
+          "raw_p": 0.188,
+          "statistic": 0.006117041596072499
+        },
+        "carrier_distance_profile": [
+          [
+            0.38736265850509827,
+            0.40426960899795655,
+            0.4082331881009599,
+            0.40087701289447775
+          ],
+          [
+            0.37125399032238376,
+            0.42409485557534604,
+            0.38347877876985653,
+            0.3373329133214464
+          ]
+        ],
+        "distance1_component": {
+          "excess_over_null_mean": 0.17927701012958447,
+          "greater_equal_count": 0,
+          "null_mean": 0.2000313142841566,
+          "null_median": 0.19868106784830863,
+          "raw_p": 0.00005,
+          "statistic": 0.37930832441374107
+        },
+        "distance8_tail_secondary": {
+          "excess_over_null_mean": 0.16911398200897268,
+          "greater_equal_count": 0,
+          "null_mean": 0.1999909810989894,
+          "null_median": 0.19733356098021404,
+          "raw_p": 0.00005,
+          "statistic": 0.3691049631079621
+        },
+        "distance_profile": [
+          0.379308324413741,
+          0.41418223228665135,
+          0.3958559834354082,
+          0.3691049631079621
+        ],
+        "holm_adjusted_p": 0.5640000000000001,
+        "holm_reject": false,
+        "intersection_union_raw_p": 0.188
+      },
+      "olmo3_7b_bf16": {
+        "attenuation_component": {
+          "excess_over_null_mean": -0.016805302333944123,
+          "greater_equal_count": 19953,
+          "null_mean": 0.00002768033767108241,
+          "null_median": 0.00043636185064906965,
+          "raw_p": 0.9977,
+          "statistic": -0.016777621996273043
+        },
+        "carrier_distance_profile": [
+          [
+            0.4686687668952649,
+            0.5035759589829792,
+            0.512291838840277,
+            0.5602640508670748
+          ],
+          [
+            0.491807161997366,
+            0.5353818937311488,
+            0.5139400532401694,
+            0.4939345155502396
+          ]
+        ],
+        "distance1_component": {
+          "excess_over_null_mean": 0.2802157410583078,
+          "greater_equal_count": 0,
+          "null_mean": 0.20002222338800765,
+          "null_median": 0.19917992201704066,
+          "raw_p": 0.00005,
+          "statistic": 0.4802379644463155
+        },
+        "distance8_tail_secondary": {
+          "excess_over_null_mean": 0.3271441312030381,
+          "greater_equal_count": 0,
+          "null_mean": 0.19995515200561917,
+          "null_median": 0.19829200097584032,
+          "raw_p": 0.00005,
+          "statistic": 0.5270992832086573
+        },
+        "distance_profile": [
+          0.4802379644463155,
+          0.519478926357064,
+          0.5131159460402233,
+          0.5270992832086572
+        ],
+        "holm_adjusted_p": 1.0,
+        "holm_reject": false,
+        "intersection_union_raw_p": 0.9977
+      }
+    },
+    "public_manifest_sha256": "6a93c12f30653b48074bd4941ec731f492349cdac8340388f77a3b3ab345f407",
+    "role": "observed_design_motivation_and_descriptive_reference_only"
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-multifamily-dense-cuda-carrier-distance-v0",
+  "randomization_draws_per_model": 19999,
+  "randomization_seed": 20260831,
+  "schema_version": 1,
+  "status": "pass"
+}

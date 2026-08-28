@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -132,6 +132,19 @@ LlamaとOLMoの距離1成分のraw p値はいずれも`0.000050`だったが、I
 単調減衰、消失、持続時間、意味、機構、因果、確認、tokenizer非依存性、backend parity、
 cross-modelの大きさ比較は示さない。LlamaのMLX Stage-A parityも未資格のままである。
 
+## 現在のdense CUDA carrier-distance結果
+
+T6は、T5の観測endpoint全体を、選択した4つのBF16 Transformers/CUDA cellへprospectiveに
+固定した。Raw IUT p値はGemma 2 2B ITが`0.770900`、Gemma 3 4B ITが`0.845150`、
+Mistral 7B Instruct v0.3が`0.469750`、Gemma 3 12B ITが`0.975750`で、Holm補正後は
+すべて`1.000000`だった。登録済みpatternは`no_dense_model_distance_attenuation`である。
+
+Mistralの距離1成分はpermutation下限`0.000050`だったが、減衰成分は`p = 0.469750`だった。
+Mistralの距離8成分とGemma 3 12Bの名目的tailには、多重性判定の権限がない。RosterはT5後に
+選び、4 cellはすべてinstruction-tunedで、Gemma 3 4B・12Bも選択した1 pairにすぎない。
+したがってT6が加えるのはconjunctionに対する範囲を限ったdense負結果であり、確認、backend
+parity、tokenizer同等性、scale効果ではない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -144,6 +157,7 @@ cross-modelの大きさ比較は示さない。LlamaのMLX Stage-A parityも未�
 8. **RQ8 — Matched-slot geometry:** 固定した5 family格子で、matched-slot activation geometryはatomic-token cellと、厳密に同じ末尾slot tokenを共有するcellの両方に再現するか。
 9. **RQ9 — Common-suffix carryover:** 生の絵文字から厳密に1 token後ろの共通tokenにも、matched-slot geometryは観測できるか。
 10. **RQ10 — Carrier-distance attenuation:** 共通tokenを反復する固定carrierの距離1、2、4、8で、距離1のrecurrenceと、事前指定した正のlog-distance減衰contrastは両立するか。
+11. **RQ11 — Dense CUDA replication:** 固定したcarrier-distance conjunction全体は、選択した4つのdense instruction-tuned Transformers/CUDA cellでも成立するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -158,6 +172,9 @@ T5はRQ10の固定したmodel-level conjunctionに負の答えを与えた。Hol
 棄却しなかった。
 距離8とdistance × depthのpatternは、持続時間や特定layerの救済命題ではなく、副次記述に
 とどめる。
+T6もRQ11へ同じtop-levelの負回答を与えた。4 modelのIUTはHolm補正後に1つも通過しない。
+Mistralでは距離1成分が再現したが、減衰成分を棄却しなかった。T6がprospectiveなのは未観測
+だったT6自身のoutcomeに対してだけであり、T5の独立確認ではない。
 
 ## 予定する貢献
 
@@ -281,6 +298,9 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - T4の2接尾文脈は独立追試ではなく、1 tokenより先のcarryover距離を示さないこと
 - T5の主判定は負であり、距離8のtail値とdistance × depth interactionは多重性判定のない
   副次結果であること。LlamaのMLX Stage-A parityも未資格であること
+- T6でも固定conjunctionを通過したdense CUDA modelはないこと。Post-T5 roster、
+  instruction tuning、tokenizer差、Gemma 3の1 pairだけという設計から、確認、同等性、
+  scale効果を推定しないこと
 - C1 v1の完全な1レコードが、実験に使われないまま研究agentの文脈へ露出したこと。Bankは廃止済みで、将来の因果実験には新しいversionのbankが必要であること
 - v1 analyzerがCLI順序でroleを割り当て、別のinput-binding auditで凍結済み入力との対応を補ったこと
 - v1 bootstrapがprototypeをreplicate内で再構築せず、依存対応感度分析が事後的であること
@@ -303,6 +323,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   3地点の転送検証、public manifest
 - T5のGemma・Llama・OLMo activation array、observation、receipt、全120行joint
   analysis、検証済み転送receipt、public manifest
+- T6の4 model activation array、observation、receipt、全160行joint analysis、
+  lifecycle・開始gate証拠、検証済み返送receipt、public manifest
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 

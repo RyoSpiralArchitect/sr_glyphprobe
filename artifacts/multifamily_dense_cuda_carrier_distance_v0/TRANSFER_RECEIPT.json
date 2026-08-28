@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-multifamily-dense-cuda-carrier-distance-v0",
+  "freeze_commit": "5e2f4984486b5e5dc87b93f656d6e00bc8718baa",
+  "status": "pass",
+  "execution_start_gate": {
+    "furnace_status_rechecked_immediately_before_compute": true,
+    "competing_compute_process_observed": false,
+    "natural_receiver_owned_lifecycle_surface": {
+      "status": "observed",
+      "canonical_thread": "resource:furnace",
+      "message_id": "msg-20260828T001621834560Z-d67b870d42824b30a34d3ef780560a6a",
+      "receiver_host": "mac2",
+      "harness": "codex",
+      "hook_event": "Stop",
+      "surface_event": "surface-emitted",
+      "observed_at_utc": "2026-08-28T01:12:44.833064Z",
+      "receiver_local_metadata_inspected": true,
+      "message_content_retrieved": false,
+      "reply_observed": false,
+      "commitment_observed": false,
+      "six_task_local_deliveries_claimed": false
+    }
+  },
+  "freeze_package_transfer": {
+    "source_node": "mac2",
+    "destination_node": "furnace",
+    "transport": "verified_tar_gzip",
+    "archive_sha256": "0a188fdab780c417122b7441f21b10f2c3566abeb503ec7e0fab6c7e91e93078",
+    "source_destination_match": true,
+    "destination_frozen_asset_audit": "pass",
+    "freeze_manifest_sha256": "997389551df07922e8dcacfffa93a97a2ffb97a9da23e2e86fbc64c73a829f06"
+  },
+  "result_return_transfer": {
+    "source_node": "furnace",
+    "destination_node": "mac2",
+    "transport": "verified_spiral_pull",
+    "bundle_count": 5,
+    "payload_files_checked": 15,
+    "all_source_ledgers_verified_at_destination": true,
+    "bundles": {
+      "gemma2_2b_it": {
+        "validator": "pass",
+        "sha256sums_sha256": "5b9282578281866f9a3646bdd6554a3ef73b49f5354864205404bba5769d8547"
+      },
+      "gemma3_4b_it": {
+        "validator": "pass",
+        "sha256sums_sha256": "f7ce0205682be7c0983db7581bd3aead0031e9cdf07b5a28fe75d6d12429cabd"
+      },
+      "mistral7b_instruct_v03": {
+        "validator": "pass",
+        "sha256sums_sha256": "ed2892efd15a91b3c414cb4806bd286d7df3dd824dca725458a6656d491f3b89"
+      },
+      "gemma3_12b_it": {
+        "validator": "pass",
+        "sha256sums_sha256": "7c0b871c64375783b60485cb4e22e6f04fe4622db425ed6431b68eb9c712d6e2"
+      },
+      "joint_analysis": {
+        "validator": "pass",
+        "sha256sums_sha256": "356d944b184b410e217072ab39a75024a2f98f99eae70c0bf3a24fc9c910619f"
+      }
+    }
+  },
+  "claim_boundary": "This receipt proves the named natural task-lifecycle surface, start-gate observation, frozen-source archive identity, and destination verification of the five returned ledgers. It does not establish notification content retrieval, reply, commitment, six in-task deliveries, a scientific effect, model or method superiority, node equivalence, backend parity, tokenizer equivalence, scale or precision effects, confirmation, or Phase I paper-gate closure."
+}

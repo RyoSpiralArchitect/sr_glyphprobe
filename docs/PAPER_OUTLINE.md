@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -142,6 +142,22 @@ duration, persistence, semantics, mechanism, causality, confirmation,
 tokenizer independence, backend parity, or direct cross-model magnitude
 comparison. Llama's MLX Stage-A parity also remains unqualified.
 
+## Current dense CUDA carrier-distance result
+
+T6 prospectively retained T5's full observational endpoint in four selected
+BF16 Transformers/CUDA cells. The raw IUT p-values were `0.770900` for Gemma 2
+2B IT, `0.845150` for Gemma 3 4B IT, `0.469750` for Mistral 7B Instruct v0.3,
+and `0.975750` for Gemma 3 12B IT; all Holm-adjusted values were `1.000000`.
+The registered pattern is `no_dense_model_distance_attenuation`.
+
+Mistral's distance-1 component was at the `0.000050` permutation floor, but its
+attenuation component was `p = 0.469750`. Its distance-8 component and Gemma 3
+12B's nominal tail are secondary, without an authorized multiplicity decision.
+The roster was selected after T5, all four cells are instruction-tuned, and the
+Gemma 3 4B/12B pair is only one selected pair. T6 therefore adds a bounded dense
+negative replication of the conjunction, not confirmation, backend parity,
+tokenizer equivalence, or a scale effect.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -154,6 +170,7 @@ comparison. Llama's MLX Stage-A parity also remains unqualified.
 8. In a frozen five-family grid, does matched-slot activation geometry recur in an atomic-token cell and in a cell with an exact shared final slot token?
 9. Does the matched-slot geometry remain observable at a common token exactly one position after the raw glyph?
 10. Across fixed distances 1, 2, 4, and 8 in repeated common-token carriers, does distance-1 recurrence coexist with a prespecified positive log-distance attenuation contrast?
+11. Does that complete fixed carrier-distance conjunction recur in four selected dense instruction-tuned Transformers/CUDA cells?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -170,6 +187,10 @@ distance-1 component raw p-values at the permutation floor, but their
 attenuation components did not reject. Distance-8 and
 distance-by-depth patterns remain secondary descriptions rather than rescued
 duration or layer-specific claims.
+T6 gives the same top-level negative answer to question 11: none of its four
+model IUTs passed Holm. Mistral's distance-1 component recurred, but its
+attenuation component did not reject. T6 is prospective only for its own unseen
+outcomes and is not independent confirmation of T5.
 
 ## Planned paper structure
 
@@ -265,6 +286,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - report T5 as a separately frozen three-model carrier-distance result: no
   model passed the recurrence-plus-attenuation IUT, with all 120
   carrier-by-distance-by-depth rows visible and no subcell promoted;
+- report T6 as a separately frozen four-model dense CUDA result: no model
+  passed the same conjunction, with all 160 rows visible, Mistral's component
+  split retained, and no scale, tail, or depth subcell promoted;
 - duplicate confirmatory matrix in a second internal backend;
 - additional tokenizer or model family;
 - agreement and disagreement table;
@@ -294,6 +318,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
   selected-layer claim.
 - Llama's observational T5 cell does not qualify MLX parity; backend agreement
   remains an engineering gate rather than an inferred property of the result.
+- T6 repeats the negative conjunction across four selected dense CUDA cells,
+  but the post-T5 roster, instruction tuning, tokenizer differences, and single
+  Gemma 3 pair prevent confirmation, equivalence, or scale inference.
 - one complete C1 v1 record was exposed in a research-agent context without
   experimental use; the bank is retired, and future causal work requires a new
   versioned bank.
@@ -311,6 +338,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - complete T5 arrays for all three models, all 120
   carrier-by-distance-by-depth rows, joint analysis, verified transfer receipt,
   and public manifest.
+- complete T6 arrays for all four models, all 160 rows, joint analysis,
+  lifecycle/start-gate evidence, verified return receipt, and public manifest.
 
 ## Planned main figures
 

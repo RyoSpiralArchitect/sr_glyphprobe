@@ -1,6 +1,6 @@
 # GlyphProbe 研究ロードマップ
 
-[English](ROADMAP.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -286,8 +286,9 @@ gateの外に置き、T4は記述参照としてのみ使う。
 
 ### 観測side track T6 — Dense CUDA carrier-distance replication
 
-状態: protocolを含む公開commitでprospective freezeを完了する。Freeze時点のT6 model
-forwardは0で、運用上の実行gateは未通過である。
+状態: `no_dense_model_distance_attenuation`として完了した。Prospective freeze時点の
+T6 model forwardは0であり、その後、自然なlifecycleとfree-furnaceの開始gateを満たして
+実行した。
 
 - T5の公開panel、`" a"`と`" |"`の反復carrier、距離1・2・4・8、5つの相対深度、
   IUT、19,999 draw randomization、model-level Holm判定を変えない。
@@ -309,9 +310,17 @@ pairは記述的な設計構造であり、scale標本やbase/instruct比較で�
 要求する。Canonical replication、watcher到着、OS popupだけでは後者を満たさない。
 Probe、trust bypass、interruptで証跡を作らない。
 
-終了条件: 4つのsealed run、160 row joint analysis、transfer receipt、英日で境界を揃えた
-結果を公開する。Outcomeにかかわらず、T6単独では因果、確認、tokenizer非依存性、backend
-parity、model一般性、scaleの論文gateを閉じない。
+Holm補正後に通過したmodel-level IUTはない。Mistralは距離1成分をpermutation下限
+（`p = 0.00005`）で棄却したが、減衰成分は棄却しなかった（`p = 0.46975`）。他の3 cellは
+距離1を棄却していない。Mistralの距離8成分とGemma 3 12Bの名目的tailは副次結果のまま
+格上げしない。Gemma 3 pairからscale trendも推定しない。
+
+終了条件: 達成した。[全結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md)、
+4つのsealed run、160 row joint analysis、transfer receipt、public manifestを公開する。
+T6単独では因果、確認、tokenizer非依存性、backend parity、model一般性、scaleの論文gateを
+閉じない。Model幅の追加は優先度を下げ、別に凍結するstructure-breaking controlまたは
+距離×深度interactionへ移る。Phase I本線ではtokenization-matched controlsと未使用の
+confirmatory target setを優先する。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

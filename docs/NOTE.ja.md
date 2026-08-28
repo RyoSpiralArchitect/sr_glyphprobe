@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[English](NOTE.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -222,6 +222,34 @@ permutation下限で棄却したが、減衰p値はLlamaが`0.188`、OLMoが`0.9
 carrier×距離×深度row、失敗した主判定、3 nodeの転送証拠を公開した。これはtokenizer条件付きの
 geometryに関する観測証拠であり、絵文字の意味や因果的memoryではない。
 
+## 4つのdense CUDA cellでも、負のconjunctionが繰り返された
+
+T6はT5のendpoint全体を保ち、model rosterと実行cellを変えた。T6 forwardより前に、炉へ
+完備されたGemma 2 2B IT、Gemma 3 4B IT、Mistral 7B Instruct v0.3、Gemma 3 12B ITの
+4つのBF16 Transformers/CUDA roleを固定した。RosterはT5の後に選んだため、prospective
+なのは未観測だったT6自身のoutcomeに対してだけである。
+
+今回も通過modelはなかった。Gemma 2 2BとGemma 3の2 cellは、距離1でmatched null付近に
+残った。Mistralは異なり、距離1統計はnull平均約`0.2`に対して`0.3845`、permutation下限
+`0.00005`だった。しかし減衰p値は`0.46975`で、conjunctionは失敗した。4つのHolm補正済み
+IUT p値はすべて`1.0`で、登録済みoutcomeは`no_dense_model_distance_attenuation`である。
+
+この分岐は「大きいmodelほど効く」という標語より有益である。Mistralは距離8でも
+`0.3930`と記述的に高く、Gemma 3 12Bには名目的な副次tail p値`0.04045`があった。
+どちらにも多重性判定の権限はない。Gemma 3の4Bと12Bは観測tokenizer rosterを共有するが、
+選択した1 pairだけではscale lawを同定できない。4 cellはmodel familyとtokenizerが異なり、
+すべてinstruction-tunedなので、T6は独立確認でもbackend parity実験でもない。
+
+運用境界も守った。炉が空いていることを再確認し、現在の`resource:furnace`通知が自然な
+receiver-owned Codex lifecycle境界でsurfaceしてから計算した。通知本文は自動取得せず、返信、
+commitment、6 sessionへのdeliveryも主張しない。1,600 forward、4 array、160 profile row、
+validator、返送ledgerは[T6の全結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md)に
+まとめた。
+
+このphaseのendpointについては、model幅を十分に試した。次は同じartifact上で共有slot構造を
+壊すcontrolか、距離×深度interaction自体を事前固定する方が綺麗である。構造をほどかずに
+modelを追加しても、主に交絡を増やすことになる。
+
 ## より大きなモデルは、技術ゲートを通過しなかった
 
 E2では、新しい科学的な結果を見る前に、固定したLlama 3.2 3B BF16 cellへ同じ
@@ -281,6 +309,9 @@ T5からは、持続距離に関する負の結果が加わる。Gemma、Llama�
 再現と正のmodel-level減衰を同時に要求した登録済み検定を通過しなかった。LlamaとOLMoは
 距離8でも記述的には高いが、tailとdepth interactionは副次結果であり、持続、意味、機構の
 主張を認めない。
+T6でも、選択した4つのdense CUDA cellで同じ負のconjunctionが繰り返された。Mistralは強い
+recurrence成分を保ったが、固定した減衰成分を通らず、3つのGemma cellは距離1を棄却しない。
+Model scale、tokenizer同等性、backend parity、確認は示さない。
 
 ## 次は、因果プロトコルを凍結する
 
@@ -289,10 +320,10 @@ T5からは、持続距離に関する負の結果が加わる。Gemma、Llama�
 T2は完了しており、primary layerを動かして救済しない。5 familyへ広げる
 選択肢は、T2の判定に後付けせず、別protocolのT3として固定・完了した。T4もT3のsubcellを
 救済せず、1 token carryoverを事前に固定して検証した。T5は単純なmodel-level carrier距離
-減衰を固定し、その説明を棄却した。残る綺麗な選択肢は、距離×深度interactionの事前固定追試、
-同じartifact上で共有slot構造だけを壊すcontrol、より条件の近いmodel pairでtokenizer差の
-交絡をほどくこと、または一つの固定endpointを独立に再実装することである。いずれも新しい
-protocolを要する。
+減衰を固定し、その説明を棄却した。T6も選択した4つのdense CUDA cellで同じconjunctionを
+保ち、やはり通過modelはなかった。追加model幅の優先度は下がった。残る綺麗な選択肢は、
+距離×深度interactionの事前固定追試、同じartifact上で共有slot構造だけを壊すcontrol、または
+一つの固定endpointを独立に再実装することである。いずれも新しいprotocolを要する。
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
@@ -301,5 +332,7 @@ E2では、研究責任者がTransformers/MPS専用の科学経路を別に選�
 Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断、T2 non-recurrence、T3のtokenizer条件に沿う分岐、T4の1 token carryoverを、それぞれの主張境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
 T5で失敗した減衰endpointと、持続して見える完全な記述profileも同じ記録へ含める。都合のよい
 距離、carrier、深度へ差し替えてはならない。
+T6の4つのnon-rejection、Mistralの成分分岐、160 rowすべても記録へ含め、tail、深度、model
+pairを格上げしてはならない。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。

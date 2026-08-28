@@ -1,6 +1,6 @@
 # GlyphProbe research roadmap
 
-[日本語](ROADMAP.ja.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -415,8 +415,9 @@ reference only.
 
 ### Observational side track T6 — Dense CUDA carrier-distance replication
 
-Status: prospective freeze complete in the public commit containing the
-protocol; zero T6 model forwards at freeze. Operational execution gate pending.
+Status: complete with `no_dense_model_distance_attenuation`. The prospective
+freeze contained zero T6 model forwards; the natural lifecycle and free-furnace
+start gates were subsequently met before execution.
 
 - preserve T5's exact public panel, repeated `" a"` and `" |"` carriers,
   distances 1/2/4/8, five depth fractions, IUT, 19,999-draw randomization, and
@@ -441,10 +442,19 @@ receiver-owned lifecycle surface for the fresh `resource:furnace` notice.
 Canonical replication, watcher arrival, and an OS popup do not satisfy the
 lifecycle gate. No probe, trust bypass, or interruption may manufacture it.
 
-Exit condition: all four sealed runs, the 160-row joint analysis, transfer
-receipt, and bilingual bounded result are public. Regardless of outcome, T6
-does not itself close a causal, confirmatory, tokenizer-independent,
-backend-parity, model-general, or scale paper gate.
+No model-level IUT survived Holm. Mistral rejected the distance-1 component at
+the permutation floor (`p = 0.00005`) but not the attenuation component
+(`p = 0.46975`). The other three cells did not reject distance 1. Mistral's
+distance-8 component and Gemma 3 12B's nominal tail are secondary and remain
+unpromoted. The Gemma 3 pair does not identify a scale trend.
+
+Exit condition: met. The [complete result](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md),
+four sealed runs, 160-row joint analysis, transfer receipt, and public manifest
+are published. T6 does not close a causal, confirmatory, tokenizer-independent,
+backend-parity, model-general, or scale paper gate. Further model breadth is
+deprioritized in favor of a separately frozen structure-breaking control or
+distance-by-depth interaction, while the main Phase I path retains
+tokenization-matched controls and an untouched confirmatory target set.
 
 ### Milestone 3 — Targeted causal localization
 
