@@ -356,26 +356,33 @@ T7は、tokenization-matched controlsと未使用confirmatory setという本線
 
 ### 観測side track T8 — Mistral semantic atlas
 
-状態: T8 model forward前にfreezeした。次のstructure-breaking段階を、真に未実行の
-確認資源を残したまま再利用できるhigh-n取得へ変える。
+状態: reserveを未実行のまま保ち、記述的high-n atlasとして完了した。次の
+structure-breaking段階を、真に未使用の確認資源を残した再利用可能な取得へ変えた。
 
-- 固定tokenizerだけを使い、Unicode Emoji 17.0のfully-qualified・単一codepoint
-  1,184件をmodel forward 0でcensusする。
-- E1で既出の50件をcalibration、事前hashで選んだ未使用842件をdiscoveryとして取得し、
-  別の292件は未実行のまま残す。
-- glyph、Unicode名、`U+...` literalを、2 carrier、4つのcausal readout距離、9固定深度で
-  取得する。
-- 892 itemを独立検証できる28個のFP32 shardとして公開し、一意入力5,352本、activation
-  vector 192,672本を保持する。
-- furnaceにforeign compute PIDが現れたら次shard前で停止し、hash-validな完了shardだけを残す。
+- Model forward 0のcensusで、Unicode Emoji 17.0のfully-qualified・単一codepoint
+  1,184件を固定した。既出calibration 50件、事前hashで選んだdiscovery 842件、
+  `reserved_unrun` 292件である。
+- 最初のbatch-64取得は892-item gridを完走したが、固定batch-one recapture gateを
+  0/18で失敗した。閾値は変えず、失敗dataも記録へ残した。
+- 同じgridをbatch size 1でcanonicalに再取得した。Glyph、Unicode名、`U+...`の3 view、
+  2 carrier、4距離、9深度について、5,352 model call、検証済みFP32 shard 28個、
+  residual vector 192,672本を得た。別の18-case repeatはbit-exactだった。
+- Discovery 842件では、layer 31の等cell glyph→name top-1 retrievalが`0.136580`、
+  chanceが`0.001188`、glyph→codepointが`0.001188`だった。Layer 31の8つの
+  carrier×distance glyph/name cellはすべてchanceを上回った。
+- 結果後の感度解析でも、共通3-token prefixを持つ5-token glyph 760件と、glyph/nameの
+  token数が等しい43件でcontrastが残った。ただし完全token-isomorphic controlではない。
 
-Atlasにはprimaryな意味判定を置かない。固定した記述候補はcross-view retrieval/alignment、
-CKA/RDM対応、Unicode group/subgroup近傍純度、token構造層別である。後続protocolは
-calibration/discovery evidenceだけでendpointと多重性familyを一つ選び、その選択をfreezeした
-後に限って292件のreserveを初めてforwardする。
+Atlasにはprimaryな意味判定を置かなかった。完了した記述解析にはcross-view
+retrieval/alignment、CKA対応、Unicode group/subgroup近傍純度、carrier×distance cell、
+token構造層別を含む。単純なcodepoint identityとglyph長による説明は狭まったが、
+disentangleされた意味変数を同定してはいない。
 
-終了条件: 全28 shardが検証に合格し、compactなrun receiptを公開した時点で取得完了。
-取得だけでは、意味、tokenizer因果、確認、mechanism、model一般性、Phase I gateを閉じない。
+終了条件: 達成した。Canonical 28 shardはすべて検証済みで、失敗した高速経路、bit-exactな
+canonical validation、compactな公開evidenceを保持する。次のprotocolはcalibration/discovery
+evidenceだけからendpointと多重性familyを一つ選び、freezeした後に限り、292件のreserveを
+一度だけforwardする。T8単独では、意味、tokenizer因果、確認、mechanism、model一般性、
+Phase I gateを閉じない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

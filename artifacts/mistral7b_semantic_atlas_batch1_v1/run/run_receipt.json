@@ -1,0 +1,91 @@
+{
+  "acquired_item_count": 892,
+  "activation_dtype": "float32",
+  "axis_order": [
+    "item",
+    "view",
+    "carrier",
+    "distance",
+    "layer",
+    "width"
+  ],
+  "batched_model_forward_calls": 5352,
+  "candidate_counts": {
+    "calibration_prior_exposed": 50,
+    "discovery_unseen": 842,
+    "reserved_unrun": 292
+  },
+  "carrier_order": [
+    "article_a",
+    "pipe"
+  ],
+  "causal_readout_vectors": 192672,
+  "claim_boundary": "Canonical batch-size-one recapture of exactly the same 892 acquired items, views, carriers, distances, and layers after the prespecified batch-64 versus batch-1 engineering validation failed. The change responds only to that numeric equivalence failure. It does not touch the 292-item reserve, define a semantic decision, or authorize confirmatory, causal, mechanistic, model-general, or Phase I claims. The failed batch-64 atlas is retained.",
+  "confirmatory_status": false,
+  "distance_order": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "experiment_role": "canonical_batch1_recapture_after_prespecified_batch64_validation_failure",
+  "freeze_manifest_sha256": "0e4ef37ff2344530f6dd914089abdb4431a66023ec616f94957de6d97d46cd2c",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "layers": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    28,
+    31
+  ],
+  "phase_i_gate_closed": false,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-batch1-v1",
+  "raw_activations_committed_to_git": false,
+  "reserved_unrun_item_count": 292,
+  "reserved_unrun_model_inputs_forwarded": 0,
+  "schema_version": 1,
+  "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "shard_count": 28,
+  "shard_ledger_sha256": {
+    "shard_0000": "784d281eb088779b30dfdb044d3afc8daadeda98c619b22de8b934301cd27359",
+    "shard_0001": "65a3a0c642e06ae6ba1dc061f31cb0f357600b717ce52ea0df6b747186b42f37",
+    "shard_0002": "fa5ef104e44a4c7be7e16fdbced0ac5e0eada93de5099feb9a3a1408430062a7",
+    "shard_0003": "98dd0ff68c4e37a3edcfc18abfdca1478c69297f31121180d7b8ade13cb0c5a8",
+    "shard_0004": "b67c8aec7d2d4c30afb91e68002c55529eb50c820e63f8d5769d3e55188ce95c",
+    "shard_0005": "a31d7bb62a229b99a38a4ad450d217a862354f03bccd59a67b8faf8eb0f51a22",
+    "shard_0006": "565ce9c3d9e6a0affb6913bfca1ceca08510847c62576d3b7325fd5e5aea6264",
+    "shard_0007": "e5d9ccb74204edb67089bdf9b6e36385085aaabdbef8cd3235adc3d32fda3765",
+    "shard_0008": "afdaf43dfe5324252bd331e5ad028a85667d57e6b7614e83258ae243cbb39ac3",
+    "shard_0009": "9b66833cae386cc13f503416a0c21a4ea4a48f34b4a7611954bc3967d6ce09a9",
+    "shard_0010": "c9ef4da1dc5b51839e7aaf6f0c5a3517174e86f82735694a4e9252e8e3893656",
+    "shard_0011": "6f5ac9aadbe791e4126fa0924e2c7504b9c183749605451ccf35b701a776cacf",
+    "shard_0012": "bfb7b4785083ba72bf8da5a977ae2716830281d682453ecbd098b20a699d6120",
+    "shard_0013": "71c9caf5adf94eb4826de358cd7c1c110234db701332ff19c58bb90635b64815",
+    "shard_0014": "5eff82128714a96d5952299ba908781c772837c26e1af07517aafe0923d3f1f5",
+    "shard_0015": "644dc15efe4675ff40e0d71bc7dfabbf139657e5bb050c5155742d3d0cef6c1a",
+    "shard_0016": "1c76da3cfea77a1387cd5d65271f8f35df3721e25a06b05ae4bf971eba01f554",
+    "shard_0017": "8ded8f300a9422751adb4eb2ad2c3bdeb2d36c9f384aa1344089f938d338cd5c",
+    "shard_0018": "dcc96276a4a158dabc2822c99aff4c3b721cd0d55fc6a3d4a70ab9c17b99d3c2",
+    "shard_0019": "7fb8e7a1517cd0364e4d0f7dee3adb293697c304d461484bf0d1606c17dd88fc",
+    "shard_0020": "1e652d6c64dbee89fdcd0a68b061be4772a6264db750be431b74f6cbab26909a",
+    "shard_0021": "0d72dac88b57920b6a38a969fb90a7f6398ef53d7801d61cb3faf0120bbeb134",
+    "shard_0022": "0d00de6a3eb2076c2f9879d787645e68c8929a9aaf8fd2dcbc3e4d3031314fcf",
+    "shard_0023": "9a1f235858a698031393ce3f0e3b20db2a06c3db45aa4115d44ae1f4b6c5f53d",
+    "shard_0024": "954a0e058fac6f3aa90f3e286625f115bd83eddfd1bdd70a843ddf487ddb8e23",
+    "shard_0025": "5bc9ac4e0293e590140c6824815fd84b3f106527ade8e5dcbe9b2c395ea9118f",
+    "shard_0026": "367e476b6e3200232a7703a0a84122a965bb253515ad64a485b90436796b841a",
+    "shard_0027": "23bed172df9ed204f0807a9b611eddb46e2daeb6fa35d24b1449548420ddc619"
+  },
+  "status": "pass",
+  "unique_input_sequences": 5352,
+  "view_order": [
+    "glyph",
+    "unicode_name",
+    "codepoint_literal"
+  ]
+}

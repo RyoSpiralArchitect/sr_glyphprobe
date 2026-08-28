@@ -499,31 +499,41 @@ tokenization-matched-control and untouched-confirmatory-set priorities.
 
 ### Observational side track T8 — Mistral semantic atlas
 
-Status: frozen before any T8 model forward. T8 converts the next
-structure-breaking step into a reusable, high-n acquisition while preserving a
-genuinely unrun confirmation resource.
+Status: complete as a descriptive high-n atlas with the reserve still unrun.
+T8 converted the next structure-breaking step into a reusable acquisition while
+preserving a genuinely untouched confirmation resource.
 
-- census all 1,184 fully-qualified single-codepoint Unicode Emoji 17.0 entries
-  with the pinned tokenizer and zero model forwards;
-- retain 50 prior-exposed E1 items as calibration, acquire 842 prospectively
-  hash-selected discovery items, and leave 292 hash-selected items unrun;
-- acquire exact glyph, Unicode-name, and `U+...` literal views through two
-  carriers, four causal readout distances, and nine fixed depths;
-- publish 892 items as 28 independent FP32 shards, totaling 5,352 unique input
-  sequences and 192,672 activation vectors; and
-- stop before the next shard when a foreign furnace compute PID appears, while
-  retaining only complete hash-valid shards.
+- The zero-forward census fixed all 1,184 fully-qualified single-codepoint
+  Unicode Emoji 17.0 entries: 50 prior-exposed calibration items, 842
+  prospectively hash-selected discovery items, and 292 `reserved_unrun` items.
+- The initial batch-64 acquisition completed the 892-item grid but failed the
+  frozen batch-one recapture gate 0/18. The thresholds were retained and the
+  failed data remain part of the record.
+- The exact grid was recaptured canonically at batch size one: 5,352 model
+  calls, 28 validated FP32 shards, and 192,672 residual vectors across glyph,
+  Unicode-name, and `U+...` views, two carriers, four distances, and nine depths.
+  A separate 18-case repeat was bit-exact.
+- On 842 discovery items, equal-cell layer-31 glyph-to-name top-1 retrieval was
+  `0.136580` against chance `0.001188`; glyph-to-codepoint retrieval was
+  `0.001188`. All eight layer-31 carrier-by-distance glyph/name cells remained
+  above chance.
+- A post-outcome sensitivity retained the contrast among 760 five-token glyphs
+  with one common three-token prefix and among 43 items with equal glyph/name
+  token counts. It is not a fully token-isomorphic control.
 
-The atlas has no primary semantic decision. Its fixed descriptive options
-include cross-view retrieval/alignment, CKA/RDM correspondence, Unicode
-group/subgroup neighborhood purity, and token-structure strata. A later
-protocol must choose one endpoint and multiplicity family using only
-calibration/discovery evidence, freeze that choice, and only then forward the
-292-item reserve.
+The atlas had no primary semantic decision. Its complete descriptive analysis
+includes cross-view retrieval/alignment, CKA correspondence, Unicode
+group/subgroup neighborhood purity, carrier/distance cells, and token-structure
+strata. It narrows simple codepoint-identity and glyph-length accounts but does
+not identify a disentangled semantic variable.
 
-Exit condition: acquisition is complete only when all 28 shards validate and a
-compact run receipt is published. Acquisition alone cannot close semantic,
-tokenizer-causal, confirmatory, mechanistic, model-general, or Phase I gates.
+Exit condition: met. All 28 canonical shards validated, the failed fast path and
+bit-exact canonical validation are retained, and a compact public evidence
+bundle is published. The next protocol must choose one endpoint and
+multiplicity family using only calibration/discovery evidence, freeze that
+choice, and only then forward the 292-item reserve exactly once. T8 alone closes
+no semantic, tokenizer-causal, confirmatory, mechanistic, model-general, or
+Phase I gate.
 
 ### Milestone 3 — Targeted causal localization
 

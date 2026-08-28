@@ -1,0 +1,35 @@
+{
+  "analysis_role": "post_outcome_token_structure_sensitivity_no_decision",
+  "capture_validation_sha256": "52367403f7dfd99c2390498f7c005b29fd555e673dab4231f4983b125cab51d2",
+  "cell_row_count": 576,
+  "common_glyph_prefix3": [
+    29473,
+    1011,
+    930
+  ],
+  "common_glyph_token_count": 5,
+  "confirmatory_status": false,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "layer_summary_row_count": 72,
+  "minimum_prespecified_stratum_size": 20,
+  "model_forward_calls": 0,
+  "outcome_known_before_exact_sensitivity_design": true,
+  "phase_i_gate_closed": false,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-batch1-v1",
+  "reserved_unrun_model_inputs_forwarded": 0,
+  "schema_version": 1,
+  "scientific_decision_authorized": false,
+  "source_run_receipt_sha256": "644fcd88c27999af2a5a011c1ba4748e2f78efb79d978dedf7a8118b8335de72",
+  "status": "pass",
+  "stratum_counts": {
+    "glyph5_codepoint_tokens_6": 180,
+    "glyph5_codepoint_tokens_7": 573,
+    "glyph5_common_prefix3_all": 760,
+    "glyph5_name_tokens_1": 105,
+    "glyph5_name_tokens_2": 257,
+    "glyph5_name_tokens_3": 213,
+    "glyph5_name_tokens_4": 111,
+    "glyph5_name_tokens_5_equal_view_length": 43
+  }
+}

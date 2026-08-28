@@ -1,0 +1,40 @@
+{
+  "analysis_role": "post_acquisition_descriptive_no_decision",
+  "cell_row_count": 144,
+  "centering": "subtract_feature_mean_across_items_separately_per_view_population_cell",
+  "confirmatory_status": false,
+  "cosine_normalization": "row_l2_after_centering",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "item_row_count": 64224,
+  "knn_k": 10,
+  "layer_summary_row_count": 18,
+  "layer_summary_weighting": "equal_weight_over_two_carriers_and_four_distances",
+  "model_forward_calls": 0,
+  "pair_order": [
+    "glyph_name",
+    "glyph_codepoint",
+    "name_codepoint"
+  ],
+  "phase_i_gate_closed": false,
+  "population_counts": {
+    "calibration_prior_exposed": 50,
+    "discovery_unseen": 842
+  },
+  "population_order": [
+    "calibration_prior_exposed",
+    "discovery_unseen"
+  ],
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-v0",
+  "reserved_unrun_model_inputs_forwarded": 0,
+  "retrieval_tie_rule": "strictly_greater_similarity_determines_rank",
+  "schema_version": 1,
+  "scientific_decision_authorized": false,
+  "source_run_receipt_sha256": "ae6d359ca310918171283765e9f68c8a4e18bc13d9faa7718792bc52692b9428",
+  "status": "pass",
+  "view_order": [
+    "glyph",
+    "unicode_name",
+    "codepoint_literal"
+  ]
+}

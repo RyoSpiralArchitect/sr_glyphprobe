@@ -315,6 +315,31 @@ FP32の適格性も、50絵文字の科学gridも許可しない。
 [Stage A3の全結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md)では、この技術上の
 no-goを、Llamaや絵文字に関する主張と明確に分けている。
 
+## T8: 大規模atlasによって次の意味問題を検定可能にする
+
+T8では、将来の確認集合を消費せず、空いたfurnace時間を広い取得に使った。Model forward 0の
+censusで、fully-qualified単一codepoint emoji 1,184件を、既出calibration 50件、未使用
+discovery 842件、決定的なreserve 292件へ分けた。取得gridは、glyph、Unicode正式名、
+`U+...` literalの3表現と、2 carrier、4 readout距離、9深度を交差させた。
+
+速く完走したことだけを理由に最速runは採用しなかった。Batch size 64はgridを短時間で
+完了したが、固定したbatch-one recapture 18 caseすべてに失敗した。閾値と失敗記録を残し、
+同じ892件を5,352回のbatch-one callで再取得した。28 shardはすべて検証に合格し、別の
+18-case repeatはbit-exactだった。このためcanonicalなのはbatch-one atlasである。失敗した
+batch-64 runのaggregate profileが近いことは、vector-level不一致を修復しない。
+
+Discovery patternは、真の確認stepを設計する価値があるほど強い。Layer 31の平均
+glyph→name top-1 retrievalは`0.136580`、chanceは`0.001188`、glyph→codepointは
+`0.001188`だった。厳密に5 tokenで共通3-token prefixを持つ760 glyphへ限定しても、
+glyph/name token数が等しい43件へ限定してもcontrastは残った。ただし、この層別は主結果を
+見た後に指定している。確認ではなく、完全token-isomorphicでもない感度解析である。
+
+したがって重要な変化は実験設計にある。292件のreserveを初めてforwardする前に、後期深度の
+glyph/name-versus-codepoint retrieval候補と限定した多重性familyを固定できる段階へ進んだ。
+そのprospective stepまでは、atlasはalignment候補の証拠であり、絵文字の意味、因果mechanism、
+Phase I gateの証明ではない。[T8の全結果](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)に、
+完全な深度profile、control、evidence hashをまとめている。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。

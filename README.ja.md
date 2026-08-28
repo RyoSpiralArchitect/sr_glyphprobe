@@ -198,15 +198,16 @@ claimは認めない。詳細は[全結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V
 
 ### Mistral 7B semantic atlas T8の現在地
 
-T8は確認的な意味検定ではなく、大規模な観測取得としてfreezeした。Unicode Emoji 17.0の
-tokenizer-only censusから、fully-qualifiedかつ単一codepointの1,184件を得た。既存E1の
-50件はcalibration、hashで選んだ未使用842件はdiscovery、別の292件はmodel forward 0の
-`reserved_unrun`として保持する。
+T8は確認的な意味検定ではなく、大規模な観測atlasとして完了した。最初のbatch-64取得は
+固定batch-one equivalenceを0/18で失敗したため、閾値を変えず、同じ892-item gridを
+batch size 1でcanonicalに再取得した。28 shard、FP32 vector 192,672本はすべて検証に通り、
+独立18-case repeatはbit-exact。292-item reserveは現在もmodel forward 0である。
 
-取得はglyph、Unicode正式名、`U+...` literalの3 viewを、2 carrier、4距離、9固定深度で
-保存する。取得892件、一意入力5,352本、FP32 vector 192,672本である。独立hashを持つ28
-shardにより、furnace競合時にも完了分を失わずyieldできる。詳細は
-[固定protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md)に示す。
+未使用discovery 842件で、layer 31の等cell glyph→正式名top-1 retrievalは`0.136580`、
+chanceは`0.001188`。Glyph→`U+...`は`0.001188`だった。このcontrastは、共通3-token
+prefixを持つ5-token glyph 760件と、glyph/name token数が等しい43件でも残った。ただし
+記述的かつ一部post-outcomeのcontrolで、意味因果や確認ではない。詳細は[全結果](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)、
+[batch-one protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md)、[公開evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.ja.md)に示す。
 
 ### E2 技術検証の結果
 
@@ -337,6 +338,10 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Mistral 7B base 深度×距離 v0結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
 - [Mistral 7B base 深度×距離 v0](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 - [Mistral 7B semantic atlas v0](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.md)
+- [Mistral 7B semantic atlas batch-one v1結果](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md)
+- [Mistral 7B semantic atlas batch-one v1](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md)
+- [Mistral 7B semantic atlas解析計画](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md)
+- [Mistral 7B semantic atlas token感度](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -353,7 +358,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T7ではMistral 7B baseの固定した距離1反復と初期−後期深度interactionがともに棄却されたが、T6後に選択した関連checkpointの1 cellであり、独立確認やinstruction tuning効果ではない。T6とT7は、scale、確認、backend parityのclaimを持たない。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性を事前に扱います。因果検証、claim-matchedな独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T7ではMistral 7B baseの固定した距離1反復と初期−後期深度interactionがともに棄却されたが、T6後に選択した関連checkpointの1 cellであり、独立確認やinstruction tuning効果ではない。T8ではbatch-one検証済みの842件discovery atlasを完了し、model forward 0のreserve 292件を保持した。将来prospectiveにfreezeできる後期深度glyph/name-versus-codepoint endpoint候補を得たが、まだ探索的で、意味や確認のgateを閉じない。T6〜T8は、scale、確認、backend parityのclaimを持たない。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性を事前に扱います。因果検証、claim-matchedな独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

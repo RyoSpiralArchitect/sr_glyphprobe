@@ -353,6 +353,40 @@ run the full cross-backend parity families, so it did not qualify FP32 or
 authorize the 50-emoji science grid. The [Stage-A3 result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 keeps this engineering no-go separate from any claim about Llama or emoji.
 
+## T8: a large atlas makes the next semantic question testable
+
+T8 used the free furnace window to acquire breadth without spending the future
+confirmation set. A zero-forward census divided 1,184 fully-qualified
+single-codepoint emoji into 50 prior-exposed calibration items, 842 unseen
+discovery items, and 292 deterministic reserve items. The acquired grid crossed
+three representations—glyph, official Unicode name, and `U+...` literal—with
+two carriers, four readout distances, and nine depths.
+
+The fastest run was not accepted merely because it finished. Batch size 64
+completed the grid quickly but failed every one of the 18 fixed batch-one
+recapture cases. We kept the thresholds and the failure, then reacquired the
+same 892 items with 5,352 batch-one calls. All 28 shards validated, and the
+separate 18-case repeat was bit-exact. This makes the batch-one atlas canonical;
+the close aggregate profile of the failed batch-64 run does not repair its
+vector-level mismatch.
+
+The discovery pattern is strong enough to motivate a real confirmation step.
+At layer 31, mean glyph-to-name top-1 retrieval was `0.136580`, compared with
+chance `0.001188`, while glyph-to-codepoint retrieval was `0.001188`. The
+contrast remained after restricting to 760 glyphs with exactly five tokens and
+one common three-token prefix, and in the 43-item stratum with equal glyph/name
+token counts. These restrictions were specified after seeing the main result;
+they are sensitivity analyses, not confirmation or a fully token-isomorphic
+control.
+
+The useful change is therefore at the design level. We now have a concrete
+late-depth glyph/name-versus-codepoint retrieval candidate that can be frozen,
+with a bounded multiplicity family, before the 292 reserve items receive their
+first forward pass. Until that prospective step, the atlas is evidence of an
+alignment candidate—not proof of emoji meaning, a causal mechanism, or a
+Phase I gate. The [complete T8 result](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md)
+keeps the full depth profile, controls, and evidence hashes together.
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
