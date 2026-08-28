@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -176,6 +176,29 @@ item-level correct-name alignment at late depth. It may not call this human
 emoji meaning, semantic causality, uniform global-geometry superiority,
 tokenizer independence, behavioral relevance, or model generality.
 
+## Current T10 cross-model replication result
+
+T10 held the T9 population and transport fixed across nine prospectively
+frozen model/tokenizer cells. Every model passed the statistical IUT between
+the unrestricted and exact three-view token-count-matched components. The four
+core p-values were each `0.00005`, so the `r = 3` of `m = 4` Bonferroni partial
+conjunction passed with `p = 0.0001`.
+
+The registered primary was still negative. Only Llama 3.2 3B base and Qwen 2.5
+7B base met the `0.02` practical minimum in both components; OLMo 2 1B base and
+Gemma 2 2B IT did not, leaving `2/4` practical core passes where `3/4` were
+required. Across the nine-cell Holm family, the bounded passes were Llama 3.2
+3B base, Qwen 2.5 7B base, and Mistral 7B Instruct v0.3.
+
+Exact token-count matching retained 281--287 items per tokenizer and did not
+erase the contrast. This narrows one token-length account but does not establish
+tokenizer independence. The raw-block endpoint, four-point Qwen profile, and
+related Mistral-Instruct result are descriptive only. The paper must preserve
+the registered wording
+`cross_model_replication_not_established_under_frozen_rule` and must not infer
+scale, tuning, semantics, causality, independent replication, or model
+generality.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -190,6 +213,7 @@ tokenizer independence, behavioral relevance, or model generality.
 10. Across fixed distances 1, 2, 4, and 8 in repeated common-token carriers, does distance-1 recurrence coexist with a prespecified positive log-distance attenuation contrast?
 11. Does that complete fixed carrier-distance conjunction recur in four selected dense instruction-tuned Transformers/CUDA cells?
 12. Does the fixed layer-31 glyph/name-versus-codepoint retrieval contrast reproduce across every carrier-distance cell in a deterministic untouched Mistral reserve?
+13. Does that same returned-final-state retrieval contrast meet both the statistical and practical replication rules in at least three of four frozen core model/tokenizer cells after exact token-count matching?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -215,6 +239,11 @@ reserve items were acquired once, and every carrier-distance contrast exceeded
 the practical floor while the global minimum statistic reached the permutation
 floor. This is untouched-target replication within one model and layer, not
 independent model-family replication.
+T10 gives a negative answer to question 13 under its frozen combined rule. The
+partial conjunction passed statistically, and matching did not erase the
+contrast, but only two of four core cells passed the practical floor. The
+result is mixed evidence across a fixed roster, not an independent-replication,
+scale, tuning, semantic, causal, or model-general claim.
 
 ## Planned paper structure
 
@@ -364,6 +393,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
   and public manifest.
 - complete T6 arrays for all four models, all 160 rows, joint analysis,
   lifecycle/start-gate evidence, verified return receipt, and public manifest.
+- T8/T9 discovery and reserve evidence, followed by T10's nine compact
+  prediction sets, complete cell metrics, run/summary/session receipts,
+  nested shard-ledger bindings, independent recomputation, and checksummed
+  external 1,212,819,072-byte raw-activation archive.
 
 ## Planned main figures
 
@@ -385,6 +418,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 11. T5 model-level IUT components and complete distance-by-depth profiles,
     separating the sole primary decisions from descriptive distance-8 tails and
     depth interactions.
+12. T10 unrestricted-versus-matched minimum contrasts for all nine cells,
+    separating the statistical partial conjunction from the failed practical
+    core-count rule; the Qwen ladder and raw-block endpoint remain secondary.
 
 ## Planned main tables
 
@@ -403,6 +439,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 10. T5 distance-1, attenuation, IUT, and Holm results for all three models plus
     all 120 secondary rows, labeled exploratory, observational, and
     non-confirmatory.
+11. T10 model-cell minima, IUT and Holm values, core partial conjunction,
+    practical core count, matched item coverage, and explicit negative primary.
 
 ## Claim table
 
@@ -424,7 +462,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | T4 common-suffix carryover proves semantics or a causal mechanism | not supported | require identified interventions and near-matched controls; short-range structured-prefix propagation remains sufficient |
 | Matched-slot recurrence follows the fixed simple carrier-distance attenuation profile | not supported; no T5 model passed the recurrence-plus-attenuation IUT after Holm correction | retain `no_model_distance_attenuation` as a bounded negative result; do not replace the primary with a distance, carrier, or depth subcell |
 | Llama or OLMo distance-8 values prove persistence, duration, meaning, or mechanism | not supported; tail and depth-interaction values are secondary without multiplicity decisions | require a new prospectively powered duration or mechanism assay and independent backend qualification |
-| The GPT-2 fingerprint result generalizes across models | not established by T2, which used a different endpoint and confounded cells | claim-matched cross-model replication |
+| The T9 returned-final-state item/name alignment meets the frozen cross-model replication rule | not established by T10; the statistical partial conjunction passed, but only two of four core cells met the practical floor | preserve the negative primary; require a newly justified independent replication for any stronger final claim |
+| Exact token-count matching removes the T10 item/name contrast | not supported; all nine matched components remained significant and close to the unrestricted minima | retain the bounded token-count result without calling it tokenizer independence |
+| The monotone T10 Qwen profile establishes a scale law | not supported; four checkpoint cells are descriptive and size remains confounded | require a dedicated size-identification design |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
 ## Statistical commitments
@@ -452,6 +492,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
   authorized decisions. The distance-1 and attenuation component p-values are
   constituent gates; all carrier-, distance-, depth-, tail-, and T4-comparison
   values are secondary and cannot replace the conjunction.
+- T10's sole cross-model decision combines the four-core partial conjunction
+  with the `3/4` practical count. The nine model IUTs and Holm family authorize
+  only bounded cell statements; extension cells, the raw-block endpoint, Qwen
+  ladder, and related Mistral-Instruct comparison cannot rescue the primary.
 
 ## Remaining paper gates
 
@@ -473,6 +517,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - preserve the completed T5 boundary: do not infer duration, monotonic decay,
   disappearance, or a selected distance/depth effect from its failed primary
   attenuation conjunction or its secondary profiles.
+- preserve the completed T10 boundary: do not lower the practical floor,
+  replace a core cell, promote an extension cell, or relabel the Qwen and
+  Mistral secondary profiles as scale, tuning, or independent replication.
 
 No full manuscript is claimed at this stage. The English paper remains the Phase I endpoint.
 

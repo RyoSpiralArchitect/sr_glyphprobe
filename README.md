@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -270,21 +270,31 @@ not a semantic-causal or model-general result. See the [confirmation result](doc
 
 ### Semantic atlas T10 status
 
-T10 is now frozen before any selected-model forward. All nine exact revisions
-passed artifact completeness and tokenizer preflight, including resolution of
-every index-referenced weight shard and 281--287 exact-stratum items per cell.
-The protocol retains the same 292 items, three views, two carriers, four
-distances, and batch-one transport across nine model/tokenizer cells. Every model
-must pass both an all-item randomization component and an exact three-view
-token-count-stratified component. The sole cross-cell primary is a Bonferroni
-partial-conjunction test requiring evidence in at least three of four core
-cells, plus the practical floor in at least three core cells.
+T10 is complete with the registered negative outcome
+`cross_model_replication_not_established_under_frozen_rule`. All nine exact
+model/tokenizer cells completed the same 292 items, three views, two carriers,
+four distances, and batch-one transport: 333 shards, 15,768 model forwards,
+and 126,144 FP32 readout vectors in total.
+
+Every model-cell IUT was statistically significant after comparing the all-item
+component with an exact three-view token-count-stratified component. The four
+core p-values were each `0.00005`, yielding a Bonferroni partial-conjunction
+`p = 0.0001`. The frozen primary nevertheless failed because only Llama 3.2 3B
+base and Qwen 2.5 7B base cleared the `0.02` practical floor in both components;
+the rule required at least three of four core cells. Across all nine cells,
+Llama 3.2 3B base, Qwen 2.5 7B base, and Mistral 7B Instruct v0.3 passed the
+bounded Holm-plus-practical cell rule.
 
 An implementation audit also corrected the T8/T9 endpoint terminology:
 `output.hidden_states[-1]` is the returned final normalized hidden state, not
 the raw final decoder-block output. T10 preserves that API endpoint as primary
-and captures the raw block output as a non-rescuing secondary. See the
-[T10 protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md).
+and captures the raw block output as a non-rescuing secondary. Exact token-count
+matching retained 281--287 items and did not erase the contrast, but this does
+not establish tokenizer independence. The monotone four-point Qwen profile and
+the related Mistral-Instruct cell remain descriptive and do not authorize scale
+or tuning claims. See the [complete result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md),
+[frozen protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md), and
+[compact evidence](artifacts/semantic_atlas_cross_model_replication_v0/README.md).
 
 ### E2 engineering results
 
@@ -500,6 +510,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Mistral 7B semantic atlas reserve confirmation v0 results | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) |
 | Mistral 7B semantic atlas reserve confirmation v0 | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) |
 | Semantic atlas cross-model replication v0 | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md) | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md) |
+| Semantic atlas cross-model replication v0 results | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -516,7 +527,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. This closes the claim-specific Mistral alignment question, not a semantic, causal, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, and the one negative CKA contrast inside the positive T8 retrieval result. Causal testing, claim-matched independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. T10 kept that population and transport fixed across nine model/tokenizer cells. Its statistical partial conjunction passed, but its frozen practical replication rule failed at two of four core cells, so cross-model replication was not established. Exact token-count matching did not erase the contrast, while tokenization independence, scale, tuning, semantics, causality, and model generality remain unauthorized. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, the one negative CKA contrast inside the positive T8 retrieval result, and T10's statistical/practical split. Causal testing, an independent implementation or appropriately independent replication, and archival evidence remain paper gates.
 
 ## Validation
 

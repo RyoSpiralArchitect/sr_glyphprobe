@@ -395,6 +395,34 @@ causal mechanism, or model generality. The [discovery result](MISTRAL7B_SEMANTIC
 and [reserve confirmation](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md)
 retain both stages and their evidence hashes.
 
+## T10: statistical alignment did not become practical cross-model replication
+
+T10 asked the narrowest useful next question: if the T9 population, views,
+carriers, distances, batch rule, and returned final-state endpoint are held
+fixed, does the item-name retrieval contrast meet the same statistical and
+practical rule across multiple model/tokenizer cells? The model roster and
+decision were frozen before any selected-model forward.
+
+The answer split cleanly. All nine model-cell IUTs were statistically
+significant, and the four core cells produced a partial-conjunction
+`p = 0.0001`. Exact three-view token-count matching retained 281--287 items and
+left the minimum contrasts close to their unrestricted values. A token-count
+stratum mismatch therefore cannot explain the whole pattern.
+
+But significance was not the entire hypothesis. The practical floor required
+at least three of four core cells to have a minimum contrast of `0.02` in both
+components. Only Llama 3.2 3B base and Qwen 2.5 7B base did so. OLMo missed in
+the unrestricted component and Gemma missed in both. The registered outcome is
+therefore `cross_model_replication_not_established_under_frozen_rule`.
+
+That negative primary is more informative than a threshold repaired after the
+fact. It says that the direction of the alignment is widespread in this fixed
+assay, while its complete-grid magnitude is not yet robust across the frozen
+core roster. The monotone Qwen size profile, strong related Mistral-Instruct
+cell, and raw-block endpoint differences remain descriptive leads rather than
+scale, tuning, or mechanism claims. The [T10 result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md)
+keeps the statistical/practical split and all nine cells visible.
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
@@ -431,6 +459,11 @@ T7 prospectively tests the Mistral depth interaction in one previously unseen
 base checkpoint. Both frozen components reject, but the endpoint and related
 checkpoint were selected after T6. The result is neither an instruction-tuning
 effect nor independent confirmation and closes no Phase I gate.
+T10 adds a claim-matched nine-cell result. Exact token-count matching did not
+erase the observed contrast, but only two of four core cells met the frozen
+practical floor. It supports three bounded model/tokenizer-cell alignments and
+a negative cross-model primary, not tokenization independence, scale, tuning,
+semantics, causality, independent replication, or model generality.
 
 ## What comes next
 
@@ -455,6 +488,12 @@ model breadth is now lower priority. The clean remaining choices are a
 same-artifact control that breaks shared slot structure or a genuinely
 independent replication of the frozen interaction. Each requires a new
 protocol.
+
+T10 is also complete and must not be rescued by lowering its practical floor,
+replacing a core model, or promoting an extension cell. Its useful next branches
+are now explicit: preserve the mixed result for the paper, design a genuinely
+independent replication matched to the final claim, or open T11 as a clearly
+labeled unusual-glyph exploration. T11 remains untouched and cannot revise T10.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -481,3 +520,8 @@ T6's four non-rejections, Mistral component split, and all 160 profile rows also
 belong in that record without promotion of a tail, depth, or model pair.
 T7's positive depth interaction and all 40 rows belong beside them, with its
 post-T6 model selection and non-confirmatory status stated explicitly.
+T8/T9's positive single-model reserve confirmation and T10's negative
+cross-model primary must also appear together. The paper should state that
+token-count matching retained the signal, while only two core cells cleared
+the practical floor and no tokenizer-independent or model-general claim was
+authorized.

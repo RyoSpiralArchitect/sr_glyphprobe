@@ -1,0 +1,38 @@
+{
+  "authorized_wording": "cross_model_replication_not_established_under_frozen_rule",
+  "core_order": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "core_practical_pass_count": 2,
+  "m": 4,
+  "multiplier": 2,
+  "ordered_model_iut_p_values": [
+    {
+      "model_role": "gemma2_2b_it_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "llama32_3b_base_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "olmo2_1b_base_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "qwen25_7b_base_bf16",
+      "p_value": 5e-05
+    }
+  ],
+  "outcome_pattern": "cross_model_replication_not_established",
+  "p_value": 0.0001,
+  "positive": false,
+  "practical_pass": false,
+  "r": 3,
+  "rth_smallest_model_iut_p": 5e-05,
+  "rth_smallest_model_role": "olmo2_1b_base_bf16",
+  "statistical_pass": true
+}

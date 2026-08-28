@@ -1,0 +1,13 @@
+{
+  "events": [
+    {
+      "contention": "Foreign GPU compute PIDs before model load: [1801605]"
+    }
+  ],
+  "model_role": "qwen25_0p5b_base_bf16",
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "requested_shard_start": 0,
+  "requested_shard_stop_exclusive": 37,
+  "schema_version": 1,
+  "status": "yielded_on_contention"
+}

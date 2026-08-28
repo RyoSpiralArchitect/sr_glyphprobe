@@ -346,6 +346,27 @@ secondary CKA contrastは1 cellでわずかに負だった。支持されるの�
 そのもの、因果mechanism、model一般性ではない。[Discovery結果](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)と
 [reserve確認](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)に、両段階とevidence hashを残した。
 
+## T10: 統計的なalignmentは、実用条件を満たすモデル横断再現にはならなかった
+
+T10では、T9のpopulation、view、carrier、距離、batch rule、返却された最終state endpointを固定したまま、
+item-name retrieval差が複数のmodel/tokenizer cellで同じ統計条件と実用条件を満たすかを問うた。Model rosterと
+判定規則は、候補modelへforwardする前に固定した。
+
+結果は明確に二つへ分かれた。9つのmodel-cell IUTはすべて統計的に有意で、4つのcore cellによる
+部分連言p値は`0.0001`だった。3 viewのtoken数を完全一致させた層にも281〜287項目が残り、最小差は
+全項目成分に近いままだった。したがって、token数の層が揃っていないことだけでは、pattern全体を説明できない。
+
+ただし、仮説は有意性だけではなかった。実用条件は、4つのcore cell中3つ以上で、両成分の最小差が
+`0.02`以上になることを求めた。通過したのはLlama 3.2 3B baseとQwen 2.5 7B baseだけである。
+OLMoは全項目成分、Gemmaは両成分で下限を下回った。したがって登録済みoutcomeは、
+`cross_model_replication_not_established_under_frozen_rule`となる。
+
+観測後に閾値を修理するより、この負の一次判定を残す方が情報量は多い。固定assayではalignmentの向きが
+広く見える一方、完全gridでの大きさは、固定したcore rosterをまたいでまだ頑健ではない。単調なQwen size
+profile、強い関連Mistral-Instruct cell、raw-block endpointとの差は、scale、tuning、mechanismの結論ではなく、
+次の記述的手掛かりにとどめる。[T10結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)には、
+統計条件と実用条件の分岐、および9セルすべてを残した。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -374,6 +395,10 @@ Model scale、tokenizer同等性、backend parity、確認は示さない。
 T7では、それまで未観測だったMistral base checkpointの深度interactionをprospectiveに検定し、
 固定した両成分を棄却した。ただしendpointと関連checkpointはT6後に選んでいる。Instruction
 tuning効果でも独立確認でもなく、Phase I gateも閉じない。
+T10からは、claim-matchedな9セル結果が加わる。Token数完全一致後も観測差は消えなかったが、固定した
+実用下限を満たしたcore cellは4つ中2つだった。支持されるのは3つの範囲限定model/tokenizer-cell
+alignmentと負のモデル横断一次判定であり、tokenization非依存性、scale、tuning、意味、因果、独立再現、
+model一般性ではない。
 
 ## 次は、因果プロトコルを凍結する
 
@@ -388,6 +413,11 @@ Mistral base cellの1 model IUTを棄却した。隣接modelをさらに増や�
 綺麗な選択肢は、同じartifact上で共有slot構造だけを壊すcontrolか、固定interactionの真に独立した
 追試である。どちらも新しいprotocolを要する。
 
+T10も完了しており、実用下限を下げたり、core modelを入れ替えたり、extension cellを昇格させたりして
+救済しない。次の分岐は明示できる。Mixed resultとして論文へ残す、最終claimに合う真に独立した追試を設計する、
+またはT11を変則glyphの探索として明確にラベル付けして開く、のいずれかである。T11は未着手のままで、T10を
+遡って変更できない。
+
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
 将来の新しいversionの因果bankは、候補、介入部位と操作、endpoint、対照、多重性familyをsealed patch–ablate–restoreプロトコルに固定するまで開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
@@ -399,5 +429,8 @@ T6の4つのnon-rejection、Mistralの成分分岐、160 rowすべても記録�
 pairを格上げしてはならない。
 T7の正の深度interactionと40 rowすべても、そのT6後のmodel選択と非確認的statusを明記して
 並べる。
+T8/T9の正の単一model reserve確認と、T10の負のモデル横断一次判定も並べて示す。Token数matching後も
+signalは残ったが、実用下限を通過したcore cellは2つだけで、tokenizer非依存性やmodel一般性は認めなかったと
+明記する。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。

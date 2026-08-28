@@ -48,6 +48,11 @@
   and validation without hard-coding a revision-dependent test count.
 - Established paired English/Japanese public documentation and the Phase I goal
   of a reproducible, falsifiable English-language paper.
+- Completed the prospectively frozen nine-cell semantic-atlas T10 replication:
+  333 shards, 15,768 model forwards, exact token-count-matched IUTs, Holm
+  family, and four-core partial conjunction. The statistical rule passed but
+  the practical count was 2/4, so cross-model replication was not established;
+  compact evidence and an independent raw-archive validator are included.
 
 ## 0.1.0
 

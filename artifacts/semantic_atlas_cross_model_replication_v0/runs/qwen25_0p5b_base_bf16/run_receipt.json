@@ -1,0 +1,146 @@
+{
+  "acquisition_status": "complete_summary_pending",
+  "activation_dtype": "float32",
+  "axis_order": [
+    "item",
+    "view",
+    "carrier",
+    "distance",
+    "endpoint",
+    "width"
+  ],
+  "carrier_order": [
+    "article_a",
+    "pipe"
+  ],
+  "claim_boundary": "A fixed nine-cell observational replication of the T9 glyph-to-official-name item-retrieval contrast on the same 292-item population, text views, carriers, distances, batch-one acquisition rule, and API-level final hidden state. The sole cross-cell primary can establish only that at least three of four frozen core model/tokenizer cells meet the registered statistical and practical rules. It cannot establish emoji meaning, semantic decomposition, tokenizer causality or independence, a mechanism, behavior, a base-versus- instruction effect, a scale law, architecture generality, or universal model generality. Shared items, training corpora, and tokenizer ancestry mean the cells are not described as independent replications.",
+  "distance_order": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "elapsed_ms": 10928.63036855124,
+  "endpoint_order": [
+    "returned_final_hidden_state",
+    "raw_last_decoder_block_output"
+  ],
+  "freeze_manifest_sha256": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "item_count": 292,
+  "model": {
+    "artifact": {
+      "file_count": 10,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "LICENSE": {
+          "bytes": 11343,
+          "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+        },
+        "README.md": {
+          "bytes": 3850,
+          "sha256": "3c93cbc9f60417337fcbf093da872007586b9d886b0f0187f21aec35b869616a"
+        },
+        "config.json": {
+          "bytes": 681,
+          "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b"
+        },
+        "generation_config.json": {
+          "bytes": 138,
+          "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8"
+        },
+        "merges.txt": {
+          "bytes": 1671839,
+          "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+        },
+        "model.safetensors": {
+          "bytes": 988097824,
+          "sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+        },
+        "tokenizer.json": {
+          "bytes": 7031645,
+          "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+        },
+        "tokenizer_config.json": {
+          "bytes": 7228,
+          "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+        },
+        "vocab.json": {
+          "bytes": 2776833,
+          "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      },
+      "manifest_sha256": "c860aa324659f8fea0265e9330ad9893cae513a6ee2a11547efcd299dd5121c2",
+      "total_bytes": 999602900
+    },
+    "artifact_model_id": "Qwen/Qwen2.5-0.5B",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "model_class": "Qwen2ForCausalLM",
+    "model_role": "qwen25_0p5b_base_bf16",
+    "parameter_count": 494032768,
+    "parameter_dtype_tensor_counts": {
+      "torch.bfloat16": 290
+    },
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "torch_version": "2.13.0+cu132",
+    "transformers_version": "5.15.0"
+  },
+  "model_forward_calls": 1752,
+  "model_role": "qwen25_0p5b_base_bf16",
+  "peak_cuda_memory_bytes": 1035239424,
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "raw_activations_committed_to_git": false,
+  "readout_vectors": 14016,
+  "schema_version": 1,
+  "shard_count": 37,
+  "shard_ledger_sha256": {
+    "shard_0000": "e904058fd786db01fa047ddde118ad973eac7d53f649392792d2a750a867792d",
+    "shard_0001": "512a900c59d0dfa6a979e8c8296f057d83c80c34abb4bb8a3b93000ccee97dbb",
+    "shard_0002": "434b533ea5795f139e210a3f12b5ff24abb6e72d6e1208ce64e7fef53605ab20",
+    "shard_0003": "3474073bea97385f4d150c8f729180e4e2b875de544949e3fd02b829d3dc6528",
+    "shard_0004": "2128b11191183f1dbaa750a4164aaf62ad8c10e297f8133937057adb4dbcc9a8",
+    "shard_0005": "fd699ff13d4d138594b3d10495c2baf14a489e13a658ade3dd892c41b16bacfb",
+    "shard_0006": "d588cbcde3891f4992aa05f2053d50c93bf2e2883145a789d697412c6bd2c46a",
+    "shard_0007": "581e712d5000ace03bfe78a4c225d208fc36a57645df80ba61d93f6f38373139",
+    "shard_0008": "62c496fea692d9367ca9e3726678b1aaa417e062e2ec8fcaf8d281c91d186be4",
+    "shard_0009": "23c466be7b31cc470f994f4295d62dcbc4069703dd7aff24b43b40e8b00e7655",
+    "shard_0010": "98540a9fb5ff1ad29af105604661e4ea147226b989e4351cde6f188dc10f6af0",
+    "shard_0011": "de30aa9193b8ea24fa8151dad619acc7b44175d9f431500c4eab8c955a05f91b",
+    "shard_0012": "2c2ff9cd2290726554949d768b0173bcb7da2249f76026afb3fc9388a1208601",
+    "shard_0013": "fe3beca078afc0864c4b9eb6be683ea7d4ca3cc0a80e011acaa784e7cecf718f",
+    "shard_0014": "bce11c5c63890e14d81daca4e0369e122662c3a7d499903e44fc25afffc2fb9b",
+    "shard_0015": "0e069f53b13513a4d869431d9c9e6ad21d89737ef91eed77db89a461b07e3249",
+    "shard_0016": "958164aabef6c155f0ec7eeebd0427080db77df33460367798796aa2da732de5",
+    "shard_0017": "c543e4411d6e8ee268a42a272c5af35ad81e7083836bd16daaa996c6ed9dc056",
+    "shard_0018": "fe544b425cea2a5d19aaa659dfb6ff42e62874ef35473e275b4b6ceb43047b37",
+    "shard_0019": "5c1739c1c9d142e5d944d494f86404289152acf496300482f99f27a9552499ec",
+    "shard_0020": "f399fbdc75e267d61225a99bbdbdcac77abb0f4fa4639b9dfb0d41df9b8a3db1",
+    "shard_0021": "88b06cd86bed7b196d9780ace8e182a0a2b9707e241b62fb3776e9d581541e2d",
+    "shard_0022": "a3c634985524a1993f6bddcf83f0686dafcb8f3394c351b13fa932c4a1a6c4a7",
+    "shard_0023": "6d26e2aee7d1a1073b055de82ea387b5324aa38178ff116ea74afc320a8df727",
+    "shard_0024": "d1a329d562f394ff62fb4031bf59ace12e4f7881154c7740c3aa9d7a0bd2111d",
+    "shard_0025": "bbfbb5aceb7520bbfd87756aa444780bb3ddaea35dcb94d5e778fcbc811e505b",
+    "shard_0026": "a1ad8d02d2cf1d902629a8f4f3bab7617428861ea5924cf34a5ed1f41c4f0747",
+    "shard_0027": "c53e89a154fb5bf0ea8c79f4a87fee277f651743e490ff9743d29728e1f5cfdf",
+    "shard_0028": "58dde6b5b2cf3574e936a35e0e0420d5d4cabe3ab3a99b245547a2356a64d5d5",
+    "shard_0029": "5edac8291a4a1dc5ae3f2cf387dd3b5dcd9b2d2241e381b56c4eb389f13ae14a",
+    "shard_0030": "d0299d223351959e72be88ad3244752ec9e10ce4186771cf221e3d66a4d7949d",
+    "shard_0031": "9fa7d7b5d1e0c3fd2206212cdbecd3fac149470b8442779837fe2c2363bc1562",
+    "shard_0032": "480744a72617a7664524c7b556c8546e1207ddf335ccc32aa7b7d8224af1646c",
+    "shard_0033": "85fd305cc6a5288bfa1532698c3ed1e2da2b47346165214d9cf8635c21d19054",
+    "shard_0034": "51d1497ec759a969aed08138b2aab098c7aae41b21df32d247a0c7e64a859aa2",
+    "shard_0035": "523f99a79d50a4bd973df0190d7b19d95eca07dd02cf3e77f37706188fe595d0",
+    "shard_0036": "89a108a0eb5d7b16cc19f76879b0230dc72b22a693b698ce52e1160063982c3c"
+  },
+  "status": "pass",
+  "unique_input_sequences": 1752,
+  "view_order": [
+    "glyph",
+    "unicode_name",
+    "codepoint_literal"
+  ]
+}

@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[日本語](ROADMAP.ja.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -555,25 +555,34 @@ semantic causality, a mechanism, behavior, tokenization independence, model
 generality, or the whole Phase I claim. The complete result and compact evidence
 bundle are published.
 
-### Active T10 — semantic-atlas cross-model replication
+### Completed T10 — semantic-atlas cross-model replication
 
-Status: the 21-asset freeze passed with zero selected-model forwards after all
-nine exact artifacts and tokenizers passed preflight. Acquisition and analysis
-remain.
+Status: complete —
+`cross_model_replication_not_established_under_frozen_rule`.
 
-T10 keeps the T9 population and transport fixed across nine model/tokenizer
-cells. Each model must pass an unrestricted 292-item component and a component
-whose official-name permutation is restricted within the exact triple
-`(glyph, name, codepoint)` token-count strata. The sole cross-cell primary is a
-Bonferroni partial conjunction for at least three of four frozen core cells;
-all nine cell p-values form a separate Holm family for bounded cell claims.
+T10 kept the T9 population and transport fixed across nine model/tokenizer
+cells. Each model was tested with an unrestricted 292-item component and a
+component whose official-name permutation was restricted within the exact
+triple `(glyph, name, codepoint)` token-count strata. All nine IUTs were
+statistically significant; the four core p-values were each `0.00005`, and the
+registered `r = 3` of `m = 4` partial conjunction passed with `p = 0.0001`.
 
-The T9 endpoint is now described precisely as the final normalized hidden state
-returned in `output.hidden_states[-1]`. T10 captures that state as primary and
-the raw final decoder-block output as a non-rescuing secondary. The Qwen size
-ladder, related Mistral-Instruct checkpoint, and endpoint difference remain
-descriptive and cannot establish scale, tuning, semantic, causal, independent-
-replication, or model-general claims. See the [frozen protocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md).
+The combined primary was nevertheless negative because only Llama 3.2 3B base
+and Qwen 2.5 7B base cleared the `0.02` practical floor in both components;
+three core cells were required. The exact matched strata retained 281--287
+items and did not erase the contrast, but this does not establish tokenizer
+independence. Across the full nine-cell Holm family, Llama 3.2 3B base, Qwen
+2.5 7B base, and Mistral 7B Instruct v0.3 passed the bounded statistical-plus-
+practical cell rule.
+
+The primary endpoint remains the final normalized hidden state returned in
+`output.hidden_states[-1]`. The raw final decoder-block endpoint, monotone
+four-point Qwen size profile, and related Mistral-Instruct checkpoint remain
+descriptive. They cannot establish scale, tuning, semantic, causal,
+independent-replication, or model-general claims. The complete result,
+independent recomputation, and compact evidence are published; T11 remains
+untouched. See the [result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md)
+and [frozen protocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md).
 
 ### Queued T11 — unusual-glyph exploration
 
@@ -680,13 +689,18 @@ distance-1 plus early-minus-late depth IUT in one selected Mistral base cell,
 but its post-T6 endpoint/model selection and related Instruct reference prevent
 independent-confirmation or instruction-tuning claims. T5–T7 therefore sharpen
 the depth-dependent observational account without closing gates 4 or 5. T8/T9
-now add a separate claim-specific prospective confirmation: one endpoint was
+then added a separate claim-specific prospective confirmation: one endpoint was
 frozen before a deterministic 292-item reserve was forwarded, and its single
 global minimum-cell randomization test passed. This supplies clean Mistral-
 specific evidence for gates 1, 2, 6, and 7, but it is neither independent-model
-replication nor semantic or causal evidence. Final paper-wide qualification for
-gate 6 remains open because the rebuilt GPT-2 prototype analysis was post hoc.
-Gates 4, 5, 8, and 10 remain open. Gate 9 must be
+replication nor semantic or causal evidence. T10 subsequently preserved that
+population and transport across nine frozen cells. Exact token-count matching
+did not erase the contrast, and the statistical partial conjunction passed,
+but only two of four core cells met the practical floor. T10 therefore records
+a claim-matched, mixed cross-model result rather than independent replication,
+scale, tuning, semantic, or model-general evidence; it does not close gate 5.
+Final paper-wide qualification for gate 6 remains open because the rebuilt
+GPT-2 prototype analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research
 release, not a finished manuscript.

@@ -22,6 +22,10 @@
 - Fail-closedなE1公開bundle builderと独立validatorを追加。検証済みmanifestは公開payload 82件を結び付け、省略したraw file 20件を記録し、local absolute pathを拒否する。P2/C1 contentを使っていないことも記録する。
 - Milestone 2、E1 preflight、解析、公開、検証に関するtestを拡充。Revisionごとに変わるtest数は固定値として文書へ埋め込まない。
 - 公開ドキュメントの英日ペア管理と、再現可能で反証可能な英語論文を Phase I の目標とする方針を導入。
+- 事前に固定した9セルのsemantic-atlas T10再現を完了。333 shard、15,768 model forward、
+  token数完全一致IUT、Holm family、4 coreの部分連言検定を実行した。統計条件は通過したが、
+  実用通過数は2/4だったため、モデル横断再現は確立しなかった。Compact evidenceとraw archiveを
+  独立検証するvalidatorを収録した。
 
 ## 0.1.0
 

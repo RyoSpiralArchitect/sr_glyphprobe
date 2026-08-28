@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -160,6 +160,23 @@ null drawは0件で、事前指定した片側p値は`0.00005`だった。Center
 prospectiveに確認された、と記述できる。一方、人間が解釈する絵文字の意味、意味因果、global
 geometryの一様な優位、tokenizer非依存性、behavioral relevance、model一般性とは呼ばない。
 
+## 現在のT10 model横断再現結果
+
+T10では、T9のpopulationとtransportを、事前に固定した9つのmodel/tokenizer cellで保った。全モデルが、
+全項目成分と3 viewのtoken数を完全一致させた成分の統計的IUTを通過した。4つのcore p値はすべて
+`0.00005`で、`m = 4`、`r = 3`のBonferroni部分連言p値は`0.0001`となった。
+
+それでも登録済みの一次判定は負だった。両成分で`0.02`の実用下限を満たしたのは、Llama 3.2 3B baseと
+Qwen 2.5 7B baseだけである。OLMo 2 1B baseとGemma 2 2B ITは通過せず、必要な`3/4`に対して
+実用通過数は`2/4`だった。9セルのHolm familyでは、Llama 3.2 3B base、Qwen 2.5 7B base、
+Mistral 7B Instruct v0.3が範囲限定セル判定を通過した。
+
+Token数完全一致層にはtokenizerごとに281〜287項目が残り、contrastは消えなかった。これによりtoken長に
+関する一つの説明は狭まるが、tokenization非依存性は確立しない。Raw-block endpoint、Qwen 4点profile、
+関連Mistral-Instruct結果は記述に限る。論文では
+`cross_model_replication_not_established_under_frozen_rule`を維持し、scale、tuning、意味、因果、
+独立再現、model一般性を推定しない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -174,6 +191,7 @@ geometryの一様な優位、tokenizer非依存性、behavioral relevance、mode
 10. **RQ10 — Carrier-distance attenuation:** 共通tokenを反復する固定carrierの距離1、2、4、8で、距離1のrecurrenceと、事前指定した正のlog-distance減衰contrastは両立するか。
 11. **RQ11 — Dense CUDA replication:** 固定したcarrier-distance conjunction全体は、選択した4つのdense instruction-tuned Transformers/CUDA cellでも成立するか。
 12. **RQ12 — Mistral reserve confirmation:** 固定したlayer 31のglyph/name-versus-codepoint retrieval contrastは、決定論的に選定した未使用Mistral reserveの全carrier-distance cellで再現するか。
+13. **RQ13 — Cross-model practical replication:** 同じreturned-final-state retrieval contrastは、token数を完全一致させた後も、固定した4 core model/tokenizer cell中3つ以上で統計条件と実用条件の両方を満たすか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -194,6 +212,9 @@ Mistralでは距離1成分が再現したが、減衰成分を棄却しなかっ
 T8/T9は、固定した判定規則の下でRQ12へ正の答えを与えた。Reserve 292件は一度だけ取得され、全
 carrier-distance contrastが実用下限を超え、globalな最小統計はpermutation下限へ到達した。
 これは単一model・layer内の未使用target再現であり、独立したmodel-family再現ではない。
+T10は、固定した統合規則の下でRQ13へ負の答えを与えた。部分連言検定は統計的に通過し、matching後も差は
+消えなかったが、実用下限を通過したcore cellは4つ中2つだけだった。これは固定rosterにおけるmixed evidenceであり、
+独立再現、scale、tuning、意味、因果、model一般性ではない。
 
 ## 予定する貢献
 
@@ -344,6 +365,9 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
   analysis、検証済み転送receipt、public manifest
 - T6の4 model activation array、observation、receipt、全160行joint analysis、
   lifecycle・開始gate証拠、検証済み返送receipt、public manifest
+- T8/T9のdiscovery・reserve evidenceと、それに続くT10の9つのcompact prediction、全cell
+  metrics、run/summary/session receipt、shard ledgerへのbinding、独立再計算、checksum付きの
+  外部raw activation archive 1,212,819,072 bytes
 - 省略した約74 MiB（77.3 MB）の生台帳・NPZを再生成する手順
 - 英語・日本語の対文書
 
@@ -367,6 +391,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
     共通化した点と、prefix構造が残る点を並べる
 14. **Figure / Supplement:** T5のmodel-level IUT成分とdistance × depth profile。唯一の
     主判定と、距離8のtail・depth interactionという副次記述を分ける
+15. **Figure / Supplement:** T10の9セルにおける全項目・token数一致の最小差。統計的な
+    部分連言通過と、実用core count失敗を分け、Qwen ladderとraw-block endpointは副次として示す
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -384,6 +410,8 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - OLMo-only token-structured recurrence for the frozen T3 all-depth endpoint
 - OLMo-only common-suffix carryover for the frozen T4 all-context/all-depth endpoint
 - no model-level carrier-distance attenuation for the frozen T5 recurrence-plus-attenuation endpoint
+- cross-model replication not established under the frozen T10 statistical-plus-practical rule
+- bounded T10 model/tokenizer-cell alignment for Llama 3.2 3B base, Qwen 2.5 7B base, and Mistral 7B Instruct v0.3
 
 ### 追加の証拠なしには使用しない
 
@@ -397,6 +425,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - T3 tokenizer causality, semantic matched-slot variable, scale effect, precision effect, or node effect
 - T4 semantics, causal mechanism, independent replication, or carryover beyond one token
 - T5 monotonic decay, disappearance, duration, persistence, selected-layer effect, semantics, or mechanism
+- T10 tokenizer independence, scale law, instruction-tuning effect, independent replication, or model generality
 
 ## 残る論文ゲート
 
@@ -418,6 +447,8 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - T4の2接尾文脈を独立再現として数えない。
 - 完了したT5の境界を保ち、失敗した主減衰conjunctionや副次profileから、持続時間、
   単調減衰、消失、特定distance・depthの効果を推定しない。
+- 完了したT10の境界を保つ。実用下限を下げず、core cellを入れ替えず、extension cellを昇格させず、
+  QwenとMistralの副次profileをscale、tuning、独立再現へ読み替えない。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

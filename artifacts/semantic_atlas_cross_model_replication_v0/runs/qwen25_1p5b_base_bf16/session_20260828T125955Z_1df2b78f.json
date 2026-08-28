@@ -1,0 +1,232 @@
+{
+  "events": [
+    {
+      "elapsed_ms": 763.8323020655662,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 0
+    },
+    {
+      "elapsed_ms": 319.43210889585316,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 1
+    },
+    {
+      "elapsed_ms": 320.9576278459281,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 2
+    },
+    {
+      "elapsed_ms": 319.725887151435,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 3
+    },
+    {
+      "elapsed_ms": 318.3494561817497,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 4
+    },
+    {
+      "elapsed_ms": 319.54077212139964,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 5
+    },
+    {
+      "elapsed_ms": 324.24507522955537,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 6
+    },
+    {
+      "elapsed_ms": 319.80517599731684,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 7
+    },
+    {
+      "elapsed_ms": 317.9301309864968,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 8
+    },
+    {
+      "elapsed_ms": 319.12738899700344,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 9
+    },
+    {
+      "elapsed_ms": 319.73631703294814,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 10
+    },
+    {
+      "elapsed_ms": 319.02159098535776,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 11
+    },
+    {
+      "elapsed_ms": 319.9839380104095,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 12
+    },
+    {
+      "elapsed_ms": 320.22286113351583,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 13
+    },
+    {
+      "elapsed_ms": 319.09281807020307,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 14
+    },
+    {
+      "elapsed_ms": 334.4034110195935,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 15
+    },
+    {
+      "elapsed_ms": 319.4135318044573,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 16
+    },
+    {
+      "elapsed_ms": 318.55920096859336,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 17
+    },
+    {
+      "elapsed_ms": 319.23135882243514,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 18
+    },
+    {
+      "elapsed_ms": 317.73322401568294,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 19
+    },
+    {
+      "elapsed_ms": 318.79252288490534,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 20
+    },
+    {
+      "elapsed_ms": 319.2721351515502,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 21
+    },
+    {
+      "elapsed_ms": 318.1851820554584,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 22
+    },
+    {
+      "elapsed_ms": 320.56712615303695,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 23
+    },
+    {
+      "elapsed_ms": 319.92685212753713,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 24
+    },
+    {
+      "elapsed_ms": 318.6387289315462,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 25
+    },
+    {
+      "elapsed_ms": 320.1704870443791,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 26
+    },
+    {
+      "elapsed_ms": 319.14694397710264,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 27
+    },
+    {
+      "elapsed_ms": 336.02263289503753,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 28
+    },
+    {
+      "elapsed_ms": 320.16638689674437,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 29
+    },
+    {
+      "elapsed_ms": 319.2415980156511,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 30
+    },
+    {
+      "elapsed_ms": 319.48604015633464,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 31
+    },
+    {
+      "elapsed_ms": 318.8071879558265,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 32
+    },
+    {
+      "elapsed_ms": 318.50888300687075,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 33
+    },
+    {
+      "elapsed_ms": 318.982589058578,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 34
+    },
+    {
+      "elapsed_ms": 319.36904415488243,
+      "item_count": 8,
+      "model_forward_calls": 48,
+      "shard_index": 35
+    },
+    {
+      "elapsed_ms": 160.2621979545802,
+      "item_count": 4,
+      "model_forward_calls": 24,
+      "shard_index": 36
+    }
+  ],
+  "model_role": "qwen25_1p5b_base_bf16",
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "requested_shard_start": 0,
+  "requested_shard_stop_exclusive": 37,
+  "schema_version": 1,
+  "status": "pass"
+}

@@ -1,0 +1,25 @@
+{
+  "analysis_role": "per_model_fixed_endpoint_prediction_summary",
+  "cell_count_per_endpoint": 8,
+  "endpoint_order": [
+    "returned_final_hidden_state",
+    "raw_last_decoder_block_output"
+  ],
+  "freeze_manifest_sha256": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "item_count": 292,
+  "matched_item_count": 284,
+  "model_forward_calls": 0,
+  "model_role": "qwen25_0p5b_base_bf16",
+  "outputs": {
+    "cell_metrics.jsonl": "7602767de45cafd703dbdc0ebedd6705b56149c63a3011f03b981d111c0a42e7",
+    "predictions.npz": "f4f8895823b812d92e2fb2afdc9b81f428121b6eb24c9b8412a1c1fee386f38a"
+  },
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "schema_version": 1,
+  "secondary_endpoint_decision_authorized": false,
+  "source_run_receipt_sha256": "b651a3440169854a3dfe12f9ad306e9d32eb5c270de0a60d6e5d8406686b9b55",
+  "status": "pass",
+  "summary_device": "cuda"
+}

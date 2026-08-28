@@ -164,6 +164,28 @@ tokenizer非依存の効果、因果結果へ変わるわけではない。
 [凍結済みプロトコル](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.ja.md)と
 [E1探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md)も参照してほしい。
 
+## 9. T10のcompact evidenceとraw evidenceを再検証する
+
+T10の結果は、modelをloadせず、Git内のcompact predictionから再計算できる。
+
+```bash
+python scripts/validate_semantic_atlas_cross_model_replication_v0_result.py \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0
+```
+
+Raw shard全体も検査する場合は、同じ独立validatorへ外部run rootを渡す。
+
+```bash
+python scripts/validate_semantic_atlas_cross_model_replication_v0_result.py \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0 \
+  --raw-root path/to/glyphprobe-t10-runs-8673bc51
+```
+
+ValidatorはT10 analyzerをimportせず、2つのrandomization成分、model IUT、Holm補正、4 coreの
+部分連言検定を別実装で再計算する。Raw rootを指定した場合はnested ledgerをすべて辿り、全activation配列の
+shape、FP32 dtype、有限値を確認する。Model forward、intervention、generationは0回である。Validationの
+passが再現するのは登録済みの負の一次判定であり、より広い主張を許可するものではない。
+
 ## マシン固有の量
 
 wall-clock latency、load time、peak device memory、dependency/OS version、hardware 固有 kernel、timestamp は receipt に記録する。

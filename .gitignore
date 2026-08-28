@@ -214,6 +214,13 @@ runs/
 # The compact, checksum-bound E1 evidence bundle is intentionally versioned.
 !artifacts/emoji_family_exploratory_v1/runs/
 !artifacts/emoji_family_exploratory_v1/runs/**
+# T10 versions compact receipts and shard-ledger bindings, never activation shards.
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/*/
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/*/SHA256SUMS
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/*/SHARD_INDEX.json
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/*/run_receipt.json
+!artifacts/semantic_atlas_cross_model_replication_v0/runs/*/session_*.json
 experiments/
 configs/experiments/
 .DS_Store

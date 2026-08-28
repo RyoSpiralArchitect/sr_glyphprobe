@@ -15,6 +15,7 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `EMOJI_FAMILY_EXPLORATORY_V1_MANIFEST.json`：E1の公開payload 82件をSHA-256で結び付け、省略したraw ledgerとarrayを記録するroot manifest
 - `multifamily_tokenizer_census_v0/`：検証済みの事後記述aggregate、collection receipt、compact checksum台帳、3 nodeのpath-scrub済みsource receipt・summary複製。各nodeには公開bundle用`SHA256SUMS`と、別名の元source台帳`SOURCE_SHA256SUMS`を置く。Raw JSONL tableは省略するが、正確なhashとrow数で結び付ける。
 - `multifamily_colored_shape_geometry_v0/`：2本の完全なcompact activation run、固定深度の全10解析行、2-cell exact-test判定、OLMoの3地点転送検証、public payload manifest。この研究ではraw arrayを省略しない。
+- `semantic_atlas_cross_model_replication_v0/`：T10の9つのcompact prediction、全primary・secondary cell metrics、run/summary/session receipt、raw shard ledgerへのbinding、独立検証、public manifest。Raw activationとmodel weightはGit外に保持する。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
@@ -40,6 +41,17 @@ Holm補正後にどちらも棄却しなかった。Gemmaは`T = 0.114857969`、
 precision、tokenizer、nodeが交絡しているため、scale差、quantization差、model一般性、
 意味、因果の結果とは読まない。境界を限った負・mixed observational evidenceである。
 [T2の全結果](../docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md)を参照する。
+
+## Semantic atlas model横断再現の読み方
+
+T10は固定した9つのmodel/tokenizer cellをすべて完了した。4 coreの統計的な部分連言検定は
+`p = 0.0001`で通過したが、全項目成分とtoken数完全一致成分の両方で実用下限を満たしたcore cellは
+2つだけだった。したがって一次outcomeは
+`cross_model_replication_not_established_under_frozen_rule`である。
+
+独立validatorは、全component test、IUT、Holm値、部分連言検定を再現し、外部raw ledger対象1,350件を
+再ハッシュした。Token数完全一致後も差は消えなかったが、T10はtokenization非依存性、scale、tuning、意味、
+因果、独立再現、model一般性を確立しない。[T10の全結果](../docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 

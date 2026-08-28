@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[English](ROADMAP.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -400,13 +400,15 @@ evidenceからendpointと多重性ruleを一つfreezeしてから、292件のres
 model・layer固有の観測的alignmentだけである。意味因果、mechanism、behavior、tokenization
 非依存性、model一般性、Phase I全体は確立しない。全結果とcompact evidenceを公開する。
 
-### 実行中のT10 — semantic atlasのmodel横断再現
+### 完了したT10 — semantic atlasのmodel横断再現
 
-状態：候補modelのforwardは0回のまま、9つのexact artifact/tokenizer preflightと21 assetのfreezeが完了した。取得と解析が残っている。
+状態：`cross_model_replication_not_established_under_frozen_rule`として完了した。
 
-T10では、T9の項目集合と搬送条件を変えず、9つのmodel/tokenizerセルで再現を調べる。各モデルには、全292項目を使う成分と、`(glyph, name, codepoint)` のtoken数が完全一致する層の内部だけで公式名の対応を置換する成分の両方を要求する。唯一のモデル横断一次判定は、凍結済み4コアセル中3セル以上を対象とするBonferroni部分連言検定である。9セルのp値には、個別セルを限定して報告するためのHolm familyを別に置く。
+T10では、T9の項目集合と搬送条件を変えず、9つのmodel/tokenizerセルで再現を調べた。各モデルについて、全292項目を使う成分と、`(glyph, name, codepoint)` のtoken数が完全一致する層の内部だけで公式名の対応を置換する成分を検定した。9つのIUTはすべて統計的に有意で、4つのcore p値はすべて`0.00005`、登録済みの`m = 4`、`r = 3`の部分連言p値は`0.0001`だった。
 
-T9のendpointは、`output.hidden_states[-1]` に返る最終norm後のhidden stateと正確に記述し直した。T10ではこれを一次とし、rawな最終decoder block出力を、一次を救済できない副次として同時取得する。Qwenの規模系列、関連するMistral-Instruct checkpoint、二つのendpointの差は記述に限り、scale、instruction tuning、意味、因果、独立再現、model一般性の主張には使わない。詳しくは[凍結済みprotocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md)に示す。
+それでも統合一次判定は負となった。全項目成分と一致成分の両方で`0.02`の実用下限を通過したcore cellは、Llama 3.2 3B baseとQwen 2.5 7B baseの2つだけで、必要な3つに届かなかった。完全一致層には281〜287項目が残り、matching後も差は消えなかったが、tokenization非依存性は確立しない。9セル全体のHolm＋実用条件を通過したのは、Llama 3.2 3B base、Qwen 2.5 7B base、Mistral 7B Instruct v0.3である。
+
+一次endpointは、`output.hidden_states[-1]` に返る最終norm後のhidden stateである。Rawな最終decoder block endpoint、単調なQwen 4点size profile、関連Mistral-Instruct checkpointは記述に限る。Scale、instruction tuning、意味、因果、独立再現、model一般性の主張には使わない。全結果、独立再計算、compact evidenceは公開済みで、T11は未着手のまま保つ。詳しくは[結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)と[固定protocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md)に示す。
 
 ### Queue中のT11 — 変則glyph探索
 
@@ -483,7 +485,7 @@ T11は、変則的なglyph systemとrepresentation shiftを調べる後続の探
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。続くT10では、このpopulationとtransportを9つの固定セルで保った。Token数完全一致後も差は消えず、統計的な部分連言検定は通過したが、実用下限を満たしたcore cellは4つ中2つだった。したがってT10はclaim-matchedなmixed cross-model結果であり、独立再現、scale、tuning、意味、model一般性ではなく、gate 5も閉じない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

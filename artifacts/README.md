@@ -32,6 +32,10 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   activation runs, all ten fixed-depth analysis rows, the two-cell exact-test
   decision, three-point OLMo transfer verification, and a public payload
   manifest. No raw array from this study is omitted.
+- `semantic_atlas_cross_model_replication_v0/` contains T10's nine compact
+  prediction sets, all primary and secondary cell metrics, run/summary/session
+  receipts, nested raw-shard ledger bindings, independent validation, and a
+  public manifest. Raw activations and model weights remain outside Git.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -65,6 +69,20 @@ decision. Model family, scale, precision, tokenizer, and node are confounded,
 so this is bounded negative/mixed observational evidence rather than a scale,
 quantization, model-general, semantic, or causal result. See the [complete T2
 result](../docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md).
+
+## Semantic-atlas cross-model reading
+
+T10 completed all nine frozen model/tokenizer cells. The four-core statistical
+partial conjunction passed (`p = 0.0001`), but only two core cells met the
+registered practical floor in both unrestricted and exact-token-count-matched
+components. The primary outcome is therefore
+`cross_model_replication_not_established_under_frozen_rule`.
+
+The independent validator reproduced all component tests, IUTs, Holm values,
+and the partial conjunction, and rehashed 1,350 external raw-ledger targets.
+Exact token-count matching did not erase the contrast, but T10 does not
+establish tokenizer independence, scale, tuning, semantics, causality,
+independent replication, or model generality. See the [complete T10 result](../docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md).
 
 ## Milestone 2 reading
 

@@ -1,0 +1,152 @@
+{
+  "bounded_model_cell_pass_roles": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "claim_boundary": {
+    "causal_claim_authorized": false,
+    "independent_replication_claim_authorized": false,
+    "model_general_claim_authorized": false,
+    "phase_i_gate_closed": false,
+    "scale_law_claim_authorized": false,
+    "semantic_claim_authorized": false
+  },
+  "compact_bundle": {
+    "analysis_ledger_targets_rehashed": 4,
+    "model_cells": 9,
+    "run_ledger_targets_rehashed": 18,
+    "summary_ledger_targets_rehashed": 27,
+    "total_model_forward_calls": 15768,
+    "total_readout_vectors": 126144,
+    "total_shards": 333
+  },
+  "cross_model_primary": {
+    "authorized_wording": "cross_model_replication_not_established_under_frozen_rule",
+    "core_practical_pass_count": 2,
+    "partial_conjunction_p_value": 0.0001,
+    "positive": false,
+    "practical_pass": false,
+    "statistical_pass": true
+  },
+  "freeze_manifest_sha256": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_forward_calls_during_validation": 0,
+  "model_results": {
+    "gemma2_2b_it_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 284,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.017605633802816902,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.017123287671232876,
+      "unrestricted_p_value": 5e-05
+    },
+    "llama32_3b_base_bf16": {
+      "bounded_model_cell_claim_pass": true,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 281,
+      "practical_pass": true,
+      "tokenization_matched_minimum_contrast": 0.03202846975088968,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.0273972602739726,
+      "unrestricted_p_value": 5e-05
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "bounded_model_cell_claim_pass": true,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 285,
+      "practical_pass": true,
+      "tokenization_matched_minimum_contrast": 0.20350877192982456,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.20205479452054792,
+      "unrestricted_p_value": 5e-05
+    },
+    "olmo2_1b_base_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 281,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.021352313167259787,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.0136986301369863,
+      "unrestricted_p_value": 5e-05
+    },
+    "qwen25_0p5b_base_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 284,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.007042253521126761,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.00684931506849315,
+      "unrestricted_p_value": 5e-05
+    },
+    "qwen25_1p5b_base_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 284,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.01408450704225352,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.0136986301369863,
+      "unrestricted_p_value": 5e-05
+    },
+    "qwen25_3b_base_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 284,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.0176056338028169,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.017123287671232876,
+      "unrestricted_p_value": 5e-05
+    },
+    "qwen25_7b_base_bf16": {
+      "bounded_model_cell_claim_pass": true,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 5e-05,
+      "matched_item_count": 284,
+      "practical_pass": true,
+      "tokenization_matched_minimum_contrast": 0.024647887323943664,
+      "tokenization_matched_p_value": 5e-05,
+      "unrestricted_minimum_contrast": 0.023972602739726026,
+      "unrestricted_p_value": 5e-05
+    },
+    "smollm2_1p7b_base_bf16": {
+      "bounded_model_cell_claim_pass": false,
+      "holm_adjusted_p": 0.00045000000000000004,
+      "intersection_union_p_value": 0.0001,
+      "matched_item_count": 287,
+      "practical_pass": false,
+      "tokenization_matched_minimum_contrast": 0.00348432055749129,
+      "tokenization_matched_p_value": 0.0001,
+      "unrestricted_minimum_contrast": 0.00684931506849315,
+      "unrestricted_p_value": 5e-05
+    }
+  },
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "raw_archive": {
+    "activation_bytes": 1212819072,
+    "activation_dtype": "float32",
+    "all_activation_values_finite": true,
+    "ledger_targets_rehashed": 1350,
+    "model_cells": 9,
+    "provided": true,
+    "shards": 333,
+    "status": "pass"
+  },
+  "schema_version": 1,
+  "share_readiness": "ready_with_registered_negative_primary_and_claim_boundary",
+  "status": "pass",
+  "validation_role": "independent_reimplementation_and_evidence_integrity_check"
+}

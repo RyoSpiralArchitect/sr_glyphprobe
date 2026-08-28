@@ -186,6 +186,33 @@ confirmatory statuses, semantic evidence, tokenizer-independent effects, or a
 causal result. See the [frozen protocol](EMOJI_FAMILY_EXPLORATORY_PROTOCOL.md)
 and [complete result](EMOJI_FAMILY_EXPLORATORY_RESULTS.md).
 
+## 9. Revalidate the T10 compact and raw evidence
+
+The T10 result can be recomputed from the Git-resident compact predictions
+without loading a model:
+
+```bash
+python scripts/validate_semantic_atlas_cross_model_replication_v0_result.py \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0
+```
+
+To add full raw-shard verification, point the same independent validator at the
+external run root:
+
+```bash
+python scripts/validate_semantic_atlas_cross_model_replication_v0_result.py \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0 \
+  --raw-root path/to/glyphprobe-t10-runs-8673bc51
+```
+
+The validator does not import the T10 analyzer. It reimplements the two
+randomization components, model IUTs, Holm correction, and four-core partial
+conjunction. With the raw root supplied, it also follows all nested ledgers and
+checks every activation array for shape, FP32 dtype, and finite values. It makes
+zero model forward, intervention, or generation calls. A validation pass
+reproduces the registered negative primary; it does not authorize a broader
+claim.
+
 ## Machine-specific quantities
 
 Wall-clock latency, load time, peak device memory, dependency and OS versions,
