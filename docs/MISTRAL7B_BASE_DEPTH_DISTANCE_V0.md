@@ -2,7 +2,9 @@
 
 [日本語](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) · [T6 results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Roadmap](ROADMAP.md)
 
-Status: **prospective freeze in preparation; zero T7 model forwards**.
+Status: **prospective freeze with zero T7 model forwards**. The freeze becomes
+complete in the public commit that binds this protocol, executable, tests,
+zero-forward preflight, artifact receipt, and checksum manifest.
 
 ## Why this cell
 
@@ -64,6 +66,14 @@ excludes the duplicate 14.5 GB `consolidated.safetensors` and includes the
 Transformers three-shard index plus tokenizer/config files. Its exact file
 manifest, architecture dimensions, parameter count, and tokenizer sequences
 must be recorded by a zero-forward preflight before the freeze commit.
+
+That preflight passed. The selected 12-file artifact contains
+`14,499,379,264` bytes and has path-independent manifest SHA-256
+`1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e`.
+All indexed tensors are BF16 and total `7,248,023,552` elements. The base
+tokenizer exactly matches the fixed T6 Mistral roster hashes, including 50/50
+round trips in both carriers. Model weights were not loaded and model forwards,
+interventions, generation calls, and protected-target reads were all zero.
 
 Immediately before model loading, `spiral status` must again show no competing
 GPU process. The runner then verifies the public freeze, local artifact hash,

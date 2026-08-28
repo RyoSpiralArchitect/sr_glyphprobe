@@ -2,7 +2,9 @@
 
 [English](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md) · [T6結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md)
 
-状態: **prospective freeze準備中・T7 model forward 0**。
+状態: **prospective freeze・T7 model forward 0**。このprotocol、実行code、test、
+zero-forward preflight、artifact receipt、checksum manifestを1つの公開commitで結び付けた
+時点でfreezeが完了する。
 
 ## このcellを選ぶ理由
 
@@ -56,6 +58,13 @@ IUTと差し替えない。
 Transformers用3 shard・index・tokenizer/configだけを含める。Freeze commitの前に、
 model forward 0のpreflightで、正確なfile manifest、architecture次元、parameter数、
 token列を記録する。
+
+このpreflightは合格した。選択した12-file artifactは`14,499,379,264` byteで、path非依存の
+manifest SHA-256は
+`1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e`である。Index内の
+全tensorはBF16で、合計`7,248,023,552` elementだった。Base tokenizerは、両carrierの
+50/50 round tripを含め、固定したT6 Mistral roster hashと完全に一致した。Model weightは
+loadせず、model forward、介入、生成、protected-target readはすべて0だった。
 
 Model load直前には`spiral status`を再確認し、競合GPU processがないことを確かめる。
 Runnerは最初のforwardより前に、公開freeze、local artifact hash、runtime version、CUDA

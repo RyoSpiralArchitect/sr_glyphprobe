@@ -1,0 +1,125 @@
+{
+  "authorization": {
+    "furnace_experiment_continuation_explicitly_authorized": true,
+    "new_model_download_explicitly_authorized_in_current_user_thread": true
+  },
+  "furnace_static_environment": {
+    "bfloat16_supported": true,
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_memory_total_mib": 32108,
+    "host_role": "furnace",
+    "local_files_only": true,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "numpy": "2.5.2",
+      "orjson": "3.11.9",
+      "pydantic": "2.12.5",
+      "safetensors": "0.8.0",
+      "torch": "2.13.0+cu132",
+      "transformers": "5.15.0"
+    }
+  },
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "machine_local_model_paths_published": false,
+  "model_artifacts": {
+    "mistral7b_base_v03": {
+      "artifact_complete": true,
+      "canonical_model_id": "mistralai/Mistral-7B-v0.3",
+      "expected_model_class": "MistralForCausalLM",
+      "file_count": 12,
+      "file_names": [
+        "config.json",
+        "generation_config.json",
+        "model-00001-of-00003.safetensors",
+        "model-00002-of-00003.safetensors",
+        "model-00003-of-00003.safetensors",
+        "model.safetensors.index.json",
+        "params.json",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer.model",
+        "tokenizer.model.v3",
+        "tokenizer_config.json"
+      ],
+      "file_policy": "transformers_required_snapshot_without_duplicate_consolidated_weight",
+      "hidden_size": 4096,
+      "index_total_size": 14496047104,
+      "indexed_parameter_dtype_elements": {
+        "BF16": 7248023552
+      },
+      "indexed_parameter_elements": 7248023552,
+      "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+      "model_type": "mistral",
+      "model_vocab_size": 32768,
+      "num_hidden_layers": 32,
+      "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "total_bytes": 14499379264
+    }
+  },
+  "model_forward_calls": 0,
+  "model_weights_loaded": false,
+  "observed_at_utc": "2026-08-28T04:39:03.895415Z",
+  "official_model_metadata": {
+    "canonical_model_id": "mistralai/Mistral-7B-v0.3",
+    "excluded_duplicate_files": [
+      ".gitattributes",
+      "README.md",
+      "consolidated.safetensors"
+    ],
+    "full_remote_dry_run_bytes_rounded": "29.0G",
+    "full_remote_storage_bytes": 28992746844,
+    "gated": false,
+    "metadata_checked_with": "huggingface_hub_hf_models_info_1.27.0",
+    "public": true,
+    "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1"
+  },
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-mistral7b-base-depth-distance-v0",
+  "schema_version": 1,
+  "scientific_result_available": false,
+  "selection_provenance": {
+    "endpoint_selected_after_t6_depth_profiles_were_known": true,
+    "instruction_tuning_effect_authorized": false,
+    "model_selection_rule": "same_generation_base_checkpoint_for_the_observed_t6_mistral_instruct_cell",
+    "scientific_confirmation": false,
+    "selected_after_t6_outcomes_were_known": true,
+    "unseen_base_activation_outcomes_at_freeze": true
+  },
+  "status": "static_preflight_pass_execution_gate_pending",
+  "tokenizer_preflight": {
+    "contexts": [
+      "raw",
+      "article_a_x8",
+      "pipe_x8"
+    ],
+    "mistral7b_base_v03": {
+      "article_a_combined_sequence_sha256": "4e3700668b73ff79b7ebe132b4dc4a3693e8712bc1d4e16881448b6f2c41dff7",
+      "article_a_token_id": 1032,
+      "pipe_combined_sequence_sha256": "64fd05819c5080b93920268aa9ab9e85d5920b505925b44b8ce526438ebbb42a",
+      "pipe_token_id": 1110,
+      "raw_count_histogram": {
+        "2": 1,
+        "5": 49
+      },
+      "raw_ordered_sequence_sha256": "c7b9d4aa125e9bb372321711c388d1aa9119982496ae03e3c31353737804ddd8",
+      "raw_prefix_preserved_per_carrier": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "raw_shared_prefix_token_ids": [
+        29473
+      ],
+      "raw_unique_sequence_count": 50,
+      "roundtrip_exact_per_carrier": {
+        "article_a": 50,
+        "pipe": 50
+      },
+      "tokenizer_class": "TokenizersBackend",
+      "tokenizer_vocab_size": 32768
+    },
+    "panel_items": 50
+  }
+}

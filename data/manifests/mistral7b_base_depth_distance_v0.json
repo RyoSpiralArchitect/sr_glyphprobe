@@ -1,0 +1,70 @@
+{
+  "engineering_preflight_sha256": "508d85f3ee90358811ce20c268d380a7a4f46eae48b858b5dd15ad963bc51936",
+  "frozen_assets": {
+    "artifacts/multifamily_dense_cuda_carrier_distance_v0/PUBLIC_MANIFEST.json": "302073e79f73b25de99087e8abea6e209dcb4ae8cd89bd8d99ef16380699c9a9",
+    "artifacts/multifamily_dense_cuda_carrier_distance_v0/analysis/analysis_receipt.json": "26a00a59e7849e0c5582624ebd344d3d84e213157275d7a90f45a7d2a60cccb8",
+    "artifacts/multifamily_dense_cuda_carrier_distance_v0/analysis/carrier_distance_layer_statistics.jsonl": "87c26a2d5b38bb748617ec25350b7a9b2bb664eb3f4d4e24586e86ba02dfd720",
+    "configs/mistral7b_base_depth_distance_v0.yaml": "dbd392274cbdf1a9f2c715ae9b8fae40e6adcf4c27b8085f48d43e7d0bda902a",
+    "data/emoji_panels/e1_animals.yaml": "2455d8de88af37fed0925c4df93f3914fba6abb275a05907198baaca2a7954b5",
+    "data/emoji_panels/e1_food.yaml": "6fb16ccf141b2dabb33dfe9d20913568d2a294285c9bc7f8f8063c197280e7a3",
+    "data/emoji_panels/e1_sky_moon.yaml": "811b0850574004bd56c9eb6419e814b273d02d13a97b815938095f66f3c1e1e1",
+    "data/emoji_panels/e1_social.yaml": "b43ba3290c499c248c2bc034af0d3454463fcf5e5d4d64e5fab4fd62ee5cf1a6",
+    "data/emoji_panels/e1_transport.yaml": "784dbba21328757db97a8ff65e310cf15707b178d37b11fce033e47832c5d67f",
+    "docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md": "faeae81c4236d6c7ee71a850a1fd68c45c9e21bba61b91c651441fda54fbb15e",
+    "docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md": "4c92ac125a6be6e1f52e37af0a7fd0f3fc0bbe5407221c0ab3d500c629fe3901",
+    "scripts/mistral7b_base_depth_distance_v0.py": "8edd0b258253b8c13fa63642426433da0311492d05e38c51252fadd4326b42c9",
+    "scripts/multifamily_carrier_distance_v0.py": "cfe40b74885d7f058508c3f7056482b2d63f2fc92ad707f741c53e83614df8d4",
+    "scripts/multifamily_dense_cuda_carrier_distance_v0.py": "cfeb9b1f4a0d3a85544b2b5bd6124290bdd2b60b06b7c430b67928387090a995",
+    "src/glyphprobe/backends/transformers_backend.py": "80feffe347daa1ca068c3cf87c6fbc6c5a93b376be16a3db44bd7581c0389ca2",
+    "tests/test_mistral7b_base_depth_distance_v0.py": "e664c52a812540099162507f924960b99c6f81e217168f2c70c30af154e05256",
+    "validation/mistral7b_base_depth_distance_v0/engineering_preflight.json": "508d85f3ee90358811ce20c268d380a7a4f46eae48b858b5dd15ad963bc51936"
+  },
+  "generation_calls_at_freeze": 0,
+  "implementation": {
+    "package_version": "0.1.0",
+    "source_file_count": 32,
+    "source_tree_sha256": "f8d7407ecc4bb5d40e000446e655af139d231fc45f11df732e59582f48c252aa"
+  },
+  "intervention_calls_at_freeze": 0,
+  "model_artifacts": {
+    "mistral7b_base_v03": {
+      "artifact_complete": true,
+      "canonical_model_id": "mistralai/Mistral-7B-v0.3",
+      "expected_model_class": "MistralForCausalLM",
+      "file_count": 12,
+      "file_names": [
+        "config.json",
+        "generation_config.json",
+        "model-00001-of-00003.safetensors",
+        "model-00002-of-00003.safetensors",
+        "model-00003-of-00003.safetensors",
+        "model.safetensors.index.json",
+        "params.json",
+        "special_tokens_map.json",
+        "tokenizer.json",
+        "tokenizer.model",
+        "tokenizer.model.v3",
+        "tokenizer_config.json"
+      ],
+      "file_policy": "transformers_required_snapshot_without_duplicate_consolidated_weight",
+      "hidden_size": 4096,
+      "index_total_size": 14496047104,
+      "indexed_parameter_dtype_elements": {
+        "BF16": 7248023552
+      },
+      "indexed_parameter_elements": 7248023552,
+      "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+      "model_type": "mistral",
+      "model_vocab_size": 32768,
+      "num_hidden_layers": 32,
+      "revision": "caa1feb0e54d415e2df31207e5f4e273e33509b1",
+      "total_bytes": 14499379264
+    }
+  },
+  "model_forward_calls_at_freeze": 0,
+  "protected_target_files_opened_at_freeze": 0,
+  "protocol_id": "glyphprobe-mistral7b-base-depth-distance-v0",
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "status": "freeze_complete_before_any_t7_model_forward"
+}

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import importlib.util
 from pathlib import Path
 
@@ -148,3 +149,19 @@ def test_protocol_forbids_intervention_confirmation_and_tuning_claims() -> None:
     assert '"generation_calls": 0' in source
     assert '"protected_target_files_opened": 0' in source
     assert '"multiplicity_decision_authorized": False' in source
+
+
+def test_freeze_manifest_binds_zero_forward_preflight_and_single_artifact() -> None:
+    audit = MODULE.audit_freeze()
+    manifest = json.loads((ROOT / MODULE.MANIFEST_PATH).read_text(encoding="utf-8"))
+    preflight = json.loads((ROOT / MODULE.PREFLIGHT_PATH).read_text(encoding="utf-8"))
+    assert audit["status"] == "pass"
+    assert audit["frozen_asset_count"] == len(MODULE.FROZEN_ASSET_PATHS)
+    assert manifest["status"] == "freeze_complete_before_any_t7_model_forward"
+    assert manifest["model_forward_calls_at_freeze"] == 0
+    assert manifest["intervention_calls_at_freeze"] == 0
+    assert manifest["generation_calls_at_freeze"] == 0
+    assert manifest["protected_target_files_opened_at_freeze"] == 0
+    assert preflight["model_weights_loaded"] is False
+    assert preflight["scientific_result_available"] is False
+    assert list(manifest["model_artifacts"]) == list(MODULE.MODEL_ROLES)
