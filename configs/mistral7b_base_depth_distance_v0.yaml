@@ -1,0 +1,199 @@
+protocol_id: glyphprobe-mistral7b-base-depth-distance-v0
+manifest_path: ../data/manifests/mistral7b_base_depth_distance_v0.json
+experiment_role: prospective_post_t6_selected_unseen_base_model_cell
+claim_boundary: >-
+  Frozen observational resid_post depth-by-distance geometry in one Mistral 7B
+  v0.3 base-model CUDA/BF16 cell. The endpoint and model were selected after
+  T6 outcomes and depth profiles were known, so the cell is prospective only
+  for its own unseen outcomes and is not an independent confirmation. The
+  instruct/base pair is descriptive only. No instruction-tuning, tokenizer,
+  architecture, backend, node, precision, semantic, mechanistic, causal,
+  intervention, generation, behavior, monotonicity, persistence,
+  model-general, confirmatory, or Phase I paper-gate claim is authorized.
+
+selection_provenance:
+  selected_after_t6_outcomes_were_known: true
+  endpoint_selected_after_t6_depth_profiles_were_known: true
+  model_selection_rule: same_generation_base_checkpoint_for_the_observed_t6_mistral_instruct_cell
+  unseen_base_activation_outcomes_at_freeze: true
+  scientific_confirmation: false
+  instruction_tuning_effect_authorized: false
+
+panel:
+  family_order: [sky, food, animals, transport, social]
+  slot_order: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  expected_items_per_family: 10
+  expected_total_items: 50
+  construction: single_codepoint_consecutive_unicode_blocks
+  sources:
+    sky: ../data/emoji_panels/e1_sky_moon.yaml
+    food: ../data/emoji_panels/e1_food.yaml
+    animals: ../data/emoji_panels/e1_animals.yaml
+    transport: ../data/emoji_panels/e1_transport.yaml
+    social: ../data/emoji_panels/e1_social.yaml
+
+input:
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  site: resid_post
+  return_attentions: false
+  exact_contract: raw_glyph_tokens_plus_eight_identical_carrier_tokens
+
+layers:
+  fractions: [0.0, 0.25, 0.5, 0.75, 1.0]
+  resolution: min(num_layers - 1, floor(fraction * num_layers))
+  expected_resolved_layers: [0, 8, 16, 24, 31]
+  primary_scope: both_fixed_carriers_equal_weight
+
+primary_endpoint:
+  id: distance1_recurrence_intersection_early_minus_late_attenuation
+  definition: >-
+    Build the family-centered matched-slot fraction at every carrier, distance,
+    and depth. Criterion A is the equal-weight distance-1 mean over both
+    carriers and all five depths. For each depth, form the equal-carrier
+    log-distance contrast with weights [0.375, 0.125, -0.125, -0.375].
+    Criterion B is the depth-0 contrast minus the equal-weight mean contrast at
+    depths 0.25, 0.5, 0.75, and 1.0. The one-model IUT p-value is max(p_A, p_B).
+  distance_contrast_weights: [0.375, 0.125, -0.125, -0.375]
+  early_depth_index: 0
+  late_depth_indices: [1, 2, 3, 4]
+  randomization_null: independent_within_family_slot_label_permutation
+  synchronized_across_carriers_distances_and_depths: true
+  fixed_reference_family: sky
+  randomization_draws: 19999
+  p_value: (1 + count(T_randomized >= T_observed)) / 20000
+  intersection_union_p_value: max_distance1_and_early_minus_late_component_p_values
+  rng: numpy.random.PCG64
+  seed: 2026082801
+  hypothesis_family: [mistral7b_base_v03]
+  multiplicity: none_one_model_one_intersection_union_test
+  alpha: 0.05
+  decision_scope: single_model_intersection_union_only
+
+secondary_endpoints:
+  - complete_carrier_by_distance_by_depth_slot_fraction_profile
+  - attenuation_contrast_by_each_fixed_depth_without_decisions
+  - original_t6_all_depth_attenuation_contrast_without_decision
+  - distance8_tail_recurrence_without_decision
+  - family_fraction_after_slot_centering
+  - interaction_fraction_of_total_centered_sum_of_squares
+  - descriptive_difference_from_mistral7b_instruct_v03_without_inferential_pooling
+  - exact_raw_plus_carrier_token_sequence_diagnostics
+  - latency_and_peak_memory_engineering_only
+
+prior_t6_reference:
+  protocol_id: glyphprobe-multifamily-dense-cuda-carrier-distance-v0
+  outcome_pattern: no_dense_model_distance_attenuation
+  analysis_receipt: ../artifacts/multifamily_dense_cuda_carrier_distance_v0/analysis/analysis_receipt.json
+  profile_rows: ../artifacts/multifamily_dense_cuda_carrier_distance_v0/analysis/carrier_distance_layer_statistics.jsonl
+  public_manifest: ../artifacts/multifamily_dense_cuda_carrier_distance_v0/PUBLIC_MANIFEST.json
+  role: observed_design_motivation_and_descriptive_instruct_reference_only
+  inferential_pooling: false
+
+models:
+  order: [mistral7b_base_v03]
+  mistral7b_base_v03:
+    canonical_model_id: mistralai/Mistral-7B-v0.3
+    revision: caa1feb0e54d415e2df31207e5f4e273e33509b1
+    artifact_file_policy: transformers_required_snapshot_without_duplicate_consolidated_weight
+    excluded_remote_files: [.gitattributes, README.md, consolidated.safetensors]
+    expected_artifact_files:
+      - config.json
+      - generation_config.json
+      - model-00001-of-00003.safetensors
+      - model-00002-of-00003.safetensors
+      - model-00003-of-00003.safetensors
+      - model.safetensors.index.json
+      - params.json
+      - special_tokens_map.json
+      - tokenizer.json
+      - tokenizer.model
+      - tokenizer.model.v3
+      - tokenizer_config.json
+    expected_weight_shards:
+      - model-00001-of-00003.safetensors
+      - model-00002-of-00003.safetensors
+      - model-00003-of-00003.safetensors
+    expected_index_total_size: 14496047104
+    tokenizer_output_class: mistral_v03_exact_roster_to_be_verified_zero_forward
+    node: furnace
+    expected_model_type: mistral
+    expected_num_layers: 32
+    expected_model_dim: 4096
+    expected_parameter_count: 7248023552
+    expected_vocab_size: 32768
+    expected_tokenizer_vocab_size: 32768
+    expected_quantized: false
+    expected_resolved_dtype: torch.bfloat16
+    expected_model_class: MistralForCausalLM
+    expected_block_path: model.layers
+    raw_tokenization_contract:
+      kind: exact_ordered_sequence_roster
+      expected_item_token_count_histogram: {2: 1, 5: 49}
+      expected_unique_sequence_count: 50
+      shared_prefix_token_ids: [29473]
+      ordered_sequence_sha256: c7b9d4aa125e9bb372321711c388d1aa9119982496ae03e3c31353737804ddd8
+      matching_family: mistral_v03_common_prefix_with_one_short_exception
+    carrier_token_ids: {article_a: 1032, pipe: 1110}
+    combined_sequence_sha256:
+      article_a: 4e3700668b73ff79b7ebe132b4dc4a3693e8712bc1d4e16881448b6f2c41dff7
+      pipe: 64fd05819c5080b93920268aa9ab9e85d5920b505925b44b8ce526438ebbb42a
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    pydantic: 2.12.5
+    PyYAML: 6.0.3
+    orjson: 3.11.9
+    safetensors: 0.8.0
+  hardware_pin: NVIDIA GeForce RTX 5090
+
+failure_policy:
+  fail_closed_on_asset_hash_mismatch: true
+  fail_closed_on_model_artifact_mismatch: true
+  fail_closed_on_raw_or_carrier_tokenization_contract_mismatch: true
+  fail_closed_on_model_type_layer_width_parameter_vocab_dtype_or_block_path_mismatch: true
+  fail_closed_on_nonfinite_activation_or_logits: true
+  retain_failed_model_cell: true
+  prohibit_model_replacement_after_base_outcomes: true
+  prohibit_carrier_distance_layer_panel_endpoint_or_seed_reselection_after_base_outcomes: true
+
+outcome_pattern_registry:
+  recurrence_and_early_depth_attenuation_excess: >-
+    Both fixed one-sided components pass and therefore the one-model IUT passes.
+    This is prospective evidence only for the selected unseen base cell and not
+    an instruction-tuning effect or independent confirmation.
+  recurrence_without_early_depth_attenuation_excess: >-
+    Distance-1 recurrence passes but the fixed early-minus-late component does
+    not. Retain all depth profiles without substituting a favorable depth.
+  early_depth_attenuation_excess_without_recurrence: >-
+    The fixed interaction component passes but distance-1 recurrence does not,
+    so the IUT fails. Do not promote the interaction alone.
+  neither_primary_component: >-
+    Neither fixed component passes. Retain the bounded null result and complete
+    profiles without model, layer, carrier, or endpoint replacement.
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+forbidden_actions:
+  - activation_intervention
+  - behavioral_generation
+  - protected_target_access
+  - post_outcome_model_carrier_distance_layer_family_endpoint_or_seed_selection
+  - instruction_tuning_effect_claim
+  - tokenizer_architecture_backend_node_precision_or_scale_effect_claim
+  - independent_confirmation_claim
+  - inferential_pooling_with_t6
