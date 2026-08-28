@@ -1,0 +1,25 @@
+protocol_id: glyphprobe-mistral7b-semantic-atlas-capture-validation-v0
+source_protocol_id: glyphprobe-mistral7b-semantic-atlas-v0
+status: frozen_before_capture_validation_forwards_and_before_activation_analysis
+fixed_acquisition_indices: [0, 445, 891]
+view_order: [glyph, unicode_name, codepoint_literal]
+carrier_order: [article_a, pipe]
+distance_order: [1, 2, 4, 8]
+layers: [0, 4, 8, 12, 16, 20, 24, 28, 31]
+expected_cases: 18
+execution:
+  batch_size: 1
+  model_forward_calls: 18
+  reserve_forward_calls: 0
+  intervention_calls: 0
+  generation_calls: 0
+thresholds:
+  minimum_vector_cosine: 0.999999
+  maximum_relative_rms_error: 0.001
+  maximum_absolute_error: 0.125
+decision: all_18_cases_must_pass_all_three_thresholds
+claim_boundary: >-
+  Engineering equivalence of the stored batch-64/fused-distance capture and a
+  batch-1 recapture for 18 fixed acquired sequences only. Passing does not
+  validate semantic content, confirm a scientific endpoint, or expose any
+  reserved item.
