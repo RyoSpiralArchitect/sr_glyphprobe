@@ -1,0 +1,92 @@
+{
+  "alignment_confirmed": true,
+  "alpha": 0.05,
+  "cell_count": 8,
+  "cell_order": [
+    {
+      "carrier": "article_a",
+      "distance": 1
+    },
+    {
+      "carrier": "article_a",
+      "distance": 2
+    },
+    {
+      "carrier": "article_a",
+      "distance": 4
+    },
+    {
+      "carrier": "article_a",
+      "distance": 8
+    },
+    {
+      "carrier": "pipe",
+      "distance": 1
+    },
+    {
+      "carrier": "pipe",
+      "distance": 2
+    },
+    {
+      "carrier": "pipe",
+      "distance": 4
+    },
+    {
+      "carrier": "pipe",
+      "distance": 8
+    }
+  ],
+  "codepoint_top1_by_cell": [
+    0.003424657534246575,
+    0.010273972602739725,
+    0.0,
+    0.0,
+    0.003424657534246575,
+    0.00684931506849315,
+    0.003424657534246575,
+    0.0
+  ],
+  "contrast_by_cell": [
+    0.3219178082191781,
+    0.2842465753424658,
+    0.22945205479452055,
+    0.2226027397260274,
+    0.18835616438356162,
+    0.17123287671232876,
+    0.2089041095890411,
+    0.22945205479452055
+  ],
+  "exceedances": 0,
+  "item_count": 292,
+  "multiplicity": "none_single_global_minimum_statistic",
+  "name_top1_by_cell": [
+    0.3253424657534247,
+    0.2945205479452055,
+    0.22945205479452055,
+    0.2226027397260274,
+    0.1917808219178082,
+    0.1780821917808219,
+    0.21232876712328766,
+    0.22945205479452055
+  ],
+  "null_statistic_quantiles": {
+    "0.0": -0.010273972602739725,
+    "0.5": -0.00684931506849315,
+    "0.95": -0.003424657534246575,
+    "0.99": 0.0,
+    "1.0": 0.00684931506849315
+  },
+  "observed_equal_cell_mean_contrast": 0.2320205479452055,
+  "observed_minimum_cell_contrast": 0.17123287671232876,
+  "outcome_pattern": "transport_robust_late_depth_glyph_name_alignment_confirmed",
+  "p_value": 5e-05,
+  "positive_rule": "permutation_p_le_alpha_and_observed_minimum_ge_0.02",
+  "practical_minimum": 0.02,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "randomization_draws": 19999,
+  "randomization_null": "Apply one common random permutation of official-name item correspondence across all eight cells while retaining the observed codepoint control and all representation matrices. Recompute the minimum eight-cell contrast.",
+  "randomization_seed": 20260828,
+  "statistic": "minimum_over_eight_cells_of_glyph_name_top1_minus_glyph_codepoint_top1",
+  "status": "pass",
+  "t8_reserve_question_closed": true
+}

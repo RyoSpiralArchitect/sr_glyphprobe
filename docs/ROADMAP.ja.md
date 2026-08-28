@@ -356,8 +356,8 @@ T7は、tokenization-matched controlsと未使用confirmatory setという本線
 
 ### 観測side track T8 — Mistral semantic atlas
 
-状態: reserveを未実行のまま保ち、記述的high-n atlasとして完了した。次の
-structure-breaking段階を、真に未使用の確認資源を残した再利用可能な取得へ変えた。
+状態: 記述的high-n atlasとして完了した。未使用reserveは、その後、固定したT9確認protocolの
+下でのみ開いた。
 
 - Model forward 0のcensusで、Unicode Emoji 17.0のfully-qualified・単一codepoint
   1,184件を固定した。既出calibration 50件、事前hashで選んだdiscovery 842件、
@@ -379,15 +379,14 @@ token構造層別を含む。単純なcodepoint identityとglyph長による説�
 disentangleされた意味変数を同定してはいない。
 
 終了条件: 達成した。Canonical 28 shardはすべて検証済みで、失敗した高速経路、bit-exactな
-canonical validation、compactな公開evidenceを保持する。次のprotocolはcalibration/discovery
-evidenceだけからendpointと多重性familyを一つ選び、freezeした後に限り、292件のreserveを
-一度だけforwardする。T8単独では、意味、tokenizer因果、確認、mechanism、model一般性、
-Phase I gateを閉じない。
+canonical validation、compactな公開evidenceを保持する。その後T9が、calibration/discovery
+evidenceからendpointと多重性ruleを一つfreezeしてから、292件のreserveをforwardした。
 
 ### 確認side track T9 — semantic atlas single-use reserve
 
-状態: protocol規定済み。Freeze commitと実行は未完了。T9では決定的な`reserved_unrun`
-292件を一度だけ使い、後期深度glyph/name alignmentという狭い問いを閉じる。
+状態: `transport_robust_late_depth_glyph_name_alignment_confirmed`として完了した。
+決定論的に選定した`reserved_unrun` 292件を一度だけ使い、後期深度glyph/name alignmentという狭い問いを
+閉じた。
 
 - 既存の3 view、2 carrier、4距離を保ち、canonical batch size 1でlayer 31だけを取得する。
 - Primary statisticは一つだけで、8 cellすべてにおけるglyph→name minus
@@ -396,9 +395,10 @@ Phase I gateを閉じない。
 - 完了した全結果を、固定ruleでconfirmedまたはnot confirmedのどちらかとして報告し、
   secondary解析による救済を認めない。
 
-T9通過が確認するのは、未使用target setにおけるmodel・layer固有の観測的alignmentだけである。
-意味因果、mechanism、behavior、tokenization非依存性、model一般性、Phase I全体は確立しない。
-T9が不通過でも、同じ問いを負の結果として閉じる。
+観測された8-cell最小contrastは`0.171233`で、固定下限は`0.02`。共通permutation 19,999回の
+うち観測統計以上は0回で、`p = 0.00005`だった。T9が確認するのは、未使用target setにおける
+model・layer固有の観測的alignmentだけである。意味因果、mechanism、behavior、tokenization
+非依存性、model一般性、Phase I全体は確立しない。全結果とcompact evidenceを公開する。
 
 ### T9後のqueue — model横断再現と変則glyph探索
 
@@ -478,7 +478,7 @@ representation shiftを扱う探索laneである。探索的と明記し、T9や
 
 これらのゲートは、正の結果を前提にしていません。実験の識別可能性とartifactの完全性を保てるなら、境界を明確にした負の結果やmixed resultも、Phase Iの妥当な到達点です。
 
-現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。また、prototype再構築解析が事後的だったため、ゲート6の最終的な統計資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

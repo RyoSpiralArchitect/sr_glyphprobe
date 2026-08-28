@@ -1,0 +1,72 @@
+{
+  "acquisition": {
+    "model_forward_calls": 1752,
+    "partial_shards": 0,
+    "raw_activation_bytes_committed": 0,
+    "readout_vectors": 7008,
+    "reserve_items": 292,
+    "shards": 10
+  },
+  "artifact_role": "compact_public_confirmatory_evidence_without_raw_activations_or_item_rows",
+  "claim_boundary": {
+    "causal_claim_authorized": false,
+    "confirmatory_alignment_claim_authorized": true,
+    "model_general_claim_authorized": false,
+    "phase_i_gate_closed": false,
+    "semantic_claim_authorized": false,
+    "tokenizer_independent_claim_authorized": false
+  },
+  "files": {
+    "analysis/analysis_receipt.json": {
+      "bytes": 971,
+      "sha256": "19e7190effec8ac057ac24cf4c893185ed5f64e67a89cef417a5b9e1047d27c1"
+    },
+    "analysis/cell_metrics.jsonl": {
+      "bytes": 10632,
+      "sha256": "c74e425c75a1d0e220ae07f80db3a0a7391b7e69380cf2db723751fc8c511fe9"
+    },
+    "analysis/primary_result.json": {
+      "bytes": 2361,
+      "sha256": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9"
+    },
+    "run/run_receipt.json": {
+      "bytes": 2595,
+      "sha256": "736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65"
+    },
+    "run/session_receipt.json": {
+      "bytes": 1547,
+      "sha256": "8b43d151bcd4f41f28cc149599bc5477c2b3a8f20c1d594032e1ae53bc4998eb"
+    },
+    "validation/execution_receipt.json": {
+      "bytes": 2649,
+      "sha256": "2e17850e474280945732df7e68dacd226e8b008a89c445bce44c2aca72ffe8c6"
+    }
+  },
+  "freeze": {
+    "commit": "952b89d1c1d8a0aa023f40b617432653581a5a85",
+    "manifest_sha256": "a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58",
+    "reserve_model_inputs_forwarded_at_freeze": 0
+  },
+  "outcome_pattern": "transport_robust_late_depth_glyph_name_alignment_confirmed",
+  "primary": {
+    "alignment_confirmed": true,
+    "alpha": 0.05,
+    "cell_count": 8,
+    "exceedances": 0,
+    "observed_equal_cell_mean_contrast": 0.2320205479452055,
+    "observed_minimum_cell_contrast": 0.17123287671232876,
+    "p_value": 5e-05,
+    "practical_minimum": 0.02,
+    "randomization_draws": 19999,
+    "randomization_seed": 20260828,
+    "t8_reserve_question_closed": true
+  },
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "raw_data_policy": {
+    "item_retrieval_outcomes_in_git": false,
+    "raw_activations_in_git": false,
+    "reason": "retain compact claim-complete evidence while keeping raw and item-level data outside Git"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

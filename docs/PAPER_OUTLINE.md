@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -158,6 +158,24 @@ Gemma 3 4B/12B pair is only one selected pair. T6 therefore adds a bounded dense
 negative replication of the conjunction, not confirmation, backend parity,
 tokenizer equivalence, or a scale effect.
 
+## Current Mistral semantic-atlas confirmation result
+
+T8 selected a fixed layer-31 retrieval contrast after inspecting only its 842
+discovery items. T9 then froze all 292 deterministic `reserved_unrun` items,
+two carriers, four distances, one primary minimum statistic, a `0.02`
+practical floor, and 19,999 common permutations before any reserve forward.
+
+The reserve minimum glyph-to-official-name minus glyph-to-codepoint top-1
+contrast was `0.171233`; every one of the eight carrier-distance cells cleared
+the floor. No null draw reached the observed minimum, giving the prespecified
+one-sided `p = 0.00005`. Centered linear CKA favored glyph/name in seven of
+eight cells, with a `-0.007682` contrast at `article_a`, distance 8.
+
+The paper may therefore describe prospectively confirmed, model-specific,
+item-level correct-name alignment at late depth. It may not call this human
+emoji meaning, semantic causality, uniform global-geometry superiority,
+tokenizer independence, behavioral relevance, or model generality.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -171,6 +189,7 @@ tokenizer equivalence, or a scale effect.
 9. Does the matched-slot geometry remain observable at a common token exactly one position after the raw glyph?
 10. Across fixed distances 1, 2, 4, and 8 in repeated common-token carriers, does distance-1 recurrence coexist with a prespecified positive log-distance attenuation contrast?
 11. Does that complete fixed carrier-distance conjunction recur in four selected dense instruction-tuned Transformers/CUDA cells?
+12. Does the fixed layer-31 glyph/name-versus-codepoint retrieval contrast reproduce across every carrier-distance cell in a deterministic untouched Mistral reserve?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -191,6 +210,11 @@ T6 gives the same top-level negative answer to question 11: none of its four
 model IUTs passed Holm. Mistral's distance-1 component recurred, but its
 attenuation component did not reject. T6 is prospective only for its own unseen
 outcomes and is not independent confirmation of T5.
+T8/T9 give a positive answer to question 12 under the frozen rule. All 292
+reserve items were acquired once, and every carrier-distance contrast exceeded
+the practical floor while the global minimum statistic reached the permutation
+floor. This is untouched-target replication within one model and layer, not
+independent model-family replication.
 
 ## Planned paper structure
 

@@ -499,9 +499,8 @@ tokenization-matched-control and untouched-confirmatory-set priorities.
 
 ### Observational side track T8 — Mistral semantic atlas
 
-Status: complete as a descriptive high-n atlas with the reserve still unrun.
-T8 converted the next structure-breaking step into a reusable acquisition while
-preserving a genuinely untouched confirmation resource.
+Status: descriptive high-n atlas complete; its untouched reserve was later
+opened only under the frozen T9 confirmation protocol.
 
 - The zero-forward census fixed all 1,184 fully-qualified single-codepoint
   Unicode Emoji 17.0 entries: 50 prior-exposed calibration items, 842
@@ -529,17 +528,15 @@ not identify a disentangled semantic variable.
 
 Exit condition: met. All 28 canonical shards validated, the failed fast path and
 bit-exact canonical validation are retained, and a compact public evidence
-bundle is published. The next protocol must choose one endpoint and
-multiplicity family using only calibration/discovery evidence, freeze that
-choice, and only then forward the 292-item reserve exactly once. T8 alone closes
-no semantic, tokenizer-causal, confirmatory, mechanistic, model-general, or
-Phase I gate.
+bundle is published. T9 subsequently froze one endpoint and multiplicity rule
+from calibration/discovery evidence before forwarding the 292-item reserve.
 
 ### Confirmatory side track T9 — single-use semantic-atlas reserve
 
-Status: protocol specified; freeze commit and execution remain pending. T9 uses
-all 292 deterministic `reserved_unrun` items exactly once to close the narrow
-late-depth glyph/name alignment question.
+Status: complete —
+`transport_robust_late_depth_glyph_name_alignment_confirmed`. T9 used all 292
+deterministic `reserved_unrun` items exactly once to close the narrow late-depth
+glyph/name alignment question.
 
 - acquire only layer 31 with the existing three views, two carriers, and four
   distances at canonical batch size one;
@@ -550,10 +547,13 @@ late-depth glyph/name alignment question.
 - report every complete outcome as either confirmed or not confirmed under the
   frozen rule, without a secondary rescue.
 
-Passing T9 confirms only a model- and layer-specific observational alignment
-on an untouched target set. It does not establish semantic causality, a
-mechanism, behavior, tokenization independence, model generality, or the whole
-Phase I claim. Failing T9 closes the same question negatively.
+The observed minimum eight-cell contrast was `0.171233` against the frozen
+`0.02` floor. Zero of 19,999 common-permutation draws reached it, yielding
+`p = 0.00005`. T9 therefore confirms only a model- and layer-specific
+observational alignment on an untouched target set. It does not establish
+semantic causality, a mechanism, behavior, tokenization independence, model
+generality, or the whole Phase I claim. The complete result and compact evidence
+bundle are published.
 
 ### Queued after T9 — cross-model replication and unusual-glyph exploration
 
@@ -661,9 +661,14 @@ distance-attenuation conjunction. T7 then prospectively rejected the fixed
 distance-1 plus early-minus-late depth IUT in one selected Mistral base cell,
 but its post-T6 endpoint/model selection and related Instruct reference prevent
 independent-confirmation or instruction-tuning claims. T5–T7 therefore sharpen
-the depth-dependent observational account without closing gates 4 or 5. Final
-statistical qualification for gate 6 remains open because the rebuilt-prototype
-analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
+the depth-dependent observational account without closing gates 4 or 5. T8/T9
+now add a separate claim-specific prospective confirmation: one endpoint was
+frozen before a deterministic 292-item reserve was forwarded, and its single
+global minimum-cell randomization test passed. This supplies clean Mistral-
+specific evidence for gates 1, 2, 6, and 7, but it is neither independent-model
+replication nor semantic or causal evidence. Final paper-wide qualification for
+gate 6 remains open because the rebuilt GPT-2 prototype analysis was post hoc.
+Gates 4, 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research
 release, not a finished manuscript.

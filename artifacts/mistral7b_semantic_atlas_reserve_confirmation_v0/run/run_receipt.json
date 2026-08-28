@@ -1,0 +1,60 @@
+{
+  "acquisition_status": "complete_analysis_pending",
+  "activation_dtype": "float32",
+  "axis_order": [
+    "item",
+    "view",
+    "carrier",
+    "distance",
+    "layer",
+    "width"
+  ],
+  "carrier_order": [
+    "article_a",
+    "pipe"
+  ],
+  "causal_readout_vectors": 7008,
+  "claim_boundary": "One fixed confirmatory test in the previously unforwarded 292-item reserve of the Mistral 7B v0.3 semantic atlas. A positive result may establish only that, in this model and frozen transport grid, layer-31 residual geometry retrieves the correct official Unicode name more strongly than the literal U+ codepoint control across every prespecified carrier-distance cell. It does not identify human meaning, tokenization causality, a mechanism, behavior, model generality, or a complete Phase I paper claim.",
+  "confirmatory_status": null,
+  "distance_order": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "experiment_role": "prospective_single_use_reserve_confirmation_of_late_depth_glyph_name_alignment",
+  "freeze_manifest_sha256": "a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "layers": [
+    31
+  ],
+  "model_forward_calls": 1752,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "raw_activations_committed_to_git": false,
+  "reserve_items": 292,
+  "reserved_items_forwarded": 292,
+  "reserved_model_inputs_forwarded": 1752,
+  "schema_version": 1,
+  "shard_count": 10,
+  "shard_ledger_sha256": {
+    "shard_0000": "805cc135b4283db843251d5a43c7695e9c52793fdaa7d96616c695ba89de0c87",
+    "shard_0001": "978b6f7a185df10a5d87c22e09d2c49c6511bb28faf748486904c10227348fe9",
+    "shard_0002": "d41ea87a72dd77e4a56a2af4ce3f30244a1c71375f01defa1506e64b093d0379",
+    "shard_0003": "c81b1be9a372afcf07d8f9e688c91f244f83489224bf4f5260500d3f2759185e",
+    "shard_0004": "fb1abf556b4a232d06c4c79239084b234c93f8e594ea05c5ace7041eb9350a50",
+    "shard_0005": "e140331b5baba928c2d375df3581c9fc0e943be947446516214f749b7a84342f",
+    "shard_0006": "e2f11dec6f6500016605e19032432c7289cd813ed44cc1dd5c847391d677e569",
+    "shard_0007": "723cfbe21a62ad470ed538f84d46e393487845380c04a6615369be51bcc1af4a",
+    "shard_0008": "b373974713cc8dcb422f5123bb4bcea83a5e13b337ffdf90d95bd136f8fda7cc",
+    "shard_0009": "7a6c69dcc6c6615117155cfbc88c32bdb56168019dd7749b7f28f69f1d901c90"
+  },
+  "source_selection_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "status": "pass",
+  "unique_input_sequences": 1752,
+  "view_order": [
+    "glyph",
+    "unicode_name",
+    "codepoint_literal"
+  ]
+}

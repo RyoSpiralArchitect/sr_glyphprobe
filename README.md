@@ -248,22 +248,25 @@ evidence](artifacts/mistral7b_base_depth_distance_v0/README.md).
 
 ### Mistral 7B semantic atlas T8 status
 
-T8 completed as a high-n observational atlas, not a confirmatory semantic test.
-The first batch-64 acquisition failed its fixed batch-one equivalence check
-0/18, so the thresholds were retained and the exact 892-item grid was
-recaptured canonically at batch size one. All 28 shards and 192,672 FP32 vectors
-validated; an independent 18-case repeat was bit-exact. The 292-item reserve
-still has zero model forwards.
+T8 began as a high-n observational atlas. The first batch-64 acquisition failed
+its fixed batch-one equivalence check 0/18, so the thresholds were retained and
+the exact 892-item grid was recaptured canonically at batch size one. All 28
+shards and 192,672 FP32 vectors validated; an independent 18-case repeat was
+bit-exact.
 
 On 842 unseen discovery items, equal-cell layer-31 glyph→official-name top-1
 retrieval was `0.136580` against chance `0.001188`; glyph→`U+...` retrieval was
 `0.001188`. The contrast persisted in 760 five-token glyphs with one shared
 three-token prefix and in the 43-item equal glyph/name token-count stratum.
-These are descriptive, partly post-outcome controls—not semantic causality or
-confirmation. See the [complete result](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md),
-[batch-one protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md), and [public
-evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.md). The next
-single-use reserve decision is specified in the [T9 confirmation protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md).
+Those discovery analyses were descriptive and partly post-outcome. A later
+protocol froze one layer-31 endpoint before any reserve forward, then acquired
+all 292 reserved items exactly once. The minimum of the eight glyph/name minus
+glyph/codepoint top-1 contrasts was `0.171233` against a practical floor of
+`0.02`; the common-permutation p-value was `0.00005`. T8's narrow alignment
+question is therefore prospectively confirmed and closed in this model. It is
+not a semantic-causal or model-general result. See the [confirmation result](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md),
+[frozen protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md), and
+[public evidence](artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/README.md).
 
 ### E2 engineering results
 
@@ -476,6 +479,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Mistral 7B semantic atlas batch-one v1 | [MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md) | [MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md) |
 | Mistral 7B semantic atlas analysis plan | [MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md) | [MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md) |
 | Mistral 7B semantic atlas token sensitivity | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) |
+| Mistral 7B semantic atlas reserve confirmation v0 results | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) |
 | Mistral 7B semantic atlas reserve confirmation v0 | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
@@ -493,7 +497,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 completed a batch-one-validated 842-item discovery atlas, preserved a 292-item zero-forward reserve, and supplied a concrete late-depth glyph/name-versus-codepoint endpoint candidate for a future prospective freeze. It remains exploratory and closes no semantic or confirmatory gate. None of these observational studies closes a causal, confirmatory, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, and carrier-distance heterogeneity. Causal testing, claim-matched independent backend or model replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. This closes the claim-specific Mistral alignment question, not a semantic, causal, tokenizer-independent, or model-general gate. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, and the one negative CKA contrast inside the positive T8 retrieval result. Causal testing, claim-matched independent backend or model replication, and archival evidence remain paper gates.
 
 ## Validation
 

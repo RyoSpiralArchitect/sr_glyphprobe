@@ -379,13 +379,21 @@ token counts. These restrictions were specified after seeing the main result;
 they are sensitivity analyses, not confirmation or a fully token-isomorphic
 control.
 
-The useful change is therefore at the design level. We now have a concrete
-late-depth glyph/name-versus-codepoint retrieval candidate that can be frozen,
-with a bounded multiplicity family, before the 292 reserve items receive their
-first forward pass. Until that prospective step, the atlas is evidence of an
-alignment candidate—not proof of emoji meaning, a causal mechanism, or a
-Phase I gate. The [complete T8 result](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md)
-keeps the full depth profile, controls, and evidence hashes together.
+That prospective step is now complete. Before any reserve forward, one global
+statistic was frozen: the minimum glyph/name-minus-codepoint top-1 contrast over
+all eight layer-31 carrier-distance cells. All 292 reserve items were then
+acquired exactly once. The minimum contrast was `0.171233` against a `0.02`
+floor, and none of 19,999 common-permutation draws reached it (`p = 0.00005`).
+The alignment candidate is therefore confirmed and the T8 reserve question is
+closed.
+
+The boundary became sharper rather than broader. One secondary CKA contrast
+was slightly negative even though every primary retrieval contrast passed. The
+result supports robust correct-name correspondence in this model and layer,
+not uniform superiority of every geometry measure, emoji meaning itself, a
+causal mechanism, or model generality. The [discovery result](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md)
+and [reserve confirmation](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md)
+retain both stages and their evidence hashes.
 
 ## What we can say—and what we cannot
 

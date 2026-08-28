@@ -1,0 +1,69 @@
+{
+  "events": [
+    {
+      "elapsed_ms": 3017.3355881124735,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 0
+    },
+    {
+      "elapsed_ms": 2556.25481903553,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 1
+    },
+    {
+      "elapsed_ms": 2557.0135000161827,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 2
+    },
+    {
+      "elapsed_ms": 2556.803622050211,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 3
+    },
+    {
+      "elapsed_ms": 2556.6794089972973,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 4
+    },
+    {
+      "elapsed_ms": 2557.3630470316857,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 5
+    },
+    {
+      "elapsed_ms": 2556.8064879626036,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 6
+    },
+    {
+      "elapsed_ms": 2556.8924909457564,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 7
+    },
+    {
+      "elapsed_ms": 2556.808243971318,
+      "item_count": 32,
+      "model_forward_calls": 192,
+      "shard_index": 8
+    },
+    {
+      "elapsed_ms": 320.6093478947878,
+      "item_count": 4,
+      "model_forward_calls": 24,
+      "shard_index": 9
+    }
+  ],
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "requested_shard_start": 0,
+  "requested_shard_stop_exclusive": 10,
+  "schema_version": 1,
+  "status": "pass"
+}

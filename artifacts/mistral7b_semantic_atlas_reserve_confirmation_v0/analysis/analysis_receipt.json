@@ -1,0 +1,23 @@
+{
+  "alignment_confirmed": true,
+  "analysis_role": "prospectively_frozen_single_primary_confirmation",
+  "causal_claim_authorized": false,
+  "cell_row_count": 8,
+  "confirmatory_status": true,
+  "freeze_manifest_sha256": "a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "item_row_count": 292,
+  "model_forward_calls": 0,
+  "model_general_claim_authorized": false,
+  "outcome_pattern": "transport_robust_late_depth_glyph_name_alignment_confirmed",
+  "phase_i_gate_closed": false,
+  "primary_result_sha256": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9",
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "reserve_items": 292,
+  "schema_version": 1,
+  "semantic_claim_authorized": false,
+  "source_run_receipt_sha256": "736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65",
+  "status": "pass",
+  "t8_reserve_question_closed": true
+}

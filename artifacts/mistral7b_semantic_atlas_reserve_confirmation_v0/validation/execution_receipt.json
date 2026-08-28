@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0",
+  "status": "pass",
+  "source": {
+    "freeze_commit": "952b89d1c1d8a0aa023f40b617432653581a5a85",
+    "clean_archive_sha256": "d6b7a5db745fad39a2ab72a1fd1d153020c25a4ef47ca48469b7732a5ad8eff7",
+    "freeze_manifest_sha256": "a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58",
+    "freeze_audit_on_furnace": "pass",
+    "reserve_model_inputs_forwarded_before_freeze_commit": 0
+  },
+  "execution_start_gate": {
+    "spiral_status_rechecked_immediately_before_compute": true,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "observed_gpu_memory_mib": 10,
+    "observed_gpu_utilization_percent": 0,
+    "competing_compute_process_observed": false,
+    "existing_local_model_snapshot_used": true,
+    "model_downloaded_for_this_run": false
+  },
+  "execution": {
+    "status": "pass",
+    "reserve_items": 292,
+    "reserved_model_inputs_forwarded": 1752,
+    "model_forward_calls": 1752,
+    "readout_vectors": 7008,
+    "shards": 10,
+    "partial_shards": 0,
+    "session_receipt_sha256": "8b43d151bcd4f41f28cc149599bc5477c2b3a8f20c1d594032e1ae53bc4998eb",
+    "run_receipt_sha256": "736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65",
+    "intervention_calls": 0,
+    "generation_calls": 0
+  },
+  "analysis": {
+    "status": "pass",
+    "analysis_receipt_sha256": "19e7190effec8ac057ac24cf4c893185ed5f64e67a89cef417a5b9e1047d27c1",
+    "primary_result_sha256": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9",
+    "cell_metrics_sha256": "c74e425c75a1d0e220ae07f80db3a0a7391b7e69380cf2db723751fc8c511fe9",
+    "outcome_pattern": "transport_robust_late_depth_glyph_name_alignment_confirmed",
+    "alignment_confirmed": true,
+    "t8_reserve_question_closed": true
+  },
+  "result_return": {
+    "transport": "direct_spiral_pull_to_mac_non_git_research_data_directory",
+    "spiral_share_used": false,
+    "raw_run_bytes_committed_to_git": 0,
+    "raw_analysis_item_rows_committed_to_git": 0,
+    "verified_shards_at_destination": 10,
+    "all_source_ledgers_verified_at_destination": true,
+    "run_receipt_sha256_at_destination": "736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65",
+    "primary_result_sha256_at_destination": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9"
+  },
+  "claim_boundary": {
+    "confirmatory_alignment_claim_authorized": true,
+    "semantic_claim_authorized": false,
+    "causal_claim_authorized": false,
+    "tokenizer_independent_claim_authorized": false,
+    "model_general_claim_authorized": false,
+    "phase_i_gate_closed": false
+  }
+}

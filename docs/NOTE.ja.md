@@ -334,11 +334,17 @@ glyph→name top-1 retrievalは`0.136580`、chanceは`0.001188`、glyph→codepo
 glyph/name token数が等しい43件へ限定してもcontrastは残った。ただし、この層別は主結果を
 見た後に指定している。確認ではなく、完全token-isomorphicでもない感度解析である。
 
-したがって重要な変化は実験設計にある。292件のreserveを初めてforwardする前に、後期深度の
-glyph/name-versus-codepoint retrieval候補と限定した多重性familyを固定できる段階へ進んだ。
-そのprospective stepまでは、atlasはalignment候補の証拠であり、絵文字の意味、因果mechanism、
-Phase I gateの証明ではない。[T8の全結果](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)に、
-完全な深度profile、control、evidence hashをまとめている。
+そのprospective stepは完了した。Reserve forward前に、layer 31の8 carrier×distance cellにおける
+glyph/name minus codepoint top-1 contrastの最小値を、単一global statisticとしてfreezeした。
+その後292件を一度ずつ取得した。最小contrastは下限`0.02`に対して`0.171233`、共通permutation
+19,999回のうち観測統計以上は0回だった（`p = 0.00005`）。Alignment候補は確認され、T8の
+reserve questionは閉じた。
+
+主張境界は広がるのではなく、より鋭くなった。Primary retrieval contrastは8 cellすべて通過したが、
+secondary CKA contrastは1 cellでわずかに負だった。支持されるのは、このmodel・layerにおける
+正しいitem-name対応の頑健性であり、すべてのgeometry measureの一様な優位、絵文字意味
+そのもの、因果mechanism、model一般性ではない。[Discovery結果](MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)と
+[reserve確認](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)に、両段階とevidence hashを残した。
 
 ## ここから言えること、まだ言えないこと
 

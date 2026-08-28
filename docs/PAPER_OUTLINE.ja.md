@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -145,6 +145,21 @@ Mistralの距離8成分とGemma 3 12Bの名目的tailには、多重性判定の
 したがってT6が加えるのはconjunctionに対する範囲を限ったdense負結果であり、確認、backend
 parity、tokenizer同等性、scale効果ではない。
 
+## 現在のMistral semantic-atlas確認結果
+
+T8では、842件のdiscovery itemだけを見た後で、layer 31のretrieval contrastを固定した。
+続くT9では、reserve forwardを一度も行う前に、決定論的に選定した`reserved_unrun` 292件すべて、2 carrier、
+4距離、1つのprimary最小統計、実用下限`0.02`、共通permutation 19,999回を固定した。
+
+Reserveにおけるglyph→Unicode正式名 top-1とglyph→codepoint top-1のcontrastの最小値は
+`0.171233`で、8つすべてのcarrier-distance cellが実用下限を通過した。観測最小統計以上の
+null drawは0件で、事前指定した片側p値は`0.00005`だった。Centered linear CKAは8 cell中
+7 cellでglyph/nameを支持したが、`article_a`・距離8ではcontrastが`-0.007682`だった。
+
+したがって論文では、後期深度におけるmodel固有・item-levelの正しいitem-name対応が
+prospectiveに確認された、と記述できる。一方、人間が解釈する絵文字の意味、意味因果、global
+geometryの一様な優位、tokenizer非依存性、behavioral relevance、model一般性とは呼ばない。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -158,6 +173,7 @@ parity、tokenizer同等性、scale効果ではない。
 9. **RQ9 — Common-suffix carryover:** 生の絵文字から厳密に1 token後ろの共通tokenにも、matched-slot geometryは観測できるか。
 10. **RQ10 — Carrier-distance attenuation:** 共通tokenを反復する固定carrierの距離1、2、4、8で、距離1のrecurrenceと、事前指定した正のlog-distance減衰contrastは両立するか。
 11. **RQ11 — Dense CUDA replication:** 固定したcarrier-distance conjunction全体は、選択した4つのdense instruction-tuned Transformers/CUDA cellでも成立するか。
+12. **RQ12 — Mistral reserve confirmation:** 固定したlayer 31のglyph/name-versus-codepoint retrieval contrastは、決定論的に選定した未使用Mistral reserveの全carrier-distance cellで再現するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -175,6 +191,9 @@ T5はRQ10の固定したmodel-level conjunctionに負の答えを与えた。Hol
 T6もRQ11へ同じtop-levelの負回答を与えた。4 modelのIUTはHolm補正後に1つも通過しない。
 Mistralでは距離1成分が再現したが、減衰成分を棄却しなかった。T6がprospectiveなのは未観測
 だったT6自身のoutcomeに対してだけであり、T5の独立確認ではない。
+T8/T9は、固定した判定規則の下でRQ12へ正の答えを与えた。Reserve 292件は一度だけ取得され、全
+carrier-distance contrastが実用下限を超え、globalな最小統計はpermutation下限へ到達した。
+これは単一model・layer内の未使用target再現であり、独立したmodel-family再現ではない。
 
 ## 予定する貢献
 
