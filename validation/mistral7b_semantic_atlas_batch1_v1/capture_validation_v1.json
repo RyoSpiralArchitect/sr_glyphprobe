@@ -1,0 +1,312 @@
+{
+  "case_count": 18,
+  "cases": [
+    {
+      "acquisition_index": 0,
+      "carrier": "article_a",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999999,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 0,
+      "carrier": "pipe",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999999,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 0,
+      "carrier": "article_a",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 0,
+      "carrier": "pipe",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 0,
+      "carrier": "article_a",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    },
+    {
+      "acquisition_index": 0,
+      "carrier": "pipe",
+      "codepoint": "1F600",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "article_a",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "pipe",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "article_a",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "pipe",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "article_a",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    },
+    {
+      "acquisition_index": 445,
+      "carrier": "pipe",
+      "codepoint": "1F3EB",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "article_a",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "pipe",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "glyph"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "article_a",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "pipe",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "unicode_name"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "article_a",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    },
+    {
+      "acquisition_index": 891,
+      "carrier": "pipe",
+      "codepoint": "1F38C",
+      "exact_element_fraction": 1.0,
+      "maximum_absolute_error": 0.0,
+      "maximum_relative_rms_error": 0.0,
+      "minimum_vector_cosine": 0.9999999999999998,
+      "pass": true,
+      "role": "discovery_unseen",
+      "view": "codepoint_literal"
+    }
+  ],
+  "claim_boundary": "Engineering repeatability of a canonical batch-size-one atlas against an independent batch-size-one recapture for 18 fixed acquired sequences. It is not a semantic or confirmatory test and forwards no reserve item.",
+  "fixed_acquisition_indices": [
+    0,
+    445,
+    891
+  ],
+  "freeze_manifest_sha256": "0e4ef37ff2344530f6dd914089abdb4431a66023ec616f94957de6d97d46cd2c",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "maximum_absolute_error": 0.0,
+  "maximum_relative_rms_error": 0.0,
+  "minimum_exact_element_fraction": 1.0,
+  "minimum_vector_cosine": 0.9999999999999998,
+  "model": {
+    "artifact": {
+      "file_count": 12,
+      "files": {
+        "config.json": {
+          "bytes": 601,
+          "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+        },
+        "generation_config.json": {
+          "bytes": 116,
+          "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+        },
+        "model-00001-of-00003.safetensors": {
+          "bytes": 4949453792,
+          "sha256": "2d7de8eb9bd554cccc999649fd5a3a28a44d09042879d6c1cedd13f59c86f7a8"
+        },
+        "model-00002-of-00003.safetensors": {
+          "bytes": 4999819336,
+          "sha256": "79a5f871a0fbb7919f263d78caff0d4d3b7a1d444552db3011ada70f48fd5ee4"
+        },
+        "model-00003-of-00003.safetensors": {
+          "bytes": 4546807800,
+          "sha256": "ba7ae59358f726f5f5bc5264fd8a3aec907f42e6009d7b22454007d18723616a"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 23950,
+          "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+        },
+        "params.json": {
+          "bytes": 202,
+          "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+        },
+        "special_tokens_map.json": {
+          "bytes": 414,
+          "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+        },
+        "tokenizer.json": {
+          "bytes": 1961548,
+          "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+        },
+        "tokenizer.model": {
+          "bytes": 587404,
+          "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+        },
+        "tokenizer.model.v3": {
+          "bytes": 587404,
+          "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+        },
+        "tokenizer_config.json": {
+          "bytes": 136697,
+          "sha256": "4b16ec9a87854359a282c521da82655cf96c91f53184d14612aa37deac34378e"
+        }
+      },
+      "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+      "total_bytes": 14499379264
+    },
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "model_class": "MistralForCausalLM",
+    "parameter_count": 7248023552,
+    "parameter_dtype_tensor_counts": {
+      "torch.bfloat16": 291
+    },
+    "torch_version": "2.13.0+cu132",
+    "transformers_version": "5.15.0"
+  },
+  "model_forward_calls": 18,
+  "passed_case_count": 18,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-batch1-capture-validation-v1",
+  "reserve_forward_calls": 0,
+  "schema_version": 1,
+  "source_protocol_id": "glyphprobe-mistral7b-semantic-atlas-batch1-v1",
+  "source_run_receipt_sha256": "644fcd88c27999af2a5a011c1ba4748e2f78efb79d978dedf7a8118b8335de72",
+  "status": "pass",
+  "thresholds": {
+    "maximum_absolute_error": 0.125,
+    "maximum_relative_rms_error": 0.001,
+    "minimum_vector_cosine": 0.999999
+  }
+}
