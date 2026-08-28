@@ -1,0 +1,102 @@
+{
+  "batch_size_unique_sequences": 1,
+  "candidate_counts": {
+    "acquired": 892,
+    "reserved_unrun": 292,
+    "roles": {
+      "calibration_prior_exposed": 50,
+      "discovery_unseen": 842,
+      "reserved_unrun": 292
+    },
+    "total": 1184
+  },
+  "claim_boundary": "Canonical batch-size-one recapture of exactly the same 892 acquired items, views, carriers, distances, and layers after the prespecified batch-64 versus batch-1 engineering validation failed. The change responds only to that numeric equivalence failure. It does not touch the 292-item reserve, define a semantic decision, or authorize confirmatory, causal, mechanistic, model-general, or Phase I claims. The failed batch-64 atlas is retained.",
+  "engineering_preflight_sha256": "b486cd512dffb9ce832bd5fd0674d14cd429dd12431f04c975ebff7fba2ccb50",
+  "expected_model_forward_calls": 5352,
+  "experiment_role": "canonical_batch1_recapture_after_prespecified_batch64_validation_failure",
+  "frozen_assets": {
+    "configs/mistral7b_semantic_atlas_batch1_capture_validation_v1.yaml": "36f1c76bd2eba9060503b6221acc8ae76d981ca4720a4b3dc0ef4775e7b1b628",
+    "configs/mistral7b_semantic_atlas_batch1_v1.yaml": "1e706d0bfcb256f35b6228b873694cc1eb25499a7962745eff711b084b269642",
+    "data/manifests/mistral7b_semantic_atlas_selection_v0.json": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+    "data/manifests/mistral7b_semantic_atlas_v0.json": "a72f145f21e5c5b18595adbde4e655827ad7d6c5393d1a8fb72b2cfd9e7330e0",
+    "docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md": "7745291379212e893345af7d25bff6648297d268b64c047c45e99415516a6d52",
+    "docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md": "ed908840085bb4994cbfb23f6dbba85e41e4bad35e3c26fe22b0067f7eb2ac92",
+    "scripts/mistral7b_semantic_atlas_batch1_v1.py": "b3bacb7976d22319f51ac934167a1c3434bf06f8ca49b54df622d507d37e09de",
+    "scripts/mistral7b_semantic_atlas_v0.py": "b53d43456336ea6b3ba428fe930e5c563c1ed6b2a4fbd8ea79819052dfa7a1c6",
+    "scripts/validate_mistral7b_semantic_atlas_capture_v0.py": "fc0397b0470e3e4aadaa61c7f187ef46e6afd7fddcffeb379975f67d2d8ea1d5",
+    "tests/test_mistral7b_semantic_atlas_batch1_v1.py": "5a29840e987b56502fd098dfaeec07235b2b393a2446ca7140bc25e16904f63c",
+    "validation/mistral7b_semantic_atlas_v0/capture_validation_v0.json": "ffd24a94f75cd0ffd64b3e38ece37803d8cb383ca6d9d642f0ecb42f8d5ee704",
+    "validation/mistral7b_semantic_atlas_v0/engineering_preflight.json": "b486cd512dffb9ce832bd5fd0674d14cd429dd12431f04c975ebff7fba2ccb50"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "model_artifact": {
+    "file_count": 12,
+    "files": {
+      "config.json": {
+        "bytes": 601,
+        "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+      },
+      "generation_config.json": {
+        "bytes": 116,
+        "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+      },
+      "model-00001-of-00003.safetensors": {
+        "bytes": 4949453792,
+        "sha256": "2d7de8eb9bd554cccc999649fd5a3a28a44d09042879d6c1cedd13f59c86f7a8"
+      },
+      "model-00002-of-00003.safetensors": {
+        "bytes": 4999819336,
+        "sha256": "79a5f871a0fbb7919f263d78caff0d4d3b7a1d444552db3011ada70f48fd5ee4"
+      },
+      "model-00003-of-00003.safetensors": {
+        "bytes": 4546807800,
+        "sha256": "ba7ae59358f726f5f5bc5264fd8a3aec907f42e6009d7b22454007d18723616a"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 23950,
+        "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+      },
+      "params.json": {
+        "bytes": 202,
+        "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+      },
+      "special_tokens_map.json": {
+        "bytes": 414,
+        "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+      },
+      "tokenizer.json": {
+        "bytes": 1961548,
+        "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+      },
+      "tokenizer.model": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer.model.v3": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer_config.json": {
+        "bytes": 136697,
+        "sha256": "4b16ec9a87854359a282c521da82655cf96c91f53184d14612aa37deac34378e"
+      }
+    },
+    "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+    "total_bytes": 14499379264
+  },
+  "model_forward_calls_for_batch1_v1_at_freeze": 0,
+  "prior_batch64_validation_forward_calls": 18,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-batch1-v1",
+  "reserved_unrun_model_inputs_forwarded_at_freeze": 0,
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "source_bindings": {
+    "acquisition_freeze_manifest_sha256": "a72f145f21e5c5b18595adbde4e655827ad7d6c5393d1a8fb72b2cfd9e7330e0",
+    "base_config_sha256": "08feab9d0f707281917d0318452d593c01ee03829bb910b7aba5e4f3ccb55885",
+    "failed_capture_validation_sha256": "ffd24a94f75cd0ffd64b3e38ece37803d8cb383ca6d9d642f0ecb42f8d5ee704",
+    "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532"
+  },
+  "status": "freeze_complete_before_any_t8_model_forward"
+}

@@ -1,0 +1,22 @@
+protocol_id: glyphprobe-mistral7b-semantic-atlas-batch1-v1
+source_protocol_id: glyphprobe-mistral7b-semantic-atlas-v0
+experiment_role: canonical_batch1_recapture_after_prespecified_batch64_validation_failure
+source_bindings:
+  base_config_sha256: 08feab9d0f707281917d0318452d593c01ee03829bb910b7aba5e4f3ccb55885
+  selection_manifest_sha256: fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532
+  acquisition_freeze_manifest_sha256: a72f145f21e5c5b18595adbde4e655827ad7d6c5393d1a8fb72b2cfd9e7330e0
+  failed_capture_validation_sha256: ffd24a94f75cd0ffd64b3e38ece37803d8cb383ca6d9d642f0ecb42f8d5ee704
+operational_overrides:
+  batch_size_unique_sequences: 1
+  expected_model_forward_calls: 5352
+  item_shard_size: 32
+  expected_shards: 28
+  fused_distance_readout: true
+claim_boundary: >-
+  Canonical batch-size-one recapture of exactly the same 892 acquired items,
+  views, carriers, distances, and layers after the prespecified batch-64 versus
+  batch-1 engineering validation failed. The change responds only to that
+  numeric equivalence failure. It does not touch the 292-item reserve, define a
+  semantic decision, or authorize confirmatory, causal, mechanistic,
+  model-general, or Phase I claims. The failed batch-64 atlas is retained.
+
