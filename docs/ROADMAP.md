@@ -535,6 +535,35 @@ choice, and only then forward the 292-item reserve exactly once. T8 alone closes
 no semantic, tokenizer-causal, confirmatory, mechanistic, model-general, or
 Phase I gate.
 
+### Confirmatory side track T9 — single-use semantic-atlas reserve
+
+Status: protocol specified; freeze commit and execution remain pending. T9 uses
+all 292 deterministic `reserved_unrun` items exactly once to close the narrow
+late-depth glyph/name alignment question.
+
+- acquire only layer 31 with the existing three views, two carriers, and four
+  distances at canonical batch size one;
+- use one primary statistic: the minimum across all eight cells of
+  glyph-to-name minus glyph-to-codepoint forward top-1 retrieval;
+- require a one-sided common-permutation p-value at most `0.05` and a minimum
+  cell contrast of at least `0.02`; and
+- report every complete outcome as either confirmed or not confirmed under the
+  frozen rule, without a secondary rescue.
+
+Passing T9 confirms only a model- and layer-specific observational alignment
+on an untouched target set. It does not establish semantic causality, a
+mechanism, behavior, tokenization independence, model generality, or the whole
+Phase I claim. Failing T9 closes the same question negatively.
+
+### Queued after T9 — cross-model replication and unusual-glyph exploration
+
+T10 is claim-matched cross-model replication. Its model family, tokenizer
+controls, endpoint translation, and multiplicity family remain deliberately
+unfrozen until T9 is sealed. T11 is a later exploratory lane for unusual glyph
+systems and representation shifts. It must be labeled exploratory and must not
+retroactively alter T9 or T10. The order is fixed: T9 confirmation, T10
+replication, then T11 exploration.
+
 ### Milestone 3 — Targeted causal localization
 
 Status: eligible for protocol design, but no causal protocol has yet been

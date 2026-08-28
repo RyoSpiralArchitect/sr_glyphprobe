@@ -207,7 +207,8 @@ batch size 1でcanonicalに再取得した。28 shard、FP32 vector 192,672本�
 chanceは`0.001188`。Glyph→`U+...`は`0.001188`だった。このcontrastは、共通3-token
 prefixを持つ5-token glyph 760件と、glyph/name token数が等しい43件でも残った。ただし
 記述的かつ一部post-outcomeのcontrolで、意味因果や確認ではない。詳細は[全結果](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.ja.md)、
-[batch-one protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md)、[公開evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.ja.md)に示す。
+[batch-one protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md)、[公開evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.ja.md)に示す。次のsingle-use reserve判定は
+[T9確認protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md)に規定した。
 
 ### E2 技術検証の結果
 
@@ -342,6 +343,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Mistral 7B semantic atlas batch-one v1](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md)
 - [Mistral 7B semantic atlas解析計画](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md)
 - [Mistral 7B semantic atlas token感度](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md)
+- [Mistral 7B semantic atlas reserve確認 v0](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)

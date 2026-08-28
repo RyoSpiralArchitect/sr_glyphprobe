@@ -1,0 +1,136 @@
+protocol_id: glyphprobe-mistral7b-semantic-atlas-reserve-confirmation-v0
+experiment_role: prospective_single_use_reserve_confirmation_of_late_depth_glyph_name_alignment
+claim_boundary: >-
+  One fixed confirmatory test in the previously unforwarded 292-item reserve of
+  the Mistral 7B v0.3 semantic atlas. A positive result may establish only that,
+  in this model and frozen transport grid, layer-31 residual geometry retrieves
+  the correct official Unicode name more strongly than the literal U+ codepoint
+  control across every prespecified carrier-distance cell. It does not identify
+  human meaning, tokenization causality, a mechanism, behavior, model
+  generality, or a complete Phase I paper claim.
+
+source_bindings:
+  selection_manifest: data/manifests/mistral7b_semantic_atlas_selection_v0.json
+  selection_manifest_sha256: fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532
+  canonical_run_receipt: artifacts/mistral7b_semantic_atlas_batch1_v1/run/run_receipt.json
+  canonical_run_receipt_sha256: 644fcd88c27999af2a5a011c1ba4748e2f78efb79d978dedf7a8118b8335de72
+  canonical_capture_validation: artifacts/mistral7b_semantic_atlas_batch1_v1/validation/batch1_capture_validation_pass.json
+  canonical_capture_validation_sha256: 52367403f7dfd99c2390498f7c005b29fd555e673dab4231f4983b125cab51d2
+  discovery_analysis_receipt: artifacts/mistral7b_semantic_atlas_batch1_v1/analysis/analysis_receipt.json
+  discovery_analysis_receipt_sha256: d731d9bd794264feb335140b37a722e6c4cc11732d08c255bbd12736f60aaeb0
+  discovery_cell_metrics: artifacts/mistral7b_semantic_atlas_batch1_v1/analysis/cell_metrics.jsonl
+  discovery_cell_metrics_sha256: 93c752fc0941dbc34b1bc9422247dc7b700ad655ef621d0fd3c1ae2bf8915c8b
+  discovery_layer_summary: artifacts/mistral7b_semantic_atlas_batch1_v1/analysis/layer_summary.json
+  discovery_layer_summary_sha256: 2e6cc8145abcdc141703d9c4675f230da7fd93e2bd93baf90eaa02deea5d8c88
+  discovery_public_manifest: artifacts/mistral7b_semantic_atlas_batch1_v1/PUBLIC_MANIFEST.json
+  discovery_public_manifest_sha256: 112dc061f81fa927b5afa06aeb2359d6ccfbe02004edaa9c78412041a086ca14
+  original_engineering_preflight: validation/mistral7b_semantic_atlas_v0/engineering_preflight.json
+  original_engineering_preflight_sha256: b486cd512dffb9ce832bd5fd0674d14cd429dd12431f04c975ebff7fba2ccb50
+
+population:
+  source_role: reserved_unrun
+  order: ascending_source_index
+  expected_items: 292
+  prior_recorded_model_inputs_forwarded: 0
+  replacement_or_exclusion_after_freeze: forbidden
+
+input:
+  view_order: [glyph, unicode_name, codepoint_literal]
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8, expected_token_id: 1032}
+    pipe: {unit: " |", repeats: 8, expected_token_id: 1110}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  site: resid_post
+  position_rule: view_token_count_plus_distance_minus_one
+  fused_distance_readout: true
+
+acquisition:
+  layers: [31]
+  item_shard_size: 32
+  expected_shards: 10
+  batch_size_unique_sequences: 1
+  expected_unique_input_sequences: 1752
+  expected_model_forward_calls: 1752
+  expected_readout_vectors: 7008
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, layer, width]
+  raw_activations_committed_to_git: false
+  completed_shards_are_never_reacquired: true
+  partial_shard_means_protocol_invalid_without_manual_adjudication: true
+
+primary_endpoint:
+  population: all_292_reserved_items
+  layer: 31
+  query_view: glyph
+  positive_target_view: unicode_name
+  negative_control_view: codepoint_literal
+  metric: forward_top1_item_retrieval_after_separate_view_centering_and_row_l2_normalization
+  cells: complete_two_carrier_by_four_distance_grid
+  cell_weighting: equal
+  statistic: minimum_over_eight_cells_of_glyph_name_top1_minus_glyph_codepoint_top1
+  practical_minimum: 0.02
+  randomization_null: >-
+    Apply one common random permutation of official-name item correspondence
+    across all eight cells while retaining the observed codepoint control and
+    all representation matrices. Recompute the minimum eight-cell contrast.
+  randomization_seed: 20260828
+  randomization_draws: 19999
+  p_value: one_plus_exceedances_divided_by_20000
+  alpha: 0.05
+  multiplicity: none_single_global_minimum_statistic
+  positive_rule: permutation_p_le_alpha_and_observed_minimum_ge_0.02
+  negative_rule: every_other_complete_outcome
+
+discovery_design_basis:
+  population_items: 842
+  observed_minimum_cell_contrast: 0.08076009538490325
+  observed_equal_cell_mean_contrast: 0.13539192931784783
+  smallest_cell: {carrier: pipe, distance: 2}
+  practical_minimum_fraction_of_discovery_minimum: 0.24764705767966028
+  endpoint_selected_after_discovery: true
+  reserve_outcome_seen_when_selected: false
+
+secondary_outputs:
+  decision_authorized: false
+  metrics:
+    - complete_eight_cell_top1_and_mean_reciprocal_rank
+    - paired_cosine_margin
+    - centered_linear_cka
+    - reverse_retrieval
+  token_strata: descriptive_only_no_reselection_no_claim
+
+model:
+  canonical_model_id: mistralai/Mistral-7B-v0.3
+  revision: caa1feb0e54d415e2df31207e5f4e273e33509b1
+  expected_model_class: MistralForCausalLM
+  expected_num_layers: 32
+  expected_model_dim: 4096
+  expected_parameter_count: 7248023552
+  expected_artifact_manifest_sha256: 1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  output_hidden_states: true
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+forbidden_actions:
+  - reserve_forward_before_freeze_commit
+  - reserve_item_replacement_or_exclusion
+  - alternate_layer_carrier_distance_or_metric_selection_after_outcome
+  - threshold_or_random_seed_change_after_outcome
+  - intervention_or_generation
+  - raw_activation_commit_to_git
+  - semantic_causal_mechanistic_behavioral_or_model_general_claim

@@ -262,7 +262,8 @@ three-token prefix and in the 43-item equal glyph/name token-count stratum.
 These are descriptive, partly post-outcome controls—not semantic causality or
 confirmation. See the [complete result](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1_RESULTS.md),
 [batch-one protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md), and [public
-evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.md).
+evidence](artifacts/mistral7b_semantic_atlas_batch1_v1/README.md). The next
+single-use reserve decision is specified in the [T9 confirmation protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md).
 
 ### E2 engineering results
 
@@ -475,6 +476,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Mistral 7B semantic atlas batch-one v1 | [MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.md) | [MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_BATCH1_V1.ja.md) |
 | Mistral 7B semantic atlas analysis plan | [MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.md) | [MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0_ANALYSIS.ja.md) |
 | Mistral 7B semantic atlas token sensitivity | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) |
+| Mistral 7B semantic atlas reserve confirmation v0 | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |

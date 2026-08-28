@@ -384,6 +384,29 @@ evidenceだけからendpointと多重性familyを一つ選び、freezeした後�
 一度だけforwardする。T8単独では、意味、tokenizer因果、確認、mechanism、model一般性、
 Phase I gateを閉じない。
 
+### 確認side track T9 — semantic atlas single-use reserve
+
+状態: protocol規定済み。Freeze commitと実行は未完了。T9では決定的な`reserved_unrun`
+292件を一度だけ使い、後期深度glyph/name alignmentという狭い問いを閉じる。
+
+- 既存の3 view、2 carrier、4距離を保ち、canonical batch size 1でlayer 31だけを取得する。
+- Primary statisticは一つだけで、8 cellすべてにおけるglyph→name minus
+  glyph→codepoint forward top-1 retrievalの最小値とする。
+- 共通permutationによる片側p-valueが`0.05`以下、かつ最小cell contrastが`0.02`以上を要求する。
+- 完了した全結果を、固定ruleでconfirmedまたはnot confirmedのどちらかとして報告し、
+  secondary解析による救済を認めない。
+
+T9通過が確認するのは、未使用target setにおけるmodel・layer固有の観測的alignmentだけである。
+意味因果、mechanism、behavior、tokenization非依存性、model一般性、Phase I全体は確立しない。
+T9が不通過でも、同じ問いを負の結果として閉じる。
+
+### T9後のqueue — model横断再現と変則glyph探索
+
+T10はclaim-matchedなmodel横断再現である。Model family、tokenizer control、endpoint翻訳、
+多重性familyは、T9を封印するまで意図的にfreezeしない。T11はその後の変則glyph systemと
+representation shiftを扱う探索laneである。探索的と明記し、T9やT10を遡って変更しない。
+順序は固定する。T9確認、T10再現、その後にT11探索である。
+
 ### Milestone 3 — 対象を絞った因果局在化
 
 状態: プロトコル設計へ進める。ただし、因果プロトコルはまだ凍結しておらず、因果主張も認めない。現時点の候補はlayer 2だけで、layer 4は未解決のため候補にしない。別の確認用bankは、このプロトコル設計に着手するための前提条件ではない。
