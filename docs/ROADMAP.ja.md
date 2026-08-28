@@ -400,12 +400,17 @@ evidenceからendpointと多重性ruleを一つfreezeしてから、292件のres
 model・layer固有の観測的alignmentだけである。意味因果、mechanism、behavior、tokenization
 非依存性、model一般性、Phase I全体は確立しない。全結果とcompact evidenceを公開する。
 
-### T9後のqueue — model横断再現と変則glyph探索
+### 実行中のT10 — semantic atlasのmodel横断再現
 
-T10はclaim-matchedなmodel横断再現である。Model family、tokenizer control、endpoint翻訳、
-多重性familyは、T9を封印するまで意図的にfreezeしない。T11はその後の変則glyph systemと
-representation shiftを扱う探索laneである。探索的と明記し、T9やT10を遡って変更しない。
-順序は固定する。T9確認、T10再現、その後にT11探索である。
+状態：候補modelのforwardは0回のまま、9つのexact artifact/tokenizer preflightと21 assetのfreezeが完了した。取得と解析が残っている。
+
+T10では、T9の項目集合と搬送条件を変えず、9つのmodel/tokenizerセルで再現を調べる。各モデルには、全292項目を使う成分と、`(glyph, name, codepoint)` のtoken数が完全一致する層の内部だけで公式名の対応を置換する成分の両方を要求する。唯一のモデル横断一次判定は、凍結済み4コアセル中3セル以上を対象とするBonferroni部分連言検定である。9セルのp値には、個別セルを限定して報告するためのHolm familyを別に置く。
+
+T9のendpointは、`output.hidden_states[-1]` に返る最終norm後のhidden stateと正確に記述し直した。T10ではこれを一次とし、rawな最終decoder block出力を、一次を救済できない副次として同時取得する。Qwenの規模系列、関連するMistral-Instruct checkpoint、二つのendpointの差は記述に限り、scale、instruction tuning、意味、因果、独立再現、model一般性の主張には使わない。詳しくは[凍結済みprotocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md)に示す。
+
+### Queue中のT11 — 変則glyph探索
+
+T11は、変則的なglyph systemとrepresentation shiftを調べる後続の探索laneとして残す。探索的と明記し、T9やT10を遡って変更しない。順序はT9確認、T10再現、T11探索のまま固定する。
 
 ### Milestone 3 — 対象を絞った因果局在化
 

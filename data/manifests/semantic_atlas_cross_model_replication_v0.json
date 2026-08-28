@@ -1,0 +1,534 @@
+{
+  "claim_boundary": "A fixed nine-cell observational replication of the T9 glyph-to-official-name item-retrieval contrast on the same 292-item population, text views, carriers, distances, batch-one acquisition rule, and API-level final hidden state. The sole cross-cell primary can establish only that at least three of four frozen core model/tokenizer cells meet the registered statistical and practical rules. It cannot establish emoji meaning, semantic decomposition, tokenizer causality or independence, a mechanism, behavior, a base-versus- instruction effect, a scale law, architecture generality, or universal model generality. Shared items, training corpora, and tokenizer ancestry mean the cells are not described as independent replications.",
+  "engineering_preflight_sha256": "8b42d28d5c2b0c5de1c117edf79dc6e159defcdae5a231dc4c7d0ab17b392cdc",
+  "experiment_role": "prospective_cross_model_tokenizer_cell_replication_of_t9_item_name_alignment",
+  "frozen_assets": {
+    "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/analysis_receipt.json": "19e7190effec8ac057ac24cf4c893185ed5f64e67a89cef417a5b9e1047d27c1",
+    "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/primary_result.json": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9",
+    "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/run/run_receipt.json": "736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65",
+    "configs/semantic_atlas_cross_model_replication_v0.yaml": "27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a",
+    "data/manifests/mistral7b_semantic_atlas_reserve_confirmation_v0.json": "a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58",
+    "data/manifests/mistral7b_semantic_atlas_selection_v0.json": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+    "docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md": "0461d55fa264c2c6b1e6def1c63fa6a2804b001f8bfb09b9954429741d729c59",
+    "docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md": "205fc3a0ac9ca782e5f763fb9a9a0711f70176d198aecac5655e1de851599515",
+    "scripts/semantic_atlas_cross_model_replication_v0.py": "f2c3836e57b8a23c841cc06d2e5391203df61d852dd4dd706dd41ec0dc88969e",
+    "tests/test_semantic_atlas_cross_model_replication_v0.py": "4f42da773274c7c22a0ad4d87d7d8293afdbd151886cb024344a7547655c5f5e",
+    "validation/semantic_atlas_cross_model_replication_v0/endpoint_semantics_audit.json": "8723566ed6dbad41dbe72732e3e6309bdd68dbad2d937a06038945cf50f6b075",
+    "validation/semantic_atlas_cross_model_replication_v0/engineering_preflight.json": "8b42d28d5c2b0c5de1c117edf79dc6e159defcdae5a231dc4c7d0ab17b392cdc",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/gemma2_2b_it_bf16.json": "9f3cb02225dc17af9ec5c1a318625410e86e0ac1bc54d2e7c417445a652d8aef",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/llama32_3b_base_bf16.json": "a13ea97bd6567e29d8ab4e458c590263117a756b214c0b32a5ff7e811c996e19",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "8e7f5f596075db8e11e507b7ff4b1891112bda10caa9e507d8446a12c5677019",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/olmo2_1b_base_bf16.json": "3887cd41618d975d82320a69e38a01cf1cb9160bdc4562d3a8d25ee6b8d3c24d",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_0p5b_base_bf16.json": "f5c1b9efd655d2f506b0721bc0291274f519dfc9f42e40306e67e30502af2804",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_1p5b_base_bf16.json": "617cb254ca3f0c2bb72545650036a94d24850a72e98da6682d6654e8297f2c29",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_3b_base_bf16.json": "b1e93c5f2b77ba3a17e3fe4572dc877aeb8288c6c55e25dc061633f8f2734aa0",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_7b_base_bf16.json": "fd4c53a74c8b569cbb29493b3437f57e433ae95246e5d26364edf81af5050653",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/smollm2_1p7b_base_bf16.json": "d9488b96fe03fd828634b457d0248f5dd594416b768dcd6236c5463919a15f76"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "model_artifacts": {
+    "gemma2_2b_it_bf16": {
+      "artifact_model_id": "google/gemma-2-2b-it",
+      "file_count": 11,
+      "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "total_bytes": 5250587389
+    },
+    "llama32_3b_base_bf16": {
+      "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "file_count": 9,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "total_bytes": 6434705789
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "file_count": 15,
+      "manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "total_bytes": 28995471365
+    },
+    "olmo2_1b_base_bf16": {
+      "artifact_model_id": "allenai/OLMo-2-0425-1B",
+      "file_count": 12,
+      "manifest_sha256": "d9274983828330b87d86c5b426978b2044df17faecabdee173c03abad3dd826f",
+      "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "total_bytes": 5949386929
+    },
+    "qwen25_0p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-0.5B",
+      "file_count": 10,
+      "manifest_sha256": "c860aa324659f8fea0265e9330ad9893cae513a6ee2a11547efcd299dd5121c2",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "total_bytes": 999602900
+    },
+    "qwen25_1p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-1.5B",
+      "file_count": 10,
+      "manifest_sha256": "cb56a7e1865b662d4f31bba50d4dab26b307810db21ba472e194d632612f6529",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "total_bytes": 3098972223
+    },
+    "qwen25_3b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-3B",
+      "file_count": 12,
+      "manifest_sha256": "cca372c88da20b8c1704fabdaae41919aa69319b2603ba73e222d261eaf8ad91",
+      "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "total_bytes": 6183463686
+    },
+    "qwen25_7b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-7B",
+      "file_count": 14,
+      "manifest_sha256": "bd8ef40517ce1e40d32874561f678de0412d5a840c4cc90ace07ac30aa41b7b9",
+      "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+      "total_bytes": 15242804690
+    },
+    "smollm2_1p7b_base_bf16": {
+      "artifact_model_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "file_count": 10,
+      "manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+      "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "total_bytes": 3426163516
+    }
+  },
+  "model_forward_calls_at_freeze": 0,
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "status": "freeze_complete_before_any_t10_candidate_model_forward",
+  "tokenizers": {
+    "gemma2_2b_it_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 476,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 1420,
+          "unit": " |"
+        }
+      },
+      "class": "GemmaTokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 284,
+        "eligible_stratum_count": 16,
+        "excluded_singleton_item_count": 8,
+        "stratum_count": 24
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "a339b8c9a2431f5401fc722d36c8fd04b02299f81c53cd5d6d251b4f52d4a5b3",
+            "pipe": "bd3ab08c448a12b3d8693b8c96310553322681a2f122a958d503a3747173b762"
+          },
+          "glyph": {
+            "article_a": "3ded8d337c3b0aaca1d7285afba09b6a221582956a5f43e6eca02d75bdb86d53",
+            "pipe": "8f70d4c37fa87f34108be6493199ea318ee13f023aaf742c29263e9b8f8807ff"
+          },
+          "unicode_name": {
+            "article_a": "3d2d2204ec049dce539a170ff4d260b622f415b7a55864f767f0bbe8ae97ad88",
+            "pipe": "a2e785f7debb5e5ff2af1a440aa255d0ce26603d4d08e2ff62f2664d0cbca833"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "a6a297cea9e37df05bc994672b23adcf1d11131e23523d158875eb9670baed0f",
+          "glyph": "674f73c357e99a61e36cbcb0d080de19e9b9af45ab61ff5610073e72cc0ec41e",
+          "unicode_name": "fb62f072a7936d0775c25e29f52a16ba42eee61da826808359f98ba11ae98a0f"
+        }
+      },
+      "receipt_sha256": "9f3cb02225dc17af9ec5c1a318625410e86e0ac1bc54d2e7c417445a652d8aef",
+      "vocab_size": 256000
+    },
+    "llama32_3b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 765,
+          "unit": " |"
+        }
+      },
+      "class": "TokenizersBackend",
+      "exact_triple_strata": {
+        "eligible_item_count": 281,
+        "eligible_stratum_count": 25,
+        "excluded_singleton_item_count": 11,
+        "stratum_count": 36
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "d70ae78ff0caf52952aabb7a2fda517b82f3f2d87fb97acc2c82c320e2c556c2",
+            "pipe": "1a623c09839e5e8db3323265e1ef6fe269713d665f0cffa0fa7cd48202ff16d4"
+          },
+          "glyph": {
+            "article_a": "438d6ceff495309dccc3ef83077aaa5916ab694bbd00537d768f722ff72361e5",
+            "pipe": "6ca26507524528d004ac0bc957670c90c9f33abc3fdf993c115f80020d6a30d3"
+          },
+          "unicode_name": {
+            "article_a": "2839a638fe6521f7f2d88e5a42e02a69cdfe948ca85d5fd9bc734ce8f9cd1481",
+            "pipe": "69c3795b93d9eda7070940fb5713acb73fa0e60e0240220221f63f5e81c9cf93"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "52295737ba283301a48edbfc855c9681fa948319800c80a16342dbf834308595",
+          "glyph": "7db60fbb113b73758a3e54863809b9c580e430808a62d9d026cfb3ca6ad16afd",
+          "unicode_name": "4c70afda942eb189e1b1fa5710f60e006cff1618e86f94f34995fb6cfc6b19bd"
+        }
+      },
+      "receipt_sha256": "a13ea97bd6567e29d8ab4e458c590263117a756b214c0b32a5ff7e811c996e19",
+      "vocab_size": 128000
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 1032,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 1110,
+          "unit": " |"
+        }
+      },
+      "class": "TokenizersBackend",
+      "exact_triple_strata": {
+        "eligible_item_count": 285,
+        "eligible_stratum_count": 20,
+        "excluded_singleton_item_count": 7,
+        "stratum_count": 27
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "3a9701cbd92f73698bb3289bcba20c1b5d5c9dff838f9f849c221b0373484fa3",
+            "pipe": "78b7c3449b2a5781359a7f1700c1a2c8dc5d61cf4cf8e7537a3eef6d174ba5c0"
+          },
+          "glyph": {
+            "article_a": "88e583c484745fa4401ea2406ee11aa0583a0b073c76ef5bd306b0146b7a6d71",
+            "pipe": "d9df9bbeba5685d7bda8b61c983194b0fff538d7d1b9c4a2bb35783acaacbb95"
+          },
+          "unicode_name": {
+            "article_a": "cb5837446f7fce67cef1e80648b77db8b6f7e8841ac6a82ece5babe2076fa0b7",
+            "pipe": "2939c74aa2872d2ccc6a893eb61cf212584e00633781ced755466ad7497c2fb9"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "76edc9442fae463cb605788ea21f8fc6c10f2ead871c4d2270162e26c91d8ba1",
+          "glyph": "83c27fe24734612c315e12f4144ce640cceecfa9bbdf8fbd9855768c4136fff5",
+          "unicode_name": "bda9b283d122f0d09f6bbb217178d6b0d5ffc72d4f71709ba884e7c789df64f0"
+        }
+      },
+      "receipt_sha256": "8e7f5f596075db8e11e507b7ff4b1891112bda10caa9e507d8446a12c5677019",
+      "vocab_size": 32768
+    },
+    "olmo2_1b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 765,
+          "unit": " |"
+        }
+      },
+      "class": "TokenizersBackend",
+      "exact_triple_strata": {
+        "eligible_item_count": 281,
+        "eligible_stratum_count": 25,
+        "excluded_singleton_item_count": 11,
+        "stratum_count": 36
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "d70ae78ff0caf52952aabb7a2fda517b82f3f2d87fb97acc2c82c320e2c556c2",
+            "pipe": "1a623c09839e5e8db3323265e1ef6fe269713d665f0cffa0fa7cd48202ff16d4"
+          },
+          "glyph": {
+            "article_a": "dba6eecfe937aeea882a8dedd0654e365bc05522e55ba0a1b79fac9195c6f77f",
+            "pipe": "6a206b0d9030db5137d0d5bdc669f9327441d97031666572e87ab270387a79a1"
+          },
+          "unicode_name": {
+            "article_a": "2839a638fe6521f7f2d88e5a42e02a69cdfe948ca85d5fd9bc734ce8f9cd1481",
+            "pipe": "69c3795b93d9eda7070940fb5713acb73fa0e60e0240220221f63f5e81c9cf93"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "52295737ba283301a48edbfc855c9681fa948319800c80a16342dbf834308595",
+          "glyph": "584d7bfa9cdf4dc4338f5d273c5ecd3b05de93bbe8aa35a7c68174d002f38fcc",
+          "unicode_name": "4c70afda942eb189e1b1fa5710f60e006cff1618e86f94f34995fb6cfc6b19bd"
+        }
+      },
+      "receipt_sha256": "3887cd41618d975d82320a69e38a01cf1cb9160bdc4562d3a8d25ee6b8d3c24d",
+      "vocab_size": 100278
+    },
+    "qwen25_0p5b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 760,
+          "unit": " |"
+        }
+      },
+      "class": "Qwen2Tokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 284,
+        "eligible_stratum_count": 22,
+        "excluded_singleton_item_count": 8,
+        "stratum_count": 30
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "5c25e765ccab29ebf7c2ab410c39cd7dc4aae57827c71bb683f2649f4b45a5cc",
+            "pipe": "79cf283df508d15c360cf05676e0cd918822fb901cb96ef63a319ca3821dbd0a"
+          },
+          "glyph": {
+            "article_a": "5d78cf4f3d1ba3a8fedb3df315d3be3a0e9f91d441e08af07b99debafd819eeb",
+            "pipe": "0a8c51d91e5b4958cfe7a2903fe68991d62d2f156fb3a5276fee2f102fbf3967"
+          },
+          "unicode_name": {
+            "article_a": "b218dfb7c2c5ae2287473a10bef75ad646d8ac9897b20629b261b3d6df771280",
+            "pipe": "90b303e3844bc6dfad3bdcfa632244491dd97bdcdffeeb331812c2018f984c8b"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "5bc0e84db9539407c44bbd0c4dc3e93f4c0dc2bdcb645e81ae3bf84e42a5835f",
+          "glyph": "663909d83cf283f2778303b96a24ed5cce3c13eee85baf715bf0b374184bd054",
+          "unicode_name": "ceedef32ba84c9df1d7ac578136abc4c5ff51faf44e52448822ac291205764d9"
+        }
+      },
+      "receipt_sha256": "f5c1b9efd655d2f506b0721bc0291274f519dfc9f42e40306e67e30502af2804",
+      "vocab_size": 151643
+    },
+    "qwen25_1p5b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 760,
+          "unit": " |"
+        }
+      },
+      "class": "Qwen2Tokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 284,
+        "eligible_stratum_count": 22,
+        "excluded_singleton_item_count": 8,
+        "stratum_count": 30
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "5c25e765ccab29ebf7c2ab410c39cd7dc4aae57827c71bb683f2649f4b45a5cc",
+            "pipe": "79cf283df508d15c360cf05676e0cd918822fb901cb96ef63a319ca3821dbd0a"
+          },
+          "glyph": {
+            "article_a": "5d78cf4f3d1ba3a8fedb3df315d3be3a0e9f91d441e08af07b99debafd819eeb",
+            "pipe": "0a8c51d91e5b4958cfe7a2903fe68991d62d2f156fb3a5276fee2f102fbf3967"
+          },
+          "unicode_name": {
+            "article_a": "b218dfb7c2c5ae2287473a10bef75ad646d8ac9897b20629b261b3d6df771280",
+            "pipe": "90b303e3844bc6dfad3bdcfa632244491dd97bdcdffeeb331812c2018f984c8b"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "5bc0e84db9539407c44bbd0c4dc3e93f4c0dc2bdcb645e81ae3bf84e42a5835f",
+          "glyph": "663909d83cf283f2778303b96a24ed5cce3c13eee85baf715bf0b374184bd054",
+          "unicode_name": "ceedef32ba84c9df1d7ac578136abc4c5ff51faf44e52448822ac291205764d9"
+        }
+      },
+      "receipt_sha256": "617cb254ca3f0c2bb72545650036a94d24850a72e98da6682d6654e8297f2c29",
+      "vocab_size": 151643
+    },
+    "qwen25_3b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 760,
+          "unit": " |"
+        }
+      },
+      "class": "Qwen2Tokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 284,
+        "eligible_stratum_count": 22,
+        "excluded_singleton_item_count": 8,
+        "stratum_count": 30
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "5c25e765ccab29ebf7c2ab410c39cd7dc4aae57827c71bb683f2649f4b45a5cc",
+            "pipe": "79cf283df508d15c360cf05676e0cd918822fb901cb96ef63a319ca3821dbd0a"
+          },
+          "glyph": {
+            "article_a": "5d78cf4f3d1ba3a8fedb3df315d3be3a0e9f91d441e08af07b99debafd819eeb",
+            "pipe": "0a8c51d91e5b4958cfe7a2903fe68991d62d2f156fb3a5276fee2f102fbf3967"
+          },
+          "unicode_name": {
+            "article_a": "b218dfb7c2c5ae2287473a10bef75ad646d8ac9897b20629b261b3d6df771280",
+            "pipe": "90b303e3844bc6dfad3bdcfa632244491dd97bdcdffeeb331812c2018f984c8b"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "5bc0e84db9539407c44bbd0c4dc3e93f4c0dc2bdcb645e81ae3bf84e42a5835f",
+          "glyph": "663909d83cf283f2778303b96a24ed5cce3c13eee85baf715bf0b374184bd054",
+          "unicode_name": "ceedef32ba84c9df1d7ac578136abc4c5ff51faf44e52448822ac291205764d9"
+        }
+      },
+      "receipt_sha256": "b1e93c5f2b77ba3a17e3fe4572dc877aeb8288c6c55e25dc061633f8f2734aa0",
+      "vocab_size": 151643
+    },
+    "qwen25_7b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 264,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 760,
+          "unit": " |"
+        }
+      },
+      "class": "Qwen2Tokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 284,
+        "eligible_stratum_count": 22,
+        "excluded_singleton_item_count": 8,
+        "stratum_count": 30
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "5c25e765ccab29ebf7c2ab410c39cd7dc4aae57827c71bb683f2649f4b45a5cc",
+            "pipe": "79cf283df508d15c360cf05676e0cd918822fb901cb96ef63a319ca3821dbd0a"
+          },
+          "glyph": {
+            "article_a": "5d78cf4f3d1ba3a8fedb3df315d3be3a0e9f91d441e08af07b99debafd819eeb",
+            "pipe": "0a8c51d91e5b4958cfe7a2903fe68991d62d2f156fb3a5276fee2f102fbf3967"
+          },
+          "unicode_name": {
+            "article_a": "b218dfb7c2c5ae2287473a10bef75ad646d8ac9897b20629b261b3d6df771280",
+            "pipe": "90b303e3844bc6dfad3bdcfa632244491dd97bdcdffeeb331812c2018f984c8b"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "5bc0e84db9539407c44bbd0c4dc3e93f4c0dc2bdcb645e81ae3bf84e42a5835f",
+          "glyph": "663909d83cf283f2778303b96a24ed5cce3c13eee85baf715bf0b374184bd054",
+          "unicode_name": "ceedef32ba84c9df1d7ac578136abc4c5ff51faf44e52448822ac291205764d9"
+        }
+      },
+      "receipt_sha256": "fd4c53a74c8b569cbb29493b3437f57e433ae95246e5d26364edf81af5050653",
+      "vocab_size": 151643
+    },
+    "smollm2_1p7b_base_bf16": {
+      "carriers": {
+        "article_a": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 253,
+          "unit": " a"
+        },
+        "pipe": {
+          "decode_exact_count": 876,
+          "prefix_exact_count": 876,
+          "repeats": 8,
+          "token_id": 2504,
+          "unit": " |"
+        }
+      },
+      "class": "GPT2Tokenizer",
+      "exact_triple_strata": {
+        "eligible_item_count": 287,
+        "eligible_stratum_count": 14,
+        "excluded_singleton_item_count": 5,
+        "stratum_count": 19
+      },
+      "ordered_sequence_sha256": {
+        "combined": {
+          "codepoint_literal": {
+            "article_a": "8e2d21db03fd19543fe5ab83003762e1124af928d06e20b23a6da78c4bcda78b",
+            "pipe": "434d28936bc5e04210607d68b9d65e01878b8e7f693df1d3aace13d79a3dd35e"
+          },
+          "glyph": {
+            "article_a": "fb74ab55f0ff8c2779a8e0ab8c0bb0b12890db24b85a01082d60b91914567db1",
+            "pipe": "b98d95601c412a87074ca023b0bcba84073be35a489326ec9e9d3c3dfb520612"
+          },
+          "unicode_name": {
+            "article_a": "a26a42357e98d8bd07fd8ed9e28fb2f53150c837379affdd57f436d153eea7cc",
+            "pipe": "747c41aded6d0f4a817be227fca1e6417d6d198a485f708219dc3cd818a3454f"
+          }
+        },
+        "raw": {
+          "codepoint_literal": "a87141d11f0fd72c74b5bebbdb950241ef458154a563fe2ffca7935b7c1d4bfc",
+          "glyph": "256aec7b32325673b376174264209278cbe1e7231bd6190c267e5edc44769b81",
+          "unicode_name": "8642738239f4c7b4c079dc8feb2cb9392cacd58cd30098b1384d77dd4f3684b1"
+        }
+      },
+      "receipt_sha256": "d9488b96fe03fd828634b457d0248f5dd594416b768dcd6236c5463919a15f76",
+      "vocab_size": 49152
+    }
+  }
+}

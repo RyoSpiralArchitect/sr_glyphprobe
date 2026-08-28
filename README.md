@@ -268,6 +268,24 @@ not a semantic-causal or model-general result. See the [confirmation result](doc
 [frozen protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md), and
 [public evidence](artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/README.md).
 
+### Semantic atlas T10 status
+
+T10 is now frozen before any selected-model forward. All nine exact revisions
+passed artifact completeness and tokenizer preflight, including resolution of
+every index-referenced weight shard and 281--287 exact-stratum items per cell.
+The protocol retains the same 292 items, three views, two carriers, four
+distances, and batch-one transport across nine model/tokenizer cells. Every model
+must pass both an all-item randomization component and an exact three-view
+token-count-stratified component. The sole cross-cell primary is a Bonferroni
+partial-conjunction test requiring evidence in at least three of four core
+cells, plus the practical floor in at least three core cells.
+
+An implementation audit also corrected the T8/T9 endpoint terminology:
+`output.hidden_states[-1]` is the returned final normalized hidden state, not
+the raw final decoder-block output. T10 preserves that API endpoint as primary
+and captures the raw block output as a non-rescuing secondary. See the
+[T10 protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md).
+
 ### E2 engineering results
 
 The frozen Llama 3.2 3B BF16 Stage-A v2 engineering validation completed with
@@ -481,6 +499,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Mistral 7B semantic atlas token sensitivity | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) |
 | Mistral 7B semantic atlas reserve confirmation v0 results | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) |
 | Mistral 7B semantic atlas reserve confirmation v0 | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) |
+| Semantic atlas cross-model replication v0 | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md) | [SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |

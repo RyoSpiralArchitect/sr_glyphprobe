@@ -1,0 +1,305 @@
+protocol_id: glyphprobe-semantic-atlas-cross-model-replication-v0
+experiment_role: prospective_cross_model_tokenizer_cell_replication_of_t9_item_name_alignment
+claim_boundary: >-
+  A fixed nine-cell observational replication of the T9 glyph-to-official-name
+  item-retrieval contrast on the same 292-item population, text views,
+  carriers, distances, batch-one acquisition rule, and API-level final hidden
+  state. The sole cross-cell primary can establish only that at least three of
+  four frozen core model/tokenizer cells meet the registered statistical and
+  practical rules. It cannot establish emoji meaning, semantic decomposition,
+  tokenizer causality or independence, a mechanism, behavior, a base-versus-
+  instruction effect, a scale law, architecture generality, or universal model
+  generality. Shared items, training corpora, and tokenizer ancestry mean the
+  cells are not described as independent replications.
+
+source_bindings:
+  population_manifest: data/manifests/mistral7b_semantic_atlas_selection_v0.json
+  population_manifest_sha256: fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532
+  t9_freeze_manifest: data/manifests/mistral7b_semantic_atlas_reserve_confirmation_v0.json
+  t9_freeze_manifest_sha256: a678213ad79f3fced9c6cffe502b38e16b49a517cdf9d18ba75ef855a8efcc58
+  t9_run_receipt: artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/run/run_receipt.json
+  t9_run_receipt_sha256: 736f575b69b3d23f49233aa2fe7af8afa3911f1699fc111fd8a17eb011d72a65
+  t9_primary_result: artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/primary_result.json
+  t9_primary_result_sha256: ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9
+  t9_analysis_receipt: artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/analysis_receipt.json
+  t9_analysis_receipt_sha256: 19e7190effec8ac057ac24cf4c893185ed5f64e67a89cef417a5b9e1047d27c1
+  t9_result_known_before_design: true
+  t10_candidate_activation_outcomes_seen_at_freeze: false
+
+population:
+  source_role: reserved_unrun
+  order: ascending_source_index
+  expected_items: 292
+  replacement_or_exclusion_after_freeze: forbidden
+  relationship_to_t9: same_items_now_prior_exposed_by_t9
+  inferential_role: fixed_transfer_population_not_a_new_item_holdout
+
+input:
+  view_order: [glyph, unicode_name, codepoint_literal]
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  position_rule: view_token_count_plus_distance_minus_one
+  fused_distance_readout: true
+  exact_boundary_rule: raw_view_token_ids_plus_eight_identical_single_carrier_tokens
+
+endpoints:
+  order: [returned_final_hidden_state, raw_last_decoder_block_output]
+  primary:
+    id: returned_final_hidden_state
+    api_contract: output.hidden_states[-1]
+    interpretation: final_normalized_hidden_state_returned_by_transformers_model_api
+    relationship_to_t9: exact_api_level_match_to_t9_output_hidden_states_layer_plus_one_at_layer_31
+    decision_authorized: true
+  secondary:
+    id: raw_last_decoder_block_output
+    api_contract: forward_hook_on_last_decoder_block_output_before_model_final_norm
+    interpretation: unnormalized_last_decoder_block_output_when_architecture_exposes_model_layers
+    decision_authorized: false
+    cannot_rescue_primary: true
+  terminology_correction: >-
+    T8/T9 called the layer-31 endpoint resid_post. A synthetic implementation
+    audit showed that output.hidden_states[-1] equals the model-final normalized
+    hidden state rather than the raw last decoder-block output. T10 preserves
+    that returned state as primary and records the raw block output separately.
+
+acquisition:
+  item_shard_size: 8
+  expected_shards_per_model: 37
+  batch_size_unique_sequences: 1
+  expected_unique_input_sequences_per_model: 1752
+  expected_model_forward_calls_per_model: 1752
+  expected_readout_vectors_per_model: 14016
+  expected_model_cells: 9
+  expected_total_model_forward_calls: 15768
+  expected_total_readout_vectors: 126144
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, endpoint, width]
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+
+tokenization_guardrail:
+  exact_stratum_key: [glyph_token_count, unicode_name_token_count, codepoint_literal_token_count]
+  eligible_rule: retain_items_in_strata_with_at_least_two_members
+  candidate_and_query_universe: eligible_items_only
+  centering_and_normalization: recomputed_within_eligible_subset
+  null: permute_official_name_correspondence_only_within_exact_strata_common_across_all_eight_cells
+  codepoint_control: observed_and_fixed
+  singleton_items: excluded_from_matched_component_only_and_reported
+  minimum_eligible_items: 250
+  role: required_component_of_each_model_intersection_union_test
+
+model_primary_endpoint:
+  query_view: glyph
+  positive_target_view: unicode_name
+  negative_control_view: codepoint_literal
+  metric: forward_top1_item_retrieval_after_separate_view_centering_and_row_l2_normalization
+  cells: complete_two_carrier_by_four_distance_grid
+  statistic: minimum_over_eight_cells_of_glyph_name_top1_minus_glyph_codepoint_top1
+  components:
+    unrestricted: all_292_items_common_unrestricted_official_name_permutation
+    tokenization_matched: exact_triple_token_count_stratified_official_name_permutation
+  intersection_union_p_value: max_unrestricted_and_tokenization_matched_component_p_values
+  practical_rule: both_component_observed_minimum_contrasts_at_least_0.02
+  practical_minimum: 0.02
+  randomization_draws: 19999
+  seed_base: 2026082900
+  seed_rule: seed_base_plus_ten_times_model_order_index_plus_component_index_one_or_two
+  p_value: one_plus_exceedances_divided_by_20000
+  alpha: 0.05
+
+cross_model_primary:
+  id: at_least_three_of_four_frozen_core_model_tokenizer_cells
+  core_order: [llama32_3b_base_bf16, qwen25_7b_base_bf16, olmo2_1b_base_bf16, gemma2_2b_it_bf16]
+  m: 4
+  r: 3
+  partial_conjunction_method: bonferroni
+  p_value: min_one_and_m_minus_r_plus_one_times_rth_smallest_core_model_iut_p
+  statistical_rule: partial_conjunction_p_le_0.05
+  practical_rule: at_least_three_core_cells_pass_both_registered_practical_floors
+  positive_rule: statistical_and_practical_rules_both_hold
+  alpha: 0.05
+  authorized_positive_wording: at_least_three_of_four_frozen_core_model_tokenizer_cells_replicate
+  independence_claim_authorized: false
+
+bounded_model_cell_family:
+  roles: all_nine_frozen_model_tokenizer_cells
+  multiplicity: holm_on_nine_model_intersection_union_p_values
+  familywise_alpha: 0.05
+  rejection_requires_practical_rule: true
+  relationship_to_cross_model_primary: secondary_exact_cell_roster_cannot_rescue_partial_conjunction
+
+secondary_outputs:
+  decision_authorized: false
+  outputs:
+    - raw_last_decoder_block_endpoint_replication_profile
+    - primary_minus_raw_last_block_endpoint_differences
+    - qwen25_base_four_point_size_profile
+    - all_model_cellwise_top1_mrr_margin_and_centered_linear_cka
+    - token_count_histograms_and_exact_stratum_coverage
+    - per_carrier_and_per_distance_profiles
+    - latency_peak_memory_and_artifact_size_engineering_metrics
+    - descriptive_comparison_with_known_t9_mistral7b_base_result
+
+models:
+  order:
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - olmo2_1b_base_bf16
+    - gemma2_2b_it_bf16
+    - qwen25_0p5b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - qwen25_3b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  core: [llama32_3b_base_bf16, qwen25_7b_base_bf16, olmo2_1b_base_bf16, gemma2_2b_it_bf16]
+  extension: [qwen25_0p5b_base_bf16, qwen25_1p5b_base_bf16, qwen25_3b_base_bf16, smollm2_1p7b_base_bf16, mistral7b_instruct_v03_bf16]
+  qwen_scale_order: [qwen25_0p5b_base_bf16, qwen25_1p5b_base_bf16, qwen25_3b_base_bf16, qwen25_7b_base_bf16]
+  llama32_3b_base_bf16:
+    artifact_model_id: mlx-community/Llama-3.2-3B-bf16
+    revision: 60a99aaf43164077157d64bf909b7b61143c6a6d
+    selection_role: core_architecture_release_cell
+    expected_model_type: llama
+    expected_model_class: LlamaForCausalLM
+    expected_num_layers: 28
+    expected_model_dim: 3072
+    expected_parameter_count: 3212749824
+    expected_vocab_size: 128256
+    expected_block_path: model.layers
+    artifact_precision: bfloat16_transformers_compatible_public_mirror
+  qwen25_7b_base_bf16:
+    artifact_model_id: Qwen/Qwen2.5-7B
+    revision: d149729398750b98c0af14eb82c78cfe92750796
+    selection_role: core_architecture_release_cell_and_qwen_scale_anchor
+    expected_model_type: qwen2
+    expected_model_class: Qwen2ForCausalLM
+    expected_num_layers: 28
+    expected_model_dim: 3584
+    expected_parameter_count: 7615616512
+    expected_vocab_size: 152064
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  olmo2_1b_base_bf16:
+    artifact_model_id: allenai/OLMo-2-0425-1B
+    revision: a1847dff35000b4271fa70afc5db10fd29fedbdf
+    selection_role: core_architecture_release_cell
+    expected_model_type: olmo2
+    expected_model_class: Olmo2ForCausalLM
+    expected_num_layers: 16
+    expected_model_dim: 2048
+    expected_parameter_count: 1484916736
+    expected_vocab_size: 100352
+    expected_block_path: model.layers
+    artifact_precision: float32_artifact_loaded_as_bfloat16
+  gemma2_2b_it_bf16:
+    artifact_model_id: google/gemma-2-2b-it
+    revision: 299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8
+    selection_role: core_architecture_release_cell_cached_gated_artifact
+    expected_model_type: gemma2
+    expected_model_class: Gemma2ForCausalLM
+    expected_num_layers: 26
+    expected_model_dim: 2304
+    expected_parameter_count: 2614341888
+    expected_vocab_size: 256000
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  qwen25_0p5b_base_bf16:
+    artifact_model_id: Qwen/Qwen2.5-0.5B
+    revision: 060db6499f32faf8b98477b0a26969ef7d8b9987
+    selection_role: registered_qwen_scale_extension
+    expected_model_type: qwen2
+    expected_model_class: Qwen2ForCausalLM
+    expected_num_layers: 24
+    expected_model_dim: 896
+    expected_parameter_count: 494032768
+    expected_vocab_size: 151936
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  qwen25_1p5b_base_bf16:
+    artifact_model_id: Qwen/Qwen2.5-1.5B
+    revision: 8faed761d45a263340a0528343f099c05c9a4323
+    selection_role: registered_qwen_scale_extension
+    expected_model_type: qwen2
+    expected_model_class: Qwen2ForCausalLM
+    expected_num_layers: 28
+    expected_model_dim: 1536
+    expected_parameter_count: 1543714304
+    expected_vocab_size: 151936
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  qwen25_3b_base_bf16:
+    artifact_model_id: Qwen/Qwen2.5-3B
+    revision: 3aab1f1954e9cc14eb9509a215f9e5ca08227a9b
+    selection_role: registered_qwen_scale_extension
+    expected_model_type: qwen2
+    expected_model_class: Qwen2ForCausalLM
+    expected_num_layers: 36
+    expected_model_dim: 2048
+    expected_parameter_count: 3085938688
+    expected_vocab_size: 151936
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  smollm2_1p7b_base_bf16:
+    artifact_model_id: HuggingFaceTB/SmolLM2-1.7B
+    revision: effd688a12921b4cc83e3312b6feb579f70f9c71
+    selection_role: registered_additional_llama_architecture_extension
+    expected_model_type: llama
+    expected_model_class: LlamaForCausalLM
+    expected_num_layers: 24
+    expected_model_dim: 2048
+    expected_parameter_count: 1711376384
+    expected_vocab_size: 49152
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+  mistral7b_instruct_v03_bf16:
+    artifact_model_id: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    selection_role: registered_related_checkpoint_extension
+    expected_model_type: mistral
+    expected_model_class: MistralForCausalLM
+    expected_num_layers: 32
+    expected_model_dim: 4096
+    expected_parameter_count: 7248023552
+    expected_vocab_size: 32768
+    expected_block_path: model.layers
+    artifact_precision: bfloat16
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  output_hidden_states: true
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+outcome_registry:
+  at_least_three_of_four_core_cells_replicate: >-
+    The partial-conjunction p-value is at most 0.05 and at least three core
+    cells pass both practical floors. This supports only the registered frozen
+    model/tokenizer-cell statement.
+  cross_model_replication_not_established: >-
+    The registered statistical rule, practical rule, or both did not pass.
+    Individual Holm-qualified cells remain bounded cell results and cannot
+    rescue the cross-model primary.
+
+forbidden_actions:
+  - any_t10_candidate_model_forward_before_freeze_commit
+  - post_outcome_model_item_endpoint_carrier_distance_or_metric_reselection
+  - post_outcome_threshold_seed_stratum_or_partial_conjunction_change
+  - secondary_endpoint_rescue_of_primary
+  - model_cell_holm_family_rescue_of_cross_model_primary
+  - intervention_or_generation
+  - raw_activation_commit_to_git_or_spiralshare
+  - semantic_decomposition_causal_mechanistic_behavioral_scale_law_or_model_general_claim

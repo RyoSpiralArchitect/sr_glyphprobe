@@ -555,14 +555,32 @@ semantic causality, a mechanism, behavior, tokenization independence, model
 generality, or the whole Phase I claim. The complete result and compact evidence
 bundle are published.
 
-### Queued after T9 — cross-model replication and unusual-glyph exploration
+### Active T10 — semantic-atlas cross-model replication
 
-T10 is claim-matched cross-model replication. Its model family, tokenizer
-controls, endpoint translation, and multiplicity family remain deliberately
-unfrozen until T9 is sealed. T11 is a later exploratory lane for unusual glyph
-systems and representation shifts. It must be labeled exploratory and must not
-retroactively alter T9 or T10. The order is fixed: T9 confirmation, T10
-replication, then T11 exploration.
+Status: the 21-asset freeze passed with zero selected-model forwards after all
+nine exact artifacts and tokenizers passed preflight. Acquisition and analysis
+remain.
+
+T10 keeps the T9 population and transport fixed across nine model/tokenizer
+cells. Each model must pass an unrestricted 292-item component and a component
+whose official-name permutation is restricted within the exact triple
+`(glyph, name, codepoint)` token-count strata. The sole cross-cell primary is a
+Bonferroni partial conjunction for at least three of four frozen core cells;
+all nine cell p-values form a separate Holm family for bounded cell claims.
+
+The T9 endpoint is now described precisely as the final normalized hidden state
+returned in `output.hidden_states[-1]`. T10 captures that state as primary and
+the raw final decoder-block output as a non-rescuing secondary. The Qwen size
+ladder, related Mistral-Instruct checkpoint, and endpoint difference remain
+descriptive and cannot establish scale, tuning, semantic, causal, independent-
+replication, or model-general claims. See the [frozen protocol](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md).
+
+### Queued T11 — unusual-glyph exploration
+
+T11 remains a later exploratory lane for unusual glyph systems and
+representation shifts. It must be labeled exploratory and cannot retroactively
+alter T9 or T10. The fixed order remains T9 confirmation, T10 replication, then
+T11 exploration.
 
 ### Milestone 3 — Targeted causal localization
 

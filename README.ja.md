@@ -213,6 +213,12 @@ top-1 contrast最小値は`0.171233`、実用下限は`0.02`、共通permutation
 意味因果やmodel一般性ではない。詳細は[確認結果](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)、
 [固定protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md)、[公開evidence](artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/README.ja.md)に示す。
 
+### Semantic atlas T10の現在地
+
+T10は、候補modelのforwardを一度も行わないまま凍結した。9つのexact revisionはすべて、indexが参照するweight shardの完全性とtokenizer preflightを通過し、完全一致層にはセルごとに281〜287項目が残った。T9と同じ292項目、3 view、2 carrier、4距離、batch size 1を保つ。各モデルは、全項目を使うrandomizationと、3 viewすべてのtoken数を完全一致させた層別randomizationの両方を通過しなければならない。唯一のモデル横断一次判定にはBonferroni部分連言検定を用い、4コアセル中3セル以上の統計的再現と実質差を要求する。
+
+実装監査では、T8/T9のendpointの呼び方も修正した。`output.hidden_states[-1]` はrawな最終decoder block出力ではなく、modelが返す最終norm後のhidden stateである。T10では、このAPI endpointを一次として維持し、raw block出力は一次を救済できない副次として同時取得する。詳しくは[T10 protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -348,6 +354,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Mistral 7B semantic atlas token感度](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_TOKEN_STRUCTURE_V0.md)
 - [Mistral 7B semantic atlas reserve確認 v0結果](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md)
 - [Mistral 7B semantic atlas reserve確認 v0](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0.md)
+- [Semantic atlas model横断再現 v0](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md) / [English](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)

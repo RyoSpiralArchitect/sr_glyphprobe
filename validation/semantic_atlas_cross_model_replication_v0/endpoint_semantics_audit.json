@@ -1,0 +1,22 @@
+{
+  "audit_role": "synthetic_endpoint_semantics_no_candidate_model_or_population_forward",
+  "candidate_model_weights_loaded": false,
+  "candidate_population_model_forward_calls": 0,
+  "generation_calls": 0,
+  "interpretation": "t9_api_endpoint_is_returned_final_normalized_state_not_raw_last_block_output",
+  "intervention_calls": 0,
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-replication-v0",
+  "returned_hidden_state_count": 3,
+  "returned_vs_explicit_final_norm_max_abs": 0.0,
+  "returned_vs_raw_last_block_max_abs": 2.827293872833252,
+  "schema_version": 1,
+  "status": "pass",
+  "synthetic_model": "random_tiny_mistral_two_layers",
+  "synthetic_model_forward_calls": 1,
+  "synthetic_token_count": 4,
+  "t10_primary_expression": "output.hidden_states[-1]",
+  "t10_secondary_expression": "last decoder block forward-hook output",
+  "t9_source_expression": "output.hidden_states[layer + 1] at layer 31",
+  "torch_version": "2.11.0",
+  "transformers_version": "4.57.6"
+}
