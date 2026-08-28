@@ -159,14 +159,29 @@ OLMoの副次的な文脈別統計はperiod `0.538985382`、newline `0.535944025
 読んだ。唯一の主判定では、model-level intersection-union testごとに、距離1の再現と
 正の固定log距離減衰contrastの両方を要求した。
 
-Gemmaは距離1の再現を棄却しなかった。LlamaとOLMoはこの成分をpermutation下限
-`0.00005`で棄却したが、減衰p値はそれぞれ`0.188`と`0.9977`だった。Gemma、Llama、
+Gemmaの距離1成分はnull付近だった。LlamaとOLMoの距離1成分のraw p値は、いずれも
+permutation下限`0.00005`だったが、減衰p値はそれぞれ`0.188`と`0.9977`だった。Gemma、Llama、
 OLMoのIUT/Holm p値は`1.0`、`0.564`、`1.0`となり、outcomeは
 `no_model_distance_attenuation`である。距離8の記述profileはLlamaで`0.369105`、
 OLMoで`0.527099`と高いが、tail rowには独立した多重性判定がない。単調な持続、
 持続時間の閾値、意味、機構、因果、tokenizer非依存性、cross-modelの大きさ比較は示さない。
 LlamaのStage A parity failureも有効なままである。詳細は[全結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md)、
 [固定protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md)、[公開evidence](artifacts/multifamily_carrier_distance_v0/README.ja.md)に示す。
+
+### Dense CUDA carrier-distance T6のfreeze
+
+次のpost-T5観測replicationを、T6 model forwardより前に凍結する。T5のpanel、carrier、
+distance、depth fraction、IUT、Holm判定を変えず、炉に完全なBF16 dense
+Transformers/CUDA artifactがあるGemma 2 2B IT、Gemma 3 4B IT、Mistral 7B
+Instruct v0.3、Gemma 3 12B ITの4 cellを加える。2Bから12Bまでを含むが、T5の結果を
+見た後に選んだrosterであり、scale-effect claimは認めない。4 cellはすべて
+instruction-tunedで、T5のbase-model MLX cellとも同等ではない。
+
+Tokenizer-only・artifact preflightは、model forward、介入、生成、protected-target accessを
+すべて0に保って完了した。全体は1,600 forward、4つのmodel-level IUTを1つのHolm familyで
+扱う。Model実行は、炉が空いていることの再確認と、receiver-ownedな自然な
+`resource:furnace` task lifecycle surfaceの両方を開始gateとする。Canonical mail、watcher
+到着、OS popupだけでは後者を満たさない。詳細は[固定protocol](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md)に示す。
 
 ### E2 技術検証の結果
 
@@ -292,6 +307,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Multifamily common-suffix carryover v0](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.ja.md) / [English](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0.md)
 - [Multifamily carrier-distance v0結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md)
 - [Multifamily carrier-distance v0](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md)
+- [Multifamily dense CUDA carrier-distance v0](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -308,7 +324,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`で完了しました。T4によって、OLMoのT3結果を現在tokenだけで説明する記述は退きましたが、構造化された直前prefixからの短距離伝播で十分という説明は残ります。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carryover距離を事前に扱います。因果検証、独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
+Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`で完了しました。T6はpost-T5のdense CUDA 4 cell replicationを事前凍結しますが、まだ結果もscale claimもありません。これらの観測実験は、因果、確認、tokenizer非依存性、model一般性のgateを閉じません。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性を事前に扱います。因果検証、claim-matchedな独立backendまたはmodelでの再現、完全なevidence archiveも論文gateとして残っています。
 
 ## ライセンスと引用
 

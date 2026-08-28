@@ -396,8 +396,8 @@ content, mechanism, causality, tokenizer independence, or direct cross-model
 magnitude equivalence. Llama's earlier Stage-A parity failure remains in force;
 this MLX cell is an observational within-artifact result only.
 
-Gemma did not reject distance-1 recurrence. Llama and OLMo rejected that
-component at raw `p = 0.00005`, but their attenuation components did not reject
+Gemma's distance-1 component remained near its null. Llama and OLMo each had a
+distance-1 component raw `p = 0.00005`, but their attenuation components did not reject
 (`p = 0.188` and `0.9977`). Their model IUT/Holm p-values were `0.564` and
 `1.0`; Gemma's was also `1.0`. The fixed outcome is therefore
 `no_model_distance_attenuation`.
@@ -412,6 +412,39 @@ Exit condition: met. The [complete result](MULTIFAMILY_CARRIER_DISTANCE_V0_RESUL
 three sealed runs, 120-row joint analysis, transfer receipt, and public manifest
 are published. T5 remains outside the Phase I gate and T4 remains a descriptive
 reference only.
+
+### Observational side track T6 — Dense CUDA carrier-distance replication
+
+Status: prospective freeze complete in the public commit containing the
+protocol; zero T6 model forwards at freeze. Operational execution gate pending.
+
+- preserve T5's exact public panel, repeated `" a"` and `" |"` carriers,
+  distances 1/2/4/8, five depth fractions, IUT, 19,999-draw randomization, and
+  model-level Holm decision scope;
+- run four complete local BF16 Transformers/CUDA artifacts in separate
+  processes: Gemma 2 2B IT, Gemma 3 4B IT, Mistral 7B Instruct v0.3, and Gemma
+  3 12B IT;
+- bind the three observed tokenizer output classes and every full-file model
+  artifact before the first model load;
+- retain 400 forwards per model, 1,600 total, with zero intervention,
+  generation, behavior scoring, or protected-target access; and
+- keep T5 as a descriptive design reference with no inferential pooling.
+
+The roster was selected after T5 from locally complete furnace artifacts. All
+four cells are instruction-tuned. The 2B–12B labels and the tokenizer-identical
+Gemma 3 4B/12B pair are descriptive design structure, not an authorized scale
+sample or base/instruct comparison. The four model IUTs form one Holm family;
+all carrier, distance, depth, tail, pair, and timing outputs remain secondary.
+
+The first model load requires a newly free `spiral status` and a natural
+receiver-owned lifecycle surface for the fresh `resource:furnace` notice.
+Canonical replication, watcher arrival, and an OS popup do not satisfy the
+lifecycle gate. No probe, trust bypass, or interruption may manufacture it.
+
+Exit condition: all four sealed runs, the 160-row joint analysis, transfer
+receipt, and bilingual bounded result are public. Regardless of outcome, T6
+does not itself close a causal, confirmatory, tokenizer-independent,
+backend-parity, model-general, or scale paper gate.
 
 ### Milestone 3 — Targeted causal localization
 

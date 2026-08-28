@@ -1,0 +1,267 @@
+protocol_id: glyphprobe-multifamily-dense-cuda-carrier-distance-v0
+manifest_path: ../data/manifests/multifamily_dense_cuda_carrier_distance_v0.json
+experiment_role: prospective_post_t5_exploratory_dense_cuda_carrier_distance_replication
+claim_boundary: >-
+  Frozen observational resid_post carrier-distance geometry for four dense,
+  instruction-tuned Transformers/CUDA model cells selected from complete local
+  furnace artifacts after T5 was known. Each model receives the same fixed
+  panel, carriers, distances, depths, endpoint, and multiplicity rule, but the
+  study is not an independent confirmation of T5 and does not isolate model
+  scale, family, tokenizer, instruction tuning, backend, node, or precision.
+  No intervention, generation, behavior, semantic, mechanistic, causal,
+  tokenizer-equivalence, backend-parity, direct cross-model magnitude,
+  monotonic-decay, disappearance, duration, persistence, confirmatory, or Phase
+  I paper-gate claim is authorized.
+
+selection_provenance:
+  selected_after_t5_outcomes_were_known: true
+  selection_rule: complete_local_dense_furnace_artifacts_at_freeze
+  excluded_incomplete_refs: [meta-llama/Meta-Llama-3-8B, meta-llama/Meta-Llama-3-8B-Instruct, google/gemma-2-2b]
+  confirmatory_status: false
+  scale_effect_authorized: false
+
+panel:
+  family_order: [sky, food, animals, transport, social]
+  slot_order: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  expected_items_per_family: 10
+  expected_total_items: 50
+  construction: single_codepoint_consecutive_unicode_blocks
+  sources:
+    sky: ../data/emoji_panels/e1_sky_moon.yaml
+    food: ../data/emoji_panels/e1_food.yaml
+    animals: ../data/emoji_panels/e1_animals.yaml
+    transport: ../data/emoji_panels/e1_transport.yaml
+    social: ../data/emoji_panels/e1_social.yaml
+
+input:
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  site: resid_post
+  return_attentions: false
+  exact_contract: raw_glyph_tokens_plus_eight_identical_carrier_tokens
+  execution_note: >-
+    Each complete raw-glyph-plus-eight-carrier-token string is forwarded
+    independently at every fixed readout distance. Current token identity and
+    complete input are fixed within model and carrier; only capture position
+    changes.
+
+layers:
+  fractions: [0.0, 0.25, 0.5, 0.75, 1.0]
+  resolution: min(num_layers - 1, floor(fraction * num_layers))
+  primary_scope: both_fixed_carriers_by_all_five_fixed_depths_equal_weight
+  selection_uses_t6_activation_outcomes: false
+
+primary_endpoint:
+  id: distance1_recurrence_intersection_logdistance_attenuation
+  definition: >-
+    For each carrier, distance, and fixed depth, arrange resid_post vectors as
+    family by matched slot, remove each family mean, and compute SS_slot /
+    (SS_slot + SS_interaction). Criterion A is the equal-weight distance-1
+    mean. Criterion B is the equal-weight log-distance contrast with weights
+    [0.375, 0.125, -0.125, -0.375] at distances [1, 2, 4, 8]. A model-level
+    intersection-union p-value is max(p_A, p_B), requiring both distance-1
+    recurrence and positive attenuation evidence.
+  distance_contrast_weights: [0.375, 0.125, -0.125, -0.375]
+  randomization_null: independent_within_family_slot_label_permutation
+  synchronized_across_carriers_distances_and_depths: true
+  fixed_reference_family: sky
+  randomization_draws: 19999
+  p_value: (1 + count(T_randomized >= T_observed)) / 20000
+  intersection_union_p_value: max_distance1_and_attenuation_component_p_values
+  rng: numpy.random.PCG64
+  seed: 20260831
+  hypothesis_family: [gemma2_2b_it, gemma3_4b_it, mistral7b_instruct_v03, gemma3_12b_it]
+  multiplicity: holm_on_four_model_level_intersection_union_p_values
+  familywise_alpha: 0.05
+  decision_scope: model_level_intersection_union_only
+
+secondary_endpoints:
+  - complete_carrier_by_distance_by_depth_slot_fraction_profile
+  - distance_specific_all_carrier_all_depth_slot_fraction_without_decisions
+  - distance8_tail_recurrence_without_decisions
+  - per_carrier_distance_profiles_without_decisions
+  - family_fraction_after_slot_centering
+  - interaction_fraction_of_total_centered_sum_of_squares
+  - activation_rms
+  - descriptive_difference_from_frozen_t5_without_inferential_pooling
+  - gemma3_4b_12b_descriptive_pair_without_scale_inference
+  - exact_raw_plus_carrier_token_sequence_diagnostics
+  - latency_and_peak_memory_engineering_only
+
+prior_t5_reference:
+  protocol_id: glyphprobe-multifamily-carrier-distance-v0
+  outcome_pattern: no_model_distance_attenuation
+  analysis_receipt: ../artifacts/multifamily_carrier_distance_v0/analysis/analysis_receipt.json
+  public_manifest: ../artifacts/multifamily_carrier_distance_v0/PUBLIC_MANIFEST.json
+  role: observed_design_motivation_and_descriptive_reference_only
+  inferential_pooling: false
+
+models:
+  order: [gemma2_2b_it, gemma3_4b_it, mistral7b_instruct_v03, gemma3_12b_it]
+  gemma2_2b_it:
+    canonical_model_id: google/gemma-2-2b-it
+    revision: 299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8
+    tokenizer_output_class: dense_cuda_output_class_atomic50
+    node: furnace
+    expected_model_type: gemma2
+    expected_num_layers: 26
+    expected_model_dim: 2304
+    expected_parameter_count: 2614341888
+    expected_vocab_size: 256000
+    expected_tokenizer_vocab_size: 256000
+    expected_quantized: false
+    expected_resolved_dtype: torch.bfloat16
+    expected_model_class: Gemma2ForCausalLM
+    expected_block_path: model.layers
+    raw_tokenization_contract:
+      kind: exact_ordered_sequence_roster
+      expected_item_token_count_histogram: {1: 50}
+      expected_unique_sequence_count: 50
+      shared_prefix_token_ids: []
+      ordered_sequence_sha256: fadc6125b7ac25e9dfe6baba700e52b764f581be5f462d492ee61f79479f5c06
+      matching_family: atomic_token_count_plus_single_codepoint_factorial_panel
+    carrier_token_ids: {article_a: 476, pipe: 1420}
+    combined_sequence_sha256:
+      article_a: 68ef8ca23c4488c92229892e597e7f121bd48d8cf6f86d4278196494d9b4cb0e
+      pipe: 0933e7ddecb53bb79b6a9616363dbf81be826cab3abf18a9189ed34d5af5a865
+  gemma3_4b_it:
+    canonical_model_id: google/gemma-3-4b-it
+    revision: 093f9f388b31de276ce2de164bdc2081324b9767
+    tokenizer_output_class: dense_cuda_output_class_gemma3
+    node: furnace
+    expected_model_type: gemma3
+    expected_num_layers: 34
+    expected_model_dim: 2560
+    expected_parameter_count: 4300079472
+    expected_vocab_size: 262208
+    expected_tokenizer_vocab_size: 262144
+    expected_quantized: false
+    expected_resolved_dtype: torch.bfloat16
+    expected_model_class: Gemma3ForConditionalGeneration
+    expected_block_path: model.language_model.layers
+    raw_tokenization_contract:
+      kind: exact_ordered_sequence_roster
+      expected_item_token_count_histogram: {1: 49, 4: 1}
+      expected_unique_sequence_count: 50
+      shared_prefix_token_ids: []
+      ordered_sequence_sha256: 280c8d5e75499da0596b58ddd72012e9a52eb9f2b8a76059b1093e3f4639e5b2
+      matching_family: gemma3_fixed_roster_with_one_four_token_exception
+    carrier_token_ids: {article_a: 496, pipe: 1109}
+    combined_sequence_sha256:
+      article_a: 590ef184e20b3d4050c32dc2d8261f0619bffc4cbc0590bfcb817d43a554f1ce
+      pipe: 37b83525257fe210df4bc34e05f4a66a2530bf6c5defda1a737683025634b3ea
+  mistral7b_instruct_v03:
+    canonical_model_id: mistralai/Mistral-7B-Instruct-v0.3
+    revision: c170c708c41dac9275d15a8fff4eca08d52bab71
+    tokenizer_output_class: dense_cuda_output_class_mistral_v03
+    node: furnace
+    expected_model_type: mistral
+    expected_num_layers: 32
+    expected_model_dim: 4096
+    expected_parameter_count: 7248023552
+    expected_vocab_size: 32768
+    expected_tokenizer_vocab_size: 32768
+    expected_quantized: false
+    expected_resolved_dtype: torch.bfloat16
+    expected_model_class: MistralForCausalLM
+    expected_block_path: model.layers
+    raw_tokenization_contract:
+      kind: exact_ordered_sequence_roster
+      expected_item_token_count_histogram: {2: 1, 5: 49}
+      expected_unique_sequence_count: 50
+      shared_prefix_token_ids: [29473]
+      ordered_sequence_sha256: c7b9d4aa125e9bb372321711c388d1aa9119982496ae03e3c31353737804ddd8
+      matching_family: mistral_v03_common_prefix_with_one_short_exception
+    carrier_token_ids: {article_a: 1032, pipe: 1110}
+    combined_sequence_sha256:
+      article_a: 4e3700668b73ff79b7ebe132b4dc4a3693e8712bc1d4e16881448b6f2c41dff7
+      pipe: 64fd05819c5080b93920268aa9ab9e85d5920b505925b44b8ce526438ebbb42a
+  gemma3_12b_it:
+    canonical_model_id: google/gemma-3-12b-it
+    revision: 96b6f1eccf38110c56df3a15bffe176da04bfd80
+    tokenizer_output_class: dense_cuda_output_class_gemma3
+    node: furnace
+    expected_model_type: gemma3
+    expected_num_layers: 48
+    expected_model_dim: 3840
+    expected_parameter_count: 12187325040
+    expected_vocab_size: 262208
+    expected_tokenizer_vocab_size: 262144
+    expected_quantized: false
+    expected_resolved_dtype: torch.bfloat16
+    expected_model_class: Gemma3ForConditionalGeneration
+    expected_block_path: model.language_model.layers
+    raw_tokenization_contract:
+      kind: exact_ordered_sequence_roster
+      expected_item_token_count_histogram: {1: 49, 4: 1}
+      expected_unique_sequence_count: 50
+      shared_prefix_token_ids: []
+      ordered_sequence_sha256: 280c8d5e75499da0596b58ddd72012e9a52eb9f2b8a76059b1093e3f4639e5b2
+      matching_family: gemma3_fixed_roster_with_one_four_token_exception
+    carrier_token_ids: {article_a: 496, pipe: 1109}
+    combined_sequence_sha256:
+      article_a: 590ef184e20b3d4050c32dc2d8261f0619bffc4cbc0590bfcb817d43a554f1ce
+      pipe: 37b83525257fe210df4bc34e05f4a66a2530bf6c5defda1a737683025634b3ea
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    pydantic: 2.12.5
+    PyYAML: 6.0.3
+    orjson: 3.11.9
+    safetensors: 0.8.0
+  hardware_pin: NVIDIA GeForce RTX 5090
+
+failure_policy:
+  fail_closed_on_asset_hash_mismatch: true
+  fail_closed_on_model_artifact_mismatch: true
+  fail_closed_on_raw_or_carrier_tokenization_contract_mismatch: true
+  fail_closed_on_model_type_layer_width_parameter_vocab_dtype_or_block_path_mismatch: true
+  fail_closed_on_nonfinite_activation_or_logits: true
+  retain_failed_model_cell: true
+  prohibit_model_replacement_after_t6_outcomes: true
+  prohibit_carrier_distance_layer_panel_endpoint_seed_or_model_reselection_after_t6_outcomes: true
+
+outcome_pattern_registry:
+  all_four_dense_distance_attenuation_candidate: >-
+    All four model-level intersection-union tests survive Holm correction. This
+    is recurrence of the fixed observational endpoint in the selected dense
+    CUDA roster, not a universal, scale, backend, or confirmatory result.
+  gemma3_size_pair_distance_attenuation: >-
+    Both Gemma 3 cells survive Holm and the other two do not. Retain the exact
+    split without promoting a single 4B/12B pair to a model-scale effect.
+  gemma3_12b_only_distance_attenuation: >-
+    Only Gemma 3 12B survives Holm. Retain the bounded cell result without
+    attributing it to size, architecture, tokenizer, or instruction tuning.
+  mixed_dense_model_distance_attenuation: >-
+    A nonempty rejection set not covered by a named branch survives Holm.
+    Report the exact set without post-outcome regrouping or magnitude ranking.
+  no_dense_model_distance_attenuation: >-
+    No model-level intersection-union test survives Holm. Retain both primary
+    components and all profiles without promoting a carrier, distance, depth,
+    model pair, or tail subcell.
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+forbidden_actions:
+  - activation_intervention
+  - behavioral_generation
+  - protected_target_access
+  - post_outcome_model_carrier_distance_layer_family_endpoint_or_seed_selection
+  - direct_cross_model_effect_magnitude_decision
+  - model_scale_or_backend_effect_claim
+  - monotonic_decay_disappearance_duration_or_persistence_claim
+  - inferential_pooling_with_t5

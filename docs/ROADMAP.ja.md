@@ -270,8 +270,8 @@ Phase I gateのclosureにも使わない。
 cross-modelの大きさの同等性は示さない。LlamaのStage A parity failureは有効なままで、
 このMLX cellが認めるのはartifact内の観測結果だけである。
 
-Gemmaは距離1の再現を棄却しなかった。LlamaとOLMoはこの成分をraw `p = 0.00005`で
-棄却したが、減衰成分は棄却しなかった（`p = 0.188`と`0.9977`）。Model IUT/Holm p値は
+Gemmaの距離1成分はnull付近だった。LlamaとOLMoの距離1成分のraw p値は、いずれも
+`0.00005`だったが、減衰成分は棄却しなかった（`p = 0.188`と`0.9977`）。Model IUT/Holm p値は
 Llamaが`0.564`、OLMoが`1.0`で、Gemmaも`1.0`だった。固定outcomeは
 `no_model_distance_attenuation`である。
 
@@ -283,6 +283,35 @@ same-artifact controlには、別の事前凍結が必要になる。
 終了条件: 達成した。[全結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md)、3つのsealed
 run、120 rowのjoint analysis、transfer receipt、public manifestを公開する。T5はPhase I
 gateの外に置き、T4は記述参照としてのみ使う。
+
+### 観測side track T6 — Dense CUDA carrier-distance replication
+
+状態: protocolを含む公開commitでprospective freezeを完了する。Freeze時点のT6 model
+forwardは0で、運用上の実行gateは未通過である。
+
+- T5の公開panel、`" a"`と`" |"`の反復carrier、距離1・2・4・8、5つの相対深度、
+  IUT、19,999 draw randomization、model-level Holm判定を変えない。
+- 炉に完全なlocal artifactがあるGemma 2 2B IT、Gemma 3 4B IT、Mistral 7B
+  Instruct v0.3、Gemma 3 12B ITを、BF16 Transformers/CUDAで別process実行する。
+- 観測した3つのtokenizer output classと、各modelの全file artifactを最初のmodel loadより
+  前に固定する。
+- 1 model 400 forward、合計1,600 forwardとし、介入、生成、behavior scoring、
+  protected-target accessは0に保つ。
+- T5は記述的な設計参照に限定し、推論へ統合しない。
+
+RosterはT5の結果を見た後、炉に完備されたartifactから選んだ。4 cellはすべて
+instruction-tunedである。2Bから12Bというlabelと、tokenizerが同一のGemma 3 4B・12B
+pairは記述的な設計構造であり、scale標本やbase/instruct比較ではない。4つのmodel IUTを
+1つのHolm familyで扱い、carrier、distance、depth、tail、pair、timingは副次結果にする。
+
+最初のmodel loadには、直前の`spiral status`で炉が空いていることと、新しい
+`resource:furnace`通知がreceiver-ownedな自然task lifecycleでsurfaceすることの両方を
+要求する。Canonical replication、watcher到着、OS popupだけでは後者を満たさない。
+Probe、trust bypass、interruptで証跡を作らない。
+
+終了条件: 4つのsealed run、160 row joint analysis、transfer receipt、英日で境界を揃えた
+結果を公開する。Outcomeにかかわらず、T6単独では因果、確認、tokenizer非依存性、backend
+parity、model一般性、scaleの論文gateを閉じない。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
