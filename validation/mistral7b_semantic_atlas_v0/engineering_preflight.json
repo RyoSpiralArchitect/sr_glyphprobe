@@ -1,0 +1,168 @@
+{
+  "architecture": {
+    "hidden_size": 4096,
+    "model_type": "mistral",
+    "num_hidden_layers": 32,
+    "vocab_size": 32768
+  },
+  "candidate_counts": {
+    "acquired": 892,
+    "reserved_unrun": 292,
+    "roles": {
+      "calibration_prior_exposed": 50,
+      "discovery_unseen": 842,
+      "reserved_unrun": 292
+    },
+    "total": 1184
+  },
+  "furnace_static_environment": {
+    "bfloat16_supported": true,
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "gpu_memory_total_mib": 32108,
+    "local_files_only": true,
+    "versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "numpy": "2.5.2",
+      "torch": "2.13.0+cu132",
+      "transformers": "5.15.0"
+    }
+  },
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_artifact": {
+    "file_count": 12,
+    "files": {
+      "config.json": {
+        "bytes": 601,
+        "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+      },
+      "generation_config.json": {
+        "bytes": 116,
+        "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+      },
+      "model-00001-of-00003.safetensors": {
+        "bytes": 4949453792,
+        "sha256": "2d7de8eb9bd554cccc999649fd5a3a28a44d09042879d6c1cedd13f59c86f7a8"
+      },
+      "model-00002-of-00003.safetensors": {
+        "bytes": 4999819336,
+        "sha256": "79a5f871a0fbb7919f263d78caff0d4d3b7a1d444552db3011ada70f48fd5ee4"
+      },
+      "model-00003-of-00003.safetensors": {
+        "bytes": 4546807800,
+        "sha256": "ba7ae59358f726f5f5bc5264fd8a3aec907f42e6009d7b22454007d18723616a"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 23950,
+        "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+      },
+      "params.json": {
+        "bytes": 202,
+        "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+      },
+      "special_tokens_map.json": {
+        "bytes": 414,
+        "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+      },
+      "tokenizer.json": {
+        "bytes": 1961548,
+        "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+      },
+      "tokenizer.model": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer.model.v3": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer_config.json": {
+        "bytes": 136697,
+        "sha256": "4b16ec9a87854359a282c521da82655cf96c91f53184d14612aa37deac34378e"
+      }
+    },
+    "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+    "total_bytes": 14499379264
+  },
+  "model_forward_calls": 0,
+  "model_weights_loaded": false,
+  "observed_at_utc": "2026-08-28T08:29:07.958072Z",
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-v0",
+  "reserved_unrun_model_inputs_forwarded": 0,
+  "schema_version": 1,
+  "scientific_result_available": false,
+  "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "source": {
+    "sha256": "1d8a944f88d7952f7ef7c5167fef3c67995bcae24543949710231b03a201acda",
+    "unicode_emoji_version": "17.0",
+    "url": "https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt"
+  },
+  "status": "static_preflight_pass_execution_gate_pending",
+  "tokenizer": {
+    "carriers": {
+      "article_a": {
+        "prefix_preserved_count": 2676,
+        "roundtrip_exact_count": 2676,
+        "token_id": 1032,
+        "unit": " a"
+      },
+      "pipe": {
+        "prefix_preserved_count": 2676,
+        "roundtrip_exact_count": 2676,
+        "token_id": 1110,
+        "unit": " |"
+      }
+    },
+    "class": "TokenizersBackend",
+    "maximum_combined_token_count": 16,
+    "ordered_sequence_hashes": {
+      "codepoint_literal": {
+        "acquired_combined": {
+          "article_a": "651c0e6d03e8175a29687f6a6b0249d48db9ade13ea2da48353a05487f1ba704",
+          "pipe": "123442b3a4f6185d9c96658b9104c01676064aa129b57bea01d019c20456acff"
+        },
+        "all_candidate_raw": "8fc7bdc7c1d845af356e4078990fbfa90eabf145b4db1e70fa2dc75c9b48c8b8"
+      },
+      "glyph": {
+        "acquired_combined": {
+          "article_a": "3747e3187e373a30681df4116a0371cc58410c88b7ce6afb0849ed12ca9d03a3",
+          "pipe": "bf7d4c114aa3d96eee13c35b9eb21dc304020714b2c11e80e007e9f97f82a478"
+        },
+        "all_candidate_raw": "8166cbdc8eb2ef98b99dc98fc4a1165e05a33a004f31c218c81dafca10b9ade5"
+      },
+      "unicode_name": {
+        "acquired_combined": {
+          "article_a": "e834e8f4953e11ebe01645ff9d1b987c0179f4f18ef85a6715775e29aede824d",
+          "pipe": "a7c46804b4d7997305c02d8d4f2212b797f393539fda3a7ac80e8e09a0c46728"
+        },
+        "all_candidate_raw": "0159805287d48f5efacef7b5f262ec2fb6230892732fdc9a7b6d54dace4d3b8f"
+      }
+    },
+    "view_token_count_histograms": {
+      "codepoint_literal": {
+        "4": 1,
+        "5": 23,
+        "6": 277,
+        "7": 883
+      },
+      "glyph": {
+        "2": 61,
+        "4": 52,
+        "5": 1071
+      },
+      "unicode_name": {
+        "1": 162,
+        "2": 403,
+        "3": 328,
+        "4": 164,
+        "5": 71,
+        "6": 37,
+        "7": 14,
+        "8": 5
+      }
+    },
+    "vocab_size": 32768
+  }
+}

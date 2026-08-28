@@ -1,0 +1,87 @@
+{
+  "candidate_counts": {
+    "acquired": 892,
+    "reserved_unrun": 292,
+    "roles": {
+      "calibration_prior_exposed": 50,
+      "discovery_unseen": 842,
+      "reserved_unrun": 292
+    },
+    "total": 1184
+  },
+  "engineering_preflight_sha256": "b486cd512dffb9ce832bd5fd0674d14cd429dd12431f04c975ebff7fba2ccb50",
+  "frozen_assets": {
+    "configs/mistral7b_semantic_atlas_v0.yaml": "08feab9d0f707281917d0318452d593c01ee03829bb910b7aba5e4f3ccb55885",
+    "data/manifests/mistral7b_semantic_atlas_selection_v0.json": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+    "docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md": "3a3cec599306c7ecad515772f4ff8dc76114df18bc115b3e06d97200e51a96dd",
+    "docs/MISTRAL7B_SEMANTIC_ATLAS_V0.md": "c7c1dcb9fc5684e2979558887f20596cbc473202f8f76f6e9ab3a93f44d77390",
+    "scripts/mistral7b_semantic_atlas_v0.py": "b53d43456336ea6b3ba428fe930e5c563c1ed6b2a4fbd8ea79819052dfa7a1c6",
+    "scripts/mistral_semantic_candidate_census_v0.py": "0816b3393f151302b1f488ec94f5479e822ccd52c8f9ec0010fa7adeb1424e11",
+    "tests/test_mistral7b_semantic_atlas_v0.py": "275be6b49202947317484a62fdc3b0fb662599245aa1f8d8c115d44782c7f9df",
+    "validation/mistral7b_semantic_atlas_v0/engineering_preflight.json": "b486cd512dffb9ce832bd5fd0674d14cd429dd12431f04c975ebff7fba2ccb50"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "model_artifact": {
+    "file_count": 12,
+    "files": {
+      "config.json": {
+        "bytes": 601,
+        "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+      },
+      "generation_config.json": {
+        "bytes": 116,
+        "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+      },
+      "model-00001-of-00003.safetensors": {
+        "bytes": 4949453792,
+        "sha256": "2d7de8eb9bd554cccc999649fd5a3a28a44d09042879d6c1cedd13f59c86f7a8"
+      },
+      "model-00002-of-00003.safetensors": {
+        "bytes": 4999819336,
+        "sha256": "79a5f871a0fbb7919f263d78caff0d4d3b7a1d444552db3011ada70f48fd5ee4"
+      },
+      "model-00003-of-00003.safetensors": {
+        "bytes": 4546807800,
+        "sha256": "ba7ae59358f726f5f5bc5264fd8a3aec907f42e6009d7b22454007d18723616a"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 23950,
+        "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+      },
+      "params.json": {
+        "bytes": 202,
+        "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+      },
+      "special_tokens_map.json": {
+        "bytes": 414,
+        "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+      },
+      "tokenizer.json": {
+        "bytes": 1961548,
+        "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+      },
+      "tokenizer.model": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer.model.v3": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer_config.json": {
+        "bytes": 136697,
+        "sha256": "4b16ec9a87854359a282c521da82655cf96c91f53184d14612aa37deac34378e"
+      }
+    },
+    "manifest_sha256": "1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e",
+    "total_bytes": 14499379264
+  },
+  "model_forward_calls_at_freeze": 0,
+  "protocol_id": "glyphprobe-mistral7b-semantic-atlas-v0",
+  "reserved_unrun_model_inputs_forwarded_at_freeze": 0,
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "status": "freeze_complete_before_any_t8_model_forward"
+}

@@ -354,6 +354,29 @@ Phase I gateのclaimを認めない。
 structure-breaking controlまたは真に独立した追試には新しいprospective freezeが必要である。
 T7は、tokenization-matched controlsと未使用confirmatory setという本線の優先順位を変えない。
 
+### 観測side track T8 — Mistral semantic atlas
+
+状態: T8 model forward前にfreezeした。次のstructure-breaking段階を、真に未実行の
+確認資源を残したまま再利用できるhigh-n取得へ変える。
+
+- 固定tokenizerだけを使い、Unicode Emoji 17.0のfully-qualified・単一codepoint
+  1,184件をmodel forward 0でcensusする。
+- E1で既出の50件をcalibration、事前hashで選んだ未使用842件をdiscoveryとして取得し、
+  別の292件は未実行のまま残す。
+- glyph、Unicode名、`U+...` literalを、2 carrier、4つのcausal readout距離、9固定深度で
+  取得する。
+- 892 itemを独立検証できる28個のFP32 shardとして公開し、一意入力5,352本、activation
+  vector 192,672本を保持する。
+- furnaceにforeign compute PIDが現れたら次shard前で停止し、hash-validな完了shardだけを残す。
+
+Atlasにはprimaryな意味判定を置かない。固定した記述候補はcross-view retrieval/alignment、
+CKA/RDM対応、Unicode group/subgroup近傍純度、token構造層別である。後続protocolは
+calibration/discovery evidenceだけでendpointと多重性familyを一つ選び、その選択をfreezeした
+後に限って292件のreserveを初めてforwardする。
+
+終了条件: 全28 shardが検証に合格し、compactなrun receiptを公開した時点で取得完了。
+取得だけでは、意味、tokenizer因果、確認、mechanism、model一般性、Phase I gateを閉じない。
+
 ### Milestone 3 — 対象を絞った因果局在化
 
 状態: プロトコル設計へ進める。ただし、因果プロトコルはまだ凍結しておらず、因果主張も認めない。現時点の候補はlayer 2だけで、layer 4は未解決のため候補にしない。別の確認用bankは、このプロトコル設計に着手するための前提条件ではない。

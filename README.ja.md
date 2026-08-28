@@ -196,6 +196,18 @@ Base modelの20個の深度×距離cellは、既知だったT6 Instruct profile�
 claimは認めない。詳細は[全結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)、
 [固定protocol](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)、[公開evidence](artifacts/mistral7b_base_depth_distance_v0/README.ja.md)に示す。
 
+### Mistral 7B semantic atlas T8の現在地
+
+T8は確認的な意味検定ではなく、大規模な観測取得としてfreezeした。Unicode Emoji 17.0の
+tokenizer-only censusから、fully-qualifiedかつ単一codepointの1,184件を得た。既存E1の
+50件はcalibration、hashで選んだ未使用842件はdiscovery、別の292件はmodel forward 0の
+`reserved_unrun`として保持する。
+
+取得はglyph、Unicode正式名、`U+...` literalの3 viewを、2 carrier、4距離、9固定深度で
+保存する。取得892件、一意入力5,352本、FP32 vector 192,672本である。独立hashを持つ28
+shardにより、furnace競合時にも完了分を失わずyieldできる。詳細は
+[固定protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -324,6 +336,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Multifamily dense CUDA carrier-distance v0](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md) / [English](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md)
 - [Mistral 7B base 深度×距離 v0結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
 - [Mistral 7B base 深度×距離 v0](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) / [English](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
+- [Mistral 7B semantic atlas v0](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md) / [English](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)

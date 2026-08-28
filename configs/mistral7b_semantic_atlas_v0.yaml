@@ -1,0 +1,125 @@
+protocol_id: glyphprobe-mistral7b-semantic-atlas-v0
+experiment_role: exploratory_high_n_observational_semantic_atlas_with_unrun_reserve
+claim_boundary: >-
+  Batched observational resid_post acquisition for one fixed Mistral 7B v0.3
+  base-model CUDA/BF16 cell. The acquisition joins raw glyphs, official Unicode
+  names, and literal codepoint strings over calibration-prior-exposed and
+  discovery-unseen items while leaving a deterministic reserve without model
+  forwards. It authorizes a reusable descriptive atlas, not a semantic,
+  tokenizer-causal, mechanistic, behavioral, model-general, confirmatory, or
+  Phase I paper-gate claim. Outcome-guided replacement of items, views,
+  carriers, distances, depths, or reserve membership is forbidden.
+
+selection:
+  manifest: ../data/manifests/mistral7b_semantic_atlas_selection_v0.json
+  source_standard: Unicode Emoji 17.0 emoji-test.txt
+  source_population: fully-qualified single-codepoint entries only
+  split_namespace: glyphprobe-t8-v0
+  split_rule: >-
+    Existing E1 items are calibration_prior_exposed. For every other item,
+    SHA256("glyphprobe-t8-v0:" + uppercase codepoint), interpreted as a big-endian
+    integer, assigns remainder 0 modulo 4 to reserved_unrun and remainders 1-3
+    to discovery_unseen.
+  expected_total_candidates: 1184
+  expected_calibration_prior_exposed: 50
+  expected_discovery_unseen: 842
+  expected_reserved_unrun: 292
+  acquisition_roles: [calibration_prior_exposed, discovery_unseen]
+  reserve_role: reserved_unrun
+
+views:
+  order: [glyph, unicode_name, codepoint_literal]
+  glyph: exact_single_codepoint_glyph
+  unicode_name: exact_name_field_from_pinned_emoji_test_source
+  codepoint_literal: uppercase_U_plus_hexadecimal_codepoint
+
+input:
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8, expected_token_id: 1032}
+    pipe: {unit: " |", repeats: 8, expected_token_id: 1110}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  site: resid_post
+  position_rule: view_token_count_plus_distance_minus_one
+  exact_contract: view_tokens_plus_eight_identical_single_token_carriers
+  fused_distance_readout: true
+
+layers:
+  fractions: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+  resolution: min(num_layers - 1, floor(fraction * num_layers))
+  expected_resolved_layers: [0, 4, 8, 12, 16, 20, 24, 28, 31]
+
+storage:
+  item_shard_size: 32
+  batch_size_unique_sequences: 64
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, layer, width]
+  expected_acquired_items: 892
+  expected_shards: 28
+  expected_unique_input_sequences: 5352
+  expected_readout_vectors: 192672
+  commit_raw_activations_to_git: false
+
+descriptive_analysis_options:
+  decision_authorized: false
+  fixed_nonexclusive_summaries:
+    - cross_view_paired_retrieval_and_mean_reciprocal_rank
+    - glyph_name_minus_glyph_codepoint_alignment
+    - centered_linear_cka_and_representational_distance_correlation
+    - unicode_group_and_subgroup_neighborhood_purity
+    - exact_token_length_and_prefix_stratification
+  reserve_policy: >-
+    No reserved_unrun model input may be forwarded until a later analysis and
+    confirmation protocol is frozen without inspecting reserve activations.
+
+model:
+  canonical_model_id: mistralai/Mistral-7B-v0.3
+  revision: caa1feb0e54d415e2df31207e5f4e273e33509b1
+  expected_model_class: MistralForCausalLM
+  expected_model_type: mistral
+  expected_num_layers: 32
+  expected_model_dim: 4096
+  expected_parameter_count: 7248023552
+  expected_vocab_size: 32768
+  expected_tokenizer_vocab_size: 32768
+  expected_resolved_dtype: torch.bfloat16
+  expected_quantized: false
+  expected_artifact_manifest_sha256: 1ee90f904de614fd2e1088e9e978fa5b9d36d1a855807764fb8f91cacfd8d05e
+  expected_artifact_file_count: 12
+  expected_artifact_total_bytes: 14499379264
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  output_hidden_states: true
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+execution_policy:
+  one_forward_per_unique_view_carrier_sequence: true
+  four_causal_readout_positions_reused_from_each_forward: true
+  deterministic_eval_no_sampling: true
+  shard_boundaries_are_operational_not_scientific: true
+  preserve_completed_shards_on_contention: true
+  stop_before_next_shard_when_foreign_gpu_pid_appears: true
+  recheck_spiral_status_immediately_before_model_load: true
+
+forbidden_actions:
+  - activation_intervention
+  - behavioral_generation
+  - protected_target_access
+  - reserved_unrun_model_forward
+  - outcome_guided_item_view_carrier_distance_layer_or_shard_selection
+  - semantic_or_tokenizer_causal_claim_from_acquisition_alone
+  - confirmatory_or_phase_i_gate_claim
+  - raw_activation_commit_to_git

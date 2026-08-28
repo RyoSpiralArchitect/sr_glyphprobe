@@ -246,6 +246,20 @@ gate claim is made. See the [complete result](docs/MISTRAL7B_BASE_DEPTH_DISTANCE
 [frozen protocol](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md), and [public
 evidence](artifacts/mistral7b_base_depth_distance_v0/README.md).
 
+### Mistral 7B semantic atlas T8 status
+
+T8 is frozen as a high-n observational acquisition, not a confirmatory semantic
+test. A tokenizer-only Unicode Emoji 17.0 census produced 1,184
+fully-qualified single-codepoint items. The 50 prior E1 items are calibration,
+842 hash-selected unseen items are discovery, and 292 hash-selected items stay
+`reserved_unrun` with zero model forwards.
+
+The acquisition stores glyph, official Unicode-name, and `U+...` literal views
+across two carriers, four distances, and nine fixed depths: 892 acquired items,
+5,352 unique sequences, and 192,672 FP32 vectors. Twenty-eight independently
+hashed shards allow the runner to yield on furnace contention without losing
+completed work. See the [frozen protocol](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.md).
+
 ### E2 engineering results
 
 The frozen Llama 3.2 3B BF16 Stage-A v2 engineering validation completed with
@@ -452,6 +466,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Multifamily dense CUDA carrier-distance v0 | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.md) | [MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0.ja.md) |
 | Mistral 7B base depth-by-distance v0 results | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) |
 | Mistral 7B base depth-by-distance v0 | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md) | [MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md) |
+| Mistral 7B semantic atlas v0 | [MISTRAL7B_SEMANTIC_ATLAS_V0.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.md) | [MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md](docs/MISTRAL7B_SEMANTIC_ATLAS_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |

@@ -497,6 +497,34 @@ are published. A later structure-breaking control or genuinely independent
 replication requires a new prospective freeze; T7 does not displace the main
 tokenization-matched-control and untouched-confirmatory-set priorities.
 
+### Observational side track T8 — Mistral semantic atlas
+
+Status: frozen before any T8 model forward. T8 converts the next
+structure-breaking step into a reusable, high-n acquisition while preserving a
+genuinely unrun confirmation resource.
+
+- census all 1,184 fully-qualified single-codepoint Unicode Emoji 17.0 entries
+  with the pinned tokenizer and zero model forwards;
+- retain 50 prior-exposed E1 items as calibration, acquire 842 prospectively
+  hash-selected discovery items, and leave 292 hash-selected items unrun;
+- acquire exact glyph, Unicode-name, and `U+...` literal views through two
+  carriers, four causal readout distances, and nine fixed depths;
+- publish 892 items as 28 independent FP32 shards, totaling 5,352 unique input
+  sequences and 192,672 activation vectors; and
+- stop before the next shard when a foreign furnace compute PID appears, while
+  retaining only complete hash-valid shards.
+
+The atlas has no primary semantic decision. Its fixed descriptive options
+include cross-view retrieval/alignment, CKA/RDM correspondence, Unicode
+group/subgroup neighborhood purity, and token-structure strata. A later
+protocol must choose one endpoint and multiplicity family using only
+calibration/discovery evidence, freeze that choice, and only then forward the
+292-item reserve.
+
+Exit condition: acquisition is complete only when all 28 shards validate and a
+compact run receipt is published. Acquisition alone cannot close semantic,
+tokenizer-causal, confirmatory, mechanistic, model-general, or Phase I gates.
+
 ### Milestone 3 — Targeted causal localization
 
 Status: eligible for protocol design, but no causal protocol has yet been
