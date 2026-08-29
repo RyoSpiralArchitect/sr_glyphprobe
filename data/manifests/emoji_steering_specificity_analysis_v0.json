@@ -3,24 +3,132 @@
   "claim_boundary": "T13-EA is an exploratory analysis of the already exposed T13-EH population and public target set. It may describe source-form and intervention-response heterogeneity. It cannot establish emoji meaning, unique emoji specificity, a mechanism, behavioral generation effects, tokenizer independence, a scale law, model-population generality, or independent confirmation.",
   "inputs": {
     "configs/emoji_steering_specificity_analysis_v0.yaml": {
-      "bytes": 5554,
-      "sha256": "bfbe253ae6524606a604133a343fe767b2a50a695cacbaf8b6c95d911f9588a7"
+      "bytes": 8849,
+      "sha256": "eafa4e435a1a003397ef9ce488a399503e3931f2ae1857d9b3d8614b988e5ce8"
     },
     "configs/emoji_steering_specificity_harvest_v0.yaml": {
       "bytes": 9031,
       "sha256": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06"
     },
+    "configs/semantic_atlas_cross_model_replication_v0.yaml": {
+      "bytes": 13474,
+      "sha256": "27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a"
+    },
     "data/manifests/emoji_steering_specificity_harvest_v0.json": {
       "bytes": 2595,
       "sha256": "a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808"
     },
+    "data/manifests/glyph_system_decomposition_selection_v0.json": {
+      "bytes": 1274090,
+      "sha256": "7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693"
+    },
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": {
+      "bytes": 23537,
+      "sha256": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4"
+    },
+    "data/targets/prestage_targets.jsonl": {
+      "bytes": 4072,
+      "sha256": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7"
+    },
+    "data/wrappers/source_wrappers.jsonl": {
+      "bytes": 1043,
+      "sha256": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md": {
+      "bytes": 7478,
+      "sha256": "58a6a010ea5257110d319d530ff171d165ac384a077de240fe7a32eca29ffc2d"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md": {
+      "bytes": 6665,
+      "sha256": "0883a775b16fbc39dc0ece8eec543ca6b59f72b43b9595d53d1348ce7b02774b"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md": {
+      "bytes": 8274,
+      "sha256": "28c8173220696dd9561a5c63e89fda814f0193ff09ac158a63a7ca9fa70c1163"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md": {
+      "bytes": 7923,
+      "sha256": "7ac3266256fb258dd25a06af3dc925711e8c62ff4aceb44377a2e587a7ad5f93"
+    },
+    "scripts/analyze_emoji_steering_specificity_geometry_v0.py": {
+      "bytes": 64063,
+      "sha256": "277c0b4397bb9dbc41c2eb1a7f8635cdf2379c064a65b3a16490631f0ea21ce1"
+    },
+    "scripts/analyze_emoji_steering_specificity_outcomes_v0.py": {
+      "bytes": 65546,
+      "sha256": "6331b323693c5c9cca53a0d7e175d52d03ba9452c9c59061db457becc38d2693"
+    },
     "scripts/audit_emoji_steering_specificity_analysis_v0.py": {
-      "bytes": 18535,
-      "sha256": "6792680d72e03a9b73b12796aa84c2d2bb0baca11407b95cb2315c741dca2f8b"
+      "bytes": 53594,
+      "sha256": "1e3ec32b6e1484b959ced0974e31e13fd258eaf7d3e97321ef01ea12543c1af7"
+    },
+    "scripts/emoji_steering_specificity_harvest_v0.py": {
+      "bytes": 84360,
+      "sha256": "a99b2581a1fafa29915d652fe0c968d67b4ad778b3badf75f38075e78743d26b"
+    },
+    "scripts/run_emoji_steering_specificity_harvest_v0_queue.sh": {
+      "bytes": 1077,
+      "sha256": "08c686e3867f0c5cf6912c24d49de736baab102da0b1d178f0d9565930687fe2"
+    },
+    "tests/test_analyze_emoji_steering_specificity_geometry_v0.py": {
+      "bytes": 12285,
+      "sha256": "b7917ec85eabdadf23cbcaf49842f580d95433bd0b862e9cda37e2cb2e390e8f"
+    },
+    "tests/test_analyze_emoji_steering_specificity_outcomes_v0.py": {
+      "bytes": 19308,
+      "sha256": "375ce6b8cc2106cad3e407ffcbe0e46e23194aadd3b3080bc4cbc0ff61e92d56"
     },
     "tests/test_emoji_steering_specificity_analysis_v0.py": {
-      "bytes": 6103,
-      "sha256": "c4b931b70d77cf8b9992b59cc2badb4e992a8e243f12ed9c27267dea190c915e"
+      "bytes": 16667,
+      "sha256": "313ac307bea16a7556be81760b1527825b78b001bddae76d65fcd37e159312ab"
+    },
+    "tests/test_emoji_steering_specificity_harvest_v0.py": {
+      "bytes": 6856,
+      "sha256": "085e74fb3912bb43602f9cb4dd3fae542acb7d970ebdaddb92e21431af597a10"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/aggregate.json": {
+      "bytes": 19916,
+      "sha256": "b3d9b38b55a5cda0b808721f342dce0b8c67fff6005128f3b6f652f8c60ef1b1"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/design_preflight.json": {
+      "bytes": 1255,
+      "sha256": "1ba7d75ab750a712b8cd3c1acf0630ad7025bab8eb32e10a9d3bd85127b33ffe"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/gemma2_2b_it_bf16.json": {
+      "bytes": 376873,
+      "sha256": "9fcecae7ddeb68ccbde2e7911d1355fd808e5633a4d2c65981d92a4ebe67c468"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/llama32_3b_base_bf16.json": {
+      "bytes": 377687,
+      "sha256": "be27f1872440c34480ec8c99d2490a9ce69d1f099508ccf8113b21ac8f8a8f78"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/mistral7b_instruct_v03_bf16.json": {
+      "bytes": 379324,
+      "sha256": "51536e65418a3833dfe05b797062e28da71498724f3a5367932b17d494830403"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/olmo2_1b_base_bf16.json": {
+      "bytes": 378130,
+      "sha256": "41ec214e50cb4501200332e8a89d35a6968638a5a28579f2e37d5ccd688474db"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/qwen25_0p5b_base_bf16.json": {
+      "bytes": 376816,
+      "sha256": "3aa32c3a8ac484f78d07d4554eee84ec6de0f435ad5d62afc58febe8e32e45fe"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/qwen25_1p5b_base_bf16.json": {
+      "bytes": 376818,
+      "sha256": "cd48e05e22f367d24afec85c51a0c7ec9d31cf9172ffa726a7fdf390477d26cf"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/qwen25_3b_base_bf16.json": {
+      "bytes": 377153,
+      "sha256": "00fde96d44aab5b395694e6c46e4831e4b3cc359ed6c5d83aca6a5f594c63c8e"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/qwen25_7b_base_bf16.json": {
+      "bytes": 377489,
+      "sha256": "fc52755035c29852f33dd6a0f0dbe23e5767a0a4007afa8ed601e01c12e56edf"
+    },
+    "validation/emoji_steering_specificity_harvest_v0/smollm2_1p7b_base_bf16.json": {
+      "bytes": 378314,
+      "sha256": "8dd6e41697c2e30ea9d8e717ca0b933b21e90e9b2798ec1d56c2b62bab65d9d0"
     }
   },
   "pilot_roles": [

@@ -53,6 +53,22 @@ integrity_gate:
   zero_hook_exact_noop_required: true
   incomplete_stage_policy: fail_closed_manual_adjudication
   independent_hash_verification_before_scientific_open: true
+  exact_production_tree_schema_required: true
+  external_closeout_root_required: true
+  zero_hook_value_gate_runs_before_nonzero_outcome_rows: true
+  zero_hook_required_equalities:
+    scalar_zero:
+      - kl_baseline_to_intervened
+      - js_divergence
+      - total_variation
+      - logit_delta_rms
+    scalar_equal:
+      - baseline_entropy_equals_intervened_entropy
+      - baseline_argmax_equals_intervened_argmax
+    array_zero:
+      - top_positive_values
+      - top_negative_values
+      - countsketch
 
 scientific_output_families:
   - id: F1_item_source_form
@@ -64,6 +80,17 @@ scientific_output_families:
       - glyph_minus_unicode_name
       - glyph_minus_decomposed_form
       - unicode_name_minus_decomposed_form
+    contrast_populations:
+      glyph_minus_unicode_name:
+        eligible_items_per_model: 192
+        systems: all_six
+      glyph_minus_decomposed_form:
+        eligible_items_per_model: 168
+        systems: unusual_five_only
+      unicode_name_minus_decomposed_form:
+        eligible_items_per_model: 168
+        systems: unusual_five_only
+    missing_form_policy: structural_missingness_reported_without_imputation
     cluster_units: [item, target]
   - id: F2_prototype_depth_dose
     population: complete_glyph_system_source_form_prototype_grid
@@ -79,8 +106,13 @@ scientific_output_families:
     summaries:
       - full_depth_surface
       - ordered_dose_fraction
-      - sign_antisymmetry
+      - magnitude_symmetry_for_all_scalar_endpoints
+      - signed_entropy_change_antisymmetry
+      - countsketch_sign_reversal_deferred_to_F5
       - source_form_contrasts
+    ordered_dose_transform:
+      entropy_change: sign_times_endpoint
+      other_scalar_endpoints: raw_endpoint
     cluster_units: [target]
   - id: F3_random_null_calibration
     population: complete_random_direction_grid
@@ -89,6 +121,13 @@ scientific_output_families:
       - empirical_random_quantiles
       - prototype_minus_random_median
       - prototype_random_percentile
+    null_scope: positive_orientation_isotropic_hidden_space_only
+    calibrated_prototype_signs: [1]
+    negative_prototype_policy: retain_but_do_not_call_sign_matched_random_calibration
+    unavailable_controls:
+      - negative_orientation_random_null
+      - activation_covariance_matched_null
+      - activation_manifold_matched_null
     cluster_units: [target, random_seed]
   - id: F4_target_sensitivity
     population: all_32_public_targets
@@ -105,6 +144,12 @@ scientific_output_families:
       - sign_reversed_countsketch_cosine
       - cross_model_rank_concordance
     interpretation: compressed_output_space_exploration
+    comparison_scope:
+      raw_countsketch_and_token_ids: within_model_only
+      cross_model: scalar_condition_rank_concordance_only
+      random_cross_model_row_alignment: forbidden_role_namespaced_seeds
+    countsketch_cosine_rule: normalize_only_at_comparison_and_return_null_for_zero_norm
+    top_tail_rule: rank_tails_with_sign_purity_reported_not_assumed_signed
   - id: F6_source_geometry
     population: complete_nine_role_source_bank
     summaries:
@@ -113,6 +158,9 @@ scientific_output_families:
       - depth_trajectories
       - tokenizer_signature_strata
     interpretation: observational_representation_audit_not_steering
+    tokenizer_strata_scope: token_count_signatures_only
+    exact_token_id_or_prefix_match_claim: forbidden_without_new_outcome_blind_manifest
+    cross_model_vector_comparison: forbidden_different_hidden_spaces
 
 scalar_endpoints:
   - kl_baseline_to_intervened
@@ -130,7 +178,32 @@ reporting:
   interval: percentile_cluster_bootstrap_95
   bootstrap_replicates: 20000
   bootstrap_seed: 2026082913
+  bootstrap_scope: registered_high_level_estimands_not_every_raw_surface_cell
+  bootstrap_intervals: pointwise_descriptive_not_simultaneous
+  point_derivation_before_bootstrap_allowed: true
+  paper_interval_gate: all_registered_bootstrap_chunks_complete_and_hash_merged
+  resampling_contract:
+    F1: paired_contrast_two_way_item_by_target_pigeonhole_within_model_cell
+    F2: target_cluster_within_fixed_model_system_form_depth_dose_sign_endpoint
+    F3: paired_target_resampling_plus_role_depth_seed_index_resampling
+    model_weighting: report_each_model_separately_no_pooled_model_mean
   retain_null_heterogeneous_and_failed_cells: true
+
+interpretation_limits:
+  unit_rms_normalization: orientation_under_imposed_scale_not_natural_encoding_strength
+  controls_present_in_t13eh:
+    - official_unicode_name
+    - decomposed_unicode_form_when_available
+    - positive_isotropic_random_direction
+    - zero_direction
+  controls_absent_from_t13eh:
+    - matched_ordinary_text
+    - matched_nonemoji_unicode
+    - orthogonalized_random_direction
+  strongest_allowed_positive_language: >-
+    Exploratory intervention-distribution differences relative to the fixed
+    name, decomposition, positive isotropic random, and zero controls in the
+    three pilot roles.
 
 distributed_execution:
   raw_source_and_response_arrays_location: furnace_only
