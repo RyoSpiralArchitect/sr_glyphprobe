@@ -496,6 +496,42 @@ Unicode, rare-token controls, and norm-matched random directions do not? The
 [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) keeps that question
 open without using T12 to tune its answer.
 
+## T13-EA: separate structured sources from easy-to-move targets
+
+T13-EH finished the furnace-dependent work first: a source bank for all nine
+roles and a complete 383,232-row intervention surface for three prespecified
+base models. The inputs were the already exposed T11 depth population and all
+32 public prestage targets. No protected bank was opened.
+
+The first exact-JS zero gate then failed closed before any nonzero scientific
+value was read. We kept that failure as a procedural negative result instead of
+quietly relaxing it. A separate v1 amendment was frozen before inspecting the
+live residual magnitude. It retained exact equality for every primitive no-op
+check and bounded only the derived float32 JS round-trip residual. The amended
+gate passed, but that pass is neither an exact-JS claim nor scientific evidence.
+
+The completed point analysis changed the shape of the question. In each pilot
+model and sign, glyph-minus-decomposed means were positive for the four
+continuous nonnegative endpoints, although this aggregate was driven mainly by
+regional flags and keycaps and was weak or reversed for modifiers. Argmax and
+the glyph-versus-name and name-versus-decomposed contrasts were less uniform.
+Dose ordering was unusually regular, while the largest raw response often
+occurred later than the strongest response relative to an isotropic null.
+Baseline target margin also predicted argmax fragility in glyph, prototype,
+and random conditions. Across all nine source banks, glyph and decomposed
+directions were more aligned than glyph and Unicode-name directions, but
+wrapper dependence remained substantial.
+
+The coherent interpretation is therefore not “emoji meaning has been found.”
+It is a separation problem: how much response comes from structured source
+directions, and how much from generic target susceptibility, wrapper context,
+and the chosen null? The registered 20,000-replicate cluster bootstrap remains
+at 0/20,000, so T13-EA is a completed exploratory point analysis without a
+primary significance decision or confirmatory verdict. See the [T13-EA
+result](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md), [zero-gate
+amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md), and [compact
+evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.md).
+
 ## What we can say—and what we cannot
 
 We can say that, in one pinned GPT-2 FP32 MLX `resid_post` cell, layer 2 retained a positive excess over three prespecified token-count and prefix-panel matched controls under two source-wrapper constructions according to the frozen v1 rule. Layer 4 did not pass that rule.
@@ -541,8 +577,20 @@ T10-D preserves that primary and supplies only diagnostic decomposition. T11
 adds a complete exploratory discovery atlas, not confirmatory evidence. T12
 then supplies a separately frozen negative confirmation of its ZWJ and
 regional candidates. Neither result changes the T10 primary.
+T13-EA adds a completed exploratory point decomposition. It does not establish
+unique emoji specificity, semantics, behavior, a scale law, or model generality,
+and its interval analysis is still pending.
 
 ## What comes next
+
+The immediate T13 question is whether structured source directions remain
+predictive after generic target susceptibility and null dependence are held
+fixed. The next freeze should combine exact token/prefix controls,
+leave-one-wrapper-out directions, positive and negative
+manifold/covariance-matched nulls, a depth-0.875-versus-1.0 contrast, response
+replication in the remaining six source-only roles, and generation endpoints.
+The registered 20,000-replicate bootstrap must complete before interval-based
+paper wording. Any confirmation still requires a new untouched target bank.
 
 Operational Milestone 2 is complete. Layer 2 can now enter the design of a new
 frozen targeted causal protocol; layer 4 remains unresolved and is not a

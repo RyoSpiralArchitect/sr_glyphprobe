@@ -212,6 +212,23 @@ T12では、reserveへの最初のforwardより前に、model family、returned-
 
 論文では、T12を、T11の強い探索patternが減衰したprospective negative confirmationとして扱う。これは未使用reserve、実用床、model heterogeneity gateの価値を示す証拠であって、modelに絵文字表現がないという証拠ではない。Analyzerをimportしないvalidatorが432 cell中央値、49,999回検定3件、全判定gateを再計算し、不一致は0件だった。
 
+## 完了したT13-EA探索的点推定
+
+T13-EHでは、9 roleのsource bankと、3つのpilot modelの383,232行の介入応答を、露出済みの
+source itemと公開targetに限って収集した。続くT13-EAでは、登録済みF1〜F6の点推定を完了した。
+v0のexact-JS gateは、非ゼロの科学値を開く前にfail-closedした手続き上の負の結果として保存している。
+別に凍結したv1 amendmentが通過したのは、primitiveの厳密なno-opと、上限を固定したfloat32 JS
+round-trip residualの検査だけである。厳密なJSのゼロも、科学的結果も意味しない。
+
+点推定が次に促すのは、絵文字に固有のsteeringという結論ではない。構造化されたsource directionが、
+ターゲット固有の変化しやすさやnull directionへの依存を超えて介入応答を説明するか、というより狭い問いである。
+F1〜F5は3つのpilot model、F6のsource geometryは9 roleすべてを対象とする。厳密なtoken・prefix対照、wrapper holdout、
+正負のmanifold/covariance-matched null、残る6 modelでの介入応答の再現、generation endpointは未実施である。
+登録済みcluster bootstrapも0 / 20,000回のままである。したがって、T13-EAに一次の有意性判定や確認判定はない。
+[T13-EA結果](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)、
+[zero-gate amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md)、
+[compact evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)に詳細を示す。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -229,6 +246,7 @@ T12では、reserveへの最初のforwardより前に、model family、returned-
 13. **RQ13 — Cross-model practical replication:** 同じreturned-final-state retrieval contrastは、token数を完全一致させた後も、固定した4 core model/tokenizer cell中3つ以上で統計条件と実用条件の両方を満たすか。
 14. **RQ14 — Glyph-system decomposition:** 固定したmulti-codepoint glyph systemで、matched-label marginはwhole-sequence name、決定論的component label、decomposed formのどれに追従し、9 cellはどの正規化depthまたはfinal-norm境界で分岐するか。
 15. **RQ15 — Reserve confirmation:** T11で固定したZWJ fusion候補とregional dual候補は、未使用reserve subset全体で、事前指定した統計量と実用的な大きさを再現するか。
+16. **RQ16 — Source structureとgeneric susceptibility:** 構造化されたemoji source directionは、厳密なtoken・prefix対照とwrapper holdoutの後にも、baseline target susceptibilityと正負のmanifold/covariance-matched nullを超えて介入応答を予測するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -253,6 +271,7 @@ T10は、固定した統合規則の下でRQ13へ負の答えを与えた。部�
 消えなかったが、実用下限を通過したcore cellは4つ中2つだけだった。これは固定rosterにおけるmixed evidenceであり、
 独立再現、scale、tuning、意味、因果、model一般性ではない。
 T11はRQ14に探索的・非確認的な答えを与えた。単一のlanding patternは支配せず、ZWJ fusionが最も狭い候補、regional flagが第二のdual pattern、その他のsystemはmixedまたはbounded nullだった。T12は、凍結したcombined ruleの下でRQ15へ負の答えを与えた。両候補とも確認されず、どのcomponentも実用床に達したmodel summaryはなかった。これはT10を変更せず、semantic nullにも読み替えない。
+T13-EAがRQ16に与えるのは、点推定に基づく探索的な分解だけである。構造化sourceとgeneric susceptibilityを分ける必要は見えたが、matched control、正負のnull、残るmodelでの介入応答の再現、generation endpoint、登録済みbootstrapを、新しいfreezeの下で完了するまでは判定できない。
 
 ## 予定する貢献
 
@@ -334,6 +353,8 @@ T11はRQ14に探索的・非確認的な答えを与えた。単一のlanding pa
     1 token後ろへの位置移動と、残るprefix説明を明示する
 13. T5の3つのmodel-level IUTと、全120 carrier × distance × depth row。距離1、
     減衰、IUT、Holmの主判定を、副次的なtail値とdepth interactionから分ける
+14. T13-EAのF1〜F6点推定を別枠の探索結果として示す。v0 zero gateのfail-closed履歴、
+    v1数値amendment、3 pilotと9 source roleの範囲の違い、20,000回bootstrapの未実行を明記する
 
 最大セルは主結果にしません。25 / 36の正セルと11 / 36の非正セルを同じ図に載せます。
 
@@ -361,6 +382,8 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
 - T5では固定したrecurrence-plus-attenuation conjunctionを通過したmodelがなかったこと。
   LlamaとOLMoの距離8は記述的に高く、初期の取得層は後段より強く低下するが、どちらにも
   推論判定はなく、持続時間、単調性、永続性、選択layerの主張には使わない
+- T13-EAで見えた構造化source directionとgeneric target susceptibilityの分岐、positive-only random nullの限界、
+  wrapper依存、深度`0.875`の相対peakと最終深度の大きなgeneric responseの区別
 
 ### 8. Limitations
 
@@ -454,6 +477,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - bounded T10 model/tokenizer-cell alignment for Llama 3.2 3B base, Qwen 2.5 7B base, and Mistral 7B Instruct v0.3
 - completed exploratory T11 glyph-system decomposition atlas
 - completed T12 one-shot negative confirmation for the ZWJ and regional candidates
+- completed T13-EA exploratory point analysis without a primary or confirmatory verdict
 
 ### 追加の証拠なしには使用しない
 
@@ -470,6 +494,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - T10 tokenizer independence, scale law, instruction-tuning effect, independent replication, or model generality
 - T11 compositional meaning, lexicalized meaning, mechanism, tokenizer independence, or scale law
 - T12 semantic null, endpoint-rescued confirmation, behavioral steering, or model generality
+- T13-EA unique emoji specificity, semantic steering, scale law, or model generality
 
 ## 残る論文ゲート
 
@@ -495,6 +520,9 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
   QwenとMistralの副次profileをscale、tuning、独立再現へ読み替えない。
 - T11を探索的・model-conditionedな結果として保つ。都合のよいcellだけを選ばず、token長一致をtokenizer非依存性と言い換えない。
 - T12を完了した一度限りの負の確認として保つ。実用床を下げず、model rosterを入れ替えず、regional componentの`p = 0.03538`だけを昇格させず、別endpointで救済しない。
+- T13-EAの20,000回cluster bootstrapを完了し、点推定から確認判定を後付けしない。
+- 厳密なtoken・prefix対照、leave-one-wrapper-out direction、正負のmanifold/covariance-matched null、
+  深度`0.875`対`1.0`、残る6 modelの介入応答、generation endpointを、T13-EAの主張を強める前に新しいprotocolへ凍結する。
 
 現段階では、完成原稿を主張しない。英語論文がPhase Iの終点である。
 

@@ -436,18 +436,31 @@ T12では、reserveへの最初のforwardより前に、ZWJ fused-form advantage
 
 Analyzerをimportしないvalidatorが、432 cell中央値、49,999回の共有item swap検定3件、実用床と異質性gate、regional conjunction、Holm補正を再計算し、不一致は0件だった。T12が閉じるのはreserve questionだけであり、絵文字の意味、mechanism、因果、behavioral steering、tokenizer非依存性、scale law、model一般性は確立しない。[結果全文](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)と[compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.ja.md)に示す。
 
-### T13-EH収集とT13の選択肢 — emoji-steering specificityへ戻る
+### 完了したT13-EH収集とT13-EA探索的点推定
 
-状態：T13-EHは凍結済みの探索的収集protocol。T13-Cは設計空間にとどまり、確認実験の
-実行は許可していない。
+状態：収集と登録済みF1〜F6の点推定は完了。登録済みcluster bootstrapは0 / 20,000回のままである。
+T13-Cは設計空間にとどまり、確認実験の実行は許可していない。
 
-T13-EHでは、炉を使えるうちにGPU依存工程だけを先に回収する。対象は、すでに露出した
+T13-EHでは、炉を使えるうちにGPU依存工程を先に回収した。対象は、すでに露出した
 T11 depth population 192項目、公開済みprestage target 32件、正規化深度8点、固定9 model
-roleである。9 roleすべてでsource bankを収集し、事前指定したbase 3 roleでは、さらに
-383,232行の介入応答を収集する。解析、matching、resampling、可視化、論文執筆はCPUまたは
-MPSへ回す。主要仮説も確認判定も置かず、保護bankは開かない。詳細は[凍結済み収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md)に示す。
+roleである。9 roleすべてのsource bankと、事前指定したbase 3 roleの383,232行の
+介入応答が欠損なく揃った。保護bankは開いていない。
 
-次の広い問いでは、emoji-derived interventionを、意味を揃えたword、decomposed form、tokenizerごとに構造を揃えた非絵文字Unicode、rarityを揃えたtext、normを揃えたnull directionと比較する。Representation geometryとbehavioral interventionは別laneに保つ。代表3 roleの探索pilotから、後の9 role confirmationを設計してもよい。ただし確認には、現在の研究文脈の外で作る新しい未使用target bankが必要であり、T12 outcome、P2、廃止済みC1 v1を再利用しない。競合説明と着地点は[T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)にまとめた。
+T13-EAでは、登録済みの探索的な点推定まで完了した。F1〜F5は3つのpilot model、F6は
+9 roleすべてのsource geometryを対象とする。元のexact-JS zero gateは、非ゼロの科学値を開く前に
+fail-closedした手続き上の負の結果として保存した。別に凍結したv1 amendmentが通過したのは、
+primitiveの厳密なno-opと、上限を固定したfloat32 JS round-trip residualの検査だけである。この数値gateは、
+科学的結果もJSの厳密なゼロも意味しない。[T13-EA結果](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)、
+[zero-gate amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md)、
+[compact evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)に詳細を示す。
+
+次に問うのは、構造化されたsource directionが、ターゲット固有の変化しやすさやnull directionへの
+依存を超えて介入応答を説明するかである。設計には、厳密に揃えたtoken・prefix対照、
+leave-one-wrapper-out direction、正負のmanifold/covariance-matched null、深度`0.875`と`1.0`の事前対比、
+残る6 modelでの介入応答の再現、generation endpointを含める。区間に基づく主張は、登録済み
+cluster bootstrapの完了後に限る。後の確認には、露出した研究文脈の外で作る新しい未使用
+target bankが必要であり、T12 outcome、P2、廃止済みC1 v1を再利用しない。Representation geometryと
+behavioral interventionは引き続き分ける。競合説明と着地点は[T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)にまとめた。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -471,6 +484,7 @@ MPSへ回す。主要仮説も確認判定も置かず、保護bankは開かな�
 - weight履歴を利用できる場合は、checkpoint間での出現時期を調べる。
 - prompt domainとtarget template familyをまたいで頑健性を検証する。
 - architecture固有の観測と、modelをまたぐ規則性を分ける。
+- 現在はsource geometryだけを提供する残り6 roleで、T13-EAの介入応答予測を固定して検証する。
 
 終了条件: 何が再現し、何がGPT-2固有のままかを論文で明確に述べられること。
 
@@ -486,6 +500,7 @@ MPSへ回す。主要仮説も確認判定も置かず、保護bankは開かな�
 - `1/1001`の置換下限と、全体有意性の主張を区別する。
 - 次の確認analyzerでは、CLI順序と別監査に頼らず、科学的なrun roleを凍結済みconfigとinputへ直接結び付ける。
 - データから推定するprototypeは各再標本内で作り直すか、別の依存対応estimatorを結果確認前に根拠とともに凍結する。
+- T13-EAの点推定を区間に基づく論文の記述へ格上げする前に、登録済み20,000回cluster bootstrapを完了する。
 
 終了条件: 標本構造に合った統計解析を、凍結済みartifactから再実行できること。
 

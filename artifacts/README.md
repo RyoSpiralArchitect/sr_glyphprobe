@@ -46,6 +46,11 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   item-contrast rows, the two-hypothesis joint decision, and an independent
   recomputation of all stored statistics and gates. Raw activations remain
   outside Git and SpiralShare.
+- `emoji_steering_specificity_analysis_v0/` contains T13-EA's deterministic
+  F1–F6 reporting synthesis, bilingual reading guide, public manifest, and
+  checksum ledger. The six 104,583,753-byte derived source outputs and the
+  4,535,141,572-byte furnace archive remain outside Git; raw arrays were not
+  copied to Git or SpiralShare.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -135,6 +140,24 @@ but not independently reconstructed. This is a one-shot negative confirmation,
 not a semantic null, causal result, behavioral-steering result, tokenizer-
 independent effect, scale law, or model-general claim. See the [complete T12
 result](../docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md).
+
+## T13-EA specificity-analysis reading
+
+T13-EA completed the registered F1–F6 exploratory point analysis. The
+three-model intervention pilot shows structured, depth- and system-dependent
+source-form effects, but the signal is not glyph-unique: Unicode names,
+decomposed forms, and codepoint literals can also separate from the limited
+positive-isotropic null. Generic target fragility, large wrapper variation,
+and count-signature-only tokenizer evidence remain competing explanations.
+
+The original exact-JS zero gate failed closed before nonzero scientific values
+were opened. That failure is preserved separately from a later bounded-float32
+JS amendment. The compact summary reproduces the reported point aggregates and
+authenticates all six source outputs, but it does not include intervals. The
+registered bootstrap remains at 0/20,000, and exact token/prefix controls,
+signed matched nulls, untouched confirmation targets, remaining-model response
+replication, and generation endpoints remain open. See the [complete T13-EA
+result](../docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md).
 
 ## Milestone 2 reading
 

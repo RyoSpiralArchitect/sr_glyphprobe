@@ -221,7 +221,7 @@ T10は、`cross_model_replication_not_established_under_frozen_rule`という登
 
 実装監査では、T8/T9のendpointの呼び方も修正した。`output.hidden_states[-1]` はrawな最終decoder block出力ではなく、modelが返す最終norm後のhidden stateである。T10では、このAPI endpointを一次として維持し、raw block出力は一次を救済できない副次として同時取得した。Token数完全一致層には281〜287項目が残り、matching後も差は消えなかった。ただし、tokenization非依存性は確立しない。単調なQwen 4点profileと関連Mistral-Instruct cellも記述に限り、scaleやtuning効果を主張しない。詳しくは[全結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)、[固定protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.ja.md)、[compact evidence](artifacts/semantic_atlas_cross_model_replication_v0/README.ja.md)に示す。
 
-### T10診断、T11探索、T12確認、T13-EH収集の現在地
+### T10診断、T11探索、T12確認、T13-EA解析の現在地
 
 T10-DはT10の負の一次判定を変えず、raw activationから導くmetricを再構築した。333 shard、36 array、84,096 scalarを照合し、不一致はゼロだった。連続glyph/name marginは72 model-context cellすべてで正だった一方、item coverageは大きく偏り、carrier-distance profile、codepoint geometry、rawからfinalへの変化はいずれもmodel依存だった。9 modelすべてでtop-1 hitになったitemはない。これは次の設計を鋭くする診断であり、T10の救済ではない。
 
@@ -229,12 +229,19 @@ T11では、凍結した9モデルのdiscovery atlasを完走した。477 shard�
 
 T12では、その後、ZWJ 96件とregional flag 64件のreserve subset全体を、同じ9 role・8 contextで別途凍結して一度だけ開いた。全9,792 forwardとreturned-final vector 39,168本が完走した。登録した仮説はどちらも確認されなかった。ZWJは統計量`0.000369`、未補正`p = 0.05496`、Holm `p = 0.10992`。Regional presentation/fusionは弱く正方向だった（`0.002767`、component単独`p = 0.03538`）が、regional component trackingは`0.000666`、`p = 0.12950`で、dual IUT/Holm判定も`p = 0.12950`となった。3 componentとも実用床に届いたmodelは0件だった。Analyzerをimportしないvalidatorが432 cell中央値、49,999回検定3件、全gateを再構築し、不一致は0件である。[T12結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)、[compact evidence](artifacts/glyph_system_reserve_confirmation_v0/README.ja.md)、[T13の設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)に示す。
 
-T13-EHでは、炉を使えるうちにGPU依存のsource tensorと介入応答だけを先に収集し、
-matching、resampling、作図、論文への統合はCPUまたはMPSへ回す。この収集で使うのは、
-すでに露出したT11 depth population 192項目と、公開済みprestage target全32件だけである。
-固定9 roleすべてでsource bankを取り、事前指定したbase 3 roleでは383,232行の応答面も
-欠けなく取る。これは探索用データ収集であり、T13-Cの確認実験ではない。保護bankを開かず、
-意味、因果、steering特異性、scale、model一般性の主張も認めない。詳細は
+T13-EHでは、露出済みのT11 depth population 192項目と公開済みprestage target
+32件を対象に、GPU依存の収集を完了した。固定9 roleのsource bankと、事前指定した
+base 3 roleの383,232行の応答面は、いずれも欠損なく揃っている。続くT13-EAでは、
+登録済みのF1〜F6を点推定まで実行した。v0のexact-JS zero gateは、非ゼロの科学値を開く前に
+fail-closedした記録として保存している。別に凍結したv1 amendmentが通過したのは、primitiveの厳密な
+no-opと、上限を固定したfloat32 JS round-trip residualの検査だけである。
+
+点推定から次に問うべきなのは、構造化されたsource directionが、ターゲット固有の変化しやすさや
+null directionへの依存を超えて介入応答を説明するかである。この結果は、絵文字に固有の意味、
+機構、行動、scale、model一般性を確立しない。登録済みcluster bootstrapは0 / 20,000回のままで、
+T13-EAに一次仮説、有意性判定、確認判定はない。詳細は[T13-EA結果](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)、
+[zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md)、
+[compact evidence](artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)、
 [T13-EH protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md)に示す。
 
 ### E2 技術検証の結果
@@ -381,6 +388,10 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Glyph-system reserve confirmation v0（T12）](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md) / [English](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md)
 - [Emoji steering specificity atlas v0（T13設計図）](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md)
 - [Emoji steering specificity harvest v0（T13-EH）](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md)
+- [Emoji steering specificity analysis v0（T13-EA）](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md)
+- [Emoji steering specificity analysis v0結果](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md)
+- [Emoji steering specificity zero-gate amendment v1](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md)
+- [Emoji steering specificity compact evidence](artifacts/emoji_steering_specificity_analysis_v0/README.ja.md) / [English](artifacts/emoji_steering_specificity_analysis_v0/README.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -399,7 +410,11 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T7ではMistral 7B baseの固定した距離1反復と初期−後期深度interactionがともに棄却されたが、T6後に選択した関連checkpointの1 cellであり、独立確認やinstruction tuning効果ではない。T8では固定したlayer-31 glyph/name-versus-codepoint retrieval endpointを、model forward 0だったreserve 292件すべてで確認した。T10は、そのpopulationとtransportを9つのmodel/tokenizer cellで固定した。統計的な部分連言検定は通過したが、固定した実用再現条件を満たしたcore cellは4つ中2つだったため、モデル横断再現は確立しなかった。Token数完全一致後も差は消えなかった一方、tokenization非依存性、scale、tuning、意味、因果、model一般性は主張しない。T10-Dはその一次判定を保ったまま次の問いを鋭くし、都合のよいmodelは選んでいない。T11は9-cellの変則glyph探索atlasのままで、T10を変更しない。T12では、そのZWJとregional reserve subsetを別の一度限りのfreezeで開き、登録した2つのdecomposition仮説はいずれも確認されなかった。負の判定と不均一cellはすべて公開する。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性、T8の正のretrieval結果に併存した1つの負のCKA contrast、T10の統計条件と実用条件の分岐、T11の探索的位置づけ、T12で探索量がreserveで減衰した事実を事前に扱います。因果検証、独立実装または適切に独立した再現、完全なevidence archiveも論文gateとして残っています。
 
-T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う探索的収集だけを凍結し、T12の判定も論文gateも変えない。T13-Cで確認を行うには、新しい未使用bankと別のfreezeが必要である。
+T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cで確認を行うには、新しい未使用bankと別のfreezeが必要である。
+
+T13-EAは、その探索的な点推定まで完了した。一次判定や確認判定は置かず、登録済みcluster
+bootstrapも0 / 20,000回のままである。直近の設計課題は、構造化source directionの効果が、厳密に揃えたtoken・prefix対照、
+wrapper holdout、matched null、target susceptibilityの統制を通過するかを確かめることである。
 
 ## ライセンスと引用
 

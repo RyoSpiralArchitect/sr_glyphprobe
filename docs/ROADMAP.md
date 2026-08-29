@@ -650,28 +650,39 @@ behavioral steering, tokenizer independence, scale law, or model generality.
 See the [complete result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) and
 [compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.md).
 
-### T13-EH harvest and T13 option map — return to emoji-steering specificity
+### Completed T13-EH harvest and T13-EA exploratory point analysis
 
-Status: T13-EH is a frozen exploratory acquisition protocol. T13-C remains a
+Status: the harvest and registered F1–F6 point analysis are complete. The
+registered cluster bootstrap remains at 0/20,000. T13-C remains a
 design space only and is not authorized for confirmatory execution.
 
-T13-EH front-loads the GPU-only work while the furnace is available. It uses
+T13-EH front-loaded the GPU-only work while the furnace was available. It used
 the already exposed 192-item T11 depth population, all 32 public prestage
 targets, eight normalized depths, and all nine frozen model roles. All nine
-roles acquire the source bank; three prespecified base roles additionally
-acquire 383,232 intervention-response rows. Analysis, matching, resampling,
-visualization, and manuscript work are deferred to CPU or MPS. The acquisition
-has no primary hypothesis or confirmatory verdict, and no protected bank is
-opened. See the [frozen acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md).
+roles completed the source bank; three prespecified base roles additionally
+completed 383,232 intervention-response rows. No protected bank was opened.
 
-The next broad question compares emoji-derived interventions with
-meaning-matched words, decomposed forms, tokenizer-specific matched non-emoji
-Unicode, rarity-matched text, and norm-matched null directions. Representation
-geometry and behavioral intervention remain separate lanes. A three-role
-exploratory pilot may design a later nine-role confirmation, but confirmation
-requires a new untouched target bank outside the exposed research context and
-cannot reuse T12 outcomes, P2, or retired C1 v1. The complete set of competing
-explanations and clean landing patterns is in the [T13 decision
+T13-EA then completed the registered exploratory point analysis. F1–F5 use the
+three pilot models; F6 uses all nine source roles. The original exact-JS zero
+gate remains a preserved fail-closed procedural result. A separately frozen
+v1 amendment passed the exact primitive no-op checks plus a bounded float32 JS
+round-trip check before nonzero values were opened. Passing that numerical gate
+is not a scientific result and does not claim exact JS. See the [point-analysis
+result](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md), [zero-gate
+amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md), and [compact
+evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.md).
+
+The next broad question is whether structured source directions explain
+intervention response beyond generic target susceptibility and null-direction
+dependence. The discriminating design should combine exact token/prefix
+controls, leave-one-wrapper-out directions, positive and negative
+manifold/covariance-matched nulls, a frozen depth-0.875-versus-1.0 contrast,
+response replication in the remaining six models, and generation endpoints.
+The registered cluster bootstrap must finish before interval claims. Any later
+confirmation requires a new untouched target bank outside the exposed research
+context and cannot reuse T12 outcomes, P2, or retired C1 v1. Representation
+geometry and behavioral intervention remain separate lanes. The competing
+explanations and clean landing patterns remain in the [T13 decision
 map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md).
 
 ### Milestone 3 — Targeted causal localization
@@ -701,6 +712,8 @@ Status: planned.
 - examine checkpoint emergence where weight histories are available;
 - test robustness across prompt domains and target-template families;
 - separate architecture-specific observations from cross-model regularities.
+- test the frozen T13-EA response predictions in the six roles that currently
+  contribute source geometry but not the full intervention-response surface.
 
 Exit condition: the paper can state clearly which findings replicate and which remain GPT-2-specific.
 
@@ -719,6 +732,8 @@ qualification.
   confirmatory analyzer, rather than relying on CLI order plus a separate audit;
 - either rebuild data-dependent prototypes inside each resample or justify and
   freeze a different dependence-aware estimator before outcomes.
+- complete the registered T13-EA 20,000-replicate cluster bootstrap before
+  promoting any point estimate to an interval-based paper statement.
 
 Exit condition: the statistical analysis matches the sampling structure and can be rerun from frozen artifacts.
 

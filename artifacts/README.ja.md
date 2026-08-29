@@ -18,6 +18,9 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `semantic_atlas_cross_model_replication_v0/`：T10の9つのcompact prediction、全primary・secondary cell metrics、run/summary/session receipt、raw shard ledgerへのbinding、独立検証、public manifest。Raw activationとmodel weightはGit外に保持する。
 - `glyph_system_decomposition_v0/`：T11のcompact joint analysis、model間geometry・agreement table、item margin・agreement・variance・depth trajectoryの独立再計算、英日reading guide、checksum付きmanifest。Dense activation arrayはGit外に保持する。
 - `glyph_system_reserve_confirmation_v0/`：T12の凍結設計、9 tokenizer preflight、9本のrun receiptとshard index、432 item-contrast行、2仮説のjoint判定、保存済み統計量とgateの独立再計算。Raw activationはGitとSpiralShareの外に保持する。
+- `emoji_steering_specificity_analysis_v0/`：T13-EAの決定論的なF1〜F6報告summary、英日reading guide、
+  public manifest、checksum台帳。104,583,753 byteの派生source output 6件と、4,535,141,572 byteの
+  furnace側archiveはGit外に保ち、raw arrayはGitにもSpiralShareにも複製しない。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
@@ -68,6 +71,19 @@ T12では、ZWJ 96件とregional flag 64件のreserve subset全体を、9 role�
 ZWJ presentation/fusionは統計量`0.000369`、未補正`p = 0.05496`、Holm `p = 0.10992`。Regional presentation/fusionは弱く正方向だった（`0.002767`、component単独`p = 0.03538`）が、component trackingは`0.000666`、`p = 0.12950`で、regional intersection-union/Holm結果も`p = 0.12950`となった。凍結した実用床に達したmodel summaryはなかった。独立validatorは432 cell中央値をすべて再構築し、49,999回検定3件と全gateを再計算して、不一致0件だった。
 
 Bundleの評価は`share_with_caveats`である。省略したraw activationはhashで拘束するが、独立再構築していない。これは一度限りの負の確認であって、semantic null、因果結果、behavioral steering、tokenizer非依存効果、scale law、model一般性ではない。[T12の全結果](../docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)を参照する。
+
+## T13-EA specificity analysisの読み方
+
+T13-EAでは、登録済みF1〜F6の探索的な点推定を完了した。3 modelの介入pilotでは、
+構造を持ち、depthとsystemに依存するsource-form effectが見える。ただし、このsignalはglyphに固有ではない。
+Unicode name、decomposed form、codepoint literalも、限られた正方向isotropic nullから分かれうる。
+一般的なtarget fragility、大きなwrapper間変動、count signatureだけのtokenizer証跡も代替説明として残る。
+
+当初のexact-JS zero gateは、非ゼロの科学値を開く前にfail-closedした。その失敗は、後の
+bounded-float32 JS amendmentと分けて保存している。Compact summaryは報告した点推定の集約値を再現し、
+source output 6件を認証するが、区間推定は含まない。登録済みbootstrapは0 / 20,000回のままで、
+exact token・prefix対照、正負のmatched null、未使用の確認用target、残るmodelの介入応答の再現、
+generation endpointも未実行である。[T13-EAの全結果](../docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 

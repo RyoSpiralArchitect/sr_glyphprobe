@@ -278,6 +278,27 @@ evidence that models lack emoji representations. An analyzer-independent
 validator recomputed 432 cell medians, all three 49,999-draw tests, and every
 decision gate with zero mismatches.
 
+## Completed T13-EA exploratory point analysis
+
+T13-EH completed the nine-role source bank and the three-pilot, 383,232-row
+intervention surface over exposed source items and public targets. T13-EA then
+completed the registered F1–F6 point analysis. Its historical v0 exact-JS gate
+remains a preserved fail-closed procedural result; the separate v1 amendment
+passed exact primitive no-op checks plus a bounded float32 JS round-trip check.
+That amendment neither claims exact JS nor supplies scientific evidence.
+
+The point estimates support a narrower organizing question than unique emoji
+specificity: when do structured source directions explain intervention response
+beyond generic target susceptibility and null-direction dependence? F1–F5 use
+three pilot models, while F6 source geometry spans all nine roles. Exact
+token/prefix matching, wrapper holdout, signed manifold/covariance-matched
+nulls, response replication in the remaining six models, and generation
+endpoints are still absent. The registered cluster bootstrap remains at
+0/20,000. T13-EA therefore has no primary significance decision or
+confirmatory verdict. See the [result](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md),
+[zero-gate amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md),
+and [compact evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.md).
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -295,6 +316,7 @@ decision gate with zero mismatches.
 13. Does that same returned-final-state retrieval contrast meet both the statistical and practical replication rules in at least three of four frozen core model/tokenizer cells after exact token-count matching?
 14. Across frozen multi-codepoint glyph systems, do matched-label margins track whole-sequence names, deterministic component labels, or decomposed forms, and at which normalized depth or final-norm boundary do the nine cells diverge?
 15. Do the frozen T11 ZWJ fusion and regional dual candidates reproduce at prespecified statistical and practical magnitude in their complete untouched reserve subsets?
+16. Do structured emoji-source directions predict intervention response beyond baseline target susceptibility and signed, manifold/covariance-matched null directions after exact token/prefix and wrapper-holdout controls?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -332,6 +354,11 @@ or bounded nulls. T12 gives a negative answer to question 15 under its frozen
 combined rules: neither candidate was confirmed, and no component reached its
 practical floor in any model summary. This closes the reserve question without
 changing T10 or converting the result into a semantic null.
+T13-EA gives only a point-estimate, exploratory decomposition of question 16.
+It motivates the structured-source-versus-generic-susceptibility distinction,
+but cannot decide it until the matched controls, signed nulls, remaining-model
+response replication, generation endpoints, and registered bootstrap are
+complete under a new freeze.
 
 ## Planned paper structure
 
@@ -384,6 +411,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - all negative and heterogeneous cells;
 - finite permutation floor and its limited interpretation;
 - tokenization audit.
+- T13-EA F1–F6 point estimates as a separate exploratory block, with the v0
+  fail-closed zero-gate history, v1 numerical amendment, three-pilot versus
+  nine-source-role scope, and pending 20,000-replicate bootstrap explicit.
 
 ### 5. Confirmatory controls
 
@@ -443,6 +473,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - compressed CountSketch fingerprints versus full-vocabulary interpretation;
 - exploratory selection, cluster count, and statistical power;
 - absent SAE, iso-KL, or generation evidence where still missing.
+- T13-EA structured source directions versus generic target susceptibility,
+  positive-only random-null limits, wrapper dependence, and the distinction
+  between a depth-0.875 relative peak and larger generic final-depth response.
 - E1 family identity is exactly confounded with the middle GPT-2 token, while
   the first and third tokens are shared; its transfer pattern cannot establish
   a semantic or tokenizer-independent family representation.
@@ -561,6 +594,7 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The monotone T10 Qwen profile establishes a scale law | not supported; four checkpoint cells are descriptive and size remains confounded | require a dedicated size-identification design |
 | T11 establishes whether emoji meaning is compositional or lexicalized | not established; the completed atlas has system-specific, model-conditioned operational contrasts rather than one semantic landing pattern | report the discovery atlas as exploratory and T12 as its separate negative confirmation |
 | T12 confirms ZWJ fusion or a regional dual structure | not supported; both registered hypotheses failed, and all components missed their practical floors | preserve the one-shot negative result; do not rescue it with another endpoint, layer, or reserve subset |
+| T13-EA establishes unique emoji steering specificity | not supported; exploratory point estimates mix source-form structure, target susceptibility, wrapper effects, and incomplete null controls | finish the registered bootstrap and run a newly frozen matched-control, signed-null, wrapper-holdout, cross-model response design |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
 ## Statistical commitments
@@ -577,6 +611,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
   fixed; discovery outcomes cannot repair them. T12 opened only its frozen ZWJ
   and regional subsets once, and its negative decision cannot be rescued by an
   alternate endpoint, threshold, model subset, or post-hoc family.
+- T13-EA remains point-estimate exploratory evidence. Its registered
+  20,000-replicate cluster bootstrap must complete before interval-based paper
+  wording, and no cell may be promoted into a confirmatory verdict.
 - E1 intervals remain descriptive; no p-value, multiplicity decision,
   confirmatory status, or layer-comparison inference will be retrofitted.
 - T2's two midpoint p-values and Holm family remain the only authorized
@@ -605,6 +642,12 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - address v1 role binding and prototype-resampling dependence prospectively in
   final-paper confirmatory wording and supporting replication;
 - complete at least one prespecified targeted causal experiment, positive or negative, without opening the replacement bank early;
+- complete the T13-EA 20,000-replicate cluster bootstrap and retain its
+  no-primary, no-confirmatory status;
+- freeze exact token/prefix controls, leave-one-wrapper-out directions, signed
+  manifold/covariance-matched nulls, the depth-0.875-versus-1.0 contrast, the
+  six-model response replication, and generation endpoints before using them
+  to strengthen the T13-EA story;
 - complete an independent backend implementation check and at least one model or tokenizer replication appropriate to the final claim;
 - archive the complete raw evidence and checksum it;
 - generate paper tables and figures from versioned scripts;

@@ -389,6 +389,31 @@ T12では、負荷は大きいが決着力のある確認を行った。Reserve�
 
 次の問いは、以前より明確である。Emoji由来interventionには、意味を揃えたword、decomposed form、構造を揃えた非絵文字Unicode、rare-token control、norm-matched random directionにはない何かがあるのか。[T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)は、T12を使って答えを調整せず、この問いを開いたままにする。
 
+## T13-EA: 構造化sourceと動きやすいtargetを分ける
+
+T13-EHでは、炉が必要な工程を先に完了した。固定9 roleのsource bankと、事前指定したbase 3 modelの
+383,232行の介入応答である。使ったのは、露出済みのT11 depth populationと公開済みprestage target 32件だけで、
+保護bankは開いていない。
+
+最初のexact-JS zero gateは、非ゼロの科学値を読む前にfail-closedした。この失敗は閾値を黙って緩めず、
+手続き上の負の結果として残した。別のv1 amendmentは、live residualの大きさを見る前に凍結している。
+Primitive no-opの等値判定は厳密なまま保ち、派生的なfloat32 JS round-trip residualだけに上限を設けた。
+修正後のgateは通過したが、JSが厳密にゼロだという主張でも、科学的証拠でもない。
+
+点推定を終えると、問いの形が変わった。3つのpilot modelの各signで、glyph minus decomposed formの平均は、
+4つの連続な非負endpointで正だった。ただし、このaggregateを主に担うのはregional flagとkeycapで、
+modifierでは弱いか反転する。Argmaxと、glyph対nameおよびname対decomposed formのcontrastは、さらに一様ではない。
+用量順序は非常に整っていた一方、raw responseが最大になる深さと、isotropic nullに対して最も優位になる深さは、
+必ずしも同じではなかった。Baseline target marginは、glyph、prototype、randomのどの条件でもargmaxの変わりやすさを予測した。
+9 roleすべてのsource bankでは、glyphとdecomposed directionの方が、glyphとUnicode-name directionよりも揃っていたが、wrapper依存は大きく残った。
+
+したがって、現時点で整合的な読みは「絵文字の意味を見つけた」ではない。分けるべきは、構造化されたsource directionから来る応答と、
+ターゲット固有の変化しやすさ、wrapper context、nullの選び方から来る応答である。登録済みのcluster bootstrapは
+0 / 20,000回のままであり、T13-EAは点推定まで完了した探索解析にとどまる。一次の有意性判定も確認判定も置いていない。
+[T13-EA結果](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)、
+[zero-gate amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md)、
+[compact evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)に、数値とその限界を並べて残した。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -422,8 +447,11 @@ T10からは、claim-matchedな9セル結果が加わる。Token数完全一致�
 alignmentと負のモデル横断一次判定であり、tokenization非依存性、scale、tuning、意味、因果、独立再現、
 model一般性ではない。
 T10-Dも一次判定を変えず、診断分解だけを加える。T11は探索的なdiscovery atlasであり、確認的evidenceではない。T12は、そのZWJ / regional候補に対する別freezeの負の確認を加えた。どちらもT10の一次判定を変えない。
+T13-EAが加えるのは、完了した探索的な点推定による分解だけである。絵文字に固有の効果、意味、行動、scale law、model一般性は確立せず、区間解析も未実行である。
 
-## 次は、因果プロトコルを凍結する
+## 次は、sourceの構造とtargetの変化しやすさを分ける
+
+直近のT13では、構造化source directionの予測力が、target固有の変化しやすさとnull依存を統制しても残るかを問う。次のfreezeには、厳密なtoken・prefix対照、leave-one-wrapper-out direction、正負のmanifold/covariance-matched null、深度`0.875`対`1.0`、残る6つのsource-only roleでの介入応答の再現、generation endpointを含める。登録済み20,000回cluster bootstrapは、区間に基づく論文表現の前に完了しなければならない。確認には、別に用意した新しい未使用target bankも必要である。
 
 運用上のMilestone 2は完了した。Layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入った。Layer 4は未解決のままで、候補にはしない。ここで認めるのはプロトコル設計であり、因果主張ではない。廃止済みC1 v1はこの実験に使えない。露出した研究文脈の外で新しいversionの因果bankを用意し、公開freezeまで未使用に保つ必要がある。E1はこのlayer候補を選び直す根拠にはしない。E1から仮説を絞る場合も、別の公開プロトコルと新しい未使用target bankが必要になる。
 

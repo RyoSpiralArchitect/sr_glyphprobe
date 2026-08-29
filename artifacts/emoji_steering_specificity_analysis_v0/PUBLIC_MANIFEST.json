@@ -1,0 +1,96 @@
+{
+  "analysis_id": "glyphprobe-emoji-steering-specificity-analysis-v0",
+  "analyzer_commit": "979533f64e9b25c48d56859a83ee4931ae47cde1",
+  "bundle_id": "glyphprobe-emoji-steering-specificity-analysis-v0-public-evidence",
+  "bundle_role": "compact_exploratory_point_result_evidence",
+  "claim_boundary": {
+    "behavioral_steering_claim_authorized": false,
+    "causal_or_mechanistic_claim_authorized": false,
+    "confirmatory_verdict_authorized": false,
+    "emoji_meaning_claim_authorized": false,
+    "exact_js_claim_authorized": false,
+    "model_population_generality_claim_authorized": false,
+    "scale_law_claim_authorized": false,
+    "tokenizer_independence_claim_authorized": false,
+    "unique_emoji_specificity_claim_authorized": false
+  },
+  "cross_host_verification": {
+    "derived_files_compared": 6,
+    "derived_files_equal_by_sha256": 6,
+    "status": "pass"
+  },
+  "included_payload": [
+    {
+      "bytes": 1127906,
+      "path": "reporting_summary_v0.json",
+      "role": "deterministic_reporting_only_f1_f6_point_synthesis",
+      "sha256": "097934b191660106167164e2f60f18edafc7fe148db55760466b525aa74c6d06"
+    }
+  ],
+  "input_closeout": {
+    "run_binding_root_sha256": "c0316c2c1b939ae831a3421c296d7eff4acd79a18747ac41eb04053ce0a88acf",
+    "sha256": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+  },
+  "interval_gate": {
+    "executed_bootstrap_replicates": 0,
+    "paper_interval_gate_satisfied": false,
+    "registered_bootstrap_replicates": 20000,
+    "status": "pending"
+  },
+  "omitted_furnace_archive": {
+    "bytes": 4535141572,
+    "files": 1161,
+    "included": false,
+    "raw_arrays_copied_to_git_or_spiralshare": false,
+    "reason": "The authenticated acquisition archive and raw arrays remain furnace-local. Hashes bind reviewed inputs but cannot reconstruct omitted bytes."
+  },
+  "omitted_source_derived_outputs": [
+    {
+      "bytes": 90049611,
+      "path": "outcomes-v1-point.json",
+      "sha256": "df0ddc58c8e98d6ca0c763cd7bc71821a10af4dad84cda5a92822abf8ecfd615"
+    },
+    {
+      "bytes": 7781,
+      "path": "zero_hook_exact_primitives_bounded_js_v1.json",
+      "sha256": "51a3beddbc5342aefea8be9f37ecdb7d870074056db3686ac220685c985c75de"
+    },
+    {
+      "bytes": 112706,
+      "path": "analysis_receipt.json",
+      "sha256": "c69f93706b20f0ddc70688aa1819376523049dd91dd2918c7c88d90c5dab7c58"
+    },
+    {
+      "bytes": 753569,
+      "path": "F4_target_sensitivity.json",
+      "sha256": "e7d8a1a3c4e781fced9ab2f8080f16d1b00d2516ffb2f8353c563df7a2b63ec9"
+    },
+    {
+      "bytes": 3139103,
+      "path": "F5_output_direction.json",
+      "sha256": "e6eee30b93b61cd812f122385d78c53d82ac9cd7b30c76e0fb9daa8218d840cb"
+    },
+    {
+      "bytes": 10520983,
+      "path": "F6_source_geometry.json",
+      "sha256": "f00f8a7b27976cf9d1cd51f97bee1c66a6d27cccb22b6cc3ffb3871fa9107916"
+    }
+  ],
+  "omitted_source_derived_outputs_bytes": 104583753,
+  "repository_provenance": {
+    "point_results_closeout": {
+      "bytes": 3411,
+      "path": "../../validation/emoji_steering_specificity_analysis_v0/point_results_closeout_979533f.json",
+      "sha256": "95e5eaee979a7930ba43879e47cfb4bf9bb28cd93b4761e7e1e531e69f934e41"
+    }
+  },
+  "schema_version": 1,
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "status": "share_with_caveats_exploratory_point_evidence_bootstrap_pending",
+  "zero_gate_history": {
+    "historical_v0": "failed_closed_before_nonzero_scientific_open_and_preserved",
+    "v1_amendment_id": "glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1",
+    "v1_amendment_manifest_sha256": "0dbcbcd56cc89f7b8e0a635e26209f0ae3cfe0c18248a849bd5f960685a2c208",
+    "v1_scope": "exact_primitive_noops_plus_bounded_float32_js_roundtrip"
+  }
+}

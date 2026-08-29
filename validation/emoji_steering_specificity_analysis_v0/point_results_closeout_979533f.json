@@ -1,0 +1,84 @@
+{
+  "analysis_id": "glyphprobe-emoji-steering-specificity-analysis-v0",
+  "analyzer_commit": "979533f64e9b25c48d56859a83ee4931ae47cde1",
+  "analyzer_zero_gate_amendment_id": "glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1",
+  "analyzer_zero_gate_amendment_manifest_sha256": "0dbcbcd56cc89f7b8e0a635e26209f0ae3cfe0c18248a849bd5f960685a2c208",
+  "bootstrap": {
+    "executed_replicates": 0,
+    "paper_interval_gate_satisfied": false,
+    "registered_replicates": 20000,
+    "status": "point_estimates_only_bootstrap_pending"
+  },
+  "claim_boundary": "Exploratory complete-family point derivation only. This closeout does not establish emoji meaning, unique emoji specificity, a mechanism, behavioral generation effects, tokenizer independence, a scale law, model-population generality, independent confirmation, or a confirmatory verdict.",
+  "cross_host_verification": {
+    "files_compared": 6,
+    "files_equal_by_sha256": 6,
+    "local_view": "mac2 temporary analysis intake",
+    "remote_authority": "furnace derived-output directory",
+    "status": "all_derived_outputs_equal_by_sha256"
+  },
+  "execution": {
+    "geometry": {
+      "elapsed_seconds": 15.36,
+      "gpu_used": false,
+      "maximum_resident_set_kib": 1132060,
+      "priority": "nice_15_idle_io",
+      "status": "complete"
+    },
+    "outcomes_point": {
+      "elapsed_seconds": 30.64,
+      "gpu_used": false,
+      "maximum_resident_set_kib": 3671988,
+      "priority": "nice_15_idle_io",
+      "status": "complete"
+    }
+  },
+  "input_closeout": {
+    "run_binding_root_sha256": "c0316c2c1b939ae831a3421c296d7eff4acd79a18747ac41eb04053ce0a88acf",
+    "sha256": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+  },
+  "json_validation": {
+    "files_parsed": 6,
+    "nonfinite_numeric_values": 0,
+    "status": "all_derived_json_parsed_without_nonfinite_values"
+  },
+  "outputs": {
+    "F4_target_sensitivity.json": {
+      "bytes": 753569,
+      "sha256": "e7d8a1a3c4e781fced9ab2f8080f16d1b00d2516ffb2f8353c563df7a2b63ec9"
+    },
+    "F5_output_direction.json": {
+      "bytes": 3139103,
+      "sha256": "e6eee30b93b61cd812f122385d78c53d82ac9cd7b30c76e0fb9daa8218d840cb"
+    },
+    "F6_source_geometry.json": {
+      "bytes": 10520983,
+      "sha256": "f00f8a7b27976cf9d1cd51f97bee1c66a6d27cccb22b6cc3ffb3871fa9107916"
+    },
+    "analysis_receipt.json": {
+      "bytes": 112706,
+      "sha256": "c69f93706b20f0ddc70688aa1819376523049dd91dd2918c7c88d90c5dab7c58"
+    },
+    "outcomes-v1-point.json": {
+      "bytes": 90049611,
+      "sha256": "df0ddc58c8e98d6ca0c763cd7bc71821a10af4dad84cda5a92822abf8ecfd615"
+    },
+    "zero_hook_exact_primitives_bounded_js_v1.json": {
+      "bytes": 7781,
+      "sha256": "51a3beddbc5342aefea8be9f37ecdb7d870074056db3686ac220685c985c75de"
+    }
+  },
+  "raw_arrays_copied_from_furnace": false,
+  "schema_version": 1,
+  "scientific_values_parsed_after_zero_gate": true,
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "status": "exploratory_point_results_cross_host_closeout_complete",
+  "total_derived_output_bytes": 104583753,
+  "zero_gate": {
+    "historical_v0_exact_js_gate_status": "failed_closed_and_preserved",
+    "nonzero_scientific_values_opened_before_v1_gate": false,
+    "primitive_noop_equalities": "exact",
+    "v1_js_absolute_tolerance": 9.5367431640625e-07,
+    "v1_status": "all_three_pilot_zero_controls_passed"
+  }
+}

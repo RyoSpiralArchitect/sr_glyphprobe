@@ -1,13 +1,18 @@
 # Emoji Steering Specificity Atlas v0 — T13の設計図
 
-[English](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md) · [Phase I論文構成](PAPER_OUTLINE.ja.md)
+[English](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T13-EA点推定結果](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md) · [Phase I論文構成](PAPER_OUTLINE.ja.md)
 
 状態: **future workの選択肢を整理した文書。事前登録ではなく、確認実験の実行許可も
 与えない**。
 
+2026年8月30日追記：T13-EHの収集と、登録済みT13-EAの探索的な点推定は完了した。
+その結果はこの選択肢を絞り込むが、決着は付けない。Cluster bootstrapは0 / 20,000回、
+random nullは正方向isotropicだけである。Exact token・prefix、wrapper holdout、matched null、
+未使用target、behavioral controlも残っている。探索結果はT13-Cの実行を許可しない。
+
 この文書では、結果に応じた複数の綺麗な着地点を意図的に残している。別のT13-EH
-protocolでは、すでに露出したT11項目と公開targetだけを使う探索的収集を凍結する。
-これはT13の確認実験ではなく、保護bankも開かない。T13-Cのmodel forward、保護対象bank
+protocolでは、すでに露出したT11項目と公開targetだけを使う探索的収集を凍結した。
+これはT13の確認実験ではなく、保護bankも開いていない。T13-Cのmodel forward、保護対象bank
 へのtokenizer処理、target選択、endpoint選択、threshold選択は、まだ一度も行っていない。
 炉の空き状況によってscheduleやshardの大きさを変えてもよいが、科学的endpointや判定規則を
 変えてはならない。
