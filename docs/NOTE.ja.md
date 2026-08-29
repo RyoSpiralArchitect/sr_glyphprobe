@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
 
-[English](NOTE.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -367,6 +367,14 @@ profile、強い関連Mistral-Instruct cell、raw-block endpointとの差は、s
 次の記述的手掛かりにとどめる。[T10結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)には、
 統計条件と実用条件の分岐、および9セルすべてを残した。
 
+## T11: 意味を語る前にglyphを分解する
+
+T10の一次判定は負のまま保つ。診断replayでは、333 raw shard、36 activation array、84,096 scalarを不一致ゼロで照合した。同時に、強かった一つのmodelだけを次へ持ち上げるべきでない理由も見えた。連続marginは72 cellすべてで正だったが、item coverage、carrier-distance profile、codepoint geometry、final normalization境界はいずれもmodelごとの差が大きく、9 modelすべてでtop-1 hitになったitemはなかった。
+
+そこでT11は、T10を修理するのではなく、分析単位を変える。Multi-codepoint glyphが、公式のwhole-sequence name、決定論的なcomponent label、presentationを変えた形や非融合形のどれに追従するかを問う。固定systemはpresentation selector、modifier、ZWJ composition、regional flag、keycap、3件のtag-flag microcaseであり、既露出のsingle-codepoint anchorをcalibrationとして添える。
+
+T11 forwardの前に、取得対象843件、reserve 268件、5 view、token長matched wrong-label control、2 carrier、4距離、2 broad endpoint、192件のdepth subsetを、T10と同じ9 cellへ固定した。予定する73,566-forward atlasは探索研究である。Compositional、lexicalization、presentation/final-norm、model-conditioned、tokenizer-structural、bounded nullのどこへ着地してもよいが、絵文字の意味を確立せず、T10も救済しない。Reserveのmodel outcomeを開くには、T12で一つのendpointとmultiplicity familyを別に凍結する必要がある。
+
 ## ここから言えること、まだ言えないこと
 
 固定したGPT-2 FP32 MLX `resid_post`セルでは、layer 2が、3つの指定済みトークン数・接頭構造matched panelに対して、2種類のsource-wrapper構成で正の超過を保った。凍結済みv1規則では、両方とも頑健と判定された。Layer 4は通過していない。
@@ -399,6 +407,7 @@ T10からは、claim-matchedな9セル結果が加わる。Token数完全一致�
 実用下限を満たしたcore cellは4つ中2つだった。支持されるのは3つの範囲限定model/tokenizer-cell
 alignmentと負のモデル横断一次判定であり、tokenization非依存性、scale、tuning、意味、因果、独立再現、
 model一般性ではない。
+T10-Dも一次判定を変えず、診断分解だけを加える。T11はmodel forwardゼロで凍結した段階で、自らの探索outcomeに対してだけprospectiveである。現時点では、まだ科学的evidenceを加えていない。
 
 ## 次は、因果プロトコルを凍結する
 
@@ -413,10 +422,7 @@ Mistral base cellの1 model IUTを棄却した。隣接modelをさらに増や�
 綺麗な選択肢は、同じartifact上で共有slot構造だけを壊すcontrolか、固定interactionの真に独立した
 追試である。どちらも新しいprotocolを要する。
 
-T10も完了しており、実用下限を下げたり、core modelを入れ替えたり、extension cellを昇格させたりして
-救済しない。次の分岐は明示できる。Mixed resultとして論文へ残す、最終claimに合う真に独立した追試を設計する、
-またはT11を変則glyphの探索として明確にラベル付けして開く、のいずれかである。T11は未着手のままで、T10を
-遡って変更できない。
+T10も完了しており、実用下限を下げたり、core modelを入れ替えたり、extension cellを昇格させたりして救済しない。T11は、変則glyphを明確にラベル付けした探索研究として凍結済みであり、T10を遡って変更できない。直近の作業は、9 modelのzero-forward preflightと、再開可能な炉取得である。T11で解析するのはdiscovery atlasだけとし、reserveのmodel outcomeは別のT12 freezeまで閉じておく。
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
@@ -432,5 +438,6 @@ T7の正の深度interactionと40 rowすべても、そのT6後のmodel選択と
 T8/T9の正の単一model reserve確認と、T10の負のモデル横断一次判定も並べて示す。Token数matching後も
 signalは残ったが、実用下限を通過したcore cellは2つだけで、tokenizer非依存性やmodel一般性は認めなかったと
 明記する。
+T10-Dで見えたheterogeneityと、T11がprospectiveな探索研究であることも明示する。T11を論文へ入れるのはatlas全体を報告できた後に限る。将来のT12 reserve結果はT11へ遡って混ぜず、別に凍結した確認として示す。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。

@@ -186,6 +186,66 @@ ValidatorはT10 analyzerをimportせず、2つのrandomization成分、model IUT
 shape、FP32 dtype、有限値を確認する。Model forward、intervention、generationは0回である。Validationの
 passが再現するのは登録済みの負の一次判定であり、より広い主張を許可するものではない。
 
+T10の一次判定を救済しないT10-D診断は、compact bundleと外部raw rootから再実行し、hash ledgerを使って別に検証できる。
+
+```bash
+python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py analyze \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0 \
+  --raw-runs path/to/glyphprobe-t10-runs-8673bc51 \
+  --output path/to/new-t10-diagnostics
+python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py validate \
+  --output path/to/new-t10-diagnostics
+```
+
+## 10. 凍結済みT11 atlasを監査・実行する
+
+T11はmodel forwardゼロで凍結済みである。最初に、すべてのstatic assetとfreeze manifestを検証する。
+
+```bash
+python scripts/glyph_system_decomposition_v0.py audit-freeze
+```
+
+炉でcomputeを始める前に、receiver側で競合を確認する。Preflightの一括commandは、local Hugging Face cacheにある固定revision 9件だけを解決し、完全なartifact hash、全tokenizer、carrier boundary、matched-control mappingを検査する。Model weightはloadしない。
+
+```bash
+spiral status
+python scripts/glyph_system_decomposition_v0.py preflight-all \
+  --output path/to/new-t11-preflight
+```
+
+取得はmodelごとに行う。Runnerはweight load前と各shardの開始前に別のGPU workを検査する。完了shardはatomicに保存し、再実行時には検証してskipする。競合が現れた場合はyieldする。
+
+```bash
+t11_role=llama32_3b_base_bf16
+python scripts/glyph_system_decomposition_v0.py run \
+  --model-label "$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --output "path/to/t11-runs/$t11_role"
+python scripts/glyph_system_decomposition_v0.py finalize \
+  --model-label "$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --run "path/to/t11-runs/$t11_role"
+python scripts/glyph_system_decomposition_v0.py summarize \
+  --run "path/to/t11-runs/$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --output "path/to/t11-summaries/$t11_role"
+```
+
+`run --help`に表示されるmodel labelへ`$t11_role`を変え、9件すべてで同じblockを繰り返す。
+
+9件すべてのsummaryが検証を通過した後、joint exploratory analysisを作り、検証する。
+
+```bash
+python scripts/glyph_system_decomposition_v0.py analyze \
+  --runs-root path/to/t11-runs \
+  --summaries-root path/to/t11-summaries \
+  --output path/to/new-t11-analysis
+python scripts/glyph_system_decomposition_v0.py validate-analysis \
+  --analysis path/to/new-t11-analysis
+```
+
+予定量は73,566 forward、477 shardである。Raw FP32 arrayは炉のarchiveにだけ置き、GitにもSpiralShareにも載せない。Validation passが支えるのは、完了した探索atlasだけである。Reserve 268件のmodel outcomeを開かず、T10を変更せず、意味、因果、tokenizer非依存性、scale、tuning、model一般性の主張も認めない。
+
 ## マシン固有の量
 
 wall-clock latency、load time、peak device memory、dependency/OS version、hardware 固有 kernel、timestamp は receipt に記録する。

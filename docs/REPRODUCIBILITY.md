@@ -213,6 +213,79 @@ zero model forward, intervention, or generation calls. A validation pass
 reproduces the registered negative primary; it does not authorize a broader
 claim.
 
+The non-rescuing T10-D diagnostic can be replayed from the compact bundle and
+the external raw root, then validated independently from its hash ledger:
+
+```bash
+python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py analyze \
+  --bundle artifacts/semantic_atlas_cross_model_replication_v0 \
+  --raw-runs path/to/glyphprobe-t10-runs-8673bc51 \
+  --output path/to/new-t10-diagnostics
+python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py validate \
+  --output path/to/new-t10-diagnostics
+```
+
+## 10. Audit and run the frozen T11 atlas
+
+T11 is frozen with zero model forwards. First verify every static asset and the
+freeze manifest:
+
+```bash
+python scripts/glyph_system_decomposition_v0.py audit-freeze
+```
+
+On the furnace, run the receiver-side contention check before any compute. The
+single preflight command resolves only the nine pinned revisions already in the
+local Hugging Face cache, hashes their complete artifacts, audits every
+tokenizer and carrier boundary, and builds the matched-control maps without
+loading model weights:
+
+```bash
+spiral status
+python scripts/glyph_system_decomposition_v0.py preflight-all \
+  --output path/to/new-t11-preflight
+```
+
+Acquire one model at a time. The runner checks for foreign GPU work before
+weight loading and before each next shard. It atomically retains complete
+shards, validates and skips them on retry, and yields when contention appears.
+
+```bash
+t11_role=llama32_3b_base_bf16
+python scripts/glyph_system_decomposition_v0.py run \
+  --model-label "$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --output "path/to/t11-runs/$t11_role"
+python scripts/glyph_system_decomposition_v0.py finalize \
+  --model-label "$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --run "path/to/t11-runs/$t11_role"
+python scripts/glyph_system_decomposition_v0.py summarize \
+  --run "path/to/t11-runs/$t11_role" \
+  --preflight-directory path/to/new-t11-preflight \
+  --output "path/to/t11-summaries/$t11_role"
+```
+
+Repeat the block with each model label printed by `run --help`.
+
+After all nine summaries validate, build and validate the joint exploratory
+analysis:
+
+```bash
+python scripts/glyph_system_decomposition_v0.py analyze \
+  --runs-root path/to/t11-runs \
+  --summaries-root path/to/t11-summaries \
+  --output path/to/new-t11-analysis
+python scripts/glyph_system_decomposition_v0.py validate-analysis \
+  --analysis path/to/new-t11-analysis
+```
+
+The expected acquisition is 73,566 forwards in 477 shards. Raw FP32 arrays
+remain in the furnace archive and must not be committed to Git or placed on
+SpiralShare. A validation pass supports only a complete exploratory atlas. It
+does not open the 268 reserve model outcomes, change T10, or authorize semantic,
+causal, tokenizer-independent, scale, tuning, or model-general claims.
+
 ## Machine-specific quantities
 
 Wall-clock latency, load time, peak device memory, dependency and OS versions,

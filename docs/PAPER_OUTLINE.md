@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -199,6 +199,31 @@ the registered wording
 scale, tuning, semantics, causality, independent replication, or model
 generality.
 
+## Frozen T11 exploratory extension — no outcomes yet
+
+T10-D preserves the negative T10 primary while showing positive continuous
+margins in all 72 cells, sparse cross-model item coverage, model-specific
+carrier-distance profiles, weak codepoint geometry, and model-conditioned
+raw-to-final changes. Its independent reconstruction checked 333 shards, 36
+activation arrays, and 84,096 scalar values with zero mismatches. These facts
+motivate T11 but do not select a favorable T10 cell.
+
+T11 freezes a nine-cell glyph-system decomposition atlas before any T11 model
+forward. It contains 843 acquisition items, a separately assigned 268-item
+reserve, exact token-length wrong-label controls, a complete two-carrier by
+four-distance grid, raw-last-block and returned-final endpoints, and a fixed
+192-item normalized-depth subset. It compares exact glyphs and official names
+with deterministic component labels and decomposed forms across presentation,
+modifier, ZWJ, regional-flag, and keycap systems, plus atomic anchors and a
+three-item tag microcase.
+
+T11 is prospective for its own outcomes but exploratory. Until the complete
+atlas exists, it is a protocol contribution rather than a scientific result.
+It cannot rescue T10 or establish semantics, mechanism, causality, scale,
+tuning, tokenizer independence, or model generality. Any confirmatory T12 use
+of the reserve requires a new endpoint and multiplicity freeze after T11
+discovery analysis.
+
 ## Research questions
 
 1. Do glyph-derived activation directions produce output fingerprints that repeat across held-out target prompts?
@@ -214,6 +239,7 @@ generality.
 11. Does that complete fixed carrier-distance conjunction recur in four selected dense instruction-tuned Transformers/CUDA cells?
 12. Does the fixed layer-31 glyph/name-versus-codepoint retrieval contrast reproduce across every carrier-distance cell in a deterministic untouched Mistral reserve?
 13. Does that same returned-final-state retrieval contrast meet both the statistical and practical replication rules in at least three of four frozen core model/tokenizer cells after exact token-count matching?
+14. Across frozen multi-codepoint glyph systems, do matched-label margins track whole-sequence names, deterministic component labels, or decomposed forms, and at which normalized depth or final-norm boundary do the nine cells diverge?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -244,6 +270,8 @@ partial conjunction passed statistically, and matching did not erase the
 contrast, but only two of four core cells passed the practical floor. The
 result is mixed evidence across a fixed roster, not an independent-replication,
 scale, tuning, semantic, causal, or model-general claim.
+T11 has not yet answered question 14. Its discovery analysis is exploratory;
+the reserve can answer only a later, narrower T12 question frozen after T11.
 
 ## Planned paper structure
 
@@ -421,6 +449,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 12. T10 unrestricted-versus-matched minimum contrasts for all nine cells,
     separating the statistical partial conjunction from the failed practical
     core-count rule; the Qwen ladder and raw-block endpoint remain secondary.
+13. Conditional on complete T11 acquisition, system-by-view matched margins,
+    retrieval breadth, normalized-depth trajectories, and raw-to-final changes,
+    labeled exploratory and separated from any later T12 reserve result.
 
 ## Planned main tables
 
@@ -465,6 +496,7 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The T9 returned-final-state item/name alignment meets the frozen cross-model replication rule | not established by T10; the statistical partial conjunction passed, but only two of four core cells met the practical floor | preserve the negative primary; require a newly justified independent replication for any stronger final claim |
 | Exact token-count matching removes the T10 item/name contrast | not supported; all nine matched components remained significant and close to the unrestricted minima | retain the bounded token-count result without calling it tokenizer independence |
 | The monotone T10 Qwen profile establishes a scale law | not supported; four checkpoint cells are descriptive and size remains confounded | require a dedicated size-identification design |
+| T11 establishes whether emoji meaning is compositional or lexicalized | not established; the protocol defines operational geometry contrasts and has zero outcomes | report the complete discovery atlas as exploratory; freeze a narrower T12 before opening reserve model outcomes |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
 ## Statistical commitments
@@ -477,6 +509,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - The paper will report effect sizes and uncertainty, not only p-values.
 - The `1/1001` exploratory permutation floor will not be presented as a multiplicity-corrected global result.
 - Negative and non-positive cells will remain visible.
+- T11 system, view, context, endpoint, depth, metric, and model choices remain
+  fixed; discovery outcomes cannot repair them. The 268 reserve items receive
+  zero T11 model forwards, and no T12 claim exists without a separate freeze.
 - E1 intervals remain descriptive; no p-value, multiplicity decision,
   confirmatory status, or layer-comparison inference will be retrofitted.
 - T2's two midpoint p-values and Holm family remain the only authorized

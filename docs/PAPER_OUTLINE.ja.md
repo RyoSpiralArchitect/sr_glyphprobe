@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -177,6 +177,14 @@ Token数完全一致層にはtokenizerごとに281〜287項目が残り、contra
 `cross_model_replication_not_established_under_frozen_rule`を維持し、scale、tuning、意味、因果、
 独立再現、model一般性を推定しない。
 
+## 凍結済みT11探索拡張 — outcomeはまだない
+
+T10-DはT10の負の一次判定を保ったまま、72 cellすべての正の連続margin、疎らなmodel横断item coverage、modelごとに異なるcarrier-distance profile、弱いcodepoint geometry、model依存のraw-to-final変化を示した。独立再構築では、333 shard、36 activation array、84,096 scalarを不一致ゼロで照合した。これはT11の動機にはなるが、都合のよいT10 cellを選ぶ根拠にはしない。
+
+T11は、T11 model forwardの前に、9-cellのglyph-system decomposition atlasを凍結した。取得対象843件、別に割り当てたreserve 268件、target token長を完全一致させるwrong-label control、2 carrier×4距離の完全grid、raw last blockとreturned finalの2 endpoint、192件の正規化depth subsetを持つ。Presentation、modifier、ZWJ、regional flag、keycapについて、exact glyphと公式名を、決定論的component labelやdecomposed formと比較する。Single-codepoint anchorを添え、tag flagは3件のmicrocaseとして扱う。
+
+T11は自らのoutcomeに対してprospectiveだが、探索研究である。Atlas全体が揃うまでは、科学的結果ではなくprotocol contributionとして扱う。T10の救済、意味、機構、因果、scale、tuning、tokenizer非依存性、model一般性は主張しない。Reserveを使う確認的T12には、T11 discovery解析後に別のendpointとmultiplicity freezeが必要である。
+
 ## 研究質問
 
 1. **RQ1 — 測定の忠実性:** 要求したRMS介入は実測値と一致し、ゼロ介入は真に無作用か。
@@ -192,6 +200,7 @@ Token数完全一致層にはtokenizerごとに281〜287項目が残り、contra
 11. **RQ11 — Dense CUDA replication:** 固定したcarrier-distance conjunction全体は、選択した4つのdense instruction-tuned Transformers/CUDA cellでも成立するか。
 12. **RQ12 — Mistral reserve confirmation:** 固定したlayer 31のglyph/name-versus-codepoint retrieval contrastは、決定論的に選定した未使用Mistral reserveの全carrier-distance cellで再現するか。
 13. **RQ13 — Cross-model practical replication:** 同じreturned-final-state retrieval contrastは、token数を完全一致させた後も、固定した4 core model/tokenizer cell中3つ以上で統計条件と実用条件の両方を満たすか。
+14. **RQ14 — Glyph-system decomposition:** 固定したmulti-codepoint glyph systemで、matched-label marginはwhole-sequence name、決定論的component label、decomposed formのどれに追従し、9 cellはどの正規化depthまたはfinal-norm境界で分岐するか。
 
 Milestone 2はRQ4にmixedな答えを与えたが、推論上の留保が残る。T2はRQ6の狭い一部に
 負・mixedな観測結果を与えたが、独立backendとclaim-matched replicationは未完了である。
@@ -215,6 +224,7 @@ carrier-distance contrastが実用下限を超え、globalな最小統計はperm
 T10は、固定した統合規則の下でRQ13へ負の答えを与えた。部分連言検定は統計的に通過し、matching後も差は
 消えなかったが、実用下限を通過したcore cellは4つ中2つだけだった。これは固定rosterにおけるmixed evidenceであり、
 独立再現、scale、tuning、意味、因果、model一般性ではない。
+T11は、まだRQ14へ答えていない。Discovery解析は探索的であり、reserveが答えられるのは、T11後に別途凍結した、より狭いT12の問いだけである。
 
 ## 予定する貢献
 
@@ -393,6 +403,7 @@ E1は探索side resultとして別枠に置く。Milestone 2のstatusや因果�
     主判定と、距離8のtail・depth interactionという副次記述を分ける
 15. **Figure / Supplement:** T10の9セルにおける全項目・token数一致の最小差。統計的な
     部分連言通過と、実用core count失敗を分け、Qwen ladderとraw-block endpointは副次として示す
+16. **Figure / Supplement:** T11取得が完了した場合に限り、system×viewのmatched margin、retrieval breadth、正規化depth trajectory、raw-to-final変化を探索結果として示し、将来のT12 reserve結果とは分ける
 
 Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.276893]、Holm p = 0.00143999）とlayer 4（-0.0329465、[-0.0761085, 0.0110094]、未解決）、独立ソースlayer 2（+0.187507、[0.125489, 0.247659]、p = 0.00393996）とlayer 4（-0.086379、[-0.159246, -0.016917]、未解決）をすべて載せる。
 
@@ -412,6 +423,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - no model-level carrier-distance attenuation for the frozen T5 recurrence-plus-attenuation endpoint
 - cross-model replication not established under the frozen T10 statistical-plus-practical rule
 - bounded T10 model/tokenizer-cell alignment for Llama 3.2 3B base, Qwen 2.5 7B base, and Mistral 7B Instruct v0.3
+- frozen exploratory T11 glyph-system decomposition protocol with zero T11 model forwards
 
 ### 追加の証拠なしには使用しない
 
@@ -426,6 +438,7 @@ Milestone 2の主表には、主要ソースlayer 2（+0.208363、[0.137463, 0.2
 - T4 semantics, causal mechanism, independent replication, or carryover beyond one token
 - T5 monotonic decay, disappearance, duration, persistence, selected-layer effect, semantics, or mechanism
 - T10 tokenizer independence, scale law, instruction-tuning effect, independent replication, or model generality
+- T11 compositional meaning, lexicalized meaning, mechanism, or confirmation before complete discovery evidence and a separate T12 freeze
 
 ## 残る論文ゲート
 
