@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -43,6 +43,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T11 decomposition atlas | ZWJ fusion contrast positive in 65/72 returned-final cells | exploratory discovery candidate; cross-model agreement was weak |
 | T12 ZWJ reserve confirmation | statistic 0.000369; raw p = 0.05496; Holm p = 0.10992 | not confirmed; 0/9 models reached the frozen 0.005 practical floor |
 | T12 regional dual reserve confirmation | presentation p = 0.03538, component p = 0.12950; IUT/Holm p = 0.12950 | not confirmed; both regional statistics were below the frozen 0.02 floors |
+| T13-EH specificity harvest | 9-role source bank plus a fixed 3-role, 383,232-row intervention surface | exploratory acquisition only; no primary hypothesis, protected bank, or confirmatory verdict |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -300,7 +301,7 @@ or tuning claims. See the [complete result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPL
 [frozen protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md), and
 [compact evidence](artifacts/semantic_atlas_cross_model_replication_v0/README.md).
 
-### T10 diagnostics, T11 discovery, and T12 reserve confirmation
+### T10 diagnostics, T11 discovery, T12 confirmation, and T13-EH harvest
 
 T10-D keeps the negative T10 primary unchanged and reconstructs the raw
 activation-derived metrics exactly: 333 shards, 36 arrays, and 84,096 scalar
@@ -339,6 +340,16 @@ cell medians, all three 49,999-draw tests, and every gate with zero mismatches.
 See the [T12 result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md),
 [compact evidence](artifacts/glyph_system_reserve_confirmation_v0/README.md),
 and [T13 decision map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md).
+
+T13-EH now freezes the resource-ordering step: acquire the GPU-dependent
+source and intervention tensors while the furnace is available, then leave
+matching, resampling, plots, and paper synthesis to CPU or MPS. It reuses only
+the exposed 192-item T11 depth population and all 32 public prestage targets.
+All nine frozen roles acquire the source bank, and three prespecified base
+roles acquire a complete 383,232-row response surface. This is an exploratory
+data harvest, not T13-C confirmation, and it does not open a protected bank or
+authorize a semantic, causal, steering-specificity, scale, or model-general
+claim. See the [T13-EH protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md).
 
 ### E2 engineering results
 
@@ -561,6 +572,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Glyph-system reserve confirmation v0 results (T12) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) |
 | Glyph-system reserve confirmation v0 (T12) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md) |
 | Emoji steering specificity atlas v0 (T13 decision map) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) |
+| Emoji steering specificity harvest v0 (T13-EH) | [EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) | [EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -582,8 +594,9 @@ Phase I ends with an English preprint-ready paper supported by an auditable evid
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the
 registered statistical-plus-practical rule. The T10 primary remains unchanged.
-The next specificity study is an option map only; it requires a new exploratory
-set and, for any confirmation, a new untouched bank.
+T13-EH freezes an exploratory acquisition over exposed items and public
+targets; it does not alter the T12 decision or close a paper gate. Any T13-C
+confirmation still requires a new untouched bank and a separate freeze.
 
 ## Validation
 

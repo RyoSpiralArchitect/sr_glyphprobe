@@ -1,15 +1,17 @@
 # Emoji Steering Specificity Atlas v0 — T13 decision map
 
-[日本語](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T12 result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Roadmap](ROADMAP.md) · [Phase I paper outline](PAPER_OUTLINE.md)
+[日本語](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Roadmap](ROADMAP.md) · [Phase I paper outline](PAPER_OUTLINE.md)
 
 Status: **future-work option map; not a preregistration and not authorized for
 confirmatory execution**.
 
-No T13 model forward, tokenizer pass over a protected bank, intervention,
-generation, target selection, endpoint selection, or threshold selection has
-been performed. This document deliberately keeps several clean landing
-patterns available. Furnace availability may change scheduling and shard size;
-it must not change the scientific endpoint or decision rule.
+This document deliberately keeps several clean landing patterns available.
+The separate T13-EH protocol freezes an exploratory acquisition over already
+exposed T11 items and public targets; it is not a T13 confirmation and does not
+open a protected bank. No T13-C model forward, tokenizer pass over a protected
+bank, target selection, endpoint selection, or threshold selection has been
+performed. Furnace availability may change scheduling and shard size; it must
+not change a scientific endpoint or decision rule.
 
 ## Why return to the original question now
 

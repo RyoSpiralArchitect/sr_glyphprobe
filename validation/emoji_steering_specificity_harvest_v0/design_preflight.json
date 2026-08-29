@@ -1,0 +1,27 @@
+{
+  "depth_sites_per_model": 8,
+  "generation_calls": 0,
+  "intervention_sequences": 0,
+  "item_intervention_directions_per_model": 552,
+  "model_cells": 9,
+  "model_forward_sequences": 0,
+  "model_weights_loaded": false,
+  "pilot_model_cells": 3,
+  "pilot_response_rows_per_model": 127744,
+  "pilot_response_rows_total": 383232,
+  "population_items": 192,
+  "present_item_views": 912,
+  "protected_target_files_opened": 0,
+  "protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "public_targets": 32,
+  "source_bindings": {
+    "configs/semantic_atlas_cross_model_replication_v0.yaml": "27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a",
+    "data/manifests/glyph_system_decomposition_selection_v0.json": "7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "data/targets/prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+    "data/wrappers/source_wrappers.jsonl": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+  },
+  "source_wrappers": 4,
+  "status": "pass",
+  "system_view_prototypes_per_model": 28
+}

@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[English](ROADMAP.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -436,9 +436,16 @@ T12では、reserveへの最初のforwardより前に、ZWJ fused-form advantage
 
 Analyzerをimportしないvalidatorが、432 cell中央値、49,999回の共有item swap検定3件、実用床と異質性gate、regional conjunction、Holm補正を再計算し、不一致は0件だった。T12が閉じるのはreserve questionだけであり、絵文字の意味、mechanism、因果、behavioral steering、tokenizer非依存性、scale law、model一般性は確立しない。[結果全文](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)と[compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.ja.md)に示す。
 
-### T13の選択肢 — emoji-steering specificityへ戻る
+### T13-EH収集とT13の選択肢 — emoji-steering specificityへ戻る
 
-状態：設計空間のみ。未凍結であり、確認実験の実行は許可していない。
+状態：T13-EHは凍結済みの探索的収集protocol。T13-Cは設計空間にとどまり、確認実験の
+実行は許可していない。
+
+T13-EHでは、炉を使えるうちにGPU依存工程だけを先に回収する。対象は、すでに露出した
+T11 depth population 192項目、公開済みprestage target 32件、正規化深度8点、固定9 model
+roleである。9 roleすべてでsource bankを収集し、事前指定したbase 3 roleでは、さらに
+383,232行の介入応答を収集する。解析、matching、resampling、可視化、論文執筆はCPUまたは
+MPSへ回す。主要仮説も確認判定も置かず、保護bankは開かない。詳細は[凍結済み収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md)に示す。
 
 次の広い問いでは、emoji-derived interventionを、意味を揃えたword、decomposed form、tokenizerごとに構造を揃えた非絵文字Unicode、rarityを揃えたtext、normを揃えたnull directionと比較する。Representation geometryとbehavioral interventionは別laneに保つ。代表3 roleの探索pilotから、後の9 role confirmationを設計してもよい。ただし確認には、現在の研究文脈の外で作る新しい未使用target bankが必要であり、T12 outcome、P2、廃止済みC1 v1を再利用しない。競合説明と着地点は[T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)にまとめた。
 
@@ -515,7 +522,7 @@ Analyzerをimportしないvalidatorが、432 cell中央値、49,999回の共有i
 
 現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。続くT10では、このpopulationとtransportを9つの固定セルで保った。Token数完全一致後も差は消えず、統計的な部分連言検定は通過したが、実用下限を満たしたcore cellは4つ中2つだった。したがってT10はclaim-matchedなmixed cross-model結果であり、独立再現、scale、tuning、意味、model一般性ではなく、gate 5も閉じない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
-T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13はfuture-workの設計図にとどまり、確認主張には新しいfreezeとtarget bankが必要である。
+T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13-EHが加えるのは、露出済み項目と公開target上の探索的な収集専用tensor surfaceであり、論文gateは閉じない。T13-Cの確認主張には、新しいfreezeと未使用target bankが必要である。
 
 ## Phase I より先の候補
 

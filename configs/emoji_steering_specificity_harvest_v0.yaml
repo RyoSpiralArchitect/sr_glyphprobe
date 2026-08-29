@@ -1,0 +1,226 @@
+protocol_id: glyphprobe-emoji-steering-specificity-harvest-v0
+experiment_label: T13-EH
+experiment_role: prospective_exploratory_gpu_harvest_no_confirmatory_decision
+status_before_execution: design_candidate_zero_t13eh_model_forwards
+question: >-
+  Which source-form, depth, target, sign, and dose response tensors should be
+  preserved now so that later CPU/MPS analysis can test whether emoji-derived
+  interventions differ from official-name, component, decomposed, codepoint,
+  and random alternatives without reacquiring GPU-dependent observations?
+claim_boundary: >-
+  T13-EH is an exploratory acquisition-only harvest over an already exposed
+  192-item population and all 32 public prestage targets. It has no primary
+  hypothesis, practical floor, confirmatory target bank, generation endpoint,
+  or authorized positive decision. It can describe source-form geometry and
+  intervention-response heterogeneity in the fixed cells. It cannot establish
+  emoji meaning, understanding, unique emoji specificity, causality of a
+  mechanism, behavioral steering, tokenizer independence, a scale law,
+  instruction-tuning effects, architecture or population generality, or
+  independent replication. It cannot alter or rescue T10, T11, or T12.
+
+source_bindings:
+  t11_selection_manifest:
+    path: data/manifests/glyph_system_decomposition_selection_v0.json
+    sha256: 7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693
+  public_targets:
+    path: data/targets/prestage_targets.jsonl
+    sha256: 91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7
+    expected_rows: 32
+    selection: all_rows_in_file_order
+  source_wrappers:
+    path: data/wrappers/source_wrappers.jsonl
+    sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+    expected_rows: 16
+    selected_ids:
+      - w01_mark_anchor
+      - w04_token_state
+      - w10_sequence_continuation
+      - w15_observation_inference
+  t10_model_config:
+    path: configs/semantic_atlas_cross_model_replication_v0.yaml
+    sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+  t10_freeze_manifest:
+    path: data/manifests/semantic_atlas_cross_model_replication_v0.json
+    sha256: 8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4
+
+population:
+  source: t11_selection_manifest
+  rule: included_in_depth_subset_is_true
+  order: ascending_depth_index
+  already_exposed_only: true
+  expected_items: 192
+  expected_present_item_views: 912
+  system_order: [atomic_anchor, presentation, modifier, zwj, regional_flag, keycap]
+  expected_system_counts:
+    atomic_anchor: 24
+    presentation: 24
+    modifier: 40
+    zwj: 56
+    regional_flag: 40
+    keycap: 8
+  replacement_or_exclusion_after_freeze: forbidden
+
+source_forms:
+  order: [glyph, unicode_name, component_name, codepoint_literal, decomposed_form]
+  atomic_anchor_available: [glyph, unicode_name, codepoint_literal]
+  unusual_system_available: [glyph, unicode_name, component_name, codepoint_literal, decomposed_form]
+  item_intervention_order: [glyph, unicode_name, decomposed_form]
+  prompt_template: source_text_newline_wrapper_text
+  direction: mean_over_four_wrapper_deltas_against_bare_wrapper
+  wrapper_delta: raw_decoder_block_output_at_wrapper_last_nonpad_with_source_minus_bare_wrapper
+  no_source_form_is_semantic_ground_truth: true
+
+depth:
+  normalized_fractions: [0.125, 0.25, 0.375, 0.50, 0.625, 0.75, 0.875, 1.0]
+  block_index_rule: max_zero_floor_fraction_times_num_hidden_layers_minus_one
+  endpoint: raw_selected_decoder_block_output
+  primary_item_intervention_fraction: 0.50
+  cross_architecture_mechanistic_equivalence_claimed: false
+
+source_bank:
+  models: all_nine
+  item_shard_size: 16
+  expected_shards_per_model: 12
+  expected_wrapper_forward_sequences_per_model: 3652
+  expected_target_baseline_forward_sequences_per_model: 32
+  expected_total_forward_sequences_per_model: 3684
+  expected_total_forward_sequences: 33156
+  expected_wrapper_delta_vectors_per_model: 29184
+  expected_mean_direction_vectors_per_model: 7296
+  expected_target_activation_vectors_per_model: 256
+  expected_total_stored_vectors_per_model: 36736
+  expected_total_stored_vectors: 330624
+  activation_dtype: float32
+  store_full_baseline_logits: true
+  raw_arrays_committed_to_git: false
+  raw_arrays_put_on_spiralshare: false
+
+pilot:
+  roles:
+    - qwen25_0p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+  role_reason: fixed_small_base_3b_base_7b_base_before_outcomes
+  target_order: all_32_public_targets_in_file_order
+  item_grid:
+    source_forms: [glyph, unicode_name, decomposed_form]
+    depth_fraction: 0.50
+    magnitudes: [0.25]
+    signs: [-1, 1]
+    expected_source_directions_per_model: 552
+    expected_response_rows_per_model: 35328
+  prototype_grid:
+    aggregation: glyph_system_by_available_source_form
+    item_scaling_before_average: unit_rms
+    expected_prototypes_per_model: 28
+    depth_fractions: all_eight
+    magnitudes: [0.125, 0.25, 0.50]
+    signs: [-1, 1]
+    expected_response_rows_per_model: 43008
+  random_grid:
+    distribution: standard_normal_then_unit_rms
+    seed_namespace: glyphprobe-t13eh-v0-random
+    seeds_per_depth: 64
+    depth_fractions: all_eight
+    magnitudes: [0.125, 0.25, 0.50]
+    expected_response_rows_per_model: 49152
+  zero_grid:
+    all_depth_target_cells: true
+    exact_logit_noop_required: true
+    expected_response_rows_per_model: 256
+  expected_response_rows_per_model: 127744
+  expected_response_rows_total: 383232
+  normalization: direction_unit_rms_times_signed_magnitude_times_target_activation_rms
+  site: raw_decoder_block_output_at_target_last_nonpad
+  generation_calls: 0
+  response_storage:
+    top_positive_and_negative_logit_deltas: 64
+    countsketch_dimension: 256
+    countsketch_seed: 2026082907
+    full_intervention_logits_stored: false
+    metrics:
+      - kl_baseline_to_intervened
+      - js_divergence
+      - total_variation
+      - baseline_entropy
+      - intervened_entropy
+      - logit_delta_rms
+      - argmax_flip
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  source_sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+  roster_unchanged_from_t10_t11_t12: true
+  order:
+    - qwen25_0p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - qwen25_3b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  order_reason: core_pilot_first_then_resource_ascending_source_bank_completion
+  batch_size:
+    qwen25_0p5b_base_bf16: 128
+    llama32_3b_base_bf16: 32
+    qwen25_7b_base_bf16: 16
+    olmo2_1b_base_bf16: 64
+    qwen25_1p5b_base_bf16: 64
+    smollm2_1p7b_base_bf16: 48
+    gemma2_2b_it_bf16: 32
+    qwen25_3b_base_bf16: 32
+    mistral7b_instruct_v03_bf16: 16
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+acquisition_policy:
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_requires_manual_adjudication: true
+  check_foreign_gpu_processes_before_model_load_and_each_shard: true
+  yield_exit_code_on_foreign_contention: 75
+  outcome_inspection_during_queue: forbidden
+  adaptive_item_model_target_depth_strength_or_endpoint_selection: forbidden
+  queue_may_stop_only_for_contention_failure_or_complete_fixed_roster: true
+
+analysis_policy:
+  status: deferred_cpu_or_mps_work_after_acquisition
+  no_primary_hypothesis: true
+  no_practical_floor: true
+  no_confirmatory_decision: true
+  allowed_later_analyses:
+    - token_signature_matched_source_form_comparisons
+    - depth_and_dose_response_surfaces
+    - positive_negative_antisymmetry
+    - item_system_target_and_model_heterogeneity
+    - target_entropy_and_margin_sensitivity
+    - top_delta_and_countsketch_semantic_probe_exploration
+    - bounded_supplementary_figures_and_future_work_selection
+  later_t13c_must_use_a_new_untouched_bank_and_new_freeze: true
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+forbidden_actions:
+  - any_T13EH_model_forward_before_static_freeze_commit
+  - any_T13EH_model_forward_before_tokenizer_and_runtime_preflight_commit
+  - reading_tokenizing_forwarding_or_scoring_any_protected_target_bank
+  - outcome_dependent_queue_item_model_target_depth_strength_or_endpoint_changes
+  - generation_or_free_form_output_selection
+  - confirmatory_positive_or_negative_decision
+  - semantic_mechanistic_tokenizer_independence_scale_instruction_or_model_general_claim
+  - raw_array_commit_to_git_or_spiralshare

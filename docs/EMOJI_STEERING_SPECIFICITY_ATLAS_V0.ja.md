@@ -1,14 +1,16 @@
 # Emoji Steering Specificity Atlas v0 — T13の設計図
 
-[English](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T12結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md) · [Phase I論文構成](PAPER_OUTLINE.ja.md)
+[English](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md) · [Phase I論文構成](PAPER_OUTLINE.ja.md)
 
 状態: **future workの選択肢を整理した文書。事前登録ではなく、確認実験の実行許可も
 与えない**。
 
-T13のmodel forward、保護対象bankへのtokenizer処理、intervention、generation、
-target選択、endpoint選択、threshold選択は、まだ一度も行っていない。この文書では、
-結果に応じた複数の綺麗な着地点を意図的に残している。炉の空き状況によってscheduleや
-shardの大きさを変えてもよいが、科学的endpointや判定規則を変えてはならない。
+この文書では、結果に応じた複数の綺麗な着地点を意図的に残している。別のT13-EH
+protocolでは、すでに露出したT11項目と公開targetだけを使う探索的収集を凍結する。
+これはT13の確認実験ではなく、保護bankも開かない。T13-Cのmodel forward、保護対象bank
+へのtokenizer処理、target選択、endpoint選択、threshold選択は、まだ一度も行っていない。
+炉の空き状況によってscheduleやshardの大きさを変えてもよいが、科学的endpointや判定規則を
+変えてはならない。
 
 ## なぜ今、最初の問いへ戻るのか
 
