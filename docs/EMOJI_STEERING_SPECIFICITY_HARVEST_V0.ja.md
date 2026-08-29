@@ -98,6 +98,10 @@ source収集は、1モデルにつき16項目×12 shardへ分ける。item介入
 
 途中のstaging directoryが残った場合は、人が内容を確認するまで再利用も削除もしない。model load前と各shard開始前には、ほかのGPU processを確認する。競合が現れたらyield receiptを書き、次のshardへ入らずexit code 75で終了する。他者のworkloadをpause、kill、変更することはない。
 
+同じ固定snapshotが標準cache以外にある場合に限り、roleごとのhost-local model pathを明示して
+よい。ただし、pathそのものはmodel identityの根拠にならない。T10 bindingとfile count、総bytes、
+artifact manifest hashが完全一致し、commit済みtokenizer receiptとも一致した場合だけ受け入れる。
+
 ## あとでCPU／MPSへ回す仕事
 
 収集工程ではoutcome analysisを行わない。GPU queueが閉じたあと、保存テンソルから次を調べられる。

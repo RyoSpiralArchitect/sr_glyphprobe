@@ -146,6 +146,12 @@ processes before model load and before each new shard. If contention appears,
 it writes a yield receipt and exits with code 75 without starting another
 shard. It never pauses, kills, or modifies another workload.
 
+A role may receive an explicit host-local model path when the same pinned
+snapshot lives outside the default cache. The path grants no identity by
+itself: the runner accepts it only when file count, total bytes, and artifact
+manifest hash exactly match the T10 binding and the committed tokenizer
+receipt.
+
 ## Later CPU/MPS work
 
 No outcome analysis is part of acquisition. After the GPU queue closes, the

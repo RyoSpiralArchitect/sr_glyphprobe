@@ -101,10 +101,12 @@ def test_queue_script_preserves_frozen_resource_order() -> None:
     text = (
         ROOT / "scripts" / "run_emoji_steering_specificity_harvest_v0_queue.sh"
     ).read_text(encoding="utf-8")
-    positions = [text.index(role) for role in harvest.model_roles()]
-    assert positions == sorted(positions)
-    assert all(text.count(role) == 1 for role in harvest.model_roles())
+    role_block = text.split("roles=(", 1)[1].split(")", 1)[0]
+    listed_roles = [line.strip() for line in role_block.splitlines() if line.strip()]
+    assert listed_roles == list(harvest.model_roles())
     assert '>>"$log_dir/$role.log"' in text
+    assert 'model_args=(--model-path "$llama32_model_path")' in text
+    assert 'model_args=(--model-path "$smollm2_model_path")' in text
 
 
 def test_runner_uses_existing_t11_model_loader() -> None:

@@ -189,6 +189,7 @@ runtime:
     PyYAML: 6.0.3
 
 acquisition_policy:
+  explicit_model_path_allowed_only_after_exact_artifact_receipt_match: true
   completed_shards_are_never_reacquired: true
   incomplete_stage_requires_manual_adjudication: true
   check_foreign_gpu_processes_before_model_load_and_each_shard: true
