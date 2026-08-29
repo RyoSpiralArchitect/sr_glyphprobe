@@ -1,0 +1,322 @@
+protocol_id: glyphprobe-glyph-system-decomposition-v0
+experiment_label: T11
+experiment_role: prospective_exploratory_glyph_system_decomposition_atlas
+status_before_execution: design_candidate_zero_t11_model_forwards
+question: >-
+  Does glyph-to-name correspondence track a glyph's compositional structure,
+  presentation form, or whole-sequence lexicalization, and at which normalized
+  depth or final-normalization boundary do frozen model/tokenizer cells diverge?
+claim_boundary: >-
+  T11 is a prospective-for-its-own-outcomes exploratory atlas. It compares
+  standards-defined multi-codepoint glyph systems, deterministic component
+  forms and labels, matched incorrect labels, contexts, inter-block depths, the
+  raw last decoder-block output, and the API-returned final hidden state across
+  the same nine model/tokenizer cells used by T10. It cannot rescue or alter
+  T10; establish emoji meaning, understanding, causality, mechanism, behavior,
+  tokenizer independence, a scale law, an instruction-tuning effect,
+  architecture or model generality, or independent replication; or inspect
+  T11 reserve model outcomes before a later T12 endpoint and multiplicity
+  family are frozen.
+
+source_bindings:
+  unicode_emoji_test:
+    url: https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt
+    unicode_emoji_version: "17.0"
+    sha256: 1d8a944f88d7952f7ef7c5167fef3c67995bcae24543949710231b03a201acda
+    expected_bytes: 669326
+    expected_fully_qualified_entries: 3944
+    expected_fully_qualified_system_counts:
+      atomic_anchor: 1184
+      presentation: 207
+      modifier: 665
+      zwj: 1614
+      regional_flag: 259
+      keycap: 12
+      tag_flag: 3
+  t10_config:
+    path: configs/semantic_atlas_cross_model_replication_v0.yaml
+    sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+  t10_freeze_manifest:
+    path: data/manifests/semantic_atlas_cross_model_replication_v0.json
+    sha256: 8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4
+  t10_public_manifest:
+    path: artifacts/semantic_atlas_cross_model_replication_v0/PUBLIC_MANIFEST.json
+    sha256: 90af3c437679399c5a246c1a1c2e603e189761b4693bc3eb74602600361a7306
+  t10_diagnostics:
+    path: artifacts/semantic_atlas_cross_model_diagnostics_v1/diagnostics.json
+    sha256: 6f5e42643b9fcfe0c444f2ef8aecd4ed4df6fa3dd4e10de08f11856971acc990
+    known_before_t11_freeze: true
+
+selection:
+  selection_namespace: glyphprobe-t11-v0-selection
+  reserve_namespace: glyphprobe-t11-v0-reserve
+  depth_namespace: glyphprobe-t11-v0-depth
+  system_order:
+    - atomic_anchor
+    - presentation
+    - modifier
+    - zwj
+    - regional_flag
+    - keycap
+    - tag_flag
+  role_order: [calibration_prior_exposed, discovery_unseen, reserve_unrun]
+  atomic_anchor_groups:
+    - Smileys & Emotion
+    - People & Body
+    - Animals & Nature
+    - Food & Drink
+    - Travel & Places
+    - Activities
+    - Objects
+    - Symbols
+  quotas:
+    atomic_anchor: {calibration_prior_exposed: 64, discovery_unseen: 0, reserve_unrun: 0}
+    presentation: {calibration_prior_exposed: 0, discovery_unseen: 160, reserve_unrun: 40}
+    modifier: {calibration_prior_exposed: 0, discovery_unseen: 192, reserve_unrun: 64}
+    zwj: {calibration_prior_exposed: 0, discovery_unseen: 256, reserve_unrun: 96}
+    regional_flag: {calibration_prior_exposed: 0, discovery_unseen: 160, reserve_unrun: 64}
+    keycap: {calibration_prior_exposed: 0, discovery_unseen: 8, reserve_unrun: 4}
+    tag_flag: {calibration_prior_exposed: 0, discovery_unseen: 3, reserve_unrun: 0}
+  expected_selected_items: 1111
+  expected_acquired_items: 843
+  expected_prior_exposed_atomic_anchors: 64
+  expected_new_discovery_items: 779
+  expected_reserve_items: 268
+  acquisition_order: ascending_unicode_source_index
+  reserve_model_forward_calls_in_t11: 0
+  reserve_tokenizer_inspection_allowed: true
+  replacement_or_exclusion_after_freeze: forbidden
+  atomic_anchor_provenance: all_single_codepoint_items_were_forwarded_in_t8_or_t9
+  unusual_sequence_provenance: absent_from_t8_t9_t10_item_populations
+
+views:
+  order: [glyph, unicode_name, component_name, codepoint_literal, decomposed_form]
+  atomic_anchor_available: [glyph, unicode_name, codepoint_literal]
+  unusual_system_available: [glyph, unicode_name, component_name, codepoint_literal, decomposed_form]
+  glyph: exact_fully_qualified_unicode_sequence
+  unicode_name: exact_name_from_pinned_unicode_emoji_test
+  component_name: >-
+    Deterministic label derived from pinned emoji-test component names and,
+    only when no emoji-test component label exists, lowercase Unicode scalar
+    names. It is not a standardized alias or semantic ground truth.
+  codepoint_literal: uppercase_U_plus_sequence_joined_by_spaces
+  decomposed_form:
+    presentation: remove_FE0E_or_FE0F
+    modifier: insert_ASCII_space_between_base_and_modifier_components
+    zwj: replace_each_ZWJ_with_ASCII_space_and_retain_other_scalars
+    regional_flag: map_regional_indicators_to_two_ASCII_letters
+    keycap: retain_the_base_number_sign_asterisk_or_digit_only
+    tag_flag: map_tag_letters_to_lowercase_ASCII_and_remove_cancel_tag
+  uniqueness_requirement: every_available_view_unique_within_each_analysis_system
+
+input:
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  position_rule: raw_view_token_count_plus_distance_minus_one
+  fused_distance_readout: true
+  exact_boundary_rule: raw_view_token_ids_plus_eight_identical_single_carrier_tokens
+  batch_size_unique_sequences: 1
+
+endpoints:
+  broad_order: [raw_last_decoder_block_output, returned_final_hidden_state]
+  broad:
+    raw_last_decoder_block_output:
+      api_contract: forward_hook_on_last_decoder_block_output_before_model_final_norm
+      interpretation: architecture_exposed_raw_last_block_output
+    returned_final_hidden_state:
+      api_contract: output.hidden_states[-1]
+      interpretation: model_API_returned_final_hidden_state_after_final_norm_when_implemented
+  depth_order:
+    - embedding_output
+    - interblock_depth_0p25
+    - interblock_depth_0p50
+    - interblock_depth_0p75
+    - raw_last_decoder_block_output
+    - returned_final_hidden_state
+  depth_fractions: [0.25, 0.50, 0.75]
+  intermediate_resolution: output.hidden_states[floor(fraction_times_num_hidden_layers)]
+  cross_architecture_caveat: API_interblock_states_are_not_claimed_to_be_mechanistically_identical_sites
+  final_norm_is_explicit_analysis_axis: true
+
+depth_subset:
+  atomic_anchor_per_group: 3
+  quotas:
+    atomic_anchor: 24
+    presentation: 24
+    modifier: 40
+    zwj: 56
+    regional_flag: 40
+    keycap: 8
+    tag_flag: 0
+  expected_items: 192
+  expected_present_item_views: 912
+  selection_rule: >-
+    Lowest SHA256 within each acquired system under the depth namespace;
+    atomic anchors use three items from each of the eight frozen Unicode groups.
+  fixed_before_any_t11_model_forward: true
+
+tokenization_controls:
+  matched_incorrect_label_targets: [unicode_name, component_name]
+  required_match_key: [glyph_system, target_token_count]
+  sensitivity_match_key: [glyph_system, target_token_count, first_target_token_id]
+  mapping_rule: deterministic_one_step_cycle_after_control_hash_sort_within_each_non_singleton_stratum
+  depth_subset_uses_independently_constructed_mapping_with_the_same_rule: true
+  self_match_forbidden: true
+  candidate_and_query_universe: same_glyph_system_and_same_view_availability
+  required_minimum_coverage:
+    atomic_anchor: 0.75
+    presentation: 0.75
+    modifier: 0.75
+    zwj: 0.75
+    regional_flag: 0.75
+    keycap: 0.75
+  tag_flag_role: bounded_three_item_microcase_no_distributional_or_matched_control_claim
+  strict_prefix_sensitivity_has_no_minimum_coverage_gate: true
+  no_outcome_dependent_control_repair: true
+  codepoint_literal_is_not_the_sole_negative_control: true
+
+acquisition:
+  item_shard_size: 16
+  expected_shards_per_model: 53
+  expected_total_shards: 477
+  expected_present_item_views: 4087
+  expected_model_forward_calls_per_model: 8174
+  expected_total_model_forward_calls: 73566
+  expected_broad_readout_vectors_per_model: 65392
+  expected_depth_readout_vectors_per_model: 43776
+  expected_total_stored_readout_vectors_per_model: 109168
+  expected_total_stored_readout_vectors: 982512
+  activation_dtype: float32
+  broad_axis_order: [item, view, carrier, distance, broad_endpoint, width]
+  depth_axis_order: [depth_item, view, carrier, distance, depth_endpoint, width]
+  absent_view_storage: NaN_with_explicit_boolean_view_mask
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+  raw_activations_put_on_spiralshare: false
+
+analysis:
+  role: exploratory_discovery_only_no_t11_primary_hypothesis_test
+  analysis_systems: [atomic_anchor, presentation, modifier, zwj, regional_flag, keycap]
+  microcase_systems: [tag_flag]
+  broad_cell_grid: complete_two_carrier_by_four_distance_grid
+  per_system_metrics:
+    - matched_incorrect_label_paired_cosine_advantage
+    - forward_and_reverse_top1
+    - forward_and_reverse_mean_reciprocal_rank
+    - paired_minus_off_diagonal_margin
+    - retrieval_breadth_and_top_decile_concentration
+    - centered_linear_cka
+  decomposition_contrasts:
+    lexicalization: >-
+      matched-control-adjusted glyph-to-unicode-name advantage minus
+      matched-control-adjusted glyph-to-component-name advantage
+    presentation_or_fusion: >-
+      matched-control-adjusted glyph-to-unicode-name advantage minus
+      matched-control-adjusted decomposed-form-to-unicode-name advantage
+    component_tracking: >-
+      matched-control-adjusted decomposed-form-to-component-name advantage
+      minus matched-control-adjusted glyph-to-component-name advantage
+  aggregation:
+    primary_descriptive_location: median_item_margin
+    uncertainty: percentile_item_bootstrap_95_percent_interval_descriptive_only
+    bootstrap_draws: 2000
+    bootstrap_seed: 2026082901
+    context_stability: sign_fraction_range_and_median_absolute_deviation_over_eight_cells
+    minimum_top1_role: secondary_T10_comparability_only
+  cross_model:
+    - per_view_item_geometry_linear_CKA
+    - full_cross_view_cosine_map_Spearman
+    - paired_item_margin_Spearman
+    - model_by_system_by_context_variance_decomposition
+  depth:
+    - fixed_subset_margin_trajectory
+    - first_depth_at_which_bootstrap_interval_excludes_zero_descriptive_only
+    - raw_last_block_to_returned_final_state_delta
+  reserve_policy: >-
+    T11 may bind public reserve identities and tokenizer-only covariates, but
+    must not forward reserve items or read reserve model outcomes.
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  source_sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+  order:
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - olmo2_1b_base_bf16
+    - gemma2_2b_it_bf16
+    - qwen25_0p5b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - qwen25_3b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  selection_changed_after_t10: false
+  roster_reason: paired_reuse_of_all_nine_T10_cells_without_outcome_based_model_selection
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  output_hidden_states: true
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+landing_patterns:
+  compositional_candidate: >-
+    Decomposed forms and component labels retain matched-control advantages
+    across multiple systems and model cells. Freeze a narrow T12 reserve test
+    before opening reserve outcomes.
+  lexicalization_candidate: >-
+    Whole official names dominate component labels after their separate
+    matched controls. Frame the next test around lexicalized sequence identity,
+    not generic compositional semantics.
+  presentation_or_final_norm_candidate: >-
+    Effects change with VS16/fusion or between raw last-block and returned final
+    state. Localize the next experiment to that boundary without calling it a
+    mechanism.
+  model_conditioned_regimes: >-
+    Direction or context stability differs materially by frozen model cell.
+    Retain an architecture-conditioned atlas and do not pool a model-general
+    effect.
+  tokenizer_structural_account: >-
+    Required token-length-matched incorrect-label controls erase the apparent
+    advantage. Preserve the bounded negative and do not widen the panel.
+  broad_bounded_null: >-
+    Continuous matched margins and geometry show no coherent system-level
+    pattern. Treat T8-T10 as a narrower single-codepoint alignment boundary.
+
+failure_policy:
+  fail_closed_on_source_config_freeze_or_selection_hash_mismatch: true
+  fail_closed_on_model_artifact_or_runtime_mismatch: true
+  fail_closed_on_carrier_boundary_or_view_uniqueness_failure: true
+  fail_closed_on_required_matched_control_coverage_failure_before_weight_load: true
+  fail_closed_on_nonfinite_present_activation_or_non_NaN_absent_view: true
+  fail_closed_on_reserve_forward_attempt: true
+  fail_closed_on_foreign_GPU_compute_before_model_load_or_next_shard: true
+  retain_failed_or_null_model_cells: true
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+forbidden_actions:
+  - any_T11_model_forward_before_the_T11_freeze_commit
+  - any_T11_reserve_model_forward_or_outcome_analysis
+  - post_outcome_item_system_view_carrier_distance_depth_endpoint_metric_or_model_reselection
+  - post_outcome_matched_control_repair_or_coverage_threshold_change
+  - lowering_or_reinterpreting_the_T10_practical_floor
+  - replacing_T10_core_cells_or_promoting_extension_cells_to_rescue_T10
+  - intervention_generation_or_behavioral_claim
+  - semantic_mechanistic_causal_tokenizer_independence_scale_tuning_or_model_general_claim
+  - raw_activation_commit_to_git_or_spiralshare
