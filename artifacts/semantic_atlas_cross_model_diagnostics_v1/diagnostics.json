@@ -1,0 +1,571 @@
+{
+  "analysis_role": "retrospective_descriptive_t10_diagnostic_t10_primary_unchanged",
+  "causal_claim_authorized": false,
+  "compact_diagnostics": {
+    "carrier_distance_heterogeneity": {
+      "cross_model_profile_spearman": {
+        "maximum": 0.6099375455928333,
+        "median": -0.1621527758996086,
+        "minimum": -0.7545045450053531
+      },
+      "median_sum_of_squares_share": {
+        "carrier": 0.19838058976653783,
+        "distance": 0.26640162165149406,
+        "interaction": 0.2986353456018888
+      }
+    },
+    "final_vs_raw_profile": {
+      "top1_contrast_profile_spearman_by_model": {
+        "gemma2_2b_it_bf16": 0.9572173526639411,
+        "llama32_3b_base_bf16": 0.8862434338158116,
+        "mistral7b_instruct_v03_bf16": 0.8571428571428572,
+        "olmo2_1b_base_bf16": 0.8467691965873324,
+        "qwen25_0p5b_base_bf16": -0.33541019662496846,
+        "qwen25_1p5b_base_bf16": 0.710894971750023,
+        "qwen25_3b_base_bf16": 0.6666666666666669,
+        "qwen25_7b_base_bf16": 0.9523809523809524,
+        "smollm2_1p7b_base_bf16": 0.0
+      }
+    },
+    "item_support": {
+      "by_model": {
+        "gemma2_2b_it_bf16": {
+          "items_with_at_least_one_name_hit": 88,
+          "name_hit_events": 169,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.5502958579881657
+        },
+        "llama32_3b_base_bf16": {
+          "items_with_at_least_one_name_hit": 49,
+          "name_hit_events": 145,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.8413793103448276
+        },
+        "mistral7b_instruct_v03_bf16": {
+          "items_with_at_least_one_name_hit": 162,
+          "name_hit_events": 564,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.374113475177305
+        },
+        "olmo2_1b_base_bf16": {
+          "items_with_at_least_one_name_hit": 32,
+          "name_hit_events": 73,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.9726027397260274
+        },
+        "qwen25_0p5b_base_bf16": {
+          "items_with_at_least_one_name_hit": 36,
+          "name_hit_events": 58,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.896551724137931
+        },
+        "qwen25_1p5b_base_bf16": {
+          "items_with_at_least_one_name_hit": 40,
+          "name_hit_events": 71,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.8591549295774648
+        },
+        "qwen25_3b_base_bf16": {
+          "items_with_at_least_one_name_hit": 95,
+          "name_hit_events": 171,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.5263157894736842
+        },
+        "qwen25_7b_base_bf16": {
+          "items_with_at_least_one_name_hit": 106,
+          "name_hit_events": 256,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 0.53125
+        },
+        "smollm2_1p7b_base_bf16": {
+          "items_with_at_least_one_name_hit": 24,
+          "name_hit_events": 44,
+          "top_ceil_10_percent_item_count": 30,
+          "top_ceil_10_percent_share_of_name_hits": 1.0
+        }
+      },
+      "cross_model_item_advantage_spearman": {
+        "maximum": 0.32696915747383987,
+        "median": 0.13270114778885983,
+        "minimum": -0.0627335704652677
+      },
+      "items_hit_by_all_nine_models": 0,
+      "items_hit_by_at_least_one_model": 233,
+      "items_hit_by_at_least_six_models": 14,
+      "unicode_group_mean_item_advantage": {
+        "Activities": 0.10503472222222222,
+        "Animals & Nature": 0.06635802469135803,
+        "Flags": 0.06944444444444445,
+        "Food & Drink": 0.11265432098765432,
+        "Objects": 0.06379472693032015,
+        "People & Body": 0.0668859649122807,
+        "Smileys & Emotion": 0.034574468085106384,
+        "Symbols": 0.046977124183006536,
+        "Travel & Places": 0.08164983164983165
+      }
+    },
+    "metric_convergence_and_divergence": {
+      "all_72_margin_contrasts_positive": true,
+      "all_72_mrr_contrasts_positive": true,
+      "all_72_top1_contrasts_positive": true,
+      "cross_model_rank_spearman": {
+        "top1_minimum_vs_mean_cka": 0.8101914936669332,
+        "top1_minimum_vs_mean_margin": 0.8017519989412359,
+        "top1_minimum_vs_median_mrr": 0.9705418934551804
+      },
+      "model_means": {
+        "gemma2_2b_it_bf16": {
+          "cka_contrast_mean": 0.009009051136672497,
+          "codepoint_top1_mean": 0.0025684931315481663,
+          "margin_contrast_mean": 0.10696065360389184,
+          "mrr_contrast_median": 0.06328005995601416,
+          "name_top1_mean": 0.07234588963910937,
+          "positive_cka_cells": 5,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.017123287543654442
+        },
+        "llama32_3b_base_bf16": {
+          "cka_contrast_mean": 0.07780115492641926,
+          "codepoint_top1_mean": 0.007705479394644499,
+          "margin_contrast_mean": 0.13804844464175403,
+          "mrr_contrast_median": 0.10085749626159668,
+          "name_top1_mean": 0.062071917578577995,
+          "positive_cka_cells": 8,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.027397260069847107
+        },
+        "mistral7b_instruct_v03_bf16": {
+          "cka_contrast_mean": 0.12149582430720329,
+          "codepoint_top1_mean": 0.00813356158323586,
+          "margin_contrast_mean": 0.22359357198001817,
+          "mrr_contrast_median": 0.29076414089649916,
+          "name_top1_mean": 0.24143835343420506,
+          "positive_cka_cells": 7,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.20205478556454182
+        },
+        "olmo2_1b_base_bf16": {
+          "cka_contrast_mean": 0.05366697907447815,
+          "codepoint_top1_mean": 0.0034246575087308884,
+          "margin_contrast_mean": 0.12099258967646165,
+          "mrr_contrast_median": 0.05938934115692973,
+          "name_top1_mean": 0.031249999534338713,
+          "positive_cka_cells": 8,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.013698630034923553
+        },
+        "qwen25_0p5b_base_bf16": {
+          "cka_contrast_mean": -0.062025985680520535,
+          "codepoint_top1_mean": 0.007277397206053138,
+          "margin_contrast_mean": 0.0726010057842359,
+          "mrr_contrast_median": 0.034694246016442776,
+          "name_top1_mean": 0.02482876693829894,
+          "positive_cka_cells": 0,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.006849315017461777
+        },
+        "qwen25_1p5b_base_bf16": {
+          "cka_contrast_mean": -0.032831169199198484,
+          "codepoint_top1_mean": 0.0034246575087308884,
+          "margin_contrast_mean": 0.10911038736230694,
+          "mrr_contrast_median": 0.046571098268032074,
+          "name_top1_mean": 0.030393835622817278,
+          "positive_cka_cells": 0,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.013698630034923553
+        },
+        "qwen25_3b_base_bf16": {
+          "cka_contrast_mean": -0.012160012498497963,
+          "codepoint_top1_mean": 0.005565068451687694,
+          "margin_contrast_mean": 0.13641712005482987,
+          "mrr_contrast_median": 0.0937627237290144,
+          "name_top1_mean": 0.07320205378346145,
+          "positive_cka_cells": 3,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.017123287543654442
+        },
+        "qwen25_7b_base_bf16": {
+          "cka_contrast_mean": -0.022388100158423185,
+          "codepoint_top1_mean": 0.006849315017461777,
+          "margin_contrast_mean": 0.1612600649241358,
+          "mrr_contrast_median": 0.15052639320492744,
+          "name_top1_mean": 0.10958903888240457,
+          "positive_cka_cells": 2,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.02397260256111622
+        },
+        "smollm2_1p7b_base_bf16": {
+          "cka_contrast_mean": -0.04649454914033413,
+          "codepoint_top1_mean": 0.005993150640279055,
+          "margin_contrast_mean": 0.11711316523724236,
+          "mrr_contrast_median": 0.03296745382249355,
+          "name_top1_mean": 0.018835616298019886,
+          "positive_cka_cells": 0,
+          "positive_margin_cells": 8,
+          "positive_mrr_cells": 8,
+          "positive_top1_cells": 8,
+          "top1_contrast_minimum": 0.006849315017461777
+        }
+      },
+      "positive_cka_cell_count": 33
+    },
+    "name_vs_codepoint": {
+      "cell_count": 72,
+      "codepoint_is_sufficient_as_sole_t11_negative_control": false,
+      "codepoint_zero_cells": 13,
+      "mean_codepoint_top1_over_72_cells": 0.005660197826930218,
+      "mean_name_top1_over_72_cells": 0.07377283019013703
+    },
+    "qwen_size_profile": {
+      "finite_item_spearman_count": 182,
+      "median_finite_item_spearman": 0.632455532033676,
+      "minimum_top1_contrast": [
+        0.00684931506849315,
+        0.0136986301369863,
+        0.017123287671232876,
+        0.023972602739726026
+      ],
+      "model_order": [
+        "qwen25_0p5b_base_bf16",
+        "qwen25_1p5b_base_bf16",
+        "qwen25_3b_base_bf16",
+        "qwen25_7b_base_bf16"
+      ],
+      "nondecreasing_items": 189,
+      "positive_finite_item_spearman_share": 0.7252747252747253,
+      "scale_law_claim_authorized": false,
+      "strictly_increasing_items": 3
+    },
+    "registered_primary_unchanged": {
+      "authorized_wording": "cross_model_replication_not_established_under_frozen_rule",
+      "core_practical_pass_count": 2,
+      "floor_as_net_correct_items_at_n_292": 6,
+      "model_cell_discreteness": {
+        "gemma2_2b_it_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 7,
+          "tokenization_matched_minimum": 0.017605633802816902,
+          "unrestricted_cells_at_or_above_0p02": 7,
+          "unrestricted_minimum": 0.017123287671232876
+        },
+        "llama32_3b_base_bf16": {
+          "practical_pass": true,
+          "tokenization_matched_cells_at_or_above_0p02": 8,
+          "tokenization_matched_minimum": 0.03202846975088968,
+          "unrestricted_cells_at_or_above_0p02": 8,
+          "unrestricted_minimum": 0.0273972602739726
+        },
+        "mistral7b_instruct_v03_bf16": {
+          "practical_pass": true,
+          "tokenization_matched_cells_at_or_above_0p02": 8,
+          "tokenization_matched_minimum": 0.20350877192982456,
+          "unrestricted_cells_at_or_above_0p02": 8,
+          "unrestricted_minimum": 0.20205479452054792
+        },
+        "olmo2_1b_base_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 8,
+          "tokenization_matched_minimum": 0.021352313167259787,
+          "unrestricted_cells_at_or_above_0p02": 7,
+          "unrestricted_minimum": 0.0136986301369863
+        },
+        "qwen25_0p5b_base_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 4,
+          "tokenization_matched_minimum": 0.007042253521126761,
+          "unrestricted_cells_at_or_above_0p02": 4,
+          "unrestricted_minimum": 0.00684931506849315
+        },
+        "qwen25_1p5b_base_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 5,
+          "tokenization_matched_minimum": 0.01408450704225352,
+          "unrestricted_cells_at_or_above_0p02": 5,
+          "unrestricted_minimum": 0.0136986301369863
+        },
+        "qwen25_3b_base_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 7,
+          "tokenization_matched_minimum": 0.0176056338028169,
+          "unrestricted_cells_at_or_above_0p02": 7,
+          "unrestricted_minimum": 0.017123287671232876
+        },
+        "qwen25_7b_base_bf16": {
+          "practical_pass": true,
+          "tokenization_matched_cells_at_or_above_0p02": 8,
+          "tokenization_matched_minimum": 0.024647887323943664,
+          "unrestricted_cells_at_or_above_0p02": 8,
+          "unrestricted_minimum": 0.023972602739726026
+        },
+        "smollm2_1p7b_base_bf16": {
+          "practical_pass": false,
+          "tokenization_matched_cells_at_or_above_0p02": 1,
+          "tokenization_matched_minimum": 0.00348432055749129,
+          "unrestricted_cells_at_or_above_0p02": 1,
+          "unrestricted_minimum": 0.00684931506849315
+        }
+      },
+      "partial_conjunction_p_value": 0.0001,
+      "positive": false,
+      "practical_floor": 0.02
+    }
+  },
+  "generation_calls": 0,
+  "implementation_script_sha256": "645406bc2ab2ac57bd6745447a8047702badfd2c93fdcc7b34a4aef56ed5b9c8",
+  "intervention_calls": 0,
+  "model_forward_calls": 0,
+  "model_general_claim_authorized": false,
+  "model_order": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "qwen25_0p5b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-semantic-atlas-cross-model-diagnostics-v1",
+  "raw_archive_provided": true,
+  "raw_diagnostics": {
+    "cross_model_glyph_name_map_agreement": {
+      "maximum": 0.32800691377491636,
+      "median": 0.07608629361838329,
+      "minimum": -0.015341080271195616
+    },
+    "cross_model_item_geometry": {
+      "codepoint_final": {
+        "all_pair_context_values": {
+          "maximum": 0.8514871747434966,
+          "median": 0.40577015712340514,
+          "minimum": 0.08196822085030714
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.8084169082197015,
+          "median": 0.4228951133929355,
+          "minimum": 0.2164137598479858
+        }
+      },
+      "codepoint_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.8162983231106544,
+          "median": 0.4300610240592191,
+          "minimum": 0.10446859088514346
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.8014579389722307,
+          "median": 0.4394969582954696,
+          "minimum": 0.2387562346593867
+        }
+      },
+      "glyph_final": {
+        "all_pair_context_values": {
+          "maximum": 0.47708532315487845,
+          "median": 0.12545134148488005,
+          "minimum": 0.05046809963781398
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.4051273348152708,
+          "median": 0.13158413712316852,
+          "minimum": 0.06652124377805452
+        }
+      },
+      "glyph_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.4648170875485745,
+          "median": 0.1553145249453422,
+          "minimum": 0.053342009099495054
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.399001111392373,
+          "median": 0.1528454182914126,
+          "minimum": 0.08086689713249942
+        }
+      },
+      "unicode_name_final": {
+        "all_pair_context_values": {
+          "maximum": 0.6790934780590842,
+          "median": 0.33809887749960854,
+          "minimum": 0.10411737884261145
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.5159002905602093,
+          "median": 0.3622678059278416,
+          "minimum": 0.17288545373691372
+        }
+      },
+      "unicode_name_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.6667724734013831,
+          "median": 0.3352796134392878,
+          "minimum": 0.13301861950310026
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.5331354176468092,
+          "median": 0.34798871921129976,
+          "minimum": 0.16986910105131897
+        }
+      }
+    },
+    "cross_model_paired_item_cosine_agreement": {
+      "maximum": 0.4181959799164519,
+      "median": 0.1514953972390664,
+      "minimum": -0.03611500853362818
+    },
+    "final_norm_boundary": {
+      "within_model_final_vs_raw_linear_cka_median": {
+        "gemma2_2b_it_bf16": 0.8360748543334838,
+        "llama32_3b_base_bf16": 0.980279987756695,
+        "mistral7b_instruct_v03_bf16": 0.9540572219066661,
+        "olmo2_1b_base_bf16": 0.9771860383754081,
+        "qwen25_0p5b_base_bf16": 0.960677609610612,
+        "qwen25_1p5b_base_bf16": 0.9389113644963739,
+        "qwen25_3b_base_bf16": 0.8933543929618062,
+        "qwen25_7b_base_bf16": 0.9664821974888718,
+        "smollm2_1p7b_base_bf16": 0.9693306209472518
+      }
+    },
+    "qwen_family_item_geometry": {
+      "codepoint_final": {
+        "all_pair_context_values": {
+          "maximum": 0.7924580897361215,
+          "median": 0.5237089575456184,
+          "minimum": 0.2779701544061418
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.7034393489704327,
+          "median": 0.5218030227419133,
+          "minimum": 0.3351056173393013
+        }
+      },
+      "codepoint_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.8123417188567985,
+          "median": 0.5021564427075424,
+          "minimum": 0.2639971091772157
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.7372238720779727,
+          "median": 0.5589087649434029,
+          "minimum": 0.38086261086205225
+        }
+      },
+      "glyph_final": {
+        "all_pair_context_values": {
+          "maximum": 0.3607829434888899,
+          "median": 0.17302839977237627,
+          "minimum": 0.07601305699185845
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.24101348383103977,
+          "median": 0.15722959596441868,
+          "minimum": 0.13198970405686805
+        }
+      },
+      "glyph_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.418501593495124,
+          "median": 0.23634070433482443,
+          "minimum": 0.10328061426234551
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.32157371567457116,
+          "median": 0.21039736979740736,
+          "minimum": 0.18972976607584485
+        }
+      },
+      "unicode_name_final": {
+        "all_pair_context_values": {
+          "maximum": 0.6437196155873185,
+          "median": 0.42312874444723175,
+          "minimum": 0.23040175564529164
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.44956369204182944,
+          "median": 0.42991995421599316,
+          "minimum": 0.34640236987387346
+        }
+      },
+      "unicode_name_raw": {
+        "all_pair_context_values": {
+          "maximum": 0.5988657045692872,
+          "median": 0.3911924797417543,
+          "minimum": 0.22117703244409914
+        },
+        "pair_medians_over_eight_contexts": {
+          "maximum": 0.4888035987750571,
+          "median": 0.3869770902513867,
+          "minimum": 0.33294729843502985
+        }
+      }
+    },
+    "raw_archive_validation": {
+      "activation_bytes": 1212819072,
+      "maximum_top1_contrast_absolute_error": 1.505425528680604e-08,
+      "model_cells": 9,
+      "prediction_arrays_reconstructed": 36,
+      "prediction_mismatches": 0,
+      "prediction_values_compared": 84096,
+      "raw_root_basename": "glyphprobe-t10-runs-8673bc51",
+      "run_ledger_sha256_by_model": {
+        "gemma2_2b_it_bf16": "1781b4ad2fd687a12625a8c60b9967dd5e2991aedcf680792400eb6cf4d7c768",
+        "llama32_3b_base_bf16": "1ce1c4caff92904d643c4b5e17bc4777e4c798a8a41dd058f9e9273d1658ddcf",
+        "mistral7b_instruct_v03_bf16": "12c3c1e71f7c83b6d90ae7a793afaefa086cd54f985effb34402d9f4f59c0f5e",
+        "olmo2_1b_base_bf16": "4f2fa44aa0c6eb1a3ba391cd254ee20525701618772a0a367c39821750f7e68e",
+        "qwen25_0p5b_base_bf16": "8d68900d4945fbbdb85acd6567a25cf981628a1ce22ad8f0e87dea5b2890b93a",
+        "qwen25_1p5b_base_bf16": "9b11011f7f917743c7c68c98fe38c1dfc19d033a6ef028798c7766d23b9206be",
+        "qwen25_3b_base_bf16": "9bd0b48468351d3f541f7b426deb10f159294b7475921eb8a73321a8d5363c18",
+        "qwen25_7b_base_bf16": "2694933b4a2cdf1b8a7f6ea6bd1a8f0c2ac02fb3f1b129a1a715d2e19b2af505",
+        "smollm2_1p7b_base_bf16": "2d09358dc60b0ceb177e53471c84c5cbab062eb70a0580314a549a9aa0fdfe58"
+      },
+      "shards": 333,
+      "status": "pass"
+    },
+    "tokenization_associations": {
+      "causal_or_tokenizer_independence_claim_authorized": false,
+      "pairwise_exact_triple_equality_vs_glyph_cka_spearman": 0.07891673430182077,
+      "pairwise_glyph_token_count_equality_vs_glyph_cka_spearman": 0.19532749781541617,
+      "within_model_glyph_token_count_vs_name_hits_spearman": {
+        "gemma2_2b_it_bf16": -0.14465972058527418,
+        "llama32_3b_base_bf16": 0.10598992265078803,
+        "mistral7b_instruct_v03_bf16": 0.042754777350272305,
+        "olmo2_1b_base_bf16": -0.05873933988837383,
+        "qwen25_0p5b_base_bf16": -0.17953199036574438,
+        "qwen25_1p5b_base_bf16": -0.2121052325515693,
+        "qwen25_3b_base_bf16": -0.24873994566592625,
+        "qwen25_7b_base_bf16": -0.25323223643247483,
+        "smollm2_1p7b_base_bf16": -0.18277169977015098
+      }
+    }
+  },
+  "scale_law_claim_authorized": false,
+  "schema_version": 1,
+  "selection_manifest_sha256": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+  "semantic_claim_authorized": false,
+  "status": "pass",
+  "t10_bundle": {
+    "ledger_targets_rehashed": 31,
+    "path": "/private/tmp/sr-glyphprobe-t11-unusual-glyph-v0/artifacts/semantic_atlas_cross_model_replication_v0",
+    "public_manifest_sha256": "90af3c437679399c5a246c1a1c2e603e189761b4693bc3eb74602600361a7306"
+  },
+  "t10_primary_changed": false,
+  "t10_rescue_authorized": false,
+  "tokenizer_independence_claim_authorized": false
+}
