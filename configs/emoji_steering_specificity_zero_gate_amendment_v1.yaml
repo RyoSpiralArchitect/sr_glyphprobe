@@ -1,0 +1,88 @@
+amendment_id: glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1
+source_analysis_id: glyphprobe-emoji-steering-specificity-analysis-v0
+source_protocol_id: glyphprobe-emoji-steering-specificity-harvest-v0
+experiment_label: T13-EA-ZG1
+status_at_freeze: post_failure_nonadaptive_numerical_amendment_before_live_js_residual_magnitude_inspection
+purpose: >-
+  Replace only the zero-control Jensen-Shannon exact-equality check after the
+  original v0 gate failed closed. Preserve every primitive no-op equality and
+  keep all nonzero scientific values closed until this amendment is frozen.
+amendment_scope: zero_control_gate_only
+claim_boundary: >-
+  Passing this amended gate shows only that the zero-hook control is consistent
+  with an exact primitive no-op plus a bounded derived float32 log-exp
+  round-trip residual. It is not a scientific result and does not change any
+  T13-EA estimand, output family, control, or interpretation limit.
+
+provenance:
+  original_analysis_commit: 7fedd4001bf3b127f3039bd2b4ec1b40d186edef
+  original_analysis_freeze:
+    path: data/manifests/emoji_steering_specificity_analysis_v0.json
+    sha256: 91c7f96cfd5fcb0026a304bcc8981b51e49090cb4fdebae15987ce3c53fa89dc
+  verified_closeout:
+    path: validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json
+    sha256: bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b
+  failure_receipt:
+    path: validation/emoji_steering_specificity_analysis_v0/zero_gate_v0_failure_receipt.json
+  failure_observation_scope: zero_control_field_identity_only
+  exact_live_js_residual_magnitude_inspected_before_freeze: false
+  nonzero_scientific_values_opened_before_freeze: false
+  analysis_output_written_by_failed_v0_attempt: false
+
+nonadaptive_basis:
+  classification: post_failure_nonadaptive_numerical_amendment
+  trigger_known_before_freeze: js_divergence_exact_equality_failed
+  observed_residual_magnitude_used_to_choose_bound: false
+  bound_source: fixed_float32_operation_chain_allowance
+  note: >-
+    The multiplier is fixed from the float32 log-softmax, exp, mean, and log
+    round-trip path. It is not fitted to the failed live value.
+
+corrected_zero_gate:
+  evaluation_order:
+    - validate_external_scientific_open_closeout
+    - open_only_zero_control_ledgers_and_arrays
+    - validate_exact_primitives
+    - validate_bounded_js_roundtrip_residual
+    - authorize_nonzero_scientific_value_open
+  exact_primitives:
+    - kl_baseline_to_intervened_equals_zero
+    - total_variation_equals_zero
+    - logit_delta_rms_equals_zero
+    - baseline_entropy_equals_intervened_entropy
+    - baseline_argmax_equals_intervened_argmax
+    - argmax_flip_is_false
+    - top_positive_values_equal_zero
+    - top_negative_values_equal_zero
+    - countsketch_equals_zero
+    - top_positive_ids_in_vocab
+    - top_negative_ids_in_vocab
+    - baseline_argmax_id_in_vocab
+    - intervened_argmax_id_in_vocab
+  js_divergence:
+    policy: bounded_float32_log_exp_roundtrip_residual
+    float32_epsilon_multiplier: 8
+    maximum_absolute: 9.5367431640625e-07
+    two_sided: true
+    finite_required: true
+    label: derived_float32_roundtrip_residual_not_exact
+  any_exact_primitive_failure: fail_closed
+  any_js_bound_failure: fail_closed
+  nonzero_open_before_full_gate: forbidden
+
+unchanged_from_v0:
+  - source_protocol_and_sealed_run_binding
+  - all_six_scientific_output_families
+  - estimands_and_resampling_contract
+  - controls_and_interpretation_limits
+  - independent_closeout_hash_audit
+  - first_open_zero_control_order
+  - no_overwrite_output_policy
+
+reporting:
+  preserve_v0_gate_failure_as_negative_procedural_result: true
+  report_amendment_separately_from_scientific_findings: true
+  report_exact_js_residual_as_exact_zero: forbidden
+  strongest_allowed_gate_language: >-
+    The zero control passed all exact primitive checks and the prospectively
+    frozen float32 Jensen-Shannon residual bound.

@@ -1,0 +1,80 @@
+{
+  "amendment_id": "glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1",
+  "analysis_output_written_by_failed_v0_attempt": false,
+  "bound_expression": "8 * numpy.finfo(numpy.float32).eps",
+  "claim_boundary": "Passing this amended gate shows only that the zero-hook control is consistent with an exact primitive no-op plus a bounded derived float32 log-exp round-trip residual. It is not a scientific result and does not change any T13-EA estimand, output family, control, or interpretation limit.",
+  "exact_live_js_residual_magnitude_inspected": false,
+  "failure_field_known": "js_divergence",
+  "input_roster": [
+    "data/manifests/emoji_steering_specificity_analysis_v0.json",
+    "validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json",
+    "validation/emoji_steering_specificity_analysis_v0/zero_gate_v0_failure_receipt.json",
+    "configs/emoji_steering_specificity_zero_gate_amendment_v1.yaml",
+    "docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md",
+    "docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md",
+    "scripts/analyze_emoji_steering_specificity_geometry_v1.py",
+    "scripts/analyze_emoji_steering_specificity_outcomes_v1.py",
+    "tests/test_analyze_emoji_steering_specificity_geometry_v1.py",
+    "tests/test_analyze_emoji_steering_specificity_outcomes_v1.py",
+    "scripts/audit_emoji_steering_specificity_zero_gate_amendment_v1.py",
+    "tests/test_emoji_steering_specificity_zero_gate_amendment_v1.py"
+  ],
+  "inputs": {
+    "configs/emoji_steering_specificity_zero_gate_amendment_v1.yaml": {
+      "bytes": 3930,
+      "sha256": "1df92657e8633d1a63923cb4029904e1b558c23d3df20ab3ae3a64891e48728e"
+    },
+    "data/manifests/emoji_steering_specificity_analysis_v0.json": {
+      "bytes": 7279,
+      "sha256": "91c7f96cfd5fcb0026a304bcc8981b51e49090cb4fdebae15987ce3c53fa89dc"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md": {
+      "bytes": 3824,
+      "sha256": "57f5a8bb2c8bc1a04c20e4a98a342e24496e8fb25a34d8ae86acbfce06e52903"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md": {
+      "bytes": 3321,
+      "sha256": "e1aba99fdba1dbf0beafa7e754a4d54f024fa4388f524e011430f3a1b1793a53"
+    },
+    "scripts/analyze_emoji_steering_specificity_geometry_v1.py": {
+      "bytes": 40758,
+      "sha256": "d281a5491a36486ad0e4e977ada4e4ce3ca9389fac2418d860c0c7d1c434d5fb"
+    },
+    "scripts/analyze_emoji_steering_specificity_outcomes_v1.py": {
+      "bytes": 17675,
+      "sha256": "cc0951be92902b6bc466d69cdb24aa457b04e38bee025eab2a9003ff9a405763"
+    },
+    "scripts/audit_emoji_steering_specificity_zero_gate_amendment_v1.py": {
+      "bytes": 18302,
+      "sha256": "cfd3176485acbbe4ab681cdaa6d77f8676972b65cefcf39314006cd2fd9178cb"
+    },
+    "tests/test_analyze_emoji_steering_specificity_geometry_v1.py": {
+      "bytes": 15907,
+      "sha256": "cb56032debeab4184a47d58f88e448b438170d5cbf84906844831da0ca4ff21f"
+    },
+    "tests/test_analyze_emoji_steering_specificity_outcomes_v1.py": {
+      "bytes": 10609,
+      "sha256": "712a29131083b0dd6049df95ad5e8ab516168607f91ed3277c9eb8cd7100ecc4"
+    },
+    "tests/test_emoji_steering_specificity_zero_gate_amendment_v1.py": {
+      "bytes": 6749,
+      "sha256": "88aca9d45d34cd4502fdc7cf3c93577a758ee2abbb21ac7ad35f64c21da1323d"
+    },
+    "validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json": {
+      "bytes": 316059,
+      "sha256": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+    },
+    "validation/emoji_steering_specificity_analysis_v0/zero_gate_v0_failure_receipt.json": {
+      "bytes": 901,
+      "sha256": "97622b3cd7166082a53d2dcc222dabfcfba8a10e36ee0bdadde443376c6a21a9"
+    }
+  },
+  "maximum_absolute_js": 9.5367431640625e-07,
+  "nonzero_scientific_values_opened": false,
+  "schema_version": 1,
+  "scientific_open_rule": "all exact primitive zero-control checks and the frozen two-sided float32 JS bound must pass before any nonzero scientific value opens",
+  "scientific_values_parsed_by_auditor": false,
+  "source_analysis_id": "glyphprobe-emoji-steering-specificity-analysis-v0",
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "status": "freeze_complete_post_failure_nonadaptive_before_live_js_residual_magnitude_inspection"
+}

@@ -1,0 +1,20 @@
+{
+  "analysis_output_written": false,
+  "closeout_receipt": {
+    "path": "validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json",
+    "sha256": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+  },
+  "exact_failed_value_recorded": false,
+  "failure_field": "js_divergence",
+  "failure_observation_scope": "zero_control_gate_only",
+  "nonzero_scientific_values_opened": false,
+  "original_analysis_commit": "7fedd4001bf3b127f3039bd2b4ec1b40d186edef",
+  "original_analysis_freeze": {
+    "path": "data/manifests/emoji_steering_specificity_analysis_v0.json",
+    "sha256": "91c7f96cfd5fcb0026a304bcc8981b51e49090cb4fdebae15987ce3c53fa89dc"
+  },
+  "preserved_as_negative_procedural_result": true,
+  "receipt_id": "glyphprobe-t13ea-zero-gate-v0-failure",
+  "schema_version": 1,
+  "status": "v0_zero_gate_failed_closed_before_nonzero_scientific_open"
+}
