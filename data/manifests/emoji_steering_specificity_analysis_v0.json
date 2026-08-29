@@ -1,0 +1,55 @@
+{
+  "analysis_id": "glyphprobe-emoji-steering-specificity-analysis-v0",
+  "claim_boundary": "T13-EA is an exploratory analysis of the already exposed T13-EH population and public target set. It may describe source-form and intervention-response heterogeneity. It cannot establish emoji meaning, unique emoji specificity, a mechanism, behavioral generation effects, tokenizer independence, a scale law, model-population generality, or independent confirmation.",
+  "inputs": {
+    "configs/emoji_steering_specificity_analysis_v0.yaml": {
+      "bytes": 5554,
+      "sha256": "bfbe253ae6524606a604133a343fe767b2a50a695cacbaf8b6c95d911f9588a7"
+    },
+    "configs/emoji_steering_specificity_harvest_v0.yaml": {
+      "bytes": 9031,
+      "sha256": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06"
+    },
+    "data/manifests/emoji_steering_specificity_harvest_v0.json": {
+      "bytes": 2595,
+      "sha256": "a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808"
+    },
+    "scripts/audit_emoji_steering_specificity_analysis_v0.py": {
+      "bytes": 18221,
+      "sha256": "df0b564f255d2f87b39562cec13f60886a5108a8ca853c990b9c7b9b073d047e"
+    },
+    "tests/test_emoji_steering_specificity_analysis_v0.py": {
+      "bytes": 5963,
+      "sha256": "082f6eedb96abb367ff8dae427929c53c40f05f929a5961992ecb770f2d4dd2b"
+    }
+  },
+  "pilot_roles": [
+    "qwen25_0p5b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "queue_time_allowed_inspection": "sealed paths, count fields, declared bytes, NPY headers, and optional content-blind SHA-256 only",
+  "required_roles": [
+    "qwen25_0p5b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "qwen25_3b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "scientific_open_gate": "all_nine_roles_complete_and_independent_hash_pass",
+  "scientific_outcomes_read": false,
+  "scientific_output_family_ids": [
+    "F1_item_source_form",
+    "F2_prototype_depth_dose",
+    "F3_random_null_calibration",
+    "F4_target_sensitivity",
+    "F5_output_direction",
+    "F6_source_geometry"
+  ],
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "status": "freeze_complete_before_t13eh_scientific_outcome_inspection"
+}

@@ -1,0 +1,158 @@
+analysis_id: glyphprobe-emoji-steering-specificity-analysis-v0
+source_protocol_id: glyphprobe-emoji-steering-specificity-harvest-v0
+experiment_label: T13-EA
+status_at_freeze: prospective_outcome_blind_exploratory_analysis_map
+purpose: >-
+  Fix the integrity gate, complete descriptive output families, resampling
+  units, and distributed-compute boundary before the T13-EH acquisition queue
+  is opened for scientific analysis.
+claim_boundary: >-
+  T13-EA is an exploratory analysis of the already exposed T13-EH population
+  and public target set. It may describe source-form and intervention-response
+  heterogeneity. It cannot establish emoji meaning, unique emoji specificity,
+  a mechanism, behavioral generation effects, tokenizer independence, a scale
+  law, model-population generality, or independent confirmation.
+
+acquisition_gate:
+  scientific_open_requires_all_roles_complete: true
+  required_role_order:
+    - qwen25_0p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - qwen25_3b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  pilot_roles:
+    - qwen25_0p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+  allowed_during_queue:
+    - path_and_sealed_directory_inventory
+    - receipt_and_summary_count_fields
+    - declared_byte_count_checks
+    - npy_header_shape_and_dtype_checks
+    - optional_content_blind_sha256_recomputation
+  forbidden_during_queue:
+    - response_ledger_metric_parsing
+    - activation_or_logit_value_loading
+    - scientific_aggregation
+    - plots_or_rankings
+    - role_cell_or_endpoint_selection
+
+integrity_gate:
+  expected_source_shards_per_role: 12
+  expected_response_shards_per_pilot_role: 27
+  expected_receipts_per_pilot_role: 40
+  expected_receipts_per_nonpilot_role: 13
+  expected_source_forward_sequences_per_role: 3684
+  expected_response_rows_per_pilot_role: 127744
+  required_generation_calls: 0
+  zero_hook_exact_noop_required: true
+  incomplete_stage_policy: fail_closed_manual_adjudication
+  independent_hash_verification_before_scientific_open: true
+
+scientific_output_families:
+  - id: F1_item_source_form
+    population: complete_item_source_form_grid
+    factors: [model, glyph_system, item, source_form, target, target_group, sign]
+    fixed_depth_fraction: 0.50
+    fixed_magnitude: 0.25
+    contrasts:
+      - glyph_minus_unicode_name
+      - glyph_minus_decomposed_form
+      - unicode_name_minus_decomposed_form
+    cluster_units: [item, target]
+  - id: F2_prototype_depth_dose
+    population: complete_glyph_system_source_form_prototype_grid
+    factors:
+      - model
+      - glyph_system
+      - source_form
+      - target
+      - target_group
+      - depth
+      - magnitude
+      - sign
+    summaries:
+      - full_depth_surface
+      - ordered_dose_fraction
+      - sign_antisymmetry
+      - source_form_contrasts
+    cluster_units: [target]
+  - id: F3_random_null_calibration
+    population: complete_random_direction_grid
+    factors: [model, target, target_group, depth, magnitude, random_seed]
+    summaries:
+      - empirical_random_quantiles
+      - prototype_minus_random_median
+      - prototype_random_percentile
+    cluster_units: [target, random_seed]
+  - id: F4_target_sensitivity
+    population: all_32_public_targets
+    summaries:
+      - baseline_entropy_association
+      - baseline_top_two_margin_association
+      - target_group_heterogeneity
+    interpretation: sensitivity_diagnostic_not_source_specificity
+  - id: F5_output_direction
+    population: complete_pilot_response_tensor
+    summaries:
+      - positive_negative_top64_overlap
+      - countsketch_cosine
+      - sign_reversed_countsketch_cosine
+      - cross_model_rank_concordance
+    interpretation: compressed_output_space_exploration
+  - id: F6_source_geometry
+    population: complete_nine_role_source_bank
+    summaries:
+      - glyph_name_decomposition_cosines
+      - wrapper_dispersion
+      - depth_trajectories
+      - tokenizer_signature_strata
+    interpretation: observational_representation_audit_not_steering
+
+scalar_endpoints:
+  - kl_baseline_to_intervened
+  - js_divergence
+  - total_variation
+  - logit_delta_rms
+  - entropy_change
+  - argmax_flip_rate
+reporting:
+  all_registered_families_reported: true
+  no_primary_hypothesis: true
+  no_practical_floor: true
+  no_confirmatory_verdict: true
+  multiplicity: descriptive_complete_family_no_significance_rescue
+  interval: percentile_cluster_bootstrap_95
+  bootstrap_replicates: 20000
+  bootstrap_seed: 2026082913
+  retain_null_heterogeneous_and_failed_cells: true
+
+distributed_execution:
+  raw_source_and_response_arrays_location: furnace_only
+  raw_arrays_to_git: forbidden
+  raw_arrays_to_spiralshare: forbidden
+  mac1_allowed_payloads_after_scientific_open:
+    - hash_bound_derived_tables
+    - deterministic_bootstrap_chunk_specs
+    - rendered_figure_inputs_without_private_prompts
+  mac1_general_execution_authority_from_spiral_mac_link: false
+  mps_bus_fidelity: bit_exact
+  merge_rule: deterministic_sorted_chunk_id_then_sha256_manifest
+
+landing_patterns:
+  - emoji_exceeds_declared_sources_and_nulls
+  - emoji_and_official_name_share_a_route
+  - unicode_structure_explains_the_response
+  - zwj_or_regional_composition_local_only
+  - model_conditioned_or_sign_inconsistent
+  - bounded_null_for_the_tested_steering_design
+
+future_confirmation:
+  t13c_requires_new_untouched_target_bank: true
+  t13eh_observations_in_confirmatory_statistic: forbidden
+  new_freeze_required: true
