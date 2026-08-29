@@ -4,6 +4,11 @@
 
 状態：**探索的discovery atlasとして完了。留保付き共有可能**。
 
+2026-08-29更新：その後T12が、別の一度限りのfreezeでZWJとregional flagのreserve
+subset全体を開いた。登録した候補はいずれも確認されなかった。この文書ではT11の
+discovery時点の記述を保存する。閉じたreserve判定は
+[T12結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)を参照する。
+
 今回の結果を、単一の「絵文字意味軸」として読むのは無理がある。Token長を揃えた対照の後にもglyphと名前の対応は広く残ったが、その分かれ方はglyph systemとmodel cellによって異なる。Regional flagでは、whole-sequenceの名前との関係とcomponentとの関係が最も明瞭に併存した。ZWJ sequenceでは、公式のwhole-sequence nameよりcomponent labelへ同等以上に寄りながら、融合形には小さいが安定した優位がある。Modifierではmatched alignment自体は広く見える一方、三つのdecomposition contrastはいずれもほぼゼロだった。Keycapはdiscoveryが8件しかなく、変動が大きい。
 
 これは確認的な結果ではなく、探索atlasである。絵文字の意味や理解、因果、機構、behaviorとの関係、tokenizer非依存性、scale law、instruction tuning効果、architecture一般性、model一般性、独立再現は、いずれも確立していない。T10の救済や改訂にも使わない。

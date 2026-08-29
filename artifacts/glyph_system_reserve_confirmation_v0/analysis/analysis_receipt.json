@@ -1,0 +1,33 @@
+{
+  "acquisition_model_forward_calls": 9792,
+  "analysis_model_forward_calls": 0,
+  "analysis_role": "prospectively_frozen_two_hypothesis_confirmation",
+  "behavioral_steering_claim_authorized": false,
+  "causal_claim_authorized": false,
+  "cell_item_contrast_rows": 432,
+  "confirmed_hypotheses": [],
+  "freeze_manifest_sha256": "38046552a26bef0eb6cdab3222f58041707616028fe89c0eb5104a84f0943738",
+  "generation_calls": 0,
+  "input_run_receipt_sha256": {
+    "gemma2_2b_it_bf16": "215ecce7dffb16f91924107c9ca8dd82219b852690f42e5cccb0a5797f81f878",
+    "llama32_3b_base_bf16": "dd26eb15d3febf2d3dbabef817749cea4957e499f6bf3bc931d0cab892945c87",
+    "mistral7b_instruct_v03_bf16": "51f1667ec9816e84af4976c27c0f28c775176ea33d8bf4a30bdd44abaacb400d",
+    "olmo2_1b_base_bf16": "d900049f834c2996e2cd1d8922ce3e02beb0c2892828d7a64d0d3c21abdf64eb",
+    "qwen25_0p5b_base_bf16": "5a5799d9f2ab05f33c002b134976f81043e8a42f1ea30dda7052da11a171c7d3",
+    "qwen25_1p5b_base_bf16": "96d7afd65394a3e80ef2419fc41803de4a5443a81e844c348e23034b24a2080f",
+    "qwen25_3b_base_bf16": "06fd78de832185edf160ca9620c7c45943e687e49ae0ef6b368a315aca80ade6",
+    "qwen25_7b_base_bf16": "f6fdb6811b99406ab301a086077f3609fed521bbd2901f90b230886556456034",
+    "smollm2_1p7b_base_bf16": "e59ab3a0857b931846ac49c6c922b42204f017645be6cd7ce556c3c1ec2a8278"
+  },
+  "intervention_calls": 0,
+  "model_general_claim_authorized": false,
+  "outcome_pattern": "neither_registered_hypothesis_confirmed",
+  "primary_result_sha256": "1dee4bd187c5816d809cec27c4972edb217442e7824ef172a7d5933557d491a6",
+  "protocol_id": "glyphprobe-glyph-system-reserve-confirmation-v0",
+  "reserve_items": 160,
+  "reserve_question_closed": true,
+  "runtime_preflight_aggregate_sha256": "3a51837c6c6a149b88e05db2528b5ebd2437d50c89e8ffdcfaaee1a343bc8ee1",
+  "schema_version": 1,
+  "semantic_claim_authorized": false,
+  "status": "pass"
+}

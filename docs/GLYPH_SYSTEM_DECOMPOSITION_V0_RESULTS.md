@@ -4,6 +4,12 @@
 
 Status: **completed exploratory discovery atlas; share with caveats**.
 
+Update, 2026-08-29: T12 subsequently opened the complete ZWJ and regional-flag
+reserve subsets under a separate one-shot freeze. Neither registered candidate
+was confirmed. This document preserves the T11 discovery-time language; see
+the [T12 result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) for the closed
+reserve decision.
+
 The most defensible reading is not one universal emoji-meaning axis. Matched
 glyph-to-name correspondence is broad, but the way it decomposes differs by
 glyph system and model cell. Regional flags show the clearest coexistence of a

@@ -1,12 +1,35 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
 **From Glyph Directions to Output Fingerprints: A Controlled Pre-Causal Study in GPT-2**
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
+
+## InterpScience 2026 submission sprint
+
+The official [InterpScience call for papers](https://interpscience.github.io/cfp)
+lists **September 1, 2026, Anywhere on Earth** as the deadline. It allows short
+papers up to five pages and long papers up to nine pages, excluding references
+and appendix. The working target is a long paper; the five-page format remains
+a fallback if the evidence-bearing narrative cannot be edited cleanly in time.
+
+Internal schedule:
+
+- **August 29:** freeze the scientific core at T12; land its bilingual result,
+  independent validation, public evidence, and figure/table inputs.
+- **August 30:** produce the first complete English draft, prioritizing methods,
+  T10–T12 results, limitations, and the negative-result narrative.
+- **August 31:** freeze claims and figures, run reproducibility and double-blind
+  checks, and move all unvalidated T13 material to future work.
+- **September 1 JST:** upload and verify the submission rather than relying on
+  the final AoE hours.
+
+T13-C is not on the critical path. A bounded T13 exploratory panel may be added
+only if it is complete and independently validated before the August 31 paper
+freeze; otherwise the decision map is the future-work contribution.
 
 ## Proposed central claim
 
@@ -210,8 +233,8 @@ motivate T11 but do not select a favorable T10 cell.
 
 T11 froze a nine-cell glyph-system decomposition atlas before any T11 model
 forward. It then completed all 843 acquisition items, 477 shards, 73,566
-forwards, and 982,512 FP32 readout vectors. The separately assigned 268-item
-reserve still has zero model forwards. The atlas includes exact token-length
+forwards, and 982,512 FP32 readout vectors. Its separately assigned 268-item
+reserve had zero model forwards at T11 completion. The atlas includes exact token-length
 wrong-label controls, a complete two-carrier by four-distance grid,
 raw-last-block and returned-final endpoints, and a fixed 192-item
 normalized-depth subset.
@@ -229,9 +252,31 @@ The atlas remains model-conditioned: cross-model item agreement was weak,
 strict first-token coverage was sparse for some systems, and only 8/36 ordered
 Qwen profiles were strictly increasing. It cannot rescue T10 or establish
 semantics, mechanism, causality, scale, tuning, tokenizer independence, or
-model generality. Any confirmatory T12 use of the reserve requires a new freeze
-of the model family, endpoint, practical floor, context rule, controls,
-heterogeneity rule, and multiplicity family.
+model generality.
+
+## Completed T12 one-shot reserve confirmation
+
+T12 separately froze the model family, returned-final endpoint, practical
+floors, context rule, exact-length and strict-prefix controls, heterogeneity
+gates, and two-hypothesis Holm family before opening any reserve item. It then
+acquired the complete ZWJ reserve (96 items) and regional-flag reserve (64
+items) across all nine roles and eight contexts: 90 shards, 9,792 forwards, and
+39,168 FP32 vectors.
+
+Neither registered hypothesis was confirmed. `H_ZWJ_FUSION` had statistic
+`0.000369`, raw `p = 0.05496`, and Holm `p = 0.10992`. Regional
+presentation/fusion was weakly directional (`0.002767`, component
+`p = 0.03538`), but regional component tracking was `0.000666`,
+`p = 0.12950`; the required intersection-union/Holm decision was therefore
+`p = 0.12950`. All three components missed their practical floor, with zero of
+nine model summaries reaching it.
+
+The manuscript should present T12 as a prospective negative confirmation that
+attenuates the strongest T11 discovery patterns. It is evidence for the value
+of untouched reserves, practical floors, and model-heterogeneity gates, not
+evidence that models lack emoji representations. An analyzer-independent
+validator recomputed 432 cell medians, all three 49,999-draw tests, and every
+decision gate with zero mismatches.
 
 ## Research questions
 
@@ -249,6 +294,7 @@ heterogeneity rule, and multiplicity family.
 12. Does the fixed layer-31 glyph/name-versus-codepoint retrieval contrast reproduce across every carrier-distance cell in a deterministic untouched Mistral reserve?
 13. Does that same returned-final-state retrieval contrast meet both the statistical and practical replication rules in at least three of four frozen core model/tokenizer cells after exact token-count matching?
 14. Across frozen multi-codepoint glyph systems, do matched-label margins track whole-sequence names, deterministic component labels, or decomposed forms, and at which normalized depth or final-norm boundary do the nine cells diverge?
+15. Do the frozen T11 ZWJ fusion and regional dual candidates reproduce at prespecified statistical and practical magnitude in their complete untouched reserve subsets?
 
 Questions 1–3 are exploratory baseline questions. Milestone 2 gives a mixed answer to question 4, subject to the open inferential qualifications. T2 gives a bounded negative/mixed observational answer to one narrow part of question 6, but independent-backend and claim-matched replication remain required before the paper freezes a stronger claim. Question 5 remains open.
 Question 7 is answered only descriptively by E1 and is not promoted to a
@@ -282,8 +328,10 @@ scale, tuning, semantic, causal, or model-general claim.
 T11 gives an exploratory, non-confirmatory answer to question 14: no single
 landing pattern dominates. ZWJ fusion is the strongest narrow candidate,
 regional flags show a secondary dual pattern, and other systems remain mixed
-or bounded nulls. The reserve can answer only a later, narrower T12 question
-frozen before its first model forward.
+or bounded nulls. T12 gives a negative answer to question 15 under its frozen
+combined rules: neither candidate was confirmed, and no component reached its
+practical floor in any model summary. This closes the reserve question without
+changing T10 or converting the result into a semantic null.
 
 ## Planned paper structure
 
@@ -511,7 +559,8 @@ The parity receipt is an engineering result and must not be counted as an indepe
 | The T9 returned-final-state item/name alignment meets the frozen cross-model replication rule | not established by T10; the statistical partial conjunction passed, but only two of four core cells met the practical floor | preserve the negative primary; require a newly justified independent replication for any stronger final claim |
 | Exact token-count matching removes the T10 item/name contrast | not supported; all nine matched components remained significant and close to the unrestricted minima | retain the bounded token-count result without calling it tokenizer independence |
 | The monotone T10 Qwen profile establishes a scale law | not supported; four checkpoint cells are descriptive and size remains confounded | require a dedicated size-identification design |
-| T11 establishes whether emoji meaning is compositional or lexicalized | not established; the completed atlas has system-specific, model-conditioned operational contrasts rather than one semantic landing pattern | report the discovery atlas as exploratory; freeze a narrower T12 before opening reserve model outcomes |
+| T11 establishes whether emoji meaning is compositional or lexicalized | not established; the completed atlas has system-specific, model-conditioned operational contrasts rather than one semantic landing pattern | report the discovery atlas as exploratory and T12 as its separate negative confirmation |
+| T12 confirms ZWJ fusion or a regional dual structure | not supported; both registered hypotheses failed, and all components missed their practical floors | preserve the one-shot negative result; do not rescue it with another endpoint, layer, or reserve subset |
 | The result changes generated behavior | not tested | sealed generation experiment |
 
 ## Statistical commitments
@@ -525,8 +574,9 @@ The parity receipt is an engineering result and must not be counted as an indepe
 - The `1/1001` exploratory permutation floor will not be presented as a multiplicity-corrected global result.
 - Negative and non-positive cells will remain visible.
 - T11 system, view, context, endpoint, depth, metric, and model choices remain
-  fixed; discovery outcomes cannot repair them. The 268 reserve items still
-  have zero model forwards, and no T12 claim exists without a separate freeze.
+  fixed; discovery outcomes cannot repair them. T12 opened only its frozen ZWJ
+  and regional subsets once, and its negative decision cannot be rescued by an
+  alternate endpoint, threshold, model subset, or post-hoc family.
 - E1 intervals remain descriptive; no p-value, multiplicity decision,
   confirmatory status, or layer-comparison inference will be retrofitted.
 - T2's two midpoint p-values and Holm family remain the only authorized
@@ -571,8 +621,10 @@ The parity receipt is an engineering result and must not be counted as an indepe
   replace a core cell, promote an extension cell, or relabel the Qwen and
   Mistral secondary profiles as scale, tuning, or independent replication.
 - preserve T11 as exploratory and model-conditioned; do not select only
-  favorable cells, relabel exact-length matching as tokenizer independence, or
-  open the reserve before a narrow T12 freeze.
+  favorable cells or relabel exact-length matching as tokenizer independence.
+- preserve T12 as a completed one-shot negative confirmation; do not lower its
+  practical floors, replace its model roster, promote the regional component
+  `p = 0.03538` alone, or add an endpoint rescue.
 
 No full manuscript is claimed at this stage. The English paper remains the Phase I endpoint.
 
@@ -602,6 +654,9 @@ The preprint package should contain or point to:
 - the T11 frozen inputs, nine validated acquisition summaries, joint analysis,
   independent item-margin/agreement/depth recomputation, compact public bundle,
   and an external checksum-bound archive for omitted dense arrays;
+- the T12 freeze, nine run/shard receipts, 432 item-contrast rows, joint primary
+  result, independent randomization/gate recomputation, and compact public
+  bundle with omitted raw activations bound by checksum;
 - artifact-audit receipt;
 - versioned analysis and figure-generation scripts;
 - English manuscript, supplementary material, and Japanese public summary.

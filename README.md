@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -40,7 +40,9 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | Multifamily dense CUDA carrier-distance v0 | `no_dense_model_distance_attenuation` | Four-model Holm family: no rejection; Mistral distance-1 raw p = 0.00005 but attenuation p = 0.46975 |
 | Mistral 7B base depth-by-distance v0 | `recurrence_and_early_depth_attenuation_excess` | Fixed recurrence and early-minus-late components both raw p = 0.00005; selected post-T6 base cell, not independent confirmation |
 | T11 matched glyph/name atlas | positive median margin in all 72 returned-final cells for presentation, modifier, ZWJ, and regional systems | exploratory; exact target-token-length controls passed, but strict first-token coverage was sparse for some systems |
-| T11 decomposition atlas | ZWJ fusion contrast positive in 65/72 returned-final cells | strongest narrow T12 candidate; cross-model agreement was weak and the 268-item reserve remains unopened |
+| T11 decomposition atlas | ZWJ fusion contrast positive in 65/72 returned-final cells | exploratory discovery candidate; cross-model agreement was weak |
+| T12 ZWJ reserve confirmation | statistic 0.000369; raw p = 0.05496; Holm p = 0.10992 | not confirmed; 0/9 models reached the frozen 0.005 practical floor |
+| T12 regional dual reserve confirmation | presentation p = 0.03538, component p = 0.12950; IUT/Holm p = 0.12950 | not confirmed; both regional statistics were below the frozen 0.02 floors |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -298,7 +300,7 @@ or tuning claims. See the [complete result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPL
 [frozen protocol](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0.md), and
 [compact evidence](artifacts/semantic_atlas_cross_model_replication_v0/README.md).
 
-### T10 diagnostics and completed T11 atlas
+### T10 diagnostics, T11 discovery, and T12 reserve confirmation
 
 T10-D keeps the negative T10 primary unchanged and reconstructs the raw
 activation-derived metrics exactly: 333 shards, 36 arrays, and 84,096 scalar
@@ -309,7 +311,8 @@ and model-conditioned raw-to-final changes. No item was a top-1 hit in all nine
 models. These are diagnostics for the next design, not a rescue of T10.
 
 T11 then completed the frozen nine-model discovery atlas: 477 shards, 73,566
-model forwards, 982,512 FP32 readout vectors, and zero reserve forwards. Exact
+model forwards, 982,512 FP32 readout vectors, and zero reserve forwards at T11
+completion. Exact
 target-token-length controls passed in every required system. Returned-final
 glyph/name margins were positive in all 72 cells for presentation, modifier,
 ZWJ, and regional systems; keycaps were positive in 65/72. The most coherent
@@ -319,11 +322,23 @@ pattern. Cross-model item agreement remained weak, only 8/36 ordered Qwen
 profiles were strictly increasing, and first-token-matched coverage was sparse
 for atomic and presentation systems. T11 is therefore an exploratory atlas,
 not a semantic, causal, tokenizer-independent, scale, tuning, or model-general
-result. Its separately assigned 268-item reserve remains unopened until a
-narrow T12 endpoint, model family, practical floor, context rule, and
-multiplicity family are frozen. See the [T11 result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md),
+result. See the [T11 result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md),
 [compact evidence](artifacts/glyph_system_decomposition_v0/README.md), and
 [frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md).
+
+T12 subsequently froze and opened the complete 96-item ZWJ and 64-item
+regional-flag reserve subsets across the same nine roles and eight contexts.
+All 9,792 forwards and 39,168 returned-final vectors completed. Neither
+registered hypothesis was confirmed. ZWJ had statistic `0.000369`, raw
+`p = 0.05496`, and Holm `p = 0.10992`. Regional presentation/fusion was weakly
+directional (`0.002767`, component `p = 0.03538`), but regional component
+tracking was `0.000666`, `p = 0.12950`; the dual IUT/Holm decision was therefore
+`p = 0.12950`. All three components missed their practical floors and had zero
+models at those floors. An analyzer-independent validator reconstructed 432
+cell medians, all three 49,999-draw tests, and every gate with zero mismatches.
+See the [T12 result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md),
+[compact evidence](artifacts/glyph_system_reserve_confirmation_v0/README.md),
+and [T13 decision map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md).
 
 ### E2 engineering results
 
@@ -543,6 +558,9 @@ Project-authored public documentation is maintained in English and Japanese:
 | Semantic atlas cross-model diagnostics v1 | [SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) | [SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) |
 | Glyph-system decomposition atlas v0 results (T11) | [GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) | [GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) |
 | Glyph-system decomposition atlas v0 (T11) | [GLYPH_SYSTEM_DECOMPOSITION_V0.md](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) | [GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) |
+| Glyph-system reserve confirmation v0 results (T12) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) |
+| Glyph-system reserve confirmation v0 (T12) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md) | [GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md) |
+| Emoji steering specificity atlas v0 (T13 decision map) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -559,13 +577,13 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. T10 kept that population and transport fixed across nine model/tokenizer cells. Its statistical partial conjunction passed, but its frozen practical replication rule failed at two of four core cells, so cross-model replication was not established. Exact token-count matching did not erase the contrast, while tokenization independence, scale, tuning, semantics, causality, and model generality remain unauthorized. T10-D preserves that primary and sharpens the next question without selecting a favorable model. T11 is frozen as a nine-cell exploratory atlas of unusual glyph systems, with 843 acquisition items and 268 reserve items; it cannot close a paper gate or alter T10, and T12 must be frozen before any reserve model outcome is opened. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, the one negative CKA contrast inside the positive T8 retrieval result, T10's statistical/practical split, and the exploratory status of T11. Causal testing, an independent implementation or appropriately independent replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. T10 kept that population and transport fixed across nine model/tokenizer cells. Its statistical partial conjunction passed, but its frozen practical replication rule failed at two of four core cells, so cross-model replication was not established. Exact token-count matching did not erase the contrast, while tokenization independence, scale, tuning, semantics, causality, and model generality remain unauthorized. T10-D preserves that primary and sharpens the next question without selecting a favorable model. T11 remains a nine-cell exploratory atlas and does not alter T10. T12 then opened the frozen ZWJ and regional reserve subsets once; neither registered decomposition hypothesis was confirmed, and both the negative decision and all heterogeneous cells remain public. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, the one negative CKA contrast inside the positive T8 retrieval result, T10's statistical/practical split, T11's exploratory status, and T12's attenuation from discovery to reserve. Causal testing, an independent implementation or appropriately independent replication, and archival evidence remain paper gates.
 
-T11 acquisition and discovery analysis are now complete under that frozen
-design. The bounded result is a model-conditioned decomposition atlas with a
-prospective ZWJ fusion candidate for T12; it is not a Phase I gate closure.
-The T10 primary remains unchanged, and all 268 T11 reserve items still have
-zero model forwards.
+T12 is also complete under its separate one-shot freeze. Its bounded result is
+that neither the ZWJ fusion candidate nor the regional dual candidate met the
+registered statistical-plus-practical rule. The T10 primary remains unchanged.
+The next specificity study is an option map only; it requires a new exploratory
+set and, for any confirmation, a new untouched bank.
 
 ## Validation
 

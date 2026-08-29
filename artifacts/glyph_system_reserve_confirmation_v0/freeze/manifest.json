@@ -1,0 +1,118 @@
+{
+  "claim_boundary": "T12 is a one-shot confirmation in the complete 96-item ZWJ and 64-item regional-flag reserves selected before T11 acquisition. It tests two discovery-informed hypotheses at the API-returned final hidden state with exact target-token-length controls, a first-target-token sensitivity gate, fixed practical floors, fixed model-heterogeneity gates, and Holm correction. A positive result may establish only reproducibility of the operational contrasts in this fixed model/tokenizer roster and transport grid. It cannot establish emoji meaning, understanding, causality, mechanism, behavioral steering, tokenizer independence, a scale law, instruction-tuning effects, architecture generality, model-population generality, or independent replication; it cannot rescue or alter T10.",
+  "design_preflight_sha256": "c4d181a32e76c36bca891301aed7434b3255031cdfac6a4e76e561dbf267ac75",
+  "endpoint": {
+    "alternative_endpoint_rescue": "forbidden",
+    "api_contract": "output.hidden_states[-1]",
+    "intermediate_depths_stored": false,
+    "interpretation": "model_API_returned_final_hidden_state_after_final_norm_when_implemented",
+    "name": "returned_final_hidden_state",
+    "raw_last_block_stored": false
+  },
+  "experiment_role": "prospective_single_use_two_hypothesis_confirmation",
+  "frozen_assets": {
+    "configs/glyph_system_reserve_confirmation_v0.yaml": "d85df2698836d8ba86c61b6967306e50762f5a7055f9d8a74d9129f4078dcfa0",
+    "docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md": "7dfb3ad014ffe1bb73c20882302eaf5b8005282d25b32f37d443390d9e426ed9",
+    "docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md": "edb696d69d3e293428b716e4ff437aaaa12f920a5ad42e663c24bd35e03fc9d9",
+    "scripts/glyph_system_reserve_confirmation_v0.py": "d853a0fe30a88b040c53597566672d26b02b9badf5a345ea350421b3ff372068",
+    "tests/test_glyph_system_reserve_confirmation_v0.py": "bf1f48b29260fc529f6349ebed14a7caaaa61f74e99b63dc1ebc50f8e16eb1f1",
+    "validation/glyph_system_reserve_confirmation_v0/design_preflight.json": "c4d181a32e76c36bca891301aed7434b3255031cdfac6a4e76e561dbf267ac75"
+  },
+  "generation_calls_at_freeze": 0,
+  "hypothesis_family": {
+    "contexts_per_model": 8,
+    "correction": "holm_over_two_registered_hypotheses",
+    "elementary_tests": {
+      "regional_component_tracking": {
+        "practical_floor": 0.02,
+        "query_negative": "glyph",
+        "query_positive": "decomposed_form",
+        "randomization_seed": 2026082913,
+        "system": "regional_flag",
+        "target": "component_name"
+      },
+      "regional_presentation_or_fusion": {
+        "practical_floor": 0.02,
+        "query_negative": "decomposed_form",
+        "query_positive": "glyph",
+        "randomization_seed": 2026082912,
+        "system": "regional_flag",
+        "target": "unicode_name"
+      },
+      "zwj_presentation_or_fusion": {
+        "practical_floor": 0.005,
+        "query_negative": "decomposed_form",
+        "query_positive": "glyph",
+        "randomization_seed": 2026082911,
+        "system": "zwj",
+        "target": "unicode_name"
+      }
+    },
+    "family_name": "zwj_fusion_and_regional_dual_structure",
+    "familywise_alpha": 0.05,
+    "heterogeneity_gate": {
+      "maximum_models_at_or_below_negative_practical_floor": 1,
+      "minimum_models_at_or_above_practical_floor": 6,
+      "model_summary": "median_over_eight_context_item_medians"
+    },
+    "item_statistic": "required_control_adjusted_cosine_contrast",
+    "model_cells": 9,
+    "positive_decision_rule": "A registered hypothesis is confirmed only if its Holm-adjusted hypothesis p-value is at most 0.05 and every required elementary test passes its practical, model-heterogeneity, and strict-prefix gates. H_REGIONAL_DUAL uses the maximum of its two component p-values and requires both components; neither component may rescue the other.",
+    "primary_statistic": "median_over_72_model_context_item_medians",
+    "randomization_draws": 49999,
+    "randomization_null": "shared_within_item_swap_of_glyph_and_decomposed_query_forms",
+    "regional_combination": "intersection_union_max_component_p_value",
+    "registered_hypotheses": {
+      "H_REGIONAL_DUAL": {
+        "required_elementary_tests": [
+          "regional_presentation_or_fusion",
+          "regional_component_tracking"
+        ]
+      },
+      "H_ZWJ_FUSION": {
+        "required_elementary_tests": [
+          "zwj_presentation_or_fusion"
+        ]
+      }
+    },
+    "registered_hypothesis_order": [
+      "H_ZWJ_FUSION",
+      "H_REGIONAL_DUAL"
+    ],
+    "strict_prefix_gate": {
+      "cannot_rescue_failed_required_control_test": true,
+      "global_statistic_must_be_positive": true,
+      "minimum_models_with_positive_context_median": 6
+    }
+  },
+  "intervention_calls_at_freeze": 0,
+  "model_order": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "qwen25_0p5b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-glyph-system-reserve-confirmation-v0",
+  "question": "Do the ZWJ fused-form advantage and the regional-flag dual whole/component structure reproduce in the complete, previously unforwarded T11 reserves across the same fixed nine model/tokenizer cells and eight contexts?",
+  "reserve_items": 160,
+  "reserve_model_forward_calls_at_freeze": 0,
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "source_bindings": {
+    "artifacts/glyph_system_decomposition_v0/PUBLIC_MANIFEST.json": "eea2e21b2a00a81de28b5f55c5214d31891956dd7e90905e76d992553741527d",
+    "artifacts/glyph_system_decomposition_v0/analysis/analysis.json": "d6d1eba0203a3d55010f5bca117b626a6aea4f7d6d9c0ea4aa69051498b2ee71",
+    "artifacts/glyph_system_decomposition_v0/validation/independent_validation.json": "efa5387beb83e032ef3af49692011b67a872cf79648d1791eb74585f5439ea13",
+    "configs/glyph_system_decomposition_v0.yaml": "4dfdbfeb7d3c5250c39e0e8aeab566f7450ede89e8138a8c3fcfbbf189193535",
+    "data/manifests/glyph_system_decomposition_selection_v0.json": "7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693",
+    "data/manifests/glyph_system_decomposition_v0.json": "5ef2e31e7bd04f079426d84db1f3437ee2d6278ff47f587826943a5101324f94",
+    "scripts/glyph_system_decomposition_v0.py": "a3743f30ddb50b28f50978f0541e85d79a6dc5de9ee7818ba43921344c07a50f"
+  },
+  "status": "freeze_complete_before_any_t12_reserve_model_forward",
+  "t10_primary_changed": false,
+  "t10_rescue_authorized": false
+}

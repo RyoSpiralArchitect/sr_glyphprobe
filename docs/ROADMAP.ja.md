@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[English](ROADMAP.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
+[English](ROADMAP.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
 
@@ -418,13 +418,29 @@ T10-Dでは、333 raw shard、36 activation array、84,096 scalarを再構築し
 
 ### 完了したT11 — 変則glyph decomposition atlas
 
-状態：探索的なdiscovery atlasとして完了。Reserve 268件のmodel outcomeは未取得のままである。
+状態：探索的なdiscovery atlasとして完了。T11完了時にはreserveは未forwardだった。その後T12が、別の一度限りのfreezeでZWJ / regionalの160件全体を開いた。
 
 T11では、固定した取得対象843件を9つのmodel/tokenizer cellですべて取得した。合計は73,566 forward、477 resumable shard、982,512本のFP32 readoutである。Target token長を完全一致させるwrong-label controlは、必須の全systemで通過した。Returned-finalのglyph/name marginは、presentation、modifier、ZWJ、regionalの72 cellすべてで正、keycapでは65 / 72 cellで正だった。一方、atomicとpresentationではfirst-token一致層のcoverageが大幅に低い。したがって、token長を揃えても残る結果ではあるが、tokenizer非依存性ではない。
 
 次の狭い候補として最も明瞭なのは、returned-finalのZWJ `presentation_or_fusion` contrastである。72 cell中65 cellで正、記述区間が厳密に負のcellはなく、9 model中8 modelでcontext中央値が正だった。Regional flagでもwhole-nameとcomponentの両contrastが正に寄った。一方、modifierとkeycapの分解は範囲の限られたmixed/null patternであり、model間のitem順位一致も弱い。Size順のQwen profileで狭義単調増加したのは36本中8本だけだった。T11が支えるのはmodel依存性を含むdecomposition atlasであり、単一のlanding pattern、意味、因果、tokenizer非依存性、scale、tuning、model一般性ではない。
 
-次はT12を別に凍結する。Reserveへの最初のforwardより前に、model family、endpoint、実用下限、context規則、必須対照とstrict対照、heterogeneity規則、multiplicity familyを固定する。第一候補は狭いZWJ fusionであり、regional component trackingまで含めると確認familyが広がる。[結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)、[compact evidence](../artifacts/glyph_system_decomposition_v0/README.ja.md)、[凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md)に詳細を示す。
+[結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)、[compact evidence](../artifacts/glyph_system_decomposition_v0/README.ja.md)、[凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md)に詳細を示す。
+
+### 完了したT12 — ZWJ / regional reserve確認
+
+状態：完了。登録した仮説はいずれも確認されなかった。
+
+T12では、reserveへの最初のforwardより前に、ZWJ fused-form advantageと、presentation/fusionおよびcomponent trackingの両方を必要とするregional dual仮説を凍結した。その後、未forwardだったZWJ reserve 96件とregional flag reserve 64件を、同じ9 role、2 carrier、4距離ですべて取得した。90 shard、9,792 model forward、returned-final FP32 vector 39,168本が完走し、interventionとgeneration callは0回だった。
+
+`H_ZWJ_FUSION`は統計量`0.000369`、未補正`p = 0.05496`、Holm `p = 0.10992`。Regional presentation/fusionは統計量`0.002767`、component単独`p = 0.03538`だったが、regional component trackingは`0.000666`、`p = 0.12950`であり、intersection-union/Holm判定も`p = 0.12950`となった。登録済み実用床に到達したmodel summaryは、どのcomponentにもなかった。別endpointによる救済なしで、両仮説を未確認のまま残す。
+
+Analyzerをimportしないvalidatorが、432 cell中央値、49,999回の共有item swap検定3件、実用床と異質性gate、regional conjunction、Holm補正を再計算し、不一致は0件だった。T12が閉じるのはreserve questionだけであり、絵文字の意味、mechanism、因果、behavioral steering、tokenizer非依存性、scale law、model一般性は確立しない。[結果全文](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)と[compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.ja.md)に示す。
+
+### T13の選択肢 — emoji-steering specificityへ戻る
+
+状態：設計空間のみ。未凍結であり、確認実験の実行は許可していない。
+
+次の広い問いでは、emoji-derived interventionを、意味を揃えたword、decomposed form、tokenizerごとに構造を揃えた非絵文字Unicode、rarityを揃えたtext、normを揃えたnull directionと比較する。Representation geometryとbehavioral interventionは別laneに保つ。代表3 roleの探索pilotから、後の9 role confirmationを設計してもよい。ただし確認には、現在の研究文脈の外で作る新しい未使用target bankが必要であり、T12 outcome、P2、廃止済みC1 v1を再利用しない。競合説明と着地点は[T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md)にまとめた。
 
 ### Milestone 3 — 対象を絞った因果局在化
 
@@ -499,7 +515,7 @@ T11では、固定した取得対象843件を9つのmodel/tokenizer cellです�
 
 現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くするが、gate 4・5は閉じない。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。続くT10では、このpopulationとtransportを9つの固定セルで保った。Token数完全一致後も差は消えず、統計的な部分連言検定は通過したが、実用下限を満たしたcore cellは4つ中2つだった。したがってT10はclaim-matchedなmixed cross-model結果であり、独立再現、scale、tuning、意味、model一般性ではなく、gate 5も閉じない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。ゲート4、5、8、10は未完了。ゲート9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
-T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了したが、reserve 268件は開いていない。最も明瞭なpatternも、現時点ではT12の事前確認候補であり、論文gateを閉じる結果ではない。Reserveを使うclaimには、最初のreserve forwardより前に別のfreezeが必要である。
+T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13はfuture-workの設計図にとどまり、確認主張には新しいfreezeとtarget bankが必要である。
 
 ## Phase I より先の候補
 

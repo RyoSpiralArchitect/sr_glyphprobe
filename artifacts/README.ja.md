@@ -17,6 +17,7 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `multifamily_colored_shape_geometry_v0/`：2本の完全なcompact activation run、固定深度の全10解析行、2-cell exact-test判定、OLMoの3地点転送検証、public payload manifest。この研究ではraw arrayを省略しない。
 - `semantic_atlas_cross_model_replication_v0/`：T10の9つのcompact prediction、全primary・secondary cell metrics、run/summary/session receipt、raw shard ledgerへのbinding、独立検証、public manifest。Raw activationとmodel weightはGit外に保持する。
 - `glyph_system_decomposition_v0/`：T11のcompact joint analysis、model間geometry・agreement table、item margin・agreement・variance・depth trajectoryの独立再計算、英日reading guide、checksum付きmanifest。Dense activation arrayはGit外に保持する。
+- `glyph_system_reserve_confirmation_v0/`：T12の凍結設計、9 tokenizer preflight、9本のrun receiptとshard index、432 item-contrast行、2仮説のjoint判定、保存済み統計量とgateの独立再計算。Raw activationはGitとSpiralShareの外に保持する。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
@@ -56,9 +57,17 @@ T10は固定した9つのmodel/tokenizer cellをすべて完了した。4 core�
 
 ## T11 glyph-system decompositionの読み方
 
-T11は固定した9つのmodel/tokenizer cellをすべて完了した。合計は477 shard、73,566 model forward、982,512本のFP32 readoutである。Target token長を完全一致させる必須対照はすべて通過し、別に割り当てたreserve 268件へのforwardはゼロのままである。Returned-finalのglyph/name marginは、presentation、modifier、ZWJ、regionalの72 cellすべてで正、keycapでは65 / 72 cellで正だった。
+T11は固定した9つのmodel/tokenizer cellをすべて完了した。合計は477 shard、73,566 model forward、982,512本のFP32 readoutである。Target token長を完全一致させる必須対照はすべて通過し、別に割り当てたreserve 268件へのforwardはT11完了時点ではゼロだった。Returned-finalのglyph/name marginは、presentation、modifier、ZWJ、regionalの72 cellすべてで正、keycapでは65 / 72 cellで正だった。
 
-次に事前確認する候補としてもっとも絞りやすいのは、65 / 72 cellで正だったZWJの`presentation_or_fusion` contrastである。Regional flagには、whole-nameとcomponentの双方に追従する第二のpatternが見えた。一方、model間のitem順位一致は弱く、一部systemではfirst-token一致層のcoverageが疎らで、size順のQwen profileも狭義単調増加は36本中8本だった。したがって、このpublic bundleが支えるのは探索的・model-conditionedなatlasであり、意味、因果、tokenizer非依存性、scale則、tuning、model一般性ではない。独立validatorの判定は`share_with_caveats`である。Stored item margin、agreement、variance decomposition、depth trajectoryは再計算し、geometryは省略したdense arrayが必要なためhashとschemaを検証した。[T11の全結果](../docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)を参照する。
+次に事前確認する候補としてもっとも絞りやすかったのは、65 / 72 cellで正だったZWJの`presentation_or_fusion` contrastである。Regional flagには、whole-nameとcomponentの双方に追従する第二のpatternが見えた。一方、model間のitem順位一致は弱く、一部systemではfirst-token一致層のcoverageが疎らで、size順のQwen profileも狭義単調増加は36本中8本だった。したがって、このpublic bundleが支えるのは探索的・model-conditionedなatlasであり、意味、因果、tokenizer非依存性、scale則、tuning、model一般性ではない。独立validatorの判定は`share_with_caveats`である。Stored item margin、agreement、variance decomposition、depth trajectoryは再計算し、geometryは省略したdense arrayが必要なためhashとschemaを検証した。[T11の全結果](../docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)を参照する。
+
+## T12 reserve confirmationの読み方
+
+T12では、ZWJ 96件とregional flag 64件のreserve subset全体を、9 role・8 contextで別に凍結し、取得した。90 shard、9,792 model forward、returned-final FP32 vector 39,168本が完走した。登録した仮説はいずれも確認されなかった。
+
+ZWJ presentation/fusionは統計量`0.000369`、未補正`p = 0.05496`、Holm `p = 0.10992`。Regional presentation/fusionは弱く正方向だった（`0.002767`、component単独`p = 0.03538`）が、component trackingは`0.000666`、`p = 0.12950`で、regional intersection-union/Holm結果も`p = 0.12950`となった。凍結した実用床に達したmodel summaryはなかった。独立validatorは432 cell中央値をすべて再構築し、49,999回検定3件と全gateを再計算して、不一致0件だった。
+
+Bundleの評価は`share_with_caveats`である。省略したraw activationはhashで拘束するが、独立再構築していない。これは一度限りの負の確認であって、semantic null、因果結果、behavioral steering、tokenizer非依存効果、scale law、model一般性ではない。[T12の全結果](../docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 

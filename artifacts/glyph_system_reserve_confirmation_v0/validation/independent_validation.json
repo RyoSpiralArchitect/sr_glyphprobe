@@ -1,0 +1,68 @@
+{
+  "acquisition": {
+    "contexts_per_model": 8,
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "model_forward_calls": 9792,
+    "models": 9,
+    "readout_vectors": 39168,
+    "reserve_items": 160
+  },
+  "behavioral_steering_claim_authorized": false,
+  "causal_claim_authorized": false,
+  "claim_boundary": "T12 is a one-shot confirmation in the complete 96-item ZWJ and 64-item regional-flag reserves selected before T11 acquisition. It tests two discovery-informed hypotheses at the API-returned final hidden state with exact target-token-length controls, a first-target-token sensitivity gate, fixed practical floors, fixed model-heterogeneity gates, and Holm correction. A positive result may establish only reproducibility of the operational contrasts in this fixed model/tokenizer roster and transport grid. It cannot establish emoji meaning, understanding, causality, mechanism, behavioral steering, tokenizer independence, a scale law, instruction-tuning effects, architecture generality, model-population generality, or independent replication; it cannot rescue or alter T10.",
+  "confirmed_hypotheses": [],
+  "independent_recomputations": {
+    "practical_and_heterogeneity_gates": {
+      "mismatches": 0,
+      "recomputed": 3
+    },
+    "raw_activation_to_item_contrast_derivation": {
+      "reason": "Raw FP32 activations are intentionally omitted from the compact public evidence.",
+      "recomputed": false
+    },
+    "registered_hypotheses_and_holm": {
+      "mismatches": 0,
+      "recomputed": 2
+    },
+    "shared_item_swap_randomization_tests": {
+      "draws_each": 49999,
+      "mismatches": 0,
+      "recomputed": 3
+    },
+    "stored_cell_medians": {
+      "mismatches": 0,
+      "recomputed": 432
+    },
+    "stored_item_contrast_rows": {
+      "mismatches": 0,
+      "recomputed": 432
+    }
+  },
+  "input_bindings": {
+    "analysis_sha256sums_sha256": "89f7ab72d57ca4d89b116bf03c1689f12b44a7e9e56decc93ea0a09e64970e40",
+    "freeze_commit": "ab64488dc4bd28510c353f4370cda5546bb34750",
+    "freeze_manifest_sha256": "38046552a26bef0eb6cdab3222f58041707616028fe89c0eb5104a84f0943738",
+    "primary_result_sha256": "1dee4bd187c5816d809cec27c4972edb217442e7824ef172a7d5933557d491a6",
+    "run_receipt_sha256": {
+      "gemma2_2b_it_bf16": "215ecce7dffb16f91924107c9ca8dd82219b852690f42e5cccb0a5797f81f878",
+      "llama32_3b_base_bf16": "dd26eb15d3febf2d3dbabef817749cea4957e499f6bf3bc931d0cab892945c87",
+      "mistral7b_instruct_v03_bf16": "51f1667ec9816e84af4976c27c0f28c775176ea33d8bf4a30bdd44abaacb400d",
+      "olmo2_1b_base_bf16": "d900049f834c2996e2cd1d8922ce3e02beb0c2892828d7a64d0d3c21abdf64eb",
+      "qwen25_0p5b_base_bf16": "5a5799d9f2ab05f33c002b134976f81043e8a42f1ea30dda7052da11a171c7d3",
+      "qwen25_1p5b_base_bf16": "96d7afd65394a3e80ef2419fc41803de4a5443a81e844c348e23034b24a2080f",
+      "qwen25_3b_base_bf16": "06fd78de832185edf160ca9620c7c45943e687e49ae0ef6b368a315aca80ade6",
+      "qwen25_7b_base_bf16": "f6fdb6811b99406ab301a086077f3609fed521bbd2901f90b230886556456034",
+      "smollm2_1p7b_base_bf16": "e59ab3a0857b931846ac49c6c922b42204f017645be6cd7ce556c3c1ec2a8278"
+    },
+    "runtime_preflight_aggregate_sha256": "3a51837c6c6a149b88e05db2528b5ebd2437d50c89e8ffdcfaaee1a343bc8ee1"
+  },
+  "model_general_claim_authorized": false,
+  "outcome_pattern": "neither_registered_hypothesis_confirmed",
+  "overall_assessment": "share_with_caveats",
+  "protocol_id": "glyphprobe-glyph-system-reserve-confirmation-v0",
+  "schema_version": 1,
+  "semantic_claim_authorized": false,
+  "status": "pass",
+  "t10_primary_changed": false
+}

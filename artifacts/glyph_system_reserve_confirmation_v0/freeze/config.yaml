@@ -1,0 +1,256 @@
+protocol_id: glyphprobe-glyph-system-reserve-confirmation-v0
+experiment_label: T12
+experiment_role: prospective_single_use_two_hypothesis_confirmation
+status_before_execution: design_candidate_zero_t12_reserve_model_forwards
+pre_execution_correction:
+  superseded_freeze_commit: 7b49d801b49d52052f0b3d73021a628d77a9986b
+  reason: >-
+    The first published v0 freeze copied obsolete pre-T11 package versions
+    into this config. The runner delegated runtime validation to the correctly
+    pinned T11 implementation, so no mismatched execution occurred. This
+    correction was frozen before tokenizer preflight, model-weight loading, or
+    any T12 reserve model forward.
+  t12_reserve_model_forward_calls_before_correction: 0
+question: >-
+  Do the ZWJ fused-form advantage and the regional-flag dual whole/component
+  structure reproduce in the complete, previously unforwarded T11 reserves
+  across the same fixed nine model/tokenizer cells and eight contexts?
+claim_boundary: >-
+  T12 is a one-shot confirmation in the complete 96-item ZWJ and 64-item
+  regional-flag reserves selected before T11 acquisition. It tests two
+  discovery-informed hypotheses at the API-returned final hidden state with
+  exact target-token-length controls, a first-target-token sensitivity gate,
+  fixed practical floors, fixed model-heterogeneity gates, and Holm correction.
+  A positive result may establish only reproducibility of the operational
+  contrasts in this fixed model/tokenizer roster and transport grid. It cannot
+  establish emoji meaning, understanding, causality, mechanism, behavioral
+  steering, tokenizer independence, a scale law, instruction-tuning effects,
+  architecture generality, model-population generality, or independent
+  replication; it cannot rescue or alter T10.
+
+source_bindings:
+  t11_config:
+    path: configs/glyph_system_decomposition_v0.yaml
+    sha256: 4dfdbfeb7d3c5250c39e0e8aeab566f7450ede89e8138a8c3fcfbbf189193535
+  t11_selection_manifest:
+    path: data/manifests/glyph_system_decomposition_selection_v0.json
+    sha256: 7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693
+  t11_freeze_manifest:
+    path: data/manifests/glyph_system_decomposition_v0.json
+    sha256: 5ef2e31e7bd04f079426d84db1f3437ee2d6278ff47f587826943a5101324f94
+  t11_analysis:
+    path: artifacts/glyph_system_decomposition_v0/analysis/analysis.json
+    sha256: d6d1eba0203a3d55010f5bca117b626a6aea4f7d6d9c0ea4aa69051498b2ee71
+  t11_public_manifest:
+    path: artifacts/glyph_system_decomposition_v0/PUBLIC_MANIFEST.json
+    sha256: eea2e21b2a00a81de28b5f55c5214d31891956dd7e90905e76d992553741527d
+  t11_independent_validation:
+    path: artifacts/glyph_system_decomposition_v0/validation/independent_validation.json
+    sha256: efa5387beb83e032ef3af49692011b67a872cf79648d1791eb74585f5439ea13
+  t11_implementation:
+    path: scripts/glyph_system_decomposition_v0.py
+    sha256: a3743f30ddb50b28f50978f0541e85d79a6dc5de9ee7818ba43921344c07a50f
+
+population:
+  source_role: reserve_unrun
+  system_order: [zwj, regional_flag]
+  expected_items_by_system: {zwj: 96, regional_flag: 64}
+  expected_items: 160
+  item_order: system_order_then_ascending_unicode_source_index
+  identities_public_before_t12: true
+  model_outcomes_inspected_before_t12: false
+  t11_model_forward_calls: 0
+  replacement_exclusion_or_reordering_after_freeze: forbidden
+
+views:
+  order: [glyph, unicode_name, component_name, decomposed_form]
+  zwj: [glyph, unicode_name, decomposed_form]
+  regional_flag: [glyph, unicode_name, component_name, decomposed_form]
+  codepoint_literal_forwarded: false
+  undeclared_view_analysis: forbidden
+
+input:
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  position_rule: raw_view_token_count_plus_distance_minus_one
+  fused_distance_readout: true
+  exact_boundary_rule: raw_view_token_ids_plus_eight_identical_single_carrier_tokens
+  batch_size_unique_sequences: 1
+
+endpoint:
+  name: returned_final_hidden_state
+  api_contract: output.hidden_states[-1]
+  interpretation: model_API_returned_final_hidden_state_after_final_norm_when_implemented
+  raw_last_block_stored: false
+  intermediate_depths_stored: false
+  alternative_endpoint_rescue: forbidden
+
+tokenization_controls:
+  matched_incorrect_label_targets: [unicode_name, component_name]
+  required_match_key: [glyph_system, target_token_count]
+  strict_match_key: [glyph_system, target_token_count, first_target_token_id]
+  mapping_rule: deterministic_one_step_cycle_after_control_hash_sort_within_each_non_singleton_stratum
+  mapping_namespace: glyphprobe-t12-v0-control
+  self_match_forbidden: true
+  required_minimum_coverage: 0.75
+  strict_prefix_minimum_coverage: 0.70
+  all_control_maps_fixed_before_model_weights_load: true
+  no_outcome_dependent_control_repair: true
+
+hypothesis_family:
+  family_name: zwj_fusion_and_regional_dual_structure
+  familywise_alpha: 0.05
+  correction: holm_over_two_registered_hypotheses
+  registered_hypothesis_order: [H_ZWJ_FUSION, H_REGIONAL_DUAL]
+  regional_combination: intersection_union_max_component_p_value
+  primary_statistic: median_over_72_model_context_item_medians
+  item_statistic: required_control_adjusted_cosine_contrast
+  randomization_null: shared_within_item_swap_of_glyph_and_decomposed_query_forms
+  randomization_draws: 49999
+  model_cells: 9
+  contexts_per_model: 8
+  heterogeneity_gate:
+    model_summary: median_over_eight_context_item_medians
+    minimum_models_at_or_above_practical_floor: 6
+    maximum_models_at_or_below_negative_practical_floor: 1
+  strict_prefix_gate:
+    global_statistic_must_be_positive: true
+    minimum_models_with_positive_context_median: 6
+    cannot_rescue_failed_required_control_test: true
+  elementary_tests:
+    zwj_presentation_or_fusion:
+      system: zwj
+      query_positive: glyph
+      query_negative: decomposed_form
+      target: unicode_name
+      practical_floor: 0.005
+      randomization_seed: 2026082911
+    regional_presentation_or_fusion:
+      system: regional_flag
+      query_positive: glyph
+      query_negative: decomposed_form
+      target: unicode_name
+      practical_floor: 0.02
+      randomization_seed: 2026082912
+    regional_component_tracking:
+      system: regional_flag
+      query_positive: decomposed_form
+      query_negative: glyph
+      target: component_name
+      practical_floor: 0.02
+      randomization_seed: 2026082913
+  registered_hypotheses:
+    H_ZWJ_FUSION:
+      required_elementary_tests: [zwj_presentation_or_fusion]
+    H_REGIONAL_DUAL:
+      required_elementary_tests:
+        - regional_presentation_or_fusion
+        - regional_component_tracking
+  positive_decision_rule: >-
+    A registered hypothesis is confirmed only if its Holm-adjusted hypothesis
+    p-value is at most 0.05 and every required elementary test passes its
+    practical, model-heterogeneity, and strict-prefix gates. H_REGIONAL_DUAL
+    uses the maximum of its two component p-values and requires both
+    components; neither component may rescue the other.
+
+discovery_design_basis:
+  source_role: t11_discovery_only
+  endpoint: returned_final_hidden_state
+  cell_count_per_contrast: 72
+  zwj_presentation_or_fusion:
+    global_cell_median: 0.0142
+    positive_cells: 65
+    positive_model_context_medians: 8
+    models_at_or_above_t12_floor: 8
+    models_at_or_below_negative_t12_floor: 0
+  regional_presentation_or_fusion:
+    global_cell_median: 0.0668
+    positive_cells: 59
+    positive_model_context_medians: 7
+    models_at_or_above_t12_floor: 6
+    models_at_or_below_negative_t12_floor: 0
+  regional_component_tracking:
+    global_cell_median: 0.0441
+    positive_cells: 58
+    positive_model_context_medians: 8
+    models_at_or_above_t12_floor: 6
+    models_at_or_below_negative_t12_floor: 1
+  threshold_selection_role: discovery_informed_fixed_before_any_reserve_forward
+  no_scale_law_or_model_general_claim: true
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  order:
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - olmo2_1b_base_bf16
+    - gemma2_2b_it_bf16
+    - qwen25_0p5b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - qwen25_3b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  roster_changed_after_t11: false
+  inference_population: fixed_roster_only_not_a_random_model_sample
+
+acquisition:
+  item_shard_size: 16
+  expected_shards_per_model: 10
+  expected_total_shards: 90
+  expected_present_item_views: 544
+  expected_model_forward_calls_per_model: 1088
+  expected_total_model_forward_calls: 9792
+  expected_readout_vectors_per_model: 4352
+  expected_total_readout_vectors: 39168
+  activation_dtype: float32
+  axis_order: [item, view, carrier, distance, width]
+  absent_view_storage: NaN_with_explicit_boolean_view_mask
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+  raw_activations_put_on_spiralshare: false
+
+analysis:
+  analysis_role: prospectively_frozen_two_hypothesis_confirmation
+  normalization: subtract_within_vector_mean_then_L2_normalize
+  control_adjustment: paired_correct_cosine_minus_deterministic_matched_wrong_label_cosine
+  item_swap_is_shared_across_all_models_and_contexts_for_the_same_unicode_item: true
+  descriptive_outputs:
+    - all_72_required_control_cell_medians
+    - per_model_eight_context_median
+    - strict_prefix_sensitivity_summaries
+    - randomization_null_quantiles
+  prohibited_outputs_before_primary_seal:
+    - item_subgroup_selection
+    - context_selection
+    - model_selection
+    - alternative_endpoint_selection
+    - generation
+    - intervention
+
+runtime:
+  execution_device: cuda
+  hardware_pin: NVIDIA GeForce RTX 5090
+  parameter_dtype: bfloat16
+  activation_export_dtype: float32
+  local_files_only: true
+  trust_remote_code: false
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+execution_policy:
+  fresh_contention_check_before_model_load: true
+  fresh_contention_check_before_every_shard: true
+  yield_on_foreign_compute: true
+  model_downloads_during_execution: forbidden
+  generation_calls: 0
+  intervention_calls: 0
+  reserve_model_forward_calls_at_freeze: 0

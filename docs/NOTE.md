@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
 
-[日本語](NOTE.ja.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -443,7 +443,8 @@ Before any T11 forward, 843 acquisition items, 268 reserve items, five views,
 token-length-matched wrong-label controls, two carriers, four distances, two
 broad endpoints, and a 192-item depth subset were frozen across the same nine
 T10 cells. The discovery run then completed all 477 shards: 73,566 forwards and
-982,512 FP32 readout vectors, while every reserve item remained unforwarded.
+982,512 FP32 readout vectors, while every reserve item remained unforwarded at
+T11 completion.
 
 The first result is broad but bounded. Every required exact target-token-length
 control passed. At the returned-final endpoint, the glyph/name margin was
@@ -461,10 +462,39 @@ context medians were positive. Regional flags leaned toward both their whole
 official names and their component labels. Modifiers and keycaps instead gave
 bounded mixed/null contrasts. The useful landing point is therefore a
 model-conditioned atlas with a prospective ZWJ T12 candidate—not a verdict
-that emoji meaning is compositional or lexicalized. T12 must bind its endpoint,
-model family, practical floor, context rule, controls, heterogeneity rule, and
-multiplicity family before the first reserve forward. The [complete T11 result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md)
-keeps those limits alongside the numbers.
+that emoji meaning is compositional or lexicalized. The [complete T11
+result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) keeps those limits alongside
+the numbers.
+
+## T12: the reserve refused the attractive story
+
+T12 then did the expensive but clarifying thing. Before any reserve forward it
+froze the returned-final endpoint, practical floors, exact-length and
+strict-prefix controls, model heterogeneity rules, and a two-hypothesis Holm
+family. It opened every ZWJ reserve item (96) and every regional-flag reserve
+item (64) once across the same nine model roles and eight contexts. The run
+completed 90 shards, 9,792 forwards, and 39,168 FP32 vectors.
+
+Neither registered hypothesis was confirmed. The ZWJ statistic was `0.000369`,
+with raw `p = 0.05496` and Holm `p = 0.10992`. Regional presentation/fusion
+kept a weak directional trace—eight of nine model summaries were positive and
+its component `p` was `0.03538`—but the statistic was only `0.002767`, far below
+the frozen `0.02` floor. Regional component tracking was `0.000666`,
+`p = 0.12950`, so the required regional conjunction also ended at
+`p = 0.12950`. Not one model summary reached any registered practical floor.
+
+That is not a failure of the research program. It is the reserve doing its job.
+The strongest T11 contrasts shrank before they could become a semantic story.
+An analyzer-independent validator reconstructed all 432 cell medians, reran
+the three 49,999-draw tests, and checked every gate with zero mismatches. The
+[complete T12 result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) preserves
+the negative cells and the exact claim boundary.
+
+The next question is now better formed: does an emoji-derived intervention do
+anything that meaning-matched words, decomposed forms, matched non-emoji
+Unicode, rare-token controls, and norm-matched random directions do not? The
+[T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) keeps that question
+open without using T12 to tune its answer.
 
 ## What we can say—and what we cannot
 
@@ -508,8 +538,9 @@ practical floor. It supports three bounded model/tokenizer-cell alignments and
 a negative cross-model primary, not tokenization independence, scale, tuning,
 semantics, causality, independent replication, or model generality.
 T10-D preserves that primary and supplies only diagnostic decomposition. T11
-adds a complete exploratory discovery atlas, not confirmatory evidence. It
-leaves the T10 primary unchanged and the 268-item reserve unopened.
+adds a complete exploratory discovery atlas, not confirmatory evidence. T12
+then supplies a separately frozen negative confirmation of its ZWJ and
+regional candidates. Neither result changes the T10 primary.
 
 ## What comes next
 
@@ -536,12 +567,12 @@ independent replication of the frozen interaction. Each requires a new
 protocol.
 
 T10 is also complete and must not be rescued by lowering its practical floor,
-replacing a core model, or promoting an extension cell. T11 is complete as a
-clearly labeled unusual-glyph discovery atlas and cannot revise T10. The clean
-next step is to freeze a narrow T12 around the ZWJ presentation-or-fusion
-candidate. Regional component tracking remains a secondary option, but adding
-it would widen the confirmatory family. Reserve model outcomes remain closed
-until that separate freeze.
+replacing a core model, or promoting an extension cell. T11 remains a clearly
+labeled unusual-glyph discovery atlas and cannot revise T10. T12 is complete
+and must not be rescued by lowering its floors, selecting a model subset, or
+promoting the regional presentation component alone. The clean next step is a
+new exploratory specificity design, with any later confirmation using a new
+untouched bank outside the exposed research context.
 
 For E2, the research owner selected a separate Transformers/MPS-only scientific
 route. V1 failed its tokenizer preflight before model-weight loading or any
@@ -573,7 +604,7 @@ cross-model primary must also appear together. The paper should state that
 token-count matching retained the signal, while only two core cells cleared
 the practical floor and no tokenizer-independent or model-general claim was
 authorized.
-T10-D's heterogeneous diagnostics and T11's completed exploratory status must
-remain explicit. T11 can enter the manuscript as an atlas with bounded
-model-conditioned patterns; a later T12 reserve result must be presented as a
-separately frozen confirmation rather than folded back into T11.
+T10-D's heterogeneous diagnostics, T11's exploratory status, and T12's
+completed negative confirmation must remain explicit. T12 must be presented as
+a separately frozen result rather than folded back into T11 or rescued by a
+new endpoint.

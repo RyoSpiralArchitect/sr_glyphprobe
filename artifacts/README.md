@@ -41,6 +41,11 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   item margins, agreement, variance, and depth trajectories, bilingual reading
   guides, and checksum-bound manifests. The dense activation arrays remain
   outside Git.
+- `glyph_system_reserve_confirmation_v0/` contains T12's frozen design,
+  nine tokenizer preflights, nine run receipts and shard indexes, 432
+  item-contrast rows, the two-hypothesis joint decision, and an independent
+  recomputation of all stored statistics and gates. Raw activations remain
+  outside Git and SpiralShare.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -94,7 +99,7 @@ independent replication, or model generality. See the [complete T10 result](../d
 T11 completed all nine frozen model/tokenizer cells: 477 shards, 73,566 model
 forwards, and 982,512 FP32 readout vectors. Every required exact
 target-token-length control passed, while the separately assigned 268-item
-reserve remained unforwarded. Returned-final glyph/name margins were positive
+reserve was unforwarded at T11 completion. Returned-final glyph/name margins were positive
 in all 72 cells for presentation, modifier, ZWJ, and regional systems and in
 65/72 keycap cells.
 
@@ -109,6 +114,27 @@ scale law, tuning, or model generality. The independent validator reports
 variance decompositions, and depth trajectories, while geometry is
 hash/schema-checked because its recomputation requires the omitted dense
 arrays. See the [complete T11 result](../docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md).
+
+## T12 reserve-confirmation reading
+
+T12 separately froze and acquired the complete ZWJ (96 items) and regional-flag
+(64 items) reserve subsets across all nine roles and eight contexts. All 90
+shards, 9,792 model forwards, and 39,168 FP32 returned-final vectors completed.
+Neither registered hypothesis was confirmed.
+
+ZWJ presentation/fusion had statistic `0.000369`, raw `p = 0.05496`, and Holm
+`p = 0.10992`. Regional presentation/fusion was directionally weak
+(`0.002767`, component `p = 0.03538`), but component tracking was `0.000666`,
+`p = 0.12950`; the regional intersection-union/Holm result was therefore
+`p = 0.12950`. No model summary reached any frozen practical floor. The
+independent validator reconstructed all 432 cell medians, reran the three
+49,999-draw tests, and recomputed every gate with zero mismatches.
+
+The bundle is rated `share_with_caveats`: omitted raw activations are hash-bound
+but not independently reconstructed. This is a one-shot negative confirmation,
+not a semantic null, causal result, behavioral-steering result, tokenizer-
+independent effect, scale law, or model-general claim. See the [complete T12
+result](../docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md).
 
 ## Milestone 2 reading
 
