@@ -139,6 +139,8 @@ def test_inventory_stays_closed_without_full_queue(tmp_path: Path) -> None:
     assert result["roles_complete"] == 0
     assert result["scientific_open_authorized"] is False
     assert result["scientific_values_parsed"] is False
+    assert result["created_at_utc"].endswith("+00:00")
+    assert result["inspection_scope"] == "sealed_paths_counts_sizes_and_npy_headers"
     assert "full_nine_role_queue_not_complete" in result["scientific_open_blockers"]
 
 

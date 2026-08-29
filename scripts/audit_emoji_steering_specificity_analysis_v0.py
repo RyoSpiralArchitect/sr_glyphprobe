@@ -14,6 +14,7 @@ import json
 import os
 import uuid
 from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping
 
@@ -455,11 +456,17 @@ def inventory(run_root: Path, *, verify_hashes: bool = False) -> dict[str, Any]:
     return {
         "analysis_id": ANALYSIS_ID,
         "source_protocol_id": SOURCE_PROTOCOL_ID,
+        "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": "queue_complete" if all_complete else "queue_in_progress",
         "run_root": str(root),
         "roles_complete": completed,
         "roles_required": len(roles),
         "independent_hash_verification": verify_hashes,
+        "inspection_scope": (
+            "sealed_paths_counts_sizes_npy_headers_and_content_blind_sha256"
+            if verify_hashes
+            else "sealed_paths_counts_sizes_and_npy_headers"
+        ),
         "scientific_open_authorized": scientific_open,
         "scientific_open_blockers": (
             []
