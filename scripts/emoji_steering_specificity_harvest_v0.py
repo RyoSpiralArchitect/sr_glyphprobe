@@ -1888,7 +1888,7 @@ def _run_zero_response_shard(
 
 
 def _validate_runtime_receipt(
-    role: str, preflight_directory: Path, tokenizer: Any, snapshot: Path
+    role: str, preflight_directory: Path, snapshot: Path
 ) -> None:
     aggregate = audit_preflight(preflight_directory)
     _require(aggregate["status"] == "pass", "T13-EH runtime preflight invalid")
@@ -1902,6 +1902,99 @@ def _validate_runtime_receipt(
         observed["artifact"] == expected["artifact"],
         f"T13-EH runtime artifact changed: {role}",
     )
+
+
+def _load_model(
+    role: str,
+    snapshot: Path,
+    preflight_directory: Path,
+) -> tuple[Any, Any, Any, dict[str, Any]]:
+    import torch
+    import transformers
+    from glyphprobe.provenance import model_artifact_receipt
+    from transformers import AutoModelForCausalLM, AutoTokenizer
+
+    aggregate = audit_preflight(preflight_directory)
+    _require(aggregate["status"] == "pass", "T13-EH runtime preflight invalid")
+    versions = _runtime_versions()
+    for package, expected in _config()["runtime"]["critical_versions"].items():
+        _require(
+            versions.get(package) == str(expected),
+            f"T13-EH runtime version changed: {package}",
+        )
+    _require(torch.cuda.is_available(), "T13-EH CUDA is unavailable")
+    _require(torch.cuda.is_bf16_supported(), "T13-EH CUDA BF16 is unavailable")
+    _require(
+        str(torch.cuda.get_device_name(0)) == str(_config()["runtime"]["hardware_pin"]),
+        "T13-EH GPU identity changed",
+    )
+    spec = t10._model_spec(role)
+    resolved = snapshot.resolve()
+    _require(resolved.is_dir(), f"T13-EH model snapshot missing: {role}")
+    _require(
+        resolved.name == str(spec["revision"]),
+        f"T13-EH model revision changed: {role}",
+    )
+    t10._validate_weight_artifact_completeness(resolved)
+    expected = atlas._read_json(preflight_directory / f"{role}.json")
+    artifact = model_artifact_receipt(resolved)
+    for key in ("manifest_sha256", "file_count", "total_bytes"):
+        _require(
+            artifact[key] == expected["artifact"][key],
+            f"T13-EH model artifact changed: {role}/{key}",
+        )
+    tokenizer = AutoTokenizer.from_pretrained(
+        resolved, local_files_only=True, trust_remote_code=False, use_fast=True
+    )
+    _validate_runtime_receipt(role, preflight_directory, resolved)
+    dtype_key = (
+        "dtype"
+        if int(transformers.__version__.split(".", 1)[0]) >= 5
+        else "torch_dtype"
+    )
+    model = AutoModelForCausalLM.from_pretrained(
+        resolved,
+        local_files_only=True,
+        trust_remote_code=False,
+        **{dtype_key: torch.bfloat16},
+    )
+    model.to("cuda")
+    model.eval()
+    _require(
+        type(model).__name__ == str(spec["expected_model_class"]),
+        f"T13-EH loaded model class changed: {role}",
+    )
+    _require(
+        int(model.config.num_hidden_layers) == int(spec["expected_num_layers"]),
+        f"T13-EH loaded layer count changed: {role}",
+    )
+    parameter_count = sum(int(parameter.numel()) for parameter in model.parameters())
+    _require(
+        parameter_count == int(spec["expected_parameter_count"]),
+        f"T13-EH parameter count changed: {role}",
+    )
+    dtypes = Counter(str(parameter.dtype) for parameter in model.parameters())
+    _require(
+        set(dtypes) == {"torch.bfloat16"},
+        f"T13-EH parameter dtype changed: {role}",
+    )
+    receipt = {
+        "model_role": role,
+        "artifact_model_id": spec["artifact_model_id"],
+        "revision": spec["revision"],
+        "model_class": type(model).__name__,
+        "parameter_count": parameter_count,
+        "parameter_dtype_tensor_counts": dict(dtypes),
+        "artifact": artifact,
+        "torch_version": torch.__version__,
+        "transformers_version": transformers.__version__,
+        "gpu": str(torch.cuda.get_device_name(0)),
+        "runtime_preflight_aggregate_sha256": _sha256(
+            preflight_directory / RUNTIME_AGGREGATE_NAME
+        ),
+        "tokenizer_receipt_sha256": _sha256(preflight_directory / f"{role}.json"),
+    }
+    return torch, tokenizer, model, receipt
 
 
 def run_role(
@@ -1923,10 +2016,10 @@ def run_role(
     snapshot = (
         model_path if model_path is not None else t11._locate_local_snapshot(role)
     )
-    torch, tokenizer, model, _last_block, model_receipt, _roster = t11._load_model(
-        role, snapshot, t11_preflight_directory
+    del t11_preflight_directory
+    torch, tokenizer, model, model_receipt = _load_model(
+        role, snapshot, preflight_directory
     )
-    _validate_runtime_receipt(role, preflight_directory, tokenizer, snapshot)
     blocks = t10._resolve_attr(model, str(t10._model_spec(role)["expected_block_path"]))
     sites = layer_indices(role)
     started = time.perf_counter()

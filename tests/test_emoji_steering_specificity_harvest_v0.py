@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+import inspect
 from types import SimpleNamespace
 
 import numpy as np
@@ -109,8 +110,11 @@ def test_queue_script_preserves_frozen_resource_order() -> None:
     assert 'model_args=(--model-path "$smollm2_model_path")' in text
 
 
-def test_runner_uses_existing_t11_model_loader() -> None:
-    assert callable(harvest.t11._load_model)
+def test_runner_uses_t13eh_owned_model_loader() -> None:
+    source = inspect.getsource(harvest._load_model)
+    assert "t11._load_model" not in source
+    assert "audit_preflight" in source
+    assert "model_artifact_receipt" in source
 
 
 class _ToyTokenizer:

@@ -175,6 +175,8 @@ models:
 
 runtime:
   backend: transformers
+  loader_authority: t13eh_freeze_and_committed_runtime_preflight
+  stale_t11_narrative_assets_are_not_reaudited_at_t13eh_runtime: true
   device: cuda
   dtype: bfloat16
   local_files_only: true

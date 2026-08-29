@@ -3,12 +3,12 @@
   "design_preflight_sha256": "1ba7d75ab750a712b8cd3c1acf0630ad7025bab8eb32e10a9d3bd85127b33ffe",
   "experiment_role": "prospective_exploratory_gpu_harvest_no_confirmatory_decision",
   "frozen_assets": {
-    "configs/emoji_steering_specificity_harvest_v0.yaml": "32ce5a3cd0c06abbc69606d094e3954cb959f22cf7d10dec1502889f721d7301",
+    "configs/emoji_steering_specificity_harvest_v0.yaml": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06",
     "docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md": "28c8173220696dd9561a5c63e89fda814f0193ff09ac158a63a7ca9fa70c1163",
     "docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md": "7ac3266256fb258dd25a06af3dc925711e8c62ff4aceb44377a2e587a7ad5f93",
-    "scripts/emoji_steering_specificity_harvest_v0.py": "fe20eccda2a755cbfca6986ff5c167fd89516d523942a6f98f8dad78aa4ee1f8",
+    "scripts/emoji_steering_specificity_harvest_v0.py": "a99b2581a1fafa29915d652fe0c968d67b4ad778b3badf75f38075e78743d26b",
     "scripts/run_emoji_steering_specificity_harvest_v0_queue.sh": "08c686e3867f0c5cf6912c24d49de736baab102da0b1d178f0d9565930687fe2",
-    "tests/test_emoji_steering_specificity_harvest_v0.py": "59087ec549e3e6d2ae75fd5796c4fc91388e9370a2a2d9498a38fd9f2bf491eb",
+    "tests/test_emoji_steering_specificity_harvest_v0.py": "085e74fb3912bb43602f9cb4dd3fae542acb7d970ebdaddb92e21431af597a10",
     "validation/emoji_steering_specificity_harvest_v0/design_preflight.json": "1ba7d75ab750a712b8cd3c1acf0630ad7025bab8eb32e10a9d3bd85127b33ffe"
   },
   "generation_calls_at_freeze": 0,
