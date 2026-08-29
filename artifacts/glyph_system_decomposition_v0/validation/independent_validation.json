@@ -1,0 +1,2632 @@
+{
+  "claim_boundary": {
+    "architecture_or_model_generality_claim_authorized": false,
+    "causal_claim_authorized": false,
+    "exploratory_only": true,
+    "independent_replication_claim_authorized": false,
+    "instruction_tuning_claim_authorized": false,
+    "scale_law_claim_authorized": false,
+    "semantic_claim_authorized": false,
+    "single_authoritative_landing_pattern_selected": false,
+    "t10_rescue_authorized": false,
+    "tokenizer_independence_claim_authorized": false
+  },
+  "depth_headlines": {
+    "atomic_anchor:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 35,
+        "interblock_depth_0p50": 7,
+        "interblock_depth_0p75": 8,
+        "none": 8,
+        "raw_last_decoder_block_output": 11,
+        "returned_final_hidden_state": 3
+      },
+      "negative_first_count": 1,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.26814422058733833,
+        "median": 0.001987079538378206,
+        "minimum": -0.14340263369600098,
+        "positive_fraction": 0.5277777777777778
+      },
+      "trajectory_count": 72
+    },
+    "keycap:component_tracking": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 15,
+        "interblock_depth_0p50": 7,
+        "interblock_depth_0p75": 6,
+        "none": 32,
+        "raw_last_decoder_block_output": 8,
+        "returned_final_hidden_state": 4
+      },
+      "negative_first_count": 26,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.5254535281296375,
+        "median": -0.0174639118323634,
+        "minimum": -0.16925840171254194,
+        "positive_fraction": 0.4166666666666667
+      },
+      "trajectory_count": 72
+    },
+    "keycap:lexicalization": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 17,
+        "interblock_depth_0p50": 12,
+        "interblock_depth_0p75": 5,
+        "none": 31,
+        "raw_last_decoder_block_output": 4,
+        "returned_final_hidden_state": 3
+      },
+      "negative_first_count": 17,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.23459689750970303,
+        "median": -0.019612566305223463,
+        "minimum": -0.20116975610953894,
+        "positive_fraction": 0.4027777777777778
+      },
+      "trajectory_count": 72
+    },
+    "keycap:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 49,
+        "interblock_depth_0p50": 5,
+        "interblock_depth_0p75": 0,
+        "none": 9,
+        "raw_last_decoder_block_output": 8,
+        "returned_final_hidden_state": 1
+      },
+      "negative_first_count": 0,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.27437736559997794,
+        "median": -0.004831467607520845,
+        "minimum": -0.22479788877493628,
+        "positive_fraction": 0.4444444444444444
+      },
+      "trajectory_count": 72
+    },
+    "keycap:presentation_or_fusion": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 34,
+        "interblock_depth_0p50": 3,
+        "interblock_depth_0p75": 2,
+        "none": 28,
+        "raw_last_decoder_block_output": 2,
+        "returned_final_hidden_state": 3
+      },
+      "negative_first_count": 33,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.2416786293034956,
+        "median": -0.009823381457594177,
+        "minimum": -0.3365275747220382,
+        "positive_fraction": 0.4444444444444444
+      },
+      "trajectory_count": 72
+    },
+    "modifier:component_tracking": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 2,
+        "interblock_depth_0p50": 7,
+        "interblock_depth_0p75": 5,
+        "none": 51,
+        "raw_last_decoder_block_output": 5,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 16,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.05335686712084861,
+        "median": -0.003707047055683192,
+        "minimum": -0.08760079559380353,
+        "positive_fraction": 0.4583333333333333
+      },
+      "trajectory_count": 72
+    },
+    "modifier:lexicalization": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 0,
+        "interblock_depth_0p50": 2,
+        "interblock_depth_0p75": 6,
+        "none": 58,
+        "raw_last_decoder_block_output": 4,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 8,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.06586198782015007,
+        "median": 0.003902765281559313,
+        "minimum": -0.06884199844946406,
+        "positive_fraction": 0.5694444444444444
+      },
+      "trajectory_count": 72
+    },
+    "modifier:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 15,
+        "interblock_depth_0p50": 6,
+        "interblock_depth_0p75": 5,
+        "none": 37,
+        "raw_last_decoder_block_output": 8,
+        "returned_final_hidden_state": 1
+      },
+      "negative_first_count": 2,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.0614764577794622,
+        "median": -0.0020846652809542662,
+        "minimum": -0.06266401066614379,
+        "positive_fraction": 0.4722222222222222
+      },
+      "trajectory_count": 72
+    },
+    "modifier:presentation_or_fusion": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 4,
+        "interblock_depth_0p50": 6,
+        "interblock_depth_0p75": 3,
+        "none": 52,
+        "raw_last_decoder_block_output": 4,
+        "returned_final_hidden_state": 3
+      },
+      "negative_first_count": 9,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.04716189040519335,
+        "median": -4.68082441291498e-05,
+        "minimum": -0.0679734612401255,
+        "positive_fraction": 0.5
+      },
+      "trajectory_count": 72
+    },
+    "presentation:component_tracking": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 3,
+        "interblock_depth_0p50": 5,
+        "interblock_depth_0p75": 6,
+        "none": 46,
+        "raw_last_decoder_block_output": 11,
+        "returned_final_hidden_state": 1
+      },
+      "negative_first_count": 19,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.08848021141428164,
+        "median": -0.0004082351538178212,
+        "minimum": -0.05459461778885516,
+        "positive_fraction": 0.4861111111111111
+      },
+      "trajectory_count": 72
+    },
+    "presentation:lexicalization": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 0,
+        "interblock_depth_0p50": 0,
+        "interblock_depth_0p75": 0,
+        "none": 72,
+        "raw_last_decoder_block_output": 0,
+        "returned_final_hidden_state": 0
+      },
+      "negative_first_count": 0,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.03870561007178565,
+        "median": 0.0,
+        "minimum": -0.011819136559203636,
+        "positive_fraction": 0.08333333333333333
+      },
+      "trajectory_count": 72
+    },
+    "presentation:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 31,
+        "interblock_depth_0p50": 5,
+        "interblock_depth_0p75": 5,
+        "none": 17,
+        "raw_last_decoder_block_output": 12,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 1,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.12263599293469427,
+        "median": 0.0076927800357226295,
+        "minimum": -0.1379451296676777,
+        "positive_fraction": 0.6111111111111112
+      },
+      "trajectory_count": 72
+    },
+    "presentation:presentation_or_fusion": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 1,
+        "interblock_depth_0p50": 7,
+        "interblock_depth_0p75": 8,
+        "none": 44,
+        "raw_last_decoder_block_output": 6,
+        "returned_final_hidden_state": 6
+      },
+      "negative_first_count": 6,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.10875619129177196,
+        "median": 0.00445039868435055,
+        "minimum": -0.0636560181181598,
+        "positive_fraction": 0.5833333333333334
+      },
+      "trajectory_count": 72
+    },
+    "regional_flag:component_tracking": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 25,
+        "interblock_depth_0p50": 6,
+        "interblock_depth_0p75": 6,
+        "none": 23,
+        "raw_last_decoder_block_output": 11,
+        "returned_final_hidden_state": 1
+      },
+      "negative_first_count": 5,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.07238343131694898,
+        "median": -0.00616222596958424,
+        "minimum": -0.19853516738434365,
+        "positive_fraction": 0.375
+      },
+      "trajectory_count": 72
+    },
+    "regional_flag:lexicalization": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 12,
+        "interblock_depth_0p50": 6,
+        "interblock_depth_0p75": 6,
+        "none": 34,
+        "raw_last_decoder_block_output": 9,
+        "returned_final_hidden_state": 5
+      },
+      "negative_first_count": 17,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.1393376825543789,
+        "median": 0.004520372150199692,
+        "minimum": -0.10641215626247123,
+        "positive_fraction": 0.5138888888888888
+      },
+      "trajectory_count": 72
+    },
+    "regional_flag:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 17,
+        "interblock_depth_0p50": 11,
+        "interblock_depth_0p75": 12,
+        "none": 11,
+        "raw_last_decoder_block_output": 20,
+        "returned_final_hidden_state": 1
+      },
+      "negative_first_count": 1,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.0852713288252267,
+        "median": 0.001608667294298885,
+        "minimum": -0.06337683056803889,
+        "positive_fraction": 0.5555555555555556
+      },
+      "trajectory_count": 72
+    },
+    "regional_flag:presentation_or_fusion": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 6,
+        "interblock_depth_0p50": 9,
+        "interblock_depth_0p75": 8,
+        "none": 31,
+        "raw_last_decoder_block_output": 13,
+        "returned_final_hidden_state": 5
+      },
+      "negative_first_count": 10,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.08845970215209767,
+        "median": 0.010210149464019498,
+        "minimum": -0.10282919594130809,
+        "positive_fraction": 0.6111111111111112
+      },
+      "trajectory_count": 72
+    },
+    "zwj:component_tracking": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 8,
+        "interblock_depth_0p50": 1,
+        "interblock_depth_0p75": 2,
+        "none": 51,
+        "raw_last_decoder_block_output": 8,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 9,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.058164910968443964,
+        "median": 0.0008536903593195835,
+        "minimum": -0.028259473554608783,
+        "positive_fraction": 0.6111111111111112
+      },
+      "trajectory_count": 72
+    },
+    "zwj:lexicalization": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 4,
+        "interblock_depth_0p50": 5,
+        "interblock_depth_0p75": 5,
+        "none": 52,
+        "raw_last_decoder_block_output": 4,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 14,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.08375186825585368,
+        "median": -0.007687773525062117,
+        "minimum": -0.07202113203343251,
+        "positive_fraction": 0.4166666666666667
+      },
+      "trajectory_count": 72
+    },
+    "zwj:matched_glyph_unicode_name": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 15,
+        "interblock_depth_0p50": 7,
+        "interblock_depth_0p75": 16,
+        "none": 9,
+        "raw_last_decoder_block_output": 23,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 0,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.06446587363793743,
+        "median": 0.0011865843003671245,
+        "minimum": -0.05029899459046262,
+        "positive_fraction": 0.5138888888888888
+      },
+      "trajectory_count": 72
+    },
+    "zwj:presentation_or_fusion": {
+      "first_interval_excluding_zero": {
+        "embedding_output": 0,
+        "interblock_depth_0p25": 5,
+        "interblock_depth_0p50": 5,
+        "interblock_depth_0p75": 6,
+        "none": 50,
+        "raw_last_decoder_block_output": 4,
+        "returned_final_hidden_state": 2
+      },
+      "negative_first_count": 6,
+      "returned_final_minus_raw_last_block_median_delta": {
+        "count": 72,
+        "maximum": 0.054574242703429206,
+        "median": 0.002572842444831405,
+        "minimum": -0.04778679537580938,
+        "positive_fraction": 0.5555555555555556
+      },
+      "trajectory_count": 72
+    }
+  },
+  "independent_recomputations": {
+    "balanced_three_way_variance": {
+      "metrics_recomputed": 7,
+      "mismatch_count": 0,
+      "tolerance": 1e-12
+    },
+    "cross_model_geometry": {
+      "reason": "Independent reconstruction requires the omitted approximately 9.15 GiB raw activation archive.",
+      "row_count": 1040,
+      "status": "hash_and_schema_checked_not_independently_recomputed"
+    },
+    "cross_model_item_margin_agreement": {
+      "mismatch_count": 0,
+      "model_pairs_per_row": 36,
+      "rows_recomputed": 720,
+      "tolerance": 1e-12
+    },
+    "depth_trajectories": {
+      "mismatch_count": 0,
+      "rows_recomputed": 2592,
+      "tolerance": 1e-12
+    },
+    "descriptive_bootstrap_intervals": {
+      "reason": "All interval values used in depth trajectories were reconciled, but the full item-bootstrap family was not independently rerun.",
+      "status": "stored_intervals_reconciled_through_depth_tables_not_fully_resampled"
+    },
+    "stored_item_margin_cell_medians": {
+      "broad_registered_metric_medians": 5184,
+      "broad_strict_prefix_metric_medians": 3024,
+      "depth_registered_metric_medians": 15552,
+      "depth_strict_prefix_metric_medians": 8976,
+      "mismatch_count": 0,
+      "tolerance": 1e-12,
+      "total_checked": 32736
+    }
+  },
+  "input_bindings": {
+    "analysis_file_sha256": {
+      "analysis.json": "d6d1eba0203a3d55010f5bca117b626a6aea4f7d6d9c0ea4aa69051498b2ee71",
+      "broad_system_cell_metrics.jsonl": "de34d6873e4a7944c6ff65839602ba7841bba0028b95ea6586582ad9f4910779",
+      "cross_model_geometry.jsonl": "2646d36f501b3212cdb3aaf4a217c73a22e0b473a300191af36be959e8c87ad9",
+      "cross_model_item_margin_agreement.jsonl": "e2fa9de6446a5eedc2b9f7482d188ec745423a710045e4036fe633f074f2e13d",
+      "depth_system_cell_metrics.jsonl": "e0fdaa2f8ec30d67d84f8f6e0cf337ce5bff1af663f6a4e12af2a5c12e0fffd4",
+      "depth_trajectories.jsonl": "a3ce7726f58f6b04b8628613a8449bc774754d54d1723dd550a8a04d8094230f",
+      "report.md": "6ed8925dcbda4d052885e40b4f5180114fe4ca61ea958a92789e0efbb47b3271"
+    },
+    "analysis_sha256sums_sha256": "8f03aa191715c96ee980fe47e9a51f85ea651c4d619d9c46af345815ea6ca07a",
+    "preflight": {
+      "aggregate_receipt": {
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "reserve_model_forward_calls": 0,
+        "status": "all_nine_tokenizer_preflights_complete_zero_t11_model_forwards"
+      },
+      "aggregate_sha256": "16484d7fa3504ddfdd9ffefc441d3270f506dc485728b7655a5ee9c2f3c8d2ff",
+      "sha256sums_sha256": "aa9a00c607a8b3da68848a36af14e2ae7f9bae9ce1a3b40648c1e0d7523942de"
+    },
+    "run_receipt_sha256_bound_but_external": {
+      "gemma2_2b_it_bf16": "93345c6952cce73ff10d90ef834b3877f1a88b9f4fa765b4aac0cc4b25b2750e",
+      "llama32_3b_base_bf16": "1fde77656347cf49f1da7ecc2a66cd79e8f1eaeebb3ffd5b527a3acd7e23974c",
+      "mistral7b_instruct_v03_bf16": "173417a94c79508027e714d93e47ba4090299132fa0a7b27678a5706b48044a3",
+      "olmo2_1b_base_bf16": "c02cf95443832f35b55892273570f30b705bd59afd4517717b3e9377e8e183a1",
+      "qwen25_0p5b_base_bf16": "83447047ed5c22db6197b11c7ea36c4b839233366eef44192befa3738b2d8389",
+      "qwen25_1p5b_base_bf16": "e84ad7e37a62b213d5b7d9658db9b10d8ac5ca713e2df4e5fbdd5475c50810fc",
+      "qwen25_3b_base_bf16": "0a6884278687c180ca2448b33de8462a9066b8aed59a3a57d82359d66e58de42",
+      "qwen25_7b_base_bf16": "b23dbbd058551cc17cf231bd7b75247bc1d57027df1cf3ca32e4b4ddafc4cdd6",
+      "smollm2_1p7b_base_bf16": "b4555aca9bb537dbb77d701c0343f30f098154b91dc0996cfe4a472224acdc68"
+    },
+    "summaries": {
+      "gemma2_2b_it_bf16": {
+        "item_margin_array_count": 3600,
+        "item_margins_sha256": "e68ed226e578a8993f3bda4f77d706046c12028f9d9cc12926e938727fac7798",
+        "sha256sums_sha256": "b8b0813da3d7cc70e97004fa78849765107480aea81f4a03ac1a5ea709525395",
+        "summary_receipt_sha256": "dd239e1121384a6394b505f4f8ab8bfc7e3c9c72789600b811f3403e4f071185"
+      },
+      "llama32_3b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "56f37674b2d44b3e991d43548ed3edaa95ab29e565351648718527d61a1772c0",
+        "sha256sums_sha256": "95b011b18829ca9104bb40c27264793380197b2b0937bc9e64114ee501cbd5a2",
+        "summary_receipt_sha256": "f04b263922761966737ddfc30fc047ac25274e4050c6fc700ab3a9729ebe812b"
+      },
+      "mistral7b_instruct_v03_bf16": {
+        "item_margin_array_count": 3600,
+        "item_margins_sha256": "45f30b961eb8e93db95332dc63df38de133a8e426b38c3d74dcb8d3524574c08",
+        "sha256sums_sha256": "f0594174cd8bb8f767ca7ef4286e5bd571875ce16063398db88d674139b8af15",
+        "summary_receipt_sha256": "3a2871c5539775b2a00de7c9b3ec8df621d1d37f3d7d6ef1057d556b8343eaca"
+      },
+      "olmo2_1b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "6e136f0f2b3a9f4814b4ef2a3aca24187ccce614fc391100ca3fe9070e2f473e",
+        "sha256sums_sha256": "2b6f93a0bb26cc90272ff6ccaa009ff14f6f7f82bb8814f38809b40364cd08e3",
+        "summary_receipt_sha256": "d55c072b6e58e197372a042a95b821ad79a77919bc7328796a6a173a7781ae8a"
+      },
+      "qwen25_0p5b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "e0fbc1f7bb39f4643b81fc0a31ffd394a3d5965a4041f7599e15ce6c04e904bc",
+        "sha256sums_sha256": "801b21ea208e09381f8d125a7c44d0d14a6023db557ba9a961b7963eb44bb650",
+        "summary_receipt_sha256": "8d7699941d04f300910d106ec712d59cf3f15c842917c0ee373de5f8635300c1"
+      },
+      "qwen25_1p5b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "998efb61fd3ff8c4da035857c4f3765c90df90c4c829255bc539d655c3036627",
+        "sha256sums_sha256": "e42224838c0a09262a62e9d42557b7bb8d8e1e8b8783701d1f59a071f4dccfd1",
+        "summary_receipt_sha256": "0b3fe9a48edacb01fc61d9879dd8f0532c830c8471134281e8456b797aa2e326"
+      },
+      "qwen25_3b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "00d818b8dc209a2a872e77242680456566a1c826728d174223e161e03bbd17c9",
+        "sha256sums_sha256": "ca65a0f613b9ec740fddb6dc97c2c9b84da70975e785b422fdc5fc030343de7d",
+        "summary_receipt_sha256": "7227231de65f6e32ec41727d586d75e076397570cfba50074a21fb6780182a05"
+      },
+      "qwen25_7b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "a44998550be4dc78b935c929b747ebb7438ed28e1aa0a756aeeafd85e36c4f5d",
+        "sha256sums_sha256": "f9838fe123df70b5da72ce627c8ff371b99b9b75235ddd9cc40e2bf24421dd30",
+        "summary_receipt_sha256": "f24cb2c8b2ca912f6717c46ceeff3dc7540a2f91e8501ed5acca3d9c3b552f08"
+      },
+      "smollm2_1p7b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "adac8f2b0b9bbbd9a81019ae30757bb597702399cbde65e2decdbd561ee32014",
+        "sha256sums_sha256": "91cb72afed442230ddb94d1f03045227b80d355e65a6a4633fb6650e8c2a7e4d",
+        "summary_receipt_sha256": "6ff75dbb05a6385ee0550ba905af8794a185fe10fc4a66df6257682d1d1b0430"
+      }
+    }
+  },
+  "invariants": {
+    "acquired_items": 843,
+    "analysis_model_forward_calls": 0,
+    "model_cells": 9,
+    "reserve_items": 268,
+    "reserve_model_forward_calls": 0,
+    "reserve_outcomes_inspected": false,
+    "row_counts": {
+      "broad_system_cell_metrics": 1008,
+      "cross_model_geometry": 1040,
+      "cross_model_item_margin_agreement": 720,
+      "depth_system_cell_metrics": 2592,
+      "depth_trajectories": 2592
+    },
+    "t10_primary_changed": false,
+    "total_acquisition_model_forward_calls": 73566
+  },
+  "matched_control_coverage_across_model_tokenizer_cells": {
+    "atomic_anchor:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 0.984375,
+        "minimum": 0.96875,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.1875,
+        "median": 0.140625,
+        "minimum": 0.0625,
+        "positive_fraction": 1.0
+      }
+    },
+    "keycap:component_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 1.0,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.875,
+        "median": 0.875,
+        "minimum": 0.875,
+        "positive_fraction": 1.0
+      }
+    },
+    "keycap:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 0.875,
+        "median": 0.875,
+        "minimum": 0.875,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.875,
+        "median": 0.875,
+        "minimum": 0.875,
+        "positive_fraction": 1.0
+      }
+    },
+    "modifier:component_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 0.9947916666666666,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.7239583333333334,
+        "median": 0.7239583333333334,
+        "minimum": 0.6979166666666666,
+        "positive_fraction": 1.0
+      }
+    },
+    "modifier:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 0.9947916666666666,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.7239583333333334,
+        "median": 0.7239583333333334,
+        "minimum": 0.6979166666666666,
+        "positive_fraction": 1.0
+      }
+    },
+    "presentation:component_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 0.99375,
+        "minimum": 0.99375,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.19375,
+        "median": 0.19375,
+        "minimum": 0.1,
+        "positive_fraction": 1.0
+      }
+    },
+    "presentation:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 0.99375,
+        "minimum": 0.99375,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.19375,
+        "median": 0.19375,
+        "minimum": 0.1,
+        "positive_fraction": 1.0
+      }
+    },
+    "regional_flag:component_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 1.0,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 1.0,
+        "positive_fraction": 1.0
+      }
+    },
+    "regional_flag:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 0.99375,
+        "minimum": 0.99375,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 0.99375,
+        "minimum": 0.99375,
+        "positive_fraction": 1.0
+      }
+    },
+    "zwj:component_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 0.99609375,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.8984375,
+        "median": 0.87890625,
+        "minimum": 0.87890625,
+        "positive_fraction": 1.0
+      }
+    },
+    "zwj:unicode_name": {
+      "required": {
+        "count": 9,
+        "maximum": 1.0,
+        "median": 1.0,
+        "minimum": 0.9921875,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_sensitivity": {
+        "count": 9,
+        "maximum": 0.87109375,
+        "median": 0.87109375,
+        "minimum": 0.8515625,
+        "positive_fraction": 1.0
+      }
+    }
+  },
+  "overall_assessment": "share_with_caveats",
+  "protocol_id": "glyphprobe-glyph-system-decomposition-v0",
+  "qwen_size_ordered_profiles_descriptive_only": {
+    "model_order": [
+      "qwen25_0p5b_base_bf16",
+      "qwen25_1p5b_base_bf16",
+      "qwen25_3b_base_bf16",
+      "qwen25_7b_base_bf16"
+    ],
+    "profile_count": 36,
+    "profiles": {
+      "atomic_anchor:matched_glyph_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.07692879218284734,
+          0.06361243495525602,
+          0.12411074422843746,
+          0.1778611809306877
+        ]
+      },
+      "keycap:component_tracking": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.045140002108013305,
+          -0.08814090744965425,
+          0.05045798434379807,
+          0.02798174867325691
+        ]
+      },
+      "keycap:lexicalization": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.003933266470048949,
+          -0.041431919696898106,
+          0.00281620012086458,
+          0.07842453329731529
+        ]
+      },
+      "keycap:matched_decomposed_form_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.021620781903555326,
+          0.07531331612828834,
+          0.18864242407531484,
+          0.08735648382505785
+        ]
+      },
+      "keycap:matched_decomposed_form_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.08509552464978845,
+          0.05330138410790423,
+          0.1085004686753028,
+          0.030390457547198803
+        ]
+      },
+      "keycap:matched_glyph_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.06975139899515165,
+          0.17707569373645413,
+          0.06293398756610576,
+          0.00862338803507784
+        ]
+      },
+      "keycap:matched_glyph_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.08337408920255109,
+          0.06384086695764882,
+          0.09780302641423652,
+          0.04585071562489981
+        ]
+      },
+      "keycap:presentation_or_fusion": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.03430627727107554,
+          0.05221758325800734,
+          -0.05032113150237701,
+          0.025572130604485165
+        ]
+      },
+      "modifier:component_tracking": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.0018467709905346718,
+          -0.0025310672483146446,
+          0.006754585159429515,
+          -0.007739127806455007
+        ]
+      },
+      "modifier:lexicalization": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.016828918266788593,
+          -0.024194786452670213,
+          0.01274488525552336,
+          -0.005529565200495869
+        ]
+      },
+      "modifier:matched_decomposed_form_component_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.019685170766100442,
+          0.06561982096356755,
+          0.08767466662252715,
+          0.12322387562516511
+        ]
+      },
+      "modifier:matched_decomposed_form_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.05163547776206927,
+          0.04160916979555122,
+          0.1124976719555364,
+          0.09177890591488572
+        ]
+      },
+      "modifier:matched_glyph_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.025680246704092455,
+          0.08257092981254019,
+          0.07967998511266804,
+          0.12080116733925933
+        ]
+      },
+      "modifier:matched_glyph_unicode_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.045464746047323756,
+          0.05324501647094713,
+          0.08441565446922003,
+          0.11453380592222101
+        ]
+      },
+      "modifier:presentation_or_fusion": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.006196207562932189,
+          0.013667706717573253,
+          -0.007189735381892031,
+          -0.004376949328565485
+        ]
+      },
+      "presentation:component_tracking": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.0029825102690776116,
+          0.007031122968480019,
+          -0.017693742017647382,
+          -0.046779434726212155
+        ]
+      },
+      "presentation:lexicalization": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.0,
+          0.008144620841093714,
+          -0.0064685224777308765,
+          0.001867591330090665
+        ]
+      },
+      "presentation:matched_decomposed_form_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.13441647709581706,
+          0.10031176780683052,
+          0.1462458301321517,
+          0.18811882811966574
+        ]
+      },
+      "presentation:matched_decomposed_form_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.12903106138860854,
+          0.09241106402624777,
+          0.10355019274142435,
+          0.1941066164842316
+        ]
+      },
+      "presentation:matched_glyph_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.14158741033306482,
+          0.09244848876852561,
+          0.15043292518582177,
+          0.24052938526599887
+        ]
+      },
+      "presentation:matched_glyph_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.12819015350739393,
+          0.12679461685397386,
+          0.11681790935875258,
+          0.24201128883517423
+        ]
+      },
+      "presentation:presentation_or_fusion": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.007777927948656657,
+          0.014977860506280957,
+          0.019676516111354153,
+          0.048247367570241464
+        ]
+      },
+      "regional_flag:component_tracking": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.09674638542819784,
+          0.07308555660148439,
+          0.00799233686358653,
+          -0.021129109902549723
+        ]
+      },
+      "regional_flag:lexicalization": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.035677916125307366,
+          0.07645108774770942,
+          0.05800371721987129,
+          0.09120401356681969
+        ]
+      },
+      "regional_flag:matched_decomposed_form_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.15871272613004464,
+          0.13277759335231218,
+          0.11661795883672166,
+          0.0850378310276921
+        ]
+      },
+      "regional_flag:matched_decomposed_form_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.050290724142909346,
+          0.057163973292068675,
+          0.03751378225722227,
+          0.05324408955069261
+        ]
+      },
+      "regional_flag:matched_glyph_component_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.08522409463479608,
+          0.07526421260673459,
+          0.09192983223000778,
+          0.10417109874537354
+        ]
+      },
+      "regional_flag:matched_glyph_unicode_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.061088527560837505,
+          0.15746802239492147,
+          0.15915071543539797,
+          0.20601425460394152
+        ]
+      },
+      "regional_flag:presentation_or_fusion": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.017998175435482527,
+          0.07285721450442131,
+          0.13196721864672606,
+          0.1585878481128058
+        ]
+      },
+      "zwj:component_tracking": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.014090365159801391,
+          -0.008150083383770275,
+          -0.005230156922133134,
+          -0.010792957164434742
+        ]
+      },
+      "zwj:lexicalization": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          -0.003938388930274584,
+          -0.025596742136758388,
+          -0.01328220537886641,
+          -0.002305162109231061
+        ]
+      },
+      "zwj:matched_decomposed_form_component_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.03197319814915027,
+          0.05340797477186245,
+          0.08421194878416122,
+          0.1011273660658642
+        ]
+      },
+      "zwj:matched_decomposed_form_unicode_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.019602738360939904,
+          0.052425010111421755,
+          0.05362800765300216,
+          0.09335758000443825
+        ]
+      },
+      "zwj:matched_glyph_component_name": {
+        "strictly_increasing": true,
+        "values_in_size_order": [
+          0.059936516489051864,
+          0.08159535174534313,
+          0.09748010454590475,
+          0.12647430770103543
+        ]
+      },
+      "zwj:matched_glyph_unicode_name": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.06398389744183976,
+          0.06252527144145031,
+          0.08233314632142953,
+          0.1256925830364371
+        ]
+      },
+      "zwj:presentation_or_fusion": {
+        "strictly_increasing": false,
+        "values_in_size_order": [
+          0.03246913033284911,
+          0.007754449556440252,
+          0.012348237843650856,
+          0.0174717359512881
+        ]
+      }
+    },
+    "scale_law_claim_authorized": false,
+    "strictly_increasing_profile_count": 8
+  },
+  "required_caveats": [
+    "The nine frozen cells confound architecture, size, tokenizer, training corpus, and tuning.",
+    "Cell-bootstrap intervals are descriptive and do not form a multiplicity-controlled confirmatory family.",
+    "The strict first-target-token sensitivity has sharply uneven coverage across glyph systems and cannot replace the required exact-token-length controls.",
+    "Tag flags are a three-item microcase and carry no distributional or matched-control claim.",
+    "Cross-model activation geometry was not independently reconstructed without the omitted raw activation archive.",
+    "T12 must freeze one endpoint and multiplicity family before any reserve model outcome is opened."
+  ],
+  "retrieval_cell_medians": {
+    "raw_last_decoder_block_output:atomic_anchor": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.20212980902844174,
+      "paired_minus_off_diagonal_margin_median": 0.12052946054462446,
+      "retrieval_breadth_fraction_forward_median": 0.4921875,
+      "top1_accuracy_forward_median": 0.109375,
+      "top_decile_prediction_concentration_forward_median": 0.46875
+    },
+    "raw_last_decoder_block_output:keycap": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.5817708333333333,
+      "paired_minus_off_diagonal_margin_median": 0.1352703573399216,
+      "retrieval_breadth_fraction_forward_median": 0.625,
+      "top1_accuracy_forward_median": 0.375,
+      "top_decile_prediction_concentration_forward_median": 0.375
+    },
+    "raw_last_decoder_block_output:modifier": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.09286882815790973,
+      "paired_minus_off_diagonal_margin_median": 0.0599297006364724,
+      "retrieval_breadth_fraction_forward_median": 0.4010416666666667,
+      "top1_accuracy_forward_median": 0.036458333333333336,
+      "top_decile_prediction_concentration_forward_median": 0.578125
+    },
+    "raw_last_decoder_block_output:presentation": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.15931865322369182,
+      "paired_minus_off_diagonal_margin_median": 0.14669045962490374,
+      "retrieval_breadth_fraction_forward_median": 0.4375,
+      "top1_accuracy_forward_median": 0.08125,
+      "top_decile_prediction_concentration_forward_median": 0.5125
+    },
+    "raw_last_decoder_block_output:regional_flag": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.17201526121591135,
+      "paired_minus_off_diagonal_margin_median": 0.11921038643411959,
+      "retrieval_breadth_fraction_forward_median": 0.45,
+      "top1_accuracy_forward_median": 0.096875,
+      "top_decile_prediction_concentration_forward_median": 0.525
+    },
+    "raw_last_decoder_block_output:tag_flag": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.6666666666666666,
+      "paired_minus_off_diagonal_margin_median": 0.08357026333952292,
+      "retrieval_breadth_fraction_forward_median": 1.0,
+      "top1_accuracy_forward_median": 0.3333333333333333,
+      "top_decile_prediction_concentration_forward_median": 0.3333333333333333
+    },
+    "raw_last_decoder_block_output:zwj": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.10999686354043353,
+      "paired_minus_off_diagonal_margin_median": 0.10445428663740336,
+      "retrieval_breadth_fraction_forward_median": 0.3359375,
+      "top1_accuracy_forward_median": 0.0546875,
+      "top_decile_prediction_concentration_forward_median": 0.6640625
+    },
+    "returned_final_hidden_state:atomic_anchor": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.19055008435250187,
+      "paired_minus_off_diagonal_margin_median": 0.12831026217979263,
+      "retrieval_breadth_fraction_forward_median": 0.5,
+      "top1_accuracy_forward_median": 0.1015625,
+      "top_decile_prediction_concentration_forward_median": 0.484375
+    },
+    "returned_final_hidden_state:keycap": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.5422619047619048,
+      "paired_minus_off_diagonal_margin_median": 0.13597859752886207,
+      "retrieval_breadth_fraction_forward_median": 0.625,
+      "top1_accuracy_forward_median": 0.375,
+      "top_decile_prediction_concentration_forward_median": 0.375
+    },
+    "returned_final_hidden_state:modifier": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.07894588857663415,
+      "paired_minus_off_diagonal_margin_median": 0.059728710073300974,
+      "retrieval_breadth_fraction_forward_median": 0.3958333333333333,
+      "top1_accuracy_forward_median": 0.036458333333333336,
+      "top_decile_prediction_concentration_forward_median": 0.5677083333333334
+    },
+    "returned_final_hidden_state:presentation": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.1410785695421883,
+      "paired_minus_off_diagonal_margin_median": 0.14872500583593593,
+      "retrieval_breadth_fraction_forward_median": 0.44375,
+      "top1_accuracy_forward_median": 0.08125,
+      "top_decile_prediction_concentration_forward_median": 0.50625
+    },
+    "returned_final_hidden_state:regional_flag": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.1558113225027877,
+      "paired_minus_off_diagonal_margin_median": 0.119229506244154,
+      "retrieval_breadth_fraction_forward_median": 0.4375,
+      "top1_accuracy_forward_median": 0.08125,
+      "top_decile_prediction_concentration_forward_median": 0.49375
+    },
+    "returned_final_hidden_state:tag_flag": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.7222222222222221,
+      "paired_minus_off_diagonal_margin_median": 0.10491801221589851,
+      "retrieval_breadth_fraction_forward_median": 0.6666666666666666,
+      "top1_accuracy_forward_median": 0.5,
+      "top_decile_prediction_concentration_forward_median": 0.6666666666666666
+    },
+    "returned_final_hidden_state:zwj": {
+      "cell_count": 72,
+      "mean_reciprocal_rank_forward_median": 0.09180829812300631,
+      "paired_minus_off_diagonal_margin_median": 0.11434426014987795,
+      "retrieval_breadth_fraction_forward_median": 0.34375,
+      "top1_accuracy_forward_median": 0.048828125,
+      "top_decile_prediction_concentration_forward_median": 0.646484375
+    }
+  },
+  "returned_final_balanced_variance_decomposition": {
+    "component_tracking": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.0019970771858608405,
+      "share_of_total_sum_squares": {
+        "context": 0.0023418343600087165,
+        "glyph_system": 0.15020900314996816,
+        "glyph_system_by_context": 0.057251364639635954,
+        "model": 0.05217503065679238,
+        "model_by_context": 0.07782902177978564,
+        "model_by_glyph_system": 0.3485999819674834,
+        "model_by_glyph_system_by_context": 0.311593763446326
+      }
+    },
+    "lexicalization": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.007759359828912619,
+      "share_of_total_sum_squares": {
+        "context": 0.014455156567783721,
+        "glyph_system": 0.03467480456008056,
+        "glyph_system_by_context": 0.04099188214365344,
+        "model": 0.027223504488671103,
+        "model_by_context": 0.10389005971708944,
+        "model_by_glyph_system": 0.2738582997581444,
+        "model_by_glyph_system_by_context": 0.5049062927645773
+      }
+    },
+    "matched_decomposed_form_component_name": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.1003343265018707,
+      "share_of_total_sum_squares": {
+        "context": 0.03177508767906144,
+        "glyph_system": 0.2211344882008816,
+        "glyph_system_by_context": 0.05346253314306573,
+        "model": 0.07325257155733307,
+        "model_by_context": 0.10983048622363234,
+        "model_by_glyph_system": 0.24436015983831064,
+        "model_by_glyph_system_by_context": 0.26618467335771523
+      }
+    },
+    "matched_decomposed_form_unicode_name": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.08218336389469015,
+      "share_of_total_sum_squares": {
+        "context": 0.017236388891244885,
+        "glyph_system": 0.2076717792402902,
+        "glyph_system_by_context": 0.05037923589851103,
+        "model": 0.04595660553392182,
+        "model_by_context": 0.12993098012916204,
+        "model_by_glyph_system": 0.169245978782319,
+        "model_by_glyph_system_by_context": 0.3795790315245512
+      }
+    },
+    "matched_glyph_component_name": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.09786563612044744,
+      "share_of_total_sum_squares": {
+        "context": 0.04173058751528761,
+        "glyph_system": 0.17414241019039692,
+        "glyph_system_by_context": 0.06135580953767457,
+        "model": 0.0859352079024486,
+        "model_by_context": 0.10590758793566347,
+        "model_by_glyph_system": 0.2507190422506247,
+        "model_by_glyph_system_by_context": 0.28020935466790414
+      }
+    },
+    "matched_glyph_unicode_name": {
+      "glyph_system_order": [
+        "atomic_anchor",
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.1059255029043639,
+      "share_of_total_sum_squares": {
+        "context": 0.022359056674331135,
+        "glyph_system": 0.19305186940255845,
+        "glyph_system_by_context": 0.02485014033440119,
+        "model": 0.260506017310107,
+        "model_by_context": 0.09759463741468866,
+        "model_by_glyph_system": 0.19892790116206552,
+        "model_by_glyph_system_by_context": 0.2027103777018482
+      }
+    },
+    "presentation_or_fusion": {
+      "glyph_system_order": [
+        "presentation",
+        "modifier",
+        "zwj",
+        "regional_flag",
+        "keycap"
+      ],
+      "grand_mean": 0.017116555519125134,
+      "share_of_total_sum_squares": {
+        "context": 0.011550520932536584,
+        "glyph_system": 0.21487393108816993,
+        "glyph_system_by_context": 0.03812068796039452,
+        "model": 0.10187066681067099,
+        "model_by_context": 0.09128494688611467,
+        "model_by_glyph_system": 0.20412438951849896,
+        "model_by_glyph_system_by_context": 0.3381748568036143
+      }
+    }
+  },
+  "returned_final_cell_distributions": {
+    "atomic_anchor": {
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 17,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 55,
+        "maximum": 0.26115803644493707,
+        "median": 0.11340481650829795,
+        "minimum": 0.0018488400862095578,
+        "positive_fraction": 1.0
+      }
+    },
+    "keycap": {
+      "component_tracking": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 58,
+        "descriptive_bootstrap_interval_negative_count": 7,
+        "descriptive_bootstrap_interval_positive_count": 7,
+        "maximum": 0.2470939921683321,
+        "median": -0.03988389057317195,
+        "minimum": -0.3260715786575656,
+        "positive_fraction": 0.3888888888888889
+      },
+      "lexicalization": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 69,
+        "descriptive_bootstrap_interval_negative_count": 2,
+        "descriptive_bootstrap_interval_positive_count": 1,
+        "maximum": 0.5768955273019536,
+        "median": 0.002975182916124232,
+        "minimum": -0.33770354826690496,
+        "positive_fraction": 0.5277777777777778
+      },
+      "matched_decomposed_form_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 53,
+        "descriptive_bootstrap_interval_negative_count": 1,
+        "descriptive_bootstrap_interval_positive_count": 18,
+        "maximum": 0.3343046087994309,
+        "median": 0.07811589285806553,
+        "minimum": -0.17131195575634217,
+        "positive_fraction": 0.8055555555555556
+      },
+      "matched_decomposed_form_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 53,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 19,
+        "maximum": 0.488115377771949,
+        "median": 0.07475437722034789,
+        "minimum": -0.1427140707823294,
+        "positive_fraction": 0.8333333333333334
+      },
+      "matched_glyph_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 52,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 20,
+        "maximum": 0.35993169223983357,
+        "median": 0.09442039810122214,
+        "minimum": -0.21578060456174936,
+        "positive_fraction": 0.8194444444444444
+      },
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 48,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 24,
+        "maximum": 0.24595169388364904,
+        "median": 0.0908683683375471,
+        "minimum": -0.10642057846606615,
+        "positive_fraction": 0.9027777777777778
+      },
+      "presentation_or_fusion": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 56,
+        "descriptive_bootstrap_interval_negative_count": 6,
+        "descriptive_bootstrap_interval_positive_count": 10,
+        "maximum": 0.22460394880397203,
+        "median": -0.009032138207531341,
+        "minimum": -0.305384123681485,
+        "positive_fraction": 0.4583333333333333
+      }
+    },
+    "modifier": {
+      "component_tracking": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 59,
+        "descriptive_bootstrap_interval_negative_count": 4,
+        "descriptive_bootstrap_interval_positive_count": 9,
+        "maximum": 0.04925472799370867,
+        "median": 0.00025599979905808166,
+        "minimum": -0.04297445880293704,
+        "positive_fraction": 0.5138888888888888
+      },
+      "lexicalization": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 64,
+        "descriptive_bootstrap_interval_negative_count": 2,
+        "descriptive_bootstrap_interval_positive_count": 6,
+        "maximum": 0.07846408989432177,
+        "median": 0.0005002519915137324,
+        "minimum": -0.04375595613737418,
+        "positive_fraction": 0.5138888888888888
+      },
+      "matched_decomposed_form_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 20,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 52,
+        "maximum": 0.1558987860690708,
+        "median": 0.05839095877155479,
+        "minimum": -0.004208770840379281,
+        "positive_fraction": 0.9722222222222222
+      },
+      "matched_decomposed_form_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 15,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 57,
+        "maximum": 0.16027773517367355,
+        "median": 0.06371067700563265,
+        "minimum": -0.0051515446663845665,
+        "positive_fraction": 0.9861111111111112
+      },
+      "matched_glyph_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 15,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 57,
+        "maximum": 0.1607324074287908,
+        "median": 0.05686318857200531,
+        "minimum": -0.01327926762283399,
+        "positive_fraction": 0.9583333333333334
+      },
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 8,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 64,
+        "maximum": 0.15106406030080133,
+        "median": 0.054785530119510324,
+        "minimum": 0.000690255412058402,
+        "positive_fraction": 1.0
+      },
+      "presentation_or_fusion": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 69,
+        "descriptive_bootstrap_interval_negative_count": 1,
+        "descriptive_bootstrap_interval_positive_count": 2,
+        "maximum": 0.03466817569359378,
+        "median": -0.0009610253863463376,
+        "minimum": -0.034300807423799075,
+        "positive_fraction": 0.4444444444444444
+      }
+    },
+    "presentation": {
+      "component_tracking": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 53,
+        "descriptive_bootstrap_interval_negative_count": 17,
+        "descriptive_bootstrap_interval_positive_count": 2,
+        "maximum": 0.04996119319027427,
+        "median": -0.005061535332466269,
+        "minimum": -0.0697888222629171,
+        "positive_fraction": 0.3888888888888889
+      },
+      "lexicalization": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 72,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 0,
+        "maximum": 0.0554601726971794,
+        "median": 0.0,
+        "minimum": -0.036799268150627534,
+        "positive_fraction": 0.375
+      },
+      "matched_decomposed_form_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.23631390692057058,
+        "median": 0.13723745527471753,
+        "minimum": 0.04110935421131576,
+        "positive_fraction": 1.0
+      },
+      "matched_decomposed_form_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.23775473852049467,
+        "median": 0.12946281116256814,
+        "minimum": 0.04819382295834807,
+        "positive_fraction": 1.0
+      },
+      "matched_glyph_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.2861680558910522,
+        "median": 0.13741990751585006,
+        "minimum": 0.056497271514092465,
+        "positive_fraction": 1.0
+      },
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.2800264784574483,
+        "median": 0.13270866646631144,
+        "minimum": 0.06108493846955554,
+        "positive_fraction": 1.0
+      },
+      "presentation_or_fusion": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 44,
+        "descriptive_bootstrap_interval_negative_count": 3,
+        "descriptive_bootstrap_interval_positive_count": 25,
+        "maximum": 0.06419466079851815,
+        "median": 0.013910956086490858,
+        "minimum": -0.05372514008428712,
+        "positive_fraction": 0.7222222222222222
+      }
+    },
+    "regional_flag": {
+      "component_tracking": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 33,
+        "descriptive_bootstrap_interval_negative_count": 3,
+        "descriptive_bootstrap_interval_positive_count": 36,
+        "maximum": 0.1506357266758342,
+        "median": 0.044108254926796965,
+        "minimum": -0.04927051634669963,
+        "positive_fraction": 0.8055555555555556
+      },
+      "lexicalization": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 26,
+        "descriptive_bootstrap_interval_negative_count": 11,
+        "descriptive_bootstrap_interval_positive_count": 35,
+        "maximum": 0.18918204101121613,
+        "median": 0.04951780084330953,
+        "minimum": -0.13461521569169937,
+        "positive_fraction": 0.6527777777777778
+      },
+      "matched_decomposed_form_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 5,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 67,
+        "maximum": 0.3024640113221138,
+        "median": 0.1257928497240537,
+        "minimum": 0.02173252295060732,
+        "positive_fraction": 1.0
+      },
+      "matched_decomposed_form_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 36,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 36,
+        "maximum": 0.13080487120650297,
+        "median": 0.03752912061180841,
+        "minimum": -0.0008719009702007618,
+        "positive_fraction": 0.9722222222222222
+      },
+      "matched_glyph_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 6,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 66,
+        "maximum": 0.26303293210698575,
+        "median": 0.0808568621710603,
+        "minimum": -0.015135261626938835,
+        "positive_fraction": 0.9861111111111112
+      },
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 8,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 64,
+        "maximum": 0.2570052186705329,
+        "median": 0.11408327839405565,
+        "minimum": 0.014997143032255439,
+        "positive_fraction": 1.0
+      },
+      "presentation_or_fusion": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 29,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 43,
+        "maximum": 0.21004299832277518,
+        "median": 0.066770993521179,
+        "minimum": -0.024954624402498293,
+        "positive_fraction": 0.8194444444444444
+      }
+    },
+    "zwj": {
+      "component_tracking": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 59,
+        "descriptive_bootstrap_interval_negative_count": 9,
+        "descriptive_bootstrap_interval_positive_count": 4,
+        "maximum": 0.022076639712951464,
+        "median": -0.004016379145155114,
+        "minimum": -0.06075787638883018,
+        "positive_fraction": 0.3611111111111111
+      },
+      "lexicalization": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 61,
+        "descriptive_bootstrap_interval_negative_count": 9,
+        "descriptive_bootstrap_interval_positive_count": 2,
+        "maximum": 0.04406752352281613,
+        "median": -0.012650870227024713,
+        "minimum": -0.09529117605216364,
+        "positive_fraction": 0.3194444444444444
+      },
+      "matched_decomposed_form_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 2,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 70,
+        "maximum": 0.14861121009842793,
+        "median": 0.07635152198501492,
+        "minimum": 0.005475790637382365,
+        "positive_fraction": 1.0
+      },
+      "matched_decomposed_form_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 11,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 61,
+        "maximum": 0.1437484651521483,
+        "median": 0.06080997091967757,
+        "minimum": 0.0047543325026645905,
+        "positive_fraction": 1.0
+      },
+      "matched_glyph_component_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.17129112318402764,
+        "median": 0.09321093344555705,
+        "minimum": 0.011976875610094487,
+        "positive_fraction": 1.0
+      },
+      "matched_glyph_unicode_name": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 2,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 70,
+        "maximum": 0.16471843714369883,
+        "median": 0.0777961038227416,
+        "minimum": 0.006403989626195709,
+        "positive_fraction": 1.0
+      },
+      "presentation_or_fusion": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 41,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 31,
+        "maximum": 0.04799567613091287,
+        "median": 0.014154060251291862,
+        "minimum": -0.019187400663402576,
+        "positive_fraction": 0.9027777777777778
+      }
+    }
+  },
+  "returned_final_cross_model_geometry_context_distributions": {
+    "full_cross_view_cosine_map:atomic_anchor:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.023402226417318442,
+      "median": 0.011220323503344044,
+      "minimum": -0.00200738507879213,
+      "positive_fraction": 0.75
+    },
+    "full_cross_view_cosine_map:atomic_anchor:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.10504021784064727,
+      "median": 0.08846888681536891,
+      "minimum": 0.07006238050199333,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:keycap:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.1019459706959707,
+      "median": 0.04906135531135531,
+      "minimum": -0.01673534798534798,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:keycap:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.3051739926739927,
+      "median": 0.21378205128205124,
+      "minimum": 0.07999084249084248,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:keycap:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.11943681318681316,
+      "median": 0.042811355311355305,
+      "minimum": -0.00483058608058608,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:keycap:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.14656593406593404,
+      "median": 0.10992445054945053,
+      "minimum": -0.0033424908424908423,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:keycap:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.3453296703296703,
+      "median": 0.13142170329670327,
+      "minimum": 0.037477106227106226,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:modifier:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.04261043610289836,
+      "median": 0.035437406694094405,
+      "minimum": 0.023194870318144947,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:modifier:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.047979145197971,
+      "median": 0.03460815452538349,
+      "minimum": 0.026080137441502525,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:modifier:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.01634777323951773,
+      "median": 0.007935198459485118,
+      "minimum": -0.007466214943835333,
+      "positive_fraction": 0.75
+    },
+    "full_cross_view_cosine_map:modifier:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.061956093903688725,
+      "median": 0.03764076758587194,
+      "minimum": 0.030410361804150646,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:modifier:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.059162981861182976,
+      "median": 0.04611207786255376,
+      "minimum": 0.0293174336954131,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:presentation:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.13559159344358118,
+      "median": 0.1101534951903778,
+      "minimum": 0.06769466273540159,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:presentation:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.13559159344358118,
+      "median": 0.1101534951903778,
+      "minimum": 0.06769466273540159,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:presentation:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.03746810865206621,
+      "median": 0.004389465792678018,
+      "minimum": -0.0032880869107350724,
+      "positive_fraction": 0.625
+    },
+    "full_cross_view_cosine_map:presentation:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.17410197938984695,
+      "median": 0.11320058043050378,
+      "minimum": 0.07658153036382717,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:presentation:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.17410197938984695,
+      "median": 0.11320058043050378,
+      "minimum": 0.07658153036382717,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:regional_flag:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.08301984664722134,
+      "median": 0.0499534129946117,
+      "minimum": 0.029352047602499272,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:regional_flag:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.14517211498060262,
+      "median": 0.058330198219612425,
+      "minimum": 0.017787241459927168,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:regional_flag:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.020370319806902418,
+      "median": 0.009826084398123488,
+      "minimum": -0.0030494340781012487,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:regional_flag:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.05430711968375816,
+      "median": 0.031146046701153448,
+      "minimum": 0.013073523646395337,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:regional_flag:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.11262142740530423,
+      "median": 0.0957818699740181,
+      "minimum": 0.04872983620187544,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:tag_flag:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.6,
+      "median": 0.16666666666666666,
+      "minimum": -0.1,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:tag_flag:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.11666666666666667,
+      "median": -0.029166666666666667,
+      "minimum": -0.14166666666666666,
+      "positive_fraction": 0.375
+    },
+    "full_cross_view_cosine_map:tag_flag:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.18333333333333335,
+      "median": -0.037500000000000006,
+      "minimum": -0.15833333333333333,
+      "positive_fraction": 0.375
+    },
+    "full_cross_view_cosine_map:tag_flag:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.025,
+      "median": -0.058333333333333334,
+      "minimum": -0.18333333333333335,
+      "positive_fraction": 0.25
+    },
+    "full_cross_view_cosine_map:tag_flag:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.29166666666666663,
+      "median": 0.12083333333333332,
+      "minimum": -0.10833333333333332,
+      "positive_fraction": 0.875
+    },
+    "full_cross_view_cosine_map:zwj:decomposed_form_to_component_name": {
+      "count": 8,
+      "maximum": 0.14531668745448012,
+      "median": 0.10032965464871138,
+      "minimum": 0.061792216391025126,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:zwj:decomposed_form_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.1076349523403762,
+      "median": 0.08835299893002463,
+      "minimum": 0.04326393490724223,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:zwj:glyph_to_codepoint_literal": {
+      "count": 8,
+      "maximum": 0.04784764847980846,
+      "median": 0.011991167450804783,
+      "minimum": -0.023073940132690655,
+      "positive_fraction": 0.75
+    },
+    "full_cross_view_cosine_map:zwj:glyph_to_component_name": {
+      "count": 8,
+      "maximum": 0.11400588873600087,
+      "median": 0.07320015256560894,
+      "minimum": 0.04903645273171141,
+      "positive_fraction": 1.0
+    },
+    "full_cross_view_cosine_map:zwj:glyph_to_unicode_name": {
+      "count": 8,
+      "maximum": 0.10286014924433942,
+      "median": 0.07414011712226853,
+      "minimum": 0.04831071980871858,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:atomic_anchor:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.46388709415414575,
+      "median": 0.43273566707061445,
+      "minimum": 0.3583266157594336,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:atomic_anchor:glyph": {
+      "count": 8,
+      "maximum": 0.2940902040806529,
+      "median": 0.22772874426819764,
+      "minimum": 0.19484742999726257,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:atomic_anchor:unicode_name": {
+      "count": 8,
+      "maximum": 0.5464731298584691,
+      "median": 0.40727830784769337,
+      "minimum": 0.3355696664599561,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:keycap:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.8874989319150333,
+      "median": 0.8299992468163522,
+      "minimum": 0.7146829441742397,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:keycap:component_name": {
+      "count": 8,
+      "maximum": 0.9619898531512288,
+      "median": 0.9025709403977664,
+      "minimum": 0.8238577193987887,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:keycap:decomposed_form": {
+      "count": 8,
+      "maximum": 0.8626041133744169,
+      "median": 0.7874521092787339,
+      "minimum": 0.4735143410277123,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:keycap:glyph": {
+      "count": 8,
+      "maximum": 0.8485186530793278,
+      "median": 0.7634292625751882,
+      "minimum": 0.7059700064891262,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:keycap:unicode_name": {
+      "count": 8,
+      "maximum": 0.9371074613090761,
+      "median": 0.9019217480248637,
+      "minimum": 0.7958159543966802,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:modifier:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.4388937385695364,
+      "median": 0.37377828302543553,
+      "minimum": 0.313499475966907,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:modifier:component_name": {
+      "count": 8,
+      "maximum": 0.39017632563333393,
+      "median": 0.348218427656598,
+      "minimum": 0.30401547497780074,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:modifier:decomposed_form": {
+      "count": 8,
+      "maximum": 0.23670035917707163,
+      "median": 0.20671460520889057,
+      "minimum": 0.14347303235413933,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:modifier:glyph": {
+      "count": 8,
+      "maximum": 0.23983205190256288,
+      "median": 0.20176185259950302,
+      "minimum": 0.17995527474958667,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:modifier:unicode_name": {
+      "count": 8,
+      "maximum": 0.44224493028809764,
+      "median": 0.38263451258312614,
+      "minimum": 0.30363201099619375,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:presentation:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.6533068857027604,
+      "median": 0.6312697937074464,
+      "minimum": 0.5187075461105273,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:presentation:component_name": {
+      "count": 8,
+      "maximum": 0.4755809989928438,
+      "median": 0.3594230926254995,
+      "minimum": 0.31441378276326915,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:presentation:decomposed_form": {
+      "count": 8,
+      "maximum": 0.2096121799470436,
+      "median": 0.147069196793269,
+      "minimum": 0.12614908437688027,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:presentation:glyph": {
+      "count": 8,
+      "maximum": 0.20874863373908287,
+      "median": 0.18093756273340764,
+      "minimum": 0.14776372574021185,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:presentation:unicode_name": {
+      "count": 8,
+      "maximum": 0.4755809989928438,
+      "median": 0.3594230926254995,
+      "minimum": 0.31441378276326915,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:regional_flag:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.49352646019282487,
+      "median": 0.37772769377440957,
+      "minimum": 0.3261181154803386,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:regional_flag:component_name": {
+      "count": 8,
+      "maximum": 0.4570284319049325,
+      "median": 0.37691033889242836,
+      "minimum": 0.2120695624925792,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:regional_flag:decomposed_form": {
+      "count": 8,
+      "maximum": 0.16016269750262108,
+      "median": 0.12096539953475038,
+      "minimum": 0.10085047044279777,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:regional_flag:glyph": {
+      "count": 8,
+      "maximum": 0.2214328749864456,
+      "median": 0.1940869127073958,
+      "minimum": 0.1644787462183021,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:regional_flag:unicode_name": {
+      "count": 8,
+      "maximum": 0.4549346904274546,
+      "median": 0.40589525426265693,
+      "minimum": 0.36560989503594576,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:tag_flag:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.9531192801010365,
+      "median": 0.9031095605880158,
+      "minimum": 0.856455553995576,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:tag_flag:component_name": {
+      "count": 8,
+      "maximum": 0.9789196871628384,
+      "median": 0.9253495294965017,
+      "minimum": 0.898303602407746,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:tag_flag:decomposed_form": {
+      "count": 8,
+      "maximum": 0.9441111869723398,
+      "median": 0.894758111066065,
+      "minimum": 0.7901433749297494,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:tag_flag:glyph": {
+      "count": 8,
+      "maximum": 0.9296892974480052,
+      "median": 0.8933274097160495,
+      "minimum": 0.8328253898996598,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:tag_flag:unicode_name": {
+      "count": 8,
+      "maximum": 0.9601043547584018,
+      "median": 0.9393998031190867,
+      "minimum": 0.9090266444496897,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:zwj:codepoint_literal": {
+      "count": 8,
+      "maximum": 0.6284341257074098,
+      "median": 0.5734344114157016,
+      "minimum": 0.5454657546444888,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:zwj:component_name": {
+      "count": 8,
+      "maximum": 0.6174907810027155,
+      "median": 0.5586007549433016,
+      "minimum": 0.4916208092465567,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:zwj:decomposed_form": {
+      "count": 8,
+      "maximum": 0.5187116822094995,
+      "median": 0.4388492287761301,
+      "minimum": 0.31881048954988167,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:zwj:glyph": {
+      "count": 8,
+      "maximum": 0.4226983120373892,
+      "median": 0.3645119182109815,
+      "minimum": 0.303254379481777,
+      "positive_fraction": 1.0
+    },
+    "per_view_item_geometry:zwj:unicode_name": {
+      "count": 8,
+      "maximum": 0.5805573425282324,
+      "median": 0.5347393207839164,
+      "minimum": 0.43798827701956866,
+      "positive_fraction": 1.0
+    }
+  },
+  "returned_final_required_margin_cross_model_agreement": {
+    "atomic_anchor:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.14144065875953765,
+      "median": 0.0976022465437788,
+      "minimum": -0.005544354838709678,
+      "positive_fraction": 0.875
+    },
+    "keycap:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.0892857142857143,
+      "median": 0.00892857142857143,
+      "minimum": -0.14285714285714288,
+      "positive_fraction": 0.5
+    },
+    "modifier:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.08844292504822264,
+      "median": 0.0669688271437485,
+      "minimum": 0.05004337718465385,
+      "positive_fraction": 1.0
+    },
+    "presentation:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.15774719369476953,
+      "median": 0.07863998686410319,
+      "minimum": 0.045115834726534514,
+      "positive_fraction": 1.0
+    },
+    "regional_flag:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.15579322904227372,
+      "median": 0.11578546692142347,
+      "minimum": 0.08667303558633868,
+      "positive_fraction": 1.0
+    },
+    "zwj:required_token_length_matched": {
+      "count": 8,
+      "maximum": 0.15181313478507305,
+      "median": 0.11846297189741256,
+      "minimum": 0.09135671778439,
+      "positive_fraction": 1.0
+    }
+  },
+  "schema_version": 1,
+  "status": "pass",
+  "strict_prefix_sensitivity": {
+    "atomic_anchor:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.26115803644493707,
+        "median": 0.11340481650829795,
+        "minimum": 0.0018488400862095578,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 67,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 5,
+        "maximum": 0.18020859627983743,
+        "median": 0.030653262619807733,
+        "minimum": -0.111952078523674,
+        "positive_fraction": 0.7361111111111112
+      }
+    },
+    "keycap:component_name:decomposed_form_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.3343046087994309,
+        "median": 0.07811589285806553,
+        "minimum": -0.17131195575634217,
+        "positive_fraction": 0.8055555555555556
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 55,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 17,
+        "maximum": 0.37348781055602914,
+        "median": 0.08360613399135633,
+        "minimum": -0.4867793563482178,
+        "positive_fraction": 0.8333333333333334
+      }
+    },
+    "keycap:component_name:glyph_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.35993169223983357,
+        "median": 0.09442039810122214,
+        "minimum": -0.21578060456174936,
+        "positive_fraction": 0.8194444444444444
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 43,
+        "descriptive_bootstrap_interval_negative_count": 1,
+        "descriptive_bootstrap_interval_positive_count": 28,
+        "maximum": 0.34864449974361367,
+        "median": 0.10058401738070447,
+        "minimum": -0.23713691983224183,
+        "positive_fraction": 0.8194444444444444
+      }
+    },
+    "keycap:unicode_name:decomposed_form_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.488115377771949,
+        "median": 0.07475437722034789,
+        "minimum": -0.1427140707823294,
+        "positive_fraction": 0.8333333333333334
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 46,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 26,
+        "maximum": 0.39405276537741296,
+        "median": 0.08992567104702476,
+        "minimum": -0.19348438886593206,
+        "positive_fraction": 0.8611111111111112
+      }
+    },
+    "keycap:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.24595169388364904,
+        "median": 0.0908683683375471,
+        "minimum": -0.10642057846606615,
+        "positive_fraction": 0.9027777777777778
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 46,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 26,
+        "maximum": 0.24529743806163334,
+        "median": 0.07412032984592315,
+        "minimum": -0.17176793112332964,
+        "positive_fraction": 0.8333333333333334
+      }
+    },
+    "modifier:component_name:decomposed_form_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.1558987860690708,
+        "median": 0.05839095877155479,
+        "minimum": -0.004208770840379281,
+        "positive_fraction": 0.9722222222222222
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 44,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 28,
+        "maximum": 0.05171518935578471,
+        "median": 0.015042820449268177,
+        "minimum": -0.02067028704276895,
+        "positive_fraction": 0.8333333333333334
+      }
+    },
+    "modifier:component_name:glyph_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.1607324074287908,
+        "median": 0.05686318857200531,
+        "minimum": -0.01327926762283399,
+        "positive_fraction": 0.9583333333333334
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 53,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 19,
+        "maximum": 0.05802772992298005,
+        "median": 0.011336656471611663,
+        "minimum": -0.01600498662951602,
+        "positive_fraction": 0.8611111111111112
+      }
+    },
+    "modifier:unicode_name:decomposed_form_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.16027773517367355,
+        "median": 0.06371067700563265,
+        "minimum": -0.0051515446663845665,
+        "positive_fraction": 0.9861111111111112
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 46,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 26,
+        "maximum": 0.04584491845576144,
+        "median": 0.016792959319447392,
+        "minimum": -0.006322723327569349,
+        "positive_fraction": 0.9305555555555556
+      }
+    },
+    "modifier:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.15106406030080133,
+        "median": 0.054785530119510324,
+        "minimum": 0.000690255412058402,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 50,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 22,
+        "maximum": 0.04057808101166034,
+        "median": 0.01192402523174219,
+        "minimum": -0.018204606761780123,
+        "positive_fraction": 0.875
+      }
+    },
+    "presentation:component_name:decomposed_form_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.23631390692057058,
+        "median": 0.13723745527471753,
+        "minimum": 0.04110935421131576,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 56,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 16,
+        "maximum": 0.12370402046126394,
+        "median": 0.031986250303024114,
+        "minimum": -0.025577280301643815,
+        "positive_fraction": 0.8888888888888888
+      }
+    },
+    "presentation:component_name:glyph_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.2861680558910522,
+        "median": 0.13741990751585006,
+        "minimum": 0.056497271514092465,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 50,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 22,
+        "maximum": 0.11553562347507451,
+        "median": 0.031324229947635535,
+        "minimum": -0.03675687929315491,
+        "positive_fraction": 0.8888888888888888
+      }
+    },
+    "presentation:unicode_name:decomposed_form_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.23775473852049467,
+        "median": 0.12946281116256814,
+        "minimum": 0.04819382295834807,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 56,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 16,
+        "maximum": 0.09655605621492713,
+        "median": 0.034788056066712654,
+        "minimum": -0.013269361294075632,
+        "positive_fraction": 0.9305555555555556
+      }
+    },
+    "presentation:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.2800264784574483,
+        "median": 0.13270866646631144,
+        "minimum": 0.06108493846955554,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 54,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 18,
+        "maximum": 0.11512920459250747,
+        "median": 0.031340593071126674,
+        "minimum": -0.03403763208725091,
+        "positive_fraction": 0.8888888888888888
+      }
+    },
+    "regional_flag:component_name:decomposed_form_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.3024640113221138,
+        "median": 0.1257928497240537,
+        "minimum": 0.02173252295060732,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 3,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 69,
+        "maximum": 0.28502840903475696,
+        "median": 0.11924051055919849,
+        "minimum": 0.013162936989330938,
+        "positive_fraction": 1.0
+      }
+    },
+    "regional_flag:component_name:glyph_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.26303293210698575,
+        "median": 0.0808568621710603,
+        "minimum": -0.015135261626938835,
+        "positive_fraction": 0.9861111111111112
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 9,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 63,
+        "maximum": 0.2655125836852744,
+        "median": 0.07107908866819304,
+        "minimum": -0.021405143703697112,
+        "positive_fraction": 0.9861111111111112
+      }
+    },
+    "regional_flag:unicode_name:decomposed_form_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.13080487120650297,
+        "median": 0.03752912061180841,
+        "minimum": -0.0008719009702007618,
+        "positive_fraction": 0.9722222222222222
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 33,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 39,
+        "maximum": 0.14569003627868796,
+        "median": 0.04484998925927411,
+        "minimum": -0.041124122878538165,
+        "positive_fraction": 0.9166666666666666
+      }
+    },
+    "regional_flag:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.2570052186705329,
+        "median": 0.11408327839405565,
+        "minimum": 0.014997143032255439,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 6,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 66,
+        "maximum": 0.2529367901828753,
+        "median": 0.1141218703065586,
+        "minimum": 0.02631251735347348,
+        "positive_fraction": 1.0
+      }
+    },
+    "zwj:component_name:decomposed_form_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.14861121009842793,
+        "median": 0.07635152198501492,
+        "minimum": 0.005475790637382365,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 1,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 71,
+        "maximum": 0.122229378561478,
+        "median": 0.05283943839965311,
+        "minimum": 0.018502298400696365,
+        "positive_fraction": 1.0
+      }
+    },
+    "zwj:component_name:glyph_component_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.17129112318402764,
+        "median": 0.09321093344555705,
+        "minimum": 0.011976875610094487,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 2,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 70,
+        "maximum": 0.1257347733369935,
+        "median": 0.05925651754609214,
+        "minimum": 0.006879978858826213,
+        "positive_fraction": 1.0
+      }
+    },
+    "zwj:unicode_name:decomposed_form_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.1437484651521483,
+        "median": 0.06080997091967757,
+        "minimum": 0.0047543325026645905,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 10,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 62,
+        "maximum": 0.0948410750685124,
+        "median": 0.042479559929911294,
+        "minimum": -0.0022433753721614186,
+        "positive_fraction": 0.9861111111111112
+      }
+    },
+    "zwj:unicode_name:glyph_unicode_name": {
+      "required_cell_median_distribution": {
+        "count": 72,
+        "maximum": 0.16471843714369883,
+        "median": 0.0777961038227416,
+        "minimum": 0.006403989626195709,
+        "positive_fraction": 1.0
+      },
+      "strict_prefix_cell_median_distribution": {
+        "count": 72,
+        "descriptive_bootstrap_interval_includes_zero_count": 4,
+        "descriptive_bootstrap_interval_negative_count": 0,
+        "descriptive_bootstrap_interval_positive_count": 68,
+        "maximum": 0.11080172089723961,
+        "median": 0.05072130469978155,
+        "minimum": 0.008548494970977205,
+        "positive_fraction": 1.0
+      }
+    }
+  },
+  "validation_role": "independent_compact_result_validation"
+}

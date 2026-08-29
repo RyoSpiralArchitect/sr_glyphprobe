@@ -36,6 +36,11 @@ This directory contains the compact, path-scrubbed evidence selected for the Gly
   prediction sets, all primary and secondary cell metrics, run/summary/session
   receipts, nested raw-shard ledger bindings, independent validation, and a
   public manifest. Raw activations and model weights remain outside Git.
+- `glyph_system_decomposition_v0/` contains T11's compact joint analysis,
+  cross-model geometry and agreement tables, an independent recomputation of
+  item margins, agreement, variance, and depth trajectories, bilingual reading
+  guides, and checksum-bound manifests. The dense activation arrays remain
+  outside Git.
 - `llama32_3b_mps_emoji_transport_v2/` is the separately versioned E2 MPS
   evidence root. At static freeze it contains only its bilingual orientation;
   no analysis tree means no valid scientific result has been published.
@@ -83,6 +88,27 @@ and the partial conjunction, and rehashed 1,350 external raw-ledger targets.
 Exact token-count matching did not erase the contrast, but T10 does not
 establish tokenizer independence, scale, tuning, semantics, causality,
 independent replication, or model generality. See the [complete T10 result](../docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md).
+
+## T11 glyph-system decomposition reading
+
+T11 completed all nine frozen model/tokenizer cells: 477 shards, 73,566 model
+forwards, and 982,512 FP32 readout vectors. Every required exact
+target-token-length control passed, while the separately assigned 268-item
+reserve remained unforwarded. Returned-final glyph/name margins were positive
+in all 72 cells for presentation, modifier, ZWJ, and regional systems and in
+65/72 keycap cells.
+
+The narrowest follow-up candidate is the ZWJ `presentation_or_fusion` contrast,
+positive in 65/72 cells. Regional flags showed a secondary dual whole-name and
+component pattern. Cross-model item agreement was weak, strict first-token
+coverage was sparse for some systems, and only 8/36 ordered Qwen profiles were
+strictly increasing. The public bundle therefore supports an exploratory,
+model-conditioned atlas—not semantics, causality, tokenizer independence, a
+scale law, tuning, or model generality. The independent validator reports
+`share_with_caveats`; it fully recomputes stored item margins, agreement,
+variance decompositions, and depth trajectories, while geometry is
+hash/schema-checked because its recomputation requires the omitted dense
+arrays. See the [complete T11 result](../docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md).
 
 ## Milestone 2 reading
 

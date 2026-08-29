@@ -1,8 +1,13 @@
 # Glyph-System Decomposition Atlas v0 (T11)
 
-[日本語](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10-D diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Roadmap](ROADMAP.md)
+[日本語](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [Completed exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10-D diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Roadmap](ROADMAP.md)
 
-Status: **frozen exploratory protocol; zero T11 model forwards**.
+Status: **frozen exploratory protocol; acquisition and discovery analysis completed**.
+
+This document preserves the outcome-independent protocol. At its public freeze
+there were zero T11 model forwards. The complete 73,566-forward discovery atlas
+and its unforwarded 268-item reserve are reported separately in the
+[T11 result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md).
 
 T11 asks:
 

@@ -1,10 +1,8 @@
 # 再現性ガイド
 
-[English](REPRODUCIBILITY.md)
+[English](REPRODUCIBILITY.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md)
 
-このガイドでは、公開したMLX validation、標準的な事前因果行列、E1探索
-side trackの再現手順を示す。異なるhardwareでwall-clock timeが同じになる
-ことは保証しない。
+このガイドでは、公開したMLX validation、標準的な事前因果行列、E1探索side track、完了したT11 discovery atlasの再現手順を示す。異なるhardwareでwall-clock timeが同じになることは保証しない。
 
 ## 1. 環境を準備する
 
@@ -197,9 +195,9 @@ python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py validate \
   --output path/to/new-t10-diagnostics
 ```
 
-## 10. 凍結済みT11 atlasを監査・実行する
+## 10. 完了したT11 atlasを再現する
 
-T11はmodel forwardゼロで凍結済みである。最初に、すべてのstatic assetとfreeze manifestを検証する。
+T11は最初のmodel forwardより前に凍結し、discovery取得をすべて完了した。別に割り当てたreserve 268件へのmodel forwardは、現在もゼロである。Discovery atlasを再現するには、最初にすべてのstatic assetとfreeze manifestを検証する。
 
 ```bash
 python scripts/glyph_system_decomposition_v0.py audit-freeze
@@ -244,7 +242,26 @@ python scripts/glyph_system_decomposition_v0.py validate-analysis \
   --analysis path/to/new-t11-analysis
 ```
 
-予定量は73,566 forward、477 shardである。Raw FP32 arrayは炉のarchiveにだけ置き、GitにもSpiralShareにも載せない。Validation passが支えるのは、完了した探索atlasだけである。Reserve 268件のmodel outcomeを開かず、T10を変更せず、意味、因果、tokenizer非依存性、scale、tuning、model一般性の主張も認めない。
+公開済み取得は73,566 forward、477 shardを完了した。Raw FP32 arrayは炉のarchiveにだけ置き、GitにもSpiralShareにも載せない。Validation passが支えるのは、完了した探索atlasだけである。Reserve 268件のmodel outcomeを開かず、T10を変更せず、意味、因果、tokenizer非依存性、scale、tuning、model一般性の主張も認めない。
+
+返却済みsummaryとpreflight directoryがある場合は、main T11 analyzerをimportしない独立compact validatorも実行する。
+
+```bash
+python scripts/validate_glyph_system_decomposition_v0_result.py \
+  --analysis path/to/new-t11-analysis \
+  --summaries-root path/to/t11-summaries \
+  --preflight path/to/new-t11-preflight \
+  --output path/to/new-t11-independent-validation
+```
+
+Commit済みのpublic evidence bundleは、外部raw archiveなしで検査できる。
+
+```bash
+python scripts/package_glyph_system_decomposition_v0_public_bundle.py validate \
+  --bundle artifacts/glyph_system_decomposition_v0
+```
+
+このcompact検証が確かめるのは公開hashと集約値である。省略した約9.15 GiBのdense archiveからmodel横断activation geometryを再構築せず、独立した科学的再現でもない。
 
 ## マシン固有の量
 

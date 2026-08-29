@@ -1,10 +1,10 @@
 # Reproducibility guide
 
-[Japanese / 日本語](REPRODUCIBILITY.ja.md)
+[Japanese / 日本語](REPRODUCIBILITY.ja.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md)
 
 This guide reproduces the released MLX validation, standard pre-causal matrix,
-and E1 exploratory side track. It does not promise identical wall-clock timing
-on different hardware.
+E1 exploratory side track, and completed T11 discovery atlas. It does not
+promise identical wall-clock timing on different hardware.
 
 ## 1. Prepare the environment
 
@@ -225,10 +225,12 @@ python scripts/analyze_semantic_atlas_cross_model_diagnostics_v1.py validate \
   --output path/to/new-t10-diagnostics
 ```
 
-## 10. Audit and run the frozen T11 atlas
+## 10. Reproduce the completed T11 atlas
 
-T11 is frozen with zero model forwards. First verify every static asset and the
-freeze manifest:
+T11 was frozen before its first model forward and has now completed the full
+discovery acquisition. The separately assigned 268-item reserve still has zero
+model forwards. To reproduce the discovery atlas, first verify every static
+asset and the freeze manifest:
 
 ```bash
 python scripts/glyph_system_decomposition_v0.py audit-freeze
@@ -280,11 +282,34 @@ python scripts/glyph_system_decomposition_v0.py validate-analysis \
   --analysis path/to/new-t11-analysis
 ```
 
-The expected acquisition is 73,566 forwards in 477 shards. Raw FP32 arrays
+The released acquisition completed 73,566 forwards in 477 shards. Raw FP32 arrays
 remain in the furnace archive and must not be committed to Git or placed on
 SpiralShare. A validation pass supports only a complete exploratory atlas. It
 does not open the 268 reserve model outcomes, change T10, or authorize semantic,
 causal, tokenizer-independent, scale, tuning, or model-general claims.
+
+With the returned summaries and preflight directory, run the independent
+compact validator. It does not import the main T11 analyzer:
+
+```bash
+python scripts/validate_glyph_system_decomposition_v0_result.py \
+  --analysis path/to/new-t11-analysis \
+  --summaries-root path/to/t11-summaries \
+  --preflight path/to/new-t11-preflight \
+  --output path/to/new-t11-independent-validation
+```
+
+The committed public evidence bundle can be checked without the external raw
+archive:
+
+```bash
+python scripts/package_glyph_system_decomposition_v0_public_bundle.py validate \
+  --bundle artifacts/glyph_system_decomposition_v0
+```
+
+That compact pass validates the published hashes and aggregates. It does not
+reconstruct cross-model activation geometry from the omitted approximately
+9.15 GiB dense archive and is not an independent scientific replication.
 
 ## Machine-specific quantities
 

@@ -1,8 +1,10 @@
 # Glyph-System Decomposition Atlas v0（T11）
 
-[English](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10-D診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md)
+[English](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [完了した探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10-D診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [ロードマップ](ROADMAP.ja.md)
 
-状態：**探索protocolを凍結済み。T11 model forwardはゼロ**。
+状態：**探索protocolを凍結済み。取得とdiscovery解析は完了**。
+
+この文書は、outcomeを見る前に固定したprotocolを保存する。公開freeze時点ではT11 model forwardはゼロだった。73,566-forwardのdiscovery atlas完了結果と、未forwardのまま保ったreserve 268件は、[T11結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)に分けて報告する。
 
 T11で問うのは、次の一点である。
 

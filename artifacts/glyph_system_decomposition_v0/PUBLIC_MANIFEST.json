@@ -1,0 +1,215 @@
+{
+  "analysis_source_sha256sums_sha256": "8f03aa191715c96ee980fe47e9a51f85ea651c4d619d9c46af345815ea6ca07a",
+  "bundle_role": "compact_exploratory_result_evidence",
+  "claim_boundary": {
+    "architecture_or_model_generality_claim_authorized": false,
+    "causal_claim_authorized": false,
+    "exploratory_only": true,
+    "independent_replication_claim_authorized": false,
+    "instruction_tuning_claim_authorized": false,
+    "scale_law_claim_authorized": false,
+    "semantic_claim_authorized": false,
+    "single_authoritative_landing_pattern_selected": false,
+    "t10_rescue_authorized": false,
+    "tokenizer_independence_claim_authorized": false
+  },
+  "external_input_bindings": {
+    "preflight": {
+      "aggregate_receipt": {
+        "model_forward_calls": 0,
+        "model_weights_loaded": false,
+        "reserve_model_forward_calls": 0,
+        "status": "all_nine_tokenizer_preflights_complete_zero_t11_model_forwards"
+      },
+      "aggregate_sha256": "16484d7fa3504ddfdd9ffefc441d3270f506dc485728b7655a5ee9c2f3c8d2ff",
+      "sha256sums_sha256": "aa9a00c607a8b3da68848a36af14e2ae7f9bae9ce1a3b40648c1e0d7523942de"
+    },
+    "raw_activation_archive": {
+      "approximate_dense_array_bytes": "9.15 GiB",
+      "included": false,
+      "reason": "Raw FP32 activations remain in the furnace data archive and are not reconstructible from hashes alone."
+    },
+    "run_receipt_sha256": {
+      "gemma2_2b_it_bf16": "93345c6952cce73ff10d90ef834b3877f1a88b9f4fa765b4aac0cc4b25b2750e",
+      "llama32_3b_base_bf16": "1fde77656347cf49f1da7ecc2a66cd79e8f1eaeebb3ffd5b527a3acd7e23974c",
+      "mistral7b_instruct_v03_bf16": "173417a94c79508027e714d93e47ba4090299132fa0a7b27678a5706b48044a3",
+      "olmo2_1b_base_bf16": "c02cf95443832f35b55892273570f30b705bd59afd4517717b3e9377e8e183a1",
+      "qwen25_0p5b_base_bf16": "83447047ed5c22db6197b11c7ea36c4b839233366eef44192befa3738b2d8389",
+      "qwen25_1p5b_base_bf16": "e84ad7e37a62b213d5b7d9658db9b10d8ac5ca713e2df4e5fbdd5475c50810fc",
+      "qwen25_3b_base_bf16": "0a6884278687c180ca2448b33de8462a9066b8aed59a3a57d82359d66e58de42",
+      "qwen25_7b_base_bf16": "b23dbbd058551cc17cf231bd7b75247bc1d57027df1cf3ca32e4b4ddafc4cdd6",
+      "smollm2_1p7b_base_bf16": "b4555aca9bb537dbb77d701c0343f30f098154b91dc0996cfe4a472224acdc68"
+    },
+    "summaries": {
+      "gemma2_2b_it_bf16": {
+        "item_margin_array_count": 3600,
+        "item_margins_sha256": "e68ed226e578a8993f3bda4f77d706046c12028f9d9cc12926e938727fac7798",
+        "sha256sums_sha256": "b8b0813da3d7cc70e97004fa78849765107480aea81f4a03ac1a5ea709525395",
+        "summary_receipt_sha256": "dd239e1121384a6394b505f4f8ab8bfc7e3c9c72789600b811f3403e4f071185"
+      },
+      "llama32_3b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "56f37674b2d44b3e991d43548ed3edaa95ab29e565351648718527d61a1772c0",
+        "sha256sums_sha256": "95b011b18829ca9104bb40c27264793380197b2b0937bc9e64114ee501cbd5a2",
+        "summary_receipt_sha256": "f04b263922761966737ddfc30fc047ac25274e4050c6fc700ab3a9729ebe812b"
+      },
+      "mistral7b_instruct_v03_bf16": {
+        "item_margin_array_count": 3600,
+        "item_margins_sha256": "45f30b961eb8e93db95332dc63df38de133a8e426b38c3d74dcb8d3524574c08",
+        "sha256sums_sha256": "f0594174cd8bb8f767ca7ef4286e5bd571875ce16063398db88d674139b8af15",
+        "summary_receipt_sha256": "3a2871c5539775b2a00de7c9b3ec8df621d1d37f3d7d6ef1057d556b8343eaca"
+      },
+      "olmo2_1b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "6e136f0f2b3a9f4814b4ef2a3aca24187ccce614fc391100ca3fe9070e2f473e",
+        "sha256sums_sha256": "2b6f93a0bb26cc90272ff6ccaa009ff14f6f7f82bb8814f38809b40364cd08e3",
+        "summary_receipt_sha256": "d55c072b6e58e197372a042a95b821ad79a77919bc7328796a6a173a7781ae8a"
+      },
+      "qwen25_0p5b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "e0fbc1f7bb39f4643b81fc0a31ffd394a3d5965a4041f7599e15ce6c04e904bc",
+        "sha256sums_sha256": "801b21ea208e09381f8d125a7c44d0d14a6023db557ba9a961b7963eb44bb650",
+        "summary_receipt_sha256": "8d7699941d04f300910d106ec712d59cf3f15c842917c0ee373de5f8635300c1"
+      },
+      "qwen25_1p5b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "998efb61fd3ff8c4da035857c4f3765c90df90c4c829255bc539d655c3036627",
+        "sha256sums_sha256": "e42224838c0a09262a62e9d42557b7bb8d8e1e8b8783701d1f59a071f4dccfd1",
+        "summary_receipt_sha256": "0b3fe9a48edacb01fc61d9879dd8f0532c830c8471134281e8456b797aa2e326"
+      },
+      "qwen25_3b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "00d818b8dc209a2a872e77242680456566a1c826728d174223e161e03bbd17c9",
+        "sha256sums_sha256": "ca65a0f613b9ec740fddb6dc97c2c9b84da70975e785b422fdc5fc030343de7d",
+        "summary_receipt_sha256": "7227231de65f6e32ec41727d586d75e076397570cfba50074a21fb6780182a05"
+      },
+      "qwen25_7b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "a44998550be4dc78b935c929b747ebb7438ed28e1aa0a756aeeafd85e36c4f5d",
+        "sha256sums_sha256": "f9838fe123df70b5da72ce627c8ff371b99b9b75235ddd9cc40e2bf24421dd30",
+        "summary_receipt_sha256": "f24cb2c8b2ca912f6717c46ceeff3dc7540a2f91e8501ed5acca3d9c3b552f08"
+      },
+      "smollm2_1p7b_base_bf16": {
+        "item_margin_array_count": 3648,
+        "item_margins_sha256": "adac8f2b0b9bbbd9a81019ae30757bb597702399cbde65e2decdbd561ee32014",
+        "sha256sums_sha256": "91cb72afed442230ddb94d1f03045227b80d355e65a6a4633fb6650e8c2a7e4d",
+        "summary_receipt_sha256": "6ff75dbb05a6385ee0550ba905af8794a185fe10fc4a66df6257682d1d1b0430"
+      }
+    }
+  },
+  "freeze_commit": "1602749815cf8007588024f89497cc5646de9f54",
+  "included_payload": [
+    {
+      "bytes": 2674,
+      "path": "README.ja.md",
+      "sha256": "096e1f76f6774f7e8db8bd1889c3cc7006e987adb7385246bdf470aa87ef15b9"
+    },
+    {
+      "bytes": 2557,
+      "path": "README.md",
+      "sha256": "1d182ee95098db735471029ed587b3231cfb2fb2f025ea8e3ef99b78498d879c"
+    },
+    {
+      "bytes": 355,
+      "path": "analysis/SHA256SUMS",
+      "sha256": "dc8a62b1afe3db631f925f770ba44db67224f4b6c54287101f9e60bf50a3b89a"
+    },
+    {
+      "bytes": 857984,
+      "path": "analysis/analysis.json",
+      "sha256": "d6d1eba0203a3d55010f5bca117b626a6aea4f7d6d9c0ea4aa69051498b2ee71"
+    },
+    {
+      "bytes": 404057,
+      "path": "analysis/cross_model_geometry.jsonl",
+      "sha256": "2646d36f501b3212cdb3aaf4a217c73a22e0b473a300191af36be959e8c87ad9"
+    },
+    {
+      "bytes": 184532,
+      "path": "analysis/cross_model_item_margin_agreement.jsonl",
+      "sha256": "e2fa9de6446a5eedc2b9f7482d188ec745423a710045e4036fe633f074f2e13d"
+    },
+    {
+      "bytes": 288,
+      "path": "analysis/report.md",
+      "sha256": "6ed8925dcbda4d052885e40b4f5180114fe4ca61ea958a92789e0efbb47b3271"
+    },
+    {
+      "bytes": 170,
+      "path": "validation/SHA256SUMS",
+      "sha256": "33472130f5c68ad845f841908ce5f2f12335c9ffebab2da310f52055577f8e7a"
+    },
+    {
+      "bytes": 94011,
+      "path": "validation/independent_validation.json",
+      "sha256": "efa5387beb83e032ef3af49692011b67a872cf79648d1791eb74585f5439ea13"
+    },
+    {
+      "bytes": 663,
+      "path": "validation/report.md",
+      "sha256": "ebf9fb74389013260475307d2e53e5358a6bd6fb0ae7e7cad41dbd57f4f00ae2"
+    }
+  ],
+  "independent_validation": {
+    "balanced_three_way_variance": {
+      "metrics_recomputed": 7,
+      "mismatch_count": 0,
+      "tolerance": 1e-12
+    },
+    "cross_model_geometry": {
+      "reason": "Independent reconstruction requires the omitted approximately 9.15 GiB raw activation archive.",
+      "row_count": 1040,
+      "status": "hash_and_schema_checked_not_independently_recomputed"
+    },
+    "cross_model_item_margin_agreement": {
+      "mismatch_count": 0,
+      "model_pairs_per_row": 36,
+      "rows_recomputed": 720,
+      "tolerance": 1e-12
+    },
+    "depth_trajectories": {
+      "mismatch_count": 0,
+      "rows_recomputed": 2592,
+      "tolerance": 1e-12
+    },
+    "overall_assessment": "share_with_caveats",
+    "status": "pass",
+    "stored_item_margin_cell_medians": {
+      "broad_registered_metric_medians": 5184,
+      "broad_strict_prefix_metric_medians": 3024,
+      "depth_registered_metric_medians": 15552,
+      "depth_strict_prefix_metric_medians": 8976,
+      "mismatch_count": 0,
+      "tolerance": 1e-12,
+      "total_checked": 32736
+    }
+  },
+  "omitted_analysis_payload": [
+    {
+      "bytes": 7731228,
+      "path": "broad_system_cell_metrics.jsonl",
+      "reason": "Omitted from Git public bundle; exact source hash retained.",
+      "sha256": "de34d6873e4a7944c6ff65839602ba7841bba0028b95ea6586582ad9f4910779"
+    },
+    {
+      "bytes": 20382088,
+      "path": "depth_system_cell_metrics.jsonl",
+      "reason": "Omitted from Git public bundle; exact source hash retained.",
+      "sha256": "e0fdaa2f8ec30d67d84f8f6e0cf337ce5bff1af663f6a4e12af2a5c12e0fffd4"
+    },
+    {
+      "bytes": 4121010,
+      "path": "depth_trajectories.jsonl",
+      "reason": "Omitted from Git public bundle; exact source hash retained.",
+      "sha256": "a3ce7726f58f6b04b8628613a8449bc774754d54d1723dd550a8a04d8094230f"
+    }
+  ],
+  "protocol_core_sha256": "5ef2e31e7bd04f079426d84db1f3437ee2d6278ff47f587826943a5101324f94",
+  "protocol_id": "glyphprobe-glyph-system-decomposition-v0",
+  "reserve_items": 268,
+  "reserve_model_forward_calls": 0,
+  "reserve_outcomes_inspected": false,
+  "schema_version": 1,
+  "t10_primary_changed": false,
+  "validation_source_sha256sums_sha256": "33472130f5c68ad845f841908ce5f2f12335c9ffebab2da310f52055577f8e7a"
+}

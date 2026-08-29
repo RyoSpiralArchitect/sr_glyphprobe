@@ -18,6 +18,10 @@ endpoint選択は行っていない。それでも、因果プロトコルの凍
 保存するが、内容を見ずにfileの存在・size・hashを検査する場合だけアクセスを許可する。将来の因果実験では、
 露出した研究文脈の外で、新しいversionのbankを作る必要がある。
 
+## T11 discovery reserve
+
+Glyph-system decomposition atlasには、別に割り当てたreserve 268件がある。T11のdiscovery取得と解析は、9 modelのいずれにもreserve itemをforwardせずに完了した。Item identityとtokenizer-only metadataは公開設計の一部として固定済みである。したがって、これは内容を秘匿したbankではなく、model outcomeを未取得に保つholdoutである。別のT12でmodel family、endpoint、実用下限、context規則、対照、heterogeneity規則、multiplicity familyを凍結するまで、reserveのmodel outcomeを開かない。完了した探索的T11結果も、この状態を変更しない。
+
 ## Llama MPS transport studyへの影響
 
 Llama 3.2 3B MPS絵文字transport studyは、P2もC1も使わない。E1と同じ、すでに
@@ -27,4 +31,4 @@ inputやoutcomeを変えない。ただし、公開来歴とPhase IのLimitation
 ## 主張境界
 
 この記録は、C1から科学的outcomeを観測したことを意味しない。研究設計文脈への露出と、
-それに伴う保守的なbank廃止を記録するものである。因果主張は認めない。
+それに伴う保守的なbank廃止を記録するものである。T11 reserveの記載はこれとは別であり、reserveへのmodel forwardがゼロであることを示す。Item identityが秘匿されていたことや、意味内容を見ていないbankであることは示さない。因果主張は認めない。

@@ -21,6 +21,17 @@ v1 file remains in place as historical evidence, but only content-blind
 existence, size, and hash checks are permitted. A future causal experiment
 requires a new versioned bank prepared outside the exposed research context.
 
+## T11 discovery reserve
+
+The glyph-system decomposition atlas has a separately assigned 268-item
+reserve. T11 completed discovery acquisition and analysis without forwarding
+any reserve item through any of the nine models. Item identities and
+tokenizer-only metadata were fixed as part of the public design, so this is a
+model-outcome holdout rather than a content-blind secret bank. No reserve model
+outcome may be opened until a separate T12 freezes its model family, endpoint,
+practical floor, context rule, controls, heterogeneity rule, and multiplicity
+family. The completed exploratory T11 result does not change that status.
+
 ## Effect on the Llama MPS transport study
 
 The Llama 3.2 3B MPS emoji-transport study does not use P2 or C1. It is bound to
@@ -32,4 +43,6 @@ the public provenance and in the Phase I limitations.
 
 This record does not imply that a scientific outcome was observed from C1. It
 records a research-design-context exposure and the conservative retirement of
-the bank. No causal claim is authorized.
+the bank. The T11 reserve statement is separate: it records zero reserve model
+forwards, not hidden item identity or a semantic-blind bank. No causal claim is
+authorized.

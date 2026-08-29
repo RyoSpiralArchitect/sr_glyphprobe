@@ -16,6 +16,7 @@ GlyphProbeの研究リリースから、個人環境のパスを除いた軽量�
 - `multifamily_tokenizer_census_v0/`：検証済みの事後記述aggregate、collection receipt、compact checksum台帳、3 nodeのpath-scrub済みsource receipt・summary複製。各nodeには公開bundle用`SHA256SUMS`と、別名の元source台帳`SOURCE_SHA256SUMS`を置く。Raw JSONL tableは省略するが、正確なhashとrow数で結び付ける。
 - `multifamily_colored_shape_geometry_v0/`：2本の完全なcompact activation run、固定深度の全10解析行、2-cell exact-test判定、OLMoの3地点転送検証、public payload manifest。この研究ではraw arrayを省略しない。
 - `semantic_atlas_cross_model_replication_v0/`：T10の9つのcompact prediction、全primary・secondary cell metrics、run/summary/session receipt、raw shard ledgerへのbinding、独立検証、public manifest。Raw activationとmodel weightはGit外に保持する。
+- `glyph_system_decomposition_v0/`：T11のcompact joint analysis、model間geometry・agreement table、item margin・agreement・variance・depth trajectoryの独立再計算、英日reading guide、checksum付きmanifest。Dense activation arrayはGit外に保持する。
 - `llama32_3b_mps_emoji_transport_v2/`：別versionとして用意したE2 MPSの証拠root。Static freeze時点では英日案内だけを置き、analysis treeがなければ有効な科学的結果は未公開である。
 - `../validation/llama32_3b_mps_emoji_transport_v1/preflight_failure_receipt.json`：廃止済みv1のtokenizer preflight failure記録。Model weightの読み込みとmodel forwardの前に停止しており、科学的outcomeの証拠ではない。
 
@@ -52,6 +53,12 @@ T10は固定した9つのmodel/tokenizer cellをすべて完了した。4 core�
 独立validatorは、全component test、IUT、Holm値、部分連言検定を再現し、外部raw ledger対象1,350件を
 再ハッシュした。Token数完全一致後も差は消えなかったが、T10はtokenization非依存性、scale、tuning、意味、
 因果、独立再現、model一般性を確立しない。[T10の全結果](../docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md)を参照する。
+
+## T11 glyph-system decompositionの読み方
+
+T11は固定した9つのmodel/tokenizer cellをすべて完了した。合計は477 shard、73,566 model forward、982,512本のFP32 readoutである。Target token長を完全一致させる必須対照はすべて通過し、別に割り当てたreserve 268件へのforwardはゼロのままである。Returned-finalのglyph/name marginは、presentation、modifier、ZWJ、regionalの72 cellすべてで正、keycapでは65 / 72 cellで正だった。
+
+次に事前確認する候補としてもっとも絞りやすいのは、65 / 72 cellで正だったZWJの`presentation_or_fusion` contrastである。Regional flagには、whole-nameとcomponentの双方に追従する第二のpatternが見えた。一方、model間のitem順位一致は弱く、一部systemではfirst-token一致層のcoverageが疎らで、size順のQwen profileも狭義単調増加は36本中8本だった。したがって、このpublic bundleが支えるのは探索的・model-conditionedなatlasであり、意味、因果、tokenizer非依存性、scale則、tuning、model一般性ではない。独立validatorの判定は`share_with_caveats`である。Stored item margin、agreement、variance decomposition、depth trajectoryは再計算し、geometryは省略したdense arrayが必要なためhashとschemaを検証した。[T11の全結果](../docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md)を参照する。
 
 ## Milestone 2 の読み方
 
