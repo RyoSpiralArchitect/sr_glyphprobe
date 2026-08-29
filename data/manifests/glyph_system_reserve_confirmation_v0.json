@@ -1,6 +1,6 @@
 {
   "claim_boundary": "T12 is a one-shot confirmation in the complete 96-item ZWJ and 64-item regional-flag reserves selected before T11 acquisition. It tests two discovery-informed hypotheses at the API-returned final hidden state with exact target-token-length controls, a first-target-token sensitivity gate, fixed practical floors, fixed model-heterogeneity gates, and Holm correction. A positive result may establish only reproducibility of the operational contrasts in this fixed model/tokenizer roster and transport grid. It cannot establish emoji meaning, understanding, causality, mechanism, behavioral steering, tokenizer independence, a scale law, instruction-tuning effects, architecture generality, model-population generality, or independent replication; it cannot rescue or alter T10.",
-  "design_preflight_sha256": "afd3b13c1cbc60d9e7c3943b2b53862f627a5c902967b3deebd7a5b75495b958",
+  "design_preflight_sha256": "c4d181a32e76c36bca891301aed7434b3255031cdfac6a4e76e561dbf267ac75",
   "endpoint": {
     "alternative_endpoint_rescue": "forbidden",
     "api_contract": "output.hidden_states[-1]",
@@ -11,12 +11,12 @@
   },
   "experiment_role": "prospective_single_use_two_hypothesis_confirmation",
   "frozen_assets": {
-    "configs/glyph_system_reserve_confirmation_v0.yaml": "a1e178f09d9223dd9b721f7ae58444b5f340cf3ea20f38b03db319ad5571bf4c",
+    "configs/glyph_system_reserve_confirmation_v0.yaml": "d85df2698836d8ba86c61b6967306e50762f5a7055f9d8a74d9129f4078dcfa0",
     "docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md": "7dfb3ad014ffe1bb73c20882302eaf5b8005282d25b32f37d443390d9e426ed9",
     "docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md": "edb696d69d3e293428b716e4ff437aaaa12f920a5ad42e663c24bd35e03fc9d9",
-    "scripts/glyph_system_reserve_confirmation_v0.py": "8d8a4263c41e2f6eb63d51633cd761c1198cb228b481eefcc369fdeca03dc974",
-    "tests/test_glyph_system_reserve_confirmation_v0.py": "d1bf44e48cf2a28e97ffda8021bad153ca30dd8727e13e980cf8869dfc160b40",
-    "validation/glyph_system_reserve_confirmation_v0/design_preflight.json": "afd3b13c1cbc60d9e7c3943b2b53862f627a5c902967b3deebd7a5b75495b958"
+    "scripts/glyph_system_reserve_confirmation_v0.py": "d853a0fe30a88b040c53597566672d26b02b9badf5a345ea350421b3ff372068",
+    "tests/test_glyph_system_reserve_confirmation_v0.py": "bf1f48b29260fc529f6349ebed14a7caaaa61f74e99b63dc1ebc50f8e16eb1f1",
+    "validation/glyph_system_reserve_confirmation_v0/design_preflight.json": "c4d181a32e76c36bca891301aed7434b3255031cdfac6a4e76e561dbf267ac75"
   },
   "generation_calls_at_freeze": 0,
   "hypothesis_family": {

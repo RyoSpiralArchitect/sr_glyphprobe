@@ -590,6 +590,21 @@ def _runtime_versions() -> dict[str, str | None]:
     return result
 
 
+def _validate_runtime() -> dict[str, str | None]:
+    inherited = t11._validate_runtime()
+    observed = _runtime_versions()
+    for package, expected in _config()["runtime"]["critical_versions"].items():
+        _require(
+            observed.get(package) == str(expected),
+            f"T12 runtime mismatch: {package}",
+        )
+        _require(
+            inherited.get(package) == str(expected),
+            f"T12/T11 runtime pin divergence: {package}",
+        )
+    return observed
+
+
 def _locate_local_snapshot(role: str) -> Path:
     return t11._locate_local_snapshot(role)
 
@@ -788,7 +803,7 @@ def _load_model(
     from transformers import AutoModelForCausalLM, AutoTokenizer
 
     aggregate = _validate_runtime_preflight(preflight_directory)
-    t11._validate_runtime()
+    _validate_runtime()
     spec = _model_spec(role)
     receipt_path = preflight_directory / f"{role}.json"
     receipt = _validate_tokenizer_receipt(receipt_path, role)

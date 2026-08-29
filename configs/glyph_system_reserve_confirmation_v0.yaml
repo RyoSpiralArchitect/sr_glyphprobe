@@ -2,6 +2,15 @@ protocol_id: glyphprobe-glyph-system-reserve-confirmation-v0
 experiment_label: T12
 experiment_role: prospective_single_use_two_hypothesis_confirmation
 status_before_execution: design_candidate_zero_t12_reserve_model_forwards
+pre_execution_correction:
+  superseded_freeze_commit: 7b49d801b49d52052f0b3d73021a628d77a9986b
+  reason: >-
+    The first published v0 freeze copied obsolete pre-T11 package versions
+    into this config. The runner delegated runtime validation to the correctly
+    pinned T11 implementation, so no mismatched execution occurred. This
+    correction was frozen before tokenizer preflight, model-weight loading, or
+    any T12 reserve model forward.
+  t12_reserve_model_forward_calls_before_correction: 0
 question: >-
   Do the ZWJ fused-form advantage and the regional-flag dual whole/component
   structure reproduce in the complete, previously unforwarded T11 reserves
@@ -231,10 +240,11 @@ runtime:
   local_files_only: true
   trust_remote_code: false
   critical_versions:
-    torch: 2.8.0+cu128
-    transformers: 4.55.4
-    numpy: 2.2.6
-    PyYAML: 6.0.2
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
 
 execution_policy:
   fresh_contention_check_before_model_load: true

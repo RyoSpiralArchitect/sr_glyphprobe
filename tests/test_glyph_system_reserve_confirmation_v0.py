@@ -83,6 +83,19 @@ def test_protocol_has_one_endpoint_and_a_two_hypothesis_family() -> None:
     assert family["heterogeneity_gate"]["maximum_models_at_or_below_negative_practical_floor"] == 1
 
 
+def test_runtime_pin_matches_t11_and_pre_execution_correction_is_zero_forward() -> None:
+    config = MODULE._config()
+    t11_config = MODULE.t11._config()
+    assert config["runtime"]["critical_versions"] == t11_config["runtime"][
+        "critical_versions"
+    ]
+    correction = config["pre_execution_correction"]
+    assert correction["superseded_freeze_commit"] == (
+        "7b49d801b49d52052f0b3d73021a628d77a9986b"
+    )
+    assert correction["t12_reserve_model_forward_calls_before_correction"] == 0
+
+
 def test_control_mapping_is_deterministic_stratified_and_has_no_self_match() -> None:
     rows = [
         {"t12_index": index, "glyph_system": "zwj", "codepoint": f"X{index}"}

@@ -1,5 +1,5 @@
 {
-  "config_sha256": "a1e178f09d9223dd9b721f7ae58444b5f340cf3ea20f38b03db319ad5571bf4c",
+  "config_sha256": "d85df2698836d8ba86c61b6967306e50762f5a7055f9d8a74d9129f4078dcfa0",
   "design": {
     "contexts_per_model": 8,
     "discovery_design_basis": {
