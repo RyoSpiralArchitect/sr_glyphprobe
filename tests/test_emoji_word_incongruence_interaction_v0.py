@@ -35,6 +35,17 @@ def test_design_arithmetic_balance_and_claim_boundary() -> None:
     assert design["model_forwards"] == 0
     assert design["confirmatory_status"] is False
     assert design["causal_claim_authorized"] is False
+    assert [row["id"] for row in MODULE.targets()] == [
+        row["id"] for row in MODULE.t13.targets()
+    ]
+    assert (
+        MODULE._config()["storage"]["countsketch_dimension"]
+        == MODULE.t13._config()["pilot"]["response_storage"]["countsketch_dimension"]
+    )
+    assert (
+        MODULE._config()["storage"]["countsketch_seed"]
+        == MODULE.t13._config()["pilot"]["response_storage"]["countsketch_seed"]
+    )
 
 
 def test_source_roster_is_exactly_balanced() -> None:

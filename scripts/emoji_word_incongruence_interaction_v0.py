@@ -384,6 +384,28 @@ def audit_design() -> dict[str, Any]:
         "Magnitudes changed",
     )
     _require(len(targets()) == 32, "Public target count changed")
+    _require(
+        [row["id"] for row in targets()] == [row["id"] for row in t13.targets()],
+        "T15-A target order differs from the T13 runtime helper",
+    )
+    t13_storage = t13._config()["pilot"]["response_storage"]
+    _require(
+        int(_config()["storage"]["top_positive_and_negative_logit_deltas"])
+        == int(t13_storage["top_positive_and_negative_logit_deltas"]),
+        "T15-A top-k storage differs from the T13 runtime helper",
+    )
+    _require(
+        int(_config()["storage"]["countsketch_dimension"])
+        == int(t13_storage["countsketch_dimension"])
+        and int(_config()["storage"]["countsketch_seed"])
+        == int(t13_storage["countsketch_seed"]),
+        "T15-A CountSketch contract differs from the T13 runtime helper",
+    )
+    _require(
+        _config()["runtime"]["critical_versions"]
+        == t13._config()["runtime"]["critical_versions"],
+        "T15-A critical versions differ from the T13 runtime helper",
+    )
     _audit_lexical_balance()
     counts = _expected_counts()
     grid = _config()["grids"]
