@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "scripts/t16_operational_semantics_causal_subspace_v0.py": "1a95cdc8b643172a1d9589a616cb1a804b33ace8a81cdffccb638a9bd688d83c",
+    "tests/test_t16_operational_semantics_causal_subspace_v0.py": "ae8f1673b74612e317e206c7ab6ce892bf3555d010193cf3ae076bdbc64e55be",
+    "validation/t16_operational_semantics_causal_subspace_v0/causal_zero_guard_failure_v0.json": "7e06da4d0e16286e1b7d558ef679d1b612509c88df1e86242376b53c770e3f9b"
+  },
+  "axis_prompt_model_site_sign_magnitude_control_endpoint_changes": 0,
+  "base_freeze_manifest_sha256": "f9890339908715ed595e45ce16a438c0a704a4973574db9195a89cddae17df3b",
+  "causal_model_forwards_after_repair_at_freeze": 0,
+  "design_changes": 0,
+  "expected_counts": {
+    "causal_conditions_per_target_per_site": 21,
+    "causal_response_rows": 5376,
+    "causal_target_rows": 128,
+    "congruence_judgment_rows_per_model": 256,
+    "meaning_choice_rows_per_model": 128
+  },
+  "failure_receipt_sha256": "7e06da4d0e16286e1b7d558ef679d1b612509c88df1e86242376b53c770e3f9b",
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "repair": "compare zero-hook and no-hook logits at identical repeated batch shape",
+  "schema_version": 1,
+  "scientific_causal_outcomes_opened_before_repair": false,
+  "status": "causal_zero_guard_implementation_repair_freeze"
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "status": "engineering_zero_guard_failed_before_causal_scientific_open",
+  "failed_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-osc-runs-6c6cf4d",
+  "failed_receipt_sha256": "b8f3434b39870f0ea9f1ca900941a7ed8be4438d296ee20c8b13a75835bb6141",
+  "observed_maximum_zero_hook_logit_error": 0.8125,
+  "observed_maximum_vector_restoration_error_rms": 3.0351459960619062e-18,
+  "cause": "The guard compared a single-sequence no-hook forward with a 21-sequence zero-hook batch, confounding the zero hook with BF16 batch-shape numerics.",
+  "repair": "Compare no-hook and zero-hook logits using the same repeated 21-sequence batch shape while retaining the separate single-sequence activation-RMS capture.",
+  "design_changes": 0,
+  "axis_prompt_model_site_sign_magnitude_control_endpoint_changes": 0,
+  "scientific_causal_outcomes_opened": false,
+  "failed_run_preserved": true
+}

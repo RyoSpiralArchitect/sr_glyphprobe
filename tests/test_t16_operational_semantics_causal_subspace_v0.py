@@ -64,3 +64,9 @@ def test_exact_sign_flip_has_256_assignments() -> None:
     values = np.ones(8, dtype=np.float64)
     assert MODULE._exact_sign_flip_p(values) == 1 / 256
 
+
+def test_repair_changes_only_matched_zero_guard_surface() -> None:
+    source = SCRIPT.read_text(encoding="utf-8")
+    assert "_matched_plain_logits" in source
+    assert "len(injections)" in source
+    assert "scientific_causal_outcomes_opened_before_repair" in source

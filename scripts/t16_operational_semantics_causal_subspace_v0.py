@@ -37,10 +37,16 @@ CONFIG_PATH = Path("configs/t16_operational_semantics_causal_subspace_v0.yaml")
 PANEL_PATH = Path("data/panels/emoji_operational_semantics_axes_v0.json")
 T15B_PANEL_PATH = Path("data/panels/emoji_word_incongruence_axes_v1.json")
 FREEZE_PATH = Path("data/manifests/t16_operational_semantics_causal_subspace_v0.json")
+REPAIR_FREEZE_PATH = Path(
+    "data/manifests/t16_operational_semantics_causal_subspace_repair_v1.json"
+)
 VALIDATION_DIRECTORY = Path("validation/t16_operational_semantics_causal_subspace_v0")
 DESIGN_PREFLIGHT_PATH = VALIDATION_DIRECTORY / "design_preflight.json"
 TOKENIZER_DIRECTORY = VALIDATION_DIRECTORY / "tokenizers"
 TOKENIZER_PREFLIGHT_PATH = VALIDATION_DIRECTORY / "tokenizer_preflight.json"
+CAUSAL_ZERO_GUARD_FAILURE_PATH = (
+    VALIDATION_DIRECTORY / "causal_zero_guard_failure_v0.json"
+)
 BEHAVIOR_ROLES = ("gemma2_2b_it_bf16", "mistral7b_instruct_v03_bf16")
 CAUSAL_ROLE = "mistral7b_instruct_v03_bf16"
 POLES = ("pole_a", "pole_b")
@@ -62,6 +68,11 @@ FROZEN_ASSETS = (
     "validation/t16_operational_semantics_causal_subspace_v0/tokenizers/gemma2_2b_it_bf16.json",
     "validation/t16_operational_semantics_causal_subspace_v0/tokenizers/mistral7b_instruct_v03_bf16.json",
     "validation/t16_operational_semantics_causal_subspace_v0/tokenizer_preflight.json",
+)
+REPAIR_ASSETS = (
+    "scripts/t16_operational_semantics_causal_subspace_v0.py",
+    "tests/test_t16_operational_semantics_causal_subspace_v0.py",
+    "validation/t16_operational_semantics_causal_subspace_v0/causal_zero_guard_failure_v0.json",
 )
 
 
@@ -483,10 +494,66 @@ def audit_freeze() -> dict[str, Any]:
     _require(value.get("protocol_id") == PROTOCOL_ID, "Freeze protocol changed")
     _require(value.get("status") == "final_execution_freeze_zero_t16_model_forwards", "Freeze incomplete")
     _require(value.get("expected_counts") == design["counts"], "Frozen counts changed")
+    repair_path = _root() / REPAIR_FREEZE_PATH
+    superseded = set(REPAIR_ASSETS) if repair_path.is_file() else set()
     for relative, expected in value["assets"].items():
+        if relative in superseded:
+            continue
         asset = _root() / relative
         _require(asset.is_file() and _sha256(asset) == expected, f"Frozen asset changed: {relative}")
-    return {"status": "pass", "freeze_manifest_sha256": _sha256(path)}
+    if not repair_path.is_file():
+        return {"status": "pass", "freeze_manifest_sha256": _sha256(path)}
+    repair = _read_json(repair_path)
+    _require(repair.get("protocol_id") == PROTOCOL_ID, "Repair freeze protocol changed")
+    _require(repair.get("status") == "causal_zero_guard_implementation_repair_freeze", "Repair freeze incomplete")
+    _require(repair.get("base_freeze_manifest_sha256") == _sha256(path), "Repair base freeze changed")
+    _require(repair.get("expected_counts") == design["counts"], "Repair counts changed")
+    for relative, expected in repair["assets"].items():
+        asset = _root() / relative
+        _require(asset.is_file() and _sha256(asset) == expected, f"Repair asset changed: {relative}")
+    return {
+        "status": "pass_with_causal_zero_guard_implementation_repair_v1",
+        "freeze_manifest_sha256": _sha256(repair_path),
+        "base_freeze_manifest_sha256": _sha256(path),
+    }
+
+
+def freeze_repair(output: Path) -> dict[str, Any]:
+    design = audit_design()
+    base = _root() / FREEZE_PATH
+    _require(base.is_file(), "Base T16 freeze missing")
+    base_value = _read_json(base)
+    _require(base_value.get("status") == "final_execution_freeze_zero_t16_model_forwards", "Base T16 freeze changed")
+    failure = _root() / CAUSAL_ZERO_GUARD_FAILURE_PATH
+    _require(failure.is_file(), "Causal zero-guard failure receipt missing")
+    failure_value = _read_json(failure)
+    _require(failure_value.get("scientific_causal_outcomes_opened") is False, "Failure claim boundary changed")
+    assets: dict[str, str] = {}
+    for relative in REPAIR_ASSETS:
+        path = _root() / relative
+        _require(path.is_file(), f"Repair asset missing: {relative}")
+        assets[relative] = _sha256(path)
+    result = {
+        "schema_version": SCHEMA_VERSION,
+        "protocol_id": PROTOCOL_ID,
+        "status": "causal_zero_guard_implementation_repair_freeze",
+        "base_freeze_manifest_sha256": _sha256(base),
+        "failure_receipt_sha256": _sha256(failure),
+        "assets": assets,
+        "expected_counts": design["counts"],
+        "design_changes": 0,
+        "axis_prompt_model_site_sign_magnitude_control_endpoint_changes": 0,
+        "repair": "compare zero-hook and no-hook logits at identical repeated batch shape",
+        "causal_model_forwards_after_repair_at_freeze": 0,
+        "scientific_causal_outcomes_opened_before_repair": False,
+    }
+    _write_json(output, result)
+    return result
+
+
+def _active_freeze_sha256() -> str:
+    audit = audit_freeze()
+    return str(audit["freeze_manifest_sha256"])
 
 
 def _yield_if_contended(output_root: Path, boundary: str) -> None:
@@ -602,7 +669,7 @@ def run_behavior_role(*, role: str, output_root: Path, model_preflight_directory
         "response_rows": len(rows),
         "task_counts": dict(Counter(str(row["task"]) for row in rows)),
         "response_ledger_sha256": _sha256(stage / "response_ledger.jsonl"),
-        "freeze_manifest_sha256": _sha256(_root() / FREEZE_PATH),
+        "freeze_manifest_sha256": _active_freeze_sha256(),
         "model_receipt": model_receipt,
         "generation_calls": 0,
         "elapsed_seconds": time.perf_counter() - started,
@@ -862,6 +929,23 @@ def _injected_logits(torch: Any, model: Any, input_ids: Any, attention_mask: Any
     return output.logits[:, -1, :].detach().float().cpu().numpy()
 
 
+def _matched_plain_logits(
+    torch: Any,
+    model: Any,
+    input_ids: Any,
+    attention_mask: Any,
+    count: int,
+) -> np.ndarray:
+    with torch.inference_mode():
+        output = model(
+            input_ids=input_ids.repeat(count, 1),
+            attention_mask=attention_mask.repeat(count, 1),
+            use_cache=False,
+            return_dict=True,
+        )
+    return output.logits[:, -1, :].detach().float().cpu().numpy()
+
+
 def _condition_vectors(vectors: Mapping[str, np.ndarray], scale: float) -> tuple[list[dict[str, Any]], np.ndarray]:
     metadata = [{"condition_kind": "zero", "sign": 0, "shift": None}]
     values = [np.zeros_like(vectors["full"])]
@@ -903,8 +987,19 @@ def run_causal(*, output_root: Path, source_directory: Path, model_preflight_dir
                 input_ids, attention_mask = _encode_single(torch, tokenizer, model, prompt)
                 baseline, target_rms = _baseline_logits_and_rms(torch, model, input_ids, attention_mask, block)
                 metadata, injections = _condition_vectors(subspaces[site_index][str(target["axis_id"])], magnitude * target_rms)
+                matched_plain = _matched_plain_logits(
+                    torch,
+                    model,
+                    input_ids,
+                    attention_mask,
+                    len(injections),
+                )
                 logits = _injected_logits(torch, model, input_ids, attention_mask, block, injections)
-                maximum_zero_error = max(maximum_zero_error, float(np.max(np.abs(logits[0] - baseline))))
+                del baseline
+                maximum_zero_error = max(
+                    maximum_zero_error,
+                    float(np.max(np.abs(logits[0] - matched_plain[0]))),
+                )
                 mismatch_id = label_ids[str(target["mismatch_label"])]
                 match_id = label_ids[str(target["match_label"])]
                 correct_id = label_ids[str(target["correct_label"])]
@@ -950,7 +1045,7 @@ def run_causal(*, output_root: Path, source_directory: Path, model_preflight_dir
         "source_directions_sha256": _sha256(source_directory / "directions.npy"),
         "response_ledger_sha256": _sha256(stage / "response_ledger.jsonl"),
         "decomposition_diagnostics_sha256": _sha256(stage / "decomposition_diagnostics.json"),
-        "freeze_manifest_sha256": _sha256(_root() / FREEZE_PATH),
+        "freeze_manifest_sha256": _active_freeze_sha256(),
         "model_receipt": model_receipt,
         "generation_calls": 0,
         "elapsed_seconds": time.perf_counter() - started,
@@ -1069,6 +1164,8 @@ def main() -> None:
     aggregate.add_argument("--output", type=Path, required=True)
     freeze_parser = subparsers.add_parser("freeze")
     freeze_parser.add_argument("--output", type=Path, default=FREEZE_PATH)
+    repair_parser = subparsers.add_parser("freeze-repair")
+    repair_parser.add_argument("--output", type=Path, default=REPAIR_FREEZE_PATH)
     behavior = subparsers.add_parser("run-behavior-role")
     behavior.add_argument("--role", required=True)
     behavior.add_argument("--output-root", type=Path, required=True)
@@ -1100,6 +1197,8 @@ def main() -> None:
         result = aggregate_preflight(args.directory, args.output)
     elif args.command == "freeze":
         result = freeze(args.output)
+    elif args.command == "freeze-repair":
+        result = freeze_repair(args.output)
     elif args.command == "audit-freeze":
         result = audit_freeze()
     elif args.command == "run-behavior-role":
