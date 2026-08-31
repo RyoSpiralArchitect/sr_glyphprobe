@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "configs/t16_utf_identity_mixing_v0.yaml": "e2fafe62ebe5314e3f201e18c4b078c8346a619438b0dc619a8d60a09a77bb2d",
+    "data/panels/t16_utf_identity_mixing_panel_v0.json": "8e80e71b3a3e7e32c903a745410a9512bf6441ad952314ce1ffd1540126ddcd3",
+    "docs/T16_UTF_IDENTITY_MIXING_V0.ja.md": "0fb16b9d6ca630290cbbf8a2f7adc9ce0ebd3e4683ea3249162ba1913284ea02",
+    "docs/T16_UTF_IDENTITY_MIXING_V0.md": "5ebaee8fc6bc164fb4e8fe23cf4cf2bf6020ea7c4b54c1f4540278beb22b5c35",
+    "scripts/t16_utf_identity_mixing_v0.py": "d06013c9725288815990d9b52b880c6e3c56a0c54dc45a7399bf7d58fb69b3be",
+    "tests/test_t16_utf_identity_mixing_v0.py": "911dd0e93799324b2d132fa9aaa5aa82798c325c06194af6bfe26eab16c82a70",
+    "validation/t16_utf_identity_mixing_v0/design_preflight.json": "3b8be1b1c130f8923eae15186ffd67b083200004aff8f1bcc9c1b2ea912ccaca",
+    "validation/t16_utf_identity_mixing_v0/tokenizer_preflight.json": "636aa0ff631b039b847875ce2876ebbdf3d5b47751c59ce50e16d39702209579",
+    "validation/t16_utf_identity_mixing_v0/tokenizers/gemma2_2b_it_bf16.json": "b91c8f2cd32aecbf5148d7ea73adb8183993db1e0b681220b079bb148f2a3095",
+    "validation/t16_utf_identity_mixing_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "7c965f2eff77fd7bfbdbc841e677051240e2e23f754348cdb01fc1c0e129aa17"
+  },
+  "depths_per_model": 4,
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "gemma2_2b_it_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-t16-utf-identity-mixing-v0",
+  "records_per_model": 1440,
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t16utf_model_forwards",
+  "tokenizer_independent_unicode_claim_authorized": false,
+  "unique_prompts_per_model": 1248
+}
