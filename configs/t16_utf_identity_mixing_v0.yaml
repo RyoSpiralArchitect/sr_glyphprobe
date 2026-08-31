@@ -1,0 +1,115 @@
+protocol_id: glyphprobe-t16-utf-identity-mixing-v0
+experiment_label: T16-UTF
+status_before_execution: static_design_candidate_zero_t16utf_model_forwards
+question: >-
+  As sequence length n grows, how does the final-wrapper hidden state change
+  when every emoji item is the exact same UTF-8 string, when item identities
+  mix within one Unicode construction family, or when construction families
+  themselves mix while the first item remains fixed?
+claim_boundary: >-
+  T16-UTF is an exploratory geometry control. Exact string identity is frozen
+  byte-for-byte, but mixed conditions can change tokenizer length and token
+  identities. Results describe hidden-state displacement conditional on the
+  recorded tokenization; they do not establish tokenizer-independent Unicode
+  composition, emoji meaning, or a causal circuit.
+
+source_bindings:
+  panel:
+    path: data/panels/t16_utf_identity_mixing_panel_v0.json
+    expected_systems: 6
+    items_per_system: 4
+  wrappers:
+    path: data/wrappers/source_wrappers.jsonl
+    sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+    selected_ids: [w01_mark_anchor, w04_token_state, w10_sequence_continuation, w15_observation_inference]
+  t13_model_preflight:
+    path: validation/emoji_steering_specificity_harvest_v0
+
+models:
+  order: [gemma2_2b_it_bf16, mistral7b_instruct_v03_bf16]
+  role: two_instruction_tuned_architectures_for_exploratory_replication
+
+factorial:
+  system_order: [atomic, presentation, modifier, zwj, regional, keycap]
+  rotations: [0, 1, 2, 3]
+  n_values: [1, 2, 4, 8, 16]
+  sequence_separator: ""
+  mixture_conditions:
+    - clone_exact_utf
+    - within_system_mix
+    - cross_system_mix
+  clone_exact_utf: repeat_the_anchor_glyph_byte_for_byte_n_times
+  within_system_mix: cycle_the_four_items_of_the_anchor_system_starting_at_rotation
+  cross_system_mix: cycle_systems_in_frozen_order_using_the_same_rotation_item_and_starting_at_anchor_system
+  first_item_invariant: all_three_conditions_start_with_the_exact_same_anchor_glyph
+  n_equals_one_invariant: all_three_conditions_share_one_unique_prompt_index
+  wrappers: 4
+  records_per_model: 1440
+  unique_prompts_per_model: 1248
+
+capture:
+  endpoint: raw_decoder_block_output_at_final_common_wrapper_token
+  normalized_depth_fractions: [0.25, 0.50, 0.75, 1.0]
+  site_indices_in_t13_eight_depth_roster: [1, 3, 5, 7]
+  dtype_on_disk: float32
+  generation_calls: 0
+
+tokenization:
+  preflight_before_final_freeze: true
+  record_full_prompt_token_count: true
+  record_sequence_utf8_bytes: true
+  record_sequence_unicode_scalar_count: true
+  record_sequence_sha256: true
+  exact_token_count_matched_subsets: descriptive_only_report_all_available_pairs
+  no_token_count_regression_rescue: true
+
+analysis:
+  principal_unit: system_by_rotation_by_wrapper
+  principal_units_per_model: 96
+  unit_aggregate: median_across_96_principal_units
+  n_equals_one_geometry_distance_required: 0.0
+  per_n_endpoints:
+    clone_growth: cosine_distance_clone_n_from_clone_n1
+    within_extra: cosine_distance_within_mix_n_from_clone_n
+    cross_extra: cosine_distance_cross_mix_n_from_clone_n
+    cross_minus_within: cross_extra_minus_within_extra
+  primary_descriptive_summaries:
+    - mean_over_n_2_4_8_16_clone_growth
+    - mean_over_n_2_4_8_16_within_extra
+    - mean_over_n_2_4_8_16_cross_extra
+    - mean_over_n_2_4_8_16_cross_minus_within
+  uncertainty:
+    bootstrap_replicates: 20000
+    bootstrap_seed: 2026090120
+    stratified_by: six_unicode_systems
+    interval: equal_tailed_95_percent
+  decision_status: exploratory_no_binary_scientific_gate
+  report_all_models_depths_n_values_systems_and_token_count_matched_subsets: true
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  batch_size: 16
+
+execution_policy:
+  tokenizer_preflight_before_final_freeze: true
+  final_freeze_commit_before_any_model_forward: true
+  complete_both_roles_before_scientific_open: true
+  check_foreign_gpu_processes_before_model_load_and_every_128_unique_prompts: true
+  yield_exit_code_on_foreign_contention: 75
+  no_overwrite: true
+  adaptive_system_item_rotation_n_wrapper_model_depth_or_endpoint_changes: forbidden
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - any_external_c1_target_bank
+forbidden_claims:
+  - tokenizer_independent_unicode_composition
+  - emoji_meaning_or_understanding
+  - causal_circuit
+  - architecture_or_model_population_generality

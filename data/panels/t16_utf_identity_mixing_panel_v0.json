@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-t16-utf-identity-mixing-v0",
+  "system_order": ["atomic", "presentation", "modifier", "zwj", "regional", "keycap"],
+  "systems": [
+    {
+      "id": "atomic",
+      "structural_rule": "one Unicode scalar; no VS16, modifier, ZWJ, regional pair, or keycap mark",
+      "items": [
+        {"glyph": "🐈", "codepoints": ["U+1F408"]},
+        {"glyph": "🔥", "codepoints": ["U+1F525"]},
+        {"glyph": "🌙", "codepoints": ["U+1F319"]},
+        {"glyph": "🎨", "codepoints": ["U+1F3A8"]}
+      ]
+    },
+    {
+      "id": "presentation",
+      "structural_rule": "one BMP base followed by U+FE0F VARIATION SELECTOR-16",
+      "items": [
+        {"glyph": "☁️", "codepoints": ["U+2601", "U+FE0F"]},
+        {"glyph": "☀️", "codepoints": ["U+2600", "U+FE0F"]},
+        {"glyph": "✈️", "codepoints": ["U+2708", "U+FE0F"]},
+        {"glyph": "✉️", "codepoints": ["U+2709", "U+FE0F"]}
+      ]
+    },
+    {
+      "id": "modifier",
+      "structural_rule": "one emoji-capable base followed by U+1F3FD MEDIUM SKIN TONE",
+      "items": [
+        {"glyph": "👍🏽", "codepoints": ["U+1F44D", "U+1F3FD"]},
+        {"glyph": "👋🏽", "codepoints": ["U+1F44B", "U+1F3FD"]},
+        {"glyph": "🙏🏽", "codepoints": ["U+1F64F", "U+1F3FD"]},
+        {"glyph": "🖐🏽", "codepoints": ["U+1F590", "U+1F3FD"]}
+      ]
+    },
+    {
+      "id": "zwj",
+      "structural_rule": "three Unicode scalars with U+200D ZERO WIDTH JOINER in the middle",
+      "items": [
+        {"glyph": "🐈‍⬛", "codepoints": ["U+1F408", "U+200D", "U+2B1B"]},
+        {"glyph": "👩‍💻", "codepoints": ["U+1F469", "U+200D", "U+1F4BB"]},
+        {"glyph": "🧑‍🔬", "codepoints": ["U+1F9D1", "U+200D", "U+1F52C"]},
+        {"glyph": "👨‍🚀", "codepoints": ["U+1F468", "U+200D", "U+1F680"]}
+      ]
+    },
+    {
+      "id": "regional",
+      "structural_rule": "two regional-indicator Unicode scalars",
+      "items": [
+        {"glyph": "🇯🇵", "codepoints": ["U+1F1EF", "U+1F1F5"]},
+        {"glyph": "🇺🇸", "codepoints": ["U+1F1FA", "U+1F1F8"]},
+        {"glyph": "🇫🇷", "codepoints": ["U+1F1EB", "U+1F1F7"]},
+        {"glyph": "🇩🇪", "codepoints": ["U+1F1E9", "U+1F1EA"]}
+      ]
+    },
+    {
+      "id": "keycap",
+      "structural_rule": "ASCII digit followed by U+FE0F and U+20E3 COMBINING ENCLOSING KEYCAP",
+      "items": [
+        {"glyph": "1️⃣", "codepoints": ["U+0031", "U+FE0F", "U+20E3"]},
+        {"glyph": "2️⃣", "codepoints": ["U+0032", "U+FE0F", "U+20E3"]},
+        {"glyph": "3️⃣", "codepoints": ["U+0033", "U+FE0F", "U+20E3"]},
+        {"glyph": "4️⃣", "codepoints": ["U+0034", "U+FE0F", "U+20E3"]}
+      ]
+    }
+  ],
+  "claim_boundary": "The panel freezes exact Unicode scalar sequences and structural labels. It does not equate Unicode structure with model semantics."
+}
