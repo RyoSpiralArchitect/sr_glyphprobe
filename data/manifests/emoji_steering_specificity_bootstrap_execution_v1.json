@@ -1,0 +1,88 @@
+{
+  "chunk_count": 100,
+  "claim_boundary": "This amendment fixes an implementation roster and distributed execution schedule after point outcomes were visible. It does not retroactively make the exact 600-row marginalization roster prospective. Completed intervals remain pointwise, descriptive, exploratory intervals and cannot establish a primary hypothesis, significance decision, confirmation, emoji meaning, unique emoji specificity, mechanism, tokenizer independence, scale law, or model-population generality.",
+  "estimand_count": 600,
+  "execution_id": "glyphprobe-emoji-steering-specificity-bootstrap-execution-v1",
+  "input_roster": [
+    "configs/emoji_steering_specificity_analysis_v0.yaml",
+    "artifacts/emoji_steering_specificity_analysis_v0/reporting_summary_v0.json",
+    "validation/emoji_steering_specificity_analysis_v0/point_results_closeout_979533f.json",
+    "scripts/analyze_emoji_steering_specificity_outcomes_v0.py",
+    "scripts/analyze_emoji_steering_specificity_outcomes_v1.py",
+    "scripts/summarize_emoji_steering_specificity_analysis_v0_results.py",
+    "configs/emoji_steering_specificity_bootstrap_execution_v1.yaml",
+    "configs/emoji_steering_specificity_bootstrap_estimands_v1.json",
+    "docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md",
+    "docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md",
+    "scripts/run_emoji_steering_specificity_bootstrap_v1.py",
+    "scripts/audit_emoji_steering_specificity_bootstrap_execution_v1.py",
+    "tests/test_emoji_steering_specificity_bootstrap_execution_v1.py"
+  ],
+  "inputs": {
+    "artifacts/emoji_steering_specificity_analysis_v0/reporting_summary_v0.json": {
+      "bytes": 1127906,
+      "sha256": "097934b191660106167164e2f60f18edafc7fe148db55760466b525aa74c6d06"
+    },
+    "configs/emoji_steering_specificity_analysis_v0.yaml": {
+      "bytes": 8849,
+      "sha256": "eafa4e435a1a003397ef9ce488a399503e3931f2ae1857d9b3d8614b988e5ce8"
+    },
+    "configs/emoji_steering_specificity_bootstrap_estimands_v1.json": {
+      "bytes": 424019,
+      "sha256": "1d36a1110fe082144c13fdb9564e22191c181f8ee381dfdca4a3ce932bca29d7"
+    },
+    "configs/emoji_steering_specificity_bootstrap_execution_v1.yaml": {
+      "bytes": 7520,
+      "sha256": "6794e7cc7ccbc8ba5bad02b55caec0330b3472cd51d26269da2acb9de1afa201"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md": {
+      "bytes": 8727,
+      "sha256": "20d936f6d5eec363e1223d3a5af240ad6cece54e705f664241f4827b39192862"
+    },
+    "docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md": {
+      "bytes": 8089,
+      "sha256": "71e8b551e4323878286bc684e33b3959a6fa834ef4f84a6964a049b59e5bd7fb"
+    },
+    "scripts/analyze_emoji_steering_specificity_outcomes_v0.py": {
+      "bytes": 65546,
+      "sha256": "6331b323693c5c9cca53a0d7e175d52d03ba9452c9c59061db457becc38d2693"
+    },
+    "scripts/analyze_emoji_steering_specificity_outcomes_v1.py": {
+      "bytes": 17675,
+      "sha256": "cc0951be92902b6bc466d69cdb24aa457b04e38bee025eab2a9003ff9a405763"
+    },
+    "scripts/audit_emoji_steering_specificity_bootstrap_execution_v1.py": {
+      "bytes": 17372,
+      "sha256": "a3be5d19b12c4a5f7c71a858ef6371beeeed0a918b45a3d0fb9ee44c91b3bc3a"
+    },
+    "scripts/run_emoji_steering_specificity_bootstrap_v1.py": {
+      "bytes": 61977,
+      "sha256": "5a596b1677944b6c9f0fa9d646a524f1f573427d183bfb57d7b991001c105514"
+    },
+    "scripts/summarize_emoji_steering_specificity_analysis_v0_results.py": {
+      "bytes": 70517,
+      "sha256": "c3d7929f6cf51fad423f5979eeaa7c1c703759c100cb2a45312ed0ee8ed3ef30"
+    },
+    "tests/test_emoji_steering_specificity_bootstrap_execution_v1.py": {
+      "bytes": 13470,
+      "sha256": "e16ebc83235cf9fb055309ae7833d3832cdd91a13a6339e16ce067a820b2a461"
+    },
+    "validation/emoji_steering_specificity_analysis_v0/point_results_closeout_979533f.json": {
+      "bytes": 3411,
+      "sha256": "95e5eaee979a7930ba43879e47cfb4bf9bb28cd93b4761e7e1e531e69f934e41"
+    }
+  },
+  "merged_intervals_written": false,
+  "paper_interval_gate_satisfied": false,
+  "production_bundle_prepared": false,
+  "production_chunks_completed": 0,
+  "production_replicates_completed": 0,
+  "registered_bootstrap_replicates": 20000,
+  "schema_version": 1,
+  "scientific_outcomes_seen_before_freeze": true,
+  "scientific_values_parsed_by_freeze_auditor": false,
+  "source_amendment_id": "glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1",
+  "source_analysis_id": "glyphprobe-emoji-steering-specificity-analysis-v0",
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-harvest-v0",
+  "status": "freeze_complete_post_outcome_before_bootstrap_execution"
+}

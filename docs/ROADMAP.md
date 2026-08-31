@@ -650,11 +650,13 @@ behavioral steering, tokenizer independence, scale law, or model generality.
 See the [complete result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) and
 [compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.md).
 
-### Completed T13-EH harvest and T13-EA exploratory point analysis
+### Completed T13-EH harvest, T13-EA point analysis, and bootstrap execution freeze
 
 Status: the harvest and registered F1–F6 point analysis are complete. The
-registered cluster bootstrap remains at 0/20,000. T13-C remains a
-design space only and is not authorized for confirmatory execution.
+post-outcome execution amendment now freezes 600 high-level estimands, 100
+deterministic chunks, a counter-based resampling schedule, cross-runtime
+sentinels, and a fail-closed merge. Production remains at 0/20,000. T13-C is
+still a design space and is not authorized for confirmatory execution.
 
 T13-EH front-loaded the GPU-only work while the furnace was available. It used
 the already exposed 192-item T11 depth population, all 32 public prestage
@@ -671,6 +673,13 @@ is not a scientific result and does not claim exact JS. See the [point-analysis
 result](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md), [zero-gate
 amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md), and [compact
 evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.md).
+
+The [bootstrap execution v1 contract](EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md)
+closes the remaining computational ambiguity without presenting the exact
+600-row marginalization roster as prospective. A bundle must replay all 600
+public point values before any chunk can run. Mixed Mac/furnace chunks may be
+merged only when three fixed sentinel replicate vectors are bit-identical.
+This is execution readiness, not evidence that an interval has been computed.
 
 The next broad question is whether structured source directions explain
 intervention response beyond generic target susceptibility and null-direction

@@ -1,0 +1,180 @@
+execution_id: glyphprobe-emoji-steering-specificity-bootstrap-execution-v1
+source_analysis_id: glyphprobe-emoji-steering-specificity-analysis-v0
+source_amendment_id: glyphprobe-emoji-steering-specificity-zero-gate-amendment-v1
+source_protocol_id: glyphprobe-emoji-steering-specificity-harvest-v0
+status_at_freeze: post_outcome_computational_amendment_frozen_before_bootstrap_execution
+scientific_outcomes_seen_before_this_freeze: true
+bootstrap_replicates_executed_at_freeze: 0
+purpose: >-
+  Turn the already registered descriptive 20,000-replicate cluster bootstrap
+  into an explicit, chunk-order-independent, fail-closed execution and merge
+  contract without selecting a favorable model, family, cell, or endpoint.
+claim_boundary: >-
+  This amendment fixes an implementation roster and distributed execution
+  schedule after point outcomes were visible. It does not retroactively make
+  the exact 600-row marginalization roster prospective. Completed intervals
+  remain pointwise, descriptive, exploratory intervals and cannot establish a
+  primary hypothesis, significance decision, confirmation, emoji meaning,
+  unique emoji specificity, mechanism, tokenizer independence, scale law, or
+  model-population generality.
+
+source_bindings:
+  analysis_config:
+    path: configs/emoji_steering_specificity_analysis_v0.yaml
+    bytes: 8849
+    sha256: eafa4e435a1a003397ef9ce488a399503e3931f2ae1857d9b3d8614b988e5ce8
+  point_reporting_summary:
+    path: artifacts/emoji_steering_specificity_analysis_v0/reporting_summary_v0.json
+    bytes: 1127906
+    sha256: 097934b191660106167164e2f60f18edafc7fe148db55760466b525aa74c6d06
+  point_results_closeout:
+    path: validation/emoji_steering_specificity_analysis_v0/point_results_closeout_979533f.json
+    bytes: 3411
+    sha256: 95e5eaee979a7930ba43879e47cfb4bf9bb28cd93b4761e7e1e531e69f934e41
+  outcomes_v0_analyzer:
+    path: scripts/analyze_emoji_steering_specificity_outcomes_v0.py
+    bytes: 65546
+    sha256: 6331b323693c5c9cca53a0d7e175d52d03ba9452c9c59061db457becc38d2693
+  outcomes_v1_wrapper:
+    path: scripts/analyze_emoji_steering_specificity_outcomes_v1.py
+    bytes: 17675
+    sha256: cc0951be92902b6bc466d69cdb24aa457b04e38bee025eab2a9003ff9a405763
+
+registered_bootstrap:
+  replicates: 20000
+  seed: 2026082913
+  interval: two_sided_pointwise_percentile_95
+  quantiles: [0.025, 0.975]
+  quantile_method: linear_h_equals_n_minus_1_times_q
+  no_simultaneous_or_multiplicity_claim: true
+
+chunk_schedule:
+  chunk_size: 200
+  chunk_count: 100
+  chunk_id_format: chunk-%04d
+  first_replicate_id: 0
+  last_replicate_id: 19999
+  chunk_membership_rule: contiguous_half_open_ranges_in_chunk_id_order
+  completion_rule: exact_nonoverlapping_coverage_no_missing_no_extra
+  merge_order: ascending_chunk_id_then_verified_payload_sha256
+  sentinel_replicate_ids: [0, 9999, 19999]
+  mixed_runtime_rule: >-
+    Every chunk recomputes the same sentinel replicate vectors. A merge accepts
+    mixed runtime fingerprints only when all sentinel SHA-256 values are
+    bit-identical.
+
+sampler:
+  algorithm: sha256_counter_uint64_unbiased_rejection
+  integer_byte_order: big
+  payload_encoding: canonical_utf8_json_array
+  target_schedule:
+    population_size: 32
+    draws_per_replicate: 32
+    namespace: target/all-families-all-models
+    sharing: one_schedule_shared_across_F1_F2_F3_and_all_models
+  f1_item_schedules:
+    - population_id: all_192_items
+      contrasts: [glyph_minus_unicode_name]
+      population_size: 192
+      draws_per_replicate: 192
+      namespace: F1/items/all-192
+    - population_id: decomposable_168_items
+      contrasts:
+        - glyph_minus_decomposed_form
+        - unicode_name_minus_decomposed_form
+      population_size: 168
+      draws_per_replicate: 168
+      namespace: F1/items/decomposable-168
+  f3_random_seed_schedule:
+    population_size: 64
+    draws_per_replicate: 64
+    namespace_template: F3/random-seeds/{model}/{depth_fraction}
+    sharing: shared_across_targets_magnitudes_endpoints_systems_and_source_forms
+
+estimand_roster:
+  path: configs/emoji_steering_specificity_bootstrap_estimands_v1.json
+  expected_count: 600
+  selection_rule: >-
+    Include every model and endpoint row in the fixed public high-level
+    reporting synthesis for F1 overall model-sign contrasts, F2 raw depth,
+    dose ordering and entropy antisymmetry, and F3 model-depth and model-overall
+    random-relative summaries. Do not add or remove rows from point outcomes.
+  family_counts:
+    F1_item_source_form: 108
+    F2_prototype_depth_dose: 168
+    F3_random_null_calibration: 324
+  model_order:
+    - qwen25_0p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_7b_base_bf16
+  endpoint_order:
+    - kl_baseline_to_intervened
+    - js_divergence
+    - total_variation
+    - logit_delta_rms
+    - entropy_change
+    - argmax_flip_rate
+  depth_order: [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+
+resampling_and_estimands:
+  F1:
+    unit: independent_item_and_target_pigeonhole_weights
+    pairing: source_forms_signs_endpoints_and_models_share_registered_draws
+    point_function: eligible_item_by_target_micro_mean_within_model_contrast_sign_endpoint
+  F2:
+    unit: target
+    pairing: one_target_schedule_shared_across_every_fixed_condition_and_model
+    raw_depth: >-
+      Equal source-form weight; within each source form equal eligible-system
+      weight; then equal magnitude and sign weight.
+    dose: >-
+      Target-level ordered-nondecreasing indicator, equally weighted over every
+      registered system-form-depth-sign cell within model and endpoint.
+    entropy_antisymmetry: >-
+      Target-level positive-plus-negative and normalized residual, equally
+      weighted over every registered system-form-depth-magnitude cell.
+  F3:
+    units: [target, role_depth_seed_index]
+    pairing: >-
+      Target draws are shared globally. Each model-depth seed-index draw is
+      shared across targets, magnitudes, endpoints, systems, and source forms.
+    null_median: exact_median_of_the_64_draw_resampled_seed_multiset
+    percentile: midrank_against_the_same_resampled_seed_multiset
+    aggregation: >-
+      Equal source-form weight, equal eligible-system weight within source
+      form, equal magnitude weight, and equal depth weight for overall rows.
+
+bundle_and_outputs:
+  bundle_contents: response_derived_scalar_tables_only
+  forbidden_bundle_contents:
+    - raw_activation_arrays
+    - raw_logit_arrays
+    - model_weights_or_caches
+    - prompt_or_target_text
+    - protected_target_banks
+  bundle_point_replay: all_600_observed_values_must_match_the_bound_public_summary
+  bundle_point_tolerance: 1.0e-12
+  output_write_policy: atomic_new_paths_no_overwrite
+  chunk_payload: [replicate_ids.npy, estimand_values.npy, receipt.json]
+  merge_payload: [intervals.jsonl, merge_receipt.json]
+  raw_arrays_to_git_or_spiralshare: forbidden
+  derived_bundle_or_chunk_transfer: hash_bound_only_after_scientific_open
+
+failure_gates:
+  - freeze_manifest_or_source_binding_mismatch
+  - point_replay_mismatch
+  - nonfinite_bundle_or_replicate_value
+  - existing_output_path
+  - chunk_id_or_replicate_range_mismatch
+  - missing_extra_duplicate_or_overlapping_chunk
+  - bundle_contract_roster_or_payload_hash_mismatch
+  - sentinel_hash_mismatch
+  - incomplete_20000_replicate_coverage
+  - quantile_or_interval_schema_mismatch
+
+execution_state_at_freeze:
+  production_bundle_prepared: false
+  production_chunks_completed: 0
+  production_replicates_completed: 0
+  merged_intervals_written: false
+  paper_interval_gate_satisfied: false

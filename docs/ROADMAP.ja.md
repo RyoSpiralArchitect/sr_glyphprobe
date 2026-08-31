@@ -436,10 +436,12 @@ T12では、reserveへの最初のforwardより前に、ZWJ fused-form advantage
 
 Analyzerをimportしないvalidatorが、432 cell中央値、49,999回の共有item swap検定3件、実用床と異質性gate、regional conjunction、Holm補正を再計算し、不一致は0件だった。T12が閉じるのはreserve questionだけであり、絵文字の意味、mechanism、因果、behavioral steering、tokenizer非依存性、scale law、model一般性は確立しない。[結果全文](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md)と[compact evidence](../artifacts/glyph_system_reserve_confirmation_v0/README.ja.md)に示す。
 
-### 完了したT13-EH収集とT13-EA探索的点推定
+### 完了したT13-EH収集、T13-EA点推定、bootstrap実行freeze
 
-状態：収集と登録済みF1〜F6の点推定は完了。登録済みcluster bootstrapは0 / 20,000回のままである。
-T13-Cは設計空間にとどまり、確認実験の実行は許可していない。
+状態：収集と登録済みF1〜F6の点推定は完了した。結果を見た後の実装追補として、600本の
+高位estimand、決定論的な100 chunk、counter方式の抽出列、runtime間sentinel、fail-closed
+mergeまでを凍結した。本番bootstrapは0 / 20,000回のままである。T13-Cは設計空間にとどまり、
+確認実験の実行は許可していない。
 
 T13-EHでは、炉を使えるうちにGPU依存工程を先に回収した。対象は、すでに露出した
 T11 depth population 192項目、公開済みprestage target 32件、正規化深度8点、固定9 model
@@ -453,6 +455,12 @@ primitiveの厳密なno-opと、上限を固定したfloat32 JS round-trip resid
 科学的結果もJSの厳密なゼロも意味しない。[T13-EA結果](EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.ja.md)、
 [zero-gate amendment](EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md)、
 [compact evidence](../artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)に詳細を示す。
+
+[Bootstrap実行 v1契約](EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md)は、残っていた
+計算上の曖昧さを閉じた。ただし、600 rowの厳密なmarginalization rosterを事前登録だったとは
+扱わない。最初のchunkへ進む前に、bundleから公開済み600点を全件再生する。Macと炉のchunkを
+混ぜられるのは、固定したsentinel replicate 3本がbit単位で一致した場合だけである。これは実行準備が
+整ったという記録であり、区間を計算済みだという証拠ではない。
 
 次に問うのは、構造化されたsource directionが、ターゲット固有の変化しやすさやnull directionへの
 依存を超えて介入応答を説明するかである。設計には、厳密に揃えたtoken・prefix対照、
