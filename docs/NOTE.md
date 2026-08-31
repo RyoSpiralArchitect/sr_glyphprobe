@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
+[T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
@@ -9,6 +9,18 @@
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
 GlyphProbe begins one step earlier.
+
+T16 now adds the next step without erasing that caution. New forced-choice
+tasks show that two instruction-tuned models can select frozen emoji-word
+associations and judge matching versus mismatching pairs. Yet the response
+fingerprint that replicated in T15-B does not causally implement that explicit
+judgment under the registered residual-subspace test; it moves the endpoint in
+the opposite direction. A wider late-layer patch carries a positive necessity
+component but is not sufficient when transplanted. Exact-UTF controls then
+show that repeated strings and Unicode-family mixing create another,
+tokenizer-conditional geometry. The interesting result is no longer one
+positive score. It is the separation between a repeatable trace, readable
+behavior, and the mechanism that produces it.
 
 Its first question is not what an emoji means inside a model. It asks whether a direction derived from that emoji leaves a reproducible fingerprint when added to a fixed internal activation. If the intervention magnitude, source prompts, target prompts, clipping, and random controls are all sealed, does the same direction move the next-token distribution in a recognizable way on held-out prompts?
 

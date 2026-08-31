@@ -1,0 +1,1071 @@
+{
+  "audit": {
+    "generation_calls": 0,
+    "records": 2880,
+    "roles_complete": 2,
+    "status": "both_roles_complete_scientific_open_authorized",
+    "unique_prompts": 2496
+  },
+  "causal_circuit_claim_authorized": false,
+  "claim_boundary": "T16-UTF is an exploratory geometry control. Exact string identity is frozen byte-for-byte, but mixed conditions can change tokenizer length and token identities. Results describe hidden-state displacement conditional on the recorded tokenization; they do not establish tokenizer-independent Unicode composition, emoji meaning, or a causal circuit.",
+  "decision_status": "exploratory_no_binary_scientific_gate",
+  "emoji_meaning_claim_authorized": false,
+  "protocol_id": "glyphprobe-t16-utf-identity-mixing-v0",
+  "results": {
+    "gemma2_2b_it_bf16": {
+      "depth_0.25": {
+        "block_index": 5,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.019106992040222037,
+              "pairs": 24
+            },
+            "4": {
+              "median_cosine_distance": 0.036274133836290856,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.024729511800062498,
+              "pairs": 24
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.01471890171397966,
+              "pairs": 60
+            },
+            "2": {
+              "median_cosine_distance": 0.007260590216784879,
+              "pairs": 76
+            },
+            "4": {
+              "median_cosine_distance": 0.011855607170976334,
+              "pairs": 60
+            },
+            "8": {
+              "median_cosine_distance": 0.013302469345152612,
+              "pairs": 60
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.06510086203456616,
+            "cross_extra": 0.04336523122086999,
+            "cross_minus_within": 0.017611681457669337,
+            "within_extra": 0.01783727049103534
+          },
+          "2": {
+            "clone_growth": 0.007882859066361547,
+            "cross_extra": 0.01708145744006706,
+            "cross_minus_within": 0.00851494917315837,
+            "within_extra": 0.0077177712029669054
+          },
+          "4": {
+            "clone_growth": 0.022720912280774053,
+            "cross_extra": 0.030016846372165618,
+            "cross_minus_within": 0.012285998800401043,
+            "within_extra": 0.013031226934537066
+          },
+          "8": {
+            "clone_growth": 0.045396847029222365,
+            "cross_extra": 0.034123673443652025,
+            "cross_minus_within": 0.011384931002951959,
+            "within_extra": 0.014303022537679455
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.03256449805273051,
+              0.037807476738176304
+            ],
+            "principal_unit_median": 0.036006951619470776,
+            "system_medians": {
+              "atomic": 0.04079122482373963,
+              "keycap": 0.038993842719967156,
+              "modifier": 0.043050634627791864,
+              "presentation": 0.03844600354050064,
+              "regional": 0.02936992398750546,
+              "zwj": 0.030701143492028696
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.028534906242569297,
+              0.03631611242863679
+            ],
+            "principal_unit_median": 0.031493984291411495,
+            "system_medians": {
+              "atomic": 0.03232300221577658,
+              "keycap": 0.0480225328103384,
+              "modifier": 0.04415291502477596,
+              "presentation": 0.026303652947200287,
+              "regional": 0.02844503584434005,
+              "zwj": 0.027985011285003428
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.010681570495464629,
+              0.015212099869285484
+            ],
+            "principal_unit_median": 0.012005122269140925,
+            "system_medians": {
+              "atomic": 0.0015005332147355332,
+              "keycap": 0.044848769805561475,
+              "modifier": 0.02765713287826635,
+              "presentation": 0.010818172206590843,
+              "regional": 0.011540239137845382,
+              "zwj": 0.005996223198306089
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.011634230669243642,
+              0.01668314558553144
+            ],
+            "principal_unit_median": 0.01296775456214172,
+            "system_medians": {
+              "atomic": 0.02644434911432053,
+              "keycap": 0.0031964918212632892,
+              "modifier": 0.01296775456214172,
+              "presentation": 0.013010929510424513,
+              "regional": 0.02005932156432208,
+              "zwj": 0.013454534708292318
+            }
+          }
+        }
+      },
+      "depth_0.5": {
+        "block_index": 12,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.08630530637592998,
+              "pairs": 24
+            },
+            "4": {
+              "median_cosine_distance": 0.14311723382986996,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.11966788916195853,
+              "pairs": 24
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.05994653696991942,
+              "pairs": 60
+            },
+            "2": {
+              "median_cosine_distance": 0.04491212673205308,
+              "pairs": 76
+            },
+            "4": {
+              "median_cosine_distance": 0.07300045791196252,
+              "pairs": 60
+            },
+            "8": {
+              "median_cosine_distance": 0.06744428032149602,
+              "pairs": 60
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.1736031296368976,
+            "cross_extra": 0.1483174905500551,
+            "cross_minus_within": 0.06712577901864936,
+            "within_extra": 0.07219457745496571
+          },
+          "2": {
+            "clone_growth": 0.04943730413140329,
+            "cross_extra": 0.07707939357104782,
+            "cross_minus_within": 0.023080684787085137,
+            "within_extra": 0.049962100611882276
+          },
+          "4": {
+            "clone_growth": 0.09360478815160134,
+            "cross_extra": 0.12131104279706195,
+            "cross_minus_within": 0.04142431108341188,
+            "within_extra": 0.08014865625084538
+          },
+          "8": {
+            "clone_growth": 0.1375170172269261,
+            "cross_extra": 0.13035356013202437,
+            "cross_minus_within": 0.05615229852676862,
+            "within_extra": 0.07790613577793232
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.11218379039692133,
+              0.12287829264446075
+            ],
+            "principal_unit_median": 0.11626104804457557,
+            "system_medians": {
+              "atomic": 0.12634133372378456,
+              "keycap": 0.08879609313027963,
+              "modifier": 0.14686965139507896,
+              "presentation": 0.11588632525824076,
+              "regional": 0.11333160973226536,
+              "zwj": 0.11272113658957782
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.11573907118678713,
+              0.13446312695762777
+            ],
+            "principal_unit_median": 0.12289248970407586,
+            "system_medians": {
+              "atomic": 0.13137569257550152,
+              "keycap": 0.09435089098221816,
+              "modifier": 0.15933808098111435,
+              "presentation": 0.1051512863500403,
+              "regional": 0.12627709353314964,
+              "zwj": 0.09950577314535222
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.041254788516872906,
+              0.054119394834046
+            ],
+            "principal_unit_median": 0.04625994818807025,
+            "system_medians": {
+              "atomic": 0.025365780212181,
+              "keycap": 0.07488144015136358,
+              "modifier": 0.08630129019253718,
+              "presentation": 0.030827453008776776,
+              "regional": 0.045240975790775406,
+              "zwj": 0.029965484094702816
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.06871462266863448,
+              0.08209495085192839
+            ],
+            "principal_unit_median": 0.0726318124914193,
+            "system_medians": {
+              "atomic": 0.10042836506444004,
+              "keycap": 0.019726233293096432,
+              "modifier": 0.06512453511178064,
+              "presentation": 0.0810052954918875,
+              "regional": 0.07846206393934908,
+              "zwj": 0.08014999592627792
+            }
+          }
+        }
+      },
+      "depth_0.75": {
+        "block_index": 18,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.09246520347426179,
+              "pairs": 24
+            },
+            "4": {
+              "median_cosine_distance": 0.16224862312103994,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.14077204286712264,
+              "pairs": 24
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.07653166946612183,
+              "pairs": 60
+            },
+            "2": {
+              "median_cosine_distance": 0.05023786403289593,
+              "pairs": 76
+            },
+            "4": {
+              "median_cosine_distance": 0.08684310414012397,
+              "pairs": 60
+            },
+            "8": {
+              "median_cosine_distance": 0.07559532691013926,
+              "pairs": 60
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.18774991971348554,
+            "cross_extra": 0.15156322413790357,
+            "cross_minus_within": 0.05512051911148469,
+            "within_extra": 0.08729256302460797
+          },
+          "2": {
+            "clone_growth": 0.06223799935700969,
+            "cross_extra": 0.08063702007947354,
+            "cross_minus_within": 0.025857419142040372,
+            "within_extra": 0.05422158554849571
+          },
+          "4": {
+            "clone_growth": 0.1123425779446689,
+            "cross_extra": 0.12547835474111307,
+            "cross_minus_within": 0.036361492335808654,
+            "within_extra": 0.09666875134025749
+          },
+          "8": {
+            "clone_growth": 0.1499105466722937,
+            "cross_extra": 0.13709373377720768,
+            "cross_minus_within": 0.03658631432043569,
+            "within_extra": 0.09383806359789143
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.12531636214974978,
+              0.13973443904024052
+            ],
+            "principal_unit_median": 0.13021296274336325,
+            "system_medians": {
+              "atomic": 0.15803010523444216,
+              "keycap": 0.10078666210489007,
+              "modifier": 0.14249169370484593,
+              "presentation": 0.1298728725117451,
+              "regional": 0.13021296274336325,
+              "zwj": 0.11554417093284759
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.118910830995025,
+              0.1375890270021657
+            ],
+            "principal_unit_median": 0.12956337731064507,
+            "system_medians": {
+              "atomic": 0.13522461494783394,
+              "keycap": 0.10189287855747832,
+              "modifier": 0.14960306608237428,
+              "presentation": 0.13181550099186656,
+              "regional": 0.1372640516033594,
+              "zwj": 0.12236915412954608
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.03146229300596437,
+              0.047298674197613924
+            ],
+            "principal_unit_median": 0.04105684961143534,
+            "system_medians": {
+              "atomic": 0.012431890144468785,
+              "keycap": 0.07156526876545503,
+              "modifier": 0.07114658879481738,
+              "presentation": 0.021095464088179694,
+              "regional": 0.043939230300946666,
+              "zwj": 0.024422344207671906
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.07765029679435054,
+              0.0980167060113254
+            ],
+            "principal_unit_median": 0.09063169852827677,
+            "system_medians": {
+              "atomic": 0.11750195270569458,
+              "keycap": 0.031568718667323664,
+              "modifier": 0.07917279910320937,
+              "presentation": 0.09922857308414962,
+              "regional": 0.09527493393212176,
+              "zwj": 0.09960861481666441
+            }
+          }
+        }
+      },
+      "depth_1": {
+        "block_index": 25,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.013831654270465177,
+              "pairs": 24
+            },
+            "4": {
+              "median_cosine_distance": 0.025796995491810804,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.024533719645049967,
+              "pairs": 24
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.014079621939854348,
+              "pairs": 60
+            },
+            "2": {
+              "median_cosine_distance": 0.00817927464810736,
+              "pairs": 76
+            },
+            "4": {
+              "median_cosine_distance": 0.012427906272346023,
+              "pairs": 60
+            },
+            "8": {
+              "median_cosine_distance": 0.014026812980011294,
+              "pairs": 60
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.0261937088606502,
+            "cross_extra": 0.028669739855461895,
+            "cross_minus_within": 0.012307709342847417,
+            "within_extra": 0.018067353163283673
+          },
+          "2": {
+            "clone_growth": 0.010939608100139275,
+            "cross_extra": 0.013409301639744908,
+            "cross_minus_within": 0.004341613947552281,
+            "within_extra": 0.008923766842331093
+          },
+          "4": {
+            "clone_growth": 0.017180423382585075,
+            "cross_extra": 0.021186377963285097,
+            "cross_minus_within": 0.004518815171191182,
+            "within_extra": 0.015074159461773318
+          },
+          "8": {
+            "clone_growth": 0.022792665945762736,
+            "cross_extra": 0.024234938592829103,
+            "cross_minus_within": 0.009374810992774818,
+            "within_extra": 0.016084191391343983
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.018137406581362453,
+              0.021519761515075772
+            ],
+            "principal_unit_median": 0.01919467617839901,
+            "system_medians": {
+              "atomic": 0.024095200214972426,
+              "keycap": 0.01835061681656018,
+              "modifier": 0.022590166970450812,
+              "presentation": 0.021003125091357322,
+              "regional": 0.017721899477151526,
+              "zwj": 0.018048332372835277
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.02150305142055378,
+              0.02461543036366562
+            ],
+            "principal_unit_median": 0.023181949412641636,
+            "system_medians": {
+              "atomic": 0.02207628451149908,
+              "keycap": 0.022164087957774553,
+              "modifier": 0.02462053741732763,
+              "presentation": 0.02418403658632634,
+              "regional": 0.023128272347175793,
+              "zwj": 0.02489729848906168
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.0056874853700236705,
+              0.008588794295008695
+            ],
+            "principal_unit_median": 0.007419079923894956,
+            "system_medians": {
+              "atomic": 0.0005550093799569361,
+              "keycap": 0.01347331970632451,
+              "modifier": 0.0108735321906792,
+              "presentation": 0.0039952036006269676,
+              "regional": 0.0058404216341918225,
+              "zwj": 0.007820644747087616
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.013377889837987197,
+              0.01797489136064001
+            ],
+            "principal_unit_median": 0.016434711801751628,
+            "system_medians": {
+              "atomic": 0.02287617757303588,
+              "keycap": 0.006637270559918446,
+              "modifier": 0.01222841141480041,
+              "presentation": 0.0197139456817014,
+              "regional": 0.01740545604976554,
+              "zwj": 0.01397609322552329
+            }
+          }
+        }
+      }
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "depth_0.25": {
+        "block_index": 7,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.024141603005267964,
+              "pairs": 12
+            },
+            "4": {
+              "median_cosine_distance": 0.045717450404681836,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.026665906067282252,
+              "pairs": 4
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.008560734636776035,
+              "pairs": 32
+            },
+            "2": {
+              "median_cosine_distance": 0.0048708159337644275,
+              "pairs": 56
+            },
+            "4": {
+              "median_cosine_distance": 0.009090264115136637,
+              "pairs": 32
+            },
+            "8": {
+              "median_cosine_distance": 0.008951246805316115,
+              "pairs": 32
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.09676079172578922,
+            "cross_extra": 0.05605377020785318,
+            "cross_minus_within": 0.02913697928471909,
+            "within_extra": 0.024117400929335564
+          },
+          "2": {
+            "clone_growth": 0.009525905133222767,
+            "cross_extra": 0.02888635823990715,
+            "cross_minus_within": 0.013342155484501794,
+            "within_extra": 0.011603402385021888
+          },
+          "4": {
+            "clone_growth": 0.02927000493696358,
+            "cross_extra": 0.04517614243357143,
+            "cross_minus_within": 0.02123129825844955,
+            "within_extra": 0.02234377697559864
+          },
+          "8": {
+            "clone_growth": 0.06087771752819121,
+            "cross_extra": 0.0520303463374141,
+            "cross_minus_within": 0.024394271853840854,
+            "within_extra": 0.023137987678000793
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.04714379779565367,
+              0.0507592091057016
+            ],
+            "principal_unit_median": 0.04888302974399947,
+            "system_medians": {
+              "atomic": 0.04731898415653088,
+              "keycap": 0.058081902357341536,
+              "modifier": 0.05092441726702514,
+              "presentation": 0.04466428595400189,
+              "regional": 0.046358862950756974,
+              "zwj": 0.049186708504074014
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.04236375049341942,
+              0.04899613612287809
+            ],
+            "principal_unit_median": 0.0457059480406688,
+            "system_medians": {
+              "atomic": 0.0474907899523052,
+              "keycap": 0.056254866254400834,
+              "modifier": 0.04355640907841714,
+              "presentation": 0.047629760616864886,
+              "regional": 0.04204899634049915,
+              "zwj": 0.03906926246391977
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.018296235556708187,
+              0.025428691937532596
+            ],
+            "principal_unit_median": 0.022962908813666152,
+            "system_medians": {
+              "atomic": 0.013442218564797728,
+              "keycap": 0.04944354367479459,
+              "modifier": 0.018234199589833078,
+              "presentation": 0.03602202524034433,
+              "regional": 0.017505337774667756,
+              "zwj": 0.010126960400464194
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.01910198493229677,
+              0.023359325906942036
+            ],
+            "principal_unit_median": 0.021029247255313452,
+            "system_medians": {
+              "atomic": 0.030173576634006674,
+              "keycap": 0.005785798617250315,
+              "modifier": 0.02263912432045087,
+              "presentation": 0.01579392720899024,
+              "regional": 0.02472072329798472,
+              "zwj": 0.024599520153789425
+            }
+          }
+        }
+      },
+      "depth_0.5": {
+        "block_index": 15,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.044129434298316506,
+              "pairs": 12
+            },
+            "4": {
+              "median_cosine_distance": 0.07958219897225932,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.07376569284940115,
+              "pairs": 4
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.03003199192520911,
+              "pairs": 32
+            },
+            "2": {
+              "median_cosine_distance": 0.018484908017484314,
+              "pairs": 56
+            },
+            "4": {
+              "median_cosine_distance": 0.03309175683551424,
+              "pairs": 32
+            },
+            "8": {
+              "median_cosine_distance": 0.03022438945375594,
+              "pairs": 32
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.1387711830704904,
+            "cross_extra": 0.101003015807965,
+            "cross_minus_within": 0.05015103889422873,
+            "within_extra": 0.04693488123683642
+          },
+          "2": {
+            "clone_growth": 0.02111467077161605,
+            "cross_extra": 0.045042195961396136,
+            "cross_minus_within": 0.021746589333074717,
+            "within_extra": 0.02564587663141321
+          },
+          "4": {
+            "clone_growth": 0.060947758971438115,
+            "cross_extra": 0.08353895740589046,
+            "cross_minus_within": 0.029631082307256973,
+            "within_extra": 0.05305085632593465
+          },
+          "8": {
+            "clone_growth": 0.09983354652024207,
+            "cross_extra": 0.10483371914143697,
+            "cross_minus_within": 0.048098317399222046,
+            "within_extra": 0.05145846971072765
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.07784201862804625,
+              0.08694483406761958
+            ],
+            "principal_unit_median": 0.08406286062447674,
+            "system_medians": {
+              "atomic": 0.08526468028690148,
+              "keycap": 0.08641289190282664,
+              "modifier": 0.08817856819039444,
+              "presentation": 0.06868638301333967,
+              "regional": 0.0753763148423728,
+              "zwj": 0.07943110337964246
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.07955952297616001,
+              0.0929461726876901
+            ],
+            "principal_unit_median": 0.08442548863252271,
+            "system_medians": {
+              "atomic": 0.08797710953016039,
+              "keycap": 0.08900255392217103,
+              "modifier": 0.08120889345976952,
+              "presentation": 0.09541836276049968,
+              "regional": 0.08129122384329537,
+              "zwj": 0.08282325678156265
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.03168479711083459,
+              0.04252770059798014
+            ],
+            "principal_unit_median": 0.0351008046274975,
+            "system_medians": {
+              "atomic": 0.016721372350065447,
+              "keycap": 0.06924119225923155,
+              "modifier": 0.03149174853249828,
+              "presentation": 0.03798846069059364,
+              "regional": 0.033555098230668906,
+              "zwj": 0.03438482774441351
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.04144495234030701,
+              0.049508133767368234
+            ],
+            "principal_unit_median": 0.04499356199700745,
+            "system_medians": {
+              "atomic": 0.06855029206191968,
+              "keycap": 0.014079899323653097,
+              "modifier": 0.05313350366930325,
+              "presentation": 0.04192224275521561,
+              "regional": 0.04909233590991785,
+              "zwj": 0.04588128576023191
+            }
+          }
+        }
+      },
+      "depth_0.75": {
+        "block_index": 23,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.048204044370122046,
+              "pairs": 12
+            },
+            "4": {
+              "median_cosine_distance": 0.06210716146123185,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.08329456319493123,
+              "pairs": 4
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.036968570222318586,
+              "pairs": 32
+            },
+            "2": {
+              "median_cosine_distance": 0.0238543961151636,
+              "pairs": 56
+            },
+            "4": {
+              "median_cosine_distance": 0.04587266120432126,
+              "pairs": 32
+            },
+            "8": {
+              "median_cosine_distance": 0.036081590670089925,
+              "pairs": 32
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.08392815988827368,
+            "cross_extra": 0.12068853919752598,
+            "cross_minus_within": 0.05966013024722411,
+            "within_extra": 0.048676079283164586
+          },
+          "2": {
+            "clone_growth": 0.014274726184406783,
+            "cross_extra": 0.04742355262407344,
+            "cross_minus_within": 0.022110157113951368,
+            "within_extra": 0.02787911359243389
+          },
+          "4": {
+            "clone_growth": 0.03733595012364782,
+            "cross_extra": 0.08708553104698946,
+            "cross_minus_within": 0.03988704275165961,
+            "within_extra": 0.05253182365546866
+          },
+          "8": {
+            "clone_growth": 0.05707210024384629,
+            "cross_extra": 0.11209239477913491,
+            "cross_minus_within": 0.06367078462678238,
+            "within_extra": 0.05044257332713514
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.04215792877666594,
+              0.05257575587738815
+            ],
+            "principal_unit_median": 0.04962193451339614,
+            "system_medians": {
+              "atomic": 0.04925480090984073,
+              "keycap": 0.06190925638799935,
+              "modifier": 0.04773114700255371,
+              "presentation": 0.05366296961539685,
+              "regional": 0.03833528383489229,
+              "zwj": 0.05029165074811856
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.08725313444280627,
+              0.1034394505370636
+            ],
+            "principal_unit_median": 0.09457352276674386,
+            "system_medians": {
+              "atomic": 0.09018488020443599,
+              "keycap": 0.10878498637663422,
+              "modifier": 0.09760756703799776,
+              "presentation": 0.09665847886759006,
+              "regional": 0.06741100786247099,
+              "zwj": 0.09914387382513012
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.03648086538893354,
+              0.05412822543733453
+            ],
+            "principal_unit_median": 0.047832985530321614,
+            "system_medians": {
+              "atomic": 0.019431002303828354,
+              "keycap": 0.08971034936590444,
+              "modifier": 0.054332086171977254,
+              "presentation": 0.03269880627203742,
+              "regional": 0.036197338370066584,
+              "zwj": 0.05000578689388839
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.03972087387684199,
+              0.050029762019185436
+            ],
+            "principal_unit_median": 0.04518533319919052,
+            "system_medians": {
+              "atomic": 0.07960467177642233,
+              "keycap": 0.014750775207197211,
+              "modifier": 0.045163170436168326,
+              "presentation": 0.058498262511999854,
+              "regional": 0.04420727807823212,
+              "zwj": 0.0467628088027761
+            }
+          }
+        }
+      },
+      "depth_1": {
+        "block_index": 31,
+        "exact_token_count_matched_subsets": {
+          "cross_system_mix": {
+            "2": {
+              "median_cosine_distance": 0.039540878863097983,
+              "pairs": 12
+            },
+            "4": {
+              "median_cosine_distance": 0.05268558216893948,
+              "pairs": 4
+            },
+            "8": {
+              "median_cosine_distance": 0.0619433630850908,
+              "pairs": 4
+            }
+          },
+          "within_system_mix": {
+            "16": {
+              "median_cosine_distance": 0.02829058631517639,
+              "pairs": 32
+            },
+            "2": {
+              "median_cosine_distance": 0.01859186672239649,
+              "pairs": 56
+            },
+            "4": {
+              "median_cosine_distance": 0.026894613382792976,
+              "pairs": 32
+            },
+            "8": {
+              "median_cosine_distance": 0.02259628408661185,
+              "pairs": 32
+            }
+          }
+        },
+        "per_n_medians": {
+          "1": {
+            "clone_growth": 0.0,
+            "cross_extra": 0.0,
+            "cross_minus_within": 0.0,
+            "within_extra": 0.0
+          },
+          "16": {
+            "clone_growth": 0.05193154885457818,
+            "cross_extra": 0.1131054111730696,
+            "cross_minus_within": 0.0531520117171666,
+            "within_extra": 0.0345726257495903
+          },
+          "2": {
+            "clone_growth": 0.009076288913874797,
+            "cross_extra": 0.04006769550395506,
+            "cross_minus_within": 0.01704990092637959,
+            "within_extra": 0.02024205724842071
+          },
+          "4": {
+            "clone_growth": 0.022808690728767234,
+            "cross_extra": 0.06765136487877271,
+            "cross_minus_within": 0.027637382185107084,
+            "within_extra": 0.03643745214719457
+          },
+          "8": {
+            "clone_growth": 0.03650326776981455,
+            "cross_extra": 0.10292560458180194,
+            "cross_minus_within": 0.04902623471215917,
+            "within_extra": 0.038409460660081496
+          }
+        },
+        "primary_summaries": {
+          "clone_growth": {
+            "bootstrap_95_percent_interval": [
+              0.02730627861970951,
+              0.034271142024424384
+            ],
+            "principal_unit_median": 0.030167327351978704,
+            "system_medians": {
+              "atomic": 0.03298316479699069,
+              "keycap": 0.035956389809180825,
+              "modifier": 0.0344131095730669,
+              "presentation": 0.028724272913634122,
+              "regional": 0.02478389938556727,
+              "zwj": 0.03575147057345228
+            }
+          },
+          "cross_extra": {
+            "bootstrap_95_percent_interval": [
+              0.07436762228163589,
+              0.09416562607954504
+            ],
+            "principal_unit_median": 0.08357365992574478,
+            "system_medians": {
+              "atomic": 0.08837376886257294,
+              "keycap": 0.08749585156697935,
+              "modifier": 0.0921445623884284,
+              "presentation": 0.08793201698247646,
+              "regional": 0.06292566984313974,
+              "zwj": 0.09398492944187165
+            }
+          },
+          "cross_minus_within": {
+            "bootstrap_95_percent_interval": [
+              0.030507724528893318,
+              0.04811401540204825
+            ],
+            "principal_unit_median": 0.03723823066255072,
+            "system_medians": {
+              "atomic": 0.01969591680543077,
+              "keycap": 0.07903089976661387,
+              "modifier": 0.04817536586963543,
+              "presentation": 0.032306219512944115,
+              "regional": 0.022128316297348294,
+              "zwj": 0.05332465414835692
+            }
+          },
+          "within_extra": {
+            "bootstrap_95_percent_interval": [
+              0.027922457328636907,
+              0.040498919617129425
+            ],
+            "principal_unit_median": 0.03151084058980953,
+            "system_medians": {
+              "atomic": 0.06165216105173263,
+              "keycap": 0.00931032590508693,
+              "modifier": 0.028374509284436952,
+              "presentation": 0.04601361176615898,
+              "regional": 0.040133639189970316,
+              "zwj": 0.03495393041796506
+            }
+          }
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "utf_identity_mixing_analysis_complete",
+  "tokenizer_independent_unicode_claim_authorized": false
+}

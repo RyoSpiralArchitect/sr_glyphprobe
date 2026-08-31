@@ -1,0 +1,51 @@
+{
+  "claims": [
+    {
+      "authorized": true,
+      "claim": "Frozen two-alternative emoji-word association and congruence judgment are supported in the two tested instruction-tuned model cells.",
+      "evidence": "validation/t16_operational_semantics_causal_subspace_v0/closeout.json",
+      "scope": "operational_behavior"
+    },
+    {
+      "authorized": true,
+      "claim": "The registered T15-B residual subspace does not support the explicit mismatch endpoint in its frozen orientation.",
+      "evidence": "validation/t16_operational_semantics_causal_subspace_v0/closeout.json",
+      "scope": "negative_causal_result"
+    },
+    {
+      "authorized": true,
+      "claim": "The frozen eight-component late band contains a positive necessity component but is not sufficient under joint transplantation.",
+      "evidence": "validation/t16_distributed_late_band_v0/closeout.json",
+      "scope": "necessary_not_sufficient_late_route"
+    },
+    {
+      "authorized": true,
+      "claim": "Cross-construction-family mixing has a positive descriptive displacement excess over within-family mixing in all eight tested model-by-depth cells.",
+      "evidence": "validation/t16_utf_identity_mixing_v0/closeout.json",
+      "scope": "tokenizer_conditional_exploratory_geometry"
+    },
+    {
+      "authorized": false,
+      "claim": "The models understand emoji meaning without restriction.",
+      "scope": "unrestricted_semantics"
+    },
+    {
+      "authorized": false,
+      "claim": "The models detect general natural-language contradiction.",
+      "scope": "general_contradiction_detection"
+    },
+    {
+      "authorized": false,
+      "claim": "A unique, minimal, or complete emoji circuit has been identified.",
+      "scope": "circuit_identification"
+    },
+    {
+      "authorized": false,
+      "claim": "The Unicode mixing result is independent of tokenization.",
+      "scope": "tokenizer_independence"
+    }
+  ],
+  "paper_story_status": "draft_claim_spine_frozen_for_writing_not_final_submission_claims",
+  "schema_version": 1,
+  "status": "t16_integrated_claim_table_complete"
+}

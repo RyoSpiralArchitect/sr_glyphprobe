@@ -527,6 +527,33 @@ R1はclaim-specificなtarget-cluster解析と多重性規則を備える。た�
 [protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)、
 [compact closeout](../validation/emoji_word_incongruence_replication_v0/t15b_closeout.json)に示す。
 
+### 完了したT16 — 運用行動・因果境界・完全同一UTF
+
+状態: 固定したT16の3 laneはすべて完了した。行動laneは運用上の関連づけと整合性判断を
+支持した。2つの因果laneは、登録済みconjunctionのもとでは負またはmixedである。
+UTF laneは探索的で、tokenizer経路を条件とする。
+
+- T16-OSCの行動実験は、Gemma 2 2B ITとMistral 7B Instruct v0.3で768行を完了した。
+  4つのmodel×task gateはすべて通過。意味選択の正答率は`0.953125`と`0.937500`、
+  整合性判断は`0.761719`と`0.753906`だった。
+- Mistral T15-B残差subspace laneは、batch shapeだけを直すzero-guard修復を別に凍結し、
+  5,376行を完了した。Treatment、sufficiency、necessityの中央値は`-0.148438`、
+  `-0.085938`、`-0.054688`で、因果gateは支持されなかった。
+- T16-DPでは、新しい192-target bankを使い、Llamaのblock 24〜27にある後期8成分を
+  joint patchした。Necessityは`+0.000871`で通過したが、sufficiencyは`-0.000146`、
+  treatmentは`0.002`の下限未達だった。Joint IUTは非棄却である。
+- T16-UTFは、2モデル、6つのUnicode構成family、4深度、5系列長で、factorial record
+  2,880行を完了した。`n=1`は同じpromptを共有する厳密なzero controlである。
+  横断−同一family変位の区間は8つのmodel×depth cellすべてで正だった。ただし、
+  観測したtokenizer経路を条件とする。
+- 運用上の行動、再現した応答指紋、十分な因果mediatorは、別の経験的対象として扱う。
+- 2つの因果bankで、結果を見た後のsubset救済は行わない。次の局在実験には、新しいbank、
+  新しいfreeze、今回の結果を見ずに選んだendpointが必要になる。
+
+今後の執筆は[T16論文ストーリー](PAPER_STORY_T16_V0.ja.md)を背骨にする。Critical pathは、
+追加のoutcome-drivenな炉探索ではない。論文claimの固定、commit済みcompact analysisからの
+figure生成、archive checksum、先入観のないclaim-boundary reviewである。
+
 ### Milestone 4 — 再現と適用境界の把握
 
 状態: T15-Aの運用上のresponse-shape候補には、prospectiveな独立model再現が

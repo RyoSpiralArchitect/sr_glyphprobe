@@ -1,0 +1,52 @@
+{
+  "audit": {
+    "maximum_explicit_zero_js": 0.0,
+    "maximum_restoration_error_js": 0.0,
+    "maximum_restoration_error_logit_rms": 0.0,
+    "receipt_sha256": "641304dcac272227e23b5c1177419a2f3037da9c024e710cc501569297cf1d1c",
+    "response_rows": 15360,
+    "status": "pass",
+    "target_rows": 192
+  },
+  "bound_t14_upstream_sham_pass": true,
+  "claim_boundary": "T16-DP is an outcome-informed follow-up to the negative T14-C single-site IUT. A pass may establish joint mediation by this eight-component late band for the pinned Llama 3.2 3B cell and operational structured-versus-null JS endpoint. It cannot identify a unique, minimal, or complete circuit, emoji meaning, generated behavior, tokenizer independence, or model generality.",
+  "decision": "joint_late_band_iut_non_rejecting",
+  "distributed_late_band_iut_pass": false,
+  "engineering_gates_pass": true,
+  "estimands": {
+    "necessity": {
+      "bootstrap_95_percent_interval": [
+        0.0007546873856646973,
+        0.0010126405566493225
+      ],
+      "component_pass": true,
+      "one_sided_sign_flip_p_value": 1e-05,
+      "practical_floor": 0.0005,
+      "target_median": 0.0008708869375758131
+    },
+    "sufficiency": {
+      "bootstrap_95_percent_interval": [
+        -0.00018354091938642858,
+        -9.160588663779923e-05
+      ],
+      "component_pass": false,
+      "one_sided_sign_flip_p_value": 1.0,
+      "practical_floor": 0.0005,
+      "target_median": -0.00014648535464712332
+    },
+    "treatment": {
+      "bootstrap_95_percent_interval": [
+        0.0014766282326694742,
+        0.001895658993471495
+      ],
+      "component_pass": false,
+      "one_sided_sign_flip_p_value": 1e-05,
+      "practical_floor": 0.002,
+      "target_median": 0.001716700659693126
+    }
+  },
+  "protocol_id": "glyphprobe-t16-distributed-late-band-v0",
+  "schema_version": 1,
+  "status": "distributed_late_band_analysis_complete",
+  "unique_minimal_or_complete_circuit_claim_authorized": false
+}

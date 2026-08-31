@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
+[T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md)
 
 [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
@@ -11,6 +11,15 @@
 つい「青い丸には、青や丸の意味が埋め込まれているのではないか」と考えたくなる。けれど、その問いは最初の一歩としては大きすぎる。モデルの内部に意味を見つけたつもりになる前に、もっと地味で、もっと厳しい確認が要る。同じ絵文字から作った方向は、条件を変えても同じような出力差を残すのか。単なるランダム方向より、本当にまとまって見えるのか。
 
 GlyphProbe は、その順序を守るために作った。
+
+T16では、その慎重さを保ったまま、次の段階へ進んだ。新しい二択課題では、
+2つのinstruction-tuned modelが、固定した絵文字と語の対応を選び、一致・不一致も
+見分けた。それでも、T15-Bで再現した応答指紋は、登録した残差subspace検定のもとで、
+その明示的な判断を因果的に実装しなかった。Endpointは、むしろ仮説と逆へ動いた。
+より広い後期bandには正のnecessity成分があったが、移植しても十分ではない。
+さらに完全同一UTF対照からは、同じ文字列の反復とUnicode family混合による、
+別のtokenizer条件付き幾何が見えた。面白いのは、正のscoreが一つ増えたことではない。
+繰り返す跡、読み出せる行動、それを生む機構が、同じものではなかったことだ。
 
 ## まず、意味ではなく「跡」を測る
 

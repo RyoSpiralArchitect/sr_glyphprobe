@@ -1,14 +1,15 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [ロードマップ](ROADMAP.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [T8 reserve結果](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [現在のT16ストーリー](PAPER_STORY_T16_V0.ja.md) · [ロードマップ](ROADMAP.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T15-B再現](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
 ## 仮題
 
-**From Glyph Directions to Output Fingerprints: A Controlled Pre-Causal Study in GPT-2**
+**Behaviorally Legible, Mechanistically Unresolved: Separating Emoji Fingerprints, Congruence, and Causal Mediation**
 
-因果実験が成立しない場合は、`Pre-Causal` を残します。限定した回路介入まで成立した場合に限り、題名と要旨で因果性を表す語を再検討します。
+回路発見ではなく、行動上の読み出しと因果実装が分かれた点を中心に置く。Sufficiencyが
+通らなかった結果を、特定の分散回路を発見した証拠へ読み替えない。
 
 ## InterpScience 2026提出sprint
 
@@ -29,9 +30,16 @@ T13-Cはcritical pathに入れない。T13 exploratory panelを加えるのは�
 
 ## 現時点で守れる中心命題
 
-> 固定したGPT-2 FP32 MLX `resid_post`条件では、layer 2の色付き図形fingerprint scoreが、凍結済み48 target bank上で、指定済みのトークン数・接頭構造matched panel 3組を2種類のsource-wrapper構成で上回った。凍結済みv1では両方のlayer 2条件を頑健と判定したが、layer 4は両方とも未解決だった。これは前因果段階のmixed resultであり、トークン化から独立した効果、意味、機構、modelを越えた一般化ではない。
+現在の中心は、回路の発見ではなく、証拠階層の分離である。絵文字×語の応答指紋は
+prospectiveに再現し、固定した二択形式の関連づけと整合性判断も、2つの
+instruction-tuned modelで成功した。それでも、検証したT15-B残差subspaceは、
+明示的な不一致判断を登録仮説と逆へ動かした。別の後期8成分bandはnecessityだけを通過し、
+sufficiencyとfull mediation gateは通っていない。完全同一UTF対照は、
+tokenizerを条件とした幾何結果を加えるが、意味やtokenizer非依存性の証拠ではない。
 
-この命題も暫定版である。v1のrole bindingと固定prototype bootstrapに関する留保を、次の結果を見る前に解決してから、論文の最終的な確認命題を凍結する。
+投稿用の詳しい物語、5ページ版への縮退、図の背骨、許可・不許可claim tableは
+[T16論文ストーリー v0](PAPER_STORY_T16_V0.ja.md)にまとめた。以下の旧節は、
+エビデンス台帳と設計履歴として残す。それぞれ単独では、現在の主張の中心を定めない。
 
 ## 現在のMilestone 2主張表
 

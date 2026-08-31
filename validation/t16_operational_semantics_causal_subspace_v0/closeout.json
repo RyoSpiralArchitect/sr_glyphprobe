@@ -1,0 +1,57 @@
+{
+  "behavior": {
+    "analysis": {
+      "repository_path": "validation/t16_operational_semantics_causal_subspace_v0/results/behavior_analysis.json",
+      "sha256": "d479e413db5eda8f8df2c7cfde32375c078af6c95b0759a71459ee063f7e8dec"
+    },
+    "decision": "operational_association_and_congruence_supported",
+    "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-osc-runs-6c6cf4d",
+    "model_receipts": {
+      "gemma2_2b_it_bf16": "8859f4c939e010b3f4b0c62b9aff04a3f5385ec803ea6b466998bcd6e28190b8",
+      "mistral7b_instruct_v03_bf16": "57afbe06493b51a7bbd974f11f5031a7446aedfcd0bc0d50be69d4d51600f2ce"
+    },
+    "response_rows": 768,
+    "roles_complete": 2
+  },
+  "causal_subspace": {
+    "analysis": {
+      "repository_path": "validation/t16_operational_semantics_causal_subspace_v0/results/causal_analysis.json",
+      "sha256": "86cd6dede2164d5fec3e7a7c128e0de0c313bf80c168d3ecb5f9c516941ca5f8"
+    },
+    "decision": "causal_subspace_gate_not_supported",
+    "engineering_invariants_pass": true,
+    "failed_attempt": {
+      "failure_receipt_path": "validation/t16_operational_semantics_causal_subspace_v0/causal_zero_guard_failure_v0.json",
+      "failure_receipt_sha256": "7e06da4d0e16286e1b7d558ef679d1b612509c88df1e86242376b53c770e3f9b",
+      "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-osc-runs-6c6cf4d",
+      "scientific_causal_outcomes_opened": false,
+      "status": "failed_closed_on_batch_shape_zero_guard"
+    },
+    "repaired_furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-osc-runs-f51597c",
+    "repair_scope": "matched_plain_logits_batch_shape_only",
+    "response_rows": 5376,
+    "run_receipt_sha256": "b4b4427aa42afa0845b8776690acaba976b3ef9a36a0e8111a89ddea34f8c03f",
+    "vector_restoration_error_rms_maximum": 3.0351459960619062e-18,
+    "zero_hook_logit_error_maximum": 0.0
+  },
+  "claim_boundary": "The behavior result supports only frozen two-alternative emoji-word association and congruence judgment. The T15-B residual subspace did not pass the registered causal gate. No unrestricted semantic-understanding, natural-language contradiction-detection, tokenizer-independent, unique-circuit, complete-circuit, or model-population claim is authorized.",
+  "commits": {
+    "answer_token_binding": "c43f1214045a283aab69564ae771fac14c7d1ff7",
+    "execution_freeze": "6c6cf4d87fa954ac699313557c99ff8739484e82",
+    "protocol_design": "3e32fc9e4048e5a8a7ad70c6b999389d458a8482",
+    "zero_guard_repair": "f51597c6c0a956c75aaccfc415825e9d9c0f81a1"
+  },
+  "execution_freeze": {
+    "base_manifest_path": "data/manifests/t16_operational_semantics_causal_subspace_v0.json",
+    "base_manifest_sha256": "f9890339908715ed595e45ce16a438c0a704a4973574db9195a89cddae17df3b",
+    "repair_manifest_path": "data/manifests/t16_operational_semantics_causal_subspace_repair_v1.json",
+    "repair_manifest_sha256": "6e0d05203e33b57a1fe7c6f038ef62fd2a43133e17c604b461faee27eb72b883"
+  },
+  "natural_language_contradiction_detection_claim_authorized": false,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "raw_arrays_copied_from_furnace": false,
+  "schema_version": 1,
+  "status": "complete_behavior_supported_causal_subspace_not_supported",
+  "unique_or_complete_circuit_claim_authorized": false,
+  "unrestricted_semantic_understanding_claim_authorized": false
+}

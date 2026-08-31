@@ -1,10 +1,10 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Roadmap](ROADMAP.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [T8 reserve result](MISTRAL7B_SEMANTIC_ATLAS_RESERVE_CONFIRMATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Current T16 story](PAPER_STORY_T16_V0.md) · [Roadmap](ROADMAP.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T15-B replication](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
-**From Glyph Directions to Output Fingerprints: A Controlled Pre-Causal Study in GPT-2**
+**Behaviorally Legible, Mechanistically Unresolved: Separating Emoji Fingerprints, Congruence, and Causal Mediation**
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
 
@@ -33,9 +33,19 @@ freeze; otherwise the decision map is the future-work contribution.
 
 ## Proposed central claim
 
-Under a pinned GPT-2 FP32 MLX `resid_post` setup, the layer-2 colored-shape fingerprint score retained a positive excess over three prespecified token-count and prefix-panel matched controls on a frozen 48-target bank under two source-wrapper constructions. Frozen v1 classified both layer-2 arms as robust to those controls; layer 4 was unresolved in both arms. This is a mixed pre-causal result, not a tokenization-free, semantic, mechanistic, or model-general claim.
+The current paper centers a separation rather than a circuit discovery.
+Emoji-word response fingerprints recur prospectively, and frozen two-choice
+association and congruence judgments succeed in two instruction-tuned models.
+The tested T15-B residual subspace nevertheless moves explicit mismatch
+judgment oppositely to its registered causal prediction, while a separate
+eight-component late band passes necessity but fails sufficiency and the full
+mediation gate. Exact-UTF controls add a tokenizer-conditional geometry result,
+not a semantic or tokenizer-independent claim.
 
-This wording is provisional. The v1 role-binding and fixed-prototype bootstrap qualifications must be resolved prospectively before the manuscript freezes its final confirmatory claim.
+The detailed submission-ready narrative, five-page fallback, figure spine, and
+allowed/disallowed claim table now live in [T16 paper story v0](PAPER_STORY_T16_V0.md).
+The older sections below remain an evidence registry and historical design
+record; they no longer define the manuscript's lead claim by themselves.
 
 ## Current Milestone 2 claim table
 

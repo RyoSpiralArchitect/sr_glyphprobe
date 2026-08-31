@@ -784,6 +784,42 @@ table is frozen. See the [result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS
 [protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md), and [compact
 closeout](../validation/emoji_word_incongruence_replication_v0/t15b_closeout.json).
 
+### Completed T16 — Operational behavior, causal boundaries, and exact UTF
+
+Status: all three frozen T16 lanes are complete. The behavioral lane supports
+operational association and congruence; both causal lanes remain negative or
+mixed under their registered conjunctions; the UTF lane is exploratory and
+tokenizer-conditional.
+
+- T16-OSC completed 768 behavioral rows across Gemma 2 2B IT and Mistral 7B
+  Instruct v0.3. All four model-by-task gates passed. Meaning-choice accuracy
+  was `0.953125` and `0.937500`; congruence accuracy was `0.761719` and
+  `0.753906`.
+- The Mistral T15-B residual-subspace lane completed 5,376 rows after a
+  separately frozen batch-shape-only zero-guard repair. Treatment,
+  sufficiency, and necessity medians were `-0.148438`, `-0.085938`, and
+  `-0.054688`; the causal gate was not supported.
+- T16-DP jointly patched eight late components over Llama blocks 24–27 on a
+  fresh 192-target bank. Necessity passed at `+0.000871`, but sufficiency was
+  `-0.000146` and treatment missed its `0.002` floor. The joint IUT did not
+  reject.
+- T16-UTF completed 2,880 factorial records across two models, six Unicode
+  construction families, four depths, and five sequence lengths. `n=1` was an
+  exact shared-prompt zero control. Cross-minus-within displacement intervals
+  were positive in all eight model-by-depth cells, conditional on the recorded
+  tokenizer paths.
+- Preserve the mechanistic dissociation: operational behavior, a replicated
+  response fingerprint, and a sufficient causal mediator are not the same
+  empirical object.
+- Do not run an adaptive subset rescue on either causal bank. Any new
+  localization study needs a new bank, a new freeze, and an endpoint chosen
+  without inspecting these outcomes.
+
+The [T16 paper story](PAPER_STORY_T16_V0.md) is now the writing spine. The next
+critical path is manuscript claim freeze, figure generation from committed
+compact analyses, archive checksums, and a fresh-eyes claim-boundary review—not
+another outcome-driven furnace search.
+
 ### Milestone 4 — Replication and boundary mapping
 
 Status: the T15-A operational response-shape candidate now has a prospective

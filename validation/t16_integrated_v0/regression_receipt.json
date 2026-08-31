@@ -1,0 +1,42 @@
+{
+  "analysis_hash_audit": {
+    "bindings_checked": 4,
+    "mismatches": 0,
+    "status": "pass"
+  },
+  "base_commit": "efe67bdf6cbfd149e15805b182e408ba5f96dc68",
+  "bilingual_and_json_audit": {
+    "t16_json_files_parsed": 18,
+    "t16_markdown_pairs_checked": 7,
+    "status": "pass"
+  },
+  "full_pytest": {
+    "collected_tests": 682,
+    "known_base_failures": [
+      "tests/test_emoji_steering_causal_path_v0.py::test_design_arithmetic_and_holdout_boundary",
+      "tests/test_validate_glyph_system_reserve_confirmation_v0_result.py::test_git_resident_public_bundle_validates"
+    ],
+    "known_failure_paths_changed_from_base": false,
+    "status": "two_out_of_scope_base_failures_preserved"
+  },
+  "full_pytest_with_known_base_failures_deselected": {
+    "selected_tests": 680,
+    "status": "pass"
+  },
+  "markdown_link_audit": {
+    "files_checked": 22,
+    "missing_relative_links": 0,
+    "status": "pass"
+  },
+  "ruff": {
+    "repository_wide_findings_outside_t16_scope": 68,
+    "repository_wide_status": "preexisting_or_out_of_scope_findings_preserved",
+    "t16_changed_python_status": "pass"
+  },
+  "schema_version": 1,
+  "status": "t16_regression_pass_with_explicit_base_failures",
+  "targeted_pytest": {
+    "status": "pass",
+    "tests": 18
+  }
+}

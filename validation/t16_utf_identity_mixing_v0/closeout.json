@@ -1,0 +1,46 @@
+{
+  "analysis": {
+    "repository_path": "validation/t16_utf_identity_mixing_v0/results/analysis.json",
+    "sha256": "4e388d505a39d91e8c8bfc5c69127878e5484ab904e39d5a5d9ba5b66f658b1b"
+  },
+  "causal_circuit_claim_authorized": false,
+  "claim_boundary": "This exploratory control holds exact UTF-8 identity inside the clone condition, but mixed conditions can change token counts and token identities. It describes hidden-state displacement conditional on the observed tokenizer paths and does not establish tokenizer-independent Unicode composition, emoji meaning, or a causal circuit.",
+  "decision_status": "exploratory_no_binary_scientific_gate",
+  "emoji_meaning_claim_authorized": false,
+  "execution": {
+    "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-utf-runs-eab8ff0",
+    "generation_calls": 0,
+    "records": 2880,
+    "roles_complete": 2,
+    "unique_prompts": 2496
+  },
+  "execution_freeze": {
+    "commit": "eab8ff07db49da585b83d883a2181ef50712e567",
+    "design_commit": "a852dc696b68722e899fb8f8e7b28ac8d43c6f18",
+    "manifest_path": "data/manifests/t16_utf_identity_mixing_v0.json",
+    "manifest_sha256": "f57c0bfc14946682a3a8f552d3c8584d82eb8b55f4a403ed81c08c8b8742734d"
+  },
+  "n1_exact_equality": {
+    "all_endpoints_zero": true,
+    "conditions_share_unique_prompt": true,
+    "status": "pass"
+  },
+  "protocol_id": "glyphprobe-t16-utf-identity-mixing-v0",
+  "raw_arrays_copied_from_furnace": false,
+  "run_receipts": {
+    "gemma2_2b_it_bf16": "8ea6e4c0bd73812e65682bcf87c7c08c8645da398115423aea2222cd86dcfd86",
+    "mistral7b_instruct_v03_bf16": "2dc781d24ec548da00d61c4d0425eff0f595846ff90239cd1f0c8ca5cbdc01ba"
+  },
+  "schema_version": 1,
+  "status": "complete_exploratory_geometry_control",
+  "token_count_matched_pair_counts_per_depth": {
+    "gemma2_2b_it_bf16": {
+      "cross_system_mix": 52,
+      "within_system_mix": 256
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "cross_system_mix": 20,
+      "within_system_mix": 152
+    }
+  }
+}
