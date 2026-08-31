@@ -1,0 +1,122 @@
+{
+  "c1_v2_target_rows_generated": 0,
+  "candidate_evidence": [
+    {
+      "block_index": 24,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": 0.00025302342555383285,
+      "median_target_sufficiency_excess_js": 0.0001113267781666725,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "attn_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 24,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": 0.0002628334777088092,
+      "median_target_sufficiency_excess_js": 0.00030675739338840134,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "mlp_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 25,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": 0.00014222110804610038,
+      "median_target_sufficiency_excess_js": 7.290051239786482e-06,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "attn_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 25,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": -0.000318297485482955,
+      "median_target_sufficiency_excess_js": 0.00021783741345546704,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "mlp_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 26,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": 0.0002599898127612875,
+      "median_target_sufficiency_excess_js": 1.5552195749477e-05,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "attn_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 26,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": -0.0005034376944081987,
+      "median_target_sufficiency_excess_js": 0.00019078656064354708,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "mlp_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 27,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": -0.0004414529343507135,
+      "median_target_sufficiency_excess_js": -2.0684853734141847e-05,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "attn_out",
+      "target_rows": 32
+    },
+    {
+      "block_index": 27,
+      "eligible": true,
+      "maximum_explicit_zero_js": 0.0,
+      "maximum_restoration_error_js": 0.0,
+      "maximum_restoration_error_logit_rms": 0.0,
+      "median_target_necessity_excess_js": -0.00036404716273891885,
+      "median_target_sufficiency_excess_js": 0.00029080785404802644,
+      "median_target_treatment_excess_js": 0.0023387666391772675,
+      "site": "mlp_out",
+      "target_rows": 32
+    }
+  ],
+  "causal_executor_and_analyzer_sha256": "bf4661a064aa45d32a8edf60210d319a0eab8d2d2a524ab2a2b134721c4f7b72",
+  "control_evidence": {
+    "positive_control_maximum_necessity_js": 0.0,
+    "positive_control_maximum_sufficiency_error_js": 0.0,
+    "positive_control_median_necessity_drop_js": 0.010165440365096296,
+    "positive_control_pass": true,
+    "upstream_sham_median_absolute_necessity_drop_js": 0.0,
+    "upstream_sham_pass": true
+  },
+  "created_at_utc": "2026-08-31T12:56:04.925450+00:00",
+  "freeze_manifest_sha256": "9f3058c347cd1202ba12bf873b9896e919c7f8d2fde51028655c45c9c6c3a372",
+  "localization_root": "/home/ryospiralarchitect/scratch/glyphprobe-t14c-localization-143e1be",
+  "localization_summary_sha256": "dd75ec378bd420dff7bb4e566a4b574c57fbe6437c1e581bce1cd74071f8e4ca",
+  "protocol_id": "glyphprobe-emoji-steering-causal-path-v0",
+  "schema_version": 1,
+  "selected_score": 0.0002628334777088092,
+  "selected_site": {
+    "block_index": 24,
+    "site": "mlp_out"
+  },
+  "status": "selected_site_bound_before_c1_v2_materialization"
+}
