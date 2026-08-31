@@ -1,0 +1,136 @@
+protocol_id: glyphprobe-t16-distributed-late-band-v0
+experiment_label: T16-DP
+status_before_execution: static_design_candidate_zero_t16dp_model_forwards
+question: >-
+  Does jointly patching the entire frozen late attn_out plus mlp_out band at
+  blocks 24 through 27 mediate the T14 structured-source output-distribution
+  effect that no prospectively selected single component mediated?
+claim_boundary: >-
+  T16-DP is an outcome-informed follow-up to the negative T14-C single-site
+  IUT. A pass may establish joint mediation by this eight-component late band
+  for the pinned Llama 3.2 3B cell and operational structured-versus-null JS
+  endpoint. It cannot identify a unique, minimal, or complete circuit, emoji
+  meaning, generated behavior, tokenizer independence, or model generality.
+
+source_bindings:
+  t14_config:
+    path: configs/emoji_steering_causal_path_v0.yaml
+    sha256: 0032f216ba3cec5819c40f66f0088ab62fd27b1a73daf72b8c168e4f94d2359c
+  t14_freeze:
+    path: data/manifests/emoji_steering_causal_path_v0.json
+    sha256: 9f3058c347cd1202ba12bf873b9896e919c7f8d2fde51028655c45c9c6c3a372
+  t14_selected_site:
+    path: data/manifests/emoji_steering_causal_site_v0.json
+    sha256: 9876695b24765e94d5eb1f5f42d394aecf42724da1c98d7f732efbe40d8c2240
+  t14_closeout:
+    path: validation/emoji_steering_causal_path_v0/t14_closeout.json
+    sha256: cd6d4a8b27dfe027e85576d75c949165a3323ae2d3727953fb67a62f3e6552e7
+    expected_status: complete_with_negative_causal_iut
+  t13_source_run_root: /home/ryospiralarchitect/scratch/glyphprobe-t13eh-runs-5161062
+  t13_model_preflight:
+    path: validation/emoji_steering_specificity_harvest_v0
+
+fixed_model:
+  role: llama32_3b_base_bf16
+  expected_layers: 28
+  expected_width: 3072
+
+treatment:
+  injection_site: resid_post
+  injection_block_index: 23
+  normalized_depth: 0.875
+  magnitude: 0.25
+  signed_conditions_per_target: 80
+  conditions:
+    structured: 48
+    signed_source_covariance_null: 32
+
+joint_mediator_band:
+  selection: whole_predeclared_late_band_no_component_selection
+  ordered_sites:
+    - {site: attn_out, block_index: 24}
+    - {site: mlp_out, block_index: 24}
+    - {site: attn_out, block_index: 25}
+    - {site: mlp_out, block_index: 25}
+    - {site: attn_out, block_index: 26}
+    - {site: mlp_out, block_index: 26}
+    - {site: attn_out, block_index: 27}
+    - {site: mlp_out, block_index: 27}
+  passes:
+    - treatment_capture_all_eight
+    - necessity_patch_all_eight_treatment_components_to_baseline
+    - sufficiency_patch_all_eight_baseline_components_to_treatment
+    - restoration_patch_all_eight_treatment_components_to_captured_treatment
+
+fresh_target_bank:
+  status_at_design_freeze: not_generated
+  rows: 192
+  strata: 12
+  rows_per_stratum: 16
+  generator_seed: 2026090117
+  retired_t14_c1_v2_generator_seed: 2026090101
+  output: external_jsonl
+  content_policy: >-
+    Materialization occurs only after the final freeze commit is pushed. It
+    returns counts and hashes but never prompt bodies to the transcript. Exact
+    overlap with the deterministic T14 C1 v2 generation and the public target
+    bank is forbidden.
+
+analysis:
+  primary_endpoint: js_divergence
+  principal_unit: target_prompt
+  target_level_estimands:
+    - structured_treatment_minus_signed_null_treatment
+    - structured_necessity_drop_minus_signed_null_necessity_drop
+    - structured_sufficiency_minus_signed_null_sufficiency
+  practical_floors:
+    treatment: 0.002
+    necessity: 0.0005
+    sufficiency: 0.0005
+  bootstrap:
+    replicates: 20000
+    seed: 2026090118
+    stratified_by: 12_target_groups
+  randomization:
+    draws: 99999
+    seed: 2026090119
+    statistic: median_target_level_excess
+  decision:
+    type: three_component_intersection_union_test
+    alpha_each_component: 0.05
+    support_requires:
+      - all_three_bootstrap_lower_bounds_exceed_practical_floors
+      - all_three_one_sided_sign_flip_p_values_below_0p05
+      - maximum_restoration_logit_rms_at_most_1e-5
+      - maximum_restoration_js_at_most_1e-7
+      - exact_within_batch_zero_js_at_most_1e-12
+      - bound_t14_upstream_sham_pass
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  condition_batch_size: 16
+  generation_calls: 0
+
+execution_policy:
+  final_freeze_commit_before_target_materialization: true
+  final_freeze_commit_before_any_model_forward: true
+  check_foreign_gpu_processes_before_model_load_and_every_16_targets: true
+  yield_exit_code_on_foreign_contention: 75
+  no_overwrite: true
+  adaptive_site_target_model_direction_endpoint_floor_or_subset_changes: forbidden
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - used_external_t14_c1_v2_bank
+forbidden_claims:
+  - unique_minimal_or_complete_circuit
+  - emoji_meaning_or_understanding
+  - generated_behavior
+  - tokenizer_independence
+  - architecture_or_model_population_generality

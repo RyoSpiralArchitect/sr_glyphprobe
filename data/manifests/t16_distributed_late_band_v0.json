@@ -1,0 +1,52 @@
+{
+  "assets": {
+    "configs/t16_distributed_late_band_v0.yaml": "a17c99a471d3a83f7ee05adcf811b230116bb27e4d00ef8ef0959e0218094b95",
+    "docs/T16_DISTRIBUTED_LATE_BAND_V0.ja.md": "23b9e1e65cb8e3af1590285dcfb3b3ec1fbdee5e881db915fb7539a1f5905d64",
+    "docs/T16_DISTRIBUTED_LATE_BAND_V0.md": "f1b435cfe045544c48b23b4c8dfbf93957e719f98e851d0e6f12108c31a6560d",
+    "scripts/t16_distributed_late_band_v0.py": "e6a7c13789165846c439627e64d98ef61ef45c8c2afe6c31d9729a18796501fa",
+    "tests/test_t16_distributed_late_band_v0.py": "28d74a0b9ef72c449c7919f7e645da7e73666b7b9969da38695943fe38c6d34f",
+    "validation/t16_distributed_late_band_v0/design_preflight.json": "6028d377e58c3a4021644c62ece373f104c7173e4d5423cff38432090b1b600a"
+  },
+  "joint_sites": [
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 25,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 25,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 26,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 26,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "model_forwards_at_freeze": 0,
+  "protocol_id": "glyphprobe-t16-distributed-late-band-v0",
+  "response_rows_planned": 15360,
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t16dp_model_forwards",
+  "target_bank_generated_at_freeze": false,
+  "target_rows_planned": 192,
+  "unique_minimal_or_complete_circuit_claim_authorized": false
+}

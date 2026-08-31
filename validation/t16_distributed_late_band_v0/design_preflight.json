@@ -1,0 +1,51 @@
+{
+  "bound_inputs": {
+    "t14_closeout": "cd6d4a8b27dfe027e85576d75c949165a3323ae2d3727953fb67a62f3e6552e7",
+    "t14_config": "0032f216ba3cec5819c40f66f0088ab62fd27b1a73daf72b8c168e4f94d2359c",
+    "t14_freeze": "9f3058c347cd1202ba12bf873b9896e919c7f8d2fde51028655c45c9c6c3a372",
+    "t14_selected_site": "9876695b24765e94d5eb1f5f42d394aecf42724da1c98d7f732efbe40d8c2240"
+  },
+  "joint_sites": [
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 25,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 25,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 26,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 26,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "model_forwards": 0,
+  "model_role": "llama32_3b_base_bf16",
+  "protocol_id": "glyphprobe-t16-distributed-late-band-v0",
+  "response_rows_planned": 15360,
+  "schema_version": 1,
+  "status": "design_pass_zero_t16dp_model_forwards",
+  "target_bank_generated": false,
+  "target_rows_planned": 192,
+  "unique_minimal_or_complete_circuit_claim_authorized": false
+}
