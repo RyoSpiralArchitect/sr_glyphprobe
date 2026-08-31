@@ -94,6 +94,28 @@ def test_scoped_profile_does_not_mutate_closed_t15a_module() -> None:
     assert after["counts"]["rows_total"] == 393_472
 
 
+def test_model_loader_uses_original_t13_target_bank_then_restores_profile() -> None:
+    observed = []
+    original_loader = MODULE.base.t13._load_model
+
+    def fake_loader(role, snapshot, preflight):
+        observed.append(MODULE.base.t13.targets)
+        return ("torch", "tokenizer", "model", {"role": role})
+
+    MODULE.base.t13._load_model = fake_loader
+    try:
+        with MODULE.profile_scope():
+            profiled_targets = MODULE.base.t13.targets
+            result = MODULE._load_model_with_original_t13_targets(
+                "smollm2_1p7b_base_bf16", Path("/snapshot"), Path("/preflight")
+            )
+            assert observed == [MODULE._ORIGINAL_T13_TARGETS]
+            assert MODULE.base.t13.targets is profiled_targets
+            assert result[-1] == {"role": "smollm2_1p7b_base_bf16"}
+    finally:
+        MODULE.base.t13._load_model = original_loader
+
+
 def test_bilingual_protocols_bind_same_numbers_and_claim_boundary() -> None:
     english = (
         ROOT / "docs" / "EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md"

@@ -63,6 +63,7 @@ DESIGN_ASSETS = (
     "tests/test_emoji_word_incongruence_replication_v0.py",
     "tests/test_analyze_emoji_word_incongruence_replication_v0.py",
     "validation/emoji_word_incongruence_replication_v0/design_preflight.json",
+    "validation/emoji_word_incongruence_replication_v0/runtime_preflight_failures_v0.json",
 )
 FROZEN_ASSETS = (*DESIGN_ASSETS, str(TOKENIZER_PREFLIGHT_PATH))
 
@@ -662,6 +663,23 @@ def _direction_groups_impl(
     return groups
 
 
+_ORIGINAL_T13_TARGETS = base.t13.targets
+
+
+def _load_model_with_original_t13_targets(
+    role: str,
+    snapshot: Path,
+    model_preflight_directory: Path,
+) -> tuple[Any, Any, Any, dict[str, Any]]:
+    """Keep the historical T13 receipt check on its original target bank."""
+    active_targets = base.t13.targets
+    base.t13.targets = _ORIGINAL_T13_TARGETS
+    try:
+        return base.t13._load_model(role, snapshot, model_preflight_directory)
+    finally:
+        base.t13.targets = active_targets
+
+
 def _run_role_impl(
     *,
     role: str,
@@ -678,7 +696,7 @@ def _run_role_impl(
         return _validate_role_impl(role, output_root)
     base._yield_if_contended(output_root, role, "before_model_load")
     snapshot = base._locate_snapshot(role, model_path).resolve()
-    torch, tokenizer, model, model_receipt = base.t13._load_model(
+    torch, tokenizer, model, model_receipt = _load_model_with_original_t13_targets(
         role, snapshot, model_preflight_directory
     )
     base._validate_runtime_tokenizer(

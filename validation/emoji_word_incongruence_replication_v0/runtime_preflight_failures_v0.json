@@ -1,0 +1,25 @@
+{
+  "attempts": [
+    {
+      "failure": "T13-EH runtime version changed: glyphprobe",
+      "model_role": "smollm2_1p7b_base_bf16",
+      "resolution": "Install glyphprobe 0.1.0 metadata into the isolated Furnace dependency directory without changing torch or transformers.",
+      "stage": "runtime_version_gate"
+    },
+    {
+      "failure": "T13-EH runtime tokenization changed: smollm2_1p7b_base_bf16",
+      "model_role": "smollm2_1p7b_base_bf16",
+      "resolution": "Use the original T13 target helper only while validating the historical T13 loader receipt, then restore the frozen T15-B target helper before T15-B capture.",
+      "stage": "historical_t13_tokenizer_receipt_gate"
+    }
+  ],
+  "created_at_utc": "2026-08-31T20:07:39Z",
+  "model_forwards": 0,
+  "model_weights_loaded": false,
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "response_output_created": false,
+  "run_root_created": false,
+  "scientific_values_read": false,
+  "status": "failed_closed_before_model_weight_load",
+  "superseded_freeze_manifest_sha256": "e12b0a49a81e628b515cffa19bda0d728ba42fb9790c19d0920f3a01d230425f"
+}
