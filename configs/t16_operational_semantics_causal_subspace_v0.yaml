@@ -45,6 +45,9 @@ models:
 behavior:
   tasks: [meaning_choice, congruence_judgment]
   answer_labels: [A, B]
+  answer_completion_surfaces:
+    gemma2_2b_it_bf16: {A: "A", B: "B"}
+    mistral7b_instruct_v03_bf16: {A: " A", B: " B"}
   answer_mappings: [correct_is_A, correct_is_B]
   chat_template: model_native_single_user_turn
   generation_calls: 0

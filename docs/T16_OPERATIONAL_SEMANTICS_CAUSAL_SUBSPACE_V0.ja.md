@@ -18,6 +18,8 @@ T15-B Mistral cellを使うため、outcome-informedなmechanistic follow-upで�
 Panelは、T15-A/T15-Bのaxis labelを再利用しない新しい8軸から成る。Gemma 2 2B ITと
 Mistral 7B Instruct v0.3を各model固有のchat templateで評価する。最終実行freeze前に、
 両tokenizerで`A`と`B`がそれぞれ正確に1 next tokenであることを要求する。
+固定completion surfaceはGemmaでは`A`/`B`、Mistralでは空白付き` A`/` B`であり、各roleの
+token IDを正確なrendered chat境界で検証する。
 
 Meaning taskはmodelごとに128 rowで、8軸、emoji 2極、prompt template 4種、answer mapping
 2種を含む。Congruence taskはword 2極を加え、modelごとに256 rowとなる。Endpointは正答

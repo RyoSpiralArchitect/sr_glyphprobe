@@ -381,7 +381,11 @@ def tokenizer_preflight(role: str, output: Path, model_path: Path | None) -> dic
     tokenizer = AutoTokenizer.from_pretrained(
         snapshot, local_files_only=True, trust_remote_code=False, use_fast=True
     )
-    label_ids = {label: _token_ids(tokenizer, label) for label in ("A", "B")}
+    surfaces = {
+        str(label): str(surface)
+        for label, surface in _config()["behavior"]["answer_completion_surfaces"][role].items()
+    }
+    label_ids = {label: _token_ids(tokenizer, surface) for label, surface in surfaces.items()}
     _require(all(len(values) == 1 for values in label_ids.values()), "Answer label is not one token")
     records = _behavior_records("meaning_choice") + _behavior_records("congruence_judgment")
     if role == CAUSAL_ROLE:
@@ -390,7 +394,7 @@ def tokenizer_preflight(role: str, output: Path, model_path: Path | None) -> dic
     prompt_ids = [_token_ids(tokenizer, prompt) for prompt in prompts]
     for prompt, ids in zip(prompts, prompt_ids, strict=True):
         for label in ("A", "B"):
-            combined = _token_ids(tokenizer, prompt + label)
+            combined = _token_ids(tokenizer, prompt + surfaces[label])
             _require(
                 combined[: len(ids)] == ids and combined[len(ids) :] == label_ids[label],
                 f"Answer token boundary changed: {role}/{label}",
@@ -405,6 +409,7 @@ def tokenizer_preflight(role: str, output: Path, model_path: Path | None) -> dic
         "artifact": model_artifact_receipt(snapshot),
         "tokenizer_class": type(tokenizer).__name__,
         "answer_token_ids": {key: values[0] for key, values in label_ids.items()},
+        "answer_completion_surfaces": surfaces,
         "prompt_sequences": len(prompts),
         "ordered_user_prompt_sha256": _canonical_sha256([record["user_prompt"] for record in records]),
         "ordered_rendered_prompt_sha256": _canonical_sha256(prompts),
@@ -511,7 +516,12 @@ def _validate_runtime_tokenizer(role: str, tokenizer: Any, snapshot: Path) -> di
     artifact = model_artifact_receipt(snapshot)
     for key in ("manifest_sha256", "file_count", "total_bytes"):
         _require(artifact[key] == frozen["artifact"][key], f"Runtime artifact changed: {role}/{key}")
-    labels = {label: _token_ids(tokenizer, label) for label in ("A", "B")}
+    surfaces = {
+        str(label): str(surface)
+        for label, surface in _config()["behavior"]["answer_completion_surfaces"][role].items()
+    }
+    _require(surfaces == frozen["answer_completion_surfaces"], "Answer surfaces changed")
+    labels = {label: _token_ids(tokenizer, surface) for label, surface in surfaces.items()}
     _require({key: value[0] for key, value in labels.items()} == frozen["answer_token_ids"], "Answer tokens changed")
     return {key: value[0] for key, value in labels.items()}
 

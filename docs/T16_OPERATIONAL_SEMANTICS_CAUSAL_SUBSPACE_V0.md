@@ -22,7 +22,9 @@ a unique or complete circuit.
 The panel contains eight new axes that do not reuse the T15-A or T15-B axis
 labels. Gemma 2 2B IT and Mistral 7B Instruct v0.3 are evaluated with their
 native chat templates. `A` and `B` must each be exactly one next token in both
-tokenizers before the final execution freeze.
+tokenizers before the final execution freeze. The frozen completion surfaces
+are `A`/`B` for Gemma and space-prefixed ` A`/` B` for Mistral; their role-local
+token IDs are verified at the exact rendered chat boundary.
 
 The meaning task has 128 rows per model: eight axes, two emoji poles, four
 prompt templates, and two answer mappings. The congruence task has 256 rows per
