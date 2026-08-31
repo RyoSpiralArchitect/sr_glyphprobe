@@ -497,6 +497,7 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
 
         def writer(path: Path, value: Mapping[str, Any]) -> None:
             result = dict(value)
+            result.pop("primary_descriptive_cell", None)
             families = dict(result["families"])
             a1 = families.pop(
                 "A1_shared_response_fingerprint_true_minus_cross_axis_null"
@@ -534,6 +535,7 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
                     "replication_support": families[R1_FAMILY][
                         "replication_support"
                     ],
+                    "significance_tests": "frozen_two_model_intersection_rule_with_one_sided_bonferroni_alpha_0.025_per_model",
                     "confirmatory_status": False,
                     "semantic_understanding_claim_authorized": False,
                     "causal_claim_authorized": False,

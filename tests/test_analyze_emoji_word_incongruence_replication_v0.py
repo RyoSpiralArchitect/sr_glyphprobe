@@ -58,6 +58,10 @@ def test_analysis_family_order_and_claim_boundary_are_frozen() -> None:
     assert config["magnitude"] == 0.25
     assert "both" in config["decision_rule"]
     assert (
+        MODULE.t15._config()["analysis"]["primary_descriptive_cell"]["family"]
+        == "A1_shared_response_fingerprint_true_minus_all_cross_axis_nulls"
+    )
+    assert (
         MODULE.t15._config()["next_gate"].startswith(
             "T15-C may be frozen only after T15-B closes"
         )

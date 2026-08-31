@@ -143,6 +143,11 @@ analysis:
     - A4_word_minus_emoji_main_response
     - A5_source_order_sensitivity
     - A6_depth_and_dose_heterogeneity
+  primary_descriptive_cell:
+    family: A1_shared_response_fingerprint_true_minus_all_cross_axis_nulls
+    magnitude: 0.25
+    signs_reported_separately: true
+    models_and_depths_reported_without_selection: true
   primary_replication_family:
     family: R1_pooled_A1_prospective_replication
     source_family: A1_shared_response_fingerprint_true_minus_all_cross_axis_nulls
