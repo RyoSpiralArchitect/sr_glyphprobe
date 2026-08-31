@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from collections import Counter
 import importlib.util
+import json
 from pathlib import Path
 
 import numpy as np
@@ -182,3 +183,48 @@ def test_english_and_japanese_protocols_bind_same_counts() -> None:
         assert "393,472" in text
         assert "20,000" in text
         assert "T15-C" in text
+
+
+def test_closeout_and_bilingual_results_bind_the_same_exploratory_boundary() -> None:
+    closeout = json.loads(
+        (
+            ROOT
+            / "validation"
+            / "emoji_word_incongruence_interaction_v0"
+            / "t15a_closeout.json"
+        ).read_text(encoding="utf-8")
+    )
+    assert (
+        closeout["status"]
+        == "exploratory_complete_family_with_post_open_implementation_repair"
+    )
+    assert closeout["run"]["response_rows"] == 393_472
+    assert closeout["run"]["model_roles_complete"] == 4
+    assert closeout["run"]["generation_calls"] == 0
+    assert closeout["confirmatory_status"] is False
+    assert closeout["semantic_understanding_claim_authorized"] is False
+    assert closeout["causal_claim_authorized"] is False
+    assert closeout["analysis_repair"]["estimands_changed"] is False
+    assert closeout["analysis_repair"]["bootstrap_changed"] is False
+    assert closeout["interval_class_counts"][
+        "A1_primary_shared_response_fingerprint"
+    ] == {"mixed": 0, "negative": 0, "positive": 16, "total": 16}
+    assert len(closeout["primary_a1_magnitude_0p25"]) == 16
+    assert all(
+        row["bootstrap_95_percent_interval"][0] > 0
+        for row in closeout["primary_a1_magnitude_0p25"]
+    )
+
+    english = (
+        ROOT / "docs" / "EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md"
+    ).read_text(encoding="utf-8")
+    japanese = (
+        ROOT / "docs" / "EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md"
+    ).read_text(encoding="utf-8")
+    for text in (english, japanese):
+        assert "393,472" in text
+        assert "16" in text
+        assert "20,000" in text
+        assert "post-open" in text
+        assert "T15-C" in text
+        assert "f089b31fbea245ad9fe4e5727c7dc618fa38e79bc27474c76ef435bd51fec5fe" in text

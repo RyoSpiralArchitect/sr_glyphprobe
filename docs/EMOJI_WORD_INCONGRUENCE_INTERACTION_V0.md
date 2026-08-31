@@ -1,6 +1,6 @@
 # Emoji × word incongruence interaction v0 (T15-A)
 
-[日本語](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14 result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md)
+[日本語](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [Result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T14 result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md)
 
 ## Frozen question
 

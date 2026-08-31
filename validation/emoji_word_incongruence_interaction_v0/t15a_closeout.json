@@ -1,0 +1,134 @@
+{
+  "analysis": {
+    "analysis_id": "glyphprobe-emoji-word-incongruence-interaction-analysis-repair-v1",
+    "complete_aggregate": {
+      "furnace_path": "/home/ryospiralarchitect/scratch/glyphprobe-t15-analysis-repair-v1-ea658b9/analysis.json",
+      "sha256": "f089b31fbea245ad9fe4e5727c7dc618fa38e79bc27474c76ef435bd51fec5fe"
+    },
+    "significance_tests": "none_exploratory_descriptive_only",
+    "status": "complete_exploratory_descriptive_analysis"
+  },
+  "analysis_repair": {
+    "analysis_repair_commit": "ea658b9",
+    "analysis_v0_output_created": false,
+    "bootstrap_changed": false,
+    "estimands_changed": false,
+    "failure_receipt": "validation/emoji_word_incongruence_interaction_v0/analysis_v0_failure.json",
+    "families_changed": false,
+    "only_allowed_code_change": "A0 congruence-class repeat assertion 8 to 16",
+    "post_open_implementation_repair": true,
+    "repair_manifest_sha256": "d72cb667a0f0d1a37936a88d56a0b6640d9f7f34fe85e1b8faafd70fde3803d8",
+    "response_values_read_before_v0_failure": true,
+    "response_values_shown_before_v0_failure": false,
+    "status": "post_open_implementation_repair_frozen"
+  },
+  "causal_claim_authorized": false,
+  "claim_boundary": "T15-A is exploratory and outcome-informed by T14 model/depth heterogeneity. It may describe a balanced non-additive interaction direction and its next-token distribution response. It cannot establish emoji meaning, contradiction detection, understanding, natural behavior, a causal circuit, tokenizer independence, architecture or model-population generality, or a scale law. The operational congruence labels come from the frozen panel, not from a claim about the studied models.",
+  "commits": {
+    "analysis_repair": "ea658b9",
+    "execution_freeze": "72add92",
+    "protocol_freeze": "b48b1c9",
+    "runtime_helper_contracts": "d10e6b4"
+  },
+  "confirmatory_status": false,
+  "execution_freeze": {
+    "manifest_path": "data/manifests/emoji_word_incongruence_interaction_v0.json",
+    "manifest_sha256": "d528276748997331c0864b7af1b5bbd75b74d7f771f4d94b7f5ae868d0b6030d",
+    "tokenizer_preflight_path": "validation/emoji_word_incongruence_interaction_v0/tokenizer_preflight.json",
+    "tokenizer_preflight_sha256": "e68a40571cc3271b74aae0034bb3eba3bfaea668373975405726a7223c9d164d"
+  },
+  "interval_class_counts": {
+    "A0_joint_additivity_residual_incongruent_minus_congruent": {
+      "mixed": 6,
+      "negative": 2,
+      "positive": 0,
+      "total": 8
+    },
+    "A1_primary_shared_response_fingerprint": {
+      "mixed": 0,
+      "negative": 0,
+      "positive": 16,
+      "total": 16
+    },
+    "A2_primary_dose": {
+      "argmax_flip_rate": {"mixed": 16, "negative": 0, "positive": 0, "total": 16},
+      "entropy_change": {"mixed": 3, "negative": 6, "positive": 7, "total": 16},
+      "js_divergence": {"mixed": 5, "negative": 3, "positive": 8, "total": 16},
+      "kl_baseline_to_intervened": {"mixed": 5, "negative": 3, "positive": 8, "total": 16},
+      "logit_delta_rms": {"mixed": 2, "negative": 5, "positive": 9, "total": 16},
+      "total_variation": {"mixed": 7, "negative": 3, "positive": 6, "total": 16}
+    },
+    "A3_source_direction_rms_true_minus_cross_axis_null": {
+      "mixed": 2,
+      "negative": 0,
+      "positive": 6,
+      "total": 8
+    },
+    "A4_primary_dose_word_minus_emoji": {
+      "argmax_flip_rate": {"mixed": 16, "negative": 0, "positive": 0, "total": 16},
+      "entropy_change": {"mixed": 2, "negative": 8, "positive": 6, "total": 16},
+      "js_divergence": {"mixed": 3, "negative": 5, "positive": 8, "total": 16},
+      "kl_baseline_to_intervened": {"mixed": 4, "negative": 6, "positive": 6, "total": 16},
+      "logit_delta_rms": {"mixed": 3, "negative": 9, "positive": 4, "total": 16},
+      "total_variation": {"mixed": 5, "negative": 6, "positive": 5, "total": 16}
+    },
+    "A5_primary_dose_order_sensitivity": {
+      "argmax_flip_rate": {"mixed": 16, "negative": 0, "positive": 0, "total": 16},
+      "entropy_change": {"mixed": 5, "negative": 4, "positive": 7, "total": 16},
+      "js_divergence": {"mixed": 7, "negative": 6, "positive": 3, "total": 16},
+      "kl_baseline_to_intervened": {"mixed": 9, "negative": 5, "positive": 2, "total": 16},
+      "logit_delta_rms": {"mixed": 3, "negative": 6, "positive": 7, "total": 16},
+      "total_variation": {"mixed": 7, "negative": 6, "positive": 3, "total": 16}
+    },
+    "A6_depth_contrast_at_primary_dose": {
+      "mixed": 1,
+      "negative": 3,
+      "positive": 4,
+      "total": 8
+    },
+    "A6_dose_contrast": {
+      "mixed": 6,
+      "negative": 9,
+      "positive": 1,
+      "total": 16
+    }
+  },
+  "landing": "exploratory_shared_non_additive_response_fingerprint_candidate",
+  "next_gate": "New axes, a new untouched target bank, an independent model or backend role, and prospectively frozen interaction-residual necessity, sufficiency, and restoration tests are required. No same-bank rescue or adaptive component search is authorized.",
+  "primary_a1_magnitude_0p25": [
+    {"bootstrap_95_percent_interval": [0.141315025, 0.198898931], "cross_axis_fingerprint_median": 0.290370, "depth_fraction": 0.875, "median_true_minus_cross": 0.155242842, "model": "llama32_3b_base_bf16", "positive_targets": 32, "sign": -1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.471595},
+    {"bootstrap_95_percent_interval": [0.224001519, 0.238300719], "cross_axis_fingerprint_median": 0.150823, "depth_fraction": 0.875, "median_true_minus_cross": 0.231919222, "model": "llama32_3b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.389174},
+    {"bootstrap_95_percent_interval": [0.227863677, 0.235741619], "cross_axis_fingerprint_median": 0.130069, "depth_fraction": 1.0, "median_true_minus_cross": 0.232216398, "model": "llama32_3b_base_bf16", "positive_targets": 32, "sign": -1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.364638},
+    {"bootstrap_95_percent_interval": [0.249631597, 0.259628505], "cross_axis_fingerprint_median": 0.093193, "depth_fraction": 1.0, "median_true_minus_cross": 0.255624010, "model": "llama32_3b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.347363},
+    {"bootstrap_95_percent_interval": [0.007662917, 0.203024335], "cross_axis_fingerprint_median": 0.036709, "depth_fraction": 0.875, "median_true_minus_cross": 0.062355407, "model": "olmo2_1b_base_bf16", "positive_targets": 22, "sign": -1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.195736},
+    {"bootstrap_95_percent_interval": [0.044836782, 0.341354592], "cross_axis_fingerprint_median": 0.096175, "depth_fraction": 0.875, "median_true_minus_cross": 0.122757364, "model": "olmo2_1b_base_bf16", "positive_targets": 26, "sign": 1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.266686},
+    {"bootstrap_95_percent_interval": [0.025334021, 0.112550778], "cross_axis_fingerprint_median": 0.088485, "depth_fraction": 1.0, "median_true_minus_cross": 0.050162452, "model": "olmo2_1b_base_bf16", "positive_targets": 23, "sign": -1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.137302},
+    {"bootstrap_95_percent_interval": [0.363294970, 0.419672067], "cross_axis_fingerprint_median": 0.104452, "depth_fraction": 1.0, "median_true_minus_cross": 0.397595630, "model": "olmo2_1b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.517765},
+    {"bootstrap_95_percent_interval": [0.362850612, 0.439044906], "cross_axis_fingerprint_median": 0.171156, "depth_fraction": 0.875, "median_true_minus_cross": 0.411275352, "model": "qwen25_3b_base_bf16", "positive_targets": 32, "sign": -1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.571834},
+    {"bootstrap_95_percent_interval": [0.365100962, 0.407403871], "cross_axis_fingerprint_median": 0.120726, "depth_fraction": 0.875, "median_true_minus_cross": 0.389015203, "model": "qwen25_3b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.515728},
+    {"bootstrap_95_percent_interval": [0.282620623, 0.296235773], "cross_axis_fingerprint_median": 0.080717, "depth_fraction": 1.0, "median_true_minus_cross": 0.290624653, "model": "qwen25_3b_base_bf16", "positive_targets": 32, "sign": -1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.364208},
+    {"bootstrap_95_percent_interval": [0.248553220, 0.266084153], "cross_axis_fingerprint_median": 0.144780, "depth_fraction": 1.0, "median_true_minus_cross": 0.257902904, "model": "qwen25_3b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.403310},
+    {"bootstrap_95_percent_interval": [0.202882100, 0.330395596], "cross_axis_fingerprint_median": 0.152445, "depth_fraction": 0.875, "median_true_minus_cross": 0.263562567, "model": "qwen25_7b_base_bf16", "positive_targets": 29, "sign": -1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.440099},
+    {"bootstrap_95_percent_interval": [0.046407457, 0.214518198], "cross_axis_fingerprint_median": 0.377342, "depth_fraction": 0.875, "median_true_minus_cross": 0.161787927, "model": "qwen25_7b_base_bf16", "positive_targets": 22, "sign": 1, "site_index": 6, "targets": 32, "true_fingerprint_median": 0.471418},
+    {"bootstrap_95_percent_interval": [0.158664260, 0.182731737], "cross_axis_fingerprint_median": 0.087359, "depth_fraction": 1.0, "median_true_minus_cross": 0.176893086, "model": "qwen25_7b_base_bf16", "positive_targets": 32, "sign": -1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.263618},
+    {"bootstrap_95_percent_interval": [0.170689760, 0.200864785], "cross_axis_fingerprint_median": 0.090104, "depth_fraction": 1.0, "median_true_minus_cross": 0.184349820, "model": "qwen25_7b_base_bf16", "positive_targets": 32, "sign": 1, "site_index": 7, "targets": 32, "true_fingerprint_median": 0.268406}
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-interaction-v0",
+  "reported_numeric_precision": "Primary paired medians and intervals are rounded to 9 decimal places; separately reduced true and cross component medians are rounded to 6 decimal places. The complete aggregate hash identifies the full-precision source.",
+  "run": {
+    "generation_calls": 0,
+    "model_roles_complete": 4,
+    "response_rows": 393472,
+    "run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t15-runs-72add92-r2",
+    "scientific_open_authorized": true,
+    "source_prompt_sequences": 5152,
+    "status": "complete_closed_to_adaptive_selection"
+  },
+  "schema_version": 1,
+  "semantic_understanding_claim_authorized": false,
+  "status": "exploratory_complete_family_with_post_open_implementation_repair",
+  "zero_axis_vectors": {
+    "cross_total": 0,
+    "true_total": 0
+  }
+}

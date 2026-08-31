@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
 
-[English](NOTE.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -504,3 +504,13 @@ positive control、shamはすべて通過している。したがって失敗し
 これは有用な閉じ方だ。選択した1部位は、必要かつ十分な媒介として支持されなかった。次点部位を選んだり、
 floorを下げたりはしない。分散・冗長なrouteは将来の自然な問いになったが、まず論文には、符号を持つ広いregime、
 prospectiveな局在化、未使用bankでの確認、負の因果IUTという順序をそのまま残す。
+
+## そぐわない組は、ただ強く効いたのではなく、似た形に出力を曲げた
+
+T15-Aでは、一見すると意味に近い問いへ戻った。ただし、測ったのはあくまで運用上の対応関係である。たとえば温度軸なら、🔥と❄️に`hot`と`cold`を組み合わせる。各絵文字と各単語がcontrastの両側へ一度ずつ現れるため、それぞれの主効果は相殺される。最後に残るのは、実験者が定めたpairingのinteractionだけだ。
+
+Base model 4種、後期depth 2点、両signを調べると、ある一点だけは驚くほど揃った。一次の16 cellすべてで、同じ軸内のtrue interactionは、軸をずらして作ったcheckerboard対照よりも、axis間で似た全語彙応答を生んだ。16本の区間は、どれも0を上回っている。
+
+ここで「そぐわない組ほどmodelを強く押した」と言いたくなる。ところが、他の測定はその物語を拒んだ。応答energyはmodelやsignによって向きが変わり、word主効果とemoji主効果の優劣も入れ替わった。Source orderはcellごとに効き方が異なり、個々のpair residualにもincongruent側の共通した増加はない。揃ったのは応答の大きさではなく、その**形**だった。
+
+この違いが、今回いちばん面白い。Interaction-residual subspaceを後で直接操作するための、具体的な候補ができた。一方、大きな意味の主張はまだ手つかずで残る。対応ラベルを与えたのは実験者であり、人と同じようにmodelが矛盾へ気づいたとは言えない。次のきれいな検定では、軸、target、modelまたはbackendを入れ替え、除去・追加・復元を結果確認前に固定する必要がある。[T15-Aの全結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)には、outcomeを開いた後の1行修復も、候補を過大評価させない負・mixed familyも、すべて残した。

@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[日本語](ROADMAP.ja.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -718,6 +718,40 @@ Exit condition: completed as a valid negative causal experiment.
 `causal_claim_authorized` remains `false`. Any multi-site or path-level follow-up
 requires a new protocol and a new untouched bank.
 
+### Completed T15-A — Emoji × word incongruence interaction
+
+Status: complete as an exploratory seven-family result. It supplies a shared
+non-additive response-fingerprint candidate and closes no Phase I paper gate.
+
+T15-A balanced two emoji and two words within each of eight operational axes,
+used both source orders and four wrappers, and compared the resulting
+interaction direction with three structurally matched cross-axis checkerboards.
+Four base models, two late depths, two doses, both signs, and all 32 public
+targets produced 393,472 steering-response rows with zero generation calls.
+
+At the primary dose, all 16 model × depth × sign A1 intervals were positive:
+true within-axis interaction directions produced more coherent
+full-vocabulary response fingerprints than the cross-axis controls. The
+secondary families narrow that result. Individual joint-additivity residual
+magnitude had zero positive intervals; response energy, word-versus-emoji main
+effects, order, depth, and dose were heterogeneous. The recurring quantity is
+therefore response shape, not a universal energy increase or behavioral flip.
+
+The v0 analyzer failed closed on an incorrect A0 repeat assertion after reading
+response values but before producing an output or printing model values. The
+versioned post-open v1 repair changed only `8` to `16`; all estimands, endpoint
+families, bootstrap schedules, and claim boundaries were unchanged. This
+procedural limitation is part of the public result.
+
+T15-A remains outcome-informed by T14 and uses public targets. It does not
+authorize meaning, contradiction detection, causal, tokenizer-independent,
+scale, or model-general claims. Any T15-C must use new axes, a new untouched
+target bank, an independent model or backend, and prospectively frozen
+necessity, sufficiency, and restoration tests on the interaction-residual
+subspace. See the [result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md),
+[protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md), and [compact
+closeout](../validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json).
+
 ### Milestone 4 — Replication and boundary mapping
 
 Status: exploratory boundary mapping substantially expanded; independent
@@ -734,6 +768,9 @@ confirmation remains planned.
   intervals were positive and 3/12 negative, with a non-monotonic Qwen profile;
 - do not promote that exploratory breadth to a scale law or independent
   confirmatory replication.
+- treat T15-A's 16/16 positive response-coherence intervals as a candidate for
+  prospective replication, not as confirmation; a T15-C lane must replace its
+  axes, public targets, and outcome-informed role selection.
 
 Exit condition: the paper can state clearly which findings replicate and which remain GPT-2-specific.
 
@@ -757,6 +794,9 @@ paper-wide qualification remains open.
 - retain the T14-C 20,000-replicate target bootstrap and fixed 99,999-draw
   paired sign-flip result without selecting a replacement site after its
   non-rejection.
+- retain T15-A's complete A0–A6 families and post-open repair disclosure; its
+  percentile intervals are descriptive and may not be promoted to a primary
+  multiplicity-adjusted claim.
 
 Exit condition: the statistical analysis matches the sampling structure and can be rerun from frozen artifacts.
 
@@ -835,6 +875,13 @@ law. T14-C was frozen before that outcome was opened, selected `mlp_out` block
 All engineering controls passed, but the treatment, necessity, and sufficiency
 IUT did not reject. Gate 4 is therefore complete with a negative result; no
 causal mediator claim or adaptive second-site search is authorized.
+T15-A then completed a separately frozen four-model emoji × word factorial.
+Its primary response-fingerprint intervals were positive in all 16
+model × depth × sign cells, while source-residual magnitude, response energy,
+main effects, order, depth, and dose remained heterogeneous. The result is an
+exploratory interaction-fingerprint candidate. Public targets, outcome-informed
+role selection, descriptive intervals, and the disclosed post-open
+implementation repair prevent it from closing gates 1, 2, 5, or 6.
 Final paper-wide qualification for gate 6 remains open because the rebuilt
 GPT-2 prototype analysis was post hoc. Gates 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
