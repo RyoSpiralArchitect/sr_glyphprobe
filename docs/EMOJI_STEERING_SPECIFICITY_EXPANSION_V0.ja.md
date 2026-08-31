@@ -7,6 +7,10 @@
 Protocol ID: `glyphprobe-emoji-steering-specificity-expansion-v0`  
 実験label: **T14-X**
 
+Freeze注記: 最初のzero-forward manifestは、T14-X model forwardを1回も行う前に
+supersedeした。変更はcontention時のyield receiptをT13 protocol IDの再利用ではなく
+T14-X自身のIDで記録するためだけであり、科学的design fieldは変更していない。
+
 ## 目的
 
 T13-EAでは、structured source directionがpositive isotropic directionより

@@ -2,6 +2,13 @@ protocol_id: glyphprobe-emoji-steering-specificity-expansion-v0
 experiment_label: T14-X
 experiment_role: prospective_exploratory_late_depth_expansion_for_causal_localization
 status_before_execution: design_candidate_zero_t14x_model_forwards
+freeze_history:
+  superseded_zero_forward_manifest_sha256: db2bdb201bcd9662e6e0c6d1767feb327a73ed347e22f9fd563c23f6e8d0adff
+  correction_reason: >-
+    Replace the reused T13 contention writer with a T14-X-owned yield receipt
+    before any T14-X model forward. No design cell, scientific endpoint, row
+    count, model, source, target, depth, sign, null, or outcome changed.
+  t14x_model_forwards_between_freezes: 0
 question: >-
   Does the late structured-source response found in T13-EA persist when the
   intervention roster expands from three to six base-model roles, all 192
@@ -145,6 +152,7 @@ execution_policy:
   no_overwrite: true
   adaptive_role_item_target_depth_sign_endpoint_or_null_changes: forbidden
   outcome_inspection_before_all_six_roles_complete: forbidden
+  yield_receipt_protocol_owner: glyphprobe-emoji-steering-specificity-expansion-v0
 
 forbidden_research_inputs:
   - data/targets/p2_confirmatory_targets_v1.jsonl

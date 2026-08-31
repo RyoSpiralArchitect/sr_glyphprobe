@@ -4,6 +4,7 @@ import importlib.util
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -115,6 +116,22 @@ def test_protocol_keeps_causal_banks_outside_executable_surface() -> None:
     source = SCRIPT.read_text(encoding="utf-8")
     assert "c1_causal_holdout_targets_v1.jsonl" not in source
     assert "p2_confirmatory_targets_v1.jsonl" not in source
+    assert "t13._yield_if_contended" not in source
+    assert (
+        config["execution_policy"]["yield_receipt_protocol_owner"] == MODULE.PROTOCOL_ID
+    )
+
+
+def test_contention_receipt_is_owned_by_t14x(monkeypatch, tmp_path: Path) -> None:
+    monkeypatch.setattr(MODULE.t13, "_foreign_gpu_pids", lambda: [12345])
+    with pytest.raises(SystemExit) as raised:
+        MODULE._yield_if_contended(tmp_path, "llama32_3b_base_bf16", "before_test")
+    assert raised.value.code == 75
+    receipt = MODULE._read_json(
+        tmp_path / "llama32_3b_base_bf16" / "yield_receipt.json"
+    )
+    assert receipt["protocol_id"] == MODULE.PROTOCOL_ID
+    assert receipt["foreign_gpu_pids"] == [12345]
 
 
 def test_english_and_japanese_protocols_bind_same_counts() -> None:

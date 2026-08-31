@@ -191,6 +191,22 @@ def audit_design() -> dict[str, Any]:
         == (0.875, 1.0),
         "T14-X depth fractions changed",
     )
+    t13_storage = t13._config()["pilot"]["response_storage"]
+    _require(
+        int(config["storage"]["top_positive_and_negative_logit_deltas"])
+        == int(t13_storage["top_positive_and_negative_logit_deltas"]),
+        "T14-X/T13 top-k storage contract differs",
+    )
+    _require(
+        int(config["storage"]["countsketch_dimension"])
+        == int(t13_storage["countsketch_dimension"]),
+        "T14-X/T13 CountSketch dimension differs",
+    )
+    _require(
+        int(config["storage"]["countsketch_seed"])
+        == int(t13_storage["countsketch_seed"]),
+        "T14-X/T13 CountSketch seed differs",
+    )
     for role in model_roles():
         indices = t13.layer_indices(role)
         _require(indices[6] < indices[7], f"T14-X late sites collapsed: {role}")
@@ -255,6 +271,12 @@ def freeze(output: Path) -> dict[str, Any]:
         "design_preflight_sha256": _sha256(_root() / DESIGN_PREFLIGHT_PATH),
         "source_run_root": _source_closeout()["run_root"],
         "source_run_binding_root_sha256": _source_closeout()["run_binding_root_sha256"],
+        "supersedes_zero_forward_manifest_sha256": _config()["freeze_history"][
+            "superseded_zero_forward_manifest_sha256"
+        ],
+        "model_forwards_between_freezes": _config()["freeze_history"][
+            "t14x_model_forwards_between_freezes"
+        ],
         "model_order": list(model_roles()),
         "expected_rows_per_model": _expected_counts()["rows_per_model"],
         "expected_rows_total": _expected_counts()["rows_total"],
@@ -448,6 +470,29 @@ def _output_directory(
     return output_root / role / kind / f"site-{site_index:02d}"
 
 
+def _yield_if_contended(output_root: Path, role: str, boundary: str) -> None:
+    pids = t13._foreign_gpu_pids()
+    if not pids:
+        return
+    receipt = output_root / role / "yield_receipt.json"
+    if not receipt.exists():
+        _write_json(
+            receipt,
+            {
+                "schema_version": SCHEMA_VERSION,
+                "protocol_id": PROTOCOL_ID,
+                "status": "yielded_before_new_shard_for_foreign_gpu_contention",
+                "model_role": role,
+                "boundary": boundary,
+                "foreign_gpu_pids": pids,
+                "time_utc": datetime.now(timezone.utc).isoformat(),
+            },
+        )
+    raise SystemExit(
+        int(_config()["execution_policy"]["yield_exit_code_on_foreign_contention"])
+    )
+
+
 def _write_shard(
     *,
     final: Path,
@@ -562,7 +607,7 @@ def _execute_groups(
     if final.exists():
         validate_shard(final, role, kind, site_index)
         return final
-    t13._yield_if_contended(output_root, role, f"before_{kind}_site_{site_index:02d}")
+    _yield_if_contended(output_root, role, f"before_{kind}_site_{site_index:02d}")
     started = time.perf_counter()
     result = t13._run_condition_groups(
         role=role,
@@ -820,7 +865,7 @@ def run_role(
     if summary_path.is_file():
         return validate_role(role, output_root)
     _validate_source_role(source_run_root, role)
-    t13._yield_if_contended(output_root, role, "before_model_load")
+    _yield_if_contended(output_root, role, "before_model_load")
     snapshot = (
         model_path if model_path is not None else t13.t11._locate_local_snapshot(role)
     )

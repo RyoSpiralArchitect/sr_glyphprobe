@@ -7,6 +7,10 @@
 Protocol ID: `glyphprobe-emoji-steering-specificity-expansion-v0`  
 Experiment label: **T14-X**
 
+Freeze note: the initial zero-forward manifest was superseded before any T14-X
+model forward solely to make the contention-yield receipt T14-X-owned instead
+of reusing the T13 protocol identifier. No scientific design field changed.
+
 ## Purpose
 
 T13-EA found that structured source directions often produce larger
