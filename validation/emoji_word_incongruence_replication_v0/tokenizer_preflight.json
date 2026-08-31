@@ -1,0 +1,30 @@
+{
+  "final_token_groups_per_model": 8,
+  "model_forwards": 0,
+  "model_roles": [
+    "smollm2_1p7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "prompt_sequences_per_model": 2312,
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "roles": {
+    "mistral7b_instruct_v03_bf16": {
+      "artifact_manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "maximum_token_count": 23,
+      "minimum_token_count": 13,
+      "ordered_prompt_sha256": "f06df5bc6aae0fe94b877c944d36adc5e9108c956245be3492ee4ebd7d893365",
+      "ordered_token_ids_sha256": "a5b22b68a8c39c731af1b84c09aa3786443432926f76775766cc9302e5feb639",
+      "receipt_sha256": "d62d16a973904648a4688acfbfe64ad305f50454a1e1d7ad05cf815d78748e99"
+    },
+    "smollm2_1p7b_base_bf16": {
+      "artifact_manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+      "maximum_token_count": 21,
+      "minimum_token_count": 13,
+      "ordered_prompt_sha256": "f06df5bc6aae0fe94b877c944d36adc5e9108c956245be3492ee4ebd7d893365",
+      "ordered_token_ids_sha256": "07a2d883b66faa6bd74ca0207e277b017519e3b98c4831bfb76ad090e14c421d",
+      "receipt_sha256": "897e38ba1fbe279afd8fe4c919b8ea703264eed45703045a1a5a33849d382281"
+    }
+  },
+  "schema_version": 1,
+  "status": "all_tokenizer_preflights_pass_zero_model_forwards"
+}

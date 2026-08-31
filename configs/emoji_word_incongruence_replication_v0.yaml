@@ -173,6 +173,9 @@ runtime:
     transformers: 5.15.0
     numpy: 2.5.2
     PyYAML: 6.0.3
+  support_versions:
+    pydantic: 2.13.5
+    orjson: 3.12.0
 
 execution_policy:
   tokenizer_preflight_before_final_freeze: true
