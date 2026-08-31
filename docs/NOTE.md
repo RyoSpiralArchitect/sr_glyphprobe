@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
 
-[日本語](NOTE.ja.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
+[日本語](NOTE.ja.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
 
@@ -632,12 +632,13 @@ protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md). This does not turn the MLX
 no-go into a pass, and the failed MLX v2 and Stage-A3 thresholds remain
 unchanged.
 
-A future versioned causal bank stays closed until the candidate, intervention
-site and operation, endpoint, controls, and multiplicity family are fixed in a
-sealed patch–ablate–restore protocol. Independent backend and model or tokenizer
-replication also remain open. Final-paper confirmatory wording and any
-replication used to support it must prospectively bind scientific roles to
-frozen inputs and account for data-dependent prototype resampling.
+T14-C met the closed-bank requirement by freezing the candidate operation,
+endpoint, controls, site roster, selector, and multiplicity family before its
+new bank was materialized. Any future versioned causal bank must follow the
+same boundary. Independent backend and model or tokenizer replication remain
+open. Final-paper wording and any supporting replication must prospectively
+bind scientific roles to frozen inputs and account for data-dependent
+prototype resampling.
 
 Phase I still ends with an English paper, whether the final pattern is positive, mixed, or negative. That paper must show layer 2 and layer 4 together, distinguish frozen-v1 inference from post-hoc sensitivity, report the completed diagnostics, T2 non-recurrence, the T3 tokenizer-conditioned split, and T4 one-token carryover with their claim boundaries, and connect every statement to a sealed artifact. The first map has become sharper. It has also become harder to overread, which is exactly what the controls were for.
 T5's failed attenuation endpoint and its complete persistent descriptive
@@ -656,3 +657,32 @@ T10-D's heterogeneous diagnostics, T11's exploratory status, and T12's
 completed negative confirmation must remain explicit. T12 must be presented as
 a separately frozen result rather than folded back into T11 or rescued by a
 new endpoint.
+
+## The larger grid found a regime, then the causal test removed the easy story
+
+T14-X asked the broad operational question with enough breadth to expose its
+sign. Across six base-model roles and two late depths, all 12 headline JS
+intervals excluded zero. Nine were positive and three were negative. The Qwen
+sequence was not monotone with size: positive at 0.5B, split by depth at 1.5B,
+negative at 3B, and positive again at 7B. That is a real regularity in the
+frozen grid, but it is a response-anisotropy regime, not a scale curve and not
+evidence that emoji directions are universally stronger.
+
+The source-form analysis made the boundary sharper. Some modifier and ZWJ
+contrasts favored the glyph surface, while keycap and many other contrasts did
+not. Null family and intervention sign also changed the result. The more data
+we collected, the less defensible a single glyph-privilege story became.
+
+T14-C then asked whether one downstream Llama component carried the operational
+effect. Its selector chose `mlp_out` block 24 before the new target bank was
+created. On 192 untouched targets, the treatment contrast was positive but
+below its practical floor, necessity was stably negative, and sufficiency was
+far below its floor. Every no-op, restoration, positive-control, and sham gate
+passed. The failure therefore belongs to the scientific hypothesis, not to the
+hook.
+
+That is a useful close. One selected component is not supported as the
+necessary and sufficient mediator. We will not choose the runner-up or lower a
+floor. A distributed or redundant route is now a plausible future question,
+but first the paper should preserve this exact sequence: broad signed regime,
+prospective localization, untouched confirmation, negative causal IUT.

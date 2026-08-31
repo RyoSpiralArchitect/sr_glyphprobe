@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[日本語](README.ja.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
+[日本語](README.ja.md) · [T14-X / T14-C result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
 
@@ -45,6 +45,8 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T12 regional dual reserve confirmation | presentation p = 0.03538, component p = 0.12950; IUT/Holm p = 0.12950 | not confirmed; both regional statistics were below the frozen 0.02 floors |
 | T13-EH specificity harvest | 9-role source bank plus a fixed 3-role, 383,232-row intervention surface | exploratory acquisition only; no primary hypothesis, protected bank, or confirmatory verdict |
 | T13-EA specificity analysis | F1–F6 exploratory point analysis complete; bootstrap execution v1 frozen | The post-outcome implementation roster has 600 complete high-level estimands in 100 fixed chunks; production remains at 0/20,000 and there is no confirmatory verdict |
+| T14-X signed response regime | 559,488 rows across 6 base models and 2 late depths | all 12 JS intervals excluded zero: 9 positive, 3 negative; exploratory, non-monotonic, and not a scale law |
+| T14-C selected-site causal test | `mlp_out` block 24; 192 untouched targets; 15,360 records | engineering controls passed; treatment, necessity, and sufficiency IUT non-rejecting; causal claim remains unauthorized |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -362,6 +364,28 @@ amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md), [compact
 evidence](artifacts/emoji_steering_specificity_analysis_v0/README.md), and
 [T13-EH protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md).
 
+### T14-X expansion and T14-C causal closeout
+
+T14-X completed 559,488 response rows across Llama 3.2 3B, OLMo 2 1B,
+and four Qwen 2.5 sizes at depths 0.875 and 1.0. All 12 headline
+structured-minus-covariance-null JS intervals excluded zero, but the signed
+classification was nine positive and three negative. Qwen was non-monotonic:
+0.5B was positive, 1.5B changed sign at the final depth, 3B was negative at
+both depths, and 7B was positive again. Source-form, null-family, and sign
+decompositions were heterogeneous, so this is an exploratory response-anisotropy
+regime rather than universal glyph privilege or a scale law.
+
+T14-C was frozen before that outcome was opened. Its fixed selector chose
+Llama 3.2 3B `mlp_out` block 24 from eight candidate sites using 32 public
+targets. A new 192-target C1 v2 bank was then materialized and used once. All
+zero, restoration, positive-control, and upstream-sham engineering gates
+passed. The registered treatment estimate was `0.00172230`, below its `0.002`
+floor; necessity was `-0.00057689`; sufficiency was `0.00002126`, below its
+`0.0005` floor. The intersection-union test therefore did not reject. This
+closes the targeted-causal paper gate with a negative result, while leaving
+`confirmatory_claim_authorized: false`. See the [complete bilingual
+result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md).
+
 ### E2 engineering results
 
 The frozen Llama 3.2 3B BF16 Stage-A v2 engineering validation completed with
@@ -589,6 +613,7 @@ Project-authored public documentation is maintained in English and Japanese:
 | Emoji steering specificity bootstrap execution v1 | [EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) | [EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) |
 | Emoji steering specificity zero-gate amendment v1 | [EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) | [EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md) |
 | Emoji steering specificity compact evidence | [README.md](artifacts/emoji_steering_specificity_analysis_v0/README.md) | [README.ja.md](artifacts/emoji_steering_specificity_analysis_v0/README.ja.md) |
+| T14-X expansion and T14-C causal results | [EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) | [EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -605,19 +630,23 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. Operational Milestone 2 is complete: layer 2 is eligible for the design of a new frozen targeted causal protocol, while layer 4 remains unresolved and is not a candidate. C1 v1 is retired and cannot serve that protocol; a new versioned bank must be prepared outside the exposed research context and kept untouched through the future causal freeze. E1 is a completed exploratory side track and does not alter that decision or close any paper gate. The multifamily tokenizer census requires future cross-tokenizer controls to be frozen per tokenizer output class. Colored-shape geometry v0 ended with `no_dual_model_recurrence`; matched-slot geometry v0 ended with `olmo_only_token_structured_recurrence`; common-suffix carryover v0 ended with `olmo_only_common_suffix_carryover`; carrier-distance v0 ended with `no_model_distance_attenuation`; dense CUDA T6 ended with `no_dense_model_distance_attenuation`; and selected Mistral-base T7 ended with `recurrence_and_early_depth_attenuation_excess`. T7 prospectively supports the frozen depth interaction in one related base checkpoint but does not supply an instruction-tuning effect, independent confirmation, or model-general claim. T8 then confirmed its fixed layer-31 glyph/name-versus-codepoint retrieval endpoint on all 292 previously unforwarded reserve items. T10 kept that population and transport fixed across nine model/tokenizer cells. Its statistical partial conjunction passed, but its frozen practical replication rule failed at two of four core cells, so cross-model replication was not established. Exact token-count matching did not erase the contrast, while tokenization independence, scale, tuning, semantics, causality, and model generality remain unauthorized. T10-D preserves that primary and sharpens the next question without selecting a favorable model. T11 remains a nine-cell exploratory atlas and does not alter T10. T12 then opened the frozen ZWJ and regional reserve subsets once; neither registered decomposition hypothesis was confirmed, and both the negative decision and all heterogeneous cells remain public. E2 Stage A v2 and Stage A3 remain completed negative MLX engineering qualifications. Final paper wording and supporting replication must prospectively address analyzer role binding, prototype-resampling dependence, tokenizer-structured alternatives, carrier-distance heterogeneity, the one negative CKA contrast inside the positive T8 retrieval result, T10's statistical/practical split, T11's exploratory status, and T12's attenuation from discovery to reserve. Causal testing, an independent implementation or appropriately independent replication, and archival evidence remain paper gates.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. T14-C has now completed the targeted-causal gate under a public freeze: one selected Llama component was tested once on a new untouched bank, and its intersection-union test did not reject. This closes gate 4 with a valid negative result while leaving every semantic, mediator, circuit, tokenizer-independent, scale, and model-general claim unauthorized. T14-X separately supplies exploratory six-model boundary mapping, not independent confirmation. The earlier positive, mixed, and negative results from Milestone 2 through T13 remain part of the claim table and may not be rescued or replaced. The remaining major gates are an appropriately independent model or backend replication, paper-wide statistical qualification, a complete checksummed evidence archive, and fresh-eyes reproducibility review. See the [roadmap](docs/ROADMAP.md) and [T14 result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) for the exact boundaries.
 
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the
 registered statistical-plus-practical rule. The T10 primary remains unchanged.
 T13-EH completed a frozen exploratory acquisition over exposed items and
 public targets; it did not alter the T12 decision or close a paper gate. Any T13-C
-confirmation still requires a new untouched bank and a separate freeze.
+confirmation required a new untouched bank and a separate freeze; T14-C later
+met that requirement without retroactively changing T13.
 T13-EA has completed the corresponding exploratory point analysis without a
 primary or confirmatory verdict. Its registered cluster bootstrap remains at
-0/20,000, and the immediate design question is whether structured source
-directions survive exact token/prefix controls, wrapper holdout, matched nulls,
-and target-susceptibility controls.
+0/20,000. T14-X separately completed the expanded six-model response grid and
+found a signed, non-monotonic model-by-depth regime. T14-C then completed one
+prospectively selected-site causal experiment on a new untouched bank. Its
+intersection-union test did not reject, so Phase I gate 4 is closed by a
+negative result and no alternative site may be promoted from the same search.
+Independent confirmation, the complete archive, and paper review remain open.
 
 ## Validation
 

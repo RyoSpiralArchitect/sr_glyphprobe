@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "A passing T14-C intersection-union test may establish only that one selected component causally mediates the operational structured-versus-null next-token JS effect in the pinned Llama 3.2 3B BF16 Transformers/CUDA cell. It cannot establish emoji meaning, understanding, a complete circuit, natural encoding strength, generated behavior, tokenizer independence, architecture or model-population generality, a scale law, or independent replication.",
+  "completed_at_utc": "2026-08-31T13:03:38.061217+00:00",
+  "confirmation_summary_sha256": "8e6ed50eb1afa40d98144e04ff8092ca6ba7e3d2a23ee5c103ba26cdb2f41f12",
+  "confirmatory_claim_authorized": false,
+  "engineering_gates": {
+    "explicit_zero_pass": true,
+    "maximum_explicit_zero_js": 0.0,
+    "maximum_restoration_error_js": 0.0,
+    "maximum_restoration_error_logit_rms": 0.0,
+    "restoration_pass": true,
+    "upstream_sham_pass_from_frozen_localization": true
+  },
+  "estimands": {
+    "necessity": {
+      "bootstrap_95_percent_interval": [
+        -0.0006116844677905403,
+        -0.0005298436166030136
+      ],
+      "component_pass": false,
+      "one_sided_sign_flip_p_value_against_zero": 1.0,
+      "point_estimate": -0.000576894038373931,
+      "practical_floor": 0.0005,
+      "target_level_aggregate": "median"
+    },
+    "sufficiency": {
+      "bootstrap_95_percent_interval": [
+        1.143815845763103e-05,
+        3.60785614524622e-05
+      ],
+      "component_pass": false,
+      "one_sided_sign_flip_p_value_against_zero": 1e-05,
+      "point_estimate": 2.1257476577396717e-05,
+      "practical_floor": 0.0005,
+      "target_level_aggregate": "median"
+    },
+    "treatment": {
+      "bootstrap_95_percent_interval": [
+        0.0015100240432597938,
+        0.0019055506047630424
+      ],
+      "component_pass": false,
+      "one_sided_sign_flip_p_value_against_zero": 1e-05,
+      "point_estimate": 0.0017223000369531395,
+      "practical_floor": 0.002,
+      "target_level_aggregate": "median"
+    }
+  },
+  "forbidden_claims": [
+    "emoji_meaning_or_understanding",
+    "complete_circuit_or_unique_emoji_mechanism",
+    "generated_behavior_or_task_improvement",
+    "tokenizer_independence",
+    "scale_architecture_or_model_population_generality",
+    "independent_replication"
+  ],
+  "intersection_union_decision": false,
+  "principal_sampling_unit": "target_prompt",
+  "protocol_id": "glyphprobe-emoji-steering-causal-path-v0",
+  "schema_version": 1,
+  "selected_site": {
+    "block_index": 24,
+    "site": "mlp_out"
+  },
+  "status": "causal_iut_non_rejecting",
+  "target_rows": 192
+}

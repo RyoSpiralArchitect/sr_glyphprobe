@@ -1,0 +1,140 @@
+{
+  "analysis_freeze_commit": "143e1be",
+  "analysis_freeze_manifest_sha256": "7f5403246aa23779d33922d9294e3556e7a35757cd62fc8185a5681feb3de6e2",
+  "analysis_id": "glyphprobe-emoji-steering-specificity-expansion-analysis-v0",
+  "causal_claim_authorized": false,
+  "claim_boundary": "Exploratory complete-family analysis only. The result may describe a signed model-by-depth response-anisotropy regime, but it does not establish universal glyph privilege, emoji meaning, a circuit, tokenizer independence, model-population generality, or a scale law.",
+  "complete_result": {
+    "furnace_path": "/home/ryospiralarchitect/scratch/glyphprobe-t14xa-analysis-143e1be/result.json",
+    "sha256": "cd012355867b32800a4815b20ade08d2738a5b0248418e8addd7f8283fa060a5",
+    "summary_cells": 3060
+  },
+  "family_js_interval_class_counts": {
+    "X1_structured_vs_covariance_null": {
+      "mixed": 0,
+      "negative": 3,
+      "positive": 9,
+      "total": 12
+    },
+    "X2_glyph_system_decomposition": {
+      "mixed": 6,
+      "negative": 15,
+      "positive": 51,
+      "total": 72
+    },
+    "X3_prototype_source_form_specificity": {
+      "mixed": 71,
+      "negative": 104,
+      "positive": 89,
+      "total": 264
+    },
+    "X4_item_source_form_specificity": {
+      "mixed": 25,
+      "negative": 64,
+      "positive": 43,
+      "total": 132
+    },
+    "X5_depth_contrast": {
+      "mixed": 3,
+      "negative": 1,
+      "positive": 2,
+      "total": 6
+    },
+    "X6_null_family_sensitivity": {
+      "mixed": 3,
+      "negative": 3,
+      "positive": 6,
+      "total": 12
+    },
+    "X7_sign_orientation": {
+      "mixed": 3,
+      "negative": 2,
+      "positive": 7,
+      "total": 12
+    }
+  },
+  "headline_x1_js": [
+    {
+      "bootstrap_95_percent_interval": [0.0017579521518200636, 0.0037548751570284367],
+      "depth_fraction": 0.875,
+      "median": 0.0028383927419781685,
+      "model": "llama32_3b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.0037118196487426758, 0.009787341579794884],
+      "depth_fraction": 1.0,
+      "median": 0.0064566899091005325,
+      "model": "llama32_3b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.004044869681820273, 0.014886393677443266],
+      "depth_fraction": 0.875,
+      "median": 0.006478053284808993,
+      "model": "olmo2_1b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.005242818035185337, 0.013729667291045189],
+      "depth_fraction": 1.0,
+      "median": 0.008590598125010729,
+      "model": "olmo2_1b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.007638031151145697, 0.014668755233287811],
+      "depth_fraction": 0.875,
+      "median": 0.010017736814916134,
+      "model": "qwen25_0p5b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.005643576383590698, 0.012085318565368652],
+      "depth_fraction": 1.0,
+      "median": 0.009668662212789059,
+      "model": "qwen25_0p5b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.001399231143295765, 0.002637668512761593],
+      "depth_fraction": 0.875,
+      "median": 0.001923746895045042,
+      "model": "qwen25_1p5b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [-0.01393225695937872, -0.007893882226198912],
+      "depth_fraction": 1.0,
+      "median": -0.011135980021208525,
+      "model": "qwen25_1p5b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [-0.007634541019797325, -0.0037337602116167545],
+      "depth_fraction": 0.875,
+      "median": -0.004869899479672313,
+      "model": "qwen25_3b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [-0.013234095647931099, -0.006413644179701805],
+      "depth_fraction": 1.0,
+      "median": -0.010316470172256231,
+      "model": "qwen25_3b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.0021869074553251266, 0.003747573122382164],
+      "depth_fraction": 0.875,
+      "median": 0.0030658325413241982,
+      "model": "qwen25_7b_base_bf16"
+    },
+    {
+      "bootstrap_95_percent_interval": [0.0030559179140254855, 0.00618384425761175],
+      "depth_fraction": 1.0,
+      "median": 0.004369738977402449,
+      "model": "qwen25_7b_base_bf16"
+    }
+  ],
+  "llama_0p875_system_x2_js": [
+    {"glyph_system": "atomic_anchor", "median": 0.002406229730695486},
+    {"glyph_system": "keycap", "median": 0.0011100125266239047},
+    {"glyph_system": "modifier", "median": 0.003731015953235328},
+    {"glyph_system": "presentation", "median": 0.002653819974511862},
+    {"glyph_system": "regional_flag", "median": 0.002595534548163414},
+    {"glyph_system": "zwj", "median": 0.003665462718345225}
+  ],
+  "schema_version": 1,
+  "status": "exploratory_complete_family"
+}

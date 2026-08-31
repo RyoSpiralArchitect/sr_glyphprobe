@@ -1,0 +1,50 @@
+{
+  "causal_analysis": {
+    "repository_path": "validation/emoji_steering_causal_path_v0/c1_v2_result.json",
+    "sha256": "3ec6fa99a4ca161a9b3f6d1a7981940b7eb2a9860fa3272e031e2f35084a9f7a",
+    "status": "causal_iut_non_rejecting"
+  },
+  "causal_confirmation": {
+    "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t14c-confirmation-2d11cb6",
+    "records": 15360,
+    "summary_sha256": "8e6ed50eb1afa40d98144e04ff8092ca6ba7e3d2a23ee5c103ba26cdb2f41f12"
+  },
+  "c1_v2_bank": {
+    "receipt_sha256": "b42f96aa12c8f9b47eb683d6c61588d8a571f74829e66f5c7823b2d84ba7d613",
+    "rows": 192,
+    "strata": 12,
+    "target_bank_sha256": "6611a9fb1720a2bc55613c8e9ee12c290577f0a610ec1e8ccf98d39a2291c7fd"
+  },
+  "claim_boundary": "T14-X is exploratory. T14-C completed one prospectively selected-site causal test, but the intersection-union rule did not reject. No causal, semantic, circuit, tokenizer-independent, scale, or model-general claim is authorized.",
+  "commits": {
+    "causal_freeze": "ff643ea",
+    "selected_site_binding": "2d11cb6",
+    "t14x_analysis_freeze": "143e1be",
+    "t14x_execution_freeze": "14408a3"
+  },
+  "freeze_manifests": {
+    "causal_sha256": "9f3058c347cd1202ba12bf873b9896e919c7f8d2fde51028655c45c9c6c3a372",
+    "t14x_analysis_sha256": "7f5403246aa23779d33922d9294e3556e7a35757cd62fc8185a5681feb3de6e2"
+  },
+  "localization": {
+    "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t14c-localization-143e1be",
+    "records": 25600,
+    "selected_site": {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    "site_manifest_sha256": "9876695b24765e94d5eb1f5f42d394aecf42724da1c98d7f732efbe40d8c2240",
+    "summary_sha256": "dd75ec378bd420dff7bb4e566a4b574c57fbe6437c1e581bce1cd74071f8e4ca"
+  },
+  "protocol_id": "glyphprobe-t14-specificity-and-causal-closeout-v0",
+  "schema_version": 1,
+  "status": "complete_with_negative_causal_iut",
+  "t14x": {
+    "analysis_result_sha256": "cd012355867b32800a4815b20ade08d2738a5b0248418e8addd7f8283fa060a5",
+    "furnace_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t14x-runs-14408a3",
+    "generation_calls": 0,
+    "model_roles_complete": 6,
+    "response_rows": 559488,
+    "status": "complete_closed_to_adaptive_selection"
+  }
+}

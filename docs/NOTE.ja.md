@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
 
-[English](NOTE.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
+[English](NOTE.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
 
@@ -468,7 +468,7 @@ T10も完了しており、実用下限を下げたり、core modelを入れ替�
 
 E2では、研究責任者がTransformers/MPS専用の科学経路を別に選択した。V1は、auditがraw tokenizationとwrapper内のcontextual tokenizationを混同したため、model weightの読み込みもforwardも行う前にtokenizer preflightで停止し、科学的outcomeを持たない。元の50絵文字armと、別々にcenteringする35絵文字token-structure感度armは、修正済みの[E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md)へoutcomeを見る前に改めて固定する。MLXのno-goをpassに変えず、MLX v2とStage A3の閾値も変更しない。
 
-将来の新しいversionの因果bankは、候補、介入部位と操作、endpoint、対照、多重性familyをsealed patch–ablate–restoreプロトコルに固定するまで開かない。独立backendと、別modelまたはtokenizerでの再現も残っている。論文での最終的な確認表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
+T14-Cは、候補操作、endpoint、対照、部位roster、selector、多重性familyを新bank物質化前に固定し、closed-bank条件を満たした。将来の新しいversionの因果bankにも同じ境界を適用する。独立backendと、別modelまたはtokenizerでの再現は残っている。論文での最終表現と、それを支える再現実験では、科学的roleを凍結済みinputへ事前に直接結び付け、データ依存prototypeの再標本化を扱う。
 
 Phase Iの終点は、結果が正でも、混合でも、負でも、英語論文だ。論文ではlayer 2と4を一緒に示し、凍結済みv1推論と事後感度分析を区別し、完了した診断、T2 non-recurrence、T3のtokenizer条件に沿う分岐、T4の1 token carryoverを、それぞれの主張境界とともに示す。そして、ひとつひとつの文を凍結済みartifactへ戻せるようにする。
 T5で失敗した減衰endpointと、持続して見える完全な記述profileも同じ記録へ含める。都合のよい
@@ -483,3 +483,24 @@ signalは残ったが、実用下限を通過したcore cellは2つだけで、t
 T10-Dで見えたheterogeneity、T11が探索atlasであること、T12が完了した負の確認であることも明示する。T12はT11へ遡って混ぜず、別に凍結した結果として示し、新しいendpointで救済しない。
 
 最初の地図は、前より鮮明になった。同時に、読みすぎにくくもなった。対照を入れた意味は、まさにそこにある。
+
+## 大きいgridでregimeが見え、因果検定で簡単な物語が消えた
+
+T14-Xでは、符号が見えるだけの幅を持たせて、運用上の問いをもう一度測った。Base model
+6 roleと後期depth 2点のheadline JS区間12本は、すべて0を含まなかった。しかし正は9本、
+負は3本である。Qwen系列はsizeに対して単調ではなく、0.5Bで正、1.5Bではdepthにより分岐、
+3Bで負、7Bで再び正になった。凍結grid上の規則性ではあるが、scale curveでも、絵文字方向が
+普遍的に強いという証拠でもない。応答異方性のregimeと呼ぶのが正確である。
+
+Source-form解析は境界をさらに鋭くした。ModifierとZWJにはglyph表記を支持するcontrastがある一方、
+keycapを含む多くのcontrastはそうならない。Null familyと介入符号でも結果が変わった。母数を増やすほど、
+単純なglyph特権の物語は維持しにくくなった。
+
+T14-Cでは、Llamaのdownstream component 1つが、この運用上の効果を担うかを問うた。新しいtarget bankを
+作る前にselectorが`mlp_out` block 24を選んだ。未使用target 192件では、treatment contrastは正でも
+実用床未満、necessityは安定して負、sufficiencyは実用床よりはるかに小さかった。No-op、restoration、
+positive control、shamはすべて通過している。したがって失敗したのはhookではなく、科学仮説である。
+
+これは有用な閉じ方だ。選択した1部位は、必要かつ十分な媒介として支持されなかった。次点部位を選んだり、
+floorを下げたりはしない。分散・冗長なrouteは将来の自然な問いになったが、まず論文には、符号を持つ広いregime、
+prospectiveな局在化、未使用bankでの確認、負の因果IUTという順序をそのまま残す。

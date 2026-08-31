@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[日本語](ROADMAP.ja.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
+[日本語](ROADMAP.ja.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
 
@@ -681,7 +681,7 @@ public point values before any chunk can run. Mixed Mac/furnace chunks may be
 merged only when three fixed sentinel replicate vectors are bit-identical.
 This is execution readiness, not evidence that an interval has been computed.
 
-The next broad question is whether structured source directions explain
+T13's next broad question was whether structured source directions explain
 intervention response beyond generic target susceptibility and null-direction
 dependence. The discriminating design should combine exact token/prefix
 controls, leave-one-wrapper-out directions, positive and negative
@@ -692,29 +692,36 @@ confirmation requires a new untouched target bank outside the exposed research
 context and cannot reuse T12 outcomes, P2, or retired C1 v1. Representation
 geometry and behavioral intervention remain separate lanes. The competing
 explanations and clean landing patterns remain in the [T13 decision
-map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md).
+map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md). T14-X and T14-C have now executed
+one frozen realization of that transition; their signed exploratory result and
+negative selected-site causal result are reported separately below.
 
 ### Milestone 3 — Targeted causal localization
 
-Status: eligible for protocol design, but no causal protocol has yet been
-frozen and no causal claim is authorized. Layer 2 is the only current
-candidate; layer 4 remains unresolved and is not a candidate. A further
-confirmatory bank is not a prerequisite to designing this protocol.
+Status: complete with a negative selected-site intersection-union result. The
+targeted-causal paper gate is closed, but no positive causal claim is authorized.
 
-- compare `resid_pre`, `attn_out`, `mlp_out`, and `resid_post` only after model-family parity qualification;
-- perform component patching and path patching around prespecified candidate layers;
-- use ablation, restoration, and projection-removal interventions;
-- include negative controls that should leave the candidate fingerprint unchanged;
-- require held-out selective effects rather than a single large drift.
-- C1 v1 is retired. Prepare a new versioned causal bank outside the exposed
-  research context, and keep it untouched until the intervention, endpoint,
-  controls, candidate layer, and multiplicity family are frozen publicly.
+- T14-C was publicly frozen before T14-X outcome access;
+- localization compared eight fixed `attn_out` / `mlp_out` sites at blocks
+  24–27, plus a positive control and upstream sham, on 32 public targets;
+- the frozen selector chose `mlp_out` block 24 before C1 v2 materialization;
+- the new bank contained 192 untouched targets in 12 fixed strata;
+- all explicit-zero, restoration, positive-control, and sham engineering gates
+  passed;
+- the treatment estimate was positive but below its floor, necessity was
+  negative, and sufficiency was far below its floor, so the causal IUT did not
+  reject;
+- no alternate site, floor, endpoint, model subset, or rescue analysis may be
+  promoted from this search.
 
-Exit condition: a prespecified intervention selectively changes the candidate effect and survives matched controls. Until then, `causal_claim_authorized` remains false.
+Exit condition: completed as a valid negative causal experiment.
+`causal_claim_authorized` remains `false`. Any multi-site or path-level follow-up
+requires a new protocol and a new untouched bank.
 
 ### Milestone 4 — Replication and boundary mapping
 
-Status: planned.
+Status: exploratory boundary mapping substantially expanded; independent
+confirmation remains planned.
 
 - repeat the confirmatory cell in raw Transformers or TransformerLens, not only adapter-level parity;
 - replicate across at least one additional model family and tokenizer;
@@ -723,13 +730,17 @@ Status: planned.
 - separate architecture-specific observations from cross-model regularities.
 - test the frozen T13-EA response predictions in the six roles that currently
   contribute source geometry but not the full intervention-response surface.
+- preserve T14-X's signed six-model, two-depth result: 9/12 headline JS
+  intervals were positive and 3/12 negative, with a non-monotonic Qwen profile;
+- do not promote that exploratory breadth to a scale law or independent
+  confirmatory replication.
 
 Exit condition: the paper can state clearly which findings replicate and which remain GPT-2-specific.
 
 ### Milestone 5 — Confirmatory statistics
 
-Status: partly completed for Milestone 2 v1, with an open bootstrap-dependence
-qualification.
+Status: T14-C's claim-specific target-cluster analysis is complete; the
+paper-wide qualification remains open.
 
 - treat target prompts as principal sampling clusters;
 - keep direction seeds and target splits nested rather than counting them as independent samples;
@@ -743,6 +754,9 @@ qualification.
   freeze a different dependence-aware estimator before outcomes.
 - complete the registered T13-EA 20,000-replicate cluster bootstrap before
   promoting any point estimate to an interval-based paper statement.
+- retain the T14-C 20,000-replicate target bootstrap and fixed 99,999-draw
+  paired sign-flip result without selecting a replacement site after its
+  non-rejection.
 
 Exit condition: the statistical analysis matches the sampling structure and can be rerun from frozen artifacts.
 
@@ -812,10 +826,17 @@ under a separate one-shot protocol; neither registered hypothesis was
 confirmed. This is a completed negative confirmation, not a paper-gate closure
 for semantics, causality, or model generality. T13-EH adds an exploratory,
 acquisition-only tensor surface over exposed items and public targets. It does
-not close a paper gate. Any T13-C confirmatory claim still requires a new
-freeze and an untouched target bank.
+not close a paper gate. T14-X then completed a separately frozen six-model,
+two-depth expansion: all 12 headline JS intervals excluded zero, but the signed
+pattern was 9 positive and 3 negative and the Qwen profile was non-monotonic.
+It is exploratory boundary mapping, not independent confirmation or a scale
+law. T14-C was frozen before that outcome was opened, selected `mlp_out` block
+24 on public targets, and tested it once on a new untouched 192-target bank.
+All engineering controls passed, but the treatment, necessity, and sufficiency
+IUT did not reject. Gate 4 is therefore complete with a negative result; no
+causal mediator claim or adaptive second-site search is authorized.
 Final paper-wide qualification for gate 6 remains open because the rebuilt
-GPT-2 prototype analysis was post hoc. Gates 4, 5, 8, and 10 remain open. Gate 9 must be
+GPT-2 prototype analysis was post hoc. Gates 5, 8, and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research
 release, not a finished manuscript.

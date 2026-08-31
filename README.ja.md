@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[English](README.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
+[English](README.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
 
@@ -14,7 +14,7 @@ GlyphProbe は、絵文字やグリフから作った活性化方向が、言語
 
 ## 現在地
 
-2026年8月7日時点で、次の実験セルを検証しています。
+最初の基準実験では、次のcellを検証しました。
 
 - モデル: `openai-community/gpt2`
 - リビジョン: `607a30d783dfa663caf39e06633721c8d4cfcd7e`
@@ -247,6 +247,23 @@ T13-EAに一次仮説、有意性判定、確認判定はない。結果を見�
 [compact evidence](artifacts/emoji_steering_specificity_analysis_v0/README.ja.md)、
 [T13-EH protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md)に示す。
 
+### T14-X拡張とT14-C因果closeout
+
+T14-Xでは、Llama 3.2 3B、OLMo 2 1B、Qwen 2.5の4 sizeについて、depth
+0.875と1.0の応答559,488行を完走した。Headlineのstructured-minus-covariance-null
+JS区間12本はすべて0を含まなかったが、符号は正9本・負3本だった。Qwenは非単調で、
+0.5Bが正、1.5Bがfinal depthで符号反転、3Bが両depthで負、7Bが再び正となった。
+Source form、null family、符号による分解も不均一であり、これは普遍的なglyph特権や
+scale lawではなく、探索的な応答異方性regimeである。
+
+T14-Cは、そのoutcomeを開く前に凍結した。固定selectorは公開32 target上の候補8部位から、
+Llama 3.2 3Bの`mlp_out` block 24を選んだ。その後に新しいC1 v2 bank 192件を物質化し、
+一度だけ使った。Zero、restoration、positive control、upstream shamのengineering gateは
+すべて通過した。登録済みtreatmentは`0.00172230`で実用床`0.002`未満、necessityは
+`-0.00057689`、sufficiencyは`0.00002126`で実用床`0.0005`未満だった。したがってIUTは
+非棄却である。この負の結果によって対象を絞った因果paper gateは完了したが、
+`confirmatory_claim_authorized: false`は維持する。詳細は[英日結果文書](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -396,6 +413,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Emoji steering specificity bootstrap実行 v1](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md)
 - [Emoji steering specificity zero-gate amendment v1](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md)
 - [Emoji steering specificity compact evidence](artifacts/emoji_steering_specificity_analysis_v0/README.ja.md) / [English](artifacts/emoji_steering_specificity_analysis_v0/README.md)
+- [T14-X拡張とT14-C因果結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) / [English](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -412,13 +430,15 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase I の最終成果は、検証可能なアーティファクトを伴う**英語論文または英語プレプリント**です。運用上のMilestone 2は完了し、layer 2は、新しい対象限定型の因果プロトコルを設計できる段階に入りました。Layer 4は未解決のままで、候補にはしません。C1 v1は廃止済みであり、将来の因果freezeには、露出した研究文脈の外で新しいversionのbankを用意する必要があります。E1とmultifamily tokenizer censusは探索・設計side trackであり、論文gateを閉じません。Colored-shape geometry v0は`no_dual_model_recurrence`、matched-slot geometry v0は`olmo_only_token_structured_recurrence`、common-suffix carryover v0は`olmo_only_common_suffix_carryover`、carrier-distance v0は`no_model_distance_attenuation`、dense CUDA T6は`no_dense_model_distance_attenuation`で完了しました。T7ではMistral 7B baseの固定した距離1反復と初期−後期深度interactionがともに棄却されたが、T6後に選択した関連checkpointの1 cellであり、独立確認やinstruction tuning効果ではない。T8では固定したlayer-31 glyph/name-versus-codepoint retrieval endpointを、model forward 0だったreserve 292件すべてで確認した。T10は、そのpopulationとtransportを9つのmodel/tokenizer cellで固定した。統計的な部分連言検定は通過したが、固定した実用再現条件を満たしたcore cellは4つ中2つだったため、モデル横断再現は確立しなかった。Token数完全一致後も差は消えなかった一方、tokenization非依存性、scale、tuning、意味、因果、model一般性は主張しない。T10-Dはその一次判定を保ったまま次の問いを鋭くし、都合のよいmodelは選んでいない。T11は9-cellの変則glyph探索atlasのままで、T10を変更しない。T12では、そのZWJとregional reserve subsetを別の一度限りのfreezeで開き、登録した2つのdecomposition仮説はいずれも確認されなかった。負の判定と不均一cellはすべて公開する。E2 Stage A v2とStage A3もMLX技術経路の負の資格判定として残ります。最終論文と再現実験では、analyzer role、prototype再標本化、tokenizer構造による代替説明、carrier-distanceの不均一性、T8の正のretrieval結果に併存した1つの負のCKA contrast、T10の統計条件と実用条件の分岐、T11の探索的位置づけ、T12で探索量がreserveで減衰した事実を事前に扱います。因果検証、独立実装または適切に独立した再現、完全なevidence archiveも論文gateとして残っています。
+Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。T14-Cにより、対象を絞った因果gateは公開freezeのもとで完了した。選択したLlama component 1つを新しい未使用bankで一度だけ検定し、intersection-union testは非棄却だった。これはgate 4を妥当な負の結果として閉じるが、意味、媒介、回路、tokenizer非依存性、scale、model一般性の主張は一切認めない。T14-Xが加えるのは、別の6 modelによる探索的な境界地図であり、独立確認ではない。Milestone 2からT13までの正・mixed・負の結果もclaim tableへ残し、救済や差し替えを行わない。残る主要gateは、適切に独立したmodelまたはbackend再現、論文全体の統計資格、完全なchecksum付きevidence archive、先入観のない再現性reviewである。正確な境界は[ロードマップ](docs/ROADMAP.ja.md)と[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)に示す。
 
-T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cで確認を行うには、新しい未使用bankと別のfreezeが必要である。
+T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cには新しい未使用bankと別freezeが必要だった。後続のT14-Cはその条件を満たしたが、T13へ遡って確認statusを与えない。
 
 T13-EAは、その探索的な点推定まで完了した。一次判定や確認判定は置かず、登録済みcluster
-bootstrapも0 / 20,000回のままである。直近の設計課題は、構造化source directionの効果が、厳密に揃えたtoken・prefix対照、
-wrapper holdout、matched null、target susceptibilityの統制を通過するかを確かめることである。
+bootstrapも0 / 20,000回のままである。T14-Xでは別に、6 modelの拡張応答gridを完走し、符号を持つ
+非単調なmodel×depth regimeを観測した。続くT14-Cは、新しい未使用bank上で、事前規定した1つの
+選択部位因果実験を完了した。IUTは非棄却だったため、Phase I gate 4は負の結果として閉じる。
+同じ探索から別部位を昇格させない。独立確認、完全archive、論文reviewは未完了である。
 
 ## ライセンスと引用
 
