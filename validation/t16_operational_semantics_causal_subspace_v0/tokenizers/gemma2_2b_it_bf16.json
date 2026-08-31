@@ -1,0 +1,75 @@
+{
+  "answer_completion_surfaces": {
+    "A": "A",
+    "B": "B"
+  },
+  "answer_token_ids": {
+    "A": 235280,
+    "B": 235305
+  },
+  "artifact": {
+    "file_count": 11,
+    "files": {
+      ".gitattributes": {
+        "bytes": 1570,
+        "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+      },
+      "README.md": {
+        "bytes": 29091,
+        "sha256": "bb52a3f239a1e7b24907644c29e51ff3159fcff5488333d75b1056ddfdd74950"
+      },
+      "config.json": {
+        "bytes": 838,
+        "sha256": "eacec6c5ca317a87ed2c46789d9705b9274db5027e7ba59da739bfae23addb55"
+      },
+      "generation_config.json": {
+        "bytes": 187,
+        "sha256": "a543a5d299bc2b20c52bd87ed174f561266510b57a392e12b5b5d758d798ce05"
+      },
+      "model-00001-of-00002.safetensors": {
+        "bytes": 4988025760,
+        "sha256": "532d792c9178805064170a3ec485b7dedbfccc6fd297b92c31a6091b6c7e41bf"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 240691728,
+        "sha256": "6d6d9ce84db398fb6e0191f91542e5da0a73da2cb695e172a24edc2146dc8d20"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 24223,
+        "sha256": "ada0043f3e3b2e5ab2f445cad9c0fbbf9d91ad444675e6a82b822591c63abf5a"
+      },
+      "special_tokens_map.json": {
+        "bytes": 636,
+        "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+      },
+      "tokenizer.json": {
+        "bytes": 17525357,
+        "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+      },
+      "tokenizer.model": {
+        "bytes": 4241003,
+        "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+      },
+      "tokenizer_config.json": {
+        "bytes": 46996,
+        "sha256": "cb32b7929c62608d46572e813112b3ad8a841fb98fdd6a4da8559e368a951c89"
+      }
+    },
+    "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+    "total_bytes": 5250587389
+  },
+  "artifact_model_id": "google/gemma-2-2b-it",
+  "maximum_token_count": 39,
+  "minimum_token_count": 30,
+  "model_forwards": 0,
+  "model_role": "gemma2_2b_it_bf16",
+  "ordered_rendered_prompt_sha256": "c7d71eff91a6ad20904c942c19192ff2aaf107fde8f7d0a8de0b9d8f063b9cc0",
+  "ordered_token_ids_sha256": "c575517e2b5a06b7206e8abfe3ff68118a2845a874c32f3b1a49b84ce8b7d203",
+  "ordered_user_prompt_sha256": "d7199c2b13182477e92371bcaddb56ba48788edd98e2a579893fc452d04134ae",
+  "prompt_sequences": 384,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "schema_version": 1,
+  "status": "tokenizer_preflight_pass_zero_t16_model_forwards",
+  "tokenizer_class": "GemmaTokenizer"
+}

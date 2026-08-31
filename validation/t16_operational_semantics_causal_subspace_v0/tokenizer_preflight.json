@@ -1,0 +1,34 @@
+{
+  "model_forwards": 0,
+  "model_roles": [
+    "gemma2_2b_it_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "roles": {
+    "gemma2_2b_it_bf16": {
+      "answer_token_ids": {
+        "A": 235280,
+        "B": 235305
+      },
+      "artifact_manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+      "ordered_rendered_prompt_sha256": "c7d71eff91a6ad20904c942c19192ff2aaf107fde8f7d0a8de0b9d8f063b9cc0",
+      "ordered_token_ids_sha256": "c575517e2b5a06b7206e8abfe3ff68118a2845a874c32f3b1a49b84ce8b7d203",
+      "prompt_sequences": 384,
+      "receipt_sha256": "e22795e5a83f65ca9a39a4a3ae5241db1ecc870cbdb609717ee6868ff3273bdc"
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "answer_token_ids": {
+        "A": 1098,
+        "B": 1133
+      },
+      "artifact_manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "ordered_rendered_prompt_sha256": "89b41938e6bf14c9b0897fe088718e0c49724a7ce3d8db74622b9633361a8d24",
+      "ordered_token_ids_sha256": "c3cf7ea435022473d494f501e38275dce40c3ec5ee001a661d1748421a16b15b",
+      "prompt_sequences": 512,
+      "receipt_sha256": "25c63a0a235431f084f5e0e84efe1a3115f7d4ff8704763363971a89d6948c2b"
+    }
+  },
+  "schema_version": 1,
+  "status": "all_tokenizer_preflights_pass_zero_t16_model_forwards"
+}

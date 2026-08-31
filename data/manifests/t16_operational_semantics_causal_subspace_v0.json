@@ -1,0 +1,34 @@
+{
+  "assets": {
+    "configs/t16_operational_semantics_causal_subspace_v0.yaml": "dc1f8bdc09c2bc6b7dbed1d2965fb52d40893c26c1c6161f998f2559dd6b7adf",
+    "data/panels/emoji_operational_semantics_axes_v0.json": "f3d294e5517a2d721b0e390fb76f20ac1a86a3cfd62247bfc078dbf5323d48ea",
+    "data/panels/emoji_word_incongruence_axes_v1.json": "483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7",
+    "docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0.ja.md": "f28f92a8a3c4df6b04cc9750df033a6cb500ee6caee45f98fd979ae3cd537694",
+    "docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0.md": "c098c594f092bf3bebac7a2f861a0d689e7e44fd6130fff88dc6ef014d48e470",
+    "scripts/t16_operational_semantics_causal_subspace_v0.py": "bd8912ac188f1b4182c018110b86f295ecf4d22cb8d99af867e7a9045deaf77b",
+    "tests/test_t16_operational_semantics_causal_subspace_v0.py": "23c422045c1596ddf3b36c098a5b8b4fbc1bfde4363c8f0dfc713ba2f50c5f13",
+    "validation/t16_operational_semantics_causal_subspace_v0/design_preflight.json": "4c1b449210c4ef4839a37f39ed377be874fc9456abd9e5be2eaf1ed331e5d979",
+    "validation/t16_operational_semantics_causal_subspace_v0/tokenizer_preflight.json": "6d7bba9e730d0ae080fa0e14866aa727da1853f535e0d122431715b9f3c86520",
+    "validation/t16_operational_semantics_causal_subspace_v0/tokenizers/gemma2_2b_it_bf16.json": "e22795e5a83f65ca9a39a4a3ae5241db1ecc870cbdb609717ee6868ff3273bdc",
+    "validation/t16_operational_semantics_causal_subspace_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "25c63a0a235431f084f5e0e84efe1a3115f7d4ff8704763363971a89d6948c2b"
+  },
+  "behavior_roles": [
+    "gemma2_2b_it_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "causal_role": "mistral7b_instruct_v03_bf16",
+  "confirmatory_status": false,
+  "expected_counts": {
+    "causal_conditions_per_target_per_site": 21,
+    "causal_response_rows": 5376,
+    "causal_target_rows": 128,
+    "congruence_judgment_rows_per_model": 256,
+    "meaning_choice_rows_per_model": 128
+  },
+  "model_forwards_at_freeze": 0,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t16_model_forwards",
+  "unique_or_complete_circuit_claim_authorized": false,
+  "unrestricted_semantic_understanding_claim_authorized": false
+}

@@ -1,0 +1,91 @@
+{
+  "answer_completion_surfaces": {
+    "A": " A",
+    "B": " B"
+  },
+  "answer_token_ids": {
+    "A": 1098,
+    "B": 1133
+  },
+  "artifact": {
+    "file_count": 15,
+    "files": {
+      ".gitattributes": {
+        "bytes": 1519,
+        "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+      },
+      "README.md": {
+        "bytes": 7893,
+        "sha256": "3166974023134d972368b585d730fa5f70100873684f90a10a773b20e80b30ba"
+      },
+      "config.json": {
+        "bytes": 601,
+        "sha256": "affafc6478ec0fd07a32f0ca57aa2fc57743f4d17d6730f86a96ac24d1507f99"
+      },
+      "consolidated.safetensors": {
+        "bytes": 14496078512,
+        "sha256": "76d5729be995fb6510c7f103c5b8825d3d82f8126ac949db6be367a638694d1f"
+      },
+      "generation_config.json": {
+        "bytes": 116,
+        "sha256": "b4669f1b8f4185324bd9b12a69e85a1ad2289bc48111ef739cfaaea3bba6b0a9"
+      },
+      "model-00001-of-00003.safetensors": {
+        "bytes": 4949453792,
+        "sha256": "ce6fb6f6f4d0183f4813cbf4ece24109da629a08d4210da46f77e1d8b0bd5c19"
+      },
+      "model-00002-of-00003.safetensors": {
+        "bytes": 4999819336,
+        "sha256": "8c0e72f148366b6a3709e002a98706a33d31aec8515090c856c95b2044f92ae0"
+      },
+      "model-00003-of-00003.safetensors": {
+        "bytes": 4546807800,
+        "sha256": "905dd405363e43d95779c1c1155a2dbfd36155914ae95dbd934e12e490cfb4ca"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 23950,
+        "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016"
+      },
+      "params.json": {
+        "bytes": 202,
+        "sha256": "8a64b8657de37af1f828eef1517dc186247938d66e7fea2c78c31d5b9071efe6"
+      },
+      "special_tokens_map.json": {
+        "bytes": 414,
+        "sha256": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0"
+      },
+      "tokenizer.json": {
+        "bytes": 1961548,
+        "sha256": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49"
+      },
+      "tokenizer.model": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer.model.v3": {
+        "bytes": 587404,
+        "sha256": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89"
+      },
+      "tokenizer_config.json": {
+        "bytes": 140874,
+        "sha256": "0533dec9cfe319163801b6618d0f3ec9cfa126b6288e3df5deca6e32acb09cd2"
+      }
+    },
+    "manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+    "total_bytes": 28995471365
+  },
+  "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "maximum_token_count": 39,
+  "minimum_token_count": 26,
+  "model_forwards": 0,
+  "model_role": "mistral7b_instruct_v03_bf16",
+  "ordered_rendered_prompt_sha256": "89b41938e6bf14c9b0897fe088718e0c49724a7ce3d8db74622b9633361a8d24",
+  "ordered_token_ids_sha256": "c3cf7ea435022473d494f501e38275dce40c3ec5ee001a661d1748421a16b15b",
+  "ordered_user_prompt_sha256": "67703c6a7e31cb146ebdd0f34648f3beb33c0f7515cd962c4c35cb2f85573bdf",
+  "prompt_sequences": 512,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "schema_version": 1,
+  "status": "tokenizer_preflight_pass_zero_t16_model_forwards",
+  "tokenizer_class": "TokenizersBackend"
+}
