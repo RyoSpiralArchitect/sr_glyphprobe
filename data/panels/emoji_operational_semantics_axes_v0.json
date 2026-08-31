@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "axis_order": [
+    "vertical",
+    "trend",
+    "volume",
+    "approval",
+    "health",
+    "visibility",
+    "connection",
+    "motion"
+  ],
+  "axes": [
+    {
+      "id": "vertical",
+      "pole_a": {"emoji": "⬆️", "emoji_label": "up arrow", "word": "up"},
+      "pole_b": {"emoji": "⬇️", "emoji_label": "down arrow", "word": "down"}
+    },
+    {
+      "id": "trend",
+      "pole_a": {"emoji": "📈", "emoji_label": "chart increasing", "word": "rising"},
+      "pole_b": {"emoji": "📉", "emoji_label": "chart decreasing", "word": "falling"}
+    },
+    {
+      "id": "volume",
+      "pole_a": {"emoji": "🔊", "emoji_label": "speaker high volume", "word": "loud"},
+      "pole_b": {"emoji": "🔇", "emoji_label": "muted speaker", "word": "silent"}
+    },
+    {
+      "id": "approval",
+      "pole_a": {"emoji": "👍", "emoji_label": "thumbs up", "word": "approve"},
+      "pole_b": {"emoji": "👎", "emoji_label": "thumbs down", "word": "disapprove"}
+    },
+    {
+      "id": "health",
+      "pole_a": {"emoji": "💪", "emoji_label": "flexed biceps", "word": "healthy"},
+      "pole_b": {"emoji": "🤒", "emoji_label": "face with thermometer", "word": "sick"}
+    },
+    {
+      "id": "visibility",
+      "pole_a": {"emoji": "👁️", "emoji_label": "eye", "word": "visible"},
+      "pole_b": {"emoji": "🙈", "emoji_label": "see-no-evil monkey", "word": "hidden"}
+    },
+    {
+      "id": "connection",
+      "pole_a": {"emoji": "🔗", "emoji_label": "link", "word": "connected"},
+      "pole_b": {"emoji": "💔", "emoji_label": "broken heart", "word": "separated"}
+    },
+    {
+      "id": "motion",
+      "pole_a": {"emoji": "▶️", "emoji_label": "play button", "word": "moving"},
+      "pole_b": {"emoji": "⏸️", "emoji_label": "pause button", "word": "paused"}
+    }
+  ],
+  "claim_boundary": "These are experimenter-frozen operational associations. Success on forced-choice prompts is evidence about those prompts, not unrestricted semantic understanding.",
+  "selection_note": "All eight axes were frozen before any T16 model forward and do not reuse the T15-A or T15-B axis labels."
+}

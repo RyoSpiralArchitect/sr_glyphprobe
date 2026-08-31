@@ -1,0 +1,45 @@
+{
+  "behavior_roles": [
+    "gemma2_2b_it_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "bound_inputs": {
+    "operational_axes": "f3d294e5517a2d721b0e390fb76f20ac1a86a3cfd62247bfc078dbf5323d48ea",
+    "t15b_axes": "483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7",
+    "t15b_closeout": "70c5b9194bd7c0e685dbf51a3ad83f258125c6cd7ebc4fd0f185821a32cf8187"
+  },
+  "causal_role": "mistral7b_instruct_v03_bf16",
+  "counts": {
+    "causal_conditions_per_target_per_site": 21,
+    "causal_response_rows": 5376,
+    "causal_target_rows": 128,
+    "congruence_judgment_rows_per_model": 256,
+    "meaning_choice_rows_per_model": 128
+  },
+  "model_forwards": 0,
+  "operational_axis_ids": [
+    "vertical",
+    "trend",
+    "volume",
+    "approval",
+    "health",
+    "visibility",
+    "connection",
+    "motion"
+  ],
+  "protocol_id": "glyphprobe-t16-operational-semantics-causal-subspace-v0",
+  "schema_version": 1,
+  "status": "design_pass_zero_t16_model_forwards",
+  "t15b_axis_ids": [
+    "speed",
+    "size",
+    "openness",
+    "weight",
+    "moisture",
+    "texture",
+    "distance",
+    "fullness"
+  ],
+  "unique_or_complete_circuit_claim_authorized": false,
+  "unrestricted_semantic_understanding_claim_authorized": false
+}

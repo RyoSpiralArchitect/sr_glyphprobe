@@ -1,0 +1,146 @@
+protocol_id: glyphprobe-t16-operational-semantics-causal-subspace-v0
+experiment_label: T16-OSC
+status_before_execution: static_design_candidate_zero_t16_model_forwards
+question: >-
+  Do two frozen instruction-tuned models show above-chance next-token evidence
+  for operational emoji meaning and emoji-word congruence on new axes, and does
+  the prospectively residualized T15-B interaction subspace causally move a
+  frozen mismatch log-odds endpoint beyond cross-axis and main-effect controls?
+claim_boundary: >-
+  The behavioral lane measures forced-choice association and congruence
+  judgment under frozen prompts. The causal lane is outcome-informed by the
+  positive T15-B Mistral cell and tests a source-defined residual subspace. A
+  pass does not establish unrestricted emoji understanding, natural-language
+  contradiction detection, a unique or complete circuit, tokenizer
+  independence, or model-population generality.
+
+source_bindings:
+  operational_axes:
+    path: data/panels/emoji_operational_semantics_axes_v0.json
+    expected_axes: 8
+  t15b_axes:
+    path: data/panels/emoji_word_incongruence_axes_v1.json
+    sha256: 483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7
+  t15b_closeout:
+    path: validation/emoji_word_incongruence_replication_v0/t15b_closeout.json
+    sha256: 70c5b9194bd7c0e685dbf51a3ad83f258125c6cd7ebc4fd0f185821a32cf8187
+    expected_status: prospective_holdout_replication_supported
+  t15b_source:
+    role: mistral7b_instruct_v03_bf16
+    expected_run_root: /home/ryospiralarchitect/scratch/glyphprobe-t15b-runs-966ea30
+    expected_files:
+      direction_catalog.jsonl: 013a459c83dd04ba11021777cd8eea27bfc37290670d0287eeae3421badf3ae8
+      directions.npy: 7564230f81f5015025a343d7f2b52063c2ecf71dd42664729312f9232609f552
+  t13_model_preflight:
+    path: validation/emoji_steering_specificity_harvest_v0
+
+models:
+  behavior_order: [gemma2_2b_it_bf16, mistral7b_instruct_v03_bf16]
+  causal_role: mistral7b_instruct_v03_bf16
+  selection_boundary: >-
+    Behavior uses two cached instruction-tuned architectures fixed before T16
+    outcomes. The causal role is explicitly outcome-informed by T15-B and is
+    not an independent model confirmation.
+
+behavior:
+  tasks: [meaning_choice, congruence_judgment]
+  answer_labels: [A, B]
+  answer_mappings: [correct_is_A, correct_is_B]
+  chat_template: model_native_single_user_turn
+  generation_calls: 0
+  templates:
+    meaning_choice:
+      - "Which word best matches the emoji {emoji}?\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Choose the closer meaning for {emoji}.\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Emoji: {emoji}\nWhich label fits?\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Select the word associated with {emoji}.\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+    congruence_judgment:
+      - "Emoji: {emoji}\nWord: {word}\nDo they match?\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Judge this emoji-word pair: {emoji} / {word}\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Does {word} fit {emoji}?\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+      - "Pair: emoji={emoji}; word={word}\nA. {option_a}\nB. {option_b}\nReply with A or B only."
+  expected_rows_per_model:
+    meaning_choice: 128
+    congruence_judgment: 256
+  primary_endpoint: correct_minus_incorrect_next_token_logit
+  principal_unit: semantic_axis
+
+causal_subspace:
+  source_panel_status: t15b_axes_outcome_informed_mechanistic_followup
+  source_site_indices: [6, 7]
+  source_depth_fractions: [0.875, 1.0]
+  source_block_indices: [27, 31]
+  target_templates: [0, 2]
+  target_answer_mappings: [correct_is_A, correct_is_B]
+  target_rows: 128
+  magnitude: 0.25
+  signs: [-1, 1]
+  nuisance_span_per_true_direction:
+    - seven_same_emoji_axis_cross_axis_interactions
+    - emoji_main_effect
+    - word_main_effect
+  decomposition: thin_svd_projection_with_relative_rank_tolerance_1e-6
+  aggregation: mean_over_two_source_orders_and_four_held_out_wrapper_folds_by_axis
+  scaling: all_components_share_the_aggregated_full_direction_rms
+  controls: seven_cross_axis_directions_each_independently_unit_rms_scaled
+  primary_endpoint: mismatch_minus_match_next_token_logit
+  primary_estimands:
+    - full_directional_antisymmetry_minus_median_cross_axis_control
+    - residual_sufficiency_minus_median_cross_axis_control
+    - full_minus_projection_only_necessity
+  restoration: residual_plus_projection_equals_full_before_model_forward
+  principal_unit: t15b_semantic_axis
+
+analysis:
+  bootstrap_replicates: 20000
+  bootstrap_seed: 2026090101
+  interval: equal_tailed_percentile_95
+  exact_axis_sign_flip: all_256_sign_assignments
+  exact_axis_sign_flip_statistic: mean_axis_effect
+  family_alpha: 0.05
+  behavior_multiplicity: Bonferroni_over_two_models_times_two_tasks
+  behavior_gate: >-
+    Support only if all four model-task axis-median lower bounds exceed zero and
+    all exact one-sided sign-flip p-values are at most 0.0125.
+  causal_multiplicity: Bonferroni_over_three_primary_estimands
+  causal_gate: >-
+    Support only if all three pooled-site axis-median lower bounds exceed zero,
+    all exact one-sided sign-flip p-values are at most 0.0166666667, the zero
+    hook is exact within 1e-10 logit units, and vector restoration error is at
+    most 1e-6 RMS.
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  batch_size: 32
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+execution_policy:
+  tokenizer_preflight_before_final_freeze: true
+  final_freeze_commit_before_any_model_forward: true
+  check_foreign_gpu_processes_before_model_load_and_each_phase: true
+  yield_exit_code_on_foreign_contention: 75
+  complete_both_behavior_roles_before_behavior_outcome_open: true
+  no_overwrite: true
+  no_free_generation: true
+  adaptive_axis_prompt_model_site_sign_magnitude_control_or_endpoint_changes: forbidden
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - any_used_c1_v2_target_bank
+forbidden_claims:
+  - unrestricted_semantic_understanding
+  - natural_language_contradiction_detection
+  - unique_or_complete_causal_circuit
+  - tokenizer_independence
+  - model_population_generality
