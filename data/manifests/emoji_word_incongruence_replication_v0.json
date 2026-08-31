@@ -1,0 +1,53 @@
+{
+  "assets": {
+    "configs/emoji_word_incongruence_replication_v0.yaml": "2d7ce699d06474fb57517fb39763e3952497ddad74c76e0075a923db40767263",
+    "data/panels/emoji_word_incongruence_axes_v1.json": "483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7",
+    "data/targets/t15b_untouched_targets_v0.jsonl": "621df78151752dbfa861b3ee4ec8d4c3462e758678fabdb4264aed9bcbedb0d4",
+    "docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md": "f8ec81f06ee91d3ae3534d5cbc281175b8323c9d2022b543e76cbc40ebcc8062",
+    "docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md": "b7ec840a703901c5e382f4f3011542a3526ff5ab8d4c3ff0ec787a29672513f9",
+    "scripts/analyze_emoji_word_incongruence_interaction_v0.py": "fd1e01e7f06fce6f53301ae0da8bf4e68ba2c39718fdb6c6ba652080ee55220a",
+    "scripts/analyze_emoji_word_incongruence_replication_v0.py": "e54053173a661305f2eaf2a8f994b52fe83ba46f3faa3e4d19c5fbca05224d84",
+    "scripts/emoji_steering_specificity_harvest_v0.py": "a99b2581a1fafa29915d652fe0c968d67b4ad778b3badf75f38075e78743d26b",
+    "scripts/emoji_word_incongruence_interaction_v0.py": "845064b11db027aaa7d943715af1a4f1b58a1176e0e9ff91b40af2087c73ac55",
+    "scripts/emoji_word_incongruence_replication_v0.py": "7393329af7615691e16044ec4fb494b6c67140ad77a26a2521314225eb6f14e8",
+    "scripts/mistral7b_semantic_atlas_v0.py": "b53d43456336ea6b3ba428fe930e5c563c1ed6b2a4fbd8ea79819052dfa7a1c6",
+    "scripts/semantic_atlas_cross_model_replication_v0.py": "f2c3836e57b8a23c841cc06d2e5391203df61d852dd4dd706dd41ec0dc88969e",
+    "tests/test_analyze_emoji_word_incongruence_replication_v0.py": "9246134c5af0c96e133b0b1c2051b0711cc7cf8c24b296f51904132f3b480008",
+    "tests/test_emoji_word_incongruence_replication_v0.py": "ef2a8c7a3001c6f6897e2c076593cfcc2a3315a3bad8264bc77590ab16dfc575",
+    "validation/emoji_word_incongruence_replication_v0/design_preflight.json": "0e584024dbe57ebfb094cebb984160c1b6e75c7883b57014a0df9638c249ae74",
+    "validation/emoji_word_incongruence_replication_v0/tokenizer_preflight.json": "2c28af5eb89c6184eaa4d8309d8c34bb45d48483342b32b72076ede412663f38"
+  },
+  "axis_ids": [
+    "speed",
+    "size",
+    "openness",
+    "weight",
+    "moisture",
+    "texture",
+    "distance",
+    "fullness"
+  ],
+  "causal_claim_authorized": false,
+  "confirmatory_status": false,
+  "expected_counts": {
+    "cross_axis_null_rows": 172032,
+    "direction_catalog_rows": 1280,
+    "emoji_main_rows": 24576,
+    "rows_per_model": 245856,
+    "rows_total": 491712,
+    "source_metric_rows": 4096,
+    "source_prompts": 2312,
+    "true_conflict_rows": 24576,
+    "word_main_rows": 24576,
+    "zero_rows": 96
+  },
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "smollm2_1p7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t15_model_forwards",
+  "tokenizer_preflight_sha256": "2c28af5eb89c6184eaa4d8309d8c34bb45d48483342b32b72076ede412663f38"
+}
