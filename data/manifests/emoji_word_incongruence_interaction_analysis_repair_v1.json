@@ -1,0 +1,22 @@
+{
+  "analysis_id": "glyphprobe-emoji-word-incongruence-interaction-analysis-repair-v1",
+  "assets": {
+    "data/manifests/emoji_word_incongruence_interaction_v0.json": "d528276748997331c0864b7af1b5bbd75b74d7f771f4d94b7f5ae868d0b6030d",
+    "scripts/analyze_emoji_word_incongruence_interaction_v0.py": "fd1e01e7f06fce6f53301ae0da8bf4e68ba2c39718fdb6c6ba652080ee55220a",
+    "scripts/analyze_emoji_word_incongruence_interaction_v1.py": "c9349e8c7f6710affd5e520731b1e30bc51088698309e898e8da4a6f9e0e3597",
+    "tests/test_analyze_emoji_word_incongruence_interaction_v1.py": "7f878fe20dc720543566ddee3eca3ab554f3f4302499d87ca57667ebef31f638",
+    "validation/emoji_word_incongruence_interaction_v0/analysis_v0_failure.json": "8485b8a0cbfecfe029a133134e7d919d7e491a7b019e2f4b08478db89a239271"
+  },
+  "bootstrap_changed": false,
+  "claim_boundary_changed": false,
+  "created_at_utc": "2026-08-31T19:06:54Z",
+  "endpoints_changed": false,
+  "estimands_changed": false,
+  "families_changed": false,
+  "only_allowed_code_change": "A0 congruence-class repeat assertion 8 to 16",
+  "original_analysis_failure_status": "failed_closed_before_any_analysis_output",
+  "original_execution_freeze_sha256": "d528276748997331c0864b7af1b5bbd75b74d7f771f4d94b7f5ae868d0b6030d",
+  "post_open_repair": true,
+  "schema_version": 1,
+  "status": "post_open_implementation_repair_frozen"
+}

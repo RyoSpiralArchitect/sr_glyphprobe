@@ -1,0 +1,16 @@
+{
+  "analysis_output_created": false,
+  "cause": "The A0 implementation asserted 8 repeats per congruence class, while the frozen factorial contains 2 cells per class times 2 source orders times 4 wrappers = 16 repeats.",
+  "error": "InteractionAnalysisError: A0 repeat count changed",
+  "failed_family": "A0_joint_additivity_residual_incongruent_minus_congruent",
+  "failure_time_utc": "2026-08-31T19:05:45Z",
+  "model_values_printed": 0,
+  "original_analysis_id": "glyphprobe-emoji-word-incongruence-interaction-analysis-v0",
+  "original_execution_freeze_sha256": "d528276748997331c0864b7af1b5bbd75b74d7f771f4d94b7f5ae868d0b6030d",
+  "repair_boundary": "A versioned repair may change only the A0 structural repeat assertion from 8 to 16. It may not change an estimand, family, endpoint, model, depth, dose, sign, target, axis, cross-axis shift, aggregation, bootstrap seed, bootstrap count, or claim boundary.",
+  "response_values_read_by_process_before_failure": true,
+  "response_values_shown_to_researcher": false,
+  "run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t15-runs-72add92-r2",
+  "schema_version": 1,
+  "status": "failed_closed_before_any_analysis_output"
+}
