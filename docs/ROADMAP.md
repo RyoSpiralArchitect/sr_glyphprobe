@@ -2,6 +2,8 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
+[T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+
 [日本語](ROADMAP.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
 ## Destination
@@ -752,10 +754,41 @@ subspace. See the [result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md),
 [protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md), and [compact
 closeout](../validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json).
 
+### Completed T15-B — Prospective emoji × word replication
+
+Status: complete with support for the frozen two-model replication gate. It
+satisfies Phase I gate 5 for the narrow T15-A operational response-shape
+candidate, while authorizing no semantic or causal claim.
+
+T15-B replaced all eight axes, all 48 target prompts, and both model roles.
+SmolLM2 1.7B base and Mistral 7B Instruct v0.3 each completed 245,856 response
+rows. Every true interaction was compared with all seven non-self cross-axis
+checkerboards, strengthening T15-A's three-shift null family.
+
+At magnitude `0.25`, the frozen R1 target median was `+0.020422` in SmolLM2
+with interval `[0.012887, 0.031510]`, and `+0.060397` in Mistral with
+`[0.056621, 0.062194]`. Both lower bounds exceeded zero under the predeclared
+two-model intersection rule and one-sided Bonferroni alpha `0.025` per model.
+
+The cell-level result remained heterogeneous: six of eight separate
+primary-dose model × depth × sign intervals were positive and two were mixed.
+A0 and A3 source diagnostics were mixed in all four model × depth cells;
+response energy, main effects, order, depth, and dose also varied. The supported
+quantity is a target-level operational response-shape contrast, not meaning,
+contradiction detection, a behavioral effect, tokenizer independence,
+instruction-tuning invariance, scale, or model-population generality.
+
+The claim-specific R1 analysis is target-cluster and multiplicity aware.
+Paper-wide statistical qualification remains open until the manuscript claim
+table is frozen. See the [result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md),
+[protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md), and [compact
+closeout](../validation/emoji_word_incongruence_replication_v0/t15b_closeout.json).
+
 ### Milestone 4 — Replication and boundary mapping
 
-Status: exploratory boundary mapping substantially expanded; independent
-confirmation remains planned.
+Status: the T15-A operational response-shape candidate now has a prospective
+independent-model replication; broader architecture and tokenizer boundary
+mapping remains planned.
 
 - repeat the confirmatory cell in raw Transformers or TransformerLens, not only adapter-level parity;
 - replicate across at least one additional model family and tokenizer;
@@ -768,16 +801,20 @@ confirmation remains planned.
   intervals were positive and 3/12 negative, with a non-monotonic Qwen profile;
 - do not promote that exploratory breadth to a scale law or independent
   confirmatory replication.
-- treat T15-A's 16/16 positive response-coherence intervals as a candidate for
-  prospective replication, not as confirmation; a T15-C lane must replace its
-  axes, public targets, and outcome-informed role selection.
+- retain T15-B's supported two-model intersection decision as the prospective
+  replication of T15-A's response-shape candidate;
+- keep its 6/8 positive and 2/8 mixed primary-dose cells visible, and do not
+  promote two deliberately selected models to a model-population claim;
+- treat T15-C as a separate causal lane with a new untouched bank, not as an
+  adaptive extension or rescue of T15-B.
 
 Exit condition: the paper can state clearly which findings replicate and which remain GPT-2-specific.
 
 ### Milestone 5 — Confirmatory statistics
 
-Status: T14-C's claim-specific target-cluster analysis is complete; the
-paper-wide qualification remains open.
+Status: T14-C and T15-B now have claim-specific target-cluster analyses;
+T15-B R1 also has a frozen model-level multiplicity rule. Paper-wide
+qualification remains open.
 
 - treat target prompts as principal sampling clusters;
 - keep direction seeds and target splits nested rather than counting them as independent samples;
@@ -797,6 +834,8 @@ paper-wide qualification remains open.
 - retain T15-A's complete A0–A6 families and post-open repair disclosure; its
   percentile intervals are descriptive and may not be promoted to a primary
   multiplicity-adjusted claim.
+- retain T15-B R1 as the only multiplicity-qualified replication decision in
+  that experiment; its A0–A6 cell intervals remain secondary diagnostics.
 
 Exit condition: the statistical analysis matches the sampling structure and can be rerun from frozen artifacts.
 
@@ -882,8 +921,14 @@ main effects, order, depth, and dose remained heterogeneous. The result is an
 exploratory interaction-fingerprint candidate. Public targets, outcome-informed
 role selection, descriptive intervals, and the disclosed post-open
 implementation repair prevent it from closing gates 1, 2, 5, or 6.
+T15-B then replaced every axis, target, and model role before outcome access,
+used all seven non-self cross-axis controls, and supported its frozen
+two-model R1 intersection rule. This satisfies gate 5 for the narrow
+operational response-shape candidate. Its claim-specific target-cluster and
+multiplicity qualification strengthens gate 6, but the paper-wide claim table
+still requires a separate freeze.
 Final paper-wide qualification for gate 6 remains open because the rebuilt
-GPT-2 prototype analysis was post hoc. Gates 5, 8, and 10 remain open. Gate 9 must be
+GPT-2 prototype analysis was post hoc. Gates 8 and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the
 Phase I endpoint; the current repository is an evidence-bearing research
 release, not a finished manuscript.

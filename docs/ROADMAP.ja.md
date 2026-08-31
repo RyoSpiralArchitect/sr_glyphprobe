@@ -2,6 +2,8 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
+[T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
+
 [English](ROADMAP.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
 ## 到達点
@@ -496,9 +498,39 @@ V0 analyzerは、応答値を読み込んだ後、解析outputやmodel値を表�
 
 T15-AはT14の結果を踏まえたrosterを使い、targetも公開済みである。意味、矛盾検出、因果、tokenizer非依存性、scale、model一般性は主張しない。T15-Cへ進むには、新しい軸、新しい未使用target bank、独立modelまたはbackend、interaction-residual subspaceに対する事前固定済みのnecessity・sufficiency・restoration検定が必要になる。詳細は[結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)、[protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md)、[compact closeout](../validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json)に示す。
 
+### 完了したT15-B — 絵文字 × 言葉のprospective再現
+
+状態: 凍結済みの二model再現gateをsupportとして完了した。T15-Aで得た狭い
+運用上のresponse-shape候補について、Phase I gate 5を満たす。ただし、意味や
+因果の主張は認めない。
+
+T15-Bでは、8軸、48件のtarget prompt、2つのmodel roleをすべて入れ替えた。
+SmolLM2 1.7B baseとMistral 7B Instruct v0.3は、それぞれ245,856 response行を
+完走した。各true interactionを7通りすべてのnon-self cross-axis checkerboardと
+比較し、T15-Aの3 shiftよりもnull familyを強くした。
+
+Magnitude `0.25`における凍結R1のtarget中央値は、SmolLM2で`+0.020422`、区間
+`[0.012887, 0.031510]`、Mistralで`+0.060397`、`[0.056621, 0.062194]`だった。
+両modelの下限が、事前規定した二model intersection ruleとmodelごとの片側
+Bonferroni alpha `0.025`を通過した。
+
+Cell-levelでは不均一性が残った。一次doseのmodel × depth × sign区間8本のうち、
+正は6本、mixedは2本だった。A0とA3のsource診断はmodel × depthの4 cellすべて
+mixedで、response energy、主効果、語順、depth、doseにもばらつきがある。
+Supportされたのはtarget-levelの運用上のresponse-shape contrastであり、意味、
+矛盾検出、行動、tokenizer非依存性、instruction tuning不変性、scale、model母集団
+への一般化ではない。
+
+R1はclaim-specificなtarget-cluster解析と多重性規則を備える。ただし、paper全体の
+統計資格は、manuscriptのclaim tableを凍結するまで未完了である。詳細は
+[結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)、
+[protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)、
+[compact closeout](../validation/emoji_word_incongruence_replication_v0/t15b_closeout.json)に示す。
+
 ### Milestone 4 — 再現と適用境界の把握
 
-状態: 探索的な境界地図は大幅に拡張した。独立確認は計画中。
+状態: T15-Aの運用上のresponse-shape候補には、prospectiveな独立model再現が
+加わった。Architectureとtokenizerをまたぐ、より広い境界地図は引き続き必要。
 
 - adapter-level parityだけでなく、raw TransformersまたはTransformerLensで確認セルを再実行する。
 - 少なくとも1つの別model familyとtokenizerで再現を試みる。
@@ -508,13 +540,16 @@ T15-AはT14の結果を踏まえたrosterを使い、targetも公開済みであ
 - 現在はsource geometryだけを提供する残り6 roleで、T13-EAの介入応答予測を固定して検証する。
 - T14-Xの符号付き6 model×2 depth結果を保存する。Headline JS区間は12本中9本が正、3本が負で、Qwen profileは非単調だった。
 - この探索的な幅をscale lawや独立確認再現へ昇格させない。
-- T15-Aの16 / 16で正となったresponse-coherence区間は、prospectiveな再現候補として扱う。確認とは呼ばず、T15-Cでは軸、公開target、結果を踏まえたrole選択をすべて置き換える。
+- T15-Bの二model intersection supportを、T15-A response-shape候補のprospective再現として保存する。
+- 一次doseの6 / 8正、2 / 8 mixedを見える状態に保ち、意図的に選んだ2 modelをmodel母集団の主張へ広げない。
+- T15-Cは新しい未使用bankを用いる別の因果laneとし、T15-Bの適応的延長や救済にしない。
 
 終了条件: 何が再現し、何がGPT-2固有のままかを論文で明確に述べられること。
 
 ### Milestone 5 — 確認的統計
 
-状態: T14-Cのclaim-specificなtarget-cluster解析は完了。論文全体の資格は未完了。
+状態: T14-CとT15-Bのclaim-specificなtarget-cluster解析は完了した。T15-B R1には
+凍結済みのmodel-level多重性規則もある。論文全体の資格は未完了。
 
 - target promptを主要な標本clusterとして扱う。
 - direction seedとtarget splitは入れ子の反復とし、独立標本として数えない。
@@ -527,6 +562,7 @@ T15-AはT14の結果を踏まえたrosterを使い、targetも公開済みであ
 - T13-EAの点推定を区間に基づく論文の記述へ格上げする前に、登録済み20,000回cluster bootstrapを完了する。
 - T14-Cの20,000回target bootstrapと、固定99,999回paired sign-flipの結果を保存し、非棄却後に代替部位を選ばない。
 - T15-AのA0〜A6全familyとpost-open repairの開示を残す。Percentile区間は記述用であり、多重性を調整したprimary claimへ昇格させない。
+- T15-BではR1だけを多重性込みの再現判定として扱い、A0〜A6のcell区間は二次診断のまま残す。
 
 終了条件: 標本構造に合った統計解析を、凍結済みartifactから再実行できること。
 
@@ -563,7 +599,7 @@ T15-AはT14の結果を踏まえたrosterを使い、targetも公開済みであ
 
 現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くしたが、その時点ではgate 4・5を閉じなかった。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。続くT10では、このpopulationとtransportを9つの固定セルで保った。Token数完全一致後も差は消えず、統計的な部分連言検定は通過したが、実用下限を満たしたcore cellは4つ中2つだった。したがってT10はclaim-matchedなmixed cross-model結果であり、独立再現、scale、tuning、意味、model一般性ではなく、gate 5も閉じない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。
 
-T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13-EHが加えるのは、露出済み項目と公開target上の探索的な収集専用tensor surfaceであり、論文gateは閉じない。T14-Xは、別freezeの6 model×2 depth拡張を完了した。Headline JS区間12本はすべて0を含まなかったが、正9本・負3本で、Qwen profileは非単調だった。これは探索的な境界地図であり、独立確認やscale lawではない。T14-Cはそのoutcomeを開く前に凍結し、公開target上で`mlp_out` block 24を選び、新しい未使用192-target bankで一度だけ検定した。Engineering controlはすべて通過したが、treatment・necessity・sufficiency IUTは非棄却だった。Gate 4は負の結果として完了したが、因果媒介主張や適応的な第2部位探索は認めない。続くT15-Aでは、別に凍結した4 modelの絵文字 × 言葉factorialを完走した。一次のresponse-fingerprint区間はmodel × depth × signの16 cellすべてで正だったが、source residual magnitude、応答energy、主効果、語順、depth、doseは不均一だった。探索的なinteraction fingerprint候補ではあるものの、公開target、結果を踏まえたrole選択、記述区間、明示したpost-open実装修復を伴うため、gate 1、2、5、6は閉じない。Gate 5、8、10は未完了である。Gate 9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13-EHが加えるのは、露出済み項目と公開target上の探索的な収集専用tensor surfaceであり、論文gateは閉じない。T14-Xは、別freezeの6 model×2 depth拡張を完了した。Headline JS区間12本はすべて0を含まなかったが、正9本・負3本で、Qwen profileは非単調だった。これは探索的な境界地図であり、独立確認やscale lawではない。T14-Cはそのoutcomeを開く前に凍結し、公開target上で`mlp_out` block 24を選び、新しい未使用192-target bankで一度だけ検定した。Engineering controlはすべて通過したが、treatment・necessity・sufficiency IUTは非棄却だった。Gate 4は負の結果として完了したが、因果媒介主張や適応的な第2部位探索は認めない。続くT15-Aでは、別に凍結した4 modelの絵文字 × 言葉factorialを完走した。一次のresponse-fingerprint区間はmodel × depth × signの16 cellすべてで正だったが、source residual magnitude、応答energy、主効果、語順、depth、doseは不均一だった。探索的なinteraction fingerprint候補ではあるものの、公開target、結果を踏まえたrole選択、記述区間、明示したpost-open実装修復を伴うため、その時点ではgate 1、2、5、6を閉じなかった。T15-Bは、outcomeを開く前にすべてのaxis、target、model roleを入れ替え、7通りすべてのnon-self cross-axis controlを使い、凍結した二model R1 intersection ruleを通過した。この狭い運用上のresponse-shape候補について、gate 5を満たす。Claim-specificなtarget-cluster解析と多重性規則はgate 6を強くするが、paper全体のclaim tableには別のfreezeが必要である。Gate 8と10は未完了である。Gate 9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
 
 ## Phase I より先の候補
 

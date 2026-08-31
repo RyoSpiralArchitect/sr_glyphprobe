@@ -1,5 +1,7 @@
 # GlyphProbe
 
+[T15-B prospective replication result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+
 [日本語](README.ja.md) · [T15-A emoji × word result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
 GlyphProbe is an auditable research harness for one deliberately narrow question:
@@ -48,6 +50,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T14-X signed response regime | 559,488 rows across 6 base models and 2 late depths | all 12 JS intervals excluded zero: 9 positive, 3 negative; exploratory, non-monotonic, and not a scale law |
 | T14-C selected-site causal test | `mlp_out` block 24; 192 untouched targets; 15,360 records | engineering controls passed; treatment, necessity, and sufficiency IUT non-rejecting; causal claim remains unauthorized |
 | T15-A emoji × word interaction fingerprint | 393,472 rows across 4 base models, 8 axes, and 2 late depths | all 16 primary model × depth × sign response-coherence intervals were positive; energy, main-effect, order, depth, and dose families remained heterogeneous |
+| T15-B prospective holdout replication | 491,712 rows across 2 new models, 8 new axes, and 48 new targets | frozen R1 gate supported in both models: SmolLM2 +0.020422 [0.012887, 0.031510], Mistral +0.060397 [0.056621, 0.062194]; 6/8 separate primary-dose cells positive and 2 mixed |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -408,6 +411,27 @@ bootstrap unchanged. See the [bilingual result](docs/EMOJI_WORD_INCONGRUENCE_INT
 [frozen protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md), and
 [compact closeout](validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json).
 
+### T15-B prospective holdout replication
+
+T15-B replaced all eight axes, all 48 targets, and both model roles, then
+compared each true interaction with all seven non-self cross-axis controls.
+The frozen R1 gate pooled the two depths and two signs within each target but
+kept the two models separate. SmolLM2 1.7B base had a target median of
+`+0.020422` with interval `[0.012887, 0.031510]`; Mistral 7B Instruct v0.3 had
+`+0.060397` with `[0.056621, 0.062194]`. Both lower bounds passed the frozen
+one-sided Bonferroni threshold, so the two-model intersection decision is
+`support`.
+
+The result is narrower than a universal cell effect: six of eight separate
+primary-dose model × depth × sign intervals were positive and two were mixed.
+A0 and A3 source diagnostics were mixed in all four model × depth cells, and
+energy, main-effect, order, depth, and dose families remained heterogeneous.
+T15-B therefore supplies an independent-model replication of the operational
+response-shape candidate, not evidence of meaning, contradiction detection,
+behavior, or a causal circuit. See the [bilingual result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md),
+[frozen protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md), and
+[compact closeout](validation/emoji_word_incongruence_replication_v0/t15b_closeout.json).
+
 ### E2 engineering results
 
 The frozen Llama 3.2 3B BF16 Stage-A v2 engineering validation completed with
@@ -638,6 +662,8 @@ Project-authored public documentation is maintained in English and Japanese:
 | T14-X expansion and T14-C causal results | [EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) | [EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) |
 | Emoji × word incongruence interaction v0 protocol (T15-A) | [EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) | [EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) |
 | Emoji × word incongruence interaction v0 results (T15-A) | [EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) | [EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) |
+| Prospective emoji × word replication v0 protocol (T15-B) | [EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md) | [EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) |
+| Prospective emoji × word replication v0 results (T15-B) | [EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) | [EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen results | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) |
 | E2 Stage-A3 numeric-screen protocol | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) | [LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) |
 | E2 Stage-A v2 results | [LLAMA32_3B_MLX_VALIDATION_RESULTS.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) | [LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) |
@@ -654,7 +680,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. T14-C has now completed the targeted-causal gate under a public freeze: one selected Llama component was tested once on a new untouched bank, and its intersection-union test did not reject. This closes gate 4 with a valid negative result while leaving every semantic, mediator, circuit, tokenizer-independent, scale, and model-general claim unauthorized. T14-X separately supplies exploratory six-model boundary mapping, not independent confirmation. T15-A adds a four-model emoji × word interaction-fingerprint candidate, but its public targets, outcome-informed roster, descriptive intervals, and post-open implementation repair close no paper gate. The earlier positive, mixed, and negative results from Milestone 2 through T13 remain part of the claim table and may not be rescued or replaced. The remaining major gates are an appropriately independent model or backend replication, paper-wide statistical qualification, a complete checksummed evidence archive, and fresh-eyes reproducibility review. See the [roadmap](docs/ROADMAP.md), [T14 result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md), and [T15-A result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) for the exact boundaries.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. T14-C completed the targeted-causal gate with a valid negative result. T15-A then supplied an exploratory emoji × word response-shape candidate. T15-B replaced its axes, targets, and model roles and supported the prospectively frozen two-model replication rule, satisfying gate 5 for that operational candidate. No semantic, mediator, circuit, tokenizer-independent, scale, tuning-invariant, or model-population claim follows. The R1 analysis is target-cluster and multiplicity aware, but paper-wide statistical qualification still depends on freezing the manuscript claim table. The remaining major work is that paper-wide qualification, a complete checksummed evidence archive, and fresh-eyes reproducibility review. See the [roadmap](docs/ROADMAP.md), [T14 result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md), [T15-A result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md), and [T15-B result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) for the exact boundaries.
 
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the
@@ -672,8 +698,10 @@ intersection-union test did not reject, so Phase I gate 4 is closed by a
 negative result and no alternative site may be promoted from the same search.
 T15-A then completed the four-model balanced interaction grid and found 16/16
 positive primary response-coherence intervals, with heterogeneous secondary
-families. It remains exploratory and supplies no gate closure.
-Independent confirmation, the complete archive, and paper review remain open.
+families. T15-B prospectively replaced the axes, targets, and model roles and
+supported its frozen two-model R1 intersection rule. Gate 5 is now satisfied
+for that narrow operational candidate. Paper-wide statistical qualification,
+the complete archive, and fresh-eyes paper review remain open.
 
 ## Validation
 

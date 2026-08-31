@@ -1,5 +1,7 @@
 # GlyphProbe
 
+[T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
+
 [English](README.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
 GlyphProbe は、絵文字やグリフから作った活性化方向が、言語モデルの出力に再現可能な「指紋」を残すかを調べる研究用ハーネスです。
@@ -281,6 +283,24 @@ interactionよりも高いcoherenceを示した。Model × depth × signの16 ce
 [凍結protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md)、
 [compact closeout](validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json)に示す。
 
+### T15-B prospective holdout再現
+
+T15-Bでは、8軸、48件のtarget、2つのmodel roleをすべて入れ替え、各true
+interactionを7通りすべてのnon-self cross-axis controlと比較した。凍結したR1は、
+target内で2つのdepthと2つのsignをまとめる一方、model間はpoolしない。SmolLM2
+1.7B baseのtarget中央値は`+0.020422`、区間は`[0.012887, 0.031510]`だった。
+Mistral 7B Instruct v0.3は`+0.060397`、`[0.056621, 0.062194]`だった。両modelの
+下限が事前規定した片側Bonferroni条件を満たし、二modelのintersection判定は
+`support`となった。
+
+ただし、普遍的なcell効果ではない。一次doseのmodel × depth × signを個別に見ると、
+正の区間は8本中6本、mixedは2本だった。A0とA3のsource診断は4 cellすべてmixedで、
+energy、主効果、語順、depth、doseも不均一である。したがってT15-Bは、運用上の
+response-shape候補を別modelで再現した結果であり、意味、矛盾検出、行動、因果回路の
+証拠ではない。詳細は[英日結果文書](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)、
+[凍結protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)、
+[compact closeout](validation/emoji_word_incongruence_replication_v0/t15b_closeout.json)に示す。
+
 ### E2 技術検証の結果
 
 固定したLlama 3.2 3B BF16のStage A v2技術検証は、最後まで実行したうえで
@@ -433,6 +453,8 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [T14-X拡張とT14-C因果結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) / [English](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md)
 - [絵文字 × 言葉の不一致interaction v0 protocol（T15-A）](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) / [English](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md)
 - [絵文字 × 言葉の不一致interaction v0結果（T15-A）](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) / [English](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md)
+- [絵文字 × 言葉のprospective再現 v0 protocol（T15-B）](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) / [English](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+- [絵文字 × 言葉のprospective再現 v0結果（T15-B）](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) / [English](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md)
 - [E2 Stage A3 数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md)
 - [E2 Stage A3 数値screenプロトコル](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) / [English](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md)
 - [E2 Stage A v2 結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) / [English](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md)
@@ -449,7 +471,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。T14-Cにより、対象を絞った因果gateは公開freezeのもとで完了した。選択したLlama component 1つを新しい未使用bankで一度だけ検定し、intersection-union testは非棄却だった。これはgate 4を妥当な負の結果として閉じるが、意味、媒介、回路、tokenizer非依存性、scale、model一般性の主張は一切認めない。T14-Xが加えるのは、別の6 modelによる探索的な境界地図であり、独立確認ではない。T15-Aでは4 modelにまたがる絵文字 × 言葉のinteraction fingerprint候補を得たが、公開target、結果を踏まえたroster、記述区間、post-open実装修復を伴うため、論文gateは閉じない。Milestone 2からT13までの正・mixed・負の結果もclaim tableへ残し、救済や差し替えを行わない。残る主要gateは、適切に独立したmodelまたはbackend再現、論文全体の統計資格、完全なchecksum付きevidence archive、先入観のない再現性reviewである。正確な境界は[ロードマップ](docs/ROADMAP.ja.md)、[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)、[T15-A結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)に示す。
+Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。T14-Cは、対象を絞った因果gateを妥当な負の結果で完了した。T15-Aは、絵文字 × 言葉の探索的なresponse-shape候補を与えた。T15-Bでは軸、target、model roleを入れ替え、事前に凍結した二modelの再現ruleを通過したため、この運用上の候補についてgate 5を満たしたと読める。意味、媒介、回路、tokenizer非依存性、scale、tuning不変性、model母集団への一般化は主張しない。R1はtarget clusterと多重性を考慮しているが、paper全体の統計資格には、manuscriptのclaim tableを凍結する作業が残る。主な未完了項目は、そのpaper-wideな資格、完全なchecksum付きevidence archive、先入観のない再現性reviewである。正確な境界は[ロードマップ](docs/ROADMAP.ja.md)、[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)、[T15-A結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)、[T15-B結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)に示す。
 
 T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cには新しい未使用bankと別freezeが必要だった。後続のT14-Cはその条件を満たしたが、T13へ遡って確認statusを与えない。
 
@@ -457,7 +479,10 @@ T13-EAは、その探索的な点推定まで完了した。一次判定や確�
 bootstrapも0 / 20,000回のままである。T14-Xでは別に、6 modelの拡張応答gridを完走し、符号を持つ
 非単調なmodel×depth regimeを観測した。続くT14-Cは、新しい未使用bank上で、事前規定した1つの
 選択部位因果実験を完了した。IUTは非棄却だったため、Phase I gate 4は負の結果として閉じる。
-同じ探索から別部位を昇格させない。続くT15-Aでは、均衡させた4 modelのinteraction gridを完走し、一次のresponse-coherence区間は16 / 16で正、二次familyは不均一だった。探索結果にとどまり、論文gateは閉じない。独立確認、完全archive、論文reviewは未完了である。
+同じ探索から別部位を昇格させない。続くT15-Aでは、均衡させた4 modelのinteraction gridを完走し、一次のresponse-coherence区間は16 / 16で正、二次familyは不均一だった。探索結果にとどまり、その時点では論文gateを閉じなかった。
+続くT15-Bでは、軸、target、model roleをprospectiveに入れ替え、凍結済みR1の
+二model intersection ruleを通過した。この狭い運用候補についてgate 5は満たした。
+Paper全体の統計資格、完全archive、fresh-eyes reviewは未完了である。
 
 ## ライセンスと引用
 

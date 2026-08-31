@@ -2,6 +2,8 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md)
 
+[T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
+
 [English](NOTE.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot geometry結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [研究ロードマップ](ROADMAP.ja.md)
 
 絵文字を言語モデルに見せたとき、内部では何が起きているのだろう。
@@ -514,3 +516,34 @@ Base model 4種、後期depth 2点、両signを調べると、ある一点だけ
 ここで「そぐわない組ほどmodelを強く押した」と言いたくなる。ところが、他の測定はその物語を拒んだ。応答energyはmodelやsignによって向きが変わり、word主効果とemoji主効果の優劣も入れ替わった。Source orderはcellごとに効き方が異なり、個々のpair residualにもincongruent側の共通した増加はない。揃ったのは応答の大きさではなく、その**形**だった。
 
 この違いが、今回いちばん面白い。Interaction-residual subspaceを後で直接操作するための、具体的な候補ができた。一方、大きな意味の主張はまだ手つかずで残る。対応ラベルを与えたのは実験者であり、人と同じようにmodelが矛盾へ気づいたとは言えない。次のきれいな検定では、軸、target、modelまたはbackendを入れ替え、除去・追加・復元を結果確認前に固定する必要がある。[T15-Aの全結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)には、outcomeを開いた後の1行修復も、候補を過大評価させない負・mixed familyも、すべて残した。
+
+## 軸もtargetもmodelも入れ替えた後に、同じ形が戻ってきた
+
+T15-Bでは、T15-Aが自分自身ではできなかった入れ替えを行った。温度、明暗、
+valence、年齢などの元の軸を外し、速度、大きさ、開閉、重さ、湿り気、硬さ、距離、
+満ち具合という新しい軸を、新しい絵文字と言葉で作った。公開bankの代わりに、48件の
+新しいcontinuation promptを使った。T15-Aの4 modelは、SmolLM2 baseとMistral
+Instructに置き換えた。Controlも強くし、true interactionを3つのshiftではなく、
+他の7軸すべてと比較した。
+
+凍結した判定は残った。Target内でdepthとsignをまとめると、SmolLM2の
+true-minus-control coherence中央値は`+0.020422`、bootstrap区間は`0.012887`から
+`0.031510`だった。Mistralは`+0.060397`、`0.056621`から`0.062194`だった。
+どちらも事前に定めた二model intersection ruleを通過した。SmolLM2のsignalは小さく
+不均一であり、Mistralはより大きく、48 targetのうち47件で正だった。この違いも、
+消すべきnoiseではなく結果の一部である。
+
+Cellを分けると、さらに慎重になれる。一次doseの8区間中、正は6本で、2本は0を
+またいだ。Source vectorの強さは同じほどきれいには再現せず、A0とA3のmodel × depth
+区間はすべてmixedだった。Energy、主効果、source order、depth、doseも、なお別々の
+方向へ動く。再現したのは、target-levelでまとめたresponse-shapeの関係である。
+すべてのinteractionが、どこでも一律に強いという法則ではない。
+
+これで一つの輪が閉じた。公開targetと4 modelから見つけた興味深いpatternだけでなく、
+prospectiveに凍結した2つの新model roleでのholdout再現ができた。一方、大きな問いは
+まだ残る。実験者が与えたpairingは、modelが絵文字を理解したことや、矛盾に気づいた
+ことの証明ではない。次の正直な一手は、さらに広いrecurrence sweepではなく、別に
+凍結した因果検定だ。新しい未使用bank上でinteraction-residual subspaceを除去・追加・
+復元し、この結果からrunner-upのmodel、depth、sign、dose、endpointを選ばない。
+[T15-Bの全結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)には、数値、
+不均一なcell、手続き上のfailure、evidence hashをまとめた。

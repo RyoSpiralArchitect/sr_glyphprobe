@@ -1,0 +1,137 @@
+{
+  "analysis": {
+    "analysis_id": "glyphprobe-emoji-word-incongruence-replication-analysis-v0",
+    "complete_aggregate": {
+      "furnace_path": "/home/ryospiralarchitect/scratch/glyphprobe-t15b-analysis-966ea30/analysis.json",
+      "sha256": "f0c98942943addcc9713283b2cb54491d16a0232711db39fc0d51d0536b4edfd"
+    },
+    "significance_tests": "frozen_two_model_intersection_rule_with_one_sided_bonferroni_alpha_0.025_per_model",
+    "status": "complete_prospective_holdout_replication_analysis"
+  },
+  "causal_claim_authorized": false,
+  "claim_boundary": "T15-B prospectively replicates only the operational response-shape candidate discovered in T15-A. Its axes are experimenter-labeled associations, its target bank is a newly frozen synthetic continuation bank, and its two model roles were selected before T15-B outcomes. The supported replication gate does not establish emoji meaning, contradiction detection, understanding, natural behavior, a causal circuit, tokenizer independence, architecture or model-population generality, instruction-tuning invariance, or a scale law.",
+  "commits": {
+    "analysis_compatibility": "f835999",
+    "final_execution_freeze": "966ea30",
+    "loader_boundary_repair": "8c658f6",
+    "protocol_freeze": "fb325a1",
+    "tokenizer_binding": "9869129"
+  },
+  "confirmatory_status": false,
+  "execution_freeze": {
+    "design_preflight_path": "validation/emoji_word_incongruence_replication_v0/design_preflight.json",
+    "design_preflight_sha256": "0e584024dbe57ebfb094cebb984160c1b6e75c7883b57014a0df9638c249ae74",
+    "manifest_path": "data/manifests/emoji_word_incongruence_replication_v0.json",
+    "manifest_sha256": "b56a68b3aa7d8e890a9121d009e517f17329abd92c346304d3558eff1fb61f1a",
+    "model_forwards_at_freeze": 0,
+    "runtime_preflight_failure_path": "validation/emoji_word_incongruence_replication_v0/runtime_preflight_failures_v0.json",
+    "tokenizer_preflight_path": "validation/emoji_word_incongruence_replication_v0/tokenizer_preflight.json",
+    "tokenizer_preflight_sha256": "2c28af5eb89c6184eaa4d8309d8c34bb45d48483342b32b72076ede412663f38"
+  },
+  "interval_class_counts": {
+    "A0_joint_additivity_residual_incongruent_minus_congruent": {
+      "mixed": 4,
+      "negative": 0,
+      "positive": 0,
+      "total": 4
+    },
+    "A1_all_depth_dose_sign_cells": {
+      "mixed": 5,
+      "negative": 1,
+      "positive": 10,
+      "total": 16
+    },
+    "A1_primary_dose_cells": {
+      "mixed": 2,
+      "negative": 0,
+      "positive": 6,
+      "total": 8
+    },
+    "A2_primary_dose": {
+      "argmax_flip_rate": {"mixed": 8, "negative": 0, "positive": 0, "total": 8},
+      "entropy_change": {"mixed": 4, "negative": 2, "positive": 2, "total": 8},
+      "js_divergence": {"mixed": 3, "negative": 1, "positive": 4, "total": 8},
+      "kl_baseline_to_intervened": {"mixed": 2, "negative": 1, "positive": 5, "total": 8},
+      "logit_delta_rms": {"mixed": 0, "negative": 2, "positive": 6, "total": 8},
+      "total_variation": {"mixed": 4, "negative": 1, "positive": 3, "total": 8}
+    },
+    "A3_source_direction_rms_true_minus_cross_axis_null": {
+      "mixed": 4,
+      "negative": 0,
+      "positive": 0,
+      "total": 4
+    },
+    "A4_primary_dose_word_minus_emoji": {
+      "argmax_flip_rate": {"mixed": 8, "negative": 0, "positive": 0, "total": 8},
+      "entropy_change": {"mixed": 6, "negative": 2, "positive": 0, "total": 8},
+      "js_divergence": {"mixed": 2, "negative": 0, "positive": 6, "total": 8},
+      "kl_baseline_to_intervened": {"mixed": 2, "negative": 0, "positive": 6, "total": 8},
+      "logit_delta_rms": {"mixed": 0, "negative": 6, "positive": 2, "total": 8},
+      "total_variation": {"mixed": 4, "negative": 0, "positive": 4, "total": 8}
+    },
+    "A5_primary_dose_order_sensitivity": {
+      "argmax_flip_rate": {"mixed": 8, "negative": 0, "positive": 0, "total": 8},
+      "entropy_change": {"mixed": 0, "negative": 4, "positive": 4, "total": 8},
+      "js_divergence": {"mixed": 1, "negative": 1, "positive": 6, "total": 8},
+      "kl_baseline_to_intervened": {"mixed": 3, "negative": 0, "positive": 5, "total": 8},
+      "logit_delta_rms": {"mixed": 2, "negative": 2, "positive": 4, "total": 8},
+      "total_variation": {"mixed": 2, "negative": 1, "positive": 5, "total": 8}
+    },
+    "A6_depth_contrast_at_primary_dose": {
+      "mixed": 2,
+      "negative": 2,
+      "positive": 0,
+      "total": 4
+    },
+    "A6_dose_contrast": {
+      "mixed": 2,
+      "negative": 3,
+      "positive": 3,
+      "total": 8
+    }
+  },
+  "landing": "prospective_holdout_support_for_operational_response_shape_candidate_with_cell_heterogeneity",
+  "next_gate": "T15-C may freeze a causal interaction-residual subspace test only with a new untouched target bank and prospectively fixed necessity, sufficiency, and restoration interventions. T15-B outcomes may motivate the frozen subspace definition but may not be used to select a runner-up model, depth, sign, dose, axis, endpoint, or control for rescue.",
+  "paper_gate_reading": {
+    "gate_5_independent_model_replication": "satisfied_for_the_t15a_operational_response_shape_candidate",
+    "gate_6_statistics": "claim_specific_cluster_and_multiplicity_qualification_complete_for_t15b_r1_but_paper_wide_claim_table_review_remains",
+    "other_open_gates_unchanged": true
+  },
+  "primary_a1_magnitude_0p25": [
+    {"bootstrap_95_percent_interval": [0.09354894654053207, 0.11175380647279386], "depth_fraction": 0.875, "median_true_minus_cross": 0.10217309461552213, "model": "mistral7b_instruct_v03_bf16", "sign": -1, "site_index": 6, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.06285206716880223, 0.08654424811997091], "depth_fraction": 0.875, "median_true_minus_cross": 0.07647380988503732, "model": "mistral7b_instruct_v03_bf16", "sign": 1, "site_index": 6, "targets": 48},
+    {"bootstrap_95_percent_interval": [-0.002336096560810741, 0.01404653419552565], "depth_fraction": 1.0, "median_true_minus_cross": 0.007967352533370303, "model": "mistral7b_instruct_v03_bf16", "sign": -1, "site_index": 7, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.03737902341221271, 0.051340851936627685], "depth_fraction": 1.0, "median_true_minus_cross": 0.04155438639314291, "model": "mistral7b_instruct_v03_bf16", "sign": 1, "site_index": 7, "targets": 48},
+    {"bootstrap_95_percent_interval": [-0.007898566983903753, 0.029779956621608004], "depth_fraction": 0.875, "median_true_minus_cross": 0.01584914193832008, "model": "smollm2_1p7b_base_bf16", "sign": -1, "site_index": 6, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.028178561945858, 0.08822101450095557], "depth_fraction": 0.875, "median_true_minus_cross": 0.053124852184714286, "model": "smollm2_1p7b_base_bf16", "sign": 1, "site_index": 6, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.004155270705904622, 0.024471605806648117], "depth_fraction": 1.0, "median_true_minus_cross": 0.015325014843373626, "model": "smollm2_1p7b_base_bf16", "sign": -1, "site_index": 7, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.0006230209580405932, 0.028018850848033308], "depth_fraction": 1.0, "median_true_minus_cross": 0.01471575499448119, "model": "smollm2_1p7b_base_bf16", "sign": 1, "site_index": 7, "targets": 48}
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "reported_numeric_precision": "The compact closeout retains full JSON precision from the aggregate for R1 and primary-dose A1. Public prose rounds medians and intervals to six decimal places. The aggregate SHA-256 identifies the full analysis.",
+  "run": {
+    "generation_calls": 0,
+    "model_roles_complete": 2,
+    "response_rows": 491712,
+    "run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t15b-runs-966ea30",
+    "scientific_open_authorized": true,
+    "source_prompt_sequences": 4624,
+    "status": "complete_closed_to_adaptive_selection",
+    "target_sequences": 96
+  },
+  "run_role_summary_sha256": {
+    "mistral7b_instruct_v03_bf16": "a5be26bdfbf050633ca92dc56ba3f985a888500afd29068b487a8045bf132b11",
+    "smollm2_1p7b_base_bf16": "19a9a9229dd3cf2b5d79ee5ecb9703c167b416b3056a3a6570b5c99d3490203c"
+  },
+  "schema_version": 1,
+  "semantic_understanding_claim_authorized": false,
+  "status": "prospective_holdout_replication_supported",
+  "target_level_r1": [
+    {"bootstrap_95_percent_interval": [0.012886954685647206, 0.03151013264981183], "bootstrap_replicates": 20000, "bonferroni_one_sided_alpha": 0.025, "lower_bound_above_zero": true, "magnitude": 0.25, "mean": 0.017363473456409272, "median": 0.02042190740188919, "model": "smollm2_1p7b_base_bf16", "negative_targets": 11, "positive_targets": 37, "targets": 48},
+    {"bootstrap_95_percent_interval": [0.056621294906496006, 0.06219406494870744], "bootstrap_replicates": 20000, "bonferroni_one_sided_alpha": 0.025, "lower_bound_above_zero": true, "magnitude": 0.25, "mean": 0.0569552938194297, "median": 0.06039677215330967, "model": "mistral7b_instruct_v03_bf16", "negative_targets": 1, "positive_targets": 47, "targets": 48}
+  ],
+  "zero_axis_vectors": {
+    "policy": "zero_cosine_when_either_vector_is_zero",
+    "reported_degeneracy_warning": false
+  }
+}

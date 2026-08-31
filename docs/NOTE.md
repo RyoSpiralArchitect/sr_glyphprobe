@@ -2,6 +2,8 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md)
 
+[T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+
 [日本語](NOTE.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot geometry results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Research roadmap](ROADMAP.md)
 
 An emoji looks like an unusually convenient probe for a language model. It is small, familiar, and visually distinctive. That convenience is also a trap. The moment a model reacts differently to 🟤 and 🟣, it is tempting to tell a story about brownness, purpleness, circles, or squares.
@@ -718,3 +720,40 @@ targets, and model or backend, then freeze removal, addition, and restoration
 before looking. The [complete T15-A result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md)
 also records the post-open one-line analyzer repair and every negative or
 heterogeneous family that keeps this candidate honest.
+
+## The shape returned after we replaced the axes, targets, and models
+
+T15-B made the clean replacement that T15-A could not make for itself. The
+temperature, brightness, valence, age, and other original axes were gone. A
+new set—speed, size, openness, weight, moisture, texture, distance, and
+fullness—used new emoji and words. Forty-eight new continuation prompts
+replaced the public bank. SmolLM2 base and Mistral Instruct replaced all four
+T15-A models. The controls also became harder: each true interaction now faced
+every one of the seven other word axes, not three selected cyclic shifts.
+
+The frozen decision survived. After reducing depth and sign inside each
+target, SmolLM2's median true-minus-control coherence was `+0.020422`, with a
+bootstrap interval from `0.012887` to `0.031510`. Mistral's median was
+`+0.060397`, with an interval from `0.056621` to `0.062194`. Both passed the
+predeclared two-model intersection rule. The first signal was small and
+heterogeneous; the second was larger and present in 47 of 48 target estimates.
+That contrast is part of the finding, not noise to hide.
+
+The separate cells also kept us honest. Six of eight primary-dose intervals
+were positive, while two crossed zero. Source-vector strength did not recur as
+cleanly: every A0 and A3 model-by-depth interval was mixed. Energy, main
+effects, source order, depth, and dose still moved in different directions.
+What replicated was the pooled target-level response-shape relation, not a law
+that every interaction is stronger everywhere.
+
+This closes an important loop. We no longer have only an intriguing pattern
+selected from four models and public targets; we have a prospectively frozen
+holdout replication in two new model roles. Yet the larger question remains
+untouched. Experimenter-supplied pairings are not proof that a model
+understands an emoji or notices a contradiction. The next honest step is no
+longer another broad recurrence sweep. It is a separately frozen causal test:
+remove, add, and restore the interaction-residual subspace on another untouched
+bank, with no runner-up model, depth, sign, dose, or endpoint chosen from this
+result. The [complete T15-B result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md)
+records the numbers, heterogeneous cells, procedural failures, and evidence
+hashes.
