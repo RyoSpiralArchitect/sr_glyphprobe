@@ -1,0 +1,38 @@
+{
+  "generation_calls": 0,
+  "intervention_sequences": 0,
+  "item_directions": 552,
+  "item_rows": 70656,
+  "late_depth_sites": [
+    6,
+    7
+  ],
+  "model_cells": 6,
+  "model_forward_sequences": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "model_weights_loaded": false,
+  "null_rows": 8192,
+  "protected_or_future_target_banks_opened": 0,
+  "protocol_id": "glyphprobe-emoji-steering-specificity-expansion-v0",
+  "prototype_rows": 14336,
+  "public_targets": 32,
+  "rows_per_model": 93248,
+  "rows_total": 559488,
+  "source_bindings": {
+    "configs/emoji_steering_specificity_harvest_v0.yaml": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06",
+    "data/manifests/emoji_steering_specificity_harvest_v0.json": "a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808",
+    "data/targets/prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+    "validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+  },
+  "source_items": 192,
+  "status": "pass",
+  "system_view_prototypes": 28,
+  "zero_rows": 64
+}

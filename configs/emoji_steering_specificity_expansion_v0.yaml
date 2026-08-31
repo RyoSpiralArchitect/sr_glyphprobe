@@ -1,0 +1,159 @@
+protocol_id: glyphprobe-emoji-steering-specificity-expansion-v0
+experiment_label: T14-X
+experiment_role: prospective_exploratory_late_depth_expansion_for_causal_localization
+status_before_execution: design_candidate_zero_t14x_model_forwards
+question: >-
+  Does the late structured-source response found in T13-EA persist when the
+  intervention roster expands from three to six base-model roles, all 192
+  source items are tested at depths 0.875 and 1.0, source prototypes are
+  rebuilt leave-one-wrapper-out, and signed source-covariance nulls replace
+  the positive-isotropic-only calibration?
+claim_boundary: >-
+  T14-X is an exploratory localization harvest over the already exposed T13
+  item population and all 32 public prestage targets. It may select one fixed
+  model/component candidate for a later, separately frozen C1 v2 experiment.
+  It is not a confirmatory target test and cannot establish emoji meaning,
+  unique emoji specificity, a causal component or path, behavioral steering,
+  tokenizer independence, a scale law, model-population generality, or
+  independent replication.
+
+source_bindings:
+  t13_harvest_config:
+    path: configs/emoji_steering_specificity_harvest_v0.yaml
+    sha256: 49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06
+  t13_harvest_freeze:
+    path: data/manifests/emoji_steering_specificity_harvest_v0.json
+    sha256: a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808
+  t13_scientific_open_closeout:
+    path: validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json
+    sha256: bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b
+  public_targets:
+    path: data/targets/prestage_targets.jsonl
+    sha256: 91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7
+    expected_rows: 32
+  source_run_binding:
+    closeout_field: run_root
+    expected_run_root: /home/ryospiralarchitect/scratch/glyphprobe-t13eh-runs-5161062
+
+models:
+  order:
+    - qwen25_0p5b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - llama32_3b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+  selection_reason: >-
+    Fixed before T14-X outcomes from the complete T13 source-bank roles: six
+    base checkpoints spanning three model families and the available
+    resource-feasible 0.5B-to-7B range. Size is descriptive and confounded.
+
+population:
+  source: frozen_t13_population_in_file_order
+  expected_items: 192
+  expected_present_item_views: 552
+  system_order: [atomic_anchor, presentation, modifier, zwj, regional_flag, keycap]
+  item_views: [glyph, unicode_name, decomposed_form]
+  public_targets: 32
+  target_groups_are_clusters: true
+
+intervention:
+  site: raw_decoder_block_output_at_target_last_nonpad
+  depth_site_indices: [6, 7]
+  depth_fractions: [0.875, 1.0]
+  magnitude: 0.25
+  signs: [-1, 1]
+  normalization: direction_unit_rms_times_signed_magnitude_times_target_activation_rms
+  generation_calls: 0
+
+grids:
+  item:
+    directions_per_model: 552
+    wrapper_rule: mean_over_all_four_frozen_wrapper_deltas
+    rows_per_model: 70656
+  wrapper_holdout_prototype:
+    system_view_prototypes: 28
+    folds: 4
+    direction_rule: >-
+      for each held-out wrapper, average the other three wrapper deltas within
+      each item, unit-RMS normalize items, then average within system and view
+    rows_per_model: 14336
+  signed_source_covariance_null:
+    families:
+      - centered_item_residual_gaussian
+      - centered_item_residual_rademacher
+    seeds_per_family_per_fold_per_depth: 8
+    folds: 4
+    construction: >-
+      form item-level residuals around each leave-one-wrapper-out system-view
+      prototype, pool only finite present views, draw deterministic Gaussian
+      or Rademacher coefficient combinations, then unit-RMS normalize
+    rows_per_model: 8192
+  zero:
+    rows_per_model: 64
+    primitive_noop_required: true
+    js_roundoff_bound: 8_times_float32_epsilon
+  expected_rows_per_model: 93248
+  expected_rows_total: 559488
+
+storage:
+  external_only: true
+  top_positive_and_negative_logit_deltas: 64
+  countsketch_dimension: 256
+  countsketch_seed: 2026082907
+  full_logits_stored: false
+  raw_activations_stored: false
+  raw_model_weights_copied: false
+
+analysis:
+  status: deferred_until_all_six_roles_complete
+  no_primary_hypothesis: true
+  no_confirmatory_decision: true
+  principal_units: target_prompts_and_source_items_with_repeated_measures_nested
+  required_complete_families:
+    - six_role_item_source_form_late_depth_surface
+    - leave_one_wrapper_out_prototype_calibration
+    - signed_source_covariance_null_calibration
+    - depth_0p875_minus_1p0_contrast
+    - model_item_system_target_heterogeneity
+  localization_use: >-
+    A later frozen selector may use complete T14-X outcomes to choose exactly
+    one model, injection depth, and downstream component candidate. It may not
+    read the replacement causal target bank.
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+execution_policy:
+  audit_freeze_before_model_load: true
+  validate_complete_t13_source_role_before_reuse: true
+  zero_shard_before_nonzero_shards: true
+  check_foreign_gpu_processes_before_model_load_and_each_shard: true
+  yield_exit_code_on_foreign_contention: 75
+  completed_shards_are_never_reacquired: true
+  no_overwrite: true
+  adaptive_role_item_target_depth_sign_endpoint_or_null_changes: forbidden
+  outcome_inspection_before_all_six_roles_complete: forbidden
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - any_future_c1_v2_target_bank
+forbidden_actions:
+  - any_T14X_model_forward_before_static_freeze_commit
+  - opening_or_generating_a_replacement_causal_bank_during_T14X
+  - generation_or_free_form_behavior_scoring
+  - confirmatory_positive_or_negative_decision
+  - causal_semantic_tokenizer_independent_scale_or_model_general_claim
+  - raw_array_commit_to_git_or_spiralshare

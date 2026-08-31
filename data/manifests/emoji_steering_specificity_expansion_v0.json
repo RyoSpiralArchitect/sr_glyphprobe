@@ -1,0 +1,33 @@
+{
+  "claim_boundary": "T14-X is an exploratory localization harvest over the already exposed T13 item population and all 32 public prestage targets. It may select one fixed model/component candidate for a later, separately frozen C1 v2 experiment. It is not a confirmatory target test and cannot establish emoji meaning, unique emoji specificity, a causal component or path, behavioral steering, tokenizer independence, a scale law, model-population generality, or independent replication.",
+  "design_preflight_sha256": "454dfba85bd77ae97605b530b6b6ce331df5cf941ad6278431f31389f6cc4fcc",
+  "expected_rows_per_model": 93248,
+  "expected_rows_total": 559488,
+  "experiment_role": "prospective_exploratory_late_depth_expansion_for_causal_localization",
+  "frozen_assets": {
+    "configs/emoji_steering_specificity_expansion_v0.yaml": "32d424783182931cfcda9b9a03ae57c4eb4ad9cca05e3d45093a41a7af6c5b89",
+    "docs/EMOJI_STEERING_SPECIFICITY_EXPANSION_V0.ja.md": "2a6a1cb88183bde31ea55ccee9fb939f624a17f109bb64d2487d3c630601fba0",
+    "docs/EMOJI_STEERING_SPECIFICITY_EXPANSION_V0.md": "d6124e4206c755a4f0a1f271ba2146ba1b4b0be3f8963475b6ee768ecadcc6e8",
+    "scripts/emoji_steering_specificity_expansion_v0.py": "dfc951d831587ab6d273f4ba310fae1adbf4e307aadcf4f234522103d592fcc0",
+    "tests/test_emoji_steering_specificity_expansion_v0.py": "82755fe782a5e6bb44f53316aac1966e711ddafc1e891f010f2937ca6fd59850",
+    "validation/emoji_steering_specificity_expansion_v0/design_preflight.json": "454dfba85bd77ae97605b530b6b6ce331df5cf941ad6278431f31389f6cc4fcc"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_sequences_at_freeze": 0,
+  "model_forward_sequences_at_freeze": 0,
+  "model_order": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "protected_or_future_target_banks_opened_at_freeze": 0,
+  "protocol_id": "glyphprobe-emoji-steering-specificity-expansion-v0",
+  "schema_version": 1,
+  "scientific_result_available_at_freeze": false,
+  "source_run_binding_root_sha256": "c0316c2c1b939ae831a3421c296d7eff4acd79a18747ac41eb04053ce0a88acf",
+  "source_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t13eh-runs-5161062",
+  "status": "freeze_complete_before_any_t14x_model_forward"
+}
