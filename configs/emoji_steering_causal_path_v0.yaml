@@ -1,0 +1,208 @@
+protocol_id: glyphprobe-emoji-steering-causal-path-v0
+experiment_label: T14-C
+status: design_candidate_zero_localization_or_c1v2_forwards
+question: >-
+  Does one prespecified downstream Transformer component selectively mediate
+  the late-depth structured-source output-distribution effect, relative to
+  signed source-covariance null directions, and does patching that component
+  into a baseline run reproduce part of the effect on a new target bank?
+claim_boundary: >-
+  A passing T14-C intersection-union test may establish only that one selected
+  component causally mediates the operational structured-versus-null
+  next-token JS effect in the pinned Llama 3.2 3B BF16 Transformers/CUDA cell.
+  It cannot establish emoji meaning, understanding, a complete circuit,
+  natural encoding strength, generated behavior, tokenizer independence,
+  architecture or model-population generality, a scale law, or independent
+  replication.
+
+source_bindings:
+  t13_harvest_config:
+    path: configs/emoji_steering_specificity_harvest_v0.yaml
+    sha256: 49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06
+  t13_scientific_open_closeout:
+    path: validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json
+    sha256: bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b
+  t14x_execution_freeze:
+    path: data/manifests/emoji_steering_specificity_expansion_v0.json
+    sha256: 14330d03596891d017b1f6a9dfc15c09c6ef67d8d16bbfd2f3032e164d638e7d
+  public_localization_targets:
+    path: data/targets/prestage_targets.jsonl
+    sha256: 91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7
+    expected_rows: 32
+  source_run_root: /home/ryospiralarchitect/scratch/glyphprobe-t13eh-runs-5161062
+
+fixed_model:
+  role: llama32_3b_base_bf16
+  artifact_model_id: mlx-community/Llama-3.2-3B-bf16
+  revision: 60a99aaf43164077157d64bf909b7b61143c6a6d
+  expected_class: LlamaForCausalLM
+  expected_layers: 28
+  expected_width: 3072
+  selection_reason: >-
+    Fixed from the already open T13-EA evidence before T14-X outcomes. This
+    role had the largest overall structured-direction random percentile among
+    the three T13 intervention pilots and is resource-feasible. It is not
+    selected from localization or C1 v2 outcomes.
+
+treatment:
+  injection_site: resid_post
+  injection_block_index: 23
+  normalized_depth: 0.875
+  magnitude: 0.25
+  position: target_last_nonpad
+  signs: [-1, 1]
+  structured_directions:
+    view: glyph
+    glyph_systems: [atomic_anchor, presentation, modifier, zwj, regional_flag, keycap]
+    wrapper_folds: 4
+    construction: leave_one_wrapper_out_system_prototype
+    directions_before_sign: 24
+  null_directions:
+    families:
+      - centered_item_residual_gaussian
+      - centered_item_residual_rademacher
+    wrapper_folds: 4
+    seeds_per_family_per_fold: 2
+    directions_before_sign: 16
+  signed_conditions_per_target: 80
+
+localization:
+  role: exploratory_component_selection_on_public_targets
+  target_bank: public_localization_targets
+  target_rows: 32
+  candidate_order:
+    - {site: attn_out, block_index: 24}
+    - {site: mlp_out, block_index: 24}
+    - {site: attn_out, block_index: 25}
+    - {site: mlp_out, block_index: 25}
+    - {site: attn_out, block_index: 26}
+    - {site: mlp_out, block_index: 26}
+    - {site: attn_out, block_index: 27}
+    - {site: mlp_out, block_index: 27}
+  controls:
+    positive: {site: resid_pre, block_index: 24, role: propagated_treatment_erasure}
+    negative: {site: mlp_out, block_index: 22, role: upstream_temporal_sham}
+  response_records: 25600
+  passes_per_record:
+    - treatment
+    - necessity_patch_treatment_component_to_baseline
+    - sufficiency_patch_baseline_component_to_treatment
+    - restoration_patch_treatment_component_to_captured_treatment
+  explicit_zero_gate: >-
+    Each treatment batch contains two identical zero-vector rows before the
+    nonzero conditions. Their next-token logits must agree, so the gate tests
+    the hook path in the same batch without adding an adaptive endpoint.
+  selector:
+    endpoint: js_divergence
+    target_level_treatment_excess: >-
+      median structured treatment JS minus median signed-null treatment JS
+    target_level_necessity_excess: >-
+      median structured (treatment JS minus necessity-patch JS) minus median
+      signed-null (treatment JS minus necessity-patch JS)
+    target_level_sufficiency_excess: >-
+      median structured sufficiency-patch JS minus median signed-null
+      sufficiency-patch JS
+    eligibility:
+      all_rows_finite: true
+      maximum_restoration_logit_rms_error: 1.0e-5
+      maximum_restoration_js_error: 1.0e-7
+      positive_control_necessity_drop_median_minimum: 0.0
+      positive_control_maximum_necessity_js: 1.0e-7
+      positive_control_maximum_sufficiency_error_js: 1.0e-7
+      negative_control_absolute_necessity_drop_median_maximum: 1.0e-5
+    ranking: descending_median_target_level_necessity_excess
+    tie_break: candidate_order
+    no_positive_result_behavior: >-
+      still bind the highest-ranked eligible candidate and carry the negative
+      localization evidence into C1 v2; never replace the endpoint or roster
+    no_eligible_candidate_behavior: fail_closed_no_c1v2_bank_generation
+
+c1_v2_bank:
+  status_at_design_freeze: not_generated
+  generation_gate:
+    - localization_complete
+    - selected_site_binding_manifest_committed_and_pushed
+    - causal_executor_and_analyzer_hashes_bound
+  rows: 192
+  strata: 12
+  rows_per_stratum: 16
+  generator_seed: 2026090101
+  generator_output: external_jsonl_not_committed_before_execution
+  agent_content_policy: >-
+    materialization emits only a row count, stratum counts, SHA-256, and
+    generator receipt to the research transcript; prompt bodies are neither
+    printed nor inspected before C1 v2 completion
+  retired_c1_v1_reuse: forbidden
+  p2_reuse: forbidden
+  public_prestage_reuse: forbidden
+
+causal_confirmation:
+  selected_sites: 1
+  target_rows: 192
+  response_records: 15360
+  primary_endpoint: js_divergence
+  principal_sampling_unit: target_prompt
+  repeated_measures_nested:
+    - glyph_system
+    - wrapper_fold
+    - sign
+    - null_family
+    - null_seed
+  target_level_estimands:
+    - structured_treatment_minus_signed_null_treatment
+    - structured_necessity_drop_minus_signed_null_necessity_drop
+    - structured_sufficiency_minus_signed_null_sufficiency
+  target_level_aggregate: median_across_192_targets
+  practical_floors:
+    treatment_excess_js: 0.002
+    necessity_excess_js: 0.0005
+    sufficiency_excess_js: 0.0005
+  uncertainty:
+    method: percentile_cluster_bootstrap_stratified_by_12_target_groups
+    replicates: 20000
+    seed: 2026090102
+    component_seed_offsets: {treatment: 0, necessity: 1, sufficiency: 2}
+    interval: equal_tailed_95_percent
+  randomization:
+    method: paired_target_sign_flip_within_fixed_strata
+    draws: 99999
+    seed: 2026090103
+    component_seed_offsets: {treatment: 0, necessity: 1, sufficiency: 2}
+    null_value: 0.0
+    statistic: median_target_level_excess
+  primary_decision:
+    type: intersection_union_test
+    alpha: 0.05
+    multiplicity: none_one_model_one_site_one_three_component_iut
+    requirements:
+      - all_three_95_percent_lower_bounds_exceed_their_practical_floors
+      - all_three_one_sided_randomization_p_values_below_0p05
+      - restoration_fidelity_gate_passes
+      - zero_and_upstream_sham_gates_pass
+  negative_decision: >-
+    Any failed component makes the causal IUT non-rejecting. A negative result
+    completes the prespecified C1 experiment and cannot be rescued by another
+    site, endpoint, target subset, sign, source form, depth, or model.
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  use_cache: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  condition_batch_size: 16
+  generation_calls: 0
+
+forbidden_until_selected_site_freeze:
+  - generating_listing_hashing_tokenizing_or_reading_c1_v2_prompt_rows
+  - any_c1_v2_model_forward
+  - adapting_candidate_sites_endpoint_floors_nulls_or_model_from_c1_v2
+forbidden_claims:
+  - emoji_meaning_or_understanding
+  - complete_circuit_or_unique_emoji_mechanism
+  - generated_behavior_or_task_improvement
+  - tokenizer_independence
+  - scale_architecture_or_model_population_generality
+  - independent_replication

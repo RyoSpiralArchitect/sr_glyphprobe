@@ -1,0 +1,66 @@
+{
+  "c1_v2_bank_generated_at_freeze": false,
+  "c1_v2_response_records_planned": 15360,
+  "c1_v2_target_rows_opened_at_freeze": 0,
+  "candidate_sites": [
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 25,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 25,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 26,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 26,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "claim_boundary": "A passing T14-C intersection-union test may establish only that one selected component causally mediates the operational structured-versus-null next-token JS effect in the pinned Llama 3.2 3B BF16 Transformers/CUDA cell. It cannot establish emoji meaning, understanding, a complete circuit, natural encoding strength, generated behavior, tokenizer independence, architecture or model-population generality, a scale law, or independent replication.",
+  "control_sites": [
+    {
+      "block_index": 24,
+      "site": "resid_pre"
+    },
+    {
+      "block_index": 22,
+      "site": "mlp_out"
+    }
+  ],
+  "design_preflight_sha256": "362fcbecc1ab0c53aa9a1989959b93868dc20badc36263358162e4c79034fe37",
+  "fixed_model_role": "llama32_3b_base_bf16",
+  "frozen_assets": {
+    "configs/emoji_steering_causal_path_v0.yaml": "0032f216ba3cec5819c40f66f0088ab62fd27b1a73daf72b8c168e4f94d2359c",
+    "docs/EMOJI_STEERING_CAUSAL_PATH_V0.ja.md": "04b4203008781fee323659b5a79096b86501282c9ab596716eedbb9bce9e604d",
+    "docs/EMOJI_STEERING_CAUSAL_PATH_V0.md": "2edd1b1cfd4f517e4afd8112efe67ddf4656b3b37b49d9ed2b42a558ea1cfb0e",
+    "scripts/emoji_steering_causal_path_v0.py": "bf4661a064aa45d32a8edf60210d319a0eab8d2d2a524ab2a2b134721c4f7b72",
+    "tests/test_emoji_steering_causal_path_v0.py": "9585dc62e17a0f7d14344698948b1ed77dc0031fb5ca544fb8cc965abaf01628",
+    "validation/emoji_steering_causal_path_v0/design_preflight.json": "362fcbecc1ab0c53aa9a1989959b93868dc20badc36263358162e4c79034fe37"
+  },
+  "localization_outcomes_available_at_freeze": false,
+  "localization_response_records": 25600,
+  "model_forward_sequences_at_freeze": 0,
+  "protocol_id": "glyphprobe-emoji-steering-causal-path-v0",
+  "schema_version": 1,
+  "status": "localization_freeze_complete_before_any_t14c_forward"
+}

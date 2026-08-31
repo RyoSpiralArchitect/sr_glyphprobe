@@ -1,0 +1,69 @@
+{
+  "c1_v2_bank_generated": false,
+  "c1_v2_response_records_planned": 15360,
+  "c1_v2_target_rows_opened": 0,
+  "c1_v2_targets_planned": 192,
+  "candidate_sites": [
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 25,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 25,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 26,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 26,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "control_sites": [
+    {
+      "block_index": 24,
+      "site": "resid_pre"
+    },
+    {
+      "block_index": 22,
+      "site": "mlp_out"
+    }
+  ],
+  "fixed_model_role": "llama32_3b_base_bf16",
+  "generation_calls": 0,
+  "injection_block_index": 23,
+  "localization_outcomes_opened": false,
+  "localization_response_records": 25600,
+  "localization_targets": 32,
+  "model_forward_sequences": 0,
+  "model_weights_loaded": false,
+  "null_directions_before_sign": 16,
+  "protocol_id": "glyphprobe-emoji-steering-causal-path-v0",
+  "signed_conditions_per_target": 80,
+  "source_bindings": {
+    "configs/emoji_steering_specificity_harvest_v0.yaml": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06",
+    "data/manifests/emoji_steering_specificity_expansion_v0.json": "14330d03596891d017b1f6a9dfc15c09c6ef67d8d16bbfd2f3032e164d638e7d",
+    "data/targets/prestage_targets.jsonl": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+    "validation/emoji_steering_specificity_analysis_v0/glyphprobe-t13ea-closeout-7fedd40.json": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b"
+  },
+  "status": "pass",
+  "structured_directions_before_sign": 24
+}
