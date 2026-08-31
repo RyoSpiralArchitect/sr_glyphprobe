@@ -1,0 +1,56 @@
+{
+  "axis_ids": [
+    "temperature",
+    "affect",
+    "vertical_direction",
+    "day_cycle",
+    "evaluation",
+    "correctness",
+    "color",
+    "volume"
+  ],
+  "bound_inputs": {
+    "axes": "c446e0750e3ee5635a17e28085f5ed0efb5e4f9129d36b3e2892b324d36dcbce",
+    "public_targets": "91ec5138c31ba56aede5f94d11a43b460385015237f437d933a55be3bc775ad7",
+    "t13_harvest_config": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06",
+    "t13_harvest_freeze": "a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808",
+    "t13_scientific_open_closeout": "bc821f2f80b46c7c50d02cc5943010c6df9a8b91c144bfcca98d4ae0104dcb6b",
+    "t14_closeout": "cd6d4a8b27dfe027e85576d75c949165a3323ae2d3727953fb67a62f3e6552e7",
+    "t14xa_closeout": "2df0c793eb788ba1a7f5c1dc79ceb191f080d0ad512788f8129058f2ac4ab94a",
+    "wrappers": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+  },
+  "causal_claim_authorized": false,
+  "confirmatory_status": false,
+  "counts": {
+    "cross_axis_null_rows": 49152,
+    "direction_catalog_rows": 768,
+    "emoji_main_rows": 16384,
+    "rows_per_model": 98368,
+    "rows_total": 393472,
+    "source_metric_rows": 2048,
+    "source_prompts": 1288,
+    "true_conflict_rows": 16384,
+    "word_main_rows": 16384,
+    "zero_rows": 64
+  },
+  "model_forwards": 0,
+  "model_roles": [
+    "olmo2_1b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-interaction-v0",
+  "schema_version": 1,
+  "source_orders": [
+    "emoji_then_word",
+    "word_then_emoji"
+  ],
+  "status": "design_pass_zero_t15_model_forwards",
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w04_token_state",
+    "w10_sequence_continuation",
+    "w15_observation_inference"
+  ]
+}

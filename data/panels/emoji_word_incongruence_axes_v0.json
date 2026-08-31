@@ -1,0 +1,58 @@
+{
+  "axis_order": [
+    "temperature",
+    "affect",
+    "vertical_direction",
+    "day_cycle",
+    "evaluation",
+    "correctness",
+    "color",
+    "volume"
+  ],
+  "axes": [
+    {
+      "id": "temperature",
+      "negative": {"emoji": "❄️", "emoji_label": "snowflake", "word": "cold"},
+      "positive": {"emoji": "🔥", "emoji_label": "fire", "word": "hot"}
+    },
+    {
+      "id": "affect",
+      "negative": {"emoji": "😢", "emoji_label": "crying face", "word": "sad"},
+      "positive": {"emoji": "😀", "emoji_label": "grinning face", "word": "happy"}
+    },
+    {
+      "id": "vertical_direction",
+      "negative": {"emoji": "⬇️", "emoji_label": "down arrow", "word": "down"},
+      "positive": {"emoji": "⬆️", "emoji_label": "up arrow", "word": "up"}
+    },
+    {
+      "id": "day_cycle",
+      "negative": {"emoji": "🌙", "emoji_label": "crescent moon", "word": "night"},
+      "positive": {"emoji": "☀️", "emoji_label": "sun", "word": "day"}
+    },
+    {
+      "id": "evaluation",
+      "negative": {"emoji": "👎", "emoji_label": "thumbs down", "word": "bad"},
+      "positive": {"emoji": "👍", "emoji_label": "thumbs up", "word": "good"}
+    },
+    {
+      "id": "correctness",
+      "negative": {"emoji": "❌", "emoji_label": "cross mark", "word": "wrong"},
+      "positive": {"emoji": "✅", "emoji_label": "check mark", "word": "correct"}
+    },
+    {
+      "id": "color",
+      "negative": {"emoji": "🔵", "emoji_label": "blue circle", "word": "blue"},
+      "positive": {"emoji": "🔴", "emoji_label": "red circle", "word": "red"}
+    },
+    {
+      "id": "volume",
+      "negative": {"emoji": "🔇", "emoji_label": "muted speaker", "word": "quiet"},
+      "positive": {"emoji": "🔊", "emoji_label": "speaker high volume", "word": "loud"}
+    }
+  ],
+  "claim_boundary": "The positive and negative labels are externally specified operational associations for a balanced experiment. They do not assert that a studied model represents these meanings.",
+  "cross_axis_cyclic_shifts": [1, 3, 5],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-interaction-v0",
+  "schema_version": 1
+}
