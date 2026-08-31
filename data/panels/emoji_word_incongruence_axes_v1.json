@@ -1,0 +1,59 @@
+{
+  "axis_order": [
+    "speed",
+    "size",
+    "openness",
+    "weight",
+    "moisture",
+    "texture",
+    "distance",
+    "fullness"
+  ],
+  "axes": [
+    {
+      "id": "speed",
+      "negative": {"emoji": "🐢", "emoji_label": "turtle", "word": "slow"},
+      "positive": {"emoji": "🐇", "emoji_label": "rabbit", "word": "fast"}
+    },
+    {
+      "id": "size",
+      "negative": {"emoji": "🐜", "emoji_label": "ant", "word": "small"},
+      "positive": {"emoji": "🐘", "emoji_label": "elephant", "word": "large"}
+    },
+    {
+      "id": "openness",
+      "negative": {"emoji": "🔒", "emoji_label": "locked", "word": "closed"},
+      "positive": {"emoji": "🔓", "emoji_label": "unlocked", "word": "open"}
+    },
+    {
+      "id": "weight",
+      "negative": {"emoji": "🪶", "emoji_label": "feather", "word": "light"},
+      "positive": {"emoji": "🪨", "emoji_label": "rock", "word": "heavy"}
+    },
+    {
+      "id": "moisture",
+      "negative": {"emoji": "🏜️", "emoji_label": "desert", "word": "dry"},
+      "positive": {"emoji": "☔", "emoji_label": "umbrella with rain drops", "word": "wet"}
+    },
+    {
+      "id": "texture",
+      "negative": {"emoji": "🧽", "emoji_label": "sponge", "word": "soft"},
+      "positive": {"emoji": "🧱", "emoji_label": "brick", "word": "hard"}
+    },
+    {
+      "id": "distance",
+      "negative": {"emoji": "🔍", "emoji_label": "magnifying glass tilted left", "word": "near"},
+      "positive": {"emoji": "🔭", "emoji_label": "telescope", "word": "far"}
+    },
+    {
+      "id": "fullness",
+      "negative": {"emoji": "🪫", "emoji_label": "low battery", "word": "empty"},
+      "positive": {"emoji": "🔋", "emoji_label": "battery", "word": "full"}
+    }
+  ],
+  "claim_boundary": "The poles are frozen operational associations chosen before T15-B outcomes. They are mostly descriptive rather than evaluative, and they do not assert that a studied model represents these meanings.",
+  "cross_axis_cyclic_shifts": [1, 2, 3, 4, 5, 6, 7],
+  "orientation_note": "Positive and negative are arbitrary checkerboard labels, not valence labels. Every non-self cyclic shift is retained so no cross-axis partner is selected after outcomes.",
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "schema_version": 1
+}

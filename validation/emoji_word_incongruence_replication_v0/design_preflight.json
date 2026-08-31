@@ -1,0 +1,69 @@
+{
+  "axis_ids": [
+    "speed",
+    "size",
+    "openness",
+    "weight",
+    "moisture",
+    "texture",
+    "distance",
+    "fullness"
+  ],
+  "bound_inputs": {
+    "axes": "483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7",
+    "t10_model_config": "27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a",
+    "t13_harvest_config": "49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06",
+    "t13_harvest_freeze": "a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808",
+    "t15a_closeout": "d9ad4842177448501acdf2800349f50c92cceac3ccc2a6526a7fc8bceb160f87",
+    "untouched_targets": "621df78151752dbfa861b3ee4ec8d4c3462e758678fabdb4264aed9bcbedb0d4",
+    "wrappers": "310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee"
+  },
+  "causal_claim_authorized": false,
+  "counts": {
+    "cross_axis_null_rows": 172032,
+    "direction_catalog_rows": 1280,
+    "emoji_main_rows": 24576,
+    "rows_per_model": 245856,
+    "rows_total": 491712,
+    "source_metric_rows": 4096,
+    "source_prompts": 2312,
+    "true_conflict_rows": 24576,
+    "word_main_rows": 24576,
+    "zero_rows": 96
+  },
+  "model_forwards": 0,
+  "model_roles": [
+    "smollm2_1p7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-replication-v0",
+  "replication_decision_available": false,
+  "schema_version": 1,
+  "semantic_understanding_claim_authorized": false,
+  "source_orders": [
+    "emoji_then_word",
+    "word_then_emoji"
+  ],
+  "status": "design_pass_zero_t15b_model_forwards",
+  "t15a_model_role_overlap": 0,
+  "target_audit": {
+    "axis_lexical_overlap": 0,
+    "target_groups": {
+      "abstract": 8,
+      "analytical": 8,
+      "descriptive": 8,
+      "dialogue": 8,
+      "narrative": 8,
+      "procedural": 8
+    },
+    "target_ids_sha256": "c7cf33948c07b67213a43beb3e74f574150a1bc7538c6c5305b90638c5c8f9f5",
+    "target_prompts_sha256": "d507d931536d178515657ea98ba0696ae65310eed5c2199f6d7a245dc17666ed",
+    "target_rows": 48
+  },
+  "wrapper_ids": [
+    "w01_mark_anchor",
+    "w04_token_state",
+    "w10_sequence_continuation",
+    "w15_observation_inference"
+  ]
+}

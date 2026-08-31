@@ -1,0 +1,201 @@
+protocol_id: glyphprobe-emoji-word-incongruence-replication-v0
+experiment_label: T15-B
+experiment_role: prospective_holdout_replication_of_response_fingerprint_candidate
+status_before_execution: static_design_candidate_zero_t15b_model_forwards
+question: >-
+  Does the T15-A response-fingerprint coherence excess recur prospectively
+  when every operational axis, every target prompt, and every model role is
+  replaced, while all seven non-self cross-axis controls are retained?
+claim_boundary: >-
+  T15-B tests only the operational response-shape candidate discovered in
+  T15-A. Its axes are experimenter-labeled associations, its target bank is a
+  newly frozen synthetic continuation bank, and its two model roles were
+  selected before T15-B outcomes. A positive replication gate would not
+  establish emoji meaning, contradiction detection, understanding, natural
+  behavior, a causal circuit, tokenizer independence, architecture or
+  model-population generality, instruction-tuning invariance, or a scale law.
+
+source_bindings:
+  axes:
+    path: data/panels/emoji_word_incongruence_axes_v1.json
+    sha256: 483e150fde148940cfbd2c32950c5de4343fddac4f95a6fc199940db84baeae7
+    expected_axes: 8
+  wrappers:
+    path: data/wrappers/source_wrappers.jsonl
+    sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+    expected_rows: 16
+    selected_ids: [w01_mark_anchor, w04_token_state, w10_sequence_continuation, w15_observation_inference]
+  untouched_targets:
+    path: data/targets/t15b_untouched_targets_v0.jsonl
+    sha256: 621df78151752dbfa861b3ee4ec8d4c3462e758678fabdb4264aed9bcbedb0d4
+    expected_rows: 48
+    expected_groups: [narrative, analytical, dialogue, procedural, descriptive, abstract]
+    rows_per_group: 8
+    status_at_design_freeze: never_used_for_any_model_forward
+  t15a_closeout:
+    path: validation/emoji_word_incongruence_interaction_v0/t15a_closeout.json
+    sha256: d9ad4842177448501acdf2800349f50c92cceac3ccc2a6526a7fc8bceb160f87
+  t13_harvest_config:
+    path: configs/emoji_steering_specificity_harvest_v0.yaml
+    sha256: 49bf6e236a0787e8bb76f57874a3b102f00826d32b383b4fddbd731a37109f06
+  t13_harvest_freeze:
+    path: data/manifests/emoji_steering_specificity_harvest_v0.json
+    sha256: a0cf213deb8d193c469c49502f644514964c47077ff16aeda9446a7aa6f74808
+  t10_model_config:
+    path: configs/semantic_atlas_cross_model_replication_v0.yaml
+    sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+
+models:
+  order:
+    - smollm2_1p7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  selection_reason: >-
+    Frozen before T15-B outcomes: both roles were absent from T15-A; SmolLM2
+    supplies a compact Llama-family base checkpoint and Mistral supplies a
+    different 7B architecture with instruction tuning. This is deliberate
+    boundary coverage, not a random model-population sample.
+  t15a_role_overlap: 0
+
+factorial:
+  polarity_order: [positive, negative]
+  polarity_semantics: arbitrary_checkerboard_labels_not_valence
+  source_orders: [emoji_then_word, word_then_emoji]
+  source_frames:
+    emoji_then_word: "emoji={emoji}; word={word}"
+    word_then_emoji: "word={word}; emoji={emoji}"
+  wrapper_folds: 4
+  true_interaction: mean_incongruent_minus_mean_congruent
+  cross_axis_control:
+    construction: checkerboard interaction for every non-self cyclic word-axis shift
+    shifts: [1, 2, 3, 4, 5, 6, 7]
+    semantic_status: exhaustive_structural_controls_not_guaranteed_unrelated
+  component_controls:
+    - emoji_main_effect_inside_joint_grid
+    - word_main_effect_inside_joint_grid
+  exact_balance:
+    - every emoji appears equally in congruent and incongruent core cells
+    - every word appears equally in congruent and incongruent core cells
+    - both checkerboard labels appear equally in every interaction grid
+    - both source orders and all wrapper folds are retained
+    - every axis serves once as the word partner at every non-self cyclic shift
+
+source_capture:
+  readout: raw_decoder_block_output_at_final_common_wrapper_token
+  depth_site_indices: [6, 7]
+  depth_fractions: [0.875, 1.0]
+  expected_prompt_sequences_per_model: 2312
+  expected_source_metric_rows_per_model: 4096
+  expected_direction_catalog_rows_per_model: 1280
+  frame_relative_additivity_residual: pair_delta_minus_emoji_delta_minus_word_delta
+  final_token_gate: exact_within_each_model_source_order_and_wrapper
+
+target_capture:
+  readout: raw_decoder_block_output_at_target_last_nonpad
+  normalized_depth_fractions: [0.125, 0.25, 0.375, 0.50, 0.625, 0.75, 0.875, 1.0]
+  expected_sequences_per_model: 48
+  prompt_bodies_in_external_receipt: false
+  prompt_sha256_only: true
+
+intervention:
+  site: raw_decoder_block_output_at_target_last_nonpad
+  magnitudes: [0.125, 0.25]
+  primary_magnitude: 0.25
+  signs: [-1, 1]
+  normalization: >-
+    unit RMS per source direction, then signed magnitude times target activation
+    RMS; directions with source RMS at or below the frozen degeneracy floor are
+    replaced by zero and retained as degenerate rows
+  degeneracy_floor_rms: 1.0e-6
+  generation_calls: 0
+
+grids:
+  kinds: [true_conflict, cross_axis_null, emoji_main, word_main, zero]
+  true_conflict_rows_per_model: 24576
+  cross_axis_null_rows_per_model: 172032
+  emoji_main_rows_per_model: 24576
+  word_main_rows_per_model: 24576
+  zero_rows_per_model: 96
+  expected_rows_per_model: 245856
+  expected_rows_total: 491712
+
+storage:
+  external_only: true
+  top_positive_and_negative_logit_deltas: 64
+  countsketch_dimension: 256
+  countsketch_seed: 2026082907
+  full_logits_stored: false
+  model_weights_copied: false
+  prompt_bodies_in_response_ledger: false
+
+analysis:
+  status: frozen_before_any_t15b_model_forward
+  principal_unit: target_prompt
+  bootstrap_replicates: 20000
+  bootstrap_seed: 2026090107
+  interval: equal_tailed_percentile_95
+  repeated_condition_aggregate: median
+  complete_families:
+    - R1_pooled_A1_prospective_replication
+    - A0_joint_additivity_residual_incongruent_minus_congruent
+    - A1_shared_response_fingerprint_true_minus_all_cross_axis_nulls
+    - A2_response_energy_true_minus_cross_axis_null
+    - A3_source_direction_rms_true_minus_cross_axis_null
+    - A4_word_minus_emoji_main_response
+    - A5_source_order_sensitivity
+    - A6_depth_and_dose_heterogeneity
+  primary_replication_family:
+    family: R1_pooled_A1_prospective_replication
+    source_family: A1_shared_response_fingerprint_true_minus_all_cross_axis_nulls
+    magnitude: 0.25
+    within_target_pool: median_over_two_depths_and_two_signs
+    model_roles_reported_separately: true
+    decision_rule: >-
+      support only if the 2.5th percentile target-bootstrap lower bound exceeds
+      zero for both frozen model roles
+    multiplicity: Bonferroni one-sided alpha 0.025 per model, family alpha at most 0.05
+    no_model_pooling_for_decision: true
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  critical_versions:
+    glyphprobe: 0.1.0
+    torch: 2.13.0+cu132
+    transformers: 5.15.0
+    numpy: 2.5.2
+    PyYAML: 6.0.3
+
+execution_policy:
+  tokenizer_preflight_before_final_freeze: true
+  final_freeze_before_model_load: true
+  complete_both_roles_before_scientific_open: true
+  zero_shard_before_nonzero_shards: true
+  check_foreign_gpu_processes_before_model_load_and_each_shard: true
+  yield_exit_code_on_foreign_contention: 75
+  completed_shards_are_never_reacquired: true
+  no_overwrite: true
+  outcome_inspection_before_both_roles_complete: forbidden
+  adaptive_axis_word_emoji_model_target_depth_order_fold_sign_magnitude_endpoint_or_null_changes: forbidden
+
+next_gate: >-
+  T15-C may be frozen only after T15-B closes. A causal test must intervene on
+  a prospectively defined interaction-residual subspace and test necessity,
+  sufficiency, and restoration without selecting a runner-up component from
+  T15-B outcomes.
+
+forbidden_research_inputs:
+  - data/targets/prestage_targets.jsonl
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - any_future_t15c_target_bank
+forbidden_actions:
+  - any_T15B_model_forward_before_final_freeze_commit
+  - reading_or_scoring_T15B_outcomes_before_both_roles_complete
+  - generation_or_free_form_behavior_scoring
+  - adaptive_axis_target_model_depth_sign_dose_endpoint_or_control_replacement
+  - same_bank_rescue_after_a_negative_gate
+  - semantic_understanding_causal_tokenizer_independent_scale_or_model_population_claim

@@ -1,0 +1,48 @@
+{"group":"narrative","id":"t15b_narrative_01","prompt":"At the edge of the village, the visitor noticed"}
+{"group":"narrative","id":"t15b_narrative_02","prompt":"Before the train reached the station, someone had"}
+{"group":"narrative","id":"t15b_narrative_03","prompt":"Inside the abandoned theater, the caretaker discovered"}
+{"group":"narrative","id":"t15b_narrative_04","prompt":"After the letter arrived, the family decided to"}
+{"group":"narrative","id":"t15b_narrative_05","prompt":"Across the courtyard, a musician began to"}
+{"group":"narrative","id":"t15b_narrative_06","prompt":"Beside the riverbank, the traveler remembered"}
+{"group":"narrative","id":"t15b_narrative_07","prompt":"When the final guest entered, the host quietly"}
+{"group":"narrative","id":"t15b_narrative_08","prompt":"Beyond the garden wall, a child found"}
+{"group":"analytical","id":"t15b_analytical_01","prompt":"The evidence in the first table suggests that"}
+{"group":"analytical","id":"t15b_analytical_02","prompt":"When the two estimates are compared, the main difference is"}
+{"group":"analytical","id":"t15b_analytical_03","prompt":"The most cautious interpretation of the observation is"}
+{"group":"analytical","id":"t15b_analytical_04","prompt":"One limitation of the proposed explanation concerns"}
+{"group":"analytical","id":"t15b_analytical_05","prompt":"If the assumption is removed, the argument becomes"}
+{"group":"analytical","id":"t15b_analytical_06","prompt":"The pattern across the examples is consistent with"}
+{"group":"analytical","id":"t15b_analytical_07","prompt":"A useful counterexample to the claim would involve"}
+{"group":"analytical","id":"t15b_analytical_08","prompt":"The next step in evaluating the hypothesis is to"}
+{"group":"dialogue","id":"t15b_dialogue_01","prompt":"The interviewer paused before asking"}
+{"group":"dialogue","id":"t15b_dialogue_02","prompt":"In response to the unexpected question, the witness said"}
+{"group":"dialogue","id":"t15b_dialogue_03","prompt":"The teacher turned to the group and explained"}
+{"group":"dialogue","id":"t15b_dialogue_04","prompt":"After a brief silence, the caller replied"}
+{"group":"dialogue","id":"t15b_dialogue_05","prompt":"The editor read the paragraph and asked"}
+{"group":"dialogue","id":"t15b_dialogue_06","prompt":"During the meeting, one participant suggested"}
+{"group":"dialogue","id":"t15b_dialogue_07","prompt":"The guide looked at the visitors and announced"}
+{"group":"dialogue","id":"t15b_dialogue_08","prompt":"Without changing the subject, the speaker added"}
+{"group":"procedural","id":"t15b_procedural_01","prompt":"To prepare the sample, begin by"}
+{"group":"procedural","id":"t15b_procedural_02","prompt":"Before recording the measurement, verify that"}
+{"group":"procedural","id":"t15b_procedural_03","prompt":"Once the components are aligned, carefully"}
+{"group":"procedural","id":"t15b_procedural_04","prompt":"The final stage of the procedure requires"}
+{"group":"procedural","id":"t15b_procedural_05","prompt":"After saving the draft, review"}
+{"group":"procedural","id":"t15b_procedural_06","prompt":"To reproduce the calculation, first identify"}
+{"group":"procedural","id":"t15b_procedural_07","prompt":"When the indicator appears, continue by"}
+{"group":"procedural","id":"t15b_procedural_08","prompt":"Before submitting the form, confirm"}
+{"group":"descriptive","id":"t15b_descriptive_01","prompt":"The surface of the artifact appeared"}
+{"group":"descriptive","id":"t15b_descriptive_02","prompt":"The arrangement of objects on the shelf was"}
+{"group":"descriptive","id":"t15b_descriptive_03","prompt":"The building at the end of the avenue seemed"}
+{"group":"descriptive","id":"t15b_descriptive_04","prompt":"The fabric used for the costume felt"}
+{"group":"descriptive","id":"t15b_descriptive_05","prompt":"The sky above the harbor looked"}
+{"group":"descriptive","id":"t15b_descriptive_06","prompt":"The outline of the structure was"}
+{"group":"descriptive","id":"t15b_descriptive_07","prompt":"The material under the glass appeared"}
+{"group":"descriptive","id":"t15b_descriptive_08","prompt":"The air in the room seemed"}
+{"group":"abstract","id":"t15b_abstract_01","prompt":"A relationship between the two variables may arise when"}
+{"group":"abstract","id":"t15b_abstract_02","prompt":"The category boundary becomes uncertain if"}
+{"group":"abstract","id":"t15b_abstract_03","prompt":"An alternative representation of the same object could"}
+{"group":"abstract","id":"t15b_abstract_04","prompt":"The rule applies to the current case provided that"}
+{"group":"abstract","id":"t15b_abstract_05","prompt":"The sequence can be extended by choosing"}
+{"group":"abstract","id":"t15b_abstract_06","prompt":"A compact summary of the argument would state"}
+{"group":"abstract","id":"t15b_abstract_07","prompt":"The distinction between form and function matters because"}
+{"group":"abstract","id":"t15b_abstract_08","prompt":"The observed regularity might disappear if"}
