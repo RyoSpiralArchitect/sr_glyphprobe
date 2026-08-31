@@ -9,12 +9,13 @@
     "scripts/analyze_emoji_word_incongruence_replication_v0.py": "e54053173a661305f2eaf2a8f994b52fe83ba46f3faa3e4d19c5fbca05224d84",
     "scripts/emoji_steering_specificity_harvest_v0.py": "a99b2581a1fafa29915d652fe0c968d67b4ad778b3badf75f38075e78743d26b",
     "scripts/emoji_word_incongruence_interaction_v0.py": "845064b11db027aaa7d943715af1a4f1b58a1176e0e9ff91b40af2087c73ac55",
-    "scripts/emoji_word_incongruence_replication_v0.py": "7393329af7615691e16044ec4fb494b6c67140ad77a26a2521314225eb6f14e8",
+    "scripts/emoji_word_incongruence_replication_v0.py": "4a34104733fee910ae05ce9fbc801d5ca6ad01502816d42b9f37e3439473694c",
     "scripts/mistral7b_semantic_atlas_v0.py": "b53d43456336ea6b3ba428fe930e5c563c1ed6b2a4fbd8ea79819052dfa7a1c6",
     "scripts/semantic_atlas_cross_model_replication_v0.py": "f2c3836e57b8a23c841cc06d2e5391203df61d852dd4dd706dd41ec0dc88969e",
     "tests/test_analyze_emoji_word_incongruence_replication_v0.py": "9246134c5af0c96e133b0b1c2051b0711cc7cf8c24b296f51904132f3b480008",
-    "tests/test_emoji_word_incongruence_replication_v0.py": "ef2a8c7a3001c6f6897e2c076593cfcc2a3315a3bad8264bc77590ab16dfc575",
+    "tests/test_emoji_word_incongruence_replication_v0.py": "caa988b6bdff910d09419c8e3d11c98f62bc5e6a5f8d719dead0a8d6baea47f8",
     "validation/emoji_word_incongruence_replication_v0/design_preflight.json": "0e584024dbe57ebfb094cebb984160c1b6e75c7883b57014a0df9638c249ae74",
+    "validation/emoji_word_incongruence_replication_v0/runtime_preflight_failures_v0.json": "7dc2b5158f846c51050ff800a7654fe70923cae8d9c980be18cb62a33001628e",
     "validation/emoji_word_incongruence_replication_v0/tokenizer_preflight.json": "2c28af5eb89c6184eaa4d8309d8c34bb45d48483342b32b72076ede412663f38"
   },
   "axis_ids": [
