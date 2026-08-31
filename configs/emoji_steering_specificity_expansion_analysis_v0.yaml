@@ -1,0 +1,84 @@
+analysis_id: glyphprobe-emoji-steering-specificity-expansion-analysis-v0
+experiment_label: T14-XA
+source_protocol_id: glyphprobe-emoji-steering-specificity-expansion-v0
+status: design_candidate_before_complete_run_scientific_open
+claim_boundary: >-
+  T14-XA is a complete-family exploratory analysis of one frozen intervention
+  grid. It may describe target-set stability, model/depth consistency, source
+  form contrasts, and covariance-null calibration. It cannot authorize a
+  confirmatory, causal, semantic-understanding, circuit, tokenizer-independent,
+  architecture-general, model-population, or scale-law claim.
+
+source_bindings:
+  execution_freeze:
+    path: data/manifests/emoji_steering_specificity_expansion_v0.json
+    sha256: 14330d03596891d017b1f6a9dfc15c09c6ef67d8d16bbfd2f3032e164d638e7d
+  execution_script:
+    path: scripts/emoji_steering_specificity_expansion_v0.py
+    sha256: f93c3f9d1f930bf869a5fb1b6542533fbd28768fc37f76be141deb1ab1e153d2
+
+model_order:
+  - qwen25_0p5b_base_bf16
+  - olmo2_1b_base_bf16
+  - qwen25_1p5b_base_bf16
+  - llama32_3b_base_bf16
+  - qwen25_3b_base_bf16
+  - qwen25_7b_base_bf16
+depth_fractions: [0.875, 1.0]
+target_rows: 32
+
+scalar_endpoints:
+  - kl_baseline_to_intervened
+  - js_divergence
+  - total_variation
+  - logit_delta_rms
+  - entropy_change
+  - argmax_flip_rate
+
+complete_families:
+  - id: X1_structured_vs_covariance_null
+    reduction: >-
+      Within each model, depth, target, and endpoint, subtract the median over
+      all signed covariance-null rows from the median over all signed glyph-view
+      wrapper-holdout system prototypes; argmax_flip_rate uses the corresponding
+      within-target means because its primitive rows are binary. Summarize the
+      32 target differences.
+  - id: X2_glyph_system_decomposition
+    reduction: X1 repeated separately for every frozen glyph system.
+  - id: X3_prototype_source_form_specificity
+    reduction: >-
+      Within model, depth, system, target, wrapper fold, and sign, pair the glyph
+      prototype with every available non-glyph source form; reduce by target.
+  - id: X4_item_source_form_specificity
+    reduction: >-
+      Within model, depth, item, target, and sign, pair glyph with unicode_name
+      and, where structurally available, decomposed_form; reduce by target.
+  - id: X5_depth_contrast
+    reduction: X1 target estimand at depth 0.875 minus the same estimand at 1.0.
+  - id: X6_null_family_sensitivity
+    reduction: >-
+      Within model, depth, target, and endpoint, gaussian-null median minus
+      rademacher-null median.
+  - id: X7_sign_orientation
+    reduction: >-
+      Within model, depth, target, and endpoint, positive-orientation structured
+      glyph-prototype median minus negative-orientation median.
+
+target_summary:
+  repeated_condition_aggregate:
+    argmax_flip_rate: mean
+    all_other_endpoints: median
+  aggregate: median
+  interval: equal_tailed_percentile_95
+  bootstrap_unit: target_prompt
+  bootstrap_replicates: 20000
+  bootstrap_seed: 2026090104
+  significance_tests: none_exploratory_descriptive_only
+
+reporting:
+  all_complete_families_required: true
+  every_model_and_depth_required: true
+  negative_and_mixed_results_retained: true
+  no_cell_selection_or_rescue: true
+  no_confirmatory_or_causal_verdict: true
+  scientific_values_may_open_only_after_six_role_audit_run_pass: true

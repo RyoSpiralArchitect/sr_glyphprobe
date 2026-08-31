@@ -1,0 +1,35 @@
+{
+  "analysis_id": "glyphprobe-emoji-steering-specificity-expansion-analysis-v0",
+  "bootstrap_replicates": 20000,
+  "causal_claim_authorized": false,
+  "complete_families": [
+    "X1_structured_vs_covariance_null",
+    "X2_glyph_system_decomposition",
+    "X3_prototype_source_form_specificity",
+    "X4_item_source_form_specificity",
+    "X5_depth_contrast",
+    "X6_null_family_sensitivity",
+    "X7_sign_orientation"
+  ],
+  "confirmatory_status": false,
+  "depth_cells": 2,
+  "model_cells": 6,
+  "response_rows_expected": 559488,
+  "scalar_endpoints": [
+    "kl_baseline_to_intervened",
+    "js_divergence",
+    "total_variation",
+    "logit_delta_rms",
+    "entropy_change",
+    "argmax_flip_rate"
+  ],
+  "scientific_response_values_read": false,
+  "source_bindings": {
+    "data/manifests/emoji_steering_specificity_expansion_v0.json": "14330d03596891d017b1f6a9dfc15c09c6ef67d8d16bbfd2f3032e164d638e7d",
+    "scripts/emoji_steering_specificity_expansion_v0.py": "f93c3f9d1f930bf869a5fb1b6542533fbd28768fc37f76be141deb1ab1e153d2"
+  },
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-expansion-v0",
+  "source_run_audited": false,
+  "status": "pass",
+  "target_rows": 32
+}

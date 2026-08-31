@@ -1,0 +1,35 @@
+{
+  "analysis_id": "glyphprobe-emoji-steering-specificity-expansion-analysis-v0",
+  "claim_boundary": "T14-XA is a complete-family exploratory analysis of one frozen intervention grid. It may describe target-set stability, model/depth consistency, source form contrasts, and covariance-null calibration. It cannot authorize a confirmatory, causal, semantic-understanding, circuit, tokenizer-independent, architecture-general, model-population, or scale-law claim.",
+  "complete_families": [
+    "X1_structured_vs_covariance_null",
+    "X2_glyph_system_decomposition",
+    "X3_prototype_source_form_specificity",
+    "X4_item_source_form_specificity",
+    "X5_depth_contrast",
+    "X6_null_family_sensitivity",
+    "X7_sign_orientation"
+  ],
+  "design_preflight_sha256": "1621fd2362d630df642b13dbf47cf64759435f6887473d61f80ed6fc36697db8",
+  "frozen_assets": {
+    "configs/emoji_steering_specificity_expansion_analysis_v0.yaml": "7710cf67a84f7d281714046d6818b447d3a97264d91afd351755bc4901ce13ee",
+    "docs/EMOJI_STEERING_SPECIFICITY_EXPANSION_ANALYSIS_V0.ja.md": "0367a90108208c0cb84ab0e152147cd5f62629eaf1b48f5cb22fbc4dcbe48e09",
+    "docs/EMOJI_STEERING_SPECIFICITY_EXPANSION_ANALYSIS_V0.md": "40933dded80edeca2afbc4ddef53a5a35504e2c4512f14c055c5a0d7f394fd4b",
+    "scripts/analyze_emoji_steering_specificity_expansion_v0.py": "a1f9b3f09552ea87130378063ad0a06f3545043c81131a643391a409c577cde7",
+    "tests/test_analyze_emoji_steering_specificity_expansion_v0.py": "083f06bd29e9314e02fd0c2271f0f11612bc2844390f7084c8680ad7f020a1d1",
+    "validation/emoji_steering_specificity_expansion_analysis_v0/design_preflight.json": "1621fd2362d630df642b13dbf47cf64759435f6887473d61f80ed6fc36697db8"
+  },
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "partial_model_outputs_opened_at_freeze": 0,
+  "response_values_read_at_freeze": 0,
+  "schema_version": 1,
+  "source_protocol_id": "glyphprobe-emoji-steering-specificity-expansion-v0",
+  "status": "analysis_frozen_before_complete_run_scientific_open"
+}
