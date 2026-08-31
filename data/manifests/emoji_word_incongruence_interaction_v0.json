@@ -1,0 +1,49 @@
+{
+  "assets": {
+    "configs/emoji_word_incongruence_interaction_v0.yaml": "cd8d71dddfe293c7e502a3838946be090ad21a25745bab009d6f0d10683f0ba4",
+    "data/panels/emoji_word_incongruence_axes_v0.json": "c446e0750e3ee5635a17e28085f5ed0efb5e4f9129d36b3e2892b324d36dcbce",
+    "docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md": "6c34eac36aea0a099c5109f85692ea0fecfe4adee28f855daaf2ff8e8407576e",
+    "docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md": "1f345f7ae28844ea87eccd2118602056200e1653cb441b9275ce189c4acbcc53",
+    "scripts/analyze_emoji_word_incongruence_interaction_v0.py": "fd1e01e7f06fce6f53301ae0da8bf4e68ba2c39718fdb6c6ba652080ee55220a",
+    "scripts/emoji_word_incongruence_interaction_v0.py": "845064b11db027aaa7d943715af1a4f1b58a1176e0e9ff91b40af2087c73ac55",
+    "tests/test_analyze_emoji_word_incongruence_interaction_v0.py": "aceecda9656a893aafb0b7f5d82b7e25518bc320d1a5835c0cd30125fc988a2a",
+    "tests/test_emoji_word_incongruence_interaction_v0.py": "fafc0550b94cad0f407fa324f9c13f317bd7a1f1dabe1686b2020a5025c43805",
+    "validation/emoji_word_incongruence_interaction_v0/design_preflight.json": "29a34ed4dc1cf73ba4dba0cb156f61c7a81968974617e7021d78d4f48388a84d",
+    "validation/emoji_word_incongruence_interaction_v0/tokenizer_preflight.json": "e68a40571cc3271b74aae0034bb3eba3bfaea668373975405726a7223c9d164d"
+  },
+  "axis_ids": [
+    "temperature",
+    "affect",
+    "vertical_direction",
+    "day_cycle",
+    "evaluation",
+    "correctness",
+    "color",
+    "volume"
+  ],
+  "causal_claim_authorized": false,
+  "confirmatory_status": false,
+  "expected_counts": {
+    "cross_axis_null_rows": 49152,
+    "direction_catalog_rows": 768,
+    "emoji_main_rows": 16384,
+    "rows_per_model": 98368,
+    "rows_total": 393472,
+    "source_metric_rows": 2048,
+    "source_prompts": 1288,
+    "true_conflict_rows": 16384,
+    "word_main_rows": 16384,
+    "zero_rows": 64
+  },
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "olmo2_1b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "protocol_id": "glyphprobe-emoji-word-incongruence-interaction-v0",
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t15_model_forwards",
+  "tokenizer_preflight_sha256": "e68a40571cc3271b74aae0034bb3eba3bfaea668373975405726a7223c9d164d"
+}

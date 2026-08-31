@@ -1,0 +1,48 @@
+{
+  "final_token_groups_per_model": 8,
+  "model_forwards": 0,
+  "model_roles": [
+    "olmo2_1b_base_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16"
+  ],
+  "prompt_sequences_per_model": 1288,
+  "protocol_id": "glyphprobe-emoji-word-incongruence-interaction-v0",
+  "roles": {
+    "llama32_3b_base_bf16": {
+      "artifact_manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "maximum_token_count": 20,
+      "minimum_token_count": 10,
+      "ordered_prompt_sha256": "e986e1f71352fa8a07d8a52f9ddeb0419bc564df34303baf3605b854f2aac86d",
+      "ordered_token_ids_sha256": "d1295245677e9e3cc2f7c31795c8ef1f37656b840b7b7468aadf910896545bea",
+      "receipt_sha256": "06813826bd04539f4a213eb456390c0eb38cd60bdb900d357ac0c8773ea97754"
+    },
+    "olmo2_1b_base_bf16": {
+      "artifact_manifest_sha256": "d9274983828330b87d86c5b426978b2044df17faecabdee173c03abad3dd826f",
+      "maximum_token_count": 20,
+      "minimum_token_count": 10,
+      "ordered_prompt_sha256": "e986e1f71352fa8a07d8a52f9ddeb0419bc564df34303baf3605b854f2aac86d",
+      "ordered_token_ids_sha256": "d1295245677e9e3cc2f7c31795c8ef1f37656b840b7b7468aadf910896545bea",
+      "receipt_sha256": "2f9fc3d8e2f7fa1de85bd37d5116b478ce13c84c561ff7e245c9871e03c41190"
+    },
+    "qwen25_3b_base_bf16": {
+      "artifact_manifest_sha256": "cca372c88da20b8c1704fabdaae41919aa69319b2603ba73e222d261eaf8ad91",
+      "maximum_token_count": 18,
+      "minimum_token_count": 10,
+      "ordered_prompt_sha256": "e986e1f71352fa8a07d8a52f9ddeb0419bc564df34303baf3605b854f2aac86d",
+      "ordered_token_ids_sha256": "95847c282a70f7fd8e0aae2cfe4202f519d564bd87579cefc43141b531355af2",
+      "receipt_sha256": "986f4f01357a8e7aa157be6266d51fd023a588738939e9293da2ff5b77cafc90"
+    },
+    "qwen25_7b_base_bf16": {
+      "artifact_manifest_sha256": "bd8ef40517ce1e40d32874561f678de0412d5a840c4cc90ace07ac30aa41b7b9",
+      "maximum_token_count": 18,
+      "minimum_token_count": 10,
+      "ordered_prompt_sha256": "e986e1f71352fa8a07d8a52f9ddeb0419bc564df34303baf3605b854f2aac86d",
+      "ordered_token_ids_sha256": "95847c282a70f7fd8e0aae2cfe4202f519d564bd87579cefc43141b531355af2",
+      "receipt_sha256": "048ffbae59194848d3d101838df3a8d2871a7e01edf055575fc7ef63a4fda0fe"
+    }
+  },
+  "schema_version": 1,
+  "status": "all_tokenizer_preflights_pass_zero_model_forwards"
+}
