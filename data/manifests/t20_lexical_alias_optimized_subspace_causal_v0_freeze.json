@@ -1,0 +1,95 @@
+{
+  "claim_boundary": "T20-C is a conditionally admitted follow-up to the registered T19-C negative. It changes exactly five prespecified things relative to T19-C: the subspace may be learned by interchange optimization on the same source bank; three residual-stream sites join the six component sites; the decision endpoint is gated on the alias-retrieval component alone with a codepoint self-retrieval guard; the evaluation bank is 384 fresh atomic emoji with zero prior T19 or T20 forwards, read in four contexts; and every site carries a full-representation interchange ceiling as a positive control. Training reuses the frozen 128-item T19 causal-source bank. A positive result supports only bounded component-level causal contribution for this cell, rank, and endpoint. A negative result at a site whose ceiling passes bounds rank-8 interchange-learnable subspaces at that site; a negative result at a site whose ceiling fails is recorded as uncalibratable at this endpoint. The result cannot establish rendered-glyph perception, human meaning, a unique or complete circuit, tokenizer independence, pretraining novelty, architecture or model-population generality, a scale law, or natural-language behavior; behavioral endpoints are deliberately out of scope and remain with the T16-OSC record.",
+  "context_order": [
+    {
+      "carrier": "pipe",
+      "distance": 1
+    },
+    {
+      "carrier": "pipe",
+      "distance": 4
+    },
+    {
+      "carrier": "article_a",
+      "distance": 1
+    },
+    {
+      "carrier": "article_a",
+      "distance": 4
+    }
+  ],
+  "evaluation_model_forwards_at_freeze": 0,
+  "experiment_label": "T20-C",
+  "frozen_assets": {
+    "configs/t19_lexical_alias_unicode_control_v0.yaml": "7d1f25f4121bbf72880e447002fb0623c891d3bfc25e3329807fa925feadf3c4",
+    "configs/t20_lexical_alias_optimized_subspace_causal_v0.yaml": "72063eb564805bc846ec84f69209c8a9f13ca067363c3c5dbba7a40bf898fbe4",
+    "data/manifests/t19_lexical_alias_component_causal_v0_go.json": "1ac8d331f0ca2c40e9888857cd379d5c745f78a85c9c333fe33e7760cdba3df2",
+    "data/manifests/t19_lexical_alias_unicode_control_v0.json": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+    "data/manifests/t19_lexical_alias_unicode_control_v0_freeze.json": "5dbbe0ef746cc3a002b8916de647a1c16a1e9f76a3f31fd4a0b53966f9c212fc",
+    "data/manifests/t20_lexical_alias_optimized_subspace_causal_v0.json": "4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7",
+    "docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.ja.md": "e4d22bc803db99839cde8e2dfd370f708ee4a1bd744ff44477ad754d0b940fe5",
+    "docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md": "02285615e4a469552d5f31e3e8d5aaf42742c13489ef580b393f90cc9f13c454",
+    "scripts/t20_lexical_alias_optimized_subspace_causal_v0.py": "e71bb72e6f7b29ca714c78ffce05884f26816f561a49cf21451d3b595b798043",
+    "scripts/validate_t20_lexical_alias_optimized_subspace_causal_v0_result.py": "bb1000a5dfa4afc21fe1b473d676060f3eb6cacef30f1169f48f46bfcaecd2dd",
+    "tests/test_t20_lexical_alias_optimized_subspace_causal_v0.py": "0f1276ec5a7d0196de7355e0c0ed3b32246e45906ea50fecd6902a6aa2461c78",
+    "validation/t20_lexical_alias_optimized_subspace_causal_v0/design_preflight.json": "a377e3814960daa6c33be87d4afc45ed654502575607b1978955262c38cf4e5c",
+    "validation/t20_lexical_alias_optimized_subspace_causal_v0/tokenizer_preflight.json": "55e448eb3242b8695b001f43ed13dc21706016fff39dd0e6ebcc7536ab330884"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "primary_sites": [
+    {
+      "block_index": 21,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 24,
+      "site": "resid_out"
+    }
+  ],
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "selection_manifest_sha256": "4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7",
+  "site_order": [
+    {
+      "block_index": 21,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 24,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 27,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 21,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "source_model_forwards_at_freeze": 0,
+  "status": "t20_final_execution_freeze_zero_source_or_eval_forwards",
+  "subspace_rank": 8,
+  "t19_freeze_manifest_sha256": "5dbbe0ef746cc3a002b8916de647a1c16a1e9f76a3f31fd4a0b53966f9c212fc"
+}

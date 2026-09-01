@@ -1,0 +1,87 @@
+{
+  "causal_go_gate_open": false,
+  "constructions": [
+    "optimized_interchange",
+    "cross_covariance_svd",
+    "deflated_span_random"
+  ],
+  "context_order": [
+    {
+      "carrier": "pipe",
+      "distance": 1
+    },
+    {
+      "carrier": "pipe",
+      "distance": 4
+    },
+    {
+      "carrier": "article_a",
+      "distance": 1
+    },
+    {
+      "carrier": "article_a",
+      "distance": 4
+    }
+  ],
+  "evaluation_model_forwards": 0,
+  "fresh_eval_rows": 384,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_role": "llama32_3b_base_bf16",
+  "parent_protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "primary_sites": [
+    {
+      "block_index": 21,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 24,
+      "site": "resid_out"
+    }
+  ],
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "selection_sha256": "4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7",
+  "site_order": [
+    {
+      "block_index": 21,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 24,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 27,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 21,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "source_model_forwards": 0,
+  "source_rows": 128,
+  "status": "t20_design_pass_zero_source_or_eval_forwards",
+  "subspace_rank": 8
+}

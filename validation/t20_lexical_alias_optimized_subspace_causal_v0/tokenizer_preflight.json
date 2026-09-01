@@ -1,0 +1,159 @@
+{
+  "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+  "banks": {
+    "fresh_eval": {
+      "maximum_combined_tokens": 15,
+      "ordered_sequence_sha256": {
+        "combined__alias_label__article_a__d1": "b3f499bb3d89082ceb6983a95f4783e42a9dd6d9938eb7e0823431bcc0ee5d66",
+        "combined__alias_label__article_a__d4": "b3f499bb3d89082ceb6983a95f4783e42a9dd6d9938eb7e0823431bcc0ee5d66",
+        "combined__alias_label__pipe__d1": "4788d5b5ec30e6c6c072b3cfabcdbfd1b19d586a6254dd2c04e874dea224c415",
+        "combined__alias_label__pipe__d4": "4788d5b5ec30e6c6c072b3cfabcdbfd1b19d586a6254dd2c04e874dea224c415",
+        "combined__codepoint_literal__article_a__d1": "6ae55e95c4670adf10840b89069efe480dd2438b3737340c57f50b145704676b",
+        "combined__codepoint_literal__article_a__d4": "6ae55e95c4670adf10840b89069efe480dd2438b3737340c57f50b145704676b",
+        "combined__codepoint_literal__pipe__d1": "b85da98aa179014042d3ef58434bac02f3490f4104f01cdf3d717e76b144888e",
+        "combined__codepoint_literal__pipe__d4": "b85da98aa179014042d3ef58434bac02f3490f4104f01cdf3d717e76b144888e",
+        "combined__glyph__article_a__d1": "e6d8161b73d078036a0190b127585464cd60c98db3368bac899b26b14c0c5c84",
+        "combined__glyph__article_a__d4": "e6d8161b73d078036a0190b127585464cd60c98db3368bac899b26b14c0c5c84",
+        "combined__glyph__pipe__d1": "5f5c7604d52d429db62277aea2ed684469b3300ad0b32a53f0060a2543901121",
+        "combined__glyph__pipe__d4": "5f5c7604d52d429db62277aea2ed684469b3300ad0b32a53f0060a2543901121",
+        "raw__alias_label": "df03a1557f7ae4dec362a872e151569f9ed5865b301adc18e51f1eda2efc3cb0",
+        "raw__codepoint_literal": "b1223524427869b9b5ee18aa562c1a06458b784e0e72fd7586bb12244cbc2408",
+        "raw__glyph": "678fec74955a3b9864922446da33cc8865da74f2ce20544e4f5265055c25cdeb"
+      },
+      "rows": 384,
+      "views": [
+        "glyph",
+        "alias_label",
+        "codepoint_literal"
+      ]
+    },
+    "source": {
+      "maximum_combined_tokens": 15,
+      "ordered_sequence_sha256": {
+        "combined__alias_label__article_a__d1": "9780fbe00883e5e7eccc1c7d3230a967c9192ce118a710e7b913735defd2e3f8",
+        "combined__alias_label__article_a__d4": "9780fbe00883e5e7eccc1c7d3230a967c9192ce118a710e7b913735defd2e3f8",
+        "combined__alias_label__pipe__d1": "a43a1163dfa13893b9a68179fb2a9c4c32c6bed31eade2063ee657c2f439f26f",
+        "combined__alias_label__pipe__d4": "a43a1163dfa13893b9a68179fb2a9c4c32c6bed31eade2063ee657c2f439f26f",
+        "combined__codepoint_literal__article_a__d1": "7816cfabefae727ef61b0864f0183cf5121eb15cdd484a7c64a6f2aff4635275",
+        "combined__codepoint_literal__article_a__d4": "7816cfabefae727ef61b0864f0183cf5121eb15cdd484a7c64a6f2aff4635275",
+        "combined__codepoint_literal__pipe__d1": "da5b87c253fb513138fbc1ec655a8af0d225c4727522258eca2967918091b0f2",
+        "combined__codepoint_literal__pipe__d4": "da5b87c253fb513138fbc1ec655a8af0d225c4727522258eca2967918091b0f2",
+        "combined__glyph__article_a__d1": "e4cb6ca52be5fd968b278eda1f512677d9a11a6de40e2bcdb9cf6690278da1d7",
+        "combined__glyph__article_a__d4": "e4cb6ca52be5fd968b278eda1f512677d9a11a6de40e2bcdb9cf6690278da1d7",
+        "combined__glyph__pipe__d1": "d0e0a3bacb9da7e863d192b5bfadca2b9e6fd740fd958fe8393f4a7e37d75326",
+        "combined__glyph__pipe__d4": "d0e0a3bacb9da7e863d192b5bfadca2b9e6fd740fd958fe8393f4a7e37d75326",
+        "raw__alias_label": "c602fceeed3dbdd3f7997602d10f06b905040b29255a6fe94e71d11967007ce8",
+        "raw__codepoint_literal": "3448141468f5f7ab41568734fa47a515366018b01aae5c0bab0ce2e2b42ab3c7",
+        "raw__glyph": "c511868c0f6899983404df20350b748aca5193db378f7a48629b635f73270b70"
+      },
+      "rows": 128,
+      "views": [
+        "glyph",
+        "alias_label",
+        "codepoint_literal"
+      ]
+    }
+  },
+  "design_preflight": {
+    "causal_go_gate_open": false,
+    "constructions": [
+      "optimized_interchange",
+      "cross_covariance_svd",
+      "deflated_span_random"
+    ],
+    "context_order": [
+      {
+        "carrier": "pipe",
+        "distance": 1
+      },
+      {
+        "carrier": "pipe",
+        "distance": 4
+      },
+      {
+        "carrier": "article_a",
+        "distance": 1
+      },
+      {
+        "carrier": "article_a",
+        "distance": 4
+      }
+    ],
+    "evaluation_model_forwards": 0,
+    "fresh_eval_rows": 384,
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "model_role": "llama32_3b_base_bf16",
+    "parent_protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+    "primary_sites": [
+      {
+        "block_index": 21,
+        "site": "resid_out"
+      },
+      {
+        "block_index": 24,
+        "site": "resid_out"
+      }
+    ],
+    "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+    "schema_version": 1,
+    "selection_sha256": "4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7",
+    "site_order": [
+      {
+        "block_index": 21,
+        "site": "resid_out"
+      },
+      {
+        "block_index": 24,
+        "site": "resid_out"
+      },
+      {
+        "block_index": 27,
+        "site": "resid_out"
+      },
+      {
+        "block_index": 21,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 21,
+        "site": "mlp_out"
+      },
+      {
+        "block_index": 24,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 24,
+        "site": "mlp_out"
+      },
+      {
+        "block_index": 27,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 27,
+        "site": "mlp_out"
+      }
+    ],
+    "source_model_forwards": 0,
+    "source_rows": 128,
+    "status": "t20_design_pass_zero_source_or_eval_forwards",
+    "subspace_rank": 8
+  },
+  "evaluation_model_forwards": 0,
+  "frozen_model_revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_role": "llama32_3b_base_bf16",
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "source_model_forwards": 0,
+  "status": "t20_tokenizer_preflight_pass_zero_source_or_eval_forwards",
+  "tokenizer_asset_sha256": {
+    "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  },
+  "tokenizer_class": "PreTrainedTokenizerFast"
+}
