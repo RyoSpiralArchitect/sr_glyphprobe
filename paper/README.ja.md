@@ -2,7 +2,8 @@
 
 [English](README.md) | [凍結済み claim table](CLAIM_TABLE.ja.md)
 
-状態: **英語初稿をcompileして凍結済みであり、まだ投稿可能ではない**。
+状態: **匿名manuscriptとcompact evidence archiveをbuild・validate済み。
+OpenReview uploadは未実施**。
 
 原稿は NeurIPS 2026 の公式 double-blind workshop style を使い、
 Interpretability as a Science workshop の long paper 上限を目標にする。
@@ -17,8 +18,15 @@ contractを記録するもので、第二の論文ではない。
   asset。`checklist.tex`は公式questionを変えず、保守的なdraft answerを入れる。
 - `scripts/build_figures.py`: compactかつ検証済みのT19 JSON summaryから図を
   決定論的に生成するscript。
+- `scripts/build_anonymous_artifact.py` と
+  `scripts/validate_anonymous_artifact.py`: whitelist-onlyで決定論的なarchive
+  builderと、integrity/identity境界の独立validator。
 - `figures/manifest.json`: 図と同時に生成する入力・出力SHA-256 receipt。
+- `ASSET_LICENSES.*`、`COMPUTE_REPORT.*`、`ETHICS_REVIEW.*`: 日英対の
+  submission audit。
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compile済みreview PDF。
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip`: standaloneな
+  匿名compact artifact。隣にreceiptとSHA-256を置く。
 
 公式formatting archiveは
 `https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip`
@@ -32,9 +40,13 @@ repository rootから実行する。
 
 ```bash
 python3 paper/scripts/build_figures.py
-tectonic -X compile --outdir "$PWD/paper/build" --outfmt pdf \
+SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
+  --outdir "$PWD/paper/build" --outfmt pdf \
   --keep-logs --keep-intermediates --untrusted "$PWD/paper/main.tex"
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
+python3 paper/scripts/build_anonymous_artifact.py
+python3 paper/scripts/validate_anonymous_artifact.py \
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip
 ```
 
 TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCodexの
@@ -45,17 +57,23 @@ TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCod
 
 ## 凍結した初稿のclaim境界
 
-論文の中心は解離である。raw atomic emojiは、9つすべての凍結済み
+論文は異なるgateを持つ二つの結果を報告する。raw atomic emojiは、9つすべての凍結済み
 model/tokenizer cellで、literal codepoint stringより語彙的に非重複なCLDR
 keyword aliasをよくretrieveした。これは4 viewのtoken countを完全一致させた
 解析でも成立した。一方、一つのLlama 3.2 3B cellで事前登録したrank-8の後期
-component testでは、未使用の評価emoji 192件に対し、jointに必要かつ十分な
-primary `attn_out` / `mlp_out` siteは見つからなかった。
+component testでは、T19-Lからhold outした評価emoji 192件に対し、jointに必要かつ
+十分なprimary `attn_out` / `mlp_out` siteは見つからなかった。表層はT19以前の
+研究に現れた可能性がある。
 
 これはtext-only Unicode入力における限定的な語彙対応を支持する。rendered
 glyph知覚、人間的な同義語理解、token identity matching、tokenizer非依存性、
 pretraining novelty、普遍manifold、完全な回路、scale lawは示さない。許可・除外
 する記述は[CLAIM_TABLE.ja.md](CLAIM_TABLE.ja.md)に凍結した。
+
+原稿では、`T19-L`を語彙観察arm、`T19-C`を条件付きcomponent因果armとして初出時に
+定義した。Appendix Aには、初期steering screenからT18までの探索→確認の短い経路を
+追加した。過去の探索結果と確認失敗は、現在のcontrolが必要になった理由を説明するが、
+T19-Lの証拠分母へは加えない。
 
 ## 図のchart contract
 
@@ -80,7 +98,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 
 - **問い:** alias-minus-codepoint top-1は、unrestrictedとtoken-count matchedの
   両方で、すべての凍結cellにおいて正か。
-- **Takeaway:** 9 cellすべてが正で、事前登録した0.02の実用floorを超えたが、
+- **Takeaway:** 9 cellすべてが正で、登録済み0.02 effect-size floorを超えたが、
   大きさは不均一である。
 - **Family / sufficiency:** paired horizontal dot plot。9 model categoryでcell単位の
   exact comparisonに十分である。
@@ -120,11 +138,16 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
   `causal_site_results.json`へ照合し、zero / 0.02 referenceを表示し、primary site
   の強調を検査する。
 
-## Draft v0で見えている投稿gap
+## 残るsubmission境界
 
-- anonymous artifactに関する記述をdouble-blind archiveへ置き換えるか、未提供の
-  理由を明記する。
-- 現在のchecklistに明示した`No` / `N/A`のsubmission gapを解消する。
-- manuscript中の全数値をcompact receiptへ独立照合する。
+- reproducibility、open access、compute checklistは`No`のまま。compact artifactは
+  model-dependent raw arrayと完全なintervention ledgerを含まず、T19 acquisitionの
+  duration/peak memoryもreceipt-boundでない。
 - double-blind copyの凍結後にだけauthor listとacknowledgmentsを確定する。
 - OpenReview recordを検証できるだけ早くuploadする。
+
+Data/codeのopen accessへの回答は、**N/AではなくNo**である。公式checklistで
+N/Aが許されるのは、codeを要する実験を含まないpaperである。査読後の公開予定だけでは
+submission時点の回答は変わらない。新archiveは匿名compact auditとdocumentation gapを
+閉じたが、exact raw replayまでは閉じていない。License、ethics、new-asset documentation、
+保守的なLLM-assistance declarationは完了した。

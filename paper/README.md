@@ -2,7 +2,8 @@
 
 [Japanese](README.ja.md) | [Frozen claim table](CLAIM_TABLE.md)
 
-Status: **first English manuscript draft compiled and frozen; not submission-ready**.
+Status: **anonymous manuscript and compact evidence archive built and
+validated; OpenReview upload not performed**.
 
 The manuscript uses the official NeurIPS 2026 double-blind workshop style and
 targets the long-paper limit for the Interpretability as a Science workshop.
@@ -19,9 +20,16 @@ second manuscript.
   official questions unchanged.
 - `scripts/build_figures.py`: deterministic figure builder from compact,
   validated T19 JSON summaries.
+- `scripts/build_anonymous_artifact.py` and
+  `scripts/validate_anonymous_artifact.py`: whitelist-only deterministic
+  archive builder and independent integrity/identity-boundary validator.
 - `figures/manifest.json`: input and output SHA-256 receipts generated with the
   figures.
+- `ASSET_LICENSES.*`, `COMPUTE_REPORT.*`, and `ETHICS_REVIEW.*`: paired
+  English/Japanese submission audits.
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compiled review PDF.
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip`: standalone
+  anonymous compact artifact, with adjacent receipt and SHA-256.
 
 The official formatting archive was downloaded from
 `https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip`.
@@ -36,9 +44,13 @@ From the repository root:
 
 ```bash
 python3 paper/scripts/build_figures.py
-tectonic -X compile --outdir "$PWD/paper/build" --outfmt pdf \
+SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
+  --outdir "$PWD/paper/build" --outfmt pdf \
   --keep-logs --keep-intermediates --untrusted "$PWD/paper/main.tex"
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
+python3 paper/scripts/build_anonymous_artifact.py
+python3 paper/scripts/validate_anonymous_artifact.py \
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip
 ```
 
 Tectonic runs the BibTeX pass automatically. The Codex `latex-compile` helper
@@ -50,18 +62,25 @@ after citation, page-count, text-extraction, and rendered-page checks.
 
 ## Frozen first-draft claim boundary
 
-The paper leads with a dissociation. Raw atomic emoji retrieve lexically
+The paper reports two differently gated results. Raw atomic emoji retrieve lexically
 disjoint CLDR keyword aliases better than literal codepoint strings across all
 nine frozen model/tokenizer cells, including exact four-view token-count
 matching. A preregistered rank-8 late-component test in one Llama 3.2 3B cell
 then finds no primary `attn_out` or `mlp_out` site that is jointly necessary
-and sufficient on 192 untouched evaluation emoji.
+and sufficient on 192 evaluation emoji held out from T19-L. Their surfaces may
+have appeared in studies before T19.
 
 This supports bounded lexical correspondence under text-only Unicode inputs.
 It does not establish rendered-glyph perception, human synonym understanding,
 token-identity matching, tokenizer independence, pretraining novelty, a
 universal manifold, a complete circuit, or a scale law. The auditable allowed
 and excluded statements are frozen in [CLAIM_TABLE.md](CLAIM_TABLE.md).
+
+The manuscript now defines `T19-L` at first use as the lexical observational
+arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
+short exploration-to-confirmation lineage from the early steering screen
+through T18. Earlier exploratory and failed-confirmation results explain why
+the final controls exist; they are not added to the T19-L evidence denominator.
 
 ## Figure chart contracts
 
@@ -88,8 +107,8 @@ encoding, output, and QA obligation before rendering.
 
 - **Question:** Is alias-minus-codepoint top-1 positive in every frozen cell,
   both unrestricted and token-count matched?
-- **Takeaway:** all nine cells are positive and exceed the preregistered 0.02
-  practical floor, with heterogeneous magnitudes.
+- **Takeaway:** all nine cells are positive and exceed the registered 0.02
+  effect-size floor, with heterogeneous magnitudes.
 - **Family / sufficiency:** paired horizontal dot plot; nine model categories
   are sufficient for exact cell-level comparison.
 - **Renderer / encoding:** static Matplotlib; blue filled circles for
@@ -130,12 +149,19 @@ encoding, output, and QA obligation before rendering.
   intervals against `causal_site_results.json`, display zero and 0.02
   references, and inspect the primary-site emphasis.
 
-## Submission gaps visible in draft v0
+## Remaining submission boundary
 
-- replace anonymous artifact prose with a double-blind archive or explicitly
-  state why it is unavailable;
-- resolve the current checklist's explicit `No` / `N/A` submission gaps;
-- independently review all manuscript numbers against the compact receipts;
+- the reproducibility, open-access, and compute checklist answers remain
+  `No`: the compact artifact omits model-dependent raw arrays and the full
+  intervention ledger, and T19 acquisition duration/peak memory were not
+  receipt-bound;
 - resolve author list and acknowledgments only after the double-blind copy is
   frozen;
 - upload early enough to verify the OpenReview record.
+
+The paper answers **No**, not **N/A**, to open access to data and code. The
+official checklist reserves N/A for papers without experiments requiring
+code. The new archive closes the anonymous compact-audit and documentation
+gaps, but not exact raw replay. A planned full public release after review does
+not change the submission-time answer. License, ethics, new-asset
+documentation, and conservative LLM-assistance declaration are now complete.

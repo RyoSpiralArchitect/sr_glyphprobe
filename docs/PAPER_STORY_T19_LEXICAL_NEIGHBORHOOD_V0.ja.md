@@ -1,23 +1,29 @@
 # T19 論文ストーリー：広い語彙readoutと、単純な後半mediatorの不在
 
-[English](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [初稿論文](../paper/README.ja.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18までのストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)
+[English](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [原稿package](../paper/README.ja.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18までのストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)
 
-状態: **paper spineとclaim tableをmanuscript draft v0向けに凍結済み。初稿はまだ投稿可能ではない**。
+状態: **paper spineとclaim tableを凍結し、匿名compact artifactとfresh-eyes reviewを完了。
+OpenReview uploadは未実施**。
+
+Draft v0では`T19-L`と`T19-C`を初出時に定義した。Appendix Aには、初期steering・
+tokenization screenからT18までの短い意思決定経路を置き、探索、確認失敗、T19 primaryの
+証拠を混ぜずに示す。
 
 ## タイトル候補
 
-> **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
+> **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
 
 ## 一文で言う貢献
 
 Atomic emojiは、語彙的に重ならないCLDR keyword aliasをliteral codepointよりよく
 取り出し、その差は四viewのtoken数を完全一致させても九つの凍結model/tokenizer cell
-すべてで残った。一方、未使用emoji 192項目に対する事前登録済みrank 8の
-`attn_out`/`mlp_out`介入では、必要かつ十分なprimary siteは見つからなかった。
+すべてで残った。一方、T19-Lからhold outしたemoji 192項目に対する事前登録済みrank 8の
+`attn_out`/`mlp_out`介入では、必要かつ十分なprimary siteは見つからなかった。表層は
+T19以前の研究に現れた可能性がある。
 
 観察の陽性と因果の陰性を、一つの結果として扱う。この論文は「emojiには意味vectorがある」
-という話ではない。広く再現する語彙readoutは存在するが、最も単純な疎な後半component説明は
-通らない、という制御されたdissociationである。
+という話ではない。異なるgateを持つ二つのarmは、広く再現する語彙readoutを示す一方、
+事前登録した疎な後半component説明を支持しない。
 
 ## T19がT18のストーリーをどう変えるか
 
@@ -37,13 +43,13 @@ emojiだけの能力を登録済み推論で証明したものではない。
 ### 1. 確認された語彙の広がり
 
 `r = 3 of 4`のcore primaryは`p = 0.0027`で通過し、coreは4/4陽性だった。
-さらに九cellすべてがtokenizationの両componentと実用下限を通った。独立実装は36本の
+さらに九cellすべてがtokenizationの両componentと登録済みeffect-size下限を通った。独立実装は36本の
 randomization testとrawからsummaryまでの証拠chainを再構築した。
 
 これが論文で最も強い新しい主張である。固定した文字列入力とretrieval endpointの下で、
 atomic emojiは一つの正式名だけでなく、より広い語彙近傍のkeyになる。
 
-### 2. 範囲を限定したemoji–symbol dissociation
+### 2. 範囲を限定したemoji–symbol contrast
 
 モデル平均では、emojiのalias効果はsymbol平均の約4〜7倍だった。倍率はcomponentによって変わる。
 正式名は、とくにsymbolでaliasより強かった。観察結果は次のような段階を示す。

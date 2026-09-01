@@ -4,13 +4,14 @@
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
-状態: 著者匿名の初稿を12ページのreview PDFとしてcompile済みである（結論まで7ページ、
-続いてreferences、appendix、checklist）。[論文package](../paper/README.ja.md)、
+状態: 著者匿名のmanuscriptを14ページのreview PDFとしてcompile済みである（結論まで8ページ、
+続いてreferences、appendix、checklist）。compact匿名artifactもbuild・validate済みで、
+OpenReview uploadが残る。[論文package](../paper/README.ja.md)、
 [凍結claim table](../paper/CLAIM_TABLE.ja.md)、[review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf)を参照する。
 
 ## 仮題
 
-**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
+**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
 
 回路発見ではなく、行動上の読み出しと因果実装が分かれた点を中心に置く。Sufficiencyが
 通らなかった結果を、特定の分散回路を発見した証拠へ読み替えない。
@@ -23,10 +24,10 @@ long paperは9ページまでで、referencesとappendixはページ数に含ま
 long paperとし、証拠を伴う物語を時間内に綺麗に編集できない場合は5ページ版をfallbackにする。
 
 科学的な実行の背骨はT19-LとT19-Cまで完了した。Draft v0ではclaim tableをfreezeし、
-全figureを検証済みcompact summaryから生成した。残るcritical pathは、anonymousな
-checksum・omission archiveを完成し、保守的checklistで明示したgapを解消し、double-blind検査と
-fresh-eyes reviewを終え、OpenReview上の登録を確認できる余裕を残してuploadすることである。
-T19-Cの適応的な追加site探索は、このcritical pathに入れない。
+全figureを検証済みcompact summaryから生成した。anonymousなchecksum・omission archive、
+license/ethics audit、fresh-eyes reviewは完了した。残るcritical pathはOpenReviewへのuploadと
+record確認であり、exact raw replayとT19 acquisitionのtime/memoryはchecklist上の明示的gapとして
+残す。T19-Cの適応的な追加site探索は、このcritical pathに入れない。
 
 ## 現時点で守れる中心命題
 
@@ -34,8 +35,9 @@ T19-Cの適応的な追加site探索は、このcritical pathに入れない。
 codepointより、正式短名と語が重ならないCLDR keywordを、凍結した9つのmodel/tokenizer
 cellすべてでよく検索した。4-viewのtoken数完全一致解析でも同じだった。非emoji Unicode
 記号panelでは、正式名検索はより広く見える一方、alias効果は小さく不均一だった。続く
-登録済みrank 8後期component介入は、すべてのengineering controlを通過したうえで、未使用
-emoji 192件に対して必要かつ十分な一次`attn_out`または`mlp_out`部位を見つけなかった。
+登録済みrank 8後期component介入は、すべてのengineering controlを通過したうえで、T19-Lから
+hold outしたemoji 192件に対して必要かつ十分な一次`attn_out`または`mlp_out`部位を
+見つけなかった。表層はT19以前に現れた可能性がある。
 
 投稿用の詳しい物語、figureの背骨、許可・不許可claim table候補は
 [T19論文ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)にまとめた。T16〜T18は

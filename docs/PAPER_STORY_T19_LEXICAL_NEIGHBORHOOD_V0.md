@@ -1,25 +1,31 @@
 # T19 paper story: broad lexical readout, no simple late mediator
 
-[日本語](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [First-draft paper](../paper/README.md) · [T19 results](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [Frozen protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 precursor](PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
+[日本語](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [Manuscript package](../paper/README.md) · [T19 results](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [Frozen protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 precursor](PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
 
-Status: **paper spine and claim table frozen for manuscript draft v0; the draft is not yet submission-ready**.
+Status: **paper spine and claim table frozen; anonymous compact artifact and
+fresh-eyes review complete; OpenReview upload not performed**.
+
+Draft v0 now defines `T19-L` and `T19-C` at first use. Its Appendix A records
+the compact decision lineage from the early steering and tokenization screens
+through T18, while keeping exploratory, failed-confirmation, and T19 primary
+evidence separate.
 
 ## Candidate title
 
-> **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
+> **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
 
 ## One-sentence contribution
 
 Raw atomic emoji retrieved lexically disjoint CLDR keyword aliases better than
 literal codepoints in all nine frozen model/tokenizer cells after exact
 four-view token-count matching, yet a preregistered rank-8 `attn_out`/`mlp_out`
-intervention on 192 untouched emoji found no primary site that was both
-necessary and sufficient.
+intervention on 192 emoji held out from T19-L found no primary site that was
+both necessary and sufficient. Their surfaces may have appeared before T19.
 
 That positive observational result and negative causal result belong together.
-The paper is not “emoji have meaning vectors.” It is a controlled dissociation:
-a broad and repeatable lexical readout exists, but the simplest sparse late-
-component explanation does not.
+The paper is not “emoji have meaning vectors.” Its differently gated arms show
+a broad and repeatable lexical readout while providing no support for the
+preregistered sparse late-component explanation.
 
 ## Why T19 changes the T18 story
 
@@ -42,13 +48,13 @@ a specificity clue, not a registered proof of an emoji-only faculty.
 
 The `r = 3 of 4` core primary passed at `p = 0.0027`, with all four core cells
 positive. In fact, all nine cells passed both tokenization components and the
-practical floor. An independent implementation reconstructed all 36
+registered effect-size floor. An independent implementation reconstructed all 36
 randomization tests and the complete raw-to-summary evidence chain.
 
 This is the strongest new paper claim: under fixed text inputs and retrieval
 endpoints, atomic emoji index more than one exact name string.
 
-### 2. Bounded emoji–symbol dissociation
+### 2. Bounded emoji–symbol contrast
 
 Across models, the mean emoji alias effect was about four to seven times the
 symbol mean, depending on the component. Canonical names remained stronger

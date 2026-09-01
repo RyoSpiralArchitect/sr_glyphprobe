@@ -4,13 +4,14 @@
 
 ## Working title
 
-**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
+**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
 
-Status: the anonymous first draft is now compiled as a 12-page review PDF
-(seven pages through the conclusion, followed by references, appendices, and
-the checklist). See the [paper package](../paper/README.md), [frozen claim
+Status: the anonymous manuscript is compiled as a 14-page review PDF
+(eight pages through the conclusion, followed by references, appendices, and
+the checklist), and the compact anonymous artifact has been built and
+validated. OpenReview upload remains. See the [paper package](../paper/README.md), [frozen claim
 table](../paper/CLAIM_TABLE.md), and [review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf).
 
 ## InterpScience 2026 submission sprint
@@ -23,10 +24,11 @@ a fallback if the evidence-bearing narrative cannot be edited cleanly in time.
 
 The scientific execution spine is complete through T19-L and T19-C. Draft v0
 now freezes the claim table and generates every figure from validated compact
-summaries. The remaining critical path is to complete the anonymous
-checksum/omission archive, resolve the conservative checklist gaps, run the
-double-blind and fresh-eyes reviews, and upload early enough to verify the
-OpenReview record. No adaptive T19-C site search belongs on this critical path.
+summaries. The anonymous checksum/omission archive, license/ethics audit, and
+fresh-eyes review are complete. The remaining critical path is OpenReview
+upload and record verification; exact raw replay and T19 acquisition
+time/memory remain explicit checklist gaps. No adaptive T19-C site search
+belongs on this critical path.
 
 ## Proposed central claim
 
@@ -37,7 +39,8 @@ four-view token-count-matched analysis. A non-emoji Unicode-symbol panel bounds
 that breadth: canonical-name retrieval is broader, while symbol alias effects
 are smaller and heterogeneous. A preregistered rank-8 late-component test then
 passes every engineering control but finds no primary `attn_out` or `mlp_out`
-site that is jointly necessary and sufficient on 192 untouched emoji.
+site that is jointly necessary and sufficient on 192 emoji held out from
+T19-L; their surfaces may have appeared before T19.
 
 The detailed submission-ready narrative, figure spine, and candidate
 allowed/disallowed claim table now live in the [T19 paper
