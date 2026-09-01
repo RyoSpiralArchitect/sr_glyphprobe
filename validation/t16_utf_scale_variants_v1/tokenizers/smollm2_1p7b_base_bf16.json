@@ -1,0 +1,176 @@
+{
+  "artifact": {
+    "file_count": 10,
+    "files": {
+      ".gitattributes": {
+        "bytes": 1519,
+        "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+      },
+      "README.md": {
+        "bytes": 7201,
+        "sha256": "83c5404c1162e01c59e08fec9e8233b357ecf0ca3249e78f4b1ee13c5b3c320c"
+      },
+      "config.json": {
+        "bytes": 635,
+        "sha256": "33397f6af8090f7290f27ce6fb1cd23a95fd0915a5c648dfd10b6002aaf7fc48"
+      },
+      "generation_config.json": {
+        "bytes": 111,
+        "sha256": "2056c988e990b0d13670f63f2f3b87b3b6d07edaf7a3416998ba27dab2d8a059"
+      },
+      "merges.txt": {
+        "bytes": 466391,
+        "sha256": "0b54e8aa4e53d5383e2e4bc635a56b43f9647f7b13832d5d9ecd8f82dac4f510"
+      },
+      "model.safetensors": {
+        "bytes": 3422777952,
+        "sha256": "1193528982f4ac0c0b707ce36fd7dc03a0ef6f3e1a432deb886dce2e90c300c0"
+      },
+      "special_tokens_map.json": {
+        "bytes": 831,
+        "sha256": "e786b595b9a23148bf1630df78d9037a048ea671e48bfd3549a1e3c233742bb3"
+      },
+      "tokenizer.json": {
+        "bytes": 2104556,
+        "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+      },
+      "tokenizer_config.json": {
+        "bytes": 3658,
+        "sha256": "4bb9af56a342753d39374f4016a16574cab299fe088e896f425ce3c433f61424"
+      },
+      "vocab.json": {
+        "bytes": 800662,
+        "sha256": "82b84012e3add4d01d12ba14442026e49b8cbbaead1f79ecf3d919784f82dc79"
+      }
+    },
+    "manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+    "total_bytes": 3426163516
+  },
+  "artifact_model_id": "HuggingFaceTB/SmolLM2-1.7B",
+  "chunks": {
+    "order_ascii_pipe": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "bd0ba2d07b873e3e06cd28f68cba90bda9a415d85080ab6943198d53b29d8a61",
+      "ordered_unique_token_ids_sha256": "87a72adb59c03f325084d6d598751f24ae0af226b9aaa6121fd5f754262a9e15",
+      "record_token_counts_sha256": "1ae32aea4e25fbebaf42e87f1a1ae234f42d9d90f62c3ed00d38622b8de0616a",
+      "record_token_multisets_sha256": "b2b05428bd7ff897f3d04b51b70dc90d808f45cbcf4eb355b479ff4677875068",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_ascii_space": {
+      "maximum_token_count": 2056,
+      "minimum_token_count": 29,
+      "ordered_unique_prompt_sha256": "159dd7fa3b7314f72efbebe51c1c1317aea7dd5b102b59581502b3b2bd2e5c6c",
+      "ordered_unique_token_ids_sha256": "a16d4fb8bed4ae1c08dc01cc88f499d22e31d409ee497670ac79f7a69e053bbb",
+      "record_token_counts_sha256": "9e59cda2bd5e04dd68962523b642375e6b6951be300d11a01b5527857863ac63",
+      "record_token_multisets_sha256": "41bbd6cb6da279f65b42877cc4bc2488aa3067ad3e641c9735ab1f6034879e53",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_comma_space": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "11c1af5a52f7d71da6a9f12c74b692dea1df9b2f57278fa46aec25bf4afd4542",
+      "ordered_unique_token_ids_sha256": "f41e2dfc33ef25a96c44dac05ad59f578df4fea3dfe0dbec4d6078526319ad5d",
+      "record_token_counts_sha256": "1ae32aea4e25fbebaf42e87f1a1ae234f42d9d90f62c3ed00d38622b8de0616a",
+      "record_token_multisets_sha256": "3b573a0684fc06a11a47e8bfae87bd54d95d0adc7b4856127d07986903053fc1",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_newline": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "ad5c45ff8c87af681bd94b41bc181b5cf62673e5462369989a1aae6e0a6a5621",
+      "ordered_unique_token_ids_sha256": "0c599e096858bd74265b62008e8696d37a09357188c3c9d68c2eb215b99f84b3",
+      "record_token_counts_sha256": "506a62e8bf1411c1aa8668e9d7c36ff6ac18b093d4c6803908c699402912b683",
+      "record_token_multisets_sha256": "7e52c612a4abd70419512f3298df428acd409a39dd519287ea859772039c5540",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_none": {
+      "maximum_token_count": 2056,
+      "minimum_token_count": 29,
+      "ordered_unique_prompt_sha256": "2f9ecf069db7e56ed31e173dfeb0dbd8e6709c0f88a2d95bbe4ba43f687ab23e",
+      "ordered_unique_token_ids_sha256": "838af02a6136478143d3313cea8dec602c93d2ade9cc2c9cf40de002a1048598",
+      "record_token_counts_sha256": "8c4421374e51b657bbd858d6a45efb7657779105a8383865890ef20ce3ca013b",
+      "record_token_multisets_sha256": "9b7d27d98af30771d189df1aa3c4994db0bb45c26d3c45458cee09889d24c06d",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "position_ascii_pipe": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "bff5c8551dc4a6e86c5e181ea32ce21c7d9d90a8a3c601a76af31a679d1b350d",
+      "ordered_unique_token_ids_sha256": "50aaff8b61762fe9c2426f0bed09b85edea3c72713153bcaf0435034b0908934",
+      "record_token_counts_sha256": "86fc90cf04cf8073ed5e8d7603c59f8e309b210812acf97e7e5c199060b35f86",
+      "record_token_multisets_sha256": "1da5b81920f5c1c5dcfb6016a52e148ad873c53b8d14cb224155f43008f8172d",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_ascii_space": {
+      "maximum_token_count": 2056,
+      "minimum_token_count": 29,
+      "ordered_unique_prompt_sha256": "a12fb713d4e1a9f06129f33406cd42c127bb8bdee9f474cbe53e2a5d93bcdea8",
+      "ordered_unique_token_ids_sha256": "d4c5aa4ea88dd79eb7d1a5d0d5fef95df722ea39bb04481eca3d4a22b2c6294d",
+      "record_token_counts_sha256": "a8f57c4bbfea7791bec48215af2ebdfe6ec6e528cc002276003dc88fa5636c59",
+      "record_token_multisets_sha256": "6fa45a64915916ebed337fdfa528504f2a5bab3866f04166f6d36b868e442d46",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_comma_space": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "c94a83c906fbbaf9000f19ed4007268432271cc01bbc6a2e39b3a3cb5e96c6c6",
+      "ordered_unique_token_ids_sha256": "506110b5392ff37bb7c10d837d2bbee8a53b3278c1633fbee677b6d83491ec3d",
+      "record_token_counts_sha256": "86fc90cf04cf8073ed5e8d7603c59f8e309b210812acf97e7e5c199060b35f86",
+      "record_token_multisets_sha256": "1e1361bfd47f8077f91f65d13952c9b9d63ef0639642ba1f07dfc4197eb8d15c",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_newline": {
+      "maximum_token_count": 2311,
+      "minimum_token_count": 36,
+      "ordered_unique_prompt_sha256": "566057badb92a79f6d00722bec7028d48244906ccd1bf6025a71ed2014bc9b5a",
+      "ordered_unique_token_ids_sha256": "1a2b6a3d92795676069d14cf487e4b5100d77ce172a38045fbd78655a8182e3a",
+      "record_token_counts_sha256": "aea9c9b54efc9ad0c4a0d886f87c996247be008359fca284cbe0883c452a440a",
+      "record_token_multisets_sha256": "5b8e6e41db9886b757d87bf1d1a822a269e918134adb2fb65221766d34527627",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_none": {
+      "maximum_token_count": 2056,
+      "minimum_token_count": 29,
+      "ordered_unique_prompt_sha256": "e2f04c7f18e1f4bba14c28d8a9f946e82a736adf4d9ff28f33d174db3055e4fc",
+      "ordered_unique_token_ids_sha256": "46b656e7cec9b14fa4505aad2eaa81aec7013327a5005d4ed3cfeb09fdd10dbb",
+      "record_token_counts_sha256": "4ac2a7d6f4b015c1d8bdc66171b2bd57d59fc14387321ccfe1393f255b9afbed",
+      "record_token_multisets_sha256": "5a9de805961afd49714c86a9111dec3f435ca5bf58de58a6c97e5381f488bce9",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "scale": {
+      "maximum_token_count": 4008,
+      "minimum_token_count": 8,
+      "ordered_unique_prompt_sha256": "ddfd1f5b93845e154e474a6c404c748a9a86608e3fcf1d756e93c7fc30e99d74",
+      "ordered_unique_token_ids_sha256": "90d2983b6f8d659c5a1bc4b225b4071c16e37eced87b1cbbcebf12a92ceff315",
+      "record_token_counts_sha256": "c8307d9faabdece511d0049b84a45310d2ff3ad034c2ef6bfe73667f550103cd",
+      "record_token_multisets_sha256": "8aea7dd9b38077b94b4e1d1cf692a9610ed4d8aaf1dd121312eabf7d1a80bd1d",
+      "records": 5472,
+      "unique_prompts": 5280
+    }
+  },
+  "hard_max_full_prompt_tokens": 8192,
+  "maximum_token_count": 4008,
+  "minimum_token_count": 8,
+  "model_context_candidates": [
+    8192
+  ],
+  "model_forwards": 0,
+  "model_role": "smollm2_1p7b_base_bf16",
+  "model_weights_loaded": false,
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+  "schema_version": 1,
+  "status": "tokenizer_preflight_pass_zero_x1_model_forwards",
+  "tokenizer_class": "GPT2Tokenizer"
+}

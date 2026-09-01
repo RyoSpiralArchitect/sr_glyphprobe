@@ -1,0 +1,180 @@
+{
+  "artifact": {
+    "file_count": 11,
+    "files": {
+      ".gitattributes": {
+        "bytes": 1570,
+        "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+      },
+      "README.md": {
+        "bytes": 29091,
+        "sha256": "bb52a3f239a1e7b24907644c29e51ff3159fcff5488333d75b1056ddfdd74950"
+      },
+      "config.json": {
+        "bytes": 838,
+        "sha256": "eacec6c5ca317a87ed2c46789d9705b9274db5027e7ba59da739bfae23addb55"
+      },
+      "generation_config.json": {
+        "bytes": 187,
+        "sha256": "a543a5d299bc2b20c52bd87ed174f561266510b57a392e12b5b5d758d798ce05"
+      },
+      "model-00001-of-00002.safetensors": {
+        "bytes": 4988025760,
+        "sha256": "532d792c9178805064170a3ec485b7dedbfccc6fd297b92c31a6091b6c7e41bf"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 240691728,
+        "sha256": "6d6d9ce84db398fb6e0191f91542e5da0a73da2cb695e172a24edc2146dc8d20"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 24223,
+        "sha256": "ada0043f3e3b2e5ab2f445cad9c0fbbf9d91ad444675e6a82b822591c63abf5a"
+      },
+      "special_tokens_map.json": {
+        "bytes": 636,
+        "sha256": "baec30ea10906f16adb8c18af7a34023002c1746542612b8b41c9f09e1351351"
+      },
+      "tokenizer.json": {
+        "bytes": 17525357,
+        "sha256": "3f289bc05132635a8bc7aca7aa21255efd5e18f3710f43e3cdb96bcd41be4922"
+      },
+      "tokenizer.model": {
+        "bytes": 4241003,
+        "sha256": "61a7b147390c64585d6c3543dd6fc636906c9af3865a5548f27f31aee1d4c8e2"
+      },
+      "tokenizer_config.json": {
+        "bytes": 46996,
+        "sha256": "cb32b7929c62608d46572e813112b3ad8a841fb98fdd6a4da8559e368a951c89"
+      }
+    },
+    "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+    "total_bytes": 5250587389
+  },
+  "artifact_model_id": "google/gemma-2-2b-it",
+  "chunks": {
+    "order_ascii_pipe": {
+      "maximum_token_count": 1286,
+      "minimum_token_count": 25,
+      "ordered_unique_prompt_sha256": "bd0ba2d07b873e3e06cd28f68cba90bda9a415d85080ab6943198d53b29d8a61",
+      "ordered_unique_token_ids_sha256": "936bcb6931a83fed871b7943c6b21d5e6b08be7ebb874c2ee14230bf801bff2d",
+      "record_token_counts_sha256": "a9eaf7fda2636dd266bce271c1b8e97f4623e780e8a464cf8d29d052a8cb0935",
+      "record_token_multisets_sha256": "053f76522e33b0714285644764f68a0d6bf151be16008935b952860ba16895d1",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_ascii_space": {
+      "maximum_token_count": 1031,
+      "minimum_token_count": 18,
+      "ordered_unique_prompt_sha256": "159dd7fa3b7314f72efbebe51c1c1317aea7dd5b102b59581502b3b2bd2e5c6c",
+      "ordered_unique_token_ids_sha256": "8b83891b707bab949fd5fff4ef9a2d412905472931e2b4234db842ebea6658fd",
+      "record_token_counts_sha256": "18f738794524f612e749ed3f98604b738ddad47fb02ea700f0ad6054e8973ece",
+      "record_token_multisets_sha256": "7d7a93b6e7820bec4a4dd3bc55c27d851103f94d9edd2113c547f1e5533a9c25",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_comma_space": {
+      "maximum_token_count": 1286,
+      "minimum_token_count": 25,
+      "ordered_unique_prompt_sha256": "11c1af5a52f7d71da6a9f12c74b692dea1df9b2f57278fa46aec25bf4afd4542",
+      "ordered_unique_token_ids_sha256": "4621512e913417d86c671cb1974ac4a3b631ebfeceec083e3e98cc6bf8085bf0",
+      "record_token_counts_sha256": "a9eaf7fda2636dd266bce271c1b8e97f4623e780e8a464cf8d29d052a8cb0935",
+      "record_token_multisets_sha256": "d205082c2238e4fc87e70bb4e982a00bb84d6134510f8a683efdac679942162d",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_newline": {
+      "maximum_token_count": 1031,
+      "minimum_token_count": 19,
+      "ordered_unique_prompt_sha256": "ad5c45ff8c87af681bd94b41bc181b5cf62673e5462369989a1aae6e0a6a5621",
+      "ordered_unique_token_ids_sha256": "5f5be02303f13cc4e1a4fce0dbd66e6ed248223f723708443cc77b8bf298f006",
+      "record_token_counts_sha256": "1c84182abbf7a9b3ec25f6ba30e879ad7e4f44640312e734cec64a5c1699f2c3",
+      "record_token_multisets_sha256": "2c5fd5efe933ca9aaef95a69cdadbab126615de613c996084cca1d9de06c090d",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "order_none": {
+      "maximum_token_count": 776,
+      "minimum_token_count": 11,
+      "ordered_unique_prompt_sha256": "2f9ecf069db7e56ed31e173dfeb0dbd8e6709c0f88a2d95bbe4ba43f687ab23e",
+      "ordered_unique_token_ids_sha256": "ed6c431eab124bb36e69edffb47629db80004d5fbe6b688b8e947df06af97ffc",
+      "record_token_counts_sha256": "f6861c487782ff41307f649ae1dc3ee414ac8b6e84ae31a966375e5273f7e971",
+      "record_token_multisets_sha256": "edbf0eacdcc8a64f8e2c199fcbb45b221ac72cc50cad67533e75ea5e0349e8d6",
+      "records": 6912,
+      "unique_prompts": 6912
+    },
+    "position_ascii_pipe": {
+      "maximum_token_count": 1286,
+      "minimum_token_count": 24,
+      "ordered_unique_prompt_sha256": "bff5c8551dc4a6e86c5e181ea32ce21c7d9d90a8a3c601a76af31a679d1b350d",
+      "ordered_unique_token_ids_sha256": "c7f70e28745c0897e8b36d5d3ab1725829f233d5ee509c1f6a36fdea8dd3624c",
+      "record_token_counts_sha256": "a0a9b698a92e872d6c2f7d99d2b8a8780fdd785c83b05441b5616116d33f28b8",
+      "record_token_multisets_sha256": "22005fda22f9893e79d313e39559c53e1c3d961536259556f6c43d6c0874a365",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_ascii_space": {
+      "maximum_token_count": 1031,
+      "minimum_token_count": 17,
+      "ordered_unique_prompt_sha256": "a12fb713d4e1a9f06129f33406cd42c127bb8bdee9f474cbe53e2a5d93bcdea8",
+      "ordered_unique_token_ids_sha256": "1a5457fddc6cbca3b81e8c8b308dd750dbb92b77685640c2ce1a49d912577207",
+      "record_token_counts_sha256": "f347ee241b5e6466cc0d410613442e04780dd0871a09ae82a412266122fda8bb",
+      "record_token_multisets_sha256": "01a6d8c0b6a359606ed968c18d517a9a2f9f46e6bbc674094efa8a2e24f5b6b1",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_comma_space": {
+      "maximum_token_count": 1286,
+      "minimum_token_count": 24,
+      "ordered_unique_prompt_sha256": "c94a83c906fbbaf9000f19ed4007268432271cc01bbc6a2e39b3a3cb5e96c6c6",
+      "ordered_unique_token_ids_sha256": "75d0852e22ce8e4f27cf4cc095a6465714c7e69eb9626c635eedc8a8126ef90d",
+      "record_token_counts_sha256": "a0a9b698a92e872d6c2f7d99d2b8a8780fdd785c83b05441b5616116d33f28b8",
+      "record_token_multisets_sha256": "a97bdee78a6eef86e927dd82b3368d0cd883a4f06cf7fb86f2946b5edac5805a",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_newline": {
+      "maximum_token_count": 1031,
+      "minimum_token_count": 19,
+      "ordered_unique_prompt_sha256": "566057badb92a79f6d00722bec7028d48244906ccd1bf6025a71ed2014bc9b5a",
+      "ordered_unique_token_ids_sha256": "4438ece11d67e4ea2f29ee482f907b4e0a9876da48a1d4dcdfce837fb6d30973",
+      "record_token_counts_sha256": "d19f9d6d297479382f55ed251d7ce677f4be7c8f2810b21ed18231bafcaceb6f",
+      "record_token_multisets_sha256": "6ad626a5fe7d4d26150f31a1ef46e82e8f7aac533da150913d05390e1c5572ca",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "position_none": {
+      "maximum_token_count": 776,
+      "minimum_token_count": 12,
+      "ordered_unique_prompt_sha256": "e2f04c7f18e1f4bba14c28d8a9f946e82a736adf4d9ff28f33d174db3055e4fc",
+      "ordered_unique_token_ids_sha256": "0705eb68b4b14a1fb73854db1ef26d6cc14b7bf5878de1193828eedc0a8c27d1",
+      "record_token_counts_sha256": "0046e4feaa9486b4077c69a6d01b262b5ce67ef800abbe962ec0db404c3da1bc",
+      "record_token_multisets_sha256": "b712aadee46d0db031c712e4071e1901b7f211bbe5894618232c3a01d3491057",
+      "records": 3456,
+      "unique_prompts": 3456
+    },
+    "scale": {
+      "maximum_token_count": 1508,
+      "minimum_token_count": 5,
+      "ordered_unique_prompt_sha256": "ddfd1f5b93845e154e474a6c404c748a9a86608e3fcf1d756e93c7fc30e99d74",
+      "ordered_unique_token_ids_sha256": "1229c0585bd0ad837a4a1e4124f6d15cfa5434f739ddb633e0941df9546acd72",
+      "record_token_counts_sha256": "a3b5b078a88d3e528ba91bf7b74044e7e9136e390bd440c3edc99ffd77f011b3",
+      "record_token_multisets_sha256": "147036d9fa7b863078694a5600e0b22f32c4e308a0c4598045ae123e4e1a7b30",
+      "records": 5472,
+      "unique_prompts": 5280
+    }
+  },
+  "hard_max_full_prompt_tokens": 8192,
+  "maximum_token_count": 1508,
+  "minimum_token_count": 5,
+  "model_context_candidates": [
+    8192
+  ],
+  "model_forwards": 0,
+  "model_role": "gemma2_2b_it_bf16",
+  "model_weights_loaded": false,
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+  "schema_version": 1,
+  "status": "tokenizer_preflight_pass_zero_x1_model_forwards",
+  "tokenizer_class": "GemmaTokenizer"
+}
