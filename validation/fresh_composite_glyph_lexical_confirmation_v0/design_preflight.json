@@ -1,0 +1,177 @@
+{
+  "core_roles": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "exact_surface_holdout": true,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_forwards": 0,
+  "model_forwards_per_role": 1536,
+  "model_forwards_total": 13824,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "normalized_depth_fractions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "pretraining_or_semantic_holdout": false,
+  "primary_normalized_depth_fractions": [
+    0.75,
+    0.875,
+    1.0
+  ],
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "readout_vectors_per_role": 55296,
+  "readout_vectors_total": 497664,
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "selection": {
+    "exact_surface_fresh_relative_to_frozen_tree": true,
+    "items": 192,
+    "model_forward_calls": 0,
+    "outside_complete_t11_selection": true,
+    "selection_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+    "status": "pass",
+    "system_counts": {
+      "modifier": 64,
+      "regional_flag": 32,
+      "zwj": 96
+    }
+  },
+  "source_hashes": {
+    "data/manifests/glyph_system_decomposition_selection_v0.json": "7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "validation/glyph_name_depth_trajectory_v0/results/analysis.json": "ed615103d85608893caf207c856a01922a4e744c6f9713f0293aa223bf8139e4"
+  },
+  "status": "design_pass_zero_t18_model_forwards",
+  "systems": [
+    "modifier",
+    "zwj",
+    "regional_flag"
+  ],
+  "views": [
+    "glyph",
+    "english_short_name",
+    "japanese_short_name",
+    "codepoint_literal"
+  ]
+}

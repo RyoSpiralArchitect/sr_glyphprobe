@@ -1,0 +1,6548 @@
+{
+  "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "exact_frozen_model_runtime_revalidation_required": true,
+  "frozen_model_revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_forward_calls": 0,
+  "model_role": "mistral7b_instruct_v03_bf16",
+  "model_weights_loaded": false,
+  "preflight_snapshot_basename": "a4b8f870474b0eb527f466a03fbc187830d271f5",
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "schema_version": 1,
+  "selection_manifest_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+  "status": "tokenizer_only_candidate_preflight_pass_zero_t18_model_forwards",
+  "t10_reference_surface_receipt_sha256": "8e7f5f596075db8e11e507b7ff4b1891112bda10caa9e507d8446a12c5677019",
+  "t10_reference_surface_sequence_equivalence": true,
+  "tokenizer": {
+    "carriers": {
+      "article_a": {
+        "decode_exact_count": 768,
+        "prefix_exact_count": 768,
+        "repeats": 8,
+        "token_id": 1032,
+        "unit": " a"
+      },
+      "pipe": {
+        "decode_exact_count": 768,
+        "prefix_exact_count": 768,
+        "repeats": 8,
+        "token_id": 1110,
+        "unit": " |"
+      }
+    },
+    "item_count": 192,
+    "item_token_counts": [
+      {
+        "codepoint": "1F636 200D 1F32B FE0F",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 0,
+        "japanese_short_name_token_count": 8,
+        "source_index": 42,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 3,
+          "glyph": 11,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F635 200D 1F4AB",
+        "codepoint_literal_token_count": 19,
+        "english_short_name_token_count": 5,
+        "glyph_system": "zwj",
+        "glyph_token_count": 10,
+        "item_index": 1,
+        "japanese_short_name_token_count": 9,
+        "source_index": 68,
+        "token_counts": {
+          "codepoint_literal": 19,
+          "english_short_name": 5,
+          "glyph": 10,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "2764 FE0F 200D 1FA79",
+        "codepoint_literal_token_count": 23,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 2,
+        "japanese_short_name_token_count": 14,
+        "source_index": 143,
+        "token_counts": {
+          "codepoint_literal": 23,
+          "english_short_name": 3,
+          "glyph": 8,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F441 FE0F 200D 1F5E8 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 4,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 3,
+        "japanese_short_name_token_count": 9,
+        "source_index": 166,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 4,
+          "glyph": 12,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F44B 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 4,
+        "japanese_short_name_token_count": 17,
+        "source_index": 175,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F91A 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 5,
+        "japanese_short_name_token_count": 13,
+        "source_index": 180,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F590 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 12,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 6,
+        "japanese_short_name_token_count": 17,
+        "source_index": 187,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 12,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "270B 1F3FE",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 5,
+        "item_index": 7,
+        "japanese_short_name_token_count": 17,
+        "source_index": 193,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 8,
+          "glyph": 5,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F596 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 8,
+        "japanese_short_name_token_count": 22,
+        "source_index": 196,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F90C 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 9,
+        "japanese_short_name_token_count": 24,
+        "source_index": 245,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 24
+        }
+      },
+      {
+        "codepoint": "270C 1F3FE",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 3,
+        "item_index": 10,
+        "japanese_short_name_token_count": 16,
+        "source_index": 259,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 8,
+          "glyph": 3,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F91E 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 11,
+        "japanese_short_name_token_count": 16,
+        "source_index": 262,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F91F 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 12,
+        "japanese_short_name_token_count": 16,
+        "source_index": 276,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F448 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 13,
+        "japanese_short_name_token_count": 15,
+        "source_index": 296,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F449 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 3,
+        "item_index": 14,
+        "japanese_short_name_token_count": 14,
+        "source_index": 300,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 3,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F446 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 15,
+        "japanese_short_name_token_count": 17,
+        "source_index": 306,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F595 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 16,
+        "japanese_short_name_token_count": 18,
+        "source_index": 311,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F447 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 11,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 17,
+        "japanese_short_name_token_count": 17,
+        "source_index": 317,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 11,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F44E 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 18,
+        "japanese_short_name_token_count": 19,
+        "source_index": 341,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "270A 1F3FE",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 5,
+        "item_index": 19,
+        "japanese_short_name_token_count": 17,
+        "source_index": 349,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 8,
+          "glyph": 5,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F91B 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 20,
+        "japanese_short_name_token_count": 20,
+        "source_index": 358,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F91C 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 21,
+        "japanese_short_name_token_count": 20,
+        "source_index": 364,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F44F 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 3,
+        "item_index": 22,
+        "japanese_short_name_token_count": 13,
+        "source_index": 370,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 3,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F64C 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 3,
+        "item_index": 23,
+        "japanese_short_name_token_count": 15,
+        "source_index": 376,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 3,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F450 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 24,
+        "japanese_short_name_token_count": 20,
+        "source_index": 389,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F932 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 10,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 25,
+        "japanese_short_name_token_count": 27,
+        "source_index": 395,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 27
+        }
+      },
+      {
+        "codepoint": "1F64F 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 26,
+        "japanese_short_name_token_count": 15,
+        "source_index": 430,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 6,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "270D 1F3FD",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 5,
+        "item_index": 27,
+        "japanese_short_name_token_count": 16,
+        "source_index": 434,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 6,
+          "glyph": 5,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F485 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 28,
+        "japanese_short_name_token_count": 22,
+        "source_index": 442,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F933 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 29,
+        "japanese_short_name_token_count": 16,
+        "source_index": 448,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F4AA 1F3FB",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 3,
+        "item_index": 30,
+        "japanese_short_name_token_count": 16,
+        "source_index": 450,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 9,
+          "glyph": 3,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9B5 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 31,
+        "japanese_short_name_token_count": 11,
+        "source_index": 460,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 6,
+          "japanese_short_name": 11
+        }
+      },
+      {
+        "codepoint": "1F9B6 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 32,
+        "japanese_short_name_token_count": 14,
+        "source_index": 465,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F442 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 33,
+        "japanese_short_name_token_count": 14,
+        "source_index": 474,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F443 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 34,
+        "japanese_short_name_token_count": 16,
+        "source_index": 485,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9D2 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 35,
+        "japanese_short_name_token_count": 13,
+        "source_index": 504,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 6,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F466 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 36,
+        "japanese_short_name_token_count": 13,
+        "source_index": 512,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 6,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F9D4 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 37,
+        "japanese_short_name_token_count": 17,
+        "source_index": 548,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9D4 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 38,
+        "japanese_short_name_token_count": 18,
+        "source_index": 552,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FC 200D 1F9B0",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 39,
+        "japanese_short_name_token_count": 18,
+        "source_index": 559,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 10,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FD 200D 1F9B1",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 40,
+        "japanese_short_name_token_count": 18,
+        "source_index": 566,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 9,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FD 200D 1F9B3",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 41,
+        "japanese_short_name_token_count": 17,
+        "source_index": 572,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 8,
+          "glyph": 11,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FE 200D 1F9B2",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 42,
+        "japanese_short_name_token_count": 19,
+        "source_index": 579,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 9,
+          "glyph": 11,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FC 200D 1F9B0",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 43,
+        "japanese_short_name_token_count": 18,
+        "source_index": 589,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 10,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FB 200D 1F9B0",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 44,
+        "japanese_short_name_token_count": 16,
+        "source_index": 594,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 8,
+          "glyph": 11,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FC 200D 1F9B3",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 45,
+        "japanese_short_name_token_count": 20,
+        "source_index": 619,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 10,
+          "glyph": 11,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F469 200D 1F9B2",
+        "codepoint_literal_token_count": 20,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 10,
+        "item_index": 46,
+        "japanese_short_name_token_count": 8,
+        "source_index": 623,
+        "token_counts": {
+          "codepoint_literal": 20,
+          "english_short_name": 3,
+          "glyph": 10,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FE 200D 1F9B2",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 47,
+        "japanese_short_name_token_count": 19,
+        "source_index": 633,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 9,
+          "glyph": 11,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F471 200D 2640 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 4,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 48,
+        "japanese_short_name_token_count": 8,
+        "source_index": 635,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 4,
+          "glyph": 8,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F471 1F3FE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 49,
+        "japanese_short_name_token_count": 20,
+        "source_index": 645,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 10,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F9D3 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 50,
+        "japanese_short_name_token_count": 17,
+        "source_index": 651,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F475 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 51,
+        "japanese_short_name_token_count": 18,
+        "source_index": 661,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F64D 1F3FC 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 52,
+        "japanese_short_name_token_count": 19,
+        "source_index": 673,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F64E 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 53,
+        "japanese_short_name_token_count": 18,
+        "source_index": 688,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F64E 1F3FC 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 54,
+        "japanese_short_name_token_count": 20,
+        "source_index": 691,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F64E 1F3FF 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 55,
+        "japanese_short_name_token_count": 18,
+        "source_index": 700,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 12,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F645 200D 2642 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 4,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 56,
+        "japanese_short_name_token_count": 11,
+        "source_index": 707,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 4,
+          "glyph": 8,
+          "japanese_short_name": 11
+        }
+      },
+      {
+        "codepoint": "1F645 1F3FF 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 57,
+        "japanese_short_name_token_count": 21,
+        "source_index": 718,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 12,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F646 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 10,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 58,
+        "japanese_short_name_token_count": 21,
+        "source_index": 723,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F481 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 59,
+        "japanese_short_name_token_count": 16,
+        "source_index": 738,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F481 1F3FF 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 60,
+        "japanese_short_name_token_count": 16,
+        "source_index": 754,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 12,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F64B 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 61,
+        "japanese_short_name_token_count": 18,
+        "source_index": 764,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F64B 1F3FE 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 62,
+        "japanese_short_name_token_count": 21,
+        "source_index": 771,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F9CF 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 63,
+        "japanese_short_name_token_count": 21,
+        "source_index": 786,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F647 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 64,
+        "japanese_short_name_token_count": 18,
+        "source_index": 800,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F926 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 65,
+        "japanese_short_name_token_count": 21,
+        "source_index": 814,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F926 1F3FE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 6,
+        "item_index": 66,
+        "japanese_short_name_token_count": 23,
+        "source_index": 819,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F926 200D 2640 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 4,
+        "glyph_system": "zwj",
+        "glyph_token_count": 5,
+        "item_index": 67,
+        "japanese_short_name_token_count": 11,
+        "source_index": 821,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 4,
+          "glyph": 5,
+          "japanese_short_name": 11
+        }
+      },
+      {
+        "codepoint": "1F937 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 68,
+        "japanese_short_name_token_count": 18,
+        "source_index": 832,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F937 1F3FC 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 6,
+        "item_index": 69,
+        "japanese_short_name_token_count": 20,
+        "source_index": 835,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FD 200D 2695 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 70,
+        "japanese_short_name_token_count": 15,
+        "source_index": 860,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 11,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FB 200D 1F33E",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 71,
+        "japanese_short_name_token_count": 18,
+        "source_index": 924,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 6,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FD 200D 1F33E",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 72,
+        "japanese_short_name_token_count": 17,
+        "source_index": 932,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 6,
+          "glyph": 11,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FF 200D 1F373",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 14,
+        "item_index": 73,
+        "japanese_short_name_token_count": 17,
+        "source_index": 946,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 6,
+          "glyph": 14,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FC 200D 1F3ED",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 74,
+        "japanese_short_name_token_count": 18,
+        "source_index": 973,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 8,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F9D1 200D 1F4BC",
+        "codepoint_literal_token_count": 19,
+        "english_short_name_token_count": 2,
+        "glyph_system": "zwj",
+        "glyph_token_count": 10,
+        "item_index": 75,
+        "japanese_short_name_token_count": 4,
+        "source_index": 989,
+        "token_counts": {
+          "codepoint_literal": 19,
+          "english_short_name": 2,
+          "glyph": 10,
+          "japanese_short_name": 4
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FD 200D 1F4BB",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 76,
+        "japanese_short_name_token_count": 15,
+        "source_index": 1034,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 7,
+          "glyph": 11,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FC 200D 1F680",
+        "codepoint_literal_token_count": 26,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 77,
+        "japanese_short_name_token_count": 22,
+        "source_index": 1111,
+        "token_counts": {
+          "codepoint_literal": 26,
+          "english_short_name": 10,
+          "glyph": 8,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F977 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 78,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1189,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F477 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 79,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1194,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F477 1F3FE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 80,
+        "japanese_short_name_token_count": 21,
+        "source_index": 1203,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F473 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 81,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1230,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F473 1F3FB 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 82,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1236,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F473 200D 2640 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 4,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 83,
+        "japanese_short_name_token_count": 8,
+        "source_index": 1241,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 4,
+          "glyph": 8,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F9D5 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 11,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 84,
+        "japanese_short_name_token_count": 20,
+        "source_index": 1255,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 11,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F470 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 10,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 85,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1279,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F470 1F3FF 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 86,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1288,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 12,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9B8 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 87,
+        "japanese_short_name_token_count": 21,
+        "source_index": 1370,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F9B8 1F3FE 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 88,
+        "japanese_short_name_token_count": 24,
+        "source_index": 1377,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 24
+        }
+      },
+      {
+        "codepoint": "1F9B9 1F3FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 89,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1384,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 9,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9B9 1F3FD 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 90,
+        "japanese_short_name_token_count": 19,
+        "source_index": 1394,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F9D9 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 91,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1406,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9D9 1F3FC 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 92,
+        "japanese_short_name_token_count": 19,
+        "source_index": 1411,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F9DA 1F3FC",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 93,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1417,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9DA 200D 2642 FE0F",
+        "codepoint_literal_token_count": 23,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 94,
+        "japanese_short_name_token_count": 7,
+        "source_index": 1421,
+        "token_counts": {
+          "codepoint_literal": 23,
+          "english_short_name": 3,
+          "glyph": 8,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F9DA 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 95,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1428,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F9DB 1F3FC",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 96,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1435,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F9DB 1F3FC 200D 2642 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 97,
+        "japanese_short_name_token_count": 20,
+        "source_index": 1441,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F9DD 1F3FF",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 5,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 98,
+        "japanese_short_name_token_count": 14,
+        "source_index": 1474,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F9DD 1F3FB 200D 2642 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 99,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1476,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9DD 200D 2640 FE0F",
+        "codepoint_literal_token_count": 23,
+        "english_short_name_token_count": 2,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 100,
+        "japanese_short_name_token_count": 6,
+        "source_index": 1481,
+        "token_counts": {
+          "codepoint_literal": 23,
+          "english_short_name": 2,
+          "glyph": 8,
+          "japanese_short_name": 6
+        }
+      },
+      {
+        "codepoint": "1F9DE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 23,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 101,
+        "japanese_short_name_token_count": 7,
+        "source_index": 1488,
+        "token_counts": {
+          "codepoint_literal": 23,
+          "english_short_name": 3,
+          "glyph": 8,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F9DE 200D 2640 FE0F",
+        "codepoint_literal_token_count": 23,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 102,
+        "japanese_short_name_token_count": 7,
+        "source_index": 1489,
+        "token_counts": {
+          "codepoint_literal": 23,
+          "english_short_name": 3,
+          "glyph": 8,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F486 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 103,
+        "japanese_short_name_token_count": 25,
+        "source_index": 1497,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 25
+        }
+      },
+      {
+        "codepoint": "1F486 1F3FE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 104,
+        "japanese_short_name_token_count": 25,
+        "source_index": 1505,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 25
+        }
+      },
+      {
+        "codepoint": "1F486 1F3FF 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 105,
+        "japanese_short_name_token_count": 23,
+        "source_index": 1512,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 12,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F487 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 106,
+        "japanese_short_name_token_count": 19,
+        "source_index": 1526,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F6B6 1F3FF 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 107,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1548,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 6,
+          "glyph": 12,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FD 200D 1F9AF",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 108,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1624,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 9,
+          "glyph": 11,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FE 200D 1F9BC",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 12,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 109,
+        "japanese_short_name_token_count": 23,
+        "source_index": 1673,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 12,
+          "glyph": 11,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FE 200D 1F9BC",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 12,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 110,
+        "japanese_short_name_token_count": 23,
+        "source_index": 1685,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 12,
+          "glyph": 11,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FF 200D 1F9BD",
+        "codepoint_literal_token_count": 25,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 14,
+        "item_index": 111,
+        "japanese_short_name_token_count": 22,
+        "source_index": 1710,
+        "token_counts": {
+          "codepoint_literal": 25,
+          "english_short_name": 9,
+          "glyph": 14,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F3C3 1F3FD 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 112,
+        "japanese_short_name_token_count": 13,
+        "source_index": 1738,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F3C3 1F3FD 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 113,
+        "japanese_short_name_token_count": 13,
+        "source_index": 1744,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F483 1F3FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 114,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1773,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F57A 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 115,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1778,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 6,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F574 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 116,
+        "japanese_short_name_token_count": 20,
+        "source_index": 1786,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F9D6 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 117,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1880,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F9D7 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 118,
+        "japanese_short_name_token_count": 16,
+        "source_index": 1898,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 16
+        }
+      },
+      {
+        "codepoint": "1F3C2 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 119,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1914,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F3CC 1F3FD",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 120,
+        "japanese_short_name_token_count": 17,
+        "source_index": 1920,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F3CC 1F3FE 200D 2642 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 121,
+        "japanese_short_name_token_count": 20,
+        "source_index": 1927,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F3C4 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 122,
+        "japanese_short_name_token_count": 19,
+        "source_index": 1948,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F6A3 1F3FF 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 123,
+        "japanese_short_name_token_count": 20,
+        "source_index": 1964,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 12,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F3CA 1F3FF",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 6,
+        "glyph_system": "modifier",
+        "glyph_token_count": 9,
+        "item_index": 124,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1976,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F3CA 1F3FF 200D 2642 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 6,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 125,
+        "japanese_short_name_token_count": 18,
+        "source_index": 1982,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 6,
+          "glyph": 12,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F3CB FE0F 200D 2642 FE0F",
+        "codepoint_literal_token_count": 28,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 126,
+        "japanese_short_name_token_count": 11,
+        "source_index": 2013,
+        "token_counts": {
+          "codepoint_literal": 28,
+          "english_short_name": 3,
+          "glyph": 9,
+          "japanese_short_name": 11
+        }
+      },
+      {
+        "codepoint": "1F3CB 1F3FB 200D 2642 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 127,
+        "japanese_short_name_token_count": 21,
+        "source_index": 2014,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F3CB 1F3FD 200D 2640 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 128,
+        "japanese_short_name_token_count": 20,
+        "source_index": 2022,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F6B5 1F3FF 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 8,
+        "glyph_system": "zwj",
+        "glyph_token_count": 12,
+        "item_index": 129,
+        "japanese_short_name_token_count": 25,
+        "source_index": 2054,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 8,
+          "glyph": 12,
+          "japanese_short_name": 25
+        }
+      },
+      {
+        "codepoint": "1F938 1F3FC 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 130,
+        "japanese_short_name_token_count": 22,
+        "source_index": 2075,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 10,
+          "glyph": 9,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F93C 200D 2640 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 131,
+        "japanese_short_name_token_count": 9,
+        "source_index": 2091,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 3,
+          "glyph": 8,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F93E 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 8,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 132,
+        "japanese_short_name_token_count": 21,
+        "source_index": 2176,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 8,
+          "glyph": 6,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F93E 1F3FE 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 10,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 133,
+        "japanese_short_name_token_count": 23,
+        "source_index": 2191,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 10,
+          "glyph": 9,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F939 1F3FB 200D 2642 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 134,
+        "japanese_short_name_token_count": 21,
+        "source_index": 2200,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 21
+        }
+      },
+      {
+        "codepoint": "1F939 1F3FD 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 135,
+        "japanese_short_name_token_count": 20,
+        "source_index": 2208,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 20
+        }
+      },
+      {
+        "codepoint": "1F9D8 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 136,
+        "japanese_short_name_token_count": 22,
+        "source_index": 2214,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F9D8 200D 2642 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 5,
+        "glyph_system": "zwj",
+        "glyph_token_count": 8,
+        "item_index": 137,
+        "japanese_short_name_token_count": 13,
+        "source_index": 2217,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 5,
+          "glyph": 8,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F9D8 1F3FB 200D 2640 FE0F",
+        "codepoint_literal_token_count": 30,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 9,
+        "item_index": 138,
+        "japanese_short_name_token_count": 23,
+        "source_index": 2224,
+        "token_counts": {
+          "codepoint_literal": 30,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 23
+        }
+      },
+      {
+        "codepoint": "1F6C0 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 139,
+        "japanese_short_name_token_count": 18,
+        "source_index": 2232,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F6CC 1F3FD",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 140,
+        "japanese_short_name_token_count": 19,
+        "source_index": 2238,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F9D1 1F3FE 200D 1F91D 200D 1F9D1 1F3FB",
+        "codepoint_literal_token_count": 45,
+        "english_short_name_token_count": 13,
+        "glyph_system": "zwj",
+        "glyph_token_count": 17,
+        "item_index": 141,
+        "japanese_short_name_token_count": 31,
+        "source_index": 2257,
+        "token_counts": {
+          "codepoint_literal": 45,
+          "english_short_name": 13,
+          "glyph": 17,
+          "japanese_short_name": 31
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FC 200D 1F91D 200D 1F469 1F3FB",
+        "codepoint_literal_token_count": 45,
+        "english_short_name_token_count": 13,
+        "glyph_system": "zwj",
+        "glyph_token_count": 17,
+        "item_index": 142,
+        "japanese_short_name_token_count": 31,
+        "source_index": 2273,
+        "token_counts": {
+          "codepoint_literal": 45,
+          "english_short_name": 13,
+          "glyph": 17,
+          "japanese_short_name": 31
+        }
+      },
+      {
+        "codepoint": "1F46D 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 143,
+        "japanese_short_name_token_count": 22,
+        "source_index": 2286,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FC 200D 1F91D 200D 1F468 1F3FE",
+        "codepoint_literal_token_count": 45,
+        "english_short_name_token_count": 17,
+        "glyph_system": "zwj",
+        "glyph_token_count": 17,
+        "item_index": 144,
+        "japanese_short_name_token_count": 33,
+        "source_index": 2302,
+        "token_counts": {
+          "codepoint_literal": 45,
+          "english_short_name": 17,
+          "glyph": 17,
+          "japanese_short_name": 33
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FB 200D 1F91D 200D 1F468 1F3FE",
+        "codepoint_literal_token_count": 45,
+        "english_short_name_token_count": 13,
+        "glyph_system": "zwj",
+        "glyph_token_count": 17,
+        "item_index": 145,
+        "japanese_short_name_token_count": 31,
+        "source_index": 2323,
+        "token_counts": {
+          "codepoint_literal": 45,
+          "english_short_name": 13,
+          "glyph": 17,
+          "japanese_short_name": 31
+        }
+      },
+      {
+        "codepoint": "1F46C 1F3FD",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 146,
+        "japanese_short_name_token_count": 19,
+        "source_index": 2332,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F48F 1F3FE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 147,
+        "japanese_short_name_token_count": 18,
+        "source_index": 2349,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 1F3FE 200D 2764 FE0F 200D 1F48B 200D 1F468 1F3FE",
+        "codepoint_literal_token_count": 62,
+        "english_short_name_token_count": 11,
+        "glyph_system": "zwj",
+        "glyph_token_count": 20,
+        "item_index": 148,
+        "japanese_short_name_token_count": 24,
+        "source_index": 2416,
+        "token_counts": {
+          "codepoint_literal": 62,
+          "english_short_name": 11,
+          "glyph": 20,
+          "japanese_short_name": 24
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FF 200D 2764 FE0F 200D 1F48B 200D 1F469 1F3FD",
+        "codepoint_literal_token_count": 62,
+        "english_short_name_token_count": 13,
+        "glyph_system": "zwj",
+        "glyph_token_count": 23,
+        "item_index": 149,
+        "japanese_short_name_token_count": 30,
+        "source_index": 2446,
+        "token_counts": {
+          "codepoint_literal": 62,
+          "english_short_name": 13,
+          "glyph": 23,
+          "japanese_short_name": 30
+        }
+      },
+      {
+        "codepoint": "1F491 1F3FB",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "modifier",
+        "glyph_token_count": 6,
+        "item_index": 150,
+        "japanese_short_name_token_count": 19,
+        "source_index": 2450,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 6,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F469 1F3FC 200D 2764 FE0F 200D 1F469 1F3FF",
+        "codepoint_literal_token_count": 49,
+        "english_short_name_token_count": 17,
+        "glyph_system": "zwj",
+        "glyph_token_count": 18,
+        "item_index": 151,
+        "japanese_short_name_token_count": 36,
+        "source_index": 2537,
+        "token_counts": {
+          "codepoint_literal": 49,
+          "english_short_name": 17,
+          "glyph": 18,
+          "japanese_short_name": 36
+        }
+      },
+      {
+        "codepoint": "1F468 200D 1F468 200D 1F466 200D 1F466",
+        "codepoint_literal_token_count": 46,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 20,
+        "item_index": 152,
+        "japanese_short_name_token_count": 18,
+        "source_index": 2561,
+        "token_counts": {
+          "codepoint_literal": 46,
+          "english_short_name": 9,
+          "glyph": 20,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F469 200D 1F469 200D 1F467",
+        "codepoint_literal_token_count": 33,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 15,
+        "item_index": 153,
+        "japanese_short_name_token_count": 14,
+        "source_index": 2564,
+        "token_counts": {
+          "codepoint_literal": 33,
+          "english_short_name": 7,
+          "glyph": 15,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F469 200D 1F469 200D 1F467 200D 1F466",
+        "codepoint_literal_token_count": 46,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 20,
+        "item_index": 154,
+        "japanese_short_name_token_count": 18,
+        "source_index": 2565,
+        "token_counts": {
+          "codepoint_literal": 46,
+          "english_short_name": 9,
+          "glyph": 20,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F469 200D 1F469 200D 1F467 200D 1F467",
+        "codepoint_literal_token_count": 46,
+        "english_short_name_token_count": 9,
+        "glyph_system": "zwj",
+        "glyph_token_count": 20,
+        "item_index": 155,
+        "japanese_short_name_token_count": 18,
+        "source_index": 2567,
+        "token_counts": {
+          "codepoint_literal": 46,
+          "english_short_name": 9,
+          "glyph": 20,
+          "japanese_short_name": 18
+        }
+      },
+      {
+        "codepoint": "1F468 200D 1F467 200D 1F467",
+        "codepoint_literal_token_count": 33,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 15,
+        "item_index": 156,
+        "japanese_short_name_token_count": 15,
+        "source_index": 2572,
+        "token_counts": {
+          "codepoint_literal": 33,
+          "english_short_name": 7,
+          "glyph": 15,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F469 200D 1F467 200D 1F467",
+        "codepoint_literal_token_count": 33,
+        "english_short_name_token_count": 7,
+        "glyph_system": "zwj",
+        "glyph_token_count": 15,
+        "item_index": 157,
+        "japanese_short_name_token_count": 15,
+        "source_index": 2577,
+        "token_counts": {
+          "codepoint_literal": 33,
+          "english_short_name": 7,
+          "glyph": 15,
+          "japanese_short_name": 15
+        }
+      },
+      {
+        "codepoint": "1F43B 200D 2744 FE0F",
+        "codepoint_literal_token_count": 24,
+        "english_short_name_token_count": 2,
+        "glyph_system": "zwj",
+        "glyph_token_count": 10,
+        "item_index": 158,
+        "japanese_short_name_token_count": 5,
+        "source_index": 2646,
+        "token_counts": {
+          "codepoint_literal": 24,
+          "english_short_name": 2,
+          "glyph": 10,
+          "japanese_short_name": 5
+        }
+      },
+      {
+        "codepoint": "1F3F3 FE0F 200D 26A7 FE0F",
+        "codepoint_literal_token_count": 29,
+        "english_short_name_token_count": 3,
+        "glyph_system": "zwj",
+        "glyph_token_count": 11,
+        "item_index": 159,
+        "japanese_short_name_token_count": 14,
+        "source_index": 3680,
+        "token_counts": {
+          "codepoint_literal": 29,
+          "english_short_name": 3,
+          "glyph": 11,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F1E6 1F1E9",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 160,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3683,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1E6 1F1EA",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 161,
+        "japanese_short_name_token_count": 14,
+        "source_index": 3684,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 14
+        }
+      },
+      {
+        "codepoint": "1F1E6 1F1FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 7,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 162,
+        "japanese_short_name_token_count": 12,
+        "source_index": 3698,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 7,
+          "glyph": 9,
+          "japanese_short_name": 12
+        }
+      },
+      {
+        "codepoint": "1F1E7 1F1E9",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 163,
+        "japanese_short_name_token_count": 11,
+        "source_index": 3701,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 11
+        }
+      },
+      {
+        "codepoint": "1F1E7 1F1EA",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 3,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 164,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3702,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 3,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1E8 1F1E9",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 8,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 165,
+        "japanese_short_name_token_count": 19,
+        "source_index": 3722,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 8,
+          "glyph": 9,
+          "japanese_short_name": 19
+        }
+      },
+      {
+        "codepoint": "1F1E8 1F1EC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 166,
+        "japanese_short_name_token_count": 17,
+        "source_index": 3724,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 9,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F1E8 1F1FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 167,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3740,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1EC 1F1F8",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 9,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 6,
+        "item_index": 168,
+        "japanese_short_name_token_count": 27,
+        "source_index": 3777,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 9,
+          "glyph": 6,
+          "japanese_short_name": 27
+        }
+      },
+      {
+        "codepoint": "1F1EC 1F1FE",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 169,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3781,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1EE 1F1F2",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 170,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3792,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1F0 1F1F5",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 171,
+        "japanese_short_name_token_count": 9,
+        "source_index": 3809,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F1F0 1F1F7",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 172,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3810,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1F1 1F1E8",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 6,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 173,
+        "japanese_short_name_token_count": 10,
+        "source_index": 3816,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 10
+        }
+      },
+      {
+        "codepoint": "1F1F1 1F1EE",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 174,
+        "japanese_short_name_token_count": 13,
+        "source_index": 3817,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 13
+        }
+      },
+      {
+        "codepoint": "1F1F1 1F1F0",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 175,
+        "japanese_short_name_token_count": 9,
+        "source_index": 3818,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F1F1 1F1F8",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 6,
+        "item_index": 176,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3820,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 6,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1F1 1F1F9",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 6,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 177,
+        "japanese_short_name_token_count": 9,
+        "source_index": 3821,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F1F2 1F1E8",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 178,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3826,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1F2 1F1F3",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 179,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3835,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 4,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1F2 1F1FF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 180,
+        "japanese_short_name_token_count": 10,
+        "source_index": 3847,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 10
+        }
+      },
+      {
+        "codepoint": "1F1F3 1F1F4",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 3,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 181,
+        "japanese_short_name_token_count": 9,
+        "source_index": 3855,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 3,
+          "glyph": 9,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F1F3 1F1FA",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 6,
+        "item_index": 182,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3858,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 4,
+          "glyph": 6,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1F7 1F1FC",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 183,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3880,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1F8 1F1EF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 10,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 6,
+        "item_index": 184,
+        "japanese_short_name_token_count": 22,
+        "source_index": 3889,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 10,
+          "glyph": 6,
+          "japanese_short_name": 22
+        }
+      },
+      {
+        "codepoint": "1F1F9 1F1ED",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 3,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 185,
+        "japanese_short_name_token_count": 6,
+        "source_index": 3907,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 3,
+          "glyph": 9,
+          "japanese_short_name": 6
+        }
+      },
+      {
+        "codepoint": "1F1F9 1F1EF",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 6,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 186,
+        "japanese_short_name_token_count": 10,
+        "source_index": 3908,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 6,
+          "glyph": 9,
+          "japanese_short_name": 10
+        }
+      },
+      {
+        "codepoint": "1F1F9 1F1F0",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 187,
+        "japanese_short_name_token_count": 8,
+        "source_index": 3909,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 8
+        }
+      },
+      {
+        "codepoint": "1F1F9 1F1F3",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 188,
+        "japanese_short_name_token_count": 9,
+        "source_index": 3912,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 9
+        }
+      },
+      {
+        "codepoint": "1F1F9 1F1F4",
+        "codepoint_literal_token_count": 14,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 189,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3913,
+        "token_counts": {
+          "codepoint_literal": 14,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 7
+        }
+      },
+      {
+        "codepoint": "1F1FB 1F1EC",
+        "codepoint_literal_token_count": 12,
+        "english_short_name_token_count": 5,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 9,
+        "item_index": 190,
+        "japanese_short_name_token_count": 17,
+        "source_index": 3929,
+        "token_counts": {
+          "codepoint_literal": 12,
+          "english_short_name": 5,
+          "glyph": 9,
+          "japanese_short_name": 17
+        }
+      },
+      {
+        "codepoint": "1F1FC 1F1F8",
+        "codepoint_literal_token_count": 13,
+        "english_short_name_token_count": 4,
+        "glyph_system": "regional_flag",
+        "glyph_token_count": 6,
+        "item_index": 191,
+        "japanese_short_name_token_count": 7,
+        "source_index": 3934,
+        "token_counts": {
+          "codepoint_literal": 13,
+          "english_short_name": 4,
+          "glyph": 6,
+          "japanese_short_name": 7
+        }
+      }
+    ],
+    "japanese_secondary_exact_strata": {
+      "eligible_global_indices_by_system": {
+        "modifier": [
+          4,
+          7,
+          11,
+          12,
+          15,
+          16,
+          19,
+          20,
+          21,
+          33,
+          35,
+          36,
+          50,
+          51,
+          59,
+          65,
+          68,
+          78,
+          79,
+          81,
+          93,
+          96,
+          98,
+          114,
+          115,
+          116,
+          119,
+          120,
+          132,
+          136,
+          139,
+          140,
+          143,
+          146,
+          147,
+          150
+        ],
+        "regional_flag": [
+          160,
+          167,
+          169,
+          172,
+          173,
+          175,
+          178,
+          179,
+          182,
+          183,
+          186,
+          187,
+          188,
+          191
+        ],
+        "zwj": [
+          37,
+          38,
+          39,
+          40,
+          42,
+          43,
+          47,
+          48,
+          52,
+          54,
+          61,
+          62,
+          63,
+          64,
+          70,
+          76,
+          80,
+          83,
+          87,
+          90,
+          92,
+          94,
+          95,
+          97,
+          99,
+          101,
+          102,
+          108,
+          109,
+          110,
+          112,
+          113,
+          118,
+          121,
+          127,
+          128,
+          134,
+          135,
+          141,
+          142,
+          145,
+          152,
+          154,
+          155,
+          156,
+          157
+        ]
+      },
+      "eligible_item_count": 96,
+      "eligible_item_count_by_system": {
+        "modifier": 36,
+        "regional_flag": 14,
+        "zwj": 46
+      },
+      "eligible_local_strata_by_system": {
+        "modifier": [
+          [
+            1,
+            6
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            2,
+            18,
+            24
+          ],
+          [
+            3,
+            14
+          ],
+          [
+            26,
+            27
+          ],
+          [
+            12,
+            17,
+            19,
+            20
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            30,
+            34
+          ],
+          [
+            5,
+            13,
+            16,
+            21,
+            23
+          ],
+          [
+            31,
+            33,
+            35
+          ],
+          [
+            7,
+            8,
+            25
+          ],
+          [
+            15,
+            28
+          ],
+          [
+            29,
+            32
+          ],
+          [
+            9,
+            22
+          ]
+        ],
+        "regional_flag": [
+          [
+            8,
+            13
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            3,
+            7
+          ],
+          [
+            0,
+            9,
+            11
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            4,
+            10
+          ]
+        ],
+        "zwj": [
+          [
+            21,
+            25,
+            26
+          ],
+          [
+            7,
+            17
+          ],
+          [
+            30,
+            31
+          ],
+          [
+            24,
+            32
+          ],
+          [
+            0,
+            22
+          ],
+          [
+            1,
+            10,
+            13
+          ],
+          [
+            8,
+            19,
+            20
+          ],
+          [
+            35,
+            37
+          ],
+          [
+            9,
+            23,
+            33
+          ],
+          [
+            12,
+            18,
+            34,
+            36
+          ],
+          [
+            11,
+            16
+          ],
+          [
+            14,
+            15
+          ],
+          [
+            3,
+            27
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            28,
+            29
+          ],
+          [
+            44,
+            45
+          ],
+          [
+            38,
+            39,
+            40
+          ],
+          [
+            41,
+            42,
+            43
+          ]
+        ]
+      },
+      "excluded_singleton_item_count": 96,
+      "key_fields": [
+        "glyph_token_count",
+        "japanese_short_name_token_count",
+        "english_short_name_token_count"
+      ],
+      "strata_by_system": {
+        "modifier": [
+          {
+            "count": 1,
+            "global_item_indices": [
+              22
+            ],
+            "key": [
+              3,
+              13,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              14
+            ],
+            "key": [
+              3,
+              14,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              23
+            ],
+            "key": [
+              3,
+              15,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              10
+            ],
+            "key": [
+              3,
+              16,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              30
+            ],
+            "key": [
+              3,
+              16,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              27
+            ],
+            "key": [
+              5,
+              16,
+              6
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              7,
+              19
+            ],
+            "key": [
+              5,
+              17,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              31
+            ],
+            "key": [
+              6,
+              11,
+              5
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              35,
+              36
+            ],
+            "key": [
+              6,
+              13,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              5
+            ],
+            "key": [
+              6,
+              13,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              32
+            ],
+            "key": [
+              6,
+              14,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              26
+            ],
+            "key": [
+              6,
+              15,
+              6
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              11,
+              79,
+              115
+            ],
+            "key": [
+              6,
+              16,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              34
+            ],
+            "key": [
+              6,
+              16,
+              7
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              12,
+              59
+            ],
+            "key": [
+              6,
+              16,
+              8
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              119,
+              120
+            ],
+            "key": [
+              6,
+              17,
+              7
+            ]
+          },
+          {
+            "count": 4,
+            "global_item_indices": [
+              50,
+              78,
+              81,
+              93
+            ],
+            "key": [
+              6,
+              17,
+              8
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              4,
+              15
+            ],
+            "key": [
+              6,
+              17,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              17
+            ],
+            "key": [
+              6,
+              17,
+              11
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              6
+            ],
+            "key": [
+              6,
+              17,
+              12
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              139,
+              147
+            ],
+            "key": [
+              6,
+              18,
+              7
+            ]
+          },
+          {
+            "count": 5,
+            "global_item_indices": [
+              16,
+              51,
+              68,
+              96,
+              114
+            ],
+            "key": [
+              6,
+              18,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              85
+            ],
+            "key": [
+              6,
+              18,
+              10
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              140,
+              146,
+              150
+            ],
+            "key": [
+              6,
+              19,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              18
+            ],
+            "key": [
+              6,
+              19,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              24
+            ],
+            "key": [
+              6,
+              20,
+              8
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              20,
+              21,
+              116
+            ],
+            "key": [
+              6,
+              20,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              84
+            ],
+            "key": [
+              6,
+              20,
+              11
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              65,
+              132
+            ],
+            "key": [
+              6,
+              21,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              58
+            ],
+            "key": [
+              6,
+              21,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              8
+            ],
+            "key": [
+              6,
+              22,
+              8
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              136,
+              143
+            ],
+            "key": [
+              6,
+              22,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              9
+            ],
+            "key": [
+              6,
+              24,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              103
+            ],
+            "key": [
+              6,
+              25,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              25
+            ],
+            "key": [
+              6,
+              27,
+              10
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              33,
+              98
+            ],
+            "key": [
+              9,
+              14,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              13
+            ],
+            "key": [
+              9,
+              15,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              29
+            ],
+            "key": [
+              9,
+              16,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              89
+            ],
+            "key": [
+              9,
+              17,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              124
+            ],
+            "key": [
+              9,
+              18,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              53
+            ],
+            "key": [
+              9,
+              18,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              28
+            ],
+            "key": [
+              9,
+              22,
+              7
+            ]
+          }
+        ],
+        "regional_flag": [
+          {
+            "count": 2,
+            "global_item_indices": [
+              182,
+              191
+            ],
+            "key": [
+              6,
+              7,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              176
+            ],
+            "key": [
+              6,
+              7,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              184
+            ],
+            "key": [
+              6,
+              22,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              168
+            ],
+            "key": [
+              6,
+              27,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              185
+            ],
+            "key": [
+              9,
+              6,
+              3
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              167,
+              178
+            ],
+            "key": [
+              9,
+              7,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              189
+            ],
+            "key": [
+              9,
+              7,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              170
+            ],
+            "key": [
+              9,
+              7,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              164
+            ],
+            "key": [
+              9,
+              8,
+              3
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              169,
+              172,
+              179
+            ],
+            "key": [
+              9,
+              8,
+              4
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              160,
+              183,
+              187
+            ],
+            "key": [
+              9,
+              8,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              181
+            ],
+            "key": [
+              9,
+              9,
+              3
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              171
+            ],
+            "key": [
+              9,
+              9,
+              4
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              175,
+              188
+            ],
+            "key": [
+              9,
+              9,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              177
+            ],
+            "key": [
+              9,
+              9,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              180
+            ],
+            "key": [
+              9,
+              10,
+              5
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              173,
+              186
+            ],
+            "key": [
+              9,
+              10,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              163
+            ],
+            "key": [
+              9,
+              11,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              162
+            ],
+            "key": [
+              9,
+              12,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              174
+            ],
+            "key": [
+              9,
+              13,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              161
+            ],
+            "key": [
+              9,
+              14,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              190
+            ],
+            "key": [
+              9,
+              17,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              166
+            ],
+            "key": [
+              9,
+              17,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              165
+            ],
+            "key": [
+              9,
+              19,
+              8
+            ]
+          }
+        ],
+        "zwj": [
+          {
+            "count": 1,
+            "global_item_indices": [
+              67
+            ],
+            "key": [
+              5,
+              11,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              69
+            ],
+            "key": [
+              6,
+              20,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              66
+            ],
+            "key": [
+              6,
+              23,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              100
+            ],
+            "key": [
+              8,
+              6,
+              2
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              94,
+              101,
+              102
+            ],
+            "key": [
+              8,
+              7,
+              3
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              48,
+              83
+            ],
+            "key": [
+              8,
+              8,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              131
+            ],
+            "key": [
+              8,
+              9,
+              3
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              56
+            ],
+            "key": [
+              8,
+              11,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              137
+            ],
+            "key": [
+              8,
+              13,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              2
+            ],
+            "key": [
+              8,
+              14,
+              3
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              77
+            ],
+            "key": [
+              8,
+              22,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              126
+            ],
+            "key": [
+              9,
+              11,
+              3
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              112,
+              113
+            ],
+            "key": [
+              9,
+              13,
+              6
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              99,
+              118
+            ],
+            "key": [
+              9,
+              16,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              91
+            ],
+            "key": [
+              9,
+              16,
+              7
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              37,
+              95
+            ],
+            "key": [
+              9,
+              17,
+              7
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              38,
+              61,
+              64
+            ],
+            "key": [
+              9,
+              18,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              82
+            ],
+            "key": [
+              9,
+              18,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              117
+            ],
+            "key": [
+              9,
+              18,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              122
+            ],
+            "key": [
+              9,
+              19,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              106
+            ],
+            "key": [
+              9,
+              19,
+              8
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              52,
+              90,
+              92
+            ],
+            "key": [
+              9,
+              19,
+              9
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              128,
+              135
+            ],
+            "key": [
+              9,
+              20,
+              7
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              54,
+              97,
+              121
+            ],
+            "key": [
+              9,
+              20,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              49
+            ],
+            "key": [
+              9,
+              20,
+              10
+            ]
+          },
+          {
+            "count": 4,
+            "global_item_indices": [
+              63,
+              87,
+              127,
+              134
+            ],
+            "key": [
+              9,
+              21,
+              7
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              62,
+              80
+            ],
+            "key": [
+              9,
+              21,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              130
+            ],
+            "key": [
+              9,
+              22,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              138
+            ],
+            "key": [
+              9,
+              23,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              133
+            ],
+            "key": [
+              9,
+              23,
+              10
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              88
+            ],
+            "key": [
+              9,
+              24,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              104
+            ],
+            "key": [
+              9,
+              25,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              75
+            ],
+            "key": [
+              10,
+              4,
+              2
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              158
+            ],
+            "key": [
+              10,
+              5,
+              2
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              46
+            ],
+            "key": [
+              10,
+              8,
+              3
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              1
+            ],
+            "key": [
+              10,
+              9,
+              5
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              0
+            ],
+            "key": [
+              11,
+              8,
+              3
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              159
+            ],
+            "key": [
+              11,
+              14,
+              3
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              70,
+              76
+            ],
+            "key": [
+              11,
+              15,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              44
+            ],
+            "key": [
+              11,
+              16,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              72
+            ],
+            "key": [
+              11,
+              17,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              41
+            ],
+            "key": [
+              11,
+              17,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              71
+            ],
+            "key": [
+              11,
+              18,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              74
+            ],
+            "key": [
+              11,
+              18,
+              8
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              40,
+              108
+            ],
+            "key": [
+              11,
+              18,
+              9
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              39,
+              43
+            ],
+            "key": [
+              11,
+              18,
+              10
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              42,
+              47
+            ],
+            "key": [
+              11,
+              19,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              45
+            ],
+            "key": [
+              11,
+              20,
+              10
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              109,
+              110
+            ],
+            "key": [
+              11,
+              23,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              3
+            ],
+            "key": [
+              12,
+              9,
+              4
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              107
+            ],
+            "key": [
+              12,
+              16,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              60
+            ],
+            "key": [
+              12,
+              16,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              86
+            ],
+            "key": [
+              12,
+              17,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              125
+            ],
+            "key": [
+              12,
+              18,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              55
+            ],
+            "key": [
+              12,
+              18,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              123
+            ],
+            "key": [
+              12,
+              20,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              57
+            ],
+            "key": [
+              12,
+              21,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              105
+            ],
+            "key": [
+              12,
+              23,
+              7
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              129
+            ],
+            "key": [
+              12,
+              25,
+              8
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              73
+            ],
+            "key": [
+              14,
+              17,
+              6
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              111
+            ],
+            "key": [
+              14,
+              22,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              153
+            ],
+            "key": [
+              15,
+              14,
+              7
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              156,
+              157
+            ],
+            "key": [
+              15,
+              15,
+              7
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              141,
+              142,
+              145
+            ],
+            "key": [
+              17,
+              31,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              144
+            ],
+            "key": [
+              17,
+              33,
+              17
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              151
+            ],
+            "key": [
+              18,
+              36,
+              17
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              152,
+              154,
+              155
+            ],
+            "key": [
+              20,
+              18,
+              9
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              148
+            ],
+            "key": [
+              20,
+              24,
+              11
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              149
+            ],
+            "key": [
+              23,
+              30,
+              13
+            ]
+          }
+        ]
+      }
+    },
+    "maximum_combined_token_count": 70,
+    "ordered_sequence_sha256": {
+      "combined": {
+        "codepoint_literal": {
+          "article_a": "6e6cff3ef40ca0ae7499840b90958807f323206d63dcb518f8bf2c205668cb17",
+          "pipe": "e1b1bcabd2d9965c3dc376469a5ad9b5d4987c91f579984a7da1432c8205cb9f"
+        },
+        "english_short_name": {
+          "article_a": "e1a8093d9d70a97de3518a00f150b19092b513c37b43b6d4e5c63b1bb9d0bac1",
+          "pipe": "4693f03a5ce7123cf176eaa477c08b31b1c2af4b07af7749490d7bd01cbb9b33"
+        },
+        "glyph": {
+          "article_a": "2c44482ae09680cc08f5fe452950872596a429661beaba8866a00911faa5f528",
+          "pipe": "0fd06cc32be28e52907af1498106e4d62b7ce9219f4f3cf9f235f202e18a256c"
+        },
+        "japanese_short_name": {
+          "article_a": "e32e300fa4b449a3799f2a5c1434e3bb4336534f789ab49de70640d561e88919",
+          "pipe": "e59c401dcf9dabe47d589444e3b111df7e0ebff0a82288c3c3ca9de3aa95916f"
+        }
+      },
+      "raw": {
+        "codepoint_literal": "d1733099ac5b169f7039521436cd0f6eb3339222324ba62e5a37c03fccafc2db",
+        "english_short_name": "b1fc5d3ac3e9b425cc709de9b09a97a74e247d2271bba06358e7510a7bb2c1bb",
+        "glyph": "b45313a142ee789b33d3c500b9b5e3f89ea2b3b841ac59cb23fcae870a5a7348",
+        "japanese_short_name": "3dd3844ff82af7bd17b0798d436bb3d94024bc94096101876d12838063af2556"
+      }
+    },
+    "primary_exact_strata": {
+      "eligible_global_indices_by_system": {
+        "modifier": [
+          4,
+          5,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          24,
+          25,
+          26,
+          28,
+          31,
+          32,
+          34,
+          35,
+          36,
+          50,
+          51,
+          53,
+          58,
+          59,
+          65,
+          68,
+          78,
+          79,
+          81,
+          84,
+          85,
+          93,
+          96,
+          103,
+          114,
+          115,
+          116,
+          119,
+          120,
+          132,
+          136,
+          139,
+          140,
+          143,
+          146,
+          147,
+          150
+        ],
+        "regional_flag": [
+          160,
+          161,
+          162,
+          163,
+          164,
+          170,
+          171,
+          172,
+          173,
+          174,
+          175,
+          177,
+          178,
+          179,
+          180,
+          182,
+          183,
+          185,
+          186,
+          187,
+          188,
+          189,
+          191
+        ],
+        "zwj": [
+          2,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          47,
+          48,
+          49,
+          52,
+          54,
+          55,
+          56,
+          57,
+          60,
+          61,
+          62,
+          63,
+          64,
+          66,
+          69,
+          71,
+          72,
+          80,
+          82,
+          83,
+          86,
+          87,
+          88,
+          90,
+          91,
+          92,
+          94,
+          95,
+          97,
+          101,
+          102,
+          104,
+          105,
+          106,
+          109,
+          110,
+          112,
+          113,
+          117,
+          118,
+          121,
+          122,
+          123,
+          127,
+          128,
+          129,
+          130,
+          133,
+          134,
+          135,
+          138,
+          141,
+          142,
+          145,
+          152,
+          153,
+          154,
+          155,
+          156,
+          157
+        ]
+      },
+      "eligible_item_count": 144,
+      "eligible_item_count_by_system": {
+        "modifier": 51,
+        "regional_flag": 23,
+        "zwj": 70
+      },
+      "eligible_local_strata_by_system": {
+        "modifier": [
+          [
+            2,
+            11
+          ],
+          [
+            18,
+            21,
+            22
+          ],
+          [
+            5,
+            16,
+            31,
+            39
+          ],
+          [
+            42,
+            46
+          ],
+          [
+            19,
+            20,
+            41,
+            45,
+            48,
+            49,
+            50
+          ],
+          [
+            35,
+            36
+          ],
+          [
+            1,
+            3,
+            6,
+            8,
+            14,
+            23,
+            24,
+            27,
+            28,
+            29,
+            30,
+            32,
+            38,
+            43
+          ],
+          [
+            0,
+            4,
+            7,
+            10,
+            12,
+            13,
+            37,
+            40,
+            44,
+            47
+          ],
+          [
+            15,
+            26,
+            34
+          ],
+          [
+            9,
+            33
+          ],
+          [
+            17,
+            25
+          ]
+        ],
+        "regional_flag": [
+          [
+            15,
+            22
+          ],
+          [
+            4,
+            17
+          ],
+          [
+            3,
+            6,
+            7,
+            12,
+            13
+          ],
+          [
+            9,
+            14,
+            16
+          ],
+          [
+            0,
+            10,
+            19,
+            20,
+            21
+          ],
+          [
+            5,
+            18
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "zwj": [
+          [
+            23,
+            24
+          ],
+          [
+            0,
+            36,
+            39,
+            40
+          ],
+          [
+            11,
+            16,
+            29
+          ],
+          [
+            46,
+            47,
+            49
+          ],
+          [
+            21,
+            37,
+            53,
+            54
+          ],
+          [
+            1,
+            2,
+            19,
+            22,
+            31,
+            34,
+            51,
+            58,
+            59
+          ],
+          [
+            28,
+            43
+          ],
+          [
+            38,
+            50
+          ],
+          [
+            13,
+            14,
+            20,
+            27,
+            32,
+            33,
+            35,
+            41,
+            48,
+            60
+          ],
+          [
+            12,
+            56,
+            57
+          ],
+          [
+            25,
+            26
+          ],
+          [
+            5,
+            8
+          ],
+          [
+            4,
+            6,
+            10
+          ],
+          [
+            3,
+            7,
+            9
+          ],
+          [
+            44,
+            45
+          ],
+          [
+            15,
+            42
+          ],
+          [
+            17,
+            18,
+            30,
+            52,
+            55
+          ],
+          [
+            65,
+            68,
+            69
+          ],
+          [
+            61,
+            62,
+            63
+          ],
+          [
+            64,
+            66,
+            67
+          ]
+        ]
+      },
+      "excluded_singleton_item_count": 48,
+      "key_fields": [
+        "glyph_token_count",
+        "english_short_name_token_count",
+        "codepoint_literal_token_count"
+      ],
+      "strata_by_system": {
+        "modifier": [
+          {
+            "count": 1,
+            "global_item_indices": [
+              23
+            ],
+            "key": [
+              3,
+              6,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              22
+            ],
+            "key": [
+              3,
+              7,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              10
+            ],
+            "key": [
+              3,
+              8,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              30
+            ],
+            "key": [
+              3,
+              9,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              14
+            ],
+            "key": [
+              3,
+              9,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              27
+            ],
+            "key": [
+              5,
+              6,
+              12
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              7,
+              19
+            ],
+            "key": [
+              5,
+              8,
+              12
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              31,
+              35,
+              36
+            ],
+            "key": [
+              6,
+              5,
+              13
+            ]
+          },
+          {
+            "count": 4,
+            "global_item_indices": [
+              11,
+              26,
+              79,
+              115
+            ],
+            "key": [
+              6,
+              6,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              120,
+              140
+            ],
+            "key": [
+              6,
+              7,
+              12
+            ]
+          },
+          {
+            "count": 7,
+            "global_item_indices": [
+              32,
+              34,
+              119,
+              139,
+              146,
+              147,
+              150
+            ],
+            "key": [
+              6,
+              7,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              93,
+              96
+            ],
+            "key": [
+              6,
+              8,
+              12
+            ]
+          },
+          {
+            "count": 14,
+            "global_item_indices": [
+              5,
+              8,
+              12,
+              16,
+              24,
+              50,
+              51,
+              59,
+              65,
+              68,
+              78,
+              81,
+              114,
+              132
+            ],
+            "key": [
+              6,
+              8,
+              13
+            ]
+          },
+          {
+            "count": 10,
+            "global_item_indices": [
+              4,
+              9,
+              15,
+              18,
+              20,
+              21,
+              103,
+              116,
+              136,
+              143
+            ],
+            "key": [
+              6,
+              9,
+              13
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              25,
+              58,
+              85
+            ],
+            "key": [
+              6,
+              10,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              17,
+              84
+            ],
+            "key": [
+              6,
+              11,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              6
+            ],
+            "key": [
+              6,
+              12,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              98
+            ],
+            "key": [
+              9,
+              5,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              33
+            ],
+            "key": [
+              9,
+              5,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              124
+            ],
+            "key": [
+              9,
+              6,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              29
+            ],
+            "key": [
+              9,
+              6,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              28,
+              53
+            ],
+            "key": [
+              9,
+              7,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              89
+            ],
+            "key": [
+              9,
+              8,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              13
+            ],
+            "key": [
+              9,
+              9,
+              13
+            ]
+          }
+        ],
+        "regional_flag": [
+          {
+            "count": 2,
+            "global_item_indices": [
+              182,
+              191
+            ],
+            "key": [
+              6,
+              4,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              176
+            ],
+            "key": [
+              6,
+              5,
+              14
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              168
+            ],
+            "key": [
+              6,
+              9,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              184
+            ],
+            "key": [
+              6,
+              10,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              164,
+              185
+            ],
+            "key": [
+              9,
+              3,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              181
+            ],
+            "key": [
+              9,
+              3,
+              14
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              169
+            ],
+            "key": [
+              9,
+              4,
+              12
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              167
+            ],
+            "key": [
+              9,
+              4,
+              13
+            ]
+          },
+          {
+            "count": 5,
+            "global_item_indices": [
+              163,
+              171,
+              172,
+              178,
+              179
+            ],
+            "key": [
+              9,
+              4,
+              14
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              190
+            ],
+            "key": [
+              9,
+              5,
+              12
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              174,
+              180,
+              183
+            ],
+            "key": [
+              9,
+              5,
+              13
+            ]
+          },
+          {
+            "count": 5,
+            "global_item_indices": [
+              160,
+              175,
+              187,
+              188,
+              189
+            ],
+            "key": [
+              9,
+              5,
+              14
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              170,
+              186
+            ],
+            "key": [
+              9,
+              6,
+              13
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              173,
+              177
+            ],
+            "key": [
+              9,
+              6,
+              14
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              161,
+              162
+            ],
+            "key": [
+              9,
+              7,
+              13
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              165
+            ],
+            "key": [
+              9,
+              8,
+              14
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              166
+            ],
+            "key": [
+              9,
+              9,
+              13
+            ]
+          }
+        ],
+        "zwj": [
+          {
+            "count": 1,
+            "global_item_indices": [
+              67
+            ],
+            "key": [
+              5,
+              4,
+              24
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              66,
+              69
+            ],
+            "key": [
+              6,
+              10,
+              30
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              100
+            ],
+            "key": [
+              8,
+              2,
+              23
+            ]
+          },
+          {
+            "count": 4,
+            "global_item_indices": [
+              2,
+              94,
+              101,
+              102
+            ],
+            "key": [
+              8,
+              3,
+              23
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              131
+            ],
+            "key": [
+              8,
+              3,
+              24
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              48,
+              56,
+              83
+            ],
+            "key": [
+              8,
+              4,
+              24
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              137
+            ],
+            "key": [
+              8,
+              5,
+              24
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              77
+            ],
+            "key": [
+              8,
+              10,
+              26
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              126
+            ],
+            "key": [
+              9,
+              3,
+              28
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              99
+            ],
+            "key": [
+              9,
+              6,
+              29
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              112,
+              113,
+              118
+            ],
+            "key": [
+              9,
+              6,
+              30
+            ]
+          },
+          {
+            "count": 4,
+            "global_item_indices": [
+              63,
+              95,
+              127,
+              128
+            ],
+            "key": [
+              9,
+              7,
+              29
+            ]
+          },
+          {
+            "count": 9,
+            "global_item_indices": [
+              37,
+              38,
+              61,
+              64,
+              87,
+              91,
+              122,
+              134,
+              135
+            ],
+            "key": [
+              9,
+              7,
+              30
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              82,
+              106
+            ],
+            "key": [
+              9,
+              8,
+              30
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              97,
+              121
+            ],
+            "key": [
+              9,
+              9,
+              29
+            ]
+          },
+          {
+            "count": 10,
+            "global_item_indices": [
+              52,
+              54,
+              62,
+              80,
+              88,
+              90,
+              92,
+              104,
+              117,
+              138
+            ],
+            "key": [
+              9,
+              9,
+              30
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              49,
+              130,
+              133
+            ],
+            "key": [
+              9,
+              10,
+              30
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              75
+            ],
+            "key": [
+              10,
+              2,
+              19
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              158
+            ],
+            "key": [
+              10,
+              2,
+              24
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              46
+            ],
+            "key": [
+              10,
+              3,
+              20
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              1
+            ],
+            "key": [
+              10,
+              5,
+              19
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              0
+            ],
+            "key": [
+              11,
+              3,
+              25
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              159
+            ],
+            "key": [
+              11,
+              3,
+              29
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              71,
+              72
+            ],
+            "key": [
+              11,
+              6,
+              26
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              76
+            ],
+            "key": [
+              11,
+              7,
+              25
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              70
+            ],
+            "key": [
+              11,
+              7,
+              30
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              74
+            ],
+            "key": [
+              11,
+              8,
+              25
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              41,
+              44
+            ],
+            "key": [
+              11,
+              8,
+              26
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              108
+            ],
+            "key": [
+              11,
+              9,
+              25
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              40,
+              42,
+              47
+            ],
+            "key": [
+              11,
+              9,
+              26
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              39,
+              43,
+              45
+            ],
+            "key": [
+              11,
+              10,
+              26
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              109,
+              110
+            ],
+            "key": [
+              11,
+              12,
+              25
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              3
+            ],
+            "key": [
+              12,
+              4,
+              30
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              125
+            ],
+            "key": [
+              12,
+              6,
+              29
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              107
+            ],
+            "key": [
+              12,
+              6,
+              30
+            ]
+          },
+          {
+            "count": 2,
+            "global_item_indices": [
+              55,
+              105
+            ],
+            "key": [
+              12,
+              7,
+              30
+            ]
+          },
+          {
+            "count": 5,
+            "global_item_indices": [
+              57,
+              60,
+              86,
+              123,
+              129
+            ],
+            "key": [
+              12,
+              8,
+              30
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              73
+            ],
+            "key": [
+              14,
+              6,
+              26
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              111
+            ],
+            "key": [
+              14,
+              9,
+              25
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              153,
+              156,
+              157
+            ],
+            "key": [
+              15,
+              7,
+              33
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              141,
+              142,
+              145
+            ],
+            "key": [
+              17,
+              13,
+              45
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              144
+            ],
+            "key": [
+              17,
+              17,
+              45
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              151
+            ],
+            "key": [
+              18,
+              17,
+              49
+            ]
+          },
+          {
+            "count": 3,
+            "global_item_indices": [
+              152,
+              154,
+              155
+            ],
+            "key": [
+              20,
+              9,
+              46
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              148
+            ],
+            "key": [
+              20,
+              11,
+              62
+            ]
+          },
+          {
+            "count": 1,
+            "global_item_indices": [
+              149
+            ],
+            "key": [
+              23,
+              13,
+              62
+            ]
+          }
+        ]
+      }
+    },
+    "token_count_histograms": {
+      "codepoint_literal": {
+        "12": 13,
+        "13": 68,
+        "14": 15,
+        "19": 2,
+        "20": 1,
+        "23": 5,
+        "24": 7,
+        "25": 7,
+        "26": 12,
+        "28": 1,
+        "29": 9,
+        "30": 39,
+        "33": 3,
+        "45": 4,
+        "46": 3,
+        "49": 1,
+        "62": 2
+      },
+      "english_short_name": {
+        "10": 13,
+        "11": 3,
+        "12": 3,
+        "13": 4,
+        "17": 2,
+        "2": 3,
+        "3": 12,
+        "4": 14,
+        "5": 17,
+        "6": 21,
+        "7": 34,
+        "8": 31,
+        "9": 35
+      },
+      "glyph": {
+        "10": 4,
+        "11": 18,
+        "12": 10,
+        "14": 2,
+        "15": 3,
+        "17": 4,
+        "18": 1,
+        "20": 4,
+        "23": 1,
+        "3": 5,
+        "5": 4,
+        "6": 55,
+        "8": 11,
+        "9": 70
+      },
+      "japanese_short_name": {
+        "10": 3,
+        "11": 5,
+        "12": 1,
+        "13": 8,
+        "14": 8,
+        "15": 7,
+        "16": 16,
+        "17": 21,
+        "18": 26,
+        "19": 12,
+        "20": 14,
+        "21": 10,
+        "22": 8,
+        "23": 6,
+        "24": 3,
+        "25": 3,
+        "27": 2,
+        "30": 1,
+        "31": 3,
+        "33": 1,
+        "36": 1,
+        "4": 1,
+        "5": 1,
+        "6": 2,
+        "7": 10,
+        "8": 11,
+        "9": 8
+      }
+    },
+    "view_order": [
+      "glyph",
+      "english_short_name",
+      "japanese_short_name",
+      "codepoint_literal"
+    ]
+  },
+  "tokenizer_asset_sha256": {
+    "special_tokens_map.json": "6fa06efa2785e450051989a6f8fb4416b10149ded485ddd3f127a40734f5cfd0",
+    "tokenizer.json": "e553af6fff7d7ad76e830608b218c5c0b0822998d5a1a96099a74cd3c1cb1a49",
+    "tokenizer.model": "37f00374dea48658ee8f5d0f21895b9bc55cb0103939607c8185bfd1c6ca1f89",
+    "tokenizer_config.json": "e8fbcfef34d855dba2c7f1d91a2c5470cf493d00ecfd06488ce21e45325bc8ae"
+  },
+  "tokenizer_class": "LlamaTokenizerFast",
+  "tokenizer_vocab_size": 32768
+}

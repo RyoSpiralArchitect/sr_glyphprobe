@@ -1,0 +1,225 @@
+protocol_id: glyphprobe-fresh-composite-glyph-lexical-confirmation-v0
+experiment_role: prospective_exact_surface_fresh_cross_model_lexical_alignment_confirmation
+claim_boundary: >-
+  A prospectively frozen observational test on 192 multi-codepoint Emoji 17
+  sequences whose exact UTF-8 glyph surfaces are absent from the complete
+  tracked repository tree at commit 85213ea9b493682c9198eadda5e20c5e5ab2a04d
+  and whose identities are outside the complete T11 selection. The primary
+  asks whether raw Unicode sequences retrieve their English Emoji short names
+  better than literal U+ codepoint strings in a fixed late-depth window across
+  frozen model/tokenizer cells, both unrestricted and within glyph-system plus
+  exact-token-count strata. Freshness is exact-surface and repository-relative,
+  not a pretraining holdout or a concept-, component-, family-, or Unicode-name
+  holdout. The test concerns text-codepoint sequence representations, not
+  rasterized glyph perception. It cannot establish human meaning,
+  understanding, tokenizer causality, a mechanism, behavior, a scale law,
+  architecture generality, tuning effects, independent model replications, or
+  model-population generality.
+
+source_bindings:
+  unicode_emoji_test:
+    url: https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt
+    unicode_emoji_version: "17.0"
+    expected_bytes: 669326
+    sha256: 1d8a944f88d7952f7ef7c5167fef3c67995bcae24543949710231b03a201acda
+    expected_fully_qualified_entries: 3944
+  cldr:
+    version: "48.2.0"
+    english_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-full/annotations/en/annotations.json
+      expected_bytes: 438314
+      sha256: f22083cb86dffb63a643d5bacb5d9899f82d2fa5d388ad4f3aed72184acef505
+      root_key: annotations
+    english_derived_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-derived-full/annotationsDerived/en/annotations.json
+      expected_bytes: 782906
+      sha256: 15c9457afa703a32dcc78d54626418a91e820fe0ddd67b7d491c4c4d9f5846ab
+      root_key: annotationsDerived
+    japanese_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-full/annotations/ja/annotations.json
+      expected_bytes: 438000
+      sha256: 737ce4bea3d52d904f7744eb7653ea55100c99232255609a913f69a5a8c3d6c1
+      root_key: annotations
+    japanese_derived_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-derived-full/annotationsDerived/ja/annotations.json
+      expected_bytes: 738196
+      sha256: 6c5496486b89d57cb6f9f0701c8052d44c23b08703d796e5e45c1d65f3902edf
+      root_key: annotationsDerived
+  exposure_tree:
+    commit: 85213ea9b493682c9198eadda5e20c5e5ab2a04d
+    tree: bc114c57fb25f9d08f12bea1bdf367002506bd67
+    tracked_paths: 1429
+    definition: exact_candidate_UTF8_byte_substring_absent_from_every_regular_git_blob
+  t11_selection:
+    path: data/manifests/glyph_system_decomposition_selection_v0.json
+    sha256: 7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693
+    exclusion: every_selected_identity_including_discovery_and_reserve
+  t10_freeze:
+    path: data/manifests/semantic_atlas_cross_model_replication_v0.json
+    sha256: 8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4
+  t17_result:
+    path: validation/glyph_name_depth_trajectory_v0/results/analysis.json
+    sha256: ed615103d85608893caf207c856a01922a4e744c6f9713f0293aa223bf8139e4
+    outcomes_known_before_t18_design: true
+    use: frozen_late_depth_window_only
+
+population:
+  selection_namespace: glyphprobe-t18-fresh-lexical-v0
+  expected_items: 192
+  maximum_emoji_version: "13.1"
+  glyph_system_order: [modifier, zwj, regional_flag]
+  quotas: {modifier: 64, zwj: 96, regional_flag: 32}
+  canonical_family_rule: remove_skin_tone_modifiers_only
+  representatives_per_canonical_family: 1
+  within_system_selection: deterministic_subgroup_round_robin_after_hash_selected_family_representative
+  final_order: ascending_emoji_test_source_index
+  replacement_or_exclusion_after_freeze: forbidden
+  freshness_scope: exact_UTF8_surface_absent_from_frozen_repository_tree_and_outside_T11_selection
+  not_authorized_as: pretraining_holdout_or_semantic_concept_holdout
+
+input:
+  view_order: [glyph, english_short_name, japanese_short_name, codepoint_literal]
+  interpretation:
+    glyph: raw_Unicode_codepoint_sequence_not_a_rasterized_font_glyph
+    english_short_name: exact_Emoji_17_comment_name_equal_to_CLDR_48p2_English_tts
+    japanese_short_name: exact_CLDR_48p2_Japanese_tts
+    codepoint_literal: uppercase_space_separated_U_plus_hexadecimal_sequence
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  position_rule: view_token_count_plus_distance_minus_one
+  batch_size_unique_sequences: 1
+
+depth:
+  collected_normalized_fractions: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+  primary_normalized_fractions: [0.75, 0.875, 1.0]
+  selection_basis: fixed_from_prior_exposed_T17_before_any_T18_forward
+  resolution: min_num_layers_minus_one_and_floor_fraction_times_num_layers
+  endpoint: output_hidden_states_resolved_block_index_plus_one
+  final_endpoint_note: >-
+    Fraction 1.0 is the model API returned final hidden state and may include a
+    model-final normalization. Intermediate checkpoints are API hidden states
+    after the resolved decoder block.
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  order:
+    - qwen25_0p5b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - llama32_3b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  core_order: [llama32_3b_base_bf16, qwen25_7b_base_bf16, olmo2_1b_base_bf16, gemma2_2b_it_bf16]
+
+tokenization_guardrail:
+  primary_exact_stratum_key: [glyph_system, glyph_token_count, english_short_name_token_count, codepoint_literal_token_count]
+  eligible_rule: retain_items_in_strata_with_at_least_two_members
+  candidate_and_query_universe: within_glyph_system_and_component_subset
+  centering_and_normalization: recomputed_within_each_glyph_system_and_component_subset
+  minimum_eligible_items_total: 128
+  minimum_eligible_items_per_system: 20
+  null: permute_English_name_correspondence_only_within_exact_strata_synchronized_across_all_primary_contexts
+  codepoint_control: observed_and_fixed
+  singleton_items: excluded_from_matched_component_only_and_reported
+  japanese_secondary_stratum_key: [glyph_system, glyph_token_count, japanese_short_name_token_count, english_short_name_token_count]
+  japanese_secondary_decision_authorized: false
+
+acquisition:
+  item_shard_size: 32
+  expected_shards_per_model: 6
+  expected_unique_input_sequences_per_model: 1536
+  expected_model_forward_calls_per_model: 1536
+  expected_readout_vectors_per_model: 55296
+  expected_model_cells: 9
+  expected_total_model_forward_calls: 13824
+  expected_total_readout_vectors: 497664
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, normalized_depth, width]
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+
+model_primary_endpoint:
+  query_view: glyph
+  positive_target_view: english_short_name
+  negative_control_view: codepoint_literal
+  metric: forward_top1_item_retrieval_after_separate_view_centering_and_row_l2_normalization
+  candidate_universe: separately_within_each_glyph_system
+  primary_contexts: complete_three_depth_by_two_carrier_by_four_distance_grid
+  statistic: equal_weight_mean_over_three_glyph_systems_and_all_24_primary_contexts_of_name_minus_codepoint_top1
+  components: [unrestricted, tokenization_matched]
+  intersection_union_p_value: max_unrestricted_and_tokenization_matched_component_p_values
+  practical_rule: both_component_observed_statistics_at_least_0.02
+  practical_minimum: 0.02
+  randomization_draws: 19999
+  seed_base: 2026090100
+  seed_rule: seed_base_plus_ten_times_model_order_index_plus_component_index_one_or_two
+  p_value: one_plus_exceedances_divided_by_20000
+  alpha: 0.05
+  descriptive_uncertainty:
+    method: independent_within_system_item_bootstrap_on_fixed_top1_predictions
+    replicates: 20000
+    seed_rule: corresponding_randomization_seed_plus_1000
+    decision_authorized: false
+
+cross_model_primary:
+  id: at_least_three_of_four_frozen_core_model_tokenizer_cells
+  m: 4
+  r: 3
+  partial_conjunction_method: bonferroni
+  p_value: min_one_and_m_minus_r_plus_one_times_rth_smallest_core_model_iut_p
+  statistical_rule: partial_conjunction_p_le_0.05
+  practical_rule: at_least_three_core_cells_each_have_model_IUT_p_le_0.05_and_pass_both_registered_practical_floors
+  positive_rule: statistical_and_practical_rules_both_hold
+  alpha: 0.05
+  authorized_positive_wording: at_least_three_of_four_frozen_core_cells_confirm_exact_surface_fresh_English_short_name_alignment
+  independence_claim_authorized: false
+
+bounded_model_cell_family:
+  roles: all_nine_frozen_model_tokenizer_cells
+  multiplicity: holm_on_nine_model_intersection_union_p_values
+  familywise_alpha: 0.05
+  rejection_requires_practical_rule: true
+  relationship_to_cross_model_primary: secondary_exact_cell_roster_cannot_rescue_partial_conjunction
+
+secondary_outputs:
+  decision_authorized: false
+  outputs:
+    - Japanese_short_name_vs_codepoint_and_English_short_name_profiles
+    - complete_nine_depth_trajectories_for_all_three_view_pairs
+    - glyph_system_specific_profiles
+    - token_count_histograms_and_matched_coverage
+    - paired_margin_MRR_reverse_top1_and_centered_linear_CKA
+    - qwen_four_checkpoint_profiles
+    - latency_peak_memory_and_artifact_size_engineering_metrics
+    - descriptive_comparison_to_prior_exposed_T17_without_pooling
+
+execution_policy:
+  backend: transformers_cuda_bfloat16
+  hardware_pin: NVIDIA GeForce RTX 5090
+  model_artifacts_and_runtime_versions: inherited_and_reverified_from_T10_freeze
+  one_forward_per_unique_item_view_carrier_sequence: true
+  four_distance_readouts_and_nine_depths_reused_from_each_forward: true
+  deterministic_eval_no_sampling: true
+  preserve_completed_shards_on_contention: true
+  stop_before_next_shard_when_foreign_gpu_pid_appears: true
+  yield_exit_code_on_foreign_contention: 75
+  recheck_spiral_status_immediately_before_compute: true
+
+forbidden_actions:
+  - any_T18_model_forward_before_final_freeze_is_committed_and_pushed
+  - replacement_or_exclusion_after_freeze
+  - outcome_guided_view_carrier_distance_depth_system_item_or_model_selection
+  - activation_intervention
+  - behavioral_generation
+  - reinterpretation_as_rendered_font_glyph_perception
+  - reinterpretation_as_pretraining_or_semantic_concept_holdout
+  - tokenizer_causal_mechanistic_behavioral_scale_tuning_architecture_or_model_general_claim
+  - raw_activation_commit_to_git

@@ -1,0 +1,264 @@
+{
+  "claim_boundary": "A prospectively frozen observational test on 192 multi-codepoint Emoji 17 sequences whose exact UTF-8 glyph surfaces are absent from the complete tracked repository tree at commit 85213ea9b493682c9198eadda5e20c5e5ab2a04d and whose identities are outside the complete T11 selection. The primary asks whether raw Unicode sequences retrieve their English Emoji short names better than literal U+ codepoint strings in a fixed late-depth window across frozen model/tokenizer cells, both unrestricted and within glyph-system plus exact-token-count strata. Freshness is exact-surface and repository-relative, not a pretraining holdout or a concept-, component-, family-, or Unicode-name holdout. The test concerns text-codepoint sequence representations, not rasterized glyph perception. It cannot establish human meaning, understanding, tokenizer causality, a mechanism, behavior, a scale law, architecture generality, tuning effects, independent model replications, or model-population generality.",
+  "core_roles": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "design_preflight_sha256": "ef7b33c8e4432e684cf70c4df7171abd23933ac696ab8f05b7da2e17d7b1f40e",
+  "engineering_preflight_sha256": "e7584d2d1c3a76cfd39f7929c56f94232a3a6e960a280dc2c0f7c004b9fb29cb",
+  "exact_frozen_model_runtime_sequence_revalidation_required_before_first_forward": true,
+  "exact_surface_holdout": true,
+  "experiment_role": "prospective_exact_surface_fresh_cross_model_lexical_alignment_confirmation",
+  "frozen_assets": {
+    "README.ja.md": "3e57da8c7db514a817e838998f1574ba3f4e54ee31d01d78f17b3fc51c2a5629",
+    "README.md": "015446b7d45427af51b6ea08694801b91adb6f56f1cba563b811388c2abdf671",
+    "configs/fresh_composite_glyph_lexical_confirmation_v0.yaml": "fdda59dd63799c72313dd56245d8b4f233dc8ae6a2111fac12af910aef63507f",
+    "data/manifests/fresh_composite_glyph_lexical_confirmation_v0.json": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+    "data/manifests/glyph_system_decomposition_selection_v0.json": "7484f9b3b1902e38d2cf57e2b783d4f39c8c21fe96ec182c34c4e4c1934a1693",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md": "a0e0e21a48334e2b5b07720c13d2dac8933a9297eb8b6faee82aecfdded4fc1d",
+    "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md": "754fd48384cf2806d79bda3b19445d7a1311079853d5885144cefbc77687db9e",
+    "scripts/fresh_composite_glyph_lexical_confirmation_v0.py": "4143fb4a986bd39839aedf408fbf4a299d01ab3427cbca946fb9264590541e4a",
+    "scripts/validate_fresh_composite_glyph_lexical_confirmation_v0_result.py": "30a58d8f6f02ccaf98b12442b6baddfc81d05a29b3de91b78b3f945fb23e4bfa",
+    "tests/test_fresh_composite_glyph_lexical_confirmation_v0.py": "6c700929a348695f35afa9cc2202845eb99790a4c063fe4f8fe6c032fc39369e",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/design_preflight.json": "ef7b33c8e4432e684cf70c4df7171abd23933ac696ab8f05b7da2e17d7b1f40e",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/engineering_preflight.json": "e7584d2d1c3a76cfd39f7929c56f94232a3a6e960a280dc2c0f7c004b9fb29cb",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/gemma2_2b_it_bf16.json": "91ad269c3c5d4d0d34494e16cc5c0fe93941906708dc3503d937dd5ed37c86b9",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/llama32_3b_base_bf16.json": "55de60e4e087bcac394e9f4337147b7ac8073bc44b041594e5a9d1953013c444",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "a72639637fabdd5a7b66eff2bd80ed451ef3e60b433a506af470b570bfad80b9",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/olmo2_1b_base_bf16.json": "863344503e0fb2b9650332332786838005a41876fa6515a52d0d3a1ea7ab8f48",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/qwen25_0p5b_base_bf16.json": "57d2ddc92c3a7710357affb1fb19681aa26ec9a9b13fe08db03dbc84b1b97313",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/qwen25_1p5b_base_bf16.json": "b9dd2472a45d7549c89727642bb4e61c571c61dff215859f44989dd4ee6e21e9",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/qwen25_3b_base_bf16.json": "b7b378bdc0c01275e7a8a67208abc88c7bc2b935f729a2d25be0743d12357358",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/qwen25_7b_base_bf16.json": "beedca0012e4189d5bbc253e602e959861cc0c30451bb5b2c7844cd128f9e2a6",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/tokenizers/smollm2_1p7b_base_bf16.json": "d1100076b2b56679cc2bc14a42f8c2ac1164ca687f2159a494d2aa7f7b2168dd",
+    "validation/glyph_name_depth_trajectory_v0/results/analysis.json": "ed615103d85608893caf207c856a01922a4e744c6f9713f0293aa223bf8139e4"
+  },
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "model_artifacts": {
+    "gemma2_2b_it_bf16": {
+      "artifact_model_id": "google/gemma-2-2b-it",
+      "file_count": 11,
+      "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "total_bytes": 5250587389
+    },
+    "llama32_3b_base_bf16": {
+      "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "file_count": 9,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "total_bytes": 6434705789
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "file_count": 15,
+      "manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "total_bytes": 28995471365
+    },
+    "olmo2_1b_base_bf16": {
+      "artifact_model_id": "allenai/OLMo-2-0425-1B",
+      "file_count": 12,
+      "manifest_sha256": "d9274983828330b87d86c5b426978b2044df17faecabdee173c03abad3dd826f",
+      "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "total_bytes": 5949386929
+    },
+    "qwen25_0p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-0.5B",
+      "file_count": 10,
+      "manifest_sha256": "c860aa324659f8fea0265e9330ad9893cae513a6ee2a11547efcd299dd5121c2",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "total_bytes": 999602900
+    },
+    "qwen25_1p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-1.5B",
+      "file_count": 10,
+      "manifest_sha256": "cb56a7e1865b662d4f31bba50d4dab26b307810db21ba472e194d632612f6529",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "total_bytes": 3098972223
+    },
+    "qwen25_3b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-3B",
+      "file_count": 12,
+      "manifest_sha256": "cca372c88da20b8c1704fabdaae41919aa69319b2603ba73e222d261eaf8ad91",
+      "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "total_bytes": 6183463686
+    },
+    "qwen25_7b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-7B",
+      "file_count": 14,
+      "manifest_sha256": "bd8ef40517ce1e40d32874561f678de0412d5a840c4cc90ace07ac30aa41b7b9",
+      "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+      "total_bytes": 15242804690
+    },
+    "smollm2_1p7b_base_bf16": {
+      "artifact_model_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "file_count": 10,
+      "manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+      "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "total_bytes": 3426163516
+    }
+  },
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "model_weights_loaded_at_freeze": false,
+  "normalized_depth_fractions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "population_items": 192,
+  "pretraining_or_semantic_holdout": false,
+  "primary_normalized_depth_fractions": [
+    0.75,
+    0.875,
+    1.0
+  ],
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+  "status": "final_execution_freeze_zero_t18_model_forwards",
+  "system_order": [
+    "modifier",
+    "zwj",
+    "regional_flag"
+  ],
+  "tokenizer_receipt_sha256": {
+    "gemma2_2b_it_bf16": "91ad269c3c5d4d0d34494e16cc5c0fe93941906708dc3503d937dd5ed37c86b9",
+    "llama32_3b_base_bf16": "55de60e4e087bcac394e9f4337147b7ac8073bc44b041594e5a9d1953013c444",
+    "mistral7b_instruct_v03_bf16": "a72639637fabdd5a7b66eff2bd80ed451ef3e60b433a506af470b570bfad80b9",
+    "olmo2_1b_base_bf16": "863344503e0fb2b9650332332786838005a41876fa6515a52d0d3a1ea7ab8f48",
+    "qwen25_0p5b_base_bf16": "57d2ddc92c3a7710357affb1fb19681aa26ec9a9b13fe08db03dbc84b1b97313",
+    "qwen25_1p5b_base_bf16": "b9dd2472a45d7549c89727642bb4e61c571c61dff215859f44989dd4ee6e21e9",
+    "qwen25_3b_base_bf16": "b7b378bdc0c01275e7a8a67208abc88c7bc2b935f729a2d25be0743d12357358",
+    "qwen25_7b_base_bf16": "beedca0012e4189d5bbc253e602e959861cc0c30451bb5b2c7844cd128f9e2a6",
+    "smollm2_1p7b_base_bf16": "d1100076b2b56679cc2bc14a42f8c2ac1164ca687f2159a494d2aa7f7b2168dd"
+  },
+  "view_order": [
+    "glyph",
+    "english_short_name",
+    "japanese_short_name",
+    "codepoint_literal"
+  ]
+}

@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T17 glyph–name 論文ストーリー](docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T18 事前固定protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 glyph–name 論文ストーリー](docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [English](README.md) · [T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
@@ -60,6 +60,23 @@ T16では、再現した応答指紋を、行動・因果・文字列幾何の�
 [後期band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md)、
 [完全同一UTF結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md)、
 [系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)にまとめた。
+
+### T18 未提示の複合glyphに対する語彙対応確認
+
+T18では、raw Unicode系列が、literalな`U+...`表記よりも英語のEmoji short nameに
+近い表現へ進むかを、事前に固定した条件で確認する。対象は192個の複合系列で、
+固定したrepository全体にexact UTF-8 surfaceが出現せず、T11の完全な選定集合にも
+含まれない。64個のmodifier系列、96個のZWJ系列、32個のregional-indicator flagを使う。
+
+判定には、全項目を使う成分と、glyph・英語名・codepoint表記のtoken数を厳密に
+揃えた成分の両方を要求する。主解析は4つのcore cellのうち3つ以上での再現を
+求め、日本語名と全深度atlasは二次解析とする。Tokenizer-only事前検査では、
+どのcellでも少なくとも144 / 192項目がmatched成分に残った。
+
+ここでいう「未提示」は、あくまで**repositoryに対するexact surface holdout**である。
+事前学習データ、概念、family、構成要素、名前のholdoutではなく、フォントで描画された
+画像の知覚も調べない。Freeze時点のT18 model forwardは0件で、まだ科学的結果はない。
+詳細は[事前固定protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md)に示す。
 
 ### T17 glyph–name深度atlasの現在地
 

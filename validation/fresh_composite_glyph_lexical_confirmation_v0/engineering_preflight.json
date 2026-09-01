@@ -1,0 +1,131 @@
+{
+  "design_preflight_sha256": "ef7b33c8e4432e684cf70c4df7171abd23933ac696ab8f05b7da2e17d7b1f40e",
+  "exact_frozen_model_runtime_sequence_revalidation_required_before_first_forward": true,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "minimum_japanese_secondary_matched_items": 92,
+  "minimum_primary_matched_items": 144,
+  "minimum_primary_matched_items_by_system": {
+    "modifier": 51,
+    "regional_flag": 23,
+    "zwj": 66
+  },
+  "model_forwards": 0,
+  "model_weights_loaded": false,
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "roles": {
+    "gemma2_2b_it_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 140,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 167,
+      "primary_matched_items_by_system": {
+        "modifier": 63,
+        "regional_flag": 29,
+        "zwj": 75
+      }
+    },
+    "llama32_3b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 125,
+      "maximum_combined_token_count": 57,
+      "primary_matched_items": 147,
+      "primary_matched_items_by_system": {
+        "modifier": 55,
+        "regional_flag": 26,
+        "zwj": 66
+      }
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 96,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 144,
+      "primary_matched_items_by_system": {
+        "modifier": 51,
+        "regional_flag": 23,
+        "zwj": 70
+      }
+    },
+    "olmo2_1b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 96,
+      "maximum_combined_token_count": 57,
+      "primary_matched_items": 149,
+      "primary_matched_items_by_system": {
+        "modifier": 55,
+        "regional_flag": 28,
+        "zwj": 66
+      }
+    },
+    "qwen25_0p5b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 117,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 165,
+      "primary_matched_items_by_system": {
+        "modifier": 61,
+        "regional_flag": 28,
+        "zwj": 76
+      }
+    },
+    "qwen25_1p5b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 117,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 165,
+      "primary_matched_items_by_system": {
+        "modifier": 61,
+        "regional_flag": 28,
+        "zwj": 76
+      }
+    },
+    "qwen25_3b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 117,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 165,
+      "primary_matched_items_by_system": {
+        "modifier": 61,
+        "regional_flag": 28,
+        "zwj": 76
+      }
+    },
+    "qwen25_7b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 117,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 165,
+      "primary_matched_items_by_system": {
+        "modifier": 61,
+        "regional_flag": 28,
+        "zwj": 76
+      }
+    },
+    "smollm2_1p7b_base_bf16": {
+      "exact_frozen_model_runtime_revalidation_required": true,
+      "japanese_secondary_matched_items": 92,
+      "maximum_combined_token_count": 70,
+      "primary_matched_items": 153,
+      "primary_matched_items_by_system": {
+        "modifier": 56,
+        "regional_flag": 27,
+        "zwj": 70
+      }
+    }
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+  "status": "nine_tokenizer_candidate_preflights_pass_zero_t18_model_forwards",
+  "tokenizer_receipt_sha256": {
+    "gemma2_2b_it_bf16": "91ad269c3c5d4d0d34494e16cc5c0fe93941906708dc3503d937dd5ed37c86b9",
+    "llama32_3b_base_bf16": "55de60e4e087bcac394e9f4337147b7ac8073bc44b041594e5a9d1953013c444",
+    "mistral7b_instruct_v03_bf16": "a72639637fabdd5a7b66eff2bd80ed451ef3e60b433a506af470b570bfad80b9",
+    "olmo2_1b_base_bf16": "863344503e0fb2b9650332332786838005a41876fa6515a52d0d3a1ea7ab8f48",
+    "qwen25_0p5b_base_bf16": "57d2ddc92c3a7710357affb1fb19681aa26ec9a9b13fe08db03dbc84b1b97313",
+    "qwen25_1p5b_base_bf16": "b9dd2472a45d7549c89727642bb4e61c571c61dff215859f44989dd4ee6e21e9",
+    "qwen25_3b_base_bf16": "b7b378bdc0c01275e7a8a67208abc88c7bc2b935f729a2d25be0743d12357358",
+    "qwen25_7b_base_bf16": "beedca0012e4189d5bbc253e602e959861cc0c30451bb5b2c7844cd128f9e2a6",
+    "smollm2_1p7b_base_bf16": "d1100076b2b56679cc2bc14a42f8c2ac1164ca687f2159a494d2aa7f7b2168dd"
+  }
+}
