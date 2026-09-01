@@ -1,0 +1,280 @@
+protocol_id: glyphprobe-t19-lexical-alias-unicode-control-v0
+experiment_label: T19-L/C
+status: design_candidate_zero_t19_model_forwards_or_interventions
+question: >-
+  Does a raw atomic emoji retrieve a lexically disjoint CLDR keyword as well as
+  its canonical CLDR short name, relative to a literal U+ codepoint string;
+  what part of that relation is shared by non-emoji Unicode symbols; and, if
+  the emoji alias gate passes, do fixed late attn_out or mlp_out subspaces
+  causally support the held-out glyph-to-alias retrieval relation?
+claim_boundary: >-
+  T19-L is a prospectively frozen endpoint-and-label follow-up on atomic emoji
+  surfaces that may have appeared in earlier repository experiments, plus a
+  text-repository-fresh non-emoji Unicode-symbol control. The alternative label
+  is one exact CLDR keyword whose ASCII-alphanumeric words are disjoint from the
+  canonical CLDR tts words; it is a source-auditable keyword alias, not a
+  human-rated paraphrase. T19-C, if admitted, tests a fixed low-rank
+  representation intervention in one pinned Llama 3.2 3B Transformers/CUDA
+  cell on a bank with zero T19-L forwards. A positive result would support only
+  bounded lexical correspondence and component-level causal contribution under
+  these inputs and endpoints. It cannot establish rendered-glyph perception,
+  human meaning, understanding, a unique or complete circuit, tokenizer
+  independence, pretraining novelty, architecture or model-population
+  generality, a scale law, tuning effects, or natural-language behavior.
+
+source_bindings:
+  unicode_emoji_test:
+    url: https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt
+    version: "17.0"
+    expected_bytes: 669326
+    sha256: 1d8a944f88d7952f7ef7c5167fef3c67995bcae24543949710231b03a201acda
+    expected_fully_qualified_entries: 3944
+  unicode_data:
+    url: https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt
+    version: "17.0.0"
+    expected_bytes: 2198209
+    sha256: 2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c
+  emoji_data:
+    url: https://www.unicode.org/Public/17.0.0/ucd/emoji/emoji-data.txt
+    version: "17.0.0"
+    expected_bytes: 107324
+    sha256: 2cb2bb9455cda83e8481541ecf5b6dfda66a3bb89efa3fa7c5297eccf607b72b
+  cldr:
+    version: "48.2.0"
+    english_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-full/annotations/en/annotations.json
+      expected_bytes: 438314
+      sha256: f22083cb86dffb63a643d5bacb5d9899f82d2fa5d388ad4f3aed72184acef505
+      root_key: annotations
+      filename: annotations-en.json
+    english_derived_annotations:
+      url: https://raw.githubusercontent.com/unicode-org/cldr-json/48.2.0/cldr-json/cldr-annotations-derived-full/annotationsDerived/en/annotations.json
+      expected_bytes: 782906
+      sha256: 15c9457afa703a32dcc78d54626418a91e820fe0ddd67b7d491c4c4d9f5846ab
+      root_key: annotationsDerived
+      filename: annotations-derived-en.json
+  exposure_tree:
+    commit: 31b3bcc5f2a635306ebebeb8b66546135b8ca8b0
+    tree: 54a5394e3bac1b845c58c0d9b1e07a12ba181d88
+    tracked_paths: 1469
+    expected_utf8_text_without_nul_paths: 1446
+    definition: exact_scalar_absent_from_every_strict_UTF8_git_blob_without_NUL
+  t10_freeze:
+    path: data/manifests/semantic_atlas_cross_model_replication_v0.json
+    sha256: 8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4
+  t18_result:
+    path: validation/fresh_composite_glyph_lexical_confirmation_v0/results/cross_model_primary_result.json
+    sha256: afa4ec9e3614ba11da578abf9fc4009630e6c3eb58cf97139aad5a20cafb8eff
+    use: late_depth_window_and_atomic_return_question_only
+
+label_construction:
+  canonical_label: exact_CLDR_48p2_English_tts
+  alias_label: one_exact_CLDR_48p2_default_keyword
+  lexical_disjointness: >-
+    The sets produced by lowercasing and extracting ASCII [a-z0-9]+ words from
+    canonical_label and alias_label must be nonempty and disjoint.
+  uniqueness: alias_label_is_globally_unique_across_all_three_selected_banks
+  assignment: deterministic_symbol_first_maximum_bipartite_matching_then_emoji_matching_with_symbol_aliases_reserved
+  edge_order: sha256_of_namespace_kind_codepoint_alias
+  interpretation: source_auditable_keyword_alias_not_human_rated_paraphrase
+
+population:
+  selection_namespace: glyphprobe-t19-lexical-alias-unicode-control-v0
+  maximum_emoji_version: "13.1"
+  emoji_definition: one_codepoint_fully_qualified_Emoji_17_entry
+  symbol_definition: >-
+    one Unicode scalar with general category prefix S, Emoji property false,
+    present in CLDR English annotations, and absent from every frozen textual
+    repository blob under the exposure definition
+  observational_items_per_kind: 55
+  causal_source_emoji_items: 128
+  causal_eval_emoji_items: 192
+  observational_emoji_selection: deterministic_group_round_robin
+  observational_symbol_selection: complete_maximum_alias_matching_pool
+  causal_selection: deterministic_group_round_robin_after_observational_exclusion
+  final_order: kind_then_ascending_source_index
+  replacement_or_exclusion_after_freeze: forbidden
+  prior_surface_exposure:
+    observational_emoji: allowed_and_explicit
+    observational_symbol: forbidden_within_frozen_text_repository_scope
+    causal_source_and_eval_emoji: allowed_prior_to_T19_but_zero_T19_L_forwards_required
+
+input:
+  view_order: [glyph, canonical_label, alias_label, codepoint_literal]
+  carrier_order: [article_a, pipe]
+  carriers:
+    article_a: {unit: " a", repeats: 8}
+    pipe: {unit: " |", repeats: 8}
+  distance_order: [1, 2, 4, 8]
+  add_special_tokens: false
+  position_rule: view_token_count_plus_distance_minus_one
+  batch_size_unique_sequences: 1
+
+depth:
+  collected_normalized_fractions: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+  primary_normalized_fractions: [0.75, 0.875, 1.0]
+  selection_basis: inherited_from_T18_before_any_T19_forward
+  resolution: min_num_layers_minus_one_and_floor_fraction_times_num_layers
+  endpoint: output_hidden_states_resolved_block_index_plus_one
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  order:
+    - qwen25_0p5b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - llama32_3b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  core_order: [llama32_3b_base_bf16, qwen25_7b_base_bf16, olmo2_1b_base_bf16, gemma2_2b_it_bf16]
+
+tokenization_guardrail:
+  primary_exact_stratum_key: [glyph_kind, glyph_token_count, canonical_label_token_count, alias_label_token_count, codepoint_literal_token_count]
+  eligible_rule: retain_items_in_strata_with_at_least_two_members
+  minimum_eligible_items_total: 52
+  minimum_eligible_items_per_kind: 24
+  null_unrestricted: permute_alias_correspondence_within_glyph_kind
+  null_matched: permute_alias_correspondence_within_exact_token_count_strata
+  codepoint_and_canonical_controls: observed_and_fixed
+  cross_kind_common_tuple_endpoint: registered_secondary_no_decision
+
+acquisition:
+  item_shard_size: 22
+  expected_shards_per_model: 5
+  expected_unique_input_sequences_per_model: 880
+  expected_model_forward_calls_per_model: 880
+  expected_readout_vectors_per_model: 31680
+  expected_model_cells: 9
+  expected_total_model_forward_calls: 7920
+  expected_total_readout_vectors: 285120
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, normalized_depth, width]
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+
+model_primary_endpoint:
+  population: observational_emoji
+  query_view: glyph
+  positive_target_view: alias_label
+  benchmark_target_view: canonical_label
+  negative_control_view: codepoint_literal
+  metric: forward_top1_item_retrieval_after_separate_view_centering_and_row_l2_normalization
+  primary_contexts: complete_three_depth_by_two_carrier_by_four_distance_grid
+  statistic: mean_over_24_contexts_of_alias_minus_codepoint_top1
+  components: [unrestricted, tokenization_matched]
+  intersection_union_p_value: max_unrestricted_and_tokenization_matched_component_p_values
+  practical_minimum: 0.02
+  practical_rule: both_component_observed_statistics_at_least_0p02
+  randomization_draws: 19999
+  seed_base: 2026090200
+  p_value: one_plus_exceedances_divided_by_20000
+  alpha: 0.05
+  descriptive_uncertainty:
+    method: independent_item_bootstrap_on_fixed_top1_predictions
+    replicates: 20000
+    decision_authorized: false
+
+cross_model_primary:
+  id: at_least_three_of_four_frozen_core_model_tokenizer_cells
+  m: 4
+  r: 3
+  partial_conjunction_method: bonferroni
+  p_value: min_one_and_m_minus_r_plus_one_times_rth_smallest_core_model_iut_p
+  statistical_rule: partial_conjunction_p_le_0p05
+  practical_rule: at_least_three_core_cells_pass_model_IUT_and_both_practical_floors
+  positive_rule: statistical_and_practical_rules_both_hold
+  alpha: 0.05
+  causal_go_gate: same_as_positive_rule
+  authorized_positive_wording: at_least_three_of_four_frozen_core_cells_confirm_atomic_emoji_CLDR_keyword_alignment
+  independence_claim_authorized: false
+
+registered_secondary:
+  decision_authorized: false
+  outputs:
+    - canonical_minus_codepoint_and_alias_minus_canonical
+    - nonemoji_symbol_alias_and_canonical_profiles
+    - emoji_minus_symbol_difference_in_differences
+    - cross_kind_common_exact_token_tuple_profiles
+    - complete_nine_depth_trajectories
+    - semantic_group_and_unicode_category_profiles
+    - paired_margin_MRR_reverse_top1_and_centered_linear_CKA
+    - all_nine_model_cells_with_Holm_descriptive_family
+
+causal_followup:
+  admission: only_if_cross_model_primary_causal_go_gate_passes
+  fixed_model:
+    role: llama32_3b_base_bf16
+    selection_reason: pre_T19_hook_compatibility_resource_feasibility_and_prior_fixed_causal_role_not_T19_outcomes
+    expected_layers: 28
+    expected_width: 3072
+  source_bank:
+    rows: 128
+    model_forward_calls_at_observational_freeze: 0
+  evaluation_bank:
+    rows: 192
+    model_forward_calls_at_observational_freeze: 0
+    overlap_with_observational_or_source: forbidden
+  subspace:
+    construction: thin_QR_SVD_of_centered_glyph_by_alias_cross_covariance_on_source_bank
+    rank: 8
+    carrier: pipe
+    distance: 1
+    source_views: [glyph, alias_label]
+    random_control: fixed_Haar_rank_8_subspace_from_source_span
+  primary_sites:
+    - {site: attn_out, block_index: 24, normalized_depth: 0.875}
+    - {site: mlp_out, block_index: 24, normalized_depth: 0.875}
+  secondary_sites:
+    - {site: attn_out, block_index: 21, normalized_depth: 0.75}
+    - {site: mlp_out, block_index: 21, normalized_depth: 0.75}
+    - {site: attn_out, block_index: 27, normalized_depth: 1.0}
+    - {site: mlp_out, block_index: 27, normalized_depth: 1.0}
+  interventions:
+    necessity: remove_learned_rank_8_coordinates_from_eval_glyph_site_output
+    sufficiency: patch_eval_glyph_rank_8_coordinates_into_same_item_codepoint_site_output
+    random_control: same_operations_in_fixed_random_rank_8_subspace
+    zero_hook: required_exact_baseline_equivalence
+    restoration: ablate_then_restore_original_coordinates
+  endpoint: final_hidden_forward_top1_alias_minus_codepoint_retrieval
+  primary_effects:
+    - necessity_drop_minus_random_subspace_drop
+    - sufficiency_gain_minus_random_subspace_gain
+  primary_decision:
+    type: two_component_intersection_union_per_site_with_Holm_over_two_primary_sites
+    alpha: 0.05
+    practical_minimum_each: 0.02
+    requirements:
+      - both_effect_lower_confidence_bounds_exceed_0p02
+      - both_one_sided_randomization_p_values_below_Holm_threshold
+      - zero_hook_and_restoration_fidelity_pass
+  negative_decision: >-
+    A failed component or engineering gate makes that site non-rejecting. The
+    result cannot be rescued by another model, endpoint, bank subset, rank,
+    carrier, distance, depth, or post-hoc site.
+
+execution_policy:
+  observational_backend: transformers_cuda_bfloat16
+  causal_backend: transformers_cuda_bfloat16
+  hardware_pin: NVIDIA GeForce RTX 5090
+  model_artifacts_and_runtime_versions: inherited_and_reverified_from_T10_freeze
+  deterministic_eval_no_sampling: true
+  preserve_completed_shards_on_contention: true
+  stop_before_next_shard_when_foreign_gpu_pid_appears: true
+  yield_exit_code_on_foreign_contention: 75
+  recheck_spiral_status_immediately_before_compute: true
+
+forbidden_actions:
+  - any_T19_model_forward_before_final_freeze_is_committed_and_pushed
+  - any_causal_source_or_eval_forward_before_the_T19_L_go_gate_is_open
+  - replacement_or_exclusion_after_freeze
+  - outcome_guided_view_carrier_distance_depth_kind_item_model_rank_or_site_selection
+  - reading_causal_eval_scientific_outputs_before_complete_seal
+  - reinterpretation_as_rendered_font_glyph_perception
+  - reinterpretation_as_pretraining_or_semantic_concept_holdout
+  - human_paraphrase_quality_claim_for_the_CLDR_keyword_alias
+  - tokenizer_causal_unique_circuit_behavioral_scale_tuning_architecture_or_model_general_claim
+  - raw_activation_commit_to_git

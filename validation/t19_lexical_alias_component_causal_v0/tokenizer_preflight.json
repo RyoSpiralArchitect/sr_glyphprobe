@@ -1,0 +1,141 @@
+{
+  "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+  "design_preflight": {
+    "causal_go_gate_open": false,
+    "evaluation_model_forwards": 0,
+    "evaluation_rows": 192,
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "model_role": "llama32_3b_base_bf16",
+    "parent_protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+    "primary_sites": [
+      {
+        "block_index": 24,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 24,
+        "site": "mlp_out"
+      }
+    ],
+    "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+    "schema_version": 1,
+    "selection_manifest_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+    "site_order": [
+      {
+        "block_index": 21,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 21,
+        "site": "mlp_out"
+      },
+      {
+        "block_index": 24,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 24,
+        "site": "mlp_out"
+      },
+      {
+        "block_index": 27,
+        "site": "attn_out"
+      },
+      {
+        "block_index": 27,
+        "site": "mlp_out"
+      }
+    ],
+    "source_model_forwards": 0,
+    "source_rows": 128,
+    "status": "causal_design_pass_zero_source_or_eval_forwards",
+    "subspace_rank": 8
+  },
+  "evaluation_bank": {
+    "carrier": " |",
+    "carrier_repeats": 8,
+    "carrier_token_id": 765,
+    "maximum_combined_tokens": 15,
+    "ordered_sequence_sha256": {
+      "combined__alias_label": "f13c1c7f6f43b5e16811f703c5877e7829ea619b64ba2ea83c43489d1c1b8ca0",
+      "combined__codepoint_literal": "b95f1422b10a702a65c1bdd0ec8e8a2b1852092ee7954d794655b1bde84f8f85",
+      "combined__glyph": "1ebf487605041f23e52ec4845457bcba692f9e00805c6eeb190826dc2a3dc12a",
+      "raw__alias_label": "3b917a54c243166b0f98b671b938347bf6691a47875466dedec5a10f05545555",
+      "raw__codepoint_literal": "c8ff44e718ba0caea30cde3beee01d4d786463da5f38a5923a09f1fb92409c72",
+      "raw__glyph": "f809ce9e35e6891c9bd577f6019c8c3b382a97549688d2a3e360965c9290805e"
+    },
+    "raw_token_count_histograms": {
+      "alias_label": {
+        "1": 85,
+        "2": 90,
+        "3": 13,
+        "4": 3,
+        "5": 1
+      },
+      "codepoint_literal": {
+        "4": 7,
+        "5": 76,
+        "6": 71,
+        "7": 38
+      },
+      "glyph": {
+        "2": 35,
+        "3": 157
+      }
+    },
+    "rows": 192,
+    "views": [
+      "glyph",
+      "alias_label",
+      "codepoint_literal"
+    ]
+  },
+  "evaluation_model_forwards": 0,
+  "frozen_model_revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_role": "llama32_3b_base_bf16",
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "schema_version": 1,
+  "source_bank": {
+    "carrier": " |",
+    "carrier_repeats": 8,
+    "carrier_token_id": 765,
+    "maximum_combined_tokens": 13,
+    "ordered_sequence_sha256": {
+      "combined__alias_label": "a43a1163dfa13893b9a68179fb2a9c4c32c6bed31eade2063ee657c2f439f26f",
+      "combined__glyph": "d0e0a3bacb9da7e863d192b5bfadca2b9e6fd740fd958fe8393f4a7e37d75326",
+      "raw__alias_label": "c602fceeed3dbdd3f7997602d10f06b905040b29255a6fe94e71d11967007ce8",
+      "raw__glyph": "c511868c0f6899983404df20350b748aca5193db378f7a48629b635f73270b70"
+    },
+    "raw_token_count_histograms": {
+      "alias_label": {
+        "1": 55,
+        "2": 55,
+        "3": 15,
+        "4": 2,
+        "5": 1
+      },
+      "glyph": {
+        "2": 22,
+        "3": 106
+      }
+    },
+    "rows": 128,
+    "views": [
+      "glyph",
+      "alias_label"
+    ]
+  },
+  "source_model_forwards": 0,
+  "status": "causal_tokenizer_preflight_pass_zero_source_or_eval_forwards",
+  "t10_reference_surface_sequence_equivalence": true,
+  "tokenizer_asset_sha256": {
+    "special_tokens_map.json": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535",
+    "tokenizer.json": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "tokenizer_config.json": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+  },
+  "tokenizer_class": "PreTrainedTokenizerFast",
+  "tokenizer_vocab_size": 128256
+}

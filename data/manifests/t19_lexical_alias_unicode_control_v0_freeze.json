@@ -1,0 +1,302 @@
+{
+  "causal_eval_items": 192,
+  "causal_eval_model_forwards_at_freeze": 0,
+  "causal_go_gate_open_at_freeze": false,
+  "causal_primary_sites": [
+    {
+      "block_index": 24,
+      "normalized_depth": 0.875,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "normalized_depth": 0.875,
+      "site": "mlp_out"
+    }
+  ],
+  "causal_secondary_sites": [
+    {
+      "block_index": 21,
+      "normalized_depth": 0.75,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "normalized_depth": 0.75,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "normalized_depth": 1.0,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "normalized_depth": 1.0,
+      "site": "mlp_out"
+    }
+  ],
+  "causal_source_items": 128,
+  "causal_source_model_forwards_at_freeze": 0,
+  "causal_subspace_rank": 8,
+  "claim_boundary": "T19-L is a prospectively frozen endpoint-and-label follow-up on atomic emoji surfaces that may have appeared in earlier repository experiments, plus a text-repository-fresh non-emoji Unicode-symbol control. The alternative label is one exact CLDR keyword whose ASCII-alphanumeric words are disjoint from the canonical CLDR tts words; it is a source-auditable keyword alias, not a human-rated paraphrase. T19-C, if admitted, tests a fixed low-rank representation intervention in one pinned Llama 3.2 3B Transformers/CUDA cell on a bank with zero T19-L forwards. A positive result would support only bounded lexical correspondence and component-level causal contribution under these inputs and endpoints. It cannot establish rendered-glyph perception, human meaning, understanding, a unique or complete circuit, tokenizer independence, pretraining novelty, architecture or model-population generality, a scale law, tuning effects, or natural-language behavior.",
+  "core_roles": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "design_preflight_sha256": "9d51aac036ad44759151f32e0b67af9866dd64faa74ff36b36d568c6bfc34895",
+  "endpoint_and_alias_followup_is_prospective": true,
+  "engineering_preflight_sha256": "fb61ce778f97ce0be4a5b5bc95138f917418c4f875208b34f46458e3ac3cdbd9",
+  "exact_surface_holdout": false,
+  "experiment_label": "T19-L/C",
+  "frozen_assets": {
+    "configs/t19_lexical_alias_unicode_control_v0.yaml": "7d1f25f4121bbf72880e447002fb0623c891d3bfc25e3329807fa925feadf3c4",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "data/manifests/t19_lexical_alias_unicode_control_v0.json": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+    "docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md": "8602faef2b0d4fd0cc24f7ea58b1c14ce6b5fdb12fcd6b63f57ffc6de42e5800",
+    "docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md": "6d41cf38e7be60b5133c1ee58dac1f29f7662e4fadb378accb74e56f68163933",
+    "scripts/t19_lexical_alias_component_causal_v0.py": "ff667d223fe94d8d443a7844f3b747044b513b07749aaa9b2aa5d210e07d762e",
+    "scripts/t19_lexical_alias_unicode_control_v0.py": "162187288d6d6d962525e77ad1976a9d900d21f49feef333f99e37fbaee87cb8",
+    "tests/test_t19_lexical_alias_component_causal_v0.py": "f891c9650d96f16ebaf59b0151681f1645406dde01012a6ae777592d28e84642",
+    "tests/test_t19_lexical_alias_unicode_control_v0.py": "73b53bc805089389eb61546b8a0777b0bf67b8aa4aca6332a4a8ab2a695b5f34",
+    "validation/fresh_composite_glyph_lexical_confirmation_v0/results/cross_model_primary_result.json": "afa4ec9e3614ba11da578abf9fc4009630e6c3eb58cf97139aad5a20cafb8eff",
+    "validation/t19_lexical_alias_component_causal_v0/design_preflight.json": "e8bb62911a90d088a5e5584ba8d60dcf6051b7a1b63a090290d539e20ac55d3f",
+    "validation/t19_lexical_alias_component_causal_v0/tokenizer_preflight.json": "5cc8272d512386b1fe6bab2b43f69c886f729ee79e8ebb6c2d23015f247a9bb4",
+    "validation/t19_lexical_alias_unicode_control_v0/design_preflight.json": "9d51aac036ad44759151f32e0b67af9866dd64faa74ff36b36d568c6bfc34895",
+    "validation/t19_lexical_alias_unicode_control_v0/engineering_preflight.json": "fb61ce778f97ce0be4a5b5bc95138f917418c4f875208b34f46458e3ac3cdbd9",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/gemma2_2b_it_bf16.json": "8a2f5b7f35716c1aef89411560942c591a7457b38c72617ca1d2b40d8265a183",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/llama32_3b_base_bf16.json": "dfb9231c70ee35ac6d3eb2335ef5d683da4b7cb51f556891738fba648ea0479d",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "5e63f0fd5d60cee351ed1dbd55d8b12eaca1b8664ab0c6efc58b44cf062fb54a",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/olmo2_1b_base_bf16.json": "92e4eb1d55e09544fc6174cde3f8462cfb7ad97f5ff599e85c8ef22e153fa4d7",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/qwen25_0p5b_base_bf16.json": "553fddf0a861158f95e7bc4692ed6807c9a506db30180d5516d551fccc022e4f",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/qwen25_1p5b_base_bf16.json": "933180b2724d3a0cfee02adc3fe30ab41b0f17a6f84c09c5e96cf97e41fa32e6",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/qwen25_3b_base_bf16.json": "3a21550ec01c77eb39f1e316258105031a77ff837699563858286a4a5bfcd2ca",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/qwen25_7b_base_bf16.json": "b8ac3a726b55852c9dd5eb0e79c67cab159d414d09c523842d85d6168a808546",
+    "validation/t19_lexical_alias_unicode_control_v0/tokenizers/smollm2_1p7b_base_bf16.json": "e502b93ada16d2beb8987f32f0f57bd1ce345b3ab70ce6f3b31d017c58d4832e"
+  },
+  "generation_calls_at_freeze": 0,
+  "glyph_kind_order": [
+    "emoji",
+    "symbol"
+  ],
+  "intervention_calls_at_freeze": 0,
+  "model_artifacts": {
+    "gemma2_2b_it_bf16": {
+      "artifact_model_id": "google/gemma-2-2b-it",
+      "file_count": 11,
+      "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "total_bytes": 5250587389
+    },
+    "llama32_3b_base_bf16": {
+      "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "file_count": 9,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "total_bytes": 6434705789
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "file_count": 15,
+      "manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "total_bytes": 28995471365
+    },
+    "olmo2_1b_base_bf16": {
+      "artifact_model_id": "allenai/OLMo-2-0425-1B",
+      "file_count": 12,
+      "manifest_sha256": "d9274983828330b87d86c5b426978b2044df17faecabdee173c03abad3dd826f",
+      "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "total_bytes": 5949386929
+    },
+    "qwen25_0p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-0.5B",
+      "file_count": 10,
+      "manifest_sha256": "c860aa324659f8fea0265e9330ad9893cae513a6ee2a11547efcd299dd5121c2",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "total_bytes": 999602900
+    },
+    "qwen25_1p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-1.5B",
+      "file_count": 10,
+      "manifest_sha256": "cb56a7e1865b662d4f31bba50d4dab26b307810db21ba472e194d632612f6529",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "total_bytes": 3098972223
+    },
+    "qwen25_3b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-3B",
+      "file_count": 12,
+      "manifest_sha256": "cca372c88da20b8c1704fabdaae41919aa69319b2603ba73e222d261eaf8ad91",
+      "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "total_bytes": 6183463686
+    },
+    "qwen25_7b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-7B",
+      "file_count": 14,
+      "manifest_sha256": "bd8ef40517ce1e40d32874561f678de0412d5a840c4cc90ace07ac30aa41b7b9",
+      "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+      "total_bytes": 15242804690
+    },
+    "smollm2_1p7b_base_bf16": {
+      "artifact_model_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "file_count": 10,
+      "manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+      "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "total_bytes": 3426163516
+    }
+  },
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "normalized_depth_fractions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "observational_items": 110,
+  "pretraining_or_semantic_holdout": false,
+  "primary_normalized_depth_fractions": [
+    0.75,
+    0.875,
+    1.0
+  ],
+  "protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+  "status": "final_execution_freeze_zero_t19_model_forwards_or_interventions",
+  "tokenizer_receipt_sha256": {
+    "gemma2_2b_it_bf16": "8a2f5b7f35716c1aef89411560942c591a7457b38c72617ca1d2b40d8265a183",
+    "llama32_3b_base_bf16": "dfb9231c70ee35ac6d3eb2335ef5d683da4b7cb51f556891738fba648ea0479d",
+    "mistral7b_instruct_v03_bf16": "5e63f0fd5d60cee351ed1dbd55d8b12eaca1b8664ab0c6efc58b44cf062fb54a",
+    "olmo2_1b_base_bf16": "92e4eb1d55e09544fc6174cde3f8462cfb7ad97f5ff599e85c8ef22e153fa4d7",
+    "qwen25_0p5b_base_bf16": "553fddf0a861158f95e7bc4692ed6807c9a506db30180d5516d551fccc022e4f",
+    "qwen25_1p5b_base_bf16": "933180b2724d3a0cfee02adc3fe30ab41b0f17a6f84c09c5e96cf97e41fa32e6",
+    "qwen25_3b_base_bf16": "3a21550ec01c77eb39f1e316258105031a77ff837699563858286a4a5bfcd2ca",
+    "qwen25_7b_base_bf16": "b8ac3a726b55852c9dd5eb0e79c67cab159d414d09c523842d85d6168a808546",
+    "smollm2_1p7b_base_bf16": "e502b93ada16d2beb8987f32f0f57bd1ce345b3ab70ce6f3b31d017c58d4832e"
+  },
+  "view_order": [
+    "glyph",
+    "canonical_label",
+    "alias_label",
+    "codepoint_literal"
+  ]
+}

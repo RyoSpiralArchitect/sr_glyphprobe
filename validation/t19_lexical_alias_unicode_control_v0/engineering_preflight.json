@@ -1,0 +1,724 @@
+{
+  "design_preflight_sha256": "9d51aac036ad44759151f32e0b67af9866dd64faa74ff36b36d568c6bfc34895",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "minimum_matched_items": 63,
+  "minimum_matched_items_by_kind": {
+    "emoji": 31,
+    "symbol": 32
+  },
+  "model_forwards": 0,
+  "model_weights_loaded": false,
+  "protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "roles": {
+    "gemma2_2b_it_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 3,
+            "key": [
+              1,
+              1,
+              1,
+              6
+            ],
+            "symbol_count": 7
+          },
+          {
+            "emoji_count": 3,
+            "key": [
+              1,
+              1,
+              2,
+              6
+            ],
+            "symbol_count": 4
+          },
+          {
+            "emoji_count": 3,
+            "key": [
+              1,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 15
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              1,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 3
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 12,
+        "symbol_items_in_common_tuples": 30
+      },
+      "matched_items": 97,
+      "matched_items_by_kind": {
+        "emoji": 51,
+        "symbol": 46
+      },
+      "maximum_combined_token_count": 15
+    },
+    "llama32_3b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              2,
+              2,
+              4
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 3,
+            "key": [
+              2,
+              3,
+              2,
+              4
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              3,
+              2,
+              2,
+              5
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 6,
+        "symbol_items_in_common_tuples": 5
+      },
+      "matched_items": 63,
+      "matched_items_by_kind": {
+        "emoji": 31,
+        "symbol": 32
+      },
+      "maximum_combined_token_count": 15
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              4,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 4
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              4,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              4,
+              3,
+              3,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              4,
+              4,
+              1,
+              6
+            ],
+            "symbol_count": 3
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 6,
+        "symbol_items_in_common_tuples": 11
+      },
+      "matched_items": 72,
+      "matched_items_by_kind": {
+        "emoji": 38,
+        "symbol": 34
+      },
+      "maximum_combined_token_count": 16
+    },
+    "olmo2_1b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              1,
+              2,
+              5
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              2,
+              2,
+              4
+            ],
+            "symbol_count": 3
+          },
+          {
+            "emoji_count": 3,
+            "key": [
+              2,
+              3,
+              2,
+              4
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              3,
+              2,
+              2,
+              5
+            ],
+            "symbol_count": 2
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 6,
+        "symbol_items_in_common_tuples": 7
+      },
+      "matched_items": 65,
+      "matched_items_by_kind": {
+        "emoji": 31,
+        "symbol": 34
+      },
+      "maximum_combined_token_count": 15
+    },
+    "qwen25_0p5b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              1,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 7
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 5
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 6
+          },
+          {
+            "emoji_count": 4,
+            "key": [
+              1,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              1,
+              4,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              5,
+              1,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 12,
+        "symbol_items_in_common_tuples": 26
+      },
+      "matched_items": 75,
+      "matched_items_by_kind": {
+        "emoji": 35,
+        "symbol": 40
+      },
+      "maximum_combined_token_count": 15
+    },
+    "qwen25_1p5b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              1,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 7
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 5
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 6
+          },
+          {
+            "emoji_count": 4,
+            "key": [
+              1,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              1,
+              4,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              5,
+              1,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 12,
+        "symbol_items_in_common_tuples": 26
+      },
+      "matched_items": 75,
+      "matched_items_by_kind": {
+        "emoji": 35,
+        "symbol": 40
+      },
+      "maximum_combined_token_count": 15
+    },
+    "qwen25_3b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              1,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 7
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 5
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 6
+          },
+          {
+            "emoji_count": 4,
+            "key": [
+              1,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              1,
+              4,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              5,
+              1,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 12,
+        "symbol_items_in_common_tuples": 26
+      },
+      "matched_items": 75,
+      "matched_items_by_kind": {
+        "emoji": 35,
+        "symbol": 40
+      },
+      "maximum_combined_token_count": 15
+    },
+    "qwen25_7b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              1,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 7
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 5
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 6
+          },
+          {
+            "emoji_count": 4,
+            "key": [
+              1,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              1,
+              4,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              1,
+              5,
+              1,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              3,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 12,
+        "symbol_items_in_common_tuples": 26
+      },
+      "matched_items": 75,
+      "matched_items_by_kind": {
+        "emoji": 35,
+        "symbol": 40
+      },
+      "maximum_combined_token_count": 15
+    },
+    "smollm2_1p7b_base_bf16": {
+      "cross_kind_common_exact_tuple_secondary": {
+        "common_exact_tuples": [
+          {
+            "emoji_count": 2,
+            "key": [
+              2,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 4
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              2,
+              3,
+              3,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              3,
+              2,
+              1,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              3,
+              2,
+              2,
+              6
+            ],
+            "symbol_count": 2
+          },
+          {
+            "emoji_count": 2,
+            "key": [
+              3,
+              3,
+              2,
+              6
+            ],
+            "symbol_count": 1
+          },
+          {
+            "emoji_count": 1,
+            "key": [
+              3,
+              4,
+              3,
+              6
+            ],
+            "symbol_count": 1
+          }
+        ],
+        "decision_authorized": false,
+        "emoji_items_in_common_tuples": 9,
+        "symbol_items_in_common_tuples": 10
+      },
+      "matched_items": 73,
+      "matched_items_by_kind": {
+        "emoji": 41,
+        "symbol": 32
+      },
+      "maximum_combined_token_count": 15
+    }
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+  "status": "nine_tokenizer_preflights_pass_zero_t19_model_forwards",
+  "tokenizer_receipt_sha256": {
+    "gemma2_2b_it_bf16": "8a2f5b7f35716c1aef89411560942c591a7457b38c72617ca1d2b40d8265a183",
+    "llama32_3b_base_bf16": "dfb9231c70ee35ac6d3eb2335ef5d683da4b7cb51f556891738fba648ea0479d",
+    "mistral7b_instruct_v03_bf16": "5e63f0fd5d60cee351ed1dbd55d8b12eaca1b8664ab0c6efc58b44cf062fb54a",
+    "olmo2_1b_base_bf16": "92e4eb1d55e09544fc6174cde3f8462cfb7ad97f5ff599e85c8ef22e153fa4d7",
+    "qwen25_0p5b_base_bf16": "553fddf0a861158f95e7bc4692ed6807c9a506db30180d5516d551fccc022e4f",
+    "qwen25_1p5b_base_bf16": "933180b2724d3a0cfee02adc3fe30ab41b0f17a6f84c09c5e96cf97e41fa32e6",
+    "qwen25_3b_base_bf16": "3a21550ec01c77eb39f1e316258105031a77ff837699563858286a4a5bfcd2ca",
+    "qwen25_7b_base_bf16": "b8ac3a726b55852c9dd5eb0e79c67cab159d414d09c523842d85d6168a808546",
+    "smollm2_1p7b_base_bf16": "e502b93ada16d2beb8987f32f0f57bd1ce345b3ab70ce6f3b31d017c58d4832e"
+  }
+}

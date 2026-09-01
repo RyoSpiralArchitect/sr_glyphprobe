@@ -1,0 +1,52 @@
+{
+  "causal_go_gate_open": false,
+  "evaluation_model_forwards": 0,
+  "evaluation_rows": 192,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_role": "llama32_3b_base_bf16",
+  "parent_protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "primary_sites": [
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    }
+  ],
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "schema_version": 1,
+  "selection_manifest_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+  "site_order": [
+    {
+      "block_index": 21,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "source_model_forwards": 0,
+  "source_rows": 128,
+  "status": "causal_design_pass_zero_source_or_eval_forwards",
+  "subspace_rank": 8
+}

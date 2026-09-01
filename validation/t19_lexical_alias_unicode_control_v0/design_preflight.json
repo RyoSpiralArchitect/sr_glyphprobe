@@ -1,0 +1,169 @@
+{
+  "causal_eval_items": 192,
+  "causal_go_gate_open": false,
+  "causal_primary_sites": [
+    {
+      "block_index": 24,
+      "normalized_depth": 0.875,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "normalized_depth": 0.875,
+      "site": "mlp_out"
+    }
+  ],
+  "causal_secondary_sites": [
+    {
+      "block_index": 21,
+      "normalized_depth": 0.75,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "normalized_depth": 0.75,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "normalized_depth": 1.0,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "normalized_depth": 1.0,
+      "site": "mlp_out"
+    }
+  ],
+  "causal_source_items": 128,
+  "causal_subspace_rank": 8,
+  "core_roles": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "expected_model_forward_calls": 7920,
+  "expected_readout_vectors": 285120,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_forwards": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "model_weights_loaded": false,
+  "observational_items": 110,
+  "protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "selection_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+  "status": "design_pass_zero_t19_model_forwards_or_interventions"
+}
