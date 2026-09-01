@@ -1,0 +1,158 @@
+protocol_id: glyphprobe-t16-utf-scale-variants-v1
+experiment_label: T16-UTF-X1
+status_before_execution: static_design_candidate_zero_x1_model_forwards
+question: >-
+  Across nine already-frozen model/tokenizer cells, how do exact-string
+  repetition, construction-family diversity, order, separators, and the
+  position of one exact UTF anchor change final-wrapper hidden-state geometry
+  as sequence length grows from 1 to 512 emoji items?
+claim_boundary: >-
+  T16-UTF-X1 is a large exploratory stress test downstream of T16-UTF. It
+  freezes exact Unicode strings and exact item multisets for paired order and
+  position contrasts, but model tokenization can still differ across prompts.
+  Results describe hidden-state displacement conditional on recorded model,
+  tokenizer, wrapper, sequence length, and token path. They do not establish
+  tokenizer-independent Unicode composition, emoji meaning, a causal circuit,
+  an instruction-tuning effect, a scale law, or model-population generality.
+
+source_bindings:
+  t16_utf_panel:
+    path: data/panels/t16_utf_identity_mixing_panel_v0.json
+    sha256: 8e80e71b3a3e7e32c903a745410a9512bf6441ad952314ce1ffd1540126ddcd3
+  t16_utf_freeze:
+    path: data/manifests/t16_utf_identity_mixing_v0.json
+    sha256: f57c0bfc14946682a3a8f552d3c8584d82eb8b55f4a403ed81c08c8b8742734d
+  wrappers:
+    path: data/wrappers/source_wrappers.jsonl
+    sha256: 310af508fbe1dd218cb72552d614c812d5afc2bca34165433036f1058a20bdee
+    selected_ids: [w01_mark_anchor, w04_token_state, w10_sequence_continuation, w15_observation_inference]
+  t10_model_config:
+    path: configs/semantic_atlas_cross_model_replication_v0.yaml
+    sha256: 27f499680177e4f44e71003a37443eab8961a711f9e37fd5aadd78065f58864a
+  t13_runtime_preflight:
+    path: validation/emoji_steering_specificity_harvest_v0/aggregate.json
+    sha256: b3d9b38b55a5cda0b808721f342dce0b8c67fff6005128f3b6f652f8c60ef1b1
+
+models:
+  order:
+    - qwen25_0p5b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - llama32_3b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  inferential_role: fixed_cached_model_tokenizer_cells_for_exploratory_stress_test
+  shared_training_or_tokenizer_ancestry_independence_claim: forbidden
+
+factorial:
+  systems: [atomic, presentation, modifier, zwj, regional, keycap]
+  rotations: [0, 1, 2, 3]
+  wrappers: [w01_mark_anchor, w04_token_state, w10_sequence_continuation, w15_observation_inference]
+  scale_lane:
+    n_values: [1, 2, 3, 4, 5, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512]
+    variants: [clone_exact_utf, within_cycle_forward, cross_cycle_forward]
+    separator: none
+  order_lane:
+    n_values: [8, 16, 32, 64, 128, 256]
+    diversity_families: [within, cross]
+    order_variants:
+      - forward_tail
+      - reverse_tail
+      - blocked_tail
+      - interleave_ends_tail
+      - shuffle_seed17_tail
+      - shuffle_seed43_tail
+    separators: [none, ascii_space, comma_space, newline, ascii_pipe]
+    invariant: anchor_first_and_exact_item_multiset_matched_within_each_paired_order_family
+  position_lane:
+    n_values: [8, 16, 32, 64, 128, 256]
+    background_families: [within, cross]
+    anchor_positions: [first, middle, last]
+    separators: [none, ascii_space, comma_space, newline, ascii_pipe]
+    invariant: exactly_one_anchor_and_exact_item_multiset_matched_across_positions
+  expected_records_per_model: 57312
+  expected_records_total: 515808
+  chunks_per_model: 11
+
+tokenization:
+  all_nine_role_preflights_before_final_freeze: true
+  hard_max_full_prompt_tokens: 8192
+  record_full_prompt_token_count: true
+  record_full_prompt_token_multiset_sha256: true
+  record_sequence_utf8_bytes: true
+  record_sequence_unicode_scalar_count: true
+  token_count_and_token_multiset_matched_pair_rates: descriptive_only
+  no_tokenization_regression_rescue: true
+
+capture:
+  endpoint: raw_decoder_block_output_at_final_common_wrapper_token
+  normalized_depth_fractions: [0.25, 0.50, 0.75, 1.0]
+  site_indices_in_t13_eight_depth_roster: [1, 3, 5, 7]
+  dtype_on_disk: float32
+  generation_calls: 0
+
+analysis:
+  scale_reference: clone_exact_utf_at_same_n
+  order_reference: forward_tail_at_same_family_n_separator_wrapper_anchor
+  position_reference: first_at_same_background_n_separator_wrapper_anchor
+  separator_reference: none_at_same_lane_variant_n_wrapper_anchor
+  primary_descriptive_unit: system_by_rotation_by_wrapper
+  uncertainty:
+    bootstrap_replicates: 10000
+    bootstrap_seed: 2026090101
+    stratified_by: unicode_construction_system
+    interval: equal_tailed_95_percent
+  decision_status: exploratory_no_binary_scientific_gate
+
+runtime:
+  backend: transformers
+  device: cuda
+  dtype: bfloat16
+  local_files_only: true
+  trust_remote_code: false
+  hardware_pin: NVIDIA GeForce RTX 5090
+  max_batch_size_by_role:
+    qwen25_0p5b_base_bf16: 128
+    olmo2_1b_base_bf16: 64
+    qwen25_1p5b_base_bf16: 64
+    smollm2_1p7b_base_bf16: 48
+    gemma2_2b_it_bf16: 32
+    llama32_3b_base_bf16: 32
+    qwen25_3b_base_bf16: 32
+    qwen25_7b_base_bf16: 16
+    mistral7b_instruct_v03_bf16: 16
+  max_padded_tokens_per_batch_by_role:
+    qwen25_0p5b_base_bf16: 32768
+    olmo2_1b_base_bf16: 24576
+    qwen25_1p5b_base_bf16: 24576
+    smollm2_1p7b_base_bf16: 24576
+    gemma2_2b_it_bf16: 16384
+    llama32_3b_base_bf16: 16384
+    qwen25_3b_base_bf16: 16384
+    qwen25_7b_base_bf16: 8192
+    mistral7b_instruct_v03_bf16: 8192
+
+execution_policy:
+  final_freeze_commit_and_push_before_any_model_forward: true
+  complete_all_frozen_chunks_before_integrated_scientific_open: true
+  completed_chunks_are_resumable_and_never_recomputed: true
+  check_foreign_gpu_processes_before_model_load_before_each_chunk_and_every_128_unique_prompts: true
+  yield_exit_code_on_foreign_contention: 75
+  no_overwrite: true
+  adaptive_model_system_item_n_variant_separator_wrapper_depth_or_endpoint_changes: forbidden
+
+forbidden_research_inputs:
+  - data/targets/p2_confirmatory_targets_v1.jsonl
+  - data/targets/c1_causal_holdout_targets_v1.jsonl
+  - any_external_c1_target_bank
+forbidden_claims:
+  - tokenizer_independent_unicode_composition
+  - emoji_meaning_or_understanding
+  - causal_circuit
+  - instruction_tuning_effect
+  - scaling_law
+  - independent_model_replication
+  - architecture_or_model_population_generality

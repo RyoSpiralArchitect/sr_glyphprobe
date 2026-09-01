@@ -1,0 +1,101 @@
+{
+  "anchor_positions": [
+    "first",
+    "middle",
+    "last"
+  ],
+  "chunks": [
+    "scale",
+    "order_none",
+    "order_ascii_space",
+    "order_comma_space",
+    "order_newline",
+    "order_ascii_pipe",
+    "position_none",
+    "position_ascii_space",
+    "position_comma_space",
+    "position_newline",
+    "position_ascii_pipe"
+  ],
+  "model_forwards": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "order_variants": [
+    "forward_tail",
+    "reverse_tail",
+    "blocked_tail",
+    "interleave_ends_tail",
+    "shuffle_seed17_tail",
+    "shuffle_seed43_tail"
+  ],
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "records_by_chunk": {
+    "order_ascii_pipe": 6912,
+    "order_ascii_space": 6912,
+    "order_comma_space": 6912,
+    "order_newline": 6912,
+    "order_none": 6912,
+    "position_ascii_pipe": 3456,
+    "position_ascii_space": 3456,
+    "position_comma_space": 3456,
+    "position_newline": 3456,
+    "position_none": 3456,
+    "scale": 5472
+  },
+  "records_per_model": 57312,
+  "records_total": 515808,
+  "scale_n_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128,
+    192,
+    256,
+    384,
+    512
+  ],
+  "schema_version": 1,
+  "separators": [
+    "none",
+    "ascii_space",
+    "comma_space",
+    "newline",
+    "ascii_pipe"
+  ],
+  "status": "design_pass_zero_x1_model_forwards",
+  "tokenizer_independent_unicode_claim_authorized": false,
+  "unique_prompts_by_chunk": {
+    "order_ascii_pipe": 6912,
+    "order_ascii_space": 6912,
+    "order_comma_space": 6912,
+    "order_newline": 6912,
+    "order_none": 6912,
+    "position_ascii_pipe": 3456,
+    "position_ascii_space": 3456,
+    "position_comma_space": 3456,
+    "position_newline": 3456,
+    "position_none": 3456,
+    "scale": 5280
+  },
+  "unique_prompts_per_model_across_chunk_namespaces": 57120
+}
