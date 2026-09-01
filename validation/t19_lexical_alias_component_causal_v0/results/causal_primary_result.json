@@ -1,0 +1,24 @@
+{
+  "claim_boundary": "T19-L is a prospectively frozen endpoint-and-label follow-up on atomic emoji surfaces that may have appeared in earlier repository experiments, plus a text-repository-fresh non-emoji Unicode-symbol control. The alternative label is one exact CLDR keyword whose ASCII-alphanumeric words are disjoint from the canonical CLDR tts words; it is a source-auditable keyword alias, not a human-rated paraphrase. T19-C, if admitted, tests a fixed low-rank representation intervention in one pinned Llama 3.2 3B Transformers/CUDA cell on a bank with zero T19-L forwards. A positive result would support only bounded lexical correspondence and component-level causal contribution under these inputs and endpoints. It cannot establish rendered-glyph perception, human meaning, understanding, a unique or complete circuit, tokenizer independence, pretraining novelty, architecture or model-population generality, a scale law, tuning effects, or natural-language behavior.",
+  "positive": false,
+  "positive_sites": [],
+  "primary_sites": [
+    {
+      "block_index": 24,
+      "holm_threshold": 0.05,
+      "positive": false,
+      "site": "attn_out",
+      "site_iut_p": 1.0
+    },
+    {
+      "block_index": 24,
+      "holm_threshold": 0.025,
+      "positive": false,
+      "site": "mlp_out",
+      "site_iut_p": 0.74912
+    }
+  ],
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "schema_version": 1,
+  "status": "causal_primary_complete"
+}
