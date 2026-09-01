@@ -13,6 +13,7 @@ jobs:
           tectonic-version: "0.15.0"
       - name: Compile paper
         run: |
+          mkdir -p paper/build
           SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
             --outdir paper/build --outfmt pdf \
             --keep-logs --keep-intermediates --untrusted paper/main.tex
