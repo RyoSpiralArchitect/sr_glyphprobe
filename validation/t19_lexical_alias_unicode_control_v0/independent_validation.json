@@ -1,0 +1,60 @@
+{
+  "analysis_output_sha256": {
+    "cross_model_primary_result.json": "4538b81a0996acd6b09fe150d4fe6b832f8e437535d183bae6bc423a50a53f27",
+    "depth_profiles.json": "1d008c34cabde7431eff52bb5583dbdd837c1086c70570471363240ccfa72c80",
+    "model_cell_results.json": "06ae543c162f713874b35cc084d11bce23624ae97f0e2f6b78fb7775ca1bf5c0"
+  },
+  "analysis_receipt_sha256": "1ebf8795c20463f2cff7b2ac5ff045aecaaeda2d8ddabc878822d6182b47e817",
+  "causal_go_gate_open": true,
+  "claim_boundary": "T19-L is a prospectively frozen endpoint-and-label follow-up on atomic emoji surfaces that may have appeared in earlier repository experiments, plus a text-repository-fresh non-emoji Unicode-symbol control. The alternative label is one exact CLDR keyword whose ASCII-alphanumeric words are disjoint from the canonical CLDR tts words; it is a source-auditable keyword alias, not a human-rated paraphrase. T19-C, if admitted, tests a fixed low-rank representation intervention in one pinned Llama 3.2 3B Transformers/CUDA cell on a bank with zero T19-L forwards. A positive result would support only bounded lexical correspondence and component-level causal contribution under these inputs and endpoints. It cannot establish rendered-glyph perception, human meaning, understanding, a unique or complete circuit, tokenizer independence, pretraining novelty, architecture or model-population generality, a scale law, tuning effects, or natural-language behavior.",
+  "core_positive_count": 4,
+  "freeze_manifest_sha256": "5dbbe0ef746cc3a002b8916de647a1c16a1e9f76a3f31fd4a0b53966f9c212fc",
+  "partial_conjunction_p": 0.0027,
+  "positive": true,
+  "protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "randomization_draws_per_test": 19999,
+  "raw_activations_committed_to_git": false,
+  "recomputed_randomization_tests": 36,
+  "run_validation": {
+    "performed": true,
+    "raw_shards_rehashed": 45,
+    "role_receipt_sha256": {
+      "gemma2_2b_it_bf16": "32fba8f3a3e13573fdf29582bd69573e1a4230ef78e30afe34cd73d590416fd8",
+      "llama32_3b_base_bf16": "347f18cddf88a7202d10eb7fb18dd3008b71662a3265ef8f92e884621fc3985b",
+      "mistral7b_instruct_v03_bf16": "db29c1d2d61f5cb4d5a7befee472ad6905387e671edea4db0116b25633996424",
+      "olmo2_1b_base_bf16": "8e16920d9852c65b23f30a1038351e1b5c535d439f456259e312389fd331847c",
+      "qwen25_0p5b_base_bf16": "85c827d98b059a48de92be9ed72dd98a2fbac9ff10abd518a504151e647eb58d",
+      "qwen25_1p5b_base_bf16": "645527d1470f0fdf6cf122be93e6118b0b9ca116809cbfc829617ef7fd4c648c",
+      "qwen25_3b_base_bf16": "3aca237f3f253b0a08e43fc4bf71ddf822b6d80c4a7f6c535dd0a5f0fb4b04f4",
+      "qwen25_7b_base_bf16": "6d3fbafe47ce74071ef4c8e140621da7fce090ab4dbfff8d99db0aab977425eb",
+      "smollm2_1p7b_base_bf16": "ecc28313f774cf24be3a75e123c6f77174f1ede5f86fa4874156fd0e1b046af5"
+    },
+    "summary_receipt_sha256": {
+      "gemma2_2b_it_bf16": "ea48c6f46c9944d0c20b804792a63bf47b15c70c8124cb45765157f160e51740",
+      "llama32_3b_base_bf16": "987ff37620cbdce73f245d2e07e6967dc7d8c14f7a23fa1a149734b923d82bb9",
+      "mistral7b_instruct_v03_bf16": "b3a45126d589da6d14b26fbbd3845d76b5753dd4fc706a26a87e6e39572fb2f9",
+      "olmo2_1b_base_bf16": "f8dd96d4c1da5222b5d727a058a7815a15676cac20b9ee09e05c8c6ee338cf0d",
+      "qwen25_0p5b_base_bf16": "556a2c79994b44bac26f85d46c70966d41e6f28902c25b612c5a0666818e3603",
+      "qwen25_1p5b_base_bf16": "7760058bc598b057c679b9f6e919fe8ea1135ed7175208e54416b6110378245f",
+      "qwen25_3b_base_bf16": "55bf1f39a799da28f605301460af1c54b6641fe28a06688c0e26be90aff94ca8",
+      "qwen25_7b_base_bf16": "c3af6b31aa1f2965ddb99d2399537c263941b843582c79b391dbe3d5d36e71a9",
+      "smollm2_1p7b_base_bf16": "2c2c23e509ff4dfe4b8b4f72d48b49ba7f62b84ccda94b28f5b269f992177656"
+    },
+    "total_model_forward_calls": 7920,
+    "total_readout_vectors": 285120
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+  "status": "independent_validation_pass",
+  "summary_receipt_sha256": {
+    "gemma2_2b_it_bf16": "ea48c6f46c9944d0c20b804792a63bf47b15c70c8124cb45765157f160e51740",
+    "llama32_3b_base_bf16": "987ff37620cbdce73f245d2e07e6967dc7d8c14f7a23fa1a149734b923d82bb9",
+    "mistral7b_instruct_v03_bf16": "b3a45126d589da6d14b26fbbd3845d76b5753dd4fc706a26a87e6e39572fb2f9",
+    "olmo2_1b_base_bf16": "f8dd96d4c1da5222b5d727a058a7815a15676cac20b9ee09e05c8c6ee338cf0d",
+    "qwen25_0p5b_base_bf16": "556a2c79994b44bac26f85d46c70966d41e6f28902c25b612c5a0666818e3603",
+    "qwen25_1p5b_base_bf16": "7760058bc598b057c679b9f6e919fe8ea1135ed7175208e54416b6110378245f",
+    "qwen25_3b_base_bf16": "55bf1f39a799da28f605301460af1c54b6641fe28a06688c0e26be90aff94ca8",
+    "qwen25_7b_base_bf16": "c3af6b31aa1f2965ddb99d2399537c263941b843582c79b391dbe3d5d36e71a9",
+    "smollm2_1p7b_base_bf16": "2c2c23e509ff4dfe4b8b4f72d48b49ba7f62b84ccda94b28f5b269f992177656"
+  }
+}

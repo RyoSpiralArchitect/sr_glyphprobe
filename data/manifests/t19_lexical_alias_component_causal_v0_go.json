@@ -1,0 +1,16 @@
+{
+  "causal_design_preflight_sha256": "e8bb62911a90d088a5e5584ba8d60dcf6051b7a1b63a090290d539e20ac55d3f",
+  "causal_executor_analyzer_sha256": "ff667d223fe94d8d443a7844f3b747044b513b07749aaa9b2aa5d210e07d762e",
+  "causal_tokenizer_preflight_sha256": "5cc8272d512386b1fe6bab2b43f69c886f729ee79e8ebb6c2d23015f247a9bb4",
+  "created_at_utc": "2026-09-01T11:11:41.947778+00:00",
+  "evaluation_bank_sha256": "b65f033b6de698ed6a16b3868a48c371480f13ef50b5341b36fb7b83a572dc26",
+  "evaluation_model_forwards_at_go": 0,
+  "intervention_calls_at_go": 0,
+  "observational_analysis_receipt_sha256": "1ebf8795c20463f2cff7b2ac5ff045aecaaeda2d8ddabc878822d6182b47e817",
+  "parent_freeze_manifest_sha256": "5dbbe0ef746cc3a002b8916de647a1c16a1e9f76a3f31fd4a0b53966f9c212fc",
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "schema_version": 1,
+  "source_bank_sha256": "b695f8559cce90962e18f230295ad5a7ecc22d46422f041ca26fc74dbe693127",
+  "source_model_forwards_at_go": 0,
+  "status": "causal_go_admitted_before_source_or_eval_forwards"
+}
