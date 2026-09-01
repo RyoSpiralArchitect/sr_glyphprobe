@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T19 語彙・因果結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
@@ -41,6 +41,26 @@ token数を完全一致させても同じで、partial conjunctionは`p = 0.0001
 とどまる。T17より強い確認が得られたのに、内部の姿はむしろ一様ではない。集約効果は確認でき、
 その中身はmodelごとにかなり私有されている。ここでの「未提示」は研究repoに対する完全一致表層の
 話であり、事前学習dataに絵文字や名前がなかったことを示さない。
+
+## T19：語彙近傍は広がったが、単純なmediatorは消えた
+
+正式短名は、やはり特別な検索先かもしれない。T18は、絵文字ごとに決められた標準文字列を
+引き当てただけではないか。T19では、短名と単語が重ならないCLDR keywordへ検索先を替えた。
+それでも、9つの凍結済みmodel/tokenizer cellすべてで、token数を完全一致させた差が正だった。
+Core 4 cellは登録済みconjunctionを通過し（`p = 0.0027`）、9 / 9 cellが実用下限も越えた。
+少なくともこの統制した検索課題では、raw symbolは一つの正式labelだけに結び付いているわけではない。
+
+非emoji Unicode記号のpanelは、「emojiだけが言葉になる」という物語に歯止めをかける。
+名前を持つ記号にも正式名の検索は見える。一方、短名と重ならないaliasへの広がりは小さく、
+model間でも揃わない。Emoji-minus-symbolの点推定は9 / 9 cellで正だった。ただし、これは
+有用な境界であって、特別な意味能力の証明ではない。Category、頻度、親しみやすさ、token
+identityまでは揃えていない。
+
+いちばん鋭い結果は、正の観測と陰性の介入を並べたところにある。別のsource bankからrank 8の
+glyph–alias subspaceを学習し、さらに別の192-item bankで後期`attn_out`と`mlp_out`の除去・
+移植を試した。Zeroとrestorationはすべて厳密に一致したが、登録したblock 24の2部位は、
+どちらも必要かつ十分ではなかった。集約すると読みやすい語彙関係が、単純な一つの後期componentには
+載っていない。分散、冗長、非線形、item固有という説明は残るが、T19だけでは選べない。
 
 ## まず、意味ではなく「跡」を測る
 

@@ -1,10 +1,10 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [T17 alternative story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [Current T16 story](PAPER_STORY_T16_V0.md) · [Roadmap](ROADMAP.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T15-B replication](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [Current T19 story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T19 result](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T17 precursor](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 story](PAPER_STORY_T16_V0.md) · [Roadmap](ROADMAP.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T15-B replication](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
-**Behaviorally Legible, Mechanistically Unresolved: Separating Emoji Fingerprints, Congruence, and Causal Mediation**
+**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
 
@@ -16,38 +16,32 @@ papers up to five pages and long papers up to nine pages, excluding references
 and appendix. The working target is a long paper; the five-page format remains
 a fallback if the evidence-bearing narrative cannot be edited cleanly in time.
 
-Internal schedule:
-
-- **August 29:** freeze the scientific core at T12; land its bilingual result,
-  independent validation, public evidence, and figure/table inputs.
-- **August 30:** produce the first complete English draft, prioritizing methods,
-  T10–T12 results, limitations, and the negative-result narrative.
-- **August 31:** freeze claims and figures, run reproducibility and double-blind
-  checks, and move all unvalidated T13 material to future work.
-- **September 1 JST:** upload and verify the submission rather than relying on
-  the final AoE hours.
-
-T13-C is not on the critical path. A bounded T13 exploratory panel may be added
-only if it is complete and independently validated before the August 31 paper
-freeze; otherwise the decision map is the future-work contribution.
+At 09:00 JST on September 1, the end of September 1 AoE is about 36 hours away:
+AoE is 21 hours behind JST. The scientific execution spine is complete through
+T19-L and T19-C. The remaining critical path is manuscript work: freeze the
+claim table, generate only figures traceable to validated summaries, complete
+the checksum/omission archive, run the double-blind and fresh-eyes reviews, and
+upload early enough to verify the OpenReview record. No adaptive T19-C site
+search belongs on this critical path.
 
 ## Proposed central claim
 
-The current paper centers a separation rather than a circuit discovery.
-Emoji-word response fingerprints recur prospectively, and frozen two-choice
-association and congruence judgments succeed in two instruction-tuned models.
-The tested T15-B residual subspace nevertheless moves explicit mismatch
-judgment oppositely to its registered causal prediction, while a separate
-eight-component late band passes necessity but fails sufficiency and the full
-mediation gate. Exact-UTF controls add a tokenizer-conditional geometry result,
-not a semantic or tokenizer-independent claim.
+The current paper centers a separation rather than a circuit discovery. Raw
+atomic emoji retrieve lexically disjoint CLDR keyword aliases better than
+literal codepoints in all nine frozen model/tokenizer cells, including exact
+four-view token-count-matched analysis. A non-emoji Unicode-symbol panel bounds
+that breadth: canonical-name retrieval is broader, while symbol alias effects
+are smaller and heterogeneous. A preregistered rank-8 late-component test then
+passes every engineering control but finds no primary `attn_out` or `mlp_out`
+site that is jointly necessary and sufficient on 192 untouched emoji.
 
-The detailed submission-ready narrative, five-page fallback, figure spine, and
-allowed/disallowed claim table now live in [T16 paper story v0](PAPER_STORY_T16_V0.md).
-The older sections below remain an evidence registry and historical design
-record; they no longer define the manuscript's lead claim by themselves.
+The detailed submission-ready narrative, figure spine, and candidate
+allowed/disallowed claim table now live in the [T19 paper
+story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md). T16–T18 remain essential
+precursors and evidence registry entries; they no longer define the lead claim
+by themselves.
 
-## T17 alternative representation spine
+## T17 representation precursor
 
 T17-GN now offers a narrower alternative lead: trace a raw emoji surface to
 its official Unicode name relative to its literal codepoint identifier across
@@ -59,10 +53,10 @@ lexical correspondence more strongly than a global name manifold.
 
 The complete argument and its fresh-population gate live in the
 [T17 alternative story](PAPER_STORY_T17_GLYPH_NAME_V0.md). Because the 292
-items were exposed in T9/T10, T17 is exploratory. Until a new label population
-is prospectively confirmed, the T16 behavior/causality dissociation remains
-the stronger confirmatory spine and T17 is either an alternative atlas paper
-or a compact representation section.
+items were exposed in T9/T10, T17 is exploratory. T18 supplied the prospective
+fresh-surface confirmation and T19 widened the lexical endpoint while testing
+a separate causal account. T17 now serves as the depth-trajectory precursor,
+not the manuscript's confirmatory spine.
 
 ## Current Milestone 2 claim table
 

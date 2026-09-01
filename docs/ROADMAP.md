@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 glyph–name result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md)
+[T19 lexical + causal result](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 glyph–name result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md)
 
 [日本語](ROADMAP.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
@@ -888,24 +888,41 @@ claim boundary. T18 supports exact-surface-fresh lexical binding in the frozen
 cells. It does not establish a pretraining holdout, rendered-glyph perception,
 human meaning, tokenizer independence, a shared mechanism, or a scale law.
 
-### Next T19 gate — Lexical breadth, symbol specificity, then causality
+### Completed T19 — Lexical breadth, symbol boundary, and causal falsification
 
-Status: option space only; no T19 population, endpoint, causal site, or
-hypothesis family is frozen.
+Status: T19-L's registered primary is positive; the conditionally admitted
+T19-C registered primary is negative.
 
-- Cross raw emoji with the official short name, a preselected alias or concise
-  paraphrase, Japanese label, and literal codepoint identifier.
-- Add named non-emoji Unicode symbols under matched token and label structure
-  to test whether the relation is emoji-specific or a broader named-symbol
-  phenomenon.
-- Freeze one small primary contrast that separates official-label lookup from
-  broader lexical-neighborhood retrieval. Multilingual and system profiles
-  remain secondary unless separately powered and registered.
-- Preserve an untouched evaluation bank for a later removal, addition, and
-  restoration experiment. T18 consensus and model-private items may define
-  prespecified strata, but must not select the sole favorable causal site.
-- Compare late `attn_out` and `mlp_out` only after fixing a site-selection rule
-  that does not reuse the largest T18 cell or depth as confirmatory evidence.
+- T19-L froze 55 atomic emoji and 55 repository-text-fresh non-emoji Unicode
+  symbols, with 430 unique codepoints and 430 unique aliases across the three
+  non-overlapping banks.
+- The primary alias was an exact CLDR keyword whose ASCII words did not overlap
+  the CLDR short name. It is source-auditable but is not a human-rated
+  paraphrase or a claim of synonym understanding.
+- All four core cells passed the unrestricted and exact four-view token-count-
+  matched rules. The registered `r = 3 of 4` partial-conjunction p-value was
+  `0.0027`; all nine frozen cells passed their model IUT and `0.02` floors.
+- Non-emoji symbol alias effects were smaller and heterogeneous. Emoji-minus-
+  symbol point estimates were positive in 9/9 cells, but this comparison was
+  registered secondary and does not prove an emoji-exclusive faculty.
+- T19-C used a separate 128-item source bank and 192-item untouched evaluation
+  bank in Llama 3.2 3B. It tested frozen block-24 `attn_out` and `mlp_out`
+  primary sites, with blocks 21 and 27 secondary.
+- All six zero-hook/restoration gates were exact. Neither primary site was
+  jointly necessary and sufficient under the registered rank-8 intervention.
+  Block-27 `mlp_out` had a positive secondary sufficiency component but a
+  negative necessity component, so its IUT failed and it is not a causal site.
+- Independent validators reconstructed all 36 observational randomization
+  tests and all 12 causal sign-flip/12 bootstrap families, including raw-array
+  hashes and engineering gates.
+
+The [T19 result](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md), [paper
+story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md), and [frozen
+protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) define the boundary. The
+clean landing is a cross-model, token-count-matched lexical relation plus a
+falsified simple late-component account. Future work should test human-rated
+aliases, tighter symbol matching, distributed interventions, and nonlinear
+readouts under new freezes rather than adaptively searching T19-C.
 
 ### Milestone 4 — Replication and boundary mapping
 
@@ -1050,6 +1067,14 @@ two-model R1 intersection rule. This satisfies gate 5 for the narrow
 operational response-shape candidate. Its claim-specific target-cluster and
 multiplicity qualification strengthens gate 6, but the paper-wide claim table
 still requires a separate freeze.
+T18 then completed prospective fresh-surface lexical confirmation. T19 widened
+that endpoint beyond an exact official label: all 9/9 frozen cells passed the
+unrestricted and exact token-count-matched alias rule, while the non-emoji
+symbol panel bounded specificity. Its separate untouched-bank component test
+passed all engineering controls and produced a registered primary causal
+negative. T19 therefore consolidates claim-specific evidence for gates 1–4,
+6, and 7. Gate 5 remains satisfied only for T15-B's narrow operational
+response-shape claim; it is not a blanket replication certificate for T19.
 Final paper-wide qualification for gate 6 remains open because the rebuilt
 GPT-2 prototype analysis was post hoc. Gates 8 and 10 remain open. Gate 9 must be
 maintained on every public documentation change. The English paper remains the

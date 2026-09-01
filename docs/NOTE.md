@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
+[T19 lexical + causal result](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
@@ -49,6 +49,32 @@ both stronger and stranger than T17: the aggregate lexical relation confirms,
 while the item roster and geometry remain model-private. “Fresh” is
 repository-relative exact-surface freshness, not evidence that the pretraining
 corpus never contained the emoji or its name.
+
+## T19: the lexical neighborhood widened, but the simple mediator vanished
+
+An official short name is still a special target. Perhaps T18 only recovered
+the standardized string attached to each emoji. T19 replaces that string with
+a CLDR keyword whose words do not overlap the short name. The contrast remains
+positive after exact token-count matching in every one of nine frozen
+model/tokenizer cells. All four core cells pass the registered conjunction
+(`p = 0.0027`), and all nine clear the practical floor. The raw symbol is thus
+linked to more than one exact label string in this controlled retrieval task.
+
+The non-emoji Unicode panel prevents the story from becoming “emoji alone turn
+into words.” Canonical-name retrieval is also visible for named symbols. Their
+disjoint-alias effects are smaller and less consistent, while the emoji-minus-
+symbol point estimate is positive in all nine cells. That is a useful boundary,
+not proof of a special semantic faculty: category, frequency, familiarity, and
+token identity are not fully matched.
+
+The sharpest result comes from putting the positive observation beside a
+negative intervention. A separate source bank learned rank-8 glyph–alias
+subspaces; a separate 192-item bank tested removal and transplantation at late
+`attn_out` and `mlp_out` sites. Every zero and restoration check was exact, but
+neither preregistered block-24 site was both necessary and sufficient. The
+lexical relation is easy to read in aggregate and hard to assign to one simple
+late component. Distributed, redundant, nonlinear, and item-private accounts
+remain possible; T19 does not choose among them.
 
 Its first question is not what an emoji means inside a model. It asks whether a direction derived from that emoji leaves a reproducible fingerprint when added to a fixed internal activation. If the intervention magnitude, source prompts, target prompts, clipping, and random controls are all sealed, does the same direction move the next-token distribution in a recognizable way on held-out prompts?
 

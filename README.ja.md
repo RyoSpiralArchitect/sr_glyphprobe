@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T19 語彙・因果結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19 凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [English](README.md) · [T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
@@ -60,6 +60,25 @@ T16では、再現した応答指紋を、行動・因果・文字列幾何の�
 [後期band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md)、
 [完全同一UTF結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md)、
 [系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)にまとめた。
+
+### T19 語彙の幅とcomponent因果の現在地
+
+T19-Lでは、atomic emoji 55件と非emoji Unicode記号55件を、正式label、正式名と
+語が重ならないalias、literal codepointと交差させた。9つの凍結済みmodel/tokenizer
+cellすべてで、emojiのalias-minus-codepoint検索差がunrestrictedと4-viewのtoken数
+完全一致解析の両方で正だった。Core 4 cellは全件、登録したpartial conjunctionを
+通過し（`p = 0.0027`）、9 / 9 cellすべてがmodel IUTと実用下限`0.02`を満たした。
+記号のalias効果は小さく不均一だった。Emoji-minus-symbol点推定は9 / 9 cellで正だったが、
+この比較は登録済み二次結果である。
+
+条件付きで実施したT19-Cでは、128件のsource emojiからrank 8のglyph–alias subspaceを
+学習し、Llama 3.2 3Bの未使用emoji 192件で検定した。6部位すべてでzero-hookとrestorationは
+厳密に一致したが、一次のblock 24 `attn_out`と`mlp_out`は、どちらもnecessityと
+sufficiencyのintersectionを通過しなかった。したがって、支持できるのはtoken数を揃えた
+CLDR語彙対応までであり、登録した単純な後期component mediatorは棄却された。描画知覚、
+同義語理解、普遍manifold、完全な回路は示していない。詳しくは[全結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md)、
+[論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)、
+[凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md)に示す。
 
 ### T18 未提示の複合glyphに対する語彙対応確認
 
@@ -500,6 +519,9 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [未提示の複合glyph確認protocol（T18）](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) / [English](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md)
 - [未提示の複合glyph確認結果（T18）](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) / [English](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md)
 - [T18 未提示表層の論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) / [English](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
+- [T19 語彙alias・Unicode記号対照protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) / [English](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md)
+- [T19 語彙・component因果結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) / [English](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md)
+- [T19 語彙近傍の論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) / [English](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md)
 - [Emoji steering specificity atlas v0（T13設計図）](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md)
 - [Emoji steering specificity harvest v0（T13-EH）](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md)
 - [Emoji steering specificity analysis v0（T13-EA）](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md)
@@ -528,7 +550,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。観測研究の背骨としては、T18が最も強くなった。未提示表層をprospectiveに固定し、4 coreすべてでunrestrictedとtoken数一致ruleを通過し、18本の検定も別実装で再計算した。T14-Cの対象を絞った因果gateは妥当な負の結果として残り、T15-Bは別の運用response-shape候補に対するprospective再現として残る。これらを足し合わせても、意味、mediator、回路、tokenizer非依存性、scale、tuning不変性、model母集団への一般化にはならない。未完了なのは、manuscript claim tableのfreeze、完全なchecksum archive、先入観のない再現性reviewである。正確な境界は[T18ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)、[ロードマップ](docs/ROADMAP.ja.md)、[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)、[T15-B結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)に示す。
+Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。T18は未提示表層に対するprospective確認を与えた。T19は、正式短名から語彙的に独立したCLDR keywordへendpointを広げた9 / 9 cellの観測結果、非emoji Unicode記号による境界、登録済みrank 8後期component仮説の妥当な陰性因果結果を一つの論文の背骨へまとめた。T15-Bは別の運用response-shape候補に対するprospective再現として残る。これらを足し合わせても、意味、完全mediator、普遍回路、tokenizer非依存性、scale、tuning不変性、model母集団への一般化にはならない。未完了なのは、manuscript claim tableのfreeze、完全なchecksum archive、先入観のない再現性reviewである。正確な境界は[T19ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)、[T19結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md)、[ロードマップ](docs/ROADMAP.ja.md)に示す。
 
 T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cには新しい未使用bankと別freezeが必要だった。後続のT14-Cはその条件を満たしたが、T13へ遡って確認statusを与えない。
 

@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 glyph–name結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)
+[T19 語彙・因果結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 glyph–name結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)
 
 [English](ROADMAP.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
@@ -608,21 +608,32 @@ claim-boundary reviewである。
 登録済みcellにおける未提示表層の語彙結合まで。事前学習holdout、描画glyph知覚、意味理解、
 tokenizer非依存性、共通mechanism、scale lawではない。
 
-### 次のT19 gate — 語彙の幅、記号特異性、その後に因果
+### 完了したT19 — 語彙の幅、記号境界、因果反証
 
-状態：選択肢を整理した段階。T19 population、endpoint、因果site、hypothesis familyは
-まだfreezeしていない。
+状態：T19-Lの登録済み一次判定は正、条件付きでadmitしたT19-Cの登録済み一次判定は陰性。
 
-- Raw emojiに、正式短名、事前選定aliasまたは短いparaphrase、日本語label、literal
-  codepoint identifierを交差させる。
-- 名前を持つ非emoji Unicode記号を、token数とlabel構造を揃えて追加する。絵文字固有か、
-  より広いnamed-symbol現象かを分ける。
-- 正式table名のlookupと広い語彙近傍を分ける、小さな一次contrastを一つだけfreezeする。
-  多言語・系統別profileは、別に検出力と多重性を固定しない限り二次に保つ。
-- 後続の除去・追加・復元用に、新しい未使用評価bankを残す。T18のconsensus itemと
-  model-private itemは事前層にできるが、都合のよい因果siteを選ぶ材料にはしない。
-- Late `attn_out`と`mlp_out`を比べる前に、最大のT18 cellやdepthを確認証拠として
-  再利用しないsite選択ruleを決める。
+- T19-Lではatomic emoji 55件と、repository text上で未提示の非emoji Unicode記号55件を
+  freezeした。3つの非重複bank全体で、codepoint 430件とalias 430件はすべて一意である。
+- 一次aliasは、CLDR短名とASCII単語が重ならないCLDR keywordをそのまま使った。Sourceは
+  監査できるが、人が評価したparaphraseでも、同義語理解の証拠でもない。
+- Core 4 cellすべてがunrestrictedと4-viewのtoken数完全一致ruleを通過した。登録した
+  `r = 3 of 4` partial conjunctionは`p = 0.0027`で、凍結済み9 cellすべてがmodel IUTと
+  実用下限`0.02`を満たした。
+- 非emoji記号のalias効果は小さく不均一だった。Emoji-minus-symbol点推定は9 / 9 cellで
+  正だったが、この比較は登録済み二次結果であり、emojiだけの能力は示さない。
+- T19-Cは、Llama 3.2 3Bで別のsource bank 128件と未使用evaluation bank 192件を使った。
+  一次はblock 24の`attn_out`と`mlp_out`、block 21と27は二次である。
+- 6部位のzero-hook/restoration gateはすべて厳密に一致した。登録済みrank 8介入では、一次
+  2部位のどちらもnecessityとsufficiencyを同時に満たさなかった。Block 27 `mlp_out`は
+  二次のsufficiencyが正でもnecessityが負で、IUT不通過のため因果siteではない。
+- 独立validatorは、観測36 randomizationと因果12 sign-flip・12 bootstrapを、raw array
+  hashとengineering gateを含めて別実装で再構成した。
+
+境界は[T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md)、[論文ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)、
+[凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md)に固定する。綺麗な落とし所は、
+model横断・token数一致の語彙関係と、単純な後期component説明の反証を同時に示すことである。
+次はT19-Cを適応的に掘らず、人手評価alias、厳密な記号matching、分散介入、非線形readoutを
+新しいfreezeで試す。
 
 ### Milestone 4 — 再現と適用境界の把握
 
@@ -697,6 +708,14 @@ tokenizer非依存性、共通mechanism、scale lawではない。
 現時点では、ゲート1〜3にGPT-2固有の実行上の根拠がある。ただし、multifamily tokenizer censusはゲート3をtokenizer間へ拡張しない。その拡張には、tokenizerごとに別々に凍結したcontrol panelが必要である。T2は2つのregimeを観測的に使い、事前指定したmidpointはいずれもHolm補正後に棄却しなかった。T3では5 familyのmatched-slot factorialを使い、同じ末尾tokenを厳密に共有するOLMoだけが再現し、Gemmaのatomic-token omnibusは棄却しなかった。T4では読み出しを1つ後ろの共通tokenへ移し、固定した両接尾文脈でもOLMoだけが再現した。これにより現在tokenだけの説明は退くが、OLMoの構造化prefixからの短距離伝播で十分という説明は残る。T2〜T4はtokenizerの因果contrast、独立再現、意味効果ではなく、論文gateを閉じない。T5とT6では登録済みmodel-level距離減衰conjunctionを棄却したmodelがなかった。T7では、選択したMistral base cellの固定した距離1＋初期−後期深度IUTをprospectiveに棄却したが、T6後のendpoint・model選択と関連Instruct参照により、独立確認やinstruction tuning効果は主張できない。T5〜T7は深度依存の観測記述を鋭くしたが、その時点ではgate 4・5を閉じなかった。T8/T9では、決定論的に選定した292-item reserveをforwardする前に一つのendpointをfreezeし、単一のglobalなcell最小値randomization testを通過した。これによりMistral固有のgate 1、2、6、7 evidenceは得たが、独立model再現、意味、因果ではない。続くT10では、このpopulationとtransportを9つの固定セルで保った。Token数完全一致後も差は消えず、統計的な部分連言検定は通過したが、実用下限を満たしたcore cellは4つ中2つだった。したがってT10はclaim-matchedなmixed cross-model結果であり、独立再現、scale、tuning、意味、model一般性ではなく、gate 5も閉じない。また、GPT-2のprototype再構築解析が事後的だったため、論文全体としてのゲート6の最終資格は未確定である。
 
 T10-Dもこの判定を保つ。T11は探索的なdiscovery atlasを完了した。T12では、別の一度限りのprotocolによりZWJ 96件とregional 64件だけを開いたが、登録した2仮説はいずれも確認されなかった。これは完了した負の確認結果であって、意味、因果、model一般性のpaper gateを閉じない。T13-EHが加えるのは、露出済み項目と公開target上の探索的な収集専用tensor surfaceであり、論文gateは閉じない。T14-Xは、別freezeの6 model×2 depth拡張を完了した。Headline JS区間12本はすべて0を含まなかったが、正9本・負3本で、Qwen profileは非単調だった。これは探索的な境界地図であり、独立確認やscale lawではない。T14-Cはそのoutcomeを開く前に凍結し、公開target上で`mlp_out` block 24を選び、新しい未使用192-target bankで一度だけ検定した。Engineering controlはすべて通過したが、treatment・necessity・sufficiency IUTは非棄却だった。Gate 4は負の結果として完了したが、因果媒介主張や適応的な第2部位探索は認めない。続くT15-Aでは、別に凍結した4 modelの絵文字 × 言葉factorialを完走した。一次のresponse-fingerprint区間はmodel × depth × signの16 cellすべてで正だったが、source residual magnitude、応答energy、主効果、語順、depth、doseは不均一だった。探索的なinteraction fingerprint候補ではあるものの、公開target、結果を踏まえたrole選択、記述区間、明示したpost-open実装修復を伴うため、その時点ではgate 1、2、5、6を閉じなかった。T15-Bは、outcomeを開く前にすべてのaxis、target、model roleを入れ替え、7通りすべてのnon-self cross-axis controlを使い、凍結した二model R1 intersection ruleを通過した。この狭い運用上のresponse-shape候補について、gate 5を満たす。Claim-specificなtarget-cluster解析と多重性規則はgate 6を強くするが、paper全体のclaim tableには別のfreezeが必要である。Gate 8と10は未完了である。Gate 9は、公開文書を更新するたびに維持する。英語論文がPhase Iの終点であり、現在のリポジトリはエビデンスを伴う研究リリースであって、完成原稿ではない。
+
+T18は未提示表層のprospectiveな語彙確認を完了した。続くT19では、正式labelだけでなく
+語彙的に独立したaliasでも、unrestrictedとtoken数一致の両方を9 / 9 cellが通過し、
+非emoji記号panelで特異性の境界も置いた。別の未使用bankによるcomponent介入は、すべての
+engineering controlを通過したうえで登録済み一次因果仮説を支持しなかった。これにより、
+claim-specificなgate 1〜4、6、7の根拠はまとまった。Gate 5はT15-Bの狭い運用上の
+response-shape claimに対してのみ満たされ、T19全体の再現証明ではない。Gate 8と10は
+未完了、gate 9は英日文書の更新ごとに維持する。英語論文がPhase Iの終点である。
 
 ## Phase I より先の候補
 

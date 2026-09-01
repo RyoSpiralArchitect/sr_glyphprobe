@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T18 fresh lexical result](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T18 frozen protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) · [T17 depth-atlas result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
+[T19 lexical + causal result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T19 frozen protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 fresh lexical result](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T18 frozen protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) · [T17 depth-atlas result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [日本語](README.ja.md) · [T15-B prospective replication result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md) · [T15-A emoji × word result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
@@ -58,6 +58,8 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T16-UTF-X1 scale and sequence variants | 515,808 records, 9 fixed model/tokenizer cells, 4 depths, n=1…500 | exploratory: primary and n=500 cross-minus-within were positive in 36/36 cells; exact-token-multiset order controls made blocked runs largest in 72/72 cells; not a scale law or tokenizer-independent Unicode result |
 | T17 raw emoji → Unicode-name depth atlas | 292 prior-exposed items, 9 exact cells, 9 depths, 567,648 readouts | exploratory: name-minus-codepoint top-1 was positive in 9/9 models from depth 0.375; peaks were heterogeneous, and final paired margins were positive in 9/9 while final CKA contrasts were positive in 4/9 |
 | T18 fresh composite-glyph confirmation | 192 exact-surface-fresh items, 9 fixed cells, 13,824 forwards, 497,664 readouts | frozen `r=3/4` core primary passed at p=0.0001; 4/4 core and 8/9 total cells passed both unrestricted and token-count-matched practical rules |
+| T19-L alias × Unicode-symbol control | 110 observational items, 9 fixed cells, 7,920 forwards, 285,120 readouts | frozen `r=3/4` core primary passed at p=0.0027; 4/4 core and 9/9 total cells passed unrestricted and exact four-view token-count-matched rules |
+| T19-C component causality | 128 source and 192 untouched evaluation emoji; 256 + 2,880 forwards; 8,064 intervention rows | 6/6 engineering gates exact; neither primary block-24 `attn_out` nor `mlp_out` was jointly necessary and sufficient |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -74,6 +76,29 @@ passed 15/15 integrity checks with caveats. `causal_claim_authorized` remains
 negative cells.
 
 Latency is machine-, load-, and software-dependent. Treat the receipt as the measurement, not 1.63× as a universal MLX claim.
+
+### T19 lexical breadth and component-causal status
+
+T19-L crossed 55 atomic emoji and 55 non-emoji Unicode symbols with canonical
+labels, lexically disjoint aliases, and literal codepoints. Across all nine
+frozen model/tokenizer cells, emoji alias-minus-codepoint retrieval was
+positive in both unrestricted and exact four-view token-count-matched
+analysis. All four core cells passed the registered partial-conjunction primary
+(`p = 0.0027`), and all 9/9 cells passed their model IUT and `0.02` practical
+floors. Symbol alias effects were smaller and heterogeneous; emoji-minus-symbol
+point estimates were positive in 9/9 cells, but this comparison was registered
+secondary.
+
+The admitted T19-C follow-up learned rank-8 glyph–alias subspaces from 128
+source emoji and tested them on 192 untouched emoji in Llama 3.2 3B. All six
+zero-hook and restoration checks were exact, but neither primary block-24
+`attn_out` nor `mlp_out` site passed the necessity–sufficiency intersection.
+The result supports a token-count-matched CLDR lexical correspondence while
+rejecting this simple late-component mediator—not rendered perception,
+synonym understanding, a universal manifold, or a complete circuit. See the
+[full result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md), [paper
+story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md), and [frozen
+protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md).
 
 ### T18 fresh composite-glyph confirmation status
 
@@ -704,6 +729,9 @@ Project-authored public documentation is maintained in English and Japanese:
 | Fresh composite-glyph confirmation protocol (T18) | [FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) | [FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) |
 | Fresh composite-glyph confirmation results (T18) | [FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) | [FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) |
 | T18 fresh lexical paper story | [PAPER_STORY_T18_FRESH_LEXICAL_V0.md](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md) | [PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) |
+| T19 lexical alias and symbol-control protocol | [T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) | [T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) |
+| T19 lexical and component-causal results | [T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) | [T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) |
+| T19 lexical-neighborhood paper story | [PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) | [PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) |
 | Emoji steering specificity atlas v0 (T13 decision map) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) | [EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) |
 | Emoji steering specificity harvest v0 (T13-EH) | [EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) | [EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) |
 | Emoji steering specificity analysis v0 (T13-EA) | [EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md) | [EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md) |
@@ -732,7 +760,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. T18 now provides the strongest observational spine: a prospectively frozen fresh-surface lexical result whose four core cells passed unrestricted and exact token-count-matched rules, with an independent recomputation of all 18 tests. T14-C remains a valid negative targeted-causal result, and T15-B remains a separate prospective replication of an operational response-shape candidate. These lanes do not combine into a semantic, mediator, circuit, tokenizer-independent, scale, tuning-invariant, or model-population claim. Paper-wide qualification still requires freezing the manuscript claim table, completing the checksum archive, and a fresh-eyes reproducibility review. See the [T18 story](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md), [roadmap](docs/ROADMAP.md), [T14 result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md), and [T15-B result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) for the exact boundaries.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. T18 supplies prospective fresh-surface confirmation; T19 now supplies the strongest paper spine by widening the endpoint from an official short name to a lexically disjoint CLDR keyword in 9/9 frozen cells, adding a non-emoji Unicode-symbol boundary, and closing its preregistered rank-8 late-component account with a valid negative causal result. T15-B remains a separate prospective replication of an operational response-shape candidate. These lanes do not combine into a semantic, complete-mediator, universal-circuit, tokenizer-independent, scale, tuning-invariant, or model-population claim. Paper-wide qualification still requires freezing the manuscript claim table, completing the checksum archive, and a fresh-eyes reproducibility review. See the [T19 story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md), [T19 result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md), and [roadmap](docs/ROADMAP.md) for the exact boundaries.
 
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the

@@ -1,0 +1,25 @@
+{
+  "analysis_output_sha256": {
+    "causal_primary_result.json": "1c59e0d3755519d47ca99d09b42db4aad140e4d09bd281256c3cf006c7315f84",
+    "causal_site_results.json": "4bd32bc1c6f6d3cfaedc7b92123ee2d75c3bc006fdb9c46502bacd4a298416af"
+  },
+  "analysis_receipt_sha256": "cfd1983cdee843af6c00ea4b2a2c94eed5b34118631a6698c02c035d98855fa1",
+  "bootstrap_replicates_per_interval": 20000,
+  "claim_boundary": "T19-L is a prospectively frozen endpoint-and-label follow-up on atomic emoji surfaces that may have appeared in earlier repository experiments, plus a text-repository-fresh non-emoji Unicode-symbol control. The alternative label is one exact CLDR keyword whose ASCII-alphanumeric words are disjoint from the canonical CLDR tts words; it is a source-auditable keyword alias, not a human-rated paraphrase. T19-C, if admitted, tests a fixed low-rank representation intervention in one pinned Llama 3.2 3B Transformers/CUDA cell on a bank with zero T19-L forwards. A positive result would support only bounded lexical correspondence and component-level causal contribution under these inputs and endpoints. It cannot establish rendered-glyph perception, human meaning, understanding, a unique or complete circuit, tokenizer independence, pretraining novelty, architecture or model-population generality, a scale law, tuning effects, or natural-language behavior.",
+  "engineering_controls_passed": 6,
+  "evaluation_model_forward_calls": 2880,
+  "evaluation_receipt_sha256": "b519fd04ba307c61ec4d0b81b93b051669444f66e40d5c03b5a32463adfb0166",
+  "go_manifest_sha256": "1ac8d331f0ca2c40e9888857cd379d5c745f78a85c9c333fe33e7760cdba3df2",
+  "intervention_rows": 8064,
+  "positive_sites": [],
+  "primary_positive": false,
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "raw_activations_committed_to_git": false,
+  "recomputed_bootstrap_intervals": 12,
+  "recomputed_sign_flip_tests": 12,
+  "schema_version": 1,
+  "sign_flip_draws_per_test": 99999,
+  "source_model_forward_calls": 256,
+  "source_receipt_sha256": "f57f03bd97dcb9e2ebd8b8dda601a3351879e1a028abb471b94a2353678c2961",
+  "status": "independent_causal_validation_pass"
+}

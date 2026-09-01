@@ -1,12 +1,12 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [T17別案ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [現在のT16ストーリー](PAPER_STORY_T16_V0.ja.md) · [ロードマップ](ROADMAP.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T15-B再現](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [現在のT19ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T17前史](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16ストーリー](PAPER_STORY_T16_V0.ja.md) · [ロードマップ](ROADMAP.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T15-B再現](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
 ## 仮題
 
-**Behaviorally Legible, Mechanistically Unresolved: Separating Emoji Fingerprints, Congruence, and Causal Mediation**
+**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
 
 回路発見ではなく、行動上の読み出しと因果実装が分かれた点を中心に置く。Sufficiencyが
 通らなかった結果を、特定の分散回路を発見した証拠へ読み替えない。
@@ -18,30 +18,26 @@
 long paperは9ページまでで、referencesとappendixはページ数に含まれない。第一候補は
 long paperとし、証拠を伴う物語を時間内に綺麗に編集できない場合は5ページ版をfallbackにする。
 
-内部scheduleは次の通り。
-
-- **8月29日:** 科学的coreをT12で固定し、英日結果、独立検証、公開証拠、図表inputを揃える。
-- **8月30日:** Methods、T10〜T12結果、限界、負の結果の物語を優先し、英語全文初稿を作る。
-- **8月31日:** Claimとfigureを凍結し、再現性・double-blind検査を行い、未検証T13をfuture workへ移す。
-- **9月1日JST:** 最後のAoE時間帯に依存せず、uploadと提出確認を終える。
-
-T13-Cはcritical pathに入れない。T13 exploratory panelを加えるのは、8月31日のpaper freezeまでに
-完走し独立検証できた場合だけとし、それ以外は設計図をfuture workとして使う。
+9月1日09:00 JSTの時点で、9月1日AoEの終了までは約36時間ある。AoEはJSTより21時間遅い。
+科学的な実行の背骨はT19-LとT19-Cまで完了した。残るcritical pathは原稿作業である。
+Claim tableをfreezeし、検証済みsummaryへ戻れるfigureだけを作り、checksum・omission archive、
+double-blind検査、fresh-eyes reviewを完了し、OpenReview上の登録を確認できる余裕を残してuploadする。
+T19-Cの適応的な追加site探索は、このcritical pathに入れない。
 
 ## 現時点で守れる中心命題
 
-現在の中心は、回路の発見ではなく、証拠階層の分離である。絵文字×語の応答指紋は
-prospectiveに再現し、固定した二択形式の関連づけと整合性判断も、2つの
-instruction-tuned modelで成功した。それでも、検証したT15-B残差subspaceは、
-明示的な不一致判断を登録仮説と逆へ動かした。別の後期8成分bandはnecessityだけを通過し、
-sufficiencyとfull mediation gateは通っていない。完全同一UTF対照は、
-tokenizerを条件とした幾何結果を加えるが、意味やtokenizer非依存性の証拠ではない。
+現在の中心は、回路の発見ではなく、証拠階層の分離である。Atomic emojiは、literal
+codepointより、正式短名と語が重ならないCLDR keywordを、凍結した9つのmodel/tokenizer
+cellすべてでよく検索した。4-viewのtoken数完全一致解析でも同じだった。非emoji Unicode
+記号panelでは、正式名検索はより広く見える一方、alias効果は小さく不均一だった。続く
+登録済みrank 8後期component介入は、すべてのengineering controlを通過したうえで、未使用
+emoji 192件に対して必要かつ十分な一次`attn_out`または`mlp_out`部位を見つけなかった。
 
-投稿用の詳しい物語、5ページ版への縮退、図の背骨、許可・不許可claim tableは
-[T16論文ストーリー v0](PAPER_STORY_T16_V0.ja.md)にまとめた。以下の旧節は、
-エビデンス台帳と設計履歴として残す。それぞれ単独では、現在の主張の中心を定めない。
+投稿用の詳しい物語、figureの背骨、許可・不許可claim table候補は
+[T19論文ストーリー](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)にまとめた。T16〜T18は
+重要な前史とエビデンス台帳として残すが、それぞれ単独では現在の中心命題を定めない。
 
-## T17の別案 — 表現atlasを背骨にする場合
+## T17 — 表現atlasの前史
 
 T17-GNは、より狭く澄んだ中心候補を与えた。Raw emoji surfaceが、literal codepoint識別子より
 Unicode正式名へ対応する過程を、9モデル × 9深度で追う。Name-minus-codepoint top-1点推定は、
@@ -50,9 +46,9 @@ Unicode正式名へ対応する過程を、9モデル × 9深度で追う。Name
 したがってglobalなname manifoldより、item固有の語彙対応を強く支持する。
 
 論証全体とfresh population gateは[T17別案ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md)にまとめた。
-292項目はT9/T10ですでに開いているため、T17は探索的である。新しいlabel populationをprospectiveに
-確認するまでは、確認の背骨はT16の行動・因果分離の方が強い。T17は別のatlas論文候補、または本文の
-compactな表現節として扱う。
+292項目はT9/T10ですでに開いているため、T17は探索的である。T18が未提示表層でprospectiveな確認を
+与え、T19が語彙endpointを広げて別の因果説明を検定した。T17は現在、論文の確認的な背骨ではなく、
+深度trajectoryを与える前史として扱う。
 
 ## 現在のMilestone 2主張表
 
