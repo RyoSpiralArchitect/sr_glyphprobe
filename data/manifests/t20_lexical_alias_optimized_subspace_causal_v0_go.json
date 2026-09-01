@@ -1,0 +1,18 @@
+{
+  "causal_executor_analyzer_sha256": "e71bb72e6f7b29ca714c78ffce05884f26816f561a49cf21451d3b595b798043",
+  "created_at_utc": "2026-09-01T22:20:52.220797+00:00",
+  "design_preflight_sha256": "a377e3814960daa6c33be87d4afc45ed654502575607b1978955262c38cf4e5c",
+  "evaluation_model_forwards_at_go": 0,
+  "fresh_eval_bank_sha256": "748fa10bbf4252f78ae501c5bfd4dc30e00ca9466e6ebb5e1279fb6b85f192f1",
+  "intervention_calls_at_go": 0,
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "source_bank_sha256": "b695f8559cce90962e18f230295ad5a7ecc22d46422f041ca26fc74dbe693127",
+  "source_model_forwards_at_go": 0,
+  "status": "t20_go_admitted_before_source_or_eval_forwards",
+  "t19_causal_analysis_receipt_sha256": "cfd1983cdee843af6c00ea4b2a2c94eed5b34118631a6698c02c035d98855fa1",
+  "t19_causal_primary_positive": false,
+  "t19_freeze_manifest_sha256": "5dbbe0ef746cc3a002b8916de647a1c16a1e9f76a3f31fd4a0b53966f9c212fc",
+  "t20_freeze_manifest_sha256": "41eb9783eb51908326d1c1bc92638e26c211bd309166fe97b04d21210e903ebe",
+  "tokenizer_preflight_sha256": "55e448eb3242b8695b001f43ed13dc21706016fff39dd0e6ebcc7536ab330884"
+}
