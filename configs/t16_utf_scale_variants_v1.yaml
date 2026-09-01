@@ -5,7 +5,7 @@ question: >-
   Across nine already-frozen model/tokenizer cells, how do exact-string
   repetition, construction-family diversity, order, separators, and the
   position of one exact UTF anchor change final-wrapper hidden-state geometry
-  as sequence length grows from 1 to 512 emoji items?
+  as sequence length grows from 1 to 500 emoji items?
 claim_boundary: >-
   T16-UTF-X1 is a large exploratory stress test downstream of T16-UTF. It
   freezes exact Unicode strings and exact item multisets for paired order and
@@ -52,7 +52,7 @@ factorial:
   rotations: [0, 1, 2, 3]
   wrappers: [w01_mark_anchor, w04_token_state, w10_sequence_continuation, w15_observation_inference]
   scale_lane:
-    n_values: [1, 2, 3, 4, 5, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512]
+    n_values: [1, 2, 3, 4, 5, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 500]
     variants: [clone_exact_utf, within_cycle_forward, cross_cycle_forward]
     separator: none
   order_lane:

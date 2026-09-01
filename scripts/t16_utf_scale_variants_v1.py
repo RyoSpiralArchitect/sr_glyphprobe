@@ -81,7 +81,7 @@ SCALE_N_VALUES = (
     192,
     256,
     384,
-    512,
+    500,
 )
 SCALE_VARIANTS = ("clone_exact_utf", "within_cycle_forward", "cross_cycle_forward")
 VARIANT_N_VALUES = (8, 16, 32, 64, 128, 256)
@@ -1725,9 +1725,9 @@ def analyze(output_root: Path, output: Path) -> dict[str, Any]:
             )
             for role in MODEL_ROLES
         }
-        n512 = {
+        n500 = {
             role: float(
-                all_results[role][depth_key]["scale"]["per_n_medians"]["512"][
+                all_results[role][depth_key]["scale"]["per_n_medians"]["500"][
                     "cross_minus_within"
                 ]
             )
@@ -1738,10 +1738,10 @@ def analyze(output_root: Path, output: Path) -> dict[str, Any]:
                 value > 0.0 for value in medians.values()
             ),
             "scale_cross_minus_within_medians": medians,
-            "n512_cross_minus_within_positive_cells": sum(
-                value > 0.0 for value in n512.values()
+            "n500_cross_minus_within_positive_cells": sum(
+                value > 0.0 for value in n500.values()
             ),
-            "n512_cross_minus_within_medians": n512,
+            "n500_cross_minus_within_medians": n500,
         }
     result = {
         "schema_version": SCHEMA_VERSION,

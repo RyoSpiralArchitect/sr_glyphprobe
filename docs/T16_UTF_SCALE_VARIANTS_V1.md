@@ -22,7 +22,7 @@ rotations.
 The stress test has three disjoint lanes:
 
 - **Scale:** `n = 1, 2, 3, 4, 5, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192,
-  256, 384, 512`, with exact clones, within-family cycles, and cross-family
+  256, 384, 500`, with exact clones, within-family cycles, and cross-family
   cycles.
 - **Order:** `n = 8, 16, 32, 64, 128, 256`, with within-family and cross-family
   multisets rendered as forward, reverse-tail, blocked-tail, interleaved-tail,

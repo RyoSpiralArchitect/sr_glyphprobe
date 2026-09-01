@@ -19,7 +19,7 @@ T16-UTF-X1のactivation outcomeは開かない。
 Stress testは、互いに重ならない3つのlaneに分けた。
 
 - **Scale:** `n = 1, 2, 3, 4, 5, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192,
-  256, 384, 512`。完全clone、同じfamily内のcycle、familyをまたぐcycleを比較する。
+  256, 384, 500`。完全clone、同じfamily内のcycle、familyをまたぐcycleを比較する。
 - **Order:** `n = 8, 16, 32, 64, 128, 256`。Family内・family横断の各multisetを、
   forward、tail反転、同一itemごとのblock化、tail両端の交互配置、固定seed 2種のshuffleで
   並べる。対になった比較では、先頭itemと完全一致するitem multisetを保つ。
