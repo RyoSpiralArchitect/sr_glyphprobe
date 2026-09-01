@@ -144,29 +144,26 @@ Conventional probing performance need not measure how information is used
 \citep{elazar2021amnesic}. Causal mediation, interchange interventions, and
 model editing instead test whether internal variables affect computation
 \citep{vig2020causal,geiger2021causal,meng2022rome}. Optimization-based
-alignment methods go further and learn the intervention subspace itself,
-either by maximizing interchange accuracy
-\citep{geiger2024das,wu2023boundless} or through sparse dictionary features
-\citep{bricken2023monosemanticity,cunningham2024sparse}. Our component test
-follows the causal distinction while fixing the subspace by a closed-form
-cross-covariance rule before any evaluation forward: a prespecified site must
-pass random-adjusted necessity and sufficiency on a disjoint evaluation set.
-It therefore rejects one fixed account rather than the best discoverable one,
-a bound Section~6 records. We retain the resulting negative test without
-adapting the layer, rank, or endpoint.
+alignment methods learn the intervention subspace itself, by maximizing
+interchange accuracy \citep{geiger2024das,wu2023boundless} or through sparse
+dictionary features \citep{bricken2023monosemanticity,cunningham2024sparse}.
+Our first causal test fixes the subspace by a closed-form cross-covariance
+rule before any evaluation forward; the second learns it by interchange
+optimization under a frozen protocol. Both require random-adjusted necessity
+and sufficiency on disjoint evaluation sets, and both negatives are retained
+without adapting layer, rank, or endpoint.
 
 \section{Prospective design}
 \label{sec:design}
 
 \subsection{Input views and disjoint item sets}
 
-For auditability, we retain two internal study labels. \textbf{T19-L}
-denotes the observational lexical-retrieval arm (``L'' for lexical), and
-\textbf{T19-C} denotes the conditionally admitted component-causal arm.
-They are labels for the two arms defined below; no knowledge of the preceding
-project sequence is required. Appendix \ref{app:lineage} gives the short
-decision lineage that led to T19-L without treating earlier exploration as
-part of its confirmatory evidence.
+For auditability, we retain internal study labels: \textbf{T19-L} denotes the
+observational lexical-retrieval arm, \textbf{T19-C} the first conditionally
+admitted causal arm, and \textbf{T20-C} the second. No knowledge of the
+preceding project sequence is required; Appendix \ref{app:lineage} gives the
+decision lineage without treating earlier exploration as confirmatory
+evidence.
 
 Throughout, \emph{glyph} means the raw Unicode scalar string supplied to a
 text model. No raster image is rendered. Atomic emoji are single-codepoint,
@@ -390,11 +387,10 @@ $p_{\mathrm{PC}}=2(0.00135)=0.0027$. All nine prespecified configurations were p
 exceeded the registered $0.02$ effect-size floor in both unrestricted and matched analyses
 (Figure \ref{fig:model-effects}; exact values in Appendix
 \ref{app:observational}). Model IUT values ranged from $0.00005$ to $0.00185$.
-The smallest unrestricted effect, Qwen2.5 0.5B at $+0.03636$, is equivalent
-to an average margin of two net top-1 matches per 55-item context. A separate
-validator that does not import the acquisition analyzer reloaded the compact
-predictions, reconstructed all 36 glyph-kind by component randomization
-tests, and reproduced the primary decision.
+The smallest unrestricted effect, Qwen2.5 0.5B at $+0.03636$, equals an
+average margin of two net top-1 matches per 55-item context. A validator that
+does not import the acquisition analyzer reconstructed all 36 randomization
+tests and reproduced the primary decision.
 
 \begin{figure}[t]
   \centering
@@ -448,7 +444,7 @@ of $+0.0750$ and $+0.0821$ (Figure \ref{fig:symbol-boundary}).
   \label{fig:symbol-boundary}
 \end{figure}
 
-This comparison cannot establish an emoji-specific faculty. The panels are
+This comparison cannot establish an emoji-specific faculty: the panels are
 not matched on training frequency, lexical specificity, Unicode category,
 visual familiarity, or token identity. Its role is to prevent the incorrect
 inference that only emoji acquire readable names.
@@ -625,15 +621,14 @@ floors are fixed would remove this failure mode.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
-tests, validators, license notices, and the rendered paper. It omits
-model-dependent raw arrays retained in execution scratch. Exact acquisition
-duration and peak memory were not receipt-bound and are not reconstructed
-after the fact. Better Unicode auditing could reveal hidden representation
-failures in multilingual or social-media systems. Conversely, treating CLDR
-correspondence as a person's meaning, sentiment, culture, or identity could
-erase contextual variation and enable unjustified profiling. The measurements
-should not be used for such inference. No personal data, human subjects, or
-user messages are used.
+tests, validators, license notices, and the rendered paper; it omits
+model-dependent raw arrays retained in execution scratch, and exact T19
+acquisition duration and peak memory were not receipt-bound. Better Unicode
+auditing could reveal hidden representation failures in multilingual or
+social-media systems. Conversely, treating CLDR correspondence as a person's
+meaning, sentiment, culture, or identity could enable unjustified profiling;
+the measurements should not be used for such inference. No personal data,
+human subjects, or user messages are used.
 
 \section{Conclusion}
 
