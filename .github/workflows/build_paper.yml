@@ -1,0 +1,24 @@
+name: build-paper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wtfjoke/setup-tectonic@v3
+        with:
+          tectonic-version: "0.15.0"
+      - name: Compile paper
+        run: |
+          SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
+            --outdir paper/build --outfmt pdf \
+            --keep-logs --keep-intermediates --untrusted paper/main.tex
+      - uses: actions/upload-artifact@v4
+        with:
+          name: paper-pdf
+          path: |
+            paper/build/main.pdf
+            paper/build/main.log
