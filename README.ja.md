@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[Phase I 初稿PDF](output/pdf/glyphprobe_t19_first_draft.pdf) · [論文sourceとbuild](paper/README.ja.md) · [T19 語彙・因果結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19 凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[Phase I 初稿PDF](output/pdf/glyphprobe_t19_first_draft.pdf) · [論文sourceとbuild](paper/README.ja.md) · [T20 凍結protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.ja.md) · [T19 語彙・因果結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19 凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [English](README.md) · [T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
@@ -75,10 +75,30 @@ cellすべてで、emojiのalias-minus-codepoint検索差がunrestrictedと4-vie
 学習し、Llama 3.2 3Bの未使用emoji 192件で検定した。6部位すべてでzero-hookとrestorationは
 厳密に一致したが、一次のblock 24 `attn_out`と`mlp_out`は、どちらもnecessityと
 sufficiencyのintersectionを通過しなかった。したがって、支持できるのはtoken数を揃えた
-CLDR語彙対応までであり、登録した単純な後期component mediatorは棄却された。描画知覚、
-同義語理解、普遍manifold、完全な回路は示していない。詳しくは[全結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md)、
+CLDR語彙対応までであり、登録した単純な後期component mediatorはjoint criterionを
+外した。描画知覚、同義語理解、普遍manifold、完全な回路は示していない。なお、判定後の
+post-hoc較正（記述的と明記）では、一次block-24両サイトのfull-interchange天井は
+`0.0000`/`+0.0052`であり、登録floorが到達可能効果を上回っていたことが判明した。
+詳しくは[全結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md)、
 [論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md)、
 [凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md)に示す。
+
+### T20 較正付き最適化部分空間の因果検定
+
+T20-Cは、検証済みT19-C解析に束縛されたgo manifestの下でのみ承認され、交換介入
+最適化で学習可能なrank-8部分空間がglyph→alias関係を担うかを、残差ストリーム3サイト
+＋コンポーネント6サイト、新鮮なatomic emoji 384件×4文脈、登録済みfull-interchange
+天井（positive control）つきで検定した。登録評決は両一次残差サイトとも
+**このendpointでは較正不能**（sufficiency天井 `+0.0234`/`+0.0254` が情報量最低値
+`0.06` 未満）。発見は天井が担う: block-27残差のswapは検索を厳密に転写
+（到達可能量 `0.0332` の100%）する一方、block 21/24では注入が71–76%を転写するのに
+除去は4–25%しか壊さない — 最終状態のalias信号はglyph位置の文脈からlate computationで
+再構成され、mid-late深さの読み出しトークンstreamには担われていない。最適化部分空間は
+source項目を記憶する（残差サイトで訓練InfoNCE 0.52–1.26）が保留項目への汎化はゼロで、
+item-private符号化とも訓練データ不足とも整合する。
+[凍結protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.ja.md)と
+`validation/t20_lexical_alias_optimized_subspace_causal_v0/results/` の
+コミット済み結果を参照。
 
 ### T18 未提示の複合glyphに対する語彙対応確認
 
