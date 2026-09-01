@@ -14,35 +14,43 @@
   "outputs": [
     {
       "path": "paper/figures/t19_causal_sites.pdf",
-      "sha256": "ea2cc7c0fe1d8c3a302a13cd67f2c6aac81fa144e550c6b31de089202e98e576"
+      "sha256": "98e3e432fb7b5acc6687c364b3e423367a6517d3c5d7589bfbcffa49b14e8bdc"
     },
     {
       "path": "paper/figures/t19_causal_sites.png",
-      "sha256": "be2aa715e7e52a2b77bc4fb2a1987723f3862afa76cccec90543aea06db976cb"
+      "sha256": "4f14f3da687152b820e1c59a6c64bb2c698745774dd2ba3a9dcb9a80046363a4"
     },
     {
       "path": "paper/figures/t19_design.pdf",
-      "sha256": "8c3183b0d722d3fe41e8745a9eb80dfda919887773bd4cfbf8c2074467160fc1"
+      "sha256": "b3b6a29ad0c0ab5489d1c7f91b38f49a23eef25896235973ff25c34fbdb988b1"
     },
     {
       "path": "paper/figures/t19_design.png",
-      "sha256": "b061bf2bc63f97c02b6238dedeb61272010f7aef6c7fa4134809ca88bba28f8d"
+      "sha256": "a7d4e86d2d9c787a19cae0806328b372a697c8c8b2bb9c126e844d9470d9fc80"
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
-      "sha256": "8efe21e1754616cadb2c0cdadc5eec0c471a85d10f80cf038f40cc0faa375391"
+      "sha256": "aafa239448b30ac161fc857d304f1c396d118a491f9a6f9df56a7b12938a6bdf"
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.png",
-      "sha256": "607a6449203bc2c8efa7b1748f0b4bdc0d9153200ee5c3028c527a6500d6377b"
+      "sha256": "e60a9a065f84f7f5e95b49e8df0ce801ba0ab23a21a868bae46ef0bb48823e32"
+    },
+    {
+      "path": "paper/figures/t19_lineage.pdf",
+      "sha256": "1ac8a3ec45decb75ca07308e9e760bd193da08effb6044c6d11059c815ec25d0"
+    },
+    {
+      "path": "paper/figures/t19_lineage.png",
+      "sha256": "970b3e0aa426d09fb36dab5039f5a0d77aeda5ade08354a6f03dd5da8a944d16"
     },
     {
       "path": "paper/figures/t19_model_effects.pdf",
-      "sha256": "638ebaf46ddeef147fe2ced379710b19568d9e447328ac78df4e6f15f6ccfb7d"
+      "sha256": "6304af0da6b3c021768d0fa186ff4695f11fc6077d726914b8cdd81d0a65e105"
     },
     {
       "path": "paper/figures/t19_model_effects.png",
-      "sha256": "b36feacd5caf80a951db687702a60d98a3da2694942a95663956802a9ea8dc41"
+      "sha256": "7f700d76317e5ae5616fb09acb007b321e7882e2bfe1fae53310872954761447"
     }
   ],
   "schema_version": 1

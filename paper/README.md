@@ -38,6 +38,13 @@ Its SHA-256 is
 Copying the style files into this directory does not imply workshop acceptance
 or submission readiness.
 
+The unmodified style sets the requested `dblblindworkshop` option and records
+the workshop title. In anonymous submission mode, the official 2026 style
+nevertheless hard-codes a main-conference footer; only its final-mode footer
+uses the track name. The build log confirms that this local
+`neurips_2026.sty` is loaded. We preserve the official asset unchanged rather
+than patching the footer.
+
 ## Build
 
 From the repository root:
@@ -60,12 +67,12 @@ bundled Tectonic executable was invoked directly. The final copy is made only
 after citation, page-count, text-extraction, and rendered-page checks.
 `paper/build/` and `tmp/pdfs/` are intermediate surfaces.
 
-## Frozen first-draft claim boundary
+## Prespecified claim boundary
 
 The paper reports two differently gated results. Raw atomic emoji retrieve lexically
 disjoint CLDR keyword aliases better than literal codepoint strings across all
-nine frozen model/tokenizer cells, including exact four-view token-count
-matching. A preregistered rank-8 late-component test in one Llama 3.2 3B cell
+nine prespecified model/tokenizer configurations, including exact four-view token-count
+matching. A preregistered rank-8 late-component test in one Llama 3.2 3B configuration
 then finds no primary `attn_out` or `mlp_out` site that is jointly necessary
 and sufficient on 192 evaluation emoji held out from T19-L. Their surfaces may
 have appeared in studies before T19.
@@ -74,7 +81,7 @@ This supports bounded lexical correspondence under text-only Unicode inputs.
 It does not establish rendered-glyph perception, human synonym understanding,
 token-identity matching, tokenizer independence, pretraining novelty, a
 universal manifold, a complete circuit, or a scale law. The auditable allowed
-and excluded statements are frozen in [CLAIM_TABLE.md](CLAIM_TABLE.md).
+and excluded statements are fixed in [CLAIM_TABLE.md](CLAIM_TABLE.md).
 
 The manuscript now defines `T19-L` at first use as the lexical observational
 arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
@@ -90,27 +97,27 @@ encoding, output, and QA obligation before rendering.
 
 ### Figure 1 - prospective design
 
-- **Question:** What surfaces, lexical endpoints, controls, and data banks are
+- **Question:** What surfaces, lexical endpoints, controls, and item sets are
   separated by the design?
 - **Takeaway:** T19-L crosses emoji and repository-text-fresh symbols with four
   text views; T19-C uses disjoint source and evaluation emoji and runs only
-  after the observational gate.
-- **Family / sufficiency:** annotated process schematic; all frozen arms and
-  bank sizes are known.
+  after the observational criterion is met.
+- **Family / sufficiency:** annotated process schematic; all prespecified arms
+  and item-set sizes are known.
 - **Renderer / encoding:** static Matplotlib; blue for observational evidence,
   orange for causal testing, gray for controls; arrows and labels preserve
   meaning without color.
-- **Output / QA:** `figures/t19_design.pdf`; verify every count and gate label
-  against the frozen protocol and inspect the embedded PDF.
+- **Output / QA:** `figures/t19_design.pdf`; verify every count and criterion
+  label against the prespecified protocol and inspect the embedded PDF.
 
 ### Figure 2 - emoji alias effect across models
 
-- **Question:** Is alias-minus-codepoint top-1 positive in every frozen cell,
+- **Question:** Is keyword-minus-codepoint top-1 positive in every prespecified configuration,
   both unrestricted and token-count matched?
-- **Takeaway:** all nine cells are positive and exceed the registered 0.02
+- **Takeaway:** all nine configurations are positive and exceed the registered 0.02
   effect-size floor, with heterogeneous magnitudes.
 - **Family / sufficiency:** paired horizontal dot plot; nine model categories
-  are sufficient for exact cell-level comparison.
+  are sufficient for exact configuration-level comparison.
 - **Renderer / encoding:** static Matplotlib; blue filled circles for
   unrestricted and orange open squares for matched estimates; marker shape,
   a zero line, and a dashed 0.02 line retain grayscale legibility.
@@ -120,10 +127,10 @@ encoding, output, and QA obligation before rendering.
 
 ### Figure 3 - emoji and symbol lexical boundary
 
-- **Question:** How do alias and canonical-name effects differ between emoji
+- **Question:** How do keyword and official-name effects differ between emoji
   and non-emoji Unicode symbols?
-- **Takeaway:** canonical-name retrieval is broad, while alias retrieval is
-  stronger and more consistent for the frozen emoji panel; the symbol contrast
+- **Takeaway:** official-name retrieval is broad, while keyword retrieval is
+  stronger and more consistent for the prespecified emoji panel; the symbol contrast
   remains secondary and nonexchangeable.
 - **Family / sufficiency:** two-panel paired dot plot across nine models,
   one panel per lexical endpoint.
@@ -136,7 +143,7 @@ encoding, output, and QA obligation before rendering.
 
 ### Figure 4 - component-level causal test
 
-- **Question:** Does any frozen late site have both random-adjusted necessity
+- **Question:** Does any prespecified late site have both random-adjusted necessity
   and sufficiency above the 0.02 floor?
 - **Takeaway:** no site passes both components; block-27 MLP shows a secondary
   sufficiency-only asymmetry rather than a complete mediator.
@@ -149,6 +156,19 @@ encoding, output, and QA obligation before rendering.
   intervals against `causal_site_results.json`, display zero and 0.02
   references, and inspect the primary-site emphasis.
 
+### Figure 5 - exploration-to-confirmation lineage
+
+- **Question:** Which earlier results changed the design that became T19?
+- **Takeaway:** token-structure and persistence studies narrowed the endpoint;
+  later lexical and causal studies motivated the two-arm design. Earlier
+  stages do not enter the T19-L primary evidence denominator.
+- **Family / sufficiency:** annotated decision lineage; the five grouped stages
+  summarize T1--T19 without treating the sequence as evidence accumulation.
+- **Renderer / encoding:** static Matplotlib; gray for token/persistence
+  diagnostics, blue for lexical/boundary studies, and orange for T19.
+- **Output / QA:** `figures/t19_lineage.pdf`; verify every study label against
+  Appendix A and inspect all box labels and arrows in the compiled paper.
+
 ## Remaining submission boundary
 
 - the reproducibility, open-access, and compute checklist answers remain
@@ -156,7 +176,7 @@ encoding, output, and QA obligation before rendering.
   intervention ledger, and T19 acquisition duration/peak memory were not
   receipt-bound;
 - resolve author list and acknowledgments only after the double-blind copy is
-  frozen;
+  finalized;
 - upload early enough to verify the OpenReview record.
 
 The paper answers **No**, not **N/A**, to open access to data and code. The

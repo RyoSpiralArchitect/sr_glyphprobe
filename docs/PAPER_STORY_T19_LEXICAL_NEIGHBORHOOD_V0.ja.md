@@ -1,4 +1,4 @@
-# T19 論文ストーリー：広い語彙readoutと、単純な後半mediatorの不在
+# T19 論文ストーリー：広い語彙readoutと、範囲を限定したmechanism test
 
 [English](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [原稿package](../paper/README.ja.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18までのストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)
 
@@ -11,26 +11,26 @@ tokenization screenからT18までの短い意思決定経路を置き、探索�
 
 ## タイトル候補
 
-> **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
+> **Beyond Short Names: Emoji Keyword Retrieval across Models and a Bounded Late-Component Test**
 
 ## 一文で言う貢献
 
 Atomic emojiは、語彙的に重ならないCLDR keyword aliasをliteral codepointよりよく
-取り出し、その差は四viewのtoken数を完全一致させても九つの凍結model/tokenizer cell
+取り出し、その差は四viewのtoken数を完全一致させても事前指定した九つのmodel/tokenizer構成
 すべてで残った。一方、T19-Lからhold outしたemoji 192項目に対する事前登録済みrank 8の
 `attn_out`/`mlp_out`介入では、必要かつ十分なprimary siteは見つからなかった。表層は
 T19以前の研究に現れた可能性がある。
 
-観察の陽性と因果の陰性を、一つの結果として扱う。この論文は「emojiには意味vectorがある」
-という話ではない。異なるgateを持つ二つのarmは、広く再現する語彙readoutを示す一方、
-事前登録した疎な後半component説明を支持しない。
+観察の陽性と因果の陰性を、一つの結果として扱う。広く再現する語彙readoutと、支持されなかった
+事前登録済みの疎な後半component説明を分けることが中心であり、emojiに汎用的な意味vectorが
+あるとは主張しない。
 
 ## T19がT18のストーリーをどう変えるか
 
 T18では、repository上で未使用だった複合emojiが、codepoint literalより正式短名をよく
 取り出すことを確認した。それでも「標準化された一つのlabel文字列を再発見しただけ」という
 説明は残っていた。T19はendpointを、正式名と語彙的に重ならないCLDR keywordへ置き換えた。
-Unrestrictedとtoken数一致の両解析で、九cellすべてが陽性だった。対応はofficial-label lookup
+Unrestrictedとtoken数一致の両解析で、九構成すべてが陽性だった。対応はofficial-label lookup
 より広い。
 
 新しいsymbol controlは、次の主張を狭く保つ。正式名retrievalは多くの非emoji Unicode記号にも
@@ -43,8 +43,9 @@ emojiだけの能力を登録済み推論で証明したものではない。
 ### 1. 確認された語彙の広がり
 
 `r = 3 of 4`のcore primaryは`p = 0.0027`で通過し、coreは4/4陽性だった。
-さらに九cellすべてがtokenizationの両componentと登録済みeffect-size下限を通った。独立実装は36本の
-randomization testとrawからsummaryまでの証拠chainを再構築した。
+さらに九構成すべてがtokenizationの両componentと登録済みeffect-size下限を通った。
+Acquisition analyzerをimportしない別validatorが36本のrandomization testとrawからsummaryまでの
+証拠chainを再構築した。
 
 これが論文で最も強い新しい主張である。固定した文字列入力とretrieval endpointの下で、
 atomic emojiは一つの正式名だけでなく、より広い語彙近傍のkeyになる。
@@ -73,8 +74,10 @@ zero hookとrestorationは厳密に一致した。それでもprimaryのblock 24
 `mlp_out`は不合格だった。調整済み必要性・十分性効果はほぼ0で、実用下限もIUTも通らなかった。
 
 Secondaryのblock 27 MLPは、不完全だからこそ示唆的である。学習patchはrandom patchより
-endpointを動かしたが、学習座標を除いても悪化しなかった。座標はendpointを動かせても、
-必須mediatorではない。分散的・非線形な説明を考える動機にはなるが、確認結果ではない。
+endpointを動かしたが、学習座標を除いても悪化しなかった。Composite endpointの追加正解15件中、
+keyword gain由来は3件で、残る12件はcodepoint自己検索の低下に由来した。このdisruptionは
+endpointを動かしても必須mediatorを同定しない。分散的・非線形な説明を考える動機にはなるが、
+確認結果ではない。
 
 ## 論文構成案
 

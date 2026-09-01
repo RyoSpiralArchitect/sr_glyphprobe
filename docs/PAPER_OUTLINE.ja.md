@@ -4,14 +4,14 @@
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
-状態: 著者匿名のmanuscriptを14ページのreview PDFとしてcompile済みである（結論まで8ページ、
+状態: 著者匿名のmanuscriptを15ページのreview PDFとしてcompile済みである（結論は8ページ目から始まり、
 続いてreferences、appendix、checklist）。compact匿名artifactもbuild・validate済みで、
 OpenReview uploadが残る。[論文package](../paper/README.ja.md)、
 [凍結claim table](../paper/CLAIM_TABLE.ja.md)、[review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf)を参照する。
 
 ## 仮題
 
-**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
+**Beyond Short Names: Emoji Keyword Retrieval across Models and a Bounded Late-Component Test**
 
 回路発見ではなく、行動上の読み出しと因果実装が分かれた点を中心に置く。Sufficiencyが
 通らなかった結果を、特定の分散回路を発見した証拠へ読み替えない。
@@ -32,8 +32,8 @@ record確認であり、exact raw replayとT19 acquisitionのtime/memoryはcheck
 ## 現時点で守れる中心命題
 
 現在の中心は、回路の発見ではなく、証拠階層の分離である。Atomic emojiは、literal
-codepointより、正式短名と語が重ならないCLDR keywordを、凍結した9つのmodel/tokenizer
-cellすべてでよく検索した。4-viewのtoken数完全一致解析でも同じだった。非emoji Unicode
+codepointより、正式短名と語が重ならないCLDR keywordを、事前指定した9つのmodel/tokenizer
+構成すべてでよく検索した。4-viewのtoken数完全一致解析でも同じだった。非emoji Unicode
 記号panelでは、正式名検索はより広く見える一方、alias効果は小さく不均一だった。続く
 登録済みrank 8後期component介入は、すべてのengineering controlを通過したうえで、T19-Lから
 hold outしたemoji 192件に対して必要かつ十分な一次`attn_out`または`mlp_out`部位を

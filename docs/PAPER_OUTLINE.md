@@ -4,12 +4,12 @@
 
 ## Working title
 
-**Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods with No Evidence for a Simple Late-Layer Mediator**
+**Beyond Short Names: Emoji Keyword Retrieval across Models and a Bounded Late-Component Test**
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
 
-Status: the anonymous manuscript is compiled as a 14-page review PDF
-(eight pages through the conclusion, followed by references, appendices, and
+Status: the anonymous manuscript is compiled as a 15-page review PDF
+(the conclusion begins on page 8, followed by references, appendices, and
 the checklist), and the compact anonymous artifact has been built and
 validated. OpenReview upload remains. See the [paper package](../paper/README.md), [frozen claim
 table](../paper/CLAIM_TABLE.md), and [review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf).
@@ -34,9 +34,9 @@ belongs on this critical path.
 
 The current paper centers a separation rather than a circuit discovery. Raw
 atomic emoji retrieve lexically disjoint CLDR keyword aliases better than
-literal codepoints in all nine frozen model/tokenizer cells, including exact
+literal codepoints in all nine prespecified model/tokenizer configurations, including exact
 four-view token-count-matched analysis. A non-emoji Unicode-symbol panel bounds
-that breadth: canonical-name retrieval is broader, while symbol alias effects
+that breadth: official-name retrieval is broader, while symbol keyword effects
 are smaller and heterogeneous. A preregistered rank-8 late-component test then
 passes every engineering control but finds no primary `attn_out` or `mlp_out`
 site that is jointly necessary and sufficient on 192 emoji held out from

@@ -204,23 +204,30 @@ def build_design() -> list[Path]:
             )
         )
 
-    ax.text(0.2, 4.15, "T19-L: frozen observational gate", weight="bold", color=BLUE)
+    ax.text(0.2, 4.15, "Observational arm (T19-L)", weight="bold", color=BLUE)
     box(0.2, 2.7, 1.55, 0.9, "55 atomic\nemoji", BLUE)
     box(0.2, 1.25, 1.55, 0.9, "55 non-emoji\nsymbols", GRAY)
-    box(2.35, 1.72, 2.2, 1.45, "Four text views\nglyph | canonical\nalias | codepoint", BLUE)
+    box(
+        2.35,
+        1.72,
+        2.2,
+        1.45,
+        "Four text views\nraw | official name\nkeyword | codepoint",
+        BLUE,
+    )
     box(5.15, 1.72, 2.1, 1.45, "24 contexts/item\n9 depths\nlate-window top-1", BLUE)
     box(7.85, 1.72, 2.05, 1.45, "Unrestricted +\nmatched-count\nIUT", BLUE)
-    box(10.45, 1.72, 1.3, 1.45, "r = 3/4\ncore gate", BLUE)
+    box(10.45, 1.72, 1.3, 1.45, "r = 3/4\ncross-model\nrule", BLUE)
     arrow(1.75, 3.15, 2.35, 2.72)
     arrow(1.75, 1.7, 2.35, 2.14)
     arrow(4.55, 2.45, 5.15, 2.45)
     arrow(7.25, 2.45, 7.85, 2.45)
     arrow(9.9, 2.45, 10.45, 2.45)
 
-    box(0.2, 0.15, 1.55, 0.78, "T19-C\ndisjoint banks", ORANGE)
+    box(0.2, 0.15, 1.55, 0.78, "Causal arm\n(T19-C)", ORANGE)
     box(2.35, 0.15, 2.2, 0.78, "128 source emoji\nrank-8 subspace", ORANGE)
-    box(5.15, 0.15, 2.1, 0.78, "192 eval emoji\nzero T19-L forwards", ORANGE)
-    box(7.85, 0.15, 2.05, 0.78, "6 late sites\nnecessity + sufficiency", ORANGE)
+    box(5.15, 0.15, 2.1, 0.78, "192 held-out emoji\nno T19-L evaluation", ORANGE)
+    box(7.85, 0.15, 2.05, 0.78, "6 late sites\nnecessity +\nsufficiency", ORANGE)
     box(10.45, 0.15, 1.3, 0.78, "joint\n0.02 floor", ORANGE)
     arrow(1.75, 0.54, 2.35, 0.54, ORANGE)
     arrow(4.55, 0.54, 5.15, 0.54, ORANGE)
@@ -230,7 +237,7 @@ def build_design() -> list[Path]:
     ax.text(
         9.95,
         1.28,
-        "run only if gate opens",
+        "run only after\ncriterion is met",
         ha="center",
         va="center",
         fontsize=7,
@@ -238,6 +245,100 @@ def build_design() -> list[Path]:
     )
 
     return save_figure(fig, "t19_design")
+
+
+def build_lineage() -> list[Path]:
+    fig, ax = plt.subplots(figsize=(7.15, 2.5))
+    ax.set_xlim(0, 12)
+    ax.set_ylim(0, 3.2)
+    ax.axis("off")
+
+    stages = [
+        (
+            0.15,
+            "Token structure",
+            "T1 census\nT2 shape geometry\nT3 matched slots\nT4 suffix carryover",
+            GRAY,
+        ),
+        (
+            2.55,
+            "Persistence",
+            "T5 distance profile\nT6 dense replication\nT7 depth interaction",
+            GRAY,
+        ),
+        (
+            4.95,
+            "Lexical endpoint",
+            "T8 semantic atlas\nT9 held-out reserve\nT10 cross-model test",
+            BLUE,
+        ),
+        (
+            7.35,
+            "Boundary tests",
+            "T11--T12 glyph systems\nT13 source/target\nT14--T16 interventions\nT17--T18 depth",
+            BLUE,
+        ),
+        (
+            9.75,
+            "Two-arm study",
+            "T19-L lexical test\nT19-C conditional\ncausal test",
+            ORANGE,
+        ),
+    ]
+    width = 2.0
+    for x, title, body, color in stages:
+        ax.text(
+            x + width / 2,
+            2.72,
+            title,
+            ha="center",
+            va="center",
+            weight="bold",
+            color=color,
+            fontsize=7.5,
+        )
+        patch = FancyBboxPatch(
+            (x, 0.68),
+            width,
+            1.72,
+            boxstyle="round,pad=0.05,rounding_size=0.08",
+            linewidth=1.1,
+            edgecolor=color,
+            facecolor="white",
+        )
+        ax.add_patch(patch)
+        ax.text(
+            x + width / 2,
+            1.54,
+            body,
+            ha="center",
+            va="center",
+            color=DARK,
+            fontsize=7.0,
+            linespacing=1.25,
+        )
+
+    for left in (2.15, 4.55, 6.95, 9.35):
+        ax.add_patch(
+            FancyArrowPatch(
+                (left, 1.54),
+                (left + 0.36, 1.54),
+                arrowstyle="-|>",
+                mutation_scale=10,
+                linewidth=1.0,
+                color=GRAY,
+            )
+        )
+    ax.text(
+        6.0,
+        0.24,
+        "Decision lineage only; earlier stages do not enter the T19-L primary denominator",
+        ha="center",
+        va="center",
+        color=DARK,
+        fontsize=7.2,
+    )
+    return save_figure(fig, "t19_lineage")
 
 
 def build_model_effects(models: list[dict[str, Any]]) -> list[Path]:
@@ -299,8 +400,8 @@ def build_model_effects(models: list[dict[str, Any]]) -> list[Path]:
     ax.set_yticks(positions, [MODEL_LABEL[row["model_role"]] for row in models])
     ax.invert_yaxis()
     ax.set_xlim(-0.01, 0.315)
-    ax.set_xlabel("Emoji alias minus codepoint top-1")
-    ax.set_title("Cross-model emoji alias retrieval")
+    ax.set_xlabel("Emoji keyword minus codepoint top-1")
+    ax.set_title("Cross-model emoji keyword retrieval")
     ax.grid(axis="x", color="#E7EAED", linewidth=0.6)
     ax.legend(
         loc="upper center",
@@ -316,8 +417,8 @@ def build_emoji_symbol_boundary(models: list[dict[str, Any]]) -> list[Path]:
     fig, axes = plt.subplots(1, 2, figsize=(7.15, 4.45), sharey=True, sharex=True)
     y = list(range(len(models)))
     endpoint_specs = [
-        ("alias_minus_codepoint_top1", "CLDR keyword alias"),
-        ("canonical_minus_codepoint_top1", "Canonical name"),
+        ("alias_minus_codepoint_top1", "CLDR keyword"),
+        ("canonical_minus_codepoint_top1", "Official name"),
     ]
     offsets = {
         ("emoji", "unrestricted"): 0.24,
@@ -418,7 +519,7 @@ def build_causal_sites(sites: list[dict[str, Any]]) -> list[Path]:
         ax.set_xlim(-0.06, 0.13)
     axes[0].set_yticks(y, labels)
     axes[0].invert_yaxis()
-    fig.suptitle("Frozen component-level causal tests", y=0.995)
+    fig.suptitle("Prespecified component-level causal tests", y=0.995)
     fig.tight_layout(rect=(0, 0, 1, 0.96))
     return save_figure(fig, "t19_causal_sites")
 
@@ -432,6 +533,7 @@ def main() -> None:
 
     outputs: list[Path] = []
     outputs.extend(build_design())
+    outputs.extend(build_lineage())
     outputs.extend(build_model_effects(models))
     outputs.extend(build_emoji_symbol_boundary(models))
     outputs.extend(build_causal_sites(sites))

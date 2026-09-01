@@ -34,6 +34,12 @@ contractを記録するもので、第二の論文ではない。
 `82473931e3ef710fcd3f4a8cd4119b9de32e56825f90f9e5a6d55f2d01b817d9`
 である。このstyle fileを置くことは、workshop採択や投稿準備完了を意味しない。
 
+無改変のstyleには指定した`dblblindworkshop` optionとworkshop titleが記録される。
+一方、匿名submission modeの公式2026 styleはmain-conference footerをhard-codeし、
+track nameを使うのはfinal modeだけである。build logではこのlocal
+`neurips_2026.sty`が実際にloadされたことを確認した。footerを変えるために公式assetを
+patchせず、無改変のまま保持する。
+
 ## Build
 
 repository rootから実行する。
@@ -55,12 +61,12 @@ TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCod
 引用、page count、text extraction、rendered pageを検査した後だけ作る。
 `paper/build/` と `tmp/pdfs/` は中間surfaceである。
 
-## 凍結した初稿のclaim境界
+## 事前指定したclaim境界
 
-論文は異なるgateを持つ二つの結果を報告する。raw atomic emojiは、9つすべての凍結済み
-model/tokenizer cellで、literal codepoint stringより語彙的に非重複なCLDR
+論文は異なる判定条件を持つ二つの結果を報告する。raw atomic emojiは、事前指定した
+9つすべてのmodel/tokenizer構成で、literal codepoint stringより語彙的に非重複なCLDR
 keyword aliasをよくretrieveした。これは4 viewのtoken countを完全一致させた
-解析でも成立した。一方、一つのLlama 3.2 3B cellで事前登録したrank-8の後期
+解析でも成立した。一方、一つのLlama 3.2 3B構成で事前登録したrank-8の後期
 component testでは、T19-Lからhold outした評価emoji 192件に対し、jointに必要かつ
 十分なprimary `attn_out` / `mlp_out` siteは見つからなかった。表層はT19以前の
 研究に現れた可能性がある。
@@ -83,24 +89,24 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 
 ### Figure 1 - prospective design
 
-- **問い:** designはどのsurface、語彙endpoint、control、data bankを分離するか。
+- **問い:** designはどのsurface、語彙endpoint、control、item setを分離するか。
 - **Takeaway:** T19-Lはemojiとrepository textでfreshなsymbolを4 text viewと
-  組み合わせる。T19-Cは観測gate通過後だけ、互いに分離したsource / evaluation
+  組み合わせる。T19-Cは観測基準の通過後だけ、互いに分離したsource / evaluation
   emojiを使う。
-- **Family / sufficiency:** annotation付きprocess schematic。凍結した全armとbank
-  sizeが既知である。
+- **Family / sufficiency:** annotation付きprocess schematic。事前指定した全armと
+  item-set sizeが既知である。
 - **Renderer / encoding:** static Matplotlib。観測証拠は青、因果testはorange、
   controlはgrayとし、arrowとlabelでも意味を保持する。
-- **Output / QA:** `figures/t19_design.pdf`。全countとgate labelを凍結protocolに
+- **Output / QA:** `figures/t19_design.pdf`。全countと判定基準labelを事前指定protocolに
   照合し、paperへ埋め込んだPDFを検査する。
 
 ### Figure 2 - modelを跨ぐemoji alias effect
 
-- **問い:** alias-minus-codepoint top-1は、unrestrictedとtoken-count matchedの
-  両方で、すべての凍結cellにおいて正か。
-- **Takeaway:** 9 cellすべてが正で、登録済み0.02 effect-size floorを超えたが、
+- **問い:** keyword-minus-codepoint top-1は、unrestrictedとtoken-count matchedの
+  両方で、事前指定した全構成において正か。
+- **Takeaway:** 9構成すべてが正で、登録済み0.02 effect-size floorを超えたが、
   大きさは不均一である。
-- **Family / sufficiency:** paired horizontal dot plot。9 model categoryでcell単位の
+- **Family / sufficiency:** paired horizontal dot plot。9 model categoryで構成単位の
   exact comparisonに十分である。
 - **Renderer / encoding:** static Matplotlib。unrestrictedを青いfilled circle、
   matchedをorangeのopen squareで表す。marker shape、zero line、0.02 dashed lineで
@@ -111,9 +117,9 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 
 ### Figure 3 - emojiとsymbolの語彙境界
 
-- **問い:** alias / canonical-name effectはemojiと非emoji Unicode symbolでどう
+- **問い:** keyword / official-name effectはemojiと非emoji Unicode symbolでどう
   異なるか。
-- **Takeaway:** canonical-name retrievalは広いが、凍結emoji panelではalias
+- **Takeaway:** official-name retrievalは広いが、事前指定emoji panelではkeyword
   retrievalがより強く一貫する。symbol contrastはsecondaryかつ非exchangeableの
   ままである。
 - **Family / sufficiency:** 9 modelにわたる2 panel paired dot plot。語彙endpoint
@@ -127,7 +133,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 ### Figure 4 - component-level causal test
 
 - **問い:** random-adjusted necessityとsufficiencyがともに0.02のfloorを超える
-  凍結siteはあるか。
+  事前指定siteはあるか。
 - **Takeaway:** 両componentを通過したsiteはない。block-27 MLPはsecondaryな
   sufficiency-only asymmetryであり、完全mediatorではない。
 - **Family / sufficiency:** 2 panel horizontal interval dot plot。登録済み6 siteを
@@ -137,6 +143,18 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 - **Output / QA:** `figures/t19_causal_sites.pdf`。12 estimateとintervalを
   `causal_site_results.json`へ照合し、zero / 0.02 referenceを表示し、primary site
   の強調を検査する。
+
+### Figure 5 - 探索から確認へ至る系譜
+
+- **問い:** T19のdesignへ至るまでに、どの先行結果が次の判断を変えたか。
+- **Takeaway:** token構造と持続性の研究がendpointを絞り、後続の語彙・因果研究が
+  二つのarmを持つdesignを導いた。先行stageはT19-L primaryの証拠分母に入らない。
+- **Family / sufficiency:** annotation付きdecision lineage。T1--T19を五つのstageへ
+  まとめ、系列を証拠の累積として扱わない。
+- **Renderer / encoding:** static Matplotlib。token・持続性diagnosticはgray、
+  語彙・boundary研究はblue、T19はorangeで表す。
+- **Output / QA:** `figures/t19_lineage.pdf`。全study labelをAppendix Aへ照合し、
+  compile済みpaperでbox labelとarrowを検査する。
 
 ## 残るsubmission境界
 

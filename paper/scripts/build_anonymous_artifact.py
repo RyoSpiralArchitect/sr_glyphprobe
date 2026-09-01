@@ -44,6 +44,8 @@ DIRECT_FILES = (
     "paper/figures/t19_design.png",
     "paper/figures/t19_emoji_symbol_boundary.pdf",
     "paper/figures/t19_emoji_symbol_boundary.png",
+    "paper/figures/t19_lineage.pdf",
+    "paper/figures/t19_lineage.png",
     "paper/figures/t19_model_effects.pdf",
     "paper/figures/t19_model_effects.png",
     "paper/scripts/build_figures.py",
@@ -159,7 +161,9 @@ def sha256_path(path: Path) -> str:
     return digest.hexdigest()
 
 
-def add_file(payloads: dict[str, bytes], source: str, destination: str | None = None) -> None:
+def add_file(
+    payloads: dict[str, bytes], source: str, destination: str | None = None
+) -> None:
     path = ROOT / source
     if not path.is_file():
         raise FileNotFoundError(f"Required artifact input is missing: {source}")
@@ -170,7 +174,9 @@ def add_file(payloads: dict[str, bytes], source: str, destination: str | None = 
 
 
 def canonical_json(value: object) -> bytes:
-    return (json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    return (
+        json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
+    ).encode("utf-8")
 
 
 def build_payloads() -> dict[str, bytes]:
@@ -216,7 +222,9 @@ def build_payloads() -> dict[str, bytes]:
 
 
 def write_zip(path: Path, files: dict[str, bytes]) -> None:
-    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_STORED, strict_timestamps=True) as archive:
+    with zipfile.ZipFile(
+        path, "w", compression=zipfile.ZIP_STORED, strict_timestamps=True
+    ) as archive:
         for name in sorted(files):
             info = zipfile.ZipInfo(f"{ARCHIVE_ROOT}/{name}", date_time=FIXED_ZIP_TIME)
             info.compress_type = zipfile.ZIP_STORED
@@ -240,7 +248,11 @@ def main() -> int:
         },
         "built_at_utc": FIXED_BUILT_AT,
         "files": [
-            {"bytes": len(payloads[name]), "path": name, "sha256": sha256_bytes(payloads[name])}
+            {
+                "bytes": len(payloads[name]),
+                "path": name,
+                "sha256": sha256_bytes(payloads[name]),
+            }
             for name in sorted(payloads)
         ],
         "schema_version": 1,
@@ -256,7 +268,11 @@ def main() -> int:
     temporary_zip = OUTPUT_ZIP.with_suffix(".zip.tmp")
     write_zip(temporary_zip, files)
     subprocess.run(
-        [sys.executable, str(ROOT / "paper/scripts/validate_anonymous_artifact.py"), str(temporary_zip)],
+        [
+            sys.executable,
+            str(ROOT / "paper/scripts/validate_anonymous_artifact.py"),
+            str(temporary_zip),
+        ],
         cwd=ROOT,
         check=True,
     )
