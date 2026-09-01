@@ -1,0 +1,90 @@
+{
+  "analysis_model_forward_calls": 0,
+  "analysis_role": "prospectively_frozen_exact_surface_fresh_confirmation",
+  "behavioral_claim_authorized": false,
+  "causal_claim_authorized": false,
+  "claim_boundary": "A prospectively frozen observational test on 192 multi-codepoint Emoji 17 sequences whose exact UTF-8 glyph surfaces are absent from the complete tracked repository tree at commit 85213ea9b493682c9198eadda5e20c5e5ab2a04d and whose identities are outside the complete T11 selection. The primary asks whether raw Unicode sequences retrieve their English Emoji short names better than literal U+ codepoint strings in a fixed late-depth window across frozen model/tokenizer cells, both unrestricted and within glyph-system plus exact-token-count strata. Freshness is exact-surface and repository-relative, not a pretraining holdout or a concept-, component-, family-, or Unicode-name holdout. The test concerns text-codepoint sequence representations, not rasterized glyph perception. It cannot establish human meaning, understanding, tokenizer causality, a mechanism, behavior, a scale law, architecture generality, tuning effects, independent model replications, or model-population generality.",
+  "core_order": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "cross_model_primary": {
+    "authorized_wording": "at_least_three_of_four_frozen_core_cells_confirm_exact_surface_fresh_English_short_name_alignment",
+    "core_joint_statistical_and_practical_pass_count": 4,
+    "core_order": [
+      "llama32_3b_base_bf16",
+      "qwen25_7b_base_bf16",
+      "olmo2_1b_base_bf16",
+      "gemma2_2b_it_bf16"
+    ],
+    "core_practical_pass_count": 4,
+    "independence_claim_authorized": false,
+    "m": 4,
+    "multiplier": 2,
+    "ordered_model_iut_p_values": [
+      {
+        "model_role": "gemma2_2b_it_bf16",
+        "p_value": 5e-05
+      },
+      {
+        "model_role": "llama32_3b_base_bf16",
+        "p_value": 5e-05
+      },
+      {
+        "model_role": "olmo2_1b_base_bf16",
+        "p_value": 5e-05
+      },
+      {
+        "model_role": "qwen25_7b_base_bf16",
+        "p_value": 5e-05
+      }
+    ],
+    "outcome_pattern": "fresh_exact_surfaces_confirmed_in_at_least_three_of_four_core_cells",
+    "p_value": 0.0001,
+    "positive": true,
+    "practical_pass": true,
+    "r": 3,
+    "rth_smallest_model_iut_p": 5e-05,
+    "rth_smallest_model_role": "olmo2_1b_base_bf16",
+    "statistical_pass": true
+  },
+  "freeze_manifest_sha256": "4bd83f058d1226b9e3332b88ffa27db04368fcaffe34c6559228b934bb4f3eb1",
+  "generation_calls": 0,
+  "holm_family_size": 9,
+  "independent_replication_claim_authorized": false,
+  "input_summary_receipt_sha256": {
+    "gemma2_2b_it_bf16": "e89a191d085764d7f7c5b2747abe0095d99915be34ea7a1becb9f0dcfec052d1",
+    "llama32_3b_base_bf16": "894a472fd4d7e3582bef19f32b350715cc38d20f7f9023d284ee995a4861a203",
+    "mistral7b_instruct_v03_bf16": "676038d553ef6a1d520863adff6de693427631d8e67e6e9b472d179e39f07ba2",
+    "olmo2_1b_base_bf16": "4f9feaca43f80c9dd8ae5d33868a08d37046a53149a7abdc8db30d7890763db9",
+    "qwen25_0p5b_base_bf16": "aae8832203703c1bee4c747d011ac35e064442bd9ebcdd904a455b6d20d5376c",
+    "qwen25_1p5b_base_bf16": "75281998b9d805f3d28c2d9e4fe66fb17f64adceb6bd83d7179056ded62e3148",
+    "qwen25_3b_base_bf16": "e3da5ed54892a8ff693c2758e2ed2a5f9838b3169dccca787bc0f5dd6cf7fa66",
+    "qwen25_7b_base_bf16": "b328095bf2634b8872f3eaa4f1d0c0f298d6431b4d108415168e7003e805c782",
+    "smollm2_1p7b_base_bf16": "072f21b1d7cabd89a5ab76236a8d3dc49a69cb8fb849b0f7c1d753114e121ac5"
+  },
+  "intervention_calls": 0,
+  "model_general_claim_authorized": false,
+  "model_order": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "outcome_pattern": "fresh_exact_surfaces_confirmed_in_at_least_three_of_four_core_cells",
+  "pretraining_or_semantic_holdout_claim_authorized": false,
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "randomization_draws_per_model_component": 19999,
+  "rendered_glyph_claim_authorized": false,
+  "scale_law_claim_authorized": false,
+  "schema_version": 1,
+  "status": "pass",
+  "total_acquisition_model_forward_calls": 13824
+}

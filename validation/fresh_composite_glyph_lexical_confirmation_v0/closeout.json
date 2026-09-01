@@ -1,0 +1,146 @@
+{
+  "acquisition": {
+    "elapsed_seconds_sum_of_completed_role_receipts": 124.56539951218292,
+    "furnace_analysis_root": "/home/ryospiralarchitect/scratch/glyphprobe-t18-fresh-lexical-analysis-c1c1f00",
+    "furnace_code_worktree": "/home/ryospiralarchitect/scratch/sr-glyphprobe-t18-fresh-lexical-c1c1f00",
+    "furnace_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t18-fresh-lexical-runs-c1c1f00",
+    "furnace_summary_root": "/home/ryospiralarchitect/scratch/glyphprobe-t18-fresh-lexical-summaries-c1c1f00",
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "maximum_peak_cuda_memory_bytes": 15351009792,
+    "model_forward_calls": 13824,
+    "raw_run_bytes": 4788850288,
+    "raw_run_files": 289,
+    "readout_vectors": 497664,
+    "roles_complete": 9,
+    "shards_complete": 54
+  },
+  "claim_boundary": "T18 supports a prospectively frozen, repository-relative exact-surface-fresh English short-name alignment result within the registered model/tokenizer cells. It concerns raw text-codepoint sequence representations. It does not establish a pretraining, concept, component, family, country, or name holdout; rendered-glyph perception; human-like meaning; tokenizer independence or causality; a shared transition, circuit, mediator, or behavior; a scale law; independent model replications; or model-population generality.",
+  "claim_authorization": {
+    "behavioral": false,
+    "causal": false,
+    "human_meaning_or_understanding": false,
+    "independent_model_replications": false,
+    "model_population_general": false,
+    "pretraining_or_semantic_holdout": false,
+    "rendered_glyph_perception": false,
+    "scale_law": false,
+    "tokenizer_independent": false
+  },
+  "compact_outputs": {
+    "depth_csv": {
+      "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/results/secondary/depth_curves.csv",
+      "rows": 81,
+      "sha256": "fc4ec44dc3768de98c8cd853c1f3cab71341b8d11f9580f248eb3d4484c0534c"
+    },
+    "depth_figure": {
+      "model_curves": 9,
+      "points": 81,
+      "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/results/secondary/depth_curves.svg",
+      "sha256": "0bd0ccdfc24cd6069d046bddb686bfe6e1b70e6c3b97a380ee7f9f46c82d7fb5"
+    },
+    "post_outcome_secondary_analysis": {
+      "can_rescue_primary": false,
+      "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/results/secondary/secondary_analysis.json",
+      "sha256": "12d244260e1b8e097211e101344dbdf91e37f67c6bb369d3ea74ffd972251911",
+      "status": "post_outcome_secondary_analysis_complete"
+    },
+    "primary_analysis": {
+      "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/results/analysis_receipt.json",
+      "sha256": "799cb3cc2b27c17b3b2d861a8f92d9e629963fd5b2ab085d8bc5a7282772b10c",
+      "status": "pass"
+    }
+  },
+  "decision": {
+    "core_joint_statistical_and_practical_pass_count": 4,
+    "core_order": [
+      "llama32_3b_base_bf16",
+      "qwen25_7b_base_bf16",
+      "olmo2_1b_base_bf16",
+      "gemma2_2b_it_bf16"
+    ],
+    "outcome_pattern": "fresh_exact_surfaces_confirmed_in_at_least_three_of_four_core_cells",
+    "partial_conjunction_p": 0.0001,
+    "positive": true,
+    "registered_cells_bounded_pass": 8,
+    "registered_cells_total": 9,
+    "r": 3
+  },
+  "documentation": {
+    "paper_story_en": {
+      "path": "docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md",
+      "sha256": "a5feb11422e99cedc6e5d969551005c99c724740e2c35a008ad05db5b24f22b8"
+    },
+    "paper_story_ja": {
+      "path": "docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md",
+      "sha256": "b5b907f92520221519f307f610940aabbf5c3f1a6c5c34c24755049e5f6f83e0"
+    },
+    "protocol_en": {
+      "path": "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md",
+      "sha256": "754fd48384cf2806d79bda3b19445d7a1311079853d5885144cefbc77687db9e"
+    },
+    "protocol_ja": {
+      "path": "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md",
+      "sha256": "a0e0e21a48334e2b5b07720c13d2dac8933a9297eb8b6faee82aecfdded4fc1d"
+    },
+    "results_en": {
+      "path": "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md",
+      "sha256": "542a0d980b66fdd9bab90624f13debb72b75109aafc58921446a98d2f4eceab3"
+    },
+    "results_ja": {
+      "path": "docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md",
+      "sha256": "ec5467a22a6db9311d390716896d4f12a3f0669b8f17ec8102e5705eaf48dfa3"
+    }
+  },
+  "execution_freeze": {
+    "commit": "c1c1f006edb6264d4042a53ad0e333e01ebc74ab",
+    "manifest_path": "data/manifests/fresh_composite_glyph_lexical_confirmation_v0_freeze.json",
+    "manifest_sha256": "4bd83f058d1226b9e3332b88ffa27db04368fcaffe34c6559228b934bb4f3eb1",
+    "pushed_before_execution": true
+  },
+  "independent_validation": {
+    "randomization_tests_recomputed": 18,
+    "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/independent_validation.json",
+    "sha256": "a81228a4a187c692ff41fff83da239a2be4de8f6de05335f7be55b4d5eb8f4ad",
+    "status": "independent_validation_pass",
+    "validator_path": "scripts/validate_fresh_composite_glyph_lexical_confirmation_v0_result.py",
+    "validator_sha256": "30a58d8f6f02ccaf98b12442b6baddfc81d05a29b3de91b78b3f945fb23e4bfa"
+  },
+  "population": {
+    "exact_surface_hits_in_frozen_repository_tree": 0,
+    "exposure_commit": "85213ea9b493682c9198eadda5e20c5e5ab2a04d",
+    "exposure_regular_git_blobs": 1429,
+    "exposure_tree": "bc114c57fb25f9d08f12bea1bdf367002506bd67",
+    "items": 192,
+    "modifier": 64,
+    "regional_flag": 32,
+    "t11_identity_hits": 0,
+    "zwj": 96
+  },
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "raw_activations_copied_from_furnace": false,
+  "regression": {
+    "new_failures": 0,
+    "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/regression.json",
+    "sha256": "e2615b4b9663cb23fb72e835d8de5035d7e8e8f27fabc1ddfb37be92eac30001",
+    "status": "no_new_regression_failures"
+  },
+  "runtime_yield": {
+    "boundary": "before_shard_0000",
+    "candidate_model_forwards_before_yield": 0,
+    "repository_path": "validation/fresh_composite_glyph_lexical_confirmation_v0/runtime_yield_receipt.json",
+    "sha256": "3cd5c608d4fffc8244cf6a87d6a67432a33726756e5bebc3219bf051308aa811",
+    "status": "yielded_for_foreign_gpu_contention_then_resumed_same_frozen_role"
+  },
+  "schema_version": 1,
+  "secondary_descriptive": {
+    "all_nine_item_positive_in_every_model": 2,
+    "core_item_positive_in_every_core_model": 8,
+    "english_paired_margin_positive_models_matched": 9,
+    "japanese_token_matched_positive_models": 9,
+    "matched_cka_positive_models": 3,
+    "qwen_size_profile_strictly_increasing": true,
+    "qwen_scale_law_claim_authorized": false
+  },
+  "status": "complete_fresh_composite_glyph_lexical_confirmation"
+}

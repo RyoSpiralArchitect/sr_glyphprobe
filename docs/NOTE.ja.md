@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[T17 glyph–name 論文ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
@@ -31,6 +31,16 @@ literalな`U+...`識別子よりUnicode正式名を正しく引けるかを調�
 paired-item marginは9 / 9でnameを支持したが、空間全体のCKA alignmentは4 / 9だけだった。
 ここが今回の収穫である。Raw emojiは、自分自身の語彙ラベルを引くkeyとして改善しても、emoji空間全体が
 name空間へ変わる必要はない。既出population上の探索結果であり、視覚知覚や意味理解の証明ではない。
+
+T18では、その関係が、tokenizerもmodel outcomeも見る前に区切った新しいpopulationで残るかを
+確かめた。結果は残った。研究repoに表層が一度も現れていない複合絵文字192件を使い、4つの
+core cellすべてで、生Unicode列はliteral codepoint列より英語短名をよく検索した。全項目でも、
+token数を完全一致させても同じで、partial conjunctionは`p = 0.0001`だった。
+
+ただし、4 coreすべてで正だったitemは8件だけ。Matched CKAが短名を支持したmodelも9つ中3つに
+とどまる。T17より強い確認が得られたのに、内部の姿はむしろ一様ではない。集約効果は確認でき、
+その中身はmodelごとにかなり私有されている。ここでの「未提示」は研究repoに対する完全一致表層の
+話であり、事前学習dataに絵文字や名前がなかったことを示さない。
 
 ## まず、意味ではなく「跡」を測る
 

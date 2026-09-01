@@ -1,0 +1,40 @@
+{
+  "authorized_wording": "at_least_three_of_four_frozen_core_cells_confirm_exact_surface_fresh_English_short_name_alignment",
+  "core_joint_statistical_and_practical_pass_count": 4,
+  "core_order": [
+    "llama32_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "gemma2_2b_it_bf16"
+  ],
+  "core_practical_pass_count": 4,
+  "independence_claim_authorized": false,
+  "m": 4,
+  "multiplier": 2,
+  "ordered_model_iut_p_values": [
+    {
+      "model_role": "gemma2_2b_it_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "llama32_3b_base_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "olmo2_1b_base_bf16",
+      "p_value": 5e-05
+    },
+    {
+      "model_role": "qwen25_7b_base_bf16",
+      "p_value": 5e-05
+    }
+  ],
+  "outcome_pattern": "fresh_exact_surfaces_confirmed_in_at_least_three_of_four_core_cells",
+  "p_value": 0.0001,
+  "positive": true,
+  "practical_pass": true,
+  "r": 3,
+  "rth_smallest_model_iut_p": 5e-05,
+  "rth_smallest_model_role": "olmo2_1b_base_bf16",
+  "statistical_pass": true
+}

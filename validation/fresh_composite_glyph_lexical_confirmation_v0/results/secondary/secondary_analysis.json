@@ -1,0 +1,938 @@
+{
+  "analysis_role": "descriptive_only_cannot_rescue_frozen_primary",
+  "claim_authorization": {
+    "can_rescue_primary": false,
+    "causal": false,
+    "human_meaning_or_understanding": false,
+    "model_population_general": false,
+    "rendered_glyph_perception": false,
+    "scale_law": false,
+    "tokenizer_independent": false
+  },
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "itemwise_agreement": {
+    "all_nine": {
+      "model_roles": [
+        "qwen25_0p5b_base_bf16",
+        "olmo2_1b_base_bf16",
+        "qwen25_1p5b_base_bf16",
+        "smollm2_1p7b_base_bf16",
+        "gemma2_2b_it_bf16",
+        "llama32_3b_base_bf16",
+        "qwen25_3b_base_bf16",
+        "qwen25_7b_base_bf16",
+        "mistral7b_instruct_v03_bf16"
+      ],
+      "negative_equal_model_mean": 25,
+      "pairwise_item_effect_pearson": {
+        "maximum": 0.4798436336627827,
+        "median": 0.1670010517327392,
+        "minimum": -0.08814073352455475
+      },
+      "positive_equal_model_mean": 164,
+      "positive_in_all_models": 2,
+      "positive_in_at_least_75_percent_of_models": 21,
+      "zero_equal_model_mean": 3
+    },
+    "core_four": {
+      "model_roles": [
+        "llama32_3b_base_bf16",
+        "qwen25_7b_base_bf16",
+        "olmo2_1b_base_bf16",
+        "gemma2_2b_it_bf16"
+      ],
+      "negative_equal_model_mean": 27,
+      "pairwise_item_effect_pearson": {
+        "maximum": 0.20345195004190364,
+        "median": 0.12945621638400298,
+        "minimum": 0.024489141910968102
+      },
+      "positive_equal_model_mean": 143,
+      "positive_in_all_models": 8,
+      "positive_in_at_least_75_percent_of_models": 49,
+      "zero_equal_model_mean": 22
+    },
+    "core_positive_in_all_items": [
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.041666666666666664,
+          "llama32_3b_base_bf16": 0.08333333333333333,
+          "olmo2_1b_base_bf16": 0.20833333333333334,
+          "qwen25_7b_base_bf16": 0.041666666666666664
+        },
+        "english_short_name": "love-you gesture: medium skin tone",
+        "glyph": "🤟🏽",
+        "glyph_system": "modifier"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.08333333333333333,
+          "llama32_3b_base_bf16": 0.041666666666666664,
+          "olmo2_1b_base_bf16": 0.2916666666666667,
+          "qwen25_7b_base_bf16": 0.16666666666666669
+        },
+        "english_short_name": "eye in speech bubble",
+        "glyph": "👁️‍🗨️",
+        "glyph_system": "zwj"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.20833333333333334,
+          "llama32_3b_base_bf16": 0.375,
+          "olmo2_1b_base_bf16": 0.16666666666666669,
+          "qwen25_7b_base_bf16": 0.7083333333333334
+        },
+        "english_short_name": "woman facepalming",
+        "glyph": "🤦‍♀️",
+        "glyph_system": "zwj"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.041666666666666664,
+          "llama32_3b_base_bf16": 0.08333333333333333,
+          "olmo2_1b_base_bf16": 0.125,
+          "qwen25_7b_base_bf16": 0.20833333333333334
+        },
+        "english_short_name": "woman superhero: medium-dark skin tone",
+        "glyph": "🦸🏾‍♀️",
+        "glyph_system": "zwj"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.125,
+          "llama32_3b_base_bf16": 0.041666666666666664,
+          "olmo2_1b_base_bf16": 0.4166666666666667,
+          "qwen25_7b_base_bf16": 0.9166666666666666
+        },
+        "english_short_name": "transgender flag",
+        "glyph": "🏳️‍⚧️",
+        "glyph_system": "zwj"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.3333333333333333,
+          "llama32_3b_base_bf16": 0.41666666666666663,
+          "olmo2_1b_base_bf16": 0.4583333333333333,
+          "qwen25_7b_base_bf16": 0.2916666666666667
+        },
+        "english_short_name": "flag: Andorra",
+        "glyph": "🇦🇩",
+        "glyph_system": "regional_flag"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.041666666666666664,
+          "llama32_3b_base_bf16": 0.16666666666666669,
+          "olmo2_1b_base_bf16": 0.16666666666666666,
+          "qwen25_7b_base_bf16": 0.5833333333333334
+        },
+        "english_short_name": "flag: South Korea",
+        "glyph": "🇰🇷",
+        "glyph_system": "regional_flag"
+      },
+      {
+        "core_item_effects": {
+          "gemma2_2b_it_bf16": 0.08333333333333333,
+          "llama32_3b_base_bf16": 0.5416666666666666,
+          "olmo2_1b_base_bf16": 0.2916666666666667,
+          "qwen25_7b_base_bf16": 0.25
+        },
+        "english_short_name": "flag: Lithuania",
+        "glyph": "🇱🇹",
+        "glyph_system": "regional_flag"
+      }
+    ],
+    "interpretation": "Aggregate recurrence does not imply a shared item roster; item-effect agreement remains descriptive and model-conditional."
+  },
+  "model_forward_calls": 0,
+  "per_model": {
+    "gemma2_2b_it_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.055229885057471256,
+          "english_unrestricted": 0.04405381944444444,
+          "japanese_secondary_tokenization_matched": 0.041460613075196405,
+          "japanese_unrestricted": 0.016710069444444444,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.05614486407589856,
+          "english_unrestricted": 0.04535590277777778,
+          "japanese_secondary_tokenization_matched": 0.04394640852974186,
+          "japanese_unrestricted": 0.029513888888888885,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.019357781426746944,
+          "english_unrestricted": 0.011284722222222222,
+          "japanese_secondary_tokenization_matched": 0.01240267255892256,
+          "japanese_unrestricted": -0.007595486111111111,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.004242838898011311,
+          "english_unrestricted": 0.0023871527777777775,
+          "japanese_secondary_tokenization_matched": -0.001023691778900112,
+          "japanese_unrestricted": -0.008680555555555556,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.013817733990147784,
+          "english_unrestricted": 0.011067708333333334,
+          "japanese_secondary_tokenization_matched": 0.010427626964085298,
+          "japanese_unrestricted": 0.010850694444444446,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.022334428024083197,
+          "english_unrestricted": 0.016710069444444444,
+          "japanese_secondary_tokenization_matched": 0.012963839786756451,
+          "japanese_unrestricted": 0.003038194444444444,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.023083378945447913,
+          "english_unrestricted": 0.024522569444444444,
+          "japanese_secondary_tokenization_matched": 0.010719170875420875,
+          "japanese_unrestricted": 0.007595486111111112,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.04341178617040686,
+          "english_unrestricted": 0.040581597222222224,
+          "japanese_secondary_tokenization_matched": 0.0180559939674523,
+          "japanese_unrestricted": 0.004123263888888889,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.02430669585842,
+          "english_unrestricted": 0.03125,
+          "japanese_secondary_tokenization_matched": 0.02521964436026936,
+          "japanese_unrestricted": 0.012152777777777778,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.005467094186054168,
+        "english_cka_unrestricted": 0.0002064467461160739,
+        "english_paired_margin_primary_tokenization_matched": 0.026477189301654675,
+        "english_paired_margin_unrestricted": 0.030794715749552882,
+        "english_primary_tokenization_matched": 0.030267286991424922,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.16925110479797978,
+        "english_to_japanese_top1_unrestricted": 0.14756944444444445,
+        "english_unrestricted": 0.03211805555555555,
+        "japanese_secondary_tokenization_matched": 0.017998269734380845,
+        "japanese_unrestricted": 0.007957175925925925
+      }
+    },
+    "llama32_3b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": -0.019852369852369853,
+          "english_unrestricted": -0.011067708333333334,
+          "japanese_secondary_tokenization_matched": -0.008661994139542252,
+          "japanese_unrestricted": -0.0036892361111111106,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": -0.01570512820512821,
+          "english_unrestricted": -0.014756944444444442,
+          "japanese_secondary_tokenization_matched": -0.02921484385311898,
+          "japanese_unrestricted": -0.014973958333333334,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.0013791763791763795,
+          "english_unrestricted": -0.003906250000000001,
+          "japanese_secondary_tokenization_matched": -0.022623478788838733,
+          "japanese_unrestricted": -0.0078125,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.012354312354312351,
+          "english_unrestricted": 0.014973958333333334,
+          "japanese_secondary_tokenization_matched": -0.022342995169082128,
+          "japanese_unrestricted": 0.0036892361111111114,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.04481351981351981,
+          "english_unrestricted": 0.028211805555555556,
+          "japanese_secondary_tokenization_matched": 0.029440880652569886,
+          "japanese_unrestricted": 0.011284722222222224,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.05332167832167831,
+          "english_unrestricted": 0.04448784722222223,
+          "japanese_secondary_tokenization_matched": 0.03315646366252211,
+          "japanese_unrestricted": 0.029947916666666668,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.079496891996892,
+          "english_unrestricted": 0.07291666666666667,
+          "japanese_secondary_tokenization_matched": 0.0604541194794224,
+          "japanese_unrestricted": 0.06770833333333333,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.09357031857031857,
+          "english_unrestricted": 0.08138020833333333,
+          "japanese_secondary_tokenization_matched": 0.06540053060901242,
+          "japanese_unrestricted": 0.07921006944444445,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.12513597513597513,
+          "english_unrestricted": 0.10828993055555557,
+          "japanese_secondary_tokenization_matched": 0.1072552862912806,
+          "japanese_unrestricted": 0.10894097222222222,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.04920283482312727,
+        "english_cka_unrestricted": -0.061794275555105804,
+        "english_paired_margin_primary_tokenization_matched": 0.08337581209586363,
+        "english_paired_margin_unrestricted": 0.08541024905425555,
+        "english_primary_tokenization_matched": 0.0994010619010619,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.404798909743671,
+        "english_to_japanese_top1_unrestricted": 0.3561197916666667,
+        "english_unrestricted": 0.08752893518518517,
+        "japanese_secondary_tokenization_matched": 0.0777033121265718,
+        "japanese_unrestricted": 0.08528645833333333
+      }
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.004059087403077173,
+          "english_unrestricted": -0.004774305555555555,
+          "japanese_secondary_tokenization_matched": 0.006354957441913964,
+          "japanese_unrestricted": -0.007161458333333333,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.024067308082653352,
+          "english_unrestricted": 0.0032552083333333335,
+          "japanese_secondary_tokenization_matched": 0.010804865424430642,
+          "japanese_unrestricted": 0.012152777777777776,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.10052723988145983,
+          "english_unrestricted": 0.07508680555555557,
+          "japanese_secondary_tokenization_matched": 0.08374309868875085,
+          "japanese_unrestricted": 0.05121527777777778,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.07064101002719929,
+          "english_unrestricted": 0.06553819444444445,
+          "japanese_secondary_tokenization_matched": 0.045491143317230275,
+          "japanese_unrestricted": 0.03797743055555556,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.09504830917874396,
+          "english_unrestricted": 0.087890625,
+          "japanese_secondary_tokenization_matched": 0.08733034276512537,
+          "japanese_unrestricted": 0.05750868055555555,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.1723719197824057,
+          "english_unrestricted": 0.15907118055555555,
+          "japanese_secondary_tokenization_matched": 0.17144726247987116,
+          "japanese_unrestricted": 0.12738715277777776,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.21785612795842976,
+          "english_unrestricted": 0.20551215277777776,
+          "japanese_secondary_tokenization_matched": 0.24946083505866112,
+          "japanese_unrestricted": 0.18098958333333334,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.23849713798562902,
+          "english_unrestricted": 0.216796875,
+          "japanese_secondary_tokenization_matched": 0.24568668046928918,
+          "japanese_unrestricted": 0.208984375,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.2980199326107254,
+          "english_unrestricted": 0.27191840277777773,
+          "japanese_secondary_tokenization_matched": 0.3087977340694732,
+          "japanese_unrestricted": 0.2521701388888889,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": 0.08244699760227837,
+        "english_cka_unrestricted": 0.045754903401254265,
+        "english_paired_margin_primary_tokenization_matched": 0.12433416012930569,
+        "english_paired_margin_unrestricted": 0.12931405427205356,
+        "english_primary_tokenization_matched": 0.25145773285159473,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.34294005444367764,
+        "english_to_japanese_top1_unrestricted": 0.24775752314814814,
+        "english_unrestricted": 0.23140914351851852,
+        "japanese_secondary_tokenization_matched": 0.26798174986580786,
+        "japanese_unrestricted": 0.2140480324074074
+      }
+    },
+    "olmo2_1b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.005131673881673881,
+          "english_unrestricted": -0.003038194444444444,
+          "japanese_secondary_tokenization_matched": -0.020299145299145296,
+          "japanese_unrestricted": -0.005208333333333333,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": -0.016423160173160173,
+          "english_unrestricted": -0.014973958333333334,
+          "japanese_secondary_tokenization_matched": -0.018518518518518517,
+          "japanese_unrestricted": -0.007595486111111111,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.00836038961038961,
+          "english_unrestricted": 0.005208333333333333,
+          "japanese_secondary_tokenization_matched": -0.006232193732193731,
+          "japanese_unrestricted": 0.00390625,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.011534992784992785,
+          "english_unrestricted": 0.005425347222222223,
+          "japanese_secondary_tokenization_matched": 0.022792022792022793,
+          "japanese_unrestricted": 0.001953125,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.002804834054834055,
+          "english_unrestricted": 0.011067708333333334,
+          "japanese_secondary_tokenization_matched": 0.025284900284900283,
+          "japanese_unrestricted": 0.018663194444444444,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.01479076479076479,
+          "english_unrestricted": 0.013454861111111112,
+          "japanese_secondary_tokenization_matched": 0.009793447293447293,
+          "japanese_unrestricted": 0.012369791666666666,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.02972582972582972,
+          "english_unrestricted": 0.023220486111111115,
+          "japanese_secondary_tokenization_matched": 0.015135327635327636,
+          "japanese_unrestricted": 0.00390625,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.047691197691197694,
+          "english_unrestricted": 0.057942708333333336,
+          "japanese_secondary_tokenization_matched": 0.07015669515669516,
+          "japanese_unrestricted": 0.044270833333333336,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.06106601731601732,
+          "english_unrestricted": 0.05967881944444444,
+          "japanese_secondary_tokenization_matched": 0.10345441595441596,
+          "japanese_unrestricted": 0.05642361111111111,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.14992113513462624,
+        "english_cka_unrestricted": -0.15701238480918928,
+        "english_paired_margin_primary_tokenization_matched": 0.040886120722125066,
+        "english_paired_margin_unrestricted": 0.04109068750595318,
+        "english_primary_tokenization_matched": 0.04616101491101491,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.19088319088319086,
+        "english_to_japanese_top1_unrestricted": 0.12702546296296294,
+        "english_unrestricted": 0.046947337962962965,
+        "japanese_secondary_tokenization_matched": 0.06291547958214626,
+        "japanese_unrestricted": 0.03486689814814815
+      }
+    },
+    "qwen25_0p5b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.008640967172028433,
+          "english_unrestricted": 0.0,
+          "japanese_secondary_tokenization_matched": -0.0035896218952697345,
+          "japanese_unrestricted": -0.009548611111111112,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.0008050351288056206,
+          "english_unrestricted": 0.0017361111111111112,
+          "japanese_secondary_tokenization_matched": -0.0034519854453409263,
+          "japanese_unrestricted": 0.004991319444444445,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.00443860676280866,
+          "english_unrestricted": 0.004340277777777777,
+          "japanese_secondary_tokenization_matched": 0.00901439645625692,
+          "japanese_unrestricted": 0.0023871527777777775,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.021086271005382306,
+          "english_unrestricted": 0.01953125,
+          "japanese_secondary_tokenization_matched": 0.011429362442651482,
+          "japanese_unrestricted": 0.0078125,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.0021108098114137794,
+          "english_unrestricted": 0.004991319444444444,
+          "japanese_secondary_tokenization_matched": 0.017975003955070398,
+          "japanese_unrestricted": 0.004340277777777779,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.011717305558979416,
+          "english_unrestricted": 0.015842013888888888,
+          "japanese_secondary_tokenization_matched": 0.017975003955070398,
+          "japanese_unrestricted": 0.01953125,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.008293017379514359,
+          "english_unrestricted": 0.01584201388888889,
+          "japanese_secondary_tokenization_matched": 0.009299952539155198,
+          "japanese_unrestricted": 0.019965277777777776,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.06453505690455648,
+          "english_unrestricted": 0.06532118055555557,
+          "japanese_secondary_tokenization_matched": 0.030586932447397564,
+          "japanese_unrestricted": 0.044921875,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.062381876823205555,
+          "english_unrestricted": 0.05360243055555555,
+          "japanese_secondary_tokenization_matched": 0.03004666983072299,
+          "japanese_unrestricted": 0.042317708333333336,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.07315000133031044,
+        "english_cka_unrestricted": -0.07797908093927068,
+        "english_paired_margin_primary_tokenization_matched": 0.05307234800625349,
+        "english_paired_margin_unrestricted": 0.054752835920011234,
+        "english_primary_tokenization_matched": 0.045069983702425466,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.18602647260454566,
+        "english_to_japanese_top1_unrestricted": 0.17469618055555558,
+        "english_unrestricted": 0.044921875,
+        "japanese_secondary_tokenization_matched": 0.023311184939091917,
+        "japanese_unrestricted": 0.0357349537037037
+      }
+    },
+    "qwen25_1p5b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.12767189490118738,
+          "english_unrestricted": 0.10785590277777779,
+          "japanese_secondary_tokenization_matched": 0.017376997310552127,
+          "japanese_unrestricted": 0.012586805555555554,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.04028257118205349,
+          "english_unrestricted": 0.03276909722222222,
+          "japanese_secondary_tokenization_matched": 0.01328033538996994,
+          "japanese_unrestricted": 0.006076388888888889,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.03356880931837791,
+          "english_unrestricted": 0.02560763888888889,
+          "japanese_secondary_tokenization_matched": 0.044489795918367346,
+          "japanese_unrestricted": 0.014539930555555554,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.03800228029089116,
+          "english_unrestricted": 0.026041666666666668,
+          "japanese_secondary_tokenization_matched": 0.0343031165954754,
+          "japanese_unrestricted": 0.020833333333333332,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.034425202350137636,
+          "english_unrestricted": 0.03927951388888889,
+          "japanese_secondary_tokenization_matched": 0.02530295839265939,
+          "japanese_unrestricted": 0.01388888888888889,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.03496446033115575,
+          "english_unrestricted": 0.033854166666666664,
+          "japanese_secondary_tokenization_matched": 0.025085429520645464,
+          "japanese_unrestricted": 0.002387152777777778,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.08895702370680801,
+          "english_unrestricted": 0.09505208333333333,
+          "japanese_secondary_tokenization_matched": 0.08128460686600221,
+          "japanese_unrestricted": 0.06684027777777778,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.17971670980730514,
+          "english_unrestricted": 0.162109375,
+          "japanese_secondary_tokenization_matched": 0.16042477456098717,
+          "japanese_unrestricted": 0.130859375,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.08959771354616049,
+          "english_unrestricted": 0.07660590277777778,
+          "japanese_secondary_tokenization_matched": 0.06587723461477614,
+          "japanese_unrestricted": 0.05360243055555556,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.0030302414304417846,
+        "english_cka_unrestricted": 0.0048018500537828565,
+        "english_paired_margin_primary_tokenization_matched": 0.11362288692186473,
+        "english_paired_margin_unrestricted": 0.10953861801378297,
+        "english_primary_tokenization_matched": 0.1194238156867579,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.31455676844381164,
+        "english_to_japanese_top1_unrestricted": 0.30512152777777773,
+        "english_unrestricted": 0.11125578703703705,
+        "japanese_secondary_tokenization_matched": 0.10252887201392184,
+        "japanese_unrestricted": 0.0837673611111111
+      }
+    },
+    "qwen25_3b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.12611831833682566,
+          "english_unrestricted": 0.10416666666666667,
+          "japanese_secondary_tokenization_matched": 0.018583293782629327,
+          "japanese_unrestricted": -0.001085069444444444,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.07442145322322198,
+          "english_unrestricted": 0.0646701388888889,
+          "japanese_secondary_tokenization_matched": 0.015662078785002375,
+          "japanese_unrestricted": 0.017578125,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.03898963597518386,
+          "english_unrestricted": 0.02560763888888889,
+          "japanese_secondary_tokenization_matched": 0.023125296630280023,
+          "japanese_unrestricted": 0.022569444444444448,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.026084678910390725,
+          "english_unrestricted": 0.019965277777777776,
+          "japanese_secondary_tokenization_matched": 0.033890998259769024,
+          "japanese_unrestricted": 0.015625,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.021655059780599038,
+          "english_unrestricted": 0.01171875,
+          "japanese_secondary_tokenization_matched": 0.024520645467489322,
+          "japanese_unrestricted": 0.014539930555555554,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.014545842064176834,
+          "english_unrestricted": 0.010633680555555558,
+          "japanese_secondary_tokenization_matched": 0.021969625059326054,
+          "japanese_unrestricted": 0.016276041666666668,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.08838053124614814,
+          "english_unrestricted": 0.07964409722222222,
+          "japanese_secondary_tokenization_matched": 0.0916595475399462,
+          "japanese_unrestricted": 0.07291666666666667,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.1637174390895271,
+          "english_unrestricted": 0.15364583333333334,
+          "japanese_secondary_tokenization_matched": 0.13408637873754156,
+          "japanese_unrestricted": 0.11892361111111112,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.14704923168577178,
+          "english_unrestricted": 0.13346354166666666,
+          "japanese_secondary_tokenization_matched": 0.15721325739598166,
+          "japanese_unrestricted": 0.11805555555555554,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": 0.035273725120206836,
+        "english_cka_unrestricted": 0.0362257567026902,
+        "english_paired_margin_primary_tokenization_matched": 0.09845560565743561,
+        "english_paired_margin_unrestricted": 0.08856041288994336,
+        "english_primary_tokenization_matched": 0.13304906734048236,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.3627108052523335,
+        "english_to_japanese_top1_unrestricted": 0.3331163194444444,
+        "english_unrestricted": 0.1222511574074074,
+        "japanese_secondary_tokenization_matched": 0.1276530612244898,
+        "japanese_unrestricted": 0.1032986111111111
+      }
+    },
+    "qwen25_7b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": 0.017837883643535064,
+          "english_unrestricted": 0.015407986111111114,
+          "japanese_secondary_tokenization_matched": 0.014063439329220063,
+          "japanese_unrestricted": 0.0004340277777777774,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": 0.05919511894490324,
+          "english_unrestricted": 0.04926215277777777,
+          "japanese_secondary_tokenization_matched": 0.029962031324157572,
+          "japanese_unrestricted": 0.021701388888888885,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": 0.03128851842721558,
+          "english_unrestricted": 0.020182291666666668,
+          "japanese_secondary_tokenization_matched": 0.05463771555133681,
+          "japanese_unrestricted": 0.03211805555555555,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": 0.05729872837832286,
+          "english_unrestricted": 0.05772569444444444,
+          "japanese_secondary_tokenization_matched": 0.06874386964087961,
+          "japanese_unrestricted": 0.053385416666666664,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.03521739800320473,
+          "english_unrestricted": 0.03537326388888889,
+          "japanese_secondary_tokenization_matched": 0.043307229868691656,
+          "japanese_unrestricted": 0.03363715277777778,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.0331078721393648,
+          "english_unrestricted": 0.029730902777777776,
+          "japanese_secondary_tokenization_matched": 0.015984021515582977,
+          "japanese_unrestricted": 0.02191840277777778,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.09609320432228112,
+          "english_unrestricted": 0.09223090277777779,
+          "japanese_secondary_tokenization_matched": 0.07715234931181775,
+          "japanese_unrestricted": 0.05902777777777778,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.28585423599983567,
+          "english_unrestricted": 0.2712673611111111,
+          "japanese_secondary_tokenization_matched": 0.25208194905869324,
+          "japanese_unrestricted": 0.23914930555555558,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.19581484448826983,
+          "english_unrestricted": 0.17209201388888892,
+          "japanese_secondary_tokenization_matched": 0.13152032906185732,
+          "japanese_unrestricted": 0.1193576388888889,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": 0.009702471535256676,
+        "english_cka_unrestricted": 0.0049926657660150295,
+        "english_paired_margin_primary_tokenization_matched": 0.11832505084382043,
+        "english_paired_margin_unrestricted": 0.11515111932140258,
+        "english_primary_tokenization_matched": 0.19258742827012887,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.3277469282286558,
+        "english_to_japanese_top1_unrestricted": 0.3044704861111111,
+        "english_unrestricted": 0.1785300925925926,
+        "japanese_secondary_tokenization_matched": 0.15358487581078945,
+        "japanese_unrestricted": 0.13917824074074073
+      }
+    },
+    "smollm2_1p7b_base_bf16": {
+      "depth_profile": [
+        {
+          "english_primary_tokenization_matched": -0.004629629629629629,
+          "english_unrestricted": -0.004340277777777778,
+          "japanese_secondary_tokenization_matched": 0.02887695085022129,
+          "japanese_unrestricted": 0.015625,
+          "normalized_depth": 0.0
+        },
+        {
+          "english_primary_tokenization_matched": -0.007864858906525572,
+          "english_unrestricted": 0.0006510416666666666,
+          "japanese_secondary_tokenization_matched": 0.0051828558117866285,
+          "japanese_unrestricted": 0.0006510416666666671,
+          "normalized_depth": 0.125
+        },
+        {
+          "english_primary_tokenization_matched": -0.006531084656084656,
+          "english_unrestricted": 0.004340277777777778,
+          "japanese_secondary_tokenization_matched": -0.0035450151409270885,
+          "japanese_unrestricted": -0.0008680555555555554,
+          "normalized_depth": 0.25
+        },
+        {
+          "english_primary_tokenization_matched": -0.009595458553791887,
+          "english_unrestricted": -0.006727430555555556,
+          "japanese_secondary_tokenization_matched": -0.018816969485208477,
+          "japanese_unrestricted": -0.004123263888888888,
+          "normalized_depth": 0.375
+        },
+        {
+          "english_primary_tokenization_matched": 0.004095017636684303,
+          "english_unrestricted": 0.01345486111111111,
+          "japanese_secondary_tokenization_matched": 0.003232005590496155,
+          "japanese_unrestricted": 0.020399305555555556,
+          "normalized_depth": 0.5
+        },
+        {
+          "english_primary_tokenization_matched": 0.015569885361552028,
+          "english_unrestricted": 0.011067708333333334,
+          "japanese_secondary_tokenization_matched": -0.002911716748194735,
+          "japanese_unrestricted": 0.0015190972222222227,
+          "normalized_depth": 0.625
+        },
+        {
+          "english_primary_tokenization_matched": 0.010570987654320985,
+          "english_unrestricted": 0.008029513888888888,
+          "japanese_secondary_tokenization_matched": -0.03763393897041696,
+          "japanese_unrestricted": 0.0021701388888888894,
+          "normalized_depth": 0.75
+        },
+        {
+          "english_primary_tokenization_matched": 0.04798831569664903,
+          "english_unrestricted": 0.03667534722222222,
+          "japanese_secondary_tokenization_matched": 0.03702975774516655,
+          "japanese_unrestricted": 0.019965277777777776,
+          "normalized_depth": 0.875
+        },
+        {
+          "english_primary_tokenization_matched": 0.0179728835978836,
+          "english_unrestricted": 0.009114583333333334,
+          "japanese_secondary_tokenization_matched": 0.07757541346377825,
+          "japanese_unrestricted": 0.01974826388888889,
+          "normalized_depth": 1.0
+        }
+      ],
+      "late_window": {
+        "english_cka_primary_tokenization_matched": -0.13006338356883063,
+        "english_cka_unrestricted": -0.1292572841864276,
+        "english_paired_margin_primary_tokenization_matched": 0.024027830849380104,
+        "english_paired_margin_unrestricted": 0.024105003905955966,
+        "english_primary_tokenization_matched": 0.025510728982951206,
+        "english_to_japanese_top1_secondary_tokenization_matched": 0.1850056293190465,
+        "english_to_japanese_top1_unrestricted": 0.11725983796296295,
+        "english_unrestricted": 0.017939814814814815,
+        "japanese_secondary_tokenization_matched": 0.02565707741284261,
+        "japanese_unrestricted": 0.013961226851851851
+      }
+    }
+  },
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "qwen_size_ordered_matched_profile": {
+    "model_roles": [
+      "qwen25_0p5b_base_bf16",
+      "qwen25_1p5b_base_bf16",
+      "qwen25_3b_base_bf16",
+      "qwen25_7b_base_bf16"
+    ],
+    "scale_law_claim_authorized": false,
+    "strictly_increasing": true,
+    "values": [
+      0.045069983702425466,
+      0.11942381568675788,
+      0.13304906734048236,
+      0.19258742827012887
+    ]
+  },
+  "schema_version": 1,
+  "source_integrity": {
+    "analysis_sha256s": {
+      "analysis_receipt.json": "799cb3cc2b27c17b3b2d861a8f92d9e629963fd5b2ab085d8bc5a7282772b10c",
+      "cross_model_primary_result.json": "afa4ec9e3614ba11da578abf9fc4009630e6c3eb58cf97139aad5a20cafb8eff",
+      "depth_profiles.json": "e753606b76df84a50d06326c294042c962ac72fd6151fc5405a6c0a9fae270cc",
+      "model_cell_results.json": "55cce60f085723e0a992f7ba4cf739ae7c354bc73eaa9dd1134fde5bcce10319",
+      "report.md": "98ac11c5c40901a8f164ddfcac487ab6e2fc6f384ce27dc68091ce1b773fe1c1"
+    },
+    "selection_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+    "summary_sha256s": {
+      "gemma2_2b_it_bf16": {
+        "cell_metrics.jsonl": "ae6f04f8b6b489e93ea9a758c96736e5e642038188c0268495def537b04960ce",
+        "primary_predictions.npz": "55ebb286e6ed276333d8adc2c2be6312fbdbeb363198bc0bfba3296c6bbb58e8",
+        "summary_receipt.json": "e89a191d085764d7f7c5b2747abe0095d99915be34ea7a1becb9f0dcfec052d1"
+      },
+      "llama32_3b_base_bf16": {
+        "cell_metrics.jsonl": "e6e2e9b3b378e84e35dc4725a43514ecfbecd913b031d25bf5bbeebb49ee5488",
+        "primary_predictions.npz": "5ab43675018d61fe3ddc64da56fcc86d06df5a33e7bc21491a520185e91f198f",
+        "summary_receipt.json": "894a472fd4d7e3582bef19f32b350715cc38d20f7f9023d284ee995a4861a203"
+      },
+      "mistral7b_instruct_v03_bf16": {
+        "cell_metrics.jsonl": "6bb89eb7190bdf368de8caf62ef0f741d012bc4bc7fdd85ce5aebaba59280f9c",
+        "primary_predictions.npz": "f435f6972dc54de84ca225504af7d099ea1a0af292efd295573031e36c08a024",
+        "summary_receipt.json": "676038d553ef6a1d520863adff6de693427631d8e67e6e9b472d179e39f07ba2"
+      },
+      "olmo2_1b_base_bf16": {
+        "cell_metrics.jsonl": "d0069b75e87cb48c600267b12e606afecd50223ffa7369889db756b24580775d",
+        "primary_predictions.npz": "8187957acfb9454873b9912cd1b4d160afec313822aafa4ac61c70fe0e5d4ce0",
+        "summary_receipt.json": "4f9feaca43f80c9dd8ae5d33868a08d37046a53149a7abdc8db30d7890763db9"
+      },
+      "qwen25_0p5b_base_bf16": {
+        "cell_metrics.jsonl": "f5dc1d9d5d617ee64a71930000880a1dbeb0b4546e32e6023caaed84fd58b95d",
+        "primary_predictions.npz": "f83453548886d96ce1728ae2be6442bca6105645f778cb41bab4fc992cc09c7b",
+        "summary_receipt.json": "aae8832203703c1bee4c747d011ac35e064442bd9ebcdd904a455b6d20d5376c"
+      },
+      "qwen25_1p5b_base_bf16": {
+        "cell_metrics.jsonl": "2663fd254b7f116a0aeff5cf91d4968e4db8c5a5c6c47e4129cdf04be8e09384",
+        "primary_predictions.npz": "938c5a0011812c52c227c547ab7ef6b24464b7c8f076ca22b58ce43c9b45aa9a",
+        "summary_receipt.json": "75281998b9d805f3d28c2d9e4fe66fb17f64adceb6bd83d7179056ded62e3148"
+      },
+      "qwen25_3b_base_bf16": {
+        "cell_metrics.jsonl": "491885cbc312e18be2336a7c41fbb9d55ab6df8dd0bdc22d36f1730a3beb03a9",
+        "primary_predictions.npz": "4c9da8a04878abe54236f742247cba24ead3e35df1f391ebd1b7360365e992f3",
+        "summary_receipt.json": "e3da5ed54892a8ff693c2758e2ed2a5f9838b3169dccca787bc0f5dd6cf7fa66"
+      },
+      "qwen25_7b_base_bf16": {
+        "cell_metrics.jsonl": "7eaa7f92b4261a4ba0feb9d9f1405284dddeb55dd649d24de65657819599f9b6",
+        "primary_predictions.npz": "bb092ddf64e20b52acc12fbd6918b216d68bbe3eaa74c444a069159213079d02",
+        "summary_receipt.json": "b328095bf2634b8872f3eaa4f1d0c0f298d6431b4d108415168e7003e805c782"
+      },
+      "smollm2_1p7b_base_bf16": {
+        "cell_metrics.jsonl": "b1e54d8cc558808559ab7d4afdabee51d59f314c7df8e12bd5db5f41d76a18d6",
+        "primary_predictions.npz": "93e4b6a28f18963712968c3c651eb7ce924333c2e051ba23b0a632ac3cae87f9",
+        "summary_receipt.json": "072f21b1d7cabd89a5ab76236a8d3dc49a69cb8fb849b0f7c1d753114e121ac5"
+      }
+    }
+  },
+  "status": "post_outcome_secondary_analysis_complete"
+}

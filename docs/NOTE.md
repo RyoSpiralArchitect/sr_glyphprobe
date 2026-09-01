@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[T17 glyph–name story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
+[T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
@@ -37,6 +37,18 @@ That split is the useful finding. A raw emoji can become a better key for its
 own lexical label without the entire emoji space turning into the name space.
 It is an exploratory result on a prior-exposed population, not proof of visual
 perception or meaning.
+
+T18 then asks whether that relation survives a population boundary fixed
+before tokenization and model execution. It does. On 192 multi-codepoint emoji
+surfaces absent from the frozen study repository, all four core cells retrieve
+English short names better than literal codepoint strings in both unrestricted
+and exact token-count-matched analyses. The registered partial-conjunction test
+passes at `p = 0.0001`. Yet only eight items are positive in every core model,
+and matched CKA favors names in only three of nine cells. The result is thus
+both stronger and stranger than T17: the aggregate lexical relation confirms,
+while the item roster and geometry remain model-private. “Fresh” is
+repository-relative exact-surface freshness, not evidence that the pretraining
+corpus never contained the emoji or its name.
 
 Its first question is not what an emoji means inside a model. It asks whether a direction derived from that emoji leaves a reproducible fingerprint when added to a fixed internal activation. If the intervention magnitude, source prompts, target prompts, clipping, and random controls are all sealed, does the same direction move the next-token distribution in a recognizable way on held-out prompts?
 

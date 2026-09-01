@@ -1,0 +1,40 @@
+{
+  "analysis_receipt_sha256": "799cb3cc2b27c17b3b2d861a8f92d9e629963fd5b2ab085d8bc5a7282772b10c",
+  "claim_boundary": "A prospectively frozen observational test on 192 multi-codepoint Emoji 17 sequences whose exact UTF-8 glyph surfaces are absent from the complete tracked repository tree at commit 85213ea9b493682c9198eadda5e20c5e5ab2a04d and whose identities are outside the complete T11 selection. The primary asks whether raw Unicode sequences retrieve their English Emoji short names better than literal U+ codepoint strings in a fixed late-depth window across frozen model/tokenizer cells, both unrestricted and within glyph-system plus exact-token-count strata. Freshness is exact-surface and repository-relative, not a pretraining holdout or a concept-, component-, family-, or Unicode-name holdout. The test concerns text-codepoint sequence representations, not rasterized glyph perception. It cannot establish human meaning, understanding, tokenizer causality, a mechanism, behavior, a scale law, architecture generality, tuning effects, independent model replications, or model-population generality.",
+  "core_joint_statistical_and_practical_pass_count": 4,
+  "core_practical_pass_count": 4,
+  "freeze_manifest_sha256": "4bd83f058d1226b9e3332b88ffa27db04368fcaffe34c6559228b934bb4f3eb1",
+  "partial_conjunction_p": 0.0001,
+  "positive": true,
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "randomization_draws_per_test": 19999,
+  "raw_activations_committed_to_git": false,
+  "recomputed_randomization_tests": 18,
+  "run_role_receipt_sha256": {
+    "gemma2_2b_it_bf16": "021955f003abbe1d78fbdb4bb07c7e4409fc479c16616791b39b4e200084e1e4",
+    "llama32_3b_base_bf16": "f74aa094f617b1f028e92224291a56c0863c875a1697c90387b94bc78828d712",
+    "mistral7b_instruct_v03_bf16": "6d76ccbad72caa61b56b157dd747921bcd6c0e034f71b34e92bd8065e3c1796c",
+    "olmo2_1b_base_bf16": "388451fd1ae57dbdca36181b5c763532a7a794bb05e3aaf1e5821d024e5e8faa",
+    "qwen25_0p5b_base_bf16": "79a2943c71cb8e6d98da4022bb925e35562d2e9ad5b33daae127d44f933bd1d9",
+    "qwen25_1p5b_base_bf16": "d8fddf1ad1fcbefbb5f12d598a74ceeae145f01f22fe11455a49c9fff0e9d520",
+    "qwen25_3b_base_bf16": "99153254d5df55c5da8699726ed9e89a8d797efd767a722308a41ad0bbe90a46",
+    "qwen25_7b_base_bf16": "7b158346b04321e08a88140ce5dad6f04fa2299d7f8ea18905fdf0fb83a5ba47",
+    "smollm2_1p7b_base_bf16": "30c9db45234e2520355486272e34651cb88dba2afb16280872a51fdb7d063b0d"
+  },
+  "schema_version": 1,
+  "selection_manifest_sha256": "ed546c4b58cc3a8dbbc769700e6b2a83125c48e58958943da59bc97f17d3a49e",
+  "status": "independent_validation_pass",
+  "summary_receipt_sha256": {
+    "gemma2_2b_it_bf16": "e89a191d085764d7f7c5b2747abe0095d99915be34ea7a1becb9f0dcfec052d1",
+    "llama32_3b_base_bf16": "894a472fd4d7e3582bef19f32b350715cc38d20f7f9023d284ee995a4861a203",
+    "mistral7b_instruct_v03_bf16": "676038d553ef6a1d520863adff6de693427631d8e67e6e9b472d179e39f07ba2",
+    "olmo2_1b_base_bf16": "4f9feaca43f80c9dd8ae5d33868a08d37046a53149a7abdc8db30d7890763db9",
+    "qwen25_0p5b_base_bf16": "aae8832203703c1bee4c747d011ac35e064442bd9ebcdd904a455b6d20d5376c",
+    "qwen25_1p5b_base_bf16": "75281998b9d805f3d28c2d9e4fe66fb17f64adceb6bd83d7179056ded62e3148",
+    "qwen25_3b_base_bf16": "e3da5ed54892a8ff693c2758e2ed2a5f9838b3169dccca787bc0f5dd6cf7fa66",
+    "qwen25_7b_base_bf16": "b328095bf2634b8872f3eaa4f1d0c0f298d6431b4d108415168e7003e805c782",
+    "smollm2_1p7b_base_bf16": "072f21b1d7cabd89a5ab76236a8d3dc49a69cb8fb849b0f7c1d753114e121ac5"
+  },
+  "total_model_forward_calls": 13824,
+  "total_readout_vectors": 497664
+}

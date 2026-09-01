@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[T17 glyph–name result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T17 paper story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+[T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 glyph–name result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md)
 
 [日本語](ROADMAP.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
@@ -858,21 +858,54 @@ The [T17 result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) and
 T16 Unicode-construction studies remain confound controls rather than proof of
 visual glyph perception.
 
-### Next T18 gate — Fresh lexical-label population
+### Completed T18 — Fresh composite-glyph lexical confirmation
 
-Status: design target only; no population, endpoint, or model roster has been
-frozen.
+Status: the prospectively frozen primary is supported within the registered
+model/tokenizer cells.
 
-- Build a new unexposed emoji population with official Unicode name, common
-  alias or concise paraphrase, one preselected non-English name, and literal
-  codepoint identifier.
-- Freeze the primary depth window, carriers, distances, model family,
-  token-count-matched stratum, and multiplicity rule before outcome opening.
-- Use official-name versus alias and English versus non-English contrasts to
-  distinguish Unicode-table naming from broader lexical association.
-- Do not choose a causal layer from the largest T17 curve. A removal,
-  insertion, and restoration experiment may use only a window justified by
-  the fresh confirmation gate.
+- T18 selected 192 multi-codepoint sequences before tokenizer measurement.
+  Their exact UTF-8 surfaces were absent from the complete frozen 1,429-blob
+  study tree, and every T11 identity was excluded.
+- All 54 shards completed: 13,824 model forwards and 497,664 FP32 readouts,
+  with zero generation and intervention calls.
+- All four core cells passed both unrestricted and exact token-count-matched
+  tests and both `0.02` practical floors. The registered `r = 3 of 4`
+  partial-conjunction p-value was `0.0001`.
+- Eight of nine registered cells met the full bounded rule. SmolLM2 was the
+  exception because its unrestricted estimate, `0.017940`, missed the
+  practical floor despite its small randomization p-value.
+- Japanese-specific token-matched point estimates were positive in 9/9 as a
+  non-rescuing secondary result.
+- The internal path was heterogeneous: matched CKA favored names in only 3/9,
+  only 8/192 items were positive in all four core cells, and peak depth varied.
+- An analyzer-independent validator re-scanned the exposure boundary and
+  independently recomputed all 18 randomization tests with no discrepancy.
+
+The [T18 result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md),
+[paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md), and
+[frozen protocol](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) define the
+claim boundary. T18 supports exact-surface-fresh lexical binding in the frozen
+cells. It does not establish a pretraining holdout, rendered-glyph perception,
+human meaning, tokenizer independence, a shared mechanism, or a scale law.
+
+### Next T19 gate — Lexical breadth, symbol specificity, then causality
+
+Status: option space only; no T19 population, endpoint, causal site, or
+hypothesis family is frozen.
+
+- Cross raw emoji with the official short name, a preselected alias or concise
+  paraphrase, Japanese label, and literal codepoint identifier.
+- Add named non-emoji Unicode symbols under matched token and label structure
+  to test whether the relation is emoji-specific or a broader named-symbol
+  phenomenon.
+- Freeze one small primary contrast that separates official-label lookup from
+  broader lexical-neighborhood retrieval. Multilingual and system profiles
+  remain secondary unless separately powered and registered.
+- Preserve an untouched evaluation bank for a later removal, addition, and
+  restoration experiment. T18 consensus and model-private items may define
+  prespecified strata, but must not select the sole favorable causal site.
+- Compare late `attn_out` and `mlp_out` only after fixing a site-selection rule
+  that does not reuse the largest T18 cell or depth as confirmatory evidence.
 
 ### Milestone 4 — Replication and boundary mapping
 

@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T18 事前固定protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 glyph–name 論文ストーリー](docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [English](README.md) · [T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
@@ -63,20 +63,22 @@ T16では、再現した応答指紋を、行動・因果・文字列幾何の�
 
 ### T18 未提示の複合glyphに対する語彙対応確認
 
-T18では、raw Unicode系列が、literalな`U+...`表記よりも英語のEmoji short nameに
-近い表現へ進むかを、事前に固定した条件で確認する。対象は192個の複合系列で、
-固定したrepository全体にexact UTF-8 surfaceが出現せず、T11の完全な選定集合にも
-含まれない。64個のmodifier系列、96個のZWJ系列、32個のregional-indicator flagを使う。
+T18では、raw Unicode列がliteralな`U+...`列より英語のEmoji短名をよく検索するかを、
+研究内で未提示だった複合絵文字192件でprospectiveに調べた。Population、9つの
+model/tokenizer cell、後期window、token数一致層、多重性rule、実用下限は、結果を
+開く前にpushしている。
 
-判定には、全項目を使う成分と、glyph・英語名・codepoint表記のtoken数を厳密に
-揃えた成分の両方を要求する。主解析は4つのcore cellのうち3つ以上での再現を
-求め、日本語名と全深度atlasは二次解析とする。Tokenizer-only事前検査では、
-どのcellでも少なくとも144 / 192項目がmatched成分に残った。
+54 shard、13,824 forward、497,664 readoutを完走した。登録済みの「core 4 cell中3以上」
+というpartial conjunctionは`p = 0.0001`で通過。実際にはcore 4 cellすべてが、
+unrestrictedとtoken数完全一致の両方で統計条件と実用下限`0.02`を満たした。9 cell全体では
+8 cellが同じruleを通過した。日本語matched差は二次結果として9 / 9で正だった。一方、
+matched CKAが正だったのは3 / 9で、4 coreすべてで正のitemは192件中8件だけだった。
 
-ここでいう「未提示」は、あくまで**repositoryに対するexact surface holdout**である。
-事前学習データ、概念、family、構成要素、名前のholdoutではなく、フォントで描画された
-画像の知覚も調べない。Freeze時点のT18 model forwardは0件で、まだ科学的結果はない。
-詳細は[事前固定protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md)に示す。
+したがって、許される読み方は「未提示表層に対するitem-specificな語彙結合が、modelごとに
+異なる実装で集約的に再現した」までである。事前学習holdout、描画glyphの知覚、意味理解、
+共通mechanism、scale lawではない。詳しくは[全結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md)、
+[論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)、
+[凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md)に示す。
 
 ### T17 glyph–name深度atlasの現在地
 
@@ -494,6 +496,10 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 - [Glyph-system decomposition atlas v0（T11）](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) / [English](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md)
 - [Glyph-system reserve confirmation v0結果（T12）](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) / [English](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md)
 - [Glyph-system reserve confirmation v0（T12）](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.ja.md) / [English](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0.md)
+- [Glyph–name深度trajectory結果（T17）](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) / [English](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md)
+- [未提示の複合glyph確認protocol（T18）](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) / [English](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md)
+- [未提示の複合glyph確認結果（T18）](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) / [English](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md)
+- [T18 未提示表層の論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) / [English](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
 - [Emoji steering specificity atlas v0（T13設計図）](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md)
 - [Emoji steering specificity harvest v0（T13-EH）](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md)
 - [Emoji steering specificity analysis v0（T13-EA）](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.ja.md) / [English](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0.md)
@@ -522,7 +528,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。T14-Cは、対象を絞った因果gateを妥当な負の結果で完了した。T15-Aは、絵文字 × 言葉の探索的なresponse-shape候補を与えた。T15-Bでは軸、target、model roleを入れ替え、事前に凍結した二modelの再現ruleを通過したため、この運用上の候補についてgate 5を満たしたと読める。意味、媒介、回路、tokenizer非依存性、scale、tuning不変性、model母集団への一般化は主張しない。R1はtarget clusterと多重性を考慮しているが、paper全体の統計資格には、manuscriptのclaim tableを凍結する作業が残る。主な未完了項目は、そのpaper-wideな資格、完全なchecksum付きevidence archive、先入観のない再現性reviewである。正確な境界は[ロードマップ](docs/ROADMAP.ja.md)、[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)、[T15-A結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md)、[T15-B結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)に示す。
+Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。観測研究の背骨としては、T18が最も強くなった。未提示表層をprospectiveに固定し、4 coreすべてでunrestrictedとtoken数一致ruleを通過し、18本の検定も別実装で再計算した。T14-Cの対象を絞った因果gateは妥当な負の結果として残り、T15-Bは別の運用response-shape候補に対するprospective再現として残る。これらを足し合わせても、意味、mediator、回路、tokenizer非依存性、scale、tuning不変性、model母集団への一般化にはならない。未完了なのは、manuscript claim tableのfreeze、完全なchecksum archive、先入観のない再現性reviewである。正確な境界は[T18ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)、[ロードマップ](docs/ROADMAP.ja.md)、[T14結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md)、[T15-B結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)に示す。
 
 T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cには新しい未使用bankと別freezeが必要だった。後続のT14-Cはその条件を満たしたが、T13へ遡って確認statusを与えない。
 

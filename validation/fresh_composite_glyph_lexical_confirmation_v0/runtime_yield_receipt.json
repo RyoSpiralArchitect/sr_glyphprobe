@@ -1,0 +1,11 @@
+{
+  "boundary": "before_shard_0000",
+  "foreign_gpu_pids": [
+    2681977
+  ],
+  "model_role": "mistral7b_instruct_v03_bf16",
+  "protocol_id": "glyphprobe-fresh-composite-glyph-lexical-confirmation-v0",
+  "schema_version": 1,
+  "status": "yielded_for_foreign_gpu_contention",
+  "time_utc": "2026-09-01T07:34:54.361039+00:00"
+}

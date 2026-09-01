@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[T17 glyph–name結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T17論文ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
+[T18 未提示表層の語彙対応結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T17 glyph–name結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md)
 
 [English](ROADMAP.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
@@ -584,17 +584,45 @@ claim-boundary reviewである。
 [論文ストーリー候補](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md)に固定する。T16のUnicode構成実験は、
 視覚的glyph知覚の証明ではなく、交絡を示す対照として扱う。
 
-### 次のT18 gate — 新しい語彙label population
+### 完了したT18 — 未提示の複合glyphに対する語彙対応確認
 
-状態：設計候補のみ。Population、endpoint、model rosterはまだ凍結していない。
+状態：事前固定した一次判定を、登録済みmodel/tokenizer cellの範囲で支持した。
 
-- 新しい未使用emoji populationを作り、Unicode正式名、一般的aliasまたは短いparaphrase、
-  事前に選んだ一つの非英語名、literal codepoint identifierを揃える。
-- Outcomeを開く前に、一次depth window、carrier、distance、model family、token数一致層、
-  多重性ruleを固定する。
-- Official name対alias、English対非Englishを使い、Unicode table名の記憶と、より広い語彙associationを分ける。
-- T17で最大だったcurveから因果layerを選ばない。除去・追加・復元に使えるのは、fresh確認gateで
-  正当化されたwindowだけとする。
+- Tokenizerを測る前に複数コードポイント列192件を選んだ。固定した研究treeの全1,429 blobに
+  exact UTF-8 surfaceがなく、T11 identityも全件除外している。
+- 54 shard、13,824 model forward、497,664本のFP32 readoutを完走した。Generationと
+  interventionは0回である。
+- Core 4 cellすべてが、unrestrictedとtoken数完全一致の検定、2つの実用下限`0.02`を
+  同時に通過した。「4つ中3つ以上」のpartial-conjunction p値は`0.0001`だった。
+- 9 cell全体では8 cellが完全なruleを通過した。SmolLM2はrandomization p値が小さくても、
+  unrestricted差`0.017940`が実用下限に届かなかった。
+- 日本語専用token数一致層は、一次を救済しない二次結果として9 / 9で正だった。
+- 内部経路は共通ではない。Matched CKAが短名を支持したのは3 / 9、4 coreすべてで正の
+  itemは8 / 192だけで、peak深度も不揃いだった。
+- Analyzerをimportしないvalidatorが、露出境界と18本のrandomizationを別実装で再計算し、
+  不一致は0件だった。
+
+主張境界は[T18結果](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md)、
+[論文ストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)、
+[凍結protocol](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md)に固定する。支持するのは、
+登録済みcellにおける未提示表層の語彙結合まで。事前学習holdout、描画glyph知覚、意味理解、
+tokenizer非依存性、共通mechanism、scale lawではない。
+
+### 次のT19 gate — 語彙の幅、記号特異性、その後に因果
+
+状態：選択肢を整理した段階。T19 population、endpoint、因果site、hypothesis familyは
+まだfreezeしていない。
+
+- Raw emojiに、正式短名、事前選定aliasまたは短いparaphrase、日本語label、literal
+  codepoint identifierを交差させる。
+- 名前を持つ非emoji Unicode記号を、token数とlabel構造を揃えて追加する。絵文字固有か、
+  より広いnamed-symbol現象かを分ける。
+- 正式table名のlookupと広い語彙近傍を分ける、小さな一次contrastを一つだけfreezeする。
+  多言語・系統別profileは、別に検出力と多重性を固定しない限り二次に保つ。
+- 後続の除去・追加・復元用に、新しい未使用評価bankを残す。T18のconsensus itemと
+  model-private itemは事前層にできるが、都合のよい因果siteを選ぶ材料にはしない。
+- Late `attn_out`と`mlp_out`を比べる前に、最大のT18 cellやdepthを確認証拠として
+  再利用しないsite選択ruleを決める。
 
 ### Milestone 4 — 再現と適用境界の把握
 

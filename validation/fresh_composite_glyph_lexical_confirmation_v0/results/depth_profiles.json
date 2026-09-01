@@ -1,0 +1,1316 @@
+{
+  "gemma2_2b_it_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05522988505747126,
+        "english_minus_codepoint_top1_minimum_cell": -0.10344827586206896,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.023465608465608467,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10344827586206896
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04405381944444444,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.016710069444444444,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05614486407589856,
+        "english_minus_codepoint_top1_minimum_cell": -0.015873015873015872,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.034280240831964966,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.06896551724137931
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04535590277777778,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.02951388888888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.019357781426746944,
+        "english_minus_codepoint_top1_minimum_cell": -0.06349206349206349,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0022769567597153797,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07936507936507936
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011284722222222222,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.007595486111111112,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.078125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.004242838898011311,
+        "english_minus_codepoint_top1_minimum_cell": -0.06896551724137931,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.008250319284802044,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07936507936507936
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.002387152777777778,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.008680555555555558,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.078125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.013817733990147782,
+        "english_minus_codepoint_top1_minimum_cell": -0.034482758620689655,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0186325488049626,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.06896551724137931
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011067708333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.010850694444444446,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.022334428024083197,
+        "english_minus_codepoint_top1_minimum_cell": -0.06896551724137931,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012556102900930488,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10344827586206896
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.016710069444444448,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0030381944444444428,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.023083378945447913,
+        "english_minus_codepoint_top1_minimum_cell": -0.06896551724137931,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01429392446633826,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10344827586206896
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.024522569444444444,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.007595486111111112,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.043411786170406856,
+        "english_minus_codepoint_top1_minimum_cell": -0.10344827586206896,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.007435686918445539,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.06896551724137931
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.040581597222222224,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.004123263888888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.024306695858419994,
+        "english_minus_codepoint_top1_minimum_cell": -0.10344827586206896,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.014591315453384419,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.06896551724137931
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03125,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012152777777777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    }
+  ],
+  "llama32_3b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.019852369852369853,
+        "english_minus_codepoint_top1_minimum_cell": -0.11538461538461539,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.014287101787101788,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07692307692307693
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.011067708333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0036892361111111106,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.01570512820512821,
+        "english_minus_codepoint_top1_minimum_cell": -0.15384615384615385,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.01654040404040404,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.15384615384615385
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.014756944444444442,
+        "english_minus_codepoint_top1_minimum_cell": -0.125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.014973958333333334,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.001379176379176379,
+        "english_minus_codepoint_top1_minimum_cell": -0.15384615384615385,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.010382672882672887,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.15384615384615385
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.003906250000000002,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0078125,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.012354312354312355,
+        "english_minus_codepoint_top1_minimum_cell": -0.11538461538461539,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.005992618492618493,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.11538461538461539
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.014973958333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0036892361111111114,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04481351981351981,
+        "english_minus_codepoint_top1_minimum_cell": -0.07692307692307693,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.016967754467754465,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07692307692307693
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.028211805555555552,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.011284722222222222,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05332167832167831,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.04292929292929293,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.038461538461538464
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04448784722222222,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.029947916666666668,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.079496891996892,
+        "english_minus_codepoint_top1_minimum_cell": -0.038461538461538464,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07324203574203575,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.01818181818181818
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07291666666666667,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06770833333333333,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.015625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.09357031857031857,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07661227661227661,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.08138020833333333,
+        "english_minus_codepoint_top1_minimum_cell": 0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07921006944444445,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.015625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.12513597513597516,
+        "english_minus_codepoint_top1_minimum_cell": 0.01818181818181818,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.11614219114219115,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03636363636363636
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.10828993055555554,
+        "english_minus_codepoint_top1_minimum_cell": 0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.10894097222222222,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    }
+  ],
+  "mistral7b_instruct_v03_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.004059087403077174,
+        "english_minus_codepoint_top1_minimum_cell": -0.058823529411764705,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.009645597369382536,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.08695652173913043
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.004774305555555556,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.007161458333333333,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.02406730808265335,
+        "english_minus_codepoint_top1_minimum_cell": -0.043478260869565216,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.00514198432996387,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.13043478260869565
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0032552083333333335,
+        "english_minus_codepoint_top1_minimum_cell": -0.046875,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012152777777777776,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.05208333333333334
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.10052723988145984,
+        "english_minus_codepoint_top1_minimum_cell": -0.08695652173913043,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06448260463605732,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.13043478260869565
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07508680555555557,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.05121527777777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07064101002719929,
+        "english_minus_codepoint_top1_minimum_cell": -0.08695652173913043,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.03826066658547477,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.043478260869565216
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.06553819444444445,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.03797743055555556,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.09504830917874396,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06254617789144644,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.087890625,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.05750868055555556,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.1723719197824057,
+        "english_minus_codepoint_top1_minimum_cell": 0.04285714285714286,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.14668026630942232,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.15907118055555555,
+        "english_minus_codepoint_top1_minimum_cell": 0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.1273871527777778,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.21785612795842976,
+        "english_minus_codepoint_top1_minimum_cell": 0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.19678226363008974,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.043478260869565216
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.2055121527777778,
+        "english_minus_codepoint_top1_minimum_cell": 0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.18098958333333334,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.23849713798562902,
+        "english_minus_codepoint_top1_minimum_cell": 0.11428571428571428,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.2069571306783583,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.043478260869565216
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.216796875,
+        "english_minus_codepoint_top1_minimum_cell": 0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.208984375,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.29801993261072546,
+        "english_minus_codepoint_top1_minimum_cell": 0.12857142857142856,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.25783958510940613,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.11764705882352941
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.2719184027777778,
+        "english_minus_codepoint_top1_minimum_cell": 0.12499999999999999,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.2521701388888889,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.09375
+      }
+    }
+  ],
+  "olmo2_1b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.005131673881673881,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0051497113997114,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.003038194444444444,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.005208333333333332,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.016423160173160173,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.009965728715728714,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.014973958333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.07291666666666666,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.007595486111111111,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.008360389610389611,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0030393217893217896,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.005208333333333333,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0039062499999999996,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011534992784992787,
+        "english_minus_codepoint_top1_minimum_cell": -0.05454545454545454,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.00698953823953824,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07272727272727272
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.005425347222222221,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0019531250000000013,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.002804834054834055,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.022988816738816736,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09090909090909091
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011067708333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.018663194444444444,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.01479076479076479,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01571969696969697,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.05454545454545454
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.013454861111111112,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012369791666666666,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.02972582972582972,
+        "english_minus_codepoint_top1_minimum_cell": -0.01818181818181818,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012671356421356422,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.023220486111111115,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.00390625,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.047691197691197694,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.04321789321789322,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03636363636363636
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.057942708333333336,
+        "english_minus_codepoint_top1_minimum_cell": -0.010416666666666668,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.044270833333333336,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.06106601731601732,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07082431457431458,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.01818181818181818
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05967881944444444,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.056423611111111105,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      }
+    }
+  ],
+  "qwen25_0p5b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.008640967172028433,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.009037706972348904,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.009548611111111112,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0008050351288056203,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.009119879617075477,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.04918032786885246
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0017361111111111112,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.004991319444444445,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.00443860676280866,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0002786166235260283,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.004340277777777777,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0023871527777777775,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.021086271005382306,
+        "english_minus_codepoint_top1_minimum_cell": -0.10714285714285714,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.005099839763342783,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.01953125,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0078125,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.052083333333333336
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0021108098114137803,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.005770060396893873,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.039473684210526314
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.004991319444444443,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.004340277777777779,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011717305558979416,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01874049878795349,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.01584201388888889,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01953125,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.008293017379514359,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.015006779243189943,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.015842013888888888,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01996527777777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.06453505690455648,
+        "english_minus_codepoint_top1_minimum_cell": -0.016393442622950817,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.041138964213813224,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.06532118055555557,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.044921875,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.062381876823205555,
+        "english_minus_codepoint_top1_minimum_cell": -0.01639344262295082,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.04345392168946958,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05360243055555555,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.042317708333333336,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      }
+    }
+  ],
+  "qwen25_1p5b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.12767189490118738,
+        "english_minus_codepoint_top1_minimum_cell": 0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012069107194215044,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.10785590277777779,
+        "english_minus_codepoint_top1_minimum_cell": 0.041666666666666664,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.012586805555555554,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04028257118205349,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.013092413410575618,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.04918032786885246
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.032769097222222224,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.006076388888888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03356880931837791,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.021907997452648015,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.02560763888888889,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.014539930555555552,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03800228029089116,
+        "english_minus_codepoint_top1_minimum_cell": -0.01639344262295082,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.03072743333744196,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.026041666666666668,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.020833333333333332,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.034425202350137636,
+        "english_minus_codepoint_top1_minimum_cell": -0.10714285714285714,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.022068490899379595,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.039279513888888895,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01388888888888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03496446033115575,
+        "english_minus_codepoint_top1_minimum_cell": -0.013157894736842105,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.009846593943876082,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.033854166666666664,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0023871527777777775,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.08895702370680798,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07780979087061916,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.09505208333333333,
+        "english_minus_codepoint_top1_minimum_cell": 0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06684027777777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.17971670980730514,
+        "english_minus_codepoint_top1_minimum_cell": 0.02631578947368421,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.15899251201774928,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.162109375,
+        "english_minus_codepoint_top1_minimum_cell": 0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.130859375,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.08959771354616047,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06466088376679403,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.013157894736842105
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07660590277777778,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.05360243055555556,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      }
+    }
+  ],
+  "qwen25_3b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.12611831833682566,
+        "english_minus_codepoint_top1_minimum_cell": 0.039473684210526314,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.00443347097251325,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.10416666666666667,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0010850694444444432,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.15625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07442145322322198,
+        "english_minus_codepoint_top1_minimum_cell": -0.03278688524590164,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.02541445827683964,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0646701388888889,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.017578125000000003,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03898963597518385,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.02913405439829081,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03571428571428571
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.02560763888888889,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.022569444444444448,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.02608467891039073,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.018622375611159047,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.01639344262295082
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.019965277777777776,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.015625,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.021655059780599038,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.015728357779695137,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857142
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.01171875,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.014539930555555554,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.014545842064176834,
+        "english_minus_codepoint_top1_minimum_cell": -0.07142857142857142,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.017804501006614896,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.010633680555555558,
+        "english_minus_codepoint_top1_minimum_cell": -0.046875,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.016276041666666668,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.08838053124614816,
+        "english_minus_codepoint_top1_minimum_cell": -0.016393442622950824,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.08935504745470234,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.04918032786885246
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.07964409722222222,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.07291666666666667,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.1637174390895271,
+        "english_minus_codepoint_top1_minimum_cell": -0.01639344262295082,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.13283849993837052,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03278688524590164
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.15364583333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.1189236111111111,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.1470492316857718,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.14184539216894695,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.013157894736842105
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.13346354166666666,
+        "english_minus_codepoint_top1_minimum_cell": 0.0,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.11805555555555557,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      }
+    }
+  ],
+  "qwen25_7b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.017837883643535068,
+        "english_minus_codepoint_top1_minimum_cell": -0.10714285714285714,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.003728583754468138,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.015407986111111112,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0004340277777777774,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.09375
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05919511894490324,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.024722410534533053,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.035714285714285726
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04926215277777778,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.021701388888888885,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03128851842721558,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.04995454825588561,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.01639344262295082
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.020182291666666668,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.03211805555555556,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.010416666666666668
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05729872837832286,
+        "english_minus_codepoint_top1_minimum_cell": -0.03571428571428571,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.06440281030444965,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.10714285714285714
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.05772569444444445,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.053385416666666664,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03521739800320473,
+        "english_minus_codepoint_top1_minimum_cell": -0.04918032786885246,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0415652348083323,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.04918032786885246
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03537326388888889,
+        "english_minus_codepoint_top1_minimum_cell": -0.046875,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.03363715277777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0331078721393648,
+        "english_minus_codepoint_top1_minimum_cell": -0.04918032786885246,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.019214275442705125,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.04918032786885246
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.029730902777777776,
+        "english_minus_codepoint_top1_minimum_cell": -0.046875,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.02191840277777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.046875
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.09609320432228112,
+        "english_minus_codepoint_top1_minimum_cell": -0.016393442622950824,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.08039437733678458,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.09223090277777779,
+        "english_minus_codepoint_top1_minimum_cell": -0.015625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.05902777777777778,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.05208333333333333
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.28585423599983567,
+        "english_minus_codepoint_top1_minimum_cell": 0.09210526315789473,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.257381414602079,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.07894736842105263
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.2712673611111111,
+        "english_minus_codepoint_top1_minimum_cell": 0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.23914930555555558,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.08333333333333333
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.19581484448826983,
+        "english_minus_codepoint_top1_minimum_cell": 0.09836065573770492,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.14091453017790379,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.0
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.17209201388888892,
+        "english_minus_codepoint_top1_minimum_cell": 0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.11935763888888888,
+        "japanese_minus_codepoint_top1_minimum_cell": 0.015625
+      }
+    }
+  ],
+  "smollm2_1p7b_base_bf16": [
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.004629629629629629,
+        "english_minus_codepoint_top1_minimum_cell": -0.1111111111111111,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.017107583774250437,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.014285714285714285
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.004340277777777779,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.015625,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.125,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.007864858906525572,
+        "english_minus_codepoint_top1_minimum_cell": -0.07407407407407407,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.012516534391534393,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.1111111111111111
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0006510416666666674,
+        "english_minus_codepoint_top1_minimum_cell": -0.03125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0006510416666666684,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.041666666666666664
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.25,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.006531084656084656,
+        "english_minus_codepoint_top1_minimum_cell": -0.1,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.006101190476190475,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07142857142857144
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.004340277777777779,
+        "english_minus_codepoint_top1_minimum_cell": -0.04166666666666667,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0008680555555555554,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.375,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.009595458553791887,
+        "english_minus_codepoint_top1_minimum_cell": -0.1111111111111111,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.0023589065255731913,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.1111111111111111
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": -0.006727430555555557,
+        "english_minus_codepoint_top1_minimum_cell": -0.125,
+        "japanese_minus_codepoint_top1_equal_cell_mean": -0.004123263888888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.5,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0040950176366843045,
+        "english_minus_codepoint_top1_minimum_cell": -0.1111111111111111,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0047619047619047615,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07407407407407407
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.013454861111111112,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.020399305555555552,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.625,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.015569885361552025,
+        "english_minus_codepoint_top1_minimum_cell": -0.07407407407407407,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.002976190476190476,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.07407407407407407
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.011067708333333334,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0015190972222222222,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.75,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.010570987654320988,
+        "english_minus_codepoint_top1_minimum_cell": -0.14814814814814814,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0008046737213403887,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.1111111111111111
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.008029513888888888,
+        "english_minus_codepoint_top1_minimum_cell": -0.09375,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.0021701388888888894,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.0625
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 0.875,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.04798831569664903,
+        "english_minus_codepoint_top1_minimum_cell": -0.07407407407407407,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.029480820105820104,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.037037037037037035
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.03667534722222222,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.019965277777777776,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    },
+    {
+      "cell_count": 24,
+      "normalized_depth": 1.0,
+      "primary_tokenization_matched": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.0179728835978836,
+        "english_minus_codepoint_top1_minimum_cell": -0.07407407407407407,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01909722222222222,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.037037037037037035
+      },
+      "unrestricted": {
+        "english_minus_codepoint_top1_equal_cell_mean": 0.009114583333333336,
+        "english_minus_codepoint_top1_minimum_cell": -0.0625,
+        "japanese_minus_codepoint_top1_equal_cell_mean": 0.01974826388888889,
+        "japanese_minus_codepoint_top1_minimum_cell": -0.03125
+      }
+    }
+  ]
+}
