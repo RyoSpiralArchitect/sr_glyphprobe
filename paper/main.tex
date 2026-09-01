@@ -1,0 +1,532 @@
+\documentclass{article}
+
+\usepackage[dblblindworkshop]{neurips_2026}
+\workshoptitle{Interpretability as a Science, NeurIPS 2026}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{hyperref}
+
+\title{Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods\\
+Without a Simple Late-Layer Mediator}
+
+\author{Anonymous Authors}
+
+\newcommand{\topone}{\operatorname{top1}}
+\newcommand{\codepoint}{\textsc{codepoint}}
+\newcommand{\alias}{\textsc{alias}}
+\newcommand{\canonical}{\textsc{canonical}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Emoji reach text language models as Unicode token sequences, not rendered
+pictures. We ask whether a raw atomic emoji indexes only its official short
+name or a wider lexical neighborhood, and whether that relation has a simple
+late-layer mediator. We prospectively cross 55 emoji and 55 non-emoji Unicode
+symbols with raw, canonical-name, lexically disjoint CLDR-keyword, and literal
+codepoint views. Across nine frozen model/tokenizer cells, the emoji
+alias-minus-codepoint retrieval effect is positive in both unrestricted and
+exact four-view token-count-matched analyses. All nine cells exceed a 0.02
+practical floor; the registered at-least-three-of-four core-model primary
+passes with four positive cells and partial-conjunction $p=0.0027$. Canonical
+names are also retrieved for symbols, but symbol alias effects are smaller and
+heterogeneous in this registered secondary comparison. Passing the
+observational gate admits a separate causal test: rank-8 subspaces learned on
+128 source emoji are intervened on for 192 untouched emoji at six late
+attention and MLP outputs in Llama 3.2 3B. Engineering controls are exact, yet
+no primary site is jointly necessary and sufficient. The combined result is a
+controlled dissociation: a repeatable text-only emoji-to-CLDR lexical relation
+exists, while the preregistered sparse late-component account does not explain
+it.
+\end{abstract}
+
+\section{Introduction}
+
+Emoji are compact visual conventions for people, but a text language model
+receives them as encoded Unicode scalars and tokenizer-dependent sequences.
+That distinction matters for interpretation. A representation probe may
+recover an official label because the label co-occurs with the character in
+standards, documentation, or training data. Such a result need not imply
+rendered-glyph perception, a human-like concept, or a localized semantic
+circuit.
+
+We therefore ask a narrower two-part question. First, does a raw atomic emoji
+retrieve a lexically disjoint CLDR keyword better than its literal
+\texttt{U+...} spelling after exact token-count matching? Second, if this
+observational relation is reliable, can a frozen low-rank late-component
+intervention identify a representation that is both necessary and sufficient
+for it? The intended contribution is not a claim that models ``understand
+emoji.'' It is an auditable separation between a broad lexical readout and one
+simple mechanistic account.
+
+Our design contributes three pieces of evidence:
+
+\begin{itemize}
+  \item A four-view, three-bank protocol separates raw Unicode surface,
+  official English CLDR name, a word-disjoint CLDR keyword, and literal
+  codepoint spelling. The causal source and evaluation banks are untouched by
+  the observational run.
+  \item The preregistered observational primary passes: 4/4 core cells and 9/9
+  total cells are positive in unrestricted and exact four-view token-count
+  matched analyses. The cross-model partial-conjunction value is $0.0027$.
+  \item A conditionally admitted causal experiment passes all zero-hook and
+  restoration controls but finds no primary block-24 attention or MLP output
+  that is jointly necessary and sufficient. A secondary block-27 MLP patch is
+  sufficient-only and is not a complete mediator.
+\end{itemize}
+
+The result rules out a narrow exact-short-name account under the frozen
+endpoint and rejects one preregistered rank-8 late-component mechanism. It
+does not identify which of distributed, redundant, nonlinear, or item-private
+alternatives is correct.
+
+\section{Related work}
+
+\paragraph{Emoji as lexical objects.}
+Prior work learns emoji embeddings from descriptions
+\citep{eisner2016emoji2vec} and builds sense inventories from lexical and
+usage resources \citep{wijeratne2016emojinet}. We instead treat CLDR names and
+keywords \citep{unicode2026cldr} as fixed, source-auditable endpoints for
+probing frozen hidden states. The goal is not to produce a better emoji
+embedding, but to test which textual relation is recoverable from a raw
+Unicode input and which alternative explanations remain.
+
+\paragraph{Probing and tokenizer controls.}
+Probe accuracy can reflect properties of the control task rather than the
+target representation \citep{hewitt2019designing}; tokenization itself can
+materially change language-model comparisons \citep{rust2021tokenizer}. We
+avoid a learned diagnostic classifier, use item-wise retrieval, and require
+both unrestricted and exact four-view token-count-matched tests. This is a
+token-count control, not token-identity matching or tokenizer independence.
+Our readout is also more local than whole-representation similarity analyses
+such as CKA \citep{kornblith2019similarity}: it asks whether the correct item
+is the nearest cross-view partner.
+
+\paragraph{Causal intervention.}
+Causal mediation and activation interventions can distinguish readable
+correlates from components that affect model computation
+\citep{vig2020causal,meng2022rome,turner2023activation}. We adopt that
+distinction but require a frozen site to pass both random-adjusted necessity
+and sufficiency on a disjoint evaluation bank. The negative result is retained
+rather than followed by an adaptive search over layers, ranks, or endpoints.
+
+\section{Prospective design}
+\label{sec:design}
+
+\subsection{Claim boundary, views, and banks}
+
+Throughout, \emph{glyph} means the raw Unicode scalar string supplied to a
+text model. No raster image is rendered. Atomic emoji are single-codepoint,
+fully-qualified Emoji 17 entries introduced no later than Emoji 13.1
+\citep{unicode2025emoji}. For each item, the canonical view is the exact
+English CLDR 48.2 \texttt{tts} value; the alias is one exact English CLDR
+\texttt{default} keyword. After lowercasing and extracting ASCII
+\texttt{[a-z0-9]+} words, canonical and alias word sets must be nonempty and
+disjoint. The fourth view is the uppercase literal codepoint spelling.
+
+The observational bank contains 55 emoji and 55 non-emoji Unicode symbols.
+Symbols are single scalars in a Unicode general category beginning with
+\texttt{S}, have \texttt{Emoji=false}, have valid disjoint CLDR aliases, and
+are absent from every strict-UTF-8, no-NUL repository blob at the frozen
+boundary. This is repository-relative freshness, not pretraining novelty.
+Exact emoji surfaces may have appeared in earlier experiments; the endpoint,
+alias assignment, and bank split are prospective, not the emoji surfaces.
+
+Two further banks contain 128 causal-source and 192 causal-evaluation emoji.
+All 430 codepoints and 430 aliases are unique across banks. Figure
+\ref{fig:design} summarizes the separation and the one-way admission gate.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_design.pdf}
+  \caption{Prospective T19 design. T19-L crosses two glyph kinds with four
+  text views. Only the emoji endpoint enters the registered cross-model
+  primary. T19-C runs only after that gate opens and uses disjoint source and
+  evaluation emoji. No causal-bank item receives a T19-L forward.}
+  \label{fig:design}
+\end{figure}
+
+\subsection{Observational readout}
+
+For each item and view, the frozen harness appends one of two suffix carriers
+(\texttt{" a"} or \texttt{" |"}) at distances 1, 2, 4, and 8 and records the
+hidden state at the selected suffix token at nine normalized depths. Batch
+size is one; no chat template or added special token is used. The primary
+late window is fixed at depths $0.75$, $0.875$, and $1.0$, yielding 24
+contexts per item.
+
+Within each view and context, hidden states are centered across items and each
+row is L2-normalized. Let $z^{v,c}_i$ denote the resulting vector for item $i$,
+view $v$, and context $c$. Cross-view top-1 retrieval is
+
+\begin{equation}
+  R_c(g \rightarrow v) = \frac{1}{n}\sum_{i=1}^{n}
+  \mathbb{1}\left[i = \arg\max_j
+  \left\langle z^{g,c}_i, z^{v,c}_j \right\rangle\right].
+  \label{eq:retrieval}
+\end{equation}
+
+The per-model primary estimate is
+
+\begin{equation}
+  \Delta_m = \frac{1}{24}\sum_c
+  \left[R_c(g \rightarrow \alias) -
+  R_c(g \rightarrow \codepoint)\right]
+  \label{eq:primary}
+\end{equation}
+
+on the 55 observational emoji. This is a nearest-neighbor readout from hidden
+states, not a next-token generation score.
+
+\subsection{Token-count intersection and cross-model test}
+
+Every model must pass two components. The unrestricted component uses all 55
+emoji and permutes alias correspondence within glyph kind. The matched
+component retains non-singleton strata sharing the exact four-view
+token-count signature and permutes aliases only within stratum. Canonical and
+codepoint correspondences stay fixed. Each component uses 19,999 one-sided
+randomization draws; the model intersection-union $p$-value is the maximum of
+the two component values. Both observed effects must also be at least $0.02$.
+
+The sole cross-model primary uses four frozen core cells: Llama 3.2 3B base,
+Qwen2.5 7B base, OLMo 2 1B base, and Gemma 2 2B IT. It tests the partial
+conjunction that at least $r=3$ of $m=4$ cells pass
+\citep{benjamini2008partial}. With ordered model IUT values
+$p_{(1)}\leq\cdots\leq p_{(4)}$, the registered value is
+$p_{\mathrm{PC}}=\min(1,2p_{(3)})$. The other five cells and all symbol or
+canonical-name results are secondary and cannot open the causal gate.
+
+We report percentile intervals from 20,000 item bootstrap replicates as
+descriptive uncertainty. They are not substituted for the permutation-based
+primary decision.
+
+\subsection{Conditionally admitted causal test}
+
+After the observational gate was committed, T19-C ran in the frozen Llama 3.2
+3B base cell. At each of six sites (attention and MLP component outputs at
+blocks 21, 24, and 27), we learned a rank-8 basis from the left singular
+directions of the centered, row-normalized glyph-alias cross-covariance on 128
+source emoji. A deterministic rank-8 control basis was drawn from the same
+source span and made orthogonal to the learned basis. Blocks 24 attention and
+MLP were primary; blocks 21 and 27 were secondary.
+
+On 192 different evaluation emoji, necessity removes learned coordinates from
+the glyph component output. Sufficiency adds the same-item learned
+glyph-minus-codepoint coordinates to the codepoint output. Analogous operations
+in the random basis define adjusted effects:
+
+\begin{align}
+N_s &= E_s(\text{random removal})-E_s(\text{learned removal}),\\
+S_s &= E_s(\text{learned patch})-E_s(\text{random patch}),
+\end{align}
+
+where $E_s$ is the final-hidden alias-minus-codepoint top-1 endpoint. A site
+must have both effects and both lower 95\% item-bootstrap bounds above $0.02$,
+pass both one-sided sign-flip tests (99,999 draws), pass zero and
+remove-restore engineering controls, and survive Holm correction across the
+two primary sites \citep{holm1979sequential}. No site, rank, depth, carrier,
+subset, or endpoint may be replaced after seeing the result.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{A lexical relation beyond the official short name}
+
+The registered cross-model primary passed. All four core cells were positive;
+the third-smallest core IUT value was $0.00135$, yielding
+$p_{\mathrm{PC}}=2(0.00135)=0.0027$. All nine frozen cells were positive and
+exceeded the $0.02$ practical floor in both unrestricted and matched analyses
+(Figure \ref{fig:model-effects}; exact values in Appendix
+\ref{app:observational}). Model IUT values ranged from $0.00005$ to $0.00185$.
+An independent implementation reconstructed all 36 glyph-kind by component
+randomization tests and the same gate decision.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_model_effects.pdf}
+  \caption{Emoji alias-minus-codepoint top-1 effects in the registered roster
+  order. Bars are descriptive 95\% item-bootstrap intervals (20,000
+  replicates); the randomization tests determine the primary decision. Every
+  point estimate exceeds the preregistered $0.02$ floor in unrestricted and
+  exact token-count-matched analysis.}
+  \label{fig:model-effects}
+\end{figure}
+
+Across models, mean emoji alias effects were $+0.0979$ unrestricted and
+$+0.1084$ matched. Mean canonical-name effects were larger, $+0.1440$ and
+$+0.1718$. Thus, the result is wider than exact official-name retrieval, but
+the official name remains the stronger key on average. The alternative label
+is an exact CLDR keyword, not a human-rated synonym or paraphrase; co-occurrence
+in model training remains a sufficient origin for the relation.
+
+Depth was secondary. The unrestricted emoji alias contrast averaged $+0.0409$
+at the first block, peaked at $+0.1152$ at normalized depth $0.875$, and ended
+at $+0.0922$. Individual cells had different onset and peak depths, so these
+data do not support one universal depth trajectory.
+
+\subsection{Named symbols bound emoji specificity}
+
+Non-emoji symbols showed mean alias effects of $+0.0236$ unrestricted and
+$+0.0153$ matched, compared with $+0.0979$ and $+0.1084$ for emoji. The
+emoji-minus-symbol point estimate was positive in all nine cells in both
+components. Yet symbol aliases were heterogeneous: Qwen2.5 3B and 7B were
+negative in both components. Canonical-name retrieval exceeded alias retrieval
+for symbols in 9/9 cells in both components, with mean symbol canonical effects
+of $+0.0750$ and $+0.0821$ (Figure \ref{fig:symbol-boundary}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_emoji_symbol_boundary.pdf}
+  \caption{Registered secondary comparison. Each row shows unrestricted (U)
+  and token-count-matched (M) effects for the same frozen model. Official-name
+  retrieval is not exclusive to emoji, while disjoint-keyword effects are
+  stronger and more consistent for the frozen emoji panel. Glyph category,
+  frequency, label quality, and token identity are not exchangeable, so this
+  is a boundary result rather than an emoji-only semantic claim.}
+  \label{fig:symbol-boundary}
+\end{figure}
+
+This comparison cannot establish an emoji-specific faculty. The panels are
+not matched on training frequency, lexical specificity, Unicode category,
+visual familiarity, or token identity. Its role is to prevent the stronger
+but false inference that only emoji acquire readable names.
+
+\subsection{The simple late-component mechanism fails}
+
+All six causal sites passed their engineering checks: zero hooks and
+remove-restore conditions reproduced the baseline final hidden state with
+exactly zero RMS difference. Nevertheless, neither primary block-24 site
+passed. Block-24 attention had adjusted necessity $0.0000$ and sufficiency
+$-0.00521$; block-24 MLP had $+0.00521$ and $0.0000$. Their site IUT values
+were $1.0$ and $0.74912$, respectively. No one of the six sites passed both
+components (Figure \ref{fig:causal}; exact values in Appendix
+\ref{app:causal}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_causal_sites.pdf}
+  \caption{Random-adjusted causal effects with descriptive 95\% item-bootstrap
+  intervals over 192 untouched emoji. Shaded rows and asterisks mark the two
+  primary block-24 sites. Solid vertical lines show zero; dashed lines show the
+  $0.02$ practical floor. No site has both necessity and sufficiency above the
+  floor with positive lower bounds.}
+  \label{fig:causal}
+\end{figure}
+
+The secondary block-27 MLP patch produced adjusted sufficiency $+0.07812$
+(95\% interval $[+0.03646,+0.11979]$, one-sided $p=0.00009$), but necessity
+was $-0.01562$ (interval $[-0.04167,+0.00521]$, $p=0.96895$). The site IUT was
+therefore $0.96895$. Moreover, the learned patch raised alias top-1 from
+$0.0052$ to $0.0208$ while lowering codepoint self-retrieval from $1.0000$ to
+$0.9375$. It is an incomplete perturbation effect, not clean alias insertion
+or a necessary mechanism.
+
+\section{Discussion}
+
+The observational and causal results answer different questions. T19-L shows
+that, under a fixed text-only readout, the same item is recoverable across raw
+emoji and a lexically disjoint CLDR keyword more reliably than across raw emoji
+and a literal codepoint string. Exact token-count matching makes a pure length
+account insufficient. The symbol panel shows that official-name readout is a
+broader Unicode phenomenon, while keyword breadth is graded rather than
+categorically emoji-only.
+
+T19-C then rejects a tempting compression of that result: a shared rank-8
+late attention or MLP component, learned from one bank and tested on another,
+is not jointly necessary and sufficient at the frozen sites. This does not
+turn the observational result into an artifact. It says that aggregate linear
+readability does not entail one sparse causal mediator. Distributed,
+redundant, nonlinear, and item-private accounts remain possible, but the
+present data do not distinguish them.
+
+The block-27 MLP asymmetry gives a useful design lesson. A patch can move an
+endpoint without identifying the normal route that produces it. Requiring
+necessity, sufficiency, random-subspace adjustment, restoration, and a disjoint
+evaluation bank prevents that isolated patch success from being upgraded to a
+circuit claim.
+
+\section{Limitations and broader impact}
+
+\paragraph{Measurement.}
+CLDR keywords are standardized annotations, not human judgments of synonymy,
+natural naming, specificity, or familiarity. Retrieval is nearest-neighbor
+geometry at selected suffix tokens, not generation or task behavior. Inputs
+are Unicode text; no rendered glyph is perceived. Exact token-count matching
+does not match token identities or equalize tokenizer construction.
+
+\paragraph{Generalization.}
+The nine model/tokenizer cells are a fixed, convenience-constrained roster
+spanning several families and sizes \citep{yang2024qwen25,groeneveld2024olmo,
+dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,smollm2modelcard}. Model
+family, parameter count, training data, tokenizer, and instruction tuning are
+confounded, so the study supports neither a scale law nor a model-population
+estimate. Exact emoji surfaces are not pretraining-novel. The symbol panel is
+repository-text-fresh but not a pretraining holdout and is not exchangeable
+with the emoji panel.
+
+\paragraph{Mechanism.}
+The negative causal result covers one Llama 3.2 3B checkpoint, rank 8, one
+carrier and distance, two primary and four secondary sites, and one
+final-hidden endpoint. It does not show that no causal representation exists.
+A future study should preregister distributed multi-site removal, nonlinear or
+sparse readouts, and a new source/evaluation split rather than selecting a
+method on the present evaluation bank.
+
+\paragraph{Reproducibility and impact.}
+The compact archive binds configurations, selections, summaries, tests, and
+independent validators, but the current public package omits model-dependent
+raw arrays retained in execution scratch. An anonymized submission artifact
+and complete license/compute audit remain preparation items. Better Unicode
+auditing could reveal hidden representation failures in multilingual or
+social-media systems. Conversely, treating CLDR correspondence as a person's
+meaning, sentiment, culture, or identity could erase contextual variation and
+enable unjustified profiling. The measurements should not be used for such
+inference. No personal data, human subjects, or user messages are used.
+
+\section{Conclusion}
+
+Across nine frozen model/tokenizer cells, raw atomic emoji retrieve
+word-disjoint CLDR keyword aliases better than literal codepoints after exact
+four-view token-count matching. A named-symbol control bounds the specificity
+of that observation, and a separately banked causal experiment finds no
+primary rank-8 late component that is jointly necessary and sufficient. The
+scientific contribution is this dissociation: broad lexical readability is
+repeatable, but it should not be mistaken for visual understanding or a simple
+localized mechanism.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\clearpage
+\appendix
+
+\section{Frozen model roster}
+\label{app:models}
+
+Table \ref{tab:models} reports the exact model artifacts and revisions used by
+the frozen observational roster. The Llama role uses the pinned BF16 mirror
+artifact specified by the protocol. Model cards and upstream license terms are
+part of the pending submission-archive license audit.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lll}
+\toprule
+Role & Artifact identifier & Revision \\
+\midrule
+Qwen2.5 0.5B base & \texttt{Qwen/Qwen2.5-0.5B} & \texttt{060db6499f32} \\
+OLMo 2 1B base & \texttt{allenai/OLMo-2-0425-1B} & \texttt{a1847dff3500} \\
+Qwen2.5 1.5B base & \texttt{Qwen/Qwen2.5-1.5B} & \texttt{8faed761d45a} \\
+SmolLM2 1.7B base & \texttt{HuggingFaceTB/SmolLM2-1.7B} & \texttt{effd688a1292} \\
+Gemma 2 2B IT & \texttt{google/gemma-2-2b-it} & \texttt{299a8560bedf} \\
+Llama 3.2 3B base & \texttt{mlx-community/Llama-3.2-3B-bf16} & \texttt{60a99aaf4316} \\
+Qwen2.5 3B base & \texttt{Qwen/Qwen2.5-3B} & \texttt{3aab1f1954e9} \\
+Qwen2.5 7B base & \texttt{Qwen/Qwen2.5-7B} & \texttt{d14972939875} \\
+Mistral 7B Inst. v0.3 & \texttt{mistralai/Mistral-7B-Instruct-v0.3} & \texttt{c170c708c41d} \\
+\bottomrule
+\end{tabular}
+\caption{Frozen artifact identifiers and the first 12 hexadecimal characters
+of their complete pinned revisions. Full revisions are stored in the
+submission manifest.}
+\label{tab:models}
+\end{table}
+
+\section{Exact observational results}
+\label{app:observational}
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrrc}
+\toprule
+Frozen cell & U effect & M effect & Model IUT $p$ & Pass \\
+\midrule
+Qwen2.5 0.5B & 0.0364 & 0.0702 & 0.00055 & yes \\
+OLMo 2 1B & 0.0652 & 0.0712 & 0.00135 & yes \\
+Qwen2.5 1.5B & 0.0530 & 0.0631 & 0.00185 & yes \\
+SmolLM2 1.7B & 0.0606 & 0.0528 & 0.00005 & yes \\
+Gemma 2 2B IT & 0.0886 & 0.0825 & 0.00005 & yes \\
+Llama 3.2 3B & 0.0856 & 0.1075 & 0.00135 & yes \\
+Qwen2.5 3B & 0.0712 & 0.0833 & 0.00005 & yes \\
+Qwen2.5 7B & 0.1818 & 0.1869 & 0.00005 & yes \\
+Mistral 7B Inst. & 0.2386 & 0.2577 & 0.00005 & yes \\
+\bottomrule
+\end{tabular}
+\caption{Exact first-draft reporting values for the registered emoji
+alias-minus-codepoint endpoint. U is unrestricted; M is exact four-view
+token-count matched. The model IUT is the maximum component randomization
+$p$-value.}
+\label{tab:observational}
+\end{table}
+
+Matched emoji counts ranged from 31 to 41; tokenizer-only preflight retained
+at least 63 observational items total in every cell, with at least 31 emoji
+and 32 symbols. The acquisition comprised 7,920 forwards, 285,120 readout
+vectors, and 45 sealed shards.
+
+\section{Exact causal results}
+\label{app:causal}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcrrrrr}
+\toprule
+Block & Site & Primary & $N_s$ & $p_N$ & $S_s$ & $p_S$ & Site IUT \\
+\midrule
+21 & attention & no  & -0.00521 & 1.00000 &  0.00521 & 0.49983 & 1.00000 \\
+21 & MLP       & no  &  0.00000 & 1.00000 &  0.00521 & 0.49760 & 1.00000 \\
+24 & attention & yes &  0.00000 & 1.00000 & -0.00521 & 1.00000 & 1.00000 \\
+24 & MLP       & yes &  0.00521 & 0.49989 &  0.00000 & 0.74912 & 0.74912 \\
+27 & attention & no  &  0.00000 & 1.00000 &  0.01042 & 0.31511 & 1.00000 \\
+27 & MLP       & no  & -0.01562 & 0.96895 &  0.07812 & 0.00009 & 0.96895 \\
+\bottomrule
+\end{tabular}
+\caption{Random-adjusted necessity ($N_s$) and sufficiency ($S_s$). All six
+engineering gates passed. Holm correction applies across the two primary
+sites; no site passed the component-level intersection.}
+\label{tab:causal}
+\end{table}
+
+The causal run used 256 source forwards, 2,880 evaluation forwards, and 8,064
+intervention rows. Each of 12 component tests used 99,999 sign flips and
+20,000 item-bootstrap replicates. An independent validator rehashed source and
+evaluation arrays, reconstructed all 12 tests and intervals, verified learned
+and random subspace relations, and reproduced six engineering passes and zero
+positive sites.
+
+\section{Execution and artifact boundary}
+\label{app:artifact}
+
+Both observational and causal acquisition were frozen to a Transformers/CUDA
+BF16 backend and an NVIDIA GeForce RTX 5090. Model artifacts, tokenizer replay
+receipts, selection files, analysis summaries, randomization seeds, bootstrap
+seeds, and validators are checksum-bound. Figure inputs in this draft are only
+the compact validated model-cell and causal-site JSON summaries; a generated
+manifest hashes both inputs and every plotted PDF/PNG output.
+
+The current compact Git artifact does not contain the model-dependent raw
+activation arrays or the full intervention ledger. Those remain bound by run
+receipts in execution scratch. Consequently, the draft supports audit of the
+published summary chain but does not yet provide a self-contained anonymous
+raw-data reproduction package. Exact wall-clock and peak-memory reporting is
+also not present in the compact T19 receipts. These are explicit submission
+gaps rather than inferred values.
+
+\input{checklist.tex}
+
+\end{document}

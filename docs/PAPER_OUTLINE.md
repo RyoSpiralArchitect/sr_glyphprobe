@@ -8,6 +8,11 @@
 
 The Phase I manuscript will be written in English. A Japanese public summary will accompany the preprint, but the English manuscript is the controlling scientific text.
 
+Status: the anonymous first draft is now compiled as a 12-page review PDF
+(seven pages through the conclusion, followed by references, appendices, and
+the checklist). See the [paper package](../paper/README.md), [frozen claim
+table](../paper/CLAIM_TABLE.md), and [review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf).
+
 ## InterpScience 2026 submission sprint
 
 The official [InterpScience call for papers](https://interpscience.github.io/cfp)
@@ -16,13 +21,12 @@ papers up to five pages and long papers up to nine pages, excluding references
 and appendix. The working target is a long paper; the five-page format remains
 a fallback if the evidence-bearing narrative cannot be edited cleanly in time.
 
-At 09:00 JST on September 1, the end of September 1 AoE is about 36 hours away:
-AoE is 21 hours behind JST. The scientific execution spine is complete through
-T19-L and T19-C. The remaining critical path is manuscript work: freeze the
-claim table, generate only figures traceable to validated summaries, complete
-the checksum/omission archive, run the double-blind and fresh-eyes reviews, and
-upload early enough to verify the OpenReview record. No adaptive T19-C site
-search belongs on this critical path.
+The scientific execution spine is complete through T19-L and T19-C. Draft v0
+now freezes the claim table and generates every figure from validated compact
+summaries. The remaining critical path is to complete the anonymous
+checksum/omission archive, resolve the conservative checklist gaps, run the
+double-blind and fresh-eyes reviews, and upload early enough to verify the
+OpenReview record. No adaptive T19-C site search belongs on this critical path.
 
 ## Proposed central claim
 

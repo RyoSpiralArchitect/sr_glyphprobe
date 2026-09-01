@@ -1,8 +1,8 @@
 # T19 論文ストーリー：広い語彙readoutと、単純な後半mediatorの不在
 
-[English](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18までのストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)
+[English](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [初稿論文](../paper/README.ja.md) · [T19結果](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [凍結protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18までのストーリー](PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md)
 
-状態: **Phase I論文の中心候補。manuscript claim tableはまだ凍結していない**。
+状態: **paper spineとclaim tableをmanuscript draft v0向けに凍結済み。初稿はまだ投稿可能ではない**。
 
 ## タイトル候補
 

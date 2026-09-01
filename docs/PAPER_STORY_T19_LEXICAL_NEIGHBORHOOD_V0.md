@@ -1,8 +1,8 @@
 # T19 paper story: broad lexical readout, no simple late mediator
 
-[日本語](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19 results](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [Frozen protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 precursor](PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
+[日本語](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [First-draft paper](../paper/README.md) · [T19 results](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [Frozen protocol](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 precursor](PAPER_STORY_T18_FRESH_LEXICAL_V0.md)
 
-Status: **candidate Phase I paper spine; not a frozen manuscript claim table**.
+Status: **paper spine and claim table frozen for manuscript draft v0; the draft is not yet submission-ready**.
 
 ## Candidate title
 

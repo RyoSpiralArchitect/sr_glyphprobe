@@ -1,0 +1,49 @@
+{
+  "builder": "paper/scripts/build_figures.py",
+  "contracts": "paper/README.md#figure-chart-contracts",
+  "inputs": [
+    {
+      "path": "validation/t19_lexical_alias_unicode_control_v0/results/model_cell_results.json",
+      "sha256": "06ae543c162f713874b35cc084d11bce23624ae97f0e2f6b78fb7775ca1bf5c0"
+    },
+    {
+      "path": "validation/t19_lexical_alias_component_causal_v0/results/causal_site_results.json",
+      "sha256": "4bd32bc1c6f6d3cfaedc7b92123ee2d75c3bc006fdb9c46502bacd4a298416af"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "paper/figures/t19_causal_sites.pdf",
+      "sha256": "ea2cc7c0fe1d8c3a302a13cd67f2c6aac81fa144e550c6b31de089202e98e576"
+    },
+    {
+      "path": "paper/figures/t19_causal_sites.png",
+      "sha256": "be2aa715e7e52a2b77bc4fb2a1987723f3862afa76cccec90543aea06db976cb"
+    },
+    {
+      "path": "paper/figures/t19_design.pdf",
+      "sha256": "8c3183b0d722d3fe41e8745a9eb80dfda919887773bd4cfbf8c2074467160fc1"
+    },
+    {
+      "path": "paper/figures/t19_design.png",
+      "sha256": "b061bf2bc63f97c02b6238dedeb61272010f7aef6c7fa4134809ca88bba28f8d"
+    },
+    {
+      "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
+      "sha256": "8efe21e1754616cadb2c0cdadc5eec0c471a85d10f80cf038f40cc0faa375391"
+    },
+    {
+      "path": "paper/figures/t19_emoji_symbol_boundary.png",
+      "sha256": "607a6449203bc2c8efa7b1748f0b4bdc0d9153200ee5c3028c527a6500d6377b"
+    },
+    {
+      "path": "paper/figures/t19_model_effects.pdf",
+      "sha256": "638ebaf46ddeef147fe2ced379710b19568d9e447328ac78df4e6f15f6ccfb7d"
+    },
+    {
+      "path": "paper/figures/t19_model_effects.png",
+      "sha256": "b36feacd5caf80a951db687702a60d98a3da2694942a95663956802a9ea8dc41"
+    }
+  ],
+  "schema_version": 1
+}

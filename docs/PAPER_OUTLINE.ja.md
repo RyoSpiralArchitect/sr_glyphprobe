@@ -4,6 +4,10 @@
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
+状態: 著者匿名の初稿を12ページのreview PDFとしてcompile済みである（結論まで7ページ、
+続いてreferences、appendix、checklist）。[論文package](../paper/README.ja.md)、
+[凍結claim table](../paper/CLAIM_TABLE.ja.md)、[review PDF](../output/pdf/glyphprobe_t19_first_draft.pdf)を参照する。
+
 ## 仮題
 
 **Beyond Short Names: Cross-Model Emoji Lexical Neighborhoods Without a Simple Late-Layer Mediator**
@@ -18,10 +22,10 @@
 long paperは9ページまでで、referencesとappendixはページ数に含まれない。第一候補は
 long paperとし、証拠を伴う物語を時間内に綺麗に編集できない場合は5ページ版をfallbackにする。
 
-9月1日09:00 JSTの時点で、9月1日AoEの終了までは約36時間ある。AoEはJSTより21時間遅い。
-科学的な実行の背骨はT19-LとT19-Cまで完了した。残るcritical pathは原稿作業である。
-Claim tableをfreezeし、検証済みsummaryへ戻れるfigureだけを作り、checksum・omission archive、
-double-blind検査、fresh-eyes reviewを完了し、OpenReview上の登録を確認できる余裕を残してuploadする。
+科学的な実行の背骨はT19-LとT19-Cまで完了した。Draft v0ではclaim tableをfreezeし、
+全figureを検証済みcompact summaryから生成した。残るcritical pathは、anonymousな
+checksum・omission archiveを完成し、保守的checklistで明示したgapを解消し、double-blind検査と
+fresh-eyes reviewを終え、OpenReview上の登録を確認できる余裕を残してuploadすることである。
 T19-Cの適応的な追加site探索は、このcritical pathに入れない。
 
 ## 現時点で守れる中心命題
