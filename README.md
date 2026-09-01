@@ -59,7 +59,8 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T17 raw emoji → Unicode-name depth atlas | 292 prior-exposed items, 9 exact cells, 9 depths, 567,648 readouts | exploratory: name-minus-codepoint top-1 was positive in 9/9 models from depth 0.375; peaks were heterogeneous, and final paired margins were positive in 9/9 while final CKA contrasts were positive in 4/9 |
 | T18 fresh composite-glyph confirmation | 192 exact-surface-fresh items, 9 fixed cells, 13,824 forwards, 497,664 readouts | frozen `r=3/4` core primary passed at p=0.0001; 4/4 core and 8/9 total cells passed both unrestricted and token-count-matched practical rules |
 | T19-L alias × Unicode-symbol control | 110 observational items, 9 fixed cells, 7,920 forwards, 285,120 readouts | frozen `r=3/4` core primary passed at p=0.0027; 4/4 core and 9/9 total cells passed unrestricted and exact four-view token-count-matched rules |
-| T19-C component causality | 128 source and 192 untouched evaluation emoji; 256 + 2,880 forwards; 8,064 intervention rows | 6/6 engineering gates exact; neither primary block-24 `attn_out` nor `mlp_out` was jointly necessary and sufficient |
+| T19-C component causality | 128 source and 192 untouched evaluation emoji; 256 + 2,880 forwards; 8,064 intervention rows | 6/6 engineering gates exact; neither primary block-24 `attn_out` nor `mlp_out` was jointly necessary and sufficient; post-hoc full-interchange ceilings at those sites were 0.0000/+0.0052 |
+| T20-C optimized-subspace causality | 128 source + 384 fresh evaluation emoji in 4 contexts; 384 + 32,256 forwards; 33,048 training passes; 124,416 intervention rows | registered verdict: both primary residual sites uncalibratable (sufficiency ceilings +0.0234/+0.0254 < 0.06); full-interchange ceilings localize the signal to the final blocks and glyph-position context |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -94,11 +95,36 @@ source emoji and tested them on 192 untouched emoji in Llama 3.2 3B. All six
 zero-hook and restoration checks were exact, but neither primary block-24
 `attn_out` nor `mlp_out` site passed the necessity–sufficiency intersection.
 The result supports a token-count-matched CLDR lexical correspondence while
-rejecting this simple late-component mediator—not rendered perception,
-synonym understanding, a universal manifold, or a complete circuit. See the
+this simple late-component mediator fails its joint criterion—establishing
+neither rendered perception, synonym understanding, a universal manifold, nor
+a complete circuit. See the
 [full result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md), [paper
 story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md), and [frozen
 protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md).
+
+### T20 calibrated optimized-subspace causal status
+
+T20-C, frozen and admitted only after the T19-C analysis was validated,
+tested whether any rank-8 subspace learnable by interchange optimization
+carries the glyph-to-alias relation, at three residual-stream and six
+component sites, on 384 fresh atomic emoji in four contexts, with
+full-interchange ceilings as registered positive controls. Both primary
+residual sites returned the registered verdict *uncalibratable at this
+endpoint* (sufficiency ceilings `+0.0234`/`+0.0254`, below the `0.06`
+informativeness minimum). The ceilings carry the finding: block-27 residual
+swaps transfer retrieval exactly (100% of the attainable `0.0332` range),
+while blocks 21/24 transfer 71–76% on injection yet destroy only 4–25% on
+removal—the final-state alias signal is reassembled from glyph-position
+context by late computation and is not carried by the readout-token stream at
+mid-late depth. Optimized subspaces memorize source items (training InfoNCE
+0.52–1.26 at residual sites) but generalize to zero held-out items,
+consistent with item-private coding or insufficient training data. A
+post-hoc ceiling pass at the six T19-C sites (labeled descriptive) shows the
+T19-C primary sites offered near-zero attainable effects, retroactively
+explaining that negative. See the
+[frozen protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md) and
+the committed results under
+`validation/t20_lexical_alias_optimized_subspace_causal_v0/results/`.
 
 ### T18 fresh composite-glyph confirmation status
 
