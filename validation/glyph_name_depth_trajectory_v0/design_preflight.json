@@ -1,0 +1,151 @@
+{
+  "confirmatory_claim_authorized": false,
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "model_forwards": 0,
+  "model_forwards_per_role": 1752,
+  "model_forwards_total": 15768,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "normalized_depth_fractions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "population_items": 292,
+  "population_prior_exposed": true,
+  "protocol_id": "glyphprobe-glyph-name-depth-trajectory-v0",
+  "readout_vectors_per_role": 63072,
+  "readout_vectors_total": 567648,
+  "rendered_glyph_perception_claim_authorized": false,
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "source_hashes": {
+    "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/primary_result.json": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9",
+    "artifacts/semantic_atlas_cross_model_replication_v0/analysis/cross_model_primary_result.json": "9633c713e06506cf392f07bb212bd41e258da52f3c7456382425790cec2ff3ef",
+    "data/manifests/mistral7b_semantic_atlas_selection_v0.json": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "validation/semantic_atlas_cross_model_replication_v0/engineering_preflight.json": "8b42d28d5c2b0c5de1c117edf79dc6e159defcdae5a231dc4c7d0ab17b392cdc"
+  },
+  "status": "design_pass_zero_t17_model_forwards",
+  "views": [
+    "glyph",
+    "unicode_name",
+    "codepoint_literal"
+  ]
+}

@@ -1,0 +1,145 @@
+protocol_id: glyphprobe-glyph-name-depth-trajectory-v0
+experiment_role: exploratory_cross_model_depth_trajectory_of_raw_emoji_to_official_name_alignment
+claim_boundary: >-
+  A fixed exploratory depth atlas on the already exposed 292-item T9/T10
+  population. It compares raw Unicode emoji surfaces with official Unicode
+  names and literal U+ codepoint strings in the same nine model/tokenizer cells,
+  carriers, and distances used by T10. It may describe where an item-specific
+  glyph/name retrieval advantage appears, peaks, or disappears across normalized
+  decoder depth. It is not a new item holdout or an independent replication and
+  cannot establish rendered-glyph perception, human meaning, understanding,
+  tokenizer independence or causality, a circuit, behavior, scale law, tuning
+  effects, architecture generality, or model-population generality.
+
+source_bindings:
+  population_manifest: data/manifests/mistral7b_semantic_atlas_selection_v0.json
+  population_manifest_sha256: fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532
+  t10_freeze_manifest: data/manifests/semantic_atlas_cross_model_replication_v0.json
+  t10_freeze_manifest_sha256: 8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4
+  t9_primary_result: artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/primary_result.json
+  t9_primary_result_sha256: ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9
+  t10_primary_result: artifacts/semantic_atlas_cross_model_replication_v0/analysis/cross_model_primary_result.json
+  t10_primary_result_sha256: 9633c713e06506cf392f07bb212bd41e258da52f3c7456382425790cec2ff3ef
+  t10_engineering_preflight: validation/semantic_atlas_cross_model_replication_v0/engineering_preflight.json
+  t10_engineering_preflight_sha256: 8b42d28d5c2b0c5de1c117edf79dc6e159defcdae5a231dc4c7d0ab17b392cdc
+  outcome_exposure:
+    t9_alignment_result_known: true
+    t10_cross_model_result_known: true
+    t17_candidate_depth_activations_seen_at_freeze: false
+
+population:
+  source_role: reserved_unrun_in_t8_then_forwarded_by_t9_and_t10
+  expected_items: 292
+  order: ascending_source_index
+  replacement_or_exclusion_after_freeze: forbidden
+  inferential_role: fixed_prior_exposed_exploratory_population
+
+input:
+  view_order: [glyph, unicode_name, codepoint_literal]
+  interpretation:
+    glyph: raw_Unicode_emoji_surface_not_a_rasterized_font_glyph
+    unicode_name: exact_name_field_from_pinned_Unicode_Emoji_17_emoji_test_source
+    codepoint_literal: uppercase_U_plus_hexadecimal_codepoint
+  carrier_order: [article_a, pipe]
+  distance_order: [1, 2, 4, 8]
+  source_contract: exact_T10_token_sequences_and_common_suffix_readout_positions
+  add_special_tokens: false
+  batch_size_unique_sequences: 1
+
+depth:
+  normalized_fractions: [0.0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0]
+  resolution: min_num_layers_minus_one_and_floor_fraction_times_num_layers
+  endpoint: output_hidden_states_resolved_block_index_plus_one
+  final_endpoint_note: >-
+    At fraction 1.0 this is the model API returned final hidden state and may
+    include a model-final normalization; intermediate checkpoints are API
+    hidden states after the resolved decoder block.
+
+models:
+  source: configs/semantic_atlas_cross_model_replication_v0.yaml
+  order:
+    - qwen25_0p5b_base_bf16
+    - olmo2_1b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - smollm2_1p7b_base_bf16
+    - gemma2_2b_it_bf16
+    - llama32_3b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+    - mistral7b_instruct_v03_bf16
+  qwen_scale_order:
+    - qwen25_0p5b_base_bf16
+    - qwen25_1p5b_base_bf16
+    - qwen25_3b_base_bf16
+    - qwen25_7b_base_bf16
+
+acquisition:
+  item_shard_size: 32
+  expected_shards_per_model: 10
+  expected_unique_input_sequences_per_model: 1752
+  expected_model_forward_calls_per_model: 1752
+  expected_readout_vectors_per_model: 63072
+  expected_model_cells: 9
+  expected_total_model_forward_calls: 15768
+  expected_total_readout_vectors: 567648
+  activation_dtype: float32
+  activation_axis_order: [item, view, carrier, distance, normalized_depth, width]
+  completed_shards_are_never_reacquired: true
+  incomplete_stage_policy: fail_closed_manual_adjudication_before_any_retry
+  raw_activations_committed_to_git: false
+
+analysis:
+  view_pair_order: [glyph_name, glyph_codepoint]
+  per_depth_per_context_metrics:
+    - top1_forward
+    - top1_reverse
+    - mean_reciprocal_rank_forward
+    - mean_reciprocal_rank_reverse
+    - paired_minus_off_diagonal_margin
+    - centered_linear_cka
+  headline_curve: >-
+    Equal-weight mean over the complete two-carrier by four-distance grid of
+    glyph-to-name top1 correctness minus glyph-to-codepoint top1 correctness.
+  registered_descriptive_summaries:
+    - initial_and_final_headline_curve_values
+    - peak_normalized_depth_and_value
+    - earliest_sustained_positive_point_estimate_depth
+    - earliest_sustained_positive_bootstrap_interval_depth
+    - trapezoidal_depth_auc
+    - positive_depth_count
+    - all_nine_model_cross_section_by_depth
+    - qwen_four_checkpoint_profile_by_depth
+  uncertainty:
+    unit: item_with_all_eight_contexts_kept_together
+    method: nonparametric_multinomial_bootstrap
+    replicates: 20000
+    seed: 2026090101
+    interval: percentile_95
+  tokenization_sensitivity:
+    secondary: exact_T10_triple_token_count_non_singleton_strata
+    decision_authorized: false
+  multiplicity: none_exploratory_descriptive_atlas
+  outcome_adaptive_depth_or_model_selection: forbidden
+
+execution_policy:
+  backend: transformers_cuda_bfloat16
+  hardware_pin: NVIDIA GeForce RTX 5090
+  model_artifacts_and_runtime_versions: inherited_and_reverified_from_T10_freeze
+  one_forward_per_unique_item_view_carrier_sequence: true
+  four_distance_readouts_and_nine_depths_reused_from_each_forward: true
+  deterministic_eval_no_sampling: true
+  preserve_completed_shards_on_contention: true
+  stop_before_next_shard_when_foreign_gpu_pid_appears: true
+  yield_exit_code_on_foreign_contention: 75
+  recheck_spiral_status_immediately_before_compute: true
+
+forbidden_actions:
+  - any_T17_candidate_model_forward_before_freeze_is_committed_and_pushed
+  - activation_intervention
+  - behavioral_generation
+  - protected_target_access
+  - outcome_guided_item_view_carrier_distance_depth_or_model_selection
+  - reinterpretation_as_rendered_font_glyph_perception
+  - reinterpretation_as_new_item_confirmation_or_independent_replication
+  - semantic_tokenizer_causal_mechanistic_behavioral_scale_tuning_or_general_claim
+  - raw_activation_commit_to_git

@@ -1,0 +1,222 @@
+{
+  "assets": {
+    "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0/analysis/primary_result.json": "ea5824a0b6c6fdd966f7920958081b67b9ee06c855ad1b31646e0865a06cb5a9",
+    "artifacts/semantic_atlas_cross_model_replication_v0/analysis/cross_model_primary_result.json": "9633c713e06506cf392f07bb212bd41e258da52f3c7456382425790cec2ff3ef",
+    "configs/glyph_name_depth_trajectory_v0.yaml": "10d2d5b6c92da4e05d23f7599938fd9e0790f9d401db48382670fe74fc03e098",
+    "data/manifests/mistral7b_semantic_atlas_selection_v0.json": "fe452c56cc96e079d832e2d1945b7d7bdd69fa0e44a3cbdd21fd05c9b6517532",
+    "data/manifests/semantic_atlas_cross_model_replication_v0.json": "8673bc51490460b3e8908f766b592169942bf6a7e88d292c50b427e5283f34a4",
+    "docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0.ja.md": "3a343e10724509b09efa5f855fb16bce72519527e2669cb07fe24edfbc2d64e0",
+    "docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0.md": "39c386b34066cc58a7b249d37fd1bf11620127c7c57db577b65ae6c8647b8d5c",
+    "scripts/glyph_name_depth_trajectory_v0.py": "69287e7e6dc4f40ffa1da1b9d8ad1680bbd9b71ee3f13f37f79840e9b1a0cded",
+    "tests/test_glyph_name_depth_trajectory_v0.py": "d2d4bf267509a6eeb8b62be13d565c65de23543685759dc6ba88a9553d1fcfa0",
+    "validation/glyph_name_depth_trajectory_v0/design_preflight.json": "31a4362c0e58984a91c820428a321a5b4d48219f2b7cd43a13696f3e814a7fb3",
+    "validation/semantic_atlas_cross_model_replication_v0/engineering_preflight.json": "8b42d28d5c2b0c5de1c117edf79dc6e159defcdae5a231dc4c7d0ab17b392cdc",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/gemma2_2b_it_bf16.json": "9f3cb02225dc17af9ec5c1a318625410e86e0ac1bc54d2e7c417445a652d8aef",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/llama32_3b_base_bf16.json": "a13ea97bd6567e29d8ab4e458c590263117a756b214c0b32a5ff7e811c996e19",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/mistral7b_instruct_v03_bf16.json": "8e7f5f596075db8e11e507b7ff4b1891112bda10caa9e507d8446a12c5677019",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/olmo2_1b_base_bf16.json": "3887cd41618d975d82320a69e38a01cf1cb9160bdc4562d3a8d25ee6b8d3c24d",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_0p5b_base_bf16.json": "f5c1b9efd655d2f506b0721bc0291274f519dfc9f42e40306e67e30502af2804",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_1p5b_base_bf16.json": "617cb254ca3f0c2bb72545650036a94d24850a72e98da6682d6654e8297f2c29",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_3b_base_bf16.json": "b1e93c5f2b77ba3a17e3fe4572dc877aeb8288c6c55e25dc061633f8f2734aa0",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/qwen25_7b_base_bf16.json": "fd4c53a74c8b569cbb29493b3437f57e433ae95246e5d26364edf81af5050653",
+    "validation/semantic_atlas_cross_model_replication_v0/tokenizers/smollm2_1p7b_base_bf16.json": "d9488b96fe03fd828634b457d0248f5dd594416b768dcd6236c5463919a15f76"
+  },
+  "claim_boundary": "A fixed exploratory depth atlas on the already exposed 292-item T9/T10 population. It compares raw Unicode emoji surfaces with official Unicode names and literal U+ codepoint strings in the same nine model/tokenizer cells, carriers, and distances used by T10. It may describe where an item-specific glyph/name retrieval advantage appears, peaks, or disappears across normalized decoder depth. It is not a new item holdout or an independent replication and cannot establish rendered-glyph perception, human meaning, understanding, tokenizer independence or causality, a circuit, behavior, scale law, tuning effects, architecture generality, or model-population generality.",
+  "confirmatory_claim_authorized": false,
+  "experiment_role": "exploratory_cross_model_depth_trajectory_of_raw_emoji_to_official_name_alignment",
+  "generation_calls_at_freeze": 0,
+  "intervention_calls_at_freeze": 0,
+  "model_artifacts": {
+    "gemma2_2b_it_bf16": {
+      "artifact_model_id": "google/gemma-2-2b-it",
+      "file_count": 11,
+      "manifest_sha256": "1b2b83416e64547b555712c59276d632ea81cd0a672bd66cc8c80f4a4c8d1a4d",
+      "revision": "299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8",
+      "total_bytes": 5250587389
+    },
+    "llama32_3b_base_bf16": {
+      "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+      "file_count": 9,
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+      "total_bytes": 6434705789
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "artifact_model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+      "file_count": 15,
+      "manifest_sha256": "d20865c47632941bb6d6192a71ddf83b94774e6095d2a0f3b5069281b9d8cdc7",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "total_bytes": 28995471365
+    },
+    "olmo2_1b_base_bf16": {
+      "artifact_model_id": "allenai/OLMo-2-0425-1B",
+      "file_count": 12,
+      "manifest_sha256": "d9274983828330b87d86c5b426978b2044df17faecabdee173c03abad3dd826f",
+      "revision": "a1847dff35000b4271fa70afc5db10fd29fedbdf",
+      "total_bytes": 5949386929
+    },
+    "qwen25_0p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-0.5B",
+      "file_count": 10,
+      "manifest_sha256": "c860aa324659f8fea0265e9330ad9893cae513a6ee2a11547efcd299dd5121c2",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "total_bytes": 999602900
+    },
+    "qwen25_1p5b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-1.5B",
+      "file_count": 10,
+      "manifest_sha256": "cb56a7e1865b662d4f31bba50d4dab26b307810db21ba472e194d632612f6529",
+      "revision": "8faed761d45a263340a0528343f099c05c9a4323",
+      "total_bytes": 3098972223
+    },
+    "qwen25_3b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-3B",
+      "file_count": 12,
+      "manifest_sha256": "cca372c88da20b8c1704fabdaae41919aa69319b2603ba73e222d261eaf8ad91",
+      "revision": "3aab1f1954e9cc14eb9509a215f9e5ca08227a9b",
+      "total_bytes": 6183463686
+    },
+    "qwen25_7b_base_bf16": {
+      "artifact_model_id": "Qwen/Qwen2.5-7B",
+      "file_count": 14,
+      "manifest_sha256": "bd8ef40517ce1e40d32874561f678de0412d5a840c4cc90ace07ac30aa41b7b9",
+      "revision": "d149729398750b98c0af14eb82c78cfe92750796",
+      "total_bytes": 15242804690
+    },
+    "smollm2_1p7b_base_bf16": {
+      "artifact_model_id": "HuggingFaceTB/SmolLM2-1.7B",
+      "file_count": 10,
+      "manifest_sha256": "aaecf4014031e3cc32c2feba3f4afb6f4a78e7b905a21105d4e41c89e9209a44",
+      "revision": "effd688a12921b4cc83e3312b6feb579f70f9c71",
+      "total_bytes": 3426163516
+    }
+  },
+  "model_forwards_at_freeze": 0,
+  "model_roles": [
+    "qwen25_0p5b_base_bf16",
+    "olmo2_1b_base_bf16",
+    "qwen25_1p5b_base_bf16",
+    "smollm2_1p7b_base_bf16",
+    "gemma2_2b_it_bf16",
+    "llama32_3b_base_bf16",
+    "qwen25_3b_base_bf16",
+    "qwen25_7b_base_bf16",
+    "mistral7b_instruct_v03_bf16"
+  ],
+  "normalized_depth_fractions": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "population_items": 292,
+  "protocol_id": "glyphprobe-glyph-name-depth-trajectory-v0",
+  "resolved_block_indices": {
+    "gemma2_2b_it_bf16": [
+      0,
+      3,
+      6,
+      9,
+      13,
+      16,
+      19,
+      22,
+      25
+    ],
+    "llama32_3b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "mistral7b_instruct_v03_bf16": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24,
+      28,
+      31
+    ],
+    "olmo2_1b_base_bf16": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14,
+      15
+    ],
+    "qwen25_0p5b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ],
+    "qwen25_1p5b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "qwen25_3b_base_bf16": [
+      0,
+      4,
+      9,
+      13,
+      18,
+      22,
+      27,
+      31,
+      35
+    ],
+    "qwen25_7b_base_bf16": [
+      0,
+      3,
+      7,
+      10,
+      14,
+      17,
+      21,
+      24,
+      27
+    ],
+    "smollm2_1p7b_base_bf16": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      23
+    ]
+  },
+  "schema_version": 1,
+  "status": "final_execution_freeze_zero_t17_model_forwards"
+}
