@@ -34,11 +34,11 @@
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
-      "sha256": "aafa239448b30ac161fc857d304f1c396d118a491f9a6f9df56a7b12938a6bdf"
+      "sha256": "342c59320226795fc0085dc38df99b1100ea0f174a7f95af189278e825603325"
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.png",
-      "sha256": "e60a9a065f84f7f5e95b49e8df0ce801ba0ab23a21a868bae46ef0bb48823e32"
+      "sha256": "a2529bddaaf5f9838e24fde9951d07c5d22bf3e61e12d644722baea340398bed"
     },
     {
       "path": "paper/figures/t19_lineage.pdf",
@@ -50,11 +50,11 @@
     },
     {
       "path": "paper/figures/t19_model_effects.pdf",
-      "sha256": "6304af0da6b3c021768d0fa186ff4695f11fc6077d726914b8cdd81d0a65e105"
+      "sha256": "7060ffec4603e72ac0ecc7b97b0151467bcebaf4e4b2d2252aa051f332451ff1"
     },
     {
       "path": "paper/figures/t19_model_effects.png",
-      "sha256": "7f700d76317e5ae5616fb09acb007b321e7882e2bfe1fae53310872954761447"
+      "sha256": "12ec5abf81c24a101f0c323cb0b01507e3249cfeb992bb8fe8889d30ae3005c3"
     },
     {
       "path": "paper/figures/t20_causal_ceilings.pdf",

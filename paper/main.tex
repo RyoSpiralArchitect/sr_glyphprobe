@@ -67,12 +67,11 @@ localized semantic circuit.
 
 Single-codepoint emoji nevertheless make the recoverability question
 unusually clean. Under the word-disjointness constraint below, the character
-shares no substring, no morpheme, and not one ASCII-alphanumeric word with the
-keyword it must retrieve, so any observed relation must be carried by learned
-association rather than by surface form. Atomic Unicode characters thereby
-offer a controlled testbed for how text-only models attach lexical relations
-to opaque tokens, and a concrete auditing target for multilingual and
-social-media systems that consume such tokens at scale.
+shares no substring, morpheme, or ASCII-alphanumeric word with the keyword it
+must retrieve, so any observed relation must be carried by learned
+association rather than surface form: a controlled testbed for how text-only
+models attach lexical relations to opaque tokens, and a concrete auditing
+target for systems that consume such tokens at scale.
 
 A prospectively specified two-arm design separates two narrower questions.
 The observational arm asks whether a raw atomic emoji retrieves a
@@ -421,12 +420,11 @@ $+0.036$, $+0.053$, $+0.071$, $+0.182$ from 0.5B to 7B). The roster remains
 confounded across families, so this ordering is description, not a registered
 scale result.
 
-Depth was secondary. The nine recorded fractions were $0, 0.125,\ldots,1.0$;
-only $0.75$, $0.875$, and $1.0$ formed the primary window. Across models and
-contexts, the unrestricted contrast was $+0.0409$ at depth 0, then $+0.0864$,
-$+0.1152$, and $+0.0922$ at the three primary depths, whose mean is the
-$+0.0979$ reported above. Individual configurations had different onset and peak
-depths, so these data do not support one universal trajectory.
+Depth was secondary. Across models and contexts, the unrestricted contrast
+was $+0.0409$ at depth 0 and $+0.0864$, $+0.1152$, $+0.0922$ at the three
+primary depths, whose mean is the $+0.0979$ above; onset and peak depths
+differed across configurations, so these data do not support one universal
+trajectory.
 
 \subsection{A named-symbol control limits the emoji-specific claim}
 
@@ -475,19 +473,8 @@ geometry, so any nonzero residue would indicate hook or batching infidelity. Nev
 passed. Block-24 attention had adjusted necessity $0.0000$ and sufficiency
 $-0.00521$; block-24 MLP had $+0.00521$ and $0.0000$. Their site IUT values
 were $1.0$ and $0.74912$, respectively. None of the six sites passed both
-components (Figure \ref{fig:causal}; exact values in Appendix
-\ref{app:causal}).
-
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/t19_causal_sites.pdf}
-  \caption{Random-adjusted causal effects with descriptive 95\% item-bootstrap
-  intervals over 192 emoji held out from T19-L. Shaded rows and asterisks mark the two
-  primary block-24 sites. Solid vertical lines show zero; dashed lines show the
-  registered $0.02$ effect-size floor. No site has both necessity and sufficiency above the
-  floor with positive lower bounds.}
-  \label{fig:causal}
-\end{figure}
+components (Figure \ref{fig:causal}, Appendix \ref{app:causal}; exact values
+in Table \ref{tab:causal}).
 
 The secondary block-27 MLP patch produced adjusted sufficiency $+0.07812$
 (95\% interval $[+0.03646,+0.11979]$; one-sided $p=0.00009$, uncorrected,
@@ -863,6 +850,18 @@ vectors in 45 sealed shards.
 
 \section{Exact causal results}
 \label{app:causal}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_causal_sites.pdf}
+  \caption{Random-adjusted T19-C causal effects with descriptive 95\%
+  item-bootstrap intervals over 192 emoji held out from T19-L. Shaded rows
+  and asterisks mark the two primary block-24 sites. Solid vertical lines
+  show zero; dashed lines show the registered $0.02$ effect-size floor. No
+  site has both necessity and sufficiency above the floor with positive lower
+  bounds.}
+  \label{fig:causal}
+\end{figure}
 
 \begin{table}[H]
 \centering

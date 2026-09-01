@@ -448,7 +448,7 @@ def build_lineage() -> list[Path]:
 
 
 def build_model_effects(models: list[dict[str, Any]]) -> list[Path]:
-    fig, ax = plt.subplots(figsize=(6.9, 3.75))
+    fig, ax = plt.subplots(figsize=(6.9, 3.45))
     positions = list(range(len(models)))
     y_u = [y + 0.13 for y in positions]
     y_m = [y - 0.13 for y in positions]
@@ -520,7 +520,7 @@ def build_model_effects(models: list[dict[str, Any]]) -> list[Path]:
 
 
 def build_emoji_symbol_boundary(models: list[dict[str, Any]]) -> list[Path]:
-    fig, axes = plt.subplots(1, 2, figsize=(7.15, 4.45), sharey=True, sharex=True)
+    fig, axes = plt.subplots(1, 2, figsize=(7.15, 3.95), sharey=True, sharex=True)
     y = list(range(len(models)))
     endpoint_specs = [
         ("alias_minus_codepoint_top1", "CLDR keyword"),
