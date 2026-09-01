@@ -1,6 +1,6 @@
 # T16 論文ストーリー v0
 
-[English](PAPER_STORY_T16_V0.md) · [統合claim table](../validation/t16_integrated_v0/claim_table.json) · [Phase I論文計画](PAPER_OUTLINE.ja.md)
+[English](PAPER_STORY_T16_V0.md) · [統合claim table](../validation/t16_integrated_v0/claim_table.json) · [T16-UTF-X1ストレステスト](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md) · [Phase I論文計画](PAPER_OUTLINE.ja.md)
 
 状態: **投稿用ストーリーの叩き台。最終的な論文claim freezeではない。**
 
@@ -38,8 +38,11 @@ sufficiency、necessityの推定値がすべて非正だった。別のLlama 3.2
 後期8成分bandのnecessity成分だけが通過し、sufficiencyとjoint mediation gateは不通過だった。
 最後に、6つのUnicode構成familyを使った完全同一UTF対照により、同一文字列反復、
 同一family内混合、family横断混合を分けた。Family横断の上乗せは8つのmodel×depth cellで
-すべて正だったが、tokenizer経路への依存は残る。以上から、応答指紋、運用上の意味行動、
-因果実装、Unicode条件付き幾何は、別々の経験的階層だと分かる。絵文字行動は測定できるが、
+すべて正だったが、tokenizer経路への依存は残る。さらに探索的な515,808件の
+ストレステストでは、その符号が`n=500`を含む36 / 36 model-depth cellで残り、
+token multisetをほぼ完全に揃えたorder対照では、連続blockが72 / 72 cellで最大変位に
+なった。一方、長さ曲線は非単調だった。以上から、応答指紋、運用上の意味行動、因果実装、
+Unicode条件付きの系列幾何は、別々の経験的階層だと分かる。絵文字行動は測定できるが、
 その機構は、検証した経路に局在せず、分散しているか、なお未解決である。
 
 ## この論文の本当の貢献
@@ -70,6 +73,7 @@ fail-closedな手順を示す。因果実験の負の結果は弱点ではない
 | 指紋から行動への因果 | T16-OSC因果 | Treatment `-0.1484`、sufficiency `-0.0859`、necessity `-0.0547`。Gate不通過 | T15-B subspaceは、明示的な不一致判断の検証済み実装ではない |
 | 後期band媒介 | T16-DP | Necessity `+0.000871`は通過、sufficiency `-0.000146`は不通過、treatmentは下限未達 | 完全な後期bandは必要成分を運ぶが、移植条件では十分でない |
 | 完全同一文字列の幾何 | T16-UTF | 横断−同一family区間が8 / 8 model-depth cellで正 | Tokenizer経路を条件に、反復と構成family多様性を分けて記述できる |
+| 長系列・orderストレステスト | T16-UTF-X1 | 主要集約と`n=500`が36 / 36 cellで正。Blocked orderが72 / 72 cellで最大 | 固定rosterで条件付き幾何が残り、同一token multisetでもorderが状態を変える。Scale則やUnicode意味は導かない |
 
 ## 本文の流れ
 
@@ -113,6 +117,12 @@ attention＋MLP bandをbaselineへ戻すとtreatment情報が失われたが、�
 異なる点は面白い。ただし、token数を揃えたfamily横断subsetは疎である。
 将来のtokenizer-matched因果対照を導く幾何として扱い、意味分解とは呼ばない。
 
+T16-UTF-X1は、因果claim ladderに新しい段を足すのではなく、補遺のストレステストとして
+使う。ここで増えた解像度は、系列幾何の内部分離にある。Family横断の上乗せは`n=500`まで
+正だが、長さ方向は非単調だった。一方、UTF item multisetと、ほぼすべてのpairでtoken
+multisetまで揃えてもorder効果が残り、連続blockが72 / 72 cellで最大だった。
+Separator pairはtoken multisetを一件も揃えられていないため、従属的な結果として扱う。
+
 ### 7. Discussion：三つの分離から、一つの方法論へ
 
 議論は、次の三つへ収束させる。
@@ -143,6 +153,8 @@ T15-BとT16について、endpoint、主要標本単位、多重性規則、結�
 - T16-UTFのmodel×depth×`n`別、横断−同一family heat map。
 - 完全同一反復、同一family、family横断の変位profile。
 - 構成family別の不均一性とtoken数完全一致subset件数。
+- T16-UTF-X1のblocked対shuffle order profileとanchor位置profile。各panelに
+  token-multiset一致率を併記する。
 - T15-Bの全secondary heterogeneityと、zero-guard failureの保存記録。
 
 ## 5ページ版への縮退
@@ -155,8 +167,9 @@ T15-BとT16について、endpoint、主要標本単位、多重性規則、結�
 4. T16-DPのnecessity / sufficiency分離。
 5. 限界を一段落。
 
-T16-UTF、T15の詳しい履歴、軸別値、engineering receiptは補遺かrepositoryへ移す。
-UTF結果がなくても論文は成立するが、行動と因果の分離を外すと物語の芯が失われる。
+T16-UTF、T16-UTF-X1、T15の詳しい履歴、軸別値、engineering receiptは補遺か
+repositoryへ移す。UTF結果がなくても論文は成立するが、行動と因果の分離を外すと
+物語の芯が失われる。
 
 ## 投稿前に固定する主張
 
@@ -167,6 +180,8 @@ UTF結果がなくても論文は成立するが、行動と因果の分離を�
 - 検証したT15-B残差subspaceは、登録した向きのまま明示的な不一致endpointを実装しない。
 - 別に検証した後期bandには正のnecessity成分があるが、sufficiencyとfull mediation gateは通らない。
 - Family横断混合は、8つの記述セルすべてで、tokenizer条件付きの追加変位を生んだ。
+- 探索的なストレステストrosterでは、その符号が`n=500`まで残り、完全token-multisetを
+  揃えたorderでも取得状態が変わった。これは補遺の頑健性主張であり、scaleや意味の主張ではない。
 
 ### 書いてはいけない主張
 

@@ -1,6 +1,6 @@
 # T16 paper story v0
 
-[日本語](PAPER_STORY_T16_V0.ja.md) · [Integrated claim table](../validation/t16_integrated_v0/claim_table.json) · [Phase I outline](PAPER_OUTLINE.md)
+[日本語](PAPER_STORY_T16_V0.ja.md) · [Integrated claim table](../validation/t16_integrated_v0/claim_table.json) · [T16-UTF-X1 stress test](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md) · [Phase I outline](PAPER_OUTLINE.md)
 
 Status: **submission-story draft, not the final manuscript claim freeze**.
 
@@ -45,10 +45,14 @@ sufficiency and the full mediation intersection test. Finally, exact-UTF
 controls across six Unicode construction families separated repeated-string,
 within-family, and cross-family displacement: cross-family excess was positive
 at all eight tested model-by-depth cells, but remained tokenizer-conditional.
-These results show that response fingerprints, operational semantic behavior,
-causal implementation, and Unicode-conditioned geometry are distinct
-empirical layers. Emoji behavior is measurable; its mechanism remains
-distributed or unresolved rather than localized by the tested routes.
+An exploratory 515,808-record stress test extended the sign through `n=500`
+in 36/36 fixed model-by-depth cells and found that contiguous item blocking
+maximized displacement in 72/72 nearly token-multiset-exact order cells, while
+the length curves remained non-monotonic. These results show that response
+fingerprints, operational semantic behavior, causal implementation, and
+Unicode-conditioned sequence geometry are distinct empirical layers. Emoji
+behavior is measurable; its mechanism remains distributed or unresolved
+rather than localized by the tested routes.
 
 ## The paper's actual contribution
 
@@ -80,6 +84,7 @@ must be tested separately.
 | Fingerprint-to-behavior causality | T16-OSC causal | Treatment `-0.1484`, sufficiency `-0.0859`, necessity `-0.0547`; gate fails | The T15-B subspace is not the validated implementation of explicit mismatch judgment |
 | Late-band mediation | T16-DP | Necessity `+0.000871` passes; sufficiency `-0.000146` fails; treatment misses floor | The complete late band carries a necessary component but is not sufficient under transplantation |
 | Exact-string geometry | T16-UTF | Cross-minus-within interval positive in 8/8 model-depth cells | Repetition and construction-family diversity separate conditionally on tokenizer paths |
+| Long-sequence and order stress | T16-UTF-X1 | Primary and `n=500` cross-minus-within positive in 36/36 cells; blocked order largest in 72/72 cells | The conditional geometry persists on this fixed roster; exact-token-multiset order affects state, but no scale law or Unicode semantics follows |
 
 ## Main narrative by section
 
@@ -132,6 +137,14 @@ between Gemma and Mistral, but token-count-matched cross-family subsets are
 sparse. Treat this as geometry that motivates future tokenizer-matched causal
 controls, not as a semantic decomposition.
 
+Use T16-UTF-X1 as an appendix stress test, not as a fifth rung in the causal
+claim ladder. Its useful addition is a separation inside sequence geometry:
+cross-family excess stays positive through `n=500`, but it is non-monotonic;
+meanwhile, preserving the exact item multiset and almost always the exact
+token multiset still leaves a strong order effect, with contiguous blocking
+largest in all 72 cells. Keep the separator result subordinate because none of
+those pairs preserve the token multiset.
+
 ### 7. Discussion: three separations, one method lesson
 
 The discussion should close around three separations:
@@ -166,6 +179,8 @@ multiplicity rule, outcome, and maximum authorized claim for T15-B and T16.
 - T16-UTF cross-minus-within heat map by model, depth, and `n`.
 - Clone, within-family, and cross-family displacement profiles.
 - Per-construction-family heterogeneity and exact-token-count subset counts.
+- T16-UTF-X1 blocked-versus-shuffled order profiles and anchor-position
+  profiles, with token-multiset match rates printed beside each panel.
 - Full T15-B secondary heterogeneity and the preserved zero-guard failure.
 
 ## Five-page fallback
@@ -178,9 +193,10 @@ If the body must fit five pages, keep only:
 4. the T16-DP necessity/sufficiency split;
 5. one limitations paragraph.
 
-Move T16-UTF, detailed T15 history, per-axis values, and engineering receipts to
-the appendix or repository. The paper remains coherent without the UTF result;
-it does not remain coherent without the behavioral-to-causal dissociation.
+Move T16-UTF, T16-UTF-X1, detailed T15 history, per-axis values, and engineering
+receipts to the appendix or repository. The paper remains coherent without the
+UTF results; it does not remain coherent without the behavioral-to-causal
+dissociation.
 
 ## Claims to freeze before submission
 
@@ -196,6 +212,9 @@ it does not remain coherent without the behavioral-to-causal dissociation.
   sufficiency and the full mediation gate.
 - Cross-family mixing adds tokenizer-conditional displacement beyond
   within-family mixing in all eight descriptive cells.
+- In the exploratory stress-test roster, that sign remains positive through
+  `n=500`, while exact-token-multiset order changes the captured state. This is
+  an appendix-level robustness claim, not a scale or semantic claim.
 
 ### Claims the manuscript must not make
 

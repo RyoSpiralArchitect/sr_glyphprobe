@@ -808,6 +808,13 @@ tokenizer-conditional.
   exact shared-prompt zero control. Cross-minus-within displacement intervals
   were positive in all eight model-by-depth cells, conditional on the recorded
   tokenizer paths.
+- The exploratory T16-UTF-X1 side track expanded this surface to 515,808
+  records, nine fixed model/tokenizer cells, 19 lengths through `n=500`, six
+  order variants, five separators, and three anchor positions. Primary and
+  `n=500` cross-minus-within were positive in all 36 model-by-depth cells.
+  Exact-token-multiset order controls made contiguous blocking the largest
+  order displacement in all 72 model-by-depth-by-family cells. The length
+  curves were non-monotonic and do not authorize a scale law.
 - Preserve the mechanistic dissociation: operational behavior, a replicated
   response fingerprint, and a sufficient causal mediator are not the same
   empirical object.
@@ -815,10 +822,12 @@ tokenizer-conditional.
   localization study needs a new bank, a new freeze, and an endpoint chosen
   without inspecting these outcomes.
 
-The [T16 paper story](PAPER_STORY_T16_V0.md) is now the writing spine. The next
-critical path is manuscript claim freeze, figure generation from committed
-compact analyses, archive checksums, and a fresh-eyes claim-boundary review—not
-another outcome-driven furnace search.
+The [T16 paper story](PAPER_STORY_T16_V0.md) is now the writing spine.
+T16-UTF-X1 belongs in the appendix or repository evidence unless space permits
+a short order-control result in the body. The next critical path is manuscript
+claim freeze, figure generation from committed compact analyses, archive
+checksums, and a fresh-eyes claim-boundary review—not another outcome-driven
+furnace search.
 
 ### Milestone 4 — Replication and boundary mapping
 

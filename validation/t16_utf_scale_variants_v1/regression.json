@@ -1,0 +1,37 @@
+{
+  "branch_result": {
+    "collected_tests": 690,
+    "failed": 2,
+    "passed": 686,
+    "skipped": 2,
+    "subtests_passed": 7
+  },
+  "completed_at_utc": "2026-09-01T04:28:11Z",
+  "failure_provenance": {
+    "branch_diff_touches_failure_inputs": false,
+    "origin_main_commit": "92756b667eb14b0c4cccd8a6e9a620ee9673fb49",
+    "reproduced_on_origin_main_before_result_publication": true
+  },
+  "failures": [
+    {
+      "error": "Selected site exists before localization freeze",
+      "nodeid": "tests/test_emoji_steering_causal_path_v0.py::test_design_arithmetic_and_holdout_boundary",
+      "pre_existing_on_origin_main": true
+    },
+    {
+      "error": "missing artifacts/glyph_system_reserve_confirmation_v0/runs/gemma2_2b_it_bf16/SHA256SUMS",
+      "nodeid": "tests/test_validate_glyph_system_reserve_confirmation_v0_result.py::test_git_resident_public_bundle_validates",
+      "pre_existing_on_origin_main": true
+    }
+  ],
+  "new_failures": 0,
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "ruff_check": "pass",
+  "ruff_format_check": "pass",
+  "schema_version": 1,
+  "status": "no_new_regressions_two_pre_existing_main_failures",
+  "targeted_result_tests": {
+    "command": "python3 -m pytest -q tests/test_t16_utf_scale_variants_v1.py tests/test_t16_result_closeouts_v0.py",
+    "passed": 14
+  }
+}

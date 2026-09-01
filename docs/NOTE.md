@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md)
+[T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
@@ -18,9 +18,13 @@ judgment under the registered residual-subspace test; it moves the endpoint in
 the opposite direction. A wider late-layer patch carries a positive necessity
 component but is not sufficient when transplanted. Exact-UTF controls then
 show that repeated strings and Unicode-family mixing create another,
-tokenizer-conditional geometry. The interesting result is no longer one
-positive score. It is the separation between a repeatable trace, readable
-behavior, and the mechanism that produces it.
+tokenizer-conditional geometry. A 515,808-record follow-up carried that
+separation through `n=500` in nine fixed cells and found a nearly
+token-multiset-exact order effect: contiguous blocks displaced the captured
+state more than every other frozen order variant in all 72 relevant cells.
+The interesting result is no longer one positive score. It is the separation
+between a repeatable trace, readable behavior, sequence construction, and the
+mechanism that produces them.
 
 Its first question is not what an emoji means inside a model. It asks whether a direction derived from that emoji leaves a reproducible fingerprint when added to a fixed internal activation. If the intervention magnitude, source prompts, target prompts, clipping, and random controls are all sealed, does the same direction move the next-token distribution in a recognizable way on held-out prompts?
 

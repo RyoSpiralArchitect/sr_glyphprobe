@@ -21,6 +21,7 @@ def test_t16_closeouts_bind_compact_analysis_hashes() -> None:
         "validation/t16_operational_semantics_causal_subspace_v0/closeout.json",
         "validation/t16_distributed_late_band_v0/closeout.json",
         "validation/t16_utf_identity_mixing_v0/closeout.json",
+        "validation/t16_utf_scale_variants_v1/closeout.json",
     )
     for closeout_path in closeout_paths:
         closeout = _load(closeout_path)
@@ -87,6 +88,7 @@ def test_t16_public_documents_remain_bilingual() -> None:
         "T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS",
         "T16_DISTRIBUTED_LATE_BAND_V0_RESULTS",
         "T16_UTF_IDENTITY_MIXING_V0_RESULTS",
+        "T16_UTF_SCALE_VARIANTS_V1_RESULTS",
         "PAPER_STORY_T16_V0",
     )
     for stem in stems:

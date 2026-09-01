@@ -1,0 +1,114 @@
+{
+  "allocator_warnings": {
+    "fatal_exceptions": 0,
+    "recoverable_warning_count": 6,
+    "requested_bytes": [
+      884998144,
+      1656750080,
+      2044723200,
+      1245708288,
+      662700032,
+      1233125376
+    ],
+    "roles": {
+      "gemma2_2b_it_bf16": 3,
+      "qwen25_3b_base_bf16": 1,
+      "qwen25_7b_base_bf16": 2
+    },
+    "scientific_arrays_admitted_only_after_chunk_hash_shape_finite_and_row_count_validation": true
+  },
+  "analysis": {
+    "bytes": 1864467,
+    "repository_path": "validation/t16_utf_scale_variants_v1/results/analysis.json",
+    "sha256": "988f2689565b9d45741f8f342cf49a3b54bd3d8d88f570f1693f21756f6d3e12",
+    "status": "utf_scale_variants_analysis_complete"
+  },
+  "causal_circuit_claim_authorized": false,
+  "claim_boundary": "T16-UTF-X1 is a large exploratory stress test downstream of T16-UTF. It freezes exact Unicode strings and exact item multisets for paired order and position contrasts, but model tokenization can still differ across prompts. Results describe hidden-state displacement conditional on recorded model, tokenizer, wrapper, sequence length, and token path. They do not establish tokenizer-independent Unicode composition, emoji meaning, a causal circuit, an instruction-tuning effect, a scale law, or model-population generality.",
+  "decision_status": "exploratory_no_binary_scientific_gate",
+  "descriptive_counts": {
+    "n500_scale_cross_minus_within_positive_model_depth_cells": 36,
+    "order_blocked_largest_model_depth_family_cells": 72,
+    "order_cross_greater_than_within_model_depth_variant_cells": 180,
+    "order_exact_full_prompt_token_multiset_matches": 258544,
+    "order_pairs": 259200,
+    "position_cross_greater_than_within_model_depth_position_cells": 72,
+    "position_exact_full_prompt_token_multiset_matches": 77952,
+    "position_last_greater_than_middle_model_depth_family_cells": 71,
+    "position_pairs": 103680,
+    "scale_cross_minus_within_bootstrap_interval_lower_above_zero_model_depth_cells": 36,
+    "scale_cross_minus_within_positive_model_depth_cells": 36,
+    "scale_nontrivial_n_positive_model_depth_cells_by_n": "36 of 36 at each of 18 n values",
+    "separator_largest_cell_counts": {
+      "ascii_pipe": 4,
+      "ascii_space": 0,
+      "comma_space": 6,
+      "newline": 26
+    }
+  },
+  "emoji_meaning_claim_authorized": false,
+  "engineering_canary": {
+    "evidence_path": "validation/t16_utf_scale_variants_v1/engineering_batch_canary.json",
+    "evidence_sha256": "dfe0f3e9f6db6508b66115ef164c65eb65a94cc214a2a490775dbc9863870c3a",
+    "excluded_from_scientific_results": true,
+    "furnace_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-utf-x1-runs-7a99494",
+    "scientific_result_authorized": false
+  },
+  "execution": {
+    "chunks_complete": 99,
+    "completed_at_utc": "2026-09-01T04:08:23Z",
+    "elapsed_seconds": 8039,
+    "furnace_analysis_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-utf-x1-analysis-fcf73bd",
+    "furnace_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-utf-x1-runs-fcf73bd",
+    "generation_calls": 0,
+    "raw_run_bytes": 20310205438,
+    "raw_run_files": 306,
+    "records": 515808,
+    "role_elapsed_seconds": {
+      "gemma2_2b_it_bf16": 500,
+      "llama32_3b_base_bf16": 1055,
+      "mistral7b_instruct_v03_bf16": 2462,
+      "olmo2_1b_base_bf16": 493,
+      "qwen25_0p5b_base_bf16": 164,
+      "qwen25_1p5b_base_bf16": 403,
+      "qwen25_3b_base_bf16": 741,
+      "qwen25_7b_base_bf16": 1575,
+      "smollm2_1p7b_base_bf16": 646
+    },
+    "roles_complete": 9,
+    "started_at_utc": "2026-09-01T01:54:24Z",
+    "unique_prompts_across_model_chunk_namespaces": 514080
+  },
+  "execution_freeze": {
+    "commit": "fcf73bd7d689df6607dab6215564e48c90aa15c3",
+    "manifest_path": "data/manifests/t16_utf_scale_variants_v1.json",
+    "manifest_sha256": "49f13da9c056813dae5aac0fbbd8b9b7801f493c2f0584ff327a5fdf7b065f0e",
+    "pushed_before_execution": true
+  },
+  "instruction_tuning_effect_claim_authorized": false,
+  "integrated_audit_status": "all_nine_roles_all_chunks_complete_integrated_scientific_open_authorized",
+  "model_population_generality_claim_authorized": false,
+  "protected_target_banks_opened": false,
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "raw_arrays_copied_from_furnace": false,
+  "regression": {
+    "new_failures": 0,
+    "pre_existing_main_failures": 2,
+    "repository_path": "validation/t16_utf_scale_variants_v1/regression.json",
+    "sha256": "23e68623a1717a34986a7276d33f9c482d0b221a31beb75b6c3af90154dc5b2b"
+  },
+  "run_log": {
+    "bytes": 14276,
+    "repository_path": "validation/t16_utf_scale_variants_v1/run.log",
+    "sha256": "9e09603ea4771c5552b9e27c66e33438858120617dc3c053a4b4e0643cb55b0d"
+  },
+  "scaling_law_claim_authorized": false,
+  "schema_version": 1,
+  "status": "complete_exploratory_utf_scale_variant_stress_test",
+  "tokenizer_independent_unicode_claim_authorized": false,
+  "tokenizer_preflight": {
+    "repository_path": "validation/t16_utf_scale_variants_v1/tokenizer_preflight.json",
+    "sha256": "f79fc441059e0d346d73fc8b153081c30a51cfa42d7588f1da7c91c15b9fd72b",
+    "weight_loads": 0
+  }
+}

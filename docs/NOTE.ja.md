@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md)
+[T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
@@ -18,8 +18,11 @@ T16では、その慎重さを保ったまま、次の段階へ進んだ。新�
 その明示的な判断を因果的に実装しなかった。Endpointは、むしろ仮説と逆へ動いた。
 より広い後期bandには正のnecessity成分があったが、移植しても十分ではない。
 さらに完全同一UTF対照からは、同じ文字列の反復とUnicode family混合による、
-別のtokenizer条件付き幾何が見えた。面白いのは、正のscoreが一つ増えたことではない。
-繰り返す跡、読み出せる行動、それを生む機構が、同じものではなかったことだ。
+別のtokenizer条件付き幾何が見えた。続く515,808件の実験でも、その分離は9つの固定cell、
+`n=500`まで残った。さらに、token multisetをほぼ完全に揃えたorder対照では、同じitemを
+連続した塊にまとめたとき、72 / 72 cellで他の並び方より大きく状態が動いた。
+面白いのは、正のscoreが一つ増えたことではない。繰り返す跡、読み出せる行動、系列の
+組み立て方、それを生む機構が、同じものではなかったことだ。
 
 ## まず、意味ではなく「跡」を測る
 

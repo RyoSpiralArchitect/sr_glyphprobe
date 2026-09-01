@@ -546,13 +546,21 @@ UTF laneは探索的で、tokenizer経路を条件とする。
   2,880行を完了した。`n=1`は同じpromptを共有する厳密なzero controlである。
   横断−同一family変位の区間は8つのmodel×depth cellすべてで正だった。ただし、
   観測したtokenizer経路を条件とする。
+- 探索side trackのT16-UTF-X1では、515,808件、9つの固定model/tokenizer cell、
+  `n=500`までの19系列長、6 order variant、5 separator、3 anchor位置まで広げた。
+  主要集約と`n=500`の横断−同一構成は36 / 36 model-depth cellで正だった。
+  Token multisetを完全に揃えたorder対照では、同じitemを連続blockにする並びが
+  72 / 72 model-depth-family cellで最大変位になった。長さ曲線は非単調であり、
+  scale則は主張しない。
 - 運用上の行動、再現した応答指紋、十分な因果mediatorは、別の経験的対象として扱う。
 - 2つの因果bankで、結果を見た後のsubset救済は行わない。次の局在実験には、新しいbank、
   新しいfreeze、今回の結果を見ずに選んだendpointが必要になる。
 
-今後の執筆は[T16論文ストーリー](PAPER_STORY_T16_V0.ja.md)を背骨にする。Critical pathは、
-追加のoutcome-drivenな炉探索ではない。論文claimの固定、commit済みcompact analysisからの
-figure生成、archive checksum、先入観のないclaim-boundary reviewである。
+今後の執筆は[T16論文ストーリー](PAPER_STORY_T16_V0.ja.md)を背骨にする。
+T16-UTF-X1は、本文に短いorder対照を置ける場合を除き、補遺またはrepository evidenceへ
+回す。Critical pathは、追加のoutcome-drivenな炉探索ではない。論文claimの固定、
+commit済みcompact analysisからのfigure生成、archive checksum、先入観のない
+claim-boundary reviewである。
 
 ### Milestone 4 — 再現と適用境界の把握
 

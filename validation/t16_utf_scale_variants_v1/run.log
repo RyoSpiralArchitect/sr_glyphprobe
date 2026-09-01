@@ -1,0 +1,215 @@
+RUN_START:2026-09-01T01:54:24Z
+ROLE_START:qwen25_0p5b_base_bf16:2026-09-01T01:54:24Z
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 18681.43it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "1cc0d70a61f878bd0ddfd84801d70de021d4d1200907c0d9c21c887e78db1433",
+    "order_ascii_space": "b6d58fa4d420fa023825986f6c9e20f49a7e438dd2e7bdd3333db0e3d861ae5b",
+    "order_comma_space": "15e8cc23d8597da73588c4a9df0c66e5e7659fec3d12f053927844382bf285a5",
+    "order_newline": "679a9e770b177223f65370644e3ccd0b2eec17dd1e57724a631ac1a7d7871637",
+    "order_none": "951d6a2d61d23ee1909c4152d4d6d89d6fb0ea238cb161b16102b0d473d9f760",
+    "position_ascii_pipe": "1c78640be1efc9450371e05e738da34c9f16dd4a220246576d0b71dabaa977cb",
+    "position_ascii_space": "61f79701b8aefb3fc0c43df22b720f80a81b3f2ad3bb24b7ca0b3e554291bded",
+    "position_comma_space": "c44d244d9fbe9516cb5bb373698ecabd1805f2b91b0852a5affeb1a27cc6a8f7",
+    "position_newline": "33aea23896c432fdef960d8fddd4f567a9845f84b9141ee42bb286690f8c5305",
+    "position_none": "75bff01e865416df8f9b5a3afcb4f06b91d575b53af02e98db8c7e0fb6f96ac5",
+    "scale": "27b72b19636a0b73e7a85076b93c1156229b4cb0d3d33904e74415b8ab710c92"
+  },
+  "chunks": 11,
+  "model_role": "qwen25_0p5b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:qwen25_0p5b_base_bf16:0:2026-09-01T01:57:08Z
+ROLE_START:olmo2_1b_base_bf16:2026-09-01T01:57:08Z
+Loading weights:   0%|          | 0/179 [00:00<?, ?it/s]Loading weights:  40%|███▉      | 71/179 [00:00<00:00, 702.59it/s]Loading weights: 100%|██████████| 179/179 [00:00<00:00, 1020.07it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "d32fe29a99fa08c6e33591de4960950d67a8749e62c130462f0f485c3c5efc03",
+    "order_ascii_space": "63d9cc4e18e09ce881c3714e499ed43e41be42d8210127701fad65418880e77c",
+    "order_comma_space": "b0ab69eaeae60f2d81eb8e8a2ccbe86a33e3f0f606cf790a6fc7468ce1768005",
+    "order_newline": "3310d2235139e4485f0ddf38da8c7901832ebc3379f3aec225bd305cb97877ec",
+    "order_none": "94189dd6057a0d19c39673a49ad2ffcfcaeb1ccade08adc38ee0906a680db9e9",
+    "position_ascii_pipe": "c93d7430b7a01e64603b7601451c540d643bbece0f84da8a28fae0fb584a1f53",
+    "position_ascii_space": "2f51bd320ef89213878186a23b41d3ec3c5a667d4c20f4a405a6801e1b809d35",
+    "position_comma_space": "09f3e6c1bb5228a1036baa4405b6a2677c62e73a7024d93c03411a983f5db9f7",
+    "position_newline": "6d4e5a7c0a8724c2fa30291822106489b275ec3ed50593aa1e05a558743f3c44",
+    "position_none": "d26c5681ccde9c2a8dbf0c7fa32b2de67cc093079ca2479f259b5bb6b62b310b",
+    "scale": "9510eba0b50b4a0740d30f436cba997a2ca45149c5d566dc423d31b8364d6c06"
+  },
+  "chunks": 11,
+  "model_role": "olmo2_1b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:olmo2_1b_base_bf16:0:2026-09-01T02:05:21Z
+ROLE_START:qwen25_1p5b_base_bf16:2026-09-01T02:05:21Z
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 15902.31it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "2e66575a9fb08ac635046b50293f275d9046e0d76a97ee7b1f3b579a964cf618",
+    "order_ascii_space": "2d16861878dfb3b7446a122da00d36413d9f007bd46b066ef101ef4204df05ba",
+    "order_comma_space": "6d2126a90b85b0b579777ea2c128bf80b41fe04413fcc6b83130cad20e99c482",
+    "order_newline": "b30ee68e5fd1fb9c8dd4c70b657197d6b9fb85211bd2ec9528726261689549b0",
+    "order_none": "1cb3ba3e5a0d9344ebd8d40810807954bf1c6c356e6fc9cb9e349bfac8eb9225",
+    "position_ascii_pipe": "433d9b2c902507f1aaf0ff24c4231b403f29032b4c9a85b00cd9e36fac30fb61",
+    "position_ascii_space": "5ccd8ce76a4e2b1db5b4b665e10efc85791cf339538f30f91209966e7dca3d46",
+    "position_comma_space": "d61283b40265a5d874ea447c8d6210e65789755c12e9866a15171f18ee630509",
+    "position_newline": "114afcad7df070a567d91cbbad438c384861a75aa4032994f52237169750f796",
+    "position_none": "91058a4c9661faa92ff4c42dd9b3b70dae4c603d0d98f52a29ab9e755f36d8b1",
+    "scale": "c9c90604607bf43d0c5c47618a526b937d90553a7e947dd62b3c983dc7e716b7"
+  },
+  "chunks": 11,
+  "model_role": "qwen25_1p5b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:qwen25_1p5b_base_bf16:0:2026-09-01T02:12:04Z
+ROLE_START:smollm2_1p7b_base_bf16:2026-09-01T02:12:04Z
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 14166.21it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "a33344cac44c80b26c7082721487f07c194dcff67cf65bb18e4717940ba24216",
+    "order_ascii_space": "415777a0655531f531d0b6cab23db036248d0a3c3068123c8c8a703144f5de0c",
+    "order_comma_space": "9418136054784cf436d842c8da38cbdf23deb6ee444c73c96b0b04a0639ac522",
+    "order_newline": "88eebc848d2c4fc0a62f9e576e1f327ac50713ba683419869a9f8095f0edfabc",
+    "order_none": "023e45df8fe94eccf3058940e34c2dd118e48b98106906667c77b6895e4da895",
+    "position_ascii_pipe": "ee674a9c02dd341b854873dc2e0bb99837a6278e085f8f9355595fc8433c7a25",
+    "position_ascii_space": "cc53b149ec3ef16340ca8e7d8fe1e5ab36a9fbefc27c96850902d87b0309de0e",
+    "position_comma_space": "8633286c73d76b83f7c0630d407f99b4d054ee627360526847a3980bbf6f1ac3",
+    "position_newline": "d68c112870f6a3e4d9db3c23f95e5368009751e87b312ee3b74ea454c7b220fc",
+    "position_none": "e8da48b04428079b3f2b5e66fc0277bd39601cd80241fe809c5b34b7767efd9f",
+    "scale": "bc5218874ae9f7f26795f1a5cbed605a24601c0175264f9e9272b3521ab092ae"
+  },
+  "chunks": 11,
+  "model_role": "smollm2_1p7b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:smollm2_1p7b_base_bf16:0:2026-09-01T02:22:50Z
+ROLE_START:gemma2_2b_it_bf16:2026-09-01T02:22:50Z
+Loading weights:   0%|          | 0/288 [00:00<?, ?it/s]Loading weights: 100%|██████████| 288/288 [00:00<00:00, 15272.84it/s]
+[W901 02:23:05.653790363 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 884998144 bytes (free: 208994304, total: 33668268032).
+[W901 02:23:06.888955741 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1656750080 bytes (free: 552927232, total: 33668268032).
+[W901 02:23:07.062077635 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2044723200 bytes (free: 366280704, total: 33668268032).
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "a899b019e15f76d3f4cd91845c9bf332cc978991cb581b454586830d8833734b",
+    "order_ascii_space": "896b160bf38ef925de289a4e3dd59d5f700c7c8de37cb107ba9aa79ced339c18",
+    "order_comma_space": "d5c15608179f66d38c90ad49f92f33e70d99e852dbb58e91084cadb3d3480609",
+    "order_newline": "98e9d7927c9f5d36c537854d56227776bd534097753f735c1765ab56f0629a55",
+    "order_none": "82dbad47e891093a520cca033f46fbddc0a2606c67551643c0d023404a2c0d5b",
+    "position_ascii_pipe": "0414a2ec9074be032f6b5a0b596a7f7c964b043f1736a0aa493daae6f68ac58b",
+    "position_ascii_space": "9e06c0fc7d405e49b139c7b492537d86e764c91f75829c3725e22649bcdd14f9",
+    "position_comma_space": "9f0078c25d11b04b3394741de4578782e1bad34c87ff8e1b6902ceaab23ba409",
+    "position_newline": "8156f2829663f8b71ad36945a77c6089c094cc3ab2dda48689cfe9b666ef277c",
+    "position_none": "2300d622372051c4f84a069ffb97fc5f51c9ea4e94dda3d87e91ad8d132dac76",
+    "scale": "ca3d938e539cde40a1eb61bfbe0502667f47821a5a752789a9b823b0d44a79d8"
+  },
+  "chunks": 11,
+  "model_role": "gemma2_2b_it_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:gemma2_2b_it_bf16:0:2026-09-01T02:31:10Z
+ROLE_START:llama32_3b_base_bf16:2026-09-01T02:31:10Z
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights: 100%|██████████| 254/254 [00:00<00:00, 19544.90it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "e793db88357b53a5c87a94b94f366793a1f6cfb88a4b469f8904ebe17f44b93c",
+    "order_ascii_space": "f697798da8c26101af48628f5f7fd4c840853962c1ee2854a2784582032a2921",
+    "order_comma_space": "e259057fb12a2cab7f45f5ed73aee01cc0594d55a7462c1f000f5e0c7dc8314c",
+    "order_newline": "0b5c4f940eb2b8244c39c9fe437555db34e9cb899db1c8a38340fcb138c07c36",
+    "order_none": "986cad98b23a90b8913858a3bfd7c8b8acff744d28264cca65b886846fec444a",
+    "position_ascii_pipe": "3b2da64b84f7796776b4419d984a962a0370fa42b32bc34d23e03232d1d93ba7",
+    "position_ascii_space": "9071ac1edf60329bab17e52a83f62a883c29e1c6d3261ddc3e2a2c826041f508",
+    "position_comma_space": "b9cd215cb371bb13ee6def22b417d8d5b493bd9578b891a1fd650d8a32819a05",
+    "position_newline": "b1e377da28cfed245a87e6000c070b7fd714d2d164914d9e0a92ae5e01bcdd2a",
+    "position_none": "ff0442b126177c7e7224433c7874054776ca75e590bb6da2a9d59fbc1d99b888",
+    "scale": "c7f6b0551602a62175738d599698753843347018f5826c90e30733cdc637630c"
+  },
+  "chunks": 11,
+  "model_role": "llama32_3b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:llama32_3b_base_bf16:0:2026-09-01T02:48:45Z
+ROLE_START:qwen25_3b_base_bf16:2026-09-01T02:48:45Z
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]Loading weights: 100%|██████████| 434/434 [00:00<00:00, 16841.48it/s]
+[W901 02:49:59.005051202 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1245708288 bytes (free: 34930688, total: 33668268032).
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "eb42b40aeeb713002a71658c246621d2ed5e4110cbe3441f3b4a6a76a66606c5",
+    "order_ascii_space": "66a0b036c8e98f294ede198ee3b570edde0f1f2a9d95ef7bf0558f7ef36f2f98",
+    "order_comma_space": "0e753eb5fef71305d5786dc1d9e567f51871276bcf4a021ed54b36e92ddf6905",
+    "order_newline": "11ad74fd151e218bff9f703b2e2e4d1684cda436c1703e3f7605f9c22512beb3",
+    "order_none": "7df8c4e80763cf7fb6f7e5da71886221654a043fdcd60eb3de36071ff853b104",
+    "position_ascii_pipe": "bd9777700459368c6d7787a0fdc374e46fed72511884e38d3ed9c6ae13122964",
+    "position_ascii_space": "f7ead7ed6b8ec1eec24555105ac1b722f51b85759b461c3126372a4e5cd8d30f",
+    "position_comma_space": "aee091d02a6aaea331ce695795529e34723f1186dd2690ba3ed48aa0a02ad55b",
+    "position_newline": "fd32054d2ddfaaa3362b98386d9876a2355c5ea605ba1046ab594d7f61e9fb00",
+    "position_none": "68f4e0981cb353c3bee76621019af881c65c7663f62c29c947aee6a128d74734",
+    "scale": "bc2a68b66ad3f58d71ebe756f5f6cb4a9f99d75437d1bf9b3ab0f7ee62fc83cf"
+  },
+  "chunks": 11,
+  "model_role": "qwen25_3b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:qwen25_3b_base_bf16:0:2026-09-01T03:01:06Z
+ROLE_START:qwen25_7b_base_bf16:2026-09-01T03:01:06Z
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 16723.15it/s]
+[W901 03:01:43.776650381 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 662700032 bytes (free: 91553792, total: 33668268032).
+[W901 03:02:04.320420521 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1233125376 bytes (free: 81068032, total: 33668268032).
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "6a99a730d934d56bef33d2ab12976e0137c4fb34248fae8256bab3b1992b59b9",
+    "order_ascii_space": "b3edecdee6175a6856ceed8d284de1a8f6d36a08bcfeec923265b8dc0d8351d6",
+    "order_comma_space": "81c223068b67799c0f70970d0297852dae60a2533ed27d405c9bce099df04eca",
+    "order_newline": "24280514a5424e4c072740c521c19effe1998e885f4543c668a573205445563a",
+    "order_none": "32e79b2e1ac4cfb600bf4cbfd98f5589adda0950e8a1f9ab40805b8bb3bc0a94",
+    "position_ascii_pipe": "e18c37e185c1040b7aec9d3cbf01b6e511791322edbadb94d101ebdd27f6684a",
+    "position_ascii_space": "e53cf6076cbb224ddc394055d956394f1e99385c4f315db26d613f11a3b19327",
+    "position_comma_space": "c358b99fce4d2d512872ea35b93f8a1cdfdf2bf99f01326fa0ee8812d5dcb510",
+    "position_newline": "861d3d814b9a92cbbd7e3d2a23920f86601071533f16b7515cab39299d6c66c1",
+    "position_none": "89fd77d65559247ab71eda29d9f77c6e28e74a22b57fb565d7a335bacd980146",
+    "scale": "b2882419b06fb86a41cd1c5721476b2f6c9fba4587019601c7caa0b9fd177830"
+  },
+  "chunks": 11,
+  "model_role": "qwen25_7b_base_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:qwen25_7b_base_bf16:0:2026-09-01T03:27:21Z
+ROLE_START:mistral7b_instruct_v03_bf16:2026-09-01T03:27:21Z
+Loading weights:   0%|          | 0/291 [00:00<?, ?it/s]Loading weights: 100%|██████████| 291/291 [00:00<00:00, 19735.51it/s]
+{
+  "chunk_receipts": {
+    "order_ascii_pipe": "7643dfbeb9b3b032cb1913c2c9c645bfff42a38826c7820ecf1b08bca2fd3501",
+    "order_ascii_space": "04498bc28117ce575e64986d5b8364c89c8929bc29412b2aa70a636bd86407b7",
+    "order_comma_space": "d23c0330d1b8f88af780a959a23bf50fef9ad90fa5649e39af8dfade6c97ce06",
+    "order_newline": "9df228aa6caaaba2b237a73b56f2ace571bc5885fee9bc6da1c9ff1bc0caad73",
+    "order_none": "1fc1406f72294350aeaca43ee7400fe062b2a428d33f3a122a476b92e6604919",
+    "position_ascii_pipe": "4a6dc7d2ebd228a134fcba574003cf46845ffb5daa2d9178f8d9d166a60d2044",
+    "position_ascii_space": "d54e8d56155e467fb93f26168b9ccd2cdecc3c234df2f8bec2a732af2e0aeddb",
+    "position_comma_space": "206218c93851d21f0a0bb81631327228a5a505b3bde885ef201f29038431d377",
+    "position_newline": "94fb0d4eeb499e6ca1e276fd71f1bb73834f2e9cd2d8503ac9c78bf0248eff30",
+    "position_none": "57df581438de313a2fbcc44ddd8ac36665a286391c0c1bc64138bfad26fc62bf",
+    "scale": "2e4e5e517932420f09333e7701ab5e77962f936dcd87f8fc4bd0cd61166004f2"
+  },
+  "chunks": 11,
+  "model_role": "mistral7b_instruct_v03_bf16",
+  "records": 57312,
+  "status": "all_chunks_complete",
+  "unique_prompts_across_chunk_namespaces": 57120
+}
+ROLE_EXIT:mistral7b_instruct_v03_bf16:0:2026-09-01T04:08:23Z
+ALL_COMPLETE:2026-09-01T04:08:23Z
