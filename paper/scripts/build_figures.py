@@ -31,6 +31,24 @@ CAUSAL_SOURCE = (
     / "results"
     / "causal_site_results.json"
 )
+T20_SOURCE = (
+    ROOT
+    / "validation"
+    / "t20_lexical_alias_optimized_subspace_causal_v0"
+    / "results"
+    / "causal_site_results.json"
+)
+T20_SITE_ORDER = [
+    (21, "resid_out"),
+    (24, "resid_out"),
+    (27, "resid_out"),
+    (21, "attn_out"),
+    (21, "mlp_out"),
+    (24, "attn_out"),
+    (24, "mlp_out"),
+    (27, "attn_out"),
+    (27, "mlp_out"),
+]
 
 MODEL_ORDER = [
     "qwen25_0p5b_base_bf16",
@@ -164,6 +182,94 @@ def validate_causal(payload: dict[str, Any]) -> list[dict[str, Any]]:
     return sites
 
 
+def validate_t20(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    if payload.get("protocol_id") != "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0":
+        raise ValueError("Unexpected T20-C protocol id")
+    sites = payload.get("sites")
+    if not isinstance(sites, list) or len(sites) != 9:
+        raise ValueError("Expected exactly nine T20-C sites")
+    observed = [(row["block_index"], row["site"]) for row in sites]
+    if observed != T20_SITE_ORDER:
+        raise ValueError("T20-C site order differs from the frozen roster")
+    if any(not row["engineering"]["pass"] for row in sites):
+        raise ValueError("A T20-C engineering gate is not exact")
+    return sites
+
+
+def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
+    fig, axes = plt.subplots(1, 2, figsize=(7.15, 4.0), sharey=True, sharex=True)
+    site_word = {"resid_out": "resid", "attn_out": "attn", "mlp_out": "MLP"}
+    labels = [
+        f"B{row['block_index']} {site_word[row['site']]}"
+        + (" *" if row["primary_site"] else "")
+        for row in sites
+    ]
+    y = list(range(len(sites)))
+    attainable = float(
+        sites[0]["baseline_glyph"]["alias_top1"]
+        - sites[0]["baseline_codepoint"]["alias_top1"]
+    )
+    panels = [
+        ("necessity", "necessity_ceiling", "Keyword necessity (adjusted)", "o"),
+        ("sufficiency", "sufficiency_ceiling", "Keyword sufficiency (adjusted)", "s"),
+    ]
+    for ax, (prefix, ceiling_key, title, marker) in zip(axes, panels):
+        for pos, row in zip(y, sites):
+            if row["primary_site"]:
+                ax.axhspan(pos - 0.43, pos + 0.43, color=PALE_BLUE, zorder=0)
+            effect = row[f"{prefix}_adjusted_effect"]
+            interval = row[f"{prefix}_interval"]
+            color = DARK if row["primary_site"] else GRAY
+            ax.errorbar(
+                [effect],
+                [pos],
+                xerr=[
+                    [effect - interval["lower_95"]],
+                    [interval["upper_95"] - effect],
+                ],
+                fmt=marker,
+                color=color,
+                ecolor=color,
+                markerfacecolor=ORANGE if prefix == "sufficiency" else BLUE,
+                markeredgecolor=color,
+                markeredgewidth=1.0,
+                markersize=5.0,
+                elinewidth=1.1,
+                capsize=2,
+                zorder=3,
+            )
+            ax.scatter(
+                [row[ceiling_key]],
+                [pos],
+                marker=">",
+                s=42,
+                facecolor="white",
+                edgecolor=ORANGE if prefix == "sufficiency" else BLUE,
+                linewidth=1.3,
+                zorder=4,
+            )
+        ax.axvline(0.0, color=DARK, linewidth=0.8)
+        ax.axvline(0.02, color=GRAY, linewidth=0.9, linestyle="--")
+        ax.axvline(0.06, color=GRAY, linewidth=0.9, linestyle=":")
+        ax.axvline(attainable, color=ORANGE, linewidth=0.9, linestyle="-.", alpha=0.7)
+        ax.set_title(title)
+        ax.set_xlabel("Keyword top-1 effect")
+        ax.grid(axis="x", color="#E7EAED", linewidth=0.6)
+        ax.set_xlim(-0.014, 0.068)
+    axes[0].set_yticks(y, labels)
+    axes[0].invert_yaxis()
+    axes[1].text(0.0605, 8.35, "0.06 min.", color=GRAY, fontsize=6.5, rotation=90, va="bottom")
+    axes[1].text(attainable + 0.001, 8.35, "attainable", color=ORANGE, fontsize=6.5, rotation=90, va="bottom")
+    handles = [
+        plt.Line2D([], [], marker="o", color=DARK, markerfacecolor=BLUE, linestyle="none", label="Optimized rank-8 (adjusted)"),
+        plt.Line2D([], [], marker=">", color=ORANGE, markerfacecolor="white", linestyle="none", label="Full-interchange ceiling"),
+    ]
+    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), frameon=False, ncol=2)
+    fig.suptitle("Registered T20-C effects and ceilings (384 fresh emoji, 4 contexts)", y=0.995)
+    fig.tight_layout(rect=(0, 0.06, 1, 0.96))
+    return save_figure(fig, "t20_causal_ceilings")
+
+
 def build_design() -> list[Path]:
     fig, ax = plt.subplots(figsize=(7.15, 2.9))
     ax.set_xlim(0, 12)
@@ -280,8 +386,8 @@ def build_lineage() -> list[Path]:
         ),
         (
             9.75,
-            "Two-arm study",
-            "T19-L lexical test\nT19-C conditional\ncausal test",
+            "Gated causal chain",
+            "T19-L lexical test\nT19-C conditional test\nT20-C calibrated\nfollow-up",
             ORANGE,
         ),
     ]
@@ -528,8 +634,10 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     model_payload = load_json(MODEL_SOURCE)
     causal_payload = load_json(CAUSAL_SOURCE)
+    t20_payload = load_json(T20_SOURCE)
     models = validate_models(model_payload)
     sites = validate_causal(causal_payload)
+    t20_sites = validate_t20(t20_payload)
 
     outputs: list[Path] = []
     outputs.extend(build_design())
@@ -537,6 +645,7 @@ def main() -> None:
     outputs.extend(build_model_effects(models))
     outputs.extend(build_emoji_symbol_boundary(models))
     outputs.extend(build_causal_sites(sites))
+    outputs.extend(build_t20_ceilings(t20_sites))
 
     manifest = {
         "schema_version": 1,
@@ -550,6 +659,10 @@ def main() -> None:
             {
                 "path": CAUSAL_SOURCE.relative_to(ROOT).as_posix(),
                 "sha256": sha256(CAUSAL_SOURCE),
+            },
+            {
+                "path": T20_SOURCE.relative_to(ROOT).as_posix(),
+                "sha256": sha256(T20_SOURCE),
             },
         ],
         "outputs": [

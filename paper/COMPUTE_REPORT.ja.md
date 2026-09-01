@@ -2,8 +2,9 @@
 
 [English](COMPUTE_REPORT.md)
 
-状態: **T19のcompactな計数は完了したが、acquisition時間・memoryの計数は未完了**。
-modelのtraining/fine-tuningは行っていない。
+状態: **T19/T20のcompactな計数は完了。T19のacquisition時間・memoryの計数は未完了**。
+model weightのtraining/fine-tuningは行っていない。T20-Cはサイトごとに
+3072×8の部分空間パラメータのみを訓練した。
 
 ## 凍結した実行環境
 
@@ -32,6 +33,9 @@ identifierは実行backendを示さず、凍結safetensorsはTransformers/CUDA�
 | T19-L analysis | model forward 0、intervention 0 | 登録componentごとにrandomization 19,999 draw、item bootstrap 20,000 replicate | compact analysis elapsed timeは6.7235秒。acquisition時間ではない。 |
 | T19-C source構築 | model forward 256回 | 6 siteでrank-8 QR/SVD構築 | source/evaluation bankは非重複で、source作業時点ではevaluation intervention未実施。 |
 | T19-C evaluation | model forward 2,880回、intervention row 8,064件 | 12 component testの各々でsign flip 99,999回、item bootstrap 20,000 replicate | 独立validatorが6 engineering gateと12統計再構成を全てpassした。 |
+| T19-C post-hoc天井（記述的） | model forward 2,304回、intervention row 2,304件 | なし | 登録済み判定の後に計算。post-hoc明記。記録済みoutcomeを変更できない。 |
+| T20-C training | capture forward 384回、batched training pass 33,048回（勾配はrank-8部分空間パラメータのみに到達）、記録stage時間14.7分 | source保留32項目でのvalidation scoring | source bankのforwardのみ。admission時のevaluation forward 0を再検証済み。 |
+| T20-C evaluation | model forward 32,256回、intervention row 124,416件、記録stage時間7.3分 | 18 component testの各々でsign flip 99,999回、item bootstrap 20,000 replicate | 9 engineering gate全てが厳密ゼロ。独立validatorが全値と両registered verdictを再導出した。 |
 
 forward数は凍結batch-size-one protocol下のcall数であり、FLOPsではない。因果の
 intervention rowは追加training exampleではない。generation callは0件である。

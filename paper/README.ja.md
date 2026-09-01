@@ -25,7 +25,7 @@ contractを記録するもので、第二の論文ではない。
 - `ASSET_LICENSES.*`、`COMPUTE_REPORT.*`、`ETHICS_REVIEW.*`: 日英対の
   submission audit。
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compile済みreview PDF。
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip`: standaloneな
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip`: standaloneな
   匿名compact artifact。隣にreceiptとSHA-256を置く。
 
 公式formatting archiveは
@@ -52,7 +52,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
 ```
 
 TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCodexの

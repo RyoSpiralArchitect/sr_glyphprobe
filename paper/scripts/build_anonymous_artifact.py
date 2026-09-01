@@ -12,7 +12,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v0"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v1"
 ARCHIVE_ROOT = ARTIFACT_ID
 OUTPUT_DIRECTORY = ROOT / "output" / "artifacts"
 OUTPUT_ZIP = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.zip"
@@ -92,6 +92,33 @@ DIRECT_FILES = (
     "tests/test_t19_lexical_alias_component_causal_v0.py",
     "tests/test_validate_t19_lexical_alias_unicode_control_v0_result.py",
     "tests/test_validate_t19_lexical_alias_component_causal_v0_result.py",
+    "paper/figures/t20_causal_ceilings.pdf",
+    "paper/figures/t20_causal_ceilings.png",
+    "docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md",
+    "docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.ja.md",
+    "configs/t20_lexical_alias_optimized_subspace_causal_v0.yaml",
+    "data/manifests/t20_lexical_alias_optimized_subspace_causal_v0.json",
+    "data/manifests/t20_lexical_alias_optimized_subspace_causal_v0_freeze.json",
+    "data/manifests/t20_lexical_alias_optimized_subspace_causal_v0_go.json",
+    "scripts/t20_lexical_alias_optimized_subspace_causal_v0.py",
+    "scripts/validate_t20_lexical_alias_optimized_subspace_causal_v0_result.py",
+    "scripts/t19_lexical_alias_component_causal_posthoc_ceiling_v0.py",
+    "tests/test_t20_lexical_alias_optimized_subspace_causal_v0.py",
+    "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/posthoc_ceiling_result.json",
+    "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/posthoc_receipt.json",
+    "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/SHA256SUMS",
+)
+
+T20_C_VALIDATION_FILES = (
+    "design_preflight.json",
+    "tokenizer_preflight.json",
+    "results/SHA256SUMS",
+    "results/analysis_receipt.json",
+    "results/causal_primary_result.json",
+    "results/causal_site_results.json",
+    "results/independent_validation.json",
+    "results/training_receipt.json",
+    "results/evaluation_receipt.json",
 )
 
 T19_L_VALIDATION_FILES = (
@@ -188,6 +215,9 @@ def build_payloads() -> dict[str, bytes]:
         add_file(payloads, f"{prefix}/{name}")
     for name in T19_C_VALIDATION_FILES:
         prefix = "validation/t19_lexical_alias_component_causal_v0"
+        add_file(payloads, f"{prefix}/{name}")
+    for name in T20_C_VALIDATION_FILES:
+        prefix = "validation/t20_lexical_alias_optimized_subspace_causal_v0"
         add_file(payloads, f"{prefix}/{name}")
     for name in T9_PUBLIC_FILES:
         prefix = "artifacts/mistral7b_semantic_atlas_reserve_confirmation_v0"

@@ -1,0 +1,15 @@
+{
+  "bootstrap_replicates_per_component": 20000,
+  "evaluation_receipt_sha256": "c503e5d8c0d157a1a1a5416e0e260385fe1bfdc2b261ab369cce362d3b4fa440",
+  "outputs": {
+    "causal_primary_result.json": "89f25a7e671e27ad5a5fda7ab574fe75829afd666e9f1ffd163fd7923fed83eb",
+    "causal_site_results.json": "3984e9615365f26cc63f5a5bfb398e448a575fb22f3297f6ae4191e3a4c923c5"
+  },
+  "positive_sites": [],
+  "primary_positive": false,
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "sign_flip_draws_per_component": 99999,
+  "sites": 9,
+  "status": "t20_analysis_complete"
+}

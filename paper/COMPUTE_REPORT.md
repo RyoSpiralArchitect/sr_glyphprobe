@@ -2,8 +2,9 @@
 
 [日本語](COMPUTE_REPORT.ja.md)
 
-Status: **compact T19 accounting complete; acquisition duration and memory
-accounting incomplete**. No model was trained or fine-tuned.
+Status: **compact T19/T20 accounting complete; T19 acquisition duration and
+memory accounting incomplete**. No model weights were trained or fine-tuned;
+T20-C trained only 3072-by-8 subspace parameters per site.
 
 ## Frozen execution environment
 
@@ -34,6 +35,9 @@ were loaded through Transformers/CUDA.
 | T19-L analysis | 0 model forwards; 0 interventions | 19,999 randomization draws and 20,000 item-bootstrap replicates per registered component | Compact analysis elapsed time: 6.7235 s. This is analysis time only, not acquisition time. |
 | T19-C source construction | 256 model forward calls | rank-8 QR/SVD construction at six sites | Source and evaluation banks were disjoint; source work preceded no evaluation intervention. |
 | T19-C evaluation | 2,880 model forward calls; 8,064 intervention rows | 99,999 sign flips and 20,000 item-bootstrap replicates for each of 12 component tests | All six engineering gates and all 12 statistical reconstructions passed the independent validator. |
+| T19-C post-hoc ceiling (descriptive) | 2,304 model forward calls; 2,304 intervention rows | none | Computed after the registered decision; labeled post-hoc; cannot change the recorded outcome. |
+| T20-C training | 384 capture forward calls; 33,048 batched training passes (gradients reach only the rank-8 subspace parameters); recorded stage duration 14.7 min | validation scoring on 32 held-out source items | Source-bank forwards only; zero evaluation forwards at admission re-verified. |
+| T20-C evaluation | 32,256 model forward calls; 124,416 intervention rows; recorded stage duration 7.3 min | 99,999 sign flips and 20,000 item-bootstrap replicates for each of 18 component tests | All nine engineering gates exact; the independent validator re-derived every value and both registered verdicts. |
 
 The forward counts describe calls under the frozen batch-size-one protocol,
 not FLOPs. The causal intervention rows are not additional training examples.

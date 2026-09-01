@@ -9,6 +9,10 @@
     {
       "path": "validation/t19_lexical_alias_component_causal_v0/results/causal_site_results.json",
       "sha256": "4bd32bc1c6f6d3cfaedc7b92123ee2d75c3bc006fdb9c46502bacd4a298416af"
+    },
+    {
+      "path": "validation/t20_lexical_alias_optimized_subspace_causal_v0/results/causal_site_results.json",
+      "sha256": "3984e9615365f26cc63f5a5bfb398e448a575fb22f3297f6ae4191e3a4c923c5"
     }
   ],
   "outputs": [
@@ -38,11 +42,11 @@
     },
     {
       "path": "paper/figures/t19_lineage.pdf",
-      "sha256": "1ac8a3ec45decb75ca07308e9e760bd193da08effb6044c6d11059c815ec25d0"
+      "sha256": "970f0e97f684b30c585252cbefd607514a61dd524984f8c663818032cbbd94a5"
     },
     {
       "path": "paper/figures/t19_lineage.png",
-      "sha256": "970b3e0aa426d09fb36dab5039f5a0d77aeda5ade08354a6f03dd5da8a944d16"
+      "sha256": "d88f78a91832b97ff41a8cb3ace0a33b51df4e9364c8bca4b9ef6d861200d021"
     },
     {
       "path": "paper/figures/t19_model_effects.pdf",
@@ -51,6 +55,14 @@
     {
       "path": "paper/figures/t19_model_effects.png",
       "sha256": "7f700d76317e5ae5616fb09acb007b321e7882e2bfe1fae53310872954761447"
+    },
+    {
+      "path": "paper/figures/t20_causal_ceilings.pdf",
+      "sha256": "2d2dc54a8d88463a994e280b1a050ac38e4f9adb84fccb8ef9e9707c157649b3"
+    },
+    {
+      "path": "paper/figures/t20_causal_ceilings.png",
+      "sha256": "92bf7ab5d470543648b24f43c59729cfe3398fe6fed2830f43e70896de417891"
     }
   ],
   "schema_version": 1

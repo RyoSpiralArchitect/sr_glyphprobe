@@ -12,7 +12,7 @@ from typing import Callable
 import zipfile
 
 
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v0"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v1"
 ARCHIVE_ROOT = ARTIFACT_ID
 MANIFEST_NAME = "ARTIFACT_MANIFEST.json"
 SUMS_NAME = "SHA256SUMS"

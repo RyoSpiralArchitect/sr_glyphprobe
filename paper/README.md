@@ -28,7 +28,7 @@ second manuscript.
 - `ASSET_LICENSES.*`, `COMPUTE_REPORT.*`, and `ETHICS_REVIEW.*`: paired
   English/Japanese submission audits.
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compiled review PDF.
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip`: standalone
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip`: standalone
   anonymous compact artifact, with adjacent receipt and SHA-256.
 
 The official formatting archive was downloaded from
@@ -57,7 +57,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v0.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
 ```
 
 Tectonic runs the BibTeX pass automatically. The Codex `latex-compile` helper

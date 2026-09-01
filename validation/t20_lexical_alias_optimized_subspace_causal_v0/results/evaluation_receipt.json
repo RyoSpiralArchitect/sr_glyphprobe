@@ -1,0 +1,143 @@
+{
+  "codepoint_condition_order": [
+    "zero_hook",
+    "sufficiency_optimized",
+    "sufficiency_random",
+    "sufficiency_svd",
+    "full_interchange_glyph"
+  ],
+  "context_order": [
+    {
+      "carrier": "pipe",
+      "distance": 1
+    },
+    {
+      "carrier": "pipe",
+      "distance": 4
+    },
+    {
+      "carrier": "article_a",
+      "distance": 1
+    },
+    {
+      "carrier": "article_a",
+      "distance": 4
+    }
+  ],
+  "elapsed_seconds": 437.0508443908766,
+  "evaluation_rows": 384,
+  "fresh_eval_bank_sha256": "748fa10bbf4252f78ae501c5bfd4dc30e00ca9466e6ebb5e1279fb6b85f192f1",
+  "glyph_condition_order": [
+    "zero_hook",
+    "necessity_optimized",
+    "necessity_random",
+    "necessity_svd",
+    "restoration_optimized",
+    "full_interchange_codepoint"
+  ],
+  "go_manifest_sha256": "9d0e86aa152fc363c77c3e0c4c8d9a87dac1e7f483636026fce041366f4f5b2e",
+  "intervention_rows": 124416,
+  "model": {
+    "artifact": {
+      "file_count": 9,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "README.md": {
+          "bytes": 15974,
+          "sha256": "52aa267762f7040fd06ccb8e04fe2610781ea7453c808bd717471533c24a022a"
+        },
+        "config.json": {
+          "bytes": 921,
+          "sha256": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 5368478882,
+          "sha256": "53c5d0d0bf614dd47699da0c3381565d9c29ffd20830dd0c0c41aec063ff0844"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 1057050089,
+          "sha256": "27918a4050dd52d318aadaa0f743d6aab0043a7ebc269ffda573c024541e4ff2"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 21946,
+          "sha256": "de5995e586fc98a942b576a6752034a6d0a741d2dece5f61e697d99c8bb99b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 301,
+          "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+        },
+        "tokenizer.json": {
+          "bytes": 9085657,
+          "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 50500,
+          "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+        }
+      },
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "total_bytes": 6434705789
+    },
+    "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "model_class": "LlamaForCausalLM",
+    "model_role": "llama32_3b_base_bf16",
+    "parameter_count": 3212749824,
+    "parameter_dtype_tensor_counts": {
+      "torch.bfloat16": 254
+    },
+    "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+    "torch_version": "2.13.0+cu132",
+    "transformers_version": "5.15.0"
+  },
+  "model_forward_calls": 32256,
+  "model_role": "llama32_3b_base_bf16",
+  "outputs": {
+    "evaluation_states.npz": "56198d4a09eb55e9abcbfb6730dab967857a41f9fb97d2c470847058e75f6a70"
+  },
+  "protocol_id": "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0",
+  "schema_version": 1,
+  "site_order": [
+    {
+      "block_index": 21,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 24,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 27,
+      "site": "resid_out"
+    },
+    {
+      "block_index": 21,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 21,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 24,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 24,
+      "site": "mlp_out"
+    },
+    {
+      "block_index": 27,
+      "site": "attn_out"
+    },
+    {
+      "block_index": 27,
+      "site": "mlp_out"
+    }
+  ],
+  "status": "t20_evaluation_complete_sealed",
+  "training_receipt_sha256": "0002a47c00fd903b4f34ec16e7a02576265ceea903c525b830fe3a573eb751fc"
+}

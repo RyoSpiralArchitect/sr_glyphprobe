@@ -45,9 +45,17 @@ criterion admits a causal arm in Llama 3.2 3B: rank-8 subspaces learned from
 128 source emoji are tested at six late attention and MLP outputs on 192
 held-out emoji. Engineering controls reproduce the baseline exactly. No
 primary site satisfies the joint necessity-and-sufficiency criterion under
-this single-context, low-baseline test. The lexical relation holds in all nine
-prespecified configurations. The bounded late-component account remains
-unsupported.
+this single-context, low-baseline test. A second admitted follow-up adds
+interchange-optimized subspaces, residual-stream sites, 384 fresh emoji in
+four contexts, and full-interchange ceilings as positive controls. Its
+registered verdict is that the primary sites are uncalibratable: full
+replacement of the readout-token residual stream at blocks 21--24 transfers
+at most 76\% of the attainable sufficiency range and destroys at most 25\% of
+the necessity range, while the same swap at block 27 transfers retrieval
+exactly. The lexical relation holds in all nine prespecified configurations;
+the readout-token late-subspace account remains unsupported at every tested
+rank, and the final-state signal is instead assembled late from glyph-position
+context.
 \end{abstract}
 
 \section{Introduction}
@@ -78,7 +86,7 @@ design yields an auditable distinction between broad lexical readability and
 one simple mechanistic account; it makes no claim of visual perception or
 human-like emoji understanding.
 
-The study is organized around three safeguards and their corresponding
+The study is organized around four safeguards and their corresponding
 results:
 
 \begin{itemize}
@@ -96,12 +104,20 @@ results:
   that is jointly necessary and sufficient. A secondary block-27 MLP patch
   raises the composite endpoint through keyword gains and codepoint losses;
   its necessity criterion fails.
+  \item A second conditionally admitted experiment tests whether any rank-8
+  subspace learnable by interchange optimization carries the relation, and
+  calibrates every site with full-interchange ceilings. The registered verdict
+  is uncalibratable at both primary residual-stream sites, and the ceilings
+  localize the attainable signal: near-total at block 27, mostly absent from
+  the readout-token stream at blocks 21--24.
 \end{itemize}
 
 The observational result extends beyond exact-short-name retrieval under the
-prespecified endpoint. The causal result rejects one prespecified rank-8
-late-component mechanism. Distributed, redundant, nonlinear, and
-item-private explanations remain unresolved.
+prespecified endpoint. The two causal results do not support the prespecified
+late readout-token subspace account at any tested construction, and the
+ceiling calibration relocates the causal question to glyph-position context
+consumed by late attention. Nonlinear and position-distributed explanations
+remain unresolved.
 
 \section{Related work}
 
@@ -321,6 +337,38 @@ survive Holm correction across the two primary sites
 \citep{holm1979sequential}. No site, rank, depth, carrier, subset, or endpoint
 may be replaced after seeing the result.
 
+\subsection{Conditionally admitted optimized-subspace follow-up (T20-C)}
+\label{sec:t20}
+
+The T19-C design left its own power uncalibrated. A second experiment,
+admitted only after the T19-C analysis was validated and frozen, changes
+exactly five prespecified things. First, the tested rank-8 basis may be
+\emph{learned}: an orthogonally parametrized subspace is trained on the same
+128 source emoji by interchange optimization (InfoNCE toward the own-item
+keyword state for the patched codepoint forward, plus a hinge pushing the
+ablated glyph forward below its own keyword), with a fixed 96/32
+train/validation split, three seeds, and a pinned selection rule; the T19
+closed-form basis and the deflated random control are recomputed at every
+site as comparators. Second, the residual stream after blocks 21, 24, and 27
+joins the six component sites; the two primaries are the block-21 and
+block-24 residual sites. Third, the decision is gated on the keyword
+component alone, with a codepoint self-retrieval guard ($\geq 0.90$ under the
+learned patch), so that representational disruption cannot pass as
+sufficiency. Fourth, evaluation uses 384 fresh atomic emoji with zero prior
+T19 or T20 forwards, drawn only after re-running the frozen T19 selection
+builder reproduced the frozen selection manifest byte-identically; each item
+is read in four contexts (two carriers $\times$ distances 1 and 4), and
+per-item values are context means. Fifth, every site carries two
+full-interchange ceilings as positive controls: replacing the entire site
+state of the codepoint forward with the same item's glyph state bounds
+attainable sufficiency, and the reverse swap bounds attainable necessity. The
+registered interpretation rule states that a primary site failing the
+decision while its sufficiency ceiling is below $0.06$ is recorded as
+\emph{uncalibratable at this endpoint} rather than as evidence against the
+low-rank account; no ceiling value can flip a failed decision to positive.
+Floors, sign-flip and bootstrap procedures, Holm correction, and exact
+engineering gates are unchanged from T19-C.
+
 \subsection{Freeze, admission, and audit chain}
 \label{sec:freeze}
 
@@ -329,14 +377,17 @@ A freeze step hashes every protocol asset (configuration, item selections,
 acquisition and analysis code, preflight receipts) into a manifest that can
 only be built while two zero-forward preflight receipts exist, and an audit
 command re-hashes every asset and fails unless the freeze commit is pushed to
-the repository default branch. The causal arm opens through a separate
-admission manifest that binds the freeze-manifest hash, the observational
-analysis-receipt hash, both causal item-bank hashes, and forward counters
-required to read zero at admission time. The causal executor rehashes its own
+the repository default branch. Each causal arm opens through a separate
+admission manifest that binds the freeze-manifest hash, the parent
+analysis-receipt hash, the item-bank hashes, and forward counters
+required to read zero at admission time; T20-C additionally binds the
+validated T19-C analysis receipt. Each causal executor rehashes its own
 file at every invocation and refuses to run if it differs from the hash bound
-at admission. The evidence archive contains the freeze and admission
-manifests and the independent validation receipts, so this ordering is
-checkable from the submitted package rather than testimonial.
+at admission. The timestamped freeze and admission manifests
+(\texttt{*\_freeze.json}, \texttt{*\_go.json}), the zero-forward preflight
+receipts, and the independent validation receipts are included in the
+anonymous supplement, so this ordering is checkable from the submitted
+package rather than testimonial.
 
 \section{Results}
 \label{sec:results}
@@ -418,7 +469,10 @@ inference that only emoji acquire readable names.
 Before intervention, the final-hidden glyph endpoint on the 192-item causal
 evaluation set was $E_s=0.07292$ (keyword top-1 $0.07292$, i.e.\ 14 of 192
 items; codepoint top-1 $0$); the zero-hook engineering check reproduced this
-baseline identically at all six sites. The
+baseline identically at all six sites. This is the glyph-input baseline used
+by the necessity arm; the sufficiency arm starts from codepoint inputs, whose
+keyword top-1 is $1/192$ and whose codepoint term is self-retrieval at
+$192/192$. The
 $0.02$ decision floor was therefore 27\% of this baseline contrast, and the
 design contained no positive intervention control that calibrated attainable
 adjusted necessity at the primary sites. All six causal sites passed
@@ -455,6 +509,79 @@ remaining 12 arise from lost codepoint self-retrieval. This pattern is
 consistent with broad representational disruption and does not identify a
 necessary keyword mechanism.
 
+A post-hoc calibration, computed after the registered decision and labeled as
+such, replaced the entire component output with the same item's other-view
+output at each site. Full interchange at the primary block-24 sites moved
+keyword top-1 by $0.0000$ (attention) and $+0.0052$ (MLP): the registered
+$0.02$ floor demanded more adjusted effect than total replacement could
+produce, so the primary negative is best read as uncalibrated rather than as
+evidence about rank. At block 27, the same swap yielded keyword ceilings of
+$+0.0417$ (attention) and $+0.0365$ (MLP), while the block-27 MLP
+\emph{composite} ceiling was $+0.2448$, quantifying how much of that
+endpoint's headroom comes from destroyed self-retrieval rather than keyword
+gains. These numbers motivated the registered ceilings of the follow-up.
+
+\subsection{The optimized-subspace follow-up is uncalibratable at its
+primary sites and localizes the signal}
+\label{sec:t20-results}
+
+T20-C's registered outcome is negative with a specific registered meaning:
+both primary residual sites return the verdict \emph{uncalibratable at this
+endpoint} (site IUT values $0.624$ and $0.679$; sufficiency ceilings
+$+0.0234$ and $+0.0254$, below the registered $0.06$ informativeness
+minimum). No secondary site passes either. All engineering checks are again
+exactly zero, and an independent validator that imports only NumPy and YAML
+re-derived every reported number, both verdicts, and the admission chain.
+
+The ceilings, registered descriptive controls rather than post-hoc additions,
+carry the finding (Figure \ref{fig:t20-ceilings}; exact values in Appendix
+\ref{app:t20}). On the fresh 384-item bank the glyph baseline is keyword
+top-1 $0.0345$ against a codepoint-input baseline of $0.0013$, so the
+attainable sufficiency range is $0.0332$. Swapping the readout-token residual
+stream at block 27 transfers retrieval \emph{exactly}: the swapped codepoint
+forward reaches $0.0345$ and the swapped glyph forward falls to $0.0013$,
+reproducing the two baselines and confirming that the endpoint can detect a
+carrier when one is present. Yet the same full swap three blocks earlier
+behaves asymmetrically. Injection carries most of the attainable range
+(sufficiency ceilings $71\%$ at block 21 and $76\%$ at block 24 of $0.0332$),
+but removal costs almost nothing (necessity ceilings $4\%$ and $25\%$): a
+glyph forward whose readout-token stream is entirely replaced by the
+codepoint stream still retrieves its keyword at near-baseline rates. The six
+component-output ceilings are smaller still (sufficiency at most $14\%$ of
+the attainable range; block-24 attention $2\%$). The final-state lexical
+signal is therefore not carried through the readout-token stream at blocks
+21--24 at any rank; late computation reassembles it from the glyph-position
+context whenever that context is present.
+
+The optimized rank-8 subspaces sharpen the same conclusion. Training fits the
+source items well where the site carries signal (final InfoNCE loss $0.52$ to
+$0.65$ at the block-21 residual, own-item softmax mass near $0.6$, against a
+chance level of $4.85$) and cannot fit at all at the attention outputs (loss
+$5.0$ to $6.3$), yet held-out source validation stays at zero to one item
+across all nine sites and three seeds. On the fresh bank the learned
+subspaces transfer a real but tiny sufficiency effect (block-24 residual
+adjusted $+0.0046$, one-sided $p=0.0085$, interval $[+0.0013,+0.0078]$),
+an order of magnitude below the floor and about $18\%$ of that site's own
+ceiling; the block-21 learned patch also breaks the codepoint self-retrieval
+guard ($0.818<0.90$). A rank-8 basis can memorize item-specific directions
+but finds no shared low-rank carrier, and the ceilings show there was little
+to find at these sites.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t20_causal_ceilings.pdf}
+  \caption{Registered T20-C outcomes over 384 fresh emoji in four contexts.
+  Filled markers show random-adjusted rank-8 optimized effects with
+  descriptive 95\% item-bootstrap intervals; open triangles show the
+  full-interchange ceilings at the same sites. Shaded rows mark the two
+  primary residual sites; the dashed line is the registered $0.02$ floor and
+  the dotted line the $0.06$ ceiling-informativeness minimum. Only the
+  block-27 residual swap reaches the attainable range (horizontal reference
+  at $0.0332$); no ceiling at a primary site clears the informativeness
+  minimum, so the registered verdict is uncalibratable rather than negative.}
+  \label{fig:t20-ceilings}
+\end{figure}
+
 \section{Discussion}
 
 The two arms answer different questions. Under a fixed text-only readout,
@@ -464,18 +591,31 @@ token-count matching makes a pure length account insufficient. The symbol
 panel places the official-name effect within a broader Unicode phenomenon and
 shows graded, rather than categorically emoji-only, keyword breadth.
 
-T19-C evaluates a narrower mechanistic hypothesis: one shared rank-8 late
-attention or MLP component learned from a source set and tested on a separate
-evaluation set. None of the prespecified sites passes joint necessity and
-sufficiency. Aggregate linear readability therefore remains compatible with
-the absence of a single shared rank-8 late component. Distributed, redundant,
-nonlinear, and item-private accounts remain open.
+The causal arms then bound one mechanistic family three ways. T19-C's
+closed-form rank-8 component account fails its joint criterion, and the
+post-hoc calibration shows its primary sites offered almost no attainable
+interchange effect in the first place. T20-C makes calibration part of the
+registered design and returns uncalibratable at its primary residual sites:
+the registered informativeness minimum exceeds what even full-state
+interchange can move there. The same registered ceilings supply the positive
+content. Injection of the full readout-token stream transfers most of the
+attainable range while removal costs little, and both directions become exact
+at block 27. The final-state keyword signal is therefore redundantly sourced:
+late computation reads it from glyph-position context whenever that context
+exists, and the readout-token stream only becomes the carrier in the last
+blocks. Optimization adds that no generalizing rank-8 carrier exists even
+where injection transfers signal, although a rank-8 basis can memorize the
+training items. A future preregistered test should intervene on the
+glyph-position sources themselves, for example late attention paths from
+glyph tokens, rather than on the readout-token state.
 
-The block-27 MLP asymmetry sharpens that distinction. Its patch moved the
-composite endpoint mainly by degrading codepoint self-retrieval. Requiring
-necessity, sufficiency, random-subspace adjustment, restoration, and a disjoint
-evaluation set prevents that isolated movement from being upgraded to a
-circuit claim.
+The block-27 MLP asymmetry in T19-C sharpens the same lesson from the other
+side. Its patch moved the composite endpoint mainly by degrading codepoint
+self-retrieval, and the post-hoc composite ceiling ($+0.2448$ against a
+keyword-only ceiling of $+0.0365$) quantifies how much of that headroom was
+disruption. Requiring necessity, sufficiency, random-subspace adjustment,
+restoration, component-gated endpoints, and disjoint evaluation sets prevents
+such movement from being upgraded to a circuit claim.
 
 \section{Limitations and broader impact}
 
@@ -498,19 +638,22 @@ repository-text-fresh but not a pretraining holdout and is not exchangeable
 with the emoji panel.
 
 \paragraph{Mechanism.}
-The negative causal result covers one Llama 3.2 3B checkpoint, rank 8, one
-carrier and distance, two primary and four secondary sites, and one
-final-hidden endpoint. That endpoint has less aggregation and lower baseline
-signal than the observational primary. Its exact engineering checks verify
-hook fidelity, while the absence of a prespecified positive intervention
-control leaves power and attainable dynamic range uncalibrated. The result
-does not exclude other causal representations: optimized interchange
-subspaces \citep{geiger2024das,wu2023boundless}, sparse feature bases
-\citep{bricken2023monosemanticity,cunningham2024sparse}, distributed
-multi-site carriers, and nonlinear readouts were not evaluated.
-A future study should preregister such a positive control together with those
-alternatives on a new source/evaluation split rather than selecting a method
-on the present evaluation set.
+Both causal results cover one Llama 3.2 3B checkpoint and rank 8, and both
+intervene only at the readout-token position of single sites; multi-position
+and attention-path interventions from the glyph tokens, sparse feature bases
+\citep{bricken2023monosemanticity,cunningham2024sparse}, and nonlinear
+readouts were not evaluated. T19-C lacked a positive intervention control;
+T20-C registered full-interchange ceilings \citep[cf.\ interchange
+alignment;][]{geiger2024das,wu2023boundless} and its verdict semantics
+absorbed the resulting calibration failure at the primary sites. The
+optimized subspaces were trained on 96 items, so their zero held-out
+generalization is compatible both with item-private coding and with training
+sets too small to expose a shared carrier; distinguishing these requires
+larger source banks. The retrieval endpoint is geometric, not behavioral, and
+its total dynamic range on the fresh 384-way bank ($0.0332$) sits below the
+registered ceiling-informativeness minimum, which was set from the smaller
+T19-C bank; endpoint families whose attainable range is measured before
+floors are fixed would remove this failure mode.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
@@ -529,11 +672,17 @@ user messages are used.
 Across nine prespecified model--tokenizer configurations, raw atomic emoji
 retrieve word-disjoint CLDR keywords better than literal codepoints after
 exact four-view token-count matching. A named-symbol comparison bounds the
-specificity of that observation. A separately partitioned causal experiment
-finds no primary rank-8 late component that is jointly necessary and
-sufficient. Together, these results establish broad lexical readability under
-a text-only metric and reject the prespecified sparse late-component account.
-Visual understanding and a general emoji circuit remain outside the evidence.
+specificity of that observation. Two separately partitioned causal
+experiments then fail to support the late readout-token subspace account at
+any tested construction: the closed-form rank-8 component test fails its
+joint criterion at sites whose post-hoc ceilings are near zero, and the
+registered optimized-subspace follow-up is uncalibratable at its primary
+sites while its ceilings localize the attainable signal to the final blocks
+and to glyph-position context. Together, these results establish broad
+lexical readability under a text-only metric, bound the simple readout-token
+carrier account, and hand the causal question to glyph-position sources read
+by late attention. Visual understanding and a general emoji circuit remain
+outside the evidence.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
@@ -631,12 +780,23 @@ official short name, while adding a named non-emoji control and reserving new
 item sets for causality. This T18 composite set is distinct from the 192
 atomic emoji in the T19-C evaluation set.
 
-\paragraph{T19-L and T19-C (current confirmatory and conditional arms).}
+\paragraph{T19-L and T19-C (confirmatory and first conditional arm).}
 T19-L replaces the sole label endpoint with a word-disjoint CLDR keyword and
 adds literal-codepoint and named-symbol boundaries. T19-C tests the prespecified
-rank-8 component account on disjoint source and evaluation sets. The present
-paper reports the resulting pair of differently gated results: broad lexical
-retrieval passes, while the simple late-component mediator does not.
+rank-8 component account on disjoint source and evaluation sets. Broad
+lexical retrieval passes, while the simple late-component mediator fails its
+joint criterion.
+
+\paragraph{T20-C (second conditional arm).}
+The T19-C result, admitted and recorded without a positive control, motivated
+one further prespecified experiment rather than a redesign after the fact.
+T20-C was frozen and admitted only after the T19-C analysis was validated; it
+binds the T19-C analysis receipt in its admission manifest. Its five deltas
+(optimized subspaces, residual-stream sites, component-gated decision, a
+fresh 384-item four-context bank, and registered full-interchange ceilings)
+each answer one T19-C limitation. Its registered verdict, uncalibratable at
+both primary sites, together with the ceiling asymmetry it measured, produced
+the locality conclusion reported in Section \ref{sec:t20-results}.
 
 This lineage explains why the final design contains four text views, exact
 token-count strata, a non-emoji symbol panel, three disjoint item sets, and a
@@ -756,6 +916,80 @@ evaluation arrays, reconstructed all 12 tests and intervals, verified learned
 and random subspace relations, and reproduced six engineering passes and zero
 positive sites.
 
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
+\toprule
+Block & Site & Necessity ceiling & Sufficiency ceiling & Composite suff.\ ceiling \\
+\midrule
+21 & attention & $+0.0052$ & $0.0000$ & $0.0000$ \\
+21 & MLP       & $0.0000$  & $+0.0156$ & $+0.0156$ \\
+24 & attention & $+0.0052$ & $0.0000$ & $0.0000$ \\
+24 & MLP       & $-0.0156$ & $+0.0052$ & $+0.0156$ \\
+27 & attention & $-0.0156$ & $+0.0417$ & $+0.0417$ \\
+27 & MLP       & $-0.0208$ & $+0.0365$ & $+0.2448$ \\
+\bottomrule
+\end{tabular}
+\caption{Post-hoc full-interchange ceilings at the six T19-C sites on the
+192-item bank and single registered context (keyword top-1 unless marked
+composite). Computed after the registered decision from 2,304 additional
+forwards; labeled descriptive and unable to change the recorded outcome. Both
+primary block-24 sufficiency ceilings sit at or near zero, far below the
+registered $0.02$ floor.}
+\label{tab:posthoc}
+\end{table}
+
+\section{Exact optimized-subspace follow-up results}
+\label{app:t20}
+
+Table \ref{tab:t20} reports the registered T20-C quantities at all nine
+sites: random-adjusted effects of the optimized rank-8 subspace on the
+keyword component, the full-interchange ceilings, the codepoint
+self-retrieval guard under the learned patch, and the site IUT value. The
+glyph-input baseline on the 384-item bank is keyword top-1 $0.03451$
+(codepoint top-1 $0.00195$); the codepoint-input baseline is keyword top-1
+$0.00130$ with self-retrieval $1.0$, so the attainable sufficiency range is
+$0.03320$. The closed-form T19 construction, recomputed at the same sites as
+a registered secondary, reaches at most $+0.0117$ adjusted sufficiency
+(block-27 residual) and never exceeds the floor. All engineering RMS values
+are exactly zero. The training stage used 384 capture forwards and 33,048
+batched training passes on source items only; evaluation used 32,256 forwards
+and 124,416 intervention rows; 18 component tests used 99,999 sign flips and
+20,000 bootstrap replicates each. The independent validator re-derived every
+value in Table \ref{tab:t20}, both primary verdicts, and the freeze-admission
+chain.
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llcrrrrrrc}
+\toprule
+Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ ceiling & Suff.\ ceiling & Guard & Site IUT & Verdict \\
+\midrule
+21 & residual  & yes & $0.0000$  & $+0.0033$ & $+0.0013$ & $+0.0234$ & $0.818$ & $0.624$ & uncalibratable \\
+24 & residual  & yes & $-0.0013$ & $+0.0046$ & $+0.0085$ & $+0.0254$ & $0.971$ & $0.679$ & uncalibratable \\
+27 & residual  & no  & $-0.0013$ & $+0.0026$ & $+0.0332$ & $+0.0332$ & $0.963$ & $0.745$ & --- \\
+21 & attention & no  & $+0.0007$ & $+0.0033$ & $0.0000$  & $+0.0020$ & $0.999$ & $0.499$ & --- \\
+21 & MLP       & no  & $+0.0033$ & $+0.0033$ & $-0.0007$ & $+0.0046$ & $0.972$ & $0.065$ & --- \\
+24 & attention & no  & $0.0000$  & $+0.0013$ & $+0.0013$ & $+0.0007$ & $1.000$ & $0.687$ & --- \\
+24 & MLP       & no  & $0.0000$  & $+0.0039$ & $-0.0013$ & $+0.0026$ & $0.987$ & $0.612$ & --- \\
+27 & attention & no  & $+0.0013$ & $+0.0039$ & $+0.0007$ & $+0.0117$ & $0.990$ & $0.377$ & --- \\
+27 & MLP       & no  & $-0.0046$ & $+0.0013$ & $-0.0091$ & $+0.0143$ & $0.971$ & $0.977$ & --- \\
+\bottomrule
+\end{tabular}
+\caption{Registered T20-C results. $N^{\mathrm{opt}}_s$/$S^{\mathrm{opt}}_s$
+are random-adjusted keyword-component effects of the optimized rank-8
+subspace, averaged over four contexts on 384 fresh emoji. Ceilings replace
+the entire site state with the same item's other-view state. Guard is
+codepoint self-retrieval under the learned patch (floor $0.90$). Verdicts
+apply to primary sites under the registered rule; the block-27 residual
+ceilings equal the attainable range $0.0332$ exactly.}
+\label{tab:t20}
+\end{table}
+
 \section{Execution, licensing, and artifact boundary}
 \label{app:artifact}
 
@@ -777,12 +1011,15 @@ objects remain bound by run receipts in execution scratch. The package thus
 supports compact-summary and figure audit, not self-contained raw replay.
 
 The observational acquisition used 7,920 batch-one forwards and produced
-285,120 readout vectors. Causal acquisition used 256 source forwards, 2,880
-evaluation forwards, and 8,064 intervention rows. No training or generation
-was performed. Exact wall-clock time, peak memory, energy use, and total
-exploratory compute were not preserved in the T19 compact receipts; the
-compute checklist therefore remains negative rather than substituting older
-run timings.
+285,120 readout vectors. T19-C acquisition used 256 source forwards, 2,880
+evaluation forwards, and 8,064 intervention rows, plus 2,304 post-hoc ceiling
+forwards. T20-C used 384 capture forwards, 33,048 batched training passes
+(gradients reach only the $3072\times8$ subspace parameters; no model weight
+is trained), 32,256 evaluation forwards, and 124,416 intervention rows, with
+recorded stage durations of 14.7 and 7.3 minutes. No generation was
+performed anywhere. Exact wall-clock time and peak memory were not
+receipt-bound for the T19 stages; the compute checklist answer therefore
+remains conservative rather than substituting partial timings.
 
 Selected Unicode 17 and CLDR 48.2 rows are used under Unicode License v3 and
 travel with its copyright and permission notice. New project code is

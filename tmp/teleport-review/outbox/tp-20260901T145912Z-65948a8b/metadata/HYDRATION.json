@@ -1,0 +1,20 @@
+{
+  "adapter_id": "builtin-claude-v0.1",
+  "authority": {
+    "approvals_transferred": false,
+    "execution_granted": false,
+    "receiver_policy_required": true
+  },
+  "created_at": "2026-09-01T14:59:12Z",
+  "envelope_id": "hyd-6d7ef9730e74f1888e2ef31363d7b78b3f38db8f7f699488932e4d54931a1d74",
+  "expires_at": "2026-09-01T20:59:12Z",
+  "protocol": "spiral-teleport/hydration-envelope/v0.2-draft",
+  "psi_id": "psi-5ce1b083e434a02602959cbca309a377bdbe283d6f5c91823bda99aec17a0604",
+  "target": {
+    "harness": "claude",
+    "node": "mac2",
+    "runtime_request": {
+      "strategy": "receiver-pinned"
+    }
+  }
+}

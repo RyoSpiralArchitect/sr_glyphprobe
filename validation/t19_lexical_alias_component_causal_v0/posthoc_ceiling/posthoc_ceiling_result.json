@@ -1,0 +1,178 @@
+{
+  "parent_evaluation_receipt_sha256": "b519fd04ba307c61ec4d0b81b93b051669444f66e40d5c03b5a32463adfb0166",
+  "parent_protocol_id": "glyphprobe-t19-lexical-alias-component-causal-v0",
+  "protocol_id": "glyphprobe-t19-lexical-alias-component-causal-posthoc-ceiling-v0",
+  "registered_decision_unchanged": true,
+  "schema_version": 1,
+  "sites": [
+    {
+      "block_index": 21,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": 0.07291666666666667,
+        "alias_top1": 0.07291666666666667,
+        "codepoint_top1": 0.0
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.9947916666666666,
+        "alias_top1": 0.005208333333333333,
+        "codepoint_top1": 1.0
+      },
+      "necessity_ceiling_alias_top1": 0.005208333333333329,
+      "primary_site_in_t19c": false,
+      "site": "attn_out",
+      "sufficiency_ceiling_alias_top1": 0.0,
+      "sufficiency_ceiling_composite": 0.0,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9947916666666666,
+        "alias_top1": 0.005208333333333333,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.078125,
+        "alias_top1": 0.078125,
+        "codepoint_top1": 0.0
+      }
+    },
+    {
+      "block_index": 21,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": 0.078125,
+        "alias_top1": 0.078125,
+        "codepoint_top1": 0.0
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.9739583333333334,
+        "alias_top1": 0.026041666666666668,
+        "codepoint_top1": 1.0
+      },
+      "necessity_ceiling_alias_top1": 0.0,
+      "primary_site_in_t19c": false,
+      "site": "mlp_out",
+      "sufficiency_ceiling_alias_top1": 0.015625,
+      "sufficiency_ceiling_composite": 0.015625,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9895833333333334,
+        "alias_top1": 0.010416666666666666,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.078125,
+        "alias_top1": 0.078125,
+        "codepoint_top1": 0.0
+      }
+    },
+    {
+      "block_index": 24,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": 0.07291666666666667,
+        "alias_top1": 0.07291666666666667,
+        "codepoint_top1": 0.0
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.9895833333333334,
+        "alias_top1": 0.010416666666666666,
+        "codepoint_top1": 1.0
+      },
+      "necessity_ceiling_alias_top1": 0.005208333333333329,
+      "primary_site_in_t19c": true,
+      "site": "attn_out",
+      "sufficiency_ceiling_alias_top1": 0.0,
+      "sufficiency_ceiling_composite": 0.0,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9895833333333334,
+        "alias_top1": 0.010416666666666666,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.078125,
+        "alias_top1": 0.078125,
+        "codepoint_top1": 0.0
+      }
+    },
+    {
+      "block_index": 24,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": 0.078125,
+        "alias_top1": 0.08854166666666667,
+        "codepoint_top1": 0.010416666666666666
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.9791666666666666,
+        "alias_top1": 0.010416666666666666,
+        "codepoint_top1": 0.9895833333333334
+      },
+      "necessity_ceiling_alias_top1": -0.015625,
+      "primary_site_in_t19c": true,
+      "site": "mlp_out",
+      "sufficiency_ceiling_alias_top1": 0.005208333333333333,
+      "sufficiency_ceiling_composite": 0.015625,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9947916666666666,
+        "alias_top1": 0.005208333333333333,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.07291666666666667,
+        "alias_top1": 0.07291666666666667,
+        "codepoint_top1": 0.0
+      }
+    },
+    {
+      "block_index": 27,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": 0.08333333333333333,
+        "alias_top1": 0.08854166666666667,
+        "codepoint_top1": 0.005208333333333333
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.953125,
+        "alias_top1": 0.046875,
+        "codepoint_top1": 1.0
+      },
+      "necessity_ceiling_alias_top1": -0.015625,
+      "primary_site_in_t19c": false,
+      "site": "attn_out",
+      "sufficiency_ceiling_alias_top1": 0.041666666666666664,
+      "sufficiency_ceiling_composite": 0.04166666666666663,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9947916666666666,
+        "alias_top1": 0.005208333333333333,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.07291666666666667,
+        "alias_top1": 0.07291666666666667,
+        "codepoint_top1": 0.0
+      }
+    },
+    {
+      "block_index": 27,
+      "full_interchange_codepoint_into_glyph": {
+        "alias_minus_codepoint_top1": -0.3697916666666667,
+        "alias_top1": 0.09375,
+        "codepoint_top1": 0.4635416666666667
+      },
+      "full_interchange_glyph_into_codepoint": {
+        "alias_minus_codepoint_top1": -0.75,
+        "alias_top1": 0.041666666666666664,
+        "codepoint_top1": 0.7916666666666666
+      },
+      "necessity_ceiling_alias_top1": -0.02083333333333333,
+      "primary_site_in_t19c": false,
+      "site": "mlp_out",
+      "sufficiency_ceiling_alias_top1": 0.03645833333333333,
+      "sufficiency_ceiling_composite": 0.24479166666666663,
+      "zero_hook_codepoint": {
+        "alias_minus_codepoint_top1": -0.9947916666666666,
+        "alias_top1": 0.005208333333333333,
+        "codepoint_top1": 1.0
+      },
+      "zero_hook_glyph": {
+        "alias_minus_codepoint_top1": 0.07291666666666667,
+        "alias_top1": 0.07291666666666667,
+        "codepoint_top1": 0.0
+      }
+    }
+  ],
+  "status": "posthoc_descriptive_not_part_of_registered_decision"
+}

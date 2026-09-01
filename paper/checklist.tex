@@ -30,12 +30,12 @@
 \item {\bf Experimental setting/details}
   \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Section 3 specifies all evaluation sets, observational carriers, distances, and depths, the causal single-carrier distance-1 context, readouts, tests, interventions, and prespecified sites; no model training is performed.
+  \item[] Justification: Section 3 specifies all evaluation sets, observational carriers, distances, and depths, both causal contexts, readouts, tests, interventions, and prespecified sites, and Section 3.5 gives the T20-C subspace-training objective, split, optimizer, and seed-selection rule; no model weights are trained.
 
 \item {\bf Experiment statistical significance}
   \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Sections 3.3--3.4 define the randomization, partial-conjunction, sign-flip, Holm, and bootstrap procedures; Figures 2 and 4 label bootstrap intervals as descriptive.
+  \item[] Justification: Sections 3.3--3.5 define the randomization, partial-conjunction, sign-flip, Holm, and bootstrap procedures and the registered ceiling semantics; bootstrap intervals are labeled descriptive throughout.
 
 \item {\bf Experiments compute resources}
   \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?
