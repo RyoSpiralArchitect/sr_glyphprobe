@@ -59,6 +59,15 @@ character in standards, documentation, or training data. That observation
 alone cannot establish rendered-glyph perception, a human-like concept, or a
 localized semantic circuit.
 
+Single-codepoint emoji nevertheless make the recoverability question
+unusually clean. Under the word-disjointness constraint below, the character
+shares no substring, no morpheme, and not one ASCII-alphanumeric word with the
+keyword it must retrieve, so any observed relation must be carried by learned
+association rather than by surface form. Atomic Unicode characters thereby
+offer a controlled testbed for how text-only models attach lexical relations
+to opaque tokens, and a concrete auditing target for multilingual and
+social-media systems that consume such tokens at scale.
+
 A prospectively specified two-arm design separates two narrower questions.
 The observational arm asks whether a raw atomic emoji retrieves a
 word-disjoint CLDR keyword better than its literal \texttt{U+...} spelling
@@ -122,10 +131,17 @@ nearest partner across two text views.
 Conventional probing performance need not measure how information is used
 \citep{elazar2021amnesic}. Causal mediation, interchange interventions, and
 model editing instead test whether internal variables affect computation
-\citep{vig2020causal,geiger2021causal,meng2022rome}. Our component test follows
-that distinction: a prespecified site must pass random-adjusted necessity and
-sufficiency on a disjoint evaluation set. We retain the resulting negative
-test without adapting the layer, rank, or endpoint.
+\citep{vig2020causal,geiger2021causal,meng2022rome}. Optimization-based
+alignment methods go further and learn the intervention subspace itself,
+either by maximizing interchange accuracy
+\citep{geiger2024das,wu2023boundless} or through sparse dictionary features
+\citep{bricken2023monosemanticity,cunningham2024sparse}. Our component test
+follows the causal distinction while fixing the subspace by a closed-form
+cross-covariance rule before any evaluation forward: a prespecified site must
+pass random-adjusted necessity and sufficiency on a disjoint evaluation set.
+It therefore rejects one fixed account rather than the best discoverable one,
+a bound Section~6 records. We retain the resulting negative test without
+adapting the layer, rank, or endpoint.
 
 \section{Prospective design}
 \label{sec:design}
@@ -241,8 +257,8 @@ not a paired significance test of keyword--codepoint equality. The registered
 primary combines that test with the observed comparative requirement
 $\Delta_m\geq0.02$ in both components. At $n=55$, the latter requires at least
 two net top-1 successes; in the smaller matched pools it requires at least one.
-Each component uses 19,999 draws, and the model intersection-union $p$-value
-is the maximum of the two component values.
+Each component uses 19,999 draws, and the model intersection--union test
+(IUT) $p$-value is the maximum of the two component values.
 
 The sole cross-model primary uses four prespecified core configurations: Llama 3.2 3B base,
 Qwen2.5 7B base, OLMo 2 1B base, and Gemma 2 2B IT. It tests the partial
@@ -259,34 +275,68 @@ primary decision.
 \subsection{Conditionally admitted causal test}
 
 After the observational criterion was committed, T19-C ran in the
-prespecified Llama 3.2 3B base configuration. At each of six sites (attention and MLP component outputs at
-blocks 21, 24, and 27), we learned a rank-8 basis from the left singular
-directions of the centered, row-normalized glyph-keyword cross-covariance on 128
-source emoji. A deterministic rank-8 control basis was drawn from the same
-source span and made orthogonal to the learned basis. Blocks 24 attention and
-MLP were primary; blocks 21 and 27 were secondary.
+prespecified Llama 3.2 3B base configuration. The six sites are the attention
+and MLP component outputs at blocks 21, 24, and 27: the tensors returned by
+the attention output projection and by the MLP down-projection, hooked before
+their residual addition. At each site we learned a rank-8 basis from the left
+singular directions of the centered, row-normalized glyph--keyword
+cross-covariance on 128 source emoji. The control basis is deterministic
+rather than ad hoc: sixteen seeded Gaussian directions inside the source
+span are deflated against the learned basis and orthonormalized, and the
+first eight are kept. Blocks 24 attention and MLP were primary; blocks 21
+and 27 were secondary.
 
-On 192 different evaluation emoji, necessity removes learned coordinates from
-the glyph component output. Sufficiency adds the same-item learned
-glyph-minus-codepoint coordinates to the codepoint output. Analogous operations
-in the random basis define adjusted effects:
+On 192 different evaluation emoji, the two criteria intervene on different
+forwards. Necessity intervenes on the glyph forward: with $P$ the learned
+rank-8 projector and $\mu$ the source-bank glyph mean at the site, the site
+output $g$ is replaced by $g-P(g-\mu)$. Sufficiency intervenes on the
+codepoint forward: the site output $c$ is replaced by $c+P(g-c)$, using the
+same item's glyph forward, with the replacement cast to BF16 at injection.
+Analogous operations in the random basis define adjusted effects:
 
 \begin{align}
 N_s &= E_s(\text{random removal})-E_s(\text{learned removal}),\\
-S_s &= E_s(\text{learned patch})-E_s(\text{random patch}),
+S_s &= E_s(\text{learned patch})-E_s(\text{random patch}).
 \end{align}
 
 Both source and evaluation inputs append eight copies of the single-token
-\texttt{" |"} suffix. The intervention and readout use its first token
-(distance 1). Thus $E_s$ is the final-hidden keyword-minus-codepoint top-1
-endpoint in one fixed context. It shares the item-wise contrast definition
-with T19-L, while using a different item pool and context; it is distinct from
-the observational 24-context average and its token-count-matched component. A
-site must have both effects and both lower 95\% item-bootstrap bounds above $0.02$,
-pass both one-sided sign-flip tests (99,999 draws), pass zero and
-remove-restore engineering controls, and survive Holm correction across the
-two primary sites \citep{holm1979sequential}. No site, rank, depth, carrier,
-subset, or endpoint may be replaced after seeing the result.
+\texttt{" |"} suffix; the intervention and readout use its first token
+(distance 1). The endpoint reads the final hidden state of the intervened
+forward at that token as a query against two fixed 192-row galleries built
+once from clean, un-intervened forwards: the keyword states and the codepoint
+states. Query matrix and each gallery are independently centered by their own
+item means, row-normalized, and scored by cosine top-1 identity, giving
+$E_s=$ keyword top-1 minus codepoint top-1. The glyph query measures the
+baseline and necessity conditions. The patched codepoint query measures
+sufficiency; there the codepoint term is self-retrieval and equals 1 at
+baseline, so a patch can raise $E_s$ either by real keyword gains or by
+destroying self-retrieval, and Section \ref{sec:results} reports the two
+components separately. $E_s$ shares the item-wise contrast definition with
+T19-L, while using a different item pool and one fixed context; it is distinct
+from the observational 24-context average and its token-count-matched
+component. A site must have both adjusted effects and both lower 95\%
+item-bootstrap bounds above $0.02$, pass both one-sided sign-flip tests
+(99,999 draws), pass zero-hook and remove-restore engineering controls, and
+survive Holm correction across the two primary sites
+\citep{holm1979sequential}. No site, rank, depth, carrier, subset, or endpoint
+may be replaced after seeing the result.
+
+\subsection{Freeze, admission, and audit chain}
+\label{sec:freeze}
+
+The prospective claims above are enforced mechanically rather than asserted.
+A freeze step hashes every protocol asset (configuration, item selections,
+acquisition and analysis code, preflight receipts) into a manifest that can
+only be built while two zero-forward preflight receipts exist, and an audit
+command re-hashes every asset and fails unless the freeze commit is pushed to
+the repository default branch. The causal arm opens through a separate
+admission manifest that binds the freeze-manifest hash, the observational
+analysis-receipt hash, both causal item-bank hashes, and forward counters
+required to read zero at admission time. The causal executor rehashes its own
+file at every invocation and refuses to run if it differs from the hash bound
+at admission. The evidence archive contains the freeze and admission
+manifests and the independent validation receipts, so this ordering is
+checkable from the submitted package rather than testimonial.
 
 \section{Results}
 \label{sec:results}
@@ -323,6 +373,11 @@ $+0.1718$. Thus, retrieval extends beyond the exact official name, although
 the official name remains the stronger key on average. The alternative label
 is an exact CLDR keyword, not a human-rated synonym or paraphrase;
 training-data co-occurrence could still fully explain the relation.
+Descriptively, the unrestricted effect also rises monotonically with
+parameter count inside the one family sampled at four sizes (Qwen2.5:
+$+0.036$, $+0.053$, $+0.071$, $+0.182$ from 0.5B to 7B). The roster remains
+confounded across families, so this ordering is description, not a registered
+scale result.
 
 Depth was secondary. The nine recorded fractions were $0, 0.125,\ldots,1.0$;
 only $0.75$, $0.875$, and $1.0$ formed the primary window. Across models and
@@ -361,14 +416,17 @@ inference that only emoji acquire readable names.
 \subsection{No prespecified late-component site passes both causal criteria}
 
 Before intervention, the final-hidden glyph endpoint on the 192-item causal
-evaluation set was $E_s=0.07292$ at every site (keyword top-1 $0.07292$;
-codepoint top-1 $0$), corresponding to 14 correct keyword retrievals. The
+evaluation set was $E_s=0.07292$ (keyword top-1 $0.07292$, i.e.\ 14 of 192
+items; codepoint top-1 $0$); the zero-hook engineering check reproduced this
+baseline identically at all six sites. The
 $0.02$ decision floor was therefore 27\% of this baseline contrast, and the
 design contained no positive intervention control that calibrated attainable
-adjusted necessity at the primary sites. All six causal sites then passed
-their engineering checks: zero hooks and
+adjusted necessity at the primary sites. All six causal sites passed
+their engineering checks: zero-hook and
 remove-restore conditions reproduced the baseline final hidden state with
-exactly zero RMS difference. Nevertheless, neither primary block-24 site
+exactly zero RMS difference. Bitwise equality is the expected pass state, not
+a numerical coincidence: baseline forwards reuse the exact intervention batch
+geometry, so any nonzero residue would indicate hook or batching infidelity. Nevertheless, neither primary block-24 site
 passed. Block-24 attention had adjusted necessity $0.0000$ and sufficiency
 $-0.00521$; block-24 MLP had $+0.00521$ and $0.0000$. Their site IUT values
 were $1.0$ and $0.74912$, respectively. None of the six sites passed both
@@ -387,8 +445,8 @@ components (Figure \ref{fig:causal}; exact values in Appendix
 \end{figure}
 
 The secondary block-27 MLP patch produced adjusted sufficiency $+0.07812$
-(95\% interval $[+0.03646,+0.11979]$, one-sided uncorrected
-$p=0.00009$ across 12 component tests). Necessity was $-0.01562$ (interval
+(95\% interval $[+0.03646,+0.11979]$; one-sided $p=0.00009$, uncorrected,
+with twelve such component tests run in total). Necessity was $-0.01562$ (interval
 $[-0.04167,+0.00521]$, $p=0.96895$), giving a site IUT of $0.96895$.
 The learned patch raised keyword top-1 from $1/192$ to $4/192$ while lowering
 codepoint self-retrieval from $192/192$ to $180/192$. The keyword gain accounts
@@ -432,7 +490,7 @@ does not match token identities or equalize tokenizer construction.
 The nine model--tokenizer configurations are a prespecified,
 convenience-constrained roster
 spanning several families and sizes \citep{yang2024qwen25,groeneveld2024olmo,
-dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,smollm2modelcard}. Model
+dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,benallal2025smollm2}. Model
 family, parameter count, training data, tokenizer, and instruction tuning are
 confounded, so the study supports neither a scale law nor a model-population
 estimate. Exact emoji surfaces are not pretraining-novel. The symbol panel is
@@ -446,10 +504,13 @@ final-hidden endpoint. That endpoint has less aggregation and lower baseline
 signal than the observational primary. Its exact engineering checks verify
 hook fidelity, while the absence of a prespecified positive intervention
 control leaves power and attainable dynamic range uncalibrated. The result
-does not exclude other causal representations.
-A future study should preregister such a positive control, distributed
-multi-site removal, nonlinear or sparse readouts, and a new source/evaluation
-split rather than selecting a method on the present evaluation set.
+does not exclude other causal representations: optimized interchange
+subspaces \citep{geiger2024das,wu2023boundless}, sparse feature bases
+\citep{bricken2023monosemanticity,cunningham2024sparse}, distributed
+multi-site carriers, and nonlinear readouts were not evaluated.
+A future study should preregister such a positive control together with those
+alternatives on a new source/evaluation split rather than selecting a method
+on the present evaluation set.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
