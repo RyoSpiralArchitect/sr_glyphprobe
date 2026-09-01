@@ -1,6 +1,6 @@
 # Phase I 英語論文の構成案
 
-[English](PAPER_OUTLINE.md) · [現在のT16ストーリー](PAPER_STORY_T16_V0.ja.md) · [ロードマップ](ROADMAP.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T15-B再現](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
+[English](PAPER_OUTLINE.md) · [T17別案ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [現在のT16ストーリー](PAPER_STORY_T16_V0.ja.md) · [ロードマップ](ROADMAP.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T15-B再現](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md)
 
 この文書は、日本語で研究設計を確認するための構成案です。Phase I の論文本体は英語で執筆します。
 
@@ -40,6 +40,19 @@ tokenizerを条件とした幾何結果を加えるが、意味やtokenizer非�
 投稿用の詳しい物語、5ページ版への縮退、図の背骨、許可・不許可claim tableは
 [T16論文ストーリー v0](PAPER_STORY_T16_V0.ja.md)にまとめた。以下の旧節は、
 エビデンス台帳と設計履歴として残す。それぞれ単独では、現在の主張の中心を定めない。
+
+## T17の別案 — 表現atlasを背骨にする場合
+
+T17-GNは、より狭く澄んだ中心候補を与えた。Raw emoji surfaceが、literal codepoint識別子より
+Unicode正式名へ対応する過程を、9モデル × 9深度で追う。Name-minus-codepoint top-1点推定は、
+正規化深度`0.375`以降9 / 9で正だった。一方、peakは最初のblockから`0.875`まで分かれた。
+最終paired marginは9 / 9でnameを支持したが、centered linear CKAは4 / 9だけだった。
+したがってglobalなname manifoldより、item固有の語彙対応を強く支持する。
+
+論証全体とfresh population gateは[T17別案ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md)にまとめた。
+292項目はT9/T10ですでに開いているため、T17は探索的である。新しいlabel populationをprospectiveに
+確認するまでは、確認の背骨はT16の行動・因果分離の方が強い。T17は別のatlas論文候補、または本文の
+compactな表現節として扱う。
 
 ## 現在のMilestone 2主張表
 

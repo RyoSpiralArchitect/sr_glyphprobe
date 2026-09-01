@@ -1,6 +1,6 @@
 # Phase I paper outline
 
-[日本語](PAPER_OUTLINE.ja.md) · [Current T16 story](PAPER_STORY_T16_V0.md) · [Roadmap](ROADMAP.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T15-B replication](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
+[日本語](PAPER_OUTLINE.ja.md) · [T17 alternative story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [Current T16 story](PAPER_STORY_T16_V0.md) · [Roadmap](ROADMAP.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T15-B replication](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md)
 
 ## Working title
 
@@ -46,6 +46,23 @@ The detailed submission-ready narrative, five-page fallback, figure spine, and
 allowed/disallowed claim table now live in [T16 paper story v0](PAPER_STORY_T16_V0.md).
 The older sections below remain an evidence registry and historical design
 record; they no longer define the manuscript's lead claim by themselves.
+
+## T17 alternative representation spine
+
+T17-GN now offers a narrower alternative lead: trace a raw emoji surface to
+its official Unicode name relative to its literal codepoint identifier across
+nine models and nine depths. The name-minus-codepoint top-1 estimate is
+positive in all nine models from normalized depth `0.375`, but peak depths
+range from the first block to `0.875`. Final paired margins favor names in 9/9
+models while centered linear CKA does so in 4/9. This supports item-specific
+lexical correspondence more strongly than a global name manifold.
+
+The complete argument and its fresh-population gate live in the
+[T17 alternative story](PAPER_STORY_T17_GLYPH_NAME_V0.md). Because the 292
+items were exposed in T9/T10, T17 is exploratory. Until a new label population
+is prospectively confirmed, the T16 behavior/causality dissociation remains
+the stronger confirmatory spine and T17 is either an alternative atlas paper
+or a compact representation section.
 
 ## Current Milestone 2 claim table
 

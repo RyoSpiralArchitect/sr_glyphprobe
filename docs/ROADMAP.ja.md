@@ -2,7 +2,7 @@
 
 [Mistral base深度×距離結果](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Mistral base深度×距離protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.ja.md)
 
-[T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
+[T17 glyph–name結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T17論文ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
 [English](ROADMAP.md) · [T15-A 絵文字 × 言葉の結果](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EH収集protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13設計図](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Dense CUDA結果](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage A3プロトコル](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.ja.md) · [E2 MLX validation v2結果](LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](MILESTONE2_RESULTS.ja.md) · [基準実験の結果](RESULTS_V1.ja.md) · [Phase I 論文計画](PAPER_OUTLINE.ja.md)
 
@@ -556,11 +556,45 @@ UTF laneは探索的で、tokenizer経路を条件とする。
 - 2つの因果bankで、結果を見た後のsubset救済は行わない。次の局在実験には、新しいbank、
   新しいfreeze、今回の結果を見ずに選んだendpointが必要になる。
 
-今後の執筆は[T16論文ストーリー](PAPER_STORY_T16_V0.ja.md)を背骨にする。
+新しいglyph–name populationを開くまでは、確認の背骨が強い
+[T16論文ストーリー](PAPER_STORY_T16_V0.ja.md)を本文の基準にする。
 T16-UTF-X1は、本文に短いorder対照を置ける場合を除き、補遺またはrepository evidenceへ
 回す。Critical pathは、追加のoutcome-drivenな炉探索ではない。論文claimの固定、
 commit済みcompact analysisからのfigure生成、archive checksum、先入観のない
 claim-boundary reviewである。
+
+### 完了したT17-GN — Raw emojiからUnicode正式名への深度atlas
+
+状態：T9/T10ですでに開いたpopulationを使う、凍結済み探索atlasとして完了。独立確認ではない。
+
+- 292項目、3 view、2 carrier、4 distance、9つのexact model/tokenizer cellを保ち、
+  returned-final endpointを9つの正規化深度へ広げた。
+- 90 shard、15,768 forward、567,648本のFP32 readoutを完了した。Generationと
+  interventionは0回である。
+- Unicode正式名からcodepoint literalを引いたequal-context forward top-1点推定は、
+  深度`0.375`以降9 / 9モデルで正だった。Token数完全一致層も`0.25`以降9 / 9で正だった。
+- 全モデル共通の後期転換は支持されない。Peakは最初のblockが2モデル、`0.125`が1、
+  `0.75`が1、`0.875`が5だった。
+- 最終状態では、paired item marginは9 / 9でnameを支持したが、centered linear CKAは
+  4 / 9だけが同方向だった。局所検索とglobal geometryの分離を残す。
+- 独立検収では、T10最終状態のunrestrictedおよびtoken数一致のcarrier × distance差を
+  全cellでexact replayした。T10の登録済み実用ruleが不通過だった判定は変えない。
+
+許される読み方は[T17結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md)と
+[論文ストーリー候補](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md)に固定する。T16のUnicode構成実験は、
+視覚的glyph知覚の証明ではなく、交絡を示す対照として扱う。
+
+### 次のT18 gate — 新しい語彙label population
+
+状態：設計候補のみ。Population、endpoint、model rosterはまだ凍結していない。
+
+- 新しい未使用emoji populationを作り、Unicode正式名、一般的aliasまたは短いparaphrase、
+  事前に選んだ一つの非英語名、literal codepoint identifierを揃える。
+- Outcomeを開く前に、一次depth window、carrier、distance、model family、token数一致層、
+  多重性ruleを固定する。
+- Official name対alias、English対非Englishを使い、Unicode table名の記憶と、より広い語彙associationを分ける。
+- T17で最大だったcurveから因果layerを選ばない。除去・追加・復元に使えるのは、fresh確認gateで
+  正当化されたwindowだけとする。
 
 ### Milestone 4 — 再現と適用境界の把握
 

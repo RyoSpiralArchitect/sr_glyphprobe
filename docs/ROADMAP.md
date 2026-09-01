@@ -2,7 +2,7 @@
 
 [Mistral base depth-distance results](MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Mistral base depth-distance protocol](MISTRAL7B_BASE_DEPTH_DISTANCE_V0.md)
 
-[T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
+[T17 glyph–name result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T17 paper story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
 [日本語](ROADMAP.ja.md) · [T15-A emoji × word result](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EH acquisition protocol](EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 decision map](EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Dense CUDA results](MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A3 protocol](LLAMA32_3B_MLX_NUMERIC_SCREEN_V1.md) · [E2 MLX validation v2 result](LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](MILESTONE2_RESULTS.md) · [Baseline results](RESULTS_V1.md) · [Phase I paper plan](PAPER_OUTLINE.md)
 
@@ -822,12 +822,57 @@ tokenizer-conditional.
   localization study needs a new bank, a new freeze, and an endpoint chosen
   without inspecting these outcomes.
 
-The [T16 paper story](PAPER_STORY_T16_V0.md) is now the writing spine.
+The [T16 paper story](PAPER_STORY_T16_V0.md) remains the stronger confirmatory
+writing spine until a fresh glyph–name population is opened.
 T16-UTF-X1 belongs in the appendix or repository evidence unless space permits
 a short order-control result in the body. The next critical path is manuscript
 claim freeze, figure generation from committed compact analyses, archive
 checksums, and a fresh-eyes claim-boundary review—not another outcome-driven
 furnace search.
+
+### Completed T17-GN — Raw emoji to Unicode-name depth atlas
+
+Status: complete as a frozen exploratory atlas on the prior-exposed T9/T10
+population; it is not independent confirmation.
+
+- T17-GN held the 292 items, three views, two carriers, four distances, and
+  nine exact model/tokenizer cells fixed while expanding the returned-final
+  endpoint to nine normalized depths.
+- All 90 shards completed: 15,768 forwards and 567,648 FP32 readouts, with no
+  generation or intervention.
+- The equal-context official-name-minus-codepoint forward top-1 estimate was
+  positive in all nine models from depth `0.375` through the final state.
+  Token-count-matched point estimates were positive in all nine from `0.25`.
+- The trajectory did not support one universal late transition. Peak depth was
+  the first block in two models, `0.125` in one, `0.75` in one, and `0.875` in
+  five.
+- At the final state, paired item margins favored names in 9/9 models, while
+  centered linear CKA favored names in only 4/9. Preserve this local-retrieval
+  versus global-geometry dissociation.
+- Independent validation exactly replayed every T10 returned-final
+  unrestricted and token-count-matched carrier-by-distance contrast. It does
+  not change T10's registered negative practical verdict.
+
+The [T17 result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) and
+[candidate story](PAPER_STORY_T17_GLYPH_NAME_V0.md) define the bounded reading.
+T16 Unicode-construction studies remain confound controls rather than proof of
+visual glyph perception.
+
+### Next T18 gate — Fresh lexical-label population
+
+Status: design target only; no population, endpoint, or model roster has been
+frozen.
+
+- Build a new unexposed emoji population with official Unicode name, common
+  alias or concise paraphrase, one preselected non-English name, and literal
+  codepoint identifier.
+- Freeze the primary depth window, carriers, distances, model family,
+  token-count-matched stratum, and multiplicity rule before outcome opening.
+- Use official-name versus alias and English versus non-English contrasts to
+  distinguish Unicode-table naming from broader lexical association.
+- Do not choose a causal layer from the largest T17 curve. A removal,
+  insertion, and restoration experiment may use only a window justified by
+  the fresh confirmation gate.
 
 ### Milestone 4 — Replication and boundary mapping
 

@@ -1,6 +1,6 @@
 # 絵文字は、モデルの中に同じ跡を残すのか
 
-[T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T17 glyph–name 論文ストーリー](PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期band結果](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF結果](T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 ストレステスト結果](T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [T15-B prospective再現結果](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md)
 
@@ -23,6 +23,14 @@ T16では、その慎重さを保ったまま、次の段階へ進んだ。新�
 連続した塊にまとめたとき、72 / 72 cellで他の並び方より大きく状態が動いた。
 面白いのは、正のscoreが一つ増えたことではない。繰り返す跡、読み出せる行動、系列の
 組み立て方、それを生む機構が、同じものではなかったことだ。
+
+T17では、rawな記号へ戻り、問いを小さくした。292個のemojiそれぞれについて、hidden stateが
+literalな`U+...`識別子よりUnicode正式名を正しく引けるかを調べた。9つのexact model cell、
+9深度を追うと、正規化深度0.375以降は全モデルでname優位が正になった。ただし、そこへ至る道筋は
+違う。最初のblockですでにpeakになるmodelもあれば、多くは0.875付近でpeakになった。最終状態の
+paired-item marginは9 / 9でnameを支持したが、空間全体のCKA alignmentは4 / 9だけだった。
+ここが今回の収穫である。Raw emojiは、自分自身の語彙ラベルを引くkeyとして改善しても、emoji空間全体が
+name空間へ変わる必要はない。既出population上の探索結果であり、視覚知覚や意味理解の証明ではない。
 
 ## まず、意味ではなく「跡」を測る
 

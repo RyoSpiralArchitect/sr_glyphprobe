@@ -1,0 +1,40 @@
+{
+  "attempts": [
+    {
+      "candidate_model_forward_calls": 0,
+      "error": "ModuleNotFoundError: No module named 'glyphprobe'",
+      "failure_boundary": "before model artifact receipt import and before model load",
+      "model_role": "qwen25_0p5b_base_bf16",
+      "model_weights_loaded": false,
+      "runtime": "furnace system python without repository package path"
+    },
+    {
+      "candidate_model_forward_calls": 0,
+      "error": "ModuleNotFoundError: No module named 'pydantic'",
+      "failure_boundary": "repository package import preflight, before runner invocation",
+      "model_role": "qwen25_0p5b_base_bf16",
+      "model_weights_loaded": false,
+      "runtime": "furnace system python with PYTHONPATH=src"
+    }
+  ],
+  "evidence_role": "posthoc_receipt_from_observed_terminal_failures",
+  "generation_calls": 0,
+  "intervention_calls": 0,
+  "protocol_id": "glyphprobe-glyph-name-depth-trajectory-v0",
+  "repair": {
+    "candidate_model_forward_calls_before_repair": 0,
+    "runtime": "/home/ryospiralarchitect/scratch/glyphprobe-t11-uvvenv-1602749/bin/python with PYTHONPATH=src",
+    "runtime_versions": {
+      "PyYAML": "6.0.3",
+      "glyphprobe": "0.1.0",
+      "numpy": "2.5.2",
+      "torch": "2.13.0+cu132",
+      "transformers": "5.15.0"
+    },
+    "scientific_design_changed": false,
+    "status": "exact_existing_runtime_selected_before_first_candidate_forward"
+  },
+  "schema_version": 1,
+  "scientific_outcome_opened_by_failures": false,
+  "status": "two_pre_model_runtime_failures_preserved"
+}

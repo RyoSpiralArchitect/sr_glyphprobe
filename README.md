@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
+[T17 glyph–name story](docs/PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [日本語](README.ja.md) · [T15-B prospective replication result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md) · [T15-A emoji × word result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
 
@@ -56,6 +56,7 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T16 distributed late band | 15,360 Llama rows; 8 joint sites over blocks 24–27 | joint IUT non-rejecting; necessity +0.000871 passed, sufficiency -0.000146 failed, and treatment +0.001717 missed its 0.002 floor |
 | T16 exact-UTF identity and mixing | 2,880 records, 2 models, 6 construction families, 4 depths, n=1/2/4/8/16 | exploratory: n=1 was exactly identical; cross-minus-within displacement intervals were positive in 8/8 cells, conditional on recorded tokenizer paths |
 | T16-UTF-X1 scale and sequence variants | 515,808 records, 9 fixed model/tokenizer cells, 4 depths, n=1…500 | exploratory: primary and n=500 cross-minus-within were positive in 36/36 cells; exact-token-multiset order controls made blocked runs largest in 72/72 cells; not a scale law or tokenizer-independent Unicode result |
+| T17 raw emoji → Unicode-name depth atlas | 292 prior-exposed items, 9 exact cells, 9 depths, 567,648 readouts | exploratory: name-minus-codepoint top-1 was positive in 9/9 models from depth 0.375; peaks were heterogeneous, and final paired margins were positive in 9/9 while final CKA contrasts were positive in 4/9 |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -72,6 +73,24 @@ passed 15/15 integrity checks with caveats. `causal_claim_authorized` remains
 negative cells.
 
 Latency is machine-, load-, and software-dependent. Treat the receipt as the measurement, not 1.63× as a universal MLX claim.
+
+### T17 glyph–name depth-atlas status
+
+T17 returns to the raw emoji surface by comparing each of 292 items with its
+official Unicode name and literal codepoint identifier across nine exact
+model/tokenizer cells and nine normalized depths. All nine models had a
+positive equal-context name-minus-codepoint top-1 estimate from depth `0.375`
+through the returned final state. Exact token-count-matched estimates were
+positive in all nine from `0.25` onward. The paths were not shared: two models
+peaked at the first block, one at `0.125`, one at `0.75`, and five at `0.875`.
+
+At the final state, paired item margins favored names in 9/9 models, but global
+centered-linear-CKA contrasts did so in only 4/9. The bounded contribution is
+therefore item-specific lexical correspondence with heterogeneous onset, not
+a universal late phase transition or a globally aligned semantic manifold.
+The population was already exposed in T9/T10, so the atlas is exploratory.
+See the [full result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) and the
+[candidate paper story](docs/PAPER_STORY_T17_GLYPH_NAME_V0.md).
 
 ### Milestone 2 status
 

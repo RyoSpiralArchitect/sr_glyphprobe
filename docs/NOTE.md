@@ -1,6 +1,6 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
-[T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
+[T17 glyph–name story](PAPER_STORY_T17_GLYPH_NAME_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 late-band result](T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF result](T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)
 
@@ -25,6 +25,18 @@ state more than every other frozen order variant in all 72 relevant cells.
 The interesting result is no longer one positive score. It is the separation
 between a repeatable trace, readable behavior, sequence construction, and the
 mechanism that produces them.
+
+T17 returns to the raw symbol with a narrower comparison. For each of 292
+emoji, it asks whether the hidden state retrieves that item's official Unicode
+name better than its literal `U+...` identifier. Across nine exact model cells
+and nine depths, the name advantage is positive in every model from normalized
+depth 0.375 onward. But the routes differ: some models already peak at the
+first block, while most peak near 0.875. The final paired-item margin favors
+names in all nine models, whereas global CKA alignment does so in only four.
+That split is the useful finding. A raw emoji can become a better key for its
+own lexical label without the entire emoji space turning into the name space.
+It is an exploratory result on a prior-exposed population, not proof of visual
+perception or meaning.
 
 Its first question is not what an emoji means inside a model. It asks whether a direction derived from that emoji leaves a reproducible fingerprint when added to a fixed internal activation. If the intervention magnitude, source prompts, target prompts, clipping, and random controls are all sealed, does the same direction move the next-token distribution in a recognizable way on held-out prompts?
 

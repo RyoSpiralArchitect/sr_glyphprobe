@@ -1,0 +1,113 @@
+{
+  "analysis_sha256": "ed615103d85608893caf207c856a01922a4e744c6f9713f0293aa223bf8139e4",
+  "claim_boundaries_all_false": [
+    "confirmatory_claim_authorized",
+    "rendered_glyph_perception_claim_authorized",
+    "emoji_meaning_claim_authorized",
+    "tokenizer_independent_claim_authorized",
+    "causal_or_behavioral_claim_authorized",
+    "model_population_generality_claim_authorized"
+  ],
+  "curve_csv_rows": 81,
+  "curve_csv_sha256": "806780db8d74e06f038e32820c355d8ef54733530aab59ed2777137dabcd2098",
+  "figure_model_curves": 9,
+  "figure_points": 81,
+  "figure_sha256": "0733cd392fd856f2874629403b500bb813fc6105be9ee8365ac88c10c3f43428",
+  "headline_checks": {
+    "all_nine_bootstrap_lowers_positive_at_depths": [
+      0.5,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "all_nine_point_estimates_positive_from_depth_0p375": true,
+    "all_nine_token_matched_point_estimates_positive_from_depth_0p25": true,
+    "final_cka_contrast_positive_model_count": 4,
+    "final_paired_margin_positive_model_count": 9,
+    "peak_depth_model_counts": {
+      "0": 2,
+      "0.125": 1,
+      "0.75": 1,
+      "0.875": 5
+    }
+  },
+  "protocol_id": "glyphprobe-glyph-name-depth-trajectory-v0",
+  "run_audit": {
+    "elapsed_seconds": 136.38808800745755,
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "maximum_peak_cuda_memory_bytes": 15319300608,
+    "model_forward_calls": 15768,
+    "readout_vectors": 567648,
+    "roles_complete": 9,
+    "shards_complete": 90
+  },
+  "schema_version": 1,
+  "source_t10_model_results_sha256": "aed7c4abf53b349afe762e359e75193e7b129e9f90ff84c813a5e76ca47fbcfb",
+  "status": "independent_compact_validation_pass",
+  "t10_final_depth_exact_replay": {
+    "gemma2_2b_it_bf16": {
+      "final_mean": 0.06977739726027397,
+      "final_minimum_context": 0.017123287671232876,
+      "peak_normalized_depth": 0.125,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "llama32_3b_base_bf16": {
+      "final_mean": 0.054366438356164386,
+      "final_minimum_context": 0.0273972602739726,
+      "peak_normalized_depth": 0.875,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "mistral7b_instruct_v03_bf16": {
+      "final_mean": 0.23330479452054795,
+      "final_minimum_context": 0.20205479452054792,
+      "peak_normalized_depth": 0.75,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "olmo2_1b_base_bf16": {
+      "final_mean": 0.027825342465753425,
+      "final_minimum_context": 0.0136986301369863,
+      "peak_normalized_depth": 0.875,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "qwen25_0p5b_base_bf16": {
+      "final_mean": 0.0175513698630137,
+      "final_minimum_context": 0.00684931506849315,
+      "peak_normalized_depth": 0.875,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "qwen25_1p5b_base_bf16": {
+      "final_mean": 0.02696917808219178,
+      "final_minimum_context": 0.0136986301369863,
+      "peak_normalized_depth": 0.0,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "qwen25_3b_base_bf16": {
+      "final_mean": 0.06763698630136987,
+      "final_minimum_context": 0.017123287671232876,
+      "peak_normalized_depth": 0.0,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "qwen25_7b_base_bf16": {
+      "final_mean": 0.10273972602739725,
+      "final_minimum_context": 0.023972602739726026,
+      "peak_normalized_depth": 0.875,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    },
+    "smollm2_1p7b_base_bf16": {
+      "final_mean": 0.012842465753424657,
+      "final_minimum_context": 0.00684931506849315,
+      "peak_normalized_depth": 0.875,
+      "tokenization_matched_cell_contrasts_exact": true,
+      "unrestricted_cell_contrasts_exact": true
+    }
+  }
+}

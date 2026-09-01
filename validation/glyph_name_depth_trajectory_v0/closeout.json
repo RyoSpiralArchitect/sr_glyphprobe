@@ -1,0 +1,123 @@
+{
+  "analysis": {
+    "repository_path": "validation/glyph_name_depth_trajectory_v0/results/analysis.json",
+    "sha256": "ed615103d85608893caf207c856a01922a4e744c6f9713f0293aa223bf8139e4",
+    "status": "glyph_name_depth_trajectory_analysis_complete"
+  },
+  "causal_or_behavioral_claim_authorized": false,
+  "claim_boundary": "T17-GN is an exploratory depth atlas on the prior-exposed T9/T10 population. It describes item-level raw-emoji, official-Unicode-name, and codepoint-literal geometry conditional on nine exact model/tokenizer cells, two carriers, four distances, and nine normalized depths. It does not establish rendered-glyph perception, human-like emoji meaning, tokenizer independence, causality, a circuit, instruction-tuning effects, a scale law, independent replication, or model- or emoji-population generality.",
+  "compact_outputs": {
+    "curve_csv": {
+      "repository_path": "validation/glyph_name_depth_trajectory_v0/results/depth_curves.csv",
+      "rows": 81,
+      "sha256": "806780db8d74e06f038e32820c355d8ef54733530aab59ed2777137dabcd2098"
+    },
+    "figure": {
+      "model_curves": 9,
+      "points": 81,
+      "repository_path": "validation/glyph_name_depth_trajectory_v0/results/depth_curves.svg",
+      "sha256": "0733cd392fd856f2874629403b500bb813fc6105be9ee8365ac88c10c3f43428"
+    }
+  },
+  "confirmatory_claim_authorized": false,
+  "decision_status": "complete_exploratory_prior_exposed_depth_atlas",
+  "descriptive_results": {
+    "all_nine_bootstrap_lower_bounds_positive_at_depths": [
+      0.5,
+      0.75,
+      0.875,
+      1.0
+    ],
+    "all_nine_point_estimates_positive_from_normalized_depth": 0.375,
+    "all_nine_token_count_matched_point_estimates_positive_from_normalized_depth": 0.25,
+    "final_centered_linear_cka_contrast_positive_models": 4,
+    "final_paired_margin_contrast_positive_models": 9,
+    "peak_depth_model_counts": {
+      "0": 2,
+      "0.125": 1,
+      "0.75": 1,
+      "0.875": 5
+    }
+  },
+  "documentation": {
+    "paper_story_en": {
+      "path": "docs/PAPER_STORY_T17_GLYPH_NAME_V0.md",
+      "sha256": "668774b21726f58c649bdd55e587fa5c484ab3896335c9dc93a7af1f93fb401b"
+    },
+    "paper_story_ja": {
+      "path": "docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md",
+      "sha256": "6bc29ccbe63575123b77dbf446756a077876c1ad6b9e82c80e2e91b3d515d8e4"
+    },
+    "results_en": {
+      "path": "docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md",
+      "sha256": "331d7c6fd8e0dc2f85c690835766d2a94e3c9bb6d16e5acc026978f010f4cf15"
+    },
+    "results_ja": {
+      "path": "docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md",
+      "sha256": "619e7e9b24b80940f4f2c17bc44b62ddb206e24e2e5e943ada44d7f54f202cbe"
+    }
+  },
+  "emoji_meaning_claim_authorized": false,
+  "execution": {
+    "elapsed_seconds": 136.38808800745755,
+    "furnace_analysis_root": "/home/ryospiralarchitect/scratch/glyphprobe-t17-glyph-name-trajectory-analysis-761c8b3",
+    "furnace_code_worktree": "/home/ryospiralarchitect/scratch/sr-glyphprobe-t17-glyph-name-trajectory-664991a",
+    "furnace_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t17-glyph-name-trajectory-runs-761c8b3",
+    "generation_calls": 0,
+    "intervention_calls": 0,
+    "maximum_peak_cuda_memory_bytes": 15319300608,
+    "model_forward_calls": 15768,
+    "raw_run_bytes": 5461606869,
+    "raw_run_files": 369,
+    "readout_vectors": 567648,
+    "roles_complete": 9,
+    "shards_complete": 90
+  },
+  "execution_freeze": {
+    "commit": "664991a6366aca15995ac439b004c9d41ab3ff72",
+    "manifest_path": "data/manifests/glyph_name_depth_trajectory_v0.json",
+    "manifest_sha256": "761c8b31d7a1b14e2e3526757c0d19eaeff7236686c0b3c24b5015f6cd12cbf6",
+    "pushed_before_execution": true
+  },
+  "independent_validation": {
+    "repository_path": "validation/glyph_name_depth_trajectory_v0/independent_validation.json",
+    "sha256": "fa0167dd2cd1606031d7a89564b54ff53e5510eca219f5ecbae0d659fd0975f7",
+    "status": "independent_compact_validation_pass",
+    "t10_final_unrestricted_and_matched_cells_exact": true,
+    "t10_source_model_results_sha256": "aed7c4abf53b349afe762e359e75193e7b129e9f90ff84c813a5e76ca47fbcfb",
+    "validator_path": "scripts/validate_glyph_name_depth_trajectory_v0_result.py",
+    "validator_sha256": "effe40689ec1efb5fb8debf601a243c2852488212eaf2f444a82f84d5fb3b138"
+  },
+  "model_population_generality_claim_authorized": false,
+  "population": {
+    "items": 292,
+    "prior_exposed": true,
+    "source_studies": [
+      "T9",
+      "T10"
+    ]
+  },
+  "protocol_id": "glyphprobe-glyph-name-depth-trajectory-v0",
+  "raw_arrays_copied_from_furnace": false,
+  "regression": {
+    "collected": 701,
+    "new_failures": 0,
+    "passed": 697,
+    "pre_existing_failures": 2,
+    "repository_path": "validation/glyph_name_depth_trajectory_v0/regression.json",
+    "sha256": "0381671520086bf2dcab08334ea097e0ebc049cf08cd3b1bdf20bda0ba263103",
+    "skipped": 2,
+    "status": "no_new_regression_failures"
+  },
+  "rendered_glyph_perception_claim_authorized": false,
+  "runtime_preflight": {
+    "candidate_forwards_before_repair": 0,
+    "failure_receipt_path": "validation/glyph_name_depth_trajectory_v0/runtime_preflight_failures.json",
+    "failure_receipt_sha256": "00a88770b984c3962d353ed56250fec750dfef90fc849ac6921a4f914b60d27d",
+    "pre_model_failures_preserved": 2,
+    "scientific_design_changed": false
+  },
+  "schema_version": 1,
+  "status": "complete_exploratory_glyph_name_depth_trajectory",
+  "tokenizer_independent_claim_authorized": false
+}

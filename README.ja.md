@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
+[T17 glyph–name 論文ストーリー](docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
 
 [English](README.md) · [T15-B prospective再現結果](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.ja.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.ja.md) · [T15-A 絵文字 × 言葉の結果](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.ja.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.ja.md) · [T14-X / T14-C結果](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.ja.md) · [T13-EA bootstrap実行freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.ja.md) · [T13-EH収集protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.ja.md) · [T12 reserve結果](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.ja.md) · [T13の問いの設計図](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.ja.md) · [T11探索結果](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.ja.md) · [T11凍結protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.ja.md) · [T10診断](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.ja.md) · [T10 model横断結果](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.ja.md) · [Mistral base深度×距離結果](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.ja.md) · [Dense CUDA結果](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distance結果](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.ja.md) · [Carrier-distanceプロトコル](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.ja.md) · [Common-suffix結果](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.ja.md) · [Matched-slot結果](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.ja.md) · [Multifamily geometry結果](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.ja.md) · [Tokenizer census結果](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.ja.md) · [E2 MPS transport v2プロトコル](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.ja.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.ja.md) · [holdout状態](docs/HOLDOUT_STATUS.ja.md) · [E2 Stage A3数値screen結果](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.ja.md) · [E2 Stage-A v2結果](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.ja.md) · [E1 探索結果](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.ja.md) · [Milestone 2 結果](docs/MILESTONE2_RESULTS.ja.md) · [基準実験の結果](docs/RESULTS_V1.ja.md) · [ロードマップ](docs/ROADMAP.ja.md) · [Phase I 論文計画](docs/PAPER_OUTLINE.ja.md)
 
@@ -60,6 +60,21 @@ T16では、再現した応答指紋を、行動・因果・文字列幾何の�
 [後期band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md)、
 [完全同一UTF結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md)、
 [系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)にまとめた。
+
+### T17 glyph–name深度atlasの現在地
+
+T17ではraw emoji surfaceへ戻り、292項目それぞれをUnicode正式名とliteral codepoint識別子に
+対応づけ、9つのexact model/tokenizer cell、9つの正規化深度で追跡した。2 carrier ×
+4 distanceを等しくまとめたname-minus-codepoint top-1点推定は、`0.375`以降9 / 9モデルで正だった。
+Token数を完全一致させた層でも、`0.25`以降は9 / 9で正である。
+
+ただし、全model共通の後期転換ではなかった。2モデルは最初のblock、1モデルは`0.125`、
+1モデルは`0.75`、5モデルは`0.875`でpeakになった。最終状態のpaired item marginは9 / 9で
+nameを支持した一方、空間全体を見るcentered linear CKAは4 / 9だけが同方向だった。
+したがって守れる貢献は、**item固有の語彙対応は広く収束するが、その立ち上がりはmodel固有で、
+globalな意味manifoldの整列は必要としない**、である。項目はT9/T10ですでに開いているため、
+このatlasは探索的である。詳しくは[全結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md)と
+[論文ストーリー候補](docs/PAPER_STORY_T17_GLYPH_NAME_V0.ja.md)に示す。
 
 ### Milestone 2 の現在地
 
