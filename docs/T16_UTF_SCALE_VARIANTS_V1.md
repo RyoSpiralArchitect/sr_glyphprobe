@@ -104,3 +104,11 @@ CUDA acquisition uses `run-role`, yields with exit code 75 when a foreign GPU
 process appears, and resumes only from completed chunk boundaries. Raw hidden
 arrays remain on the furnace; only compact receipts and analysis are admitted
 to Git.
+
+An execution canary from freeze commit `7a99494` exposed an unsafe padded-token
+budget before integrated scientific opening: Qwen2.5 0.5B completed three
+chunks, then the allocator reported failed 3.97 GB and 7.74 GB requests during
+the next chunk. No activation value was inspected. That run root is retained as
+engineering-invalid evidence and cannot contribute scientific results. The
+scientific grid is unchanged; the amended freeze sets a conservative 4,096
+padded-token budget for every role and starts from a new empty run root.

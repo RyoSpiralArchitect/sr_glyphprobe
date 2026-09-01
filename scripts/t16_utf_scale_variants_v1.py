@@ -121,6 +121,7 @@ STATIC_ASSETS = (
     "data/wrappers/source_wrappers.jsonl",
     "configs/semantic_atlas_cross_model_replication_v0.yaml",
     "validation/emoji_steering_specificity_harvest_v0/aggregate.json",
+    "validation/t16_utf_scale_variants_v1/engineering_batch_canary.json",
     "docs/T16_UTF_SCALE_VARIANTS_V1.md",
     "docs/T16_UTF_SCALE_VARIANTS_V1.ja.md",
     "scripts/t16_utf_scale_variants_v1.py",

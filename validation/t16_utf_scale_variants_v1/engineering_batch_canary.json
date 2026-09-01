@@ -1,0 +1,26 @@
+{
+  "activation_values_opened": false,
+  "completed_chunk_receipt_sha256": {
+    "order_ascii_space": "9f1f41c6763c2da9cbcad5f2740484b092295931bcc9b75d681d172988571c7d",
+    "order_none": "2af9868e280ba24a0911e4c9a6284c22f63bc77eb09576025a381bd3cd33df36",
+    "scale": "0d2231cd010b6ae5c73efb5ccaf07aa8dc6dea884ef88dca8c07bdb07208feca"
+  },
+  "completed_chunks": 3,
+  "failed_allocation_requests_bytes": [
+    3967811584,
+    7740588032
+  ],
+  "invalid_run_root": "/home/ryospiralarchitect/scratch/glyphprobe-t16-utf-x1-runs-7a99494",
+  "new_max_padded_tokens_per_batch_all_roles": 4096,
+  "old_freeze_commit": "7a994944f99f9d7b9bba6145e77deacb654996e1",
+  "old_freeze_manifest_sha256": "7b73ed5b094170b871f03745520adf7e596783ba3ff46af049cfee048b68aed1",
+  "old_run_log_sha256": "9158cb22ae30f2a3c6305b7a48a0f01792353273e4a7292d574ad1c38e9c7750",
+  "protocol_id": "glyphprobe-t16-utf-scale-variants-v1",
+  "raw_arrays_copied_from_furnace": false,
+  "reason": "engineering_canary_exposed_unsafe_padding_batch_budget_before_integrated_scientific_open",
+  "runtime_change_only": true,
+  "schema_version": 1,
+  "scientific_factors_changed": false,
+  "scientific_result_authorized": false,
+  "status": "preserved_engineering_invalid_canary"
+}

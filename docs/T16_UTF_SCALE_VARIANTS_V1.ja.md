@@ -90,3 +90,9 @@ python scripts/t16_utf_scale_variants_v1.py audit-freeze --require-pushed
 CUDA取得は`run-role`で実行する。外部GPU processを検知したらexit code 75でyieldし、完了済みの
 chunk境界からのみ再開する。Raw hidden arrayは炉に残し、Gitへ収録するのはcompact receiptと
 解析結果だけとする。
+
+Freeze commit `7a99494`から実行したcanaryでは、統合outcomeを開く前にpadding budgetの問題が
+見つかった。Qwen2.5 0.5Bで3 chunkが完了した後、次のchunkでallocatorが3.97 GBと7.74 GBの
+追加確保に失敗した。Activation値は一つも見ていない。このrun rootはengineering-invalidの
+証拠として残し、科学結果には使わない。科学gridは変えず、改訂freezeでは全roleの
+padded-token budgetを保守的な4,096に統一し、空のrun rootから再開する。

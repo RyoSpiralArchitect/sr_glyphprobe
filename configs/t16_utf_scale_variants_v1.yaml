@@ -125,15 +125,15 @@ runtime:
     qwen25_7b_base_bf16: 16
     mistral7b_instruct_v03_bf16: 16
   max_padded_tokens_per_batch_by_role:
-    qwen25_0p5b_base_bf16: 32768
-    olmo2_1b_base_bf16: 24576
-    qwen25_1p5b_base_bf16: 24576
-    smollm2_1p7b_base_bf16: 24576
-    gemma2_2b_it_bf16: 16384
-    llama32_3b_base_bf16: 16384
-    qwen25_3b_base_bf16: 16384
-    qwen25_7b_base_bf16: 8192
-    mistral7b_instruct_v03_bf16: 8192
+    qwen25_0p5b_base_bf16: 4096
+    olmo2_1b_base_bf16: 4096
+    qwen25_1p5b_base_bf16: 4096
+    smollm2_1p7b_base_bf16: 4096
+    gemma2_2b_it_bf16: 4096
+    llama32_3b_base_bf16: 4096
+    qwen25_3b_base_bf16: 4096
+    qwen25_7b_base_bf16: 4096
+    mistral7b_instruct_v03_bf16: 4096
 
 execution_policy:
   final_freeze_commit_and_push_before_any_model_forward: true
