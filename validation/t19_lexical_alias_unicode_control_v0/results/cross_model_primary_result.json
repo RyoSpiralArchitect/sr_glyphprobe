@@ -1,0 +1,38 @@
+{
+  "cross_model_primary": {
+    "causal_go_gate_open": true,
+    "core_model_positive_count": 4,
+    "core_roles": [
+      "llama32_3b_base_bf16",
+      "qwen25_7b_base_bf16",
+      "olmo2_1b_base_bf16",
+      "gemma2_2b_it_bf16"
+    ],
+    "id": "at_least_three_of_four_frozen_core_model_tokenizer_cells",
+    "ordered_core_model_iut_p_values": [
+      {
+        "model_role": "gemma2_2b_it_bf16",
+        "p_value": 5e-05
+      },
+      {
+        "model_role": "qwen25_7b_base_bf16",
+        "p_value": 5e-05
+      },
+      {
+        "model_role": "olmo2_1b_base_bf16",
+        "p_value": 0.00135
+      },
+      {
+        "model_role": "llama32_3b_base_bf16",
+        "p_value": 0.00135
+      }
+    ],
+    "partial_conjunction_p": 0.0027,
+    "positive": true,
+    "practical_pass": true,
+    "rth_smallest_model_iut_p": 0.00135,
+    "statistical_pass": true
+  },
+  "protocol_id": "glyphprobe-t19-lexical-alias-unicode-control-v0",
+  "schema_version": 1
+}
