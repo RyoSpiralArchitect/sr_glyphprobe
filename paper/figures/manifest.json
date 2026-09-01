@@ -58,11 +58,11 @@
     },
     {
       "path": "paper/figures/t20_causal_ceilings.pdf",
-      "sha256": "2d2dc54a8d88463a994e280b1a050ac38e4f9adb84fccb8ef9e9707c157649b3"
+      "sha256": "2bacba0f0b0d0659a49353a7dfd4c91ebc693726360723be6f3f5bc2a6594a25"
     },
     {
       "path": "paper/figures/t20_causal_ceilings.png",
-      "sha256": "92bf7ab5d470543648b24f43c59729cfe3398fe6fed2830f43e70896de417891"
+      "sha256": "84ef19d11da48a4fffd73ac03c227b999c1e4fca752c3a4c938fc0246fbcbbb4"
     }
   ],
   "schema_version": 1

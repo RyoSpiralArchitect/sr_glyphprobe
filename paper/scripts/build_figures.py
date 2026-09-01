@@ -197,7 +197,7 @@ def validate_t20(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
-    fig, axes = plt.subplots(1, 2, figsize=(7.15, 4.0), sharey=True, sharex=True)
+    fig, axes = plt.subplots(1, 2, figsize=(7.15, 3.4), sharey=True, sharex=True)
     site_word = {"resid_out": "resid", "attn_out": "attn", "mlp_out": "MLP"}
     labels = [
         f"B{row['block_index']} {site_word[row['site']]}"
