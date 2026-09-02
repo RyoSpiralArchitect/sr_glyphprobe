@@ -584,15 +584,13 @@ and attention-path interventions from the glyph tokens, sparse feature bases
 readouts were not evaluated. T19-C lacked a positive intervention control;
 T20-C registered full-interchange ceilings \citep[cf.\ interchange
 alignment;][]{geiger2024das,wu2023boundless} and its verdict semantics
-absorbed the resulting calibration failure at the primary sites. The
-optimized subspaces were trained on 96 items, so their zero held-out
-generalization is compatible both with item-private coding and with training
-sets too small to expose a shared carrier; distinguishing these requires
-larger source banks. The retrieval endpoint is geometric, not behavioral, and
-its total dynamic range on the fresh 384-way bank ($0.0332$) sits below the
-registered ceiling-informativeness minimum, which was set from the smaller
-T19-C bank; endpoint families whose attainable range is measured before
-floors are fixed would remove this failure mode.
+absorbed the resulting calibration failure. The optimized subspaces were
+trained on 96 items, so zero held-out generalization is compatible both with
+item-private coding and with training sets too small to expose a shared
+carrier. The retrieval endpoint is geometric, not behavioral, and its total
+dynamic range on the 384-way bank ($0.0332$) sits below the registered
+ceiling minimum, which was set from the smaller T19-C bank; measuring
+attainable range before fixing floors would remove this failure mode.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
@@ -609,18 +607,17 @@ human subjects, or user messages are used.
 
 Across nine prespecified model--tokenizer configurations, raw atomic emoji
 retrieve word-disjoint CLDR keywords better than literal codepoints after
-exact four-view token-count matching. A named-symbol comparison bounds the
-specificity of that observation. Two separately partitioned causal
-experiments then fail to support the late readout-token subspace account at
-any tested construction: the closed-form rank-8 component test fails its
-joint criterion at sites whose post-hoc ceilings are near zero, and the
-registered optimized-subspace follow-up is uncalibratable at its primary
-sites while its ceilings localize the attainable signal to the final blocks
-and to glyph-position context. Together, these results establish broad
-lexical readability under a text-only metric, bound the simple readout-token
-carrier account, and hand the causal question to glyph-position sources read
-by late attention. Visual understanding and a general emoji circuit remain
-outside the evidence.
+exact four-view token-count matching, and a named-symbol comparison bounds
+the specificity of that observation. Two separately partitioned causal
+experiments fail to support the late readout-token subspace account at any
+tested construction: the closed-form rank-8 test fails its joint criterion at
+sites whose post-hoc ceilings are near zero, and the registered
+optimized-subspace follow-up is uncalibratable at its primary sites while its
+ceilings localize the attainable signal to the final blocks and to
+glyph-position context. The results establish broad lexical readability under
+a text-only metric, bound the simple readout-token carrier account, and hand
+the causal question to glyph-position sources read by late attention. Visual
+understanding and a general emoji circuit remain outside the evidence.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
