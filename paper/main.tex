@@ -73,15 +73,14 @@ association rather than surface form: a controlled testbed for how text-only
 models attach lexical relations to opaque tokens, and a concrete auditing
 target for systems that consume such tokens at scale.
 
-A prospectively specified two-arm design separates two narrower questions.
-The observational arm asks whether a raw atomic emoji retrieves a
-word-disjoint CLDR keyword better than its literal \texttt{U+...} spelling
-after exact token-count matching. Conditional on that result, the causal arm
-asks whether a low-rank late-component intervention identifies a
-representation that is both necessary and sufficient for the relation. This
-design yields an auditable distinction between broad lexical readability and
-one simple mechanistic account; it makes no claim of visual perception or
-human-like emoji understanding.
+A prospectively specified design separates two narrower questions. The
+observational arm asks whether a raw atomic emoji retrieves a word-disjoint
+CLDR keyword better than its literal \texttt{U+...} spelling after exact
+token-count matching. Conditional on that result, gated causal arms ask
+whether a low-rank late intervention identifies a representation that is both
+necessary and sufficient for the relation --- an auditable distinction
+between broad lexical readability and simple mechanistic accounts, with no
+claim of visual perception or human-like understanding.
 
 The study is organized around four safeguards and their corresponding
 results:
@@ -257,9 +256,8 @@ $p_{(1)}\leq\cdots\leq p_{(4)}$, the registered value is
 $p_{\mathrm{PC}}=\min(1,2p_{(3)})$. The other five configurations and all symbol or
 official-name results are secondary and cannot admit the causal arm.
 
-We report percentile intervals from 20,000 item bootstrap replicates as
-descriptive uncertainty. They are not substituted for the permutation-based
-primary decision.
+Percentile intervals from 20,000 item-bootstrap replicates are reported as
+descriptive uncertainty, never as the primary decision.
 
 \subsection{Conditionally admitted causal test}
 
@@ -301,9 +299,8 @@ sufficiency; there the codepoint term is self-retrieval and equals 1 at
 baseline, so a patch can raise $E_s$ either by real keyword gains or by
 destroying self-retrieval, and Section \ref{sec:results} reports the two
 components separately. $E_s$ shares the item-wise contrast definition with
-T19-L, while using a different item pool and one fixed context; it is distinct
-from the observational 24-context average and its token-count-matched
-component. A site must have both adjusted effects and both lower 95\%
+T19-L while using a different item pool and one fixed context. A site must
+have both adjusted effects and both lower 95\%
 item-bootstrap bounds above $0.02$, pass both one-sided sign-flip tests
 (99,999 draws), pass zero-hook and remove-restore engineering controls, and
 survive Holm correction across the two primary sites
@@ -341,11 +338,11 @@ engineering gates are unchanged from T19-C.
 \subsection{Freeze, admission, and audit chain}
 \label{sec:freeze}
 
-The prospective claims above are enforced mechanically rather than asserted.
-A freeze step hashes every protocol asset into a manifest that can only be
-built while zero-forward preflight receipts exist, and an audit command
-re-hashes every asset and fails unless the freeze commit is pushed to the
-repository default branch. Each causal arm opens through an admission
+The prospective claims above are enforced mechanically: a freeze step hashes
+every protocol asset into a manifest that can only be built while
+zero-forward preflight receipts exist, and an audit command re-hashes every
+asset and fails unless the freeze commit is pushed to the repository default
+branch. Each causal arm opens through an admission
 manifest binding the freeze hash, the parent analysis-receipt hash (for
 T20-C, the validated T19-C receipt), the item-bank hashes, and forward
 counters required to read zero at admission. Each causal executor rehashes
@@ -532,12 +529,11 @@ find at these sites.
 
 \section{Discussion}
 
-The two arms answer different questions. Under a fixed text-only readout,
-T19-L recovers the same item across raw emoji and a word-disjoint CLDR keyword
-more reliably than across raw emoji and a literal codepoint string. Exact
-token-count matching makes a pure length account insufficient. The symbol
-panel places the official-name effect within a broader Unicode phenomenon and
-shows graded, rather than categorically emoji-only, keyword breadth.
+The arms answer different questions. Under a fixed text-only readout, T19-L
+recovers the same item across raw emoji and a word-disjoint CLDR keyword more
+reliably than across raw emoji and a literal codepoint string; exact
+token-count matching makes a pure length account insufficient, and the symbol
+panel shows graded, rather than categorically emoji-only, keyword breadth.
 
 The causal arms then bound one mechanistic family three ways. T19-C's
 closed-form rank-8 component account fails its joint criterion, and the
