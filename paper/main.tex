@@ -121,12 +121,11 @@ remain unresolved.
 Emoji representations have been learned from descriptions
 \citep{eisner2016emoji2vec}, linked to lexical sense inventories
 \citep{wijeratne2017emojinet}, and induced from usage through emoji prediction
-\citep{felbo2017deepmoji,barbieri2018interpretable}. These approaches identify
-descriptions, lexical resources, and context as distinct sources of emoji
-meaning. We use CLDR names and keywords \citep{unicode2026cldr} as
-source-auditable endpoints and ask which item-wise textual relations are
-recoverable from a raw Unicode input. Co-occurrence with these resources
-remains a candidate explanation for every positive result.
+\citep{felbo2017deepmoji,barbieri2018interpretable}. We use CLDR names and
+keywords \citep{unicode2026cldr} as source-auditable endpoints and ask which
+item-wise textual relations are recoverable from a raw Unicode input;
+co-occurrence with these resources remains a candidate explanation for every
+positive result.
 
 \paragraph{Probing and tokenizer controls.}
 Probe accuracy can reflect the diagnostic model or its control task
@@ -175,27 +174,8 @@ CLDR \texttt{default} keyword. After lowercasing and extracting ASCII
 and disjoint. The fourth view is the uppercase literal codepoint spelling.
 When several keywords qualify, one deterministic maximum bipartite matching
 assigns globally unique labels; a fixed SHA-256 edge order breaks ties before
-any T19 model forward.
-
-\begin{table}[t]
-\centering
-\scriptsize
-\setlength{\tabcolsep}{2.5pt}
-\begin{tabular}{p{0.17\linewidth}p{0.35\linewidth}p{0.15\linewidth}p{0.20\linewidth}}
-\toprule
-Raw scalar$^\dagger$ & CLDR \texttt{tts} & Keyword & Literal view \\
-\midrule
-U+1F923 & rolling on the floor laughing & lmao & \texttt{U+1F923} \\
-U+1F928 & face with raised eyebrow & skeptic & \texttt{U+1F928} \\
-U+00B4  & acute accent & tone & \texttt{U+00B4} \\
-\bottomrule
-\end{tabular}
-\caption{Concrete prespecified views for two emoji and one non-emoji symbol.
-$^\dagger$The model receives the scalar itself; the table names it by codepoint
-because the paper typeface need not render every glyph. The literal view is
-the displayed ASCII string.}
-\label{tab:examples}
-\end{table}
+any T19 model forward. Table \ref{tab:examples} in Appendix \ref{app:models}
+shows concrete views for two emoji and one symbol.
 
 The observational set contains 55 emoji and 55 non-emoji Unicode symbols.
 Symbols are single scalars in a Unicode general category beginning with
@@ -228,9 +208,9 @@ size is one; no chat template or added special token is used. The primary
 late window is fixed at depths $0.75$, $0.875$, and $1.0$, yielding 24
 contexts per item.
 
-Within each view and context, hidden states are centered across items and each
-row is L2-normalized. Let $z^{v,c}_i$ denote the resulting vector for item $i$,
-view $v$, and context $c$. Cross-view top-1 retrieval is
+Within each view and context, hidden states are centered across items and
+row-L2-normalized; $z^{v,c}_i$ denotes the vector for item $i$, view $v$, and
+context $c$. Cross-view top-1 retrieval is
 
 \begin{equation}
   R_c(g \rightarrow v) = \frac{1}{n}\sum_{i=1}^{n}
@@ -585,21 +565,20 @@ such movement from being upgraded to a circuit claim.
 
 \paragraph{Measurement.}
 CLDR keywords are standardized annotations, not human judgments of synonymy,
-natural naming, specificity, or familiarity. Retrieval is nearest-neighbor
-geometry at selected suffix tokens, not generation or task behavior. Inputs
-are Unicode text; no rendered glyph is perceived. Exact token-count matching
-does not match token identities or equalize tokenizer construction.
+naming, specificity, or familiarity. Retrieval is nearest-neighbor geometry
+at selected suffix tokens, not generation or task behavior; inputs are
+Unicode text, and no rendered glyph is perceived. Token-count matching does
+not match token identities or equalize tokenizer construction.
 
 \paragraph{Generalization.}
 The nine model--tokenizer configurations are a prespecified,
 convenience-constrained roster
 spanning several families and sizes \citep{yang2024qwen25,groeneveld2024olmo,
-dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,benallal2025smollm2}. Model
-family, parameter count, training data, tokenizer, and instruction tuning are
+dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,benallal2025smollm2}.
+Family, parameter count, training data, tokenizer, and instruction tuning are
 confounded, so the study supports neither a scale law nor a model-population
-estimate. Exact emoji surfaces are not pretraining-novel. The symbol panel is
-repository-text-fresh but not a pretraining holdout and is not exchangeable
-with the emoji panel.
+estimate; exact emoji surfaces are not pretraining-novel, and the symbol
+panel is repository-text-fresh, not a pretraining holdout.
 
 \paragraph{Mechanism.}
 Both causal results cover one Llama 3.2 3B checkpoint and rank 8, and both
@@ -768,8 +747,28 @@ favorable prior layer, glyph system, or causal site was promoted into the
 T19-L primary. Only that prespecified primary supports the paper's confirmatory
 lexical claim.
 
-\section{Prespecified model roster}
+\section{Prespecified examples and model roster}
 \label{app:models}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{p{0.17\linewidth}p{0.35\linewidth}p{0.15\linewidth}p{0.20\linewidth}}
+\toprule
+Raw scalar$^\dagger$ & CLDR \texttt{tts} & Keyword & Literal view \\
+\midrule
+U+1F923 & rolling on the floor laughing & lmao & \texttt{U+1F923} \\
+U+1F928 & face with raised eyebrow & skeptic & \texttt{U+1F928} \\
+U+00B4  & acute accent & tone & \texttt{U+00B4} \\
+\bottomrule
+\end{tabular}
+\caption{Concrete prespecified views for two emoji and one non-emoji symbol.
+$^\dagger$The model receives the scalar itself; the table names it by codepoint
+because the paper typeface need not render every glyph. The literal view is
+the displayed ASCII string.}
+\label{tab:examples}
+\end{table}
 
 Table \ref{tab:models} reports the exact model artifacts and revisions used by
 the prespecified observational roster. The Llama role uses the pinned BF16 mirror
