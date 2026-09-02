@@ -1,0 +1,102 @@
+{
+  "archive": {
+    "artifact_id": "glyphprobe_t19_anonymous_evidence_v3",
+    "byte_identical_rebuild": true,
+    "manifest_sha256": "ef1f8f74d94ca3189cc2642784f40172ffdc8425352c2f728b29075789477c6a",
+    "payload_files": 203,
+    "sha256": "4459fc06a9ccf9404acfd79e78cd4109f802c52f0d5d6c1cb2312721fe254da1",
+    "status": "anonymous_artifact_validation_pass",
+    "total_files": 205
+  },
+  "boundary": "Checks this package and numerical replay; author approval and submission remain separate. Raw-state acquisition is not rerun here.",
+  "created_at_utc": "2026-09-02T08:24:17.314968+00:00",
+  "figures": {
+    "byte_identical_from_extracted_archive": true,
+    "figures": 7,
+    "pdf_png_files": 14
+  },
+  "pdf": {
+    "main_text_ends_on_page": 9,
+    "page_boundary_violations": 0,
+    "pages": 22,
+    "references_start_on_page": 10,
+    "rendered_page_visual_review": "Assistant inspected all 22 pages through page images and contact sheets, including full-size new figures and changed tables.",
+    "sha256": "ea1af5e200bf023c86a94b2a5b76189504030616fdab9f02968c8ab7c9748e79"
+  },
+  "schema_version": 1,
+  "status": "submission_revision_qa_pass",
+  "t19_extracted_archive_replay": {
+    "all_nine_positive": true,
+    "bootstrap_intervals_replayed": 36,
+    "bootstrap_replicates_per_interval": 20000,
+    "boundary": "Statistical replay from fixed prediction indices; hidden-state and tokenizer acquisition are separate checks.",
+    "compact_sha256": "9a75e4e14dba0e6befffacece04a573503121b98f93a0f37f03a49d70cd7943e",
+    "core_positive_count": 4,
+    "created_at_utc": "2026-09-02T08:21:19.558346+00:00",
+    "maximum_numeric_error": 0.0,
+    "numpy_version": "2.4.4",
+    "partial_conjunction_p": 0.0027,
+    "randomization_draws_per_test": 19999,
+    "randomization_tests_replayed": 36,
+    "status": "pass",
+    "validator_sha256": "8dfed517f8735e7337e2f14e992e3f645386aff17d7d4633b15ee29fb4fd73a2"
+  },
+  "t20_extracted_archive_selection": {
+    "auditor_sha256": "96dbc28df08b58deb414d6fab03b6edb6b210b12af5adb44821855f5d31a59fc",
+    "histories_reconstructed": 27,
+    "matches_original_audit_except_timestamp": true,
+    "sites_reconstructed": 9
+  },
+  "t21_extracted_archive_decomposition": {
+    "boundary": "Checks compact scalar identities and means; raw-state provenance is a separate receipt.",
+    "contrasts_checked": 5,
+    "decomposition_sha256": "d4a0f6cb96323c0e41905035f3dc68e183cef70b448518d3fa1e9f078db19b50",
+    "items_checked": 195,
+    "maximum_numeric_error": 4.163336342344337e-17,
+    "original_compact_sha256": "5266a84e14e3f7cb9307b22bc3b416512e7269555d30e039df07670d58dcecf3",
+    "status": "pass",
+    "validator_sha256": "0d173879140e1571ed45db68585a106eac94de83bffdda4c4bd038e615adca75"
+  },
+  "t21_extracted_archive_replay": {
+    "boundary": "Statistical replay from derived contrasts; raw-state correctness is a separate check.",
+    "compact_sha256": "5266a84e14e3f7cb9307b22bc3b416512e7269555d30e039df07670d58dcecf3",
+    "maximum_numeric_error": 0.0,
+    "replicates": 20000,
+    "result_sha256": "87b39b75392a2a443c59f70d9f61aa878fe2314df2dade185f387436b52352ef",
+    "status": "pass",
+    "target_items": 195,
+    "validator_sha256": "83c0dda9029b807ba919235acb1f3c607b1f9be904036ad7aedbc967b264829e",
+    "verdict": "conditional_path_contribution_supported"
+  },
+  "tests": {
+    "command": [
+      "python3",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "-q",
+      "tests/test_t21_glyph_context_path_pilot_v0.py",
+      "tests/test_t21_path_inference_v0.py",
+      "tests/test_t21_glyph_context_path_confirmation_v0.py",
+      "tests/test_t21_compact_and_paper_evidence.py",
+      "tests/test_t20_lexical_alias_optimized_subspace_causal_v0.py",
+      "tests/test_paper_figure_layout.py",
+      "tests/test_post_review_evidence_v0.py",
+      "-k",
+      "not test_go_cannot_open_without_validated_t19_analysis"
+    ],
+    "deselected": 1,
+    "deselection_reason": "Exclude the historical bank-scanning audit test; retired banks are outside scope.",
+    "passed": 63,
+    "test_file_sha256": {
+      "tests/test_paper_figure_layout.py": "53e740465cb2d6b61d9790063dbed0a99dbb6c1d0a4282b409c5907fd173496b",
+      "tests/test_post_review_evidence_v0.py": "26495e4f3a1d0b1389fc4af9ef03c77354ffea611bf5caeaf902b430d17c54d7",
+      "tests/test_t20_lexical_alias_optimized_subspace_causal_v0.py": "0f1276ec5a7d0196de7355e0c0ed3b32246e45906ea50fecd6902a6aa2461c78",
+      "tests/test_t21_compact_and_paper_evidence.py": "3611068747336353997cfd3ac7ebe8447ff8a470900f4b9c15057b78ec3613f7",
+      "tests/test_t21_glyph_context_path_confirmation_v0.py": "10a4e3cff7ecc995ae650a652ced2574296acaaf73bb2dc55da75f1942a6133d",
+      "tests/test_t21_glyph_context_path_pilot_v0.py": "35998593ade2ecc6a2844db7f3aaf3e243ec7569a23f7136be106522eba7c5e1",
+      "tests/test_t21_path_inference_v0.py": "bb9ea74def8a466f23bc774e1b0c1652e0196c6b71e4217ce75310adac930408"
+    }
+  }
+}

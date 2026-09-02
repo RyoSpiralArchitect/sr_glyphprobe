@@ -1,5 +1,11 @@
 # GlyphProbe
 
+[査読後の証拠補強](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md): モデル不要のT19統計再計算、
+T20のチェックポイント採用、T21の自項目・競合マージンの記述的分解。
+科学的な判定は変更していません。
+[最終パッケージ検証](validation/post_review_evidence_v0/submission_qa.json)に、本文9ページ、
+コンパクトな再計算、図の再生成、回帰テストの確認を記録しています。
+
 [T21 条件付き経路の結果](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md) · [T21 prospective設計](docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.ja.md)
 
 [Phase I 初稿PDF](output/pdf/glyphprobe_t19_first_draft.pdf) · [論文sourceとbuild](paper/README.ja.md) · [T20 凍結protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.ja.md) · [T19 語彙・因果結果](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.ja.md) · [T19 論文ストーリー](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md) · [T19 凍結protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.ja.md) · [T18 未提示表層の語彙対応結果](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.ja.md) · [T18 論文ストーリー](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.ja.md) · [T18 凍結protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.ja.md) · [T17 深度atlas結果](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.ja.md) · [T16 論文ストーリー](docs/PAPER_STORY_T16_V0.ja.md) · [T16 運用行動・因果結果](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.ja.md) · [T16 後期分散band結果](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.ja.md) · [T16 完全同一UTF混合結果](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.ja.md) · [T16-UTF-X1 系列長・並び方ストレステスト](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.ja.md)
@@ -594,7 +600,21 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 ## Phase I のゴール
 
-Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。[著者匿名の原稿](output/pdf/glyphprobe_t19_first_draft.pdf)は、T19の9 / 9 token-count-matched語彙結果、記号・componentによる境界、T20の較正限界、T21の条件付き連続margin寄与をまとめた。[v3 claim table](paper/CLAIM_TABLE.ja.md)では、これらを分けて扱う。[論文package](paper/README.ja.md)にcompactな匿名資料、asset license一覧、compute report、ethics reviewを収めた。rawモデル状態からの再実行、過去の計算資源の完全な集計、著者による最終reviewは、限界または残作業として明記する。T21のスカラー値からの統計再計算にはモデルを必要としない。T15-Bは別の運用response-shape候補に対するprospective再現として残る。これらを足し合わせても、人間的意味、完全mediator、普遍回路、tokenizer非依存性、scale law、tuning不変性、model母集団への一般化にはならない。梱包・検証と投稿は別であり、最終的な著者承認とuploadはまだ行っていない。[T21結果](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md)と[ロードマップ](docs/ROADMAP.ja.md)に正確な境界を示す。
+Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。
+[著者匿名の原稿](output/pdf/glyphprobe_t19_first_draft.pdf)は、T19の9 / 9
+token-count-matched語彙結果、記号・componentによる境界、T20の較正限界、T21の条件付き
+連続margin寄与をまとめた。[v4 claim table](paper/CLAIM_TABLE.ja.md)ではこれらを分ける。
+[論文package](paper/README.ja.md)には匿名資料、license一覧、compute report、ethics reviewを
+収めた。T19主要区間の統計とT21のscalar推論はモデルなしで再計算でき、事後的なT21分解は
+記述的に扱う。raw状態からの再実行、過去の計算資源の完全な集計、著者による最終reviewは
+限界または残作業として明記する。
+
+T15-Bは別の運用response-shape候補に対するprospective再現として残る。これらを
+足し合わせても、人間的意味、完全mediator、普遍回路、tokenizer非依存性、scale law、
+tuning不変性、model母集団への一般化にはならない。梱包・検証と投稿は別であり、
+最終的な著者承認とuploadは別の手順である。[T21結果](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md)、
+[査読後の検証](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md)、[ロードマップ](docs/ROADMAP.ja.md)に
+正確な境界を示す。
 
 T12も、別に凍結した一度限りの設計で完了した。許される結論は、ZWJ fusion候補とregional dual候補のどちらも、登録済みの統計＋実用ruleを満たさなかったことまでである。T10の一次判定は変わらない。T13-EHは、露出済み項目と公開targetを使う凍結済みの探索的収集を完了したが、T12の判定も論文gateも変えない。T13-Cには新しい未使用bankと別freezeが必要だった。後続のT14-Cはその条件を満たしたが、T13へ遡って確認statusを与えない。
 

@@ -1,11 +1,11 @@
-# GlyphProbe T19/T20/T21 匿名evidence artifact v2
+# GlyphProbe T19/T20/T21 匿名evidence artifact v3
 
 [English](README.md)
 
 この**compactなdouble-blind review artifact**は、事前指定したT19/T20/T21プロトコル、
 選択済み項目集合、compactな結果、独立検証報告、解析・検証コード、論文ソース、図、
-匿名review PDFを結び付ける。T21-Cの同時推論は、195項目分の派生スカラー比較値から
-モデルなしで再計算できる。raw dataからの再実行には、下記の追加ファイルが必要になる。
+匿名review PDFを結び付ける。T19-Lの主要区間の統計、T21-Cの同時推論、事後的なT21
+マージン分解をモデルなしで再計算できる。raw dataからの再実行には下記の追加ファイルが必要。
 
 ## 最初に検証する
 
@@ -24,15 +24,16 @@ scientific estimandの正しさではない。
 ## 含むもの
 
 - `paper/glyphprobe_t19_anonymous.pdf`と匿名TeX/BibTeX source。
-- 決定論的なpaper figure 6件と入出力のhash manifest、箱内ラベルのレイアウト回帰テスト。
+- 決定論的なpaper figure 7件と入出力のhash manifest、箱内ラベルのレイアウト回帰テスト。
 - T19-L selection、freeze、config、tokenizer preflight、compact observational result、
-  独立validation receipt。
+  独立validation receipt、全9モデルの主要区間の予測indexと正確なstratum。
 - T19-C go manifest、compact component result、独立validation receipt。
 - T19-Cの事後的な全状態交換についての記述的結果。
 - T20-Cの設定、項目選択、事前指定と実行承認のmanifest、事前検査、訓練・評価報告、
-  compactな結果、独立validation receipt。
+  compactな結果、独立validation receipt、査読後のチェックポイント採用検証。
 - T21のpilotと別のprospective確認計画、露出済み項目によるcanaryのreceipt、収集・解析報告、
-  別実装による数値検証、および確認用195項目すべての派生スカラー比較値。
+  別実装による数値検証、確認用195項目すべての派生スカラー比較値、事後分解と明記した
+  自項目・競合のマージン成分。
 - receipt生成方法を点検するためのexecutor、analyzer、independent validator source。
 - T19 freezeが参照する最小限のT9/T10/T18 binding。
 - 日英対のclaim、license、compute、ethics、protocol、result、artifact-boundary文書。
@@ -53,8 +54,9 @@ build時刻や実験時刻ではない。実際の設計・収集・解析時刻
 - T19 evidence denominatorに入らない探索raw output。
 
 除外したraw arrayは同梱acquisition/validation receiptでbindされるが、このcompact package
-だけでは独立replayできない。compact-result/figure audit、派生比較値からのT21-C統計再計算、
-source-code inspection、manuscript verificationは可能だが、upstream model assetを別途取得しない
+だけでは独立replayできない。compact-result/figure audit、予測indexからのT19-L再計算、
+派生比較値からのT21-C統計再計算、事後的scalar分解、source-code inspection、
+manuscript verificationは可能だが、upstream model assetを別途取得しない
 完全reacquisitionや、compact evidenceだけからのraw-array再構成はできない。
 
 ## Compact surfaceを再生成する
@@ -62,6 +64,18 @@ source-code inspection、manuscript verificationは可能だが、upstream model
 integrity validatorはPython standard libraryだけを使う。scientific Python file向けの
 記録済みacquisition stackは`paper/COMPUTE_REPORT.md`、小さなaudit/figure環境は
 `requirements-audit.txt`にある。
+
+T19-Lの主要区間の全36 randomization検定・記述的区間、モデル判定、model横断primaryは
+NumPyだけで再計算できる。
+
+```bash
+python3 scripts/validate_t19_compact_predictions_v0.py \
+  --compact validation/t19_lexical_alias_unicode_control_v0/compact_v0/predictions.json
+```
+
+各検定は19,999回の置換、各区間は20,000回の項目bootstrapを使う。matched帰無分布は
+正確なstratum内で置換し、`1/n`という一様当て推量の基準とは区別する。
+採用emoji数は31–51項目である。
 
 T21-Cの5比較の同時下限、判定、記述的なtop-1平均は、NumPyだけで再計算できる。
 
@@ -74,6 +88,19 @@ python3 scripts/validate_t21_compact_inference_v0.py \
 項目の再標本化indexを共有するbootstrapを20,000回再計算する。一致が検証するのは、
 同梱スカラー値からの統計計算である。モデル状態への介入が正しく実装されたことは、
 receiptに結び付いた別の検証として扱う。
+
+同梱scalarから事後的なT21分解を検証する。
+
+```bash
+python3 scripts/validate_t21_margin_decomposition_v0.py \
+  --decomposition validation/t21_margin_decomposition_v0/decomposition.json \
+  --original validation/t21_glyph_context_path_confirmation_v0/results/item_contrasts.json
+```
+
+自項目keywordから最大競合を引いた対比を元の195項目のマージン行と照合し、記述的平均を
+再計算する。成分の有意差検定は追加せず、元のマージン下限を各成分には適用しない。
+[査読後レポート](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md)では、T20の採用時点と
+step 600の訓練診断の違いも説明する。
 
 disposableな展開copyでfigureを再生成する。
 

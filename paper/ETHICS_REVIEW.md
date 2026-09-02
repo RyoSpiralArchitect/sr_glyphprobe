@@ -33,6 +33,13 @@ replication or a substitute for author review.
 This disclosure is conservative: assistant use affected the research workflow
 even though no assistant output is an experimental measurement.
 
+The subsequent fresh-reader review prompted a post-hoc endpoint decomposition,
+checkpoint-selection clarification, and compact statistical replay. These use
+completed outputs, retain all 195 T21 items and all original comparisons, and
+introduce no new significance tests or revised confirmatory decisions. The
+matched T19 item-count range was corrected in prose from 31--41 to 31--51;
+the original arrays and tests already used the correct counts.
+
 ## Conclusion
 
 Within the declared scope, T19/T20/T21 conform to the reviewed NeurIPS ethics

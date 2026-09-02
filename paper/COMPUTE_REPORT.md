@@ -65,6 +65,21 @@ states. The anonymous package includes 195 item-level scalar contrasts and a
 NumPy-only statistical validator; raw model-state replay remains a separate
 step requiring omitted arrays.
 
+## Post-review CPU audit
+
+The 2026-09-02 review pass used retained outputs only, on the same Linux worker
+with NumPy 2.5.2. T21 reconstruction used a four-thread BLAS/OpenMP cap; the
+T19 replay used a two-thread cap. It reconstructed 13 T21 chunks and ten metric
+arrays, exported all 195 items' margin components, replayed all 36 T19
+randomization tests and 36 bootstrap intervals, and reconstructed 27 T20
+training histories and nine checkpoint choices. This added zero model
+forwards, generation calls, and component significance tests. No GPU compute
+was requested. Per-stage CPU timing and peak memory were not separately
+instrumented, so no speedup or total-compute estimate is claimed.
+
+The T19 compact predictions, T20 selection audit, and T21 descriptive
+decomposition are included in archive v3; raw states remain excluded.
+
 ## Known omissions
 
 The compact T19 receipts do **not** preserve acquisition wall-clock duration,

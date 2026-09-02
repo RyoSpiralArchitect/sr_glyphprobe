@@ -16,7 +16,7 @@ contractを記録するもので、第二の論文ではない。
 - `references.bib`: 初稿で使用する参考文献。
 - `neurips_2026.sty` と `checklist_template.tex`: 無改変の公式template
   asset。`checklist.tex`は公式questionを変えず、保守的なdraft answerを入れる。
-- `scripts/build_figures.py`: compactかつ検証済みのT19/T20 JSON summaryから図を
+- `scripts/build_figures.py`: compactかつ検証済みのT19/T20/T21 JSON summaryから図を
   決定論的に生成するscript。
 - `scripts/build_anonymous_artifact.py` と
   `scripts/validate_anonymous_artifact.py`: whitelist-onlyで決定論的なarchive
@@ -25,7 +25,7 @@ contractを記録するもので、第二の論文ではない。
 - `ASSET_LICENSES.*`、`COMPUTE_REPORT.*`、`ETHICS_REVIEW.*`: 日英対の
   submission audit。
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compile済みreview PDF。
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip`: standaloneな
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip`: standaloneな
   匿名compact artifact。隣にreceiptとSHA-256を置く。
 
 公式formatting archiveは
@@ -52,7 +52,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip
 ```
 
 TectonicはBibTeX passも自動実行する。検証したMacではbundled executableを
@@ -94,16 +94,19 @@ pretraining novelty、普遍manifold、完全な回路、scale lawは示さな�
 深さ依存の非対称性は回復経路の仮説を動機づけるが、経路の同定や全部分空間の排除は
 示さない。
 
-改訂v3には、別途事前指定した195項目のT21-Cを追加する。コードポイント表記の読み出し
+改訂v4でも、別途事前指定した195項目のT21-Cを維持する。コードポイント表記の読み出し
 状態への置換後、glyph位置からの情報は、同数の接尾位置対照を上回って対応語の
 コサイン・マージンに寄与した。片側・同時95%下限は五つすべて正で、glyph情報の絶対的な
 低下・回復による平均top-1効果は0だった。384項目の探索と195項目の確認は分け、
 過去のT19/T20の数値・判定・閾値・入力ハッシュは維持する。
 [結果の英日レポート](../docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md)を参照。
 
-匿名資料v2には195項目分の派生比較値と、NumPyだけで動く統計の再計算コードも含む。
-生のモデル状態の検証とは区別する。Table 6修正済みのv1はT21追加前の投稿用基準として
-残し、検証コードは両バージョンを受け付ける。
+匿名資料v3には、T19の主要区間の全36検定・記述的区間をモデルなしで再計算する予測index、
+T20の採用チェックポイント検証、T21の自項目・競合マージンの事後分解を追加する。
+分解は記述的で、確認判定を変更しない。元の195項目の比較値と同時推論の再計算も保つ。
+T19 matched emoji数は31–51（Gemma: 51）へ訂正した。元の計算は正しかった。
+[査読後の証拠レポート](../docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md)を参照。
+生のモデル状態の検証とは区別する。v1・v2とも残し、archive検証器は全3版を受け付ける。
 
 原稿では、`T19-L`を語彙観察arm、`T19-C`を条件付きcomponent因果armとして初出時に
 定義した。Appendix Aには、初期steering screenからT21-Cまでの探索→確認の短い経路を
@@ -144,7 +147,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
   18点を`model_cell_results.json`へ照合し、compile済みpaperのlabelとreference
   lineを検査する。
 
-### Figure 3 - emojiとsymbolの語彙境界
+### Figure 6 (Appendix C) - emojiとsymbolの語彙境界
 
 - **問い:** keyword / official-name effectはemojiと非emoji Unicode symbolでどう
   異なるか。
@@ -159,7 +162,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
   検証し、x-axisを共通化し、"registered secondary"と明示してcaptionとlegendを
   検査する。
 
-### Figure 4 - 最適化部分空間と全状態交換の対照
+### Figure 3 - 最適化部分空間と全状態交換の対照
 
 - **問い:** T20-Cの9サイトで、最適化rank-8部分空間の効果と状態全体の交換効果は
   どう異なるか。
@@ -173,6 +176,20 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 - **Output / QA:** `figures/t20_causal_ceilings.pdf`。記録済み推定値と区間を保持し、
   random補正した部分空間効果と未補正の交換効果を区別する。PDFの凡例と縦基準線を確認する。
 
+### Figure 4 - 条件付きglyph位置メッセージの検証
+
+- **問い:** T21-Cでは何を置換し、指定した5つのコサイン・マージン対比はどの程度か。
+- **Takeaway:** block 21の読み出し状態を置換した後、glyph位置の情報を崩す・戻す操作は、
+  195項目で同数の接尾位置対照を上回る。条件付きマージン効果であり、絶対的な
+  top-1の平均効果は0である。
+- **Family / sufficiency:** 3段階の模式図と5つの片側区間。元の5対比をすべて表示する。
+- **Renderer / encoding:** static Matplotlib。低下は丸、回復は四角、較正は中立色の菱形。
+  線分は同時片側95%下限から平均までで、両側信頼区間ではない。
+  2つのcarrierと2つのdonorを項目内で平均する。
+- **Output / QA:** `figures/t21_path_summary.pdf`。元の`confirmation_result.json`
+  だけを入力とし、5下限・ゼロ基準・3解像度での3-pointの箱内余白を確認する。
+  本文9ページを保つため、副次的なsymbol比較図をAppendix Cへ移す。
+
 ### Figure 5 - 探索から確認へ至る系譜
 
 - **問い:** T19のdesignへ至るまでに、どの先行結果が次の判断を変えたか。
@@ -185,7 +202,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 - **Output / QA:** `figures/t19_lineage.pdf`。全study labelをAppendix Aへ照合し、
   compile済みpaperでbox labelとarrowを検査する。
 
-### Figure 6 (Appendix D) - component-level causal test
+### Figure 7 (Appendix D) - component-level causal test
 
 - **問い:** random-adjusted necessityとsufficiencyがともに0.02のfloorを超える
   事前指定siteはあるか。

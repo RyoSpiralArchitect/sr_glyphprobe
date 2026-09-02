@@ -13,6 +13,10 @@
     {
       "path": "validation/t20_lexical_alias_optimized_subspace_causal_v0/results/causal_site_results.json",
       "sha256": "3984e9615365f26cc63f5a5bfb398e448a575fb22f3297f6ae4191e3a4c923c5"
+    },
+    {
+      "path": "validation/t21_glyph_context_path_confirmation_v0/results/confirmation_result.json",
+      "sha256": "87b39b75392a2a443c59f70d9f61aa878fe2314df2dade185f387436b52352ef"
     }
   ],
   "outputs": [
@@ -63,6 +67,14 @@
     {
       "path": "paper/figures/t20_causal_ceilings.png",
       "sha256": "c6aabc29a6ea225268cc49338fb94328d2dfec4e68a5c95491ffd71eaa57475f"
+    },
+    {
+      "path": "paper/figures/t21_path_summary.pdf",
+      "sha256": "2e23c2cd3e450e2f5e804fcede2aad183f1c84940f4c4eecb712e8db36504720"
+    },
+    {
+      "path": "paper/figures/t21_path_summary.png",
+      "sha256": "125d9d7b5a97b72154655c4f42ea9566bbf520542de8aab5de6eafe6329a89fe"
     }
   ],
   "schema_version": 1

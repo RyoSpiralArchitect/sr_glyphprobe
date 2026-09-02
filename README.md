@@ -1,5 +1,11 @@
 # GlyphProbe
 
+[Post-review evidence audit](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md): T19
+model-free statistical replay, T20 checkpoint selection, and descriptive T21
+own-keyword/competitor decomposition. The scientific decisions are unchanged.
+[Final package checks](validation/post_review_evidence_v0/submission_qa.json)
+record the 9-page main text, compact replay, figure regeneration, and regression tests.
+
 [T21 conditional path result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md) · [T21 prospective design](docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.md)
 
 [Phase I first-draft PDF](output/pdf/glyphprobe_t19_first_draft.pdf) · [Paper source and build](paper/README.md) · [T20 frozen protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md) · [T19 lexical + causal result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T19 frozen protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 fresh lexical result](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T18 frozen protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) · [T17 depth-atlas result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
@@ -808,7 +814,23 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. The [anonymous manuscript](output/pdf/glyphprobe_t19_first_draft.pdf) combines T19's 9/9 token-count-matched lexical result, its symbol and component boundaries, T20's calibration limits, and T21's conditional continuous-margin contribution. The [v3 claim table](paper/CLAIM_TABLE.md) keeps these distinct. The compact anonymous artifact, asset-license inventory, compute report, and ethics review are included in the [paper package](paper/README.md); raw model-state replay, complete historical compute accounting, and final author review remain explicit limitations or pending work. The T21 scalar inference is reproducible without a model. T15-B remains a separate prospective replication of an operational response-shape candidate. These lanes do not establish human meaning, a complete mediator, a universal circuit, tokenizer independence, a scale law, tuning invariance, or model-population generality. Packaging and validation do not constitute submission; final author approval and upload remain separate steps. See the [T21 result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md) and [roadmap](docs/ROADMAP.md).
+Phase I ends with an English preprint-ready paper supported by an auditable
+evidence package. The [anonymous manuscript](output/pdf/glyphprobe_t19_first_draft.pdf)
+combines T19's 9/9 token-count-matched lexical result, its symbol and component
+boundaries, T20's calibration limits, and T21's conditional continuous-margin
+contribution. The [v4 claim table](paper/CLAIM_TABLE.md) keeps these distinct.
+The [paper package](paper/README.md) includes an anonymous artifact, licenses,
+compute accounting, and ethics review. T19 primary-window statistics and T21
+scalar inference can be replayed without models; the post-hoc T21 decomposition
+remains descriptive. Raw-state replay, complete historical compute accounting,
+and final author review remain limitations or pending work.
+
+T15-B remains a separate prospective replication of an operational response-shape
+candidate. These lanes do not establish human meaning, a complete mediator,
+a universal circuit, tokenizer independence, a scale law, tuning invariance,
+or model-population generality. Packaging and validation do not constitute
+submission; final author approval and upload are separate. See the [T21 result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md),
+[post-review audit](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md), and [roadmap](docs/ROADMAP.md).
 
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the

@@ -38,8 +38,8 @@ word-disjoint CLDR-keyword, and codepoint views of 55 emoji and 55 non-emoji
 Unicode symbols. Across nine prespecified model--tokenizer configurations,
 emoji keyword-minus-codepoint retrieval is positive in unrestricted and
 exact four-view token-count-matched analyses. Every configuration exceeds the
-registered 0.02 floor; the four-model partial-conjunction primary passes
-($p=0.0027$). Symbols show broad official-name retrieval and smaller,
+registered 0.02 floor; keyword-mapping randomization passes the four-model
+partial-conjunction primary ($p=0.0027$). Symbols show broad official-name retrieval and smaller,
 heterogeneous keyword effects. In Llama 3.2 3B, rank-8 subspaces learned from
 128 source emoji satisfy no primary late-component joint
 necessity-and-sufficiency criterion on 192 held-out emoji. A separately
@@ -229,9 +229,11 @@ Every model must pass two components. The unrestricted component uses all 55
 emoji and permutes keyword correspondence within glyph kind. The matched
 component retains non-singleton strata sharing the exact four-view
 token-count signature and permutes keywords only within stratum. Retrieval in
-that component uses the retained pool ($n=31$--$41$ emoji across models), so
-its chance level is $1/n$; unrestricted and matched magnitudes are not treated
-as directly commensurable. Official-name and codepoint correspondences stay fixed.
+that component uses the retained pool ($n=31$--$51$ emoji across models).
+Uniform guessing over this gallery has rate $1/n$; the within-stratum
+randomization expectation depends on stratum membership of the predictions.
+Unrestricted and matched magnitudes are not directly commensurable.
+Official-name and codepoint correspondences stay fixed.
 Thus the one-sided randomization test asks whether the fixed keyword mapping
 beats mappings allowed by its null; because the codepoint term is fixed, it is
 not a paired significance test of keyword--codepoint equality. The registered
@@ -412,18 +414,6 @@ negative in both components. Official-name retrieval exceeded keyword retrieval
 for symbols in 9/9 configurations in both components, with mean symbol official-name effects
 of $+0.0750$ and $+0.0821$ (Figure \ref{fig:symbol-boundary}).
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=\linewidth]{figures/t19_emoji_symbol_boundary.pdf}
-  \caption{Registered secondary comparison. Each row shows unrestricted (U)
-  and token-count-matched (M) effects for the same prespecified model. Official-name
-  retrieval is not exclusive to emoji; disjoint-keyword effects are
-  stronger and more consistent for the prespecified emoji panel. Glyph category,
-  frequency, label quality, and token identity are not exchangeable, so this
-  is a boundary result rather than an emoji-only semantic claim.}
-  \label{fig:symbol-boundary}
-\end{figure}
-
 This comparison cannot establish an emoji-specific faculty: the panels are
 not matched on training frequency, lexical specificity, Unicode category,
 visual familiarity, or token identity. Its role is to prevent the incorrect
@@ -497,7 +487,7 @@ replaced at these earlier sites. Component-output swap effects at blocks 21
 and 24 are smaller (at most $14\%$ of the gap; block-24 attention $2\%$).
 This asymmetry motivated the T21-C test of later glyph-position messages.
 
-Optimized source-item fits yield little held-out benefit; Appendix
+Training trajectories improve with limited held-out benefit; Appendix
 \ref{app:t20} reports the training, validation, and self-retrieval diagnostics.
 
 \begin{figure}[t]
@@ -515,30 +505,44 @@ Optimized source-item fits yield little held-out benefit; Appendix
   \label{fig:t20-ceilings}
 \end{figure}
 
-\paragraph{A conditional attention-message contribution.}
+\subsection{A conditional attention-message contribution}
 On all 195 T21-C items, the five simultaneous lower bounds are positive.
 Glyph-message decrement exceeds the suffix control by $0.002326$ in cosine
 margin (lower bound $0.001399$), and restoration exceeds its control by
-$0.002267$ (lower bound $0.001400$; Table \ref{tab:t21}). Both carriers have
+$0.002267$ (lower bound $0.001400$; Figure \ref{fig:t21-path}). Both carriers have
 positive means separately. Absolute glyph-message decrement and restoration
 each have zero mean keyword top-1 effects; the positive result concerns
 relative similarity. Independent CPU reconstruction agrees on every metric,
 bound, and the prespecified verdict.
+A post-hoc decomposition finds positive own-keyword shifts in both adjusted
+means, partly offset by increased competitor similarity (Table
+\ref{tab:t21-decomposition}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t21_path_summary.pdf}
+  \caption{T21-C: conditional message intervention and five margin contrasts.
+  A 384-item pilot selected block 21 before the 195-item confirmation.
+  Points are means; each segment joins its simultaneous one-sided 95\%
+  lower bound to the mean (20,000 shared-index item-bootstrap draws).
+  All five lower bounds exceed zero. Effects average two carriers and two
+  fixed-pool donors within each item; absolute top-1 decrement and restoration
+  have zero mean effects. Table \ref{tab:t21} gives exact values.}
+  \label{fig:t21-path}
+\end{figure}
 
 \section{Discussion}
 
 The sequence separates three measurements. T19-L establishes a word-disjoint
-lexical relation beyond a pure length account, within the broader pattern of
-named-symbol retrieval. T19-C and T20-C constrain local low-rank accounts;
-T20-C's full-state calibration also exposes the limits of its own top-1
-criterion. T21-C then confirms a conditional contribution from later
-glyph-position messages on new items. Its zero mean absolute top-1 effects
-separate changes in lexical geometry from changes in retrieval rank.
+lexical relation beyond a pure length account within named-symbol retrieval.
+T19-C and T20-C constrain local low-rank accounts, with T20-C exposing the
+calibration limits of its top-1 criterion. T21-C confirms a conditional
+glyph-message contribution on new items.
 
-Endpoint decomposition matters throughout. T19-C's block-27 MLP patch raises
+Endpoint decomposition clarifies each claim. T19-C's block-27 MLP patch raises
 the composite score chiefly by degrading codepoint self-retrieval. T21-C
-raises a continuous keyword margin without a mean rank benefit. Reporting
-these components separately makes the causal claim's target explicit.
+changes both own-keyword and competing-keyword cosines, with positive adjusted
+margins and zero mean absolute top-1 effects.
 
 \section{Limitations and broader impact}
 
@@ -599,7 +603,7 @@ experiments leave the tested rank-8 readout-token account unsupported.
 A separately specified 195-item follow-up confirms a conditional glyph-position
 attention contribution to keyword margin, with zero mean absolute top-1
 effects. Lexical readability, component-local mediation, and behaviorally
-effective pathways remain distinct empirical questions.
+effective pathways remain distinct empirical questions.\label{sec:main-end}
 
 \bibliographystyle{plainnat}
 \bibliography{references}
@@ -793,19 +797,19 @@ submission manifest.}
 \begin{table}[H]
 \centering
 \small
-\begin{tabular}{lrrrc}
+\begin{tabular}{lrrrrc}
 \toprule
-Model configuration & U effect & M effect & Model IUT $p$ & Pass \\
+Model configuration & M $n$ & U effect & M effect & Model IUT $p$ & Pass \\
 \midrule
-Qwen2.5 0.5B & 0.0364 & 0.0702 & 0.00055 & yes \\
-OLMo 2 1B & 0.0652 & 0.0712 & 0.00135 & yes \\
-Qwen2.5 1.5B & 0.0530 & 0.0631 & 0.00185 & yes \\
-SmolLM2 1.7B & 0.0606 & 0.0528 & 0.00005 & yes \\
-Gemma 2 2B IT & 0.0886 & 0.0825 & 0.00005 & yes \\
-Llama 3.2 3B & 0.0856 & 0.1075 & 0.00135 & yes \\
-Qwen2.5 3B & 0.0712 & 0.0833 & 0.00005 & yes \\
-Qwen2.5 7B & 0.1818 & 0.1869 & 0.00005 & yes \\
-Mistral 7B Inst. & 0.2386 & 0.2577 & 0.00005 & yes \\
+Qwen2.5 0.5B & 35 & 0.0364 & 0.0702 & 0.00055 & yes \\
+OLMo 2 1B & 31 & 0.0652 & 0.0712 & 0.00135 & yes \\
+Qwen2.5 1.5B & 35 & 0.0530 & 0.0631 & 0.00185 & yes \\
+SmolLM2 1.7B & 41 & 0.0606 & 0.0528 & 0.00005 & yes \\
+Gemma 2 2B IT & 51 & 0.0886 & 0.0825 & 0.00005 & yes \\
+Llama 3.2 3B & 31 & 0.0856 & 0.1075 & 0.00135 & yes \\
+Qwen2.5 3B & 35 & 0.0712 & 0.0833 & 0.00005 & yes \\
+Qwen2.5 7B & 35 & 0.1818 & 0.1869 & 0.00005 & yes \\
+Mistral 7B Inst. & 38 & 0.2386 & 0.2577 & 0.00005 & yes \\
 \bottomrule
 \end{tabular}
 \caption{Exact reporting values for the registered emoji
@@ -815,13 +819,43 @@ $p$-value.}
 \label{tab:observational}
 \end{table}
 
-Matched emoji counts ranged from 31 to 41. The matched component retained at
+Matched emoji counts ranged from 31 to 51. The matched component retained at
 least 63 observational items total in every configuration, with at least 31 emoji and
 32 symbols; the unrestricted component used all 55 emoji and 55 symbols. The
 acquisition comprised $9\times110\times4\times2=7{,}920$ batch-one forwards
 (configurations $\times$ items $\times$ views $\times$ carriers). Four
 distances and nine depths produced $7{,}920\times4\times9=285{,}120$ readout
 vectors in 45 checksum-verified data files.
+
+\paragraph{Conditional randomization benchmark and compact replay.}
+For query $i$, let $s(i)$ be its exact token-count stratum and
+$\hat\jmath_{i,c}$ its keyword prediction. The keyword hit rate expected under
+the matched null is
+\[
+ \frac{1}{24n}\sum_{c,i}
+ \frac{\mathbf{1}[\hat\jmath_{i,c}\in s(i)]}{|s(i)|}.
+\]
+This averages a fixed prediction's chance of matching its permuted label.
+For Llama's 31-item matched emoji gallery it is $0.06650$; uniform guessing
+over that gallery is $1/31=0.03226$. The codepoint term stays fixed. The
+anonymous archive supplies all primary-window prediction indices and exact
+strata for all nine configurations. A separate NumPy-only program reproduces
+all 36 randomization tests, 36 descriptive intervals, model and Holm
+decisions, and the cross-model $p=0.0027$ with zero numerical difference on
+the acquisition platform. This is statistical replay from fixed predictions;
+hidden-state reconstruction requires the retained arrays.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=\linewidth]{figures/t19_emoji_symbol_boundary.pdf}
+  \caption{Registered secondary comparison. Each row shows unrestricted (U)
+  and token-count-matched (M) effects for the same prespecified model.
+  Official-name retrieval extends to non-emoji symbols; disjoint-keyword
+  effects are stronger and more consistent for the prespecified emoji panel.
+  Glyph category, frequency, label quality, and token identity are
+  nonexchangeable across panels.}
+  \label{fig:symbol-boundary}
+\end{figure}
 
 \section{Exact causal results}
 \label{app:causal}
@@ -916,17 +950,25 @@ and 124,416 intervention rows; 18 component tests used 99,999 sign flips and
 value in Table \ref{tab:t20}, both primary verdicts, and the specification
 and execution records.
 
-Final training InfoNCE is $0.52$--$0.65$ at the block-21 residual against a
-$4.85$ chance level and $5.0$--$6.3$ at attention outputs. Held-out source
-validation stays at zero to one item across all nine sites and three seeds.
+At step 600, recorded minibatch InfoNCE is $0.52$--$0.65$ at the block-21
+residual (uniform-label benchmark $\log 128=4.85$) and $5.0$--$6.3$ at
+attention outputs. These training-trajectory diagnostics refer to the
+pre-update minibatch, not a full-set evaluation of the returned basis.
+Held-out source validation stays at zero to one item across all nine sites
+and three seeds.
 The block-24 evaluation adjusted sufficiency of $+0.0046$ has an uncorrected
 component-test $p=0.0085$ and remains below one quarter of the $0.02$ floor.
 
 Subspace training used Adam with learning rate $10^{-3}$ for 600 steps,
 32 items per batch, and seeds 0, 1, and 2. The 128 source items were split
-deterministically into 96 training and 32 validation items. Seed selection
-maximized validation keyword top-1 under patching minus that under ablation;
-ties selected the lowest seed. Training used the pipe carrier at distance 1,
+deterministically into 96 training and 32 validation items. Validation every
+50 steps measured keyword top-1 under patching minus that under ablation.
+Within each seed, the first checkpoint attaining the maximum was retained;
+the maximum across seeds then selected the basis, with lowest-seed ties.
+Both primary sites selected seed 0, at steps 350 (block 21) and 50 (block 24),
+well before step 600. Their recorded minibatch losses at those iterations
+were $1.235$ and $3.884$; the bases were saved after the corresponding update.
+Training used the pipe carrier at distance 1,
 FP32 subspace parameters, and BF16 injection during evaluation. The model
 weights remained unchanged.
 
@@ -1077,9 +1119,48 @@ Keyword top-1 has zero mean absolute decrement, absolute restoration, and
 adjusted restoration. Adjusted decrement is $-0.001282$ in top-1 units;
 full-prefix calibration is $0.010256$. These are descriptive means, not
 equivalence tests. The positive result establishes a conditional contribution
-to keyword similarity. T19/T20 top-1 verdicts remain unchanged. Testing the
+to keyword margin. T19/T20 top-1 verdicts remain unchanged. Testing the
 same route on non-emoji symbols, separating keys from values, and connecting
 margin changes to rank or behavior require new prospective populations.
+
+\paragraph{Post-hoc margin decomposition.}
+To identify which terms changed, we decomposed all five original contrasts on
+all 195 items using the saved states. For each original contrast operator
+$D$, $D(m)=D(\mathrm{own})-D(\mathrm{max\ competitor})$, with the same
+neutral references and within-item averaging. Table \ref{tab:t21-decomposition}
+reports descriptive means. The positive own-keyword shifts in both
+position-adjusted contrasts are partially offset by increased maximum
+competitor cosine. Absolute decrement also reflects increased competition
+under donor injection. The donor keyword belongs to the source gallery;
+its cosine is a diagnostic rather than a third additive term. The maximum
+competitor may change identity between conditions. This endpoint identity
+does not separate independently manipulable mediators. No new significance
+tests were performed, and the simultaneous bounds above apply only to the
+original margins. All ten original metric arrays were reconstructed exactly
+on the acquisition platform; the largest itemwise decomposition error was
+$4.17\times10^{-17}$.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Contrast & Own & Max.\ competitor & Margin & Donor \\
+\midrule
+Calibration & $+0.011980$ & $+0.003054$ & $+0.008926$ & $-0.003177$ \\
+Decrement & $+0.001046$ & $-0.002376$ & $+0.003422$ & $-0.005442$ \\
+Adjusted decrement & $+0.002428$ & $+0.000103$ & $+0.002326$ & $-0.001913$ \\
+Restoration & $+0.008955$ & $+0.005238$ & $+0.003717$ & $+0.003039$ \\
+Adjusted restoration & $+0.004402$ & $+0.002135$ & $+0.002267$ & $+0.000653$ \\
+\bottomrule
+\end{tabular}
+\caption{Post-hoc T21-C decomposition on the same 195 items, block 21, two
+distance-8 carriers, and two donors. Entries are mean contrasts in cosine
+units; Own minus Max.\ competitor equals Margin before rounding. Donor
+reports the injected source item's keyword cosine. These descriptive
+components have no separate significance tests.}
+\label{tab:t21-decomposition}
+\end{table}
 
 \section{Execution, licensing, and artifact boundary}
 \label{app:artifact}
@@ -1088,7 +1169,7 @@ Both observational and causal acquisition used a fixed Transformers/CUDA
 BF16 environment and an NVIDIA GeForce RTX 5090. Model artifacts, tokenizer replay
 receipts, selection files, analysis summaries, randomization seeds, bootstrap
 seeds, and validators are checksum-bound. Figure inputs in the paper are only
-the compact validated model-configuration and causal-site JSON summaries; a generated
+the compact validated model-configuration, causal-site, and T21 contrast JSON summaries; a generated
 manifest hashes both inputs and every plotted PDF/PNG output.
 
 The anonymous evidence archive is a deterministic whitelist-only zip. Its
@@ -1099,10 +1180,11 @@ item sets, code, validation receipts, and paired license/compute/ethics reports.
 It omits model-dependent activation arrays, learned causal subspaces, the full
 intervention ledger, model weights, and tokenizer files. Those raw scientific
 objects remain identified by checksums in execution records. The package
-supports compact-summary and figure audit. T21-C additionally includes 195
-item-level scalar contrast rows and a NumPy-only validator that reproduces
-its simultaneous bounds and top-1 means without a model. Raw-state replay
-requires the omitted arrays.
+supports compact-summary and figure audit. T19-L prediction indices and
+exact strata reproduce its primary-window tests and intervals without a
+model. T21-C includes 195 item-level scalar contrast rows and NumPy-only
+validators for its simultaneous bounds, top-1 means, and descriptive margin
+decomposition. Raw-state replay requires the omitted arrays.
 
 The observational acquisition used 7,920 batch-one forwards and produced
 285,120 readout vectors. T19-C acquisition used 256 source forwards, 2,880

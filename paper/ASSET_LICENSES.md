@@ -5,6 +5,8 @@
 Status: **reviewed for the anonymous T19/T20/T21 submission artifact on 2026-09-02**.
 T21 reuses the same Llama checkpoint and Unicode/CLDR sources; it introduces
 derived scalar contrasts and project code, with no new upstream model assets.
+Archive v3 additionally includes derived T19 prediction indices, T20 selection
+diagnostics, and T21 margin components; it adds no upstream model files.
 This register distinguishes permission to use an upstream asset from permission
 to redistribute the asset itself. The anonymous archive contains no model
 weights or tokenizer files.

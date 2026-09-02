@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate compact double-blind evidence archives, preserving v1 compatibility."""
+"""Validate compact double-blind evidence archives, preserving v1/v2 compatibility."""
 
 from __future__ import annotations
 
@@ -12,9 +12,13 @@ from typing import Callable
 import zipfile
 
 
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v2"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v3"
 ARCHIVE_ROOT = ARTIFACT_ID
-SUPPORTED_IDS = {"glyphprobe_t19_anonymous_evidence_v1", ARTIFACT_ID}
+SUPPORTED_IDS = {
+    "glyphprobe_t19_anonymous_evidence_v1",
+    "glyphprobe_t19_anonymous_evidence_v2",
+    ARTIFACT_ID,
+}
 MANIFEST_NAME = "ARTIFACT_MANIFEST.json"
 SUMS_NAME = "SHA256SUMS"
 FIXED_ZIP_TIME = (2026, 9, 2, 0, 0, 0)

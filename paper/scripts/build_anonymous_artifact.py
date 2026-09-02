@@ -12,7 +12,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v2"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v3"
 ARCHIVE_ROOT = ARTIFACT_ID
 OUTPUT_DIRECTORY = ROOT / "output" / "artifacts"
 OUTPUT_ZIP = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.zip"
@@ -141,6 +141,27 @@ T21_FILES = (
     "validation/t21_glyph_context_path_confirmation_v0/confirmation_specification.json",
 )
 
+POST_REVIEW_FILES = (
+    "docs/POST_REVIEW_EVIDENCE_PLAN_V0.md",
+    "docs/POST_REVIEW_EVIDENCE_PLAN_V0.ja.md",
+    "docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md",
+    "docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md",
+    "scripts/audit_t20_checkpoint_selection_v0.py",
+    "scripts/decompose_t21_margin_v0.py",
+    "scripts/validate_t21_margin_decomposition_v0.py",
+    "scripts/export_t19_compact_predictions_v0.py",
+    "scripts/validate_t19_compact_predictions_v0.py",
+    "tests/test_post_review_evidence_v0.py",
+    "validation/post_review_evidence_v0/t20_checkpoint_selection.json",
+    "validation/t19_lexical_alias_unicode_control_v0/compact_v0/predictions.json",
+    "validation/t19_lexical_alias_unicode_control_v0/compact_v0/replay_receipt.json",
+    "validation/t21_margin_decomposition_v0/decomposition.json",
+    "validation/t21_margin_decomposition_v0/reconstruction_receipt.json",
+    "validation/t21_margin_decomposition_v0/compact_validation.json",
+    "paper/figures/t21_path_summary.pdf",
+    "paper/figures/t21_path_summary.png",
+)
+
 T21_SHARED_RESULTS = (
     "acquisition_receipt.json",
     "source_receipt.json",
@@ -252,6 +273,8 @@ def build_payloads() -> dict[str, bytes]:
         add_file(payloads, name)
     for name in T21_FILES:
         add_file(payloads, name)
+    for name in POST_REVIEW_FILES:
+        add_file(payloads, name)
     for stage in ("pilot", "confirmation"):
         prefix = f"validation/t21_glyph_context_path_{stage}_v0/results"
         for name in T21_SHARED_RESULTS:
@@ -333,6 +356,8 @@ def main() -> int:
             "raw_model_arrays_included": False,
             "scientific_correctness_proven_by_hashes": False,
             "t21_scalar_contrast_statistical_replay_supported": True,
+            "t19_prediction_index_statistical_replay_supported": True,
+            "t21_posthoc_scalar_decomposition_supported": True,
         },
         "reproducibility_timestamp_utc": FIXED_REPRODUCIBILITY_TIMESTAMP,
         "files": [

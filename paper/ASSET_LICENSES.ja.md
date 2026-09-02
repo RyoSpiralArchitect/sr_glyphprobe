@@ -7,6 +7,8 @@ T21は同じLlamaチェックポイントとUnicode/CLDR原資料を再利用し
 導入していない。追加するのは派生した比較値とプロジェクトのコードである。この台帳では、
 upstream assetを利用する権限と、そのasset自体を再配布する権限を分ける。匿名archiveに
 model weightやtokenizer fileは含めない。
+Archive v3には派生したT19予測index、T20の採用診断、T21のマージン成分も含める。
+upstreamのモデルファイルは追加しない。
 
 ## Model checkpoint
 

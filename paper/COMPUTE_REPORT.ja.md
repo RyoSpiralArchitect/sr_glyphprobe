@@ -60,6 +60,18 @@ intervention rowは追加training exampleではない。generation callは0件�
 動く統計検証コードを同梱する。生のモデル状態からの再構成には、別途保管している配列が
 必要である。
 
+## 査読後のCPU検証
+
+2026-09-02の査読対応では、同じLinux側のNumPy 2.5.2で保存済み出力だけを用いた。
+T21の再構成はBLAS/OpenMPを4 thread、T19の再計算は2 threadに制限した。
+T21の13 chunkと10指標配列を再構成して195項目のマージン成分を出力し、T19の全36
+randomization検定・36 bootstrap区間、T20の27訓練履歴・9採用時点を再計算した。
+追加のモデル実行・生成・成分の有意差検定はいずれも0で、GPU計算は要求していない。
+段階別のCPU時間・最大メモリを別途計測していないため、速度倍率や総計算量は主張しない。
+
+T19のコンパクトな予測、T20の採用検証、T21の記述的分解はarchive v3に含める。
+raw状態は引き続き省略する。
+
 ## 既知の欠落
 
 compact T19 receiptには、acquisition wall-clock、peak CUDA memory、CPU model、system

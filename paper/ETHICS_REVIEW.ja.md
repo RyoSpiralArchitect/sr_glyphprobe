@@ -30,6 +30,11 @@ CLDRから取得し、assistantの判断を実験測定値には使っていな�
 assistant output自体は実験measurementではないが、研究workflowには影響したため、保守的に
 開示する。
 
+その後のfresh-reader reviewを受けて、事後的な指標分解、採用チェックポイントの説明、
+コンパクトな統計再計算を加えた。完了済み出力を使い、T21の全195項目と元の対比を保ち、
+有意差検定や確認判定の変更は追加しない。T19 matched項目数の範囲は文章上の31–41を
+31–51へ訂正した。元の配列と検定は既に正しい項目数を用いていた。
+
 ## 結論
 
 宣言scope内でT19/T20/T21は、確認したNeurIPS ethics原則に適合する。licensed public resourceを

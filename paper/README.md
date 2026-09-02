@@ -19,7 +19,7 @@ second manuscript.
   template assets; `checklist.tex` contains conservative draft answers with the
   official questions unchanged.
 - `scripts/build_figures.py`: deterministic figure builder from compact,
-  validated T19/T20 JSON summaries.
+  validated T19/T20/T21 JSON summaries.
 - `scripts/build_anonymous_artifact.py` and
   `scripts/validate_anonymous_artifact.py`: whitelist-only deterministic
   archive builder and independent integrity/identity-boundary validator.
@@ -28,7 +28,7 @@ second manuscript.
 - `ASSET_LICENSES.*`, `COMPUTE_REPORT.*`, and `ETHICS_REVIEW.*`: paired
   English/Japanese submission audits.
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compiled review PDF.
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip`: standalone
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip`: standalone
   anonymous compact artifact, with adjacent receipt and SHA-256.
 
 The official formatting archive was downloaded from
@@ -57,7 +57,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip
 ```
 
 Tectonic runs the BibTeX pass automatically. On the validated Mac, invoke the
@@ -103,7 +103,7 @@ uncalibratable verdicts at both primary sites. The measured depth-dependent
 asymmetry motivates a recovery-pathway hypothesis; those swaps alone do not
 identify that pathway or exclude all possible subspaces.
 
-Revision v3 adds the separately specified T21-C result on 195 further items:
+Revision v4 retains the separately specified T21-C result on 195 further items:
 glyph-position messages after a codepoint-view readout reset contribute to
 keyword cosine margin beyond equal-count suffix controls. All five
 simultaneous one-sided 95% lower bounds are positive. Absolute glyph-message
@@ -112,10 +112,15 @@ decrement and restoration have zero mean keyword top-1 effects. The
 T19/T20 results, thresholds, and input checksums remain unchanged. See the
 [paired result report](../docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md).
 
-The v2 anonymous archive includes 195 derived item-level contrast rows and a
-standalone NumPy statistical replay, in addition to compact receipts. This
-does not replace raw-state validation. The Table-6-corrected v1 package remains
-available as the pre-T21 submission baseline; the validator accepts both versions.
+The v3 anonymous archive adds T19 prediction indices for model-free replay of
+all 36 primary-window tests and descriptive intervals, the T20 checkpoint
+selection audit, and T21's post-hoc own/competitor margin decomposition. The
+decomposition is descriptive and changes no confirmatory verdict. It retains
+the 195 original scalar contrast rows and their simultaneous-inference replay.
+Matched T19 emoji counts are corrected to 31--51 (Gemma: 51); the underlying
+computations were already correct. See the [post-review evidence report](../docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md).
+Raw-state validation remains separate. Both v1 and v2 remain available, and
+the archive validator accepts all three versions.
 
 The manuscript now defines `T19-L` at first use as the lexical observational
 arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
@@ -159,7 +164,7 @@ encoding, output, and QA obligation before rendering.
   order, validate all 18 points against `model_cell_results.json`, and inspect
   labels and reference lines in the compiled paper.
 
-### Figure 3 - emoji and symbol lexical boundary
+### Figure 6 (Appendix C) - emoji and symbol lexical boundary
 
 - **Question:** How do keyword and official-name effects differ between emoji
   and non-emoji Unicode symbols?
@@ -175,7 +180,7 @@ encoding, output, and QA obligation before rendering.
   model-level values, preserve a common x-axis, label the comparison
   "registered secondary," and inspect the final caption and legend.
 
-### Figure 4 - optimized subspaces and full-state controls
+### Figure 3 - optimized subspaces and full-state controls
 
 - **Question:** How do the optimized rank-8 effects compare with complete
   state replacement at each of the nine T20-C sites?
@@ -192,6 +197,24 @@ encoding, output, and QA obligation before rendering.
   estimate and interval, distinguish adjusted subspace effects from unadjusted
   swap effects, and check the legend and vertical reference lines in the PDF.
 
+### Figure 4 - conditional glyph-position message test
+
+- **Question:** What is replaced in T21-C, and how large are its five specified
+  cosine-margin contrasts?
+- **Takeaway:** after a block-21 readout reset, glyph-position disruption and
+  restoration exceed equal-count suffix controls on 195 items. This is a
+  conditional margin effect, with zero mean absolute top-1 effects.
+- **Family / sufficiency:** a three-step schematic above five one-sided
+  interval marks; all five original contrasts remain visible.
+- **Renderer / encoding:** static Matplotlib, circles for decrement, squares
+  for restoration, and a neutral calibration diamond. Segments run from each
+  simultaneous one-sided 95% lower bound to its mean; they are not two-sided
+  confidence intervals. Two carriers and two donors are averaged within items.
+- **Output / QA:** `figures/t21_path_summary.pdf`; source only the original
+  `confirmation_result.json`, check all five bounds, preserve a zero reference,
+  and test 3-point box insets at three resolutions. The secondary symbol plot
+  moves to Appendix C so the main text remains within nine pages.
+
 ### Figure 5 - exploration-to-confirmation lineage
 
 - **Question:** Which earlier results changed the design that became T19?
@@ -205,7 +228,7 @@ encoding, output, and QA obligation before rendering.
 - **Output / QA:** `figures/t19_lineage.pdf`; verify every study label against
   Appendix A and inspect all box labels and arrows in the compiled paper.
 
-### Figure 6 (Appendix D) - component-level causal test
+### Figure 7 (Appendix D) - component-level causal test
 
 - **Question:** Does any prespecified late site have both random-adjusted necessity
   and sufficiency above the 0.02 floor?

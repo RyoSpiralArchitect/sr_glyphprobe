@@ -1,0 +1,28 @@
+{
+  "acquisition_receipt_sha256": "5c521d3839d43c1d3875a1fa68d7a840e94a45383c4bea88edc6c3fc056c1476",
+  "analysis_receipt_sha256": "182697223edb9aeccd4d1a64595d65d07e923dfd48a25e6eeb837395fe00b408",
+  "chunks_checked": 13,
+  "created_at_utc": "2026-09-02T07:49:21.539530+00:00",
+  "decomposition_sha256": "d4a0f6cb96323c0e41905035f3dc68e183cef70b448518d3fa1e9f078db19b50",
+  "items_checked": 195,
+  "maximum_margin_identity_error": 4.163336342344337e-17,
+  "metric_reconstruction_errors": {
+    "alias_margin": 0.0,
+    "alias_margin_effect": 0.0,
+    "alias_top1": 0.0,
+    "alias_top1_effect": 0.0,
+    "codepoint_margin": 0.0,
+    "codepoint_margin_effect": 0.0,
+    "codepoint_top1": 0.0,
+    "codepoint_top1_effect": 0.0,
+    "donor_margin": 0.0,
+    "donor_margin_effect": 0.0
+  },
+  "plan_sha256": "be6c8c4fb94d47f80ee4668a46895366abc05c6d1088e8e3154cf18670a25b6b",
+  "scientific_decisions_changed": false,
+  "source_script_sha256": "759a8d518ddefe1507ead35495451db948af528c54fc34c362d78c019fb56b66",
+  "source_states_sha256": "20c4fba633b8fbcdde6a1dd0fa8d14a6c1d6d9d5a5e40e216c91974d412ba287",
+  "specification_sha256": "c3c34ca583958882157b90c20a28ef1667138b9dd0df907f95aa4c8d29ab8282",
+  "status": "pass",
+  "top1_exact": true
+}

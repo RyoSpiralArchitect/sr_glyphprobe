@@ -1,0 +1,10 @@
+{
+  "boundary": "Checks compact scalar identities and means; raw-state provenance is a separate receipt.",
+  "contrasts_checked": 5,
+  "decomposition_sha256": "d4a0f6cb96323c0e41905035f3dc68e183cef70b448518d3fa1e9f078db19b50",
+  "items_checked": 195,
+  "maximum_numeric_error": 4.163336342344337e-17,
+  "original_compact_sha256": "5266a84e14e3f7cb9307b22bc3b416512e7269555d30e039df07670d58dcecf3",
+  "status": "pass",
+  "validator_sha256": "0d173879140e1571ed45db68585a106eac94de83bffdda4c4bd038e615adca75"
+}

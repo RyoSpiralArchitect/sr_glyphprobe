@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build manuscript figures from checksum-bound compact T19/T20 summaries."""
+"""Build manuscript figures from checksum-bound compact T19/T20/T21 summaries."""
 
 from __future__ import annotations
 
@@ -39,6 +39,10 @@ T20_SOURCE = (
     / "t20_lexical_alias_optimized_subspace_causal_v0"
     / "results"
     / "causal_site_results.json"
+)
+T21_SOURCE = (
+    ROOT
+    / "validation/t21_glyph_context_path_confirmation_v0/results/confirmation_result.json"
 )
 T20_SITE_ORDER = [
     (21, "resid_out"),
@@ -347,6 +351,120 @@ def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
     )
     fig.tight_layout(rect=(0, 0.06, 1, 0.96))
     return save_figure(fig, "t20_causal_ceilings")
+
+
+def build_t21_path_summary() -> list[Path]:
+    payload = load_json(T21_SOURCE)
+    if (
+        payload["protocol_id"] != "glyphprobe-t21-glyph-context-path-confirmation-v0"
+        or payload["target_items"] != 195
+        or payload["candidate_anchor"] != 21
+        or payload["primary"]["replicates"] != 20000
+    ):
+        raise ValueError("T21 population, anchor, or inference changed")
+    fig = plt.figure(figsize=(7.15, 3.05))
+    diagram = fig.add_axes((0.02, 0.65, 0.96, 0.24))
+    diagram.set(xlim=(0, 3.2), ylim=(0, 1))
+    diagram.axis("off")
+    boxes = []
+    words = [
+        "Readout residual reset\nSame-item codepoint state\nAfter block 21",
+        "Later attention K/V\nDonor G / S / prefix swaps\nBlocks 22–27 · readout only",
+        "Final keyword margin\nOwn minus best source cosine\n195 items · 128 competitors",
+    ]
+    for start, text in zip((0.02, 1.11, 2.20), words, strict=True):
+        patch = FancyBboxPatch(
+            (start, 0.03),
+            0.96,
+            0.94,
+            boxstyle="round,pad=0.015,rounding_size=0.035",
+            facecolor="white",
+            edgecolor=DARK,
+            linewidth=1.0,
+        )
+        diagram.add_patch(patch)
+        label = diagram.text(
+            start + 0.48, 0.50, text, ha="center", va="center", fontsize=8.1, color=DARK
+        )
+        boxes.append((patch, label))
+    for start in (0.98, 2.07):
+        diagram.add_patch(
+            FancyArrowPatch(
+                (start, 0.5),
+                (start + 0.13, 0.5),
+                arrowstyle="-|>",
+                mutation_scale=9,
+                color=GRAY,
+                linewidth=1.0,
+            )
+        )
+    fig.text(
+        0.5,
+        0.597,
+        "G: glyph positions   S: equal-count suffix positions   Same-slot neutral references",
+        ha="center",
+        fontsize=8.0,
+        color=DARK,
+    )
+    fig.text(
+        0.34,
+        0.536,
+        "Mean and simultaneous one-sided 95% lower bound",
+        fontsize=8.0,
+        color=DARK,
+    )
+    ax = fig.add_axes((0.34, 0.155, 0.62, 0.345))
+    names = [
+        "calibration",
+        "necessity_absolute",
+        "necessity_position_adjusted",
+        "rescue_absolute",
+        "rescue_position_adjusted",
+    ]
+    labels = [
+        "Full-prefix calibration",
+        "Glyph decrement",
+        "Adjusted decrement",
+        "Glyph restoration",
+        "Adjusted restoration",
+    ]
+    colors = [GRAY, BLUE, BLUE, ORANGE, ORANGE]
+    markers = ["D", "o", "o", "s", "s"]
+    for position, name, color, marker in zip(
+        range(4, -1, -1), names, colors, markers, strict=True
+    ):
+        row = payload["primary"]["contrasts"][name]
+        mean, lower = row["mean"], row["lower_simultaneous_95"]
+        if not 0 < lower <= mean:
+            raise ValueError("T21 plotted lower bound changed")
+        ax.errorbar(
+            [mean],
+            [position],
+            xerr=[[mean - lower], [0]],
+            fmt=marker,
+            color=color,
+            markerfacecolor=color,
+            markeredgecolor=DARK,
+            markeredgewidth=0.7,
+            markersize=4.8,
+            elinewidth=1.2,
+            capsize=2.5,
+        )
+    ax.set_yticks(range(4, -1, -1), labels)
+    ax.set_ylim(-0.55, 4.55)
+    ax.set_xlim(0, 0.0105)
+    ax.set_xticks([0, 0.002, 0.004, 0.006, 0.008, 0.010])
+    ax.set_xlabel("Cosine-margin contrast", labelpad=3)
+    ax.tick_params(axis="y", length=0, pad=7)
+    ax.grid(axis="x", color="#E7EAED", linewidth=0.6)
+    fig.suptitle(
+        "T21-C: readout-specific path test and five contrasts",
+        y=0.99,
+        fontsize=10,
+        color=DARK,
+    )
+    validate_box_labels(fig, boxes)
+    return save_figure(fig, "t21_path_summary")
 
 
 def build_design() -> list[Path]:
@@ -741,6 +859,7 @@ def main() -> None:
     outputs.extend(build_emoji_symbol_boundary(models))
     outputs.extend(build_causal_sites(sites))
     outputs.extend(build_t20_ceilings(t20_sites))
+    outputs.extend(build_t21_path_summary())
 
     manifest = {
         "schema_version": 1,
@@ -758,6 +877,10 @@ def main() -> None:
             {
                 "path": T20_SOURCE.relative_to(ROOT).as_posix(),
                 "sha256": sha256(T20_SOURCE),
+            },
+            {
+                "path": T21_SOURCE.relative_to(ROOT).as_posix(),
+                "sha256": sha256(T21_SOURCE),
             },
         ],
         "outputs": [

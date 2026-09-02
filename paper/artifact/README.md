@@ -1,13 +1,13 @@
-# GlyphProbe T19/T20/T21 anonymous evidence artifact v2
+# GlyphProbe T19/T20/T21 anonymous evidence artifact v3
 
 [日本語](README.ja.md)
 
 This **compact, double-blind review artifact** links the prespecified T19/T20/T21
 protocols, selected item sets, compact results, independent validation reports,
 analysis and validator code, paper sources, figures, and the anonymous review
-PDF. It also supports model-free replay of T21-C's simultaneous inference from
-195 item-level scalar contrasts. Full raw-data replay requires additional files
-listed below.
+PDF. It supports model-free replay of T19-L's primary-window statistics and
+T21-C's simultaneous inference, plus the post-hoc T21 margin decomposition.
+Full raw-data replay requires additional files listed below.
 
 ## Verify first
 
@@ -27,19 +27,21 @@ prove that the scientific estimand is correct.
 ## What is included
 
 - `paper/glyphprobe_t19_anonymous.pdf` and the anonymous TeX/BibTeX sources;
-- all six deterministic paper figures plus their input/output hash manifest
+- all seven deterministic paper figures plus their input/output hash manifest
   and boxed-label layout regression tests;
 - the T19-L selection, freeze, configuration, tokenizer preflights, compact
-  observational results, and independent-validation receipt;
+  observational results, independent-validation receipt, and primary-window
+  prediction indices with exact strata for all nine models;
 - the T19-C go manifest, compact component results, and independent-validation
   receipt;
 - the descriptive T19-C post-hoc full-state swap results;
 - the T20-C configuration, selection, specification and admission manifests,
   preliminary checks, training/evaluation reports, compact results, and
-  independent-validation receipt;
+  independent-validation receipt and a post-review checkpoint-selection audit;
 - the T21 pilot and separate prospective confirmation specifications, exposed-item
   canary receipts, acquisition and analysis reports, independent numerical
-  validation, and all 195 confirmation items' derived scalar contrasts;
+  validation, all 195 confirmation items' derived scalar contrasts, and a
+  separately labeled post-hoc own/competitor decomposition;
 - the exact executor, analyzer, and independent-validator source files needed
   to inspect how the receipts were produced;
 - the minimal T9/T10/T18 bindings referenced by the T19 freeze;
@@ -65,8 +67,9 @@ design, acquisition, and analysis times remain in the experimental receipts.
 
 The omitted raw arrays remain bound by the included acquisition and validation
 receipts but are not independently replayable from this compact package. The
-archive therefore supports compact-result and figure audit, T21-C statistical
-replay from derived contrasts, source-code inspection, and manuscript
+archive therefore supports compact-result and figure audit, T19-L statistical
+replay from prediction indices, T21-C statistical replay from derived contrasts,
+the post-hoc scalar decomposition, source-code inspection, and manuscript
 verification. It does not support full
 reacquisition without obtaining the upstream model assets, or raw-array
 reconstruction from the compact evidence alone.
@@ -77,6 +80,18 @@ The integrity validator uses only the Python standard library. For the
 scientific Python files, the recorded acquisition stack is in
 `paper/COMPUTE_REPORT.md`; the small audit/figure environment is listed in
 `requirements-audit.txt`.
+
+Replay all 36 T19-L primary-window randomization tests and descriptive
+intervals, model decisions, and the cross-model primary using NumPy alone:
+
+```bash
+python3 scripts/validate_t19_compact_predictions_v0.py \
+  --compact validation/t19_lexical_alias_unicode_control_v0/compact_v0/predictions.json
+```
+
+Each test uses 19,999 permutations, each interval 20,000 item-bootstrap draws.
+The matched null permutes within exact strata; `1/n` is the separate uniform
+guessing benchmark. Retained emoji counts range from 31 to 51.
 
 Replay the T21-C five-contrast simultaneous lower bounds, verdict, and
 descriptive top-1 means using NumPy alone:
@@ -90,6 +105,20 @@ python3 scripts/validate_t21_compact_inference_v0.py \
 This recomputes 20,000 shared-index item bootstrap replicates. Agreement checks
 the statistical calculation from the included scalars; correctness of the
 model-state interventions remains a separate, receipt-bound validation.
+
+Check the post-hoc T21 decomposition from the included scalars:
+
+```bash
+python3 scripts/validate_t21_margin_decomposition_v0.py \
+  --decomposition validation/t21_margin_decomposition_v0/decomposition.json \
+  --original validation/t21_glyph_context_path_confirmation_v0/results/item_contrasts.json
+```
+
+This checks own-keyword minus maximum-competitor contrasts against all 195
+original margin rows and recomputes the descriptive means. It adds no
+component significance tests. The original margin bounds do not apply to the
+separated components. The [post-review report](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md)
+also explains selected T20 checkpoints versus step-600 training diagnostics.
 
 Regenerate the figures in a disposable extracted copy:
 

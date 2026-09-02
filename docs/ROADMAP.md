@@ -23,11 +23,18 @@ attention contribution after a readout reset, with no revision to prior
 verdicts. See the [result and evidence](T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md).
 
 The manuscript, compact anonymous archive, license inventory, compute report,
-and ethics review are assembled. Scalar T21 inference can be replayed without
-a model; full raw-state replay and complete historical compute accounting remain
+and ethics review are assembled. T19 primary-window statistics and scalar T21
+inference can be replayed without a model; full raw-state replay and complete historical compute accounting remain
 outside the compact package. Final author review and submission remain separate.
 The milestone entries below retain the research history and are not retroactive
 certificates for later claims.
+
+The [post-review audit](POST_REVIEW_EVIDENCE_RESULTS_V0.md) reconstructs the
+selected T20 checkpoints and decomposes T21's own-keyword and competitor
+cosines without changing the original decisions. All 36 T19 tests and
+descriptive intervals replay exactly. Archive v3 includes these compact
+checks. The new T21 component means are post-hoc; future component-specific
+or behavior-level claims still require a new prospective design.
 
 The original 195-item reserve is now exhausted. A future prospective study needs
 a new population, with non-emoji symbol path controls, separate key/value

@@ -18,12 +18,14 @@ FIGURES = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(FIGURES)
 
 
-@pytest.mark.parametrize("builder_name", ["build_design", "build_lineage"])
+@pytest.mark.parametrize(
+    "builder_name", ["build_design", "build_lineage", "build_t21_path_summary"]
+)
 @pytest.mark.parametrize("dpi", [72, 100, 220])
 def test_boxed_diagrams_keep_readable_padding(monkeypatch, builder_name, dpi):
     def inspect_without_export(fig, stem):
         try:
-            assert stem in {"t19_design", "t19_lineage"}
+            assert stem in {"t19_design", "t19_lineage", "t21_path_summary"}
             fig.set_dpi(dpi)
             labels = []
             for ax in fig.axes:
@@ -41,7 +43,10 @@ def test_boxed_diagrams_keep_readable_padding(monkeypatch, builder_name, dpi):
                     ]
                     assert len(matching) == 1
                     labels.append((patch, matching[0]))
-            assert len(labels) == (11 if stem == "t19_design" else 5)
+            assert (
+                len(labels)
+                == {"t19_design": 11, "t19_lineage": 5, "t21_path_summary": 3}[stem]
+            )
             FIGURES.validate_box_labels(fig, labels)
             return []
         finally:
@@ -108,3 +113,27 @@ def test_clipped_interval_fails_before_export():
             FIGURES.validate_interval_bounds(fig)
     finally:
         FIGURES.plt.close(fig)
+
+
+def test_t21_bounds_are_one_sided_and_unclipped(monkeypatch):
+    def inspect(fig, stem):
+        try:
+            assert stem == "t21_path_summary"
+            FIGURES.validate_interval_bounds(fig)
+            segments = [
+                segment
+                for ax in fig.axes
+                for container in ax.containers
+                if getattr(container, "has_xerr", False)
+                for collection in container.lines[2]
+                for segment in collection.get_segments()
+            ]
+            assert len(segments) == 5
+            for segment in segments:
+                assert 0 < segment[0, 0] < segment[1, 0]
+            return []
+        finally:
+            FIGURES.plt.close(fig)
+
+    monkeypatch.setattr(FIGURES, "save_figure", inspect)
+    FIGURES.build_t21_path_summary()
