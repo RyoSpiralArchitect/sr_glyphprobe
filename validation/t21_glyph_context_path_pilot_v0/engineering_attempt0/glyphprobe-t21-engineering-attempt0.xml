@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="16" time="1.821" timestamp="2026-09-02T03:44:20.202951+00:00" hostname="spiralreality"><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_config_has_no_reserve_authority" time="0.003" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_position_controls_are_disjoint_and_count_matched[2-4]" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_position_controls_are_disjoint_and_count_matched[3-4]" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_position_controls_are_disjoint_and_count_matched[2-8]" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_position_controls_are_disjoint_and_count_matched[3-8]" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_distance_eight_avoids_degenerate_restore_controls" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_donor_selection_is_deterministic_disjoint_and_length_matched" time="0.000" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_continuous_metrics_match_independent_reconstruction" time="0.006" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_equal_vectors_tie_break_to_own_item" time="0.001"><failure message="assert np.False_&#10; +  where np.False_ = &lt;function all at 0x768b821371b0&gt;(array([[[[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n         [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]],\n\n      ...0.]],\n\n        [[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n         [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]]]]) == 1)&#10; +    where &lt;function all at 0x768b821371b0&gt; = np.all">def test_equal_vectors_tie_break_to_own_item():
+        states = np.ones((2, 2, 2, 11, 8))
+        own = np.ones((2, 8))
+        source = np.ones((128, 8))
+        scores = pilot.score_states(
+            states, own, own, source, source, np.asarray([[0, 1], [2, 3]])
+        )
+        np.testing.assert_allclose(scores["alias_margin"], 0, atol=1e-12)
+&gt;       assert np.all(scores["alias_top1"] == 1)
+E       assert np.False_
+E        +  where np.False_ = &lt;function all at 0x768b821371b0&gt;(array([[[[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n         [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]],\n\n      ...0.]],\n\n        [[0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.],\n         [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]]]]) == 1)
+E        +    where &lt;function all at 0x768b821371b0&gt; = np.all
+
+tests/test_t21_glyph_context_path_pilot_v0.py:96: AssertionError</failure></testcase><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_bootstrap_resamples_items_not_contexts" time="0.005" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_failed_screen_keeps_reserve_closed" time="0.001" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_passing_screen_only_permits_a_new_protocol" time="0.001" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_receipts_never_overwrite" time="0.001" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_attention_adapter_exact_stock_parity" time="1.727" /><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_query_only_intervention_and_roundtrip_on_tiny_model" time="0.018"><failure message="AssertionError: assert False&#10; +  where False = &lt;built-in method equal of type object at 0x768abc3abe00&gt;(tensor([[-2.2031e-01,  5.1387e-01,  2.9449e-01, -7.2434e-01,  4.2804e-01,\n         -1.3080e+00, -1.9987e-02,  3.5692e-...092e+00,\n         -6.1072e-01,  9.1630e-01,  8.3127e-01,  2.8507e-01, -1.1307e+00,\n         -1.8579e-01,  5.5543e-02]]), tensor([[-2.2031e-01,  5.1387e-01,  2.9449e-01, -7.2434e-01,  4.2804e-01,\n         -1.3080e+00, -1.9987e-02,  3.5692e-...092e+00,\n         -6.1072e-01,  9.1630e-01,  8.3127e-01,  2.8507e-01, -1.1307e+00,\n         -1.8579e-01,  5.5543e-02]]))&#10; +    where &lt;built-in method equal of type object at 0x768abc3abe00&gt; = &lt;module 'torch' from '/home/ryospiralarchitect/.local/lib/python3.14/site-packages/torch/__init__.py'&gt;.equal">tiny_model = (&lt;module 'torch' from '/home/ryospiralarchitect/.local/lib/python3.14/site-packages/torch/__init__.py'&gt;, LlamaForCausa...1e-06)
+    (rotary_emb): LlamaRotaryEmbedding()
+  )
+  (lm_head): Linear(in_features=32, out_features=64, bias=False)
+))
+
+    def test_query_only_intervention_and_roundtrip_on_tiny_model(tiny_model):
+        torch, model = tiny_model
+        controller = pilot.AttentionPath(model.model.layers)
+        try:
+            controller.mode = "capture"
+            controller.positions = [5, 9]
+            donor_ids = torch.tensor([[6, 7] + [5] * 8])
+            with torch.inference_mode():
+                model.model(
+                    input_ids=donor_ids,
+                    attention_mask=torch.ones_like(donor_ids),
+                    use_cache=False,
+                )
+            donor_kv = controller.captured_kv
+            reset_ids = torch.tensor([[8, 9] + [5] * 8])
+            controller.captured_states, controller.captured_kv = {}, {}
+            with torch.inference_mode():
+                model.model(
+                    input_ids=reset_ids,
+                    attention_mask=torch.ones_like(reset_ids),
+                    use_cache=False,
+                )
+            controller.resets = controller.captured_states
+            conditions = [
+                "reset",
+                "reset_roundtrip",
+                "reset_glyph_donor",
+                "intact",
+                "no_op",
+            ]
+            controller.rows = [
+                {
+                    "anchor": 21,
+                    "condition": condition,
+                    "distance": 4,
+                    "distance_index": 0,
+                    "position": 5,
+                    "glyph_length": 2,
+                    "donor_slot": 0,
+                }
+                for condition in conditions
+            ]
+            controller.donor_kv = [donor_kv]
+            controller.mode = "patch"
+            ids = torch.tensor([[3, 4] + [5] * 8]).repeat(len(conditions), 1)
+            with torch.inference_mode():
+                final = model.model(
+                    input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=False
+                ).last_hidden_state
+            assert torch.equal(final[0], final[1])
+&gt;           assert torch.equal(final[3], final[4])
+E           AssertionError: assert False
+E            +  where False = &lt;built-in method equal of type object at 0x768abc3abe00&gt;(tensor([[-2.2031e-01,  5.1387e-01,  2.9449e-01, -7.2434e-01,  4.2804e-01,\n         -1.3080e+00, -1.9987e-02,  3.5692e-...092e+00,\n         -6.1072e-01,  9.1630e-01,  8.3127e-01,  2.8507e-01, -1.1307e+00,\n         -1.8579e-01,  5.5543e-02]]), tensor([[-2.2031e-01,  5.1387e-01,  2.9449e-01, -7.2434e-01,  4.2804e-01,\n         -1.3080e+00, -1.9987e-02,  3.5692e-...092e+00,\n         -6.1072e-01,  9.1630e-01,  8.3127e-01,  2.8507e-01, -1.1307e+00,\n         -1.8579e-01,  5.5543e-02]]))
+E            +    where &lt;built-in method equal of type object at 0x768abc3abe00&gt; = &lt;module 'torch' from '/home/ryospiralarchitect/.local/lib/python3.14/site-packages/torch/__init__.py'&gt;.equal
+
+tests/test_t21_glyph_context_path_pilot_v0.py:232: AssertionError</failure></testcase><testcase classname="tests.test_t21_glyph_context_path_pilot_v0" name="test_future_tokens_cannot_affect_readout" time="0.010" /></testsuite></testsuites>

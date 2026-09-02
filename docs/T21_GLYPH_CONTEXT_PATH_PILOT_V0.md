@@ -29,7 +29,8 @@ preceding suffix positions. A broader control replaces every preceding-position
 message; separate conditions restore either the own-item glyph messages or the
 matched suffix messages. Intact-readout versions distinguish baseline dependence
 from dependence following readout replacement. A donor-then-original round trip
-must exactly reproduce the unmodified-reset result; that is an engineering check.
+must exactly reproduce the unmodified-reset result in the same batch slot;
+that is an engineering check.
 
 Both pipe and article carriers are read at distances 4 and 8. Distance 4 connects
 to T20. **Progression decisions use distance 8**, where restoring glyph messages
@@ -45,6 +46,15 @@ correct keyword and 128 distractors, regardless of the evaluation-set size.
 Own-versus-donor keyword margin, keyword top-1, and codepoint retrieval are also
 reported. A gallery is always read under the same carrier and distance as the
 query. Changing this measure does not change any historical T20 result or rule.
+
+Every intervention is paired with a neutral forward in the **identical batch
+slot**, preserving its residual-reset condition. Contrasts use the difference
+from that reference; raw scores are also saved. This prevents position-dependent
+matrix-multiplication rounding from entering the estimated intervention effect.
+The correct keyword and all distractors are scored in one matrix multiplication,
+with the correct keyword first for exact ties. Initial cross-platform synthetic
+tests exposed both issues before any T21 experimental forward; the original
+specification and failing test report are retained under `engineering_attempt0`.
 
 Within-item means average the two donors and, for progression, the two
 distance-8 carriers. Bootstrap intervals resample target items, conditional on

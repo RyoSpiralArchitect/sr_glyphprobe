@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 PROTOCOL = "glyphprobe-t21-glyph-context-path-pilot-v0"
 CONFIG = Path("configs/t21_glyph_context_path_pilot_v0.yaml")
-SPEC = Path("validation/t21_glyph_context_path_pilot_v0/pilot_specification.json")
+SPEC = Path("validation/t21_glyph_context_path_pilot_v0/pilot_specification_v1.json")
 CONDITIONS = (
     "intact",
     "reset",
@@ -50,6 +50,7 @@ METRICS = (
     "codepoint_margin",
     "codepoint_top1",
 )
+ALL_METRICS = (*METRICS, *(name + "_effect" for name in METRICS))
 CONTRASTS = {
     "calibration": ("reset", "reset_prefix_donor"),
     "necessity_absolute": ("reset", "reset_glyph_donor"),
@@ -324,6 +325,7 @@ class AttentionPath:
     def __init__(self, blocks: Any):
         self.blocks = blocks
         self.mode = "idle"
+        self.neutral_path = False
         self.positions: list[int] = []
         self.captured_states: dict[int, Any] = {}
         self.captured_kv: dict[int, tuple[Any, Any]] = {}
@@ -415,6 +417,8 @@ class AttentionPath:
                     positions = foreign_positions(
                         row["condition"], row["glyph_length"], row["distance"]
                     )
+                    if self.neutral_path:
+                        positions = ()
                     if positions:
                         changed_key[row_index, :, list(positions)] = donor_key[
                             :, list(positions)
@@ -619,7 +623,7 @@ def patch_item(
     carrier: str,
     resets: dict[int, Any],
     donor_kv: list[dict[int, Any]],
-) -> np.ndarray:
+) -> tuple[np.ndarray, np.ndarray]:
     length = len(token_row["raw"]["glyph"])
     controller.rows = [
         {
@@ -642,42 +646,42 @@ def patch_item(
     inputs = torch.tensor([ids], device="cuda", dtype=torch.long).repeat(
         len(controller.rows), 1
     )
-    with torch.inference_mode():
-        output = model.model(
-            input_ids=inputs,
-            attention_mask=torch.ones_like(inputs),
-            use_cache=False,
-            return_dict=True,
-        )
     positions = torch.tensor(
         [row["position"] for row in controller.rows], device="cuda"
     )
-    final = (
-        output.last_hidden_state[
-            torch.arange(len(controller.rows), device="cuda"), positions
-        ]
-        .float()
-        .cpu()
-        .numpy()
-    )
+    acquired = []
+    for neutral in (False, True):
+        controller.neutral_path = neutral
+        with torch.inference_mode():
+            output = model.model(
+                input_ids=inputs,
+                attention_mask=torch.ones_like(inputs),
+                use_cache=False,
+                return_dict=True,
+            )
+        final = (
+            output.last_hidden_state[
+                torch.arange(len(controller.rows), device="cuda"), positions
+            ]
+            .float()
+            .cpu()
+            .numpy()
+        )
+        acquired.append(final.reshape(2, len(ANCHORS), 2, len(CONDITIONS), -1))
+    controller.neutral_path = False
     controller.mode = "idle"
-    shaped = final.reshape(2, len(ANCHORS), 2, len(CONDITIONS), -1)
-    require(np.isfinite(shaped).all(), "Nonfinite intervention states")
+    shaped, reference = acquired
     require(
-        np.array_equal(
-            shaped[..., CONDITIONS.index("intact"), :],
-            shaped[..., CONDITIONS.index("no_op"), :],
-        ),
-        "No-op check failed",
+        np.isfinite(shaped).all() and np.isfinite(reference).all(),
+        "Nonfinite intervention states",
     )
-    require(
-        np.array_equal(
-            shaped[..., CONDITIONS.index("reset"), :],
-            shaped[..., CONDITIONS.index("reset_roundtrip"), :],
-        ),
-        "Roundtrip check failed",
-    )
-    return shaped
+    for condition in ("intact", "reset", "no_op", "reset_roundtrip"):
+        ci = CONDITIONS.index(condition)
+        require(
+            np.array_equal(shaped[..., ci, :], reference[..., ci, :]),
+            f"Same-slot reference check failed: {condition}",
+        )
+    return shaped, reference
 
 
 def verify_chunk(path: Path, specification_hash: str) -> dict[str, Any]:
@@ -724,15 +728,12 @@ def check_canary(root: Path, specification_hash: str) -> str:
         chunk = verify_chunk(path, specification_hash)
         covered.extend(range(chunk["start"], chunk["stop"]))
         with np.load(path / "states.npz", allow_pickle=False) as values:
-            states = values["intervention"]
-            require(
-                np.array_equal(states[..., 0, :], states[..., 10, :]),
-                "Canary no-op mismatch",
-            )
-            require(
-                np.array_equal(states[..., 1, :], states[..., 9, :]),
-                "Canary roundtrip mismatch",
-            )
+            states, reference = values["intervention"], values["neutral_reference"]
+            for ci in (0, 1, 9, 10):
+                require(
+                    np.array_equal(states[..., ci, :], reference[..., ci, :]),
+                    "Canary same-slot control mismatch",
+                )
     require(sorted(covered) == list(range(8)), "Canary coverage mismatch")
     return sha256(root / "acquisition_receipt.json")
 
@@ -878,6 +879,7 @@ def run(
             final_states = np.empty(
                 (stop - start, 4, 2, 2, len(CONDITIONS), width), np.float32
             )
+            neutral_states = np.empty_like(final_states)
             chunk_forwards = 0
             for index in range(start, stop):
                 resource_check(output, f"target_{index:03d}", started)
@@ -899,16 +901,19 @@ def run(
                         cached_donors[donor, carrier]
                         for donor in specification["donor_indices"][index]
                     ]
-                    final_states[index - start, ci * 2 : ci * 2 + 2] = patch_item(
+                    patched, reference = patch_item(
                         torch, model, controller, tokens, carrier, resets, donors
                     )
-                    forwards += 1
-                    sequences += 2 * 2 * 2 * len(CONDITIONS)
-                    chunk_forwards += 1
+                    final_states[index - start, ci * 2 : ci * 2 + 2] = patched
+                    neutral_states[index - start, ci * 2 : ci * 2 + 2] = reference
+                    forwards += 2
+                    sequences += 2 * 2 * 2 * 2 * len(CONDITIONS)
+                    chunk_forwards += 2
             np.savez_compressed(
                 stage / "states.npz",
                 baseline=baseline,
                 intervention=final_states,
+                neutral_reference=neutral_states,
                 item_indices=np.arange(start, stop, dtype=np.int64),
             )
             receipt = {
@@ -992,19 +997,32 @@ def score_states(
     q = normalize(states)
     own_a, own_c = normalize(own_alias), normalize(own_codepoint)
     source_a, source_c = normalize(source_alias), normalize(source_codepoint)
-    own_alias_score = np.einsum("narkd,nd->nark", q, own_a)
-    own_codepoint_score = np.einsum("narkd,nd->nark", q, own_c)
-    flat = q.reshape(-1, q.shape[-1])
-    max_alias = (flat @ source_a.T).max(axis=-1).reshape(q.shape[:-1])
-    max_codepoint = (flat @ source_c.T).max(axis=-1).reshape(q.shape[:-1])
-    donor_score = np.einsum("narkd,nrd->nark", q, source_a[donor_indices])
-    return {
-        "alias_margin": own_alias_score - max_alias,
-        "donor_margin": own_alias_score - donor_score,
-        "alias_top1": (own_alias_score >= max_alias).astype(np.float64),
-        "codepoint_margin": own_codepoint_score - max_codepoint,
-        "codepoint_top1": (own_codepoint_score >= max_codepoint).astype(np.float64),
-    }
+    result = {name: np.empty(q.shape[:-1], np.float64) for name in METRICS}
+    for index in range(len(q)):
+        flat = q[index].reshape(-1, q.shape[-1])
+        alias_scores = (
+            flat @ np.concatenate((own_a[index : index + 1], source_a)).T
+        ).reshape(*q.shape[1:-1], 129)
+        codepoint_scores = (
+            flat @ np.concatenate((own_c[index : index + 1], source_c)).T
+        ).reshape(*q.shape[1:-1], 129)
+        result["alias_margin"][index] = alias_scores[..., 0] - alias_scores[
+            ..., 1:
+        ].max(axis=-1)
+        result["codepoint_margin"][index] = codepoint_scores[..., 0] - codepoint_scores[
+            ..., 1:
+        ].max(axis=-1)
+        result["alias_top1"][index] = (alias_scores.argmax(axis=-1) == 0).astype(
+            np.float64
+        )
+        result["codepoint_top1"][index] = (
+            codepoint_scores.argmax(axis=-1) == 0
+        ).astype(np.float64)
+        for slot, donor in enumerate(donor_indices[index]):
+            result["donor_margin"][index, :, slot] = (
+                alias_scores[:, slot, :, 0] - alias_scores[:, slot, :, int(donor) + 1]
+            )
+    return result
 
 
 def bootstrap_summary(
@@ -1036,7 +1054,7 @@ def pilot_decision(
     rows = []
     for ai, anchor in enumerate(ANCHORS):
         # Item x context x anchor x donor x condition; average inside the item.
-        values = metrics["alias_margin"][:, [1, 3], ai].mean(axis=(1, 2))
+        values = metrics["alias_margin_effect"][:, [1, 3], ai].mean(axis=(1, 2))
         summaries = {}
         for ci, (name, (positive, negative)) in enumerate(CONTRASTS.items()):
             delta = (
@@ -1095,7 +1113,8 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
     with np.load(run_root / "source_states.npz", allow_pickle=False) as values:
         source = values["states"]
     metrics = {
-        name: np.empty((384, 4, 2, 2, len(CONDITIONS)), np.float64) for name in METRICS
+        name: np.empty((384, 4, 2, 2, len(CONDITIONS)), np.float64)
+        for name in ALL_METRICS
     }
     covered = np.zeros(384, dtype=bool)
     for name, digest in sorted(acquisition["chunks"].items()):
@@ -1106,7 +1125,11 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
         require(not covered[start:stop].any(), "Overlapping chunks")
         covered[start:stop] = True
         with np.load(path / "states.npz", allow_pickle=False) as values:
-            baseline, states = values["baseline"], values["intervention"]
+            baseline, states, neutral = (
+                values["baseline"],
+                values["intervention"],
+                values["neutral_reference"],
+            )
             require(
                 np.array_equal(values["item_indices"], np.arange(start, stop)),
                 "Changed target item order",
@@ -1120,8 +1143,19 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
                 source[:, context, 2],
                 np.asarray(spec["donor_indices"][start:stop]),
             )
+            neutral_scored = score_states(
+                neutral[:, context],
+                baseline[:, context, 1],
+                baseline[:, context, 2],
+                source[:, context, 1],
+                source[:, context, 2],
+                np.asarray(spec["donor_indices"][start:stop]),
+            )
             for metric in METRICS:
                 metrics[metric][start:stop, context] = scored[metric]
+                metrics[metric + "_effect"][start:stop, context] = (
+                    scored[metric] - neutral_scored[metric]
+                )
     require(covered.all(), "Missing target items")
     decision = pilot_decision(metrics)
     decision.update(
@@ -1148,7 +1182,7 @@ def analyze(run_root: Path, output: Path) -> dict[str, Any]:
                         "condition": condition,
                         **{
                             metric: float(metrics[metric][:, context, ai, :, ki].mean())
-                            for metric in METRICS
+                            for metric in ALL_METRICS
                         },
                     }
                 )

@@ -158,18 +158,16 @@ def validate(run_root: Path, analysis_root: Path, output: Path) -> dict:
                 values["intervention"],
                 values["item_indices"],
             )
+            neutral = values["neutral_reference"]
         check(
             np.array_equal(indices, np.arange(receipt["start"], receipt["stop"])),
             "Changed chunk indices",
         )
-        check(
-            np.array_equal(states[..., 0, :], states[..., 10, :]),
-            "No-op state mismatch",
-        )
-        check(
-            np.array_equal(states[..., 1, :], states[..., 9, :]),
-            "Roundtrip state mismatch",
-        )
+        for ci in (0, 1, 9, 10):
+            check(
+                np.array_equal(states[..., ci, :], neutral[..., ci, :]),
+                "Same-slot neutral reference mismatch",
+            )
         for local, index in enumerate(indices.tolist()):
             check(index not in covered, "Duplicate target")
             covered.add(index)
@@ -184,6 +182,18 @@ def validate(run_root: Path, analysis_root: Path, output: Path) -> dict:
                 )
                 for metric, values in result.items():
                     rebuilt[metric][index, context] = values
+                reference = reconstruct_item(
+                    neutral[local, context],
+                    baseline[local, context, 1],
+                    baseline[local, context, 2],
+                    source[:, context, 1],
+                    source[:, context, 2],
+                    specification["donor_indices"][index],
+                )
+                for metric, values in result.items():
+                    rebuilt[metric + "_effect"][index, context] = (
+                        values - reference[metric]
+                    )
     check(covered == set(range(384)), "Incomplete item coverage")
     errors = {
         name: float(np.max(np.abs(rebuilt[name] - reported[name]))) for name in rebuilt
@@ -195,7 +205,9 @@ def validate(run_root: Path, analysis_root: Path, output: Path) -> dict:
     result = read(analysis_root / "pilot_result.json")
     candidate_rows = []
     for anchor_index, site in enumerate(result["sites"]):
-        scores = rebuilt["alias_margin"][:, [1, 3], anchor_index].sum(axis=(1, 2)) / 4
+        scores = (
+            rebuilt["alias_margin_effect"][:, [1, 3], anchor_index].sum(axis=(1, 2)) / 4
+        )
         lows = {}
         for contrast_index, (name, positive, negative) in enumerate(CONTRASTS):
             delta = scores[:, positive] - scores[:, negative]

@@ -107,7 +107,7 @@ def test_bootstrap_resamples_items_not_contexts():
 
 def test_failed_screen_keeps_reserve_closed():
     values = np.zeros((24, 4, 2, 2, 11))
-    result = pilot.pilot_decision({"alias_margin": values}, replicates=500)
+    result = pilot.pilot_decision({"alias_margin_effect": values}, replicates=500)
     assert result["candidate_anchor"] is None
     assert result["reserve_access_allowed"] is False
     assert not any(row["pilot_screen_pass"] for row in result["sites"])
@@ -125,7 +125,7 @@ def test_passing_screen_only_permits_a_new_protocol():
     }
     for condition, level in levels.items():
         values[..., pilot.CONDITIONS.index(condition)] = level
-    result = pilot.pilot_decision({"alias_margin": values}, replicates=500)
+    result = pilot.pilot_decision({"alias_margin_effect": values}, replicates=500)
     assert result["candidate_anchor"] == 21
     assert result["next_step"] == "prepare_separate_prospective_protocol"
     assert result["reserve_access_allowed"] is False
@@ -228,11 +228,16 @@ def test_query_only_intervention_and_roundtrip_on_tiny_model(tiny_model):
             final = model.model(
                 input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=False
             ).last_hidden_state
-        assert torch.equal(final[0], final[1])
-        assert torch.equal(final[3], final[4])
-        assert torch.equal(final[2, :5], final[0, :5])
-        assert not torch.equal(final[2, 5], final[0, 5])
-        assert controller.offtarget_checks == 6
+        controller.neutral_path = True
+        with torch.inference_mode():
+            reference = model.model(
+                input_ids=ids, attention_mask=torch.ones_like(ids), use_cache=False
+            ).last_hidden_state
+        for row in (0, 1, 3, 4):
+            assert torch.equal(final[row], reference[row])
+        assert torch.equal(final[2, :5], reference[2, :5])
+        assert not torch.equal(final[2, 5], reference[2, 5])
+        assert controller.offtarget_checks == 12
     finally:
         controller.close()
 
