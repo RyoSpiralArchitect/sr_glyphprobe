@@ -1,0 +1,111 @@
+protocol_id: glyphprobe-t21-glyph-context-path-pilot-v0
+stage: exploratory_pilot_on_previously_evaluated_items
+parent_commit: 896b9425036b82a0821b57f41e85932f1d2d0b5b
+question: >-
+  After replacing the readout-token residual state, does later attention from
+  glyph positions contribute more to own-keyword retrieval than an equal-sized
+  suffix-position control, and can those glyph-position messages restore
+  retrieval when the other preceding-position messages come from another item?
+population:
+  target_selection: data/manifests/t20_lexical_alias_optimized_subspace_causal_v0.json
+  target_selection_sha256: 4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7
+  target_count: 384
+  donor_selection: data/manifests/t19_lexical_alias_unicode_control_v0.json
+  donor_selection_sha256: 7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2
+  donor_count: 128
+  donor_slots: [0, 1]
+  donor_rule: sha256_ordered_source_items_with_same_glyph_token_count
+  confirmatory_reserve_count: 195
+  confirmatory_reserve_access: false
+model:
+  role: llama32_3b_base_bf16
+  artifact_manifest_sha256: dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4
+  revision: 60a99aaf43164077157d64bf909b7b61143c6a6d
+  layers: 28
+  hidden_size: 3072
+  parameters: 3212749824
+  torch: 2.13.0+cu132
+  transformers: 5.15.0
+  device: NVIDIA GeForce RTX 5090
+  dtype: bfloat16
+  attention: eager
+  runtime_exception: >-
+    Internal residual and per-query post-RoPE key/value interventions require
+    eager Transformers access. Managed TensorRT-LLM generation is not a
+    compatible execution interface for this experiment. No runtime is modified.
+input:
+  carriers:
+    pipe: " |"
+    article_a: " a"
+  repeats: 8
+  distances: [4, 8]
+  views: [glyph, alias_label, codepoint_literal]
+  special_tokens: false
+  chat_template: false
+intervention:
+  anchors: [21, 24]
+  active_blocks: strictly_after_anchor_through_block_27
+  query_positions: readout_only
+  glyph_positions: all_glyph_tokens
+  suffix_control: nearest_preceding_suffix_tokens_equal_to_glyph_token_count
+  prefix_positions: every_position_strictly_before_readout
+  replacement: paired_post_rope_keys_and_values_from_length_matched_source_donor
+  reset: same_item_codepoint_readout_residual_at_anchor
+  conditions:
+    - intact
+    - reset
+    - intact_glyph_donor
+    - intact_suffix_donor
+    - reset_glyph_donor
+    - reset_suffix_donor
+    - reset_prefix_donor
+    - reset_prefix_restore_glyph
+    - reset_prefix_restore_suffix
+    - reset_roundtrip
+    - no_op
+readout:
+  primary_metric: own_alias_cosine_minus_max_128_fixed_source_alias_cosine
+  comparison_metric: own_alias_cosine_minus_matched_donor_alias_cosine
+  secondary_metrics: [alias_top1_fixed_129, codepoint_top1_fixed_129, codepoint_margin_fixed_129]
+  source_gallery: same_128_source_items_for_every_target
+  decision_contexts: both_carriers_at_distance_8
+  diagnostic_contexts: both_carriers_at_distance_4
+  aggregation: mean_contexts_and_two_donors_within_target_item
+  bootstrap_unit: target_item_conditional_on_fixed_donor_pool
+pilot_progression:
+  status: screening_only_never_a_confirmatory_result
+  engineering: exact_no_op_and_roundtrip_and_nonreadout_attention_outputs_unchanged
+  calibration: reset_minus_reset_prefix_donor_lower_95_gt_zero
+  contrasts:
+    necessity_absolute: reset_minus_reset_glyph_donor
+    necessity_position_adjusted: reset_suffix_donor_minus_reset_glyph_donor
+    rescue_absolute: reset_prefix_restore_glyph_minus_reset_prefix_donor
+    rescue_position_adjusted: reset_prefix_restore_glyph_minus_reset_prefix_restore_suffix
+  screen: all_four_contrast_lower_95_gt_zero_and_calibration_pass
+  candidate_selection: largest_minimum_four_contrast_lower_95_then_lower_anchor
+  bootstrap_replicates: 20000
+  bootstrap_seed: 2026092100
+  confirmatory_execution_allowed_by_pilot_alone: false
+  next_step_if_screen_passes: >-
+    Specify one candidate, effect-size interpretation, fixed galleries,
+    multiplicity, power assessment, and stop rules in a separate prospective
+    confirmation protocol before accessing any of the 195 reserve items.
+execution:
+  chunk_items: 16
+  canary_items: 8
+  contention_check: before_model_load_and_each_target_and_donor_item
+  contention_exit_code: 75
+  pilot_wall_budget_seconds: 5400
+  overwrite_completed_chunks: false
+  resume_requires_identical_specification: true
+  generation_calls: 0
+claim_boundary:
+  - Previously evaluated items are deliberately reused for exploration.
+  - Positive pilot effects do not constitute prospective replication.
+  - Key/value replacement is restricted to readout-query attention messages.
+  - Other query outputs and readout self-key/value messages are preserved.
+  - Equal-sized suffix controls match position count, not attention mass or meaning.
+  - Restoring every altered value is an engineering check, not independent causal evidence.
+  - At distance 4 with three glyph tokens, some necessity and rescue contrasts coincide by construction.
+  - Full-context interventions are reference controls, not universal effect-size ceilings.
+  - Neither semantic uniqueness nor a complete mechanism follows from these interventions.
