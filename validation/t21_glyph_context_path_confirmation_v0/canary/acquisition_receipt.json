@@ -1,0 +1,75 @@
+{
+  "batched_forward_calls_this_invocation": 850,
+  "chunks": {
+    "chunk_0000_0008": "81e5b77080a63b35ca4f36d7ee864de894a07c1612b7db56ea17c22e7250e150"
+  },
+  "completed_at_utc": "2026-09-02T04:26:33.739495+00:00",
+  "elapsed_seconds_this_invocation": 19.728656716877595,
+  "generation_calls": 0,
+  "mode": "exposed_canary",
+  "model": {
+    "artifact": {
+      "file_count": 9,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "README.md": {
+          "bytes": 15974,
+          "sha256": "52aa267762f7040fd06ccb8e04fe2610781ea7453c808bd717471533c24a022a"
+        },
+        "config.json": {
+          "bytes": 921,
+          "sha256": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 5368478882,
+          "sha256": "53c5d0d0bf614dd47699da0c3381565d9c29ffd20830dd0c0c41aec063ff0844"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 1057050089,
+          "sha256": "27918a4050dd52d318aadaa0f743d6aab0043a7ebc269ffda573c024541e4ff2"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 21946,
+          "sha256": "de5995e586fc98a942b576a6752034a6d0a741d2dece5f61e697d99c8bb99b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 301,
+          "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+        },
+        "tokenizer.json": {
+          "bytes": 9085657,
+          "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 50500,
+          "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+        }
+      },
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "total_bytes": 6434705789
+    },
+    "attention": "eager",
+    "generation_calls": 0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "llama_attention_source_sha256": "dc6807936ef6103d2675e82361b9c82359d43356a331140bbb1a974595522bff",
+    "python": "3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+    "runtime_modified": false,
+    "torch": "2.13.0+cu132",
+    "transformers": "5.15.0"
+  },
+  "offtarget_attention_checks": 192,
+  "original_pilot_canary_bit_exact": true,
+  "protocol_id": "glyphprobe-t21-glyph-context-path-confirmation-v0",
+  "published_commit_at_start": "8f41d6493e2cb8f685b32f15f87873dd2c35f173",
+  "reserve_items_forwarded": 0,
+  "sequence_forwards_this_invocation": 3634,
+  "source_items": 128,
+  "source_states_sha256": "20c4fba633b8fbcdde6a1dd0fa8d14a6c1d6d9d5a5e40e216c91974d412ba287",
+  "specification_sha256": "8533cfaeeba71dc50216fb9123f7c04072c07447da32a8b03ba828af44991957",
+  "status": "acquisition_complete",
+  "stock_eager_adapter_exact": true,
+  "target_items": 8
+}
