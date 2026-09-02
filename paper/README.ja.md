@@ -55,9 +55,10 @@ python3 paper/scripts/validate_anonymous_artifact.py \
   output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
 ```
 
-TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCodexの
-`latex-compile` helperも使用できる。検証したMac buildではTeX Live不在をhelperが
-正しく検出したため、bundled Tectonic executableを直接呼び出した。最終copyは、
+TectonicはBibTeX passも自動実行する。検証したMacではbundled executableを
+直接使うか、Codexの`latex-compile` helperに`--compiler tectonic`を指定する。
+helperの自動選択は文献処理をTeX Live向けと判定するが、この端末にはTeX Liveはない。
+最終copyは、
 引用、page count、text extraction、rendered pageを検査した後だけ作る。
 `paper/build/` と `tmp/pdfs/` は中間surfaceである。
 
@@ -68,6 +69,10 @@ TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCod
 最終PDFも目視で確認する。文字を小さくせずに読みやすさを確保するための検査である。
 区間プロットでは、記録済みの区間が軸の範囲からはみ出すと出力を停止する。
 Figure 2はMistralのmatched上限0.3531を含む全18区間から表示範囲を決める。
+
+Table 6では7つの副次サイトを明記する。9サイト全て評価済みであり、事前指定した
+2つの主要サイトだけに主判定を付ける。この表記変更で検定を追加したり数値を
+変更したりしない。
 
 ## 事前指定したclaim境界
 

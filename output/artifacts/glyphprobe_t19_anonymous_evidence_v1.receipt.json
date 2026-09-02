@@ -1,11 +1,11 @@
 {
-  "archive_bytes": 7697251,
+  "archive_bytes": 7697952,
   "archive_entries": 144,
   "archive_path": "output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip",
-  "archive_sha256": "a0fc962d3c047ee57d7aeec5604856a5a1cf93d7884eabd44dead0b305ea579e",
+  "archive_sha256": "04a57ba47c728bb0f558f31b6fb5dcd69b84f4af3df8429af133ee0cc0b328fd",
   "artifact_id": "glyphprobe_t19_anonymous_evidence_v1",
   "built_at_utc": "2026-09-02T00:00:00Z",
-  "manifest_sha256": "99feefd912b9ac3eaa1077975494ae2c9e4de88c95ab48fc82838bcf0354d073",
+  "manifest_sha256": "2c4e43f88c60a0d63c5e8afd594b0924255163c24a0e74fe71d426164f932183",
   "payload_files": 142,
   "schema_version": 1,
   "status": "anonymous_artifact_built_and_validated"

@@ -915,25 +915,26 @@ weights remained unchanged.
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{llcrrrrrrc}
 \toprule
-Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ ceiling & Suff.\ ceiling & Guard & Site IUT & Verdict \\
+Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ ceiling & Suff.\ ceiling & Guard & Site IUT & Primary verdict \\
 \midrule
 21 & residual  & yes & $0.0000$  & $+0.0033$ & $+0.0013$ & $+0.0234$ & $0.818$ & $0.624$ & uncalibratable \\
 24 & residual  & yes & $-0.0013$ & $+0.0046$ & $+0.0085$ & $+0.0254$ & $0.971$ & $0.679$ & uncalibratable \\
-27 & residual  & no  & $-0.0013$ & $+0.0026$ & $+0.0332$ & $+0.0332$ & $0.963$ & $0.745$ & --- \\
-21 & attention & no  & $+0.0007$ & $+0.0033$ & $0.0000$  & $+0.0020$ & $0.999$ & $0.499$ & --- \\
-21 & MLP       & no  & $+0.0033$ & $+0.0033$ & $-0.0007$ & $+0.0046$ & $0.972$ & $0.065$ & --- \\
-24 & attention & no  & $0.0000$  & $+0.0013$ & $+0.0013$ & $+0.0007$ & $1.000$ & $0.687$ & --- \\
-24 & MLP       & no  & $0.0000$  & $+0.0039$ & $-0.0013$ & $+0.0026$ & $0.987$ & $0.612$ & --- \\
-27 & attention & no  & $+0.0013$ & $+0.0039$ & $+0.0007$ & $+0.0117$ & $0.990$ & $0.377$ & --- \\
-27 & MLP       & no  & $-0.0046$ & $+0.0013$ & $-0.0091$ & $+0.0143$ & $0.971$ & $0.977$ & --- \\
+27 & residual  & no  & $-0.0013$ & $+0.0026$ & $+0.0332$ & $+0.0332$ & $0.963$ & $0.745$ & secondary \\
+21 & attention & no  & $+0.0007$ & $+0.0033$ & $0.0000$  & $+0.0020$ & $0.999$ & $0.499$ & secondary \\
+21 & MLP       & no  & $+0.0033$ & $+0.0033$ & $-0.0007$ & $+0.0046$ & $0.972$ & $0.065$ & secondary \\
+24 & attention & no  & $0.0000$  & $+0.0013$ & $+0.0013$ & $+0.0007$ & $1.000$ & $0.687$ & secondary \\
+24 & MLP       & no  & $0.0000$  & $+0.0039$ & $-0.0013$ & $+0.0026$ & $0.987$ & $0.612$ & secondary \\
+27 & attention & no  & $+0.0013$ & $+0.0039$ & $+0.0007$ & $+0.0117$ & $0.990$ & $0.377$ & secondary \\
+27 & MLP       & no  & $-0.0046$ & $+0.0013$ & $-0.0091$ & $+0.0143$ & $0.971$ & $0.977$ & secondary \\
 \bottomrule
 \end{tabular}
 \caption{Registered T20-C results. $N^{\mathrm{opt}}_s$/$S^{\mathrm{opt}}_s$
 are random-adjusted keyword-component effects of the optimized rank-8
 subspace, averaged over four contexts on 384 fresh emoji. Ceilings replace
 the entire site state with the same item's other-view state. Guard is
-codepoint self-retrieval under the learned patch (floor $0.90$). Verdicts
-apply to primary sites under the registered rule; the block-27 residual
+codepoint self-retrieval under the learned patch (floor $0.90$). All nine sites
+were evaluated. Entries marked secondary are outside the prespecified primary
+decision family; no primary verdict is assigned to them. The block-27 residual
 swap effects equal the baseline keyword-retrieval gap $0.0332$ exactly.}
 \label{tab:t20}
 \end{table}

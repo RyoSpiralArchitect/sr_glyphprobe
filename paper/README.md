@@ -60,10 +60,10 @@ python3 paper/scripts/validate_anonymous_artifact.py \
   output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
 ```
 
-Tectonic runs the BibTeX pass automatically. The Codex `latex-compile` helper
-can be used instead when a full TeX Live installation is available; on the
-validated Mac build it correctly detected that TeX Live was absent, so the
-bundled Tectonic executable was invoked directly. The final copy is made only
+Tectonic runs the BibTeX pass automatically. On the validated Mac, invoke the
+bundled executable directly or select `--compiler tectonic` in the Codex
+`latex-compile` helper. Its automatic mode flags bibliography tooling for
+TeX Live, which is absent on this host. The final copy is made only
 after citation, page-count, text-extraction, and rendered-page checks.
 `paper/build/` and `tmp/pdfs/` are intermediate surfaces.
 
@@ -76,6 +76,10 @@ visual inspection. These checks preserve legibility without reducing type size.
 Interval plots also reject axis ranges that clip a reported interval; Figure 2
 derives its limits from all 18 intervals, including Mistral's matched upper
 bound of 0.3531.
+
+Table 6 labels all seven secondary sites explicitly. All nine sites were
+evaluated; the two prespecified primary sites alone receive primary verdicts.
+The labels do not add tests or change any numerical result.
 
 ## Prespecified claim boundary
 
