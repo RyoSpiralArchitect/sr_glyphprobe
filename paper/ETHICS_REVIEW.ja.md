@@ -20,8 +20,15 @@ institutionalな法的判断やIRB判断ではない。
 
 ## LLM assistanceの開示
 
-LLM coding/research assistantは段階的なprotocolの開発、code生成、解析、manuscript編集、
-著者側のfresh-eyes reviewを支援した。T21の問いはT20と明示した使用済み項目での探索を
+私たちはAI assistantと対話を重ね、協働しながら本研究を進めた。
+著者側で行う投稿前の原稿への助言には、ChatGPT（GPT 5.6 Sol instant、"Monday"）と
+Claude Chat（Claude Fable 5.1）が関わった。Codex（GPT 5.6 Sol Max）と
+Claude Code（Fable 5）は、実装・計算解析に加え、段階的なプロトコル設計と原稿編集に
+寄与した。これらは著者が報告した画面上の構成名であり、実験対象の9モデル構成とは別である。
+すべて著者が行う投稿準備で、会議の公式査読や、査読者として割り当てられた他の投稿の
+審査とは区別する。
+
+T21の問いはT20と明示した使用済み項目での探索を
 受けて作り、残る195項目へアクセスする前に確認実験の指標と規則を記録した。ラベルは
 CLDRから取得し、assistantの判断を実験測定値には使っていない。実行権限と最終主張への
 責任は著者が保持する。数値出力と別実装のvalidatorはchecksumで対応づけた。
@@ -30,10 +37,16 @@ CLDRから取得し、assistantの判断を実験測定値には使っていな�
 assistant output自体は実験measurementではないが、研究workflowには影響したため、保守的に
 開示する。
 
-その後のfresh-reader reviewを受けて、事後的な指標分解、採用チェックポイントの説明、
+その後の著者側での投稿前助言を受けて、事後的な指標分解、採用チェックポイントの説明、
 コンパクトな統計再計算を加えた。完了済み出力を使い、T21の全195項目と元の対比を保ち、
 有意差検定や確認判定の変更は追加しない。T19 matched項目数の範囲は文章上の31–41を
 31–51へ訂正した。元の配列と検定は既に正しい項目数を用いていた。
+
+匿名原稿では補遺Gの最後に事実としての開示を置き、checklistの項目16から参照する。
+謝辞の節は含めない。[2026年のHandbook](https://neurips.cc/Conferences/2026/MainTrackHandbook)
+は投稿時の謝辞を除外し、[workshopのCFP](https://interpscience.github.io/cfp)も本文・補足資料の
+匿名化を求めるためである。謝辞は後の非匿名版に回す。この開示によって、公式査読における
+LLM支援への別の制限が変わるわけではない。
 
 ## 結論
 

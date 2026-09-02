@@ -1,4 +1,4 @@
-# GlyphProbe T19/T20/T21 anonymous evidence artifact v3
+# GlyphProbe T19/T20/T21 anonymous evidence artifact v4
 
 [日本語](README.ja.md)
 
@@ -8,6 +8,12 @@ analysis and validator code, paper sources, figures, and the anonymous review
 PDF. It supports model-free replay of T19-L's primary-window statistics and
 T21-C's simultaneous inference, plus the post-hoc T21 margin decomposition.
 Full raw-data replay requires additional files listed below.
+
+Version 4 updates the manuscript, citations, and paired claim documentation
+after paper-only reader feedback. It adds a read-only regression check of
+reported T21 baseline percentages against the existing condition means. No
+experimental result or statistical decision changes; no new acquisition or
+statistical replay was performed for this prose revision.
 
 ## Verify first
 

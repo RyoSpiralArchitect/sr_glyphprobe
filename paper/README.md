@@ -28,7 +28,7 @@ second manuscript.
 - `ASSET_LICENSES.*`, `COMPUTE_REPORT.*`, and `ETHICS_REVIEW.*`: paired
   English/Japanese submission audits.
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compiled review PDF.
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip`: standalone
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v4.zip`: standalone
   anonymous compact artifact, with adjacent receipt and SHA-256.
 
 The official formatting archive was downloaded from
@@ -57,7 +57,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v4.zip
 ```
 
 Tectonic runs the BibTeX pass automatically. On the validated Mac, invoke the
@@ -103,7 +103,7 @@ uncalibratable verdicts at both primary sites. The measured depth-dependent
 asymmetry motivates a recovery-pathway hypothesis; those swaps alone do not
 identify that pathway or exclude all possible subspaces.
 
-Revision v4 retains the separately specified T21-C result on 195 further items:
+Revision v5 retains the separately specified T21-C result on 195 further items:
 glyph-position messages after a codepoint-view readout reset contribute to
 keyword cosine margin beyond equal-count suffix controls. All five
 simultaneous one-sided 95% lower bounds are positive. Absolute glyph-message
@@ -119,8 +119,40 @@ decomposition is descriptive and changes no confirmatory verdict. It retains
 the 195 original scalar contrast rows and their simultaneous-inference replay.
 Matched T19 emoji counts are corrected to 31--51 (Gemma: 51); the underlying
 computations were already correct. See the [post-review evidence report](../docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md).
-Raw-state validation remains separate. Both v1 and v2 remain available, and
-the archive validator accepts all three versions.
+Raw-state validation remains separate. Archives v1, v2, and v3 remain available,
+and the archive validator accepts all four versions.
+
+The v4 archive contains the final reader-facing revision. The abstract states
+the lexical question first, and the introduction uses the prespecified
+U+1F923 / `lmao` pair to illustrate the design. Word disjointness concerns
+official-name/keyword words; it does not exclude shared subwords or training
+co-occurrence. T20's swap asymmetry motivates T21 without establishing
+redundant coding or a complete explanation across their different populations
+and endpoints. Final-block full-state replacement is an expected consistency
+check, and the block-24 attention `2%` is explicitly a sufficiency effect.
+
+Saved T21 condition means supply post-reset baseline accuracy of `3.08%`
+(pipe) and `0.51%` (article carrier), at block 21 and distance 8 on all 195
+items. These rates motivate a sensitivity caveat, not a demonstrated floor
+effect or equivalence claim. The OLMo 2 citation and Apple Silicon origin of
+the Llama mirror are clarified. This revision adds no model runs or statistical
+replays and changes no experimental result. Read-only regression tests bind
+the reported percentages to the existing condition means.
+
+The final Appendix G disclosure names the author-reported ChatGPT and Claude
+Chat configurations for author-side pre-submission feedback, and Codex and
+Claude Code configurations for implementation and analysis. It also retains
+protocol-design and editing involvement. This activity is explicitly separated
+from conference peer review. Checklist item 16 points to the disclosure;
+the anonymous submission contains no acknowledgments section. See the
+[paired ethics disclosure](ETHICS_REVIEW.md).
+
+Final local checks for revision v5: the PDF has 23 pages, with the main text
+ending on page 9 and references beginning on page 10. All pages were inspected
+after rendering; no clipped labels, overfull boxes, or undefined citations were
+found. The selected manuscript, figure-layout, and table regression tests pass
+(29 tests). These are document and packaging checks, not new scientific runs
+or confirmation of OpenReview submission.
 
 The manuscript now defines `T19-L` at first use as the lexical observational
 arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
@@ -186,7 +218,7 @@ encoding, output, and QA obligation before rendering.
   state replacement at each of the nine T20-C sites?
 - **Takeaway:** the primary sites fail the registered calibration requirement;
   full-state effects are asymmetric at blocks 21/24 and reproduce the baseline
-  gap at block 27.
+  gap at block 27, an expected endpoint-consistency check.
 - **Family / sufficiency:** paired horizontal interval plots of all nine sites,
   with 384 evaluation emoji and four contexts per item.
 - **Renderer / encoding:** circles for necessity, squares for sufficiency,

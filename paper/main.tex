@@ -31,44 +31,39 @@ and Bounded Causal Tests}
 \maketitle
 
 \begin{abstract}
-We use prospectively specified experiments to separate cross-model lexical
-readability, component-local mediation, and conditional attention-path
-contributions. The observational arm compares raw, official-name,
+Do text-only language models connect emoji to words absent from their official
+names? We prospectively separate cross-model lexical readability,
+component-local mediation, and conditional attention-path contributions.
+We compare raw, official-name,
 word-disjoint CLDR-keyword, and codepoint views of 55 emoji and 55 non-emoji
 Unicode symbols. Across nine prespecified model--tokenizer configurations,
-emoji keyword-minus-codepoint retrieval is positive in unrestricted and
-exact four-view token-count-matched analyses. Every configuration exceeds the
-registered 0.02 floor; keyword-mapping randomization passes the four-model
+emoji keyword-minus-codepoint retrieval exceeds the registered 0.02 floor
+in unrestricted and exact four-view token-count-matched analyses.
+Keyword-mapping randomization passes the four-model
 partial-conjunction primary ($p=0.0027$). Symbols show broad official-name retrieval and smaller,
 heterogeneous keyword effects. In Llama 3.2 3B, rank-8 subspaces learned from
 128 source emoji satisfy no primary late-component joint
 necessity-and-sufficiency criterion on 192 held-out emoji. A separately
 specified optimized-subspace follow-up on 384 further emoji returns
 uncalibratable at both primary residual sites. Its full-state controls reveal
-a depth-dependent asymmetry that motivates an attention-path test. On 195
+a depth-dependent asymmetry, motivating an attention-path test. On 195
 additional, prospectively specified items, glyph-position message disruption
 and restoration after readout-state replacement shift keyword cosine margins
 beyond equal-count suffix controls; all five simultaneous one-sided 95\%
 lower bounds are positive. Absolute glyph-message disruption and restoration
-have zero mean top-1 effects. Together, the results establish cross-model
-lexical readability and a conditional attention-message contribution while
-leaving the tested rank-8 account unsupported.
+have zero mean top-1 effects. The results establish cross-model lexical
+readability and a conditional attention-message contribution. The tested
+rank-8 account remains unsupported.
 \end{abstract}
 
 \section{Introduction}
 
-Readers encounter emoji as compact visual objects. A text language model
-instead receives encoded Unicode scalars and tokenizer-dependent sequences.
-An official label may therefore be recoverable because it co-occurs with the
-character in standards, documentation, or training data. That observation
-alone cannot establish rendered-glyph perception, a human-like concept, or a
-localized semantic circuit.
-
-Single-codepoint emoji nevertheless make the recoverability question
-unusually clean. Under the word-disjointness constraint below, the character
-shares no substring, morpheme, or ASCII-alphanumeric word with the keyword it
-must retrieve. The relation therefore probes learned lexical associations
-with opaque text tokens.
+Readers encounter emoji as compact visual objects; a text model receives
+tokenizer-dependent sequences. For the emoji U+1F923, CLDR pairs the official
+name ``rolling on the floor laughing'' with the keyword ``lmao''
+(Table \ref{tab:examples}). Can the raw character retrieve this keyword from
+its hidden state? The keyword shares no ASCII-alphanumeric word with the
+official name. Shared subwords and training-data co-occurrence remain possible.
 
 A prospectively specified design separates two narrower questions. The
 observational arm asks whether a raw atomic emoji retrieves a word-disjoint
@@ -79,6 +74,7 @@ necessary and sufficient for the relation --- an auditable distinction
 between broad lexical readability and simple mechanistic accounts, with no
 claim of visual perception or human-like understanding.
 
+\needspace{4\baselineskip}
 The study links the following comparisons:
 
 \begin{itemize}
@@ -480,11 +476,12 @@ The registered full-state controls reveal a depth-dependent pattern
 the new evaluation set, glyph-input keyword top-1 is $0.0345$ and
 codepoint-input top-1 is $0.0013$, a baseline gap of $0.0332$. Swapping the
 readout-token residual stream at block 27 reproduces both baseline retrieval
-rates exactly. At blocks 21 and 24, injection transfers $71\%$ and $76\%$ of
+rates exactly, as expected because the endpoint is a function of that state.
+At blocks 21 and 24, injection transfers $71\%$ and $76\%$ of
 this gap; replacement in the glyph forward removes only $4\%$ and $25\%$.
 Retrieval therefore remains near baseline after the readout-token stream is
 replaced at these earlier sites. Component-output swap effects at blocks 21
-and 24 are smaller (at most $14\%$ of the gap; block-24 attention $2\%$).
+and 24 are smaller (at most $14\%$ of the gap; block-24 attention sufficiency $2\%$).
 This asymmetry motivated the T21-C test of later glyph-position messages.
 
 Training trajectories improve with limited held-out benefit; Appendix
@@ -498,9 +495,9 @@ Training trajectories improve with limited held-out benefit; Appendix
   descriptive 95\% item-bootstrap intervals; open triangles show the
   full-interchange ceilings at the same sites. Shaded rows mark the two
   primary residual sites; the dashed line is the registered $0.02$ floor and
-  the dotted line the $0.06$ ceiling-informativeness minimum. Only the
-  block-27 residual swap reproduces both baseline rates (the dash-dotted
-  vertical line marks their $0.0332$ gap). Neither primary sufficiency
+  the dotted line the $0.06$ ceiling-informativeness minimum. The
+  block-27 residual swap is an expected endpoint-consistency check (the
+  dash-dotted line marks the $0.0332$ baseline gap). Neither primary sufficiency
   ceiling clears $0.06$, so both sites are uncalibratable under the registered rule.}
   \label{fig:t20-ceilings}
 \end{figure}
@@ -511,7 +508,8 @@ Glyph-message decrement exceeds the suffix control by $0.002326$ in cosine
 margin (lower bound $0.001399$), and restoration exceeds its control by
 $0.002267$ (lower bound $0.001400$; Figure \ref{fig:t21-path}). Both carriers have
 positive means separately. Absolute glyph-message decrement and restoration
-each have zero mean keyword top-1 effects; the positive result concerns
+each have zero mean keyword top-1 effects. Post-reset baseline accuracy is
+low (pipe $3.08\%$; article carrier $0.51\%$). The positive result concerns
 relative similarity. Independent CPU reconstruction agrees on every metric,
 bound, and the prespecified verdict.
 A post-hoc decomposition finds positive own-keyword shifts in both adjusted
@@ -531,80 +529,82 @@ means, partly offset by increased competitor similarity (Table
   \label{fig:t21-path}
 \end{figure}
 
+\clearpage
 \section{Discussion}
 
-The sequence separates three measurements. T19-L establishes a word-disjoint
-lexical relation beyond a pure length account within named-symbol retrieval.
-T19-C and T20-C constrain local low-rank accounts, with T20-C exposing the
-calibration limits of its top-1 criterion. T21-C confirms a conditional
-glyph-message contribution on new items.
+T19-L establishes word-disjoint lexical retrieval after token-count matching.
+T19-C/T20-C constrain the tested rank-8 accounts within their calibration
+limits. Preserved T20-C retrieval after earlier readout-state replacement
+suggested later use of the unchanged prefix. T21-C confirms a conditional
+glyph-position margin contribution on new items after a readout reset.
+Its different population and endpoint leave the
+full explanation of T20-C's swap asymmetry open.
 
-Endpoint decomposition clarifies each claim. T19-C's block-27 MLP patch raises
-the composite score chiefly by degrading codepoint self-retrieval. T21-C
-changes both own-keyword and competing-keyword cosines, with positive adjusted
-margins and zero mean absolute top-1 effects.
+State replacement and pathway intervention answer distinct causal
+questions. Endpoint decomposition clarifies the results: T19-C's block-27 MLP patch
+chiefly degrades codepoint self-retrieval; T21-C shifts both own-keyword and
+competitor cosines, yielding positive adjusted margins with zero mean absolute
+top-1 effects.
 
 \section{Limitations and broader impact}
 
 \paragraph{Measurement.}
-CLDR keywords provide standardized annotations without human ratings of
-synonymy, specificity, or familiarity in this study. Retrieval measures
+CLDR keywords were not human-rated for synonymy, specificity, or familiarity.
+Retrieval measures
 nearest-neighbor geometry at selected suffix tokens. Generation, task
-behavior, and rendered-glyph perception were not tested. Token-count matching does
-not match token identities or equalize tokenizer construction.
+behavior, and rendered-glyph perception were not tested. Token-count matching
+leaves token identities and tokenizer construction uncontrolled.
+Low T21 top-1 baselines may limit detection of decrements; zero means establish
+neither equivalence nor unchanged outcomes for every item.
 
 \paragraph{Generalization.}
-The nine model--tokenizer configurations are a prespecified,
-convenience-constrained roster
-spanning several families and sizes \citep{yang2024qwen25,groeneveld2024olmo,
+The nine model--tokenizer configurations form a prespecified convenience roster
+spanning several families and sizes \citep{yang2024qwen25,olmo2024furious,
 dubey2024llama3,gemmateam2024gemma2,jiang2023mistral,benallal2025smollm2}.
-Family, parameter count, training data, tokenizer, and instruction tuning are
-confounded, so the study supports neither a scale law nor a model-population
-estimate. Emoji surfaces may have appeared in pretraining; the symbol-panel
+Family, size, training data, tokenizer, and instruction tuning are confounded;
+scale laws and model-population estimates remain unsupported. Emoji surfaces
+may have appeared in pretraining; the symbol-panel
 freshness criterion concerns only repository history.
 
 \paragraph{Mechanism.}
-T19-C and T20-C cover one Llama 3.2 3B checkpoint, rank 8, and single-site
-readout-token interventions. T21-C establishes a contribution conditional on
-a codepoint-view residual reset, two carriers, and a fixed donor/gallery pool.
-Its suffix controls match position count, with attention mass and semantic
-content uncontrolled. Non-emoji path controls, separate key/value effects,
-sparse feature bases
-\citep{bricken2023monosemanticity,cunningham2024sparse}, and nonlinear
-readouts remain untested. Its item-bootstrap intervals are approximate and
-do not generalize beyond the eligibility-defined population. T19-C lacked a positive intervention control;
-T20-C registered full-interchange ceilings \citep[cf.\ interchange
-alignment;][]{geiger2024das,wu2023boundless} and classified its primary sites
-as uncalibratable. These swaps are reference interventions, not proven upper
-bounds on every subspace effect. Training on 96 items leaves item-specific
-coding, limited training data, and optimization limits as explanations for
-weak generalization. The baseline retrieval gap on the 384-item set
-($0.0332$) is itself below the $0.06$ calibration threshold chosen from the
-smaller T19-C set. Future designs should calibrate thresholds on a separate
-development set before specifying the evaluation protocol.
+Mechanistic tests cover one Llama 3.2 3B checkpoint. T19-C/T20-C use rank-8,
+single-site readout-token interventions; T21-C conditions on a codepoint-view
+reset, two carriers, and a fixed donor/gallery pool. Suffix controls match
+position count alone; attention mass and semantic content remain uncontrolled.
+Non-emoji path controls, separate key/value effects, sparse feature bases
+\citep{bricken2023monosemanticity,cunningham2024sparse}, and nonlinear readouts
+remain untested. T21 item-bootstrap coverage is approximate and limited to the
+eligibility-defined population. T19-C lacked a positive intervention control;
+T20-C registered full-interchange ceilings \citep{geiger2024das,wu2023boundless}
+and returned uncalibratable primary verdicts. These reference swaps have no
+proven universal upper-bound property. Training on 96 items leaves item-specific
+coding, limited data, and optimization as explanations for weak generalization.
+The 384-item baseline gap ($0.0332$) falls below the $0.06$ threshold chosen
+from the smaller T19-C set. Future thresholds should be calibrated on a
+separate development set before specifying evaluation.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
-tests, validators, licenses, and the rendered paper; it omits raw arrays
-retained in the execution environment. Exact T19 acquisition duration and
-peak memory were not recorded in the submitted evidence. Better Unicode auditing could reveal hidden
-representation failures in multilingual systems; conversely, treating CLDR
-correspondence as a person's meaning, sentiment, culture, or identity could
-enable unjustified profiling, and the measurements should not be used for
-such inference. No personal data, human subjects, or user messages are used.
+tests, validators, licenses, and the paper; raw arrays remain in the execution
+environment. Exact T19 acquisition duration and peak memory are absent from
+the submitted evidence. Unicode auditing could reveal representation failures
+in multilingual systems. Applying CLDR correspondence to people's meaning,
+sentiment, culture, or identity risks unjustified profiling. No personal data,
+human subjects, or user messages are used.
 
 \section{Conclusion}
 
 Across nine prespecified model--tokenizer configurations, raw atomic emoji
 retrieve word-disjoint CLDR keywords better than literal codepoints after
-exact four-view token-count matching, and a named-symbol comparison bounds
-the specificity of that observation. Two separately partitioned causal
+exact four-view token-count matching. A named-symbol control bounds the
+specificity of this result. Two separately partitioned causal
 experiments leave the tested rank-8 readout-token account unsupported.
 A separately specified 195-item follow-up confirms a conditional glyph-position
 attention contribution to keyword margin, with zero mean absolute top-1
-effects. Lexical readability, component-local mediation, and behaviorally
-effective pathways remain distinct empirical questions.\label{sec:main-end}
+effects. These outcomes distinguish lexical readability, local mediation,
+and behaviorally effective pathways.\label{sec:main-end}
 
+\clearpage
 \bibliographystyle{plainnat}
 \bibliography{references}
 
@@ -756,10 +756,11 @@ the displayed ASCII string.}
 \end{table}
 
 Table \ref{tab:models} reports the exact model artifacts and revisions used by
-the prespecified observational roster. The Llama configuration uses the BF16 mirror
-artifact specified by the protocol. Despite its \texttt{mlx-community}
-identifier, the recorded run loaded its safetensors through the
-Transformers/CUDA backend; we make no upstream bit-identity claim. Model cards
+the prespecified observational roster. The Llama BF16 mirror was retained
+from initial development on Apple Silicon and specified in the protocol.
+The reported runs loaded its safetensors through Transformers/CUDA.
+The \texttt{mlx-community} identifier records artifact provenance; upstream
+bit-identity was not verified. Model cards
 and upstream license terms are part of the submission-archive license audit.
 The cards declare Apache-2.0 for the Qwen2.5 0.5B, 1.5B, and 7B configurations, OLMo,
 SmolLM2, and Mistral; Qwen2.5 3B uses the non-commercial Qwen Research
@@ -998,7 +999,8 @@ the entire site state with the same item's other-view state. Guard is
 codepoint self-retrieval under the learned patch (floor $0.90$). All nine sites
 were evaluated. Entries marked secondary are outside the prespecified primary
 decision family; no primary verdict is assigned to them. The block-27 residual
-swap effects equal the baseline keyword-retrieval gap $0.0332$ exactly.}
+swap effects equal the baseline keyword-retrieval gap $0.0332$ exactly, as
+expected for a complete replacement of the state used by the endpoint.}
 \label{tab:t20}
 \end{table}
 
@@ -1115,6 +1117,12 @@ These are descriptive sensitivity checks. Independent reconstruction on a
 different CPU platform agrees to $1.26\times10^{-14}$ in saved metrics and
 $6.0\times10^{-14}$ in the critical value, preserving every bound and verdict.
 
+At the primary block-21, distance-8 condition, saved condition means give
+keyword top-1 of $3.0769\%$ (pipe) and $0.5128\%$ (article carrier) after
+the readout reset, compared with intact baselines of $5.1282\%$ and
+$1.5385\%$. Full-prefix donor replacement yields $1.5385\%$ and $0\%$.
+These low rates may limit sensitivity to decrements; a floor-effect
+explanation is not established.
 Keyword top-1 has zero mean absolute decrement, absolute restoration, and
 adjusted restoration. Adjusted decrement is $-0.001282$ in top-1 units;
 full-prefix calibration is $0.010256$. These are descriptive means, not
@@ -1165,25 +1173,21 @@ components have no separate significance tests.}
 \section{Execution, licensing, and artifact boundary}
 \label{app:artifact}
 
-Both observational and causal acquisition used a fixed Transformers/CUDA
-BF16 environment and an NVIDIA GeForce RTX 5090. Model artifacts, tokenizer replay
-receipts, selection files, analysis summaries, randomization seeds, bootstrap
-seeds, and validators are checksum-bound. Figure inputs in the paper are only
-the compact validated model-configuration, causal-site, and T21 contrast JSON summaries; a generated
-manifest hashes both inputs and every plotted PDF/PNG output.
+Acquisition used Transformers/CUDA BF16 on an NVIDIA GeForce RTX 5090.
+Checksums bind model artifacts, tokenizer replay, selections, analyses,
+randomization and bootstrap seeds, and validation. Figures use validated
+model-configuration, causal-site, and T21-contrast summaries; their manifest
+binds every input and PDF/PNG output.
 
-The anonymous evidence archive is a deterministic whitelist-only zip. Its
-manifest records every payload path, byte count, and SHA-256; a validator
-rejects unsafe paths, author or local-path tokens, model-weight formats, and
-raw array formats. The archive includes the paper, compact results, selected
-item sets, code, validation receipts, and paired license/compute/ethics reports.
-It omits model-dependent activation arrays, learned causal subspaces, the full
-intervention ledger, model weights, and tokenizer files. Those raw scientific
-objects remain identified by checksums in execution records. The package
-supports compact-summary and figure audit. T19-L prediction indices and
-exact strata reproduce its primary-window tests and intervals without a
-model. T21-C includes 195 item-level scalar contrast rows and NumPy-only
-validators for its simultaneous bounds, top-1 means, and descriptive margin
+A deterministic, whitelist-only archive contains the paper, compact results,
+selections, code, validation receipts, and paired license/compute/ethics reports.
+Its manifest binds every path, byte count, and SHA-256; the validator rejects
+unsafe paths, author or local-path tokens, and raw/model-file formats.
+Model-dependent activation arrays, learned subspaces, the full intervention
+ledger, model weights, and tokenizer files are omitted and remain bound by
+execution records. T19-L prediction indices and exact strata allow model-free
+statistical replay. T21-C includes 195 scalar contrast rows and NumPy-only
+validators for simultaneous bounds, top-1 means, and descriptive margin
 decomposition. Raw-state replay requires the omitted arrays.
 
 The observational acquisition used 7,920 batch-one forwards and produced
@@ -1206,15 +1210,22 @@ Apache-2.0. Checkpoint assets are identified by exact revision and upstream
 terms; the archive omits their files. In particular, the Qwen2.5 3B configuration
 is used only for non-commercial research under the Qwen Research License.
 
-We reviewed the study against the NeurIPS Code of Ethics. It uses no human
-participants, personal data, private messages, or scraped user content. LLM
-coding and research assistants supported sequential protocol development,
-code generation, analysis, manuscript editing, and an author-side fresh-eyes
-review. Each evaluation bank's endpoint was specified before its outcomes
-were inspected. Labels came from CLDR; assistant judgments were not used as
-experimental measurements. The authors retained execution authority and
-responsibility for final claims. Numerical evidence and independently
-implemented validators were checksum-bound.
+The study uses no human participants, personal data, private messages, or
+scraped user content and was reviewed against the NeurIPS Code of Ethics.
+
+\Needspace{12\baselineskip}
+\paragraph{Author-side AI assistance.}
+We developed this study interactively in collaboration with AI assistants.
+Author-side pre-submission feedback involved ChatGPT (GPT 5.6 Sol instant,
+``Monday'') and Claude Chat (Claude Fable 5.1). Codex (GPT 5.6 Sol Max) and
+Claude Code (Fable 5) contributed to implementation, analysis, sequential
+protocol design, and manuscript editing. These exchanges were part of
+author-initiated preparation, separate from conference peer review. Endpoints were specified
+before each bank's outcomes were inspected. CLDR supplied labels; assistant
+judgments were not experimental measurements. Authors retain execution
+authority and responsibility for the paper's text, figures, code, references,
+and claims. Numerical evidence and independently implemented validators are
+checksum-bound.
 
 \clearpage
 \input{checklist.tex}

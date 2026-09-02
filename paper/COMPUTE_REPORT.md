@@ -78,7 +78,7 @@ was requested. Per-stage CPU timing and peak memory were not separately
 instrumented, so no speedup or total-compute estimate is claimed.
 
 The T19 compact predictions, T20 selection audit, and T21 descriptive
-decomposition are included in archive v3; raw states remain excluded.
+decomposition are included from archive v3 onward; raw states remain excluded.
 
 ## Known omissions
 

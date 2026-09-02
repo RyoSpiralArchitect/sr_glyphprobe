@@ -12,7 +12,7 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v3"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v4"
 ARCHIVE_ROOT = ARTIFACT_ID
 OUTPUT_DIRECTORY = ROOT / "output" / "artifacts"
 OUTPUT_ZIP = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.zip"
@@ -50,6 +50,7 @@ DIRECT_FILES = (
     "paper/figures/t19_model_effects.png",
     "paper/scripts/build_figures.py",
     "tests/test_paper_figure_layout.py",
+    "tests/test_final_manuscript_polish.py",
     "docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md",
     "docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md",
     "docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md",

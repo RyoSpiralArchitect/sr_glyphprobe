@@ -818,7 +818,7 @@ Phase I ends with an English preprint-ready paper supported by an auditable
 evidence package. The [anonymous manuscript](output/pdf/glyphprobe_t19_first_draft.pdf)
 combines T19's 9/9 token-count-matched lexical result, its symbol and component
 boundaries, T20's calibration limits, and T21's conditional continuous-margin
-contribution. The [v4 claim table](paper/CLAIM_TABLE.md) keeps these distinct.
+contribution. The [v5 claim table](paper/CLAIM_TABLE.md) keeps these distinct.
 The [paper package](paper/README.md) includes an anonymous artifact, licenses,
 compute accounting, and ethics review. T19 primary-window statistics and T21
 scalar inference can be replayed without models; the post-hoc T21 decomposition

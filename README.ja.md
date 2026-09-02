@@ -603,7 +603,7 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。
 [著者匿名の原稿](output/pdf/glyphprobe_t19_first_draft.pdf)は、T19の9 / 9
 token-count-matched語彙結果、記号・componentによる境界、T20の較正限界、T21の条件付き
-連続margin寄与をまとめた。[v4 claim table](paper/CLAIM_TABLE.ja.md)ではこれらを分ける。
+連続margin寄与をまとめた。[v5 claim table](paper/CLAIM_TABLE.ja.md)ではこれらを分ける。
 [論文package](paper/README.ja.md)には匿名資料、license一覧、compute report、ethics reviewを
 収めた。T19主要区間の統計とT21のscalar推論はモデルなしで再計算でき、事後的なT21分解は
 記述的に扱う。raw状態からの再実行、過去の計算資源の完全な集計、著者による最終reviewは

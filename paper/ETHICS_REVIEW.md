@@ -20,9 +20,17 @@ scope-specific self-audit, not an institutional legal or IRB determination.
 
 ## LLM-assistance disclosure
 
-LLM coding and research assistants supported sequential protocol development,
-code generation, analysis, manuscript editing, and an author-side fresh-eyes
-review. The T21 question was developed after T20 and a declared exposed-item
+We developed this study interactively in collaboration with AI assistants.
+Author-side pre-submission manuscript feedback involved ChatGPT
+(GPT 5.6 Sol instant, "Monday") and Claude Chat (Claude Fable 5.1).
+Codex (GPT 5.6 Sol Max) and Claude Code (Fable 5) contributed to implementation and
+computational analysis, along with sequential protocol design and manuscript
+editing. These are the interface configurations reported by the authors;
+they are not members of the nine experimental model configurations.
+These activities were author-initiated preparation, separate from conference
+peer review or an assigned review of another submission.
+
+The T21 question was developed after T20 and a declared exposed-item
 pilot; its confirmation endpoint and rules were recorded before accessing
 the 195 remaining items. Labels came from CLDR, and assistant judgments were
 not experimental measurements. The authors retained execution authority and
@@ -33,12 +41,21 @@ replication or a substitute for author review.
 This disclosure is conservative: assistant use affected the research workflow
 even though no assistant output is an experimental measurement.
 
-The subsequent fresh-reader review prompted a post-hoc endpoint decomposition,
+Subsequent author-side pre-submission feedback prompted a post-hoc endpoint decomposition,
 checkpoint-selection clarification, and compact statistical replay. These use
 completed outputs, retain all 195 T21 items and all original comparisons, and
 introduce no new significance tests or revised confirmatory decisions. The
 matched T19 item-count range was corrected in prose from 31--41 to 31--51;
 the original arrays and tests already used the correct counts.
+
+The anonymous manuscript includes this factual disclosure at the end of
+Appendix G and refers to it in checklist item 16. It does not include an
+acknowledgments section: the [2026 handbook](https://neurips.cc/Conferences/2026/MainTrackHandbook)
+excludes acknowledgments at submission time, and the
+[workshop CFP](https://interpscience.github.io/cfp) requires anonymous main
+and supplementary materials. Acknowledgments belong in the later
+de-anonymized version. Disclosure does not change the separate restrictions
+on LLM assistance during official peer review.
 
 ## Conclusion
 

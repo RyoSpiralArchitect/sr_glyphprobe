@@ -25,7 +25,7 @@ contractを記録するもので、第二の論文ではない。
 - `ASSET_LICENSES.*`、`COMPUTE_REPORT.*`、`ETHICS_REVIEW.*`: 日英対の
   submission audit。
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compile済みreview PDF。
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip`: standaloneな
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v4.zip`: standaloneな
   匿名compact artifact。隣にreceiptとSHA-256を置く。
 
 公式formatting archiveは
@@ -52,7 +52,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v3.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v4.zip
 ```
 
 TectonicはBibTeX passも自動実行する。検証したMacではbundled executableを
@@ -94,7 +94,7 @@ pretraining novelty、普遍manifold、完全な回路、scale lawは示さな�
 深さ依存の非対称性は回復経路の仮説を動機づけるが、経路の同定や全部分空間の排除は
 示さない。
 
-改訂v4でも、別途事前指定した195項目のT21-Cを維持する。コードポイント表記の読み出し
+改訂v5でも、別途事前指定した195項目のT21-Cを維持する。コードポイント表記の読み出し
 状態への置換後、glyph位置からの情報は、同数の接尾位置対照を上回って対応語の
 コサイン・マージンに寄与した。片側・同時95%下限は五つすべて正で、glyph情報の絶対的な
 低下・回復による平均top-1効果は0だった。384項目の探索と195項目の確認は分け、
@@ -106,7 +106,31 @@ T20の採用チェックポイント検証、T21の自項目・競合マージ�
 分解は記述的で、確認判定を変更しない。元の195項目の比較値と同時推論の再計算も保つ。
 T19 matched emoji数は31–51（Gemma: 51）へ訂正した。元の計算は正しかった。
 [査読後の証拠レポート](../docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md)を参照。
-生のモデル状態の検証とは区別する。v1・v2とも残し、archive検証器は全3版を受け付ける。
+生のモデル状態の検証とは区別する。資料v1・v2・v3は残し、archive検証器は全4版を受け付ける。
+
+資料v4には、読者への伝わり方を整えた最終改稿を含める。要旨は語彙関係の問いから始め、
+導入では事前指定したU+1F923 / `lmao`を設計の具体例にする。単語の非重複は公式名と
+keywordの間の規則で、部分語や学習時の共起までは排除しない。T20の交換非対称性はT21を
+動機づけるが、異なる集団・指標をまたぐ完全な説明や冗長な符号化の証明にはしない。
+最終blockの全状態交換は期待される整合性確認、block 24 attentionの`2%`は
+sufficiency効果と明記する。
+
+保存済みT21条件別平均から、置換後の基準正答率`3.08%`（pipe）と`0.51%`（article）を
+示す。block 21・距離8・全195項目の値である。低さは感度上の留意点であり、床効果の証明や
+同等性の主張には使わない。OLMo 2の引用と、Llama mirrorを使う経緯がApple Siliconでの
+初期開発にあることも明確にした。この改訂ではモデル実行・統計の再計算を追加せず、実験結果も
+変えない。読み取り専用の回帰テストで、記載した百分率を既存の条件別平均に照合する。
+
+補遺G末尾の開示には、著者から申告されたChatGPT・Claude Chatの構成名を投稿前の助言、
+Codex・Claude Codeの構成名を実装・解析の役割として記載した。プロトコル設計と編集への
+関与も残し、会議の公式査読とは明確に分ける。Checklistの項目16から参照し、匿名提出版に
+謝辞の節は含めない。[日英の倫理・開示文書](ETHICS_REVIEW.ja.md)を参照。
+
+改訂v5の最終ローカル検査では、PDFは全23ページ、本文は9ページ目で終わり、参考文献は
+10ページ目から始まる。全ページを画像化して確認し、ラベルの欠け、枠からのはみ出し、
+未解決の引用は見つからなかった。原稿・図の配置・表に関する選択した回帰テストは
+29件すべて通過した。これらは文書と梱包の検査であり、新たな科学実験やOpenReviewへの
+投稿完了を意味しない。
 
 原稿では、`T19-L`を語彙観察arm、`T19-C`を条件付きcomponent因果armとして初出時に
 定義した。Appendix Aには、初期steering screenからT21-Cまでの探索→確認の短い経路を
@@ -167,7 +191,7 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
 - **問い:** T20-Cの9サイトで、最適化rank-8部分空間の効果と状態全体の交換効果は
   どう異なるか。
 - **Takeaway:** 主要サイトは登録済み較正基準を満たさず、全状態交換はblock 21/24で
-  非対称な効果を示し、block 27ではベースライン差を再現する。
+  非対称な効果を示し、block 27では期待されるendpoint整合性確認としてベースライン差を再現する。
 - **Family / sufficiency:** 全9サイトの横向き区間プロット。評価emojiは384件、
   各項目4文脈である。
 - **Renderer / encoding:** necessityは丸、sufficiencyは四角、全状態交換は白抜き三角。

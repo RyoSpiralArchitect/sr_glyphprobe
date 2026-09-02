@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate compact double-blind evidence archives, preserving v1/v2 compatibility."""
+"""Validate compact double-blind evidence archives, preserving older versions."""
 
 from __future__ import annotations
 
@@ -12,11 +12,12 @@ from typing import Callable
 import zipfile
 
 
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v3"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v4"
 ARCHIVE_ROOT = ARTIFACT_ID
 SUPPORTED_IDS = {
     "glyphprobe_t19_anonymous_evidence_v1",
     "glyphprobe_t19_anonymous_evidence_v2",
+    "glyphprobe_t19_anonymous_evidence_v3",
     ARTIFACT_ID,
 }
 MANIFEST_NAME = "ARTIFACT_MANIFEST.json"
