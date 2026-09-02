@@ -28,7 +28,7 @@ second manuscript.
 - `ASSET_LICENSES.*`, `COMPUTE_REPORT.*`, and `ETHICS_REVIEW.*`: paired
   English/Japanese submission audits.
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compiled review PDF.
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip`: standalone
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip`: standalone
   anonymous compact artifact, with adjacent receipt and SHA-256.
 
 The official formatting archive was downloaded from
@@ -57,7 +57,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip
 ```
 
 Tectonic runs the BibTeX pass automatically. On the validated Mac, invoke the
@@ -100,14 +100,27 @@ and excluded statements are fixed in [CLAIM_TABLE.md](CLAIM_TABLE.md).
 The separately specified T20-C follow-up tests optimized rank-8 subspaces on
 384 additional emoji in four contexts. Its full-state swap controls yield
 uncalibratable verdicts at both primary sites. The measured depth-dependent
-asymmetry motivates a recovery-pathway hypothesis; it does not identify that
-pathway or exclude all possible subspaces. No experimental result, decision,
-threshold, or input checksum was changed by the prose and layout revision.
+asymmetry motivates a recovery-pathway hypothesis; those swaps alone do not
+identify that pathway or exclude all possible subspaces.
+
+Revision v3 adds the separately specified T21-C result on 195 further items:
+glyph-position messages after a codepoint-view readout reset contribute to
+keyword cosine margin beyond equal-count suffix controls. All five
+simultaneous one-sided 95% lower bounds are positive. Absolute glyph-message
+decrement and restoration have zero mean keyword top-1 effects. The
+384-item pilot and 195-item confirmation are distinct, and all historical
+T19/T20 results, thresholds, and input checksums remain unchanged. See the
+[paired result report](../docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md).
+
+The v2 anonymous archive includes 195 derived item-level contrast rows and a
+standalone NumPy statistical replay, in addition to compact receipts. This
+does not replace raw-state validation. The Table-6-corrected v1 package remains
+available as the pre-T21 submission baseline; the validator accepts both versions.
 
 The manuscript now defines `T19-L` at first use as the lexical observational
 arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
 short exploration-to-confirmation lineage from the early steering screen
-through T20-C. Earlier exploratory and failed-confirmation results explain why
+through T21-C. Earlier exploratory and failed-confirmation results explain why
 the final controls exist; they are not added to the T19-L evidence denominator.
 
 ## Figure chart contracts

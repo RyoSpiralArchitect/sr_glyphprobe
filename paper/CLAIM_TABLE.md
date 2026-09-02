@@ -1,10 +1,11 @@
-# Manuscript claims and evidence (v2)
+# Manuscript claims and evidence (v3)
 
 [Japanese](CLAIM_TABLE.ja.md) | [Paper README](README.md)
 
-Status: **specified for manuscript revision v2**. This editorial revision
-retains every T19/T20 result and decision while distinguishing measured swap
-effects from hypotheses about their source. Any change to the allowed wording, evidence denominator, or
+Status: **specified for manuscript revision v3 after independent T21-C validation**.
+Every T19/T20 result and decision is retained. T21-C adds a separately specified,
+195-item conditional attention-message test with a cosine-margin endpoint.
+Any change to the allowed wording, evidence denominator, or
 exclusion requires a versioned update before the corresponding manuscript
 sentence changes.
 
@@ -20,6 +21,8 @@ sentence changes.
 | An interchange-optimized rank-8 subspace at a late residual or component site is jointly necessary and sufficient. | Registered verdict: **uncalibratable at both primary sites** (sufficiency ceilings `+0.0234`/`+0.0254` below the registered `0.06` informativeness minimum); no secondary site passes. | The verdict records a failed calibration requirement and leaves the account unresolved. One model, rank 8, readout-token interventions, four contexts. |
 | Full readout-token swaps have asymmetric effects at blocks 21 and 24 and reproduce both baselines at block 27. | Supported descriptively by registered controls: necessity effects are `4%`/`25%` of the baseline glyph--codepoint gap at blocks 21/24 versus exact transfer (`100%`) at block 27; sufficiency effects are `71%`/`76%`. | Preserved retrieval motivates a hypothesis of recovery from unchanged glyph-position context. The interventions do not identify that pathway, exclude all ranks, or prove that a full swap upper-bounds every subspace intervention. |
 | The tested optimized rank-8 subspaces fit source items and generalize weakly to held-out items. | Supported descriptively: training InfoNCE falls to `0.52--1.26` at residual sites while held-out source validation stays at `0--1` item; fresh-set adjusted sufficiency at most `+0.0046` (`p = 0.0085`, uncorrected component test), below one quarter of the `0.02` floor. | Trained on 96 items; weak generalization is compatible with item-specific coding, limited training data, or optimization limits. It does not establish that no shared subspace exists. |
+| After a codepoint-view readout reset, glyph-position messages through later attention contribute to own-keyword cosine margin beyond equal-count suffix controls. | Supported on 195 prospectively specified items at block 21 of Llama 3.2 3B: all five simultaneous one-sided 95% lower bounds are positive; adjusted decrement/restoration means `0.002326`/`0.002267`, lower bounds `0.001399`/`0.001400`. | The 384-item pilot selected the candidate before reserve reconstruction; average two carriers at distance 8 and two fixed-pool donors within items. Conditional intervention, margin endpoint, one model, approximate item-bootstrap inference; no emoji specificity or unique-circuit claim. |
+| T21-C demonstrates improved retrieval accuracy or behavioral steering. | Not supported: mean keyword top-1 effects are zero for absolute decrement, absolute restoration, and adjusted restoration; adjusted decrement is `-0.001282`. | These are descriptive means, not equivalence tests. Generation and downstream behavior were not measured. The positive margin result does not change T19/T20 top-1 verdicts. |
 | Models visually perceive emoji or humanly understand their meaning. | Excluded. | Inputs are text-only Unicode scalars; no raster perception or behavioral understanding test was run. |
 | The result identifies a universal emoji manifold, complete circuit, scale law, or model-population effect. | Excluded. | The nine cells are a fixed, confounded roster and the causal tests cover one model. |
 | T19/T20 establish pretraining novelty or tokenizer independence. | Excluded. | Emoji surfaces may have appeared in earlier experiments or pretraining; only repository-text freshness for symbols, T19/T20-forward freshness for causal banks, and token-count matching are established. |
@@ -28,8 +31,10 @@ sentence changes.
 
 > Raw atomic emoji retrieve word-disjoint CLDR keywords better than literal
 > codepoints across nine prespecified model--tokenizer configurations after
-> exact four-view token-count matching. Neither causal experiment supports
-> the tested rank-8 readout-token account. The optimized-subspace follow-up
+> exact four-view token-count matching. T19-C and T20-C leave the tested
+> rank-8 readout-token account unsupported. The optimized-subspace follow-up
 > is uncalibratable at its primary sites under the registered rule. Its
-> full-state swaps reveal a depth-dependent asymmetry and motivate direct
-> tests of recovery from glyph-position context.
+> full-state swaps reveal a depth-dependent asymmetry. A separately specified
+> attention-path test on 195 additional items confirms a conditional
+> glyph-position contribution to keyword cosine margin, with zero mean top-1
+> effects for absolute glyph-message disruption and restoration.

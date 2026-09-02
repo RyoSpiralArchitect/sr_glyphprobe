@@ -1,10 +1,11 @@
-# GlyphProbe T19/T20 匿名evidence artifact v1
+# GlyphProbe T19/T20/T21 匿名evidence artifact v2
 
 [English](README.md)
 
-この**compactなdouble-blind review artifact**は、事前指定したT19/T20プロトコル、
+この**compactなdouble-blind review artifact**は、事前指定したT19/T20/T21プロトコル、
 選択済み項目集合、compactな結果、独立検証報告、解析・検証コード、論文ソース、図、
-匿名review PDFを結び付ける。raw dataからの再実行には、下記の追加ファイルが必要になる。
+匿名review PDFを結び付ける。T21-Cの同時推論は、195項目分の派生スカラー比較値から
+モデルなしで再計算できる。raw dataからの再実行には、下記の追加ファイルが必要になる。
 
 ## 最初に検証する
 
@@ -30,6 +31,8 @@ scientific estimandの正しさではない。
 - T19-Cの事後的な全状態交換についての記述的結果。
 - T20-Cの設定、項目選択、事前指定と実行承認のmanifest、事前検査、訓練・評価報告、
   compactな結果、独立validation receipt。
+- T21のpilotと別のprospective確認計画、露出済み項目によるcanaryのreceipt、収集・解析報告、
+  別実装による数値検証、および確認用195項目すべての派生スカラー比較値。
 - receipt生成方法を点検するためのexecutor、analyzer、independent validator source。
 - T19 freezeが参照する最小限のT9/T10/T18 binding。
 - 日英対のclaim、license、compute、ethics、protocol、result、artifact-boundary文書。
@@ -37,19 +40,21 @@ scientific estimandの正しさではない。
 
 `ARTIFACT_MANIFEST.json`がmachine-readableな境界であり、全payloadのpath、size、digestを
 列挙する。`SHA256SUMS`はmanifest自体も追加でbindする。
+固定の`reproducibility_timestamp_utc`とZIP timestampは、決定論的な梱包のための値であり、
+build時刻や実験時刻ではない。実際の設計・収集・解析時刻は各実験receiptに残す。
 
 ## 意図的に除外するもの
 
 - model weight、tokenizer file、cache、virtual environment、secret。
-- T19/T20のmodel-dependent activation array、causal source subspace、causal evaluation
+- T19/T20/T21のmodel-dependent activation array、causal source subspace、causal evaluation
   array、完全なintervention ledger。
 - Git metadata、repository remote、author metadata、local absolute path、privateな
   execution-host情報。
 - T19 evidence denominatorに入らない探索raw output。
 
 除外したraw arrayは同梱acquisition/validation receiptでbindされるが、このcompact package
-だけでは独立replayできない。したがって、exact compact-result/figure audit、source-code
-inspection、manuscript verificationは可能だが、upstream model assetを別途取得しない
+だけでは独立replayできない。compact-result/figure audit、派生比較値からのT21-C統計再計算、
+source-code inspection、manuscript verificationは可能だが、upstream model assetを別途取得しない
 完全reacquisitionや、compact evidenceだけからのraw-array再構成はできない。
 
 ## Compact surfaceを再生成する
@@ -57,6 +62,18 @@ inspection、manuscript verificationは可能だが、upstream model assetを別
 integrity validatorはPython standard libraryだけを使う。scientific Python file向けの
 記録済みacquisition stackは`paper/COMPUTE_REPORT.md`、小さなaudit/figure環境は
 `requirements-audit.txt`にある。
+
+T21-Cの5比較の同時下限、判定、記述的なtop-1平均は、NumPyだけで再計算できる。
+
+```bash
+python3 scripts/validate_t21_compact_inference_v0.py \
+  --compact validation/t21_glyph_context_path_confirmation_v0/results/item_contrasts.json \
+  --result validation/t21_glyph_context_path_confirmation_v0/results/confirmation_result.json
+```
+
+項目の再標本化indexを共有するbootstrapを20,000回再計算する。一致が検証するのは、
+同梱スカラー値からの統計計算である。モデル状態への介入が正しく実装されたことは、
+receiptに結び付いた別の検証として扱う。
 
 disposableな展開copyでfigureを再生成する。
 
@@ -86,8 +103,12 @@ manuscriptである。
 T19-Lは、固定text-only Unicode入力とexact token-count control下での限定的なmodel横断
 lexical retrievalを支持する。T19-Cは一つのLlama 3.2 3B構成で、登録済みnecessity・
 sufficiencyを両方通る事前指定の主要late componentを見つけなかった。
-T20-Cの主要サイトは登録済み規則の下で較正不能となった。全状態交換はglyph位置の
-文脈から回復する経路の仮説を動機づけるが、その経路の同定や全rankの排除を示さない。
+T20-Cの主要サイトは登録済み規則の下で較正不能となった。その全状態交換の非対称性から、
+別のT21研究を設計した。T21-Cは、Llama 3.2 3Bの一構成でblock 21のreadoutをresetした後、
+glyph位置のkeyとvalueが連続的な語彙検索marginへ寄与することを条件付きで支持する。
+事前指定した5比較は、同時信頼下限がすべて正だった。絶対的なnecessityとrescueのtop-1
+平均効果は、ともにゼロである。T19/T20の判定規則は変更せず、正答率向上、無条件または
+emojiに特有の経路、完全な媒介機構は示さない。
 rendered-glyph perception、
 人間的意味、tokenizer independence、universal manifold、完全circuit、scale law、
 model-population generalityは示さない。

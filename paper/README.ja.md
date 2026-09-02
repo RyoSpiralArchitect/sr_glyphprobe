@@ -25,7 +25,7 @@ contractを記録するもので、第二の論文ではない。
 - `ASSET_LICENSES.*`、`COMPUTE_REPORT.*`、`ETHICS_REVIEW.*`: 日英対の
   submission audit。
 - `../output/pdf/glyphprobe_t19_first_draft.pdf`: compile済みreview PDF。
-- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip`: standaloneな
+- `../output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip`: standaloneな
   匿名compact artifact。隣にreceiptとSHA-256を置く。
 
 公式formatting archiveは
@@ -52,7 +52,7 @@ SOURCE_DATE_EPOCH=1788307200 tectonic -X compile \
 cp paper/build/main.pdf output/pdf/glyphprobe_t19_first_draft.pdf
 python3 paper/scripts/build_anonymous_artifact.py
 python3 paper/scripts/validate_anonymous_artifact.py \
-  output/artifacts/glyphprobe_t19_anonymous_evidence_v1.zip
+  output/artifacts/glyphprobe_t19_anonymous_evidence_v2.zip
 ```
 
 TectonicはBibTeX passも自動実行する。検証したMacではbundled executableを
@@ -92,10 +92,21 @@ pretraining novelty、普遍manifold、完全な回路、scale lawは示さな�
 別途設計を指定したT20-Cでは、追加のemoji 384件と4文脈で最適化rank-8部分空間を調べた。
 全状態交換による対照を用いた登録済み判定は、両主要サイトで較正不能となった。
 深さ依存の非対称性は回復経路の仮説を動機づけるが、経路の同定や全部分空間の排除は
-示さない。今回の文章・組版改訂では、実験結果、判定、閾値、入力のハッシュを変えていない。
+示さない。
+
+改訂v3には、別途事前指定した195項目のT21-Cを追加する。コードポイント表記の読み出し
+状態への置換後、glyph位置からの情報は、同数の接尾位置対照を上回って対応語の
+コサイン・マージンに寄与した。片側・同時95%下限は五つすべて正で、glyph情報の絶対的な
+低下・回復による平均top-1効果は0だった。384項目の探索と195項目の確認は分け、
+過去のT19/T20の数値・判定・閾値・入力ハッシュは維持する。
+[結果の英日レポート](../docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md)を参照。
+
+匿名資料v2には195項目分の派生比較値と、NumPyだけで動く統計の再計算コードも含む。
+生のモデル状態の検証とは区別する。Table 6修正済みのv1はT21追加前の投稿用基準として
+残し、検証コードは両バージョンを受け付ける。
 
 原稿では、`T19-L`を語彙観察arm、`T19-C`を条件付きcomponent因果armとして初出時に
-定義した。Appendix Aには、初期steering screenからT20-Cまでの探索→確認の短い経路を
+定義した。Appendix Aには、初期steering screenからT21-Cまでの探索→確認の短い経路を
 追加した。過去の探索結果と確認失敗は、現在のcontrolが必要になった理由を説明するが、
 T19-Lの証拠分母へは加えない。
 

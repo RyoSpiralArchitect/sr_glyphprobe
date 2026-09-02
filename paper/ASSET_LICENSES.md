@@ -2,7 +2,9 @@
 
 [日本語](ASSET_LICENSES.ja.md)
 
-Status: **reviewed for the anonymous T19 submission artifact on 2026-09-02**.
+Status: **reviewed for the anonymous T19/T20/T21 submission artifact on 2026-09-02**.
+T21 reuses the same Llama checkpoint and Unicode/CLDR sources; it introduces
+derived scalar contrasts and project code, with no new upstream model assets.
 This register distinguishes permission to use an upstream asset from permission
 to redistribute the asset itself. The anonymous archive contains no model
 weights or tokenizer files.

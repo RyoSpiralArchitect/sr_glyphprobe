@@ -1,11 +1,13 @@
-# GlyphProbe T19/T20 anonymous evidence artifact v1
+# GlyphProbe T19/T20/T21 anonymous evidence artifact v2
 
 [日本語](README.ja.md)
 
-This **compact, double-blind review artifact** links the prespecified T19/T20
+This **compact, double-blind review artifact** links the prespecified T19/T20/T21
 protocols, selected item sets, compact results, independent validation reports,
 analysis and validator code, paper sources, figures, and the anonymous review
-PDF. Full raw-data replay requires additional files listed below.
+PDF. It also supports model-free replay of T21-C's simultaneous inference from
+195 item-level scalar contrasts. Full raw-data replay requires additional files
+listed below.
 
 ## Verify first
 
@@ -35,6 +37,9 @@ prove that the scientific estimand is correct.
 - the T20-C configuration, selection, specification and admission manifests,
   preliminary checks, training/evaluation reports, compact results, and
   independent-validation receipt;
+- the T21 pilot and separate prospective confirmation specifications, exposed-item
+  canary receipts, acquisition and analysis reports, independent numerical
+  validation, and all 195 confirmation items' derived scalar contrasts;
 - the exact executor, analyzer, and independent-validator source files needed
   to inspect how the receipts were produced;
 - the minimal T9/T10/T18 bindings referenced by the T19 freeze;
@@ -45,11 +50,14 @@ prove that the scientific estimand is correct.
 
 `ARTIFACT_MANIFEST.json` is the machine-readable boundary. It lists every
 payload path, size, and digest. `SHA256SUMS` additionally binds the manifest.
+The fixed `reproducibility_timestamp_utc` and ZIP timestamps make packaging
+deterministic; they are not build or experimental-event timestamps. Actual
+design, acquisition, and analysis times remain in the experimental receipts.
 
 ## What is deliberately excluded
 
 - model weights, tokenizer files, caches, virtual environments, and secrets;
-- T19/T20 model-dependent activation arrays, causal source subspaces, causal
+- T19/T20/T21 model-dependent activation arrays, causal source subspaces, causal
   evaluation arrays, and the full intervention ledger;
 - Git metadata, repository remotes, author metadata, local absolute paths, and
   private execution-host information; and
@@ -57,8 +65,9 @@ payload path, size, and digest. `SHA256SUMS` additionally binds the manifest.
 
 The omitted raw arrays remain bound by the included acquisition and validation
 receipts but are not independently replayable from this compact package. The
-archive therefore supports exact compact-result and figure audit, source-code
-inspection, and manuscript verification. It does not support full
+archive therefore supports compact-result and figure audit, T21-C statistical
+replay from derived contrasts, source-code inspection, and manuscript
+verification. It does not support full
 reacquisition without obtaining the upstream model assets, or raw-array
 reconstruction from the compact evidence alone.
 
@@ -68,6 +77,19 @@ The integrity validator uses only the Python standard library. For the
 scientific Python files, the recorded acquisition stack is in
 `paper/COMPUTE_REPORT.md`; the small audit/figure environment is listed in
 `requirements-audit.txt`.
+
+Replay the T21-C five-contrast simultaneous lower bounds, verdict, and
+descriptive top-1 means using NumPy alone:
+
+```bash
+python3 scripts/validate_t21_compact_inference_v0.py \
+  --compact validation/t21_glyph_context_path_confirmation_v0/results/item_contrasts.json \
+  --result validation/t21_glyph_context_path_confirmation_v0/results/confirmation_result.json
+```
+
+This recomputes 20,000 shared-index item bootstrap replicates. Agreement checks
+the statistical calculation from the included scalars; correctness of the
+model-state interventions remains a separate, receipt-bound validation.
 
 Regenerate the figures in a disposable extracted copy:
 
@@ -100,8 +122,13 @@ T19-L supports bounded cross-model lexical retrieval under fixed text-only
 Unicode inputs and exact token-count controls. T19-C finds no prespecified
 primary late component that passes both necessity and sufficiency criteria in
 one Llama 3.2 3B configuration. T20-C returns uncalibratable at its primary
-sites under the registered rule. Full-state swaps motivate a hypothesis about
-recovery from glyph-position context; they do not identify that pathway or
-exclude all ranks. The artifact does not establish rendered-glyph
+sites under the registered rule. Their full-state asymmetry motivated the
+separate T21 study. T21-C supports a conditional contribution of glyph-position
+keys and values to a continuous lexical-retrieval margin after a block-21
+readout reset in one Llama 3.2 3B configuration. All five prespecified
+simultaneous lower bounds are positive. Absolute necessity and rescue top-1
+mean effects are both zero. This result does not revise the T19/T20 criteria
+or establish accuracy improvement, an unconditional or emoji-specific path,
+or a complete mediator. The artifact does not establish rendered-glyph
 perception, human meaning, tokenizer independence, a universal manifold, a
 complete circuit, a scale law, or model-population generality.

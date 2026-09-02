@@ -1,0 +1,23 @@
+{
+  "acquisition_receipt_sha256": "5c521d3839d43c1d3875a1fa68d7a840e94a45383c4bea88edc6c3fc056c1476",
+  "analysis_receipt_sha256": "182697223edb9aeccd4d1a64595d65d07e923dfd48a25e6eeb837395fe00b408",
+  "claim": "independent numerical reconstruction, not a second experimental replication",
+  "critical_value_error": 5.995204332975845e-14,
+  "maximum_metric_errors": {
+    "alias_margin": 7.327471962526033e-15,
+    "alias_margin_effect": 9.769962616701378e-15,
+    "alias_top1": 0.0,
+    "alias_top1_effect": 0.0,
+    "codepoint_margin": 8.992806499463768e-15,
+    "codepoint_margin_effect": 1.2545520178264269e-14,
+    "codepoint_top1": 0.0,
+    "codepoint_top1_effect": 0.0,
+    "donor_margin": 1.0547118733938987e-14,
+    "donor_margin_effect": 1.0103029524088925e-14
+  },
+  "status": "pass",
+  "target_items_validated": 195,
+  "validator": "validate_t21_glyph_context_path_confirmation_v0.py",
+  "validator_sha256": "8c2df9805ee79d5d9b1fef61e37e085c4ac73852c3239e9ba44d2edf41b24cc5",
+  "verdict": "conditional_path_contribution_supported"
+}

@@ -1,0 +1,11 @@
+{
+  "boundary": "Statistical replay from derived contrasts; raw-state correctness is a separate check.",
+  "compact_sha256": "5266a84e14e3f7cb9307b22bc3b416512e7269555d30e039df07670d58dcecf3",
+  "maximum_numeric_error": 0.0,
+  "replicates": 20000,
+  "result_sha256": "87b39b75392a2a443c59f70d9f61aa878fe2314df2dade185f387436b52352ef",
+  "status": "pass",
+  "target_items": 195,
+  "validator_sha256": "83c0dda9029b807ba919235acb1f3c607b1f9be904036ad7aedbc967b264829e",
+  "verdict": "conditional_path_contribution_supported"
+}

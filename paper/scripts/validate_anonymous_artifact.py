@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the compact, double-blind T19 evidence artifact."""
+"""Validate compact double-blind evidence archives, preserving v1 compatibility."""
 
 from __future__ import annotations
 
@@ -12,8 +12,9 @@ from typing import Callable
 import zipfile
 
 
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v1"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v2"
 ARCHIVE_ROOT = ARTIFACT_ID
+SUPPORTED_IDS = {"glyphprobe_t19_anonymous_evidence_v1", ARTIFACT_ID}
 MANIFEST_NAME = "ARTIFACT_MANIFEST.json"
 SUMS_NAME = "SHA256SUMS"
 FIXED_ZIP_TIME = (2026, 9, 2, 0, 0, 0)
@@ -66,8 +67,14 @@ def _safe_path(name: str) -> None:
     require("\\" not in name, f"Backslash in artifact path: {name}")
     path = PurePosixPath(name)
     require(not path.is_absolute(), f"Absolute artifact path: {name}")
-    require(path.parts and all(part not in {"", ".", ".."} for part in path.parts), f"Unsafe artifact path: {name}")
-    require(path.suffix.lower() not in FORBIDDEN_SUFFIXES, f"Forbidden raw/model file type: {name}")
+    require(
+        path.parts and all(part not in {"", ".", ".."} for part in path.parts),
+        f"Unsafe artifact path: {name}",
+    )
+    require(
+        path.suffix.lower() not in FORBIDDEN_SUFFIXES,
+        f"Forbidden raw/model file type: {name}",
+    )
     require(".git" not in path.parts, f"Git metadata present: {name}")
 
 
@@ -80,8 +87,11 @@ def _validate_payloads(files: dict[str, bytes]) -> dict[str, object]:
         raise ArtifactValidationError(f"Invalid manifest: {exc}") from exc
     require(isinstance(manifest, dict), "Manifest must be a JSON object")
     require(manifest.get("schema_version") == 1, "Unexpected manifest schema")
-    require(manifest.get("artifact_id") == ARTIFACT_ID, "Unexpected artifact id")
-    require(manifest.get("archive_root") == ARCHIVE_ROOT, "Unexpected archive root")
+    require(manifest.get("artifact_id") in SUPPORTED_IDS, "Unexpected artifact id")
+    require(
+        manifest.get("archive_root") == manifest.get("artifact_id"),
+        "Unexpected archive root",
+    )
     rows = manifest.get("files")
     require(isinstance(rows, list), "Manifest files must be a list")
 
@@ -96,8 +106,13 @@ def _validate_payloads(files: dict[str, bytes]) -> dict[str, object]:
         listed_payloads.add(name)
         require(name in files, f"Manifest path missing from artifact: {name}")
         require(row.get("bytes") == len(files[name]), f"Byte count mismatch: {name}")
-        require(row.get("sha256") == digest_bytes(files[name]), f"SHA-256 mismatch: {name}")
-    require(listed_payloads == expected_payloads, "Manifest roster differs from artifact payload roster")
+        require(
+            row.get("sha256") == digest_bytes(files[name]), f"SHA-256 mismatch: {name}"
+        )
+    require(
+        listed_payloads == expected_payloads,
+        "Manifest roster differs from artifact payload roster",
+    )
 
     try:
         sum_lines = files[SUMS_NAME].decode("ascii").splitlines()
@@ -105,12 +120,18 @@ def _validate_payloads(files: dict[str, bytes]) -> dict[str, object]:
         raise ArtifactValidationError("SHA256SUMS is not ASCII") from exc
     parsed_sums: dict[str, str] = {}
     for line in sum_lines:
-        require(len(line) > 66 and line[64:66] == "  ", f"Malformed SHA256SUMS row: {line!r}")
+        require(
+            len(line) > 66 and line[64:66] == "  ",
+            f"Malformed SHA256SUMS row: {line!r}",
+        )
         sha_value, name = line[:64], line[66:]
         require(name not in parsed_sums, f"Duplicate SHA256SUMS path: {name}")
         parsed_sums[name] = sha_value
     expected_sum_names = set(files) - {SUMS_NAME}
-    require(set(parsed_sums) == expected_sum_names, "SHA256SUMS roster differs from payload plus manifest")
+    require(
+        set(parsed_sums) == expected_sum_names,
+        "SHA256SUMS roster differs from payload plus manifest",
+    )
     for name, sha_value in parsed_sums.items():
         require(sha_value == digest_bytes(files[name]), f"SHA256SUMS mismatch: {name}")
 
@@ -119,17 +140,29 @@ def _validate_payloads(files: dict[str, bytes]) -> dict[str, object]:
         _safe_path(name)
         lowered = value.lower()
         for fragment in forbidden:
-            require(fragment not in lowered, f"Forbidden identity/local-path token in {name}")
+            require(
+                fragment not in lowered,
+                f"Forbidden identity/local-path token in {name}",
+            )
 
     boundary = manifest.get("boundary")
     require(isinstance(boundary, dict), "Manifest boundary must be an object")
-    require(boundary.get("raw_model_arrays_included") is False, "Raw-array boundary changed")
-    require(boundary.get("model_weights_included") is False, "Model-weight boundary changed")
-    require(boundary.get("full_raw_replay_supported") is False, "Replay boundary changed")
-    require(boundary.get("compact_audit_supported") is True, "Compact-audit boundary changed")
+    require(
+        boundary.get("raw_model_arrays_included") is False, "Raw-array boundary changed"
+    )
+    require(
+        boundary.get("model_weights_included") is False, "Model-weight boundary changed"
+    )
+    require(
+        boundary.get("full_raw_replay_supported") is False, "Replay boundary changed"
+    )
+    require(
+        boundary.get("compact_audit_supported") is True,
+        "Compact-audit boundary changed",
+    )
 
     return {
-        "artifact_id": ARTIFACT_ID,
+        "artifact_id": manifest["artifact_id"],
         "payload_files": len(expected_payloads),
         "total_files": len(files),
         "manifest_sha256": digest_bytes(files[MANIFEST_NAME]),
@@ -158,31 +191,60 @@ def _read_zip(path: Path) -> dict[str, bytes]:
     with zipfile.ZipFile(path, "r") as archive:
         require(not archive.comment, "Zip comment must be empty")
         seen: set[str] = set()
+        observed_root: str | None = None
         for info in archive.infolist():
             require(info.filename not in seen, f"Duplicate zip entry: {info.filename}")
             seen.add(info.filename)
-            require(not info.is_dir(), f"Directory zip entry is not allowed: {info.filename}")
-            require(info.date_time == FIXED_ZIP_TIME, f"Non-fixed zip timestamp: {info.filename}")
-            require(info.create_system == 3, f"Unexpected zip creator system: {info.filename}")
+            require(
+                not info.is_dir(),
+                f"Directory zip entry is not allowed: {info.filename}",
+            )
+            require(
+                info.date_time == FIXED_ZIP_TIME,
+                f"Non-fixed zip timestamp: {info.filename}",
+            )
+            require(
+                info.create_system == 3,
+                f"Unexpected zip creator system: {info.filename}",
+            )
             mode = info.external_attr >> 16
             require(stat.S_ISREG(mode), f"Non-regular zip entry: {info.filename}")
-            require(mode & 0o777 == 0o644, f"Unexpected zip permissions: {info.filename}")
-            prefix = ARCHIVE_ROOT + "/"
-            require(info.filename.startswith(prefix), f"Unexpected zip root: {info.filename}")
-            name = info.filename[len(prefix):]
+            require(
+                mode & 0o777 == 0o644, f"Unexpected zip permissions: {info.filename}"
+            )
+            root = info.filename.split("/", 1)[0]
+            require(root in SUPPORTED_IDS, f"Unexpected zip root: {root}")
+            if observed_root is None:
+                observed_root = root
+            require(root == observed_root, "Mixed archive roots")
+            prefix = root + "/"
+            require(
+                info.filename.startswith(prefix),
+                f"Unexpected zip root: {info.filename}",
+            )
+            name = info.filename[len(prefix) :]
             _safe_path(name)
             files[name] = archive.read(info)
+        require(MANIFEST_NAME in files, "Missing artifact manifest")
+        require(
+            json.loads(files[MANIFEST_NAME])["archive_root"] == observed_root,
+            "Manifest/zip root mismatch",
+        )
     return files
 
 
 def validate(path: Path) -> dict[str, object]:
-    reader: Callable[[Path], dict[str, bytes]] = _read_directory if path.is_dir() else _read_zip
+    reader: Callable[[Path], dict[str, bytes]] = (
+        _read_directory if path.is_dir() else _read_zip
+    )
     return _validate_payloads(reader(path))
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("artifact", type=Path, help="Extracted artifact root or artifact zip")
+    parser.add_argument(
+        "artifact", type=Path, help="Extracted artifact root or artifact zip"
+    )
     return parser.parse_args()
 
 

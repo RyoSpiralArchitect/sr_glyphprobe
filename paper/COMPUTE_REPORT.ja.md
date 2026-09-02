@@ -2,11 +2,11 @@
 
 [English](COMPUTE_REPORT.md)
 
-状態: **T19/T20のcompactな計数は完了。T19のacquisition時間・memoryの計数は未完了**。
+状態: **T19/T20/T21のcompactな計数は完了。T19のacquisition時間・memoryの計数は未完了**。
 model weightのtraining/fine-tuningは行っていない。T20-Cはサイトごとに
 3072×8の部分空間パラメータのみを訓練した。
 
-## 凍結した実行環境
+## 記録された実行環境
 
 | 項目 | 記録値 |
 |---|---|
@@ -37,8 +37,28 @@ identifierは実行backendを示さず、凍結safetensorsはTransformers/CUDA�
 | T20-C training | capture forward 384回、batched training pass 33,048回（勾配はrank-8部分空間パラメータのみに到達）、記録stage時間14.7分 | source保留32項目でのvalidation scoring | source bankのforwardのみ。admission時のevaluation forward 0を再検証済み。 |
 | T20-C evaluation | model forward 32,256回、intervention row 124,416件、記録stage時間7.3分 | 18 component testの各々でsign flip 99,999回、item bootstrap 20,000 replicate | 9 engineering gate全てが厳密ゼロ。独立validatorが全値と両registered verdictを再導出した。 |
 
-forward数は凍結batch-size-one protocol下のcall数であり、FLOPsではない。因果の
+T19/T20のforward数は指定したbatch-size-one protocol下のcall数であり、FLOPsではない。因果の
 intervention rowは追加training exampleではない。generation callは0件である。
+
+## T21の取得作業量
+
+| 段階 | 対象項目 | バッチforward | 系列換算forward | 記録した所要時間 |
+| --- | ---: | ---: | ---: | ---: |
+| 元の使用済み項目canary | 8 | 850 | 3,634 | 19.48秒 |
+| 使用済み項目による探索 | 384 | 4,610 | 138,242 | 218.87秒 |
+| 確認実行処理のcanary、同じ使用済み項目 | 8 | 850 | 3,634 | 19.73秒 |
+| 事前指定した確認実験 | 195 | 2,720 | 70,580 | 118.50秒 |
+
+ドナーの取得と標準attentionとの一致検査も含む。介入forwardは文脈ごとに88行で、
+同じバッチ位置の対照forwardと対にする。canaryは既存項目の繰り返しであり、科学的な
+標本数を増やさない。新モデルの取得、モデル重みの訓練、生成はいずれも行っていない。
+所要時間には読み込み・取得・保存も含み、GPUの計算時間だけではない。T21の最大メモリ
+使用量とエネルギー消費は未計測である。
+
+確認実験の主要推定は、インデックスを共有する項目bootstrap 20,000回を用いる。
+別実装でも保存状態から区間を再計算した。匿名資料には195項目の比較値とNumPyだけで
+動く統計検証コードを同梱する。生のモデル状態からの再構成には、別途保管している配列が
+必要である。
 
 ## 既知の欠落
 

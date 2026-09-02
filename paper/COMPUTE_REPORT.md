@@ -2,11 +2,11 @@
 
 [日本語](COMPUTE_REPORT.ja.md)
 
-Status: **compact T19/T20 accounting complete; T19 acquisition duration and
+Status: **compact T19/T20/T21 accounting complete; T19 acquisition duration and
 memory accounting incomplete**. No model weights were trained or fine-tuned;
 T20-C trained only 3072-by-8 subspace parameters per site.
 
-## Frozen execution environment
+## Recorded execution environment
 
 | Field | Recorded value |
 |---|---|
@@ -39,9 +39,31 @@ were loaded through Transformers/CUDA.
 | T20-C training | 384 capture forward calls; 33,048 batched training passes (gradients reach only the rank-8 subspace parameters); recorded stage duration 14.7 min | validation scoring on 32 held-out source items | Source-bank forwards only; zero evaluation forwards at admission re-verified. |
 | T20-C evaluation | 32,256 model forward calls; 124,416 intervention rows; recorded stage duration 7.3 min | 99,999 sign flips and 20,000 item-bootstrap replicates for each of 18 component tests | All nine engineering gates exact; the independent validator re-derived every value and both registered verdicts. |
 
-The forward counts describe calls under the frozen batch-size-one protocol,
+The T19/T20 forward counts describe calls under the specified batch-size-one protocol,
 not FLOPs. The causal intervention rows are not additional training examples.
 The experiment issued no generation calls.
+
+## T21 acquisition accounting
+
+| Stage | Target items | Batched calls | Sequence forwards | Recorded wall time |
+| --- | ---: | ---: | ---: | ---: |
+| Original exposed-item canary | 8 | 850 | 3,634 | 19.48 s |
+| Exposed-item pilot | 384 | 4,610 | 138,242 | 218.87 s |
+| Confirmation-runner canary, same exposed items | 8 | 850 | 3,634 | 19.73 s |
+| Prospective confirmation | 195 | 2,720 | 70,580 | 118.50 s |
+
+These counts include source capture and stock-attention parity checks.
+Intervention forwards use 88 rows per carrier; each has a same-slot neutral
+forward. The canaries repeat existing items and do not increase the scientific
+sample size. No new model assets, model-weight training, or generation were
+needed. Wall times include loading, acquisition, and output work, not just
+GPU kernels. T21 peak memory and energy use were not recorded.
+
+Primary confirmation inference uses 20,000 shared-index item-bootstrap draws.
+Independent reconstruction also rederives the intervals from the retained
+states. The anonymous package includes 195 item-level scalar contrasts and a
+NumPy-only statistical validator; raw model-state replay remains a separate
+step requiring omitted arrays.
 
 ## Known omissions
 

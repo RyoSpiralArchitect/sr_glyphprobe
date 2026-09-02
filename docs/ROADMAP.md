@@ -12,6 +12,28 @@ Phase I ends with an English preprint-ready paper and an auditable evidence pack
 
 Repository-authored public documentation is maintained in both English and Japanese throughout Phase I. English is the controlling language for the paper; Japanese companion documents keep the research process accessible and reviewable.
 
+## Current manuscript status — 2 September 2026
+
+T21 adds a separately specified conditional path test to the T19/T20 manuscript.
+An exposed 384-item pilot selected block 21; all 195 remaining T19/T20-unused
+emoji were then evaluated under a new five-contrast, simultaneous-inference
+rule. Every continuous-margin lower bound was positive. Absolute necessity and
+rescue top-1 mean effects were both zero. This supports a bounded glyph-position
+attention contribution after a readout reset, with no revision to prior
+verdicts. See the [result and evidence](T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md).
+
+The manuscript, compact anonymous archive, license inventory, compute report,
+and ethics review are assembled. Scalar T21 inference can be replayed without
+a model; full raw-state replay and complete historical compute accounting remain
+outside the compact package. Final author review and submission remain separate.
+The milestone entries below retain the research history and are not retroactive
+certificates for later claims.
+
+The original 195-item reserve is now exhausted. A future prospective study needs
+a new population, with non-emoji symbol path controls, separate key/value
+interventions, and a behavioral endpoint as useful next questions. These are
+future-work options, not additional runs authorized by the current protocol.
+
 ## Research sequence
 
 ### Milestone 1 — Reproducible screening baseline

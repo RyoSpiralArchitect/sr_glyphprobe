@@ -2,7 +2,9 @@
 
 [English](ASSET_LICENSES.md)
 
-状態: **2026-09-02にT19匿名投稿artifact向けの確認を実施済み**。この台帳では、
+状態: **2026-09-02にT19/T20/T21匿名投稿artifact向けの確認を実施済み**。
+T21は同じLlamaチェックポイントとUnicode/CLDR原資料を再利用し、新たなupstreamモデルは
+導入していない。追加するのは派生した比較値とプロジェクトのコードである。この台帳では、
 upstream assetを利用する権限と、そのasset自体を再配布する権限を分ける。匿名archiveに
 model weightやtokenizer fileは含めない。
 

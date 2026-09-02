@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the deterministic, whitelist-only T19 anonymous evidence archive."""
+"""Build the deterministic, whitelist-only T19/T20/T21 anonymous archive."""
 
 from __future__ import annotations
 
@@ -12,14 +12,14 @@ import zipfile
 
 
 ROOT = Path(__file__).resolve().parents[2]
-ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v1"
+ARTIFACT_ID = "glyphprobe_t19_anonymous_evidence_v2"
 ARCHIVE_ROOT = ARTIFACT_ID
 OUTPUT_DIRECTORY = ROOT / "output" / "artifacts"
 OUTPUT_ZIP = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.zip"
 OUTPUT_RECEIPT = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.receipt.json"
 OUTPUT_SHA = OUTPUT_DIRECTORY / f"{ARTIFACT_ID}.sha256"
 FIXED_ZIP_TIME = (2026, 9, 2, 0, 0, 0)
-FIXED_BUILT_AT = "2026-09-02T00:00:00Z"
+FIXED_REPRODUCIBILITY_TIMESTAMP = "2026-09-02T00:00:00Z"
 
 
 DIRECT_FILES = (
@@ -108,6 +108,45 @@ DIRECT_FILES = (
     "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/posthoc_ceiling_result.json",
     "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/posthoc_receipt.json",
     "validation/t19_lexical_alias_component_causal_v0/posthoc_ceiling/SHA256SUMS",
+)
+
+T21_FILES = (
+    "configs/t21_glyph_context_path_pilot_v0.yaml",
+    "configs/t21_glyph_context_path_confirmation_v0.yaml",
+    "docs/T21_GLYPH_CONTEXT_PATH_PILOT_V0.md",
+    "docs/T21_GLYPH_CONTEXT_PATH_PILOT_V0.ja.md",
+    "docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.md",
+    "docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.ja.md",
+    "docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md",
+    "docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md",
+    "scripts/t21_glyph_context_path_pilot_v0.py",
+    "scripts/validate_t21_glyph_context_path_pilot_v0.py",
+    "scripts/t21_glyph_context_path_confirmation_v0.py",
+    "scripts/validate_t21_glyph_context_path_confirmation_v0.py",
+    "scripts/t21_path_inference_v0.py",
+    "scripts/export_t21_compact_inference_v0.py",
+    "scripts/validate_t21_compact_inference_v0.py",
+    "tests/test_t21_glyph_context_path_pilot_v0.py",
+    "tests/test_t21_glyph_context_path_confirmation_v0.py",
+    "tests/test_t21_path_inference_v0.py",
+    "tests/test_t21_compact_and_paper_evidence.py",
+    "src/glyphprobe/__init__.py",
+    "src/glyphprobe/config.py",
+    "src/glyphprobe/provenance.py",
+    "validation/t21_glyph_context_path_pilot_v0/pilot_specification_v1.json",
+    "validation/t21_glyph_context_path_pilot_v0/canary/acquisition_receipt.json",
+    "validation/t21_glyph_context_path_confirmation_v0/prospective_design.json",
+    "validation/t21_glyph_context_path_confirmation_v0/canary_specification.json",
+    "validation/t21_glyph_context_path_confirmation_v0/canary/acquisition_receipt.json",
+    "validation/t21_glyph_context_path_confirmation_v0/confirmation_specification.json",
+)
+
+T21_SHARED_RESULTS = (
+    "acquisition_receipt.json",
+    "source_receipt.json",
+    "analysis_receipt.json",
+    "condition_means.json",
+    "independent_validation.json",
 )
 
 T20_C_VALIDATION_FILES = (
@@ -211,6 +250,23 @@ def build_payloads() -> dict[str, bytes]:
     payloads: dict[str, bytes] = {}
     for name in DIRECT_FILES:
         add_file(payloads, name)
+    for name in T21_FILES:
+        add_file(payloads, name)
+    for stage in ("pilot", "confirmation"):
+        prefix = f"validation/t21_glyph_context_path_{stage}_v0/results"
+        for name in T21_SHARED_RESULTS:
+            add_file(payloads, f"{prefix}/{name}")
+    for name in ("pilot_result.json", "precision_and_quality_report.json"):
+        add_file(payloads, f"validation/t21_glyph_context_path_pilot_v0/results/{name}")
+    for name in (
+        "confirmation_result.json",
+        "item_contrasts.json",
+        "compact_validation.json",
+    ):
+        add_file(
+            payloads,
+            f"validation/t21_glyph_context_path_confirmation_v0/results/{name}",
+        )
     for name in T19_L_VALIDATION_FILES:
         prefix = "validation/t19_lexical_alias_unicode_control_v0"
         add_file(payloads, f"{prefix}/{name}")
@@ -276,8 +332,9 @@ def main() -> int:
             "model_weights_included": False,
             "raw_model_arrays_included": False,
             "scientific_correctness_proven_by_hashes": False,
+            "t21_scalar_contrast_statistical_replay_supported": True,
         },
-        "built_at_utc": FIXED_BUILT_AT,
+        "reproducibility_timestamp_utc": FIXED_REPRODUCIBILITY_TIMESTAMP,
         "files": [
             {
                 "bytes": len(payloads[name]),
@@ -316,7 +373,7 @@ def main() -> int:
         "archive_path": f"output/artifacts/{OUTPUT_ZIP.name}",
         "archive_sha256": archive_sha,
         "artifact_id": ARTIFACT_ID,
-        "built_at_utc": FIXED_BUILT_AT,
+        "reproducibility_timestamp_utc": FIXED_REPRODUCIBILITY_TIMESTAMP,
         "manifest_sha256": sha256_bytes(manifest_bytes),
         "payload_files": len(payloads),
         "schema_version": 1,

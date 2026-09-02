@@ -1,5 +1,7 @@
 # GlyphProbe
 
+[T21 conditional path result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md) · [T21 prospective design](docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.md)
+
 [Phase I first-draft PDF](output/pdf/glyphprobe_t19_first_draft.pdf) · [Paper source and build](paper/README.md) · [T20 frozen protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md) · [T19 lexical + causal result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T19 frozen protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md) · [T18 fresh lexical result](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](docs/PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T18 frozen protocol](docs/FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0.md) · [T17 depth-atlas result](docs/GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](docs/PAPER_STORY_T16_V0.md) · [T16 operational behavior and causal result](docs/T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16 distributed late-band result](docs/T16_DISTRIBUTED_LATE_BAND_V0_RESULTS.md) · [T16 exact-UTF mixing result](docs/T16_UTF_IDENTITY_MIXING_V0_RESULTS.md) · [T16-UTF-X1 scale and order stress test](docs/T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [日本語](README.ja.md) · [T15-B prospective replication result](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](docs/EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md) · [T15-A emoji × word result](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0_RESULTS.md) · [T15-A protocol](docs/EMOJI_WORD_INCONGRUENCE_INTERACTION_V0.md) · [T14-X / T14-C result](docs/EMOJI_STEERING_T14_X_T14_C_RESULTS_V0.md) · [T13-EA bootstrap execution freeze](docs/EMOJI_STEERING_SPECIFICITY_BOOTSTRAP_EXECUTION_V1.md) · [T13-EA exploratory point result](docs/EMOJI_STEERING_SPECIFICITY_ANALYSIS_V0_RESULTS.md) · [T13-EA zero-gate amendment](docs/EMOJI_STEERING_SPECIFICITY_ZERO_GATE_AMENDMENT_V1.md) · [T13-EH acquisition protocol](docs/EMOJI_STEERING_SPECIFICITY_HARVEST_V0.md) · [T12 reserve result](docs/GLYPH_SYSTEM_RESERVE_CONFIRMATION_V0_RESULTS.md) · [T13 question map](docs/EMOJI_STEERING_SPECIFICITY_ATLAS_V0.md) · [T11 exploratory result](docs/GLYPH_SYSTEM_DECOMPOSITION_V0_RESULTS.md) · [T11 frozen protocol](docs/GLYPH_SYSTEM_DECOMPOSITION_V0.md) · [T10 diagnostics](docs/SEMANTIC_ATLAS_CROSS_MODEL_DIAGNOSTICS_V1.md) · [T10 cross-model result](docs/SEMANTIC_ATLAS_CROSS_MODEL_REPLICATION_V0_RESULTS.md) · [Mistral base depth-distance results](docs/MISTRAL7B_BASE_DEPTH_DISTANCE_V0_RESULTS.md) · [Dense CUDA results](docs/MULTIFAMILY_DENSE_CUDA_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance results](docs/MULTIFAMILY_CARRIER_DISTANCE_V0_RESULTS.md) · [Carrier-distance protocol](docs/MULTIFAMILY_CARRIER_DISTANCE_V0.md) · [Common-suffix results](docs/MULTIFAMILY_COMMON_SUFFIX_CARRYOVER_V0_RESULTS.md) · [Matched-slot results](docs/MULTIFAMILY_MATCHED_SLOT_GEOMETRY_V0_RESULTS.md) · [Multifamily geometry results](docs/MULTIFAMILY_COLORED_SHAPE_GEOMETRY_V0_RESULTS.md) · [Tokenizer census results](docs/MULTIFAMILY_TOKENIZER_CENSUS_V0_RESULTS.md) · [E2 MPS transport v2 protocol](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V2.md) · [v1 preflight failure](docs/LLAMA32_3B_MPS_EMOJI_TRANSPORT_V1_PREFLIGHT_FAILURE.md) · [Holdout status](docs/HOLDOUT_STATUS.md) · [E2 Stage-A3 numeric-screen result](docs/LLAMA32_3B_MLX_NUMERIC_SCREEN_RESULTS.md) · [E2 Stage-A v2 result](docs/LLAMA32_3B_MLX_VALIDATION_RESULTS.md) · [E1 exploratory results](docs/EMOJI_FAMILY_EXPLORATORY_RESULTS.md) · [Milestone 2 results](docs/MILESTONE2_RESULTS.md) · [Baseline results](docs/RESULTS_V1.md) · [Roadmap](docs/ROADMAP.md) · [Phase I paper plan](docs/PAPER_OUTLINE.md)
@@ -14,7 +16,7 @@ The default panel is a balanced `5 colors × 2 shapes` grid:
 🟤 🟫   🟠 🟧   🟢 🟩   🔵 🟦   🟣 🟪
 ```
 
-GlyphProbe starts with blind numerical screening. It does **not** infer what a glyph means to a model, identify a circuit, or establish a causal path. A reproducible fingerprint is a candidate for sharper causal experiments, not their conclusion.
+GlyphProbe starts with blind numerical screening. A reproducible fingerprint motivates a targeted causal test. Later studies below separately test lexical retrieval, component mediation, and a conditional attention-path contribution; none establishes human meaning or a complete circuit.
 
 ## Current evidence snapshot
 
@@ -60,7 +62,8 @@ The first standard MLX cell uses the pinned `openai-community/gpt2` revision `60
 | T18 fresh composite-glyph confirmation | 192 exact-surface-fresh items, 9 fixed cells, 13,824 forwards, 497,664 readouts | frozen `r=3/4` core primary passed at p=0.0001; 4/4 core and 8/9 total cells passed both unrestricted and token-count-matched practical rules |
 | T19-L alias × Unicode-symbol control | 110 observational items, 9 fixed cells, 7,920 forwards, 285,120 readouts | frozen `r=3/4` core primary passed at p=0.0027; 4/4 core and 9/9 total cells passed unrestricted and exact four-view token-count-matched rules |
 | T19-C component causality | 128 source and 192 untouched evaluation emoji; 256 + 2,880 forwards; 8,064 intervention rows | 6/6 engineering gates exact; neither primary block-24 `attn_out` nor `mlp_out` was jointly necessary and sufficient; post-hoc full-interchange ceilings at those sites were 0.0000/+0.0052 |
-| T20-C optimized-subspace causality | 128 source + 384 fresh evaluation emoji in 4 contexts; 384 + 32,256 forwards; 33,048 training passes; 124,416 intervention rows | registered verdict: both primary residual sites uncalibratable (sufficiency ceilings +0.0234/+0.0254 < 0.06); full-interchange ceilings localize the signal to the final blocks and glyph-position context |
+| T20-C optimized-subspace causality | 128 source + 384 fresh evaluation emoji in 4 contexts; 384 + 32,256 forwards; 33,048 training passes; 124,416 intervention rows | registered verdict: both primary residual sites uncalibratable (sufficiency ceilings +0.0234/+0.0254 < 0.06); full-interchange asymmetry motivates a separate glyph-context path test |
+| T21-C conditional glyph-context path | 384-item exposed pilot followed by all 195 remaining T19/T20-unused emoji; one Llama 3.2 3B configuration | all five prespecified one-sided simultaneous 95% lower bounds are positive for the continuous margin; absolute necessity and rescue top-1 mean effects are both zero |
 | E2 Llama 3.2 3B BF16 parity | 33/60 gates passed | Stage-A v2 engineering validation failed; no scientific E2 grid was run |
 | E2 machine-local median latency | 132.127833 ms → 230.138000 ms | Transformers/MPS → MLX; speed gate failed; recorded MLX speedup 0.574124367x |
 | E2 Stage-A3 runtime-dtype selection | no candidate selected | FP16 and FP32 passed identity, token/determinism, zero-vector, and fidelity gates; both failed only speed |
@@ -72,11 +75,30 @@ the Milestone 2 rows are frozen-v1 target-cluster results with the qualification
 summarized below. The [parity receipt](validation/mlx_gpt2_parity/receipt.json)
 is explicitly marked as an engineering validation rather than a scientific
 result. The [standard-run audit](validation/run_audits/colored-shapes-v1-standard-mlx--c493ae1e18743922.json)
-passed 15/15 integrity checks with caveats. `causal_claim_authorized` remains
-`false`. See [Results v1](docs/RESULTS_V1.md) for the baseline qualification and
+passed 15/15 integrity checks with caveats. That baseline's `causal_claim_authorized`
+remains `false`. See [Results v1](docs/RESULTS_V1.md) for its qualification and
 negative cells.
 
 Latency is machine-, load-, and software-dependent. Treat the receipt as the measurement, not 1.63× as a universal MLX claim.
+
+### T21 conditional glyph-context path
+
+After a 384-item exposed pilot, the block-21 candidate, five-contrast family,
+20,000-replicate simultaneous inference, and stopping rule were specified
+before model evaluation of all 195 remaining T19/T20-unused emoji. Under a
+codepoint-state readout reset, replacing or restoring glyph-position keys and
+values in strictly later attention blocks changes a continuous alias-retrieval
+margin. Both absolute and suffix-position-adjusted necessity and rescue
+contrasts, together with full-prefix calibration, have positive simultaneous
+95% lower bounds. The adjusted effects are `+0.002326` and `+0.002267`.
+
+This is a conditional directional contribution in one model and a fixed
+source/gallery setting. Absolute necessity and rescue top-1 mean effects are
+both zero; generated behavior, emoji specificity, and a complete or
+unconditional mediator remain untested. The T19/T20 verdicts are unchanged.
+All 195 reserve items are now used; another prospective test needs a new
+population. The [result report](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md)
+includes the numerical reconstruction and a NumPy-only statistical replay.
 
 ### T19 lexical breadth and component-causal status
 
@@ -786,7 +808,7 @@ Machine-generated artifacts, schemas, citations, licenses, and source code are e
 
 ## Phase I goal
 
-Phase I ends with an English preprint-ready paper supported by an auditable evidence package. The [anonymous first draft](output/pdf/glyphprobe_t19_first_draft.pdf) now combines T19's 9/9 token-count-matched lexical result, the non-emoji Unicode-symbol boundary, and the valid negative rank-8 late-component result. Its [manuscript claim table](paper/CLAIM_TABLE.md) is frozen for draft v0, and every figure is regenerated from validated compact JSON with input/output hashes. T15-B remains a separate prospective replication of an operational response-shape candidate. These lanes do not combine into a semantic, complete-mediator, universal-circuit, tokenizer-independent, scale, tuning-invariant, or model-population claim. Submission-wide qualification still requires a self-contained anonymous evidence archive, license and compute audit, formal ethics review, and a fresh-eyes reproducibility pass. See the [paper package](paper/README.md), [T19 story](docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md), [T19 result](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md), and [roadmap](docs/ROADMAP.md) for the exact boundaries.
+Phase I ends with an English preprint-ready paper supported by an auditable evidence package. The [anonymous manuscript](output/pdf/glyphprobe_t19_first_draft.pdf) combines T19's 9/9 token-count-matched lexical result, its symbol and component boundaries, T20's calibration limits, and T21's conditional continuous-margin contribution. The [v3 claim table](paper/CLAIM_TABLE.md) keeps these distinct. The compact anonymous artifact, asset-license inventory, compute report, and ethics review are included in the [paper package](paper/README.md); raw model-state replay, complete historical compute accounting, and final author review remain explicit limitations or pending work. The T21 scalar inference is reproducible without a model. T15-B remains a separate prospective replication of an operational response-shape candidate. These lanes do not establish human meaning, a complete mediator, a universal circuit, tokenizer independence, a scale law, tuning invariance, or model-population generality. Packaging and validation do not constitute submission; final author approval and upload remain separate steps. See the [T21 result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md) and [roadmap](docs/ROADMAP.md).
 
 T12 is also complete under its separate one-shot freeze. Its bounded result is
 that neither the ZWJ fusion candidate nor the regional dual candidate met the
@@ -806,8 +828,8 @@ T15-A then completed the four-model balanced interaction grid and found 16/16
 positive primary response-coherence intervals, with heterogeneous secondary
 families. T15-B prospectively replaced the axes, targets, and model roles and
 supported its frozen two-model R1 intersection rule. Gate 5 is now satisfied
-for that narrow operational candidate. Paper-wide statistical qualification,
-the complete archive, and fresh-eyes paper review remain open.
+for that narrow operational candidate. Those historical decisions remain
+unchanged by the later manuscript and T21 work described above.
 
 ## Validation
 
