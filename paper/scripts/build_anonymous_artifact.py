@@ -49,6 +49,7 @@ DIRECT_FILES = (
     "paper/figures/t19_model_effects.pdf",
     "paper/figures/t19_model_effects.png",
     "paper/scripts/build_figures.py",
+    "tests/test_paper_figure_layout.py",
     "docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md",
     "docs/PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.ja.md",
     "docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md",

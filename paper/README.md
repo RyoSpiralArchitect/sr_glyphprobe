@@ -1,6 +1,6 @@
 # GlyphProbe Phase I paper
 
-[Japanese](README.ja.md) | [Frozen claim table](CLAIM_TABLE.md)
+[Japanese](README.ja.md) | [Claims and evidence](CLAIM_TABLE.md)
 
 Status: **anonymous manuscript and compact evidence archive built and
 validated; OpenReview upload not performed**.
@@ -19,7 +19,7 @@ second manuscript.
   template assets; `checklist.tex` contains conservative draft answers with the
   official questions unchanged.
 - `scripts/build_figures.py`: deterministic figure builder from compact,
-  validated T19 JSON summaries.
+  validated T19/T20 JSON summaries.
 - `scripts/build_anonymous_artifact.py` and
   `scripts/validate_anonymous_artifact.py`: whitelist-only deterministic
   archive builder and independent integrity/identity-boundary validator.
@@ -67,9 +67,19 @@ bundled Tectonic executable was invoked directly. The final copy is made only
 after citation, page-count, text-extraction, and rendered-page checks.
 `paper/build/` and `tmp/pdfs/` are intermediate surfaces.
 
+Manuscript prose uses reader-facing terms such as *prespecified protocol*,
+*evaluation set*, and *execution records*. Technical filenames, registered
+protocols, and scientific receipts retain their original identifiers and
+hashes. Boxed diagrams have a minimum 3-point text inset, checked at 72, 100,
+and 220 dpi by `tests/test_paper_figure_layout.py`; the final PDF also requires
+visual inspection. These checks preserve legibility without reducing type size.
+Interval plots also reject axis ranges that clip a reported interval; Figure 2
+derives its limits from all 18 intervals, including Mistral's matched upper
+bound of 0.3531.
+
 ## Prespecified claim boundary
 
-The paper reports two differently gated results. Raw atomic emoji retrieve lexically
+The T19 design reports two conditionally linked results. Raw atomic emoji retrieve lexically
 disjoint CLDR keyword aliases better than literal codepoint strings across all
 nine prespecified model/tokenizer configurations, including exact four-view token-count
 matching. A preregistered rank-8 late-component test in one Llama 3.2 3B configuration
@@ -83,10 +93,17 @@ token-identity matching, tokenizer independence, pretraining novelty, a
 universal manifold, a complete circuit, or a scale law. The auditable allowed
 and excluded statements are fixed in [CLAIM_TABLE.md](CLAIM_TABLE.md).
 
+The separately specified T20-C follow-up tests optimized rank-8 subspaces on
+384 additional emoji in four contexts. Its full-state swap controls yield
+uncalibratable verdicts at both primary sites. The measured depth-dependent
+asymmetry motivates a recovery-pathway hypothesis; it does not identify that
+pathway or exclude all possible subspaces. No experimental result, decision,
+threshold, or input checksum was changed by the prose and layout revision.
+
 The manuscript now defines `T19-L` at first use as the lexical observational
 arm and `T19-C` as the conditional component-causal arm. Appendix A gives the
 short exploration-to-confirmation lineage from the early steering screen
-through T18. Earlier exploratory and failed-confirmation results explain why
+through T20-C. Earlier exploratory and failed-confirmation results explain why
 the final controls exist; they are not added to the T19-L evidence denominator.
 
 ## Figure chart contracts
@@ -141,7 +158,37 @@ encoding, output, and QA obligation before rendering.
   model-level values, preserve a common x-axis, label the comparison
   "registered secondary," and inspect the final caption and legend.
 
-### Figure 4 - component-level causal test
+### Figure 4 - optimized subspaces and full-state controls
+
+- **Question:** How do the optimized rank-8 effects compare with complete
+  state replacement at each of the nine T20-C sites?
+- **Takeaway:** the primary sites fail the registered calibration requirement;
+  full-state effects are asymmetric at blocks 21/24 and reproduce the baseline
+  gap at block 27.
+- **Family / sufficiency:** paired horizontal interval plots of all nine sites,
+  with 384 evaluation emoji and four contexts per item.
+- **Renderer / encoding:** circles for necessity, squares for sufficiency,
+  open triangles for full swaps, and shaded primary rows. The dashed line is
+  0.02, the dash-dotted line is the 0.0332 baseline gap, and the dotted 0.06
+  line applies only to the sufficiency calibration.
+- **Output / QA:** `figures/t20_causal_ceilings.pdf`; preserve every recorded
+  estimate and interval, distinguish adjusted subspace effects from unadjusted
+  swap effects, and check the legend and vertical reference lines in the PDF.
+
+### Figure 5 - exploration-to-confirmation lineage
+
+- **Question:** Which earlier results changed the design that became T19?
+- **Takeaway:** token-structure and persistence studies narrowed the endpoint;
+  later lexical and causal studies motivated the two-arm design. Earlier
+  stages do not enter the T19-L primary evidence denominator.
+- **Family / sufficiency:** annotated decision lineage; the five grouped stages
+  summarize T1--T20 without treating the sequence as evidence accumulation.
+- **Renderer / encoding:** static Matplotlib; gray for token/persistence
+  diagnostics, blue for lexical/boundary studies, and orange for the T19/T20 tests.
+- **Output / QA:** `figures/t19_lineage.pdf`; verify every study label against
+  Appendix A and inspect all box labels and arrows in the compiled paper.
+
+### Figure 6 (Appendix D) - component-level causal test
 
 - **Question:** Does any prespecified late site have both random-adjusted necessity
   and sufficiency above the 0.02 floor?
@@ -156,25 +203,14 @@ encoding, output, and QA obligation before rendering.
   intervals against `causal_site_results.json`, display zero and 0.02
   references, and inspect the primary-site emphasis.
 
-### Figure 5 - exploration-to-confirmation lineage
-
-- **Question:** Which earlier results changed the design that became T19?
-- **Takeaway:** token-structure and persistence studies narrowed the endpoint;
-  later lexical and causal studies motivated the two-arm design. Earlier
-  stages do not enter the T19-L primary evidence denominator.
-- **Family / sufficiency:** annotated decision lineage; the five grouped stages
-  summarize T1--T19 without treating the sequence as evidence accumulation.
-- **Renderer / encoding:** static Matplotlib; gray for token/persistence
-  diagnostics, blue for lexical/boundary studies, and orange for T19.
-- **Output / QA:** `figures/t19_lineage.pdf`; verify every study label against
-  Appendix A and inspect all box labels and arrows in the compiled paper.
-
 ## Remaining submission boundary
 
-- the reproducibility, open-access, and compute checklist answers remain
-  `No`: the compact artifact omits model-dependent raw arrays and the full
-  intervention ledger, and T19 acquisition duration/peak memory were not
-  receipt-bound;
+- the reproducibility-disclosure answer is `Yes`: the protocol, exact model
+  revisions, selections, training settings, seeds, and analysis code support
+  reacquisition from the referenced checkpoints;
+- open access and compute remain `No`: the compact artifact omits raw arrays
+  and the full intervention ledger, and exact T19 acquisition duration/peak
+  memory are absent from the submitted records;
 - resolve author list and acknowledgments only after the double-blind copy is
   finalized;
 - upload early enough to verify the OpenReview record.

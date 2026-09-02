@@ -2,84 +2,100 @@
 
 \begin{enumerate}
 
+\Needspace{6\baselineskip}
 \item {\bf Claims}
   \item[] Question: Do the main claims made in the abstract and introduction accurately reflect the paper's contributions and scope?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Sections 1, 5, and 6 separate the positive observational result, the negative registered causal result, and their bounded interpretation.
+  \item[] Justification: Sections 1, 5, and 6 distinguish the positive observational result, the unsuccessful T19-C test, the uncalibratable T20-C primary sites, and the hypotheses motivated by the full-state controls.
 
+\Needspace{6\baselineskip}
 \item {\bf Limitations}
   \item[] Question: Does the paper discuss the limitations of the work performed by the authors?
   \item[] Answer: \answerYes{}
   \item[] Justification: Section 6 discusses measurement, tokenization, model-roster, causal-scope, archive, and social-interpretation limits.
 
+\Needspace{6\baselineskip}
 \item {\bf Theory assumptions and proofs}
   \item[] Question: For each theoretical result, does the paper provide the full set of assumptions and a complete (and correct) proof?
   \item[] Answer: \answerNA{}
   \item[] Justification: The paper reports empirical tests and does not introduce a theoretical result.
 
+\Needspace{6\baselineskip}
 \item {\bf Experimental result reproducibility}
   \item[] Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions of the paper (regardless of whether the code and data are provided or not)?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Sections 3 and A--E disclose the complete protocol, prespecified item selections, pinned artifact revisions, seeds, tests, and analysis code, so the main results can be reacquired from public checkpoints. The anonymous package omits retained raw activation arrays; verification is therefore by reacquisition rather than replay, and bit-exact equality across GPU hardware is not claimed.
+  \item[] Justification: Section 3 and Appendices A--F disclose the protocol, prespecified item selections, exact artifact revisions, seeds, tests, and analysis code for reacquisition from the referenced checkpoints. The anonymous package omits retained raw activation arrays, so verification requires reacquisition. Bit-exact equality across GPU hardware is not claimed.
 
+\Needspace{6\baselineskip}
 \item {\bf Open access to data and code}
   \item[] Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental material?
   \item[] Answer: \answerNo{}
-  \item[] Justification: The study depends on code, so N/A is inapplicable. A checksum-bound anonymous compact artifact is supplied, but no public repository is available at submission and the package omits model-dependent raw arrays required for exact replay. Full code and eligible data are planned for public release after review.
+  \item[] Justification: The study depends on code, so N/A is inapplicable. The submission includes an anonymous compact artifact with checksums. It omits a public repository link and the model-dependent raw arrays needed for exact replay. Full code and eligible data are planned for public release after review.
 
+\Needspace{6\baselineskip}
 \item {\bf Experimental setting/details}
   \item[] Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer) necessary to understand the results?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Section 3 specifies all evaluation sets, observational carriers, distances, and depths, both causal contexts, readouts, tests, interventions, and prespecified sites, and Section 3.5 gives the T20-C subspace-training objective, split, optimizer, and seed-selection rule; no model weights are trained.
+  \item[] Justification: Section 3 specifies the evaluation sets, carriers, distances, depths, readouts, tests, interventions, and sites. Section 3.5 gives the T20-C objective; Appendix E supplies the optimizer, training split, and seed-selection rule. No model weights are trained.
 
+\Needspace{6\baselineskip}
 \item {\bf Experiment statistical significance}
   \item[] Question: Does the paper report error bars suitably and correctly defined or other appropriate information about the statistical significance of the experiments?
   \item[] Answer: \answerYes{}
   \item[] Justification: Sections 3.3--3.5 define the randomization, partial-conjunction, sign-flip, Holm, and bootstrap procedures and the registered ceiling semantics; bootstrap intervals are labeled descriptive throughout.
 
+\Needspace{6\baselineskip}
 \item {\bf Experiments compute resources}
   \item[] Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce the experiments?
   \item[] Answer: \answerNo{}
-  \item[] Justification: Appendix E identifies the RTX 5090 and BF16 CUDA path and reports forward counts, but exact wall-clock and peak-memory receipts are not in the compact archive.
+  \item[] Justification: Appendix F identifies the RTX 5090 and BF16 CUDA path and reports forward counts and T20-C stage durations. Exact T19 wall-clock and peak-memory measurements are absent from the submitted records.
 
+\Needspace{6\baselineskip}
 \item {\bf Code of ethics}
   \item[] Question: Does the research conducted in the paper conform, in every respect, with the NeurIPS Code of Ethics \url{https://neurips.cc/public/EthicsGuidelines}?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Section 6 and Appendix E document the completed scope review: no human subjects or personal data, licensed public inputs, explicit representativeness and misuse limits, and disclosed compute-accounting gaps.
+  \item[] Justification: Section 6 and Appendix F document the completed scope review: no human subjects or personal data, licensed public inputs, explicit representativeness and misuse limits, and disclosed compute-accounting gaps.
 
+\Needspace{6\baselineskip}
 \item {\bf Broader impacts}
   \item[] Question: Does the paper discuss both potential positive societal impacts and negative societal impacts of the work performed?
   \item[] Answer: \answerYes{}
   \item[] Justification: Section 6 discusses auditing benefits and the risk of converting standardized lexical correspondence into unjustified cultural, sentiment, or identity inference.
 
+\Needspace{6\baselineskip}
 \item {\bf Safeguards}
   \item[] Question: Does the paper describe safeguards that have been put in place for responsible release of data or models that have a high risk for misuse (e.g., pre-trained language models, image generators, or scraped datasets)?
   \item[] Answer: \answerNA{}
   \item[] Justification: The work releases no new pretrained model, scraped dataset, or high-risk capability; it studies public Unicode annotations and existing model checkpoints.
 
+\Needspace{6\baselineskip}
 \item {\bf Licenses for existing assets}
   \item[] Question: Are the creators or original owners of assets (e.g., code, data, models), used in the paper, properly credited and are the license and terms of use explicitly mentioned and properly respected?
   \item[] Answer: \answerYes{}
-  \item[] Justification: Appendices B and E and the archive license register identify every model and data term. Model/tokenizer files are not redistributed; the Qwen 3B configuration is bounded to non-commercial research; and the Unicode License v3 notice accompanies the derived rows.
+  \item[] Justification: Appendices B and F and the archive license register identify every model and data term. Model/tokenizer files are not redistributed; the Qwen 3B configuration is bounded to non-commercial research; and the Unicode License v3 notice accompanies the derived rows.
 
+\Needspace{6\baselineskip}
 \item {\bf New assets}
   \item[] Question: Are new assets introduced in the paper well documented and is the documentation provided alongside the assets?
   \item[] Answer: \answerYes{}
   \item[] Justification: The anonymous artifact includes paired artifact documentation, a machine-readable file manifest, SHA256SUMS, omission boundaries, validation instructions, licenses, prespecified selections, compact evidence, and source code.
 
+\Needspace{6\baselineskip}
 \item {\bf Crowdsourcing and research with human subjects}
   \item[] Question: For crowdsourcing experiments and research with human subjects, does the paper include the full text of instructions given to participants and screenshots, if applicable, as well as details about compensation (if any)?
   \item[] Answer: \answerNA{}
   \item[] Justification: The study uses no crowdsourcing or human subjects.
 
+\Needspace{6\baselineskip}
 \item {\bf Institutional review board (IRB) approvals or equivalent for research with human subjects}
   \item[] Question: Does the paper describe potential risks incurred by study participants, whether such risks were disclosed to the subjects, and whether Institutional Review Board (IRB) approvals (or an equivalent approval/review based on the requirements of your country or institution) were obtained?
   \item[] Answer: \answerNA{}
   \item[] Justification: The study uses no crowdsourcing, personal data, or human subjects.
 
+\Needspace{6\baselineskip}
 \item {\bf Declaration of LLM usage}
   \item[] Question: Does the paper describe the usage of LLMs if it is an important, original, or non-standard component of the core methods in this research? Note that if the LLM is used only for writing, editing, or formatting purposes and does \emph{not} impact the core methodology, scientific rigor, or originality of the research, declaration is not required.
   \item[] Answer: \answerYes{}
-  \item[] Justification: Appendix E conservatively discloses assistant support for protocol drafting, code generation, editing, and fresh-eyes review, while separating it from labels, prespecified decisions, execution authority, numerical evidence, and scientific evaluation.
+  \item[] Justification: Appendix F discloses assistant support for protocol drafting, code generation, editing, and fresh-eyes review, while separating it from labels, prespecified decisions, execution authority, numerical evidence, and scientific evaluation.
 
 \end{enumerate}

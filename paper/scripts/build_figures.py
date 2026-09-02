@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build manuscript figures from checksum-bound compact T19 summaries."""
+"""Build manuscript figures from checksum-bound compact T19/T20 summaries."""
 
 from __future__ import annotations
 
@@ -12,7 +12,9 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.legend_handler import HandlerTuple
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+from matplotlib.text import Text
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -117,6 +119,7 @@ def load_json(path: Path) -> dict[str, Any]:
 
 
 def save_figure(fig: plt.Figure, stem: str) -> list[Path]:
+    validate_interval_bounds(fig)
     outputs: list[Path] = []
     metadata = {
         "Title": stem,
@@ -132,6 +135,49 @@ def save_figure(fig: plt.Figure, stem: str) -> list[Path]:
     plt.close(fig)
     outputs.extend([pdf_path, png_path])
     return outputs
+
+
+def validate_interval_bounds(fig: plt.Figure) -> None:
+    """Reject confidence intervals clipped by a manually chosen axis range."""
+    for ax in fig.axes:
+        lower, upper = sorted(ax.get_xlim())
+        for container in ax.containers:
+            if not getattr(container, "has_xerr", False):
+                continue
+            for collection in container.lines[2]:
+                for segment in collection.get_segments():
+                    if any(not lower <= point[0] <= upper for point in segment):
+                        raise ValueError(
+                            "Confidence interval extends beyond the x-axis"
+                        )
+
+
+def validate_box_labels(
+    fig: plt.Figure,
+    labels: list[tuple[FancyBboxPatch, Text]],
+    minimum_padding_points: float = 3.0,
+) -> None:
+    """Fail before export if a diagram label touches or escapes its box."""
+    fig.canvas.draw()
+    renderer = fig.canvas.get_renderer()
+    for patch, label in labels:
+        box_bounds = patch.get_window_extent(renderer)
+        text_bounds = label.get_window_extent(renderer)
+        padding = (
+            min(
+                text_bounds.x0 - box_bounds.x0,
+                box_bounds.x1 - text_bounds.x1,
+                text_bounds.y0 - box_bounds.y0,
+                box_bounds.y1 - text_bounds.y1,
+            )
+            * 72
+            / fig.dpi
+        )
+        if padding < minimum_padding_points:
+            raise ValueError(
+                f"Diagram label has {padding:.2f} pt padding; "
+                f"requires {minimum_padding_points:.2f} pt: {label.get_text()!r}"
+            )
 
 
 def validate_models(payload: dict[str, Any]) -> list[dict[str, Any]]:
@@ -183,7 +229,10 @@ def validate_causal(payload: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def validate_t20(payload: dict[str, Any]) -> list[dict[str, Any]]:
-    if payload.get("protocol_id") != "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0":
+    if (
+        payload.get("protocol_id")
+        != "glyphprobe-t20-lexical-alias-optimized-subspace-causal-v0"
+    ):
         raise ValueError("Unexpected T20-C protocol id")
     sites = payload.get("sites")
     if not isinstance(sites, list) or len(sites) != 9:
@@ -210,8 +259,8 @@ def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
         - sites[0]["baseline_codepoint"]["alias_top1"]
     )
     panels = [
-        ("necessity", "necessity_ceiling", "Keyword necessity (adjusted)", "o"),
-        ("sufficiency", "sufficiency_ceiling", "Keyword sufficiency (adjusted)", "s"),
+        ("necessity", "necessity_ceiling", "Keyword necessity", "o"),
+        ("sufficiency", "sufficiency_ceiling", "Keyword sufficiency", "s"),
     ]
     for ax, (prefix, ceiling_key, title, marker) in zip(axes, panels):
         for pos, row in zip(y, sites):
@@ -250,22 +299,52 @@ def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
             )
         ax.axvline(0.0, color=DARK, linewidth=0.8)
         ax.axvline(0.02, color=GRAY, linewidth=0.9, linestyle="--")
-        ax.axvline(0.06, color=GRAY, linewidth=0.9, linestyle=":")
-        ax.axvline(attainable, color=ORANGE, linewidth=0.9, linestyle="-.", alpha=0.7)
+        if prefix == "sufficiency":
+            ax.axvline(0.06, color=GRAY, linewidth=0.9, linestyle=":")
+        ax.axvline(attainable, color=GRAY, linewidth=0.9, linestyle="-.")
         ax.set_title(title)
         ax.set_xlabel("Keyword top-1 effect")
         ax.grid(axis="x", color="#E7EAED", linewidth=0.6)
         ax.set_xlim(-0.014, 0.068)
     axes[0].set_yticks(y, labels)
     axes[0].invert_yaxis()
-    axes[1].text(0.0605, 8.35, "0.06 min.", color=GRAY, fontsize=6.5, rotation=90, va="bottom")
-    axes[1].text(attainable + 0.001, 8.35, "attainable", color=ORANGE, fontsize=6.5, rotation=90, va="bottom")
+    axes[1].text(
+        0.0605, 8.35, "0.06 min.", color=GRAY, fontsize=7, rotation=90, va="bottom"
+    )
+    axes[1].text(
+        attainable + 0.001,
+        8.35,
+        "baseline gap",
+        color=GRAY,
+        fontsize=7,
+        rotation=90,
+        va="bottom",
+    )
     handles = [
-        plt.Line2D([], [], marker="o", color=DARK, markerfacecolor=BLUE, linestyle="none", label="Optimized rank-8 (adjusted)"),
-        plt.Line2D([], [], marker=">", color=ORANGE, markerfacecolor="white", linestyle="none", label="Full-interchange ceiling"),
+        (
+            plt.Line2D(
+                [], [], marker="o", color=DARK, markerfacecolor=BLUE, linestyle="none"
+            ),
+            plt.Line2D(
+                [], [], marker="s", color=DARK, markerfacecolor=ORANGE, linestyle="none"
+            ),
+        ),
+        plt.Line2D(
+            [], [], marker=">", color=DARK, markerfacecolor="white", linestyle="none"
+        ),
     ]
-    fig.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 0.0), frameon=False, ncol=2)
-    fig.suptitle("Registered T20-C effects and ceilings (384 fresh emoji, 4 contexts)", y=0.995)
+    fig.legend(
+        handles=handles,
+        labels=["Optimized rank-8 (random-adjusted)", "Full-state swap"],
+        handler_map={tuple: HandlerTuple(ndivide=None)},
+        loc="lower center",
+        bbox_to_anchor=(0.5, 0.0),
+        frameon=False,
+        ncol=2,
+    )
+    fig.suptitle(
+        "T20-C: optimized effects and full-state swaps (384 emoji, 4 contexts)", y=0.995
+    )
     fig.tight_layout(rect=(0, 0.06, 1, 0.96))
     return save_figure(fig, "t20_causal_ceilings")
 
@@ -275,6 +354,7 @@ def build_design() -> list[Path]:
     ax.set_xlim(0, 12)
     ax.set_ylim(0, 4.5)
     ax.axis("off")
+    labels: list[tuple[FancyBboxPatch, Text]] = []
 
     def box(x: float, y: float, w: float, h: float, text: str, color: str) -> None:
         patch = FancyBboxPatch(
@@ -287,7 +367,7 @@ def build_design() -> list[Path]:
             facecolor="white",
         )
         ax.add_patch(patch)
-        ax.text(
+        label = ax.text(
             x + w / 2,
             y + h / 2,
             text,
@@ -296,6 +376,7 @@ def build_design() -> list[Path]:
             color=DARK,
             fontsize=7.7,
         )
+        labels.append((patch, label))
 
     def arrow(x1: float, y1: float, x2: float, y2: float, color: str = GRAY) -> None:
         ax.add_patch(
@@ -312,34 +393,34 @@ def build_design() -> list[Path]:
 
     ax.text(0.2, 4.15, "Observational arm (T19-L)", weight="bold", color=BLUE)
     box(0.2, 2.7, 1.55, 0.9, "55 atomic\nemoji", BLUE)
-    box(0.2, 1.25, 1.55, 0.9, "55 non-emoji\nsymbols", GRAY)
+    box(0.2, 1.25, 1.55, 0.9, "55 symbols\n(non-emoji)", GRAY)
     box(
         2.35,
-        1.72,
+        1.645,
         2.2,
-        1.45,
-        "Four text views\nraw | official name\nkeyword | codepoint",
+        1.6,
+        "Four views\nraw glyph\nofficial name\nCLDR keyword\nU+... spelling",
         BLUE,
     )
-    box(5.15, 1.72, 2.1, 1.45, "24 contexts/item\n9 depths\nlate-window top-1", BLUE)
+    box(5.15, 1.72, 2.1, 1.45, "24 contexts/item\n9 depths\nlate top-1", BLUE)
     box(7.85, 1.72, 2.05, 1.45, "Unrestricted +\nmatched-count\nIUT", BLUE)
-    box(10.45, 1.72, 1.3, 1.45, "r = 3/4\ncross-model\nrule", BLUE)
+    box(10.45, 1.72, 1.3, 1.45, "r = 3/4\nmodel\nrule", BLUE)
     arrow(1.75, 3.15, 2.35, 2.72)
     arrow(1.75, 1.7, 2.35, 2.14)
     arrow(4.55, 2.45, 5.15, 2.45)
     arrow(7.25, 2.45, 7.85, 2.45)
     arrow(9.9, 2.45, 10.45, 2.45)
 
-    box(0.2, 0.15, 1.55, 0.78, "Causal arm\n(T19-C)", ORANGE)
-    box(2.35, 0.15, 2.2, 0.78, "128 source emoji\nrank-8 subspace", ORANGE)
-    box(5.15, 0.15, 2.1, 0.78, "192 held-out emoji\nno T19-L evaluation", ORANGE)
-    box(7.85, 0.15, 2.05, 0.78, "6 late sites\nnecessity +\nsufficiency", ORANGE)
-    box(10.45, 0.15, 1.3, 0.78, "joint\n0.02 floor", ORANGE)
+    box(0.2, 0.065, 1.55, 0.95, "Causal arm\n(T19-C)", ORANGE)
+    box(2.35, 0.065, 2.2, 0.95, "128 source emoji\nrank-8 subspace", ORANGE)
+    box(5.15, 0.065, 2.1, 0.95, "192 held-out\nemoji", ORANGE)
+    box(7.85, 0.065, 2.05, 0.95, "6 late sites\nnecessity +\nsufficiency", ORANGE)
+    box(10.45, 0.065, 1.3, 0.95, "joint\n0.02 floor", ORANGE)
     arrow(1.75, 0.54, 2.35, 0.54, ORANGE)
     arrow(4.55, 0.54, 5.15, 0.54, ORANGE)
     arrow(7.25, 0.54, 7.85, 0.54, ORANGE)
     arrow(9.9, 0.54, 10.45, 0.54, ORANGE)
-    arrow(11.1, 1.72, 11.1, 0.93, ORANGE)
+    arrow(11.1, 1.72, 11.1, 1.015, ORANGE)
     ax.text(
         9.95,
         1.28,
@@ -350,6 +431,7 @@ def build_design() -> list[Path]:
         color=ORANGE,
     )
 
+    validate_box_labels(fig, labels)
     return save_figure(fig, "t19_design")
 
 
@@ -358,36 +440,37 @@ def build_lineage() -> list[Path]:
     ax.set_xlim(0, 12)
     ax.set_ylim(0, 3.2)
     ax.axis("off")
+    labels: list[tuple[FancyBboxPatch, Text]] = []
 
     stages = [
         (
             0.15,
-            "Token structure",
-            "T1 census\nT2 shape geometry\nT3 matched slots\nT4 suffix carryover",
+            "Token\nstructure",
+            "T1 census\nT2 geometry\nT3 matched slots\nT4 carryover",
             GRAY,
         ),
         (
             2.55,
             "Persistence",
-            "T5 distance profile\nT6 dense replication\nT7 depth interaction",
+            "T5 distance\nT6 replication\nT7 depth",
             GRAY,
         ),
         (
             4.95,
-            "Lexical endpoint",
-            "T8 semantic atlas\nT9 held-out reserve\nT10 cross-model test",
+            "Lexical\nretrieval",
+            "T8 atlas\nT9 reserve\nT10 cross-model",
             BLUE,
         ),
         (
             7.35,
-            "Boundary tests",
-            "T11--T12 glyph systems\nT13 source/target\nT14--T16 interventions\nT17--T18 depth",
+            "Boundary\ntests",
+            "T11–T12 systems\nT13 specificity\nT14–T16 causal\nT17–T18 depth",
             BLUE,
         ),
         (
             9.75,
-            "Gated causal chain",
-            "T19-L lexical test\nT19-C conditional test\nT20-C calibrated\nfollow-up",
+            "Lexical +\ncausal tests",
+            "T19-L retrieval\nT19-C rank-8\nT20-C optimized\n+ full swaps",
             ORANGE,
         ),
     ]
@@ -413,7 +496,7 @@ def build_lineage() -> list[Path]:
             facecolor="white",
         )
         ax.add_patch(patch)
-        ax.text(
+        label = ax.text(
             x + width / 2,
             1.54,
             body,
@@ -423,6 +506,7 @@ def build_lineage() -> list[Path]:
             fontsize=7.0,
             linespacing=1.25,
         )
+        labels.append((patch, label))
 
     for left in (2.15, 4.55, 6.95, 9.35):
         ax.add_patch(
@@ -438,12 +522,13 @@ def build_lineage() -> list[Path]:
     ax.text(
         6.0,
         0.24,
-        "Decision lineage only; earlier stages do not enter the T19-L primary denominator",
+        "Earlier studies motivate the design; only T19-L enters the lexical primary test",
         ha="center",
         va="center",
         color=DARK,
         fontsize=7.2,
     )
+    validate_box_labels(fig, labels)
     return save_figure(fig, "t19_lineage")
 
 
@@ -505,7 +590,17 @@ def build_model_effects(models: list[dict[str, Any]]) -> list[Path]:
     ax.text(0.022, -0.72, "0.02 floor", color=GRAY, fontsize=7, ha="left")
     ax.set_yticks(positions, [MODEL_LABEL[row["model_role"]] for row in models])
     ax.invert_yaxis()
-    ax.set_xlim(-0.01, 0.315)
+    lower_bounds = [
+        point - error
+        for points, errors in ((u, u_low), (m, m_low))
+        for point, error in zip(points, errors)
+    ]
+    upper_bounds = [
+        point + error
+        for points, errors in ((u, u_high), (m, m_high))
+        for point, error in zip(points, errors)
+    ]
+    ax.set_xlim(min(0.0, *lower_bounds) - 0.01, max(0.02, *upper_bounds) + 0.015)
     ax.set_xlabel("Emoji keyword minus codepoint top-1")
     ax.set_title("Cross-model emoji keyword retrieval")
     ax.grid(axis="x", color="#E7EAED", linewidth=0.6)

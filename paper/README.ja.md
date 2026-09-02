@@ -1,6 +1,6 @@
 # GlyphProbe Phase I 論文
 
-[English](README.md) | [凍結済み claim table](CLAIM_TABLE.ja.md)
+[English](README.md) | [主張と証拠](CLAIM_TABLE.ja.md)
 
 状態: **匿名manuscriptとcompact evidence archiveをbuild・validate済み。
 OpenReview uploadは未実施**。
@@ -16,7 +16,7 @@ contractを記録するもので、第二の論文ではない。
 - `references.bib`: 初稿で使用する参考文献。
 - `neurips_2026.sty` と `checklist_template.tex`: 無改変の公式template
   asset。`checklist.tex`は公式questionを変えず、保守的なdraft answerを入れる。
-- `scripts/build_figures.py`: compactかつ検証済みのT19 JSON summaryから図を
+- `scripts/build_figures.py`: compactかつ検証済みのT19/T20 JSON summaryから図を
   決定論的に生成するscript。
 - `scripts/build_anonymous_artifact.py` と
   `scripts/validate_anonymous_artifact.py`: whitelist-onlyで決定論的なarchive
@@ -61,9 +61,17 @@ TectonicはBibTeX passも自動実行する。full TeX Liveがある場合はCod
 引用、page count、text extraction、rendered pageを検査した後だけ作る。
 `paper/build/` と `tmp/pdfs/` は中間surfaceである。
 
+論文の文章では、事前指定したプロトコル、評価集合、実行記録など、読者に伝わる語を使う。
+技術的なファイル名、登録済みプロトコル、科学的な検証記録の識別子とハッシュは保持する。
+箱付きの図は文字と枠の間に最低3ポイントの余白を設け、
+`tests/test_paper_figure_layout.py`で72・100・220 dpiの3条件を検査する。
+最終PDFも目視で確認する。文字を小さくせずに読みやすさを確保するための検査である。
+区間プロットでは、記録済みの区間が軸の範囲からはみ出すと出力を停止する。
+Figure 2はMistralのmatched上限0.3531を含む全18区間から表示範囲を決める。
+
 ## 事前指定したclaim境界
 
-論文は異なる判定条件を持つ二つの結果を報告する。raw atomic emojiは、事前指定した
+T19の設計は条件付きで連結した二つの結果を報告する。raw atomic emojiは、事前指定した
 9つすべてのmodel/tokenizer構成で、literal codepoint stringより語彙的に非重複なCLDR
 keyword aliasをよくretrieveした。これは4 viewのtoken countを完全一致させた
 解析でも成立した。一方、一つのLlama 3.2 3B構成で事前登録したrank-8の後期
@@ -74,10 +82,15 @@ component testでは、T19-Lからhold outした評価emoji 192件に対し、jo
 これはtext-only Unicode入力における限定的な語彙対応を支持する。rendered
 glyph知覚、人間的な同義語理解、token identity matching、tokenizer非依存性、
 pretraining novelty、普遍manifold、完全な回路、scale lawは示さない。許可・除外
-する記述は[CLAIM_TABLE.ja.md](CLAIM_TABLE.ja.md)に凍結した。
+する記述は[CLAIM_TABLE.ja.md](CLAIM_TABLE.ja.md)に記録した。
+
+別途設計を指定したT20-Cでは、追加のemoji 384件と4文脈で最適化rank-8部分空間を調べた。
+全状態交換による対照を用いた登録済み判定は、両主要サイトで較正不能となった。
+深さ依存の非対称性は回復経路の仮説を動機づけるが、経路の同定や全部分空間の排除は
+示さない。今回の文章・組版改訂では、実験結果、判定、閾値、入力のハッシュを変えていない。
 
 原稿では、`T19-L`を語彙観察arm、`T19-C`を条件付きcomponent因果armとして初出時に
-定義した。Appendix Aには、初期steering screenからT18までの探索→確認の短い経路を
+定義した。Appendix Aには、初期steering screenからT20-Cまでの探索→確認の短い経路を
 追加した。過去の探索結果と確認失敗は、現在のcontrolが必要になった理由を説明するが、
 T19-Lの証拠分母へは加えない。
 
@@ -130,7 +143,33 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
   検証し、x-axisを共通化し、"registered secondary"と明示してcaptionとlegendを
   検査する。
 
-### Figure 4 - component-level causal test
+### Figure 4 - 最適化部分空間と全状態交換の対照
+
+- **問い:** T20-Cの9サイトで、最適化rank-8部分空間の効果と状態全体の交換効果は
+  どう異なるか。
+- **Takeaway:** 主要サイトは登録済み較正基準を満たさず、全状態交換はblock 21/24で
+  非対称な効果を示し、block 27ではベースライン差を再現する。
+- **Family / sufficiency:** 全9サイトの横向き区間プロット。評価emojiは384件、
+  各項目4文脈である。
+- **Renderer / encoding:** necessityは丸、sufficiencyは四角、全状態交換は白抜き三角。
+  主要行を網掛けし、破線は0.02、一点鎖線はベースライン差0.0332を示す。
+  点線の0.06はsufficiencyの較正だけに適用する。
+- **Output / QA:** `figures/t20_causal_ceilings.pdf`。記録済み推定値と区間を保持し、
+  random補正した部分空間効果と未補正の交換効果を区別する。PDFの凡例と縦基準線を確認する。
+
+### Figure 5 - 探索から確認へ至る系譜
+
+- **問い:** T19のdesignへ至るまでに、どの先行結果が次の判断を変えたか。
+- **Takeaway:** token構造と持続性の研究がendpointを絞り、後続の語彙・因果研究が
+  二つのarmを持つdesignを導いた。先行stageはT19-L primaryの証拠分母に入らない。
+- **Family / sufficiency:** annotation付きdecision lineage。T1--T20を五つのstageへ
+  まとめ、系列を証拠の累積として扱わない。
+- **Renderer / encoding:** static Matplotlib。token・持続性diagnosticはgray、
+  語彙・boundary研究はblue、T19/T20の検定はorangeで表す。
+- **Output / QA:** `figures/t19_lineage.pdf`。全study labelをAppendix Aへ照合し、
+  compile済みpaperでbox labelとarrowを検査する。
+
+### Figure 6 (Appendix D) - component-level causal test
 
 - **問い:** random-adjusted necessityとsufficiencyがともに0.02のfloorを超える
   事前指定siteはあるか。
@@ -144,23 +183,12 @@ takeaway、chart family、data sufficiency、renderer、encoding、output、QA�
   `causal_site_results.json`へ照合し、zero / 0.02 referenceを表示し、primary site
   の強調を検査する。
 
-### Figure 5 - 探索から確認へ至る系譜
-
-- **問い:** T19のdesignへ至るまでに、どの先行結果が次の判断を変えたか。
-- **Takeaway:** token構造と持続性の研究がendpointを絞り、後続の語彙・因果研究が
-  二つのarmを持つdesignを導いた。先行stageはT19-L primaryの証拠分母に入らない。
-- **Family / sufficiency:** annotation付きdecision lineage。T1--T19を五つのstageへ
-  まとめ、系列を証拠の累積として扱わない。
-- **Renderer / encoding:** static Matplotlib。token・持続性diagnosticはgray、
-  語彙・boundary研究はblue、T19はorangeで表す。
-- **Output / QA:** `figures/t19_lineage.pdf`。全study labelをAppendix Aへ照合し、
-  compile済みpaperでbox labelとarrowを検査する。
-
 ## 残るsubmission境界
 
-- reproducibility、open access、compute checklistは`No`のまま。compact artifactは
-  model-dependent raw arrayと完全なintervention ledgerを含まず、T19 acquisitionの
-  duration/peak memoryもreceipt-boundでない。
+- 再現に必要な情報の開示は`Yes`。プロトコル、モデルの正確なrevision、項目選択、
+  訓練設定、seed、解析コードを示し、参照先checkpointから再取得できる。
+- open accessとcomputeは`No`のまま。compact artifactはraw arrayと完全な介入記録を
+  含まず、T19の正確な取得時間・peak memoryも提出記録に含まれない。
 - double-blind copyの凍結後にだけauthor listとacknowledgmentsを確定する。
 - OpenReview recordを検証できるだけ早くuploadする。
 

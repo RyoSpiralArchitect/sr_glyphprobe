@@ -1,11 +1,11 @@
-# GlyphProbe T19 anonymous evidence artifact v0
+# GlyphProbe T19/T20 anonymous evidence artifact v1
 
 [日本語](README.ja.md)
 
-This is a **compact, double-blind review artifact**, not a claim of complete
-open-data reproduction. It binds the frozen T19 protocol, selected item banks,
-compact results, independent-validation receipts, analysis and validator code,
-paper sources, figures, and the anonymous review PDF.
+This **compact, double-blind review artifact** links the prespecified T19/T20
+protocols, selected item sets, compact results, independent validation reports,
+analysis and validator code, paper sources, figures, and the anonymous review
+PDF. Full raw-data replay requires additional files listed below.
 
 ## Verify first
 
@@ -25,11 +25,16 @@ prove that the scientific estimand is correct.
 ## What is included
 
 - `paper/glyphprobe_t19_anonymous.pdf` and the anonymous TeX/BibTeX sources;
-- all four deterministic paper figures plus their input/output hash manifest;
+- all six deterministic paper figures plus their input/output hash manifest
+  and boxed-label layout regression tests;
 - the T19-L selection, freeze, configuration, tokenizer preflights, compact
   observational results, and independent-validation receipt;
 - the T19-C go manifest, compact component results, and independent-validation
   receipt;
+- the descriptive T19-C post-hoc full-state swap results;
+- the T20-C configuration, selection, specification and admission manifests,
+  preliminary checks, training/evaluation reports, compact results, and
+  independent-validation receipt;
 - the exact executor, analyzer, and independent-validator source files needed
   to inspect how the receipts were produced;
 - the minimal T9/T10/T18 bindings referenced by the T19 freeze;
@@ -44,7 +49,7 @@ payload path, size, and digest. `SHA256SUMS` additionally binds the manifest.
 ## What is deliberately excluded
 
 - model weights, tokenizer files, caches, virtual environments, and secrets;
-- T19 model-dependent activation arrays, causal source subspaces, causal
+- T19/T20 model-dependent activation arrays, causal source subspaces, causal
   evaluation arrays, and the full intervention ledger;
 - Git metadata, repository remotes, author metadata, local absolute paths, and
   private execution-host information; and
@@ -71,7 +76,7 @@ python3 paper/scripts/build_figures.py
 python3 scripts/validate_anonymous_artifact.py .
 ```
 
-The second command passes only if regeneration is byte-identical to the frozen
+The second command passes only if regeneration is byte-identical to the recorded
 figure and manifest hashes. Font and rendering-library differences can change
 PDF/PNG bytes even when plotted values are the same, so a mismatch is a
 rendering-parity result, not automatically a scientific discrepancy.
@@ -81,7 +86,8 @@ archive whose URL and SHA-256 are recorded in `paper/README.md`, place
 `neurips_2026.sty` beside `main.tex`, and run:
 
 ```bash
-tectonic -X compile --outdir paper/build --outfmt pdf \
+mkdir -p paper/build
+SOURCE_DATE_EPOCH=1788307200 tectonic -X compile --outdir paper/build --outfmt pdf \
   --keep-logs --keep-intermediates --untrusted paper/main.tex
 ```
 
@@ -91,8 +97,11 @@ included PDF is the artifact's controlling rendered manuscript.
 ## Claim boundary
 
 T19-L supports bounded cross-model lexical retrieval under fixed text-only
-Unicode inputs and exact token-count controls. T19-C finds no frozen primary
-late component that passes both registered necessity and sufficiency gates in
-one Llama 3.2 3B cell. The artifact does not establish rendered-glyph
+Unicode inputs and exact token-count controls. T19-C finds no prespecified
+primary late component that passes both necessity and sufficiency criteria in
+one Llama 3.2 3B configuration. T20-C returns uncalibratable at its primary
+sites under the registered rule. Full-state swaps motivate a hypothesis about
+recovery from glyph-position context; they do not identify that pathway or
+exclude all ranks. The artifact does not establish rendered-glyph
 perception, human meaning, tokenizer independence, a universal manifold, a
 complete circuit, a scale law, or model-population generality.

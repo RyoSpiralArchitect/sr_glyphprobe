@@ -104,24 +104,23 @@ protocol](docs/T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0.md).
 
 ### T20 calibrated optimized-subspace causal status
 
-T20-C, frozen and admitted only after the T19-C analysis was validated,
-tested whether any rank-8 subspace learnable by interchange optimization
-carries the glyph-to-alias relation, at three residual-stream and six
-component sites, on 384 fresh atomic emoji in four contexts, with
-full-interchange ceilings as registered positive controls. Both primary
-residual sites returned the registered verdict *uncalibratable at this
-endpoint* (sufficiency ceilings `+0.0234`/`+0.0254`, below the `0.06`
-informativeness minimum). The ceilings carry the finding: block-27 residual
-swaps transfer retrieval exactly (100% of the attainable `0.0332` range),
-while blocks 21/24 transfer 71–76% on injection yet destroy only 4–25% on
-removal—the final-state alias signal is reassembled from glyph-position
-context by late computation and is not carried by the readout-token stream at
-mid-late depth. Optimized subspaces memorize source items (training InfoNCE
-0.52–1.26 at residual sites) but generalize to zero held-out items,
-consistent with item-private coding or insufficient training data. A
-post-hoc ceiling pass at the six T19-C sites (labeled descriptive) shows the
-T19-C primary sites offered near-zero attainable effects, retroactively
-explaining that negative. See the
+T20-C was specified and authorized after the T19-C analysis was validated.
+It tested interchange-optimized rank-8 subspaces at three residual-stream and
+six component sites, using 384 atomic emoji unused in T19/T20 and four
+contexts. Full-state swaps served as registered positive controls. Both
+primary residual sites returned *uncalibratable at this endpoint*
+(sufficiency effects `+0.0234`/`+0.0254`, below the registered `0.06`
+calibration minimum). Block-27 residual swaps reproduce both baseline
+retrieval rates, whose gap is `0.0332`. At blocks 21/24, injection transfers
+71–76% of that gap and replacement in the glyph forward removes 4–25%.
+This asymmetry motivates direct tests of recovery from unchanged
+glyph-position context; it does not identify that pathway or exclude every
+rank. Optimized subspaces fit source items (residual-site training InfoNCE
+0.52–1.26), with held-out source validation at 0–1 item. Limited data and
+optimization remain alternative explanations for weak generalization.
+Descriptive post-hoc full-state swaps at the T19-C primary sites produced
+near-zero sufficiency effects, limiting the interpretation of that earlier
+negative without changing its registered decision. See the
 [frozen protocol](docs/T20_LEXICAL_ALIAS_OPTIMIZED_SUBSPACE_CAUSAL_V0.md) and
 the committed results under
 `validation/t20_lexical_alias_optimized_subspace_causal_v0/results/`.

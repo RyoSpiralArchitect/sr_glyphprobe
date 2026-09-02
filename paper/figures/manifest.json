@@ -26,11 +26,11 @@
     },
     {
       "path": "paper/figures/t19_design.pdf",
-      "sha256": "b3b6a29ad0c0ab5489d1c7f91b38f49a23eef25896235973ff25c34fbdb988b1"
+      "sha256": "45f49a8550e54851ef0fff4644113b5e545dd5023d97a2c0e5ead38fcf78d4f9"
     },
     {
       "path": "paper/figures/t19_design.png",
-      "sha256": "a7d4e86d2d9c787a19cae0806328b372a697c8c8b2bb9c126e844d9470d9fc80"
+      "sha256": "7223f5ca06442632ce01b2184e27fda3dd228a430b97883f4ccc15218722e190"
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
@@ -42,27 +42,27 @@
     },
     {
       "path": "paper/figures/t19_lineage.pdf",
-      "sha256": "970f0e97f684b30c585252cbefd607514a61dd524984f8c663818032cbbd94a5"
+      "sha256": "71c9db4e942d6856c49e1672e8287a03e6639c2ad91453c5b6d951fc952eb23b"
     },
     {
       "path": "paper/figures/t19_lineage.png",
-      "sha256": "d88f78a91832b97ff41a8cb3ace0a33b51df4e9364c8bca4b9ef6d861200d021"
+      "sha256": "9c012a2d9659839f7a68665611a66d9dc8404c5d243a05e2ae8e47d63ba9ed04"
     },
     {
       "path": "paper/figures/t19_model_effects.pdf",
-      "sha256": "7060ffec4603e72ac0ecc7b97b0151467bcebaf4e4b2d2252aa051f332451ff1"
+      "sha256": "676f0f9a90795c7e8cf675165027dd22625cacd648ef8945dd76386cf9de4438"
     },
     {
       "path": "paper/figures/t19_model_effects.png",
-      "sha256": "12ec5abf81c24a101f0c323cb0b01507e3249cfeb992bb8fe8889d30ae3005c3"
+      "sha256": "e3310d3e977b153ea52e840cfa47c49223614d598c979263e8a526b3f412a37a"
     },
     {
       "path": "paper/figures/t20_causal_ceilings.pdf",
-      "sha256": "2bacba0f0b0d0659a49353a7dfd4c91ebc693726360723be6f3f5bc2a6594a25"
+      "sha256": "99532f55d39df89f17fcc979b954901125b57643eff5d65acb7ee021d930a68a"
     },
     {
       "path": "paper/figures/t20_causal_ceilings.png",
-      "sha256": "84ef19d11da48a4fffd73ac03c227b999c1e4fca752c3a4c938fc0246fbcbbb4"
+      "sha256": "c6aabc29a6ea225268cc49338fb94328d2dfec4e68a5c95491ffd71eaa57475f"
     }
   ],
   "schema_version": 1
