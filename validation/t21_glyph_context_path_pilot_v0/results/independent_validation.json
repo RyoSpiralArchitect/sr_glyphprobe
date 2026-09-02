@@ -1,0 +1,23 @@
+{
+  "acquisition_receipt_sha256": "28b19417759f94f97ac4a0c596fd01c1c143f8a95a4486deee82766917b283fc",
+  "analysis_receipt_sha256": "1db773c8d1e1695dc9f625884acb36c38220c9abd388d9d4e2037e005cf05f9e",
+  "candidate_anchor": 21,
+  "claim": "independent numerical reconstruction, not a new experimental replication",
+  "maximum_metric_errors": {
+    "alias_margin": 0.0,
+    "alias_margin_effect": 0.0,
+    "alias_top1": 0.0,
+    "alias_top1_effect": 0.0,
+    "codepoint_margin": 0.0,
+    "codepoint_margin_effect": 0.0,
+    "codepoint_top1": 0.0,
+    "codepoint_top1_effect": 0.0,
+    "donor_margin": 0.0,
+    "donor_margin_effect": 0.0
+  },
+  "reserve_model_forwards": 0,
+  "status": "pass",
+  "target_items_validated": 384,
+  "validator": "validate_t21_glyph_context_path_pilot_v0.py",
+  "validator_sha256": "5de46b28520aebf6d35c5bcae648c9a30505ea6bf62cc8d44c7f4cc4bd487955"
+}

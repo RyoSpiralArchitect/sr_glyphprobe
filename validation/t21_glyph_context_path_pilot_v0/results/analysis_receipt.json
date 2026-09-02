@@ -1,0 +1,13 @@
+{
+  "acquisition_receipt_sha256": "28b19417759f94f97ac4a0c596fd01c1c143f8a95a4486deee82766917b283fc",
+  "completed_at_utc": "2026-09-02T03:57:07.835588+00:00",
+  "outputs": {
+    "condition_means.json": "4842c1741baf647fb18a200cfa15e511b8d2012f52243f1dc59d9e15bc077503",
+    "item_metrics.npz": "de4dbc27c2a5fa7f44d373b01556b2d4b6ba8c7f13c830c950f9805a4034752f",
+    "pilot_result.json": "062502b71110a2297178d1ea64eefa3bd4f507ece9c44461c7b6d5ff45ffcf45"
+  },
+  "protocol_id": "glyphprobe-t21-glyph-context-path-pilot-v0",
+  "reserve_model_forwards": 0,
+  "specification_sha256": "0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5",
+  "status": "analysis_complete"
+}

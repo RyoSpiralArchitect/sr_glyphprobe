@@ -1,0 +1,58 @@
+protocol_id: glyphprobe-t21-glyph-context-path-confirmation-v0
+stage: prospective_confirmation_after_exposed_item_pilot
+population:
+  target_count: 195
+  source_count: 128
+  selection: all_remaining_t19_alias_matched_emoji_after_t19_and_t20_exclusions
+  matched_pool_count: 954
+  previously_used_emoji_count: 759
+  reused_symbol_alias_count: 55
+  order: ascending_unicode_source_index
+  exclusion_after_outcomes: prohibited
+  historical_text_rescan: prohibited
+  freshness: no_prior_T19_T20_T21_model_evaluation_not_pretraining_or_repository_novelty
+pilot:
+  specification_sha256: 0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5
+  acquisition_receipt_sha256: 28b19417759f94f97ac4a0c596fd01c1c143f8a95a4486deee82766917b283fc
+  analysis_receipt_sha256: 1db773c8d1e1695dc9f625884acb36c38220c9abd388d9d4e2037e005cf05f9e
+  selected_anchor: 21
+  precision_report_sha256: 80d585c0da9320c5577864d26012e2286a77e35e6afead9c2f5bd1724da36523
+intervention:
+  engine: unchanged_t21_pilot_engineering_revision_1
+  acquired_anchors: [21, 24]
+  primary_anchor: 21
+  primary_context_indices: [1, 3]
+  primary_distance: 8
+  donor_rule: unchanged_t21_pilot_hash_order_two_same_glyph_token_count_source_items
+  source_pool: unchanged_128_t19_source_items
+  gallery: same_context_own_keyword_and_128_source_keywords
+  effect_reference: same_batch_slot_neutral_path_with_residual_reset_preserved
+inference:
+  primary_metric: alias_margin_effect
+  unit: target_item_mean_of_two_carriers_and_two_donors
+  contrasts: [calibration, necessity_absolute, necessity_position_adjusted, rescue_absolute, rescue_position_adjusted]
+  direction: positive
+  method: one_sided_single_step_max_studentized_item_bootstrap
+  simultaneous_confidence: 0.95
+  replicates: 20000
+  seed: 2026092201
+  positive_rule: complete_validated_acquisition_and_all_five_simultaneous_lower_bounds_gt_zero
+  effect_interpretation: cosine_margin_units_not_accuracy_points
+  effect_size_reference: ratio_of_mean_contrast_to_mean_full_prefix_decrement_descriptive_only
+  practical_minimum_claim: none_directional_contribution_only
+  zero_standard_error: fail_closed_no_positive_verdict
+  secondary: [anchor_24, distance_4, individual_carriers, token_length_strata, top1, codepoint, donor_margin]
+  secondary_controls_primary_verdict: false
+execution:
+  canary_items: 8
+  canary_population: already_exposed_first_eight_pilot_targets
+  canary_reference: exact_replay_of_original_eight_item_pilot_canary
+  chunk_items: 16
+  wall_budget_seconds: 1800
+  foreign_gpu_contention: cooperative_exit_75_at_next_item_boundary
+  resume: identical_incomplete_specification_only_no_outcome_inspection
+  complete_rerun: prohibited
+  model_download: false
+  generation: false
+  gate_order: design_published_canary_pass_selection_and_token_preflight_spec_published_full_run
+  paper_protection: preserve_submission_ready_table6_corrected_version

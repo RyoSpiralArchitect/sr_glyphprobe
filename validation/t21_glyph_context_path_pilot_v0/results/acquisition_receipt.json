@@ -1,0 +1,96 @@
+{
+  "batched_forward_calls_this_invocation": 4610,
+  "canary_receipt_sha256": "80fc4674d5991f88637f6f5430520896ad7e7c32632e728c18a5a97ea511764c",
+  "chunks": {
+    "chunk_0000_0016": "86001ffebe443355cdb8c82471762870daaf4044196902e62d5f5c2bb361db12",
+    "chunk_0016_0032": "5178b2044b79964aa8e5e084b48a4c9df122f76cb1201b87fe52df60dc5e1865",
+    "chunk_0032_0048": "c69fdea625b0cd4268abeabaa96f748787c7e418cde1c6df6b651932c6aa2dff",
+    "chunk_0048_0064": "6e9e4fca8a58d6dcc228576a1ecee35a1bd68e2efd80fed8bdfcb0a5cd70f6ef",
+    "chunk_0064_0080": "9b6370fec4d019c6dbfba37c3117b4059a5399bf840ce5cdc2fd89d6e73c4770",
+    "chunk_0080_0096": "6030c3774f353152a8cd0fdd83eb11b397467f688e46925e75a54959ab64027a",
+    "chunk_0096_0112": "1c4978003326e2d6cfc7db3f412029ec1c1639e50922a0329d5fa93f1704aefb",
+    "chunk_0112_0128": "03f0f776b845ad4d954f7e768d76f1eeda41af50dc06f54c2c90479ebc04a8b6",
+    "chunk_0128_0144": "217db9ffffefad5673547ad89d25b5e68756ada4361011810eb300046aac31f7",
+    "chunk_0144_0160": "d03d588919965b6782c973be0d8f3473e3ada0da25677ec3c96805bb292b102f",
+    "chunk_0160_0176": "5106c21138c045e6832f4baffe7fef5b93a9f2e02b1e6b0d6c64a38c5bac0f2e",
+    "chunk_0176_0192": "58d0627632472dc393b971bec5e02a0973da0df91b6b05e1b905b9e699733277",
+    "chunk_0192_0208": "4527ed81d5d06c36db062d6389f4dfea8a03807ee7ad769d1058d3105feaf497",
+    "chunk_0208_0224": "87a2c4830fafcd4d39189ef87d2cda29ce6a3d707f160939c69f7f806c95567e",
+    "chunk_0224_0240": "786f9b32e3d16549d79a805672650decc2049b89978aaf9baa79c2c309a44054",
+    "chunk_0240_0256": "d18a94a7fff188b1b9bc81b7168292b60977d5169ba9175a31070d5fc9a019d9",
+    "chunk_0256_0272": "6f49aef02165256cc8f82f8e88fc678c6f3be5963c4948b21098f21cc2164e96",
+    "chunk_0272_0288": "8d2d5272ef30fd22f399d4b15280bea42825db410715a7440dff19fef4550dc6",
+    "chunk_0288_0304": "1128031ff90f523fe7a763d83cb9cc30c666512d7d3767e579942312d77c0178",
+    "chunk_0304_0320": "bef380102c4e6b33c6459a738048b542050bcec6258724c40922f6e53fe0d691",
+    "chunk_0320_0336": "c065387bfc9282ac6694dcc722bdafa26e9a9a0cfeeed243a588bfc3a00e3038",
+    "chunk_0336_0352": "c49b6ee8b7732e6ad7d58b4400135ff138995dcd07b08462e05372131edd167d",
+    "chunk_0352_0368": "63b83e7a44c6eff6a5aaa5dcb862eefa5846fa8ddc76e4fa86e578f8871dce44",
+    "chunk_0368_0384": "e351e81807ec32f18df59e1021829dabb43869c987d99c89d7a03778e6f5ae02"
+  },
+  "completed_at_utc": "2026-09-02T03:56:14.690358+00:00",
+  "elapsed_seconds_this_invocation": 218.87184752803296,
+  "generation_calls": 0,
+  "model": {
+    "artifact": {
+      "file_count": 9,
+      "files": {
+        ".gitattributes": {
+          "bytes": 1519,
+          "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+        },
+        "README.md": {
+          "bytes": 15974,
+          "sha256": "52aa267762f7040fd06ccb8e04fe2610781ea7453c808bd717471533c24a022a"
+        },
+        "config.json": {
+          "bytes": 921,
+          "sha256": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63"
+        },
+        "model-00001-of-00002.safetensors": {
+          "bytes": 5368478882,
+          "sha256": "53c5d0d0bf614dd47699da0c3381565d9c29ffd20830dd0c0c41aec063ff0844"
+        },
+        "model-00002-of-00002.safetensors": {
+          "bytes": 1057050089,
+          "sha256": "27918a4050dd52d318aadaa0f743d6aab0043a7ebc269ffda573c024541e4ff2"
+        },
+        "model.safetensors.index.json": {
+          "bytes": 21946,
+          "sha256": "de5995e586fc98a942b576a6752034a6d0a741d2dece5f61e697d99c8bb99b3d"
+        },
+        "special_tokens_map.json": {
+          "bytes": 301,
+          "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+        },
+        "tokenizer.json": {
+          "bytes": 9085657,
+          "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+        },
+        "tokenizer_config.json": {
+          "bytes": 50500,
+          "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+        }
+      },
+      "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+      "total_bytes": 6434705789
+    },
+    "attention": "eager",
+    "generation_calls": 0,
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "llama_attention_source_sha256": "dc6807936ef6103d2675e82361b9c82359d43356a331140bbb1a974595522bff",
+    "python": "3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0]",
+    "runtime_modified": false,
+    "torch": "2.13.0+cu132",
+    "transformers": "5.15.0"
+  },
+  "offtarget_checks_this_invocation": 9216,
+  "protocol_id": "glyphprobe-t21-glyph-context-path-pilot-v0",
+  "reserve_model_forwards": 0,
+  "sequence_forwards_this_invocation": 138242,
+  "source_items": 128,
+  "source_states_sha256": "20c4fba633b8fbcdde6a1dd0fa8d14a6c1d6d9d5a5e40e216c91974d412ba287",
+  "specification_sha256": "0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5",
+  "status": "pilot_acquisition_complete",
+  "stock_eager_adapter_exact": true,
+  "target_items": 384
+}

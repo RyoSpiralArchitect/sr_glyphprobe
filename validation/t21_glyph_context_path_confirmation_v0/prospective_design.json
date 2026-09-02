@@ -1,0 +1,42 @@
+{
+  "candidate_anchor": 21,
+  "created_at_utc": "2026-09-02T04:24:25.322242+00:00",
+  "input_sha256": {
+    "data/manifests/t19_lexical_alias_unicode_control_v0.json": "7a51d38effe67e74ff1264ae61c652e4192088063c3d31c874421f0b4dad8ee2",
+    "data/manifests/t20_lexical_alias_optimized_subspace_causal_v0.json": "4f2904d66099e5c42522942cae9a37919e52af1f1c1ad6d737070d581202d2b7"
+  },
+  "parent_commit": "0ff5635e8003fcb76b7022d86f671cfc4bfd2df2",
+  "primary_rule": "all_five_one_sided_simultaneous_95_lower_bounds_positive",
+  "protocol_id": "glyphprobe-t21-glyph-context-path-confirmation-v0",
+  "registry": "internal_prospective_specification_not_external_registration",
+  "reserve_items_accessed_at_design": 0,
+  "reserve_model_forwards_at_design": 0,
+  "source_sha256": {
+    "configs/t19_lexical_alias_unicode_control_v0.yaml": "7d1f25f4121bbf72880e447002fb0623c891d3bfc25e3329807fa925feadf3c4",
+    "configs/t21_glyph_context_path_confirmation_v0.yaml": "29f99712d93811066743fc073feaa48f9a9a4e3bbba67308491eaf38e30577de",
+    "configs/t21_glyph_context_path_pilot_v0.yaml": "5e6df33e34f341bae8c54eb5d3b5a64551fa581546a6f2277e54756e9ec0df54",
+    "docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.ja.md": "148da8906c61d794d1bca8a4bdb7f951a3d9f483e17e1b0c2a34727a8015055a",
+    "docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.md": "3cf2fb2ad2dbcf1aca4d5c01d0dc75d548efbbb63b9b024da459dc57a26c17ea",
+    "docs/T21_GLYPH_CONTEXT_PATH_PILOT_V0.ja.md": "f476634b2a2f4ccdba32f7b45174c40ee1efbafea8157e73068c7493981b5153",
+    "docs/T21_GLYPH_CONTEXT_PATH_PILOT_V0.md": "0545ecc5e62ad8938bf1f992473b7b8c2a8df319678f712ba7c5c0f5847549b9",
+    "scripts/glyph_system_decomposition_v0.py": "a3743f30ddb50b28f50978f0541e85d79a6dc5de9ee7818ba43921344c07a50f",
+    "scripts/t19_lexical_alias_unicode_control_v0.py": "162187288d6d6d962525e77ad1976a9d900d21f49feef333f99e37fbaee87cb8",
+    "scripts/t21_glyph_context_path_confirmation_v0.py": "55aae3688d567cf3709430020029b089832e83549df36e41ee208bd8c6589dc8",
+    "scripts/t21_glyph_context_path_pilot_v0.py": "4e36d84c64484ff28d378eae7e11b4d0d07b2f83d8da7246d4bb4b09a9943016",
+    "scripts/t21_path_inference_v0.py": "ace8c205350f43933ea8804d9725487daa369783d637bf35a499089b36119761",
+    "scripts/validate_t21_glyph_context_path_confirmation_v0.py": "8c2df9805ee79d5d9b1fef61e37e085c4ac73852c3239e9ba44d2edf41b24cc5",
+    "scripts/validate_t21_glyph_context_path_pilot_v0.py": "5de46b28520aebf6d35c5bcae648c9a30505ea6bf62cc8d44c7f4cc4bd487955",
+    "src/glyphprobe/provenance.py": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c",
+    "tests/test_t21_glyph_context_path_confirmation_v0.py": "10a4e3cff7ecc995ae650a652ced2574296acaaf73bb2dc55da75f1942a6133d",
+    "tests/test_t21_glyph_context_path_pilot_v0.py": "35998593ade2ecc6a2844db7f3aaf3e243ec7569a23f7136be106522eba7c5e1",
+    "tests/test_t21_path_inference_v0.py": "bb9ea74def8a466f23bc774e1b0c1652e0196c6b71e4217ce75310adac930408",
+    "validation/t21_glyph_context_path_pilot_v0/pilot_specification_v1.json": "0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5",
+    "validation/t21_glyph_context_path_pilot_v0/results/acquisition_receipt.json": "28b19417759f94f97ac4a0c596fd01c1c143f8a95a4486deee82766917b283fc",
+    "validation/t21_glyph_context_path_pilot_v0/results/analysis_receipt.json": "1db773c8d1e1695dc9f625884acb36c38220c9abd388d9d4e2037e005cf05f9e",
+    "validation/t21_glyph_context_path_pilot_v0/results/independent_validation.json": "87577c07619534f89110d3b3cac5d408d0b9922c3907f05c2ad4ca5986805f5b",
+    "validation/t21_glyph_context_path_pilot_v0/results/pilot_result.json": "062502b71110a2297178d1ea64eefa3bd4f507ece9c44461c7b6d5ff45ffcf45",
+    "validation/t21_glyph_context_path_pilot_v0/results/precision_and_quality_report.json": "80d585c0da9320c5577864d26012e2286a77e35e6afead9c2f5bd1724da36523"
+  },
+  "status": "specified_before_reserve_reconstruction_tokenization_or_model_forward",
+  "target_count": 195
+}

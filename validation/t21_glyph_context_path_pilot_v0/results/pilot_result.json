@@ -1,0 +1,112 @@
+{
+  "acquisition_receipt_sha256": "28b19417759f94f97ac4a0c596fd01c1c143f8a95a4486deee82766917b283fc",
+  "candidate_anchor": 21,
+  "confirmatory_result": false,
+  "context_order": [
+    [
+      "pipe",
+      4
+    ],
+    [
+      "pipe",
+      8
+    ],
+    [
+      "article_a",
+      4
+    ],
+    [
+      "article_a",
+      8
+    ]
+  ],
+  "decision_context_indices": [
+    1,
+    3
+  ],
+  "metric": "own_alias_cosine_minus_max_128_fixed_source_alias_cosine",
+  "next_step": "prepare_separate_prospective_protocol",
+  "protocol_id": "glyphprobe-t21-glyph-context-path-pilot-v0",
+  "reserve_access_allowed": false,
+  "reserve_model_forwards": 0,
+  "sites": [
+    {
+      "anchor": 21,
+      "calibration_pass": true,
+      "contrasts": {
+        "calibration": {
+          "item_sd": 0.016081145624714934,
+          "lower_95": 0.005073472853977645,
+          "mean": 0.006658149695210304,
+          "upper_95": 0.008274580718158361
+        },
+        "necessity_absolute": {
+          "item_sd": 0.0064701845221967,
+          "lower_95": 0.002035450926182493,
+          "mean": 0.0026802878683470283,
+          "upper_95": 0.0033322627551798374
+        },
+        "necessity_position_adjusted": {
+          "item_sd": 0.0056737996986838445,
+          "lower_95": 0.0014629218117217363,
+          "mean": 0.002029969227178782,
+          "upper_95": 0.0025987131136214034
+        },
+        "rescue_absolute": {
+          "item_sd": 0.007022011613851456,
+          "lower_95": 0.002618312307533848,
+          "mean": 0.0033026269387148328,
+          "upper_95": 0.004003484698490046
+        },
+        "rescue_position_adjusted": {
+          "item_sd": 0.0060333710229013935,
+          "lower_95": 0.0015746548191698576,
+          "mean": 0.0021817000330260966,
+          "upper_95": 0.0027866455675363763
+        }
+      },
+      "pilot_screen_pass": true,
+      "selection_score": 0.0014629218117217363
+    },
+    {
+      "anchor": 24,
+      "calibration_pass": true,
+      "contrasts": {
+        "calibration": {
+          "item_sd": 0.013433033676669448,
+          "lower_95": 0.00459100923659356,
+          "mean": 0.0059306223698820685,
+          "upper_95": 0.007282850505176632
+        },
+        "necessity_absolute": {
+          "item_sd": 0.006563417284001246,
+          "lower_95": 0.001889420169395005,
+          "mean": 0.0025292011608887195,
+          "upper_95": 0.003186989687921946
+        },
+        "necessity_position_adjusted": {
+          "item_sd": 0.00573921109001873,
+          "lower_95": 0.0012828525582827713,
+          "mean": 0.0018597210399662761,
+          "upper_95": 0.0024376233840470328
+        },
+        "rescue_absolute": {
+          "item_sd": 0.006975738630881901,
+          "lower_95": 0.0022578709172616806,
+          "mean": 0.00293892187806166,
+          "upper_95": 0.003655653617456818
+        },
+        "rescue_position_adjusted": {
+          "item_sd": 0.006090946260828988,
+          "lower_95": 0.0015657223559799585,
+          "mean": 0.0021592820806335005,
+          "upper_95": 0.002778872482037745
+        }
+      },
+      "pilot_screen_pass": true,
+      "selection_score": 0.0012828525582827713
+    }
+  ],
+  "status": "pilot_analysis_complete",
+  "target_items": 384
+}
