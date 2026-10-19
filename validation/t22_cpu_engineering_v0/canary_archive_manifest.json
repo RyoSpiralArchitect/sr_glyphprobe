@@ -1,0 +1,81 @@
+{
+  "archive": "validation/t22_cpu_engineering_v0/canary",
+  "byte_identical": true,
+  "file_count": 18,
+  "files": {
+    "acquisition_receipt.json": {
+      "bytes": 4028,
+      "sha256": "27c9e58535a872861a87c22d7b82dce7f9e54952bc229511b7231a9693dca901"
+    },
+    "item_0000/receipt.json": {
+      "bytes": 7047,
+      "sha256": "521c49678e4478291a5d4a9037908d6b5a2b8d9396783791bc1fb1e8280c7643"
+    },
+    "item_0000/states.npz": {
+      "bytes": 4195939,
+      "sha256": "44a9ffcc2867b4e1d0f8cd1536e5b51921dfa75d6cb46c739961c1135658f03a"
+    },
+    "item_0001/receipt.json": {
+      "bytes": 7042,
+      "sha256": "919794e70108c005251948f945ab3b5699cbefd81e5ad5b929600d0ed92777a0"
+    },
+    "item_0001/states.npz": {
+      "bytes": 4184055,
+      "sha256": "5ab7d855322b57ab5cbc69d7cd5d482cd3ab01396e7af516f77ee4e73e3e02a8"
+    },
+    "item_0002/receipt.json": {
+      "bytes": 7043,
+      "sha256": "aae62fcac09358a7e8b59a97a8a76d4df3986d4214f40fd05a7326757b5ab795"
+    },
+    "item_0002/states.npz": {
+      "bytes": 4179903,
+      "sha256": "c40758f89c2621515413074f0c0e4f399ed7dc20a669f7f374d1ee73688a3bf5"
+    },
+    "item_0003/receipt.json": {
+      "bytes": 7045,
+      "sha256": "c7e6d443faa8f80151443200298055a0ed57e2cb39393cce119764fa32fb71fb"
+    },
+    "item_0003/states.npz": {
+      "bytes": 4154292,
+      "sha256": "13c863767500a8f1611135af2bebc2dadcf823407fa11cd81018eb22069c9fbf"
+    },
+    "item_0004/receipt.json": {
+      "bytes": 7039,
+      "sha256": "c987762c693594ab59c33b92b9924b404ca87a4a7dba037257a20e6de8024923"
+    },
+    "item_0004/states.npz": {
+      "bytes": 4149592,
+      "sha256": "30f27e37dbba5fd944ab21ae79d7a48519cd7770ba5237b063c0b6e5c9f35c2c"
+    },
+    "item_0005/receipt.json": {
+      "bytes": 7043,
+      "sha256": "7743dbd60786d63f10faea1016bb3d98c86dd4dfc8e66f0a16409bdea1488122"
+    },
+    "item_0005/states.npz": {
+      "bytes": 4191652,
+      "sha256": "13339514a2f8636f9b4e1c007b638ba68a075718b661c2834aab83839309cf11"
+    },
+    "item_0006/receipt.json": {
+      "bytes": 7048,
+      "sha256": "1a49965799bcc2267d4860f996cc0800ea5d262b71aab9915c3aa12485aece2d"
+    },
+    "item_0006/states.npz": {
+      "bytes": 4176284,
+      "sha256": "784f51550febc41890289f2a24fd3eb08b2a43bb19ace3b74168bf13227e066a"
+    },
+    "item_0007/receipt.json": {
+      "bytes": 7043,
+      "sha256": "e610a2f68eecb77ce8873126f6fd7c131ee1a7f92dadb2e8a569631241eba329"
+    },
+    "item_0007/states.npz": {
+      "bytes": 4195215,
+      "sha256": "00f5868e0825f52de660591a6649c94a9e688fe6560a290657c358505c2e8c89"
+    },
+    "specification.json": {
+      "bytes": 248817,
+      "sha256": "d334efa55ad2438079e27ba05347eb92f421bd51ad1066e060371f259b939df7"
+    }
+  },
+  "source": "runs/t22_cpu_canary_v0",
+  "total_bytes": 33736127
+}

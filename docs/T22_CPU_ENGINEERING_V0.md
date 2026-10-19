@@ -7,6 +7,11 @@ blocked operation**. This extends the earlier availability assessment without
 changing any T19/T20/T21 result, gate, or saved receipt. Engineering parity is
 not evidence of an emoji lexical effect.
 
+Subsequent status: the separate [eight-item lexical analysis](T22_CPU_LEXICAL_RESULTS_V0.md)
+is complete. This document records the engineering stage and its boundaries.
+The eight parent arrays and receipts are now also archived at
+`validation/t22_cpu_engineering_v0/canary/` for portable numerical auditing.
+
 ## What the repository preserves
 
 The T21 pilot specification fixes the model
@@ -160,10 +165,12 @@ rechecked when recording completion. The eight-item audit did not separately
 rehash model files; the acquisition verified them before and after the run,
 and the earlier timing-item independent audit rehashed all nine files.
 
-This completes engineering validation. Lexical effects, historical GPU parity,
-and semantic or mechanistic conclusions remain unestablished. The next research
-step requires the fixed 128-source alias gallery and target alias baselines on
-the same CPU runtime before evaluating lexical margins for K/V conditions.
+This completed engineering validation. At that stage, lexical effects,
+historical GPU parity, and semantic or mechanistic conclusions were unestablished.
+The subsequent fixed 128-source alias gallery and target alias acquisition on
+the same CPU runtime enabled the separate descriptive
+[lexical results](T22_CPU_LEXICAL_RESULTS_V0.md); historical GPU parity and
+semantic or mechanistic conclusions remain unestablished.
 
 After a completed run, independently audit its persisted arrays and provenance:
 

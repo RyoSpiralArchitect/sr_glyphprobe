@@ -1,6 +1,6 @@
 # T22 CPU lexical comparison: exposed-eight descriptive results
 
-[日本語](T22_CPU_LEXICAL_RESULTS_V0.ja.md) | [Frozen protocol](T22_CPU_LEXICAL_CANARY_V0.md)
+[日本語](T22_CPU_LEXICAL_RESULTS_V0.ja.md) | [Frozen protocol](T22_CPU_LEXICAL_CANARY_V0.md) | [Paper 2 discussion](PAPER2_DISCUSSION_NOTES_V0.md)
 
 Completed on 2026-10-20 at 06:41 JST. All eight preselected exposed items,
 both carriers, both fixed donors, and all four operations were retained.
@@ -108,8 +108,37 @@ source-bound acquisition assertions.
 - [Byte-identical archive manifest](../validation/t22_cpu_lexical_canary_v0/archive_manifest.json).
 
 The archive preserves aliases, row receipts, raw cosine scores, paired
-contrasts, CSV, and attention diagnostics. Complete engineering-parent arrays
-remain at `runs/t22_cpu_canary_v0/`; analysis still needs those files. Historical
+contrasts, CSV, and attention diagnostics. The engineering-parent arrays and
+receipts are also preserved byte-for-byte at
+`validation/t22_cpu_engineering_v0/canary/`, with an
+[archive manifest](../validation/t22_cpu_engineering_v0/canary_archive_manifest.json).
+The original acquisition remains at `runs/t22_cpu_canary_v0/`. Historical
 GPU parity, codepoint-gallery controls, emoji specificity, and behavioral benefit
 remain unestablished. Any larger exploration uses the frozen candidate and
 fixed gallery regardless of these canary means.
+
+## Portable numerical replay
+
+From any checkout root, with NumPy installed and an unused output path:
+
+```bash
+python3 scripts/validate_t22_cpu_lexical_results_v0.py \
+  --acquisition validation/t22_cpu_lexical_canary_v0/acquisition \
+  --analysis validation/t22_cpu_lexical_canary_v0/results \
+  --parent-run validation/t22_cpu_engineering_v0/canary \
+  --validation-receipt validation/t22_cpu_lexical_canary_v0/synthetic_validation.json \
+  --expected-specification-sha256 e6da21348028f8fffe6bda879336beeffcbf515e1862271dada2db6f4bf56067 \
+  --output /tmp/t22-lexical-audit-NEW.json
+```
+
+The two relocation options change only file locations; original specification,
+receipt, source, and array hashes remain mandatory. No model, Torch, original
+workspace path, network access, or protected target bank is needed. This
+recomputes the stored-data numerical audit; it does not reacquire model states.
+The frozen acquisition/scoring runners retain their original absolute paths.
+
+The original independent audit is preserved unchanged and binds its original
+validator at commit `83b1a2220822b11ecbf190016ff480c6bb9de42d`.
+The relocation-capable validator has a separate
+[replay receipt](../validation/t22_cpu_lexical_canary_v0/portable_validation.json).
+Neither receipt is a second experimental acquisition.

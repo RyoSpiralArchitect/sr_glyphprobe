@@ -66,7 +66,8 @@ def statistics(value):
             "sample_sd": np.std(value, ddof=1), "min": np.min(value), "max": np.max(value)}
 
 
-def audit(repo, acquisition, analysis, expected_spec=None):
+def audit(repo, acquisition, analysis, expected_spec=None, *, parent_run=None,
+          validation_receipt=None):
     spec = read(acquisition / "specification.json")
     spec_hash = sha(acquisition / "specification.json")
     if expected_spec:
@@ -81,11 +82,13 @@ def audit(repo, acquisition, analysis, expected_spec=None):
         check(name.startswith(("scripts/", "tests/", "docs/", "src/", "configs/", "validation/"))
               and ".." not in Path(name).parts, "Unexpected source path")
         check(sha(repo / name) == expected, f"Frozen source changed: {name}")
-    check(sha(spec["validation_receipt"]) == spec["validation_receipt_sha256"], "Validation receipt changed")
-    synthetic = read(spec["validation_receipt"])
+    validation_path = (Path(validation_receipt) if validation_receipt is not None
+                       else Path(spec["validation_receipt"]))
+    check(sha(validation_path) == spec["validation_receipt_sha256"], "Validation receipt changed")
+    synthetic = read(validation_path)
     check(synthetic["status"] == "pass" and synthetic["source_sha256"] == spec["source_sha256"], "Synthetic source validation mismatch")
     check(sha(acquisition / "engineering_audit.json") == spec["engineering_audit_sha256"], "Engineering audit changed")
-    parent = Path(spec["canary_run"])
+    parent = Path(parent_run) if parent_run is not None else Path(spec["canary_run"])
     check(sha(parent / "acquisition_receipt.json") == spec["canary_acquisition_sha256"] == PARENT_SHA
           and result["canary_acquisition_sha256"] == PARENT_SHA, "Unexpected engineering parent")
     check(sha(parent / "specification.json") == spec["canary_specification_sha256"], "Parent specification changed")
@@ -236,10 +239,15 @@ def main():
     parser.add_argument("--acquisition", type=Path, required=True)
     parser.add_argument("--analysis", type=Path, required=True)
     parser.add_argument("--expected-specification-sha256")
+    parser.add_argument("--parent-run", type=Path,
+                        help="Relocated byte-identical engineering parent; all pinned hashes still apply")
+    parser.add_argument("--validation-receipt", type=Path,
+                        help="Relocated byte-identical synthetic receipt; its pinned hash still applies")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     check(not args.output.exists(), "Audit output already exists")
-    result = audit(args.repo, args.acquisition, args.analysis, args.expected_specification_sha256)
+    result = audit(args.repo, args.acquisition, args.analysis, args.expected_specification_sha256,
+                   parent_run=args.parent_run, validation_receipt=args.validation_receipt)
     with args.output.open("x") as stream:
         json.dump(result, stream, indent=2, sort_keys=True, allow_nan=False)
         stream.write("\n")

@@ -6,6 +6,11 @@
 以前の実行可能性評価を拡張するが、T19/T20/T21 の結果・gate・保存済み receipt は変更しない。
 実装の一致は絵文字の語彙効果を示す証拠ではない。
 
+その後の状態：別段階の[8項目の語彙解析](T22_CPU_LEXICAL_RESULTS_V0.ja.md)は完了した。
+この文書は実装検証段階とその境界を記録する。
+8項目の親配列とreceiptは、別checkoutでの数値監査のため
+`validation/t22_cpu_engineering_v0/canary/` にも保存した。
+
 ## repo に保存されているもの
 
 T21 pilot の specification は、モデル `mlx-community/Llama-3.2-3B-bf16` の
@@ -143,9 +148,10 @@ CPU runner はランダム小型モデルで、元の batch 配置と出力・�
 8項目の独立監査ではモデルファイルの hash を別途再計算していないが、取得処理が run 前後に検証し、
 先行1項目の独立監査で全9ファイルを再計算している。
 
-これで実装検証は完了した。語彙効果・過去 GPU 出力との一致・意味や機構の結論は未確立。
-次の研究段階では、同一 CPU runtime で固定128 source の alias gallery と target alias baseline を
-取得したうえで、K/V 条件の語彙 margin を評価する必要がある。
+これで実装検証は完了した。この段階では語彙効果・過去 GPU 出力との一致・意味や機構の結論は
+未確立だった。その後、同一 CPU runtime で固定128 source の alias gallery と target alias を
+取得し、別段階の記述的な[語彙結果](T22_CPU_LEXICAL_RESULTS_V0.ja.md)を得た。
+過去 GPU 出力との一致・意味や機構の結論は引き続き未確立。
 
 run 完了後、保存配列と provenance を独立に監査する。
 

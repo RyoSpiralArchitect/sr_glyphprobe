@@ -1,6 +1,6 @@
 # T22 CPU語彙比較：露出済み8項目の記述結果
 
-[English](T22_CPU_LEXICAL_RESULTS_V0.md) | [凍結した仕様](T22_CPU_LEXICAL_CANARY_V0.ja.md)
+[English](T22_CPU_LEXICAL_RESULTS_V0.md) | [凍結した仕様](T22_CPU_LEXICAL_CANARY_V0.ja.md) | [第2論文の考察](PAPER2_DISCUSSION_NOTES_V0.ja.md)
 
 2026年10月20日06:41（日本時間）に完了。事前に選んだ露出済み8項目、両carrier、
 両固定donor、4操作すべてを保持した。仮説検定・効能screen・母集団の信頼区間・
@@ -96,6 +96,34 @@ Referenceの効果は厳密にゼロで、記録したmargin分解誤差もゼ�
 - [byte単位で同一なarchiveのmanifest](../validation/t22_cpu_lexical_canary_v0/archive_manifest.json)。
 
 Archiveにはalias・行ごとのreceipt・raw cosine score・参照との差分・CSV・attention診断を保存した。
-元の実装検証の全配列は `runs/t22_cpu_canary_v0/` に保持し、解析には引き続きそれらが必要。
+実装検証の親配列とreceiptもbyte単位で同じまま
+`validation/t22_cpu_engineering_v0/canary/` に保存し、
+[archive manifest](../validation/t22_cpu_engineering_v0/canary_archive_manifest.json)を添えた。
+元の取得結果は `runs/t22_cpu_canary_v0/` に保持している。
 過去GPUとの一致、codepoint gallery対照、絵文字特異性、挙動上の利益は未確立。
 大規模探索は、このcanary平均によらず凍結した候補と固定galleryを使う。
+
+## 別のcheckoutでの数値再計算
+
+NumPyをインストールし、任意のcheckoutのrootで、未使用の出力先を指定する：
+
+```bash
+python3 scripts/validate_t22_cpu_lexical_results_v0.py \
+  --acquisition validation/t22_cpu_lexical_canary_v0/acquisition \
+  --analysis validation/t22_cpu_lexical_canary_v0/results \
+  --parent-run validation/t22_cpu_engineering_v0/canary \
+  --validation-receipt validation/t22_cpu_lexical_canary_v0/synthetic_validation.json \
+  --expected-specification-sha256 e6da21348028f8fffe6bda879336beeffcbf515e1862271dada2db6f4bf56067 \
+  --output /tmp/t22-lexical-audit-NEW.json
+```
+
+2つの移設optionはfileの場所だけを変更する。元の仕様・receipt・source・配列の
+hash検証はすべて必須のまま。モデル、Torch、元のworkspace path、network接続、
+保護対象bankは不要。保存データの数値監査を再計算するもので、モデル状態の再取得ではない。
+凍結した取得・scoring runnerは元の絶対pathを保っている。
+
+最初の独立監査は変更せず保存し、そのvalidatorはcommit
+`83b1a2220822b11ecbf190016ff480c6bb9de42d` にある。
+移設に対応したvalidatorには別の
+[再計算receipt](../validation/t22_cpu_lexical_canary_v0/portable_validation.json)を付ける。
+どちらのreceiptも、2回目の実験取得を意味しない。
