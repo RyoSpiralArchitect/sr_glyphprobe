@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[論文第2弾の考察Note](docs/PAPER2_DISCUSSION_NOTES_V0.ja.md) · [T22 露出済み8項目のK/V結果](docs/T22_CPU_LEXICAL_RESULTS_V0.ja.md)：事後的なフレーミング、CPUでの記述的証拠、別checkoutでも使える数値再計算。384項目の探索は未実施です。
+[論文第2弾の考察Note](docs/PAPER2_DISCUSSION_NOTES_V0.ja.md) · [T22 露出済み8項目のK/V結果](docs/T22_CPU_LEXICAL_RESULTS_V0.ja.md) · [384項目の凍結設計](docs/T22_KV_EXPLORATION_CPU_V0.ja.md)：事後的なフレーミング、CPUでの記述的証拠、別checkoutでも使える数値再計算。384項目の探索は未実施で、軽量化runnerの実装・検証が必要です。
 
 [査読後の証拠補強](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md): モデル不要のT19統計再計算、
 T20のチェックポイント採用、T21の自項目・競合マージンの記述的分解。

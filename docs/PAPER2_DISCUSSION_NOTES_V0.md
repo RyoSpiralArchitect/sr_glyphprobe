@@ -187,3 +187,24 @@ CSV alignment, and attention diagnostics. It does not repeat the model
 forwards or the full tensors omitted at acquisition. Portable replay commands
 are in the results document. Numerical reconstruction is an audit of one
 acquisition, not an independent scientific replication.
+
+## 7. Design entry — 2026-10-20 JST
+
+The [384-item CPU design](T22_KV_EXPLORATION_CPU_V0.md) now fixes the original
+384 targets, 128 sources, donors, all four operations, aggregation, diagnostics,
+and resource policy. The earlier eight stay in the panel and are explicitly
+marked as having known T22 outcomes. No condition was chosen by their signs.
+
+Timing receipts motivated retaining the 16-row measurement while removing
+the repeated 88-row legacy comparison from the proposed production schedule.
+That reduced runner is not implemented or admitted yet: it must exactly replay
+all 26 nonlegacy arrays for each of the original eight items and the alias
+rows before target 8. The approximately 14.8/21.7-hour mean/slowest-item timing
+scenarios are extrapolations, not measured new-runner performance.
+The frozen design has no new model forwards; an execution manifest binding
+validated runner/analysis hashes and runtime must precede acquisition.
+
+Frozen specification SHA-256:
+`b3d18ec4fac4588ca784c6caea6fbb03a2703deec7e503a60e690a540d14c19c`.
+The source-bound design suite passed 22 tests with zero skips; the deterministic
+input/design audit passed. These checks admit the design artifact, not a model run.

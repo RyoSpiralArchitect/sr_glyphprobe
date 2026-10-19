@@ -1,6 +1,6 @@
 # GlyphProbe
 
-[Paper 2 discussion notes](docs/PAPER2_DISCUSSION_NOTES_V0.md) · [T22 exposed-eight K/V results](docs/T22_CPU_LEXICAL_RESULTS_V0.md): retrospective framing, descriptive CPU evidence, and portable numerical replay. The 384-item exploration remains unrun.
+[Paper 2 discussion notes](docs/PAPER2_DISCUSSION_NOTES_V0.md) · [T22 exposed-eight K/V results](docs/T22_CPU_LEXICAL_RESULTS_V0.md) · [Frozen 384-item design](docs/T22_KV_EXPLORATION_CPU_V0.md): retrospective framing, descriptive CPU evidence, and portable numerical replay. The 384-item exploration remains unrun; its reduced runner still requires implementation and validation.
 
 [Post-review evidence audit](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md): T19
 model-free statistical replay, T20 checkpoint selection, and descriptive T21
