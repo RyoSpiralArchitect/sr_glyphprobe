@@ -1,0 +1,3981 @@
+{
+  "blocks": [
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "boundary": "V preserves local weights at each layer's own input; downstream queries can differ from neutral.",
+  "rows": [
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.012048590928316116,
+        0.058290641754865646,
+        0.055305223912000656,
+        0.05631722882390022,
+        0.06326738744974136,
+        0.05541981756687164
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.00038010874413885176,
+        0.0011819204082712531,
+        -0.002008497714996338,
+        -0.01235924381762743,
+        -9.34600830078125e-05,
+        -0.004386762622743845
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.42578125,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.00019399325537960976,
+        -0.0008662541513331234,
+        -0.0012522339820861816,
+        0.0018658166518434882,
+        -0.0003123283386230469,
+        0.0007229397888295352
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.015385497361421585,
+        0.02758856676518917,
+        0.027181187644600868,
+        0.02150697261095047,
+        0.026167869567871094,
+        0.03654702752828598
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.004044851753860712,
+        -0.004063725471496582,
+        -0.0019441047916188836,
+        -0.002304085763171315,
+        -0.0008594195242039859,
+        -0.00577179342508316
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.060546875,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.004906587302684784,
+        0.0073412260971963406,
+        0.008695880882441998,
+        0.0068655856885015965,
+        0.003095785854384303,
+        0.008929007686674595
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0071886382065713406,
+        0.011216203682124615,
+        0.018273571506142616,
+        0.028089681640267372,
+        0.031668175011873245
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0012765725841745734,
+        -0.0017598867416381836,
+        0.00017751629638951272,
+        0.008360862731933594,
+        -0.006721608340740204
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0002982616424560547,
+        0.0005609989166259766,
+        -2.2652247935184278e-05,
+        -0.002544403076171875,
+        0.0003197969344910234
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.008882761001586914,
+        0.0070229172706604,
+        0.008744999766349792,
+        0.011843998916447163,
+        0.014946438372135162
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.003296375274658203,
+        -0.0016998052597045898,
+        -0.0020498621743172407,
+        -0.0007584889535792172,
+        -0.0017267689108848572
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0002843538823071867,
+        -0.00027233362197875977,
+        5.717078965972178e-05,
+        -0.0007119178771972656,
+        -0.0007811139221303165
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.012048590928316116,
+        0.059270501136779785,
+        0.05554657056927681,
+        0.0609668530523777,
+        0.06651481240987778,
+        0.05863460898399353
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.00038010874413885176,
+        0.002361973049119115,
+        -0.0044634342193603516,
+        -0.015541824512183666,
+        0.0021797816734761,
+        -0.004875153303146362
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.44140625,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.00019399325537960976,
+        -0.0010436376323923469,
+        -0.0007702211732976139,
+        0.002292795805260539,
+        -0.0008074442739598453,
+        -0.00026092989719472826
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.015385497361421585,
+        0.029753049835562706,
+        0.02909839153289795,
+        0.02571346051990986,
+        0.03032596968114376,
+        0.03863644227385521
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.004044851753860712,
+        -0.007456660270690918,
+        -0.003913124557584524,
+        -0.0050805783830583096,
+        -0.0009944438934326172,
+        -0.005597988609224558
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.004906587302684784,
+        0.00880897045135498,
+        0.009557683952152729,
+        0.008344643749296665,
+        0.004621823783963919,
+        0.00859399139881134
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02518351376056671,
+        0.07686170190572739,
+        0.05069570615887642,
+        0.0654493048787117,
+        0.07288292795419693,
+        0.075013168156147
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0016229121247306466,
+        0.00848388671875,
+        0.003545234678313136,
+        -0.0054741003550589085,
+        0.003955086227506399,
+        0.005313297268003225
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.353515625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0005665222997777164,
+        -0.003845175029709935,
+        -0.0026391346473246813,
+        0.0009582862257957458,
+        -0.0015281041851267219,
+        -0.0023494225461035967
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.019971927627921104,
+        0.02765568159520626,
+        0.024721940979361534,
+        0.024583926424384117,
+        0.02736874483525753,
+        0.04332573339343071
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.008060378022491932,
+        -0.005493124481290579,
+        0.001198848127387464,
+        -0.003716618986800313,
+        -0.0028918981552124023,
+        -0.00024107098579406738
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.056640625,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.009740866720676422,
+        0.007485429290682077,
+        0.00022546450782101601,
+        0.003484011860564351,
+        0.004580656532198191,
+        0.0005094930529594421
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.006777644157409668,
+        0.014159977436065674,
+        0.015294649638235569,
+        0.028491219505667686,
+        0.048371877521276474
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0011756817111745477,
+        -0.003731032134965062,
+        -0.0033737868070602417,
+        0.007941205985844135,
+        0.008445024490356445
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0006870428915135562,
+        0.0007929801940917969,
+        0.0005864177946932614,
+        -0.0036891300696879625,
+        -0.005827692802995443
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.008976261131465435,
+        0.006866971496492624,
+        0.009170317091047764,
+        0.012923002243041992,
+        0.01585361547768116
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.00041655698441900313,
+        0.00013045470404904336,
+        -0.00016018997121136636,
+        0.002543846843764186,
+        0.004559621214866638
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0003781318664550781,
+        -0.0001736481935949996,
+        -0.00011630853259703144,
+        -0.0012667974224314094,
+        -0.0022261205594986677
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02518351376056671,
+        0.07713202387094498,
+        0.04922047257423401,
+        0.06954392045736313,
+        0.07825589179992676,
+        0.09289183467626572
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0016229121247306466,
+        0.009337265975773335,
+        -0.0031613409519195557,
+        -0.009702530689537525,
+        0.009321768768131733,
+        0.01715845800936222
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.3740234375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0005665222997777164,
+        -0.004281481262296438,
+        -0.0005348523263819516,
+        0.0016005287179723382,
+        -0.004300276283174753,
+        -0.008261295966804028
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.019971927627921104,
+        0.03022301197052002,
+        0.023846188560128212,
+        0.0252013448625803,
+        0.03010459803044796,
+        0.047739703208208084
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.008060378022491932,
+        -0.006825605873018503,
+        0.00015000502753537148,
+        -0.004722414072602987,
+        -0.0012416442623361945,
+        0.00362270581535995
+      ],
+      "item": 0,
+      "local_max_abs_weight_difference": 0.0634765625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.009740866720676422,
+        0.0092761917039752,
+        0.0019714832305908203,
+        0.004718991462141275,
+        0.006232897285372019,
+        -0.00018923357129096985
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.016346892341971397,
+        0.041908860206604004,
+        0.03921353816986084,
+        0.041098978370428085,
+        0.0606541633605957,
+        0.0366993211209774
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0011350748827680945,
+        -0.007736524101346731,
+        -0.00526293134316802,
+        -0.011632435023784637,
+        -0.008220195770263672,
+        -0.004135300870984793
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.287109375,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0003905296325683594,
+        0.0020651817321777344,
+        0.0012384653091430664,
+        0.0018899738788604736,
+        0.0022783279418945312,
+        0.0010648773750290275
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.006363015156239271,
+        0.016911664977669716,
+        0.018928885459899902,
+        0.020778579637408257,
+        0.0218330230563879,
+        0.027684291824698448
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -3.6738812923431396e-05,
+        -0.004072427749633789,
+        -0.0020595788955688477,
+        -0.0006659614737145603,
+        0.0007396538858301938,
+        0.0008696814184077084
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.046875,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007339517469517887,
+        0.00602587079629302,
+        0.006453275680541992,
+        0.004283384885638952,
+        0.0024248759727925062,
+        0.0012884686002507806
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.006665309425443411,
+        0.01257816981524229,
+        0.01704089343547821,
+        0.023292263969779015,
+        0.030182652175426483
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0013726552715525031,
+        -0.0024544398766011,
+        -0.0013656591763719916,
+        -0.004582762718200684,
+        -0.0050922357477247715
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0007243950967676938,
+        0.0006808837060816586,
+        -8.030980825424194e-05,
+        0.0010239282855764031,
+        0.002086847322061658
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.007759253028780222,
+        0.00473390007391572,
+        0.005878780502825975,
+        0.01053166389465332,
+        0.011816181242465973
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0018723011016845703,
+        0.00018846988677978516,
+        -0.0009699438815005124,
+        -0.0028259754180908203,
+        -0.0009584203362464905
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0006182193756103516,
+        -0.0003684560360852629,
+        0.0001232549548149109,
+        0.00078582763671875,
+        0.0010758806020021439
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.016346892341971397,
+        0.04200369119644165,
+        0.040675580501556396,
+        0.04795227572321892,
+        0.06653952598571777,
+        0.05132414028048515
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0011350748827680945,
+        -0.007703165058046579,
+        -0.00719141960144043,
+        -0.01332836877554655,
+        -0.01022521685808897,
+        -0.010282051749527454
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.306640625,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0003905296325683594,
+        0.002277771709486842,
+        0.0018054445972666144,
+        0.002072026254609227,
+        0.0028645198326557875,
+        0.003778069047257304
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.006363015156239271,
+        0.018179655075073242,
+        0.019572138786315918,
+        0.02241775393486023,
+        0.023732900619506836,
+        0.03298557177186012
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -3.6738812923431396e-05,
+        -0.0026412804145365953,
+        -0.00165669119451195,
+        -0.0010537629714235663,
+        -0.0013732115039601922,
+        0.0017295107245445251
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.046875,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007339517469517887,
+        0.006195783615112305,
+        0.006452759262174368,
+        0.004938443657010794,
+        0.004137834068387747,
+        0.0021819386165589094
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02699587494134903,
+        0.049529749900102615,
+        0.04470621421933174,
+        0.04990382865071297,
+        0.0868830680847168,
+        0.04680198058485985
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002321763662621379,
+        -0.00673695420846343,
+        -0.006446073297411203,
+        -0.00917937234044075,
+        -0.007671276573091745,
+        -0.005199151579290628
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.291015625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.000673733651638031,
+        0.002256552455946803,
+        0.0019311109790578485,
+        0.001955171348527074,
+        0.0028864543419331312,
+        0.0013736840337514877
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.011330649256706238,
+        0.021415352821350098,
+        0.02567521668970585,
+        0.027343058958649635,
+        0.038072746247053146,
+        0.035711757838726044
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0017135360976681113,
+        -0.0003795623779296875,
+        -0.0012786388397216797,
+        0.002975744428113103,
+        0.005002737045288086,
+        0.003235128941014409
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.052734375,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.002153030363842845,
+        0.0014417171478271484,
+        -0.00027195611619390547,
+        -0.0028240170795470476,
+        -0.010241985321044922,
+        -0.0055992030538618565
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.006726702209562063,
+        0.014358758926391602,
+        0.017737075686454773,
+        0.022260824218392372,
+        0.04066544026136398
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0005083481664769351,
+        -0.004099607467651367,
+        -0.003111422061920166,
+        -0.0029861927032470703,
+        -0.0061900317668914795
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0004593531193677336,
+        0.0012015501270070672,
+        0.0007055550813674927,
+        0.0007915496826171875,
+        0.0016080476343631744
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.009423295967280865,
+        0.006303171161562204,
+        0.011505532078444958,
+        0.015016674995422363,
+        0.015371701680123806
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0005680720205418766,
+        -3.8564205169677734e-05,
+        0.0033419032115489244,
+        0.002390821697190404,
+        -0.0016844943165779114
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.00021278858184814453,
+        -0.0004414717259351164,
+        -0.0006756384973414242,
+        -0.00012922286987304688,
+        0.0011766714742407203
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02699587494134903,
+        0.04927833750844002,
+        0.04935876652598381,
+        0.0590338408946991,
+        0.09098843485116959,
+        0.06465405225753784
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002321763662621379,
+        -0.005896449089050293,
+        -0.010320186614990234,
+        -0.01360052078962326,
+        -0.011333267204463482,
+        -0.01667642779648304
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.310546875,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.000673733651638031,
+        0.0019960403442382812,
+        0.0033562183380126953,
+        0.0029447253327816725,
+        0.003094196319580078,
+        0.0058521912433207035
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.011330649256706238,
+        0.024258971214294434,
+        0.027457237243652344,
+        0.029286904260516167,
+        0.04056429862976074,
+        0.03870661184191704
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0017135360976681113,
+        -0.0021995704155415297,
+        -0.0008454322814941406,
+        0.003700119676068425,
+        0.006477037910372019,
+        0.001867289305664599
+      ],
+      "item": 1,
+      "local_max_abs_weight_difference": 0.049072265625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.002153030363842845,
+        0.0033137004356831312,
+        0.0007344881887547672,
+        -0.002255720319226384,
+        -0.00823990534991026,
+        -0.003026255639269948
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02034131996333599,
+        0.06423827260732651,
+        0.07001902908086777,
+        0.085549496114254,
+        0.1154039278626442,
+        0.07034914940595627
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0017979902913793921,
+        -0.007094582077115774,
+        -0.008747577667236328,
+        0.001970921875908971,
+        -0.009110887534916401,
+        -0.0015297532081604004
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.4462890625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0005474488134495914,
+        0.0023659069556742907,
+        0.003809909103438258,
+        -0.0002869119343813509,
+        0.0011205673217773438,
+        0.0007464202935807407
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.009541946463286877,
+        0.015120585449039936,
+        0.013268689624965191,
+        0.012724381871521473,
+        0.01595592498779297,
+        0.017904777079820633
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.002970784902572632,
+        0.0040280818939208984,
+        0.003837188007310033,
+        0.002368452725932002,
+        0.0013246536254882812,
+        0.00035298863076604903
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0390625,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0043199374340474606,
+        -0.004506508354097605,
+        -0.005430956836789846,
+        -0.0026995365042239428,
+        -0.0016851425170898438,
+        -0.0021304276306182146
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.007684310432523489,
+        0.017216185107827187,
+        0.021881476044654846,
+        0.02669445611536503,
+        0.04702521488070488
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0021597545128315687,
+        -0.000148773193359375,
+        0.0015343526611104608,
+        0.0017487207660451531,
+        -0.009186670184135437
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0003608862461987883,
+        3.2524269045097753e-05,
+        -0.0016264939913526177,
+        -0.00018215179443359375,
+        0.0022398021537810564
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.00698987627401948,
+        0.0043868026696145535,
+        0.006375790107995272,
+        0.00999577809125185,
+        0.012419898994266987
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0017555555095896125,
+        -0.00039517879486083984,
+        0.00027864426374435425,
+        0.0017499923706054688,
+        -0.0018980702152475715
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0005727608804591,
+        -5.9922535001533106e-05,
+        -0.00042513260268606246,
+        0.00016148884606081992,
+        0.0014665847411379218
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02034131996333599,
+        0.06682828813791275,
+        0.06765703111886978,
+        0.08298859000205994,
+        0.11288396269083023,
+        0.0858885645866394
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0017979902913793921,
+        -0.009993910789489746,
+        -0.007774034980684519,
+        -0.003129713237285614,
+        -0.011504888534545898,
+        -0.010463458485901356
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.396240234375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0005474488134495914,
+        0.0031495094299316406,
+        0.003197570564225316,
+        0.0011768689146265388,
+        0.0020726521033793688,
+        0.0025351482909172773
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.009541946463286877,
+        0.016556262969970703,
+        0.014544566161930561,
+        0.014941745437681675,
+        0.01864655874669552,
+        0.020257094874978065
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.002970784902572632,
+        0.0024868648033589125,
+        0.0042308964766561985,
+        0.0032472882885485888,
+        0.0026025772094726562,
+        0.0017904291162267327
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.03515625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0043199374340474606,
+        -0.0036606788635253906,
+        -0.005590260028839111,
+        -0.0031834591645747423,
+        -0.0012607574462890625,
+        -0.0015913037350401282
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.03601401671767235,
+        0.07000434398651123,
+        0.06727868318557739,
+        0.08086708188056946,
+        0.11438187211751938,
+        0.07380721718072891
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0023714143317192793,
+        -0.00887050200253725,
+        -0.008658905513584614,
+        0.0005760689382441342,
+        -0.004793405532836914,
+        -0.0011705433716997504
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.35546875,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007526476983912289,
+        0.0032389957923442125,
+        0.003977298736572266,
+        0.0002019318490056321,
+        0.00034236907958984375,
+        0.000795989588368684
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01029957178980112,
+        0.01901388168334961,
+        0.014514923095703125,
+        0.016949204728007317,
+        0.018245378509163857,
+        0.02763502113521099
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0032682064920663834,
+        0.005098819732666016,
+        0.002544323680922389,
+        0.0017381757497787476,
+        -0.0016791025409474969,
+        -0.0020470868330448866
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.04248046875,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0038397759199142456,
+        -0.007300694938749075,
+        -0.0034962494391947985,
+        -0.003385321469977498,
+        -1.430511474609375e-06,
+        0.001361596048809588
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.009596745483577251,
+        0.019678035750985146,
+        0.02035801112651825,
+        0.025531530380249023,
+        0.07150188088417053
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0022059280890971422,
+        0.0021224021911621094,
+        0.0019148439168930054,
+        -0.002667586086317897,
+        -0.012727364897727966
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.000685016333591193,
+        -0.0007127125863917172,
+        -0.0006028239731676877,
+        0.00033664703369140625,
+        0.004268899094313383
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.009549856185913086,
+        0.006900747772306204,
+        0.009439465589821339,
+        0.011372089385986328,
+        0.011370179243385792
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.001203298568725586,
+        0.0015159050235524774,
+        -0.0022782732266932726,
+        0.0010024706134572625,
+        0.00043650963925756514
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.00012711684394162148,
+        -0.0001906553952721879,
+        0.0006771485204808414,
+        2.9087066650390625e-05,
+        -0.00021832685160916299
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.03601401671767235,
+        0.071816086769104,
+        0.06683298200368881,
+        0.07902606576681137,
+        0.11738348007202148,
+        0.10352852195501328
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0023714143317192793,
+        -0.01262382697314024,
+        -0.007894356735050678,
+        -0.0015200773486867547,
+        -0.00629433011636138,
+        -0.010747872292995453
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.47314453125,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007526476983912289,
+        0.0046456255950033665,
+        0.003437598468735814,
+        0.0008393700118176639,
+        0.00028514862060546875,
+        0.003997291903942823
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01029957178980112,
+        0.022208094596862793,
+        0.01678810454905033,
+        0.018525714054703712,
+        0.019175926223397255,
+        0.030323101207613945
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0032682064920663834,
+        0.0033250648993998766,
+        0.002790312049910426,
+        0.000518734275829047,
+        -0.0008867581491358578,
+        -0.0007774730329401791
+      ],
+      "item": 2,
+      "local_max_abs_weight_difference": 0.04296875,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0038397759199142456,
+        -0.006534735206514597,
+        -0.0032248497009277344,
+        -0.0029163535218685865,
+        0.00047620138502679765,
+        0.0013184895506128669
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.024381717666983604,
+        0.06743403524160385,
+        0.05169268324971199,
+        0.06377767771482468,
+        0.08579277992248535,
+        0.07752194255590439
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002804279327392578,
+        -0.011417071335017681,
+        -0.003406047821044922,
+        -0.003955364227294922,
+        -0.0015316009521484375,
+        -0.0012660821666941047
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.4833984375,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007165670394897461,
+        0.0018322864780202508,
+        0.000980714918114245,
+        0.00020154316734988242,
+        0.0005715687875635922,
+        0.001046235323883593
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.018411876633763313,
+        0.03346053883433342,
+        0.032081883400678635,
+        0.021863559260964394,
+        0.02707783319056034,
+        0.05174870416522026
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002878030063584447,
+        0.001338958740234375,
+        0.004810651298612356,
+        -0.005634506698697805,
+        0.0013637542724609375,
+        -0.007276058197021484
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.08984375,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0022137959022074938,
+        -0.0009438197012059391,
+        -0.007912199012935162,
+        0.004439671989530325,
+        -0.0013411840191110969,
+        0.007009814027696848
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.010469515807926655,
+        0.012612898834049702,
+        0.014748615212738514,
+        0.023771842941641808,
+        0.03331415727734566
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0026524860877543688,
+        0.0025739669799804688,
+        -0.0023936231154948473,
+        -0.006346702575683594,
+        -0.000978231430053711
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0003105799260083586,
+        -0.0010574260959401727,
+        -3.139178079436533e-05,
+        -0.00028165182447992265,
+        -0.0024723459500819445
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.017307201400399208,
+        0.012752492912113667,
+        0.011739067733287811,
+        0.02182372473180294,
+        0.05490763112902641
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0051180520094931126,
+        -7.708867633482441e-05,
+        -0.0017643769970163703,
+        6.834665691712871e-05,
+        -0.017457008361816406
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0017388662090525031,
+        -0.00015358130622189492,
+        7.104873657226562e-05,
+        -0.00021012623619753867,
+        0.0011391142616048455
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.024381717666983604,
+        0.0686517134308815,
+        0.05208732560276985,
+        0.06509402394294739,
+        0.08953181654214859,
+        0.08992636203765869
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002804279327392578,
+        -0.012856642715632915,
+        -0.002111593959853053,
+        -0.00700590992346406,
+        -0.009641488082706928,
+        -0.0003521442413330078
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.4541015625,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0007165670394897461,
+        0.001970012905076146,
+        0.0007740457658655941,
+        -0.00010776519775390625,
+        0.000827789306640625,
+        -0.0013158222427591681
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.018411876633763313,
+        0.042156022042036057,
+        0.03180481866002083,
+        0.024949202314019203,
+        0.0326431579887867,
+        0.08618489652872086
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002878030063584447,
+        0.004882176872342825,
+        0.001971085788682103,
+        -0.006483753677457571,
+        -0.0013262430438771844,
+        -0.02577408216893673
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.08984375,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0022137959022074938,
+        -0.00010061264038085938,
+        -0.0062187910079956055,
+        0.0052320160903036594,
+        0.0012803077697753906,
+        0.009859442710876465
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.039528969675302505,
+        0.0872565507888794,
+        0.0467803068459034,
+        0.07282727211713791,
+        0.11129895597696304,
+        0.09107154607772827
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0036346912384033203,
+        -0.017503738403320312,
+        -0.009919960983097553,
+        -0.012023608200252056,
+        -0.01354217529296875,
+        -0.012587706558406353
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.401611328125,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.000990152359008789,
+        0.0036563873291015625,
+        0.0029480457305908203,
+        0.0010023117065429688,
+        0.002039750339463353,
+        0.0036496322136372328
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01870979182422161,
+        0.025690793991088867,
+        0.031133055686950684,
+        0.022782236337661743,
+        0.02873142622411251,
+        0.03444391116499901
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.005773147102445364,
+        0.0065816245041787624,
+        0.006287813186645508,
+        -0.0006453593377955258,
+        -0.0035235087852925062,
+        -0.0030013720970600843
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.080078125,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0066559710539877415,
+        -0.006451606750488281,
+        -0.011366884224116802,
+        -0.0006159941549412906,
+        0.003245830535888672,
+        0.002098004100844264
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.013131101615726948,
+        0.01670360565185547,
+        0.01908629573881626,
+        0.03320248797535896,
+        0.04931775853037834
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0010204315185546875,
+        0.00261688232421875,
+        0.0002852281031664461,
+        -0.0059858956374228,
+        0.003149827243760228
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.00031463304185308516,
+        -0.0007557074422948062,
+        -0.0010706583270803094,
+        -0.0004008611140307039,
+        -0.0034419100265949965
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.01781539060175419,
+        0.010851780883967876,
+        0.009928024373948574,
+        0.016522645950317383,
+        0.01719433069229126
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.00523694371804595,
+        -0.0007188320159912109,
+        6.278356067923596e-06,
+        0.001628875732421875,
+        0.0017980734119191766
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0013229846954345703,
+        0.000942230224609375,
+        -6.421407306334004e-05,
+        -0.0009336471557617188,
+        -0.0008899967069737613
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.039528969675302505,
+        0.08856570720672607,
+        0.04757833480834961,
+        0.07687340676784515,
+        0.11859782785177231,
+        0.10575050115585327
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0036346912384033203,
+        -0.018570423126220703,
+        -0.008944392204284668,
+        -0.013865669257938862,
+        -0.017434438690543175,
+        -0.01116959284991026
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.4107666015625,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.000990152359008789,
+        0.003822406055405736,
+        0.0026290416717529297,
+        0.0008989970083348453,
+        0.001758575439453125,
+        0.0010682145366445184
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01870979182422161,
+        0.03451089188456535,
+        0.029583215713500977,
+        0.026422938331961632,
+        0.03358451649546623,
+        0.040869519114494324
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.005773147102445364,
+        0.009474754333496094,
+        0.005514065269380808,
+        -0.0007137854699976742,
+        -0.0035425822716206312,
+        -0.0014606317272409797
+      ],
+      "item": 3,
+      "local_max_abs_weight_difference": 0.0859375,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0066559710539877415,
+        -0.005799253936856985,
+        -0.009849508292973042,
+        0.0006999969482421875,
+        0.00497754430398345,
+        0.002126971958205104
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.025880971923470497,
+        0.06675931066274643,
+        0.06522306054830551,
+        0.07581823319196701,
+        0.10271040350198746,
+        0.07930075377225876
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0024537246208637953,
+        -0.012795289047062397,
+        -0.008974313735961914,
+        -0.024298300966620445,
+        -0.03367932513356209,
+        -0.01471428107470274
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.33056640625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00043245157576166093,
+        0.001660505891777575,
+        0.0004895925521850586,
+        0.0015343824634328485,
+        0.004059473518282175,
+        0.0013535916805267334
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.00816071592271328,
+        0.013843178749084473,
+        0.014005661010742188,
+        0.0153648117557168,
+        0.02109161950647831,
+        0.023594960570335388
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0024062793236225843,
+        -0.0025491714477539062,
+        -0.0011914571514353156,
+        -0.0025223891716450453,
+        -0.0039014816284179688,
+        0.0008368094568140805
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.05126953125,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0027915239334106445,
+        0.004945436958223581,
+        0.003516077995300293,
+        0.00410779332742095,
+        0.008499781601130962,
+        0.0005636115674860775
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.007437586784362793,
+        0.011845718137919903,
+        0.02003549225628376,
+        0.026201725006103516,
+        0.04493407532572746
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0025822322349995375,
+        -0.0011102358112111688,
+        0.0019437074661254883,
+        0.002755800960585475,
+        0.005712827201932669
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0007230440969578922,
+        0.00040209293365478516,
+        -0.00019582112145144492,
+        0.0001983642578125,
+        -0.00035552182816900313
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.006722728256136179,
+        0.005892942193895578,
+        0.007744451519101858,
+        0.0116640729829669,
+        0.011336048133671284
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0012725194683298469,
+        0.0002442995610181242,
+        -0.00025554499006830156,
+        -0.00023492176842410117,
+        0.0018721818923950195
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        9.5367431640625e-05,
+        -0.00021383166313171387,
+        0.00030819574021734297,
+        0.0004100799560546875,
+        -0.000504742085468024
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.025880971923470497,
+        0.06533380597829819,
+        0.06718675047159195,
+        0.07570963352918625,
+        0.1063232421875,
+        0.08728375285863876
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0024537246208637953,
+        -0.010446230880916119,
+        -0.010480324737727642,
+        -0.023342877626419067,
+        -0.032695770263671875,
+        -0.016664305701851845
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.3505859375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00043245157576166093,
+        0.0009519259328953922,
+        0.001157482503913343,
+        0.0013428529491648078,
+        0.0038801829796284437,
+        0.001350104808807373
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.00816071592271328,
+        0.016676584258675575,
+        0.015501797199249268,
+        0.01841128058731556,
+        0.025655269622802734,
+        0.02619095705449581
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0024062793236225843,
+        -0.0037848155479878187,
+        -0.0015168190002441406,
+        -0.002031683921813965,
+        -0.004481951240450144,
+        0.0006219943170435727
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0537109375,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0027915239334106445,
+        0.005580028053373098,
+        0.0038252274971455336,
+        0.004361152648925781,
+        0.009580612182617188,
+        0.0009247760172002017
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.03836500644683838,
+        0.07379201799631119,
+        0.061968762427568436,
+        0.07497552037239075,
+        0.09537013620138168,
+        0.07200462371110916
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.00014281272888183594,
+        -0.008146603591740131,
+        -0.005836804863065481,
+        -0.01854550838470459,
+        -0.02109559439122677,
+        -0.019700804725289345
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.412109375,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00019351641822140664,
+        0.0010439554462209344,
+        0.00034578642225824296,
+        0.001185258268378675,
+        0.00275421142578125,
+        0.004031479358673096
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.016755636781454086,
+        0.013681769371032715,
+        0.01961573027074337,
+        0.018952803686261177,
+        0.02246936224400997,
+        0.03312182053923607
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0013276735553517938,
+        0.0005518595571629703,
+        0.0034634273033589125,
+        -0.0031178791541606188,
+        -0.0024749438744038343,
+        0.0037440459709614515
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0625,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0020804007072001696,
+        0.0004886388778686523,
+        -0.004668235778808594,
+        0.003428300144150853,
+        0.0048313140869140625,
+        -0.006634940858930349
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.011937935836613178,
+        0.01296405028551817,
+        0.02457331120967865,
+        0.03536923602223396,
+        0.05359305813908577
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.00452423095703125,
+        0.0003456274571362883,
+        -0.0020805199164897203,
+        0.006204923149198294,
+        -0.006243228912353516
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.000989039777778089,
+        0.0004791418614331633,
+        0.0009009043569676578,
+        -0.0008478164672851562,
+        0.004142463207244873
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.010051250457763672,
+        0.007779240608215332,
+        0.009271092712879181,
+        0.01300032902508974,
+        0.014858096837997437
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0018609365215525031,
+        2.8530756026157178e-05,
+        0.0010523796081542969,
+        3.751118856598623e-05,
+        -0.0017925103893503547
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.001161297201178968,
+        -0.0003317197260912508,
+        -0.0009765625,
+        -0.0008061726693995297,
+        -0.001157055259682238
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.03836500644683838,
+        0.07112690061330795,
+        0.06318839639425278,
+        0.07735856622457504,
+        0.10046529769897461,
+        0.09110471606254578
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.00014281272888183594,
+        -0.0036869049072265625,
+        -0.006836414337158203,
+        -0.019741317257285118,
+        -0.018863677978515625,
+        -0.025051435455679893
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.435546875,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00019351641822140664,
+        -0.00011205673217773438,
+        0.0007226467132568359,
+        0.0016930898418650031,
+        0.0023349125403910875,
+        0.007116238120943308
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.016755636781454086,
+        0.019471287727355957,
+        0.02150162123143673,
+        0.02132728137075901,
+        0.025989213958382607,
+        0.03582986816763878
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0013276735553517938,
+        0.0030953090172261,
+        0.0043088593520224094,
+        -0.0012482007732614875,
+        -0.002954324008896947,
+        0.0009749730234034359
+      ],
+      "item": 4,
+      "local_max_abs_weight_difference": 0.06640625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0020804007072001696,
+        0.0001116196290240623,
+        -0.0046030678786337376,
+        0.002536773681640625,
+        0.0055143036879599094,
+        -0.00655760383233428
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01356690376996994,
+        0.03036177158355713,
+        0.02210422419011593,
+        0.02035975269973278,
+        0.03747503086924553,
+        0.0299081951379776
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0008087580208666623,
+        0.0008764664526097476,
+        -0.00019556283950805664,
+        -0.0015091411769390106,
+        0.0022105376701802015,
+        -7.576743519166484e-05
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.1201171875,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0001385211944580078,
+        -0.00034264722489751875,
+        -0.0003804167208727449,
+        -0.0001350492238998413,
+        -0.0006395975942723453,
+        0.0003397054970264435
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.008346273563802242,
+        0.013320167548954487,
+        0.012159745208919048,
+        0.014280207455158234,
+        0.019904175773262978,
+        0.028190666809678078
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -6.791701162001118e-05,
+        -0.0005671977996826172,
+        -0.001048743724822998,
+        -0.0008125156164169312,
+        -0.00231556105427444,
+        -0.003029336454346776
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.03173828125,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0004692723450716585,
+        -0.00021139781165402383,
+        0.00012127558147767559,
+        -0.0017243610927835107,
+        0.0021330516319721937,
+        0.0045722853392362595
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.005282560829073191,
+        0.006056586746126413,
+        0.009710698388516903,
+        0.013161182403564453,
+        0.017067261040210724
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.00030159950256347656,
+        0.0003598928451538086,
+        0.003864031285047531,
+        0.0025588672142475843,
+        -0.0006037379498593509
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.00011610984802246094,
+        -0.00043984255171380937,
+        -0.0016522295773029327,
+        -0.0009934107074514031,
+        0.0004456204769667238
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.005074421409517527,
+        0.007275005336850882,
+        0.00526015879586339,
+        0.009986519813537598,
+        0.012362927198410034
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0010226964950561523,
+        -0.0031923253554850817,
+        -0.0008423824911005795,
+        0.00010597705841064453,
+        -0.0006847133045084774
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0005090634222142398,
+        0.0010727643966674805,
+        0.0003866814076900482,
+        -0.0007519721984863281,
+        -0.000944504514336586
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01356690376996994,
+        0.030897876247763634,
+        0.02304542064666748,
+        0.02287614904344082,
+        0.03964861109852791,
+        0.03361031413078308
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0008087580208666623,
+        0.0010109940776601434,
+        0.001120448112487793,
+        0.0007886725361458957,
+        0.0064237117767333984,
+        0.001848015934228897
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.12255859375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0001385211944580078,
+        -0.00033311048173345625,
+        -0.0008830428123474121,
+        -0.0008224857156164944,
+        -0.0019887287635356188,
+        -0.0003806408494710922
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.008346273563802242,
+        0.013339479453861713,
+        0.014698266983032227,
+        0.015697991475462914,
+        0.021098852157592773,
+        0.030004674568772316
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -6.791701162001118e-05,
+        0.0001378456800011918,
+        -0.00415666913613677,
+        -0.0010526204714551568,
+        -0.00283273053355515,
+        -0.004262557718902826
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.03125,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0004692723450716585,
+        -0.00039593377732671797,
+        0.0014455318450927734,
+        -0.0016067735850811005,
+        0.0018099149456247687,
+        0.004423162434250116
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02696376107633114,
+        0.039673786610364914,
+        0.03006959892809391,
+        0.028113411739468575,
+        0.06379803270101547,
+        0.04191412404179573
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0006490976666100323,
+        0.002041260479018092,
+        -0.00013312697410583496,
+        -0.002009489806368947,
+        0.004349470138549805,
+        -0.001761607825756073
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.15576171875,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0003650188446044922,
+        -0.0010491609573364258,
+        -0.00035015741013921797,
+        0.00045136859989725053,
+        -0.0009145736694335938,
+        0.0016647279262542725
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.019181573763489723,
+        0.029860278591513634,
+        0.023295462131500244,
+        0.01848793961107731,
+        0.0286405086517334,
+        0.029520392417907715
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.007731318939477205,
+        -0.011625051498413086,
+        -0.0035901665687561035,
+        -0.0028423964977264404,
+        -0.0009555022115819156,
+        0.0017643546452745795
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.052734375,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.009137272834777832,
+        0.01412979792803526,
+        0.009068489074707031,
+        0.004982563201338053,
+        0.0050551095046103,
+        -0.000793013081420213
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.008139570243656635,
+        0.00930101703852415,
+        0.010680350475013256,
+        0.020563879981637,
+        0.04294801875948906
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0006767113809473813,
+        0.0004714826645795256,
+        0.0011912634363397956,
+        0.0031022627372294664,
+        0.0028032809495925903
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0003848075866699219,
+        -0.0002315839083166793,
+        -0.0003596358001232147,
+        -0.0008066495065577328,
+        -0.0009395256638526917
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.009197235107421875,
+        0.007683952804654837,
+        0.009275596588850021,
+        0.0127169294282794,
+        0.012749024666845798
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.00045931339263916016,
+        -0.00038210549973882735,
+        -0.0014395167818292975,
+        -0.0008455912466160953,
+        -0.001502240658737719
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0007671117782592773,
+        0.0007384617929346859,
+        0.0007813622360117733,
+        0.0009449322824366391,
+        0.0011060349643230438
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.02696376107633114,
+        0.039454203099012375,
+        0.03163626790046692,
+        0.02951020561158657,
+        0.06840737909078598,
+        0.05624062195420265
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0006490976666100323,
+        0.0031495492439717054,
+        0.000856767117511481,
+        -0.0006535773281939328,
+        0.005622068885713816,
+        0.001678111613728106
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.159423828125,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0003650188446044922,
+        -0.0015147527446970344,
+        -0.0008623600006103516,
+        -0.00039370605372823775,
+        -0.0013306936016306281,
+        -0.0012443860759958625
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.019181573763489723,
+        0.03505740687251091,
+        0.02662453055381775,
+        0.02174115926027298,
+        0.032797496765851974,
+        0.030831195414066315
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.007731318939477205,
+        -0.012332320213317871,
+        -0.005419820547103882,
+        -0.0033825039863586426,
+        -0.0021654765587300062,
+        0.0005201324820518494
+      ],
+      "item": 5,
+      "local_max_abs_weight_difference": 0.05078125,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.009137272834777832,
+        0.015647172927856445,
+        0.010839223861694336,
+        0.005957512650638819,
+        0.007173220161348581,
+        0.0005016221548430622
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.009369171224534512,
+        0.02368098497390747,
+        0.022724786773324013,
+        0.024432718753814697,
+        0.040073949843645096,
+        0.03296215832233429
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.00015830621123313904,
+        -0.002440551994368434,
+        -0.0010235309600830078,
+        -0.00511400168761611,
+        -0.0058438777923583984,
+        -0.0030715391039848328
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.25048828125,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -5.125999450683594e-06,
+        0.0006930033559910953,
+        0.00030493736267089844,
+        0.0009854709496721625,
+        0.0020531017798930407,
+        0.0011591166257858276
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.008362806402146816,
+        0.020482560619711876,
+        0.017227808013558388,
+        0.015591385774314404,
+        0.020993152633309364,
+        0.026954451575875282
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0006183211808092892,
+        -0.004537323955446482,
+        -0.0020202796440571547,
+        0.0012717917561531067,
+        0.00017984707665164024,
+        -0.0006467948551289737
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.05078125,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0015782974660396576,
+        0.006920456886291504,
+        0.006233493331819773,
+        0.0029941622633486986,
+        0.0010587373981252313,
+        0.0032397161703556776
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.005195637699216604,
+        0.006353636737912893,
+        0.0074067614041268826,
+        0.011244535446166992,
+        0.017612038180232048
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.000798126042354852,
+        -0.00024167697119992226,
+        0.001397105515934527,
+        0.0012803872814401984,
+        0.002911711810156703
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0004639625549316406,
+        -6.73532485961914e-05,
+        -0.0005360282957553864,
+        -0.00022474925208371133,
+        -0.0020538282115012407
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0065033636055886745,
+        0.005020658019930124,
+        0.0072867549024522305,
+        0.010160207748413086,
+        0.011504446156322956
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.000758826732635498,
+        0.0002648433146532625,
+        0.0019162148237228394,
+        0.0015407403698191047,
+        0.0008116227691061795
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0004749298095703125,
+        -0.0004941622610203922,
+        -0.0007258827681653202,
+        -0.0007410049438476562,
+        -0.0007231484050862491
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.009369171224534512,
+        0.024836719036102295,
+        0.02442622184753418,
+        0.02550624869763851,
+        0.041883230209350586,
+        0.03352906554937363
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.00015830621123313904,
+        -0.002878208877518773,
+        -0.0015331903705373406,
+        -0.005696963518857956,
+        -0.0034350554924458265,
+        -0.0014209734508767724
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.23583984375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -5.125999450683594e-06,
+        0.0008797248010523617,
+        -0.00010607639705995098,
+        0.0007874953444115818,
+        0.0011576017132028937,
+        -0.00043536722660064697
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.008362806402146816,
+        0.021207451820373535,
+        0.018543362617492676,
+        0.018475938588380814,
+        0.02578202821314335,
+        0.028672439977526665
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0006183211808092892,
+        -0.0045570931397378445,
+        -0.0010608434677124023,
+        0.0027403049170970917,
+        0.0026921431999653578,
+        -0.00021189202379900962
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.048828125,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0015782974660396576,
+        0.007174134254455566,
+        0.005629976745694876,
+        0.002243395894765854,
+        0.0012451807269826531,
+        0.0033312079031020403
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.013347509317100048,
+        0.034723877906799316,
+        0.02026977203786373,
+        0.022367700934410095,
+        0.035477519035339355,
+        0.035415131598711014
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        8.225751662394032e-05,
+        -0.004465937614440918,
+        0.00027833381318487227,
+        -0.003505668370053172,
+        -0.0007443030481226742,
+        -0.0003011723456438631
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.2265625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -6.643930828431621e-05,
+        0.001600464223884046,
+        5.5472057283623144e-05,
+        0.0009782264241948724,
+        -0.0003930727543774992,
+        -0.00010038850450655445
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.013014573603868484,
+        0.024982929229736328,
+        0.018952906131744385,
+        0.020635761320590973,
+        0.04149623587727547,
+        0.033376410603523254
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.00017842215311247855,
+        0.003979682922363281,
+        -0.0011196732521057129,
+        -0.0010829021921381354,
+        0.00834627915173769,
+        0.0017430247971788049
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.095703125,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.00016747166228014976,
+        -0.007208108901977539,
+        -0.0006267229910008609,
+        -0.0015427855541929603,
+        -0.016396204009652138,
+        -0.005648279096931219
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.004010200500488281,
+        0.006035754922777414,
+        0.009559430181980133,
+        0.011770050041377544,
+        0.02745158225297928
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        9.747346484800801e-05,
+        0.0010253489017486572,
+        -0.00013706833124160767,
+        0.0018020073184743524,
+        0.009112640284001827
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        3.814697265625e-05,
+        -0.0005388259887695312,
+        -0.0004122331738471985,
+        -0.0008103052969090641,
+        -0.004060023929923773
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.007191637996584177,
+        0.006576865911483765,
+        0.0067519801668822765,
+        0.010274529457092285,
+        0.013609264977276325
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0005277196760289371,
+        -0.0013107756385579705,
+        0.0006777222151868045,
+        8.269151294371113e-05,
+        -0.0018356405198574066
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -6.786981975892559e-05,
+        0.0003120899200439453,
+        -0.0005374178290367126,
+        -0.00012493133544921875,
+        0.00016086858522612602
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.013347509317100048,
+        0.03402590751647949,
+        0.021635213866829872,
+        0.02333345077931881,
+        0.04107276722788811,
+        0.04146397486329079
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        8.225751662394032e-05,
+        -0.003977934364229441,
+        0.0001779000012902543,
+        -0.002404492348432541,
+        0.0005822181701660156,
+        0.005952590610831976
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.234375,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -6.643930828431621e-05,
+        0.0014195442199707031,
+        -0.0002718766627367586,
+        4.1914481698768213e-05,
+        -0.0005065600271336734,
+        -0.002816905500367284
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.013014573603868484,
+        0.02627064846456051,
+        0.02025493048131466,
+        0.020086530596017838,
+        0.0411757230758667,
+        0.03497195616364479
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.00017842215311247855,
+        0.002295076847076416,
+        -0.0023183028679341078,
+        -0.0013296703109517694,
+        0.008065183646976948,
+        0.00013392542314250022
+      ],
+      "item": 6,
+      "local_max_abs_weight_difference": 0.087890625,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.00016747166228014976,
+        -0.006121277809143066,
+        0.0003266334533691406,
+        -0.0011571819195523858,
+        -0.01514704991132021,
+        -0.004857320338487625
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01808859221637249,
+        0.07240527868270874,
+        0.05936594679951668,
+        0.067820705473423,
+        0.09011391550302505,
+        0.06823638081550598
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0005440562963485718,
+        -0.0031769871711730957,
+        -0.0045401654206216335,
+        0.004452960100024939,
+        -0.002527673961594701,
+        0.005421551410108805
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.4462890625,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00022161006927490234,
+        0.0009396473760716617,
+        0.0021313230972737074,
+        2.460181713104248e-05,
+        -0.000209808349609375,
+        -0.0012923938920721412
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.007283878047019243,
+        0.018202343955636024,
+        0.014508347027003765,
+        0.01532148290425539,
+        0.022477230057120323,
+        0.03092731535434723
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0012798557290807366,
+        -0.002244234085083008,
+        0.0035099585074931383,
+        4.462897777557373e-05,
+        -0.0012961229076609015,
+        -0.006549773272126913
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.044921875,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0017848964780569077,
+        0.002726515056565404,
+        -0.0033232171554118395,
+        0.0026611064095050097,
+        0.005823612213134766,
+        0.011575420387089252
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.00728770112618804,
+        0.01646554470062256,
+        0.017341354861855507,
+        0.022918542847037315,
+        0.04597228765487671
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0016476312885060906,
+        0.0006759365205653012,
+        -0.0014534791698679328,
+        0.00040721893310546875,
+        -0.010937872342765331
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        8.745988452574238e-05,
+        0.0006601412896998227,
+        0.001081744791008532,
+        -0.0001975695340661332,
+        0.0033782385289669037
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.008356094360351562,
+        0.0044589838944375515,
+        0.0058152335695922375,
+        0.009938876144587994,
+        0.009341803379356861
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0020904541015625,
+        -0.00043278932571411133,
+        -1.1324882507324219e-06,
+        -0.000408172607421875,
+        -0.0008588458294980228
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.000620722770690918,
+        0.0002200603485107422,
+        -0.0004563679394777864,
+        0.00020074844360351562,
+        0.001052485196851194
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.01808859221637249,
+        0.0735306367278099,
+        0.061302024871110916,
+        0.06391453742980957,
+        0.09191334247589111,
+        0.08164188265800476
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.0005440562963485718,
+        -0.0047081708908081055,
+        -0.0050868988037109375,
+        0.0013881810009479523,
+        -0.0037235815543681383,
+        -0.0031931002158671618
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.3603515625,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.00022161006927490234,
+        0.0013620058307424188,
+        0.002750992774963379,
+        0.0010796388378366828,
+        0.0005648930673487484,
+        0.0022674601059406996
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.007283878047019243,
+        0.02018062211573124,
+        0.014278094284236431,
+        0.013770430348813534,
+        0.023640712723135948,
+        0.03224627301096916
+      ],
+      "carrier": "pipe",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0012798557290807366,
+        -0.0038429896812886,
+        0.002936422824859619,
+        -0.0011667236685752869,
+        -0.003149271011352539,
+        -0.005531080067157745
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.046875,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.0017848964780569077,
+        0.003441850421950221,
+        -0.0029688875656574965,
+        0.002806673524901271,
+        0.0071965851821005344,
+        0.011473230086266994
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "none",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.034328073263168335,
+        0.06844045966863632,
+        0.046499092131853104,
+        0.06623324751853943,
+        0.10941755771636963,
+        0.07787633687257767
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002775076776742935,
+        -0.0042123994790017605,
+        -0.004293402191251516,
+        0.0006039974396117032,
+        -0.005065401550382376,
+        0.0046438127756118774
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.40234375,
+      "operation": "k",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0010859171161428094,
+        0.0018960634479299188,
+        0.001976410625502467,
+        -0.0003231192531529814,
+        0.0008467038278467953,
+        -0.002144948812201619
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.018621018156409264,
+        0.029503265395760536,
+        0.027166306972503662,
+        0.024664508178830147,
+        0.04385717585682869,
+        0.04995649680495262
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0021729867439717054,
+        0.00558781623840332,
+        0.0023875434417277575,
+        -0.00115053856279701,
+        0.0019113222369924188,
+        -0.003949647303670645
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.134765625,
+      "operation": "k",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.003061459632590413,
+        -0.009184201247990131,
+        -0.005470434669405222,
+        -0.0004074797034263611,
+        -0.008020718581974506,
+        0.005060011986643076
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.009060144424438477,
+        0.014150400646030903,
+        0.01751614734530449,
+        0.02351180650293827,
+        0.06066348776221275
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0019753773231059313,
+        -0.00020486116409301758,
+        0.0007629096508026123,
+        -0.0026864211540669203,
+        -0.013020649552345276
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0008095105295069516,
+        -0.0002552668156567961,
+        0.00045917928218841553,
+        -0.00028149285935796797,
+        0.004040671978145838
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.0,
+        0.00993529986590147,
+        0.010366062633693218,
+        0.008116797544062138,
+        0.012099106796085835,
+        0.013873339630663395
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0,
+        0.0012938181171193719,
+        0.003106017829850316,
+        -0.0004138996300753206,
+        -0.0010099411010742188,
+        0.00042385360575281084
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.0,
+      "operation": "v",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0,
+        -0.0010825792560353875,
+        -0.0019518533954396844,
+        -0.00038870921707712114,
+        -0.00025669732713140547,
+        -0.000882565975189209
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.034328073263168335,
+        0.06950411945581436,
+        0.0485546700656414,
+        0.06474053859710693,
+        0.11661267280578613,
+        0.10322723537683487
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        -0.002775076776742935,
+        -0.006279647350311279,
+        -0.004932492971420288,
+        0.0005816519260406494,
+        -0.007767280098050833,
+        -0.00928451120853424
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.447998046875,
+      "operation": "kv",
+      "position": "glyph",
+      "suffix_mass_active_minus_neutral_by_block": [
+        0.0010859171161428094,
+        0.0028955142479389906,
+        0.0020459492225199938,
+        7.426490628859028e-05,
+        0.0015854835510253906,
+        0.003423356683924794
+      ]
+    },
+    {
+      "active_minus_neutral_headmean_l1_by_block": [
+        0.018621018156409264,
+        0.03221507743000984,
+        0.02849447727203369,
+        0.026425650343298912,
+        0.046401262283325195,
+        0.05453372001647949
+      ],
+      "carrier": "article_a",
+      "glyph_mass_active_minus_neutral_by_block": [
+        0.0021729867439717054,
+        0.006524642463773489,
+        0.0040644011460244656,
+        -0.0018770098686218262,
+        0.0013957023620605469,
+        -0.004546815995126963
+      ],
+      "item": 7,
+      "local_max_abs_weight_difference": 0.1240234375,
+      "operation": "kv",
+      "position": "suffix",
+      "suffix_mass_active_minus_neutral_by_block": [
+        -0.003061459632590413,
+        -0.008995413780212402,
+        -0.005803823471069336,
+        -0.00023489196610171348,
+        -0.006499131675809622,
+        0.006029639393091202
+      ]
+    }
+  ]
+}

@@ -1,2 +1,4 @@
 # Generated E1 run reports use Markdown's intentional two-space line breaks.
 artifacts/emoji_family_exploratory_v1/runs/*/report.md -whitespace
+# Preserve the checksum-bound CSV writer's CRLF bytes on every platform.
+validation/t22_cpu_lexical_canary_v0/results/rows.csv -text whitespace=cr-at-eol

@@ -1,0 +1,10 @@
+{
+  "completed_at_utc": "2026-10-19T21:40:27.803717+00:00",
+  "elapsed_seconds": 0.7206115299998146,
+  "forward_calls": 2,
+  "group": "source",
+  "index": 73,
+  "specification_sha256": "e6da21348028f8fffe6bda879336beeffcbf515e1862271dada2db6f4bf56067",
+  "states_sha256": "dc026f24339ece1233147823073c11763a9c3131bc1202cf38059bb2a13d929e",
+  "stock_glyph_full_state_replayed": false
+}

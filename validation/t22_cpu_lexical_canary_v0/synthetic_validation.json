@@ -1,0 +1,33 @@
+{
+  "collected": 16,
+  "counts": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 16
+  },
+  "created_at_utc": "2026-10-19T21:38:18.072965+00:00",
+  "exit_code": 0,
+  "junit_sha256": "567a465eea18098dde61551f89c40fd0bd88cc16dc6f293aa4f39a4aed7cc5e1",
+  "numpy": "2.5.4",
+  "protected_bank_reads": 0,
+  "protocol_id": "glyphprobe-t22-cpu-lexical-eight-descriptive-v0",
+  "real_model_forwards": 0,
+  "source_sha256": {
+    "configs/t21_glyph_context_path_pilot_v0.yaml": "5e6df33e34f341bae8c54eb5d3b5a64551fa581546a6f2277e54756e9ec0df54",
+    "docs/T22_CPU_LEXICAL_CANARY_V0.ja.md": "e6813d0e1b638380e431288865aa4249e665a5002f64325a2e7154dc638fd91d",
+    "docs/T22_CPU_LEXICAL_CANARY_V0.md": "6a194bf6b6027f960376e51c56dbab202b18ed8dd4ea0648f2a3640c7f8e13d4",
+    "scripts/t21_glyph_context_path_pilot_v0.py": "4e36d84c64484ff28d378eae7e11b4d0d07b2f83d8da7246d4bb4b09a9943016",
+    "scripts/t22_cpu_lexical_canary_v0.py": "9704bdeb87620de1ceb4b7403aeaa34968b18364008cad1c69f124c50913ae90",
+    "scripts/t22_kv_cpu_canary_v0.py": "27b65691b0ba665e7fede53c2af7e954cd9a3f8f9fab244e8f972ac73447c4da",
+    "scripts/t22_kv_dissection_v0.py": "4229c127afd5f42cce19a73bb4a052e19cf647e1402980e607850fbf5724cfe1",
+    "scripts/validate_t22_cpu_acquisition_v0.py": "92db9950383a5c70046f19f3a67ac78d7616199fc299d4b73cff6a18ce72f4e6",
+    "src/glyphprobe/io.py": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef",
+    "src/glyphprobe/provenance.py": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c",
+    "tests/test_t22_cpu_lexical_canary_v0.py": "00d5428cfdd5e2f30447a0a1ffc51ceaf1663816bca535432491d791de2ac132",
+    "tests/test_t22_kv_cpu_canary_v0.py": "9022ac44557623f4e244421591b9b076154060571315a730a7db05b6f42a444f",
+    "validation/t21_glyph_context_path_confirmation_v0/canary_specification.json": "8533cfaeeba71dc50216fb9123f7c04072c07447da32a8b03ba828af44991957",
+    "validation/t21_glyph_context_path_pilot_v0/pilot_specification_v1.json": "0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5"
+  },
+  "status": "pass"
+}

@@ -1,0 +1,347 @@
+{
+  "absolute_glyph_margin_decrement": {
+    "k": {
+      "max": 0.0021261395908557246,
+      "mean": 0.00019257637944947864,
+      "median": 0.00042509566608073257,
+      "min": -0.0031246630719320434,
+      "n_items": 8,
+      "sample_sd": 0.001686232332563109
+    },
+    "kv": {
+      "max": 0.009456792370372197,
+      "mean": 0.001339504807153634,
+      "median": 0.0008856450374388064,
+      "min": -0.004376015843380043,
+      "n_items": 8,
+      "sample_sd": 0.004526445953160765
+    },
+    "none": {
+      "max": -0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "min": -0.0,
+      "n_items": 8,
+      "sample_sd": 0.0
+    },
+    "v": {
+      "max": 0.013067493653367845,
+      "mean": 0.002353180836241253,
+      "median": 0.0016171377996853503,
+      "min": -0.0037697442699006767,
+      "n_items": 8,
+      "sample_sd": 0.005260669308702483
+    }
+  },
+  "alias_acquisition_sha256": "5bac71106134a2c5f56cbc5c8e371e5e48832e084ca233a2d020ffa7598d10b2",
+  "analysis_model_forwards": 0,
+  "artifacts_sha256": {
+    "attention_diagnostics.json": "a7b45ee8d0795792815a03b6d63355ca75ae8b34d1f9bbe078a92b05c0fa7fd9",
+    "metrics.npz": "9b77ad0c975417f3d78dc4af006c2d750162b3339b26fde7ec656a5a04ea203b",
+    "report.md": "f34655bf8e3e126254a0bc835c6b57f05f1ab8c0e1f3bfe8dbebc8011014e7fd",
+    "rows.csv": "1c679f229b28572aa6bd052ecb91eabb82d49db4e903135742775515a7e22687"
+  },
+  "boundary": "Descriptive exposed-eight comparison; no population inference or semantic-mechanism conclusion. Codepoint gallery metrics and 384-item exploration are unrun. Exploration is not selected by these signs.",
+  "canary_acquisition_sha256": "27c9e58535a872861a87c22d7b82dce7f9e54952bc229511b7231a9693dca901",
+  "carriers_per_item": 2,
+  "completed_at_utc": "2026-10-19T21:41:15.651296+00:00",
+  "confirmation": false,
+  "donors_per_item": 2,
+  "efficacy_screen": false,
+  "gallery_sources": 128,
+  "historical_gpu_replay": false,
+  "hypothesis_tests": false,
+  "itemwise_adjusted_margin": [
+    [
+      0.0,
+      0.0028125087412727012,
+      0.0017450634246184427,
+      0.0006274871749191446
+    ],
+    [
+      0.0,
+      0.0017237881810858446,
+      0.000969865817217308,
+      0.003888943061517852
+    ],
+    [
+      0.0,
+      0.0016920974507374786,
+      0.002848526430102638,
+      0.002592287273111532
+    ],
+    [
+      0.0,
+      0.00025469756210735883,
+      0.009041986496811816,
+      0.005688834456370612
+    ],
+    [
+      0.0,
+      -0.0027962074427333727,
+      -0.0035018070267210377,
+      -0.00795553054781481
+    ],
+    [
+      0.0,
+      0.00026840164435443237,
+      0.002683283733801417,
+      0.0026245954792536164
+    ],
+    [
+      0.0,
+      -0.001101456161893194,
+      -0.0013512320793686583,
+      -0.0014871381672644235
+    ],
+    [
+      0.0,
+      0.0006421009998275606,
+      0.0020042931181847023,
+      0.0012107909220817614
+    ]
+  ],
+  "itemwise_nonadditivity": [
+    -0.003930084990971999,
+    0.0011952890632146995,
+    -0.0019483366077285846,
+    -0.003607849602548563,
+    -0.0016575160783603993,
+    -0.00032708989890223306,
+    0.0009655500739974288,
+    -0.0014356031959305016
+  ],
+  "max_decomposition_error": 0.0,
+  "nonadditivity": {
+    "max": 0.0011952890632146995,
+    "mean": -0.001343205154653769,
+    "median": -0.0015465596371454504,
+    "min": -0.003930084990971999,
+    "n_items": 8,
+    "sample_sd": 0.0018936309946076377
+  },
+  "primary_position_adjusted_decrement": {
+    "k": {
+      "alias_margin": {
+        "max": 0.0028125087412727012,
+        "mean": 0.0004369913718448512,
+        "median": 0.0004552513220909965,
+        "min": -0.0027962074427333727,
+        "n_items": 8,
+        "sample_sd": 0.0017646666600413016
+      },
+      "alias_top1": {
+        "max": 0.0,
+        "mean": -0.0625,
+        "median": 0.0,
+        "min": -0.5,
+        "n_items": 8,
+        "sample_sd": 0.1767766952966369
+      },
+      "competitor_cosine": {
+        "max": 0.0023349651913458502,
+        "mean": -0.00990909055207988,
+        "median": -0.0073846726591994954,
+        "min": -0.03209814341592235,
+        "n_items": 8,
+        "sample_sd": 0.012119531935997518
+      },
+      "donor_cosine": {
+        "max": 0.0028196379735858645,
+        "mean": -0.009697838598378652,
+        "median": -0.006100948482658214,
+        "min": -0.03422946899465512,
+        "n_items": 8,
+        "sample_sd": 0.012649347334954401
+      },
+      "donor_margin": {
+        "max": 0.002327835959032687,
+        "mean": 0.000225739418143623,
+        "median": 3.236214441008911e-05,
+        "min": -0.002348235226892176,
+        "n_items": 8,
+        "sample_sd": 0.0015597866351266761
+      },
+      "own_cosine": {
+        "max": 0.0051474739326185515,
+        "mean": -0.00947209918023503,
+        "median": -0.00731388789924374,
+        "min": -0.03489435085865572,
+        "n_items": 8,
+        "sample_sd": 0.013173183440743887
+      }
+    },
+    "kv": {
+      "alias_margin": {
+        "max": 0.005688834456370612,
+        "mean": 0.0008987837065219106,
+        "median": 0.0019015390975966467,
+        "min": -0.00795553054781481,
+        "n_items": 8,
+        "sample_sd": 0.004174659510022183
+      },
+      "alias_top1": {
+        "max": 0.0,
+        "mean": -0.0625,
+        "median": 0.0,
+        "min": -0.5,
+        "n_items": 8,
+        "sample_sd": 0.1767766952966369
+      },
+      "competitor_cosine": {
+        "max": 0.009540945180888327,
+        "mean": -0.009010408842798426,
+        "median": -0.0019007734522771408,
+        "min": -0.0485965378856435,
+        "n_items": 8,
+        "sample_sd": 0.01835424635156319
+      },
+      "donor_cosine": {
+        "max": 0.009987268930038568,
+        "mean": -0.010689217544171122,
+        "median": -0.003655640251218714,
+        "min": -0.05632942229787846,
+        "n_items": 8,
+        "sample_sd": 0.021225643144517706
+      },
+      "donor_margin": {
+        "max": 0.007074382956471947,
+        "mean": 0.002577592407894607,
+        "median": 0.002780930201425183,
+        "min": -0.003844717763665434,
+        "n_items": 8,
+        "sample_sd": 0.0034165779492480435
+      },
+      "own_cosine": {
+        "max": 0.012165540660141944,
+        "mean": -0.008111625136276515,
+        "median": 0.0012811537852695093,
+        "min": -0.05655206843345831,
+        "n_items": 8,
+        "sample_sd": 0.021603230978449704
+      }
+    },
+    "none": {
+      "alias_margin": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "alias_top1": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "competitor_cosine": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "donor_cosine": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "donor_margin": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "own_cosine": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      }
+    },
+    "v": {
+      "alias_margin": {
+        "max": 0.009041986496811816,
+        "mean": 0.0018049974893308285,
+        "median": 0.0018746782714015725,
+        "min": -0.0035018070267210377,
+        "n_items": 8,
+        "sample_sd": 0.00364689817875287
+      },
+      "alias_top1": {
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "n_items": 8,
+        "sample_sd": 0.0
+      },
+      "competitor_cosine": {
+        "max": 0.01072538345547941,
+        "mean": -0.0007111382699481472,
+        "median": 0.0031488145647771415,
+        "min": -0.03311949353987023,
+        "n_items": 8,
+        "sample_sd": 0.014161883935040797
+      },
+      "donor_cosine": {
+        "max": 0.019028201702071867,
+        "mean": -0.0024612158107696278,
+        "median": -0.0022986796243482516,
+        "min": -0.039042108884753596,
+        "n_items": 8,
+        "sample_sd": 0.017738184306329223
+      },
+      "donor_margin": {
+        "max": 0.010502307946902822,
+        "mean": 0.003555075030152309,
+        "median": 0.0028758879625808836,
+        "min": -0.003785372491639377,
+        "n_items": 8,
+        "sample_sd": 0.00409586576201926
+      },
+      "own_cosine": {
+        "max": 0.01524282921043249,
+        "mean": 0.0010938592193826813,
+        "median": 0.0029581314337014664,
+        "min": -0.03662130056659127,
+        "n_items": 8,
+        "sample_sd": 0.01666175756837959
+      }
+    }
+  },
+  "protected_bank_reads": 0,
+  "protocol_id": "glyphprobe-t22-cpu-lexical-eight-descriptive-v0",
+  "scored_rows": 512,
+  "source_sha256": {
+    "configs/t21_glyph_context_path_pilot_v0.yaml": "5e6df33e34f341bae8c54eb5d3b5a64551fa581546a6f2277e54756e9ec0df54",
+    "docs/T22_CPU_LEXICAL_CANARY_V0.ja.md": "e6813d0e1b638380e431288865aa4249e665a5002f64325a2e7154dc638fd91d",
+    "docs/T22_CPU_LEXICAL_CANARY_V0.md": "6a194bf6b6027f960376e51c56dbab202b18ed8dd4ea0648f2a3640c7f8e13d4",
+    "scripts/t21_glyph_context_path_pilot_v0.py": "4e36d84c64484ff28d378eae7e11b4d0d07b2f83d8da7246d4bb4b09a9943016",
+    "scripts/t22_cpu_lexical_canary_v0.py": "9704bdeb87620de1ceb4b7403aeaa34968b18364008cad1c69f124c50913ae90",
+    "scripts/t22_kv_cpu_canary_v0.py": "27b65691b0ba665e7fede53c2af7e954cd9a3f8f9fab244e8f972ac73447c4da",
+    "scripts/t22_kv_dissection_v0.py": "4229c127afd5f42cce19a73bb4a052e19cf647e1402980e607850fbf5724cfe1",
+    "scripts/validate_t22_cpu_acquisition_v0.py": "92db9950383a5c70046f19f3a67ac78d7616199fc299d4b73cff6a18ce72f4e6",
+    "src/glyphprobe/io.py": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef",
+    "src/glyphprobe/provenance.py": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c",
+    "tests/test_t22_cpu_lexical_canary_v0.py": "00d5428cfdd5e2f30447a0a1ffc51ceaf1663816bca535432491d791de2ac132",
+    "tests/test_t22_kv_cpu_canary_v0.py": "9022ac44557623f4e244421591b9b076154060571315a730a7db05b6f42a444f",
+    "validation/t21_glyph_context_path_confirmation_v0/canary_specification.json": "8533cfaeeba71dc50216fb9123f7c04072c07447da32a8b03ba828af44991957",
+    "validation/t21_glyph_context_path_pilot_v0/pilot_specification_v1.json": "0015887f2dc37318a577c748d2b3b2f8f217982d377d6ce12662feeb37d389d5"
+  },
+  "specification_sha256": "e6da21348028f8fffe6bda879336beeffcbf515e1862271dada2db6f4bf56067",
+  "status": "descriptive_analysis_complete",
+  "target_items": 8
+}
