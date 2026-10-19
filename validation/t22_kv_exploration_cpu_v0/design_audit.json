@@ -1,0 +1,12 @@
+{
+  "acquisition_admitted": false,
+  "boundary": "Deterministic design/input integrity audit, not independent model or outcome validation.",
+  "first_eight_retained": true,
+  "model_forwards": 0,
+  "protected_bank_reads": 0,
+  "protocol_id": "glyphprobe-t22-kv-cpu-exposed384-design-v0",
+  "source_items": 128,
+  "specification_sha256": "b3d18ec4fac4588ca784c6caea6fbb03a2703deec7e503a60e690a540d14c19c",
+  "status": "pass",
+  "target_items": 384
+}

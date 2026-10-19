@@ -173,3 +173,22 @@ PRには実装検証の親NPZ 8ファイルとalias/score archiveを、receipt�
 CSVとの対応、attention診断を再計算する。モデルforwardや取得時に省略した
 完全tensorを再実行するものではない。他のcheckoutでも使える再計算commandは
 結果文書に記す。数値再構成は1回の取得に対する監査であり、独立した科学的再現ではない。
+
+## 7. 設計の追記 — 2026-10-20 JST
+
+[384項目CPU設計](T22_KV_EXPLORATION_CPU_V0.ja.md)で、元の384 target、128 source、
+donor、4 operationすべて、集約、診断、資源方針を固定した。
+先行8項目はpanelに残し、T22結果が既知であることを明示する。
+その符号で条件を選んでいない。
+
+時間receiptを根拠に、予定する本実行では16行の測定を維持し、88行の旧layout照合を
+繰り返さない設計にした。軽量化runnerは未実装で、実行の技術的条件も未達。
+target 8より前に、元の8項目それぞれの非legacy 26配列すべてとalias行を完全replayする
+必要がある。平均/最遅項目からの約14.8/21.7時間というscenarioは外挿であり、
+新runnerの実測性能ではない。凍結設計による新しいmodel forwardはゼロ。
+取得より前に、検証済みrunner/解析のhashとruntimeを結び付けた実行manifestが必要となる。
+
+凍結仕様のSHA-256：
+`b3d18ec4fac4588ca784c6caea6fbb03a2703deec7e503a60e690a540d14c19c`。
+Sourceに結び付けた設計検証は22テスト通過・skipゼロで、決定的な入力/設計監査も通過した。
+これらが検証するのは設計artifactであり、モデル実行を認める検証ではない。
