@@ -1,0 +1,48 @@
+{
+  "external_review_complete": false,
+  "files_sha256": {
+    "docs/PAPER2_DISCUSSION_NOTES_V0.ja.md": "bd293c784897d6f435280afe0c973d1d61c665d6d383bfeee1306e0a97fa6570",
+    "docs/PAPER2_DISCUSSION_NOTES_V0.md": "cd8d40e8c7f3ad3df2c8df721ecafe933eeb364f5ccced62e56e1083c013c479",
+    "scripts/validate_t22_cpu_lexical_results_v0.py": "d67ea160bb6eb6e5673fb621a67fe144001406e2e77b56d20c8949d8f6c9e86e",
+    "tests/test_validate_t22_cpu_lexical_results_v0.py": "55af47e5bb4e2a196bbed807c6a5c409f4c3b05d19a7769ca93e3d45af8f5ec5",
+    "validation/t22_cpu_lexical_canary_v0/portable_validation.json": "42d79cf8569f9edd64efbd0ffc3bf80b93074ff148e9b2551432824e7df57d5e",
+    "validation/t22_pr_review_v0/parent_validation.json": "d6a73eea7845e47fe373b259ab1cb472a7cd3452f2519290a44fc84e93c5b952",
+    "validation/t22_pr_review_v0/tests.xml": "1343292845104e1396d45db8814aa3477ca3f8c5bdb0404115e098c2936fa628"
+  },
+  "findings_resolved": [
+    {
+      "issue": "Engineering-parent arrays were only in ignored runs, preventing clean-checkout arithmetic replay",
+      "resolution": "Archive 18 byte-identical files, including all eight NPZ arrays, and a generated hash manifest"
+    },
+    {
+      "issue": "Independent audit followed absolute acquisition-time paths",
+      "resolution": "Add explicit location overrides with original hash checks; pass relocated evidence test and reject altered receipt/parent/array"
+    },
+    {
+      "issue": "Frozen historical documents can be mistaken for current status",
+      "resolution": "Keep frozen protocols intact and add current-status navigation in results, engineering record, README, and retrospective Paper 2 notes"
+    },
+    {
+      "issue": "Generated CSV uses hash-bound CRLF",
+      "resolution": "Preserve bytes with scoped .gitattributes; do not rewrite evidence"
+    }
+  ],
+  "missing_links": 0,
+  "prose_docs_link_checked": 10,
+  "scientific_boundaries": [
+    "Eight exposed items; descriptive only",
+    "No historical GPU replay",
+    "No population winner or semantic-transport inference",
+    "384-item exploration unrun and not selected by canary signs"
+  ],
+  "scope": "Local code, evidence integrity, numerical replay, and bilingual research-claim review before external PR review",
+  "source_binding_mismatches": 0,
+  "source_bindings_checked": 90,
+  "status": "pass",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 166
+  }
+}

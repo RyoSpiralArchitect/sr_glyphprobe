@@ -1,0 +1,29 @@
+{
+  "adapter_sha256": "4229c127afd5f42cce19a73bb4a052e19cf647e1402980e607850fbf5724cfe1",
+  "boundary": "Prerequisite inspection only; does not validate arrays, admit acquisition, or establish scientific effects.",
+  "checks": {
+    "bf16_supported": false,
+    "cuda_available": false,
+    "gpu_matches_historical": false,
+    "historical_canary_arrays_supplied": false,
+    "historical_canary_integrity_matches": false,
+    "model_manifest_matches": false,
+    "model_supplied": false,
+    "torch_matches_historical": false,
+    "transformers_match_historical": true
+  },
+  "historical_canary_error": "FileNotFoundError: [Errno 2] No such file or directory: 'validation/t21_glyph_context_path_pilot_v0/canary/source_states.npz'",
+  "model_forwards": 0,
+  "protocol_id": "glyphprobe-t22-kv-dissection-v0",
+  "required_runtime": {
+    "device": "NVIDIA GeForce RTX 5090",
+    "dtype": "bfloat16",
+    "torch": "2.13.0+cu132",
+    "transformers": "5.15.0"
+  },
+  "runtime": {
+    "torch": "2.13.0+cpu",
+    "transformers": "5.15.0"
+  },
+  "status": "blocked"
+}

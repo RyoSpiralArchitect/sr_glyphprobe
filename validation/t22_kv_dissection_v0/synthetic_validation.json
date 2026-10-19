@@ -1,0 +1,47 @@
+{
+  "boundary": "Synthetic tiny random models only. No historical Llama artifact replay, real-item acquisition, lexical effect, or confirmatory inference.",
+  "collected_test_count": 58,
+  "command": [
+    "python",
+    "-m",
+    "pytest",
+    "-o",
+    "addopts=",
+    "-q",
+    "tests/test_t22_kv_dissection_v0.py",
+    "tests/test_t22_kv_dissection_commands_v0.py",
+    "tests/test_t21_glyph_context_path_pilot_v0.py"
+  ],
+  "created_at_utc": "2026-10-19T13:18:43.775122+00:00",
+  "protected_bank_reads": 0,
+  "protocol_id": "glyphprobe-t22-kv-dissection-v0",
+  "runner_exit_code": 0,
+  "runtime": {
+    "numpy": "2.5.4",
+    "pytest": "9.1.1",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.15.0"
+  },
+  "scientific_model_forwards": 0,
+  "source_sha256": {
+    "configs/t21_glyph_context_path_pilot_v0.yaml": "5e6df33e34f341bae8c54eb5d3b5a64551fa581546a6f2277e54756e9ec0df54",
+    "scripts/t21_glyph_context_path_pilot_v0.py": "4e36d84c64484ff28d378eae7e11b4d0d07b2f83d8da7246d4bb4b09a9943016",
+    "scripts/t22_kv_dissection_v0.py": "4229c127afd5f42cce19a73bb4a052e19cf647e1402980e607850fbf5724cfe1",
+    "scripts/validate_t21_glyph_context_path_pilot_v0.py": "5de46b28520aebf6d35c5bcae648c9a30505ea6bf62cc8d44c7f4cc4bd487955",
+    "scripts/validate_t22_kv_dissection_v0.py": "81b2be44e4a33586aa5cb13452174a046651c052714ddc702ee53b4453cc6bb5",
+    "tests/test_t21_glyph_context_path_pilot_v0.py": "35998593ade2ecc6a2844db7f3aaf3e243ec7569a23f7136be106522eba7c5e1",
+    "tests/test_t22_kv_dissection_commands_v0.py": "3081a43f05b98ca55e4d213f1f7efc826aca14442e54ddd7080e626d81a12f7b",
+    "tests/test_t22_kv_dissection_v0.py": "ce549569a4064fc4c70c3c54a55cc08e0a6191e563da5d611ffc5b8f2ee68fdb"
+  },
+  "sources_changed_during_validation": false,
+  "status": "synthetic_engineering_pass",
+  "synthetic_model_forwards_executed": true,
+  "test_counts": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 58,
+    "skipped": 0,
+    "tests": 58
+  },
+  "test_output_sha256": "7a435238deec0b55f5a32e9a85e111d111c413cc8330a261553eac9ef8cc2749"
+}

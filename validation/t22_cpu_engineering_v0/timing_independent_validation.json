@@ -1,0 +1,66 @@
+{
+  "acquisition_receipt_sha256": "c49a18f5a756bf5dc4c2cc4056776ac25bf6cba1a7d8ef7a22aeb7027bd0f120",
+  "arrays_validated": 34,
+  "boundary": "Stored readouts/attention and hash bindings independently checked. Acquisition-time full-hidden-state, stock-idle, donor-capture-pair, and nonreadout comparisons are source-bound claims; those complete tensors are not retained here.",
+  "glyph_token_count_histogram": {
+    "3": 1
+  },
+  "historical_gpu_replay": false,
+  "independent_validator_sha256": "92db9950383a5c70046f19f3a67ac78d7616199fc299d4b73cff6a18ce72f4e6",
+  "items": [
+    {
+      "all_three_float32_attention_mass_reconstructions_exact": true,
+      "array_count": 34,
+      "elapsed_seconds": 1915.379377786,
+      "glyph_token_count": 3,
+      "item_index": 0,
+      "legacy_and_neutral_readouts_exact": true,
+      "legacy_no_op_and_roundtrip_readouts_exact": true,
+      "local_none_and_v_weights_exact": true,
+      "neutral_weights_exact": true,
+      "non_mass_saved_float32_values_bf16_representable": true,
+      "peak_rss_bytes": 6159065088,
+      "receipt_sha256": "280806d32673b94d9e89235b22da2be2c74d6718d62359f8692acdf3a3ae60b4",
+      "reference_extension_readouts_exact": true,
+      "sequence_length": 11,
+      "specified_selected_masks_exact": true,
+      "states_sha256": "44a9ffcc2867b4e1d0f8cd1536e5b51921dfa75d6cb46c739961c1135658f03a"
+    }
+  ],
+  "model_files_independently_rehashed": true,
+  "model_forwards_this_validation": 0,
+  "omitted_full_hidden_state_stock_capture_and_nonreadout_checks_reverified": false,
+  "protected_bank_reads": 0,
+  "protocol_id": "glyphprobe-t22-kv-cpu-engineering-canary-v0",
+  "runtime": {
+    "attention": "eager",
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cpu_count": 5,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "interop_threads": 1,
+    "llama_attention_source_sha256": "dc6807936ef6103d2675e82361b9c82359d43356a331140bbb1a974595522bff",
+    "machine": "x86_64",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "threads": 4,
+    "torch": "2.13.0+cpu",
+    "transformers": "5.15.0"
+  },
+  "saved_readout_and_attention_arrays_reverified": true,
+  "scientific_result": false,
+  "specification_sha256": "a9a630ae44b8623fc29593cda50000931a2db76edfb48804603c07d4f8cb85d2",
+  "status": "pass",
+  "target_items": 1,
+  "totals": {
+    "forward_calls": 30,
+    "offtarget_attention_checks": 72,
+    "sequence_forwards": 786
+  }
+}
