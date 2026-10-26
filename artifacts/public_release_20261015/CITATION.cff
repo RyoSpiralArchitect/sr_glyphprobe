@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the version-specific preprint DOI. See the record landing page for publication status and accompanying evidence."
+type: software
+title: "GlyphProbe research code and evidence"
+authors:
+  - family-names: Higa
+    given-names: Ryo
+version: 1.0.0
+license: Apache-2.0
+preferred-citation:
+  type: article
+  title: "Beyond Short Names: Emoji Keyword Retrieval across Models and Bounded Causal Tests"
+  authors:
+    - family-names: Higa
+      given-names: Ryo
+  year: 2026
+  doi: 10.5281/zenodo.23376699
+  url: https://zenodo.org/records/23376699
+keywords:
+  - mechanistic interpretability
+  - causal interpretability
+  - emoji
+  - lexical retrieval
+  - measurement validity

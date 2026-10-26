@@ -347,7 +347,7 @@ def build_t20_ceilings(sites: list[dict[str, Any]]) -> list[Path]:
         ncol=2,
     )
     fig.suptitle(
-        "T20-C: optimized effects and full-state swaps (384 emoji, 4 contexts)", y=0.995
+        "Optimized-subspace intervention and full-state swaps (384 emoji)", y=0.995
     )
     fig.tight_layout(rect=(0, 0.06, 1, 0.96))
     return save_figure(fig, "t20_causal_ceilings")
@@ -458,7 +458,7 @@ def build_t21_path_summary() -> list[Path]:
     ax.tick_params(axis="y", length=0, pad=7)
     ax.grid(axis="x", color="#E7EAED", linewidth=0.6)
     fig.suptitle(
-        "T21-C: readout-specific path test and five contrasts",
+        "Attention-path intervention after readout reset",
         y=0.99,
         fontsize=10,
         color=DARK,
@@ -509,7 +509,7 @@ def build_design() -> list[Path]:
             )
         )
 
-    ax.text(0.2, 4.15, "Observational arm (T19-L)", weight="bold", color=BLUE)
+    ax.text(0.2, 4.15, "Keyword retrieval", weight="bold", color=BLUE)
     box(0.2, 2.7, 1.55, 0.9, "55 atomic\nemoji", BLUE)
     box(0.2, 1.25, 1.55, 0.9, "55 symbols\n(non-emoji)", GRAY)
     box(
@@ -520,7 +520,7 @@ def build_design() -> list[Path]:
         "Four views\nraw glyph\nofficial name\nCLDR keyword\nU+... spelling",
         BLUE,
     )
-    box(5.15, 1.72, 2.1, 1.45, "24 contexts/item\n9 depths\nlate top-1", BLUE)
+    box(5.15, 1.72, 2.1, 1.45, "2 carriers x\n4 distances x\n3 late depths", BLUE)
     box(7.85, 1.72, 2.05, 1.45, "Unrestricted +\nmatched-count\nIUT", BLUE)
     box(10.45, 1.72, 1.3, 1.45, "r = 3/4\nmodel\nrule", BLUE)
     arrow(1.75, 3.15, 2.35, 2.72)
@@ -529,7 +529,7 @@ def build_design() -> list[Path]:
     arrow(7.25, 2.45, 7.85, 2.45)
     arrow(9.9, 2.45, 10.45, 2.45)
 
-    box(0.2, 0.065, 1.55, 0.95, "Causal arm\n(T19-C)", ORANGE)
+    box(0.2, 0.065, 1.55, 0.95, "Fixed\nsubspace\nintervention", ORANGE)
     box(2.35, 0.065, 2.2, 0.95, "128 source emoji\nrank-8 subspace", ORANGE)
     box(5.15, 0.065, 2.1, 0.95, "192 held-out\nemoji", ORANGE)
     box(7.85, 0.065, 2.05, 0.95, "6 late sites\nnecessity +\nsufficiency", ORANGE)

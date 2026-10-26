@@ -1,0 +1,578 @@
+{
+  "all_56_scores_completed": true,
+  "all_scored_boundaries_admissible": true,
+  "block_H_recomputed": false,
+  "claim_ceiling": "eight outcome-selected engineering inputs; no corrected scientific scores or causal attribution",
+  "input_diagnostics": [
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.01607799530029297,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.01607799530029297,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.01091766357421875,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.005160331726074219,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.005160331726074219,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "a",
+        "padded_preferred_candidate": "a",
+        "preference_or_tie_changed": false,
+        "s_original": 0.01051773875951767,
+        "s_padded": 0.06243326514959335,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.06595563888549805,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "original/emoji/affect_01/p/b",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.05677676200866699,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.05677676200866699,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.031280517578125,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.025496244430541992,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.025496244430541992,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "a",
+        "padded_preferred_candidate": "a",
+        "preference_or_tie_changed": false,
+        "s_original": 0.4298054575920105,
+        "s_padded": 0.4820391535758972,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.05677676200866699,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.07489538192749023,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.07489538192749023,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.007020711898803711,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.08191609382629395,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.007020711898803711,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "b",
+        "padded_preferred_candidate": "b",
+        "preference_or_tie_changed": false,
+        "s_original": -2.5440205335617065,
+        "s_padded": -2.5638911724090576,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.0,
+          "b": 0.07489538192749023
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.13022422790527344,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.13022422790527344,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.026966094970703125,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.10325813293457031,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.026966094970703125,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "a",
+        "padded_preferred_candidate": "a",
+        "preference_or_tie_changed": false,
+        "s_original": 1.86709064245224,
+        "s_padded": 1.656819999217987,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.0,
+          "b": 0.13022422790527344
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "original/emoji/thermal_04/p/a",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.05359530448913574,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.05359530448913574,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.05359530448913574,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "b",
+        "padded_preferred_candidate": "b",
+        "preference_or_tie_changed": false,
+        "s_original": -1.122746765613556,
+        "s_padded": -1.122746765613556,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.0,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "original/emoji/completion_02/p/a",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.007088899612426758,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.007088899612426758,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.007088899612426758,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "b",
+        "padded_preferred_candidate": "b",
+        "preference_or_tie_changed": false,
+        "s_original": -0.29751288890838623,
+        "s_padded": -0.29751288890838623,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.0,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "original/word/completion_02/p/a",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.06046009063720703,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.06046009063720703,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.013407230377197266,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.047052860260009766,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.047052860260009766,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "a",
+        "padded_preferred_candidate": "a",
+        "preference_or_tie_changed": false,
+        "s_original": 1.7230963706970215,
+        "s_padded": 1.7738704681396484,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.08743822574615479,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    },
+    {
+      "cross_shape_descriptive_comparisons": [
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "original_b_1",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_a",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": true,
+          "prefix_max_absolute_logprob_difference": 0.0,
+          "right": "padded_b",
+          "shared_predictor_logits_exact_equal": true
+        },
+        {
+          "left": "original_a_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.005227088928222656,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "original_b_1",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.005227088928222656,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        },
+        {
+          "left": "padded_a",
+          "not_a_historical_total_parity_gate": true,
+          "prefix_logprobs_exact_equal": false,
+          "prefix_max_absolute_logprob_difference": 0.005227088928222656,
+          "right": "prefix_only",
+          "shared_predictor_logits_exact_equal": false
+        }
+      ],
+      "full_score_geometry_comparison": {
+        "descriptive_only_not_corrected_scores_or_H_verdict": true,
+        "original_preferred_candidate": "a",
+        "padded_preferred_candidate": "a",
+        "preference_or_tie_changed": false,
+        "s_original": 1.1503121256828308,
+        "s_padded": 1.155262291431427,
+        "same_candidate_max_absolute_logprob_difference": {
+          "a": 0.00574493408203125,
+          "b": 0.0
+        },
+        "strict_nonzero_polarity_flip": false
+      },
+      "historical_exact_parity": true,
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "padded_predictor_logits_exact_equality": true,
+      "padded_prefix_exact_equality": true,
+      "padded_prefix_max_absolute_logprob_difference": 0.0,
+      "repeated_original_exact_equality": true
+    }
+  ],
+  "numerical_gate_passed": true,
+  "scientific_population_verdict": null
+}

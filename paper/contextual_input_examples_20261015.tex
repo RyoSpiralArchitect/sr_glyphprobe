@@ -1,0 +1,112 @@
+\subsection{Complete source-defined contextual inputs}
+\label{app:contextual-inputs}
+
+These examples come from the public-source scenario \texttt{thermal\_01}
+and its source-defined model inventory, not from a participant packet,
+assignment, or response. The two contexts change Mira's stated goal; the
+two cues are fire and ice. Each displayed \texttt{U+1F525} stands for the
+single fire character and each \texttt{U+1F9CA} for the single ice character.
+The model receives those Unicode characters, never their codepoint spellings.
+Line wrapping below is typographic; the breaks before \texttt{Question:}
+and \texttt{Answer:} are actual input newlines. The word comparators replace
+only the character with the recorded alternative \texttt{hot} or
+\texttt{cold}, respectively. The absent-cue condition uses the literal
+\texttt{[no cue provided]}.
+
+\newenvironment{contextinput}{\par\smallskip\noindent
+  \begin{minipage}{\linewidth}\small\ttfamily\raggedright
+  \hrule\smallskip}{\par\smallskip\hrule\end{minipage}\par\smallskip}
+
+\paragraph{Complete crossed message-interpretation inputs.}
+All four positive-worded prompts are shown. The corresponding negative
+question replaces only \texttt{Is it true that} with
+\texttt{Is it false that}. Both cue types are evaluated in both contexts;
+their author-intended temperature interpretation has not been established
+by independent human judgments.
+
+% exact-input: thermal_01::p::emoji::a::message_reading::positive
+\begin{contextinput}
+Mira has come in from the snow and wants a drink that will warm her up. The cafe sends a message about the drink: U+1F525\\
+Question: Is it true that the message suggests that the drink is hot?\\
+Answer:
+\end{contextinput}
+
+% exact-input: thermal_01::p::emoji::b::message_reading::positive
+\begin{contextinput}
+Mira has come in from the snow and wants a drink that will warm her up. The cafe sends a message about the drink: U+1F9CA\\
+Question: Is it true that the message suggests that the drink is hot?\\
+Answer:
+\end{contextinput}
+
+% exact-input: thermal_01::q::emoji::a::message_reading::positive
+\begin{contextinput}
+Mira has come in from the heat and wants a drink that will cool her down. The cafe sends a message about the drink: U+1F525\\
+Question: Is it true that the message suggests that the drink is cold?\\
+Answer:
+\end{contextinput}
+
+% exact-input: thermal_01::q::emoji::b::message_reading::positive
+\begin{contextinput}
+Mira has come in from the heat and wants a drink that will cool her down. The cafe sends a message about the drink: U+1F9CA\\
+Question: Is it true that the message suggests that the drink is cold?\\
+Answer:
+\end{contextinput}
+
+The same naturalistic scenes also use the outcome question
+\texttt{Is it true that the message alone establishes that Mira has warmed up?}
+in the snow context and
+\texttt{Is it true that the message alone establishes that Mira has cooled down?}
+in the heat context, each with its corresponding \texttt{false} wording.
+This changes the measured proposition from a reported drink property to
+evidence about Mira's resulting condition.
+
+\paragraph{Bounded property-matching input.}
+The bounded arm adds a stipulated-accuracy instruction. This complete
+snow/fire input illustrates the distinction from the naturalistic arm.
+For the cold request, \texttt{hot} on the first line becomes \texttt{cold};
+the reported cue still varies independently.
+
+% exact-input: thermal_01::p::emoji::a::local_match::positive
+\begin{contextinput}
+The requested drink temperature is: hot.\\
+Report of the drink temperature: U+1F525\\
+For this task, assume the report accurately describes the drink temperature. It describes a state or category, not an instruction or a button action. Judge only the requested drink temperature; other goals and practical outcomes are outside this question. If the cue's meaning is unclear, the report's assumed accuracy does not resolve that meaning.\\
+Question: Is it true that the reported drink temperature matches the requested drink temperature?\\
+Answer:
+\end{contextinput}
+
+\paragraph{Accurate-completion controls and scored answers.}
+These two prompts share an explicit, stipulated-accurate outcome report.
+The intended answers are Yes and No, respectively. They test whether this
+prompt and scoring arrangement distinguishes the reversed questions without
+depending on an emoji's interpretation. Their recorded failure is scoped
+to that arrangement.
+
+% exact-input: thermal_01::p::complete_report::outcome_evidence::positive
+\begin{contextinput}
+For this question, assume this report is accurate: Mira has warmed up.\\
+Question: Is it true that the message alone establishes that Mira has warmed up?\\
+Answer:
+\end{contextinput}
+
+% exact-input: thermal_01::p::complete_report::outcome_evidence::negative
+\begin{contextinput}
+For this question, assume this report is accurate: Mira has warmed up.\\
+Question: Is it false that the message alone establishes that Mira has warmed up?\\
+Answer:
+\end{contextinput}
+
+Every prompt above is scored with the two exact continuations
+\verb| The answer is yes.| and \verb| The answer is no.|.
+The initial ASCII space and final period are included in the score. No
+continuation text is generated and no chat template is inserted.
+The unknown-outcome anchor instead uses
+\texttt{The message explicitly says: I do not know whether the practical outcome happened.}
+with the same two questions and continuations.
+
+The scenario source is \path{data/contextual_emoji_development_v0.jsonl};
+\path{scripts/contextual_emoji_two_track_v1.py} supplies the model
+input construction. A regression check reconstructs all seven displayed
+inputs, both word substitutions in both contexts, question reversals,
+and the scored continuations directly from those public sources. It neither
+opens private author records nor recomputes a model score.

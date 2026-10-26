@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-contextual-emoji-output-pilot-v0",
+  "status": "development_design_stimulus_review_complete_execution_pending_pdf_and_runtime_gates",
+  "claim_status": "development_engineering_and_behavioral_feasibility_only",
+  "inputs": {
+    "path": "data/contextual_emoji_development_v0.jsonl",
+    "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394",
+    "expected_blocks": 24,
+    "expected_families": 6,
+    "expected_blocks_per_family": 4,
+    "source": "author_defined_English_goal_compatibility_scenarios_not_CLDR_or_historical_target_banks",
+    "human_validation": "absent",
+    "selection_by_model_output": false
+  },
+  "design": {
+    "contexts_per_block": 2,
+    "emoji_variants_per_context": 2,
+    "emoji_absent_controls_per_context": 1,
+    "candidate_pairs_per_block": 1,
+    "candidate_label_bookkeeping": "positive_assessment_is_a_for_odd_and_b_for_even_blocks_eta_changes_with_labels_not_presentation_counterbalancing_or_bias_control",
+    "orientation_rule": "eta_is_plus_one_when_p_a_favors_candidate_a_and_minus_one_when_candidate_order_is_reversed",
+    "primary_description": "finite_set_author_oriented_context_by_emoji_output_score_interaction",
+    "family_weighting": "equal_weight_six_family_means_each_of_four_fixed_blocks",
+    "baseline_token_mismatch_policy": "retain_all_blocks_and_report_counts_and_positions_no_outcome_or_token_count_exclusions",
+    "route_intervention": "not_implemented_or_authorized_by_this_baseline_config",
+    "intervention_eligibility": "separate_future_outcome_blind_token_position_rule_not_baseline_exclusion"
+  },
+  "scoring": {
+    "method": "teacher_forced_full_candidate_sequence_log_probability",
+    "add_special_tokens": false,
+    "include_eos": false,
+    "normalization": "none",
+    "boundary": "joint_tokenization_exact_prefix",
+    "boundary_failure": "record_failed_cell_without_scoring_or_silent_retokenization_fallback",
+    "candidate_leading_space": "literal_as_stored",
+    "prompt_slot": "{emoji}",
+    "absent_replacement": "",
+    "J": 1,
+    "s": "log_probability(candidate_a)-log_probability(candidate_b)",
+    "delta_p": "s(context_p,emoji_b)-s(context_p,emoji_a)",
+    "delta_q": "s(context_q,emoji_b)-s(context_q,emoji_a)",
+    "H": "eta*(delta_q-delta_p)",
+    "intended_crossover_diagnostic": "eta*delta_p<0_and_eta*delta_q>0",
+    "statistical_inference": "none_no_bootstrap_no_significance_or_confirmation_decision",
+    "practical_effect_threshold": null
+  },
+  "model": {
+    "role": "llama32_3b_base_bf16",
+    "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+    "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+    "artifact_manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+    "artifact_manifest_pin_source": "configs/t21_glyph_context_path_pilot_v0.yaml:model.artifact_manifest_sha256_same_revision",
+    "snapshot_path": null,
+    "expected_class": "LlamaForCausalLM",
+    "expected_layers": 28,
+    "expected_hidden_size": 3072,
+    "expected_parameters": 3212749824,
+    "expected_vocab_size": 128256,
+    "model_base": true,
+    "dtype": "bf16",
+    "local_files_only": true,
+    "download": false,
+    "chat_template": false,
+    "bos_handling": "none_no_added_special_tokens",
+    "eos_handling": "not_appended_or_scored"
+  },
+  "runtime": {
+    "python_version": null,
+    "torch_version": null,
+    "transformers_version": null,
+    "cuda_version": null,
+    "device": null,
+    "binding_rule": "prepare_receipt_must_bind_actual_snapshot_artifact_hashes_tokenizer_and_runtime_before_run"
+  },
+  "budget": {
+    "max_sequences": 288,
+    "max_input_tokens": 512,
+    "max_input_tokens_scope": "full_prompt_plus_candidate_sequence_candidate_limit_is_within_this_total",
+    "max_candidate_tokens": 64,
+    "walltime_seconds": 900,
+    "planned_blocks": 24,
+    "planned_input_conditions": 144,
+    "planned_candidate_sequence_cells": 288,
+    "generation_calls": 0,
+    "training_steps": 0,
+    "route_intervention_cells": 0
+  },
+  "controls": {
+    "emoji_absent": {"status": "planned_for_first_baseline_run", "conditions": 48, "candidate_sequence_cells": 96},
+    "ordinary_word": {"status": "planned_not_executed_in_v0_baseline", "source": "planned_word_alternatives_in_each_block", "limitations": "not_token_count_matched_not_human_validated_requires_separate_execution_decision"},
+    "nonemoji_symbol": {"status": "planned_not_executed_in_v0_baseline", "candidate_symbols": ["+", "-"], "limitations": "semantic_mapping_and_neutral_legend_design_unresolved_not_equivalent_to_emoji_no_specificity_claim"},
+    "matched_position_route": {"status": "not_implemented_not_executed", "limitations": "future_route_study_requires_explicit_masks_and_engineering_controls"}
+  },
+  "execution_gates": [
+    "main_agent_verifies_revised_pdf_before_any_gpu_forward",
+    "independent_read_only_stimulus_review_before_fixed_input_sha256",
+    "no_model_output_seen_during_stimulus_definition_or_hash_fixing",
+    "prepare_binds_existing_model_artifact_tokenizer_runtime_and_all_input_hashes",
+    "idle_compute_and_runtime_preflight_pass_on_execution_host",
+    "no_download_no_remote_execution_by_this_design_author"
+  ],
+  "reporting": {
+    "retain_all_planned_completed_failed_cells": true,
+    "missing_data": "never_silently_drop_or_impute_failed_cells_in_block_or_family_means",
+    "required": ["all_four_crossed_s_cells", "both_context_deltas", "eta_oriented_H", "both_absent_s_cells", "candidate_token_counts", "emoji_token_counts_and_positions", "intended_crossover_diagnostic", "family_means", "planned_completed_failed_denominators", "all_claim_limits"],
+    "forbidden_claims": ["human_semantic_validity", "confirmation", "causal_route_contribution", "emoji_specificity", "context_specific_meaning_stored_in_emoji_state", "cross_model_generality", "new_emoji_or_pretraining_holdout"]
+  }
+}

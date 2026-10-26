@@ -1,0 +1,28 @@
+{
+  "local_paths_and_host_process_metadata_omitted": true,
+  "model_forwards_for_projection": 0,
+  "private_participant_records_read": false,
+  "projection_policy": "explicit_field_allowlist_v1",
+  "raw_receipts_edited": false,
+  "raw_sha256": {
+    "analysis.json": "61b3c3f543e21ea3b1287a3c03086bb733269bdfac143a8ba3dd44729d5d7d87",
+    "forwards.jsonl": "6703cf0bd253250ba2aee9023a9d4fef4fc1d40fa961f0940b515533dad6d9f9",
+    "implementation_sources.json": "c84131b308d4b82a23ff0aaf85b25dd61c18b9ad02696f8b206ead8a45ef382a",
+    "occupancy_checks.json": "907a627329b906de3e7327eaa53bdb41841394b6865f67807bf40d23cdf89a22",
+    "run_completed.json": "bc3cb7c03dada0b5b8cc0e314cddb7e2feb3145a42a4e83454dc721c47b773e1",
+    "run_started.json": "5567608a83424ada9602a6f2cb19efaae3f71d24a7e4c729c7ddf0995464333b",
+    "runtime.json": "952139aec861ada4b9c889b36933a0f65c520c393d61d80e308f81b3df41e323",
+    "specification.json": "5273b1f86db4ee956659a94ca7f047856e86b5f857fdf66efc5d96e5f85c487f"
+  },
+  "scope": "Exact CPU replay of saved-score statistics and recorded equality gates; no independent recomputation of GPU logits.",
+  "source_sha256": {
+    "docs/READOUT_QUALIFICATION_V1.ja.md": "959d3dd252e9d7764654ae22845f01b28e9ba2f644af7a26852e0df274cf2f62",
+    "docs/READOUT_QUALIFICATION_V1.md": "3341d795e50bf685bc330724659afab06ff9445da5da18b0760f1c87df191cb9",
+    "scripts/contextual_emoji_output_pilot_v0.py": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa",
+    "scripts/contextual_emoji_prefix_consistency_v0.py": "5ee9d2120c51e26db936ef37e0e1d4607aaf606fad41fb4970fc20210b985d65",
+    "scripts/readout_qualification_v1.py": "a285a44bddf37c4f206052b055096f2ef58ce5a7b71a6112c75f72f6eb36e636",
+    "src/glyphprobe/io.py": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef",
+    "src/glyphprobe/provenance.py": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c",
+    "tests/test_readout_qualification_v1.py": "8d27c8e9911dc4781c1fac151440b40e9db5ff45d73db47eeb9bcb98f2d5642b"
+  }
+}

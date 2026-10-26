@@ -1,0 +1,804 @@
+{
+  "available_case_summaries_are_not_full_population_estimates": true,
+  "blocks": [
+    {
+      "H": 1.107030208222568,
+      "block_id": "thermal_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": -0.7804069155827165,
+      "delta_q": 0.32662329263985157,
+      "eta": 1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": true,
+      "missing_pairs": [],
+      "s": {
+        "p": {
+          "a": -0.9776244349777699,
+          "absent": -0.7520587700419128,
+          "b": -1.7580313505604863
+        },
+        "q": {
+          "a": -2.051327643916011,
+          "absent": -0.8003661539405584,
+          "b": -1.7247043512761593
+        }
+      },
+      "status": "completed"
+    },
+    {
+      "H": null,
+      "block_id": "thermal_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "thermal_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "thermal_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "sound_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "sound_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "sound_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "sound_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "completion_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "completion_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "completion_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "completion_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "affect_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "affect_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "affect_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "affect_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "direction_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "direction_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "direction_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "direction_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "weather_01",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "weather_02",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "weather_03",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    },
+    {
+      "H": null,
+      "block_id": "weather_04",
+      "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      },
+      "status": "incomplete"
+    }
+  ],
+  "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+  "complete_block_mean_H": 1.107030208222568,
+  "confirmatory": false,
+  "denominator": {
+    "cell_status_counts": {
+      "completed": 12,
+      "not_run": 276
+    },
+    "completed_blocks": 1,
+    "incomplete_blocks": 23,
+    "planned_blocks": 24,
+    "planned_cells": 288,
+    "recorded_cells": 288
+  },
+  "descriptive_only": true,
+  "family_complete_block_mean_H": {
+    "thermal_goal": 1.107030208222568
+  },
+  "family_denominators": {
+    "affect_tone_goal": {
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "completion_goal": {
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "direction_goal": {
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "sound_goal": {
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "thermal_goal": {
+      "completed_blocks": 1,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 3,
+      "planned_blocks": 4
+    },
+    "weather_goal": {
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    }
+  },
+  "incomplete_population_warning": true,
+  "intervention_executed": false,
+  "mean_of_available_family_means_H": 1.107030208222568,
+  "planned_population_equal_family_mean_H": null,
+  "route_instrumented": false,
+  "semantic_claim_supported": false
+}

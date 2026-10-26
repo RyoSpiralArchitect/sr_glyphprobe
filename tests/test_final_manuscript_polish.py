@@ -52,7 +52,8 @@ def test_word_disjoint_example_preserves_tokenization_boundary():
 def test_discussion_retains_conditional_bridge_and_floor_qualification():
     tex = manuscript()
     assert "different population and endpoint" in tex
-    assert "full explanation of T20-C's swap asymmetry open" in tex
+    # The October reader-facing revision names the study instead of its run ID.
+    assert "full explanation of the optimized study's swap asymmetry open" in tex
     assert "a floor-effect\nexplanation is not established" in tex
     assert "neither equivalence nor unchanged outcomes for every item" in tex
 
@@ -74,10 +75,9 @@ def test_bilingual_claim_boundary_is_versioned_together():
         assert "3.08%" in text and "0.51%" in text
 
 
-def test_ai_disclosure_is_author_side_and_names_all_four_configurations():
+def test_collaboration_acknowledgment_names_all_four_configurations():
     tex = manuscript()
-    checklist = (ROOT / "paper/checklist.tex").read_text()
-    disclosure = tex.split(r"\paragraph{Author-side AI assistance.}", 1)[1]
+    disclosure = tex.split(r"\paragraph{Collaborative development.}", 1)[1]
     assert (
         "We developed this study interactively in collaboration with AI assistants."
         in disclosure
@@ -90,7 +90,24 @@ def test_ai_disclosure_is_author_side_and_names_all_four_configurations():
         "Claude Code (Fable 5)",
     ):
         assert label in disclosure
-    assert "separate from conference peer review" in disclosure
-    assert "author-side pre-submission manuscript feedback" in checklist
-    assert "fresh-eyes review" not in tex + checklist
+    assert "Manuscript feedback" in disclosure
+    assert "The human author retains responsibility" in disclosure
+    assert "operational references are not independent human labels" in disclosure
+    assert "were never\nfilled in by an assistant" in disclosure
+    assert "not an external scientific replication" in disclosure
+    assert "conference peer review" not in disclosure
+    assert "fresh-eyes review" not in tex
     assert r"\begin{ack}" not in tex
+
+
+def test_standalone_manuscript_has_no_workshop_style_or_checklist_dependency():
+    tex = manuscript()
+    assert r"\documentclass{article}" in tex
+    assert r"\usepackage[letterpaper,textwidth=5.5in,textheight=9in,top=1in]{geometry}" in tex
+    for package in ("times", "helvet", "courier", "natbib"):
+        assert rf"\usepackage{{{package}}}" in tex
+    assert r"\date{}" in tex
+    assert "neurips_2026" not in tex
+    assert "NeurIPS Code of Ethics" not in tex
+    assert r"\input{checklist.tex}" not in tex
+    assert "checklist" not in tex.lower()

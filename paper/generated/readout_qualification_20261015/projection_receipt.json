@@ -1,0 +1,14 @@
+{
+  "analysis_sha256": "61b3c3f543e21ea3b1287a3c03086bb733269bdfac143a8ba3dd44729d5d7d87",
+  "artifacts": {
+    "summary.json": "86bddf5317622003ad8ed10dfce35fbf268c64760778bb22d7104435674518eb",
+    "tables.tex": "2a6ac5d8b21e176affabb3cb301dbad24d81362352f59b0a576908b732502e47"
+  },
+  "independent_validation_sha256": "1b50a1df0e75ff43e9e86b837ea4cb52c429b9a518932f644cca139c91d4da0c",
+  "label_robustness_passed": false,
+  "new_model_forwards": 0,
+  "primary_qualification_passed": false,
+  "projection_source_sha256": "be12a473039d9864ad6b331f7006c8881864dec57b07f27e7c77904e1126b433",
+  "protocol_id": "glyphprobe-text-only-readout-qualification-v1",
+  "status": "projected_independently_validated_saved_scores"
+}

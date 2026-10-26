@@ -1,11 +1,82 @@
 # GlyphProbe
 
+[English](README.md)
+
+## 公開済みプレプリントと現在の研究
+
+[公開PDF](output/pdf/glyphprobe_preprint_20261015.pdf) ·
+[DOI: 10.5281/zenodo.23376699](https://doi.org/10.5281/zenodo.23376699) ·
+[論文ソースとbuild](paper/README.ja.md) ·
+[現在の主張](paper/CURRENT_CLAIMS_20261015.ja.md) ·
+[次版のテーマ案](docs/PAPER_NEXT_THEME_20261026.ja.md) ·
+[10月26日の統合範囲](docs/PUBLIC_INTEGRATION_SCOPE_20261026.ja.md)
+
+**Beyond Short Names: Emoji Keyword Retrieval across Models and Bounded Causal
+Tests** のVersion 1.0.0を、2026年10月15日に独立プレプリントとして公開しました。
+モデル横断の語彙の読み取り、範囲を限定した因果検査、文脈に応じた応答の測定限界を分けて
+扱います。NeurIPS 2026 workshop **Interpretability as a Science (InterpScience)**
+で受けた査読を踏まえた改稿であり、workshop採択論文やproceedings掲載論文ではありません。
+
+負の結果も公開版の貢献の一部です。調べたrank-8の説明は未支持または較正不能で、条件付き
+attention経路のmargin効果には平均の絶対top-1効果が伴いませんでした。明示的事実を使う
+適格性検査は、直接質問・最小回答が88/96正答、A/B回答が104/192正答で、事前指定した
+要件は両方とも未達でした。CLDRとの対応は語彙の測定であり、人間の意味理解の正解ラベルや
+研究の最終目的としては扱いません。
+
+元の[sr_glyphprobe](https://github.com/RyoSpiralArchitect/sr_glyphprobe)は現在**public**です。
+10月15日の資料を絞った[sr_glyphprobe-public](https://github.com/RyoSpiralArchitect/sr_glyphprobe-public)
+も公開済みです。10月26日の統合では点検済みの研究資料を元リポジトリへ加え、未公開の
+開発履歴を丸ごと取り込みません。人の個別記録、保護holdout、運用上の引き継ぎ、機械固有の
+生のruntime記録は今回の統合から除外します。選択した科学的ファイルは、全runを再実行
+できる完全な資料一式ではありません。[統合範囲](docs/PUBLIC_INTEGRATION_SCOPE_20261026.ja.md)
+に境界を記し、元から存在する全履歴の公開可否を認証するものとは区別します。
+
+公開PDFは変更しておらず、SHA-256は
+`9f9a34b578b8eeec6dd8f08994fa348ea050d5477c3387663cc885d9cd30d673`です。
+36ページ、対象231テスト成功、はみ出し・未定義参照なしという結果は、**10月15日の検証記録**
+です。今回の統合で231テストを再実行したという意味ではありません。正確なPDFに結び付く
+[公開検証記録](artifacts/public_release_20261015/evidence/document_validation.public.json)
+をそのまま保持します。
+
+### 公開済み保存得点パッケージの検証
+
+[公開アーカイブ](output/artifacts/glyphprobe_public_release_20261015_v2.zip)のSHA-256は
+`36959018915a13b988d83b7db13b9e3bb91b6e3a660649cbc8a270340b68f409`です。
+同じ内容を変更せず、[`artifacts/public_release_20261015/`](artifacts/public_release_20261015/README.ja.md)
+にも収録しています。リポジトリrootから、Python標準ライブラリだけで実行できます。
+
+```bash
+python3 -B artifacts/public_release_20261015/paper/scripts/build_public_release_20261015.py \
+  verify artifacts/public_release_20261015
+```
+
+正確な収録内容を検査し、保存済みの適格性得点4,640件を二つの計算実装で再計算します。
+モデルのlogit再取得、人間の意味理解の検証、外部公開の確認は行いません。
+`publication_verified: false`はその検証範囲を意図的に表し、DOIの公開とは別の記録です。
+公開準備時点のmanifestは変更しません。[ライセンス案内](paper/PUBLIC_LICENSES_20261015.ja.md)
+のとおり、著者が権利を持つ論文・独自の論文図・新たな公開データはCC BY 4.0、コードと通常の
+プロジェクト文書はApache 2.0とし、第三者の権利表示は保持します。
+
+### 次版の方向 — 提案であり、新しい結果ではない
+
+[読み取れる記号情報から計算での利用へ](docs/PAPER_NEXT_THEME_20261026.ja.md)では、局所的な
+K/Vの変更が後続計算へどう伝わり、読み出しの非線形性とどう分けられるかを問います。
+現在のT22は既露出8項目の記述的証拠です。Vのみの操作で局所attentionが変わらないのは
+定義上の性質で、後続attentionの変化は観測されましたが、それが語彙効果を媒介する程度は
+未同定です。固定済み384項目の探索は未実施で、新しい確認用標本でもありません。
+テーマ案はプロトコルを変更せず、実験の実行も承認しません。
+
 [論文第2弾の考察Note](docs/PAPER2_DISCUSSION_NOTES_V0.ja.md) · [T22 露出済み8項目のK/V結果](docs/T22_CPU_LEXICAL_RESULTS_V0.ja.md) · [384項目の凍結設計](docs/T22_KV_EXPLORATION_CPU_V0.ja.md)：事後的なフレーミング、CPUでの記述的証拠、別checkoutでも使える数値再計算。384項目の探索は未実施で、軽量化runnerの実装・検証が必要です。
 
-[査読後の証拠補強](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md): モデル不要のT19統計再計算、
+## 過去の研究索引
+
+以下の実験、ページ数、検証記録は、それぞれに記した過去の版に属します。現在の公開PDFの
+状態や、全実験の生の入力がこの公開checkoutに含まれることを意味しません。
+
+[9月の査読後の証拠補強](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.ja.md): モデル不要のT19統計再計算、
 T20のチェックポイント採用、T21の自項目・競合マージンの記述的分解。
 科学的な判定は変更していません。
-[最終パッケージ検証](validation/post_review_evidence_v0/submission_qa.json)に、本文9ページ、
+[過去のパッケージ検証](validation/post_review_evidence_v0/submission_qa.json)に、本文9ページ、
 コンパクトな再計算、図の再生成、回帰テストの確認を記録しています。
 
 [T21 条件付き経路の結果](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.ja.md) · [T21 prospective設計](docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.ja.md)
@@ -27,7 +98,7 @@ GlyphProbe は、絵文字やグリフから作った活性化方向が、言語
 🟤 🟫   🟠 🟧   🟢 🟩   🔵 🟦   🟣 🟪
 ```
 
-## 現在地
+## 過去の研究結果
 
 最初の基準実験では、次のcellを検証しました。
 
@@ -600,7 +671,10 @@ shasum -a 256 validation/mlx_gpt2_parity/receipt.candidate.json
 
 公開向けの手書き文書は、原則として英語版と日本語版を対にします。ライセンス、引用情報、スキーマ、機械生成レシート、コード内コメントは対象外です。
 
-## Phase I のゴール
+## 過去のPhase Iのゴールと投稿記録
+
+以下は9月の論文作成段階の記録です。現在の独立プレプリントと次版のテーマ案は、このREADME
+冒頭から参照できます。過去の投稿確認を、現在も残る公開条件として扱うものではありません。
 
 Phase Iの最終成果は、検証可能なartifactを伴う**英語論文または英語プレプリント**である。
 [著者匿名の原稿](output/pdf/glyphprobe_t19_first_draft.pdf)は、T19の9 / 9

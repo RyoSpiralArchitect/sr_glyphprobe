@@ -1,5 +1,7 @@
 # Before asking what an emoji means, ask whether it leaves a fingerprint
 
+2026-10-07 update: [Contextual cue interactions and response-choice stability](CONTEXTUAL_EMOJI_MEASUREMENT_RESEARCH_NOTE_V0.md) · [Next study options](CONTEXTUAL_EMOJI_MEASUREMENT_NEXT_PLAN_V0.md). The paired research note analyzes saved output scores and an open numerical-consistency issue; the historical narrative below is retained.
+
 [T19 lexical + causal result](T19_LEXICAL_ALIAS_UNICODE_CONTROL_V0_RESULTS.md) · [T19 paper story](PAPER_STORY_T19_LEXICAL_NEIGHBORHOOD_V0.md) · [T18 fresh lexical result](FRESH_COMPOSITE_GLYPH_LEXICAL_CONFIRMATION_V0_RESULTS.md) · [T18 paper story](PAPER_STORY_T18_FRESH_LEXICAL_V0.md) · [T17 depth-atlas result](GLYPH_NAME_DEPTH_TRAJECTORY_V0_RESULTS.md) · [T16 paper story](PAPER_STORY_T16_V0.md) · [T16 operational and causal result](T16_OPERATIONAL_SEMANTICS_CAUSAL_SUBSPACE_V0_RESULTS.md) · [T16-UTF-X1 stress-test result](T16_UTF_SCALE_VARIANTS_V1_RESULTS.md)
 
 [T15-B prospective replication result](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0_RESULTS.md) · [T15-B protocol](EMOJI_WORD_INCONGRUENCE_REPLICATION_V0.md)

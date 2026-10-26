@@ -1,0 +1,41 @@
+{
+  "all_resource_observations_allowed": true,
+  "assessment": "qualified_development_acquisition_not_human_validation",
+  "carrier_pair_counts": {
+    "absent": 288,
+    "anchor": 192,
+    "emoji": 576,
+    "word": 576
+  },
+  "complete_pairs": 1632,
+  "created_at_utc": "2026-10-10T08:19:16.216396+00:00",
+  "downloads": 0,
+  "elapsed_seconds": 638.744943046011,
+  "exact_historical_sentinel_scores": 32,
+  "exact_prefix_pairs": 1632,
+  "forward_rows": 3296,
+  "guarded_before_after_every_attempt": true,
+  "human_responses_read": 0,
+  "independent_scenarios": 24,
+  "inputs": {
+    "auditor_sha256": "e5a74c46d0b6377f415fda7aedd5d4eb9923628ff58047ed8289a26813a5c42f",
+    "completion_sha256": "37703e2b8d382a65436b28e38c0a080da6f98ead230ad4a99a690c8313fe8fef",
+    "forwards_sha256": "23951e81b4606b47110880d3b15d199e0cd804616860050fba4821b709f2b0a5",
+    "specification_sha256": "172af46ca6b4d946edbfb1daa9f2926850d8ed25559070301cdf01b548416039"
+  },
+  "model_choice_summaries_disclosed": false,
+  "model_forwards": 0,
+  "new_independent_scenarios": 0,
+  "numerical_gate_passed": true,
+  "peak_torch_memory_mib": {
+    "allocated_mib": 6195.23095703125,
+    "reserved_mib": 6318.0
+  },
+  "planned_forward_rows": 3296,
+  "planned_pairs": 1632,
+  "protocol_id": "glyphprobe-two-track-v1-independent-mechanical-audit",
+  "status_counts": {
+    "completed": 3296
+  },
+  "token_sums_checked": 3296
+}

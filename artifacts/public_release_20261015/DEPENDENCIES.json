@@ -1,0 +1,7 @@
+{
+  "current_paper_format": "standard LaTeX article and public TeX packages; no workshop style or checklist",
+  "external_model_assets_included": false,
+  "historical_archive_dependency_notices": "Retained inside the unchanged nested historical archive.",
+  "pdf_scan_builder_dependency": "pypdf (not vendored)",
+  "public_score_replay_dependencies": "Python standard library only"
+}
