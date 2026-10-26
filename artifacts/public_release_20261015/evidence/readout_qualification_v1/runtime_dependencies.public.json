@@ -1,0 +1,85 @@
+{
+  "bitwise_reacquisition_claimed": false,
+  "implementation_source_hashes": {
+    "masking_utils": {
+      "sha256": "e8c497af6979274fc6ae78980ad9893e7850bdb750e46d459f09178123992196"
+    },
+    "modeling_llama": {
+      "sha256": "13e65b752a9c9d8a5c22b83df73009a8940c0eefdc58c101df3eb910e3efc2f9"
+    }
+  },
+  "model_artifact_hashes_only": {
+    "file_count": 9,
+    "files": {
+      ".gitattributes": {
+        "bytes": 1519,
+        "sha256": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361"
+      },
+      "README.md": {
+        "bytes": 15974,
+        "sha256": "52aa267762f7040fd06ccb8e04fe2610781ea7453c808bd717471533c24a022a"
+      },
+      "config.json": {
+        "bytes": 921,
+        "sha256": "3ac8521f7b26049f57889a2a16c4ad9c30f32ed17c003d6899dc916300be6d63"
+      },
+      "model-00001-of-00002.safetensors": {
+        "bytes": 5368478882,
+        "sha256": "53c5d0d0bf614dd47699da0c3381565d9c29ffd20830dd0c0c41aec063ff0844"
+      },
+      "model-00002-of-00002.safetensors": {
+        "bytes": 1057050089,
+        "sha256": "27918a4050dd52d318aadaa0f743d6aab0043a7ebc269ffda573c024541e4ff2"
+      },
+      "model.safetensors.index.json": {
+        "bytes": 21946,
+        "sha256": "de5995e586fc98a942b576a6752034a6d0a741d2dece5f61e697d99c8bb99b3d"
+      },
+      "special_tokens_map.json": {
+        "bytes": 301,
+        "sha256": "cc2e013b7545f183ef03e079a3c91c6f364fa37e4068c512d7dd843e59024535"
+      },
+      "tokenizer.json": {
+        "bytes": 9085657,
+        "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+      },
+      "tokenizer_config.json": {
+        "bytes": 50500,
+        "sha256": "8004530facf809ac432114de2a4dcc65fcb632da5ec16d666091aeb6a2ee444a"
+      }
+    },
+    "manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+    "total_bytes": 6434705789
+  },
+  "model_files_included": false,
+  "python_version": "3.14.4",
+  "runtime_packages": {
+    "numpy": "2.5.2",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.13.0+cu132",
+    "transformers": "5.15.0"
+  },
+  "scoring": {
+    "attention": "eager",
+    "changed_geometry_historical_total_parity_required": false,
+    "dtype": "bfloat16",
+    "end_to_begin_tolerance": 0,
+    "historical_parity_tolerance": 0,
+    "log_softmax_dtype": "float32",
+    "num_threads": 4,
+    "original_kwargs": "input_ids,attention_mask=ones_like,use_cache=False; implicit positions",
+    "padded_kwargs": "right pad token 0; 1 real/0 pad mask; absolute position_ids 0..L-1",
+    "padded_normalization": "common rectangle [prompt_length-1:common_total_length-1] before valid-token gather",
+    "prefix_only": "not run",
+    "primary_estimator": "full_candidate_sequence_logprob_sum",
+    "same_shape_gate": "exact shared predictor logits hash AND every prefix logprob",
+    "same_shape_prefix_tolerance": 0,
+    "scientific_prefix_failure_policy": "finish_bounded_inventory_and_fail_acceptance_gate",
+    "scientific_sentinel_repeat_tolerance": 0,
+    "seed": 2026100701,
+    "sentinel_resource_runtime_failure_policy": "stop_and_preserve_planned_missingness",
+    "sentinel_tolerance": 0,
+    "use_cache": false
+  }
+}

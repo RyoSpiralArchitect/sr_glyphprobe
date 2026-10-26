@@ -1,11 +1,95 @@
 # GlyphProbe
 
+[日本語](README.ja.md)
+
+## Published preprint and current research
+
+[Published PDF](output/pdf/glyphprobe_preprint_20261015.pdf) ·
+[DOI: 10.5281/zenodo.23376699](https://doi.org/10.5281/zenodo.23376699) ·
+[Paper source and build](paper/README.md) ·
+[Current claims](paper/CURRENT_CLAIMS_20261015.md) ·
+[Next-paper theme](docs/PAPER_NEXT_THEME_20261026.md) ·
+[October 26 integration scope](docs/PUBLIC_INTEGRATION_SCOPE_20261026.md)
+
+**Beyond Short Names: Emoji Keyword Retrieval across Models and Bounded Causal
+Tests**, version 1.0.0, was published as an independent preprint on October 15,
+2026. It separates cross-model lexical readability, bounded causal tests and
+the limits of contextual response measurement. It was revised following
+reviewer feedback from the NeurIPS 2026 workshop **Interpretability as a Science
+(InterpScience)**; it is not an accepted workshop or proceedings paper.
+
+The published negative results remain part of the contribution. The tested
+rank-8 accounts were unsupported or uncalibratable, and the conditional
+attention-path margin result had zero mean absolute top-1 effects. Explicit-report
+qualification returned 88/96 correct direct/minimal answers and 104/192 correct
+A/B answers; both prespecified requirements failed. CLDR correspondence is a
+lexical measurement, not a human-semantic label or the ultimate research goal.
+
+The original [sr_glyphprobe repository](https://github.com/RyoSpiralArchitect/sr_glyphprobe)
+is now **public**, as is the curated October 15
+[sr_glyphprobe-public release](https://github.com/RyoSpiralArchitect/sr_glyphprobe-public).
+The October 26 integration brings selected research material into this original
+repository; it does not import the unpublished development history wholesale.
+Individual human records, protected holdouts, operational handoffs and raw
+machine-specific runtime records are excluded from this integration. Selected
+scientific files are not a complete-run replay bundle. The
+[scope note](docs/PUBLIC_INTEGRATION_SCOPE_20261026.md) records these boundaries;
+it does not certify all prior repository history.
+
+The published PDF is unchanged, with SHA-256
+`9f9a34b578b8eeec6dd8f08994fa348ea050d5477c3387663cc885d9cd30d673`.
+Its 36 pages, 231 passing targeted tests, and absence of overfull boxes or
+undefined references are **October 15 validation records**, not a claim that
+231 tests were rerun during this integration. The exact-PDF
+[public validation receipt](artifacts/public_release_20261015/evidence/document_validation.public.json)
+preserves that historical evidence.
+
+### Verify the published saved-score package
+
+The [published archive](output/artifacts/glyphprobe_public_release_20261015_v2.zip)
+has SHA-256 `36959018915a13b988d83b7db13b9e3bb91b6e3a660649cbc8a270340b68f409`.
+Its unchanged contents are also available under
+[`artifacts/public_release_20261015/`](artifacts/public_release_20261015/README.md).
+From this repository root, using Python's standard library only:
+
+```bash
+python3 -B artifacts/public_release_20261015/paper/scripts/build_public_release_20261015.py \
+  verify artifacts/public_release_20261015
+```
+
+This verifies the exact package and replays all 4,640 saved qualification scores
+with two arithmetic implementations. It does not reacquire model logits,
+validate human meaning, or establish publication. Its deliberate
+`publication_verified: false` reports that limited scope; DOI publication is
+documented separately. The package's preparation manifests stay unchanged.
+The [license guide](paper/PUBLIC_LICENSES_20261015.md) assigns CC BY 4.0 to the
+author-owned paper, original paper figures and newly released public data;
+code and ordinary project documentation retain Apache 2.0, with third-party
+notices preserved.
+
+### Next-paper direction — proposed, not a new result
+
+[From readable symbols to causal use](docs/PAPER_NEXT_THEME_20261026.md) asks how
+local K/V changes propagate through later computation, and how that propagation
+can be distinguished from nonlinear readout effects. T22 currently supplies
+descriptive evidence from eight previously exposed items. Local V-only attention
+invariance is true by construction; later attention changes were observed, but
+their mediation of the lexical effect has not been identified. The fixed
+384-item exploration remains unrun and is not fresh confirmation. The theme
+note changes no protocol and authorizes no experiment.
+
 [Paper 2 discussion notes](docs/PAPER2_DISCUSSION_NOTES_V0.md) · [T22 exposed-eight K/V results](docs/T22_CPU_LEXICAL_RESULTS_V0.md) · [Frozen 384-item design](docs/T22_KV_EXPLORATION_CPU_V0.md): retrospective framing, descriptive CPU evidence, and portable numerical replay. The 384-item exploration remains unrun; its reduced runner still requires implementation and validation.
 
-[Post-review evidence audit](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md): T19
+## Historical study index
+
+The following studies, page counts and receipts belong to their named historical
+versions. They do not describe the current published PDF or imply that every
+historical raw input is included in this public checkout.
+
+[September post-review evidence audit](docs/POST_REVIEW_EVIDENCE_RESULTS_V0.md): T19
 model-free statistical replay, T20 checkpoint selection, and descriptive T21
 own-keyword/competitor decomposition. The scientific decisions are unchanged.
-[Final package checks](validation/post_review_evidence_v0/submission_qa.json)
+[Historical package checks](validation/post_review_evidence_v0/submission_qa.json)
 record the 9-page main text, compact replay, figure regeneration, and regression tests.
 
 [T21 conditional path result](docs/T21_GLYPH_CONTEXT_PATH_RESULTS_V0.md) · [T21 prospective design](docs/T21_GLYPH_CONTEXT_PATH_CONFIRMATION_V0.md)
@@ -26,7 +110,7 @@ The default panel is a balanced `5 colors × 2 shapes` grid:
 
 GlyphProbe starts with blind numerical screening. A reproducible fingerprint motivates a targeted causal test. Later studies below separately test lexical retrieval, component mediation, and a conditional attention-path contribution; none establishes human meaning or a complete circuit.
 
-## Current evidence snapshot
+## Historical evidence snapshot
 
 The first standard MLX cell uses the pinned `openai-community/gpt2` revision `607a30d783dfa663caf39e06633721c8d4cfcd7e`, FP32, and full-sequence `resid_post` addition at layers 2, 4, 7, and 9.
 
@@ -814,7 +898,11 @@ Project-authored public documentation is maintained in English and Japanese:
 
 Machine-generated artifacts, schemas, citations, licenses, and source code are exempt from line-by-line translation. English is the controlling language for the planned Phase I paper; the repository documentation remains bilingual.
 
-## Phase I goal
+## Historical Phase I goal and submission record
+
+The following records the September paper-development stage. The current
+standalone preprint and next-paper agenda are linked at the top of this README;
+historical submission checks are not pending publication requirements today.
 
 Phase I ends with an English preprint-ready paper supported by an auditable
 evidence package. The [anonymous manuscript](output/pdf/glyphprobe_t19_first_draft.pdf)

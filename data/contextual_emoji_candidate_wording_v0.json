@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "status": "author_defined_development_not_human_validated",
+  "authored_after_original_emoji_and_word_results": true,
+  "original_pair_id": "original",
+  "original_pair_policy": "reuse_each_block_original_candidates_without_changes_or_new_forwards",
+  "additional_pairs": [
+    {
+      "pair_id": "explicit_negation",
+      "positive": " This meets my goal.",
+      "negative": " This does not meet my goal.",
+      "description": "Generic goal compatibility with explicit verbal negation."
+    },
+    {
+      "pair_id": "adjective_pair",
+      "positive": " This is suitable for my goal.",
+      "negative": " This is unsuitable for my goal.",
+      "description": "Generic goal compatibility with suitable/unsuitable adjective contrast."
+    }
+  ],
+  "mapping": "positive_is_candidate_a_when_eta_is_plus_one_otherwise_candidate_b",
+  "scope": "same_two_added_pairs_for_every_block_context_and_carrier",
+  "limitations": [
+    "These are approximate author-defined paraphrases, not independently validated meaning equivalents.",
+    "Wording, lexical identity, length, negation morphology, and specificity change together; this is not an isolated negation experiment.",
+    "No candidate pair may be selected or excluded based on its new model output.",
+    "A/B and eta bookkeeping is not presentation counterbalancing or a bias control."
+  ]
+}

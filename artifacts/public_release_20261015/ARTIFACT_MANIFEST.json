@@ -1,0 +1,594 @@
+{
+  "archive_timestamp_is_reproducibility_constant_not_event_time": true,
+  "artifact_id": "glyphprobe_public_release_20261015",
+  "current_pdf": "paper/preprint.pdf",
+  "document_validation_included": true,
+  "doi": "10.5281/zenodo.23376699",
+  "doi_action_performed_by_builder": false,
+  "doi_registered": false,
+  "doi_reserved": true,
+  "externally_supplied_reserved_doi": "10.5281/zenodo.23376699",
+  "files": [
+    {
+      "bytes": 709,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "CITATION.cff",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "5ca4f20a675bcb509dce85a81ffcf0a4dcf91a4dd39773c1ccbc479c972bd0ab"
+    },
+    {
+      "bytes": 384,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "DEPENDENCIES.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "c4bb04dd646e058e1b3041d1baae85cf0a636725fb62224a19657d0876ce5ca1"
+    },
+    {
+      "bytes": 11357,
+      "license_classification": "Apache-2.0_license_text",
+      "path": "LICENSE",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "bytes": 954,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "PUBLICATION_METADATA.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "d76f4251ed8adc4c23142898cb5df63a889f3ef0280789accfea6591be12db53"
+    },
+    {
+      "bytes": 8571,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "README.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "5af384e3d86bba5353a9bd4aab9a9bc74dc60954963bdef7fcdfe5ae778e2b77"
+    },
+    {
+      "bytes": 7572,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "README.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "6a89a6f943b01b9d7f70fbaf804b895db141a77e77be1407556702c6297a0423"
+    },
+    {
+      "bytes": 1374,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "data/contextual_emoji_candidate_wording_v0.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "480d236a87e40e20a4ea339e0514c2a06a0707ec248413ca0260e56868a52730"
+    },
+    {
+      "bytes": 20684,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "data/contextual_emoji_development_v0.jsonl",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394"
+    },
+    {
+      "bytes": 17572,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "7b37412f439eaf8d01724a4bdfcaf724dfe7d851469c0d2fe1673774c5cbf019"
+    },
+    {
+      "bytes": 15940,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "d936d348ecd6cbdbbae091eec9d4843d497ff1369eea31d76630aa11b5df1884"
+    },
+    {
+      "bytes": 6626,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "6c9cb8fa786736e2e46b5a1e19ed1949698e7fc5ad34012b3115cf00f5aa5ef0"
+    },
+    {
+      "bytes": 6506,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "87c018168a2ede80d1ddb551b2860b1db8f323b1621f0dfc23ddece459bb7d4f"
+    },
+    {
+      "bytes": 4338,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "2ec31bed30b42692b101ecb77e9c9bdfa0505bcdd221d45d96bbd1262cbf8c16"
+    },
+    {
+      "bytes": 4140,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "2caa17078dd43b36c4efee1e708b5bb1f464f964b7136714d0a9198c9c64f34a"
+    },
+    {
+      "bytes": 6052,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/READOUT_QUALIFICATION_V1.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "959d3dd252e9d7764654ae22845f01b28e9ba2f644af7a26852e0df274cf2f62"
+    },
+    {
+      "bytes": 6196,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "docs/READOUT_QUALIFICATION_V1.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "3341d795e50bf685bc330724659afab06ff9445da5da18b0760f1c87df191cb9"
+    },
+    {
+      "bytes": 5370,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/document_validation.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "965cd700f238ad72380a0bb82306b91f3e35a5c7c57845285af4a71eaf3e255e"
+    },
+    {
+      "bytes": 3628963,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/analysis.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "61b3c3f543e21ea3b1287a3c03086bb733269bdfac143a8ba3dd44729d5d7d87"
+    },
+    {
+      "bytes": 9194109,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/forwards.public.jsonl",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "83cc7c51c254941be1179087e584fbe538c4ec5c354397230a2b06ccdc60c334"
+    },
+    {
+      "bytes": 404760,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/independent_validation.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "8869dd7b6202cac7cd51e039b21771138def17732146c9a36c1b73a4663181f1"
+    },
+    {
+      "bytes": 2041,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/projection_binding.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "a07fad5d4e9ec7dddc10be326140ba4d611e703d7c25bb948ea4d93ff71fdaf4"
+    },
+    {
+      "bytes": 616,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/run_summary.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "d3ce5d3e7b6061d6e6960ec2da5e2db50906b4e7c92eb692811847e544de298f"
+    },
+    {
+      "bytes": 3192,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/runtime_dependencies.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "4f0ed1c25e9d95505f3c47bac90ccc1f56c04ecc990558e59e075295a4941920"
+    },
+    {
+      "bytes": 12134212,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "evidence/readout_qualification_v1/specification.public.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "6fee8380e20087a3553a7e059625d3840360dce5b495bb587e23e8326f77a182"
+    },
+    {
+      "bytes": 10914039,
+      "license_classification": "historical_mixed_assets_existing_notices_no_relicensing",
+      "path": "historical/glyphprobe_t19_anonymous_evidence_v4.zip",
+      "privacy_check": "historical_prevalidated_digest_only_not_reinspected",
+      "sha256": "33cadc408d550781454aa95aa5af7ea2f1c62a1411d2cabaaf9ac561afe1a84e"
+    },
+    {
+      "bytes": 4576,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/ASSET_LICENSES.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "b8e07837d8b50e81172b34583f7aba7e3cf8d17f4efaa35e234e47ab3a2df25c"
+    },
+    {
+      "bytes": 4572,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/ASSET_LICENSES.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "b375664c785e86aeb81c30d5d3c90840b56ab876dd6896e49dd5e34bafbe8252"
+    },
+    {
+      "bytes": 9482,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/CLAIM_TABLE.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "ca7f2255ebd02e01adf867c3eec9a438ce7a4f2ed2255bb898cb3b3ca4348ca1"
+    },
+    {
+      "bytes": 8957,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/CLAIM_TABLE.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "b5949797b35e210e97f5cfe8e452a420f8c8f997a336877f547d31284bf7e0e9"
+    },
+    {
+      "bytes": 10083,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/COMPUTE_REPORT.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "636953bab9ebcbdbdb8ef08728d496e78363a824bd93624c7876cfe4de10fcb5"
+    },
+    {
+      "bytes": 9976,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/COMPUTE_REPORT.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "eaa3c1bf36fcbcc017efcd057fe8baabce57e5f50132bccabfd3e23f3c7a1404"
+    },
+    {
+      "bytes": 9942,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/CURRENT_CLAIMS_20261015.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "c73aafaaec9f9b9870b0310815be8ecf9dc98b1a4c323c86f2831e76f5d0dfad"
+    },
+    {
+      "bytes": 9263,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/CURRENT_CLAIMS_20261015.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "e54328219dc193e23c30ff41d4d1325654f21e62a77b8f68e3ea9be8c06e6ceb"
+    },
+    {
+      "bytes": 9448,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/ETHICS_REVIEW.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "96047b8a767c533ded93d59c50af435c8e12612334b86b54a9f66e99e29cdd68"
+    },
+    {
+      "bytes": 9043,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/ETHICS_REVIEW.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "0e67b0a5848a2af025fdbbad563428d08c3af928e2a4343d24aa44889d471317"
+    },
+    {
+      "bytes": 15810,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/EXPERIMENT_GUIDE.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "aeaa9d0e1576db7677764e056dcd55bf35d7d6c4cdeec8d94a6388c08d8d7b08"
+    },
+    {
+      "bytes": 12674,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/EXPERIMENT_GUIDE.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "6f79b8770ff037a6e31a71903268bcb6dcb97db8b93670a2040850a8fcbde8d3"
+    },
+    {
+      "bytes": 3652,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/FORK_REVIEW_PUBLICATION_20261015.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "7f3720ecb0ba7d8e46619aeb7258908bba35dceb9ba6c08c560de8e73c3770fb"
+    },
+    {
+      "bytes": 3438,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/FORK_REVIEW_PUBLICATION_20261015.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "8d62f284626ca3ef68894dd87a04f89a23b98f480ea4718e70becbbe58a1b2ec"
+    },
+    {
+      "bytes": 3271,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/PUBLIC_LICENSES_20261015.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "a54683e31e9524e5e0879a2e9c68382a8b106f7bb1d0b257c24c5318847b5901"
+    },
+    {
+      "bytes": 2956,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/PUBLIC_LICENSES_20261015.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "4dc14ee0dde90da0789f585fc450c14d9a8f07eb9b5b9dc06cc7cf6e19bb4489"
+    },
+    {
+      "bytes": 8582,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/PUBLIC_RELEASE_20261015.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "857d1d2e9365014cb86bd3a790d32c35c3cb0172165ae9c3c39deb66d3bfa313"
+    },
+    {
+      "bytes": 7583,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/PUBLIC_RELEASE_20261015.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "4319afbfa96955e7c8cdfd87fe20be8871f7e0f8fa4e88d93055f34700e524bc"
+    },
+    {
+      "bytes": 7418,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/REVISION_NOTES_20261015.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "a674483eada6d9aa799e357cb6c8b47019720853f34fba22bf12b5b590a3b48d"
+    },
+    {
+      "bytes": 7077,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/REVISION_NOTES_20261015.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "c4292ab101c91529a826324693786c73faf6a8de0e1aaef0d963985f45a04419"
+    },
+    {
+      "bytes": 2049,
+      "license_classification": "Unicode-3.0_notice",
+      "path": "paper/UNICODE_LICENSE.txt",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "4b1bde6caac5d127b3a065d454fe264cc5916bc7c0c3ddf60087a07bbff26b55"
+    },
+    {
+      "bytes": 4150,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/WORKING_CLAIMS_20261010.ja.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "1738e3a39b46b530e578a82429248cccb3d041e5aac5ddf871343bbb107bf8be"
+    },
+    {
+      "bytes": 3957,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/WORKING_CLAIMS_20261010.md",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "e1f2dd374d81ab60f34f045c7b01ef48908466f818c23fe21b3a855f335981c3"
+    },
+    {
+      "bytes": 11873,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/contextual_development_20261010.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "d51b2d3456f7bb5ae9b0ef610c4c63786e488428ed86cc268ccd00ee4d9f4d4b"
+    },
+    {
+      "bytes": 5829,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/contextual_input_examples_20261015.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "38a40c7ac89a1fc9f801bf91e4c8bff2e80e73979b56236ca5c1ee913ba30563"
+    },
+    {
+      "bytes": 14176,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t19_causal_sites.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "98e3e432fb7b5acc6687c364b3e423367a6517d3c5d7589bfbcffa49b14e8bdc"
+    },
+    {
+      "bytes": 22164,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t19_design.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "588d50c83b378a407e25c47f08a62319f71c6e7ced7badff8974897fdf7486fc"
+    },
+    {
+      "bytes": 18885,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "342c59320226795fc0085dc38df99b1100ea0f174a7f95af189278e825603325"
+    },
+    {
+      "bytes": 21478,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t19_lineage.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "71c9db4e942d6856c49e1672e8287a03e6639c2ad91453c5b6d951fc952eb23b"
+    },
+    {
+      "bytes": 16359,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t19_model_effects.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "676f0f9a90795c7e8cf675165027dd22625cacd648ef8945dd76386cf9de4438"
+    },
+    {
+      "bytes": 18139,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t20_causal_ceilings.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "dc5a219800f3b15a4ac5fecb1b26b70241db231ea2546fdea42b1b0e6206171b"
+    },
+    {
+      "bytes": 16840,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/figures/t21_path_summary.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "5ff7e32bfb4db3409c98e29668f360d489fada6642e4dc94025764bc3b13d542"
+    },
+    {
+      "bytes": 1596,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/generated/contextual_development_tables_20261010.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "a2bdf162f9dba585ab6dad5b11490ae44cbe6b834d9082384373457f4976604a"
+    },
+    {
+      "bytes": 720,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "paper/generated/readout_qualification_20261015/projection_receipt.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "6159e8fff25dad1f6f0f46efe0151154bc84dacfb0b492daa555965dd5e24ff8"
+    },
+    {
+      "bytes": 1979804,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "paper/generated/readout_qualification_20261015/summary.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "86bddf5317622003ad8ed10dfce35fbf268c64760778bb22d7104435674518eb"
+    },
+    {
+      "bytes": 4619,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/generated/readout_qualification_20261015/tables.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "2a6ac5d8b21e176affabb3cb301dbad24d81362352f59b0a576908b732502e47"
+    },
+    {
+      "bytes": 81914,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/main.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "10a69b490763530a9cb55d0b73b079c5f2ab2ed75319a81c5531b78f0e81af25"
+    },
+    {
+      "bytes": 304651,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/preprint.pdf",
+      "privacy_check": "pdf_text_metadata_annotations_and_bytes_scanned",
+      "sha256": "9f9a34b578b8eeec6dd8f08994fa348ea050d5477c3387663cc885d9cd30d673"
+    },
+    {
+      "bytes": 11400,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/readout_qualification_20261015.tex",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "22983e26f3675fb9508a89ac8753a4afda57fae9296ee5f22fdf15ac4ecef086"
+    },
+    {
+      "bytes": 11302,
+      "license_classification": "CC-BY-4.0_author_owned_paper_and_figures_third_party_exceptions_retained",
+      "path": "paper/references.bib",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "7bd821ea4802e3cb311f58b3803d4679843fece02e4dcca5c0259116f9bde82e"
+    },
+    {
+      "bytes": 16850,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/scripts/build_public_release_20261015.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "79bf014357857bfff33ce009650fe37ee0a374933180f63c2191ad38f15f37db"
+    },
+    {
+      "bytes": 29569,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/scripts/build_release_candidate_20261015.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "68603a369ddcb37c293811c022daefd08dcd762e8090087d29a47aeec3d18742"
+    },
+    {
+      "bytes": 5160,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "paper/scripts/validate_public_preprint_20261015.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "ee7593fd566aefeedda2055de5fc95c8e3ffa8096560d26e09c51b48ed760947"
+    },
+    {
+      "bytes": 32766,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/contextual_emoji_output_pilot_v0.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa"
+    },
+    {
+      "bytes": 43292,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/contextual_emoji_prefix_consistency_v0.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "5ee9d2120c51e26db936ef37e0e1d4607aaf606fad41fb4970fc20210b985d65"
+    },
+    {
+      "bytes": 16454,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/contextual_emoji_two_track_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "b9a7d5da1576f0eac054c7492ee00ab93b5721cda612440d7d148936f6268234"
+    },
+    {
+      "bytes": 40429,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "a285a44bddf37c4f206052b055096f2ef58ce5a7b71a6112c75f72f6eb36e636"
+    },
+    {
+      "bytes": 15016,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/run_contextual_emoji_two_track_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "868a6f512f0df7f8a1a0105417e150def05ca664e3618cacd746a882418e86c8"
+    },
+    {
+      "bytes": 21856,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/summarize_readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "be12a473039d9864ad6b331f7006c8881864dec57b07f27e7c77904e1126b433"
+    },
+    {
+      "bytes": 25840,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "scripts/validate_readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "b85ff6913527f005653f187436f21240d007f3c6549a3e7add0a127e5778adc1"
+    },
+    {
+      "bytes": 3229,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "src/glyphprobe/io.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef"
+    },
+    {
+      "bytes": 2877,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "src/glyphprobe/provenance.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c"
+    },
+    {
+      "bytes": 15603,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "tests/test_readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "8d27c8e9911dc4781c1fac151440b40e9db5ff45d73db47eeb9bcb98f2d5642b"
+    },
+    {
+      "bytes": 9672,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "tests/test_summarize_readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "c3e67d0798de8a93835eeb5c6b3f0710b231f845f251854122f2a2cd9ce2b424"
+    },
+    {
+      "bytes": 11580,
+      "license_classification": "Apache-2.0_existing_project_code_and_documentation",
+      "path": "tests/test_validate_readout_qualification_v1.py",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "bcaf784880a939b690c42110ba896cec58e2bb263478a8bdae8e7ae6fe770f45"
+    },
+    {
+      "bytes": 26923,
+      "license_classification": "CC-BY-4.0_author_owned_public_data_third_party_exceptions_retained",
+      "path": "validation/contextual_emoji_working_revision_20261010/summary.json",
+      "privacy_check": "utf8_privacy_name_and_path_scan",
+      "sha256": "ea9b1026c7dd188f5aaa24f580ab127c2d0f2e72fc97a37c4e1973f084917685"
+    }
+  ],
+  "git_visibility": "Not changed by this builder; no public repository URL is assumed.",
+  "historical_boundary": "Unchanged September mixed-license archive is historical, not the current paper or a newly re-audited bank.",
+  "human_evidence_boundary": "Author-tryout aggregates only; no private answers, assignments, notes, or item-level human replay.",
+  "license_guide": "paper/PUBLIC_LICENSES_20261015.md",
+  "license_scope": "Own paper, figures and new public data: CC-BY-4.0; project code/docs: Apache-2.0; third-party and historical notices unchanged.",
+  "metadata_authority": "Operator-supplied; no remote verification or publication by this builder.",
+  "paper_license_confirmed": true,
+  "payload_files": 81,
+  "public_data_license_confirmed": true,
+  "public_deposit": false,
+  "reproducibility_timestamp_utc": "2026-10-15T00:00:00Z",
+  "schema_version": 1,
+  "scientific_claim": "Packaging integrity and saved-score replay are separate from scientific validity.",
+  "status": "prepared_public_release"
+}

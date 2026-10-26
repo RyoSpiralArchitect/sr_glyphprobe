@@ -1,0 +1,188 @@
+\section{Explicit-report readout qualification}
+\label{app:qualification}
+
+\subsection{A prospective test of the measurement}
+
+The failed completion controls in Appendix~\ref{app:contextual} motivate a
+more elementary question: does this checkpoint and scoring procedure recover
+what a short report explicitly states when question structure and answer
+encoding vary? We specified the inventory, logical references, full grid,
+and two operational decisions before acquiring any of its model scores.
+This is an internally recorded prospective specification, not an external
+preregistration. It neither revises a historical endpoint nor supplies a new
+emoji confirmation set.
+
+The inventory comprises 32 newly authored fact roots, eight from each of four
+domain/template families. Maintenance and storage form the 16-root development
+split; delivery and garden form the 16-root reserved check. Both complete
+splits were specified together, and no tuning occurred between them. The
+reserved families test a limited template change, without independent authors
+or human validation. Each root supplies three reports: explicit $P$, explicit
+$\neg P$, and an unknown report that specifies neither. Each report is queried
+about both $P$ and $\neg P$. The target concerns explicit evidence in the
+report, not whether the event occurred in the world.
+
+For example, an unknown report about whether Ada has rinsed the copper kettle
+supports neither that she has rinsed it nor that she has not rinsed it.
+Thus unknown is a distinct report state, never a negative event label.
+The logical reference is Yes exactly when the queried assertion equals the
+explicit report state. A question asking whether that support relation is
+false reverses the reference answer. This rule is defined by the authored
+inputs; it is not a judgment elicited from a person or another model.
+
+\paragraph{Question and answer factors.}
+The three question forms are ``Does the report explicitly state that
+\{proposition\}?'', ``Is it true that the report explicitly states that
+\{proposition\}?'', and ``Is it false that the report explicitly states that
+\{proposition\}?''. Every prompt explicitly instructs the model to judge the
+report's contents and to treat an unknown report as stating neither assertion.
+Four answer formats are fully crossed: the two historical full sentences
+\verb| The answer is yes.| and \verb| The answer is no.|; minimal
+\verb| Yes| and \verb| No|; and two A/B encodings, one assigning A to Yes and
+the other assigning A to No. Both encodings display A before B. Physical
+letter preferences are decoded using the stated mapping before assessing
+correctness. The full-sentence condition preserves the earlier answer strings,
+while its task instructions and reports are new; it is not a replay of the
+old prompts.
+
+One complete direct/minimal input is shown below. Printed line wrapping is
+typographic; the explicit breaks are input newlines. Its two continuations
+are \verb| Yes| and \verb| No|, including their leading spaces; the stipulated
+reference is No. The public candidate includes all 2,304 complete inputs and
+their token IDs, rather than only this example.
+
+% qualification-input: maintenance_01::unknown::positive::direct::minimal
+\begin{contextinput}
+Judge what the report explicitly states, not what happened in the world. A report that does not specify whether a proposition holds explicitly states neither that proposition nor its negation.\\
+Response labels: Yes means yes; No means no.\\
+Give only the response label.\\
+Report: The report does not specify whether Ada has rinsed the copper kettle.\\
+Question: Does the report explicitly state that Ada has rinsed the copper kettle?\\
+Answer:
+\end{contextinput}
+
+The complete design contains $32\times3\times2\times3\times4=2{,}304$
+candidate pairs, or 4,608 scientific sequence forwards. Sixteen historical
+sentinel forwards precede and sixteen follow acquisition, for 4,640 planned
+forwards in total. The 2,304 rows are repeated conditions on 32 authored roots,
+not independent tasks. All forms are reported; no format is selected after
+seeing its results.
+
+\paragraph{Two fixed operational decisions.}
+The primary gate requires direct questions with minimal Yes/No answers to
+be correct in all 96 reserved cases, with zero ties and all 16 roots correct
+in their six report--assertion combinations. A separate label-robustness gate
+requires all 192 reserved direct-question cases across the two A/B mappings
+to be correct, with zero ties. This strict finite-set requirement reflects
+the explicitly stipulated facts and support rule. It is not a population
+accuracy estimate or a calibrated test of semantic understanding. Constant
+No attains 64/96 on direct and nested-true questions because two thirds of
+the queried assertions lack explicit support; its class-balanced accuracy
+is 0.5. Nested-false questions reverse the answer prevalence, giving constant
+No 32/96 and constant Yes 64/96. A mapping can agree with another mapping
+while both are wrong.
+
+\paragraph{Scoring and numerical controls.}
+Acquisition retains the earlier Llama 3.2 3B base checkpoint, BF16 CUDA eager
+attention, teacher-forced full-continuation log-probability sums, and no chat
+template. It changes no weights and performs no free generation. Each candidate
+pair uses equal padded sequence shape and identical FP32 normalization shape,
+while summing real continuation tokens only. Exact predictor-logit checks
+include the first divergent answer position as well as shared answer tokens;
+formats with no shared answer tokens cannot pass through an empty comparison.
+The first-divergent-token score is a separate diagnostic, not a replacement
+primary estimator. Numerical acceptance requires every planned forward,
+finite sums, exact prefix/predictor checks, and exact historical sentinels
+at both acquisition boundaries. The source and prepared-input checksums bind
+these decisions to the run.
+
+\subsection{Results and operational verdicts}
+
+All 4,640 planned forwards completed, with 2,304/2,304 exact prefix and
+first-divergence predictor comparisons and exact historical sentinels at both
+boundaries. A separate implementation reconstructed the logical references,
+schedule, per-token sums, all 24 split--question--format summaries, and both
+verdicts from the saved records. It reproduced the acquisition analysis
+exactly. This is independent arithmetic verification on the same acquired
+scores, not an independent model run.
+
+The primary reserved direct/minimal condition is correct on 88/96 cases:
+four choices are incorrect and four are tied. Eight of 16 roots are correct
+on all six cases. Its class-balanced accuracy is 0.9375, above the constant-No
+baseline of 0.5; nevertheless, it fails the specified all-cases-correct gate.
+The same condition scores 88/96 on the development split, with six ties and
+nine complete-success roots. Neither split was used to choose another format.
+
+The reserved direct full-sentence condition scores 75/96. With minimal
+answers, nesting the support question under ``is it true'' yields 65/96;
+``is it false'' yields 57/96 after reference inversion. The latter has
+class-balanced accuracy 0.4453; constant Yes scores 64/96 in that condition.
+Table~\ref{tab:readout-qualification-main} reports every condition, including
+ties and the separate first-token diagnostic. These are within-inventory
+format comparisons. The revised prompts also add instructions and explicit
+reports, so they do not identify a causal repair of the earlier 48 failed
+completion controls.
+
+\paragraph{Failure location and unknown reports.}
+Within the primary reserved condition, explicit-positive reports score 25/32,
+explicit-negative reports 32/32, and unknown reports 31/32 (Table
+\ref{tab:readout-qualification-states}). All four incorrect choices and three
+ties occur when a positive report is queried about its negative assertion;
+the remaining tie is an unknown report queried about its positive assertion.
+The four wrong Yes preferences each have a $+0.125$-nat Yes-minus-No margin.
+Failures are therefore concentrated in a specified relation between the
+report and question; they do not establish general inability to process
+negation. Ties are exact at the recorded BF16 execution path. Numerical
+precision was not varied, so their cause is unresolved.
+
+\paragraph{Answer mappings and question consistency.}
+Across the two reserved direct A/B encodings, 104/192 choices are correct,
+69 are incorrect, and 19 are tied. This separately fails the 192/192
+label-robustness gate. Of 96 paired mappings of the same logical case, 14
+produce two correct decoded answers, 64 disagree, and 18 contain at least
+one tie. Agreement alone is not a correctness measure. Across both splits
+and all formats, direct versus nested-true questions agree on 580/768 pairs,
+disagree on 73, and contain ties on 115. Direct versus nested-false questions
+give the required opposite answers on 141/768 pairs, fail to do so on 507,
+and contain ties on 120. These totals reuse the same 32 roots and supply
+no population significance test.
+
+There are 221 full-sequence ties across the complete 2,304-pair inventory.
+The first-divergent-token diagnostic produces 264 ties and eight strict
+sign reversals relative to the full sequence, all in the full-sentence format.
+In the reserved direct full-sentence condition it gives 63/96 correct and
+12 ties; scoring the period resolves those 12 ties toward the correct answer,
+yielding the full-sequence 75/96. Thus the minimal format's 88/96 cannot be
+attributed to simply removing a period. The minimal and A/B continuations
+each contain one scored token, so this diagnostic cannot change their
+decisions or remove the four primary errors and four ties.
+
+\input{generated/readout_qualification_20261015/tables.tex}
+
+\paragraph{Execution and evidence.}
+The run took 889.366 seconds on the RTX 5090, with peak Torch allocated memory
+6,195.228 MiB and reservation 6,312 MiB. It downloaded no checkpoint and used
+the same pinned artifact through Transformers/CUDA, not MLX execution.
+The artifact and prepared-input specification are identified below.
+\begin{quote}\small\raggedright
+Checkpoint: \texttt{mlx-community/Llama-3.2-3B-bf16}\\
+Revision: \texttt{60a99aaf43164077157d64bf909b7b61143c6a6d}\\
+Prepared specification SHA-256:\\
+\texttt{5273b1f86db4ee956659a94ca7f047856e86b5f857fdf66efc5d96e5f85c487f}
+\end{quote}
+The current local candidate supplies the complete public input/score
+projection, all family and root summaries, and both saved-score analysis
+implementations. The primary remains unqualified; no contextual transfer,
+new model, or internal intervention was launched after this result.
+
+\subsection{Scope of this qualification}
+
+These controls assess one checkpoint, specified task instructions, authored
+report families, and teacher-forced encodings. Explicit support can be solved
+through literal matching. Changing the answer format changes instruction
+wording as well as the scored continuation, and changing question embedding
+changes its linguistic demands. The comparison cannot identify punctuation,
+negation circuitry, or any neural component as the cause of a failure.
+It supplies no emoji effect, cross-model replication, population interval,
+independent human validation, or natural-state causal intervention. Historical
+lexical retrieval and post-reset attention results retain their original scope.

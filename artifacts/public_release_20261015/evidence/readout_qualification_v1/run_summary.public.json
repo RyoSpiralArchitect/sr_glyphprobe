@@ -1,0 +1,22 @@
+{
+  "completed_pairs": 2304,
+  "downloads": 0,
+  "elapsed_seconds": 889.365958028473,
+  "forward_attempts": 4640,
+  "generation_calls": 0,
+  "label_robustness_passed": false,
+  "numerical_gate_passed": true,
+  "peak_torch_memory_mib": {
+    "allocated_mib": 6195.22802734375,
+    "reserved_mib": 6312.0
+  },
+  "planned_forward_attempts": 4640,
+  "primary_qualification_passed": false,
+  "protocol_id": "glyphprobe-text-only-readout-qualification-v1",
+  "qualification_status": "not_qualified",
+  "source_binding_or_execution_failure": false,
+  "status": "completed",
+  "status_counts": {
+    "completed": 4640
+  }
+}

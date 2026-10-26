@@ -1,0 +1,33 @@
+:root {color-scheme:light;--ink:#202329;--muted:#555e69;--line:#cdd2d8;--accent:#244ca2;--soft:#f5f7fa}
+* {box-sizing:border-box}
+body {margin:0;background:#fff;color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+header,main,#notice,footer {width:min(760px,calc(100% - 40px));margin-inline:auto}
+header {display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}
+header p {margin:0;font-weight:650} main {padding:28px 0 42px}
+h1 {font-size:28px;line-height:1.4;font-weight:650;letter-spacing:-.02em;margin:0 0 20px}
+h2 {font-size:20px;line-height:1.6;margin:0 0 18px;font-weight:600}
+p {margin:10px 0 16px} .muted,small {color:var(--muted)} small {font-size:13px}
+button,textarea,select,input {font:inherit}
+button,.download {padding:10px 16px;border:1px solid var(--line);border-radius:5px;background:white;color:var(--ink);font-size:15px;font-weight:550;line-height:1.5;cursor:pointer;text-decoration:none}
+button:hover,.download:hover {background:var(--soft)} button.primary {background:var(--accent);color:white;border-color:var(--accent)}
+button:disabled {opacity:.5;cursor:not-allowed}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {outline:3px solid var(--accent);outline-offset:3px}
+.toolbar {display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:24px}
+.progress {font-size:14px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.prompt {white-space:pre-wrap;overflow-wrap:anywhere;font-size:18px;line-height:1.8;padding:18px 0;margin:0;border-block:1px solid var(--line)}
+.question {padding:26px 0;border-bottom:1px solid var(--line)}
+.question h2 {overflow-wrap:anywhere}.question small {display:block;margin-top:12px}
+fieldset {border:0;padding:0;margin:18px 0;min-width:0}legend {font-weight:550;margin-bottom:10px}
+.choices {display:flex;flex-wrap:wrap;gap:10px}.choice {display:flex;align-items:flex-start;gap:10px;padding:10px 16px;border:1px solid var(--line);border-radius:5px;min-width:105px;cursor:pointer}
+.choice:has(input:checked) {background:#eef3ff;border-color:var(--accent)}
+input[type=radio],input[type=checkbox] {accent-color:var(--accent);width:18px;height:18px;flex-shrink:0;margin:4px 0 0}
+.field {display:block;font-weight:550;margin:18px 0}.field select,.field textarea {display:block;width:100%;margin-top:8px}
+select,textarea {border:1px solid var(--line);border-radius:5px;padding:11px;font-size:16px;font-weight:400;background:white;color:var(--ink)}
+textarea {min-height:96px;resize:vertical}.check-line {display:flex;align-items:flex-start;gap:10px;margin:16px 0}
+.reasons {display:grid;gap:6px}.reasons label {display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.review {display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}.review button {min-width:62px}.review .saved {border-bottom:3px solid var(--accent)}
+#notice:empty {display:none}#notice {padding:12px 16px;background:var(--soft);margin-top:16px;border-left:3px solid var(--accent)}
+#notice.error {border-color:#a92d2d;color:#762020;background:#fff6f6}
+footer {border-top:1px solid var(--line);padding:18px 0 30px;font-size:13px;color:var(--muted)}
+[hidden] {display:none!important}
+@media(max-width:540px){header,main,#notice,footer {width:calc(100% - 28px)}header {gap:10px;padding:16px 0}header p {font-size:14px}h1 {font-size:24px}.prompt {font-size:17px}.toolbar button,.toolbar .download {flex:1 1 auto;text-align:center}}

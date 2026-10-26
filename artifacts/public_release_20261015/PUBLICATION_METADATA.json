@@ -1,0 +1,20 @@
+{
+  "title": "Beyond Short Names: Emoji Keyword Retrieval across Models and Bounded Causal Tests",
+  "resource_type": "publication-preprint",
+  "creators": [{"family_name": "Higa", "given_name": "Ryo"}],
+  "version": "1.0.0",
+  "publication_date": "2026-10-15",
+  "doi": "10.5281/zenodo.23376699",
+  "doi_status_at_preparation": "reserved_not_registered",
+  "draft_record_url": "https://zenodo.org/uploads/23376699",
+  "record_url": "https://zenodo.org/records/23376699",
+  "author_license_confirmation": {
+    "source": "direct_author_confirmation_in_publication_workflow",
+    "paper_original_figures_and_new_public_data": "CC-BY-4.0",
+    "project_code": "Apache-2.0",
+    "third_party_and_historical_materials": "retain_original_licenses_and_notices"
+  },
+  "repository_visibility_at_preparation": "original_private_curated_public_repository_authorized",
+  "conference_acceptance_claimed": false,
+  "new_experiments_in_publication_workflow": false
+}

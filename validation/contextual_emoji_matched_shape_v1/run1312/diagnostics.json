@@ -1,0 +1,4695 @@
+{
+  "all1312_scores_completed": true,
+  "all624_prefixes_exact": true,
+  "all_scored_boundaries_admissible": true,
+  "all_sentinel_scientific_repeats_exact": true,
+  "claim_ceiling": "scoring-consistency gate; scientific interpretation requires independent analysis",
+  "completed_forward_scores": 1312,
+  "completed_scientific_inputs": 624,
+  "completed_scientific_scores": 1248,
+  "input_comparisons": [
+    {
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.7230963706970215,
+      "s_matched_shape": 1.7738704681396484,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3155124187469482,
+      "s_matched_shape": 1.2115081548690796,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9025976061820984,
+      "s_matched_shape": 0.8807340264320374,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.551721453666687,
+      "s_matched_shape": 1.536679744720459,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2163399457931519,
+      "s_matched_shape": -1.1769126653671265,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8023748695850372,
+      "s_matched_shape": 0.8433808386325836,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7241684198379517,
+      "s_matched_shape": 0.7566303014755249,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5058799982070923,
+      "s_matched_shape": -1.5189782977104187,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.9299660325050354,
+      "s_matched_shape": 3.9304612278938293,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2860729694366455,
+      "s_matched_shape": 2.144691586494446,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.7761808037757874,
+      "s_matched_shape": 2.754363238811493,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.085607349872589,
+      "s_matched_shape": 3.0917059183120728,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.629421979188919,
+      "s_matched_shape": -1.537632018327713,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.8631791174411774,
+      "s_matched_shape": -0.8823833763599396,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.365295171737671,
+      "s_matched_shape": -1.371334433555603,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.492587447166443,
+      "s_matched_shape": -2.5076348781585693,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.3580628633499146,
+      "s_matched_shape": 3.3123886585235596,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.157373547554016,
+      "s_matched_shape": 2.157373547554016,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.4113359451293945,
+      "s_matched_shape": 2.551485061645508,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2649794816970825,
+      "s_matched_shape": 2.230816125869751,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.9528571367263794,
+      "s_matched_shape": -3.9528571367263794,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4353062510490417,
+      "s_matched_shape": -2.4816256761550903,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3126713037490845,
+      "s_matched_shape": -2.3292707204818726,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.6825364232063293,
+      "s_matched_shape": -2.6825364232063293,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.450837016105652,
+      "s_matched_shape": 5.739752411842346,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9586704969406128,
+      "s_matched_shape": 1.9586704969406128,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1305545568466187,
+      "s_matched_shape": 2.1305545568466187,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.8827207684516907,
+      "s_matched_shape": 1.9397075176239014,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.4344857931137085,
+      "s_matched_shape": -3.5111052989959717,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.055234968662262,
+      "s_matched_shape": -0.9243497848510742,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.9461058378219604,
+      "s_matched_shape": -1.9389806389808655,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.1036520600318909,
+      "s_matched_shape": -1.1036520600318909,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.8778167068958282,
+      "s_matched_shape": 1.858767032623291,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6799568831920624,
+      "s_matched_shape": 1.6799568831920624,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2585686445236206,
+      "s_matched_shape": 1.3730416595935822,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2443783283233643,
+      "s_matched_shape": 1.2471562623977661,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.5182111263275146,
+      "s_matched_shape": -2.4081780910491943,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.549398362636566,
+      "s_matched_shape": -2.6110236048698425,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.2632049322128296,
+      "s_matched_shape": -2.3204609155654907,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.5143781900405884,
+      "s_matched_shape": -2.5289065837860107,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.168458342552185,
+      "s_matched_shape": 2.2222704887390137,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.353302240371704,
+      "s_matched_shape": 1.3190933465957642,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9061920642852783,
+      "s_matched_shape": 1.9868180751800537,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.570628046989441,
+      "s_matched_shape": 1.6144664287567139,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.0691694021224976,
+      "s_matched_shape": -3.249855160713196,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.40372633934021,
+      "s_matched_shape": -2.2882543802261353,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3974066972732544,
+      "s_matched_shape": -2.4019678831100464,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4567677974700928,
+      "s_matched_shape": -2.556427478790283,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9111047387123108,
+      "s_matched_shape": 1.8741386532783508,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8811597228050232,
+      "s_matched_shape": 0.8916741609573364,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.935130327939987,
+      "s_matched_shape": 2.8275468945503235,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.3846041560173035,
+      "s_matched_shape": 2.3846041560173035,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.736444652080536,
+      "s_matched_shape": -3.736444652080536,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.3874388933181763,
+      "s_matched_shape": -3.3106179237365723,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.6653026938438416,
+      "s_matched_shape": -2.6627818942070007,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.901142120361328,
+      "s_matched_shape": -2.917867422103882,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.317582577466965,
+      "s_matched_shape": 5.236968249082565,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.82480189204216,
+      "s_matched_shape": 4.914776146411896,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.403479993343353,
+      "s_matched_shape": 4.488388508558273,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.7382446229457855,
+      "s_matched_shape": 4.648806214332581,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.3236493468284607,
+      "s_matched_shape": -3.3066039085388184,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.6797454953193665,
+      "s_matched_shape": -2.6691682934761047,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.430994927883148,
+      "s_matched_shape": -2.382174074649811,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.0022628903388977,
+      "s_matched_shape": -2.1536269187927246,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9635518491268158,
+      "s_matched_shape": 1.0119862258434296,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.399674654006958,
+      "s_matched_shape": 0.3995217978954315,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.10354262590408325,
+      "s_matched_shape": -0.10354262590408325,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9493651390075684,
+      "s_matched_shape": 0.9513052701950073,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.229218751192093,
+      "s_matched_shape": -1.2141594588756561,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.921256810426712,
+      "s_matched_shape": -0.9140648543834686,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.15711691975593567,
+      "s_matched_shape": 0.06456547975540161,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0325174033641815,
+      "s_matched_shape": -0.930834174156189,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.6606101393699646,
+      "s_matched_shape": 3.6606101393699646,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.484518826007843,
+      "s_matched_shape": 3.45285302400589,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.479653537273407,
+      "s_matched_shape": 3.483880877494812,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.754717528820038,
+      "s_matched_shape": 3.7056908011436462,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.963557183742523,
+      "s_matched_shape": -2.961549162864685,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.5440205335617065,
+      "s_matched_shape": -2.5638911724090576,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.9358595609664917,
+      "s_matched_shape": -2.9542006850242615,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.916454017162323,
+      "s_matched_shape": -2.992064952850342,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3361781239509583,
+      "s_matched_shape": 1.1823003888130188,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9418337345123291,
+      "s_matched_shape": 0.6868950724601746,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.16333958506584167,
+      "s_matched_shape": 0.15279033780097961,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.5578162670135498,
+      "s_matched_shape": 1.4970293045043945,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4495431184768677,
+      "s_matched_shape": 0.30275754630565643,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.13561077415943146,
+      "s_matched_shape": 0.13561077415943146,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.27861741185188293,
+      "s_matched_shape": 0.3737954795360565,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4575791656970978,
+      "s_matched_shape": -0.4575791656970978,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9178290218114853,
+      "s_matched_shape": 0.9178290218114853,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8013773299753666,
+      "s_matched_shape": 0.7335703410208225,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.46445928514003754,
+      "s_matched_shape": 0.46445928514003754,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3867033272981644,
+      "s_matched_shape": 1.461317852139473,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0180337689816952,
+      "s_matched_shape": -1.1916569136083126,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.34162114188075066,
+      "s_matched_shape": 0.503373634070158,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.095786064863205,
+      "s_matched_shape": 1.095786064863205,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.3240201473236084,
+      "s_matched_shape": -1.3185278177261353,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1503121256828308,
+      "s_matched_shape": 1.155262291431427,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.07376229763031,
+      "s_matched_shape": 1.07376229763031,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.0577886700630188,
+      "s_matched_shape": -0.04377037286758423,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.52103590965271,
+      "s_matched_shape": 0.5104554891586304,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2598044872283936,
+      "s_matched_shape": -1.23116135597229,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.37195122241973877,
+      "s_matched_shape": 0.37195122241973877,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7915272116661072,
+      "s_matched_shape": 0.7383714318275452,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.8468984365463257,
+      "s_matched_shape": -0.8537524938583374,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.7631725668907166,
+      "s_matched_shape": 3.6990583539009094,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.3908535838127136,
+      "s_matched_shape": 2.38540381193161,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.415534794330597,
+      "s_matched_shape": 2.2582589983940125,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.338503837585449,
+      "s_matched_shape": 2.2825464606285095,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.3896729946136475,
+      "s_matched_shape": -1.3263837099075317,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.45541125535964966,
+      "s_matched_shape": -0.5578153729438782,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9967662394046783,
+      "s_matched_shape": -0.9775599539279938,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3543712496757507,
+      "s_matched_shape": -2.2796455025672913,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.351964235305786,
+      "s_matched_shape": 3.3955984115600586,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1977197527885437,
+      "s_matched_shape": 2.1977197527885437,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.4034123420715332,
+      "s_matched_shape": 1.5410174131393433,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.64996874332428,
+      "s_matched_shape": 2.53720223903656,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.13613224029541,
+      "s_matched_shape": -3.1864166259765625,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.5447126626968384,
+      "s_matched_shape": -3.6473814249038696,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.9018900394439697,
+      "s_matched_shape": -1.9005558490753174,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.897163510322571,
+      "s_matched_shape": -2.898033022880554,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.346126168966293,
+      "s_matched_shape": 5.2301070392131805,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.8836096823215485,
+      "s_matched_shape": 1.8912310898303986,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.851715624332428,
+      "s_matched_shape": 1.851715624332428,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1975197792053223,
+      "s_matched_shape": 2.2787423133850098,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.397193729877472,
+      "s_matched_shape": -3.507099449634552,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7590539455413818,
+      "s_matched_shape": -1.813991904258728,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.1605005860328674,
+      "s_matched_shape": -0.9987813830375671,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.3644443154335022,
+      "s_matched_shape": -1.4078541994094849,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.14061775803566,
+      "s_matched_shape": 2.080513507127762,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.4000622630119324,
+      "s_matched_shape": 1.3589272797107697,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1852679252624512,
+      "s_matched_shape": 1.1852679252624512,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0829671025276184,
+      "s_matched_shape": 1.0829671025276184,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4855297803878784,
+      "s_matched_shape": -2.5792598724365234,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.51845383644104,
+      "s_matched_shape": -2.5157886743545532,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8576490879058838,
+      "s_matched_shape": -1.8576490879058838,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.602592706680298,
+      "s_matched_shape": -2.602592706680298,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.6282365322113037,
+      "s_matched_shape": 2.6558221578598022,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.0795735120773315,
+      "s_matched_shape": 1.9799747467041016,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.206260561943054,
+      "s_matched_shape": 2.217073082923889,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.730824828147888,
+      "s_matched_shape": 2.8678921461105347,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.626373291015625,
+      "s_matched_shape": -2.587092161178589,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4957841634750366,
+      "s_matched_shape": -2.4957841634750366,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.632208228111267,
+      "s_matched_shape": -1.610388159751892,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.7144458293914795,
+      "s_matched_shape": -2.7137651443481445,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6668776869773865,
+      "s_matched_shape": 1.6768895983695984,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6211099624633789,
+      "s_matched_shape": 0.6211099624633789,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1730778217315674,
+      "s_matched_shape": 2.1730778217315674,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.290617883205414,
+      "s_matched_shape": 2.290456712245941,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.4066410064697266,
+      "s_matched_shape": -3.40484619140625,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.915868401527405,
+      "s_matched_shape": -2.915868401527405,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.411357581615448,
+      "s_matched_shape": -3.277224540710449,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.052316665649414,
+      "s_matched_shape": -3.022555887699127,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.636107683181763,
+      "s_matched_shape": 5.5893029272556305,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.3751871585845947,
+      "s_matched_shape": 2.400113046169281,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.0569968819618225,
+      "s_matched_shape": 3.0359587967395782,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.4810420870780945,
+      "s_matched_shape": 3.5388556718826294,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.920091539621353,
+      "s_matched_shape": -2.9571273922920227,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8045188784599304,
+      "s_matched_shape": -1.8045188784599304,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0227917432785034,
+      "s_matched_shape": -1.2165417075157166,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.884047031402588,
+      "s_matched_shape": -2.690613806247711,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.801419198513031,
+      "s_matched_shape": 1.7501417398452759,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7177172303199768,
+      "s_matched_shape": 0.7821280360221863,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3338674306869507,
+      "s_matched_shape": 0.3338674306869507,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.0593191981315613,
+      "s_matched_shape": 2.1318085193634033,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5833300650119781,
+      "s_matched_shape": -1.5767235159873962,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3034084737300873,
+      "s_matched_shape": 0.3100099563598633,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.04621109366416931,
+      "s_matched_shape": -0.04621109366416931,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.581125020980835,
+      "s_matched_shape": -1.581125020980835,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.1939034461975098,
+      "s_matched_shape": 3.1244784593582153,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.422977387905121,
+      "s_matched_shape": 2.4311968088150024,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.7603015303611755,
+      "s_matched_shape": 1.8046594858169556,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.739721357822418,
+      "s_matched_shape": 3.7598716616630554,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.506507635116577,
+      "s_matched_shape": -3.519621431827545,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.6748924255371094,
+      "s_matched_shape": -2.6815714836120605,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.565663516521454,
+      "s_matched_shape": -2.565663516521454,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.0355047583580017,
+      "s_matched_shape": -3.059313714504242,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.5489619374275208,
+      "s_matched_shape": 2.5489619374275208,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.006442248821258545,
+      "s_matched_shape": -0.006442248821258545,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6720919609069824,
+      "s_matched_shape": -0.5815414190292358,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9397881329059601,
+      "s_matched_shape": 1.065138727426529,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5515798330307007,
+      "s_matched_shape": -1.5515798330307007,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1059961318969727,
+      "s_matched_shape": 1.1059961318969727,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.176530659198761,
+      "s_matched_shape": 1.176530659198761,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.513596847653389,
+      "s_matched_shape": -0.513596847653389,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.296510249376297,
+      "s_matched_shape": 1.296510249376297,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5019949674606323,
+      "s_matched_shape": -0.5019949674606323,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.09981125593185425,
+      "s_matched_shape": -0.09981125593185425,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.109471619129181,
+      "s_matched_shape": 1.109471619129181,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.9574434757232666,
+      "s_matched_shape": -2.9296942949295044,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.17051873728632927,
+      "s_matched_shape": 0.1274806670844555,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3080272674560547,
+      "s_matched_shape": 0.36695098876953125,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "adjective_pair/word/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.499390959739685,
+      "s_matched_shape": -2.499390959739685,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.100817248225212,
+      "s_matched_shape": -1.1502874344587326,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.9841372221708298,
+      "s_matched_shape": -2.0865073651075363,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9294327944517136,
+      "s_matched_shape": -1.047986552119255,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6699822694063187,
+      "s_matched_shape": -0.6022014170885086,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5805097818374634,
+      "s_matched_shape": -0.554518461227417,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9584052488207817,
+      "s_matched_shape": 1.9162487909197807,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9859776943922043,
+      "s_matched_shape": 0.9066399782896042,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7854114174842834,
+      "s_matched_shape": -0.7447372078895569,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1625867187976837,
+      "s_matched_shape": 1.1392159759998322,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.2499748170375824,
+      "s_matched_shape": -0.1447182595729828,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.46570277214050293,
+      "s_matched_shape": 0.46570277214050293,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4298054575920105,
+      "s_matched_shape": 0.4820391535758972,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.08484360575675964,
+      "s_matched_shape": 0.1936464011669159,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2983596622943878,
+      "s_matched_shape": 1.3385789692401886,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7372952997684479,
+      "s_matched_shape": 0.773322731256485,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.23569682240486145,
+      "s_matched_shape": 0.23569682240486145,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2595582231879234,
+      "s_matched_shape": 2.320997379720211,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.13686828687787056,
+      "s_matched_shape": 0.16808896139264107,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1946925669908524,
+      "s_matched_shape": 2.1616169959306717,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.4296636283397675,
+      "s_matched_shape": 1.4973016679286957,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7989473640918732,
+      "s_matched_shape": -1.8472260534763336,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.07212257757782936,
+      "s_matched_shape": -0.09109282866120338,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6147586107254028,
+      "s_matched_shape": -1.5051424503326416,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.188073456287384,
+      "s_matched_shape": -1.224837601184845,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.658644437789917,
+      "s_matched_shape": 3.607526183128357,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4287591576576233,
+      "s_matched_shape": 0.3563304543495178,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.001872807741165,
+      "s_matched_shape": 2.109808474779129,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9194156378507614,
+      "s_matched_shape": 1.9194156378507614,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.0402410328388214,
+      "s_matched_shape": -3.0261025726795197,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.34305518865585327,
+      "s_matched_shape": -0.5148102641105652,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.276229277253151,
+      "s_matched_shape": -1.3774321228265762,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.967087134718895,
+      "s_matched_shape": -1.0852781385183334,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9643288850784302,
+      "s_matched_shape": 0.9030402898788452,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8395450860261917,
+      "s_matched_shape": 0.7033546715974808,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8313956409692764,
+      "s_matched_shape": 0.8313956409692764,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.414430133998394,
+      "s_matched_shape": 0.357437364757061,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9587371572852135,
+      "s_matched_shape": 0.8913549408316612,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.910974957048893,
+      "s_matched_shape": 1.0286950841546059,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.815506786108017,
+      "s_matched_shape": 0.9156059920787811,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0386313199996948,
+      "s_matched_shape": 1.0386313199996948,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4562770128250122,
+      "s_matched_shape": -0.2417367696762085,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5708115622401237,
+      "s_matched_shape": -1.5051644369959831,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7239685617387295,
+      "s_matched_shape": -0.7908261381089687,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9712557308375835,
+      "s_matched_shape": -0.9375130645930767,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.030719399452209473,
+      "s_matched_shape": 0.04928934574127197,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4603339731693268,
+      "s_matched_shape": 0.5063728392124176,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.324832521378994,
+      "s_matched_shape": 0.3526396378874779,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.04684438556432724,
+      "s_matched_shape": 0.03360340744256973,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.4529730640351772,
+      "s_matched_shape": -1.4497598968446255,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.133241694420576,
+      "s_matched_shape": -2.143159192055464,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8753158748149872,
+      "s_matched_shape": 0.8753158748149872,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.18306560441851616,
+      "s_matched_shape": 0.18306560441851616,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.179548755288124,
+      "s_matched_shape": -1.2546683698892593,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.058235540986061096,
+      "s_matched_shape": -0.0068383365869522095,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.19033072888851166,
+      "s_matched_shape": 0.19033072888851166,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.25030769407749176,
+      "s_matched_shape": 0.2768181711435318,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.580476999282837,
+      "s_matched_shape": 2.580476999282837,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.1229240596294403,
+      "s_matched_shape": 2.1229240596294403,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3548735529184341,
+      "s_matched_shape": 1.3548735529184341,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.696183979511261,
+      "s_matched_shape": 1.696183979511261,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.754868984222412,
+      "s_matched_shape": -1.754868984222412,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0375718921422958,
+      "s_matched_shape": -0.9876240342855453,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.501188464462757,
+      "s_matched_shape": -1.3792563751339912,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8142922073602676,
+      "s_matched_shape": -1.869340792298317,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2501421868801117,
+      "s_matched_shape": 0.2499593198299408,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.15055528283119202,
+      "s_matched_shape": 0.12241092324256897,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.22154778242111206,
+      "s_matched_shape": -0.1861303448677063,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.33808667957782745,
+      "s_matched_shape": -0.2903476506471634,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.0331616699695587,
+      "s_matched_shape": -1.9507270157337189,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.9003815203905106,
+      "s_matched_shape": -1.8013091832399368,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5515733510255814,
+      "s_matched_shape": -0.5515733510255814,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2074816972017288,
+      "s_matched_shape": -1.2975871115922928,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3590877056121826,
+      "s_matched_shape": 1.2413079142570496,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.33588314056396484,
+      "s_matched_shape": 0.46277618408203125,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5560570359230042,
+      "s_matched_shape": 0.3903631567955017,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.22829803824424744,
+      "s_matched_shape": 0.1975449025630951,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.53188157081604,
+      "s_matched_shape": -0.5347541570663452,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.835852362215519,
+      "s_matched_shape": 0.835852362215519,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.06975032389163971,
+      "s_matched_shape": 0.00038649141788482666,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3089483454823494,
+      "s_matched_shape": 0.3089483454823494,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8985396027565002,
+      "s_matched_shape": -1.8985396027565002,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.9140717163681984,
+      "s_matched_shape": -3.0931133404374123,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.8830629251897335,
+      "s_matched_shape": -2.8946431539952755,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.965558484196663,
+      "s_matched_shape": -1.9707967787981033,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.22265802323818207,
+      "s_matched_shape": 0.22265802323818207,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.19520201534032822,
+      "s_matched_shape": 0.2924589142203331,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.445671021938324,
+      "s_matched_shape": 1.445671021938324,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.5435381308197975,
+      "s_matched_shape": 1.402600683271885,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.07322452962398529,
+      "s_matched_shape": -0.07322452962398529,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7225332222878933,
+      "s_matched_shape": -0.7225332222878933,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3121180981397629,
+      "s_matched_shape": 0.3121180981397629,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.45870906859636307,
+      "s_matched_shape": 0.45870906859636307,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3462038896977901,
+      "s_matched_shape": 1.5088606737554073,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.163345456123352,
+      "s_matched_shape": 3.163345456123352,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.753843527287245,
+      "s_matched_shape": 2.6494674496352673,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.8499700948596,
+      "s_matched_shape": 1.8913818523287773,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.4395470581948757,
+      "s_matched_shape": -1.439535852521658,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.072083119302988,
+      "s_matched_shape": -2.0885982550680637,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6535711698234081,
+      "s_matched_shape": -1.5776030234992504,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.187422826886177,
+      "s_matched_shape": -1.1952605992555618,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4055836647748947,
+      "s_matched_shape": -0.4958302229642868,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.226771667599678,
+      "s_matched_shape": 1.2548449784517288,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0318460389971733,
+      "s_matched_shape": 1.0049798414111137,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.03641393780708313,
+      "s_matched_shape": 0.051562219858169556,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7100497782230377,
+      "s_matched_shape": 0.6403553783893585,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.654810756444931,
+      "s_matched_shape": 0.5703659951686859,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.13420650362968445,
+      "s_matched_shape": 0.047725290060043335,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7153238952159882,
+      "s_matched_shape": 0.7153238952159882,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.26387934386730194,
+      "s_matched_shape": -0.27884630858898163,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7792999967932701,
+      "s_matched_shape": 0.7397567257285118,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6561311855912209,
+      "s_matched_shape": 0.6176557913422585,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.18406063318252563,
+      "s_matched_shape": 0.30326205492019653,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.0897482819855213,
+      "s_matched_shape": 2.1403768248856068,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.33100157231092453,
+      "s_matched_shape": -0.3920305296778679,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7439066655933857,
+      "s_matched_shape": 0.7511104829609394,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0657470859587193,
+      "s_matched_shape": 1.0081810392439365,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6531094014644623,
+      "s_matched_shape": -0.6531094014644623,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.00417906790971756,
+      "s_matched_shape": 0.02821929007768631,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6703448966145515,
+      "s_matched_shape": -0.6703448966145515,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6757601574063301,
+      "s_matched_shape": -0.7633439376950264,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.0138728320598602,
+      "s_matched_shape": 2.8863849341869354,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.15946956723928452,
+      "s_matched_shape": 0.04086681455373764,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6369785331189632,
+      "s_matched_shape": 1.632877852767706,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.409481965005398,
+      "s_matched_shape": 2.2143547162413597,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3262439370155334,
+      "s_matched_shape": -2.3262439370155334,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5163569226861,
+      "s_matched_shape": -0.4162536635994911,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9330182746052742,
+      "s_matched_shape": -0.9835401251912117,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7202699109911919,
+      "s_matched_shape": -0.6951188966631889,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.051344964653253555,
+      "s_matched_shape": 0.1563933826982975,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.1731882058084011,
+      "s_matched_shape": 0.17765307053923607,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2681645154953003,
+      "s_matched_shape": 0.27929413318634033,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.33514080941677094,
+      "s_matched_shape": 0.33514080941677094,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7755605354905128,
+      "s_matched_shape": 0.9017728939652443,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7194484397768974,
+      "s_matched_shape": 0.8167270347476006,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5586840659379959,
+      "s_matched_shape": 0.8162382394075394,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4157780408859253,
+      "s_matched_shape": 0.5571372509002686,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.1147616058588028,
+      "s_matched_shape": -0.1147616058588028,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4930577017366886,
+      "s_matched_shape": -0.4930577017366886,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.006619401276111603,
+      "s_matched_shape": -0.006619401276111603,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.1860961988568306,
+      "s_matched_shape": 0.1860961988568306,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2235284261405468,
+      "s_matched_shape": 0.16911236569285393,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5719945915043354,
+      "s_matched_shape": 0.5607190616428852,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5258832685649395,
+      "s_matched_shape": 0.5605668537318707,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4009382613003254,
+      "s_matched_shape": 0.33144282177090645,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.1317392587661743,
+      "s_matched_shape": -2.0676369667053223,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7564226873219013,
+      "s_matched_shape": -1.8122309930622578,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.14782541617751122,
+      "s_matched_shape": 0.12400954589247704,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.1869341880083084,
+      "s_matched_shape": -0.11587567627429962,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.46961963176727295,
+      "s_matched_shape": -0.43392133712768555,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.40077001601457596,
+      "s_matched_shape": 0.43803543597459793,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.2063078135251999,
+      "s_matched_shape": -0.20745079219341278,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3945457637310028,
+      "s_matched_shape": 0.32295987010002136,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.7013074159622192,
+      "s_matched_shape": 1.7013074159622192,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.20031912624835968,
+      "s_matched_shape": -0.20031912624835968,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.2427082136273384,
+      "s_matched_shape": -0.2427082136273384,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6842178255319595,
+      "s_matched_shape": 0.6842178255319595,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.187506817281246,
+      "s_matched_shape": -1.9986164793372154,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.011915195733308792,
+      "s_matched_shape": 0.011915195733308792,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.1656323075294495,
+      "s_matched_shape": -1.0926100015640259,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9503688365221024,
+      "s_matched_shape": -0.9699677377939224,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.26942581683397293,
+      "s_matched_shape": 0.3832995370030403,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.425380602478981,
+      "s_matched_shape": -0.44262005388736725,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5978531241416931,
+      "s_matched_shape": -0.5978531241416931,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2167118713259697,
+      "s_matched_shape": 0.16391467303037643,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.3948763310909271,
+      "s_matched_shape": -1.3948763310909271,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3970295712351799,
+      "s_matched_shape": 0.3970295712351799,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.28130604326725006,
+      "s_matched_shape": 0.28130604326725006,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.8020879700779915,
+      "s_matched_shape": -0.8020879700779915,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3950648531317711,
+      "s_matched_shape": 0.3950648531317711,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.002736195921897888,
+      "s_matched_shape": -0.002736195921897888,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2470520175993443,
+      "s_matched_shape": -1.2470520175993443,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4599318131804466,
+      "s_matched_shape": 0.4599318131804466,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9586571529507637,
+      "s_matched_shape": -0.9438185170292854,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.057635389268398285,
+      "s_matched_shape": 0.0076309069991111755,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.8866882771253586,
+      "s_matched_shape": -0.8782592266798019,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.355396881699562,
+      "s_matched_shape": -1.3129810243844986,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2722252383828163,
+      "s_matched_shape": -1.2722252383828163,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.331584256142378,
+      "s_matched_shape": -3.331584256142378,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.8182142190635204,
+      "s_matched_shape": -2.8182142190635204,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6145590096712112,
+      "s_matched_shape": -1.6145590096712112,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.22230342030525208,
+      "s_matched_shape": 0.22230342030525208,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6293336004018784,
+      "s_matched_shape": 1.6293336004018784,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2261846773326397,
+      "s_matched_shape": 2.2261846773326397,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3363604433834553,
+      "s_matched_shape": 1.3363604433834553,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7647241055965424,
+      "s_matched_shape": -0.7647241055965424,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.1597518660128117,
+      "s_matched_shape": -2.1597518660128117,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5118889659643173,
+      "s_matched_shape": -0.5118889659643173,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.15684621036052704,
+      "s_matched_shape": -0.15684621036052704,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.799185186624527,
+      "s_matched_shape": 0.6944461166858673,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.0911929234862328,
+      "s_matched_shape": 3.057592235505581,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.0920732989907265,
+      "s_matched_shape": 3.0920732989907265,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "explicit_negation/word/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9365294575691223,
+      "s_matched_shape": 1.8618480563163757,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4805357903242111,
+      "s_matched_shape": 0.5029299706220627,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.01051773875951767,
+      "s_matched_shape": 0.06243326514959335,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.012716412544250488,
+      "s_matched_shape": -0.14095181226730347,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9923722892999649,
+      "s_matched_shape": 0.9450476318597794,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.426281750202179,
+      "s_matched_shape": -1.4856276512145996,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.171835333108902,
+      "s_matched_shape": 1.149777740240097,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4351053833961487,
+      "s_matched_shape": -0.4351053833961487,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.537456214427948,
+      "s_matched_shape": -2.4903453588485718,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 6.4567973129451275,
+      "s_matched_shape": 6.439186494797468,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.505028448998928,
+      "s_matched_shape": 4.452890567481518,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 6.554268132895231,
+      "s_matched_shape": 6.406960796564817,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 7.258626822382212,
+      "s_matched_shape": 7.309051517397165,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.2131255865097046,
+      "s_matched_shape": -0.2738795280456543,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.08503937721252441,
+      "s_matched_shape": -0.14650189876556396,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7964961528778076,
+      "s_matched_shape": 0.7169308662414551,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.15494287014007568,
+      "s_matched_shape": 0.03908896446228027,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.5793850049376488,
+      "s_matched_shape": 2.418220244348049,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4123533107340336,
+      "s_matched_shape": 0.4123533107340336,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.21115123480558395,
+      "s_matched_shape": 0.34889208525419235,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.0248555950820446,
+      "s_matched_shape": -0.10955752804875374,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.122746765613556,
+      "s_matched_shape": -1.122746765613556,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.19521522521972656,
+      "s_matched_shape": 0.19521522521972656,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.131496548652649,
+      "s_matched_shape": -1.131496548652649,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9967776536941528,
+      "s_matched_shape": -0.9967776536941528,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.145064353942871,
+      "s_matched_shape": 3.145064353942871,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8369944095611572,
+      "s_matched_shape": 0.8369944095611572,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0131124258041382,
+      "s_matched_shape": 1.0131124258041382,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.23337006568908691,
+      "s_matched_shape": 0.23337006568908691,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.6500465273857117,
+      "s_matched_shape": -3.5629207491874695,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7075363546609879,
+      "s_matched_shape": -1.676075592637062,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.0650239288806915,
+      "s_matched_shape": -3.058815509080887,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.7263320088386536,
+      "s_matched_shape": -2.725296676158905,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.576933426782489,
+      "s_matched_shape": 3.504320666193962,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.9581847046501935,
+      "s_matched_shape": 2.8083409767132252,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.231774755520746,
+      "s_matched_shape": 3.231774755520746,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.942653330974281,
+      "s_matched_shape": 2.996604457963258,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6715219290927052,
+      "s_matched_shape": 1.6299593718722463,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.5308575313538313,
+      "s_matched_shape": 1.5364612024277449,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.5967193208634853,
+      "s_matched_shape": 1.4990815483033657,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6786777302622795,
+      "s_matched_shape": 1.6606632992625237,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2055246755480766,
+      "s_matched_shape": 1.2055246755480766,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7078500613570213,
+      "s_matched_shape": 0.7078500613570213,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7966291420161724,
+      "s_matched_shape": 0.7966291420161724,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.708282645791769,
+      "s_matched_shape": 0.708282645791769,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4797567129135132,
+      "s_matched_shape": -0.4797567129135132,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.3823983371257782,
+      "s_matched_shape": -0.3823983371257782,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.11256355047225952,
+      "s_matched_shape": 0.11256355047225952,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.14933830499649048,
+      "s_matched_shape": -0.14933830499649048,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.4990278761833906,
+      "s_matched_shape": -1.4990278761833906,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.7210833840072155,
+      "s_matched_shape": -2.7210833840072155,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5516845118254423,
+      "s_matched_shape": -1.5516845118254423,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.173131650313735,
+      "s_matched_shape": -2.177396720275283,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1446306109428406,
+      "s_matched_shape": 1.1446306109428406,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.126539468765259,
+      "s_matched_shape": 2.126539468765259,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1523845195770264,
+      "s_matched_shape": 1.1523845195770264,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7232116460800171,
+      "s_matched_shape": 0.7232116460800171,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.146435126662254,
+      "s_matched_shape": 5.146435126662254,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.866971746087074,
+      "s_matched_shape": 4.866971746087074,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.4675160236656666,
+      "s_matched_shape": 3.4675160236656666,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.6534903831779957,
+      "s_matched_shape": 3.6534903831779957,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4023397564888,
+      "s_matched_shape": -2.3782591223716736,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.9932112097740173,
+      "s_matched_shape": -2.0102140307426453,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6923785209655762,
+      "s_matched_shape": -1.5642091035842896,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.096403121948242,
+      "s_matched_shape": -2.0880373120307922,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.9776244349777699,
+      "s_matched_shape": -0.9776244349777699,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7580313505604863,
+      "s_matched_shape": -1.511992515064776,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.051327643916011,
+      "s_matched_shape": -2.093569254502654,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7247043512761593,
+      "s_matched_shape": -1.6743393242359161,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.1434240639209747,
+      "s_matched_shape": -1.2872243225574493,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2024625092744827,
+      "s_matched_shape": -0.99776990711689,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.23343007266521454,
+      "s_matched_shape": 0.23343007266521454,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5368557721376419,
+      "s_matched_shape": -0.7066083699464798,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.071930408477783,
+      "s_matched_shape": 3.071930408477783,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.367997884750366,
+      "s_matched_shape": 2.49002742767334,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.349962890148163,
+      "s_matched_shape": 2.417403519153595,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.8364911675453186,
+      "s_matched_shape": 2.675637662410736,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.86709064245224,
+      "s_matched_shape": 1.656819999217987,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2608836889266968,
+      "s_matched_shape": 2.178072929382324,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.7933456897735596,
+      "s_matched_shape": 1.7933456897735596,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6548576354980469,
+      "s_matched_shape": 1.6648340225219727,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.6101268008351326,
+      "s_matched_shape": 2.9073839262127876,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7463955916464329,
+      "s_matched_shape": 0.6758603490889072,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.793656587600708,
+      "s_matched_shape": 1.6884842962026596,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.306539662182331,
+      "s_matched_shape": 1.306539662182331,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2245199345052242,
+      "s_matched_shape": -1.163141179829836,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.16163810342550278,
+      "s_matched_shape": -0.08710261434316635,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.46628687530755997,
+      "s_matched_shape": -0.46628687530755997,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.14540072157979012,
+      "s_matched_shape": -0.22955061867833138,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.17735111713409424,
+      "s_matched_shape": 0.17735111713409424,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6224846839904785,
+      "s_matched_shape": -1.6224846839904785,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.0010677576065063477,
+      "s_matched_shape": 0.0010677576065063477,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.09579169750213623,
+      "s_matched_shape": -0.09579169750213623,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.5928820371627808,
+      "s_matched_shape": -2.5928820371627808,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5968102216720581,
+      "s_matched_shape": -0.5968102216720581,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.258254051208496,
+      "s_matched_shape": -1.258254051208496,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/emoji/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.020813226699829,
+      "s_matched_shape": -3.020813226699829,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.43587152659893036,
+      "s_matched_shape": 0.43587152659893036,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6687848567962646,
+      "s_matched_shape": 0.6380637288093567,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.42799437046051025,
+      "s_matched_shape": -0.42799437046051025,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.7339801788330078,
+      "s_matched_shape": -1.7339801788330078,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.674828860908747,
+      "s_matched_shape": 4.702012304216623,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 5.142951384186745,
+      "s_matched_shape": 5.142951384186745,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6215507984161377,
+      "s_matched_shape": 0.614474892616272,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/affect_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7480877637863159,
+      "s_matched_shape": 0.7480877637863159,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3647950403392315,
+      "s_matched_shape": 0.22491974756121635,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5585218891501427,
+      "s_matched_shape": -0.3907724842429161,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.10481113195419312,
+      "s_matched_shape": -0.10481113195419312,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6274032592773438,
+      "s_matched_shape": -0.6274032592773438,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.17384445667266846,
+      "s_matched_shape": 0.17384445667266846,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.05640304088592529,
+      "s_matched_shape": -0.05640304088592529,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.386802852153778,
+      "s_matched_shape": -1.4013953804969788,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/completion_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5403644442558289,
+      "s_matched_shape": -1.5081912279129028,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.059776444453746,
+      "s_matched_shape": 2.0943906996399164,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9142298940569162,
+      "s_matched_shape": 1.8973003472201526,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.8602279853075743,
+      "s_matched_shape": 2.9391131829470396,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.707307768985629,
+      "s_matched_shape": 2.6570518743246794,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1620063930749893,
+      "s_matched_shape": 1.1620063930749893,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0892237909138203,
+      "s_matched_shape": 1.0892237909138203,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5561274886131287,
+      "s_matched_shape": -0.5561274886131287,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/direction_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.3989582657814026,
+      "s_matched_shape": -0.3989582657814026,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.0670724399387836,
+      "s_matched_shape": -2.0660101659595966,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3979554027318954,
+      "s_matched_shape": -2.3493084758520126,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7758990526199341,
+      "s_matched_shape": 0.7758990526199341,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7317405939102173,
+      "s_matched_shape": 0.7317405939102173,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.9042840972542763,
+      "s_matched_shape": 3.9042840972542763,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.9948669523000717,
+      "s_matched_shape": 1.9948669523000717,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.381662130355835,
+      "s_matched_shape": -1.3891489505767822,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/sound_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.5539664030075073,
+      "s_matched_shape": -1.5863033533096313,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7520587700419128,
+      "s_matched_shape": -0.6322006280533969,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.8003661539405584,
+      "s_matched_shape": -0.7500335816293955,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.752937987446785,
+      "s_matched_shape": -1.752937987446785,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2508177012205124,
+      "s_matched_shape": -1.2508177012205124,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.486938953399658,
+      "s_matched_shape": 2.486938953399658,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.0616201162338257,
+      "s_matched_shape": 2.0616201162338257,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.6959087252616882,
+      "s_matched_shape": 1.748173177242279,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/thermal_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.0991055369377136,
+      "s_matched_shape": 2.067433476448059,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_01/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1527552492916584,
+      "s_matched_shape": 1.1527552492916584,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_01/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.4054281674325466,
+      "s_matched_shape": 2.4054281674325466,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_02/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5162218790501356,
+      "s_matched_shape": -0.5162218790501356,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_02/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.5277409665286541,
+      "s_matched_shape": -0.5277409665286541,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_03/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7651296854019165,
+      "s_matched_shape": 0.7651296854019165,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_03/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.7338229417800903,
+      "s_matched_shape": 0.7338229417800903,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_04/p/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0305272340774536,
+      "s_matched_shape": -1.0305272340774536,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/shared_absent/weather_04/q/absent",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0800979137420654,
+      "s_matched_shape": -1.0800979137420654,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.35395972803235054,
+      "s_matched_shape": -0.33125923946499825,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.2264493815600872,
+      "s_matched_shape": -0.22956330701708794,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.733998004347086,
+      "s_matched_shape": -0.6758000291883945,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.1057208701968193,
+      "s_matched_shape": 0.16936444491147995,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.2550168335437775,
+      "s_matched_shape": -1.2369754314422607,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5906445682048798,
+      "s_matched_shape": 0.5648413598537445,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2995622754096985,
+      "s_matched_shape": 0.22494792938232422,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.183365225791931,
+      "s_matched_shape": -2.1240170001983643,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.879749096930027,
+      "s_matched_shape": 4.174257196485996,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.6503897085785866,
+      "s_matched_shape": 3.755753882229328,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.5172745175659657,
+      "s_matched_shape": 3.4217215664684772,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 4.646047208458185,
+      "s_matched_shape": 4.646047208458185,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.2639211416244507,
+      "s_matched_shape": 0.12119948863983154,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5514688491821289,
+      "s_matched_shape": 0.36029696464538574,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.432151198387146,
+      "s_matched_shape": 1.4904170036315918,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/affect_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4986816644668579,
+      "s_matched_shape": 0.5026041269302368,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2485609203577042,
+      "s_matched_shape": 1.3251267820596695,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.15797152742743492,
+      "s_matched_shape": 0.23576262220740318,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.191003981977701,
+      "s_matched_shape": -2.320113006979227,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7150935493409634,
+      "s_matched_shape": -0.7707986198365688,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.29751288890838623,
+      "s_matched_shape": -0.29751288890838623,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.0086289644241333,
+      "s_matched_shape": 0.0086289644241333,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.41110026836395264,
+      "s_matched_shape": 0.41110026836395264,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.18215453624725342,
+      "s_matched_shape": -0.18215453624725342,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.2635399103164673,
+      "s_matched_shape": 2.2635399103164673,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.16927051544189453,
+      "s_matched_shape": 0.16927051544189453,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3000694513320923,
+      "s_matched_shape": 0.3000694513320923,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.28793632984161377,
+      "s_matched_shape": 0.28793632984161377,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -3.1494879871606827,
+      "s_matched_shape": -3.1406716853380203,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.037977270781994,
+      "s_matched_shape": -1.9413899704813957,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8253377303481102,
+      "s_matched_shape": -1.8768555745482445,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/completion_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.0162248462438583,
+      "s_matched_shape": -2.07547090947628,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.794217208167538,
+      "s_matched_shape": 2.846115202875808,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.426387355197221,
+      "s_matched_shape": 1.558727014111355,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.4257560702972114,
+      "s_matched_shape": 2.4257560702972114,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.7991652013733983,
+      "s_matched_shape": 1.8061633948236704,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5970027344301343,
+      "s_matched_shape": 0.44749962259083986,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9816419035196304,
+      "s_matched_shape": 1.147624984383583,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1755179520696402,
+      "s_matched_shape": 1.1755179520696402,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2367202742025256,
+      "s_matched_shape": 1.2367202742025256,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8589598312973976,
+      "s_matched_shape": 0.8589598312973976,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.3064085841178894,
+      "s_matched_shape": 0.3064085841178894,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5955643430352211,
+      "s_matched_shape": 0.5955643430352211,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.8021994456648827,
+      "s_matched_shape": 0.8021994456648827,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.089592456817627,
+      "s_matched_shape": -1.089592456817627,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.6637899577617645,
+      "s_matched_shape": -0.6637899577617645,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.48094648122787476,
+      "s_matched_shape": -0.48094648122787476,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/direction_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.7290402054786682,
+      "s_matched_shape": -0.7290402054786682,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.6989119164645672,
+      "s_matched_shape": -1.6989119164645672,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.289167020469904,
+      "s_matched_shape": -2.3006998039782047,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.402774104848504,
+      "s_matched_shape": -1.402251848950982,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3029058817774057,
+      "s_matched_shape": -2.35683854855597,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6719042062759399,
+      "s_matched_shape": 0.6719042062759399,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.6817586421966553,
+      "s_matched_shape": 2.6817586421966553,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0665751695632935,
+      "s_matched_shape": 1.0665751695632935,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.9544467926025391,
+      "s_matched_shape": 0.9544467926025391,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.808790862560272,
+      "s_matched_shape": 3.808790862560272,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3634176030755043,
+      "s_matched_shape": 1.3634176030755043,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5072112828493118,
+      "s_matched_shape": 0.5072112828493118,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1532348841428757,
+      "s_matched_shape": 1.1532348841428757,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.3142200708389282,
+      "s_matched_shape": -2.4025150537490845,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.48853135108947754,
+      "s_matched_shape": -0.48853135108947754,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.1626665592193604,
+      "s_matched_shape": -1.2685575485229492,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/sound_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8639192581176758,
+      "s_matched_shape": -1.6541364192962646,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.13841744512319565,
+      "s_matched_shape": -0.0448029600083828,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.0552296182140708,
+      "s_matched_shape": -1.0636155074462295,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.482296820729971,
+      "s_matched_shape": -1.4031734131276608,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.10882970690727234,
+      "s_matched_shape": -0.04020627588033676,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.4130158126354218,
+      "s_matched_shape": -2.4130158126354218,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.5955907627940178,
+      "s_matched_shape": 0.5955907627940178,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.306099072098732,
+      "s_matched_shape": 0.306099072098732,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -1.8697962239384651,
+      "s_matched_shape": -1.8697962239384651,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.3862677812576294,
+      "s_matched_shape": 2.481002449989319,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3497141003608704,
+      "s_matched_shape": 1.4320688247680664,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.2002965211868286,
+      "s_matched_shape": 1.240709900856018,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.7358816266059875,
+      "s_matched_shape": 2.7377357482910156,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.12780320644378662,
+      "s_matched_shape": -0.036838650703430176,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.3415712714195251,
+      "s_matched_shape": 1.289813220500946,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.0326529145240784,
+      "s_matched_shape": 1.0326529145240784,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/thermal_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.44890761375427246,
+      "s_matched_shape": 0.4425655007362366,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_01/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.065008495002985,
+      "s_matched_shape": 2.065008495002985,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_01/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.4346562400460243,
+      "s_matched_shape": -0.4346562400460243,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_01/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 2.342926671728492,
+      "s_matched_shape": 2.2715131249278784,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_01/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 3.5102944783866405,
+      "s_matched_shape": 3.679639231413603,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_02/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.096739048138261,
+      "s_matched_shape": -2.096739048138261,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_02/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 1.1630342360585928,
+      "s_matched_shape": 1.1630342360585928,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_02/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.6686048861593008,
+      "s_matched_shape": 0.6686048861593008,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_02/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.09635786525905132,
+      "s_matched_shape": 0.09635786525905132,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_03/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.867192268371582,
+      "s_matched_shape": 0.867192268371582,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_03/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.608093500137329,
+      "s_matched_shape": -2.608093500137329,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_03/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.04033339023590088,
+      "s_matched_shape": 0.04033339023590088,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_03/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.01493990421295166,
+      "s_matched_shape": 0.01493990421295166,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_04/p/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -4.197118639945984,
+      "s_matched_shape": -4.197118639945984,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_04/p/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": 0.4862695336341858,
+      "s_matched_shape": 0.4862695336341858,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_04/q/a",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -0.26175200939178467,
+      "s_matched_shape": -0.26175200939178467,
+      "shared_predictor_logits_exact_equal": true
+    },
+    {
+      "input_id": "original/word/weather_04/q/b",
+      "prefix_logprobs_exact_equal": true,
+      "s_historical": -2.1438257694244385,
+      "s_matched_shape": -2.1438257694244385,
+      "shared_predictor_logits_exact_equal": true
+    }
+  ],
+  "matching_scientific_prefixes": 624,
+  "new_scientific_n": 0,
+  "numerical_gate_passed": true,
+  "planned_forward_attempts": 1312,
+  "planned_scientific_inputs": 624,
+  "planned_scientific_sequence_scores": 1248,
+  "scientific_sentinel_comparisons": [
+    {
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/word/completion_02/p/a",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "original/word/completion_02/p/a",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "padded_a",
+      "scientific_exact_prior": true
+    },
+    {
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "padded_b",
+      "scientific_exact_prior": true
+    }
+  ],
+  "sentinel_comparisons": [
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/affect_01/p/b",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "explicit_negation/emoji/affect_03/q/b",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/thermal_04/p/b",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/thermal_04/p/a",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/emoji/completion_02/p/a",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/word/completion_02/p/a",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/word/completion_02/p/a",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/word/completion_02/p/a",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "original/word/completion_02/p/a",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/emoji/affect_01/p/a",
+      "method": "padded_b"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "original_a_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "original_b_1"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "padded_a"
+    },
+    {
+      "begin_exact_prior": true,
+      "end_exact_begin": true,
+      "end_exact_prior": true,
+      "input_id": "adjective_pair/word/affect_01/p/a",
+      "method": "padded_b"
+    }
+  ],
+  "sentinel_exact_parity": true
+}

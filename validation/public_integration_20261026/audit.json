@@ -1,0 +1,1713 @@
+{
+  "schema_version": 1,
+  "scope": "reviewed_file_integration_into_existing_public_repository",
+  "base_commit": "aa5abaa6d7c69cd902154556e530d034877e4cdd",
+  "source_archive_head": "8fa8f2a387f83f3ef27ce893b22854e61b20c787",
+  "unpublished_source_history_imported": false,
+  "existing_remote_history_certified": false,
+  "new_scientific_acquisition": false,
+  "retired_banks_read": false,
+  "private_human_records_read": false,
+  "t22_baseline_paths_unchanged": true,
+  "new_or_changed_files_excluding_this_receipt": [
+    {
+      "path": "CITATION.cff",
+      "bytes": 709,
+      "sha256": "5ca4f20a675bcb509dce85a81ffcf0a4dcf91a4dd39773c1ccbc479c972bd0ab"
+    },
+    {
+      "path": "README.ja.md",
+      "bytes": 68088,
+      "sha256": "e47680abd1386d03a99a0fe9567c7ab4ef79edaa228c4fc1ab25aa62b4944628"
+    },
+    {
+      "path": "README.md",
+      "bytes": 77476,
+      "sha256": "d5aec1b9a2bf34603ef92306b84bf31cc0e02695cf8a457ec302aee6136721f8"
+    },
+    {
+      "path": "artifacts/public_release_20261015/ARTIFACT_MANIFEST.json",
+      "bytes": 27784,
+      "sha256": "ad7b14bb2ac0b82353f095a692c1a56a6d8635ccc9596363127b2111057fed1f"
+    },
+    {
+      "path": "artifacts/public_release_20261015/CITATION.cff",
+      "bytes": 709,
+      "sha256": "5ca4f20a675bcb509dce85a81ffcf0a4dcf91a4dd39773c1ccbc479c972bd0ab"
+    },
+    {
+      "path": "artifacts/public_release_20261015/DEPENDENCIES.json",
+      "bytes": 384,
+      "sha256": "c4bb04dd646e058e1b3041d1baae85cf0a636725fb62224a19657d0876ce5ca1"
+    },
+    {
+      "path": "artifacts/public_release_20261015/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "artifacts/public_release_20261015/PUBLICATION_METADATA.json",
+      "bytes": 954,
+      "sha256": "d76f4251ed8adc4c23142898cb5df63a889f3ef0280789accfea6591be12db53"
+    },
+    {
+      "path": "artifacts/public_release_20261015/README.ja.md",
+      "bytes": 8571,
+      "sha256": "5af384e3d86bba5353a9bd4aab9a9bc74dc60954963bdef7fcdfe5ae778e2b77"
+    },
+    {
+      "path": "artifacts/public_release_20261015/README.md",
+      "bytes": 7572,
+      "sha256": "6a89a6f943b01b9d7f70fbaf804b895db141a77e77be1407556702c6297a0423"
+    },
+    {
+      "path": "artifacts/public_release_20261015/SHA256SUMS",
+      "bytes": 8569,
+      "sha256": "ae9cae23d72a8523b198c060d06bdba794df1798096be852ec4c7d5caf4feddb"
+    },
+    {
+      "path": "artifacts/public_release_20261015/data/contextual_emoji_candidate_wording_v0.json",
+      "bytes": 1374,
+      "sha256": "480d236a87e40e20a4ea339e0514c2a06a0707ec248413ca0260e56868a52730"
+    },
+    {
+      "path": "artifacts/public_release_20261015/data/contextual_emoji_development_v0.jsonl",
+      "bytes": 20684,
+      "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.ja.md",
+      "bytes": 17572,
+      "sha256": "7b37412f439eaf8d01724a4bdfcaf724dfe7d851469c0d2fe1673774c5cbf019"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.md",
+      "bytes": 15940,
+      "sha256": "d936d348ecd6cbdbbae091eec9d4843d497ff1369eea31d76630aa11b5df1884"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.ja.md",
+      "bytes": 6626,
+      "sha256": "6c9cb8fa786736e2e46b5a1e19ed1949698e7fc5ad34012b3115cf00f5aa5ef0"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.md",
+      "bytes": 6506,
+      "sha256": "87c018168a2ede80d1ddb551b2860b1db8f323b1621f0dfc23ddece459bb7d4f"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.ja.md",
+      "bytes": 4338,
+      "sha256": "2ec31bed30b42692b101ecb77e9c9bdfa0505bcdd221d45d96bbd1262cbf8c16"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.md",
+      "bytes": 4140,
+      "sha256": "2caa17078dd43b36c4efee1e708b5bb1f464f964b7136714d0a9198c9c64f34a"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/READOUT_QUALIFICATION_V1.ja.md",
+      "bytes": 6052,
+      "sha256": "959d3dd252e9d7764654ae22845f01b28e9ba2f644af7a26852e0df274cf2f62"
+    },
+    {
+      "path": "artifacts/public_release_20261015/docs/READOUT_QUALIFICATION_V1.md",
+      "bytes": 6196,
+      "sha256": "3341d795e50bf685bc330724659afab06ff9445da5da18b0760f1c87df191cb9"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/document_validation.public.json",
+      "bytes": 5370,
+      "sha256": "965cd700f238ad72380a0bb82306b91f3e35a5c7c57845285af4a71eaf3e255e"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/analysis.public.json",
+      "bytes": 3628963,
+      "sha256": "61b3c3f543e21ea3b1287a3c03086bb733269bdfac143a8ba3dd44729d5d7d87"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/forwards.public.jsonl",
+      "bytes": 9194109,
+      "sha256": "83cc7c51c254941be1179087e584fbe538c4ec5c354397230a2b06ccdc60c334"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/independent_validation.public.json",
+      "bytes": 404760,
+      "sha256": "8869dd7b6202cac7cd51e039b21771138def17732146c9a36c1b73a4663181f1"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/projection_binding.json",
+      "bytes": 2041,
+      "sha256": "a07fad5d4e9ec7dddc10be326140ba4d611e703d7c25bb948ea4d93ff71fdaf4"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/run_summary.public.json",
+      "bytes": 616,
+      "sha256": "d3ce5d3e7b6061d6e6960ec2da5e2db50906b4e7c92eb692811847e544de298f"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/runtime_dependencies.public.json",
+      "bytes": 3192,
+      "sha256": "4f0ed1c25e9d95505f3c47bac90ccc1f56c04ecc990558e59e075295a4941920"
+    },
+    {
+      "path": "artifacts/public_release_20261015/evidence/readout_qualification_v1/specification.public.json",
+      "bytes": 12134212,
+      "sha256": "6fee8380e20087a3553a7e059625d3840360dce5b495bb587e23e8326f77a182"
+    },
+    {
+      "path": "artifacts/public_release_20261015/historical/glyphprobe_t19_anonymous_evidence_v4.zip",
+      "bytes": 10914039,
+      "sha256": "33cadc408d550781454aa95aa5af7ea2f1c62a1411d2cabaaf9ac561afe1a84e"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/ASSET_LICENSES.ja.md",
+      "bytes": 4576,
+      "sha256": "b8e07837d8b50e81172b34583f7aba7e3cf8d17f4efaa35e234e47ab3a2df25c"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/ASSET_LICENSES.md",
+      "bytes": 4572,
+      "sha256": "b375664c785e86aeb81c30d5d3c90840b56ab876dd6896e49dd5e34bafbe8252"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/CLAIM_TABLE.ja.md",
+      "bytes": 9482,
+      "sha256": "ca7f2255ebd02e01adf867c3eec9a438ce7a4f2ed2255bb898cb3b3ca4348ca1"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/CLAIM_TABLE.md",
+      "bytes": 8957,
+      "sha256": "b5949797b35e210e97f5cfe8e452a420f8c8f997a336877f547d31284bf7e0e9"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/COMPUTE_REPORT.ja.md",
+      "bytes": 10083,
+      "sha256": "636953bab9ebcbdbdb8ef08728d496e78363a824bd93624c7876cfe4de10fcb5"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/COMPUTE_REPORT.md",
+      "bytes": 9976,
+      "sha256": "eaa3c1bf36fcbcc017efcd057fe8baabce57e5f50132bccabfd3e23f3c7a1404"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/CURRENT_CLAIMS_20261015.ja.md",
+      "bytes": 9942,
+      "sha256": "c73aafaaec9f9b9870b0310815be8ecf9dc98b1a4c323c86f2831e76f5d0dfad"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/CURRENT_CLAIMS_20261015.md",
+      "bytes": 9263,
+      "sha256": "e54328219dc193e23c30ff41d4d1325654f21e62a77b8f68e3ea9be8c06e6ceb"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/ETHICS_REVIEW.ja.md",
+      "bytes": 9448,
+      "sha256": "96047b8a767c533ded93d59c50af435c8e12612334b86b54a9f66e99e29cdd68"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/ETHICS_REVIEW.md",
+      "bytes": 9043,
+      "sha256": "0e67b0a5848a2af025fdbbad563428d08c3af928e2a4343d24aa44889d471317"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/EXPERIMENT_GUIDE.ja.md",
+      "bytes": 15810,
+      "sha256": "aeaa9d0e1576db7677764e056dcd55bf35d7d6c4cdeec8d94a6388c08d8d7b08"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/EXPERIMENT_GUIDE.md",
+      "bytes": 12674,
+      "sha256": "6f79b8770ff037a6e31a71903268bcb6dcb97db8b93670a2040850a8fcbde8d3"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/FORK_REVIEW_PUBLICATION_20261015.ja.md",
+      "bytes": 3652,
+      "sha256": "7f3720ecb0ba7d8e46619aeb7258908bba35dceb9ba6c08c560de8e73c3770fb"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/FORK_REVIEW_PUBLICATION_20261015.md",
+      "bytes": 3438,
+      "sha256": "8d62f284626ca3ef68894dd87a04f89a23b98f480ea4718e70becbbe58a1b2ec"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/PUBLIC_LICENSES_20261015.ja.md",
+      "bytes": 3271,
+      "sha256": "a54683e31e9524e5e0879a2e9c68382a8b106f7bb1d0b257c24c5318847b5901"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/PUBLIC_LICENSES_20261015.md",
+      "bytes": 2956,
+      "sha256": "4dc14ee0dde90da0789f585fc450c14d9a8f07eb9b5b9dc06cc7cf6e19bb4489"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/PUBLIC_RELEASE_20261015.ja.md",
+      "bytes": 8582,
+      "sha256": "857d1d2e9365014cb86bd3a790d32c35c3cb0172165ae9c3c39deb66d3bfa313"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/PUBLIC_RELEASE_20261015.md",
+      "bytes": 7583,
+      "sha256": "4319afbfa96955e7c8cdfd87fe20be8871f7e0f8fa4e88d93055f34700e524bc"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/REVISION_NOTES_20261015.ja.md",
+      "bytes": 7418,
+      "sha256": "a674483eada6d9aa799e357cb6c8b47019720853f34fba22bf12b5b590a3b48d"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/REVISION_NOTES_20261015.md",
+      "bytes": 7077,
+      "sha256": "c4292ab101c91529a826324693786c73faf6a8de0e1aaef0d963985f45a04419"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/UNICODE_LICENSE.txt",
+      "bytes": 2049,
+      "sha256": "4b1bde6caac5d127b3a065d454fe264cc5916bc7c0c3ddf60087a07bbff26b55"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/WORKING_CLAIMS_20261010.ja.md",
+      "bytes": 4150,
+      "sha256": "1738e3a39b46b530e578a82429248cccb3d041e5aac5ddf871343bbb107bf8be"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/WORKING_CLAIMS_20261010.md",
+      "bytes": 3957,
+      "sha256": "e1f2dd374d81ab60f34f045c7b01ef48908466f818c23fe21b3a855f335981c3"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/contextual_development_20261010.tex",
+      "bytes": 11873,
+      "sha256": "d51b2d3456f7bb5ae9b0ef610c4c63786e488428ed86cc268ccd00ee4d9f4d4b"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/contextual_input_examples_20261015.tex",
+      "bytes": 5829,
+      "sha256": "38a40c7ac89a1fc9f801bf91e4c8bff2e80e73979b56236ca5c1ee913ba30563"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t19_causal_sites.pdf",
+      "bytes": 14176,
+      "sha256": "98e3e432fb7b5acc6687c364b3e423367a6517d3c5d7589bfbcffa49b14e8bdc"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t19_design.pdf",
+      "bytes": 22164,
+      "sha256": "588d50c83b378a407e25c47f08a62319f71c6e7ced7badff8974897fdf7486fc"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t19_emoji_symbol_boundary.pdf",
+      "bytes": 18885,
+      "sha256": "342c59320226795fc0085dc38df99b1100ea0f174a7f95af189278e825603325"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t19_lineage.pdf",
+      "bytes": 21478,
+      "sha256": "71c9db4e942d6856c49e1672e8287a03e6639c2ad91453c5b6d951fc952eb23b"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t19_model_effects.pdf",
+      "bytes": 16359,
+      "sha256": "676f0f9a90795c7e8cf675165027dd22625cacd648ef8945dd76386cf9de4438"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t20_causal_ceilings.pdf",
+      "bytes": 18139,
+      "sha256": "dc5a219800f3b15a4ac5fecb1b26b70241db231ea2546fdea42b1b0e6206171b"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/figures/t21_path_summary.pdf",
+      "bytes": 16840,
+      "sha256": "5ff7e32bfb4db3409c98e29668f360d489fada6642e4dc94025764bc3b13d542"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/generated/contextual_development_tables_20261010.tex",
+      "bytes": 1596,
+      "sha256": "a2bdf162f9dba585ab6dad5b11490ae44cbe6b834d9082384373457f4976604a"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/generated/readout_qualification_20261015/projection_receipt.json",
+      "bytes": 720,
+      "sha256": "6159e8fff25dad1f6f0f46efe0151154bc84dacfb0b492daa555965dd5e24ff8"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/generated/readout_qualification_20261015/summary.json",
+      "bytes": 1979804,
+      "sha256": "86bddf5317622003ad8ed10dfce35fbf268c64760778bb22d7104435674518eb"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/generated/readout_qualification_20261015/tables.tex",
+      "bytes": 4619,
+      "sha256": "2a6ac5d8b21e176affabb3cb301dbad24d81362352f59b0a576908b732502e47"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/main.tex",
+      "bytes": 81914,
+      "sha256": "10a69b490763530a9cb55d0b73b079c5f2ab2ed75319a81c5531b78f0e81af25"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/preprint.pdf",
+      "bytes": 304651,
+      "sha256": "9f9a34b578b8eeec6dd8f08994fa348ea050d5477c3387663cc885d9cd30d673"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/readout_qualification_20261015.tex",
+      "bytes": 11400,
+      "sha256": "22983e26f3675fb9508a89ac8753a4afda57fae9296ee5f22fdf15ac4ecef086"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/references.bib",
+      "bytes": 11302,
+      "sha256": "7bd821ea4802e3cb311f58b3803d4679843fece02e4dcca5c0259116f9bde82e"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/scripts/build_public_release_20261015.py",
+      "bytes": 16850,
+      "sha256": "79bf014357857bfff33ce009650fe37ee0a374933180f63c2191ad38f15f37db"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/scripts/build_release_candidate_20261015.py",
+      "bytes": 29569,
+      "sha256": "68603a369ddcb37c293811c022daefd08dcd762e8090087d29a47aeec3d18742"
+    },
+    {
+      "path": "artifacts/public_release_20261015/paper/scripts/validate_public_preprint_20261015.py",
+      "bytes": 5160,
+      "sha256": "ee7593fd566aefeedda2055de5fc95c8e3ffa8096560d26e09c51b48ed760947"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/contextual_emoji_output_pilot_v0.py",
+      "bytes": 32766,
+      "sha256": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/contextual_emoji_prefix_consistency_v0.py",
+      "bytes": 43292,
+      "sha256": "5ee9d2120c51e26db936ef37e0e1d4607aaf606fad41fb4970fc20210b985d65"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/contextual_emoji_two_track_v1.py",
+      "bytes": 16454,
+      "sha256": "b9a7d5da1576f0eac054c7492ee00ab93b5721cda612440d7d148936f6268234"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/readout_qualification_v1.py",
+      "bytes": 40429,
+      "sha256": "a285a44bddf37c4f206052b055096f2ef58ce5a7b71a6112c75f72f6eb36e636"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/run_contextual_emoji_two_track_v1.py",
+      "bytes": 15016,
+      "sha256": "868a6f512f0df7f8a1a0105417e150def05ca664e3618cacd746a882418e86c8"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/summarize_readout_qualification_v1.py",
+      "bytes": 21856,
+      "sha256": "be12a473039d9864ad6b331f7006c8881864dec57b07f27e7c77904e1126b433"
+    },
+    {
+      "path": "artifacts/public_release_20261015/scripts/validate_readout_qualification_v1.py",
+      "bytes": 25840,
+      "sha256": "b85ff6913527f005653f187436f21240d007f3c6549a3e7add0a127e5778adc1"
+    },
+    {
+      "path": "artifacts/public_release_20261015/src/glyphprobe/io.py",
+      "bytes": 3229,
+      "sha256": "4462b5e288a7f60e901def3b5a90696e095c609eee65980571ae18fdc31683ef"
+    },
+    {
+      "path": "artifacts/public_release_20261015/src/glyphprobe/provenance.py",
+      "bytes": 2877,
+      "sha256": "3dd436db6a24528f455ae7b5d00448d04bc444c9ff0f5fb84205ae5e75fe727c"
+    },
+    {
+      "path": "artifacts/public_release_20261015/tests/test_readout_qualification_v1.py",
+      "bytes": 15603,
+      "sha256": "8d27c8e9911dc4781c1fac151440b40e9db5ff45d73db47eeb9bcb98f2d5642b"
+    },
+    {
+      "path": "artifacts/public_release_20261015/tests/test_summarize_readout_qualification_v1.py",
+      "bytes": 9672,
+      "sha256": "c3e67d0798de8a93835eeb5c6b3f0710b231f845f251854122f2a2cd9ce2b424"
+    },
+    {
+      "path": "artifacts/public_release_20261015/tests/test_validate_readout_qualification_v1.py",
+      "bytes": 11580,
+      "sha256": "bcaf784880a939b690c42110ba896cec58e2bb263478a8bdae8e7ae6fe770f45"
+    },
+    {
+      "path": "artifacts/public_release_20261015/validation/contextual_emoji_working_revision_20261010/summary.json",
+      "bytes": 26923,
+      "sha256": "ea9b1026c7dd188f5aaa24f580ab127c2d0f2e72fc97a37c4e1973f084917685"
+    },
+    {
+      "path": "configs/contextual_emoji_candidate_wording_v0.json",
+      "bytes": 4050,
+      "sha256": "800487ad09921b2b8f2d6a1a66c4e1d014a1df08296ee4fd1bde181319f9a104"
+    },
+    {
+      "path": "configs/contextual_emoji_output_pilot_v0.json",
+      "bytes": 5919,
+      "sha256": "07445ce31fded82d340f2b52fc209750424d78bacd05d7d337a267e620f81b71"
+    },
+    {
+      "path": "configs/contextual_emoji_word_control_v0.json",
+      "bytes": 5066,
+      "sha256": "0128b45b4c1d77f5b88274a26a06860ebcf20f4d289bc9d027c31dc675034ff0"
+    },
+    {
+      "path": "data/contextual_emoji_candidate_wording_v0.json",
+      "bytes": 1374,
+      "sha256": "480d236a87e40e20a4ea339e0514c2a06a0707ec248413ca0260e56868a52730"
+    },
+    {
+      "path": "data/contextual_emoji_development_v0.jsonl",
+      "bytes": 20684,
+      "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_AUTHOR_PILOT_ANALYSIS_V0.ja.md",
+      "bytes": 4640,
+      "sha256": "793349f61989f3c634d5c0749c0b1697b7cbdc80bf1018e80c8914d00b92fb0a"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_AUTHOR_PILOT_ANALYSIS_V0.md",
+      "bytes": 4401,
+      "sha256": "cc647d879a6c9c514af67686ba984bc06303ddc5094be2dcb2c90efe925972f8"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_AUTHOR_PILOT_V0.ja.md",
+      "bytes": 16855,
+      "sha256": "271fe54af7ba836d94cedcfa6ca968366fd747795dfe126f5cf213fcbe1cdbfc"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_AUTHOR_PILOT_V0.md",
+      "bytes": 14077,
+      "sha256": "5c42aa0ef7a2eeb4db3a5f39072e37d74ee19eb9876935d0bff656191231b8ee"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CANDIDATE_WORDING_V0.ja.md",
+      "bytes": 9348,
+      "sha256": "b52f26063be67d67b2727102b66300cd4f97a62eab98759d2e4b455422afa958"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CANDIDATE_WORDING_V0.md",
+      "bytes": 9019,
+      "sha256": "8571ba320c52e9e90143cde0587acb8985a423a2c2479e721dbc304b8f4897c2"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CANDIDATE_WORDING_V0_RESULTS.ja.md",
+      "bytes": 9560,
+      "sha256": "f1d915ffe719568e69e6922680fc01b2c7a4e19d38174fec632982592789adde"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CANDIDATE_WORDING_V0_RESULTS.md",
+      "bytes": 9174,
+      "sha256": "0f3cfccf8f899ceb245d28413e38e442c6af04bbcef1b30c5a467af8326e49f3"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CAUSAL_TRANSFER_PLAN_V0.ja.md",
+      "bytes": 17638,
+      "sha256": "93e975020d91527fb851310b70898901e66d3b4fd1d9a3481b1f5095c35ed989"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_CAUSAL_TRANSFER_PLAN_V0.md",
+      "bytes": 15622,
+      "sha256": "91d6e42c3be8fecc772fef5c12e782d28d978c742387c5a1f1d2ae521c3986cc"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_HUMAN_VALIDATION_DRAFT_V0.ja.md",
+      "bytes": 12716,
+      "sha256": "0b716685e5b4290a1296aa149f96dc7ae119b414b75f5f5d36b97a1c7666bb06"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_HUMAN_VALIDATION_DRAFT_V0.md",
+      "bytes": 12034,
+      "sha256": "149156c3eaff3acf88528d850d8a30e27f9f73295c4580921c10f424875eb43b"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MATCHED_SHAPE_RESULTS_V1.ja.md",
+      "bytes": 12722,
+      "sha256": "fd916444195fe0c8825bf704bc45da0b806426bef2fa3dea9d2a46530791475f"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MATCHED_SHAPE_RESULTS_V1.md",
+      "bytes": 12218,
+      "sha256": "c5a0527010da20b02e2bb12a28f2d55907b5add5b4f26429f133f29422ba694a"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MATCHED_SHAPE_V1.ja.md",
+      "bytes": 8330,
+      "sha256": "8c5b09d78f1d8a2e76d6e2a8c8a269d04f11e57bef5d91dd8b3a0f04e60e65a5"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MATCHED_SHAPE_V1.md",
+      "bytes": 8281,
+      "sha256": "2837a39d51b8d511eac50b7c4740c36c2d003d9165eded0eeececee99aa35347"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MEASUREMENT_NEXT_PLAN_V0.ja.md",
+      "bytes": 19621,
+      "sha256": "00518afb783fa9c00440dd8b1d2f4782ad72745dcb0ebeac381354b26dd98180"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MEASUREMENT_NEXT_PLAN_V0.md",
+      "bytes": 18538,
+      "sha256": "7485c926574be464c2abc872a347fc7cf28ba96749f421f6950d4246357e2197"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MEASUREMENT_RESEARCH_NOTE_V0.ja.md",
+      "bytes": 26966,
+      "sha256": "eb74052e74b27cfa63fdb9af422cc6b1a9db3af80931454d3368a0fd4d42f38d"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_MEASUREMENT_RESEARCH_NOTE_V0.md",
+      "bytes": 25661,
+      "sha256": "c6d11f5956d7b4f5017ed2f75fda4c92b47076cca810a39bce3cada48b9006a7"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_OUTPUT_PILOT_V0.ja.md",
+      "bytes": 13252,
+      "sha256": "7e103c62abd3426fa90326e0ea2fc10f994a54b4d573d2979892c410933d2f07"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_OUTPUT_PILOT_V0.md",
+      "bytes": 11065,
+      "sha256": "33cb3585e6252586316dbcdcdcbe40e0a4e42d659ef1c3c784264f33a10a9354"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_OUTPUT_PILOT_V0_RESULTS.ja.md",
+      "bytes": 12519,
+      "sha256": "f90500d92cb1c18a39bafde0370988f48eb282776071e6cf8b1eec59da1330eb"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_OUTPUT_PILOT_V0_RESULTS.md",
+      "bytes": 11436,
+      "sha256": "4f79a0bbe68e754dcd47dcc5f8cada20310bb05c4b9bd2612588984727a3ac35"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_CONSISTENCY_RESULTS_V0.ja.md",
+      "bytes": 10453,
+      "sha256": "5002ad478e41bd48c0b60d0f9608ce8096a88b54aeefee9b0c310340c1fff33b"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_CONSISTENCY_RESULTS_V0.md",
+      "bytes": 9999,
+      "sha256": "1b4053c176c71d937b72297a05e12cc48ec21fcffdff0365be6f4556fe8cd6b3"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_CONSISTENCY_V0.ja.md",
+      "bytes": 8651,
+      "sha256": "a431493d602bbdf6cd7213ec64a8ffcfcbfed146d4d06cf3e37c46cdfb776b62"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_CONSISTENCY_V0.md",
+      "bytes": 8715,
+      "sha256": "a6a23fcbcc0eef376758c4d7827dd0be53ea863e31e0699992921a300238d2d3"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_PREFLIGHT_ADDENDUM_V0.ja.md",
+      "bytes": 3137,
+      "sha256": "0ccbf3059b6456265f3609b037675ad54cab744404324cdba4a14c76c7790c03"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_PREFIX_PREFLIGHT_ADDENDUM_V0.md",
+      "bytes": 2882,
+      "sha256": "d47da6254108c6f0ea11f4f646acda3e1207ed3397cb86f56809ea36ae023eab"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.ja.md",
+      "bytes": 17572,
+      "sha256": "7b37412f439eaf8d01724a4bdfcaf724dfe7d851469c0d2fe1673774c5cbf019"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_REASSESSMENT_20261010.md",
+      "bytes": 15940,
+      "sha256": "d936d348ecd6cbdbbae091eec9d4843d497ff1369eea31d76630aa11b5df1884"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.ja.md",
+      "bytes": 6626,
+      "sha256": "6c9cb8fa786736e2e46b5a1e19ed1949698e7fc5ad34012b3115cf00f5aa5ef0"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1.md",
+      "bytes": 6506,
+      "sha256": "87c018168a2ede80d1ddb551b2860b1db8f323b1621f0dfc23ddece459bb7d4f"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.ja.md",
+      "bytes": 4338,
+      "sha256": "2ec31bed30b42692b101ecb77e9c9bdfa0505bcdd221d45d96bbd1262cbf8c16"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_TWO_TRACK_V1_ANALYSIS.md",
+      "bytes": 4140,
+      "sha256": "2caa17078dd43b36c4efee1e708b5bb1f464f964b7136714d0a9198c9c64f34a"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_WORD_CONTROL_V0.ja.md",
+      "bytes": 8382,
+      "sha256": "3a3b2c89433444f1a8fcc1bead3e1df1c35270583b237b34f95d3f977002ff20"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_WORD_CONTROL_V0.md",
+      "bytes": 7814,
+      "sha256": "2d81c78a1b3e21d3dc66793c60af1cc5f485c9f9ce5140805bca7a8d748b9bdf"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_WORD_CONTROL_V0_RESULTS.ja.md",
+      "bytes": 10729,
+      "sha256": "58e2f2a71326a7b8a340e514dac8e92a80d54c5d0916548ea8983aa149410239"
+    },
+    {
+      "path": "docs/CONTEXTUAL_EMOJI_WORD_CONTROL_V0_RESULTS.md",
+      "bytes": 9831,
+      "sha256": "9a3db30ff0b7b85b704a0eb4353d5dd863df56f3cf4b7f218244243900656b4d"
+    },
+    {
+      "path": "docs/NOTE.ja.md",
+      "bytes": 63540,
+      "sha256": "b4d1cf421444d06f8e3d69cb6beff210f7c337192f8ff697680909216903c5b1"
+    },
+    {
+      "path": "docs/NOTE.md",
+      "bytes": 58956,
+      "sha256": "9520afdd7e2c652d781e0eb36019d4e78736ea6701f6c94f09ec964383b891ec"
+    },
+    {
+      "path": "docs/PAPER_NEXT_THEME_20261026.ja.md",
+      "bytes": 12981,
+      "sha256": "9b1c05063192ab1f332bd8d9b2675fe953fb58acadf3431a4ed85c322b49d951"
+    },
+    {
+      "path": "docs/PAPER_NEXT_THEME_20261026.md",
+      "bytes": 11611,
+      "sha256": "a5778b50b4e48b6416f5741ad786b805fd9e61cde81822ad5ffe0f86a46eae7b"
+    },
+    {
+      "path": "docs/POST_REVIEW_REVISION_20261007.ja.md",
+      "bytes": 11266,
+      "sha256": "568ffef23b94914a1b0284f242d64c5149a530f1ccae2a1d94379a263ff50d5d"
+    },
+    {
+      "path": "docs/POST_REVIEW_REVISION_20261007.md",
+      "bytes": 10367,
+      "sha256": "6328e05883b35cd6d57e1a7196e35bbf4c502e5fa9d799e677e9a4113c0f08d2"
+    },
+    {
+      "path": "docs/PUBLIC_INTEGRATION_SCOPE_20261026.ja.md",
+      "bytes": 5724,
+      "sha256": "385ed16076afed07d243deeb8ab80c8a9b8bf3837c19b518be5b872a7e095923"
+    },
+    {
+      "path": "docs/PUBLIC_INTEGRATION_SCOPE_20261026.md",
+      "bytes": 4817,
+      "sha256": "ed6423c1c5856d398c67fe4ccc5ce37f7d13db23d7673c0abb47be525411f394"
+    },
+    {
+      "path": "docs/READOUT_QUALIFICATION_V1.ja.md",
+      "bytes": 6052,
+      "sha256": "959d3dd252e9d7764654ae22845f01b28e9ba2f644af7a26852e0df274cf2f62"
+    },
+    {
+      "path": "docs/READOUT_QUALIFICATION_V1.md",
+      "bytes": 6196,
+      "sha256": "3341d795e50bf685bc330724659afab06ff9445da5da18b0760f1c87df191cb9"
+    },
+    {
+      "path": "output/artifacts/glyphprobe_public_release_20261015_v2.zip",
+      "bytes": 3618044,
+      "sha256": "36959018915a13b988d83b7db13b9e3bb91b6e3a660649cbc8a270340b68f409"
+    },
+    {
+      "path": "output/pdf/glyphprobe_preprint_20261015.pdf",
+      "bytes": 304651,
+      "sha256": "9f9a34b578b8eeec6dd8f08994fa348ea050d5477c3387663cc885d9cd30d673"
+    },
+    {
+      "path": "paper/COMPUTE_REPORT.ja.md",
+      "bytes": 11140,
+      "sha256": "5f430598a8a5ae79d7d71a0f2ad9a2bcd67e6944c8e5e246a906a31522f71a2d"
+    },
+    {
+      "path": "paper/COMPUTE_REPORT.md",
+      "bytes": 10942,
+      "sha256": "1c636ec5b9d7709cb322d9ab1e75d52f87b1be512547c4f7b57226a3c17ef82f"
+    },
+    {
+      "path": "paper/CURRENT_CLAIMS_20261015.ja.md",
+      "bytes": 10505,
+      "sha256": "e3189a79c7bb706786c75e1bd73837a956029ab982be29334ab85cc37db82171"
+    },
+    {
+      "path": "paper/CURRENT_CLAIMS_20261015.md",
+      "bytes": 9749,
+      "sha256": "618127266d89cdd7210255b6b4fb5e3594d6a28bcf015901b87a29ab153d2a90"
+    },
+    {
+      "path": "paper/ETHICS_REVIEW.ja.md",
+      "bytes": 10083,
+      "sha256": "917a3380a5c16e5f22b9274ddb5ae031eb885097daf1f687af1f26bbfa42b45e"
+    },
+    {
+      "path": "paper/ETHICS_REVIEW.md",
+      "bytes": 9598,
+      "sha256": "04da4e64769345311ad3a3c6d2a33b246542cb2750c271d4502e72fc0bf6ea1f"
+    },
+    {
+      "path": "paper/EXPERIMENT_GUIDE.ja.md",
+      "bytes": 15810,
+      "sha256": "aeaa9d0e1576db7677764e056dcd55bf35d7d6c4cdeec8d94a6388c08d8d7b08"
+    },
+    {
+      "path": "paper/EXPERIMENT_GUIDE.md",
+      "bytes": 12674,
+      "sha256": "6f79b8770ff037a6e31a71903268bcb6dcb97db8b93670a2040850a8fcbde8d3"
+    },
+    {
+      "path": "paper/FORK_REVIEW_PUBLICATION_20261015.ja.md",
+      "bytes": 3652,
+      "sha256": "7f3720ecb0ba7d8e46619aeb7258908bba35dceb9ba6c08c560de8e73c3770fb"
+    },
+    {
+      "path": "paper/FORK_REVIEW_PUBLICATION_20261015.md",
+      "bytes": 3438,
+      "sha256": "8d62f284626ca3ef68894dd87a04f89a23b98f480ea4718e70becbbe58a1b2ec"
+    },
+    {
+      "path": "paper/PUBLICATION_METADATA_20261015.json",
+      "bytes": 954,
+      "sha256": "d76f4251ed8adc4c23142898cb5df63a889f3ef0280789accfea6591be12db53"
+    },
+    {
+      "path": "paper/PUBLIC_LICENSES_20261015.ja.md",
+      "bytes": 3925,
+      "sha256": "bd010648bac566f945d4a5bdf8c8b3f0d5ee71c4a6a9b056bdd6783a544253fb"
+    },
+    {
+      "path": "paper/PUBLIC_LICENSES_20261015.md",
+      "bytes": 3511,
+      "sha256": "0d3eb91a44478a96a65e6c9bd1948d43828e7185caf1a601843e36778f99e5a8"
+    },
+    {
+      "path": "paper/PUBLIC_RELEASE_20261015.ja.md",
+      "bytes": 9323,
+      "sha256": "6611eb24384301f523061af7fecbe1bd13c448d711b5727a9251ac87f1714dc6"
+    },
+    {
+      "path": "paper/PUBLIC_RELEASE_20261015.md",
+      "bytes": 8191,
+      "sha256": "6f3c85908bdaac580cd58f2a2b55d22bd5f968ab38fd3b4984e2dea06606c7b8"
+    },
+    {
+      "path": "paper/README.ja.md",
+      "bytes": 30560,
+      "sha256": "52c654cc956a462f4d22cd4c376ca7594fc781c9bfa801c2cf8fc73031f64351"
+    },
+    {
+      "path": "paper/README.md",
+      "bytes": 28867,
+      "sha256": "54d0da013906705df4a718034815a6739bd512f819aa4fdf019dfff821d10d95"
+    },
+    {
+      "path": "paper/RELEASE_CANDIDATE_20261015.ja.md",
+      "bytes": 10655,
+      "sha256": "5420fb383d5c476c1a32fbfa9c79098d41a8d719df047e1ee63dc2d1884ec3b1"
+    },
+    {
+      "path": "paper/RELEASE_CANDIDATE_20261015.md",
+      "bytes": 9685,
+      "sha256": "328f2a48644320be3f049e6cfd49ae65bfff708cb8543967376fe0cf849bde74"
+    },
+    {
+      "path": "paper/REVISION_NOTES_20261015.ja.md",
+      "bytes": 7418,
+      "sha256": "a674483eada6d9aa799e357cb6c8b47019720853f34fba22bf12b5b590a3b48d"
+    },
+    {
+      "path": "paper/REVISION_NOTES_20261015.md",
+      "bytes": 7077,
+      "sha256": "c4292ab101c91529a826324693786c73faf6a8de0e1aaef0d963985f45a04419"
+    },
+    {
+      "path": "paper/WORKING_CLAIMS_20261010.ja.md",
+      "bytes": 4150,
+      "sha256": "1738e3a39b46b530e578a82429248cccb3d041e5aac5ddf871343bbb107bf8be"
+    },
+    {
+      "path": "paper/WORKING_CLAIMS_20261010.md",
+      "bytes": 3957,
+      "sha256": "e1f2dd374d81ab60f34f045c7b01ef48908466f818c23fe21b3a855f335981c3"
+    },
+    {
+      "path": "paper/contextual_development_20261010.tex",
+      "bytes": 11873,
+      "sha256": "d51b2d3456f7bb5ae9b0ef610c4c63786e488428ed86cc268ccd00ee4d9f4d4b"
+    },
+    {
+      "path": "paper/contextual_input_examples_20261015.tex",
+      "bytes": 5829,
+      "sha256": "38a40c7ac89a1fc9f801bf91e4c8bff2e80e73979b56236ca5c1ee913ba30563"
+    },
+    {
+      "path": "paper/figures/manifest.json",
+      "bytes": 3031,
+      "sha256": "571e4a469fc652690a68cf0b075520609a4989412b3bd04ef0b9499318e632f3"
+    },
+    {
+      "path": "paper/figures/t19_design.pdf",
+      "bytes": 22164,
+      "sha256": "588d50c83b378a407e25c47f08a62319f71c6e7ced7badff8974897fdf7486fc"
+    },
+    {
+      "path": "paper/figures/t19_design.png",
+      "bytes": 98879,
+      "sha256": "2517ebcecea952e5d404c4b84c0aaeeaff019bb712fc96c54aa97470c8026845"
+    },
+    {
+      "path": "paper/figures/t20_causal_ceilings.pdf",
+      "bytes": 18139,
+      "sha256": "dc5a219800f3b15a4ac5fecb1b26b70241db231ea2546fdea42b1b0e6206171b"
+    },
+    {
+      "path": "paper/figures/t20_causal_ceilings.png",
+      "bytes": 106337,
+      "sha256": "06e0b0474f574dc54dec64b62e7725673363417d507c32af72067f9ad57ee4d7"
+    },
+    {
+      "path": "paper/figures/t21_path_summary.pdf",
+      "bytes": 16840,
+      "sha256": "5ff7e32bfb4db3409c98e29668f360d489fada6642e4dc94025764bc3b13d542"
+    },
+    {
+      "path": "paper/figures/t21_path_summary.png",
+      "bytes": 131032,
+      "sha256": "93fcc4f93d221c7580401f04b3179ccc1d41241a2dee9684d628e591e6539d55"
+    },
+    {
+      "path": "paper/generated/contextual_development_tables_20261010.tex",
+      "bytes": 1596,
+      "sha256": "a2bdf162f9dba585ab6dad5b11490ae44cbe6b834d9082384373457f4976604a"
+    },
+    {
+      "path": "paper/generated/readout_qualification_20261015/projection_receipt.json",
+      "bytes": 720,
+      "sha256": "6159e8fff25dad1f6f0f46efe0151154bc84dacfb0b492daa555965dd5e24ff8"
+    },
+    {
+      "path": "paper/generated/readout_qualification_20261015/summary.json",
+      "bytes": 1979804,
+      "sha256": "86bddf5317622003ad8ed10dfce35fbf268c64760778bb22d7104435674518eb"
+    },
+    {
+      "path": "paper/generated/readout_qualification_20261015/tables.tex",
+      "bytes": 4619,
+      "sha256": "2a6ac5d8b21e176affabb3cb301dbad24d81362352f59b0a576908b732502e47"
+    },
+    {
+      "path": "paper/main.tex",
+      "bytes": 81914,
+      "sha256": "10a69b490763530a9cb55d0b73b079c5f2ab2ed75319a81c5531b78f0e81af25"
+    },
+    {
+      "path": "paper/readout_qualification_20261015.tex",
+      "bytes": 11400,
+      "sha256": "22983e26f3675fb9508a89ac8753a4afda57fae9296ee5f22fdf15ac4ecef086"
+    },
+    {
+      "path": "paper/scripts/build_development_summary_20261010.py",
+      "bytes": 10394,
+      "sha256": "5d29fcf51b422c142d4a2dce31e0490777e56352290339c0b0c53e71f2561712"
+    },
+    {
+      "path": "paper/scripts/build_figures.py",
+      "bytes": 29550,
+      "sha256": "c1f2879d04a10e5b7f4502cb4af6dcdfa6e883755196ba80ac732c457d2d72aa"
+    },
+    {
+      "path": "paper/scripts/build_public_release_20261015.py",
+      "bytes": 16850,
+      "sha256": "79bf014357857bfff33ce009650fe37ee0a374933180f63c2191ad38f15f37db"
+    },
+    {
+      "path": "paper/scripts/build_release_candidate_20261015.py",
+      "bytes": 29569,
+      "sha256": "68603a369ddcb37c293811c022daefd08dcd762e8090087d29a47aeec3d18742"
+    },
+    {
+      "path": "paper/scripts/validate_public_preprint_20261015.py",
+      "bytes": 5160,
+      "sha256": "ee7593fd566aefeedda2055de5fc95c8e3ffa8096560d26e09c51b48ed760947"
+    },
+    {
+      "path": "paper/scripts/validate_revised_preprint_20261015.py",
+      "bytes": 7452,
+      "sha256": "0890e619684cb5315cf25d1d91ed41a2d76dcb39b87737fa8b6a35e19e7d4564"
+    },
+    {
+      "path": "paper/scripts/validate_working_reassessment_20261010.py",
+      "bytes": 5217,
+      "sha256": "bfc5084d17e00630608ebd1fcfc877ac98d15b5c646f5b2be2e353cfa4f50550"
+    },
+    {
+      "path": "scripts/analyze_contextual_emoji_author_pilot_v0.py",
+      "bytes": 9631,
+      "sha256": "36de5d9648106be93d34b81dda008c84654b1f97de89b0d8d22e55042f9af248"
+    },
+    {
+      "path": "scripts/analyze_contextual_emoji_matched_shape_v1.py",
+      "bytes": 40709,
+      "sha256": "c7654f264cd2817cce4146a3f4d7299d92dc33cbc5c86c6797b413229672b7fd"
+    },
+    {
+      "path": "scripts/analyze_contextual_emoji_measurement_v0.py",
+      "bytes": 25813,
+      "sha256": "f6337beb418b04fd2bbef675e6295739c5b5a72d28439549dea1a8a17c7cf59b"
+    },
+    {
+      "path": "scripts/analyze_contextual_emoji_two_track_author_v1.py",
+      "bytes": 10245,
+      "sha256": "2ab652003181d5b4012544ec366cfd63b8091cd290aff997a101e2d5148f6137"
+    },
+    {
+      "path": "scripts/audit_contextual_emoji_two_track_v1.py",
+      "bytes": 8959,
+      "sha256": "e5a74c46d0b6377f415fda7aedd5d4eb9923628ff58047ed8289a26813a5c42f"
+    },
+    {
+      "path": "scripts/build_contextual_emoji_matched_shape_notebook_v1.py",
+      "bytes": 9768,
+      "sha256": "e899bc31dbe4602f0a4b73bedd1358c13f5d1221cc6c33a92ee2fa9ec9b75e85"
+    },
+    {
+      "path": "scripts/build_contextual_emoji_measurement_notebook_v0.py",
+      "bytes": 16675,
+      "sha256": "c4091033c335196bfa0d28a5d597af453f09437b9f358dbfab66ef885153565d"
+    },
+    {
+      "path": "scripts/build_contextual_emoji_prefix_notebook_v0.py",
+      "bytes": 7761,
+      "sha256": "c98b4226afea108129343cf5a457fd912af1df63a05f537ac3a0016dedaab8fe"
+    },
+    {
+      "path": "scripts/build_contextual_emoji_two_track_audit_notebook.py",
+      "bytes": 4249,
+      "sha256": "8ba293d014a9abb8abba371a3a621feaf8ccda63e21616719101918bfbcdd0a1"
+    },
+    {
+      "path": "scripts/build_contextual_emoji_two_track_author_notebook_v1.py",
+      "bytes": 10646,
+      "sha256": "e95eb2f33ad059261a5f49b9a2180f5c384306c2fbb8e8d53cc43ae0ffb14d72"
+    },
+    {
+      "path": "scripts/compare_contextual_emoji_author_pilot_v0.py",
+      "bytes": 9166,
+      "sha256": "43e81a2e87d7bb89d103c7511b295175cdf2bedcdfc8ac91874b278b5cf139dd"
+    },
+    {
+      "path": "scripts/compare_contextual_emoji_two_track_author_v1.py",
+      "bytes": 15882,
+      "sha256": "5ebd1f65742c248b93991e489a4923d99b94beff262835f16ae1648b27b3f914"
+    },
+    {
+      "path": "scripts/compare_contextual_emoji_word_control_v0.py",
+      "bytes": 36931,
+      "sha256": "73f11dd05e84ba8ed9ca3be636167743f1ff7fba3e1a5b7555176dc39b8bfbd4"
+    },
+    {
+      "path": "scripts/contextual_emoji_author_pilot_v0.py",
+      "bytes": 21958,
+      "sha256": "4e638d5bbef2abfd8f72ae4cfdf9cad986cba330cd45b2a18450a0ec6cd0796f"
+    },
+    {
+      "path": "scripts/contextual_emoji_candidate_wording_v0.py",
+      "bytes": 26318,
+      "sha256": "b7f856c45004c69ce57579e3365659baff7ee599130e8ae727cd68578a610455"
+    },
+    {
+      "path": "scripts/contextual_emoji_matched_shape_v1.py",
+      "bytes": 26266,
+      "sha256": "e01d53c02f572ef17a68fe42fae00b9ac35ceb7762164307f8075154e7a04964"
+    },
+    {
+      "path": "scripts/contextual_emoji_output_pilot_v0.py",
+      "bytes": 32766,
+      "sha256": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa"
+    },
+    {
+      "path": "scripts/contextual_emoji_prefix_consistency_v0.py",
+      "bytes": 43292,
+      "sha256": "5ee9d2120c51e26db936ef37e0e1d4607aaf606fad41fb4970fc20210b985d65"
+    },
+    {
+      "path": "scripts/contextual_emoji_two_track_v1.py",
+      "bytes": 16454,
+      "sha256": "b9a7d5da1576f0eac054c7492ee00ab93b5721cda612440d7d148936f6268234"
+    },
+    {
+      "path": "scripts/contextual_emoji_word_control_v0.py",
+      "bytes": 26583,
+      "sha256": "1589c0452e127b08d824604a139bab408e1dec87cff0a577d4578bb6d5aecfd4"
+    },
+    {
+      "path": "scripts/diagnose_contextual_emoji_two_track_readout_v1.py",
+      "bytes": 4705,
+      "sha256": "4d0258074e643c849305aa996119e6bb28ef72f003c82b962d593630a222d389"
+    },
+    {
+      "path": "scripts/glyphprobe_shared_cuda_v0.py",
+      "bytes": 6776,
+      "sha256": "1b97e30db37d11a62b8cf733a330fabcf6a7f4d56ba5a2ebdd7ea8d00df6a876"
+    },
+    {
+      "path": "scripts/readout_qualification_v1.py",
+      "bytes": 40429,
+      "sha256": "a285a44bddf37c4f206052b055096f2ef58ce5a7b71a6112c75f72f6eb36e636"
+    },
+    {
+      "path": "scripts/run_contextual_emoji_two_track_v1.py",
+      "bytes": 15016,
+      "sha256": "868a6f512f0df7f8a1a0105417e150def05ca664e3618cacd746a882418e86c8"
+    },
+    {
+      "path": "scripts/serve_contextual_emoji_author_pilot_v0.py",
+      "bytes": 26602,
+      "sha256": "9971ce07d536d85bc0ac963344b06101bcc3fbca696682855a5b157fcbf832b2"
+    },
+    {
+      "path": "scripts/serve_contextual_emoji_two_track_v1.py",
+      "bytes": 8029,
+      "sha256": "a0cc6c499c896b98a0010be7f7fbddf9a83d4638de52eef30ec79658d3a5e24a"
+    },
+    {
+      "path": "scripts/summarize_contextual_emoji_candidate_wording_v0.py",
+      "bytes": 19509,
+      "sha256": "9567aba0cc19fc081c6b33ce470bbe9f7939084f6d1f4a93d1b585bc1adb9197"
+    },
+    {
+      "path": "scripts/summarize_readout_qualification_v1.py",
+      "bytes": 21856,
+      "sha256": "be12a473039d9864ad6b331f7006c8881864dec57b07f27e7c77904e1126b433"
+    },
+    {
+      "path": "scripts/summarize_revision_sensitivity_v0.py",
+      "bytes": 6990,
+      "sha256": "15dadc3d14c1b7634839740364dbbb2dcec091352761bd8373af2ac77a685aaf"
+    },
+    {
+      "path": "scripts/validate_contextual_emoji_output_pilot_v0.py",
+      "bytes": 28492,
+      "sha256": "c3c9e0e5036974f30115945e6c5438f5bb1dd9e26929c060a705085b45a19948"
+    },
+    {
+      "path": "scripts/validate_contextual_emoji_prefix_consistency_v0.py",
+      "bytes": 38994,
+      "sha256": "9e8d9079327e24011c0776374af67b56acf226a624445c27f00aded19d701464"
+    },
+    {
+      "path": "scripts/validate_readout_qualification_v1.py",
+      "bytes": 25840,
+      "sha256": "b85ff6913527f005653f187436f21240d007f3c6549a3e7add0a127e5778adc1"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 6263,
+      "sha256": "e2a36da6a4ff1ea62bcfe243b38314d96df456d0d4e9624d28bac5c2ca0e5f4b"
+    },
+    {
+      "path": "tests/serve_two_track_synthetic_qa.py",
+      "bytes": 1106,
+      "sha256": "cf8f722ea630136e02032fcd1290b54981988988bd0c759765bcf4ce0629ee57"
+    },
+    {
+      "path": "tests/test_analyze_contextual_emoji_author_pilot_v0.py",
+      "bytes": 3892,
+      "sha256": "3b7395bcd7316e929b2455cfafa26752356a86e0eae95d36513099e708b204b7"
+    },
+    {
+      "path": "tests/test_analyze_contextual_emoji_matched_shape_v1.py",
+      "bytes": 20591,
+      "sha256": "f5b449b4b4db9e8111d957d2fc7d2e1a26c69bc89c708929b5a3ac7c619be060"
+    },
+    {
+      "path": "tests/test_analyze_contextual_emoji_measurement_v0.py",
+      "bytes": 9173,
+      "sha256": "4a44d9f12373aaf8fa6ed9a65c8e15b2fe40740908a3f9a4822e45560e781efa"
+    },
+    {
+      "path": "tests/test_analyze_contextual_emoji_two_track_author_v1.py",
+      "bytes": 7805,
+      "sha256": "c109c8996a05b385827af341b2aaf06c87e9000e3a155267d30f82f1dd32c954"
+    },
+    {
+      "path": "tests/test_audit_contextual_emoji_two_track_v1.py",
+      "bytes": 2241,
+      "sha256": "df7a8f22be1749dcfe3c1a6ffc7ddacd196aa393aef0c264fe08e494cf149758"
+    },
+    {
+      "path": "tests/test_compare_contextual_emoji_author_pilot_v0.py",
+      "bytes": 4061,
+      "sha256": "e26e51f220610c59d7e3dc4e84ec88ade0045938049e7473c7b957fccaae3bf1"
+    },
+    {
+      "path": "tests/test_compare_contextual_emoji_two_track_author_v1.py",
+      "bytes": 5552,
+      "sha256": "8aa9f53f3cd9e4da2161e018d882de00045e0354cfca1305f572b433fdca4755"
+    },
+    {
+      "path": "tests/test_compare_contextual_emoji_word_control_v0.py",
+      "bytes": 17386,
+      "sha256": "08eb2bb34d225653a32cec944297b2969e527f649b5c399409dd30b299b35555"
+    },
+    {
+      "path": "tests/test_contextual_emoji_author_pilot_v0.py",
+      "bytes": 13136,
+      "sha256": "e2832f8f775f6caf2841d115a911c60f91cb2b7b861aee41155229f194238ecc"
+    },
+    {
+      "path": "tests/test_contextual_emoji_candidate_wording_v0.py",
+      "bytes": 9282,
+      "sha256": "356f6ea86daf7b105b9e1c8295a569185dbc801d9ffbc101340d097d700994a1"
+    },
+    {
+      "path": "tests/test_contextual_emoji_matched_shape_v1.py",
+      "bytes": 16762,
+      "sha256": "f365c3030b84e6662c71eb90f166335459b32d392cbd1cb69b8e9c6296daeab0"
+    },
+    {
+      "path": "tests/test_contextual_emoji_output_pilot_v0.py",
+      "bytes": 13173,
+      "sha256": "7b29cdfba702a8dff841d652ef37e7359f50f2b6d94fbfbcb793a0d213efce9e"
+    },
+    {
+      "path": "tests/test_contextual_emoji_prefix_consistency_v0.py",
+      "bytes": 29421,
+      "sha256": "f00a22db892e9bfce7d28952bb83d13da783ec0063d021ed5f0a6d0c6552c969"
+    },
+    {
+      "path": "tests/test_contextual_emoji_two_track_v1.py",
+      "bytes": 6872,
+      "sha256": "cc19970539bb49ea2f1e561cd81c86dd1349e686b185214af015942af74c3af0"
+    },
+    {
+      "path": "tests/test_contextual_emoji_word_control_v0.py",
+      "bytes": 12780,
+      "sha256": "86c5df39419a53a0cba7a56f87482c5aa92d5668efc4bcf22cacaa5de3651bfb"
+    },
+    {
+      "path": "tests/test_diagnose_contextual_emoji_two_track_readout_v1.py",
+      "bytes": 2188,
+      "sha256": "f3e67a66a90859ebbd1ec83bba33f361c75612fae567486e427489335d3eaacf"
+    },
+    {
+      "path": "tests/test_final_manuscript_polish.py",
+      "bytes": 4244,
+      "sha256": "68755ee4fc1a1a7c7b65d1c99c0dc56662c483814449399ac569dd3074a7c0ca"
+    },
+    {
+      "path": "tests/test_glyphprobe_shared_cuda_v0.py",
+      "bytes": 4427,
+      "sha256": "59c302c53cdb6d01b08ad53ae38216c19076b7d6c91b5dfd11674082f6ecd9f6"
+    },
+    {
+      "path": "tests/test_manuscript_review_repairs_20261015.py",
+      "bytes": 5484,
+      "sha256": "f9b5f02943bce06c183819b272cf04c1d2addcbe5ec6c0ed09fa4672126b1da4"
+    },
+    {
+      "path": "tests/test_public_document_privacy_20261026.py",
+      "bytes": 1379,
+      "sha256": "05ee7d3c98b1f6b3cf0f1ca0040c258c79aff0dd58c591b1511ff8429b91480f"
+    },
+    {
+      "path": "tests/test_public_integration_20261026.py",
+      "bytes": 2559,
+      "sha256": "6c57f00e103141d65b026175a47f01e76dcc21a11fe0ed2fea4595a469e3b618"
+    },
+    {
+      "path": "tests/test_public_release_20261015.py",
+      "bytes": 12836,
+      "sha256": "aee96b2b12c4cae488395fd4fbc3213290168a552e3a2ba542373f6896e5ab60"
+    },
+    {
+      "path": "tests/test_public_test_scope_20261026.py",
+      "bytes": 5705,
+      "sha256": "fc1f94af23c88b231985a91d1bf9555a13bbcdc508076f856607cfe028cb3e8a"
+    },
+    {
+      "path": "tests/test_readout_qualification_v1.py",
+      "bytes": 15603,
+      "sha256": "8d27c8e9911dc4781c1fac151440b40e9db5ff45d73db47eeb9bcb98f2d5642b"
+    },
+    {
+      "path": "tests/test_release_candidate_20261015.py",
+      "bytes": 16056,
+      "sha256": "9470ffd0e4e56f86b776a2648feededf46ac25153e210bba52b466cb0f227825"
+    },
+    {
+      "path": "tests/test_revised_preprint_20261015.py",
+      "bytes": 5762,
+      "sha256": "45812a7282333190ae227e67f0f0dd024a91ec054dab82c5dade68d454b1abff"
+    },
+    {
+      "path": "tests/test_serve_contextual_emoji_author_pilot_v0.py",
+      "bytes": 21241,
+      "sha256": "da832fd35c68a37348be5b75b5f680b2879cb7f2178d4395ff27be4c32703d01"
+    },
+    {
+      "path": "tests/test_serve_contextual_emoji_two_track_v1.py",
+      "bytes": 6918,
+      "sha256": "2781b070fc202bc593f6d00e01e561eb8c974b504bcc5c5de4f69616cdfb7ee8"
+    },
+    {
+      "path": "tests/test_summarize_readout_qualification_v1.py",
+      "bytes": 9672,
+      "sha256": "c3e67d0798de8a93835eeb5c6b3f0710b231f845f251854122f2a2cd9ce2b424"
+    },
+    {
+      "path": "tests/test_validate_contextual_emoji_output_pilot_v0.py",
+      "bytes": 18406,
+      "sha256": "f33c29bce7c451b918baa25d9e77947ce4bb028825589ff835d5d728ee3d9e1a"
+    },
+    {
+      "path": "tests/test_validate_contextual_emoji_prefix_consistency_v0.py",
+      "bytes": 27112,
+      "sha256": "75fe5b243dfb64a98277c6d6e5a31920eb7ea4e9fa3f00e499c8fc672ba305f3"
+    },
+    {
+      "path": "tests/test_validate_readout_qualification_v1.py",
+      "bytes": 11580,
+      "sha256": "bcaf784880a939b690c42110ba896cec58e2bb263478a8bdae8e7ae6fe770f45"
+    },
+    {
+      "path": "tests/test_working_reassessment_20261010.py",
+      "bytes": 7680,
+      "sha256": "7ee40b6b5f7e6cd65217ae9fe1e534070d8dbcccdfe6c49226772a615954ffd7"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/cells.jsonl",
+      "bytes": 1265099,
+      "sha256": "ceeb391072ddfd42db7e464e5dbb715217dadeb90661516c6f1c2e326c872630"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/independent_analysis.json",
+      "bytes": 626663,
+      "sha256": "1512f4ad613a4d9d20473c1a33af326412299c3a7f3a0d031551716ca753c719"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/parity.jsonl",
+      "bytes": 624063,
+      "sha256": "d9fab28226bf4d84d40983ce6698d940643e373ec9748c954adf3b81ef6e6a98"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/shared_trial/cells.jsonl",
+      "bytes": 1106280,
+      "sha256": "66af2328f4e65225de4334736566a1fbc5a2b36b8bb0a5a1fd6ae614e8f0b626"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/shared_trial/independent_analysis.json",
+      "bytes": 605706,
+      "sha256": "531ce43fcb3d04c78f1e3c2849deda1717f311ad262f594247d8ff819a9503ca"
+    },
+    {
+      "path": "validation/contextual_emoji_candidate_wording_v0/shared_trial/parity.jsonl",
+      "bytes": 521869,
+      "sha256": "6b1c7b7b4db2b490a1314b2169c2914aea632825f2a4572f245cd38357ee04b3"
+    },
+    {
+      "path": "validation/contextual_emoji_matched_shape_v1/independent_analysis.json",
+      "bytes": 1353256,
+      "sha256": "8557d04e77b6c095022b3d97d5404024b1f7be8d1a101a93a6e54ebdcd4d2e35"
+    },
+    {
+      "path": "validation/contextual_emoji_matched_shape_v1/run1312/diagnostics.json",
+      "bytes": 165100,
+      "sha256": "7202eb63186db520d176e90a3de486c929c03039ef0c33267341e97558eaee3f"
+    },
+    {
+      "path": "validation/contextual_emoji_matched_shape_v1/run1312/forwards.jsonl",
+      "bytes": 2079747,
+      "sha256": "5bc84713d6305e0dff80898bb57d60d54d2c9ef01ab45b11f9158d59df8e5706"
+    },
+    {
+      "path": "validation/contextual_emoji_measurement_v0/analysis.json",
+      "bytes": 842061,
+      "sha256": "806400d78608cc2999f9480d3b82b24a45fd4739f85f52d82a21f3f7cb4b39e8"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/cells.jsonl",
+      "bytes": 449104,
+      "sha256": "ce090b817ea5c0ebf5382d1b1994a482f918d06043821d94157c0b2710980d97"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/independent_validation.json",
+      "bytes": 17813,
+      "sha256": "076727f043507198c7b6b4604060c8ecfd4a7d655c7915763cb991b92d867983"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/independent_validation_with_diagnostics.json",
+      "bytes": 61788,
+      "sha256": "a22b51a8ecde24bae2aa2d7909728f529343dc6144f07dd9092894dd6bd701d0"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/summary.json",
+      "bytes": 18472,
+      "sha256": "813645f83449e5996e639b651bad1bd70500031a3dc16867e1471951b6fcfcd9"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/smoke12/cells.jsonl",
+      "bytes": 385638,
+      "sha256": "6769b4eee7928861a306312287eb39d9ab940bc9b75b3cbc423ae5a3d72d99e6"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/smoke12/independent_validation.json",
+      "bytes": 17135,
+      "sha256": "a282e3e3567aeed5bd7ddd201f1056ee582199b4e81cc0ac7a0dcf484a50de7f"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/smoke12/independent_validation_with_diagnostics.json",
+      "bytes": 59842,
+      "sha256": "f779c01636d422e10fa24b361e848e6a6f3d4ff11850c981f27d671251aa6095"
+    },
+    {
+      "path": "validation/contextual_emoji_output_pilot_v0/smoke12/summary.json",
+      "bytes": 17661,
+      "sha256": "5f7775971f0957a4780b78a16dc36f8445d73dadc106bcec3c28b97d3165c257"
+    },
+    {
+      "path": "validation/contextual_emoji_prefix_consistency_v0/portable_preflight/measurement_portable_replay.json",
+      "bytes": 904723,
+      "sha256": "5c07a5e7569d2a0a91f916ed4fb68231c9da6a02049a1f1f26da44f6ab052bce"
+    },
+    {
+      "path": "validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/diagnostics.json",
+      "bytes": 22280,
+      "sha256": "81798d317c4650812e625559ccc57ec6f730639e37d045ead58a81381de41a4f"
+    },
+    {
+      "path": "validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/forwards.jsonl",
+      "bytes": 82396,
+      "sha256": "09a8a4ca0296677017376299b85edf65ce1e1d1f405b5a69cc5213e4f769b4e0"
+    },
+    {
+      "path": "validation/contextual_emoji_two_track_v1/inventory.json",
+      "bytes": 1918040,
+      "sha256": "14a0d7299d4a57e6808a2175620e7109657c32037f46dd7dd592b01c3adbc61b"
+    },
+    {
+      "path": "validation/contextual_emoji_two_track_v1/mechanical_audit.json",
+      "bytes": 1398,
+      "sha256": "9490d147a9cf9ecdd9d33476ccea22e4f896a32c42d91e967ae30c0d4c9b3a26"
+    },
+    {
+      "path": "validation/contextual_emoji_two_track_v1/run3296/diagnostics.json",
+      "bytes": 298464,
+      "sha256": "c4ceedccc8a27b6e9f6d932f254a114aa742df1ff9f5e2b1f12ba6fa44b8e1fe"
+    },
+    {
+      "path": "validation/contextual_emoji_two_track_v1/run3296/forwards.jsonl",
+      "bytes": 6461349,
+      "sha256": "23951e81b4606b47110880d3b15d199e0cd804616860050fba4821b709f2b0a5"
+    },
+    {
+      "path": "validation/contextual_emoji_word_control_v0/full192/cells.jsonl",
+      "bytes": 304697,
+      "sha256": "1026d3001ad4390662bfec608cfeca28d1610f7ba7117b6401494d8fa929ad91"
+    },
+    {
+      "path": "validation/contextual_emoji_word_control_v0/full192/independent_comparison.json",
+      "bytes": 278456,
+      "sha256": "830ba534f5c9c44b640598c0e869b3c7bb3ec16e98d3ed85e52c08d38e0a9495"
+    },
+    {
+      "path": "validation/contextual_emoji_word_control_v0/full192/summary.json",
+      "bytes": 24304,
+      "sha256": "0c91b49c3b0186d875d1ffe4e40c1e42b6f9d03a012bf7b9ffa003dbac12f121"
+    },
+    {
+      "path": "validation/contextual_emoji_working_revision_20261010/summary.json",
+      "bytes": 26923,
+      "sha256": "ea9b1026c7dd188f5aaa24f580ab127c2d0f2e72fc97a37c4e1973f084917685"
+    },
+    {
+      "path": "validation/post_review_revision_20261007/sensitivity_summary.json",
+      "bytes": 15873,
+      "sha256": "d7c7a8b52d6dc68083f247ea622a72b3e06a9cf5bff2007a3b8e34bbf52a252d"
+    },
+    {
+      "path": "web/author-pilot-v1/app.js",
+      "bytes": 17008,
+      "sha256": "b5d32212282ade419ffe2b1a84838d88d174568aea43f61e3a3506bd38e1a7f6"
+    },
+    {
+      "path": "web/author-pilot-v1/index.html",
+      "bytes": 766,
+      "sha256": "9f14bcdf7035a8f6e0161feab7c9e0d8b618abd4f8291b5bc198ad006cfbeb14"
+    },
+    {
+      "path": "web/author-pilot-v1/style.css",
+      "bytes": 3558,
+      "sha256": "4433ee0020d3b0789d4c7287d35fd4bd60f2beb36b24a94ee1298ec0834d2f19"
+    },
+    {
+      "path": "web/author-pilot/app.js",
+      "bytes": 20674,
+      "sha256": "09d1c1404f7c61b5f7cc3f5aaecc7063c4b34f09fda70a4048cd4e9e5651faf8"
+    },
+    {
+      "path": "web/author-pilot/index.html",
+      "bytes": 831,
+      "sha256": "9de265775ed0ac86102db2b77a7d9a6a079dad68f47d25f1e3c902cbb15b481c"
+    },
+    {
+      "path": "web/author-pilot/style.css",
+      "bytes": 4769,
+      "sha256": "f73087abdabc3c15985d81e8be18f64934533bda742a143b096e4ae5c2fb0d48"
+    }
+  ],
+  "published_package_replay": {
+    "status": "package_integrity_and_saved_score_replay_passed",
+    "model_forwards": 0,
+    "numerical_gate_passed": true,
+    "primary_qualification_passed": false,
+    "independent_arithmetic_validation_passed": true,
+    "not_independent_logit_reconstruction": true,
+    "release_artifact_id": "glyphprobe_public_release_20261015",
+    "publication_verified": false
+  },
+  "targeted_tests": {
+    "junit_sha256": "950f6f2421dc4dc78be3ea14fa539b3cb2e8bd5f305f1809086ae7a8373040a8",
+    "junit_totals_include_subtests": {
+      "tests": 742,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 52
+    },
+    "raw_xml_published": false,
+    "skips_are_not_passes": true,
+    "skips": [
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_complete_receipt_and_exact_denominators",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_completed_numerical_negative_is_not_eligible",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_decomposition_negative_and_tie_boundaries",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_duplicate_event",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_failed_end_prior_parity_need_not_have_end_begin_metadata",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_final_resource_refusal_ineligible_despite_full_scores",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_implementation_drift_is_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_item_level_transition_matches_full_candidate_scores",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_mask_geometry_tamper",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_missing_after_boundary_on_failed_call_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_missing_resource_event_label_is_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_nonfinite_score_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_output_is_exclusive",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_partial_retains_all_planned_denominators",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_peer_pid_in_allowed_resource_observation_is_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_positive_logprob_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_run_artifact_hash_tamper",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_runtime_drift_before_forward_is_rejected",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_analyze_contextual_emoji_matched_shape_v1.MatchedShapeCheckerTests::test_scientific_sentinel_full_score_mismatch_is_not_accepted",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_full_audit_without_model_choice_disclosure",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_missing_after_guard_cannot_qualify",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_pair_drop_rejected",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_resource_violation_cannot_qualify",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_wrong_runtime_rejected",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_audit_contextual_emoji_two_track_v1.AuditTests::test_wrong_specification_hash_rejected",
+        "reason": "Saved acquisition not present"
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_fixed_grid_preserves_all_blocks_and_original_orientation",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_synthetic_interaction_and_candidate_stability",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_missing_cell_preserves_denominator_and_nulls_full_estimate",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[duplicate]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[sum]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[nan]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[prompt]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[candidate]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[eta]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_independent_analysis_rejects_mutations[unknown_carrier]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_parity_gate_and_full_missingness_receipts[setup-parity0-new0-0]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_parity_gate_and_full_missingness_receipts[parity-parity1-new1-1]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_parity_gate_and_full_missingness_receipts[candidate-parity2-new2-385]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_parity_gate_and_full_missingness_receipts[None-parity3-new3-1152]",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_new_data_cannot_be_admitted_without_parity",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_candidate_wording_v0::test_complete_runtime_comparison_uses_saved_json_key_types",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_matched_shape_v1.InventoryTests::test_exact_real_pinned_inventory_and_prior_panel",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_matched_shape_v1.InventoryTests::test_source_and_spec_overwrite_refused",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/specification.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/independent_validation.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/runtime.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/implementation_sources.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_completed.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/run_started.json, validation/contextual_emoji_prefix_consistency_v0/portable_preflight/run56/occupancy_checks.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_prefix_consistency_v0.PreparationTests::test_exact_pinned_real_selection_without_model_or_tokenizer",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_prefix_consistency_v0.PreparationTests::test_portable_payload_hash_and_native_observation_are_separate",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_prefix_consistency_v0.ExecutionTests::test_mock_run_receipts_bind_all112_forward_boundaries",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_prefix_consistency_v0.ExecutionTests::test_run_refusal_writes_complete_notrun_receipts_without_loading",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/specification.json, validation/contextual_emoji_word_control_v0/specification.json, validation/contextual_emoji_output_pilot_v0/full288/runtime.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/specification.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/occupancy_checks.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/placement.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_completed.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/run_started.json, validation/contextual_emoji_candidate_wording_v0/runtime_fix/shared_trial/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_two_track_v1.RunnerTests::test_historical_geometry_and_sentinels",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_matched_shape_v1/specification.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_contextual_emoji_word_control_v0::test_runtime_identity_compares_actual_baseline_before_forward",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_output_pilot_v0/full288/runtime.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_revised_preprint_20261015::test_all_preserved_pins_are_actual_file_hashes",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: output/pdf/glyphprobe_post_review_20261007.pdf, output/pdf/glyphprobe_working_reassessment_20261010.pdf. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_working_reassessment_20261010::test_raw_model_polarities_recomputed_without_private_join",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: validation/contextual_emoji_two_track_v1/specification.json. This is not a validation pass; restore the complete archive to run the original test."
+      },
+      {
+        "test": "tests.test_working_reassessment_20261010::test_historical_pdf_preserved_and_successor_scoped",
+        "reason": "Public integration: expected unpublished archive artifact(s) unavailable: output/pdf/glyphprobe_post_review_20261007.pdf. This is not a validation pass; restore the complete archive to run the original test."
+      }
+    ]
+  },
+  "local_paper_build": {
+    "compiler": "Tectonic 0.17.0",
+    "exit_code": 0,
+    "build_log_sha256": "f3644b8b650213be813de44a902cee1523be695c1669fa2f9118f4faa1c8ac97",
+    "pdf_sha256": "307aa0889b9434fe3f862485cfa4b4cd23ebf013e7fe88a286db64f77993d5cd",
+    "unresolved_layout_or_reference_patterns": 0,
+    "underfull_warning_retained": true,
+    "published_pdf_replaced": false,
+    "new_visual_page_review": false
+  },
+  "partial_historical_machine_evidence_is_complete_run": false,
+  "license_scope": "paper/PUBLIC_LICENSES_20261015.md",
+  "git_push_or_merge_verified_by_this_receipt": false
+}

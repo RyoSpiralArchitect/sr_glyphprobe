@@ -30,11 +30,11 @@
     },
     {
       "path": "paper/figures/t19_design.pdf",
-      "sha256": "45f49a8550e54851ef0fff4644113b5e545dd5023d97a2c0e5ead38fcf78d4f9"
+      "sha256": "588d50c83b378a407e25c47f08a62319f71c6e7ced7badff8974897fdf7486fc"
     },
     {
       "path": "paper/figures/t19_design.png",
-      "sha256": "7223f5ca06442632ce01b2184e27fda3dd228a430b97883f4ccc15218722e190"
+      "sha256": "2517ebcecea952e5d404c4b84c0aaeeaff019bb712fc96c54aa97470c8026845"
     },
     {
       "path": "paper/figures/t19_emoji_symbol_boundary.pdf",
@@ -62,19 +62,19 @@
     },
     {
       "path": "paper/figures/t20_causal_ceilings.pdf",
-      "sha256": "99532f55d39df89f17fcc979b954901125b57643eff5d65acb7ee021d930a68a"
+      "sha256": "dc5a219800f3b15a4ac5fecb1b26b70241db231ea2546fdea42b1b0e6206171b"
     },
     {
       "path": "paper/figures/t20_causal_ceilings.png",
-      "sha256": "c6aabc29a6ea225268cc49338fb94328d2dfec4e68a5c95491ffd71eaa57475f"
+      "sha256": "06e0b0474f574dc54dec64b62e7725673363417d507c32af72067f9ad57ee4d7"
     },
     {
       "path": "paper/figures/t21_path_summary.pdf",
-      "sha256": "2e23c2cd3e450e2f5e804fcede2aad183f1c84940f4c4eecb712e8db36504720"
+      "sha256": "5ff7e32bfb4db3409c98e29668f360d489fada6642e4dc94025764bc3b13d542"
     },
     {
       "path": "paper/figures/t21_path_summary.png",
-      "sha256": "125d9d7b5a97b72154655c4f42ea9566bbf520542de8aab5de6eafe6329a89fe"
+      "sha256": "93fcc4f93d221c7580401f04b3179ccc1d41241a2dee9684d628e591e6539d55"
     }
   ],
   "schema_version": 1

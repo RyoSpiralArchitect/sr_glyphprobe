@@ -1,0 +1,2522 @@
+{
+  "blocks": [
+    {
+      "H": 1.107030208222568,
+      "block_id": "thermal_01",
+      "complete_with_absent_controls": true,
+      "delta_p": -0.7804069155827165,
+      "delta_q": 0.32662329263985157,
+      "eta": 1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": true,
+      "missing_pairs": [],
+      "s": {
+        "p": {
+          "a": -0.9776244349777699,
+          "absent": -0.7520587700419128,
+          "b": -1.7580313505604863
+        },
+        "q": {
+          "a": -2.051327643916011,
+          "absent": -0.8003661539405584,
+          "b": -1.7247043512761593
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "thermal_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "thermal_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "thermal_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "thermal_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "sound_01",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "sound_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "sound_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "sound_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "sound_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "completion_01",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "completion_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "completion_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "completion_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "completion_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "affect_01",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "affect_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "affect_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "affect_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "affect_tone_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "direction_01",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "direction_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "direction_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "direction_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "direction_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "weather_01",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "weather_02",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "weather_03",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": 1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    },
+    {
+      "H": null,
+      "block_id": "weather_04",
+      "complete_with_absent_controls": false,
+      "delta_p": null,
+      "delta_q": null,
+      "eta": -1,
+      "family": "weather_goal",
+      "intended_delta_crossover": null,
+      "missing_pairs": [
+        "p:a",
+        "p:b",
+        "p:absent",
+        "q:a",
+        "q:b",
+        "q:absent"
+      ],
+      "s": {
+        "p": {
+          "a": null,
+          "absent": null,
+          "b": null
+        },
+        "q": {
+          "a": null,
+          "absent": null,
+          "b": null
+        }
+      }
+    }
+  ],
+  "causal_claim_supported": false,
+  "cells_sha256": "6769b4eee7928861a306312287eb39d9ab940bc9b75b3cbc423ae5a3d72d99e6",
+  "claim_ceiling": "author_defined_development_labels_only_not_semantic_or_confirmatory",
+  "complete_population": false,
+  "confirmatory": false,
+  "denominator": {
+    "cell_status_counts": {
+      "completed": 12,
+      "not_run": 276
+    },
+    "completed_blocks": 1,
+    "incomplete_blocks": 23,
+    "planned_blocks": 24,
+    "planned_cells": 288,
+    "recorded_cells": 288
+  },
+  "exploratory_author_label_diagnostics": {
+    "absolute_candidate_alignment": {
+      "aligned_crossed_input_cells": 2,
+      "all_four_aligned_blocks": 0,
+      "blocks": [
+        {
+          "all_four_aligned": false,
+          "block_id": "thermal_01",
+          "crossed_inputs_complete": true
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "thermal_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "thermal_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "thermal_04",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "sound_01",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "sound_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "sound_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "sound_04",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "completion_01",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "completion_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "completion_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "completion_04",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "affect_01",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "affect_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "affect_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "affect_04",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "direction_01",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "direction_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "direction_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "direction_04",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "weather_01",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "weather_02",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "weather_03",
+          "crossed_inputs_complete": false
+        },
+        {
+          "all_four_aligned": null,
+          "block_id": "weather_04",
+          "crossed_inputs_complete": false
+        }
+      ],
+      "blocks_with_complete_crossed_inputs": 1,
+      "completed_crossed_input_cells": 4,
+      "input_cells": [
+        {
+          "aligned": false,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_01",
+          "context": "p",
+          "higher_probability_candidate": "b",
+          "s": -0.9776244349777699,
+          "variant": "a"
+        },
+        {
+          "aligned": true,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_01",
+          "context": "p",
+          "higher_probability_candidate": "b",
+          "s": -1.7580313505604863,
+          "variant": "b"
+        },
+        {
+          "aligned": true,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_01",
+          "context": "q",
+          "higher_probability_candidate": "b",
+          "s": -2.051327643916011,
+          "variant": "a"
+        },
+        {
+          "aligned": false,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_01",
+          "context": "q",
+          "higher_probability_candidate": "b",
+          "s": -1.7247043512761593,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "thermal_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "thermal_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "sound_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "sound_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "completion_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "completion_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "affect_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "affect_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "direction_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "direction_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_01",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_01",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_02",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_02",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_03",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_03",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_04",
+          "context": "p",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "a",
+          "block_id": "weather_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "a"
+        },
+        {
+          "aligned": null,
+          "author_expected_candidate": "b",
+          "block_id": "weather_04",
+          "context": "q",
+          "higher_probability_candidate": null,
+          "s": null,
+          "variant": "b"
+        }
+      ],
+      "misaligned_crossed_input_cells": 2,
+      "missing_crossed_input_cells": 92,
+      "planned_blocks": 24,
+      "planned_crossed_input_cells": 96,
+      "planned_denominator_fraction": null,
+      "tied_crossed_input_cells": 0
+    },
+    "alignment_rule": "Strict sign of raw candidate_a_minus_candidate_b logprob against eta-defined author mapping; ties are not aligned.",
+    "claim_limits": [
+      "Author-defined candidate alignment is not human-validated task success or accuracy.",
+      "Positive H or an emoji-effect crossover does not imply absolute candidate alignment.",
+      "Token-position mismatch is a future intervention-design diagnostic, not a baseline exclusion or causal result."
+    ],
+    "inference_performed": false,
+    "post_acquisition_request": true,
+    "status": "exploratory_author_label_diagnostics_not_human_task_accuracy",
+    "within_context_emoji_token_position_arrays": {
+      "available_pairs": 48,
+      "matched_pairs": 24,
+      "mismatched_pairs": 24,
+      "missing_pairs": 0,
+      "pairs": [
+        {
+          "arrays_match": false,
+          "block_id": "thermal_01",
+          "context": "p",
+          "emoji_a_positions": [
+            27,
+            28
+          ],
+          "emoji_b_positions": [
+            27,
+            28,
+            29
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_01",
+          "context": "q",
+          "emoji_a_positions": [
+            27,
+            28
+          ],
+          "emoji_b_positions": [
+            27,
+            28,
+            29
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_02",
+          "context": "p",
+          "emoji_a_positions": [
+            19,
+            20
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_02",
+          "context": "q",
+          "emoji_a_positions": [
+            18,
+            19
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_03",
+          "context": "p",
+          "emoji_a_positions": [
+            18,
+            19
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_03",
+          "context": "q",
+          "emoji_a_positions": [
+            18,
+            19
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_04",
+          "context": "p",
+          "emoji_a_positions": [
+            19,
+            20
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "thermal_04",
+          "context": "q",
+          "emoji_a_positions": [
+            19,
+            20
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_01",
+          "context": "p",
+          "emoji_a_positions": [
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_01",
+          "context": "q",
+          "emoji_a_positions": [
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_02",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_02",
+          "context": "q",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_03",
+          "context": "p",
+          "emoji_a_positions": [
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            17,
+            18
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_03",
+          "context": "q",
+          "emoji_a_positions": [
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            17,
+            18
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_04",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "sound_04",
+          "context": "q",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_01",
+          "context": "p",
+          "emoji_a_positions": [
+            23,
+            24
+          ],
+          "emoji_b_positions": [
+            23,
+            24,
+            25
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_01",
+          "context": "q",
+          "emoji_a_positions": [
+            28,
+            29
+          ],
+          "emoji_b_positions": [
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_02",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22,
+            23
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_02",
+          "context": "q",
+          "emoji_a_positions": [
+            26,
+            27
+          ],
+          "emoji_b_positions": [
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_03",
+          "context": "p",
+          "emoji_a_positions": [
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_03",
+          "context": "q",
+          "emoji_a_positions": [
+            25,
+            26
+          ],
+          "emoji_b_positions": [
+            25,
+            26,
+            27
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_04",
+          "context": "p",
+          "emoji_a_positions": [
+            23,
+            24
+          ],
+          "emoji_b_positions": [
+            23,
+            24,
+            25
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "completion_04",
+          "context": "q",
+          "emoji_a_positions": [
+            26,
+            27
+          ],
+          "emoji_b_positions": [
+            26,
+            27,
+            28
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_01",
+          "context": "p",
+          "emoji_a_positions": [
+            22,
+            23
+          ],
+          "emoji_b_positions": [
+            22,
+            23
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_01",
+          "context": "q",
+          "emoji_a_positions": [
+            22,
+            23
+          ],
+          "emoji_b_positions": [
+            22,
+            23
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_02",
+          "context": "p",
+          "emoji_a_positions": [
+            19,
+            20
+          ],
+          "emoji_b_positions": [
+            19,
+            20
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_02",
+          "context": "q",
+          "emoji_a_positions": [
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_03",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_03",
+          "context": "q",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_04",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "affect_04",
+          "context": "q",
+          "emoji_a_positions": [
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_01",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "emoji_b_positions": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_01",
+          "context": "q",
+          "emoji_a_positions": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "emoji_b_positions": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_02",
+          "context": "p",
+          "emoji_a_positions": [
+            19,
+            20,
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_02",
+          "context": "q",
+          "emoji_a_positions": [
+            19,
+            20,
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_03",
+          "context": "p",
+          "emoji_a_positions": [
+            18,
+            19,
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_03",
+          "context": "q",
+          "emoji_a_positions": [
+            18,
+            19,
+            20,
+            21
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_04",
+          "context": "p",
+          "emoji_a_positions": [
+            19,
+            20,
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": true,
+          "block_id": "direction_04",
+          "context": "q",
+          "emoji_a_positions": [
+            19,
+            20,
+            21,
+            22
+          ],
+          "emoji_b_positions": [
+            19,
+            20,
+            21,
+            22
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_01",
+          "context": "p",
+          "emoji_a_positions": [
+            16,
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_01",
+          "context": "q",
+          "emoji_a_positions": [
+            18,
+            19,
+            20
+          ],
+          "emoji_b_positions": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_02",
+          "context": "p",
+          "emoji_a_positions": [
+            16,
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_02",
+          "context": "q",
+          "emoji_a_positions": [
+            16,
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_03",
+          "context": "p",
+          "emoji_a_positions": [
+            16,
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_03",
+          "context": "q",
+          "emoji_a_positions": [
+            16,
+            17,
+            18
+          ],
+          "emoji_b_positions": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_04",
+          "context": "p",
+          "emoji_a_positions": [
+            21,
+            22,
+            23
+          ],
+          "emoji_b_positions": [
+            21,
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "arrays_match": false,
+          "block_id": "weather_04",
+          "context": "q",
+          "emoji_a_positions": [
+            23,
+            24,
+            25
+          ],
+          "emoji_b_positions": [
+            23,
+            24,
+            25,
+            26
+          ]
+        }
+      ],
+      "planned_pairs": 48,
+      "source": "saved_preflight_specification_not_new_tokenizer_or_model_execution"
+    }
+  },
+  "families": {
+    "affect_tone_goal": {
+      "available_complete_block_mean_H": null,
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "completion_goal": {
+      "available_complete_block_mean_H": null,
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "direction_goal": {
+      "available_complete_block_mean_H": null,
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "sound_goal": {
+      "available_complete_block_mean_H": null,
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    },
+    "thermal_goal": {
+      "available_complete_block_mean_H": 1.107030208222568,
+      "completed_blocks": 1,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 3,
+      "planned_blocks": 4
+    },
+    "weather_goal": {
+      "available_complete_block_mean_H": null,
+      "completed_blocks": 0,
+      "full_family_mean_H": null,
+      "incomplete_blocks": 4,
+      "planned_blocks": 4
+    }
+  },
+  "forward_calls_attempted_recomputed": 12,
+  "limitations": [
+    "Validates saved token-score arithmetic and bound record consistency, not logits or model execution.",
+    "Source and model files are not reopened; their identities remain the acquisition receipts' claims.",
+    "An explicit smoke run is never an independent replication or an untouched confirmation."
+  ],
+  "maximum_sequence_sum_error": 0.0,
+  "model_loaded": false,
+  "model_probability_reexecution_verified": false,
+  "planned_population_equal_family_mean_H": null,
+  "protocol_id": "glyphprobe-contextual-emoji-output-pilot-v0",
+  "resampling_performed": false,
+  "run_completed_sha256": "67ae393f56e22ef82dd56d4779fa10ef0dacaa2c9a9c3f973ab61d1f4a5c6481",
+  "semantic_claim_supported": false,
+  "sequence_totals_recomputed": 12,
+  "specification_sha256": "04d7d005ee5c6555ef85cf900d79f79b88a50e7681001502ed3cd5be0d95bcd5",
+  "status": "validated_saved_scalar_arithmetic",
+  "summary_comparison": {
+    "absolute_tolerance": 1e-10,
+    "compared_after_independent_reconstruction": true,
+    "floating_point_values_compared": 12,
+    "maximum_absolute_numeric_error": 0.0
+  },
+  "summary_numerics_used": false,
+  "tokenizer_loaded": false,
+  "validation_scope": "partial_explicit_smoke",
+  "validator_schema_version": 1,
+  "validator_sha256": "c3c9e0e5036974f30115945e6c5438f5bb1dd9e26929c060a705085b45a19948"
+}

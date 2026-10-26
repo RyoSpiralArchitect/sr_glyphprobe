@@ -1,0 +1,210 @@
+\section{Contextual response measurement: unfinished development extension}
+\label{app:contextual}
+
+This October extension examines the measurement needed to connect emoji
+information with ordinary response probabilities. It uses no CLDR targets,
+readout-state replacement, or internal intervention. The materials are 24
+author-written scenarios in six recurring families: temperature, setting,
+completion, direction, forecast, and affect. Every development stage reuses
+these scenarios. Repeated conditions increase measurement coverage, not the
+number of independent scenarios. Analyses are descriptive, with no population
+p-values, new confirmatory endpoint, or retrospective revision of the
+lexical and causal decisions. The current title and integration are provisional.
+
+\subsection{Continuation wording and numerical consistency}
+
+The first design crosses two goals with two cues, separately for emoji and
+previously recorded word alternatives. It scores scenario-specific
+continuation pairs and two later formulations: ``This meets my goal.'' versus
+``This does not meet my goal.'', and ``This is suitable for my goal.'' versus
+``This is unsuitable for my goal.'' Leading spaces are part of the scored
+continuations. All use Llama 3.2 3B base, BF16 Transformers/CUDA, eager
+attention, without a chat template or model-weight training. The pinned
+\texttt{mlx-community/Llama-3.2-3B-bf16} artifact is loaded through Transformers;
+its identifier does not imply MLX execution. Its revision is
+\texttt{60a99aaf43164077157d64bf909b7b61143c6a6d}.
+
+An earlier execution version produced unequal scores for identical common
+continuation prefixes in 355/576 cue-bearing pairs and 17/48 absent-cue pairs.
+The matched-execution revision pads candidate sequences to equal length,
+normalizes the same FP32 logit rectangle, and gathers valid continuation
+positions. It yields exact common-prefix equality for all 624 pairs; 1,248
+scientific sequence scores and 64 historical checks comprise 1,312 forwards.
+The results below use this complete revised inventory. Earlier records remain
+available. The check qualifies these numerical comparisons without identifying
+a general BF16 cause or establishing semantic validity.
+
+Let $s(c,v)=\log P(A\mid c,v)-\log P(B\mid c,v)$ be the full-continuation
+score difference. With the recorded author orientation $\eta\in\{-1,+1\}$,
+the interaction is
+\[
+H=\eta\{[s(p,a)-s(p,b)]-[s(q,a)-s(q,b)]\}.
+\]
+Coding $C,V\in\{-1,+1\}$, the four oriented scores have the exact
+representation $\eta s=b_0+b_C C+b_V V+b_{CV}CV$, with $H=4b_{CV}$.
+Positive interaction requires $b_{CV}>0$; the expected cue-effect crossover
+requires $b_{CV}>|b_V|$. Author alignment in every input requires
+$\min_{C,V} CV\,\eta s(C,V)>0$. All-four alignment implies the crossover,
+which implies positive interaction. This is an accounting of the four
+observed scores, not a decomposition of neural causes.
+
+Table~\ref{tab:development-formulations} retains all formulations and both
+cue types. Positive interaction across every formulation occurs on 22/24
+emoji and 23/24 word scenarios; crossover across every formulation occurs on
+8/24 and 14/24. All-four author alignment across every formulation occurs on
+0/24 for each. Candidate polarity changes on 55/96 emoji and 56/96 word inputs.
+The alternatives jointly vary vocabulary, specificity, morphology, and length.
+Neither their semantic equivalence nor the authored labels has independent
+human validation. Absent-cue subtraction changes offsets and context main
+effects while leaving $H$ and cue-effect crossover unchanged algebraically;
+it defines a different estimand rather than corrected accuracy.
+
+\subsection{Three questions and an author-only tryout}
+
+After an earlier author tryout, a revised design separates three propositions:
+whether an accurately reported property matches a requested property;
+whether a naturalistic message suggests a stated property or affect; and
+whether that message alone establishes a specified wider outcome. The affect
+questions concern visible expression in the bounded task and affect in the
+naturalistic task. The changes therefore extend beyond instruction wording.
+
+One previously exposed author saw 24 scenes, one condition per scenario:
+12 bounded property questions and 12 naturalistic scenes with two questions
+each, giving 36 substantive judgments. Emoji and word cues each appear in
+12 scenes. Assignment used a source-only seed and did not select by model
+agreement. Both naturalistic questions are visible together, allowing priming.
+A separate assessability question precedes each Yes/No judgment. An undecidable
+response leaves the substantive answer empty; it is never recoded to No.
+English scenes accompany bilingual interface guidance. A human-only reading
+was recorded before the current assignment/model comparison; known prior
+project exposure prevents an independent-blinding claim.
+
+\input{generated/contextual_development_tables_20261010.tex}
+
+All scenes were completed, with 26 binary and ten undecidable judgments.
+Table~\ref{tab:development-author} reports only aggregates. The model
+comparison uses the exact positive-worded question and binary human answers,
+giving 16/26 agreement on a response-selected subset. Model scoring forces
+Yes/No while the human interface permits undecidability. Every one of the
+36 selected model choices is also reproduced by a post-hoc constant rule:
+Yes for property match and No for both naturalistic questions. On 32/36
+selected questions, reversing true/false wording changes the implied truth.
+The tryout locates question-design difficulties; it supplies no independent
+human accuracy, population estimate, or causal improvement over the earlier
+interface. Individual answers, assignments, and notes remain private outside
+the repository, shared storage, and compute worker.
+
+\subsection{Full model inventory and explicit controls}
+
+Appendix~\ref{app:contextual-inputs} gives complete source-defined model inputs,
+including the crossed cues, word alternatives, and accurate-completion controls.
+
+The revised acquisition was specified before its outputs. For each of the
+24 scenarios it crosses two contexts, five cue conditions (two emoji, two
+words, one absent), three propositions, and two question polarities, giving
+1,440 candidate pairs. Explicit accurate-completion and unknown-outcome
+reports add 192 pairs. Thus 1,632 pairs require 3,264 scored sequences;
+32 historical repeat checks bring the total to 3,296 forwards. All planned
+sequences complete, every shared prefix is exact, and every historical check
+matches. The recorded RTX 5090 acquisition takes 638.745 seconds, with peak
+Torch reserved memory of 6,318 MiB. These counts do not add new scenario N.
+
+Questions begin ``Is it true that'' or ``Is it false that'' with the same
+following proposition. Full answers are \texttt{The answer is yes.}
+and \texttt{The answer is no.}, each with an initial space and five tokens.
+The literal score is $s=\log P(\mathrm{Yes\ answer})-
+\log P(\mathrm{No\ answer})$; positive $s$ selects Yes, negative $s$ selects No,
+and zero remains a tie. Negating the question reverses the answer needed to
+preserve the underlying proposition. Normalized scores therefore use $-s$
+for negative questions. No human undecidability option is modeled.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrr}
+\toprule
+Positive-worded question & Emoji & Word & Absent cue \\
+\midrule
+Property match: Yes & 94/96 & 95/96 & 48/48 \\
+Message interpretation: No & 94/96 & 90/96 & 46/48 \\
+Outcome evidence: No & 95/96 & 93/96 & 48/48 \\
+\bottomrule
+\end{tabular}
+\caption{Full-inventory answer preferences. Each 96 comprises 24 scenarios
+by two contexts by two cues. Absent-cue conditions are shared, not duplicated
+as two cue alternatives. These are preferences, not correctness counts.}
+\label{tab:development-bias}
+\end{table}
+
+Across 816 paired true/false questions, 106 imply consistent truth and 710
+imply inconsistent truth, with zero primary-score ties. All 48
+positive-worded accurate-completion controls prefer No; their negative
+versions also prefer No in 48/48 cases. Unknown-outcome controls prefer Yes
+in 2/48 positive and 5/48 negative versions. Agreement on one question
+polarity alone can therefore conceal contradictory implied interpretations.
+The observations limit this checkpoint/prompt/readout combination. They do
+not establish model-wide inability to understand negation or its internal cause.
+
+\begin{table}[H]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{Emoji} & \multicolumn{2}{c}{Word} \\
+Question & Positive & Negative$^\dagger$ & Positive & Negative$^\dagger$ \\
+\midrule
+Property match & 0.405 & 0.064 & 0.596 & 0.119 \\
+Message interpretation & 0.392 & $-0.086$ & 0.829 & $-0.224$ \\
+Outcome evidence & 0.059 & $-0.010$ & 0.123 & $-0.031$ \\
+\bottomrule
+\end{tabular}
+\caption{Mean context--cue contrasts across 24 scenarios, in nats:
+$[s(p,a)-s(p,b)]-[s(q,a)-s(q,b)]$.
+$^\dagger$Negative-worded questions are sign-normalized to the same truth
+direction. These descriptive interactions do not establish semantic accuracy
+or an emoji advantage.}
+\label{tab:development-contrasts}
+\end{table}
+
+For message interpretation, positive-worded contrasts are positive in 23/24
+emoji and 24/24 word scenarios. Both become 7/24 after negative-wording
+normalization. Continuous context sensitivity thus coexists with substantial
+question dependence and failed explicit controls.
+
+\paragraph{Secondary answer-token diagnostic.}
+The shared three-token answer prefix cancels exactly in all 1,632 pairs.
+The remaining sequence margin equals the yes/no-token difference plus the
+following period difference. The period contributes a mean $-0.232795$ nats.
+Using only the answer token reverses 103 non-tied signs and introduces
+191 ties. Paired question polarities then comprise 78 consistent, 553
+inconsistent, and 185 pairs with at least one tie. All 48 positive-worded
+completion controls still prefer No. This post-result diagnostic leaves the
+full-sequence primary estimator unchanged; omitting ties or replacing the
+estimator would not qualify the present measurement.
+
+\input{contextual_input_examples_20261015.tex}
+
+\subsection{Qualification and remaining questions}
+\label{app:contextual-next}
+
+The extension motivated two qualification steps. For people, short questions
+and explicit practice cases should separate message interpretation, event
+truth, and evidential sufficiency while retaining uncertainty. For models,
+simple text-only complete, incomplete, and unknown cases should test direct
+versus nested questions, proposition reversals, answer-label mappings, and
+constant-response comparators before evaluating an emoji effect.
+Appendix~\ref{app:qualification} reports that text-only follow-up on new,
+source-authored facts, using scoring and pass criteria specified before
+execution. Model changes and independent human evaluation remain separate steps.
+
+A stable cue meaning with a changing goal can explain a context--cue
+interaction. Distinguishing that case from a changed interpretation of the
+same cue requires new scenario/template families and independent evaluators.
+Only a qualified output measure can support the intended next natural-state
+causal study. No new sample size, threshold, recruitment, or intervention is
+committed for a contextual-interpretation or causal follow-up by this revision.
+
+The aggregate export rechecks saved scores, human/model joins, token diagnostics,
+and their digests. Independent replay of human counts requires the private
+records, which remain outside the September archive. These checks establish
+faithful accounting. Semantic validation remains open. The October 10 aggregate
+export added no model forwards, generation, or inferential tests; the later
+acquisition in Appendix~\ref{app:qualification} is recorded separately.

@@ -1,10 +1,12 @@
 \documentclass{article}
 
-\usepackage[dblblindworkshop]{neurips_2026}
-\workshoptitle{Interpretability as a Science, NeurIPS 2026}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[letterpaper,textwidth=5.5in,textheight=9in,top=1in]{geometry}
+\usepackage{times}
+\usepackage{helvet}
+\usepackage{courier}
+\usepackage{natbib}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{booktabs}
@@ -16,11 +18,15 @@
 \usepackage{url}
 \usepackage{hyperref}
 \hypersetup{hidelinks}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{1em}
 
-\title{Beyond Short Names: Emoji Keyword Retrieval across Models\\
+\title{Beyond Short Names:\\Emoji Keyword Retrieval across Models\\
 and Bounded Causal Tests}
 
-\author{Anonymous Authors}
+\author{Ryo Higa}
+\date{}
 
 \newcommand{\topone}{\operatorname{top1}}
 \newcommand{\codepoint}{\textsc{codepoint}}
@@ -30,10 +36,17 @@ and Bounded Causal Tests}
 
 \maketitle
 
+\begin{center}
+\small Revised preprint, October 15, 2026.\\
+Independent preprint. CC BY 4.0.\\
+\url{https://doi.org/10.5281/zenodo.23376699}
+\end{center}
+
 \begin{abstract}
-Do text-only language models connect emoji to words absent from their official
-names? We prospectively separate cross-model lexical readability,
-component-local mediation, and conditional attention-path contributions.
+We distinguish information readable from hidden states from its causal
+contribution to a specified computation. Using emoji as a controlled text-only
+case, we prospectively separate cross-model keyword retrieval,
+component-local mediation, and attention-path contributions after a readout reset.
 We compare raw, official-name,
 word-disjoint CLDR-keyword, and codepoint views of 55 emoji and 55 non-emoji
 Unicode symbols. Across nine prespecified model--tokenizer configurations,
@@ -53,7 +66,13 @@ beyond equal-count suffix controls; all five simultaneous one-sided 95\%
 lower bounds are positive. Absolute glyph-message disruption and restoration
 have zero mean top-1 effects. The results establish cross-model lexical
 readability and a conditional attention-message contribution. The tested
-rank-8 account remains unsupported.
+rank-8 account remains unsupported. A subsequent exploratory response-scoring
+extension on 24 authored scenarios exposes wording and polarity failures in
+the proposed measures. A prospective text-only qualification on 32 new facts
+then yields 88/96 correct reserved direct/minimal answers, four errors, and
+four ties, failing its all-cases-correct criterion. Separate label mappings
+also fail their criterion. Contextual interpretation and output-linked
+causality remain unresolved.
 \end{abstract}
 
 \section{Introduction}
@@ -65,20 +84,26 @@ name ``rolling on the floor laughing'' with the keyword ``lmao''
 its hidden state? The keyword shares no ASCII-alphanumeric word with the
 official name. Shared subwords and training-data co-occurrence remain possible.
 
-A prospectively specified design separates two narrower questions. The
-observational arm asks whether a raw atomic emoji retrieves a word-disjoint
-CLDR keyword better than its literal \texttt{U+...} spelling after exact
-token-count matching. Conditional on that result, the causal arms ask
-whether a low-rank late intervention identifies a representation that is both
-necessary and sufficient for the relation --- an auditable distinction
-between broad lexical readability and simple mechanistic accounts, with no
-claim of visual perception or human-like understanding.
+The broader motivation is to understand how emoji information affects a text
+model's computation. This study takes a narrower, measurable step: it connects
+cross-model keyword retrieval to explicitly bounded causal tests. A raw atomic
+emoji is compared with its literal \texttt{U+...} spelling under exact token-count
+matching. Subsequent experiments remove and transfer learned low-rank
+coordinates, optimize those coordinates, and test an attention route after
+replacing the readout state. CLDR supplies an operational lexical target for
+these experiments. A later, separate development extension removes CLDR
+targets and examines contextual continuation scores and an author-only
+questionnaire tryout (Section~\ref{sec:development}, Appendix~\ref{app:contextual}).
+An explicit-report qualification then tests the response measure on new
+text-only facts (Appendix~\ref{app:qualification}).
+Independent human validation and free generation remain unperformed.
 
 \needspace{4\baselineskip}
 The study links the following comparisons:
 
 \begin{itemize}
-  \item Four text views and three disjoint item sets separate the raw Unicode
+  \item In the initial retrieval/fixed-subspace stage, four text views and
+  three disjoint item sets separate the raw Unicode
   surface, official English CLDR name, word-disjoint CLDR keyword, and literal
   codepoint spelling. The causal source and evaluation sets receive no
   observational-arm evaluation, although their surfaces may have appeared in
@@ -93,7 +118,7 @@ The study links the following comparisons:
   raises the composite endpoint through keyword gains and codepoint losses;
   its necessity criterion fails.
   \item A second admitted experiment learns rank-8 subspaces by interchange
-  optimization and calibrates every site with full-interchange ceilings. Its
+  optimization and tests calibration with full-state reference swaps. Its
   registered verdict is uncalibratable at both primary residual sites; the
   full-state swaps motivate a separately specified 195-item attention-path
   test, which confirms a conditional glyph-position contribution to keyword
@@ -145,12 +170,32 @@ ranks, and endpoints.
 
 \subsection{Input views and disjoint item sets}
 
-For auditability, we retain internal study labels: \textbf{T19-L} denotes the
-observational lexical-retrieval arm, \textbf{T19-C} the first conditionally
-admitted causal arm, and \textbf{T20-C} the second. No knowledge of the
-preceding project sequence is required; Appendix \ref{app:lineage} gives the
-decision lineage without treating earlier exploration as confirmatory
-evidence.
+Four descriptive names organize the study (Table \ref{tab:study-guide}).
+The sequence follows the question, the intervention, and its interpretation.
+Historical identifiers remain in Appendix \ref{app:lineage} and the code so
+that each result can be traced to its original protocol. Earlier exploration
+explains the design choices without adding confirmatory evidence.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{0.28\linewidth}p{0.42\linewidth}p{0.23\linewidth}}
+\toprule
+Experiment & Question & Evaluation scope \\
+\midrule
+Keyword retrieval & Is the correct keyword readable across text views? & 55 emoji; 9 models \\
+Fixed-subspace intervention & Does removing or transferring a learned rank-8 subspace meet both causal criteria? & 192 evaluation emoji \\
+Optimized-subspace intervention & Can interchange training find a useful subspace, with informative full-state controls? & 384 evaluation emoji \\
+Attention-path intervention after readout reset & Do messages from emoji positions contribute after a specified state replacement? & 195 evaluation emoji \\
+\bottomrule
+\end{tabular}
+\caption{The four experiments in reading order. The three intervention
+experiments use one Llama 3.2 3B checkpoint and disjoint evaluation sets.
+The first two share 128 source emoji. The path experiment first selects an
+anchor on the already evaluated 384-item set, then tests 195 further items.}
+\label{tab:study-guide}
+\end{table}
 
 Throughout, \emph{glyph} means the raw Unicode scalar string supplied to a
 text model. No raster image is rendered. Atomic emoji are single-codepoint,
@@ -162,7 +207,7 @@ CLDR \texttt{default} keyword. After lowercasing and extracting ASCII
 and disjoint. The fourth view is the uppercase literal codepoint spelling.
 When several keywords qualify, one deterministic maximum bipartite matching
 assigns globally unique labels; a fixed SHA-256 edge order breaks ties before
-any T19 model forward. Table \ref{tab:examples} in Appendix \ref{app:models}
+any model forward in this study. Table \ref{tab:examples} in Appendix \ref{app:models}
 shows concrete views for two emoji and one symbol.
 
 The observational set contains 55 emoji and 55 non-emoji Unicode symbols.
@@ -180,10 +225,11 @@ All 430 codepoints and 430 keywords are unique across sets. Figure
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figures/t19_design.pdf}
-  \caption{Prospective T19 design. T19-L crosses two glyph kinds with four
+  \caption{Keyword retrieval and fixed-subspace intervention. Retrieval crosses two glyph kinds with four
   text views. Only the emoji endpoint enters the registered cross-model
-  primary. T19-C runs only after that criterion is met and uses disjoint source and
-  evaluation emoji. No causal-set item receives a T19-L forward.}
+  primary. Fixed-subspace intervention runs only after that criterion is met
+  and uses disjoint source and evaluation emoji. No causal-set item receives
+  an observational retrieval evaluation.}
   \label{fig:design}
 \end{figure}
 
@@ -195,6 +241,26 @@ hidden state at the selected suffix token at nine normalized depths. Batch
 size is one; no chat template or added special token is used. The primary
 late window is fixed at depths $0.75$, $0.875$, and $1.0$, yielding 24
 contexts per item.
+
+\paragraph{Running example: input, position, and score.}
+For U+1F923, the four inputs begin with the raw Unicode character, the words
+\texttt{rolling on the floor laughing}, the keyword \texttt{lmao}, or the
+ASCII string \texttt{U+1F923}. In the pipe context each is followed by eight
+copies of \texttt{ |}. Distance 1 reads the first suffix token's hidden
+state; distance 8 reads the eighth. The tokenizer may split the raw character
+into several tokens, together called the glyph positions. The model is never
+asked to generate \texttt{lmao}; its readout vector is compared with all
+keyword vectors in the gallery, including the matching item. This example illustrates the procedure
+and makes no claim about that individual item's result.
+
+\paragraph{Depth selection.}
+The three late depths were inherited from the preceding study before the
+present acquisition. The rule $\min(L-1,\lfloor fL\rfloor)$ maps normalized
+depth $f$ to a zero-based block index in a model with $L$ blocks. For the
+28-block Llama checkpoint, it yields blocks 21, 24, and 27. These are
+prespecified sampling locations; they have no established status as universal
+semantic stages. Appendix \ref{app:sensitivity} reports sensitivity to the
+late-window average using saved observational summaries.
 
 Within each view and context, hidden states are centered across items and
 row-L2-normalized; $z^{v,c}_i$ denotes the vector for item $i$, view $v$, and
@@ -229,12 +295,18 @@ that component uses the retained pool ($n=31$--$51$ emoji across models).
 Uniform guessing over this gallery has rate $1/n$; the within-stratum
 randomization expectation depends on stratum membership of the predictions.
 Unrestricted and matched magnitudes are not directly commensurable.
+Matching compares the four-count tuple across items. It does not require the
+four views of one item to have equal token counts.
 Official-name and codepoint correspondences stay fixed.
 Thus the one-sided randomization test asks whether the fixed keyword mapping
 beats mappings allowed by its null; because the codepoint term is fixed, it is
 not a paired significance test of keyword--codepoint equality. The registered
 primary combines that test with the observed comparative requirement
 $\Delta_m\geq0.02$ in both components.
+The 0.02 floor is a prespecified operational requirement of two percentage
+points. It has no independent calibration to human meaning or practical
+utility. Appendix \ref{app:sensitivity} therefore reports descriptive
+threshold sensitivity while preserving the original decision.
 Each component uses 19,999 draws, and the model intersection--union test
 (IUT) $p$-value is the maximum of the two component values.
 
@@ -246,12 +318,14 @@ $p_{(1)}\leq\cdots\leq p_{(4)}$, the registered value is
 $p_{\mathrm{PC}}=\min(1,2p_{(3)})$. The other five configurations and all symbol or
 official-name results are secondary and cannot admit the causal arm.
 
-Percentile intervals from 20,000 item-bootstrap replicates are reported as
-descriptive uncertainty, never as the primary decision.
+For keyword retrieval, percentile intervals from 20,000 item-bootstrap
+replicates describe uncertainty; its primary decision uses the randomization
+tests above. The subsequent causal designs also use bootstrap lower bounds
+in their prespecified decision rules.
 
-\subsection{Conditionally admitted causal test}
+\subsection{Fixed-subspace intervention}
 
-After the observational criterion was committed, T19-C ran in the
+After the observational criterion was committed, fixed-subspace intervention ran in the
 prespecified Llama 3.2 3B base configuration. The six sites are the attention
 and MLP component outputs at blocks 21, 24, and 27: the tensors returned by
 the attention output projection and by the MLP down-projection, hooked before
@@ -262,6 +336,8 @@ deterministically: sixteen seeded Gaussian directions inside the source
 span are deflated against the learned basis and orthonormalized, and the
 first eight are kept. Blocks 24 attention and MLP were primary; blocks 21
 and 27 were secondary.
+Block 24 was specified in advance; the protocol supplies no separate
+empirical calibration establishing it as the uniquely appropriate primary site.
 
 On 192 different evaluation emoji, the two criteria intervene on different
 forwards. Necessity intervenes on the glyph forward: with $P$ the learned
@@ -289,19 +365,22 @@ sufficiency; there the codepoint term is self-retrieval and equals 1 at
 baseline, so a patch can raise $E_s$ either by real keyword gains or by
 destroying self-retrieval, and Section \ref{sec:results} reports the two
 components separately. $E_s$ shares the item-wise contrast definition with
-T19-L while using a different item pool and one fixed context. A site must
+keyword retrieval while using a different item pool and one fixed context. A site must
 have both adjusted effects and both lower 95\%
 item-bootstrap bounds above $0.02$, pass both one-sided sign-flip tests
 (99,999 draws), pass zero-hook and remove-restore engineering controls, and
 survive Holm correction across the two primary sites
 \citep{holm1979sequential}. No site, rank, depth, carrier, subset, or endpoint
 was replaced after observing the result.
+Here, \emph{fixed} means that the source-learned basis is held constant during
+evaluation. In the next experiment, \emph{optimized} denotes interchange
+training of the basis; it supplies no guarantee of an optimal explanation.
 
-\subsection{Conditionally admitted optimized-subspace follow-up (T20-C)}
+\subsection{Optimized-subspace intervention}
 \label{sec:t20}
 
-The T19-C design left its own power uncalibrated. A second experiment,
-specified after the T19-C analysis was validated and recorded, makes
+The fixed-subspace design left its own power uncalibrated. A second experiment,
+specified after that analysis was validated and recorded, makes
 five prespecified changes. (i) The rank-8 basis is learned by optimization:
 an orthogonally parametrized subspace is trained on the same 128 source emoji
 by interchange optimization (InfoNCE toward the own-item keyword state for
@@ -313,24 +392,26 @@ blocks 21, 24, and 27 joins the six component sites, with the block-21 and
 block-24 residual sites primary. (iii) The decision uses the keyword
 component alone, with a codepoint self-retrieval guard ($\geq0.90$ under the
 learned patch), so disruption cannot pass as sufficiency. (iv) Evaluation
-uses 384 atomic emoji with zero prior T19/T20 forwards. The original T19
+uses 384 atomic emoji with zero prior forwards in these experiments. The original
 selection had to be reproduced byte for byte before these items were drawn.
 Each item is read in four contexts (two carriers $\times$ distances 1 and 4),
 and its scores are averaged across contexts. (v) Every site has two
-full-state swap controls, termed \emph{ceilings} in the protocol: the entire
+full-state reference swaps: the entire
 site state is exchanged between same-item glyph and codepoint forwards. By
-the registered rule, a primary site that fails while its sufficiency ceiling
+the registered rule, a primary site that fails while its full-swap sufficiency effect
 is below $0.06$ is recorded as \emph{uncalibratable at this endpoint}.
 This verdict leaves the low-rank account unresolved; the control cannot turn
 a failed decision positive. Floors, tests, Holm correction, and exact
-engineering checks are unchanged from T19-C.
+engineering checks are unchanged from fixed-subspace intervention.
+The historical protocol calls these swaps \emph{ceilings}; no universal
+upper-bound property is established.
 
-\subsection{Conditional attention-path follow-up (T21-C)}
+\subsection{Attention-path intervention after readout reset}
 \label{sec:t21}
 
-A pilot on the 384 already evaluated T20 items selected block 21 from
+A pilot on the 384 already evaluated optimized-subspace items selected block 21 from
 blocks 21/24 under a specified screening rule. Before accessing the remaining
-195 T19/T20-unused emoji, we specified a new test. After replacing the
+195 unused evaluation emoji, we specified a new test. After replacing the
 readout residual with its codepoint-view state, blocks 22--27 receive
 token-count-matched donor keys and values at glyph positions, solely for the
 readout query. Equal-count suffix replacement and full-prefix replacement
@@ -353,6 +434,8 @@ to the repository's default branch. Each invocation rejects changed code or
 inputs. Dated specifications, admission records, execution manifests, and
 independent validation reports in the supplement preserve the order of
 specification, conditional admission, and evaluation.
+These are timestamped internal prospective specifications, not registrations
+in an external registry.
 
 \section{Results}
 \label{sec:results}
@@ -400,6 +483,12 @@ primary depths, whose mean is the $+0.0979$ above; onset and peak depths
 differed across configurations, so these data do not support one universal
 trajectory.
 
+Post-outcome arithmetic on the saved estimates retains all nine configurations
+when the point-estimate floor is raised to $0.03$. Each of the three late
+depths alone also retains all nine above $0.02$. These sensitivity checks
+leave the original test unchanged and supply no new depth-specific $p$-values
+(Appendix \ref{app:sensitivity}).
+
 \subsection{A named-symbol control limits the emoji-specific claim}
 
 Non-emoji symbols showed mean keyword effects of $+0.0236$ unrestricted and
@@ -438,9 +527,9 @@ were $1.0$ and $0.74912$, respectively. None of the six sites passed both
 components (Figure \ref{fig:causal}, Appendix \ref{app:causal}; exact values
 in Table \ref{tab:causal}).
 
-The secondary block-27 MLP patch produced adjusted sufficiency $+0.07812$
-(95\% interval $[+0.03646,+0.11979]$; one-sided $p=0.00009$, uncorrected,
-with twelve such component tests run in total). Necessity was $-0.01562$ (interval
+The secondary block-27 MLP patch produced adjusted sufficiency $+0.07812$.
+Its 95\% interval was $[+0.03646,+0.11979]$, with one-sided $p=0.00009$
+(uncorrected; twelve such component tests were run in total). Necessity was $-0.01562$ (interval
 $[-0.04167,+0.00521]$, $p=0.96895$), giving a site IUT of $0.96895$.
 The learned patch raised keyword top-1 from $1/192$ to $4/192$ while lowering
 codepoint self-retrieval from $192/192$ to $180/192$. The keyword gain accounts
@@ -455,17 +544,17 @@ output at each site (Appendix \ref{app:causal}). Full interchange at the
 primary block-24 sites moved keyword top-1 by $0.0000$ (attention) and
 $+0.0052$ (MLP). These complete replacements fell below the $0.02$ floor,
 limiting what the primary negative can establish about rank. The block-27
-MLP composite ceiling ($+0.2448$ against a
+MLP full-swap composite effect ($+0.2448$ against a
 keyword-only $+0.0365$) quantifies how much of that endpoint's headroom was
-destroyed self-retrieval. These numbers motivated the registered ceilings of
+destroyed self-retrieval. These numbers motivated the full-state controls of
 the follow-up.
 
 \subsection{Full-state controls reveal a depth-dependent asymmetry}
 \label{sec:t20-results}
 
-Both primary T20-C residual sites return the registered verdict
+Both primary optimized-subspace residual sites return the registered verdict
 \emph{uncalibratable at this
-endpoint} (site IUT values $0.624$ and $0.679$; sufficiency ceilings
+endpoint} (site IUT values $0.624$ and $0.679$; full-swap sufficiency effects
 $+0.0234$ and $+0.0254$, below the registered $0.06$ minimum). No secondary
 site passes either. All engineering checks are again exactly zero, and an
 independent validator re-derived every reported number, both verdicts, and
@@ -482,7 +571,7 @@ this gap; replacement in the glyph forward removes only $4\%$ and $25\%$.
 Retrieval therefore remains near baseline after the readout-token stream is
 replaced at these earlier sites. Component-output swap effects at blocks 21
 and 24 are smaller (at most $14\%$ of the gap; block-24 attention sufficiency $2\%$).
-This asymmetry motivated the T21-C test of later glyph-position messages.
+This asymmetry motivated the attention-path test of later glyph-position messages.
 
 Training trajectories improve with limited held-out benefit; Appendix
 \ref{app:t20} reports the training, validation, and self-retrieval diagnostics.
@@ -490,20 +579,20 @@ Training trajectories improve with limited held-out benefit; Appendix
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figures/t20_causal_ceilings.pdf}
-  \caption{Registered T20-C outcomes over 384 fresh emoji in four contexts.
+  \caption{Optimized-subspace intervention on 384 evaluation emoji in four contexts.
   Filled markers show random-adjusted rank-8 optimized effects with
   descriptive 95\% item-bootstrap intervals; open triangles show the
-  full-interchange ceilings at the same sites. Shaded rows mark the two
+  full-state reference swaps at the same sites. Shaded rows mark the two
   primary residual sites; the dashed line is the registered $0.02$ floor and
-  the dotted line the $0.06$ ceiling-informativeness minimum. The
+  the dotted line the $0.06$ reference-effect minimum. The
   block-27 residual swap is an expected endpoint-consistency check (the
   dash-dotted line marks the $0.0332$ baseline gap). Neither primary sufficiency
-  ceiling clears $0.06$, so both sites are uncalibratable under the registered rule.}
+  reference effect clears $0.06$, so both sites are uncalibratable under the registered rule.}
   \label{fig:t20-ceilings}
 \end{figure}
 
 \subsection{A conditional attention-message contribution}
-On all 195 T21-C items, the five simultaneous lower bounds are positive.
+On all 195 attention-path evaluation items, the five simultaneous lower bounds are positive.
 Glyph-message decrement exceeds the suffix control by $0.002326$ in cosine
 margin (lower bound $0.001399$), and restoration exceeds its control by
 $0.002267$ (lower bound $0.001400$; Figure \ref{fig:t21-path}). Both carriers have
@@ -519,7 +608,7 @@ means, partly offset by increased competitor similarity (Table
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figures/t21_path_summary.pdf}
-  \caption{T21-C: conditional message intervention and five margin contrasts.
+  \caption{Attention-path intervention after readout reset: five margin contrasts.
   A 384-item pilot selected block 21 before the 195-item confirmation.
   Points are means; each segment joins its simultaneous one-sided 95\%
   lower bound to the mean (20,000 shared-index item-bootstrap draws).
@@ -529,33 +618,89 @@ means, partly offset by increased competitor similarity (Table
   \label{fig:t21-path}
 \end{figure}
 
-\clearpage
 \section{Discussion}
 
-T19-L establishes word-disjoint lexical retrieval after token-count matching.
-T19-C/T20-C constrain the tested rank-8 accounts within their calibration
-limits. Preserved T20-C retrieval after earlier readout-state replacement
-suggested later use of the unchanged prefix. T21-C confirms a conditional
+Keyword retrieval establishes a word-disjoint lexical relation after token-count matching.
+Fixed and optimized subspace interventions constrain the tested rank-8 accounts
+within their calibration limits. Retrieval preserved after earlier readout-state replacement
+suggested later use of the unchanged prefix. Attention-path intervention confirms a conditional
 glyph-position margin contribution on new items after a readout reset.
 Its different population and endpoint leave the
-full explanation of T20-C's swap asymmetry open.
+full explanation of the optimized study's swap asymmetry open.
 
 State replacement and pathway intervention answer distinct causal
-questions. Endpoint decomposition clarifies the results: T19-C's block-27 MLP patch
-chiefly degrades codepoint self-retrieval; T21-C shifts both own-keyword and
+questions. Endpoint decomposition clarifies the results: the fixed-subspace block-27 MLP patch
+chiefly degrades codepoint self-retrieval; the path intervention shifts both own-keyword and
 competitor cosines, yielding positive adjusted margins with zero mean absolute
 top-1 effects.
+
+\subsection{Development extension: measuring contextual responses}
+\label{sec:development}
+
+Following the lexical experiments, we examined teacher-forced response
+probabilities in 24 authored scenarios from six recurring families. Two goal
+contexts were crossed with emoji and word cues, using three continuation
+formulations. The matched-execution scoring version retains positive
+context--cue interaction across every formulation in 22/24 emoji and 23/24
+word scenarios. Absolute candidate preference changes across formulations
+on 55/96 emoji and 56/96 word inputs. Neither carrier has a scenario with
+author-aligned choices in all four inputs across every formulation. A stable
+cue meaning combined with a changing goal can generate such interactions.
+
+A subsequent development design separated property matching, message
+interpretation, and evidence that an outcome occurred. One previously exposed
+author supplied 36 judgments on 24 scenes: 26 were binary and ten undecidable.
+Same-question model agreement was 16/26 on the binary subset; all 36 selected
+model choices also follow a post-hoc question-type constant rule. Across the
+full model inventory, 710/816 true/false wording pairs imply inconsistent
+truth, and all 48 positive-worded accurate-completion controls prefer No.
+These limitations concern the tested Llama 3.2 3B base checkpoint and its
+prompt/readout configuration. Exact numerical replay alone cannot qualify
+this format as a measure of contextual interpretation.
+
+Appendix~\ref{app:contextual} records the complete developmental comparison,
+including adverse controls and a token-level sensitivity analysis. The same
+scenarios are reused throughout, with no new confirmatory sample or population
+inference. A subsequent, prospectively specified qualification uses 32 new
+text-only facts in four authored families, with explicit-positive,
+explicit-negative, and unknown reports (Appendix~\ref{app:qualification}).
+Direct questions with minimal Yes/No answers are correct on 88/96 reserved
+cases, with four errors and four ties; eight of 16 roots satisfy all six
+conditions. Full-sentence answers score 75/96 on the same direct questions,
+and minimal answers score 65/96 and 57/96 under nested-true and nested-false
+questions. The primary fails its specified 96/96 requirement; explicit A/B
+remappings separately fail at 104/192, with 19 ties. These controlled text-only
+comparisons identify question and encoding dependence before any emoji
+interpretation is required. Independent assessment and an output measure
+qualified for its intended task remain prerequisites for a natural-state
+causal study. The earlier conditional attention result establishes no such
+output connection.
 
 \section{Limitations and broader impact}
 
 \paragraph{Measurement.}
 CLDR keywords were not human-rated for synonymy, specificity, or familiarity.
 Retrieval measures
-nearest-neighbor geometry at selected suffix tokens. Generation, task
-behavior, and rendered-glyph perception were not tested. Token-count matching
+nearest-neighbor geometry at selected suffix tokens. Free generation,
+validated task performance, and rendered-glyph perception were not tested. Token-count matching
 leaves token identities and tokenizer construction uncontrolled.
-Low T21 top-1 baselines may limit detection of decrements; zero means establish
+Low post-reset top-1 baselines may limit detection of decrements; zero means establish
 neither equivalence nor unchanged outcomes for every item.
+
+The response extension is unfinished instrument development on reused,
+author-written scenarios. Repeated formulations and six scenario families
+constrain independence. Word and emoji cues differ in explicitness and
+token/position geometry. The single author knew prior project results;
+the tryout supplies no independent semantic labels. Human uncertainty and
+forced model choices have different response spaces. Track revisions also
+change some constructs, including visible expression versus affect, so they
+do not isolate an instruction-only effect. The controls qualify neither
+semantic accuracy nor a general failure of the model to understand negation.
+The later 32-root qualification is a finite, source-authored check, with repeated
+report and question conditions and a deliberately strict all-cases-correct
+requirement. Its four primary errors coexist with four ties under the fixed
+BF16 computation; no precision comparison identifies their cause. It adds
+no human semantic labels or model-population estimate.
 
 \paragraph{Generalization.}
 The nine model--tokenizer configurations form a prespecified convenience roster
@@ -567,30 +712,35 @@ may have appeared in pretraining; the symbol-panel
 freshness criterion concerns only repository history.
 
 \paragraph{Mechanism.}
-Mechanistic tests cover one Llama 3.2 3B checkpoint. T19-C/T20-C use rank-8,
-single-site readout-token interventions; T21-C conditions on a codepoint-view
+Mechanistic tests cover one Llama 3.2 3B checkpoint. The two subspace studies use rank-8,
+single-site readout-token interventions; the path test conditions on a codepoint-view
 reset, two carriers, and a fixed donor/gallery pool. Suffix controls match
 position count alone; attention mass and semantic content remain uncontrolled.
 Non-emoji path controls, separate key/value effects, sparse feature bases
 \citep{bricken2023monosemanticity,cunningham2024sparse}, and nonlinear readouts
-remain untested. T21 item-bootstrap coverage is approximate and limited to the
-eligibility-defined population. T19-C lacked a positive intervention control;
-T20-C registered full-interchange ceilings \citep{geiger2024das,wu2023boundless}
+remain untested. Path-test item-bootstrap coverage is approximate and limited to the
+eligibility-defined population. Fixed-subspace intervention lacked a positive intervention control;
+optimized-subspace intervention specified full-state swaps \citep{geiger2024das,wu2023boundless}
 and returned uncalibratable primary verdicts. These reference swaps have no
 proven universal upper-bound property. Training on 96 items leaves item-specific
 coding, limited data, and optimization as explanations for weak generalization.
 The 384-item baseline gap ($0.0332$) falls below the $0.06$ threshold chosen
-from the smaller T19-C set. Future thresholds should be calibrated on a
+from the smaller fixed-subspace set. Future thresholds should be calibrated on a
 separate development set before specifying evaluation.
 
 \paragraph{Reproducibility and impact.}
 The anonymous compact archive binds configurations, selections, summaries,
-tests, validators, licenses, and the paper; raw arrays remain in the execution
-environment. Exact T19 acquisition duration and peak memory are absent from
+tests, validators, licenses, and the September manuscript; raw arrays remain in the execution
+environment. Exact retrieval/fixed-subspace acquisition duration and peak memory are absent from
 the submitted evidence. Unicode auditing could reveal representation failures
 in multilingual systems. Applying CLDR correspondence to people's meaning,
-sentiment, culture, or identity risks unjustified profiling. No personal data,
-human subjects, or user messages are used.
+sentiment, culture, or identity risks unjustified profiling. The historical
+lexical and intervention experiments use no human responses or private messages.
+The development extension adds an author-only tryout. Its individual responses,
+assignments, and notes remain private; this local draft includes aggregates
+only. No external participants were recruited. Formal approval or exemption
+for future human evaluation is not claimed, and its review and release
+arrangements remain to be specified.
 
 \section{Conclusion}
 
@@ -601,8 +751,15 @@ specificity of this result. Two separately partitioned causal
 experiments leave the tested rank-8 readout-token account unsupported.
 A separately specified 195-item follow-up confirms a conditional glyph-position
 attention contribution to keyword margin, with zero mean absolute top-1
-effects. These outcomes distinguish lexical readability, local mediation,
-and behaviorally effective pathways.\label{sec:main-end}
+effects. Together, these experiments separate recoverable lexical information
+from the conclusions licensed by each intervention. Subsequent contextual
+response scoring finds interactions alongside substantial formulation and
+polarity dependence. A new explicit-report qualification records partial
+success on simple facts alongside failures of the specified primary and
+label-robustness criteria. Together, these results identify measurement
+limits that precede interpreting response scores as meaning judgments.
+Independent validation, free generation, and output-linked causality remain
+open.\label{sec:main-end}
 
 \clearpage
 \bibliographystyle{plainnat}
@@ -614,7 +771,11 @@ and behaviorally effective pathways.\label{sec:main-end}
 \section{Exploration path and decision lineage}
 \label{app:lineage}
 
-T19-L denotes the observational arm of the nineteenth study in this project.
+Historical identifiers map to the reader-facing names as follows:
+T19-L is \emph{keyword retrieval}; T19-C is \emph{fixed-subspace intervention};
+T20-C is \emph{optimized-subspace intervention}; and T21-C is
+\emph{attention-path intervention after readout reset}.
+T19-L was the observational arm of the nineteenth study in this project.
 The concise lineage below includes only results that changed the next design
 decision. Earlier studies retain their exploratory or failed-confirmation
 status; the T19-L primary uses its own prespecified evidence alone.
@@ -634,7 +795,7 @@ addressed. The labels trace how the design changed.
 \end{figure}
 
 \paragraph{Initial screen and matched controls (baseline and Milestone 2).}
-A colored-shape steering screen produced 25 positive results among 36
+An initial colored-shape screen produced 25 positive results among 36
 layer--seed--dose configurations. An exact tokenization-matched follow-up
 supported one tested layer contrast and failed to support the other. We made
 tokenization part of the estimand, retained negative configurations, and
@@ -761,7 +922,7 @@ from initial development on Apple Silicon and specified in the protocol.
 The reported runs loaded its safetensors through Transformers/CUDA.
 The \texttt{mlx-community} identifier records artifact provenance; upstream
 bit-identity was not verified. Model cards
-and upstream license terms are part of the submission-archive license audit.
+and upstream license terms are part of the historical archive's license audit.
 The cards declare Apache-2.0 for the Qwen2.5 0.5B, 1.5B, and 7B configurations, OLMo,
 SmolLM2, and Mistral; Qwen2.5 3B uses the non-commercial Qwen Research
 License, Gemma uses the Gemma Terms of Use, and the Llama mirror uses the
@@ -846,6 +1007,55 @@ decisions, and the cross-model $p=0.0027$ with zero numerical difference on
 the acquisition platform. This is statistical replay from fixed predictions;
 hidden-state reconstruction requires the retained arrays.
 
+\subsection{Descriptive threshold and depth sensitivity}
+\label{app:sensitivity}
+
+The following checks were added during the October revision using five saved
+compact result files, without new model forwards or randomization draws.
+The supplied script \path{summarize_revision_sensitivity_v0.py} records
+the SHA-256 of each input and reproduces the arithmetic. Historical protocols,
+decisions, and statistical tests are unchanged.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{rrrc}
+\toprule
+Hypothetical floor & Both point estimates: all models & Core models & At least 3 of 4 core \\
+\midrule
+0.02 & 9/9 & 4/4 & yes \\
+0.03 & 9/9 & 4/4 & yes \\
+0.04 & 8/9 & 4/4 & yes \\
+0.06 & 6/9 & 4/4 & yes \\
+0.08 & 4/9 & 3/4 & yes \\
+0.09 & 2/9 & 1/4 & no \\
+\bottomrule
+\end{tabular}
+\caption{Post-outcome sensitivity of keyword retrieval to an observed-effect
+floor. Both unrestricted and matched estimates must meet the floor. Stored
+model tests are held fixed; the table reports no new inferential decisions.}
+\label{tab:sensitivity}
+\end{table}
+
+The smallest of the two point estimates across all nine models is
+$0.03636$; the third-largest core-model minimum is $0.08252$ (rounded).
+The stored cross-model $p$-value remains $0.0027$ because the keyword
+randomization tests are unchanged. A floor check and its permutation test
+address different requirements of the original decision.
+
+At normalized depths $0.75$, $0.875$, and $1.0$, the smallest point estimate
+over models and unrestricted/matched components is respectively $0.02045$,
+$0.05000$, and $0.03182$. Each leave-one-late-depth-out average also retains
+all nine models above $0.02$. No primary $p$-value is transferred to these
+alternative windows, and untested intervention depths remain unresolved.
+
+For the six fixed-subspace and nine optimized-subspace sites, every saved
+site has at least one nonpositive necessity/sufficiency lower bound and an
+IUT $p$-value above $0.05$. Reducing their effect floor to zero would therefore
+create no successful joint intervention. The optimized primary sites remain
+uncalibratable under their original full-state reference rule. Changing that
+rule afterward could change the label, not establish a successful intervention.
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=\linewidth]{figures/t19_emoji_symbol_boundary.pdf}
@@ -864,8 +1074,8 @@ hidden-state reconstruction requires the retained arrays.
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{figures/t19_causal_sites.pdf}
-  \caption{Random-adjusted T19-C causal effects with descriptive 95\%
-  item-bootstrap intervals over 192 emoji held out from T19-L. Shaded rows
+\caption{Fixed-subspace intervention effects with descriptive 95\%
+item-bootstrap intervals over 192 evaluation emoji. Shaded rows
   and asterisks mark the two primary block-24 sites. Solid vertical lines
   show zero; dashed lines show the registered $0.02$ effect-size floor. No
   site has both necessity and sufficiency above the floor with positive lower
@@ -912,7 +1122,7 @@ positive sites.
 \setlength{\tabcolsep}{4pt}
 \begin{tabular}{llrrr}
 \toprule
-Block & Site & Necessity ceiling & Sufficiency ceiling & Composite suff.\ ceiling \\
+Block & Site & Necessity swap & Sufficiency swap & Composite suff.\ swap \\
 \midrule
 21 & attention & $+0.0052$ & $0.0000$ & $0.0000$ \\
 21 & MLP       & $0.0000$  & $+0.0156$ & $+0.0156$ \\
@@ -922,12 +1132,14 @@ Block & Site & Necessity ceiling & Sufficiency ceiling & Composite suff.\ ceilin
 27 & MLP       & $-0.0208$ & $+0.0365$ & $+0.2448$ \\
 \bottomrule
 \end{tabular}
-\caption{Post-hoc full-interchange ceilings at the six T19-C sites on the
+\caption{Post-hoc full-state reference-swap effects at the six fixed-subspace
+intervention sites (historical ID: T19-C) on the
 192-item set and single registered context (keyword top-1 unless marked
 composite). Computed after the registered decision from 2,304 additional
 forwards; labeled descriptive and unable to change the recorded outcome. Both
-primary block-24 sufficiency ceilings sit at or near zero, far below the
-registered $0.02$ floor.}
+primary block-24 sufficiency swap effects sit at or near zero, far below the
+registered $0.02$ floor. These reference swaps are not established upper
+bounds on all possible interventions.}
 \label{tab:posthoc}
 \end{table}
 
@@ -936,7 +1148,7 @@ registered $0.02$ floor.}
 
 Table \ref{tab:t20} reports the registered T20-C quantities at all nine
 sites: random-adjusted effects of the optimized rank-8 subspace on the
-keyword component, the full-interchange ceilings, the codepoint
+keyword component, the full-state reference-swap effects, the codepoint
 self-retrieval guard under the learned patch, and the site IUT value. The
 glyph-input baseline on the 384-item set is keyword top-1 $0.03451$
 (codepoint top-1 $0.00195$); the codepoint-input baseline is keyword top-1
@@ -979,7 +1191,7 @@ weights remained unchanged.
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{llcrrrrrrc}
 \toprule
-Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ ceiling & Suff.\ ceiling & Guard & Site IUT & Primary verdict \\
+Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ swap & Suff.\ swap & Guard & Site IUT & Primary verdict \\
 \midrule
 21 & residual  & yes & $0.0000$  & $+0.0033$ & $+0.0013$ & $+0.0234$ & $0.818$ & $0.624$ & uncalibratable \\
 24 & residual  & yes & $-0.0013$ & $+0.0046$ & $+0.0085$ & $+0.0254$ & $0.971$ & $0.679$ & uncalibratable \\
@@ -992,10 +1204,11 @@ Block & Site & Primary & $N^{\mathrm{opt}}_s$ & $S^{\mathrm{opt}}_s$ & Nec.\ cei
 27 & MLP       & no  & $-0.0046$ & $+0.0013$ & $-0.0091$ & $+0.0143$ & $0.971$ & $0.977$ & secondary \\
 \bottomrule
 \end{tabular}
-\caption{Registered T20-C results. $N^{\mathrm{opt}}_s$/$S^{\mathrm{opt}}_s$
+\caption{Optimized-subspace intervention results (historical ID: T20-C). $N^{\mathrm{opt}}_s$/$S^{\mathrm{opt}}_s$
 are random-adjusted keyword-component effects of the optimized rank-8
-subspace, averaged over four contexts on 384 fresh emoji. Ceilings replace
-the entire site state with the same item's other-view state. Guard is
+subspace, averaged over four contexts on 384 fresh emoji. Full-state reference
+swaps replace the entire site state with the same item's other-view state;
+their effects are not universal upper bounds. Guard is
 codepoint self-retrieval under the learned patch (floor $0.90$). All nine sites
 were evaluated. Entries marked secondary are outside the prespecified primary
 decision family; no primary verdict is assigned to them. The block-27 residual
@@ -1179,20 +1392,42 @@ randomization and bootstrap seeds, and validation. Figures use validated
 model-configuration, causal-site, and T21-contrast summaries; their manifest
 binds every input and PDF/PNG output.
 
-A deterministic, whitelist-only archive contains the paper, compact results,
+A deterministic, whitelist-only September archive contains the submitted paper, compact results,
 selections, code, validation receipts, and paired license/compute/ethics reports.
 Its manifest binds every path, byte count, and SHA-256; the validator rejects
 unsafe paths, author or local-path tokens, and raw/model-file formats.
 Model-dependent activation arrays, learned subspaces, the full intervention
 ledger, model weights, and tokenizer files are omitted and remain bound by
 execution records. T19-L prediction indices and exact strata allow model-free
-statistical replay. T21-C includes 195 scalar contrast rows and NumPy-only
+statistical replay. T19-C and T20-C provide compact site-level summaries;
+the released material does not support independent recomputation of their
+item-level resampling and decision statistics. T21-C includes 195 scalar contrast rows and NumPy-only
 validators for simultaneous bounds, top-1 means, and descriptive margin
 decomposition. Raw-state replay requires the omitted arrays.
+The October manuscript revision, descriptive sensitivity analysis, and
+contextual development extension are maintained separately; the archived
+submission has not been overwritten. The September archive is a historical
+snapshot, not a complete evidence package for this revision. The October 15
+standalone release package binds the current PDF and TeX dependencies, public
+development inputs and aggregates, the new qualification inputs and per-token
+scores, and executable saved-score replays in one version-specific manifest.
+It retains the September archive as an unchanged historical file. The new
+score projection omits local paths and process metadata while binding their
+original records by checksums; two implementations reconstruct its numerical
+results without model forwards. This establishes saved-score reproducibility,
+not independent reconstruction of GPU logits. Historical raw-state arrays,
+the earlier contextual per-token ledger, and individual author responses are
+outside this package. Independent replay of the author-response aggregates
+therefore remains unavailable in the public materials. The standalone manuscript
+uses standard LaTeX packages and does not require a workshop formatting style.
+The version-specific record is identified by
+\url{https://doi.org/10.5281/zenodo.23376699}; its landing page records the
+deposit status and accompanying files. Further experiments are not a prerequisite
+for releasing the bounded results reported here.
 
 The observational acquisition used 7,920 batch-one forwards and produced
 285,120 readout vectors. T19-C acquisition used 256 source forwards, 2,880
-evaluation forwards, and 8,064 intervention rows, plus 2,304 post-hoc ceiling
+evaluation forwards, and 8,064 intervention rows, plus 2,304 post-hoc full-state-swap
 forwards. T20-C used 384 capture forwards, 33,048 batched training passes
 (gradients reach only the $3072\times8$ subspace parameters; no model weight
 is trained), 32,256 evaluation forwards, and 124,416 intervention rows, with
@@ -1201,33 +1436,47 @@ recorded stage durations of 14.7 and 7.3 minutes. T21's 384-item pilot used
 2,720 calls (70,580 sequences) in 118.50 seconds, including source capture and
 parity checks. Its eight-item canaries are accounted separately in the
 compute report. No generation was performed anywhere. Exact wall-clock time and peak memory for the T19 stages
-are absent from the submitted records; the compute checklist answer reflects
-that gap.
+are absent from the historical acquisition records.
 
 Selected Unicode 17 and CLDR 48.2 rows are used under Unicode License v3 and
-travel with its copyright and permission notice. New project code is
-Apache-2.0. Checkpoint assets are identified by exact revision and upstream
+travel with its copyright and permission notice. The author licenses the
+paper, its original figures, and the project-authored public data under
+CC BY 4.0. Project code remains Apache-2.0. Third-party materials retain
+their original licenses and notices. Checkpoint assets are identified by exact revision and upstream
 terms; the archive omits their files. In particular, the Qwen2.5 3B configuration
 is used only for non-commercial research under the Qwen Research License.
 
-The study uses no human participants, personal data, private messages, or
-scraped user content and was reviewed against the NeurIPS Code of Ethics.
+The historical lexical and intervention experiments use no human responses,
+personal data, private messages, or scraped user content. Appendix~\ref{app:contextual}
+adds an author-only development tryout with private individual records and
+aggregate reporting. No external participants were recruited. Institutional
+approval or exemption for future human evaluation is not claimed; its review,
+consent, and release arrangements remain to be specified.
 
 \Needspace{12\baselineskip}
-\paragraph{Author-side AI assistance.}
+\paragraph{Collaborative development.}
 We developed this study interactively in collaboration with AI assistants.
-Author-side pre-submission feedback involved ChatGPT (GPT 5.6 Sol instant,
+Manuscript feedback involved ChatGPT (GPT 5.6 Sol instant,
 ``Monday'') and Claude Chat (Claude Fable 5.1). Codex (GPT 5.6 Sol Max) and
 Claude Code (Fable 5) contributed to implementation, analysis, sequential
-protocol design, and manuscript editing. These exchanges were part of
-author-initiated preparation, separate from conference peer review. Endpoints were specified
-before each bank's outcomes were inspected. CLDR supplied labels; assistant
-judgments were not experimental measurements. Authors retain execution
-authority and responsibility for the paper's text, figures, code, references,
-and claims. Numerical evidence and independently implemented validators are
-checksum-bound.
+protocol design, and manuscript editing. Subsequent manuscript revision,
+saved-summary analysis, contextual development, and explicit-report qualification
+were also developed in collaboration with Codex. Authored scenarios, questions,
+and operational references are not independent human labels. CLDR supplied
+the lexical labels; assistant judgments were not experimental measurements.
+The author's questionnaire responses were recorded directly and were never
+filled in by an assistant. Historical confirmation endpoints preceded inspection
+of their evaluation outcomes; the adaptive development sequence is reported
+separately. The explicit-report qualification's complete inventory and
+decisions preceded score acquisition. The human author retains responsibility
+for execution and for the paper's text, figures, code, references, and claims.
+Independently implemented saved-score verification checks the recorded
+computation; it is not an external scientific replication.
 
 \clearpage
-\input{checklist.tex}
+\input{contextual_development_20261010.tex}
+
+\clearpage
+\input{readout_qualification_20261015.tex}
 
 \end{document}

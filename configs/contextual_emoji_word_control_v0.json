@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-contextual-emoji-word-control-v0",
+  "status": "development_design_fixed_before_word_acquisition_emoji_outcomes_already_seen",
+  "claim_status": "finite_inventory_lexicalization_comparison_not_semantic_or_causal_confirmation",
+  "inputs": {
+    "path": "data/contextual_emoji_development_v0.jsonl",
+    "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394",
+    "expected_blocks": 24,
+    "expected_families": 6,
+    "expected_blocks_per_family": 4,
+    "word_source": "planned_word_alternatives",
+    "human_validation": "absent",
+    "word_pairs_authored_before_emoji_baseline": true,
+    "followup_selected_after_emoji_outcomes": true,
+    "outcome_based_exclusions": false
+  },
+  "comparators": {
+    "baseline_specification": {
+      "path": "validation/contextual_emoji_output_pilot_v0/specification.json",
+      "sha256": "04d7d005ee5c6555ef85cf900d79f79b88a50e7681001502ed3cd5be0d95bcd5"
+    },
+    "baseline_cells": {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/cells.jsonl",
+      "sha256": "ce090b817ea5c0ebf5382d1b1994a482f918d06043821d94157c0b2710980d97"
+    },
+    "baseline_runner": {
+      "path": "scripts/contextual_emoji_output_pilot_v0.py",
+      "sha256": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa"
+    },
+    "baseline_runtime": {
+      "path": "validation/contextual_emoji_output_pilot_v0/full288/runtime.json",
+      "sha256": "952139aec861ada4b9c889b36933a0f65c520c393d61d80e308f81b3df41e323"
+    }
+  },
+  "design": {
+    "carrier_kind": "word",
+    "contexts_per_block": 2,
+    "word_variants_per_context": 2,
+    "candidate_pairs_per_block": 1,
+    "substitution_rule": "replace_only_literal_emoji_slot_with_existing_word_a_or_b",
+    "unchanged_fields": ["block_id", "family", "context_p", "context_q", "candidate_a", "candidate_b", "eta", "orientation"],
+    "primary_description": "finite_inventory_paired_word_minus_emoji_goal_compatibility_interaction",
+    "family_weighting": "equal_weight_six_family_means_each_of_four_fixed_blocks",
+    "token_mismatch_policy": "retain_all_and_report_no_matched_subset_selection",
+    "absent_controls": "existing_baseline_only_not_reacquired_or_counted_as_new_cells",
+    "route_intervention": "not_instrumented_not_executed"
+  },
+  "scoring": {
+    "method": "teacher_forced_full_candidate_sequence_log_probability",
+    "add_special_tokens": false,
+    "include_eos": false,
+    "normalization": "none",
+    "boundary": "joint_tokenization_exact_prefix",
+    "boundary_failure": "record_failed_cell_no_silent_fallback",
+    "prompt_slot": "{emoji}",
+    "J": 1,
+    "s": "log_probability(candidate_a)-log_probability(candidate_b)",
+    "delta_p": "s(context_p,word_b)-s(context_p,word_a)",
+    "delta_q": "s(context_q,word_b)-s(context_q,word_a)",
+    "H": "eta*(delta_q-delta_p)",
+    "paired_effect": "H_word-H_emoji",
+    "intended_crossover_diagnostic": "eta*delta_p<0_and_eta*delta_q>0",
+    "absolute_alignment": "strict_sign_of_s_against_recorded_author_orientation_ties_not_aligned",
+    "statistical_inference": "none_no_pvalues_bootstrap_population_intervals_or_threshold_pass",
+    "effect_ratio": "not_computed"
+  },
+  "model": {
+    "role": "llama32_3b_base_bf16",
+    "artifact_model_id": "mlx-community/Llama-3.2-3B-bf16",
+    "revision": "60a99aaf43164077157d64bf909b7b61143c6a6d",
+    "artifact_manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+    "expected_class": "LlamaForCausalLM",
+    "expected_layers": 28,
+    "expected_hidden_size": 3072,
+    "expected_parameters": 3212749824,
+    "expected_vocab_size": 128256,
+    "model_base": true,
+    "dtype": "bf16",
+    "local_files_only": true,
+    "download": false,
+    "chat_template": false,
+    "bos_handling": "none_no_added_special_tokens",
+    "eos_handling": "not_appended_or_scored"
+  },
+  "runtime": {
+    "require_baseline_python_and_packages": true,
+    "attention": "eager",
+    "use_cache": false,
+    "new_dependency_installation": false
+  },
+  "budget": {
+    "max_sequences": 192,
+    "max_input_tokens": 512,
+    "max_candidate_tokens": 64,
+    "walltime_seconds": 900,
+    "planned_blocks": 24,
+    "planned_input_conditions": 96,
+    "planned_candidate_sequence_cells": 192,
+    "generation_calls": 0,
+    "training_steps": 0,
+    "route_intervention_cells": 0,
+    "new_absent_cells": 0,
+    "new_emoji_cells": 0
+  },
+  "reporting": {
+    "retain_all_planned_completed_failed_cells": true,
+    "full_population_estimates_null_if_incomplete": true,
+    "required": ["all_four_s_cells", "both_deltas", "H", "effect_crossover", "absolute_author_alignment", "all_four_alignment", "family_means_and_denominators", "paired_H_and_delta_differences", "paired_alignment_transitions", "token_geometry", "runtime_parity"],
+    "forbidden_claims": ["human_semantic_validity", "confirmation", "causal_route_contribution", "emoji_specificity", "meaning_matched_control", "token_matched_control", "free_generation_accuracy", "cross_model_generality"]
+  }
+}

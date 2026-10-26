@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "protocol_id": "glyphprobe-contextual-emoji-candidate-wording-v0",
+  "status": "development_design_new_candidate_outputs_unobserved_original_outputs_seen",
+  "inputs": {
+    "path": "data/contextual_emoji_development_v0.jsonl",
+    "sha256": "3222695420917983d79d84e55364dd07a86b61b29ecc4d6dfdadedccde72f394"
+  },
+  "candidate_panel": {
+    "path": "data/contextual_emoji_candidate_wording_v0.json",
+    "sha256": "480d236a87e40e20a4ea339e0514c2a06a0707ec248413ca0260e56868a52730"
+  },
+  "references": {
+    "emoji_spec": {"path": "validation/contextual_emoji_output_pilot_v0/specification.json", "sha256": "04d7d005ee5c6555ef85cf900d79f79b88a50e7681001502ed3cd5be0d95bcd5"},
+    "emoji_cells": {"path": "validation/contextual_emoji_output_pilot_v0/full288/cells.jsonl", "sha256": "ce090b817ea5c0ebf5382d1b1994a482f918d06043821d94157c0b2710980d97"},
+    "word_spec": {"path": "validation/contextual_emoji_word_control_v0/specification.json", "sha256": "ba8eabb588d48eca68041f475440e64b3f6e0db1fa6ab4f5aa56ee7083b0c519"},
+    "word_cells": {"path": "validation/contextual_emoji_word_control_v0/full192/cells.jsonl", "sha256": "1026d3001ad4390662bfec608cfeca28d1610f7ba7117b6401494d8fa929ad91"},
+    "runtime": {"path": "validation/contextual_emoji_output_pilot_v0/full288/runtime.json", "sha256": "952139aec861ada4b9c889b36933a0f65c520c393d61d80e308f81b3df41e323"},
+    "baseline_helper": {"path": "scripts/contextual_emoji_output_pilot_v0.py", "sha256": "ccce1d18b701708506b61fa20cc1724fed3dd4c44ebfcecde66b20c635944daa"},
+    "word_helper": {"path": "scripts/contextual_emoji_word_control_v0.py", "sha256": "1589c0452e127b08d824604a139bab408e1dec87cff0a577d4578bb6d5aecfd4"}
+  },
+  "model_artifact_manifest_sha256": "dc5b61a2c4aa123f82e7d0471b4cdb3a7d8de3b6a8db327047fb1b6d05e3bdf4",
+  "compute_policy": {
+    "mode": "staged_shared_cuda",
+    "allowed_peer_pids": [485817],
+    "allocator_cap_mib": 2560,
+    "driver_allowance_mib": 512,
+    "minimum_free_mib": 4096,
+    "minimum_call_interval_seconds": 0.1,
+    "parity_original_crossed_cells": 384,
+    "parity_tolerance": 0,
+    "no_peer_priority_pause_or_process_changes": true,
+    "not_a_reservation_or_zero_slowdown_guarantee": true
+  },
+  "scoring": {
+    "add_special_tokens": false,
+    "include_eos": false,
+    "normalization": "none",
+    "boundary": "joint_tokenization_exact_prefix",
+    "J_total": 3,
+    "new_pair_ids": ["explicit_negation", "adjective_pair"],
+    "carrier_kinds": ["emoji", "word"],
+    "reuse_original": true,
+    "acquisition_order": "pair_then_block_then_context_then_carrier_then_variant_then_candidate"
+  },
+  "budget": {
+    "max_sequences": 768,
+    "max_input_tokens": 96,
+    "max_candidate_tokens": 64,
+    "walltime_seconds": 900,
+    "planned_blocks": 24,
+    "planned_families": 6,
+    "distinct_crossed_prompts_both_carriers": 192,
+    "new_candidate_sequence_cells": 768,
+    "new_parity_forward_cells": 384,
+    "max_total_model_forward_attempts": 1152,
+    "reused_candidate_sequence_cells": 384,
+    "total_crossed_sequence_scores": 1152,
+    "new_absent_cells": 0,
+    "generation_calls": 0,
+    "training_steps": 0,
+    "intervention_cells": 0
+  },
+  "analysis": {
+    "report_each_pair_separately": true,
+    "pair_aggregation": "equal_weight_three_pairs_only_when_complete",
+    "family_aggregation": "equal_weight_six_families_only_when_complete",
+    "sign_stability": "all_three_H_strictly_positive_or_all_negative_else_zero_or_mixed",
+    "range": "max_H_minus_min_H_over_three_pairs_when_complete",
+    "absolute_preference": "author_proposed_label_agreement_ties_not_aligned",
+    "paired_contrast": "H_word_minus_H_emoji_for_each_pair_then_equal_weight_mean",
+    "no_best_pair_selection": true,
+    "no_token_geometry_exclusions": true,
+    "new_absent_diagnostics": "unavailable_no_new_absent_forwards_and_original_candidates_differ",
+    "inference": "none_no_pvalues_bootstrap_or_population_claim",
+    "human_validation": "absent",
+    "confirmatory": false,
+    "causal_claim_supported": false
+  }
+}
